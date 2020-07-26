@@ -1,0 +1,258 @@
+\hypertarget{IR__lowering__exec_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\+I\+R\+\_\+lowering\+\_\+exec.cpp File Reference}
+\label{IR__lowering__exec_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\+I\+R\+\_\+lowering\+\_\+exec.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\+I\+R\+\_\+lowering\+\_\+exec.\+cpp}}
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+A\+S\+S\+E\+R\+T\+S.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+F\+R\+O\+M\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Discrepancy.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}I\+R\+\_\+lowering.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}application\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}design\+\_\+flow\+\_\+step.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}frontend\+\_\+flow\+\_\+step.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}function\+\_\+behavior.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}function\+\_\+frontend\+\_\+flow\+\_\+step.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}math\+\_\+function.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+basic\+\_\+block.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+common.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+reindex.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for I\+R\+\_\+lowering\+\_\+exec.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d22/IR__lowering__exec_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{IR__lowering__exec_8cpp_a6539157e7cba1a60c83b69097d6cb3ea}{L\+O\+W\+P\+A\+RT}(x)~(static\+\_\+cast$<$unsigned long long int$>$(x) \& ((1\+U\+L\+L $<$$<$ 32) -\/ 1))
+\item 
+\#define \hyperlink{IR__lowering__exec_8cpp_a96b9c65f43b83ea6daa5cfdec374eb8e}{H\+I\+G\+H\+P\+A\+RT}(x)~(static\+\_\+cast$<$unsigned long long int$>$(x) $>$$>$ 32)
+\item 
+\#define \hyperlink{IR__lowering__exec_8cpp_a79bcfb6bde984f42d1124b068a509af7}{B\+A\+SE}~(1\+L\+L $<$$<$ 32)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned long long int \hyperlink{IR__lowering__exec_8cpp_ab800231cf5831d4074ad7f0931fa4634}{invert\+\_\+mod2n} (unsigned long long int x, unsigned int n)
+\begin{DoxyCompactList}\small\item\em Compute the inverse of X mod 2$\ast$$\ast$n, i.\+e., find Y such that X $\ast$ Y is congruent to 1 (mod 2$\ast$$\ast$N). \end{DoxyCompactList}\item 
+static void \hyperlink{IR__lowering__exec_8cpp_a9e9dcb1b6cf38085303d6de9d05e9a3b}{encode} (long long int $\ast$words, unsigned long long int low, long long int hi)
+\item 
+static void \hyperlink{IR__lowering__exec_8cpp_a59ff19c37360a64820322ae732778c6b}{decode} (long long int $\ast$words, unsigned long long int $\ast$low, long long int $\ast$hi)
+\item 
+static int \hyperlink{IR__lowering__exec_8cpp_ad572034554e992b75905ba947d4d29c5}{div\+\_\+and\+\_\+round\+\_\+double\+\_\+cprop} (unsigned long long int lnum\+\_\+orig, long long int hnum\+\_\+orig, unsigned long long int lden\+\_\+orig, unsigned long long int $\ast$lquo, long long int $\ast$hquo)
+\item 
+static unsigned long long int \hyperlink{IR__lowering__exec_8cpp_a512cbdacf2c37b408183e9a45b0b3c8c}{choose\+\_\+multiplier} (unsigned long long int d, int n, int precision, unsigned long long int $\ast$multiplier\+\_\+ptr, int $\ast$post\+\_\+shift\+\_\+ptr, int $\ast$lgup\+\_\+ptr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{IR__lowering__exec_8cpp_a79bcfb6bde984f42d1124b068a509af7}\label{IR__lowering__exec_8cpp_a79bcfb6bde984f42d1124b068a509af7}} 
+\index{I\+R\+\_\+lowering\+\_\+exec.\+cpp@{I\+R\+\_\+lowering\+\_\+exec.\+cpp}!B\+A\+SE@{B\+A\+SE}}
+\index{B\+A\+SE@{B\+A\+SE}!I\+R\+\_\+lowering\+\_\+exec.\+cpp@{I\+R\+\_\+lowering\+\_\+exec.\+cpp}}
+\subsubsection{\texorpdfstring{B\+A\+SE}{BASE}}
+{\footnotesize\ttfamily \#define B\+A\+SE~(1\+L\+L $<$$<$ 32)}
+
+
+
+Definition at line 93 of file I\+R\+\_\+lowering\+\_\+exec.\+cpp.
+
+
+
+Referenced by decode(), and div\+\_\+and\+\_\+round\+\_\+double\+\_\+cprop().
+
+\mbox{\Hypertarget{IR__lowering__exec_8cpp_a96b9c65f43b83ea6daa5cfdec374eb8e}\label{IR__lowering__exec_8cpp_a96b9c65f43b83ea6daa5cfdec374eb8e}} 
+\index{I\+R\+\_\+lowering\+\_\+exec.\+cpp@{I\+R\+\_\+lowering\+\_\+exec.\+cpp}!H\+I\+G\+H\+P\+A\+RT@{H\+I\+G\+H\+P\+A\+RT}}
+\index{H\+I\+G\+H\+P\+A\+RT@{H\+I\+G\+H\+P\+A\+RT}!I\+R\+\_\+lowering\+\_\+exec.\+cpp@{I\+R\+\_\+lowering\+\_\+exec.\+cpp}}
+\subsubsection{\texorpdfstring{H\+I\+G\+H\+P\+A\+RT}{HIGHPART}}
+{\footnotesize\ttfamily \#define H\+I\+G\+H\+P\+A\+RT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(static\+\_\+cast$<$unsigned long long int$>$(x) $>$$>$ 32)}
+
+
+
+Definition at line 92 of file I\+R\+\_\+lowering\+\_\+exec.\+cpp.
+
+
+
+Referenced by div\+\_\+and\+\_\+round\+\_\+double\+\_\+cprop(), and encode().
+
+\mbox{\Hypertarget{IR__lowering__exec_8cpp_a6539157e7cba1a60c83b69097d6cb3ea}\label{IR__lowering__exec_8cpp_a6539157e7cba1a60c83b69097d6cb3ea}} 
+\index{I\+R\+\_\+lowering\+\_\+exec.\+cpp@{I\+R\+\_\+lowering\+\_\+exec.\+cpp}!L\+O\+W\+P\+A\+RT@{L\+O\+W\+P\+A\+RT}}
+\index{L\+O\+W\+P\+A\+RT@{L\+O\+W\+P\+A\+RT}!I\+R\+\_\+lowering\+\_\+exec.\+cpp@{I\+R\+\_\+lowering\+\_\+exec.\+cpp}}
+\subsubsection{\texorpdfstring{L\+O\+W\+P\+A\+RT}{LOWPART}}
+{\footnotesize\ttfamily \#define L\+O\+W\+P\+A\+RT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(static\+\_\+cast$<$unsigned long long int$>$(x) \& ((1\+U\+L\+L $<$$<$ 32) -\/ 1))}
+
+
+
+Definition at line 91 of file I\+R\+\_\+lowering\+\_\+exec.\+cpp.
+
+
+
+Referenced by div\+\_\+and\+\_\+round\+\_\+double\+\_\+cprop(), and encode().
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{IR__lowering__exec_8cpp_a512cbdacf2c37b408183e9a45b0b3c8c}\label{IR__lowering__exec_8cpp_a512cbdacf2c37b408183e9a45b0b3c8c}} 
+\index{I\+R\+\_\+lowering\+\_\+exec.\+cpp@{I\+R\+\_\+lowering\+\_\+exec.\+cpp}!choose\+\_\+multiplier@{choose\+\_\+multiplier}}
+\index{choose\+\_\+multiplier@{choose\+\_\+multiplier}!I\+R\+\_\+lowering\+\_\+exec.\+cpp@{I\+R\+\_\+lowering\+\_\+exec.\+cpp}}
+\subsubsection{\texorpdfstring{choose\+\_\+multiplier()}{choose\_multiplier()}}
+{\footnotesize\ttfamily static unsigned long long int choose\+\_\+multiplier (\begin{DoxyParamCaption}\item[{unsigned long long int}]{d,  }\item[{int}]{n,  }\item[{int}]{precision,  }\item[{unsigned long long int $\ast$}]{multiplier\+\_\+ptr,  }\item[{int $\ast$}]{post\+\_\+shift\+\_\+ptr,  }\item[{int $\ast$}]{lgup\+\_\+ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 297 of file I\+R\+\_\+lowering\+\_\+exec.\+cpp.
+
+
+
+References ceil\+\_\+log2(), div\+\_\+and\+\_\+round\+\_\+double\+\_\+cprop(), and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by I\+R\+\_\+lowering\+::division\+\_\+by\+\_\+a\+\_\+constant().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d1d/IR__lowering__exec_8cpp_a512cbdacf2c37b408183e9a45b0b3c8c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d1d/IR__lowering__exec_8cpp_a512cbdacf2c37b408183e9a45b0b3c8c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{IR__lowering__exec_8cpp_a59ff19c37360a64820322ae732778c6b}\label{IR__lowering__exec_8cpp_a59ff19c37360a64820322ae732778c6b}} 
+\index{I\+R\+\_\+lowering\+\_\+exec.\+cpp@{I\+R\+\_\+lowering\+\_\+exec.\+cpp}!decode@{decode}}
+\index{decode@{decode}!I\+R\+\_\+lowering\+\_\+exec.\+cpp@{I\+R\+\_\+lowering\+\_\+exec.\+cpp}}
+\subsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily static void decode (\begin{DoxyParamCaption}\item[{long long int $\ast$}]{words,  }\item[{unsigned long long int $\ast$}]{low,  }\item[{long long int $\ast$}]{hi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 109 of file I\+R\+\_\+lowering\+\_\+exec.\+cpp.
+
+
+
+References B\+A\+SE.
+
+
+
+Referenced by div\+\_\+and\+\_\+round\+\_\+double\+\_\+cprop().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d1d/IR__lowering__exec_8cpp_a59ff19c37360a64820322ae732778c6b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{IR__lowering__exec_8cpp_ad572034554e992b75905ba947d4d29c5}\label{IR__lowering__exec_8cpp_ad572034554e992b75905ba947d4d29c5}} 
+\index{I\+R\+\_\+lowering\+\_\+exec.\+cpp@{I\+R\+\_\+lowering\+\_\+exec.\+cpp}!div\+\_\+and\+\_\+round\+\_\+double\+\_\+cprop@{div\+\_\+and\+\_\+round\+\_\+double\+\_\+cprop}}
+\index{div\+\_\+and\+\_\+round\+\_\+double\+\_\+cprop@{div\+\_\+and\+\_\+round\+\_\+double\+\_\+cprop}!I\+R\+\_\+lowering\+\_\+exec.\+cpp@{I\+R\+\_\+lowering\+\_\+exec.\+cpp}}
+\subsubsection{\texorpdfstring{div\+\_\+and\+\_\+round\+\_\+double\+\_\+cprop()}{div\_and\_round\_double\_cprop()}}
+{\footnotesize\ttfamily static int div\+\_\+and\+\_\+round\+\_\+double\+\_\+cprop (\begin{DoxyParamCaption}\item[{unsigned long long int}]{lnum\+\_\+orig,  }\item[{long long int}]{hnum\+\_\+orig,  }\item[{unsigned long long int}]{lden\+\_\+orig,  }\item[{unsigned long long int $\ast$}]{lquo,  }\item[{long long int $\ast$}]{hquo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 123 of file I\+R\+\_\+lowering\+\_\+exec.\+cpp.
+
+
+
+References B\+A\+SE, decode(), encode(), H\+I\+G\+H\+P\+A\+RT, and L\+O\+W\+P\+A\+RT.
+
+
+
+Referenced by choose\+\_\+multiplier().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{db/d1d/IR__lowering__exec_8cpp_ad572034554e992b75905ba947d4d29c5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d1d/IR__lowering__exec_8cpp_ad572034554e992b75905ba947d4d29c5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{IR__lowering__exec_8cpp_a9e9dcb1b6cf38085303d6de9d05e9a3b}\label{IR__lowering__exec_8cpp_a9e9dcb1b6cf38085303d6de9d05e9a3b}} 
+\index{I\+R\+\_\+lowering\+\_\+exec.\+cpp@{I\+R\+\_\+lowering\+\_\+exec.\+cpp}!encode@{encode}}
+\index{encode@{encode}!I\+R\+\_\+lowering\+\_\+exec.\+cpp@{I\+R\+\_\+lowering\+\_\+exec.\+cpp}}
+\subsubsection{\texorpdfstring{encode()}{encode()}}
+{\footnotesize\ttfamily static void encode (\begin{DoxyParamCaption}\item[{long long int $\ast$}]{words,  }\item[{unsigned long long int}]{low,  }\item[{long long int}]{hi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 98 of file I\+R\+\_\+lowering\+\_\+exec.\+cpp.
+
+
+
+References H\+I\+G\+H\+P\+A\+RT, and L\+O\+W\+P\+A\+RT.
+
+
+
+Referenced by div\+\_\+and\+\_\+round\+\_\+double\+\_\+cprop().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d1d/IR__lowering__exec_8cpp_a9e9dcb1b6cf38085303d6de9d05e9a3b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{IR__lowering__exec_8cpp_ab800231cf5831d4074ad7f0931fa4634}\label{IR__lowering__exec_8cpp_ab800231cf5831d4074ad7f0931fa4634}} 
+\index{I\+R\+\_\+lowering\+\_\+exec.\+cpp@{I\+R\+\_\+lowering\+\_\+exec.\+cpp}!invert\+\_\+mod2n@{invert\+\_\+mod2n}}
+\index{invert\+\_\+mod2n@{invert\+\_\+mod2n}!I\+R\+\_\+lowering\+\_\+exec.\+cpp@{I\+R\+\_\+lowering\+\_\+exec.\+cpp}}
+\subsubsection{\texorpdfstring{invert\+\_\+mod2n()}{invert\_mod2n()}}
+{\footnotesize\ttfamily static unsigned long long int invert\+\_\+mod2n (\begin{DoxyParamCaption}\item[{unsigned long long int}]{x,  }\item[{unsigned int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compute the inverse of X mod 2$\ast$$\ast$n, i.\+e., find Y such that X $\ast$ Y is congruent to 1 (mod 2$\ast$$\ast$N). 
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+\end{DoxyAuthor}
+
+
+Definition at line 69 of file I\+R\+\_\+lowering\+\_\+exec.\+cpp.
+
+
+
+Referenced by I\+R\+\_\+lowering\+::division\+\_\+by\+\_\+a\+\_\+constant().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d1d/IR__lowering__exec_8cpp_ab800231cf5831d4074ad7f0931fa4634_icgraph}
+\end{center}
+\end{figure}

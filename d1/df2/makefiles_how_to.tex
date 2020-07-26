@@ -1,0 +1,213 @@
+This file contains a brief explanation on the strcture of the makefiles used in PandA; at the end we will also see what are the steps needed to create a new makefile and to hook it to the main compilation chain.\hypertarget{makefiles_how_to_panda_makefile_organization}{}\section{Makefile organization in PandA}\label{makefiles_how_to_panda_makefile_organization}
+There are essentially four types of makefiles in PandA (and in most of the autotools based projects)\+: Makefile.\+cvs, Makefile.\+am, Makefile.\+in and Makefile; you will actually deal only with Makefile.\+am, the other types are automatically created from it.
+
+When the project is downloaded from the repository (using the command svn+ssh .... as explained in svn) it contains only one Makefile.\+cvs (in the root directoy of the project) and some Makefile.\+am files, usually one for each folder; there is also a configure.\+ac. First of all you have to launch (from the trunk/panda folder) the command \char`\"{}make -\/f Makefile.\+cvs\char`\"{}\+: this automatically creates the configure script from the configure.\+ac file and a Makefile.\+in file from each Makefile.\+am. The next step consists in the creation of the real makefiles\+: to do this either stay in the (from the trunk/panda folder) or, to have a more clean project, create a new directory (let\textquotesingle{}s call it obj for example) and move into it (so move to the trunk/panda/obj folder) and the launch the configure script (so ./configure if you are in trunk/panda or ../configure in case you are in trunk/panda/obj) using the appropriate options as explained in \hyperlink{panda_install}{PandA Installation}. Now that all the necessary Makefile are created it is possible to compile the project launching \char`\"{}make\char`\"{}; later, by using the command \char`\"{}make documentation\char`\"{} we can create the html files which describe the various functionalities of the PandA project.
+\begin{DoxyItemize}
+\item The configure script is used to check the version of the programs an libraries present on your computer and with this information it correctly creates the Makefiles; this script is also used to decide which part of the PandA project have to be enabled (usually you don\textquotesingle{}t need to compile the whole PandA).
+\item The Makefiles indicates to the compiler which are the files which must be compiled and what to do with the output (whether it is necessary to create a library, an executable program ...). They also contain the rules necessary to create the documentation.
+\end{DoxyItemize}
+
+The main idea in the PandA compilation chain is that a libtool library is created almost for each directory found in trunk/panda/src\+: each of these libraries implements a functionality (high level synthesis algorithms, partitioning algorithms). When all the necesary libraries are created they are linked together and together with the desired main functions (contained in either panda.\+cpp, \hyperlink{bambu_8cpp}{bambu.\+cpp} or koala.\+cpp) and the executable file is produced. So the aim of the Makefile in the subfolders of trunk/panda/src consists in the creation of the libraries while the Makefile in src just puts these libraries together and creates the executable programs.\hypertarget{makefiles_how_to_panda_makefile_creation}{}\section{Writing the Makefile for your project}\label{makefiles_how_to_panda_makefile_creation}
+This section contains a short tutorial which should (hopefully...) guide you during the creation of the Makefile for a new project and the modification of the existing ones.
+
+Let us suppose that your new project is going to be located in trunk/panda/src/new\+Proj and that it is composed of two subfolders trunk/panda/src/new\+Proj/fold1 and trunk/panda/src/new\+Proj/fold2; they contain the following files\+: \char`\"{}trunk/panda/src/new\+Proj -\/-\/$>$ main\+Proj.\+cpp main\+Proj.\+hpp\char`\"{}, \char`\"{}trunk/panda/src/new\+Proj/fold1 -\/-\/$>$ fold1\+File.\+cpp fold1\+File.\+hpp\char`\"{} and \char`\"{}trunk/panda/src/new\+Proj/fold2 -\/-\/$>$ fold2\+File.\+cpp fold2\+File.\+hpp\char`\"{}. We want to create a library in both fold1 and fold2 and then link those libraries together and with main\+Proj.\+cpp; finally we want to add the thus created project to the panda executable program.
+
+First of all we start writing the Makefile.\+am for the two subfolders, fold1 and fold2; I will just show the Makefile.\+am for fold1, the one for fold2 is the same. \begin{DoxyVerb}noinst_LTLIBRARIES = lib_fold1.la
+
+lib_fold1_la_CPPFLAGS = -I$(top_srcdir)/src/utility -I$(BOOST_DIR) $(all_includes)
+METASOURCES = AUTO
+
+pkginclude_HEADERS = fold1File.hpp
+
+lib_fold1_la_SOURCES = fold1File.cpp
+
+#DOCUMENTATION STUFF
+DOX_TAGFILES=
+
+PRJ_DOC = fold1.doc
+EXTRA_DIST = $(PRJ_DOC)
+\end{DoxyVerb}
+
+
+The first contains the name (or names in case we are need to produce more than one library) of the library we want to produce. $\ast$\+\_\+\+C\+P\+P\+F\+L\+A\+GS is a variable containing all the flags we want to pass to the compiler; most likely here you will put the path to the files your project includes (the path to the files you specify in you project using the directive \#include \char`\"{}....\char`\"{})\+: usually you include at least files in utility (\hyperlink{refcount_8hpp}{refcount.\+hpp} and \hyperlink{exceptions_8hpp}{exceptions.\+hpp} are almost in every project) the files of the boost library (refcounts are now implemented using boost facilities); other includes may anyway be present here. pkginclude\+\_\+\+H\+E\+A\+D\+E\+RS contains the header files of out this folder which we may need to distribute with our library (usually these are all the $\ast$.hpp and $\ast$.h files whose correspondent $\ast$.cpp or $\ast$.c are compiled to create the library). $\ast$\+\_\+\+S\+O\+U\+R\+C\+ES lists the source file used to which will compose the library. Finally there are a few lines used to create the documentation, you don\textquotesingle{}t usually need to change them.
+
+Once libraries lib\+\_\+fold1.\+la and lib\+\_\+fold2.\+la are created we need to link them together in lib\+\_\+new\+Proj.\+la; this can be accomplished by using the following makefile\+: \begin{DoxyVerb}SUBDIRS = fold1 fold2
+
+METASOURCES = AUTO
+noinst_LTLIBRARIES = lib_newProj.la
+
+pkginclude_HEADERS =  mainProj.hpp
+
+lib_newProj_la_SOURCES = mainProj.cpp
+lib_newProj_la_LIBADD = $(top_builddir)/src/newProj/fold1/lib_fold1.la \
+ $(top_builddir)/src/newProj/fold2/lib_fold2.la
+
+#DOCUMENTATION STUFF
+DOX_TAGFILES = src/newProj/fold1/ src/newProj/fold2/
+
+PRJ_DOC = newProj.doc
+EXTRA_DIST = $(PRJ_DOC)
+\end{DoxyVerb}
+
+
+This file is similar to the preceding one; there are some new instructions anyway. S\+U\+B\+D\+I\+RS instructs the make command to first of all inspect fold1 and fold2\+: this way the Makefiles seen above are parsed and lib\+\_\+fold1.\+la and lib\+\_\+fold2.\+la are created. $\ast$\+\_\+\+L\+I\+B\+A\+DD tells to litool that lib\+\_\+new\+Proj.\+la must contain not only the result of the compilation of main\+Proj.\+cpp but also the content of the two sublibraries lib\+\_\+fold1.\+la and lib\+\_\+fold2.\+la. Finally D\+O\+X\+\_\+\+T\+A\+G\+F\+I\+L\+ES is a variable used to instruct Doxygen (the program used to create the documentation) to look in fold1 and fold2 for possible documentation links (i.\+e. the documentation file new\+Proj.\+doc may contain links to other doc files\+: doxygen looks for these files in the directories specified by the D\+O\+X\+\_\+\+T\+A\+G\+F\+I\+L\+ES variable).
+
+Now we have almost completed our task\+: we just have link our library to the panda executable (actually this in our example\+: in your project you may need to link it to bambu or koala ...) and we need also the tell the to the configure script to parse our Makefile.\+am files to create the Makefile.
+
+Let\textquotesingle{}s start by modifying the configure.\+ac file (I will now show only the part we need to modify)\+: \begin{DoxyVerb}AC_CONFIG_FILES( Makefile
+                 etc/Makefile
+                 style/stylesheet.css
+                 style/img/micro.png
+                 style/img/panda.png
+                 style/img/logoPoli.gif
+                 src/Makefile
+                 src/frontend/Makefile 
+                 src/frontend/treegcc/Makefile 
+                 src/tree/Makefile 
+                 src/graph/Makefile 
+                 src/technology/Makefile
+                 src/circuit/Makefile
+                 src/backend/Makefile 
+                 src/backend/ToHDL/Makefile 
+                 src/utility/Makefile 
+              )
+
+if test "x$have_qt" = xyes; then
+  AC_CONFIG_FILES( 
+                   src/gui/Makefile
+                   src/gui/main_window/Makefile 
+                   src/gui/settings/Makefile 
+               )
+fi
+
+if test "x$panda_USE_GLPK" = xyes -o "x$panda_USE_COIN_OR" = xyes 
+        -o "x$panda_USE_LP_SOLVE" = xyes -o "x$panda_USE_BEAGLE" = xyes 
+        -o "x$panda_USE_ABC" = xyes ; then
+  AC_CONFIG_FILES(ext/Makefile)
+fi
+
+if test "x$panda_USE_BAMBU" = xyes;  then
+  AC_CONFIG_FILES(
+                   src/ilp/Makefile 
+                   src/algorithms/Makefile
+                   src/algorithms/clique_covering/Makefile
+                   src/HLS/Makefile 
+                   src/frontend/graph/Makefile 
+                   src/frontend/HLS_constraintsIO/Makefile
+                   src/HLS/lowbound/Makefile 
+                   src/HLS/scheduling/Makefile
+                   src/HLS/mixed/Makefile
+                   src/HLS/binding/Makefile 
+                   src/HLS/binding/register/Makefile
+                   src/HLS/binding/module/Makefile
+                   src/HLS/binding/interconnection/Makefile
+                   src/HLS/controller/Makefile 
+                   src/HLS/datapath/Makefile 
+                   src/HLS/scheduling/ilp_scheduling/Makefile 
+               )
+fi
+
+if test "x$panda_USE_PANDA" = xyes; then
+  AC_CONFIG_FILES( 
+                 src/backend/ToC/Makefile 
+                 src/codesign/Makefile 
+                 src/codesign/Metrics/Makefile
+                 src/codesign/Metrics/RTL/Makefile
+                 src/codesign/Metrics/TLM/Makefile
+               )
+  if test "x$panda_USE_ICODES" != xyes; then
+    AC_CONFIG_FILES( 
+                 src/codesign/partitioning/Makefile
+                 src/codesign/partitioning/graph_partitioning/Makefile
+                 src/codesign/partitioning/metric_partitioning/Makefile
+               )
+  fi
+fi
+
+if test "x$panda_USE_KOALA" = xyes; then
+  AC_CONFIG_FILES(
+                  src/regularity/Makefile
+                  src/frontend/edif/Makefile 
+                  src/frontend/bench/Makefile 
+                  src/edif/Makefile
+                 )
+fi
+\end{DoxyVerb}
+
+
+These lines list the makefiles which will be created by the configure script; first of all there are the Makefiles which are common to all the projects (panda, bambu and koala), then the ones specific to each project. Since we want to add our files to panda, we need to change the following lines\+: \begin{DoxyVerb}if test "x$panda_USE_PANDA" = xyes; then
+  AC_CONFIG_FILES( 
+                 src/backend/ToC/Makefile 
+                 src/codesign/Makefile 
+                 src/codesign/Metrics/Makefile
+                 src/codesign/Metrics/RTL/Makefile
+                 src/codesign/Metrics/TLM/Makefile
+                 src/newProj/Makefile
+                 src/newProj/fold1/Makefile
+                 src/newProj/fold2/Makefile
+               )
+..................
+\end{DoxyVerb}
+
+
+Finally we need to include our project inside the panda executable; to do this we have to modify trunk/panda/src/\+Makefile.\+am\+: \begin{DoxyVerb}..........................................
+..........................................
+
+panda_CPPFLAGS = -I$(top_srcdir)/src/tree \
+        -I$(top_srcdir)/src/backend/ToC \
+        -I$(top_srcdir)/src/codesign/Metrics/RTL -I$(top_srcdir)/src/codesign/Metrics/TLM \
+        -I$(top_srcdir)/src/codesign/partitioning/graph_partitioning \
+        -I$(top_srcdir)/src/codesign/partitioning/metric_partitioning \
+        -I$(top_srcdir)/src/frontend/treegcc $(AM_CPPFLAGS)
+
+........................................
+........................................
+
+if BUILD_PANDA
+  bin_PROGRAMS += panda 
+  SUBDIRS += codesign
+  dist_SUBDIRS += codesign
+  panda_SOURCES = panda.cpp
+  panda_LDADD = \
+          $(top_builddir)/src/circuit/lib_structuralIO.la \
+          $(top_builddir)/src/frontend/lib_frontend.la \
+          $(top_builddir)/src/codesign/Metrics/lib_Metrics.la
+
+if ! BUILD_ICODES
+      panda_LDADD += \
+          $(top_builddir)/src/codesign/partitioning/metric_partitioning/lib_metric_partitioning.la \
+          $(top_builddir)/src/codesign/partitioning/metric_partitioning/lib_parse_metric.la
+endif
+
+   panda_LDADD += \
+          $(top_builddir)/src/backend/lib_backend.la \
+          $(top_builddir)/src/circuit/lib_circuit.la \
+          $(top_builddir)/src/graph/lib_graph.la \
+          $(top_builddir)/src/technology/lib_technology.la \
+          $(top_builddir)/src/tree/lib_tree_to_graph.la \
+          $(top_builddir)/src/tree/lib_tree.la \
+          $(XML_lib_LIBS)
+endif
+
+................................................
+................................................
+\end{DoxyVerb}
+
+
+First of all note that probably panda.\+cpp has a line which includes the header of the just create library (i.\+e. it has \#include \char`\"{}main\+Proj.\+hpp\char`\"{})\+: we, thus, need to modify panda\+\_\+\+C\+P\+P\+F\+L\+A\+GS to add the path to our folder, so we add -\/I/src/new\+Proj to this variable. Then we have to add lib\+\_\+new\+Proj.\+la library to panda; though we just have to add a line to the panda\+\_\+\+L\+D\+A\+DD variable, this step is not as easy as it seems\+: we have to add our library after the lines which used that library. I will try to explain it with an example\+: \begin{DoxyVerb}panda_LDADD = \
+                        $(top_srcdir)/src/newProj/lib_newProj.la \
+                        $(top_builddir)/src/circuit/lib_structuralIO.la \
+                        $(top_builddir)/src/frontend/lib_frontend.la \
+                        $(top_builddir)/src/codesign/Metrics/lib_Metrics.la
+\end{DoxyVerb}
+ If only panda needs to access the functions in lib\+\_\+new\+Proj.\+la this code is fine, but if, for example, lib\+\_\+frontend.\+la needs to access the functions in lib\+\_\+new\+Proj.\+la, then this code does not work; we need to put lib\+\_\+new\+Proj.\+la below lib\+\_\+frontend.\+la, so a correct Makefile.\+am would be \begin{DoxyVerb}panda_LDADD = \
+                        $(top_builddir)/src/circuit/lib_structuralIO.la \
+                        $(top_builddir)/src/frontend/lib_frontend.la \
+                        $(top_srcdir)/src/newProj/lib_newProj.la \
+                        $(top_builddir)/src/codesign/Metrics/lib_Metrics.la
+\end{DoxyVerb}
+
+
+Note that the example explained in this document do not cover all the situations which you may encounter in a real project; I suggest you to give also a look to the Makefile.\+am files in the PandA folders.
+
+For further details on Makefiles and autotools (the collection of programs used to automatically generate makefiles starting from Makefile.\+am files) look at \href{http://sources.redhat.com/automake/automake.html}{\tt http\+://sources.\+redhat.\+com/automake/automake.\+html} ; the libtool documentation can be found at \href{http://www.gnu.org/software/libtool/manual.html}{\tt http\+://www.\+gnu.\+org/software/libtool/manual.\+html} 

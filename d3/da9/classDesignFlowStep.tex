@@ -1,0 +1,603 @@
+\hypertarget{classDesignFlowStep}{}\section{Design\+Flow\+Step Class Reference}
+\label{classDesignFlowStep}\index{Design\+Flow\+Step@{Design\+Flow\+Step}}
+
+
+The base class for design step.  
+
+
+
+
+{\ttfamily \#include $<$design\+\_\+flow\+\_\+step.\+hpp$>$}
+
+
+
+Inheritance diagram for Design\+Flow\+Step\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d4e/classDesignFlowStep__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Design\+Flow\+Step\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d04/classDesignFlowStep__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Relationship\+Type} \{ \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7a9764ade006f899d5cc8eecf26f4d878a}{D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP}, 
+\hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7a568a09094d86faaf6037c4f62f4236a9}{I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP}, 
+\hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7a1505b23f7a905247d6a875e7667ace48}{P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP}
+ \}\begin{DoxyCompactList}\small\item\em The relationship type. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDesignFlowStep_a5ae5a1314a6de081e44f0a89ce4d16ab}{Design\+Flow\+Step} (const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classDesignFlowStep_a1145a27e25a0afbe24eed50403ca0e6a}{$\sim$\+Design\+Flow\+Step} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classDesignFlowStep_a77d7e38493016766098711ea24f60b89}{Exec} ()=0
+\begin{DoxyCompactList}\small\item\em Execute the step. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classDesignFlowStep_a1783abe0c1d162a52da1e413d5d1ef05}{Has\+To\+Be\+Executed} () const =0
+\begin{DoxyCompactList}\small\item\em Check if this step has actually to be executed. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Initialize} ()
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\item 
+virtual const std\+::string \hyperlink{classDesignFlowStep_ab111e3d4058615c2dedc0505978d4699}{Get\+Signature} () const =0
+\begin{DoxyCompactList}\small\item\em Return a unified identifier of this design step. \end{DoxyCompactList}\item 
+virtual const std\+::string \hyperlink{classDesignFlowStep_a01e5ebfab88db3b3b7f832f80075fad8}{Get\+Name} () const =0
+\begin{DoxyCompactList}\small\item\em Return the name of this design step. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classDesignFlowStep_a489f53821a358e1d67dd0cfc042bd496}{Get\+Status} () const
+\begin{DoxyCompactList}\small\item\em Return the status of this design step. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDesignFlowStep_a65bf7bcb603189a7ddcf930c3a9fd7fe}{Compute\+Relationships} (\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&relationship, const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type)=0
+\begin{DoxyCompactList}\small\item\em Compute the relationships of a step with other steps. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDesignFlowStep_a1562bb503d9b9f2a2a059041d79043c6}{Write\+Dot} (std\+::ostream \&out) const
+\begin{DoxyCompactList}\small\item\em Write the label for a dot graph. \end{DoxyCompactList}\item 
+virtual const Design\+Flow\+Step\+Factory\+Const\+Ref \hyperlink{classDesignFlowStep_a5510a8d296670a07f6b53312c448994c}{C\+Get\+Design\+Flow\+Step\+Factory} () const =0
+\begin{DoxyCompactList}\small\item\em Return the factory to create this type of steps. \end{DoxyCompactList}\item 
+bool \hyperlink{classDesignFlowStep_a4aa24c5bf7334ad80130ace3f6d5d7d6}{Is\+Composed} () const
+\begin{DoxyCompactList}\small\item\em Returns if this step is composed. \end{DoxyCompactList}\item 
+int \hyperlink{classDesignFlowStep_a3b33b8a51e6b58238a8377d077523b88}{C\+Get\+Debug\+Level} () const
+\begin{DoxyCompactList}\small\item\em Return the debug level of the step. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDesignFlowStep_a2a169bd0ac5fe3cd5179871714cbe1ab}{Print\+Initial\+IR} () const
+\begin{DoxyCompactList}\small\item\em Dump the initial intermediate representation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDesignFlowStep_a1d30b6b575c459521803a388a2085d60}{Print\+Final\+IR} () const
+\begin{DoxyCompactList}\small\item\em Dump the final intermediate representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classDesignFlowStep_a523e6c76331990290e451a16bcab13f3}{composed}
+\begin{DoxyCompactList}\small\item\em True if this step represents a composition of design flow steps (e.\+g., a flow); must be set by specialized constructors. \end{DoxyCompactList}\item 
+const \hyperlink{classWrefcount}{Wrefcount}$<$ const \hyperlink{classDesignFlowManager}{Design\+Flow\+Manager} $>$ \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}
+\begin{DoxyCompactList}\small\item\em The design flow manager. \end{DoxyCompactList}\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters}
+\begin{DoxyCompactList}\small\item\em Set of input parameters. \end{DoxyCompactList}\item 
+int \hyperlink{classDesignFlowStep_a5cc9222e58f094a5b1b78cb4426ef8b4}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em The debug level. \end{DoxyCompactList}\item 
+const int \hyperlink{classDesignFlowStep_ad1ca503adaba849037edba18d9f209b8}{output\+\_\+level}
+\begin{DoxyCompactList}\small\item\em The output level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The base class for design step. 
+
+Definition at line 112 of file design\+\_\+flow\+\_\+step.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}\label{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!Relationship\+Type@{Relationship\+Type}}
+\index{Relationship\+Type@{Relationship\+Type}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{Relationship\+Type}{RelationshipType}}
+{\footnotesize\ttfamily enum \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}
+
+
+
+The relationship type. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP@{D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP}!Design\+Flow\+Step@{Design\+Flow\+Step}}\index{Design\+Flow\+Step@{Design\+Flow\+Step}!D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP@{D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP}}}\mbox{\Hypertarget{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7a9764ade006f899d5cc8eecf26f4d878a}\label{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7a9764ade006f899d5cc8eecf26f4d878a}} 
+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP@{I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP}!Design\+Flow\+Step@{Design\+Flow\+Step}}\index{Design\+Flow\+Step@{Design\+Flow\+Step}!I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP@{I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP}}}\mbox{\Hypertarget{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7a568a09094d86faaf6037c4f62f4236a9}\label{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7a568a09094d86faaf6037c4f62f4236a9}} 
+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP&Source must be executed to satisfy target. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP@{P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP}!Design\+Flow\+Step@{Design\+Flow\+Step}}\index{Design\+Flow\+Step@{Design\+Flow\+Step}!P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP@{P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP}}}\mbox{\Hypertarget{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7a1505b23f7a905247d6a875e7667ace48}\label{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7a1505b23f7a905247d6a875e7667ace48}} 
+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP&Target must be reexecuted. Source must be executed before target \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 134 of file design\+\_\+flow\+\_\+step.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDesignFlowStep_a5ae5a1314a6de081e44f0a89ce4d16ab}\label{classDesignFlowStep_a5ae5a1314a6de081e44f0a89ce4d16ab}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{Design\+Flow\+Step()}{DesignFlowStep()}}
+{\footnotesize\ttfamily Design\+Flow\+Step\+::\+Design\+Flow\+Step (\begin{DoxyParamCaption}\item[{const Design\+Flow\+Manager\+Const\+Ref}]{design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{parameters }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+{\em parameters} & is the set of input parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file design\+\_\+flow\+\_\+step.\+cpp.
+
+
+
+References $\sim$\+Design\+Flow\+Step().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/da9/classDesignFlowStep_a5ae5a1314a6de081e44f0a89ce4d16ab_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDesignFlowStep_a1145a27e25a0afbe24eed50403ca0e6a}\label{classDesignFlowStep_a1145a27e25a0afbe24eed50403ca0e6a}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!````~Design\+Flow\+Step@{$\sim$\+Design\+Flow\+Step}}
+\index{````~Design\+Flow\+Step@{$\sim$\+Design\+Flow\+Step}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{$\sim$\+Design\+Flow\+Step()}{~DesignFlowStep()}}
+{\footnotesize\ttfamily Design\+Flow\+Step\+::$\sim$\+Design\+Flow\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Design\+Flow\+Step().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/da9/classDesignFlowStep_a1145a27e25a0afbe24eed50403ca0e6a_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDesignFlowStep_a3b33b8a51e6b58238a8377d077523b88}\label{classDesignFlowStep_a3b33b8a51e6b58238a8377d077523b88}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!C\+Get\+Debug\+Level@{C\+Get\+Debug\+Level}}
+\index{C\+Get\+Debug\+Level@{C\+Get\+Debug\+Level}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{C\+Get\+Debug\+Level()}{CGetDebugLevel()}}
+{\footnotesize\ttfamily int Design\+Flow\+Step\+::\+C\+Get\+Debug\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the debug level of the step. 
+
+\begin{DoxyReturn}{Returns}
+the debug level of the step 
+\end{DoxyReturn}
+
+
+Definition at line 70 of file design\+\_\+flow\+\_\+step.\+cpp.
+
+
+
+References debug\+\_\+level.
+
+\mbox{\Hypertarget{classDesignFlowStep_a5510a8d296670a07f6b53312c448994c}\label{classDesignFlowStep_a5510a8d296670a07f6b53312c448994c}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!C\+Get\+Design\+Flow\+Step\+Factory@{C\+Get\+Design\+Flow\+Step\+Factory}}
+\index{C\+Get\+Design\+Flow\+Step\+Factory@{C\+Get\+Design\+Flow\+Step\+Factory}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{C\+Get\+Design\+Flow\+Step\+Factory()}{CGetDesignFlowStepFactory()}}
+{\footnotesize\ttfamily virtual const Design\+Flow\+Step\+Factory\+Const\+Ref Design\+Flow\+Step\+::\+C\+Get\+Design\+Flow\+Step\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Return the factory to create this type of steps. 
+
+
+
+Implemented in \hyperlink{classFrontendFlowStep_a6d36a52be3de210e018389f802f940a7}{Frontend\+Flow\+Step}, \hyperlink{classHLS__step_a4c959ad5e9f100d5f0b0dd64b9883cd7}{H\+L\+S\+\_\+step}, \hyperlink{classCBackend_ae88e75e47f68079871cad2be17fde136}{C\+Backend}, \hyperlink{classRTLCharacterization_a4a947126e0eb8dd4eb164887a252d597}{R\+T\+L\+Characterization}, \hyperlink{classTechnologyFlowStep_a10c1c680300843016dfcd692831845d0}{Technology\+Flow\+Step}, \hyperlink{classParserFlowStep_a41edd2518ace1ab135ba83ca630540fa}{Parser\+Flow\+Step}, \hyperlink{classAuxDesignFlowStep_a062a1d93bb92d8df06c9cbf6340573ae}{Aux\+Design\+Flow\+Step}, \hyperlink{classToDataFileStep_a2c4090d1f2b890df6a10cc716221c9e9}{To\+Data\+File\+Step}, \hyperlink{classGenerateFuList_a51c1a9b6fe9a61328d6dc99d8e0bd47c}{Generate\+Fu\+List}, and \hyperlink{classDesignFlow_a5c46b102b9346c38c5a85a1841588bda}{Design\+Flow}.
+
+\mbox{\Hypertarget{classDesignFlowStep_a65bf7bcb603189a7ddcf930c3a9fd7fe}\label{classDesignFlowStep_a65bf7bcb603189a7ddcf930c3a9fd7fe}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!Compute\+Relationships@{Compute\+Relationships}}
+\index{Compute\+Relationships@{Compute\+Relationships}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{Compute\+Relationships()}{ComputeRelationships()}}
+{\footnotesize\ttfamily virtual void Design\+Flow\+Step\+::\+Compute\+Relationships (\begin{DoxyParamCaption}\item[{\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&}]{relationship,  }\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Compute the relationships of a step with other steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dependencies} & is where relationships will be stored \\
+\hline
+{\em relationship\+\_\+type} & is the type of relationship to be computed \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classFrontendFlowStep_a532ee0d76d7a10c373b4a7478a7eee18}{Frontend\+Flow\+Step}, \hyperlink{classHLS__step_ad5c58777d9b466fb3eee185f6d3ac993}{H\+L\+S\+\_\+step}, \hyperlink{classparametric__list__based_af4154cabe85bbd707fc5ee05981e54b0}{parametric\+\_\+list\+\_\+based}, \hyperlink{classPhiOpt_ae9fa634dbb3dfb91ff7928cc8e48be1c}{Phi\+Opt}, \hyperlink{classRTLCharacterization_acb29748095419798f3ff059e7b00099f}{R\+T\+L\+Characterization}, \hyperlink{classSDCScheduling_a28390f2bb68bc997c4827f5dbd240ca5}{S\+D\+C\+Scheduling}, \hyperlink{classIR__lowering_a47d1e16e6d42ddac272d166329013fd4}{I\+R\+\_\+lowering}, \hyperlink{classlut__transformation_a91631c01821c79e4c92f0be5d92af0a4}{lut\+\_\+transformation}, \hyperlink{classTechnologyFlowStep_a94c17619fd6b02de821d7e41ff454d85}{Technology\+Flow\+Step}, \hyperlink{classCBackend_a2acdf81972285d1505ad178769bf5d53}{C\+Backend}, \hyperlink{classParserFlowStep_af3cab6d308a30f7d9397d922e34b0a35}{Parser\+Flow\+Step}, \hyperlink{classinterface__infer_adaf46bd679e004e36be194484e47e54e}{interface\+\_\+infer}, \hyperlink{classHLSFunctionStep_ab3864e8dbd73b0eabc25f386a0cece54}{H\+L\+S\+Function\+Step}, \hyperlink{classToDataFileStep_aa2644f2c16d52ff381a6c52eef19c7c5}{To\+Data\+File\+Step}, \hyperlink{classFunctionFrontendFlowStep_a1a815ea7885f3e92e414dadd40c43cba}{Function\+Frontend\+Flow\+Step}, \hyperlink{classAuxDesignFlowStep_a1524f4638ebc58e0d345bfec52c27e54}{Aux\+Design\+Flow\+Step}, \hyperlink{classBuildVirtualPhi_a91ad5ae49dfe85e06f47e88df0dab90d}{Build\+Virtual\+Phi}, \hyperlink{classTestbenchValuesCGeneration_a3724358a7237a76d6446d9bcb1ffff7c}{Testbench\+Values\+C\+Generation}, \hyperlink{classSDCCodeMotion_aba1edb7d7851104686225cf6aaa92c56}{S\+D\+C\+Code\+Motion}, \hyperlink{classuse__counting_ae50eb0e5cc8c9e0a5c6a630ac6765f59}{use\+\_\+counting}, \hyperlink{classBasicBlocksProfiling_a7fe35844cefbb68704d111f34b356df0}{Basic\+Blocks\+Profiling}, \hyperlink{classBambuFrontendFlow_a17a62b2f18ad3df23ec7a5418059c465}{Bambu\+Frontend\+Flow}, \hyperlink{classGenerateFuList_a3651813235effdc39f39dd064571a135}{Generate\+Fu\+List}, \hyperlink{classAggregateDataFlowAnalysis_aa387e9bcfac9ad1ac7bab7b5b94f19fd}{Aggregate\+Data\+Flow\+Analysis}, \hyperlink{classTasteInterfaceGeneration_aef8be37534a1f17bdfdb6c26ff565fac}{Taste\+Interface\+Generation}, \hyperlink{classDesignFlow_acdb609fb0873cfd4cb342157d4972d01}{Design\+Flow}, \hyperlink{classfun__dominator__allocation_aced73fc0e76b139d3fca739237f0542b}{fun\+\_\+dominator\+\_\+allocation}, \hyperlink{classBitValueIPA_a0599406c42da912fe0c0d768bf52e73a}{Bit\+Value\+I\+PA}, \hyperlink{classcreate__tree__manager_ac60f96c1a28f6faf3480e832f071ceb0}{create\+\_\+tree\+\_\+manager}, \hyperlink{classCTestbenchExecution_ac3b75ac39514d02be971318c2b9018e9}{C\+Testbench\+Execution}, and \hyperlink{classHLSBitValue_ab1fe55bc2b8b26bd131e9aed874f5e94}{H\+L\+S\+Bit\+Value}.
+
+\mbox{\Hypertarget{classDesignFlowStep_a77d7e38493016766098711ea24f60b89}\label{classDesignFlowStep_a77d7e38493016766098711ea24f60b89}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!Exec@{Exec}}
+\index{Exec@{Exec}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{Exec()}{Exec()}}
+{\footnotesize\ttfamily virtual \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} Design\+Flow\+Step\+::\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Execute the step. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classTestbenchGenerationBaseStep_a81cdc7a419f3795b97b205cc8ac28e97}{Testbench\+Generation\+Base\+Step}, \hyperlink{classCBackend_ab35c39606dc2d39998ccd35edf7c82df}{C\+Backend}, \hyperlink{classVcdSignalSelection_a330bc0d127f30a23cb4c8224855f0c27}{Vcd\+Signal\+Selection}, \hyperlink{classRTLCharacterization_a6550aa6ae4bcf74abe7cb170f82d5905}{R\+T\+L\+Characterization}, \hyperlink{classmemory__allocation_a2e53598d28bd9c5f3bc153b15a88759b}{memory\+\_\+allocation}, \hyperlink{classFunctionFrontendFlowStep_a4ee2aae4089ec112f2236c0b08a854bb}{Function\+Frontend\+Flow\+Step}, \hyperlink{classHLSFunctionStep_aa23c7b38f7775f2e11cee12a45173f95}{H\+L\+S\+Function\+Step}, \hyperlink{classCreateAddressTranslation_a1213d1228ac3e336e8425ebacdf1ab60}{Create\+Address\+Translation}, \hyperlink{classcall__graph__computation_a59dbe3059afb5101f03f746b52e49d0e}{call\+\_\+graph\+\_\+computation}, \hyperlink{classAadlParser_aded0aad8f9b66318957f0df1d027256b}{Aadl\+Parser}, \hyperlink{classPragmaAnalysis_a972bd7b68f27335d6fbf6e1d327c2663}{Pragma\+Analysis}, \hyperlink{classvcd__utility_ad6098cc9cf2ed44a6ae34f9b896760dd}{vcd\+\_\+utility}, \hyperlink{classstring__cst__fix_a366deb5000664520f5b7979a5ecb48bc}{string\+\_\+cst\+\_\+fix}, \hyperlink{classEvaluation_a74f7914b49ce8c21b264857eb5c2d81d}{Evaluation}, \hyperlink{classAsnParser_abdbeaeae6fefdb8081b3705d0a081d6f}{Asn\+Parser}, \hyperlink{classHostProfiling_a9cf2a3820514e3a207c5e975a25f7d04}{Host\+Profiling}, \hyperlink{classparm2ssa_ae308e612abcdd8e6cb9dcf490e774065}{parm2ssa}, \hyperlink{classTestbenchValuesCGeneration_a964570c06f70ce449d63410d9e7b6d81}{Testbench\+Values\+C\+Generation}, \hyperlink{classTestbenchValuesXMLGeneration_afbcc1f49fabb5fa9cf4c4aaa15acba75}{Testbench\+Values\+X\+M\+L\+Generation}, \hyperlink{classFindMaxCFGTransformations_a6ac50147095421ddfda88a6fbb33e969}{Find\+Max\+C\+F\+G\+Transformations}, \hyperlink{classTestVectorParser_a88660488c77a6d59a68893a4e74cf662}{Test\+Vector\+Parser}, \hyperlink{classcreate__tree__manager_a1703cbe6a6f2df1ca3ef7809e8682fac}{create\+\_\+tree\+\_\+manager}, \hyperlink{classFixCharacterization_a45c45b820d574101ae07841c5f773b6c}{Fix\+Characterization}, \hyperlink{classAuxDesignFlowStep_a74c09957fafe9160d82120a4fa2f3e7f}{Aux\+Design\+Flow\+Step}, \hyperlink{classipa__point__to__analysis_a9ef230477061e15dd1550e1ca226aa79}{ipa\+\_\+point\+\_\+to\+\_\+analysis}, \hyperlink{classTestbenchGeneration_a85c026e1008605a36960dbbd4f80a14e}{Testbench\+Generation}, \hyperlink{classNonDeterministicFlows_af018a9ea67d29631e1bb8eb489ac5154}{Non\+Deterministic\+Flows}, \hyperlink{classBitValueIPA_a83d4228b39c126b0007701f32409a71c}{Bit\+Value\+I\+PA}, \hyperlink{classSymbolicApplicationFrontendFlowStep_ad75eb18151a95dc374523c24ec78a1b5}{Symbolic\+Application\+Frontend\+Flow\+Step}, \hyperlink{classLoadBuiltinTechnology_ab0fb4115da509336a908c1ea53e0140c}{Load\+Builtin\+Technology}, \hyperlink{classLoadDefaultTechnology_ad3943a87c0ecb17d3823a40c4e959df6}{Load\+Default\+Technology}, \hyperlink{classLoadDeviceTechnology_a694eac1b69f97358027d74d939d3574f}{Load\+Device\+Technology}, \hyperlink{classLoadFileTechnology_a5059ff57d50028e3eb11cc0e77451034}{Load\+File\+Technology}, \hyperlink{classLoadTechnology_a53cfdf06974770ede80309e27d2e0a15}{Load\+Technology}, \hyperlink{classWriteTechnology_a0effd2133532682e6d116262e4782bf5}{Write\+Technology}, \hyperlink{classClassicalHLSSynthesisFlow_a719619247564584bd858b259239cffcc}{Classical\+H\+L\+S\+Synthesis\+Flow}, \hyperlink{classApplicationFrontendFlowStep_a2bf060a5ebc1735635dc5c7773387a25}{Application\+Frontend\+Flow\+Step}, \hyperlink{classGenerateFuList_adadbe6658c33d77bb24fd0e8b1516a65}{Generate\+Fu\+List}, \hyperlink{classPragmaSubstitution_a77d4052228752a2ea2a3541f9340bce2}{Pragma\+Substitution}, \hyperlink{classHLSBitValue_aa12a409aacf4e6eef2e5ab063923b572}{H\+L\+S\+Bit\+Value}, \hyperlink{classBasicBlocksProfiling_a3a818424991cbd10f25d89e2f2d0417d}{Basic\+Blocks\+Profiling}, \hyperlink{classCompleteCallGraph_adfe7bbc7b2950105a2fd26b29436964e}{Complete\+Call\+Graph}, \hyperlink{classHDLFunctionDeclFix_aea64c6af343b3a2cebbfd0dda66cb1e1}{H\+D\+L\+Function\+Decl\+Fix}, \hyperlink{classBambuFrontendFlow_a12e11602383ea4902d93e20f2400eed3}{Bambu\+Frontend\+Flow}, \hyperlink{classgenerate__hdl_a3d6fb722c230dc38b6c90646f59c79c2}{generate\+\_\+hdl}, \hyperlink{classCTestbenchExecution_a8c357be38d34d8472d3ed3914ec14aef}{C\+Testbench\+Execution}, \hyperlink{classWriteHLSSummary_ab846705e6c5c2b406578e5bf2a62ec2d}{Write\+H\+L\+S\+Summary}, \hyperlink{classGenerateSimulationScripts_a58904865494c7a37559bb0490f5ee3a6}{Generate\+Simulation\+Scripts}, \hyperlink{classGenerateSynthesisScripts_aeba18d6961c98211710aa3ada02dc50e}{Generate\+Synthesis\+Scripts}, \hyperlink{classGenerateTasteSynthesisScript_a1b01b440d4a3ea2e23b9753c83d7cf7d}{Generate\+Taste\+Synthesis\+Script}, \hyperlink{classfun__dominator__allocation_aab3d1e1e5b22f40816fa73325bcab578}{fun\+\_\+dominator\+\_\+allocation}, \hyperlink{classGenerateTasteHDLArchitecture_a6d92a9a5da5f96e8de1f4a2fab12c572}{Generate\+Taste\+H\+D\+L\+Architecture}, \hyperlink{classOmpFunctionAllocation_a5ed037b259e632de3cad930b2b5cc8ef}{Omp\+Function\+Allocation}, \hyperlink{classOmpFunctionAllocationCS_a2a5a5321bfaefebcca2c4f290bb0d808}{Omp\+Function\+Allocation\+CS}, \hyperlink{classmem__dominator__allocation__cs_a60f6b1d90b9bf041ba3fe87a486b49ec}{mem\+\_\+dominator\+\_\+allocation\+\_\+cs}, \hyperlink{classTestbenchMemoryAllocation_a043da976f1d68793e6c264fb105eb7e9}{Testbench\+Memory\+Allocation}, \hyperlink{classHWDiscrepancyAnalysis_ab5f7d26b554925eb5a558fcfeaaf01d2}{H\+W\+Discrepancy\+Analysis}, \hyperlink{classCallGraphUnfolding_a22a28a943380b9859f6006542f1929ab}{Call\+Graph\+Unfolding}, and \hyperlink{classHWPathComputation_add5efabc2eea4a6167863ceca3c50b0e}{H\+W\+Path\+Computation}.
+
+\mbox{\Hypertarget{classDesignFlowStep_a01e5ebfab88db3b3b7f832f80075fad8}\label{classDesignFlowStep_a01e5ebfab88db3b3b7f832f80075fad8}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!Get\+Name@{Get\+Name}}
+\index{Get\+Name@{Get\+Name}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{Get\+Name()}{GetName()}}
+{\footnotesize\ttfamily virtual const std\+::string Design\+Flow\+Step\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Return the name of this design step. 
+
+\begin{DoxyReturn}{Returns}
+the name of the pass (for debug purpose) 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classHLS__step_aa60ee88fc2b3b180e118e8dee44f4044}{H\+L\+S\+\_\+step}, \hyperlink{classCBackend_af879cc47d9bc18eb778390825b85667d}{C\+Backend}, \hyperlink{classRTLCharacterization_a0b41ce2d4af25aa22e41dd9af50f1b0b}{R\+T\+L\+Characterization}, \hyperlink{classTechnologyFlowStep_ac50a4cc6222e4872c65c93f55415c3b7}{Technology\+Flow\+Step}, \hyperlink{classFunctionFrontendFlowStep_add9013c4bc46fe7e932151ca5b902d32}{Function\+Frontend\+Flow\+Step}, \hyperlink{classHLSFunctionStep_ab070622813a99accede9dd5f6ba5a3cb}{H\+L\+S\+Function\+Step}, \hyperlink{classToDataFileStep_ada4a3271187ee310379405eaaefc24e1}{To\+Data\+File\+Step}, \hyperlink{classParserFlowStep_adc59d75712212fd7d908550665d5719b}{Parser\+Flow\+Step}, \hyperlink{classAuxDesignFlowStep_aada604a4981c38194ce791b2232e782c}{Aux\+Design\+Flow\+Step}, \hyperlink{classGenerateFuList_a0b6efa299b9de2bc45157d9e28a97a9e}{Generate\+Fu\+List}, \hyperlink{classDesignFlow_aa8b86491bfa371d09a22f863df1c5be8}{Design\+Flow}, and \hyperlink{classApplicationFrontendFlowStep_adc8a9e4cf2fd49e1f0d2270955f474f8}{Application\+Frontend\+Flow\+Step}.
+
+
+
+Referenced by Frontend\+Flow\+Step\+::\+Print\+Tree\+Manager(), and Write\+Dot().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/da9/classDesignFlowStep_a01e5ebfab88db3b3b7f832f80075fad8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDesignFlowStep_ab111e3d4058615c2dedc0505978d4699}\label{classDesignFlowStep_ab111e3d4058615c2dedc0505978d4699}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!Get\+Signature@{Get\+Signature}}
+\index{Get\+Signature@{Get\+Signature}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{Get\+Signature()}{GetSignature()}}
+{\footnotesize\ttfamily virtual const std\+::string Design\+Flow\+Step\+::\+Get\+Signature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Return a unified identifier of this design step. 
+
+\begin{DoxyReturn}{Returns}
+the signature of the design step 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classHLS__step_a93c15724812bc99bccd3c57bcb680295}{H\+L\+S\+\_\+step}, \hyperlink{classCBackend_aa66a47377656d5f70e26c4dd96de7ab6}{C\+Backend}, \hyperlink{classRTLCharacterization_a04f2b9b10118caba1e50a27769445f21}{R\+T\+L\+Characterization}, \hyperlink{classTechnologyFlowStep_a56b1c17014e131852e07a52bceee38e0}{Technology\+Flow\+Step}, \hyperlink{classFunctionFrontendFlowStep_a89e3f6d142de8aacb36eeb7b3f3d5ad8}{Function\+Frontend\+Flow\+Step}, \hyperlink{classHLSFunctionStep_a8f40b68d392790017292410850088887}{H\+L\+S\+Function\+Step}, \hyperlink{classParserFlowStep_aa20842b21ed80673edb2fc8a664cc9b6}{Parser\+Flow\+Step}, \hyperlink{classAuxDesignFlowStep_a0ed46b87b6526026f9b405f35ba06244}{Aux\+Design\+Flow\+Step}, \hyperlink{classGenerateFuList_a7bd13ddbc7a4b82d834a9cd0812d4b90}{Generate\+Fu\+List}, \hyperlink{classSymbolicApplicationFrontendFlowStep_a556a719569a45bfc5f3554c1cc7558c3}{Symbolic\+Application\+Frontend\+Flow\+Step}, \hyperlink{classDesignFlow_a0cfc751e3c286071ffb473e1165e1f46}{Design\+Flow}, \hyperlink{classApplicationFrontendFlowStep_a25500677dc27a20d35bdb4b45bfdba42}{Application\+Frontend\+Flow\+Step}, and \hyperlink{classToDataFileStep_ad4d235d11fd907c9d593f73e55609022}{To\+Data\+File\+Step}.
+
+
+
+Referenced by Get\+Status(), and Write\+Dot().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/da9/classDesignFlowStep_ab111e3d4058615c2dedc0505978d4699_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDesignFlowStep_a489f53821a358e1d67dd0cfc042bd496}\label{classDesignFlowStep_a489f53821a358e1d67dd0cfc042bd496}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!Get\+Status@{Get\+Status}}
+\index{Get\+Status@{Get\+Status}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{Get\+Status()}{GetStatus()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} Design\+Flow\+Step\+::\+Get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the status of this design step. 
+
+
+
+Definition at line 75 of file design\+\_\+flow\+\_\+step.\+cpp.
+
+
+
+References design\+\_\+flow\+\_\+manager, Get\+Signature(), and Wrefcount$<$ T $>$\+::lock().
+
+
+
+Referenced by fanout\+\_\+opt\+::\+Compute\+Frontend\+Relationships(), Bit\+\_\+\+Value\+\_\+opt\+::\+Compute\+Frontend\+Relationships(), simple\+\_\+code\+\_\+motion\+::\+Compute\+Frontend\+Relationships(), hls\+\_\+div\+\_\+cg\+\_\+ext\+::\+Compute\+Frontend\+Relationships(), commutative\+\_\+expr\+\_\+restructuring\+::\+Compute\+Frontend\+Relationships(), Cond\+Expr\+Restructuring\+::\+Compute\+Frontend\+Relationships(), short\+\_\+circuit\+\_\+taf\+::\+Compute\+Frontend\+Relationships(), C\+S\+E\+::\+Compute\+Frontend\+Relationships(), Multiple\+Entry\+If\+Reduction\+::\+Compute\+Frontend\+Relationships(), lut\+\_\+transformation\+::\+Compute\+Frontend\+Relationships(), Vectorize\+::\+Compute\+Frontend\+Relationships(), Phi\+Opt\+::\+Compute\+Frontend\+Relationships(), and S\+D\+C\+Scheduling\+::\+Compute\+Relationships().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/da9/classDesignFlowStep_a489f53821a358e1d67dd0cfc042bd496_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/da9/classDesignFlowStep_a489f53821a358e1d67dd0cfc042bd496_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDesignFlowStep_a1783abe0c1d162a52da1e413d5d1ef05}\label{classDesignFlowStep_a1783abe0c1d162a52da1e413d5d1ef05}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}}
+\index{Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{Has\+To\+Be\+Executed()}{HasToBeExecuted()}}
+{\footnotesize\ttfamily virtual bool Design\+Flow\+Step\+::\+Has\+To\+Be\+Executed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Check if this step has actually to be executed. 
+
+\begin{DoxyReturn}{Returns}
+true if the step has to be executed 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classBit__Value_abcdc2de278483e5b1771f6f90081330a}{Bit\+\_\+\+Value}, \hyperlink{classTestbenchGenerationBaseStep_a22c9fdb0a26c1947958a749ba2fa9a17}{Testbench\+Generation\+Base\+Step}, \hyperlink{classallocation_af29b72851d7c54b1b6ea0b60daa162de}{allocation}, \hyperlink{classCBackend_a9cedb79a577526fabd2e396c6697eaf1}{C\+Backend}, \hyperlink{classVectorize_a2001b38db34ec3dcff8e011436c3cd32}{Vectorize}, \hyperlink{classRTLCharacterization_a8bd96bf987458c331aab335f764da995}{R\+T\+L\+Characterization}, \hyperlink{classVcdSignalSelection_afa06729c43cc2aa50e1fb3ed25d5b239}{Vcd\+Signal\+Selection}, \hyperlink{classSDCScheduling_a2c5241704adbd9ab53968c7cbf549560}{S\+D\+C\+Scheduling}, \hyperlink{classmemory__allocation_a933144a32a794f82719db7874abd3562}{memory\+\_\+allocation}, \hyperlink{classCheckSystemType_a0e9660fbad92ffdc163cae8d108df86c}{Check\+System\+Type}, \hyperlink{classlut__transformation_a41cd40761d625f5f747b78b51d545c95}{lut\+\_\+transformation}, \hyperlink{classmulti__way__if_a067bd457b6d38a33de81d0a3b474f947}{multi\+\_\+way\+\_\+if}, \hyperlink{classTechnologyFlowStep_a615857428a91ec31e8b9f45cbdeeaa36}{Technology\+Flow\+Step}, \hyperlink{classMultipleEntryIfReduction_a0aed1493c46ae158341d4dffef7aae62}{Multiple\+Entry\+If\+Reduction}, \hyperlink{classFunctionFrontendFlowStep_a12e786363530aa9533e4bd9380130d75}{Function\+Frontend\+Flow\+Step}, \hyperlink{classsimple__code__motion_a2b0b3e0ac4c9ad745ef690e183358c5f}{simple\+\_\+code\+\_\+motion}, \hyperlink{classToDataFileStep_a22c665fe60796cdd10b779df3198cb51}{To\+Data\+File\+Step}, \hyperlink{classRemoveEndingIf_a02a434d8972c1582197d7e12f136c652}{Remove\+Ending\+If}, \hyperlink{classParserFlowStep_afaf2f3989d660b1cfaa00c8d51deb570}{Parser\+Flow\+Step}, \hyperlink{classDesignFlow_ac0c4f316f0ecf8f3b4a040e0a700616c}{Design\+Flow}, \hyperlink{classinterface__infer_ad97e5d56a1e05d81ed97976e8e8382f7}{interface\+\_\+infer}, \hyperlink{classcommutative__expr__restructuring_a9ea0a98a356901b31b212ad25255e784}{commutative\+\_\+expr\+\_\+restructuring}, \hyperlink{classCondExprRestructuring_a4442cdaca3a1345d45f17912918f1392}{Cond\+Expr\+Restructuring}, \hyperlink{classhls__div__cg__ext_a9325b4922476e33095be75cbf2ec08f9}{hls\+\_\+div\+\_\+cg\+\_\+ext}, \hyperlink{classdead__code__elimination_aa7771fdf8a82f2e274bf0cfe44edf553}{dead\+\_\+code\+\_\+elimination}, \hyperlink{classBit__Value__opt_aca5d7fc33c82b8da126592bbd9e84588}{Bit\+\_\+\+Value\+\_\+opt}, \hyperlink{classdetermine__memory__accesses_a5a273a8e5ec33a4abc8989169231c827}{determine\+\_\+memory\+\_\+accesses}, \hyperlink{classvcd__utility_a09e32be65c7938434bf02c9f08a49f0d}{vcd\+\_\+utility}, \hyperlink{classBuildVirtualPhi_adc93051d46113e21948c8672a0fc4f04}{Build\+Virtual\+Phi}, \hyperlink{classCreateAddressTranslation_a3570b8c94b6ff002652bffa0353cb977}{Create\+Address\+Translation}, \hyperlink{classSymbolicApplicationFrontendFlowStep_a113fcb0dca5cdd6e2be02252be23b0e7}{Symbolic\+Application\+Frontend\+Flow\+Step}, \hyperlink{classdom__post__dom__computation_a4b744602d67b99a29be3a61b769bad7a}{dom\+\_\+post\+\_\+dom\+\_\+computation}, \hyperlink{classTestVectorParser_aed4c7043035bd2cb2f0e9ebf32efd66f}{Test\+Vector\+Parser}, \hyperlink{classApplicationFrontendFlowStep_ad99f4dcbab470c65eea79ae0291a4bd5}{Application\+Frontend\+Flow\+Step}, \hyperlink{classSplitReturn_a807a2c344e7d217d4164065e1e4e10da}{Split\+Return}, \hyperlink{classTestbenchValuesCGeneration_a56bdb926fdd2e5f08906706e8fba4df5}{Testbench\+Values\+C\+Generation}, \hyperlink{classTestbenchValuesXMLGeneration_ad4f4aed7d1ff36657d084de85e3ee717}{Testbench\+Values\+X\+M\+L\+Generation}, \hyperlink{classcreate__tree__manager_ab0dc851ab662326a6d0a5ecfeba7d663}{create\+\_\+tree\+\_\+manager}, \hyperlink{classEvaluation_a036dd1c9ae9fe7d5e255eb9300bf9e5f}{Evaluation}, \hyperlink{classAuxDesignFlowStep_a7ff8544122f2f0ec2588cdbc5a9fca4a}{Aux\+Design\+Flow\+Step}, \hyperlink{classUpdateSchedule_a8b63b0bd4821e2759cffe3a86910e430}{Update\+Schedule}, \hyperlink{classGenerateFuList_ae5f29f70bd0b315ffa9369fc93fa5096}{Generate\+Fu\+List}, \hyperlink{classTestbenchGeneration_acf3bc257f411c14241561002b00a72c1}{Testbench\+Generation}, \hyperlink{classBitValueIPA_aaf4e7bb4cee74b03ae5e8fd94e593f2d}{Bit\+Value\+I\+PA}, \hyperlink{classHLSFunctionStep_ac70d2df8fd475639bf9b5c8d492b2d62}{H\+L\+S\+Function\+Step}, \hyperlink{classTasteInterfaceGeneration_a3cfa566432fc5a45a50ef491a4ba83f6}{Taste\+Interface\+Generation}, \hyperlink{classSDCCodeMotion_ae41623316514debbca9be2eed971fa09}{S\+D\+C\+Code\+Motion}, \hyperlink{classExtractOmpFor_ab4577fa78708af18e3d2718869797d38}{Extract\+Omp\+For}, \hyperlink{classClassicalHLSSynthesisFlow_aa0913cd5f8a697a6103d3047dc156886}{Classical\+H\+L\+S\+Synthesis\+Flow}, \hyperlink{classCleanVirtualPhi_add0ec70cbdefe63144501ea17de2f5a5}{Clean\+Virtual\+Phi}, \hyperlink{classHLSBitValue_a49f19f5709798c91fa14970e17ca26a3}{H\+L\+S\+Bit\+Value}, \hyperlink{classCompleteCallGraph_a8380495bcddb634f538066b11d927d70}{Complete\+Call\+Graph}, \hyperlink{classfun__dominator__allocation_afde71d1d22d09ffa5f2afaf0c73ab4b0}{fun\+\_\+dominator\+\_\+allocation}, \hyperlink{classBambuFrontendFlow_a44511aa9719eca10142e1e736dec5f08}{Bambu\+Frontend\+Flow}, \hyperlink{classgenerate__hdl_a6b5a0a9f67703606268a1eccafc389aa}{generate\+\_\+hdl}, \hyperlink{classPredicateStatements_a1933a849ecb25e92d3a13d2e6be605b6}{Predicate\+Statements}, \hyperlink{classSerializeMutualExclusions_ab1ad51de5bb426b8121949a0f4ceb616}{Serialize\+Mutual\+Exclusions}, \hyperlink{classWriteHLSSummary_ac901ee249803853d6cecec187c530fff}{Write\+H\+L\+S\+Summary}, \hyperlink{classGenerateSimulationScripts_ab03643b6186e247c72faeb97f3e96e7b}{Generate\+Simulation\+Scripts}, \hyperlink{classGenerateSynthesisScripts_ac7727b3364b8ec425960a093d5ba61ee}{Generate\+Synthesis\+Scripts}, \hyperlink{classGenerateTasteSynthesisScript_acbd9a6934e6ba26615b49dc66650981f}{Generate\+Taste\+Synthesis\+Script}, \hyperlink{classTestbenchMemoryAllocation_a5546b24f116a6d0b3cba059d096ab2c6}{Testbench\+Memory\+Allocation}, \hyperlink{classCTestbenchExecution_a33f54e90fb5810ea5df6adb1512f87bb}{C\+Testbench\+Execution}, \hyperlink{classGenerateTasteHDLArchitecture_ab7fb74172594a37df64a99f0afecc5da}{Generate\+Taste\+H\+D\+L\+Architecture}, \hyperlink{classHWCallInjection_a9d5dd1b5b7abe33cced04220a229303c}{H\+W\+Call\+Injection}, \hyperlink{classDryRunEvaluation_a57360a240bb8752db568be9228abaf58}{Dry\+Run\+Evaluation}, \hyperlink{classHWDiscrepancyAnalysis_a9cc845a4b074af79cc881f8bc021de55}{H\+W\+Discrepancy\+Analysis}, \hyperlink{classCallGraphUnfolding_a27dfc396f756a66bfa689002aac9b943}{Call\+Graph\+Unfolding}, and \hyperlink{classHWPathComputation_a0a9a812ed694880508c509a63c03fb26}{H\+W\+Path\+Computation}.
+
+\mbox{\Hypertarget{classDesignFlowStep_a44b50683382a094976e1d432a7784799}\label{classDesignFlowStep_a44b50683382a094976e1d432a7784799}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Design\+Flow\+Step\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented in \hyperlink{classparametric__list__based_a33b5a6aadaf0f36b342b434126ebbf79}{parametric\+\_\+list\+\_\+based}, \hyperlink{classBit__Value_ad953c9d31beaef0358204674ef9308e5}{Bit\+\_\+\+Value}, \hyperlink{classallocation_a448e4e0cc7e3444fb3479f211d0b637e}{allocation}, \hyperlink{classRTLCharacterization_a5763e2ae1d1252dedf0b282a55526fd3}{R\+T\+L\+Characterization}, \hyperlink{classCBackend_a9c77a707b51fd49230668549eb1fd8db}{C\+Backend}, \hyperlink{classPhiOpt_a1b620dd1d02ad1accbfe986e02add067}{Phi\+Opt}, \hyperlink{classTestbenchGenerationBaseStep_a3c3722de551d16d1d2b9c0fa22e73bcb}{Testbench\+Generation\+Base\+Step}, \hyperlink{classmux__connection__binding_af8f6b0964f86f8cf2b503a0570a425e1}{mux\+\_\+connection\+\_\+binding}, \hyperlink{classoperations__cfg__computation_ae89b6b5ecac95fdcb9e84ee9bbf527f5}{operations\+\_\+cfg\+\_\+computation}, \hyperlink{classIR__lowering_a88ed11612162d524f892e9329b36380d}{I\+R\+\_\+lowering}, \hyperlink{classmulti__way__if_a8503a9e02e909dfe59978ad170f2d844}{multi\+\_\+way\+\_\+if}, \hyperlink{classlut__transformation_ae48068e30dd6842435f9e26c23b11485}{lut\+\_\+transformation}, \hyperlink{classScheduling_a178619eced00400e3a023a0b32784f8d}{Scheduling}, \hyperlink{classMultipleEntryIfReduction_adbaeee425a62fdee6e6723ce59a4cf2a}{Multiple\+Entry\+If\+Reduction}, \hyperlink{classCSE_a6bb59a891291b3ecfec7072ce1b2d77d}{C\+SE}, \hyperlink{classshort__circuit__taf_ab6bd4b50e2ab5bd53ab964156829ce6b}{short\+\_\+circuit\+\_\+taf}, \hyperlink{classsimple__code__motion_a786374b9d68aa7b714254c22a1220e6c}{simple\+\_\+code\+\_\+motion}, \hyperlink{classVarComputation_a99f7f770ae1073b7e563159ef4fa42a5}{Var\+Computation}, \hyperlink{classSDCScheduling_a6776ee26349c16c789a5b2c33c1fa9ff}{S\+D\+C\+Scheduling}, \hyperlink{classFunctionalUnitStep_a7957c47789e5d4a97eb9315872dc8d37}{Functional\+Unit\+Step}, \hyperlink{classRemoveEndingIf_a31a37f3146c2637dfe6ea70d51269574}{Remove\+Ending\+If}, \hyperlink{classBit__Value__opt_a0034bd25e17bbf5e3fbd6c278ca10f2e}{Bit\+\_\+\+Value\+\_\+opt}, \hyperlink{classinterface__infer_a6d0b5cf326bca201100be4cb19f1a588}{interface\+\_\+infer}, \hyperlink{classcommutative__expr__restructuring_ae09db402c964798f3e6386e65095d0b3}{commutative\+\_\+expr\+\_\+restructuring}, \hyperlink{classCondExprRestructuring_a5ac68a27de704107d9e33b3a93751a73}{Cond\+Expr\+Restructuring}, \hyperlink{classhls__div__cg__ext_a68ca8c0cd178e82f30fd07b8e471604d}{hls\+\_\+div\+\_\+cg\+\_\+ext}, \hyperlink{classDataDependenceComputation_adeeabf6602796c390b4e331e553c71b9}{Data\+Dependence\+Computation}, \hyperlink{classTopEntityMemoryMapped_af010b7c4ce218de33c97dcc351aee6fd}{Top\+Entity\+Memory\+Mapped}, \hyperlink{classBuildVirtualPhi_ac9d535c633bc0b4a6f9d9396eaa8d5a5}{Build\+Virtual\+Phi}, \hyperlink{classCreateAddressTranslation_a869c3993736729eb7be9b70c1b920255}{Create\+Address\+Translation}, \hyperlink{classControllerCreatorBaseStep_a1446309080149bf6370ae3a9d1e18feb}{Controller\+Creator\+Base\+Step}, \hyperlink{classNI__SSA__liveness_acc878d0cb85006c946feebb6c43e474e}{N\+I\+\_\+\+S\+S\+A\+\_\+liveness}, \hyperlink{classdom__post__dom__computation_a6ee3cd25445edae2d45bf4a77564f11f}{dom\+\_\+post\+\_\+dom\+\_\+computation}, \hyperlink{classfanout__opt_a64ba51ab333ce9c993abcd30bca77119}{fanout\+\_\+opt}, \hyperlink{classFixCharacterization_a1abe993122a5f39bbabbe3e1fca6141d}{Fix\+Characterization}, \hyperlink{classBitValueIPA_a00d93654fdcf33acbd281faa1915dbbd}{Bit\+Value\+I\+PA}, \hyperlink{classHLSFunctionStep_a966629ba62a8188ff4fa783ab0d4e319}{H\+L\+S\+Function\+Step}, \hyperlink{classweighted__clique__register_a1f6d70de6fafd41bf34a6b9360a57c2b}{weighted\+\_\+clique\+\_\+register}, \hyperlink{classAddOpLoopFlowEdges_a6fb9be353ace7d554c91a4056f102855}{Add\+Op\+Loop\+Flow\+Edges}, \hyperlink{classTestVectorParser_aa48917a5ac5ec20341754ec35edd6b3a}{Test\+Vector\+Parser}, \hyperlink{classloops__computation_a9faf9a8d51f9f0ab9015e44bc912d4e4}{loops\+\_\+computation}, \hyperlink{classHLSFunctionBitValue_aded992799d0c15347a1012e90ebd914a}{H\+L\+S\+Function\+Bit\+Value}, \hyperlink{classAddOpExitFlowEdges_a62e837ee9c075439de0fbe4155c32de0}{Add\+Op\+Exit\+Flow\+Edges}, \hyperlink{classUpdateSchedule_a4f3faaefc08037c8c273fef044f5bb60}{Update\+Schedule}, \hyperlink{classvalues__scheme_aa31c876e845bc7ea78495e0b789cc51f}{values\+\_\+scheme}, \hyperlink{classMemoryDataFlowAnalysis_a7c26b870182fa981eab5056955fd89d9}{Memory\+Data\+Flow\+Analysis}, \hyperlink{classScalarSsaDataDependenceComputation_a16de581136910ae27dca6599125d3067}{Scalar\+Ssa\+Data\+Dependence\+Computation}, \hyperlink{classExtractGimpleCondOp_aa5ad36991f470b0fae011ed6d5c77094}{Extract\+Gimple\+Cond\+Op}, \hyperlink{classBasicBlocksCfgComputation_a210b95e3205f3d1c797be0ad2a4b6671}{Basic\+Blocks\+Cfg\+Computation}, \hyperlink{classFunctionCallTypeCleanup_ab3d6a5c58f07a1c7c8bb7af316aee7c3}{Function\+Call\+Type\+Cleanup}, \hyperlink{classBasicBlocksProfiling_a3d2004d81a84529f1048fcc66c6a61d0}{Basic\+Blocks\+Profiling}, \hyperlink{classSDCCodeMotion_aa39c97469f1bafdb251a547487414aeb}{S\+D\+C\+Code\+Motion}, \hyperlink{classBBOrderComputation_a3f9b91887a6fac728cdda5a5cbf92877}{B\+B\+Order\+Computation}, \hyperlink{classOpOrderComputation_a188a6be8efc8b80fd9ed85c19ceac824}{Op\+Order\+Computation}, \hyperlink{classExtractOmpAtomic_a4895f8dc863df77a8e52069c00425977}{Extract\+Omp\+Atomic}, \hyperlink{classExtractOmpFor_aa13852248ade9c2e4518534556213692}{Extract\+Omp\+For}, \hyperlink{classBBCdgComputation_a1d510dd27e13936768f5c82a5be2494e}{B\+B\+Cdg\+Computation}, \hyperlink{classOpCdgComputation_a38c20d73f1e6af5b403e06affe59a30a}{Op\+Cdg\+Computation}, \hyperlink{classeasy__module__binding_a965941b4523dc46f21b2fade436d46db}{easy\+\_\+module\+\_\+binding}, \hyperlink{classfu__binding__creator_a4a4645ca4839bcf172824e2c725f4219}{fu\+\_\+binding\+\_\+creator}, \hyperlink{classBB__based__stg_a68123e6fdc9a397be06ee3058e217ff0}{B\+B\+\_\+based\+\_\+stg}, \hyperlink{classAddOpPhiFlowEdges_aad46abbd148a9b7a63117184c2366c40}{Add\+Op\+Phi\+Flow\+Edges}, \hyperlink{classCallGraphBuiltinCall_a8f754ae1d4aa2a9857d2288768902852}{Call\+Graph\+Builtin\+Call}, \hyperlink{classCleanVirtualPhi_a591498af926bbd5368338f97c45c5e2a}{Clean\+Virtual\+Phi}, \hyperlink{classstorage__value__insertion_a43f36ebf82f907a629125b1f0cc1b096}{storage\+\_\+value\+\_\+insertion}, \hyperlink{classBBReachabilityComputation_ad2e0ecc294538d9a60d9175d345fc11c}{B\+B\+Reachability\+Computation}, \hyperlink{classOpReachabilityComputation_a64280ac1c3901738ef28fd4aaaece2d8}{Op\+Reachability\+Computation}, \hyperlink{classmem__dominator__allocation_a742ee8ca37f2b4123e62b365fa524016}{mem\+\_\+dominator\+\_\+allocation}, \hyperlink{classInitializeHLS_ae1674f8063ae4a38affcf5d2ca3ede18}{Initialize\+H\+LS}, \hyperlink{classVirtualAggregateDataFlowAnalysis_acafa9a90b201923d66a16fea72ccc9ac}{Virtual\+Aggregate\+Data\+Flow\+Analysis}, \hyperlink{classFSM__NI__SSA__liveness_a36cbd84735c2126d760d7fbdadab9d5e}{F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness}, \hyperlink{classTestbenchValuesCGeneration_a9cd290bc7ce4f2ada56343231d3341e2}{Testbench\+Values\+C\+Generation}, \hyperlink{classTestbenchValuesXMLGeneration_a33f05a86d9767b3503b981d95ae7d604}{Testbench\+Values\+X\+M\+L\+Generation}, \hyperlink{classfunction__allocation_a48d784232dd4383a11ff009a3cd78b30}{function\+\_\+allocation}, \hyperlink{classOmpFunctionAllocation_a7ed35644fe18a1430f3bcf546bef1c1a}{Omp\+Function\+Allocation}, \hyperlink{classOmpFunctionAllocationCS_a6c97b4f87a09796aa43a387460348315}{Omp\+Function\+Allocation\+CS}, \hyperlink{classmem__cg__ext_a5899173716bbaa87a39603a1847f4ff6}{mem\+\_\+cg\+\_\+ext}, \hyperlink{classchaining_a2ec8eacb120c33974ba7829842910880}{chaining}, and \hyperlink{classsched__based__chaining__computation_a86daa9b72e0e2d9a939e80aa22055d4e}{sched\+\_\+based\+\_\+chaining\+\_\+computation}.
+
+
+
+Definition at line 66 of file design\+\_\+flow\+\_\+step.\+cpp.
+
+
+
+Referenced by function\+\_\+allocation\+::\+Initialize(), Omp\+Function\+Allocation\+::\+Initialize(), Omp\+Function\+Allocation\+C\+S\+::\+Initialize(), Clean\+Virtual\+Phi\+::\+Initialize(), Test\+Vector\+Parser\+::\+Initialize(), H\+L\+S\+Function\+Step\+::\+Initialize(), Create\+Address\+Translation\+::\+Initialize(), Build\+Virtual\+Phi\+::\+Initialize(), commutative\+\_\+expr\+\_\+restructuring\+::\+Initialize(), Cond\+Expr\+Restructuring\+::\+Initialize(), and interface\+\_\+infer\+::\+Initialize().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/da9/classDesignFlowStep_a44b50683382a094976e1d432a7784799_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDesignFlowStep_a4aa24c5bf7334ad80130ace3f6d5d7d6}\label{classDesignFlowStep_a4aa24c5bf7334ad80130ace3f6d5d7d6}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!Is\+Composed@{Is\+Composed}}
+\index{Is\+Composed@{Is\+Composed}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{Is\+Composed()}{IsComposed()}}
+{\footnotesize\ttfamily bool Design\+Flow\+Step\+::\+Is\+Composed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns if this step is composed. 
+
+\begin{DoxyReturn}{Returns}
+if this step is composed 
+\end{DoxyReturn}
+
+
+Definition at line 61 of file design\+\_\+flow\+\_\+step.\+cpp.
+
+
+
+References composed.
+
+\mbox{\Hypertarget{classDesignFlowStep_a1d30b6b575c459521803a388a2085d60}\label{classDesignFlowStep_a1d30b6b575c459521803a388a2085d60}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!Print\+Final\+IR@{Print\+Final\+IR}}
+\index{Print\+Final\+IR@{Print\+Final\+IR}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{Print\+Final\+I\+R()}{PrintFinalIR()}}
+{\footnotesize\ttfamily void Design\+Flow\+Step\+::\+Print\+Final\+IR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Dump the final intermediate representation. 
+
+
+
+Reimplemented in \hyperlink{classFrontendFlowStep_a2a9b475fe6e3739803cb4e6afdc94a01}{Frontend\+Flow\+Step}, \hyperlink{classFunctionFrontendFlowStep_abe2dc98fddb94bebf12a91e8c78f9dcc}{Function\+Frontend\+Flow\+Step}, and \hyperlink{classLoadTechnology_a4f0526d4eb5b2a5be97a670e9ad580e2}{Load\+Technology}.
+
+
+
+Definition at line 84 of file design\+\_\+flow\+\_\+step.\+cpp.
+
+
+
+References Design\+Flow\+Step\+Set\+::\+Design\+Flow\+Step\+Set(), Design\+Flow\+Step\+Sorter\+::\+Design\+Flow\+Step\+Sorter(), and Design\+Flow\+Step\+Sorter\+::operator()().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/da9/classDesignFlowStep_a1d30b6b575c459521803a388a2085d60_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDesignFlowStep_a2a169bd0ac5fe3cd5179871714cbe1ab}\label{classDesignFlowStep_a2a169bd0ac5fe3cd5179871714cbe1ab}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!Print\+Initial\+IR@{Print\+Initial\+IR}}
+\index{Print\+Initial\+IR@{Print\+Initial\+IR}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{Print\+Initial\+I\+R()}{PrintInitialIR()}}
+{\footnotesize\ttfamily void Design\+Flow\+Step\+::\+Print\+Initial\+IR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Dump the initial intermediate representation. 
+
+
+
+Reimplemented in \hyperlink{classFrontendFlowStep_aa4082589c5838cc22e2b4ea7097b5c16}{Frontend\+Flow\+Step}, \hyperlink{classallocation_aa977c26d2952e7fc0e7f09037c540bd3}{allocation}, and \hyperlink{classFunctionFrontendFlowStep_a65cf8273a7a4f4bc3ed85c04220349ad}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 80 of file design\+\_\+flow\+\_\+step.\+cpp.
+
+\mbox{\Hypertarget{classDesignFlowStep_a1562bb503d9b9f2a2a059041d79043c6}\label{classDesignFlowStep_a1562bb503d9b9f2a2a059041d79043c6}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!Write\+Dot@{Write\+Dot}}
+\index{Write\+Dot@{Write\+Dot}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{Write\+Dot()}{WriteDot()}}
+{\footnotesize\ttfamily void Design\+Flow\+Step\+::\+Write\+Dot (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write the label for a dot graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & is the stream where label has to be printed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classAuxDesignFlowStep_acb3ca20dd02fa5e910b22c19a4d5f9c6}{Aux\+Design\+Flow\+Step}.
+
+
+
+Definition at line 55 of file design\+\_\+flow\+\_\+step.\+cpp.
+
+
+
+References Get\+Name(), and Get\+Signature().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/da9/classDesignFlowStep_a1562bb503d9b9f2a2a059041d79043c6_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classDesignFlowStep_a523e6c76331990290e451a16bcab13f3}\label{classDesignFlowStep_a523e6c76331990290e451a16bcab13f3}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!composed@{composed}}
+\index{composed@{composed}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{composed}{composed}}
+{\footnotesize\ttfamily bool Design\+Flow\+Step\+::composed\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+True if this step represents a composition of design flow steps (e.\+g., a flow); must be set by specialized constructors. 
+
+
+
+Definition at line 116 of file design\+\_\+flow\+\_\+step.\+hpp.
+
+
+
+Referenced by Aggregate\+Data\+Flow\+Analysis\+::\+Aggregate\+Data\+Flow\+Analysis(), Classical\+H\+L\+S\+Synthesis\+Flow\+::\+Classical\+H\+L\+S\+Synthesis\+Flow(), Complete\+B\+B\+Graph\+::\+Complete\+B\+B\+Graph(), Complete\+Call\+Graph\+::\+Complete\+Call\+Graph(), H\+L\+S\+Synthesis\+Flow\+::\+H\+L\+S\+Synthesis\+Flow(), Is\+Composed(), Load\+Technology\+::\+Load\+Technology(), Omp\+Body\+Loop\+Synthesis\+Flow\+::\+Omp\+Body\+Loop\+Synthesis\+Flow(), Omp\+For\+Wrapper\+C\+S\+Synthesis\+Flow\+::\+Omp\+For\+Wrapper\+C\+S\+Synthesis\+Flow(), standard\+\_\+hls\+::standard\+\_\+hls(), Symbolic\+Application\+Frontend\+Flow\+Step\+::\+Symbolic\+Application\+Frontend\+Flow\+Step(), Testbench\+Generation\+::\+Testbench\+Generation(), and virtual\+\_\+hls\+::virtual\+\_\+hls().
+
+\mbox{\Hypertarget{classDesignFlowStep_a5cc9222e58f094a5b1b78cb4426ef8b4}\label{classDesignFlowStep_a5cc9222e58f094a5b1b78cb4426ef8b4}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily int Design\+Flow\+Step\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The debug level. 
+
+
+
+Definition at line 125 of file design\+\_\+flow\+\_\+step.\+hpp.
+
+
+
+Referenced by Aadl\+Parser\+::\+Aadl\+Parser(), classic\+\_\+datapath\+::add\+\_\+clock\+\_\+reset(), Control\+Flow\+Checker\+::add\+\_\+clock\+\_\+reset(), Controller\+Creator\+Base\+Step\+::add\+\_\+clock\+\_\+reset(), Controller\+Creator\+Base\+Step\+::add\+\_\+command\+\_\+ports(), controller\+\_\+cs\+::add\+\_\+common\+\_\+ports(), Control\+Flow\+Checker\+::add\+\_\+common\+\_\+ports(), Controller\+Creator\+Base\+Step\+::add\+\_\+common\+\_\+ports(), top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port(), top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port\+\_\+kernel(), Control\+Flow\+Checker\+::add\+\_\+done\+\_\+port(), Controller\+Creator\+Base\+Step\+::add\+\_\+done\+\_\+port(), dead\+\_\+code\+\_\+elimination\+::add\+\_\+gimple\+\_\+nop(), top\+\_\+entity\+\_\+cs\+::add\+\_\+input\+\_\+register(), add\+\_\+library\+::add\+\_\+library(), Control\+Flow\+Checker\+::add\+\_\+notifiers(), cs\+\_\+interface\+::add\+\_\+parameter\+\_\+port(), conn\+\_\+binding\+\_\+creator\+::add\+\_\+parameter\+\_\+ports(), datapath\+\_\+cs\+::add\+\_\+ports(), top\+\_\+entity\+::add\+\_\+ports(), classic\+\_\+datapath\+::add\+\_\+ports(), datapath\+\_\+parallel\+\_\+cs\+::add\+\_\+ports(), Control\+Flow\+Checker\+::add\+\_\+present\+\_\+state(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+module(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+wrapper(), controller\+\_\+cs\+::add\+\_\+selector\+\_\+register\+\_\+file\+\_\+port(), Control\+Flow\+Checker\+::add\+\_\+start\+\_\+port(), Controller\+Creator\+Base\+Step\+::add\+\_\+start\+\_\+port(), allocation\+::add\+\_\+tech\+\_\+constraint(), parametric\+\_\+list\+\_\+based\+::add\+\_\+to\+\_\+priority\+\_\+queues(), Add\+Artificial\+Call\+Flow\+Edges\+::\+Add\+Artificial\+Call\+Flow\+Edges(), Add\+Bb\+Ecfg\+Edges\+::\+Add\+Bb\+Ecfg\+Edges(), module\+\_\+interface\+::\+Add\+Connection(), module\+\_\+interface\+::\+Add\+Constant(), S\+D\+C\+Scheduling\+::\+Add\+Delay\+Constraints(), S\+D\+C\+Scheduling\+::\+Add\+Dependence\+Constraint(), Vectorize\+::\+Add\+Guards(), Add\+Op\+Exit\+Flow\+Edges\+::\+Add\+Op\+Exit\+Flow\+Edges(), Add\+Op\+Loop\+Flow\+Edges\+::\+Add\+Op\+Loop\+Flow\+Edges(), Add\+Op\+Phi\+Flow\+Edges\+::\+Add\+Op\+Phi\+Flow\+Edges(), module\+\_\+interface\+::\+Add\+Signal(), Aggregate\+Data\+Flow\+Analysis\+::\+Aggregate\+Data\+Flow\+Analysis(), allocation\+::allocation(), Testbench\+Memory\+Allocation\+::\+Alloc\+Testbench\+Memory(), determine\+\_\+memory\+\_\+accesses\+::analyze\+\_\+node(), use\+\_\+counting\+::analyze\+\_\+node(), Generate\+Fu\+List\+::\+Analyze\+Cell(), Functional\+Unit\+Step\+::\+Analyze\+Fu(), C\+Backend\+::\+Analyze\+Include(), Scheduling\+::anticipate\+\_\+operations(), Application\+Frontend\+Flow\+Step\+::\+Application\+Frontend\+Flow\+Step(), Phi\+Opt\+::\+Apply\+Diff\+Nothing(), Phi\+Opt\+::\+Apply\+Gimple\+Nothing(), Phi\+Opt\+::\+Apply\+If\+Merge(), Phi\+Opt\+::\+Apply\+If\+Nothing(), Phi\+Opt\+::\+Apply\+If\+Remove(), Phi\+Opt\+::\+Apply\+Multi\+Merge(), Phi\+Opt\+::\+Apply\+Multi\+Nothing(), Phi\+Opt\+::\+Apply\+Multi\+Remove(), I\+R\+\_\+lowering\+::array\+\_\+ref\+\_\+lowering(), Asn\+Parser\+::\+Asn\+Parser(), Bit\+\_\+\+Value\+::backward(), Bit\+\_\+\+Value\+::backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses(), Bit\+\_\+\+Value\+::backward\+\_\+transfer(), Bambu\+Frontend\+Flow\+::\+Bambu\+Frontend\+Flow(), Basic\+Blocks\+Cfg\+Computation\+::\+Basic\+Blocks\+Cfg\+Computation(), Basic\+Blocks\+Profiling\+::\+Basic\+Blocks\+Profiling(), B\+B\+\_\+based\+\_\+stg\+::\+B\+B\+\_\+based\+\_\+stg(), bb\+\_\+feedback\+\_\+edges\+\_\+computation\+::bb\+\_\+feedback\+\_\+edges\+\_\+computation(), B\+B\+Order\+Computation\+::\+B\+B\+Order\+Computation(), B\+B\+Reachability\+Computation\+::\+B\+B\+Reachability\+Computation(), Bit\+\_\+\+Value\+::\+Bit\+\_\+\+Value(), Bit\+\_\+\+Value\+\_\+opt\+::\+Bit\+\_\+\+Value\+\_\+opt(), Bit\+Value\+I\+P\+A\+::\+Bit\+Value\+I\+P\+A(), Block\+Fix\+::\+Block\+Fix(), operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+complete\+\_\+logic(), H\+W\+Call\+Injection\+::build\+Builtin\+Call(), Build\+Virtual\+Phi\+::\+Build\+Virtual\+Phi(), call\+\_\+expr\+\_\+fix\+::call\+\_\+expr\+\_\+fix(), call\+\_\+graph\+\_\+computation\+::call\+\_\+graph\+\_\+computation(), call\+\_\+graph\+\_\+computation\+::call\+\_\+graph\+\_\+computation\+\_\+recursive(), Call\+Graph\+Builtin\+Call\+::\+Call\+Graph\+Builtin\+Call(), C\+Backend\+::\+C\+Backend(), cdfc\+\_\+module\+\_\+binding\+::cdfc\+\_\+module\+\_\+binding(), C\+Get\+Debug\+Level(), Phi\+Opt\+::\+Chain\+Optimization(), short\+\_\+circuit\+\_\+taf\+::check\+\_\+merging\+\_\+candidate(), allocation\+::check\+\_\+templated\+\_\+units(), allocation\+::check\+\_\+type\+\_\+and\+\_\+precision(), simple\+\_\+code\+\_\+motion\+::\+Check\+Movable(), Check\+System\+Type\+::\+Check\+System\+Type(), classic\+\_\+datapath\+::classic\+\_\+datapath(), Vectorize\+::\+Classify\+Loop(), Vectorize\+::\+Classify\+Tree\+Node(), Clean\+Virtual\+Phi\+::\+Clean\+Virtual\+Phi(), commutative\+\_\+expr\+\_\+restructuring\+::commutative\+\_\+expr\+\_\+restructuring(), Complete\+B\+B\+Graph\+::\+Complete\+B\+B\+Graph(), Complete\+Call\+Graph\+::\+Complete\+Call\+Graph(), B\+B\+\_\+based\+\_\+stg\+::compute\+\_\+\+E\+P\+P\+\_\+edge\+\_\+increments(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+exec\+\_\+stage\+\_\+time(), compute\+\_\+implicit\+\_\+calls\+::compute\+\_\+implicit\+\_\+calls(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), Create\+Address\+Translation\+::\+Compute\+Address(), Data\+Dependence\+Computation\+::\+Computedependencies(), Generate\+Fu\+List\+::\+Compute\+Relationships(), H\+L\+S\+Function\+Step\+::\+Compute\+Relationships(), H\+L\+S\+\_\+step\+::\+Compute\+Relationships(), Load\+Technology\+::\+Compute\+Technology\+Relationships(), Cond\+Expr\+Restructuring\+::\+Cond\+Expr\+Restructuring(), datapath\+\_\+parallel\+\_\+cs\+::connect\+\_\+i\+\_\+module\+\_\+kernel(), datapath\+\_\+parallel\+\_\+cs\+::connect\+\_\+module\+\_\+kernel(), operations\+\_\+cfg\+\_\+computation\+::connect\+\_\+start\+\_\+nodes(), mux\+\_\+connection\+\_\+binding\+::connect\+\_\+to\+\_\+registers(), constant\+\_\+flop\+\_\+wrapper\+::constant\+\_\+flop\+\_\+wrapper(), Control\+Flow\+Checker\+::\+Control\+Flow\+Checker(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), create\+\_\+control\+\_\+flow\+\_\+checker(), short\+\_\+circuit\+\_\+taf\+::create\+\_\+gimple\+\_\+cond(), Testbench\+Generation\+Base\+Step\+::create\+\_\+\+H\+D\+L\+\_\+testbench(), Pragma\+Analysis\+::create\+\_\+map\+\_\+pragma(), Pragma\+Analysis\+::create\+\_\+omp\+\_\+pragma(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+array(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Read\+\_\+simple(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Write\+\_\+simple(), create\+\_\+return\+\_\+and\+\_\+fix\+\_\+cfg(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+single\+\_\+conn(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), create\+\_\+tree\+\_\+manager\+::create\+\_\+tree\+\_\+manager(), Create\+Address\+Translation\+::\+Create\+Address\+Translation(), cs\+\_\+interface\+::cs\+\_\+interface(), C\+S\+E\+::\+C\+S\+E(), C\+Testbench\+Execution\+::\+C\+Testbench\+Execution(), datapath\+\_\+cs\+::datapath\+\_\+cs(), datapath\+\_\+parallel\+\_\+cs\+::datapath\+\_\+parallel\+\_\+cs(), dead\+\_\+code\+\_\+elimination\+::dead\+\_\+code\+\_\+elimination(), mux\+\_\+connection\+\_\+binding\+::determine\+\_\+connection(), determine\+\_\+memory\+\_\+accesses\+::determine\+\_\+memory\+\_\+accesses(), I\+R\+\_\+lowering\+::division\+\_\+by\+\_\+a\+\_\+constant(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), Data\+Dependence\+Computation\+::do\+\_\+dependence\+\_\+reduction(), dom\+\_\+post\+\_\+dom\+\_\+computation\+::dom\+\_\+post\+\_\+dom\+\_\+computation(), Dry\+Run\+Evaluation\+::\+Dry\+Run\+Evaluation(), Vectorize\+::\+Duplicate\+Increment(), easy\+\_\+module\+\_\+binding\+::easy\+\_\+module\+\_\+binding(), Evaluation\+::\+Evaluation(), H\+W\+Discrepancy\+Analysis\+::\+Exec(), Omp\+Function\+Allocation\+::\+Exec(), Omp\+Function\+Allocation\+C\+S\+::\+Exec(), Generate\+Simulation\+Scripts\+::\+Exec(), fun\+\_\+dominator\+\_\+allocation\+::\+Exec(), C\+Testbench\+Execution\+::\+Exec(), Bambu\+Frontend\+Flow\+::\+Exec(), Basic\+Blocks\+Profiling\+::\+Exec(), Pragma\+Substitution\+::\+Exec(), Load\+Device\+Technology\+::\+Exec(), Bit\+Value\+I\+P\+A\+::\+Exec(), ipa\+\_\+point\+\_\+to\+\_\+analysis\+::\+Exec(), Fix\+Characterization\+::\+Exec(), create\+\_\+tree\+\_\+manager\+::\+Exec(), Test\+Vector\+Parser\+::\+Exec(), Testbench\+Values\+X\+M\+L\+Generation\+::\+Exec(), Testbench\+Values\+C\+Generation\+::\+Exec(), parm2ssa\+::\+Exec(), Pragma\+Analysis\+::\+Exec(), vcd\+\_\+utility\+::\+Exec(), Aadl\+Parser\+::\+Exec(), call\+\_\+graph\+\_\+computation\+::\+Exec(), Create\+Address\+Translation\+::\+Exec(), Vcd\+Signal\+Selection\+::\+Exec(), C\+Backend\+::\+Exec(), parametric\+\_\+list\+\_\+based\+::exec(), Find\+Max\+C\+F\+G\+Transformations\+::\+Execute\+Bambu(), Non\+Deterministic\+Flows\+::\+Execute\+Tool(), I\+R\+\_\+lowering\+::expand\+\_\+mult\+\_\+const(), I\+R\+\_\+lowering\+::expand\+\_\+target\+\_\+mem\+\_\+ref(), extract\+\_\+patterns\+::extract\+\_\+patterns(), Extract\+Gimple\+Cond\+Op\+::\+Extract\+Gimple\+Cond\+Op(), Extract\+Omp\+Atomic\+::\+Extract\+Omp\+Atomic(), Extract\+Omp\+For\+::\+Extract\+Omp\+For(), fanout\+\_\+opt\+::fanout\+\_\+opt(), memory\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation(), Find\+Max\+C\+F\+G\+Transformations\+::\+Find\+Max\+C\+F\+G\+Transformations(), multi\+\_\+way\+\_\+if\+::\+Fix\+Cfg(), Fix\+Characterization\+::\+Fix\+Characterization(), Vectorize\+::\+Fix\+Phis(), Fix\+Structs\+Passed\+By\+Value\+::\+Fix\+Structs\+Passed\+By\+Value(), Bit\+\_\+\+Value\+::forward(), Bit\+\_\+\+Value\+::forward\+\_\+transfer(), Frontend\+Flow\+Step\+::\+Frontend\+Flow\+Step(), fsm\+\_\+controller\+::fsm\+\_\+controller(), F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness(), fun\+\_\+dominator\+\_\+allocation\+::fun\+\_\+dominator\+\_\+allocation(), Function\+Call\+Type\+Cleanup\+::\+Function\+Call\+Type\+Cleanup(), Function\+Frontend\+Flow\+Step\+::\+Function\+Frontend\+Flow\+Step(), Generate\+Fu\+List\+::\+Generate\+Fu\+List(), Generate\+Simulation\+Scripts\+::\+Generate\+Simulation\+Scripts(), Generate\+Synthesis\+Scripts\+::\+Generate\+Synthesis\+Scripts(), Pragma\+Analysis\+::get\+\_\+call\+\_\+parameter(), Multiple\+Entry\+If\+Reduction\+::\+Get\+Area\+Cost(), C\+S\+E\+::hash\+\_\+check(), H\+D\+L\+Function\+Decl\+Fix\+::\+H\+D\+L\+Function\+Decl\+Fix(), H\+D\+L\+Var\+Decl\+Fix\+::\+H\+D\+L\+Var\+Decl\+Fix(), hls\+\_\+div\+\_\+cg\+\_\+ext\+::hls\+\_\+div\+\_\+cg\+\_\+ext(), H\+L\+S\+Bit\+Value\+::\+H\+L\+S\+Bit\+Value(), H\+L\+S\+Function\+Bit\+Value\+::\+H\+L\+S\+Function\+Bit\+Value(), Host\+Profiling\+::\+Host\+Profiling(), H\+W\+Call\+Injection\+::\+H\+W\+Call\+Injection(), H\+W\+Discrepancy\+Analysis\+::\+H\+W\+Discrepancy\+Analysis(), Phi\+Opt\+::\+Identify\+Pattern(), S\+D\+C\+Scheduling\+::\+Initialize(), Bit\+\_\+\+Value\+::initialize(), mux\+\_\+connection\+\_\+binding\+::input\+\_\+logic(), datapath\+\_\+parallel\+\_\+cs\+::instantiate\+\_\+component\+\_\+parallel(), cs\+\_\+interface\+::instantiate\+\_\+component\+\_\+parallel(), allocation\+::\+Integrate\+Technology\+Libraries(), interface\+\_\+infer\+::interface\+\_\+infer(), parm\+\_\+decl\+\_\+taken\+\_\+address\+\_\+fix\+::\+Internal\+Exec(), Fix\+Structs\+Passed\+By\+Value\+::\+Internal\+Exec(), mem\+\_\+cg\+\_\+ext\+::\+Internal\+Exec(), fixed\+\_\+scheduling\+::\+Internal\+Exec(), unique\+\_\+binding\+::\+Internal\+Exec(), F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Internal\+Exec(), fsm\+\_\+controller\+::\+Internal\+Exec(), sched\+\_\+based\+\_\+chaining\+\_\+computation\+::\+Internal\+Exec(), Serialize\+Mutual\+Exclusions\+::\+Internal\+Exec(), Predicate\+Statements\+::\+Internal\+Exec(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), Clean\+Virtual\+Phi\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), Un\+Comparison\+Lowering\+::\+Internal\+Exec(), Op\+Cdg\+Computation\+::\+Internal\+Exec(), B\+B\+Order\+Computation\+::\+Internal\+Exec(), Taste\+Interface\+Generation\+::\+Internal\+Exec(), Op\+Order\+Computation\+::\+Internal\+Exec(), Extract\+Omp\+Atomic\+::\+Internal\+Exec(), Extract\+Omp\+For\+::\+Internal\+Exec(), Simulation\+Evaluation\+::\+Internal\+Exec(), S\+D\+C\+Code\+Motion\+::\+Internal\+Exec(), Basic\+Blocks\+Cfg\+Computation\+::\+Internal\+Exec(), Function\+Call\+Type\+Cleanup\+::\+Internal\+Exec(), Add\+Artificial\+Call\+Flow\+Edges\+::\+Internal\+Exec(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), Switch\+Fix\+::\+Internal\+Exec(), Call\+Graph\+Builtin\+Call\+::\+Internal\+Exec(), Update\+Schedule\+::\+Internal\+Exec(), classic\+\_\+datapath\+::\+Internal\+Exec(), B\+B\+Reachability\+Computation\+::\+Internal\+Exec(), Top\+Entity\+Memory\+Mapped\+::\+Internal\+Exec(), Loops\+Analysis\+Bambu\+::\+Internal\+Exec(), Add\+Op\+Phi\+Flow\+Edges\+::\+Internal\+Exec(), Control\+Flow\+Checker\+::\+Internal\+Exec(), call\+\_\+expr\+\_\+fix\+::\+Internal\+Exec(), Add\+Op\+Loop\+Flow\+Edges\+::\+Internal\+Exec(), op\+\_\+feedback\+\_\+edges\+\_\+computation\+::\+Internal\+Exec(), bb\+\_\+feedback\+\_\+edges\+\_\+computation\+::\+Internal\+Exec(), compute\+\_\+implicit\+\_\+calls\+::\+Internal\+Exec(), Add\+Bb\+Ecfg\+Edges\+::\+Internal\+Exec(), extract\+\_\+patterns\+::\+Internal\+Exec(), rebuild\+\_\+initialization\+::\+Internal\+Exec(), fanout\+\_\+opt\+::\+Internal\+Exec(), dom\+\_\+post\+\_\+dom\+\_\+computation\+::\+Internal\+Exec(), loops\+\_\+computation\+::\+Internal\+Exec(), N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Internal\+Exec(), Block\+Fix\+::\+Internal\+Exec(), mem\+\_\+xml\+\_\+allocation\+::\+Internal\+Exec(), Build\+Virtual\+Phi\+::\+Internal\+Exec(), Split\+Return\+::\+Internal\+Exec(), top\+\_\+entity\+::\+Internal\+Exec(), determine\+\_\+memory\+\_\+accesses\+::\+Internal\+Exec(), Bit\+\_\+\+Value\+\_\+opt\+::\+Internal\+Exec(), add\+\_\+library\+::\+Internal\+Exec(), hls\+\_\+div\+\_\+cg\+\_\+ext\+::\+Internal\+Exec(), constant\+\_\+flop\+\_\+wrapper\+::\+Internal\+Exec(), dead\+\_\+code\+\_\+elimination\+::\+Internal\+Exec(), interface\+\_\+infer\+::\+Internal\+Exec(), commutative\+\_\+expr\+\_\+restructuring\+::\+Internal\+Exec(), Cond\+Expr\+Restructuring\+::\+Internal\+Exec(), Remove\+Ending\+If\+::\+Internal\+Exec(), virtual\+\_\+phi\+\_\+nodes\+\_\+split\+::\+Internal\+Exec(), simple\+\_\+code\+\_\+motion\+::\+Internal\+Exec(), datapath\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), short\+\_\+circuit\+\_\+taf\+::\+Internal\+Exec(), C\+S\+E\+::\+Internal\+Exec(), Multiple\+Entry\+If\+Reduction\+::\+Internal\+Exec(), multi\+\_\+way\+\_\+if\+::\+Internal\+Exec(), I\+R\+\_\+lowering\+::\+Internal\+Exec(), operations\+\_\+cfg\+\_\+computation\+::\+Internal\+Exec(), port\+\_\+swapping\+::\+Internal\+Exec(), Vectorize\+::\+Internal\+Exec(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), Phi\+Opt\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), Bit\+\_\+\+Value\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), ipa\+\_\+point\+\_\+to\+\_\+analysis\+::ipa\+\_\+point\+\_\+to\+\_\+analysis(), I\+R\+\_\+lowering\+::\+I\+R\+\_\+lowering(), Check\+System\+Type\+::is\+\_\+system\+\_\+include(), dead\+\_\+code\+\_\+elimination\+::kill\+\_\+uses(), Load\+File\+Technology\+::\+Load\+File\+Technology(), Load\+Technology\+::\+Load\+Technology(), rebuild\+\_\+initialization2\+::look\+\_\+for\+\_\+\+R\+O\+Ms(), Call\+Graph\+Builtin\+Call\+::look\+For\+Builtin\+Call(), loops\+\_\+computation\+::loops\+\_\+computation(), Loops\+Analysis\+Bambu\+::\+Loops\+Analysis\+Bambu(), lut\+\_\+transformation\+::lut\+\_\+transformation(), datapath\+\_\+parallel\+\_\+cs\+::manage\+\_\+extern\+\_\+global\+\_\+port\+\_\+parallel(), cs\+\_\+interface\+::manage\+\_\+extern\+\_\+global\+\_\+port\+\_\+top(), Bit\+\_\+\+Value\+::manage\+\_\+forward\+\_\+binary\+\_\+operands(), mem\+\_\+cg\+\_\+ext\+::mem\+\_\+cg\+\_\+ext(), mem\+\_\+dominator\+\_\+allocation\+::mem\+\_\+dominator\+\_\+allocation(), mem\+\_\+dominator\+\_\+allocation\+\_\+cs\+::mem\+\_\+dominator\+\_\+allocation\+\_\+cs(), memory\+\_\+allocation\+::memory\+\_\+allocation(), Memory\+Data\+Flow\+Analysis\+::\+Memory\+Data\+Flow\+Analysis(), multi\+\_\+way\+\_\+if\+::\+Merge\+Cond\+Cond(), multi\+\_\+way\+\_\+if\+::\+Merge\+Cond\+Multi(), multi\+\_\+way\+\_\+if\+::\+Merge\+Multi\+Cond(), multi\+\_\+way\+\_\+if\+::\+Merge\+Multi\+Multi(), Phi\+Opt\+::\+Merge\+Phi(), Minimal\+Interface\+Testbench\+::\+Minimal\+Interface\+Testbench(), dead\+\_\+code\+\_\+elimination\+::move2empty\+B\+B(), B\+B\+\_\+based\+\_\+stg\+::move\+\_\+with\+\_\+duplication(), B\+B\+\_\+based\+\_\+stg\+::move\+\_\+without\+\_\+duplication(), multi\+\_\+way\+\_\+if\+::multi\+\_\+way\+\_\+if(), Multiple\+Entry\+If\+Reduction\+::\+Multiple\+Entry\+If\+Reduction(), mux\+\_\+connection\+\_\+binding\+::mux\+\_\+connection\+\_\+binding(), mux\+\_\+connection\+\_\+binding\+::mux\+\_\+interconnection(), N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness(), Host\+Profiling\+::normalize(), Omp\+Allocation\+::\+Omp\+Allocation(), Omp\+Function\+Allocation\+::\+Omp\+Function\+Allocation(), Omp\+Function\+Allocation\+C\+S\+::\+Omp\+Function\+Allocation\+C\+S(), op\+\_\+feedback\+\_\+edges\+\_\+computation\+::op\+\_\+feedback\+\_\+edges\+\_\+computation(), Op\+Cdg\+Computation\+::\+Op\+Cdg\+Computation(), operations\+\_\+cfg\+\_\+computation\+::operations\+\_\+cfg\+\_\+computation(), Op\+Order\+Computation\+::\+Op\+Order\+Computation(), Op\+Reachability\+Computation\+::\+Op\+Reachability\+Computation(), Bit\+\_\+\+Value\+\_\+opt\+::optimize(), B\+B\+\_\+based\+\_\+stg\+::optimize\+\_\+cycles(), parametric\+\_\+list\+\_\+based\+::parametric\+\_\+list\+\_\+based(), parm2ssa\+::parm2ssa(), parm\+\_\+decl\+\_\+taken\+\_\+address\+\_\+fix\+::parm\+\_\+decl\+\_\+taken\+\_\+address\+\_\+fix(), Test\+Vector\+Parser\+::\+Parse\+User\+String(), Test\+Vector\+Parser\+::\+Parse\+X\+M\+L\+File(), Phi\+Opt\+::\+Phi\+Opt(), Bit\+\_\+\+Value\+::pointer\+\_\+resizing(), port\+\_\+swapping\+::port\+\_\+swapping(), Pragma\+Analysis\+::\+Pragma\+Analysis(), Pragma\+Substitution\+::\+Pragma\+Substitution(), Predicate\+Statements\+::\+Predicate\+Statements(), Bit\+\_\+\+Value\+::print\+\_\+bitstring\+\_\+map(), rebuild\+\_\+initialization\+::rebuild\+\_\+initialization(), rebuild\+\_\+initialization2\+::rebuild\+\_\+initialization2(), parm2ssa\+::recursive\+\_\+analysis(), string\+\_\+cst\+\_\+fix\+::recursive\+\_\+analysis(), hls\+\_\+div\+\_\+cg\+\_\+ext\+::recursive\+\_\+examinate(), Var\+Decl\+Fix\+::recursive\+\_\+examinate(), Check\+System\+Type\+::recursive\+\_\+examinate(), soft\+\_\+float\+\_\+cg\+\_\+ext\+::\+Recursive\+Examinate(), Var\+Computation\+::\+Recursively\+Analyze(), remove\+\_\+clobber\+\_\+ga\+::remove\+\_\+clobber\+\_\+ga(), Phi\+Opt\+::\+Remove\+Cond\+Expr(), Remove\+Ending\+If\+::\+Remove\+Ending\+If(), Top\+Entity\+Memory\+Mapped\+::resizing\+\_\+\+I\+O(), short\+\_\+circuit\+\_\+taf\+::restructure\+\_\+\+C\+F\+G(), R\+T\+L\+Characterization\+::\+R\+T\+L\+Characterization(), Scalar\+Ssa\+Data\+Dependence\+Computation\+::\+Scalar\+Ssa\+Data\+Dependence\+Computation(), sched\+\_\+based\+\_\+chaining\+\_\+computation\+::sched\+\_\+based\+\_\+chaining\+\_\+computation(), S\+D\+C\+Code\+Motion\+::\+S\+D\+C\+Code\+Motion(), S\+D\+C\+Scheduling\+::\+S\+D\+C\+Scheduling(), Serialize\+Mutual\+Exclusions\+::\+Serialize\+Mutual\+Exclusions(), Vectorize\+::\+Set\+Predication(), short\+\_\+circuit\+\_\+taf\+::short\+\_\+circuit\+\_\+taf(), simple\+\_\+code\+\_\+motion\+::simple\+\_\+code\+\_\+motion(), Simulation\+Evaluation\+::\+Simulation\+Evaluation(), Phi\+Opt\+::\+Single\+Phi\+Optimization(), soft\+\_\+float\+\_\+cg\+\_\+ext\+::soft\+\_\+float\+\_\+cg\+\_\+ext(), Split\+Return\+::\+Split\+Return(), string\+\_\+cst\+\_\+fix\+::string\+\_\+cst\+\_\+fix(), Switch\+Fix\+::\+Switch\+Fix(), Symbolic\+Application\+Frontend\+Flow\+Step\+::\+Symbolic\+Application\+Frontend\+Flow\+Step(), Taste\+Interface\+Generation\+::\+Taste\+Interface\+Generation(), extract\+\_\+patterns\+::ternary\+\_\+plus\+\_\+expr\+\_\+extraction(), Testbench\+Memory\+Allocation\+::\+Testbench\+Memory\+Allocation(), Testbench\+Values\+C\+Generation\+::\+Testbench\+Values\+C\+Generation(), Testbench\+Values\+X\+M\+L\+Generation\+::\+Testbench\+Values\+X\+M\+L\+Generation(), Test\+Vector\+Parser\+::\+Test\+Vector\+Parser(), top\+\_\+entity\+::top\+\_\+entity(), top\+\_\+entity\+\_\+cs\+::top\+\_\+entity\+\_\+cs(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::top\+\_\+entity\+\_\+parallel\+\_\+cs(), Top\+Entity\+Memory\+Mapped\+::\+Top\+Entity\+Memory\+Mapped(), Vectorize\+::\+Transform(), Un\+Comparison\+Lowering\+::\+Un\+Comparison\+Lowering(), Bit\+\_\+\+Value\+::update\+\_\+\+I\+R(), cdfc\+\_\+module\+\_\+binding\+::update\+\_\+slack\+\_\+starting\+\_\+time(), parametric\+\_\+list\+\_\+based\+::update\+\_\+starting\+\_\+ending\+\_\+time(), parametric\+\_\+list\+\_\+based\+::update\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), multi\+\_\+way\+\_\+if\+::\+Update\+Cfg(), Update\+Schedule\+::\+Update\+Schedule(), use\+\_\+counting\+::use\+\_\+counting(), Var\+Computation\+::\+Var\+Computation(), Var\+Decl\+Fix\+::\+Var\+Decl\+Fix(), vcd\+\_\+utility\+::vcd\+\_\+utility(), Vcd\+Signal\+Selection\+::\+Vcd\+Signal\+Selection(), Vectorize\+::\+Vectorize(), Testbench\+Generation\+Base\+Step\+::verilator\+\_\+testbench(), virtual\+\_\+hls\+::virtual\+\_\+hls(), virtual\+\_\+phi\+\_\+nodes\+\_\+split\+::virtual\+\_\+phi\+\_\+nodes\+\_\+split(), virtual\+\_\+phi\+\_\+nodes\+\_\+split\+::virtual\+\_\+split\+\_\+phi(), Virtual\+Aggregate\+Data\+Flow\+Analysis\+::\+Virtual\+Aggregate\+Data\+Flow\+Analysis(), cdfc\+\_\+module\+\_\+binding\+::weight\+\_\+computation(), Minimal\+Interface\+Testbench\+::write\+\_\+file\+\_\+reading\+\_\+operations(), Testbench\+Generation\+Base\+Step\+::write\+\_\+output\+\_\+checks(), Function\+Frontend\+Flow\+Step\+::\+Write\+B\+B\+Graph\+Dot(), C\+Backend\+::\+Write\+Global\+Declarations(), C\+Backend\+::write\+Implementations(), and C\+Backend\+::write\+Includes().
+
+\mbox{\Hypertarget{classDesignFlowStep_ab770677ddf087613add30024e16a5554}\label{classDesignFlowStep_ab770677ddf087613add30024e16a5554}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!design\+\_\+flow\+\_\+manager@{design\+\_\+flow\+\_\+manager}}
+\index{design\+\_\+flow\+\_\+manager@{design\+\_\+flow\+\_\+manager}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{design\+\_\+flow\+\_\+manager}{design\_flow\_manager}}
+{\footnotesize\ttfamily const \hyperlink{classWrefcount}{Wrefcount}$<$const \hyperlink{classDesignFlowManager}{Design\+Flow\+Manager}$>$ Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The design flow manager. 
+
+
+
+Definition at line 119 of file design\+\_\+flow\+\_\+step.\+hpp.
+
+
+
+Referenced by Design\+Flow\+::\+C\+Get\+Design\+Flow\+Step\+Factory(), To\+Data\+File\+Step\+::\+C\+Get\+Design\+Flow\+Step\+Factory(), Parser\+Flow\+Step\+::\+C\+Get\+Design\+Flow\+Step\+Factory(), Technology\+Flow\+Step\+::\+C\+Get\+Design\+Flow\+Step\+Factory(), C\+Backend\+::\+C\+Get\+Design\+Flow\+Step\+Factory(), H\+L\+S\+\_\+step\+::\+C\+Get\+Design\+Flow\+Step\+Factory(), Frontend\+Flow\+Step\+::\+C\+Get\+Design\+Flow\+Step\+Factory(), Serialize\+Mutual\+Exclusions\+::\+Compute\+Frontend\+Relationships(), Aggregate\+Data\+Flow\+Analysis\+::\+Compute\+Frontend\+Relationships(), use\+\_\+counting\+::\+Compute\+Frontend\+Relationships(), commutative\+\_\+expr\+\_\+restructuring\+::\+Compute\+Frontend\+Relationships(), Cond\+Expr\+Restructuring\+::\+Compute\+Frontend\+Relationships(), Remove\+Ending\+If\+::\+Compute\+Frontend\+Relationships(), short\+\_\+circuit\+\_\+taf\+::\+Compute\+Frontend\+Relationships(), Create\+Address\+Translation\+::\+Compute\+Frontend\+Relationships(), H\+L\+S\+Synthesis\+Flow\+::\+Compute\+H\+L\+S\+Relationships(), Testbench\+Generation\+Base\+Step\+::\+Compute\+H\+L\+S\+Relationships(), H\+L\+S\+Bit\+Value\+::\+Compute\+Relationships(), C\+Testbench\+Execution\+::\+Compute\+Relationships(), create\+\_\+tree\+\_\+manager\+::\+Compute\+Relationships(), Bit\+Value\+I\+P\+A\+::\+Compute\+Relationships(), fun\+\_\+dominator\+\_\+allocation\+::\+Compute\+Relationships(), Taste\+Interface\+Generation\+::\+Compute\+Relationships(), Aggregate\+Data\+Flow\+Analysis\+::\+Compute\+Relationships(), Generate\+Fu\+List\+::\+Compute\+Relationships(), Bambu\+Frontend\+Flow\+::\+Compute\+Relationships(), Basic\+Blocks\+Profiling\+::\+Compute\+Relationships(), use\+\_\+counting\+::\+Compute\+Relationships(), Testbench\+Values\+C\+Generation\+::\+Compute\+Relationships(), Build\+Virtual\+Phi\+::\+Compute\+Relationships(), Function\+Frontend\+Flow\+Step\+::\+Compute\+Relationships(), H\+L\+S\+Function\+Step\+::\+Compute\+Relationships(), interface\+\_\+infer\+::\+Compute\+Relationships(), C\+Backend\+::\+Compute\+Relationships(), Technology\+Flow\+Step\+::\+Compute\+Relationships(), lut\+\_\+transformation\+::\+Compute\+Relationships(), I\+R\+\_\+lowering\+::\+Compute\+Relationships(), S\+D\+C\+Scheduling\+::\+Compute\+Relationships(), R\+T\+L\+Characterization\+::\+Compute\+Relationships(), Phi\+Opt\+::\+Compute\+Relationships(), parametric\+\_\+list\+\_\+based\+::\+Compute\+Relationships(), H\+L\+S\+\_\+step\+::\+Compute\+Relationships(), Frontend\+Flow\+Step\+::\+Compute\+Relationships(), Get\+Status(), H\+L\+S\+Function\+Step\+::\+Has\+To\+Be\+Executed(), dom\+\_\+post\+\_\+dom\+\_\+computation\+::\+Has\+To\+Be\+Executed(), Cond\+Expr\+Restructuring\+::\+Has\+To\+Be\+Executed(), commutative\+\_\+expr\+\_\+restructuring\+::\+Has\+To\+Be\+Executed(), simple\+\_\+code\+\_\+motion\+::\+Has\+To\+Be\+Executed(), Multiple\+Entry\+If\+Reduction\+::\+Has\+To\+Be\+Executed(), multi\+\_\+way\+\_\+if\+::\+Has\+To\+Be\+Executed(), operations\+\_\+cfg\+\_\+computation\+::\+Initialize(), Bit\+\_\+\+Value\+::\+Initialize(), S\+D\+C\+Code\+Motion\+::\+Internal\+Exec(), Basic\+Blocks\+Cfg\+Computation\+::\+Internal\+Exec(), H\+L\+S\+Function\+Bit\+Value\+::\+Internal\+Exec(), dom\+\_\+post\+\_\+dom\+\_\+computation\+::\+Internal\+Exec(), simple\+\_\+code\+\_\+motion\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), and Wishbone\+Interface\+Testbench\+::write\+\_\+interface\+\_\+handler().
+
+\mbox{\Hypertarget{classDesignFlowStep_ad1ca503adaba849037edba18d9f209b8}\label{classDesignFlowStep_ad1ca503adaba849037edba18d9f209b8}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!output\+\_\+level@{output\+\_\+level}}
+\index{output\+\_\+level@{output\+\_\+level}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{output\+\_\+level}{output\_level}}
+{\footnotesize\ttfamily const int Design\+Flow\+Step\+::output\+\_\+level\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The output level. 
+
+
+
+Definition at line 128 of file design\+\_\+flow\+\_\+step.\+hpp.
+
+
+
+Referenced by memory\+\_\+allocation\+::allocate\+\_\+parameters(), Testbench\+Memory\+Allocation\+::\+Alloc\+Testbench\+Memory(), determine\+\_\+memory\+\_\+accesses\+::analyze\+\_\+node(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), Classical\+H\+L\+S\+Synthesis\+Flow\+::\+Compute\+H\+L\+S\+Relationships(), I\+R\+\_\+lowering\+::division\+\_\+by\+\_\+a\+\_\+constant(), Call\+Graph\+Unfolding\+::\+Exec(), H\+W\+Discrepancy\+Analysis\+::\+Exec(), fun\+\_\+dominator\+\_\+allocation\+::\+Exec(), Basic\+Blocks\+Profiling\+::\+Exec(), Write\+Technology\+::\+Exec(), Load\+File\+Technology\+::\+Exec(), ipa\+\_\+point\+\_\+to\+\_\+analysis\+::\+Exec(), create\+\_\+tree\+\_\+manager\+::\+Exec(), Find\+Max\+C\+F\+G\+Transformations\+::\+Exec(), Evaluation\+::\+Exec(), vcd\+\_\+utility\+::\+Exec(), Vcd\+Signal\+Selection\+::\+Exec(), memory\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation(), vertex\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), unique\+\_\+binding\+\_\+register\+::\+Internal\+Exec(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), chordal\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), easy\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), values\+\_\+scheme\+::\+Internal\+Exec(), weighted\+\_\+clique\+\_\+register\+::\+Internal\+Exec(), commutative\+\_\+expr\+\_\+restructuring\+::\+Internal\+Exec(), port\+\_\+swapping\+::\+Internal\+Exec(), mux\+\_\+connection\+\_\+binding\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), Bit\+\_\+\+Value\+\_\+opt\+::optimize(), vcd\+\_\+utility\+::print\+\_\+discrepancy(), vcd\+\_\+utility\+::print\+\_\+failed\+\_\+vcd\+\_\+head(), Testbench\+Generation\+Base\+Step\+::read\+\_\+input\+\_\+value\+\_\+from\+\_\+file(), Minimal\+Interface\+Testbench\+::read\+\_\+input\+\_\+value\+\_\+from\+\_\+file\+\_\+\+R\+N\+O\+N\+E(), and Testbench\+Generation\+Base\+Step\+::write\+\_\+output\+\_\+checks().
+
+\mbox{\Hypertarget{classDesignFlowStep_a802eaafe8013df706370679d1a436949}\label{classDesignFlowStep_a802eaafe8013df706370679d1a436949}} 
+\index{Design\+Flow\+Step@{Design\+Flow\+Step}!parameters@{parameters}}
+\index{parameters@{parameters}!Design\+Flow\+Step@{Design\+Flow\+Step}}
+\subsubsection{\texorpdfstring{parameters}{parameters}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Design\+Flow\+Step\+::parameters\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set of input parameters. 
+
+
+
+Definition at line 122 of file design\+\_\+flow\+\_\+step.\+hpp.
+
+
+
+Referenced by top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port(), top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port\+\_\+kernel(), mux\+\_\+connection\+\_\+binding\+::add\+\_\+conversion(), add\+\_\+library\+::add\+\_\+library(), datapath\+\_\+cs\+::add\+\_\+ports(), datapath\+\_\+parallel\+\_\+cs\+::add\+\_\+ports(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+module(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+wrapper(), controller\+\_\+cs\+::add\+\_\+selector\+\_\+register\+\_\+file\+\_\+port(), Add\+Artificial\+Call\+Flow\+Edges\+::\+Add\+Artificial\+Call\+Flow\+Edges(), Add\+Bb\+Ecfg\+Edges\+::\+Add\+Bb\+Ecfg\+Edges(), module\+\_\+interface\+::\+Add\+Constant(), Add\+Op\+Exit\+Flow\+Edges\+::\+Add\+Op\+Exit\+Flow\+Edges(), Add\+Op\+Loop\+Flow\+Edges\+::\+Add\+Op\+Loop\+Flow\+Edges(), Add\+Op\+Phi\+Flow\+Edges\+::\+Add\+Op\+Phi\+Flow\+Edges(), Omp\+Allocation\+::\+Add\+Panda\+Pthread\+Mutex(), Aggregate\+Data\+Flow\+Analysis\+::\+Aggregate\+Data\+Flow\+Analysis(), Testbench\+Memory\+Allocation\+::\+Alloc\+Testbench\+Memory(), determine\+\_\+memory\+\_\+accesses\+::analyze\+\_\+node(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), C\+Backend\+::\+Analyze\+Include(), Application\+Frontend\+Flow\+Step\+::\+Application\+Frontend\+Flow\+Step(), Bambu\+Frontend\+Flow\+::\+Bambu\+Frontend\+Flow(), Basic\+Blocks\+Cfg\+Computation\+::\+Basic\+Blocks\+Cfg\+Computation(), Basic\+Blocks\+Profiling\+::\+Basic\+Blocks\+Profiling(), bb\+\_\+feedback\+\_\+edges\+\_\+computation\+::bb\+\_\+feedback\+\_\+edges\+\_\+computation(), B\+B\+Order\+Computation\+::\+B\+B\+Order\+Computation(), Bit\+\_\+\+Value\+::\+Bit\+\_\+\+Value(), Bit\+\_\+\+Value\+\_\+opt\+::\+Bit\+\_\+\+Value\+\_\+opt(), Bit\+Value\+I\+P\+A\+::\+Bit\+Value\+I\+P\+A(), Check\+System\+Type\+::build\+\_\+include\+\_\+structures(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+complete\+\_\+logic(), minimal\+\_\+interface\+::build\+\_\+wrapper(), H\+W\+Call\+Injection\+::build\+Builtin\+Call(), allocation\+::\+Build\+Proxy\+Function(), allocation\+::\+Build\+Proxy\+Function\+Verilog(), allocation\+::\+Build\+Proxy\+Function\+V\+H\+D\+L(), Build\+Virtual\+Phi\+::\+Build\+Virtual\+Phi(), call\+\_\+graph\+\_\+computation\+::call\+\_\+graph\+\_\+computation(), C\+Backend\+::\+C\+Backend(), allocation\+::check\+\_\+for\+\_\+memory\+\_\+compliancy(), parametric\+\_\+list\+\_\+based\+::check\+\_\+non\+\_\+direct\+\_\+operation\+\_\+chaining(), parametric\+\_\+list\+\_\+based\+::\+Check\+Schedulability\+Conditions(), Check\+System\+Type\+::\+Check\+System\+Type(), classic\+\_\+datapath\+::classic\+\_\+datapath(), Vectorize\+::\+Classify\+Loop(), Clean\+Virtual\+Phi\+::\+Clean\+Virtual\+Phi(), commutative\+\_\+expr\+\_\+restructuring\+::commutative\+\_\+expr\+\_\+restructuring(), Complete\+B\+B\+Graph\+::\+Complete\+B\+B\+Graph(), Complete\+Call\+Graph\+::\+Complete\+Call\+Graph(), B\+B\+\_\+based\+\_\+stg\+::compute\+\_\+\+E\+P\+P\+\_\+edge\+\_\+increments(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+exec\+\_\+stage\+\_\+time(), compute\+\_\+implicit\+\_\+calls\+::compute\+\_\+implicit\+\_\+calls(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), Non\+Deterministic\+Flows\+::\+Compute\+Arg\+String(), Find\+Max\+C\+F\+G\+Transformations\+::\+Compute\+Arg\+String(), Data\+Dependence\+Computation\+::\+Computedependencies(), mem\+\_\+cg\+\_\+ext\+::\+Compute\+Frontend\+Relationships(), Bambu\+Frontend\+Flow\+::\+Compute\+Frontend\+Relationships(), Complete\+Call\+Graph\+::\+Compute\+Frontend\+Relationships(), Aggregate\+Data\+Flow\+Analysis\+::\+Compute\+Frontend\+Relationships(), Basic\+Blocks\+Cfg\+Computation\+::\+Compute\+Frontend\+Relationships(), fanout\+\_\+opt\+::\+Compute\+Frontend\+Relationships(), Bit\+\_\+\+Value\+\_\+opt\+::\+Compute\+Frontend\+Relationships(), Split\+Return\+::\+Compute\+Frontend\+Relationships(), Host\+Profiling\+::\+Compute\+Frontend\+Relationships(), determine\+\_\+memory\+\_\+accesses\+::\+Compute\+Frontend\+Relationships(), hls\+\_\+div\+\_\+cg\+\_\+ext\+::\+Compute\+Frontend\+Relationships(), commutative\+\_\+expr\+\_\+restructuring\+::\+Compute\+Frontend\+Relationships(), Cond\+Expr\+Restructuring\+::\+Compute\+Frontend\+Relationships(), short\+\_\+circuit\+\_\+taf\+::\+Compute\+Frontend\+Relationships(), Multiple\+Entry\+If\+Reduction\+::\+Compute\+Frontend\+Relationships(), lut\+\_\+transformation\+::\+Compute\+Frontend\+Relationships(), multi\+\_\+way\+\_\+if\+::\+Compute\+Frontend\+Relationships(), operations\+\_\+cfg\+\_\+computation\+::\+Compute\+Frontend\+Relationships(), Generate\+Taste\+H\+D\+L\+Architecture\+::\+Compute\+H\+L\+S\+Relationships(), H\+L\+S\+Synthesis\+Flow\+::\+Compute\+H\+L\+S\+Relationships(), Initialize\+H\+L\+S\+::\+Compute\+H\+L\+S\+Relationships(), standard\+\_\+hls\+::\+Compute\+H\+L\+S\+Relationships(), virtual\+\_\+hls\+::\+Compute\+H\+L\+S\+Relationships(), generate\+\_\+hdl\+::\+Compute\+H\+L\+S\+Relationships(), B\+B\+\_\+based\+\_\+stg\+::\+Compute\+H\+L\+S\+Relationships(), liveness\+\_\+computer\+::\+Compute\+H\+L\+S\+Relationships(), Control\+Flow\+Checker\+::\+Compute\+H\+L\+S\+Relationships(), H\+L\+S\+Function\+Bit\+Value\+::\+Compute\+H\+L\+S\+Relationships(), fu\+\_\+binding\+\_\+creator\+::\+Compute\+H\+L\+S\+Relationships(), chaining\+::\+Compute\+H\+L\+S\+Relationships(), Classical\+H\+L\+S\+Synthesis\+Flow\+::\+Compute\+H\+L\+S\+Relationships(), Synthesis\+Evaluation\+::\+Compute\+H\+L\+S\+Relationships(), C\+Testbench\+Execution\+::\+Compute\+H\+L\+S\+Relationships(), datapath\+\_\+creator\+::\+Compute\+H\+L\+S\+Relationships(), reg\+\_\+binding\+\_\+creator\+::\+Compute\+H\+L\+S\+Relationships(), Testbench\+Generation\+::\+Compute\+H\+L\+S\+Relationships(), top\+\_\+entity\+::\+Compute\+H\+L\+S\+Relationships(), port\+\_\+swapping\+::\+Compute\+H\+L\+S\+Relationships(), Evaluation\+::\+Compute\+H\+L\+S\+Relationships(), Controller\+Creator\+Base\+Step\+::\+Compute\+H\+L\+S\+Relationships(), add\+\_\+library\+::\+Compute\+H\+L\+S\+Relationships(), conn\+\_\+binding\+\_\+creator\+::\+Compute\+H\+L\+S\+Relationships(), module\+\_\+interface\+::\+Compute\+H\+L\+S\+Relationships(), Scheduling\+::\+Compute\+H\+L\+S\+Relationships(), memory\+\_\+allocation\+::\+Compute\+H\+L\+S\+Relationships(), S\+D\+C\+Scheduling\+::\+Compute\+H\+L\+S\+Relationships(), allocation\+::\+Compute\+H\+L\+S\+Relationships(), Testbench\+Generation\+Base\+Step\+::\+Compute\+H\+L\+S\+Relationships(), parametric\+\_\+list\+\_\+based\+::\+Compute\+H\+L\+S\+Relationships(), H\+L\+S\+Bit\+Value\+::\+Compute\+Relationships(), C\+Testbench\+Execution\+::\+Compute\+Relationships(), create\+\_\+tree\+\_\+manager\+::\+Compute\+Relationships(), fun\+\_\+dominator\+\_\+allocation\+::\+Compute\+Relationships(), Bambu\+Frontend\+Flow\+::\+Compute\+Relationships(), Testbench\+Values\+C\+Generation\+::\+Compute\+Relationships(), C\+Backend\+::\+Compute\+Relationships(), S\+D\+C\+Scheduling\+::\+Compute\+Relationships(), parametric\+\_\+list\+\_\+based\+::\+Compute\+Relationships(), Load\+Technology\+::\+Compute\+Technology\+Relationships(), Cond\+Expr\+Restructuring\+::\+Cond\+Expr\+Restructuring(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::connect\+\_\+loop\+\_\+iter(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::connect\+\_\+port\+\_\+parallel(), constant\+\_\+flop\+\_\+wrapper\+::constant\+\_\+flop\+\_\+wrapper(), Control\+Flow\+Checker\+::\+Control\+Flow\+Checker(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), short\+\_\+circuit\+\_\+taf\+::create\+\_\+gimple\+\_\+cond(), Testbench\+Generation\+Base\+Step\+::create\+\_\+\+H\+D\+L\+\_\+testbench(), interface\+\_\+infer\+::create\+\_\+\+Read\+\_\+function(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+array(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Read\+\_\+simple(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Write\+\_\+simple(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), Functional\+Unit\+Step\+::create\+\_\+template\+\_\+instance(), create\+\_\+tree\+\_\+manager\+::create\+\_\+tree\+\_\+manager(), interface\+\_\+infer\+::create\+\_\+\+Write\+\_\+function(), Create\+Address\+Translation\+::\+Create\+Address\+Translation(), cs\+\_\+interface\+::cs\+\_\+interface(), C\+S\+E\+::\+C\+S\+E(), C\+Testbench\+Execution\+::\+C\+Testbench\+Execution(), datapath\+\_\+parallel\+\_\+cs\+::datapath\+\_\+parallel\+\_\+cs(), dead\+\_\+code\+\_\+elimination\+::dead\+\_\+code\+\_\+elimination(), vcd\+\_\+utility\+::detect\+\_\+binary\+\_\+double\+\_\+mismatch(), vcd\+\_\+utility\+::detect\+\_\+binary\+\_\+float\+\_\+mismatch(), vcd\+\_\+utility\+::detect\+\_\+mismatch(), determine\+\_\+memory\+\_\+accesses\+::determine\+\_\+memory\+\_\+accesses(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), Data\+Dependence\+Computation\+::do\+\_\+dependence\+\_\+reduction(), dom\+\_\+post\+\_\+dom\+\_\+computation\+::dom\+\_\+post\+\_\+dom\+\_\+computation(), Dry\+Run\+Evaluation\+::\+Dry\+Run\+Evaluation(), Evaluation\+::\+Evaluation(), H\+W\+Discrepancy\+Analysis\+::\+Exec(), W\+B4\+Intercon\+\_\+interface\+::exec(), mem\+\_\+dominator\+\_\+allocation\+\_\+cs\+::\+Exec(), Generate\+Taste\+H\+D\+L\+Architecture\+::\+Exec(), fun\+\_\+dominator\+\_\+allocation\+::\+Exec(), Generate\+Simulation\+Scripts\+::\+Exec(), C\+Testbench\+Execution\+::\+Exec(), generate\+\_\+hdl\+::\+Exec(), Bambu\+Frontend\+Flow\+::\+Exec(), H\+D\+L\+Function\+Decl\+Fix\+::\+Exec(), Basic\+Blocks\+Profiling\+::\+Exec(), Generate\+Fu\+List\+::\+Exec(), Pragma\+Substitution\+::\+Exec(), Load\+File\+Technology\+::\+Exec(), Write\+Technology\+::\+Exec(), Load\+Builtin\+Technology\+::\+Exec(), Load\+Device\+Technology\+::\+Exec(), Non\+Deterministic\+Flows\+::\+Exec(), create\+\_\+tree\+\_\+manager\+::\+Exec(), Testbench\+Values\+X\+M\+L\+Generation\+::\+Exec(), Testbench\+Values\+C\+Generation\+::\+Exec(), Asn\+Parser\+::\+Exec(), Evaluation\+::\+Exec(), vcd\+\_\+utility\+::\+Exec(), Aadl\+Parser\+::\+Exec(), call\+\_\+graph\+\_\+computation\+::\+Exec(), Create\+Address\+Translation\+::\+Exec(), Vcd\+Signal\+Selection\+::\+Exec(), C\+Backend\+::\+Exec(), Testbench\+Generation\+Base\+Step\+::\+Exec(), parametric\+\_\+list\+\_\+based\+::exec(), Find\+Max\+C\+F\+G\+Transformations\+::\+Execute\+Bambu(), Non\+Deterministic\+Flows\+::\+Execute\+Tool(), extract\+\_\+patterns\+::extract\+\_\+patterns(), Extract\+Gimple\+Cond\+Op\+::\+Extract\+Gimple\+Cond\+Op(), Extract\+Omp\+Atomic\+::\+Extract\+Omp\+Atomic(), Extract\+Omp\+For\+::\+Extract\+Omp\+For(), fanout\+\_\+opt\+::fanout\+\_\+opt(), memory\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation(), Find\+Max\+C\+F\+G\+Transformations\+::\+Find\+Max\+C\+F\+G\+Transformations(), R\+T\+L\+Characterization\+::fix\+\_\+execution\+\_\+time\+\_\+std(), R\+T\+L\+Characterization\+::fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std(), Fix\+Characterization\+::\+Fix\+Characterization(), Fix\+Structs\+Passed\+By\+Value\+::\+Fix\+Structs\+Passed\+By\+Value(), fsm\+\_\+controller\+::fsm\+\_\+controller(), F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness(), fun\+\_\+dominator\+\_\+allocation\+::fun\+\_\+dominator\+\_\+allocation(), Function\+Frontend\+Flow\+Step\+::\+Function\+Frontend\+Flow\+Step(), Generate\+Fu\+List\+::\+Generate\+Fu\+List(), allocation\+::get\+\_\+compliant\+\_\+pipelined\+\_\+unit(), get\+\_\+data\+\_\+bus\+\_\+bitsize(), C\+S\+E\+::hash\+\_\+check(), S\+D\+C\+Code\+Motion\+::\+Has\+To\+Be\+Executed(), Update\+Schedule\+::\+Has\+To\+Be\+Executed(), Split\+Return\+::\+Has\+To\+Be\+Executed(), commutative\+\_\+expr\+\_\+restructuring\+::\+Has\+To\+Be\+Executed(), Cond\+Expr\+Restructuring\+::\+Has\+To\+Be\+Executed(), Remove\+Ending\+If\+::\+Has\+To\+Be\+Executed(), simple\+\_\+code\+\_\+motion\+::\+Has\+To\+Be\+Executed(), Multiple\+Entry\+If\+Reduction\+::\+Has\+To\+Be\+Executed(), multi\+\_\+way\+\_\+if\+::\+Has\+To\+Be\+Executed(), lut\+\_\+transformation\+::\+Has\+To\+Be\+Executed(), H\+D\+L\+Function\+Decl\+Fix\+::\+H\+D\+L\+Function\+Decl\+Fix(), H\+D\+L\+Var\+Decl\+Fix\+::\+H\+D\+L\+Var\+Decl\+Fix(), hls\+\_\+div\+\_\+cg\+\_\+ext\+::hls\+\_\+div\+\_\+cg\+\_\+ext(), Host\+Profiling\+::\+Host\+Profiling(), H\+W\+Call\+Injection\+::\+H\+W\+Call\+Injection(), H\+W\+Discrepancy\+Analysis\+::\+H\+W\+Discrepancy\+Analysis(), F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Initialize(), fu\+\_\+binding\+\_\+creator\+::\+Initialize(), B\+B\+\_\+based\+\_\+stg\+::\+Initialize(), easy\+\_\+module\+\_\+binding\+::\+Initialize(), Test\+Vector\+Parser\+::\+Initialize(), Fix\+Characterization\+::\+Initialize(), Build\+Virtual\+Phi\+::\+Initialize(), Top\+Entity\+Memory\+Mapped\+::\+Initialize(), Bit\+\_\+\+Value\+\_\+opt\+::\+Initialize(), Remove\+Ending\+If\+::\+Initialize(), simple\+\_\+code\+\_\+motion\+::\+Initialize(), Multiple\+Entry\+If\+Reduction\+::\+Initialize(), Scheduling\+::\+Initialize(), lut\+\_\+transformation\+::\+Initialize(), multi\+\_\+way\+\_\+if\+::\+Initialize(), I\+R\+\_\+lowering\+::\+Initialize(), Phi\+Opt\+::\+Initialize(), allocation\+::\+Initialize(), Testbench\+Generation\+Base\+Step\+::initialize\+\_\+input\+\_\+signals(), Vcd\+Signal\+Selection\+::\+Initial\+Ssa\+Is\+Address(), Top\+Entity\+Memory\+Mapped\+::insert\+Memory\+Mapped\+Register(), Top\+Entity\+Memory\+Mapped\+::insert\+Start\+Done\+Logic(), Top\+Entity\+Memory\+Mapped\+::insert\+Status\+Register(), datapath\+\_\+parallel\+\_\+cs\+::instantiate\+\_\+component\+\_\+parallel(), cs\+\_\+interface\+::instantiate\+\_\+component\+\_\+parallel(), allocation\+::\+Integrate\+Technology\+Libraries(), interface\+\_\+infer\+::interface\+\_\+infer(), parm\+\_\+decl\+\_\+taken\+\_\+address\+\_\+fix\+::\+Internal\+Exec(), Fix\+Structs\+Passed\+By\+Value\+::\+Internal\+Exec(), mem\+\_\+cg\+\_\+ext\+::\+Internal\+Exec(), cs\+\_\+interface\+::\+Internal\+Exec(), fixed\+\_\+scheduling\+::\+Internal\+Exec(), Initialize\+H\+L\+S\+::\+Internal\+Exec(), minimal\+\_\+interface\+::\+Internal\+Exec(), Predicate\+Statements\+::\+Internal\+Exec(), Serialize\+Mutual\+Exclusions\+::\+Internal\+Exec(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), Dry\+Run\+Evaluation\+::\+Internal\+Exec(), Un\+Comparison\+Lowering\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), easy\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), B\+B\+Cdg\+Computation\+::\+Internal\+Exec(), Op\+Cdg\+Computation\+::\+Internal\+Exec(), Taste\+Interface\+Generation\+::\+Internal\+Exec(), Extract\+Omp\+For\+::\+Internal\+Exec(), Simulation\+Evaluation\+::\+Internal\+Exec(), Add\+Artificial\+Call\+Flow\+Edges\+::\+Internal\+Exec(), Function\+Call\+Type\+Cleanup\+::\+Internal\+Exec(), Basic\+Blocks\+Cfg\+Computation\+::\+Internal\+Exec(), Synthesis\+Evaluation\+::\+Internal\+Exec(), Switch\+Fix\+::\+Internal\+Exec(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), Call\+Graph\+Builtin\+Call\+::\+Internal\+Exec(), Extract\+Gimple\+Cond\+Op\+::\+Internal\+Exec(), Top\+Entity\+Memory\+Mapped\+::\+Internal\+Exec(), H\+L\+S\+Function\+Bit\+Value\+::\+Internal\+Exec(), classic\+\_\+datapath\+::\+Internal\+Exec(), Loops\+Analysis\+Bambu\+::\+Internal\+Exec(), H\+D\+L\+Var\+Decl\+Fix\+::\+Internal\+Exec(), Add\+Op\+Loop\+Flow\+Edges\+::\+Internal\+Exec(), weighted\+\_\+clique\+\_\+register\+::\+Internal\+Exec(), bb\+\_\+feedback\+\_\+edges\+\_\+computation\+::\+Internal\+Exec(), compute\+\_\+implicit\+\_\+calls\+::\+Internal\+Exec(), op\+\_\+feedback\+\_\+edges\+\_\+computation\+::\+Internal\+Exec(), Add\+Bb\+Ecfg\+Edges\+::\+Internal\+Exec(), rebuild\+\_\+initialization\+::\+Internal\+Exec(), fanout\+\_\+opt\+::\+Internal\+Exec(), Add\+Op\+Exit\+Flow\+Edges\+::\+Internal\+Exec(), dom\+\_\+post\+\_\+dom\+\_\+computation\+::\+Internal\+Exec(), loops\+\_\+computation\+::\+Internal\+Exec(), mem\+\_\+xml\+\_\+allocation\+::\+Internal\+Exec(), Build\+Virtual\+Phi\+::\+Internal\+Exec(), top\+\_\+entity\+::\+Internal\+Exec(), W\+B4\+\_\+interface\+::\+Internal\+Exec(), determine\+\_\+memory\+\_\+accesses\+::\+Internal\+Exec(), add\+\_\+library\+::\+Internal\+Exec(), constant\+\_\+flop\+\_\+wrapper\+::\+Internal\+Exec(), dead\+\_\+code\+\_\+elimination\+::\+Internal\+Exec(), Cond\+Expr\+Restructuring\+::\+Internal\+Exec(), commutative\+\_\+expr\+\_\+restructuring\+::\+Internal\+Exec(), interface\+\_\+infer\+::\+Internal\+Exec(), virtual\+\_\+phi\+\_\+nodes\+\_\+split\+::\+Internal\+Exec(), simple\+\_\+code\+\_\+motion\+::\+Internal\+Exec(), datapath\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), Var\+Computation\+::\+Internal\+Exec(), C\+S\+E\+::\+Internal\+Exec(), Multiple\+Entry\+If\+Reduction\+::\+Internal\+Exec(), multi\+\_\+way\+\_\+if\+::\+Internal\+Exec(), I\+R\+\_\+lowering\+::\+Internal\+Exec(), operations\+\_\+cfg\+\_\+computation\+::\+Internal\+Exec(), Vectorize\+::\+Internal\+Exec(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), Phi\+Opt\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), ipa\+\_\+point\+\_\+to\+\_\+analysis\+::ipa\+\_\+point\+\_\+to\+\_\+analysis(), I\+R\+\_\+lowering\+::\+I\+R\+\_\+lowering(), allocation\+::is\+\_\+ram\+\_\+not\+\_\+timing\+\_\+compliant(), dead\+\_\+code\+\_\+elimination\+::kill\+\_\+uses(), Load\+File\+Technology\+::\+Load\+File\+Technology(), Load\+Technology\+::\+Load\+Technology(), rebuild\+\_\+initialization2\+::look\+\_\+for\+\_\+\+R\+O\+Ms(), loops\+\_\+computation\+::loops\+\_\+computation(), Loops\+Analysis\+Bambu\+::\+Loops\+Analysis\+Bambu(), cs\+\_\+interface\+::manage\+\_\+extern\+\_\+global\+\_\+port\+\_\+top(), mem\+\_\+cg\+\_\+ext\+::mem\+\_\+cg\+\_\+ext(), memory\+\_\+allocation\+::memory\+\_\+allocation(), Memory\+Data\+Flow\+Analysis\+::\+Memory\+Data\+Flow\+Analysis(), multi\+\_\+way\+\_\+if\+::multi\+\_\+way\+\_\+if(), Multiple\+Entry\+If\+Reduction\+::\+Multiple\+Entry\+If\+Reduction(), N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness(), Omp\+Allocation\+::\+Omp\+Allocation(), Omp\+Function\+Allocation\+::\+Omp\+Function\+Allocation(), Omp\+Function\+Allocation\+C\+S\+::\+Omp\+Function\+Allocation\+C\+S(), op\+\_\+feedback\+\_\+edges\+\_\+computation\+::op\+\_\+feedback\+\_\+edges\+\_\+computation(), Op\+Cdg\+Computation\+::\+Op\+Cdg\+Computation(), operations\+\_\+cfg\+\_\+computation\+::operations\+\_\+cfg\+\_\+computation(), Op\+Order\+Computation\+::\+Op\+Order\+Computation(), Bit\+\_\+\+Value\+\_\+opt\+::optimize(), parametric\+\_\+list\+\_\+based\+::parametric\+\_\+list\+\_\+based(), parm2ssa\+::parm2ssa(), parm\+\_\+decl\+\_\+taken\+\_\+address\+\_\+fix\+::parm\+\_\+decl\+\_\+taken\+\_\+address\+\_\+fix(), mem\+\_\+xml\+\_\+allocation\+::parse\+\_\+xml\+\_\+allocation(), Test\+Vector\+Parser\+::\+Parse\+X\+M\+L\+File(), Bit\+\_\+\+Value\+::pointer\+\_\+resizing(), port\+\_\+swapping\+::port\+\_\+swapping\+\_\+algorithm(), Pragma\+Analysis\+::\+Pragma\+Analysis(), Pragma\+Substitution\+::\+Pragma\+Substitution(), Predicate\+Statements\+::\+Predicate\+Statements(), Load\+Technology\+::\+Print\+Final\+I\+R(), allocation\+::\+Print\+Initial\+I\+R(), Frontend\+Flow\+Step\+::\+Print\+Tree\+Manager(), string\+\_\+cst\+\_\+fix\+::recursive\+\_\+analysis(), Check\+System\+Type\+::recursive\+\_\+examinate(), soft\+\_\+float\+\_\+cg\+\_\+ext\+::\+Recursive\+Examinate(), Var\+Computation\+::\+Recursively\+Analyze(), Remove\+Ending\+If\+::\+Remove\+Ending\+If(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::resize\+\_\+controller\+\_\+parallel(), datapath\+\_\+parallel\+\_\+cs\+::resize\+\_\+ctrl\+\_\+parallel\+\_\+ports(), cs\+\_\+interface\+::resize\+\_\+memory\+\_\+ctrl\+\_\+ports(), R\+T\+L\+Characterization\+::\+R\+T\+L\+Characterization(), Scalar\+Ssa\+Data\+Dependence\+Computation\+::\+Scalar\+Ssa\+Data\+Dependence\+Computation(), sched\+\_\+based\+\_\+chaining\+\_\+computation\+::sched\+\_\+based\+\_\+chaining\+\_\+computation(), S\+D\+C\+Code\+Motion\+::\+S\+D\+C\+Code\+Motion(), S\+D\+C\+Scheduling\+::\+S\+D\+C\+Scheduling(), Serialize\+Mutual\+Exclusions\+::\+Serialize\+Mutual\+Exclusions(), short\+\_\+circuit\+\_\+taf\+::short\+\_\+circuit\+\_\+taf(), soft\+\_\+float\+\_\+cg\+\_\+ext\+::soft\+\_\+float\+\_\+cg\+\_\+ext(), constant\+\_\+flop\+\_\+wrapper\+::\+Soft\+Float\+Writer(), Split\+Return\+::\+Split\+Return(), string\+\_\+cst\+\_\+fix\+::string\+\_\+cst\+\_\+fix(), Symbolic\+Application\+Frontend\+Flow\+Step\+::\+Symbolic\+Application\+Frontend\+Flow\+Step(), Taste\+Interface\+Generation\+::\+Taste\+Interface\+Generation(), extract\+\_\+patterns\+::ternary\+\_\+plus\+\_\+expr\+\_\+extraction(), Testbench\+Generation\+Base\+Step\+::testbench\+\_\+controller\+\_\+machine(), Testbench\+Memory\+Allocation\+::\+Testbench\+Memory\+Allocation(), Testbench\+Values\+C\+Generation\+::\+Testbench\+Values\+C\+Generation(), Testbench\+Values\+X\+M\+L\+Generation\+::\+Testbench\+Values\+X\+M\+L\+Generation(), Test\+Vector\+Parser\+::\+Test\+Vector\+Parser(), top\+\_\+entity\+::top\+\_\+entity(), top\+\_\+entity\+\_\+cs\+::top\+\_\+entity\+\_\+cs(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::top\+\_\+entity\+\_\+parallel\+\_\+cs(), Top\+Entity\+Memory\+Mapped\+::\+Top\+Entity\+Memory\+Mapped(), Un\+Comparison\+Lowering\+::\+Un\+Comparison\+Lowering(), vcd\+\_\+utility\+::update\+\_\+discr\+\_\+list(), Update\+Schedule\+::\+Update\+Schedule(), use\+\_\+counting\+::use\+\_\+counting(), Var\+Computation\+::\+Var\+Computation(), Var\+Decl\+Fix\+::\+Var\+Decl\+Fix(), vcd\+\_\+utility\+::vcd\+\_\+utility(), Vcd\+Signal\+Selection\+::\+Vcd\+Signal\+Selection(), Testbench\+Generation\+Base\+Step\+::verilator\+\_\+testbench(), virtual\+\_\+hls\+::virtual\+\_\+hls(), virtual\+\_\+phi\+\_\+nodes\+\_\+split\+::virtual\+\_\+phi\+\_\+nodes\+\_\+split(), Virtual\+Aggregate\+Data\+Flow\+Analysis\+::\+Virtual\+Aggregate\+Data\+Flow\+Analysis(), Testbench\+Generation\+Base\+Step\+::write\+\_\+auxiliary\+\_\+signal\+\_\+declaration(), Wishbone\+Interface\+Testbench\+::write\+\_\+call(), Testbench\+Generation\+Base\+Step\+::write\+\_\+hdl\+\_\+testbench\+\_\+prolog(), Testbench\+Generation\+Base\+Step\+::write\+\_\+initial\+\_\+block(), Minimal\+Interface\+Testbench\+::write\+\_\+input\+\_\+signal\+\_\+declaration(), Wishbone\+Interface\+Testbench\+::write\+\_\+memory\+\_\+handler(), Minimal\+Interface\+Testbench\+::write\+\_\+memory\+\_\+handler(), Testbench\+Generation\+Base\+Step\+::write\+\_\+module\+\_\+end(), Testbench\+Generation\+Base\+Step\+::write\+\_\+module\+\_\+instantiation(), Testbench\+Generation\+Base\+Step\+::write\+\_\+output\+\_\+checks(), Minimal\+Interface\+Testbench\+::write\+\_\+output\+\_\+signal\+\_\+declaration(), Minimal\+Interface\+Testbench\+::write\+\_\+signals(), Testbench\+Generation\+Base\+Step\+::write\+\_\+verilator\+\_\+testbench(), Function\+Frontend\+Flow\+Step\+::\+Write\+B\+B\+Graph\+Dot(), C\+Backend\+::\+Write\+Global\+Declarations(), and R\+T\+L\+Characterization\+::xwrite\+\_\+characterization().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/\hyperlink{design__flow__step_8hpp}{design\+\_\+flow\+\_\+step.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/\hyperlink{design__flow__step_8cpp}{design\+\_\+flow\+\_\+step.\+cpp}\end{DoxyCompactItemize}

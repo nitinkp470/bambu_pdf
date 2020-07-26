@@ -1,0 +1,94 @@
+\hypertarget{split__return_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/split\+\_\+return.cpp File Reference}
+\label{split__return_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/split\+\_\+return.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/split\+\_\+return.\+cpp}}
+
+
+Simple transformations that remove almost empty basic blocks having a single phi and a return statement.  
+
+
+{\ttfamily \#include \char`\"{}split\+\_\+return.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}phi\+\_\+opt.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}application\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}call\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}call\+\_\+graph\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}token\+\_\+interface.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ext\+\_\+tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+basic\+\_\+block.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+reindex.\+hpp\char`\"{}}\newline
+Include dependency graph for split\+\_\+return.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d14/split__return_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{split__return_8cpp_a8580715d444d4113d3a41969e8423c1f}{create\+\_\+return\+\_\+and\+\_\+fix\+\_\+cfg} (const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} TM, std\+::map$<$ \hyperlink{token__interface_8hpp_a14502d0757789149f644966ca931b126}{Tree\+Vocabulary\+Token\+Types\+\_\+\+Token\+Enum}, std\+::string $>$ \&gimple\+\_\+return\+\_\+schema, \hyperlink{structstatement__list}{statement\+\_\+list} $\ast$\hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_ace9c0991f7fffe6ab436175d7fff821e}{sl}, bloc\+Ref pred\+\_\+block, bloc\+Ref bb\+\_\+block, int \hyperlink{utility_8hpp_a450072edf58d75cd87746723abe6ab3e}{D\+E\+B\+U\+G\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}(debug\+\_\+level))
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple transformations that remove almost empty basic blocks having a single phi and a return statement. 
+
+The transformation remove this BB by propagating back the return statement.
+
+\begin{DoxyAuthor}{Author}
+Hamidreza Hanafi \href{mailto:hamidreza.hanafi@mail.polimi.it}{\tt hamidreza.\+hanafi@mail.\+polimi.\+it} 
+
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{split__return_8cpp_a8580715d444d4113d3a41969e8423c1f}\label{split__return_8cpp_a8580715d444d4113d3a41969e8423c1f}} 
+\index{split\+\_\+return.\+cpp@{split\+\_\+return.\+cpp}!create\+\_\+return\+\_\+and\+\_\+fix\+\_\+cfg@{create\+\_\+return\+\_\+and\+\_\+fix\+\_\+cfg}}
+\index{create\+\_\+return\+\_\+and\+\_\+fix\+\_\+cfg@{create\+\_\+return\+\_\+and\+\_\+fix\+\_\+cfg}!split\+\_\+return.\+cpp@{split\+\_\+return.\+cpp}}
+\subsubsection{\texorpdfstring{create\+\_\+return\+\_\+and\+\_\+fix\+\_\+cfg()}{create\_return\_and\_fix\_cfg()}}
+{\footnotesize\ttfamily static void create\+\_\+return\+\_\+and\+\_\+fix\+\_\+cfg (\begin{DoxyParamCaption}\item[{const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref}}]{TM,  }\item[{std\+::map$<$ \hyperlink{token__interface_8hpp_a14502d0757789149f644966ca931b126}{Tree\+Vocabulary\+Token\+Types\+\_\+\+Token\+Enum}, std\+::string $>$ \&}]{gimple\+\_\+return\+\_\+schema,  }\item[{\hyperlink{structstatement__list}{statement\+\_\+list} $\ast$}]{sl,  }\item[{bloc\+Ref}]{pred\+\_\+block,  }\item[{bloc\+Ref}]{bb\+\_\+block,  }\item[{int }]{D\+E\+B\+U\+G\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ERdebug\+\_\+level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Add predecessor as pred basic block
+
+Add successor as succ basic block
+
+Fix successor of predecessor
+
+Fix \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} 
+
+Definition at line 138 of file split\+\_\+return.\+cpp.
+
+
+
+References tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), and S\+TR.
+
+
+
+Referenced by Split\+Return\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d8f/split__return_8cpp_a8580715d444d4113d3a41969e8423c1f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d8f/split__return_8cpp_a8580715d444d4113d3a41969e8423c1f_icgraph}
+\end{center}
+\end{figure}

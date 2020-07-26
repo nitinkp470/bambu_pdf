@@ -1,0 +1,132 @@
+\hypertarget{control__flow__checker_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/architecture\+\_\+creation/controller\+\_\+creation/control\+\_\+flow\+\_\+checker.cpp File Reference}
+\label{control__flow__checker_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/architecture\+\_\+creation/controller\+\_\+creation/control\+\_\+flow\+\_\+checker.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/architecture\+\_\+creation/controller\+\_\+creation/control\+\_\+flow\+\_\+checker.\+cpp}}
+{\ttfamily \#include \char`\"{}control\+\_\+flow\+\_\+checker.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}function\+\_\+behavior.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}structural\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+target.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Discrepancy.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}language\+\_\+writer.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}state\+\_\+transition\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}state\+\_\+transition\+\_\+graph\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}behavioral\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}copyrights\+\_\+strings.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/algorithm/string/case\+\_\+conv.\+hpp$>$}\newline
+Include dependency graph for control\+\_\+flow\+\_\+checker.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dd2/control__flow__checker_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{control__flow__checker_8cpp_a4d5d366dcff82aa4af44d845fd9795f7}{is\+\_\+one\+\_\+hot} (const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} H\+L\+S\+Mgr, unsigned int function\+\_\+id)
+\item 
+static unsigned int \hyperlink{control__flow__checker_8cpp_a049c2d8aad69d787cf6224b20b0a6d1d}{comp\+\_\+state\+\_\+bitsize} (bool one\+\_\+hot\+\_\+encoding, const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} H\+L\+S\+Mgr, const unsigned int f\+\_\+id, unsigned max\+\_\+value)
+\item 
+static std\+::string \hyperlink{control__flow__checker_8cpp_a9dcc48077704f0f1f274d480127d2ca8}{create\+\_\+control\+\_\+flow\+\_\+checker} (\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} epp\+\_\+trace\+\_\+bitsize, const unsigned int f\+\_\+id, const \hyperlink{state__transition__graph__manager_8hpp_af0c5e63a678c09ef63a87b9cbe427978}{State\+Transition\+Graph\+Manager\+Ref} \&S\+TG, const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} H\+L\+S\+Mgr, const \hyperlink{Discrepancy_8hpp_aff6ad95cf4cd98e698a7bd9c1f76d74f}{H\+W\+Discrepancy\+Info\+Const\+Ref} \&discr\+\_\+info, bool one\+\_\+hot\+\_\+encoding, unsigned max\+\_\+value, unsigned int state\+\_\+bitsize, int \hyperlink{utility_8hpp_a450072edf58d75cd87746723abe6ab3e}{D\+E\+B\+U\+G\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}(debug\+\_\+level))
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{control__flow__checker_8cpp_a049c2d8aad69d787cf6224b20b0a6d1d}\label{control__flow__checker_8cpp_a049c2d8aad69d787cf6224b20b0a6d1d}} 
+\index{control\+\_\+flow\+\_\+checker.\+cpp@{control\+\_\+flow\+\_\+checker.\+cpp}!comp\+\_\+state\+\_\+bitsize@{comp\+\_\+state\+\_\+bitsize}}
+\index{comp\+\_\+state\+\_\+bitsize@{comp\+\_\+state\+\_\+bitsize}!control\+\_\+flow\+\_\+checker.\+cpp@{control\+\_\+flow\+\_\+checker.\+cpp}}
+\subsubsection{\texorpdfstring{comp\+\_\+state\+\_\+bitsize()}{comp\_state\_bitsize()}}
+{\footnotesize\ttfamily static unsigned int comp\+\_\+state\+\_\+bitsize (\begin{DoxyParamCaption}\item[{bool}]{one\+\_\+hot\+\_\+encoding,  }\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr,  }\item[{const unsigned int}]{f\+\_\+id,  }\item[{unsigned}]{max\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 127 of file control\+\_\+flow\+\_\+checker.\+cpp.
+
+
+
+References language\+\_\+writer\+::bitnumber().
+
+
+
+Referenced by Control\+Flow\+Checker\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5c/control__flow__checker_8cpp_a049c2d8aad69d787cf6224b20b0a6d1d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{d4/d5c/control__flow__checker_8cpp_a049c2d8aad69d787cf6224b20b0a6d1d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{control__flow__checker_8cpp_a9dcc48077704f0f1f274d480127d2ca8}\label{control__flow__checker_8cpp_a9dcc48077704f0f1f274d480127d2ca8}} 
+\index{control\+\_\+flow\+\_\+checker.\+cpp@{control\+\_\+flow\+\_\+checker.\+cpp}!create\+\_\+control\+\_\+flow\+\_\+checker@{create\+\_\+control\+\_\+flow\+\_\+checker}}
+\index{create\+\_\+control\+\_\+flow\+\_\+checker@{create\+\_\+control\+\_\+flow\+\_\+checker}!control\+\_\+flow\+\_\+checker.\+cpp@{control\+\_\+flow\+\_\+checker.\+cpp}}
+\subsubsection{\texorpdfstring{create\+\_\+control\+\_\+flow\+\_\+checker()}{create\_control\_flow\_checker()}}
+{\footnotesize\ttfamily static std\+::string create\+\_\+control\+\_\+flow\+\_\+checker (\begin{DoxyParamCaption}\item[{\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{epp\+\_\+trace\+\_\+bitsize,  }\item[{const unsigned int}]{f\+\_\+id,  }\item[{const \hyperlink{state__transition__graph__manager_8hpp_af0c5e63a678c09ef63a87b9cbe427978}{State\+Transition\+Graph\+Manager\+Ref} \&}]{S\+TG,  }\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr,  }\item[{const \hyperlink{Discrepancy_8hpp_aff6ad95cf4cd98e698a7bd9c1f76d74f}{H\+W\+Discrepancy\+Info\+Const\+Ref} \&}]{discr\+\_\+info,  }\item[{bool}]{one\+\_\+hot\+\_\+encoding,  }\item[{unsigned}]{max\+\_\+value,  }\item[{unsigned int}]{state\+\_\+bitsize,  }\item[{int }]{D\+E\+B\+U\+G\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ERdebug\+\_\+level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+adjust in case states are not consecutive 
+
+Definition at line 139 of file control\+\_\+flow\+\_\+checker.\+cpp.
+
+
+
+References State\+Transition\+Graph\+Manager\+::\+C\+Get\+Astg(), State\+Transition\+Graph\+Manager\+::\+C\+Get\+E\+P\+P\+Stg(), State\+Transition\+Graph\+Manager\+::\+C\+Get\+Stg(), C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, N\+E\+X\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, result, S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Control\+Flow\+Checker\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5c/control__flow__checker_8cpp_a9dcc48077704f0f1f274d480127d2ca8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{d4/d5c/control__flow__checker_8cpp_a9dcc48077704f0f1f274d480127d2ca8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{control__flow__checker_8cpp_a4d5d366dcff82aa4af44d845fd9795f7}\label{control__flow__checker_8cpp_a4d5d366dcff82aa4af44d845fd9795f7}} 
+\index{control\+\_\+flow\+\_\+checker.\+cpp@{control\+\_\+flow\+\_\+checker.\+cpp}!is\+\_\+one\+\_\+hot@{is\+\_\+one\+\_\+hot}}
+\index{is\+\_\+one\+\_\+hot@{is\+\_\+one\+\_\+hot}!control\+\_\+flow\+\_\+checker.\+cpp@{control\+\_\+flow\+\_\+checker.\+cpp}}
+\subsubsection{\texorpdfstring{is\+\_\+one\+\_\+hot()}{is\_one\_hot()}}
+{\footnotesize\ttfamily static bool is\+\_\+one\+\_\+hot (\begin{DoxyParamCaption}\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr,  }\item[{unsigned int}]{function\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 109 of file control\+\_\+flow\+\_\+checker.\+cpp.
+
+
+
+Referenced by Control\+Flow\+Checker\+::\+Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{d4/d5c/control__flow__checker_8cpp_a4d5d366dcff82aa4af44d845fd9795f7_icgraph}
+\end{center}
+\end{figure}

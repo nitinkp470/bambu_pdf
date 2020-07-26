@@ -1,0 +1,105 @@
+\hypertarget{multiple__entry__if__reduction_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/multiple\+\_\+entry\+\_\+if\+\_\+reduction.cpp File Reference}
+\label{multiple__entry__if__reduction_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp}}
+
+
+This class implements the reduction of blocks with n input and m output These operations can be done if the BB contains only conditional statements and phi First duplicate the block on all the n input and add the respective connections to predecessor and successors (bidirectional) Each duplicate starts as an empty one with only connections Then the new BB is populated by conditional functions derivated from the original statement list.  
+
+
+{\ttfamily \#include \char`\"{}multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}loop.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}loops.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}application\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}basic\+\_\+block.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}behavioral\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}function\+\_\+behavior.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}design\+\_\+flow\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}design\+\_\+flow\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}simple\+\_\+code\+\_\+motion.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}allocation\+\_\+information.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}token\+\_\+interface.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/range/adaptor/reversed.\+hpp$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include \char`\"{}ext\+\_\+tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+basic\+\_\+block.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+node\+\_\+dup.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+reindex.\+hpp\char`\"{}}\newline
+Include dependency graph for multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dd3/multiple__entry__if__reduction_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{multiple__entry__if__reduction_8cpp_a6b65f4b50d2d129e2fe16f8febc172c4}{M\+A\+X\+\_\+\+D\+O\+U\+B\+LE}~std\+::numeric\+\_\+limits$<$double$>$\+::\hyperlink{tutorial__pact__2019_2Target-Customization_2first_2hint_8c_a28f422940797ea297699ba55d89171c5}{max}();
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{multiple__entry__if__reduction_8cpp_a26c6496c2eafb7281ae6f19d03cb8020}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structtree__node__dup}{tree\+\_\+node\+\_\+dup})
+\begin{DoxyCompactList}\small\item\em Header include. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class implements the reduction of blocks with n input and m output These operations can be done if the BB contains only conditional statements and phi First duplicate the block on all the n input and add the respective connections to predecessor and successors (bidirectional) Each duplicate starts as an empty one with only connections Then the new BB is populated by conditional functions derivated from the original statement list. 
+
+
+\begin{DoxyItemize}
+\item if cond is defined outside the BB keep them
+\item if cond is defined in the BB then modify it leaving only the component of the condition defined in the BB predecessor After that the phi statement defined in the original BB are added to the successors blocks changing this ssa names To keep the tree coherent each time that an old ssa name of a phi is used substitute it with the new one Then remove the old BB connections from predecessor and successors and eventually eliminate it
+\end{DoxyItemize}
+
+for more details look at the comments in the code
+
+\begin{DoxyAuthor}{Author}
+Andrea Caielli \href{mailto:andrea.caielli@mail.polimi.it}{\tt andrea.\+caielli@mail.\+polimi.\+it} 
+
+Marco Lattuada \href{mailto:marco.lattuada@polimi.it}{\tt marco.\+lattuada@polimi.\+it} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{multiple__entry__if__reduction_8cpp_a6b65f4b50d2d129e2fe16f8febc172c4}\label{multiple__entry__if__reduction_8cpp_a6b65f4b50d2d129e2fe16f8febc172c4}} 
+\index{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp@{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp}!M\+A\+X\+\_\+\+D\+O\+U\+B\+LE@{M\+A\+X\+\_\+\+D\+O\+U\+B\+LE}}
+\index{M\+A\+X\+\_\+\+D\+O\+U\+B\+LE@{M\+A\+X\+\_\+\+D\+O\+U\+B\+LE}!multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp@{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+D\+O\+U\+B\+LE}{MAX\_DOUBLE}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+D\+O\+U\+B\+LE~std\+::numeric\+\_\+limits$<$double$>$\+::\hyperlink{tutorial__pact__2019_2Target-Customization_2first_2hint_8c_a28f422940797ea297699ba55d89171c5}{max}();}
+
+
+
+Definition at line 116 of file multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{multiple__entry__if__reduction_8cpp_a26c6496c2eafb7281ae6f19d03cb8020}\label{multiple__entry__if__reduction_8cpp_a26c6496c2eafb7281ae6f19d03cb8020}} 
+\index{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp@{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp@{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structtree__node__dup}{tree\+\_\+node\+\_\+dup}}]{ }\end{DoxyParamCaption})}
+
+
+
+Header include. 
+
+algorithms/loops\+\_\+detection includes Behavior include design\+\_\+flows includes frontend\+\_\+analysis/\+I\+R\+\_\+analysis H\+LS include H\+L\+S/allocation include \hyperlink{classParameter}{Parameter} include parser/treegcc include S\+TD include S\+TL includes Tree include 

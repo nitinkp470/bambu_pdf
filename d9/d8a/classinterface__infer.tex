@@ -1,0 +1,700 @@
+\hypertarget{classinterface__infer}{}\section{interface\+\_\+infer Class Reference}
+\label{classinterface__infer}\index{interface\+\_\+infer@{interface\+\_\+infer}}
+
+
+{\ttfamily \#include $<$interface\+\_\+infer.\+hpp$>$}
+
+
+
+Inheritance diagram for interface\+\_\+infer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{d7/d68/classinterface__infer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for interface\+\_\+infer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d55/classinterface__infer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classinterface__infer_abb5945f2271e5c1623f8a0059e8b4fd5}{interface\+\_\+infer} (const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classinterface__infer_acc515495ed14927c97a9e414bfe97474}{$\sim$interface\+\_\+infer} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classinterface__infer_ac613f0dc15f8116799a922fc7fbd726a}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Performs the loops analysis. \end{DoxyCompactList}\item 
+void \hyperlink{classinterface__infer_a6d0b5cf326bca201100be4cb19f1a588}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\item 
+bool \hyperlink{classinterface__infer_ad97e5d56a1e05d81ed97976e8e8382f7}{Has\+To\+Be\+Executed} () const override
+\begin{DoxyCompactList}\small\item\em Check if this step has actually to be executed. \end{DoxyCompactList}\item 
+void \hyperlink{classinterface__infer_adaf46bd679e004e36be194484e47e54e}{Compute\+Relationships} (\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&relationship, const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) override
+\begin{DoxyCompactList}\small\item\em Compute the relationships of a step with other steps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classinterface__infer_a160b24c511a07dff732ed211f01bb81a}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\item 
+void \hyperlink{classinterface__infer_a5da918cda06334bf2d7b6828c90ede34}{Computepar2ssa} (\hyperlink{structstatement__list}{statement\+\_\+list} $\ast$\hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_ace9c0991f7fffe6ab436175d7fff821e}{sl}, std\+::map$<$ unsigned, unsigned $>$ \&par2ssa)
+\item 
+void \hyperlink{classinterface__infer_ab036c9a72e643238236d229c1eb875a6}{classify\+Arg\+Recurse} (\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned $>$ \&Visited, \hyperlink{structssa__name}{ssa\+\_\+name} $\ast$arg\+S\+SA, unsigned int dest\+BB, \hyperlink{structstatement__list}{statement\+\_\+list} $\ast$\hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_ace9c0991f7fffe6ab436175d7fff821e}{sl}, bool \&can\+Be\+Moved\+To\+B\+B2, bool \&is\+Read, bool \&is\+Write, bool \&unkwown\+\_\+pattern, std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&write\+Stmt, std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&read\+Stmt)
+\item 
+void \hyperlink{classinterface__infer_afb57e923fa70473d88a87f9d9a4482c1}{classify\+Arg} (\hyperlink{structstatement__list}{statement\+\_\+list} $\ast$\hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_ace9c0991f7fffe6ab436175d7fff821e}{sl}, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} arg\+S\+S\+A\+Node, bool \&can\+Be\+Moved\+To\+B\+B2, bool \&is\+Read, bool \&is\+Write, bool \&unkwown\+\_\+pattern, std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&write\+Stmt, std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&read\+Stmt)
+\item 
+void \hyperlink{classinterface__infer_aebc13d03184a040770e742f5e9e8320a}{add\+Gimple\+N\+O\+Px\+Virtual} (\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} orig\+Stmt, const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} TM)
+\item 
+void \hyperlink{classinterface__infer_a99d0aeddc3181d958d1ecc3df7f298a7}{create\+\_\+\+Read\+\_\+function} (\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} ref\+Stmt, const std\+::string \&arg\+Name\+\_\+string, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} orig\+Stmt, unsigned int dest\+BB, const std\+::string \&fd\+Name, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} arg\+S\+S\+A\+Node, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} a\+Type, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} read\+Type, const std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&used\+Stmt\+\_\+defs, const \hyperlink{tree__manipulation_8hpp_a1a9460e3a2f9fc6a96cfd2f24cc9b2a5}{tree\+\_\+manipulation\+Ref} tree\+\_\+man, const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} TM, bool common\+R\+W\+Signature)
+\item 
+void \hyperlink{classinterface__infer_a7a20911ad7bad6cbb4afee947f26131e}{create\+\_\+\+Write\+\_\+function} (const std\+::string \&arg\+Name\+\_\+string, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} orig\+Stmt, const std\+::string \&fd\+Name, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} write\+Value, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} a\+Type, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} write\+Type, const \hyperlink{tree__manipulation_8hpp_a1a9460e3a2f9fc6a96cfd2f24cc9b2a5}{tree\+\_\+manipulation\+Ref} tree\+\_\+man, const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} TM, bool common\+R\+W\+Signature)
+\item 
+void \hyperlink{classinterface__infer_a1b660bd8340d00695b5b8163edabe9f2}{create\+\_\+resource\+\_\+\+Read\+\_\+simple} (const std\+::vector$<$ std\+::string $>$ \&operations, const std\+::string \&arg\+Name\+\_\+string, const std\+::string \&interface\+Type, unsigned int input\+Bit\+Width, bool I\+O\+\_\+port, unsigned n\+\_\+resources)
+\item 
+void \hyperlink{classinterface__infer_a939d3b1a8c42718def0faaad4e09624f}{create\+\_\+resource\+\_\+\+Write\+\_\+simple} (const std\+::vector$<$ std\+::string $>$ \&operations, const std\+::string \&arg\+Name\+\_\+string, const std\+::string \&interface\+Type, unsigned int input\+Bit\+Width, bool I\+O\+\_\+port, bool is\+Diff\+Size, unsigned n\+\_\+resources)
+\item 
+void \hyperlink{classinterface__infer_a0bff55a66fa24a9b18c1aadd1c224f87}{create\+\_\+resource\+\_\+array} (const std\+::vector$<$ std\+::string $>$ \&operationsR, const std\+::vector$<$ std\+::string $>$ \&operationsW, const std\+::string \&arg\+Name\+\_\+string, const std\+::string \&interface\+Type, unsigned int input\+Bit\+Width, unsigned int array\+Size, unsigned n\+\_\+resources, unsigned alignment)
+\item 
+void \hyperlink{classinterface__infer_adaa76ea6635a0d64f796b9ff84da3d4b}{create\+\_\+resource} (const std\+::vector$<$ std\+::string $>$ \&operationsR, const std\+::vector$<$ std\+::string $>$ \&operationsW, const std\+::string \&arg\+Name\+\_\+string, const std\+::string \&interface\+Type, unsigned int input\+Bit\+Width, bool is\+Diff\+Size, const std\+::string \&fname, unsigned n\+\_\+resources, unsigned alignment)
+\item 
+void \hyperlink{classinterface__infer_ab4aeabadb7b03a53d0605a3cc88fe6df}{Compute\+Resources\+Alignment} (unsigned \&n\+\_\+resources, unsigned \&alignment, unsigned int input\+Bit\+Width, bool is\+\_\+ac\+Type, bool is\+\_\+signed, bool is\+\_\+fixed)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned $>$ \hyperlink{classinterface__infer_a4b46febd5b45bd3d489232eb93873e66}{write\+Vdef}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 60 of file interface\+\_\+infer.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classinterface__infer_abb5945f2271e5c1623f8a0059e8b4fd5}\label{classinterface__infer_abb5945f2271e5c1623f8a0059e8b4fd5}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!interface\+\_\+infer@{interface\+\_\+infer}}
+\index{interface\+\_\+infer@{interface\+\_\+infer}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{interface\+\_\+infer()}{interface\_infer()}}
+{\footnotesize\ttfamily interface\+\_\+infer\+::interface\+\_\+infer (\begin{DoxyParamCaption}\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{AppM,  }\item[{unsigned int}]{function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{parameters }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em AppM} & is the application manager \\
+\hline
+{\em function\+\_\+id} & is the node id of the function analyzed. \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+{\em parameters} & is the set of input parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 155 of file interface\+\_\+infer.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$interface\+\_\+infer().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_abb5945f2271e5c1623f8a0059e8b4fd5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classinterface__infer_acc515495ed14927c97a9e414bfe97474}\label{classinterface__infer_acc515495ed14927c97a9e414bfe97474}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!````~interface\+\_\+infer@{$\sim$interface\+\_\+infer}}
+\index{````~interface\+\_\+infer@{$\sim$interface\+\_\+infer}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{$\sim$interface\+\_\+infer()}{~interface\_infer()}}
+{\footnotesize\ttfamily interface\+\_\+infer\+::$\sim$interface\+\_\+infer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by interface\+\_\+infer().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_acc515495ed14927c97a9e414bfe97474_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classinterface__infer_aebc13d03184a040770e742f5e9e8320a}\label{classinterface__infer_aebc13d03184a040770e742f5e9e8320a}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!add\+Gimple\+N\+O\+Px\+Virtual@{add\+Gimple\+N\+O\+Px\+Virtual}}
+\index{add\+Gimple\+N\+O\+Px\+Virtual@{add\+Gimple\+N\+O\+Px\+Virtual}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{add\+Gimple\+N\+O\+Px\+Virtual()}{addGimpleNOPxVirtual()}}
+{\footnotesize\ttfamily void interface\+\_\+infer\+::add\+Gimple\+N\+O\+Px\+Virtual (\begin{DoxyParamCaption}\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{orig\+Stmt,  }\item[{const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref}}]{TM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 996 of file interface\+\_\+infer.\+cpp.
+
+
+
+References tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), sl, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+OK, T\+O\+K\+\_\+\+S\+R\+CP, and write\+Vdef.
+
+
+
+Referenced by create\+\_\+\+Write\+\_\+function(), and Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_aebc13d03184a040770e742f5e9e8320a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_aebc13d03184a040770e742f5e9e8320a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classinterface__infer_afb57e923fa70473d88a87f9d9a4482c1}\label{classinterface__infer_afb57e923fa70473d88a87f9d9a4482c1}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!classify\+Arg@{classify\+Arg}}
+\index{classify\+Arg@{classify\+Arg}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{classify\+Arg()}{classifyArg()}}
+{\footnotesize\ttfamily void interface\+\_\+infer\+::classify\+Arg (\begin{DoxyParamCaption}\item[{\hyperlink{structstatement__list}{statement\+\_\+list} $\ast$}]{sl,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{arg\+S\+S\+A\+Node,  }\item[{bool \&}]{can\+Be\+Moved\+To\+B\+B2,  }\item[{bool \&}]{is\+Read,  }\item[{bool \&}]{is\+Write,  }\item[{bool \&}]{unkwown\+\_\+pattern,  }\item[{std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&}]{write\+Stmt,  }\item[{std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&}]{read\+Stmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 362 of file interface\+\_\+infer.\+cpp.
+
+
+
+References classify\+Arg\+Recurse(), bloc\+::\+E\+N\+T\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, bloc\+::\+E\+X\+I\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, G\+E\+T\+\_\+\+N\+O\+DE, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_afb57e923fa70473d88a87f9d9a4482c1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_afb57e923fa70473d88a87f9d9a4482c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classinterface__infer_ab036c9a72e643238236d229c1eb875a6}\label{classinterface__infer_ab036c9a72e643238236d229c1eb875a6}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!classify\+Arg\+Recurse@{classify\+Arg\+Recurse}}
+\index{classify\+Arg\+Recurse@{classify\+Arg\+Recurse}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{classify\+Arg\+Recurse()}{classifyArgRecurse()}}
+{\footnotesize\ttfamily void interface\+\_\+infer\+::classify\+Arg\+Recurse (\begin{DoxyParamCaption}\item[{\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned $>$ \&}]{Visited,  }\item[{\hyperlink{structssa__name}{ssa\+\_\+name} $\ast$}]{arg\+S\+SA,  }\item[{unsigned int}]{dest\+BB,  }\item[{\hyperlink{structstatement__list}{statement\+\_\+list} $\ast$}]{sl,  }\item[{bool \&}]{can\+Be\+Moved\+To\+B\+B2,  }\item[{bool \&}]{is\+Read,  }\item[{bool \&}]{is\+Write,  }\item[{bool \&}]{unkwown\+\_\+pattern,  }\item[{std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&}]{write\+Stmt,  }\item[{std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&}]{read\+Stmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+reading different objects
+
+propagate design interfaces 
+
+Definition at line 189 of file interface\+\_\+infer.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, test\+\_\+panda\+::arg, ssa\+\_\+name\+::\+C\+Get\+Use\+Stmts(), Computepar2ssa(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+mangled\+\_\+fname(), G\+E\+T\+\_\+\+N\+O\+DE, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG, tree\+\_\+node\+::\+To\+String(), test\+\_\+panda\+::type, and ssa\+\_\+name\+::var.
+
+
+
+Referenced by classify\+Arg().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_ab036c9a72e643238236d229c1eb875a6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_ab036c9a72e643238236d229c1eb875a6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classinterface__infer_a160b24c511a07dff732ed211f01bb81a}\label{classinterface__infer_a160b24c511a07dff732ed211f01bb81a}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ interface\+\_\+infer\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 99 of file interface\+\_\+infer.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and U\+S\+E\+\_\+\+C\+O\+U\+N\+T\+I\+NG.
+
+\mbox{\Hypertarget{classinterface__infer_a5da918cda06334bf2d7b6828c90ede34}\label{classinterface__infer_a5da918cda06334bf2d7b6828c90ede34}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!Computepar2ssa@{Computepar2ssa}}
+\index{Computepar2ssa@{Computepar2ssa}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{Computepar2ssa()}{Computepar2ssa()}}
+{\footnotesize\ttfamily void interface\+\_\+infer\+::\+Computepar2ssa (\begin{DoxyParamCaption}\item[{\hyperlink{structstatement__list}{statement\+\_\+list} $\ast$}]{sl,  }\item[{std\+::map$<$ unsigned, unsigned $>$ \&}]{par2ssa }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 163 of file interface\+\_\+infer.\+cpp.
+
+
+
+References tree\+\_\+helper\+::\+Compute\+Ssa\+Uses(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by classify\+Arg\+Recurse(), and Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_a5da918cda06334bf2d7b6828c90ede34_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_a5da918cda06334bf2d7b6828c90ede34_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classinterface__infer_adaf46bd679e004e36be194484e47e54e}\label{classinterface__infer_adaf46bd679e004e36be194484e47e54e}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!Compute\+Relationships@{Compute\+Relationships}}
+\index{Compute\+Relationships@{Compute\+Relationships}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{Compute\+Relationships()}{ComputeRelationships()}}
+{\footnotesize\ttfamily void interface\+\_\+infer\+::\+Compute\+Relationships (\begin{DoxyParamCaption}\item[{\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&}]{relationship,  }\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the relationships of a step with other steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dependencies} & is where relationships will be stored \\
+\hline
+{\em relationship\+\_\+type} & is the type of relationship to be computed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classFunctionFrontendFlowStep_a1a815ea7885f3e92e414dadd40c43cba}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 126 of file interface\+\_\+infer.\+cpp.
+
+
+
+References Function\+Frontend\+Flow\+Step\+::\+Compute\+Relationships(), Technology\+Flow\+Step\+::\+Compute\+Signature(), Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, L\+O\+A\+D\+\_\+\+T\+E\+C\+H\+N\+O\+L\+O\+GY, Wrefcount$<$ T $>$\+::lock(), Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_adaf46bd679e004e36be194484e47e54e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classinterface__infer_ab4aeabadb7b03a53d0605a3cc88fe6df}\label{classinterface__infer_ab4aeabadb7b03a53d0605a3cc88fe6df}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!Compute\+Resources\+Alignment@{Compute\+Resources\+Alignment}}
+\index{Compute\+Resources\+Alignment@{Compute\+Resources\+Alignment}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{Compute\+Resources\+Alignment()}{ComputeResourcesAlignment()}}
+{\footnotesize\ttfamily void interface\+\_\+infer\+::\+Compute\+Resources\+Alignment (\begin{DoxyParamCaption}\item[{unsigned \&}]{n\+\_\+resources,  }\item[{unsigned \&}]{alignment,  }\item[{unsigned int}]{input\+Bit\+Width,  }\item[{bool}]{is\+\_\+ac\+Type,  }\item[{bool}]{is\+\_\+signed,  }\item[{bool}]{is\+\_\+fixed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+compute alignment 
+
+Definition at line 922 of file interface\+\_\+infer.\+cpp.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_ab4aeabadb7b03a53d0605a3cc88fe6df_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classinterface__infer_a99d0aeddc3181d958d1ecc3df7f298a7}\label{classinterface__infer_a99d0aeddc3181d958d1ecc3df7f298a7}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!create\+\_\+\+Read\+\_\+function@{create\+\_\+\+Read\+\_\+function}}
+\index{create\+\_\+\+Read\+\_\+function@{create\+\_\+\+Read\+\_\+function}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{create\+\_\+\+Read\+\_\+function()}{create\_Read\_function()}}
+{\footnotesize\ttfamily void interface\+\_\+infer\+::create\+\_\+\+Read\+\_\+function (\begin{DoxyParamCaption}\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{ref\+Stmt,  }\item[{const std\+::string \&}]{arg\+Name\+\_\+string,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{orig\+Stmt,  }\item[{unsigned int}]{dest\+BB,  }\item[{const std\+::string \&}]{fd\+Name,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{arg\+S\+S\+A\+Node,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{a\+Type,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{read\+Type,  }\item[{const std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&}]{used\+Stmt\+\_\+defs,  }\item[{const \hyperlink{tree__manipulation_8hpp_a1a9460e3a2f9fc6a96cfd2f24cc9b2a5}{tree\+\_\+manipulation\+Ref}}]{tree\+\_\+man,  }\item[{const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref}}]{TM,  }\item[{bool}]{common\+R\+W\+Signature }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+create the \hyperlink{structfunction__decl}{function\+\_\+decl}
+
+TO BE I\+M\+P\+R\+O\+V\+ED 
+
+Definition at line 381 of file interface\+\_\+infer.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, test\+\_\+panda\+::args, tree\+\_\+manipulation\+::create\+\_\+bit\+\_\+size\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+boolean\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+function\+\_\+decl(), tree\+\_\+manipulation\+::\+Create\+Call\+Expr(), tree\+\_\+manipulation\+::\+Create\+Gimple\+Assign(), tree\+\_\+manipulation\+::\+Create\+Integer\+Cst(), tree\+\_\+manipulation\+::\+Create\+Real\+Cst(), Function\+Edge\+Info\+::direct\+\_\+call, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+mangled\+\_\+fname(), G\+E\+T\+\_\+\+N\+O\+DE, srcp\+::include\+\_\+name, tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), Design\+Flow\+Step\+::parameters, tree\+\_\+manager\+::\+Replace\+Tree\+Node(), tree\+\_\+helper\+::\+Size(), sl, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_a99d0aeddc3181d958d1ecc3df7f298a7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_a99d0aeddc3181d958d1ecc3df7f298a7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classinterface__infer_adaa76ea6635a0d64f796b9ff84da3d4b}\label{classinterface__infer_adaa76ea6635a0d64f796b9ff84da3d4b}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!create\+\_\+resource@{create\+\_\+resource}}
+\index{create\+\_\+resource@{create\+\_\+resource}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{create\+\_\+resource()}{create\_resource()}}
+{\footnotesize\ttfamily void interface\+\_\+infer\+::create\+\_\+resource (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{operationsR,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{operationsW,  }\item[{const std\+::string \&}]{arg\+Name\+\_\+string,  }\item[{const std\+::string \&}]{interface\+Type,  }\item[{unsigned int}]{input\+Bit\+Width,  }\item[{bool}]{is\+Diff\+Size,  }\item[{const std\+::string \&}]{fname,  }\item[{unsigned}]{n\+\_\+resources,  }\item[{unsigned}]{alignment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 965 of file interface\+\_\+infer.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, create\+\_\+resource\+\_\+array(), create\+\_\+resource\+\_\+\+Read\+\_\+simple(), create\+\_\+resource\+\_\+\+Write\+\_\+simple(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_adaa76ea6635a0d64f796b9ff84da3d4b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_adaa76ea6635a0d64f796b9ff84da3d4b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classinterface__infer_a0bff55a66fa24a9b18c1aadd1c224f87}\label{classinterface__infer_a0bff55a66fa24a9b18c1aadd1c224f87}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!create\+\_\+resource\+\_\+array@{create\+\_\+resource\+\_\+array}}
+\index{create\+\_\+resource\+\_\+array@{create\+\_\+resource\+\_\+array}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{create\+\_\+resource\+\_\+array()}{create\_resource\_array()}}
+{\footnotesize\ttfamily void interface\+\_\+infer\+::create\+\_\+resource\+\_\+array (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{operationsR,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{operationsW,  }\item[{const std\+::string \&}]{arg\+Name\+\_\+string,  }\item[{const std\+::string \&}]{interface\+Type,  }\item[{unsigned int}]{input\+Bit\+Width,  }\item[{unsigned int}]{array\+Size,  }\item[{unsigned}]{n\+\_\+resources,  }\item[{unsigned}]{alignment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+add description and license
+
+required to activate the module generation
+
+add constraint on resource 
+
+Definition at line 771 of file interface\+\_\+infer.\+cpp.
+
+
+
+References structural\+\_\+manager\+::add\+\_\+\+N\+P\+\_\+functionality(), structural\+\_\+manager\+::add\+\_\+port(), structural\+\_\+manager\+::add\+\_\+port\+\_\+vector(), Frontend\+Flow\+Step\+::\+AppM, A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS, A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+DS, C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, area\+\_\+model\+::create\+\_\+model(), time\+\_\+model\+::create\+\_\+model(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, E\+N\+C\+O\+D\+E\+\_\+\+F\+D\+N\+A\+ME, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+N\+E\+R\+A\+T\+E\+D\+\_\+\+C\+O\+P\+Y\+R\+I\+G\+HT, G\+E\+N\+E\+R\+A\+T\+E\+D\+\_\+\+L\+I\+C\+E\+N\+SE, structural\+\_\+manager\+::get\+\_\+circ(), port\+\_\+o\+::\+IN, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+L\+I\+B\+R\+A\+RY, N\+P\+\_\+functionality\+::\+L\+I\+B\+R\+A\+RY, L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+T\+D\+\_\+\+FU, port\+\_\+o\+::\+O\+UT, Design\+Flow\+Step\+::parameters, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, area\+\_\+model\+::set\+\_\+area\+\_\+value(), time\+\_\+model\+::set\+\_\+execution\+\_\+time(), structural\+\_\+manager\+::set\+\_\+top\+\_\+info(), S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, and N\+P\+\_\+functionality\+::\+V\+E\+R\+I\+L\+O\+G\+\_\+\+G\+E\+N\+E\+R\+A\+T\+OR.
+
+
+
+Referenced by create\+\_\+resource().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_a0bff55a66fa24a9b18c1aadd1c224f87_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_a0bff55a66fa24a9b18c1aadd1c224f87_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classinterface__infer_a1b660bd8340d00695b5b8163edabe9f2}\label{classinterface__infer_a1b660bd8340d00695b5b8163edabe9f2}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!create\+\_\+resource\+\_\+\+Read\+\_\+simple@{create\+\_\+resource\+\_\+\+Read\+\_\+simple}}
+\index{create\+\_\+resource\+\_\+\+Read\+\_\+simple@{create\+\_\+resource\+\_\+\+Read\+\_\+simple}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{create\+\_\+resource\+\_\+\+Read\+\_\+simple()}{create\_resource\_Read\_simple()}}
+{\footnotesize\ttfamily void interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Read\+\_\+simple (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{operations,  }\item[{const std\+::string \&}]{arg\+Name\+\_\+string,  }\item[{const std\+::string \&}]{interface\+Type,  }\item[{unsigned int}]{input\+Bit\+Width,  }\item[{bool}]{I\+O\+\_\+port,  }\item[{unsigned}]{n\+\_\+resources }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+add description and license
+
+required to activate the module generation
+
+otherwise no constraints are required for this resource 
+
+Definition at line 535 of file interface\+\_\+infer.\+cpp.
+
+
+
+References structural\+\_\+manager\+::add\+\_\+\+N\+P\+\_\+functionality(), structural\+\_\+manager\+::add\+\_\+port(), structural\+\_\+manager\+::add\+\_\+port\+\_\+vector(), Frontend\+Flow\+Step\+::\+AppM, C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, functional\+\_\+unit\+::\+C\+O\+M\+B\+I\+N\+A\+T\+I\+O\+N\+AL, area\+\_\+model\+::create\+\_\+model(), time\+\_\+model\+::create\+\_\+model(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, E\+N\+C\+O\+D\+E\+\_\+\+F\+D\+N\+A\+ME, E\+P\+S\+I\+L\+ON, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+N\+E\+R\+A\+T\+E\+D\+\_\+\+C\+O\+P\+Y\+R\+I\+G\+HT, G\+E\+N\+E\+R\+A\+T\+E\+D\+\_\+\+L\+I\+C\+E\+N\+SE, structural\+\_\+manager\+::get\+\_\+circ(), port\+\_\+o\+::\+IN, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+L\+I\+B\+R\+A\+RY, N\+P\+\_\+functionality\+::\+L\+I\+B\+R\+A\+RY, port\+\_\+o\+::\+O\+UT, Design\+Flow\+Step\+::parameters, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, area\+\_\+model\+::set\+\_\+area\+\_\+value(), time\+\_\+model\+::set\+\_\+execution\+\_\+time(), structural\+\_\+manager\+::set\+\_\+top\+\_\+info(), S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, and N\+P\+\_\+functionality\+::\+V\+E\+R\+I\+L\+O\+G\+\_\+\+G\+E\+N\+E\+R\+A\+T\+OR.
+
+
+
+Referenced by create\+\_\+resource().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_a1b660bd8340d00695b5b8163edabe9f2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_a1b660bd8340d00695b5b8163edabe9f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classinterface__infer_a939d3b1a8c42718def0faaad4e09624f}\label{classinterface__infer_a939d3b1a8c42718def0faaad4e09624f}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!create\+\_\+resource\+\_\+\+Write\+\_\+simple@{create\+\_\+resource\+\_\+\+Write\+\_\+simple}}
+\index{create\+\_\+resource\+\_\+\+Write\+\_\+simple@{create\+\_\+resource\+\_\+\+Write\+\_\+simple}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{create\+\_\+resource\+\_\+\+Write\+\_\+simple()}{create\_resource\_Write\_simple()}}
+{\footnotesize\ttfamily void interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Write\+\_\+simple (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{operations,  }\item[{const std\+::string \&}]{arg\+Name\+\_\+string,  }\item[{const std\+::string \&}]{interface\+Type,  }\item[{unsigned int}]{input\+Bit\+Width,  }\item[{bool}]{I\+O\+\_\+port,  }\item[{bool}]{is\+Diff\+Size,  }\item[{unsigned}]{n\+\_\+resources }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+add description and license
+
+required to activate the module generation
+
+add constraint on resource 
+
+Definition at line 644 of file interface\+\_\+infer.\+cpp.
+
+
+
+References structural\+\_\+manager\+::add\+\_\+\+N\+P\+\_\+functionality(), structural\+\_\+manager\+::add\+\_\+port(), structural\+\_\+manager\+::add\+\_\+port\+\_\+vector(), Frontend\+Flow\+Step\+::\+AppM, C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, functional\+\_\+unit\+::\+C\+O\+M\+B\+I\+N\+A\+T\+I\+O\+N\+AL, area\+\_\+model\+::create\+\_\+model(), time\+\_\+model\+::create\+\_\+model(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, E\+N\+C\+O\+D\+E\+\_\+\+F\+D\+N\+A\+ME, E\+P\+S\+I\+L\+ON, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+N\+E\+R\+A\+T\+E\+D\+\_\+\+C\+O\+P\+Y\+R\+I\+G\+HT, G\+E\+N\+E\+R\+A\+T\+E\+D\+\_\+\+L\+I\+C\+E\+N\+SE, structural\+\_\+manager\+::get\+\_\+circ(), port\+\_\+o\+::\+IN, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+L\+I\+B\+R\+A\+RY, N\+P\+\_\+functionality\+::\+L\+I\+B\+R\+A\+RY, port\+\_\+o\+::\+O\+UT, Design\+Flow\+Step\+::parameters, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, area\+\_\+model\+::set\+\_\+area\+\_\+value(), time\+\_\+model\+::set\+\_\+execution\+\_\+time(), structural\+\_\+manager\+::set\+\_\+top\+\_\+info(), S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, N\+P\+\_\+functionality\+::\+V\+E\+R\+I\+L\+O\+G\+\_\+\+G\+E\+N\+E\+R\+A\+T\+OR, V\+H\+DL, and N\+P\+\_\+functionality\+::\+V\+H\+D\+L\+\_\+\+G\+E\+N\+E\+R\+A\+T\+OR.
+
+
+
+Referenced by create\+\_\+resource().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_a939d3b1a8c42718def0faaad4e09624f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_a939d3b1a8c42718def0faaad4e09624f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classinterface__infer_a7a20911ad7bad6cbb4afee947f26131e}\label{classinterface__infer_a7a20911ad7bad6cbb4afee947f26131e}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!create\+\_\+\+Write\+\_\+function@{create\+\_\+\+Write\+\_\+function}}
+\index{create\+\_\+\+Write\+\_\+function@{create\+\_\+\+Write\+\_\+function}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{create\+\_\+\+Write\+\_\+function()}{create\_Write\_function()}}
+{\footnotesize\ttfamily void interface\+\_\+infer\+::create\+\_\+\+Write\+\_\+function (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{arg\+Name\+\_\+string,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{orig\+Stmt,  }\item[{const std\+::string \&}]{fd\+Name,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{write\+Value,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{a\+Type,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{write\+Type,  }\item[{const \hyperlink{tree__manipulation_8hpp_a1a9460e3a2f9fc6a96cfd2f24cc9b2a5}{tree\+\_\+manipulation\+Ref}}]{tree\+\_\+man,  }\item[{const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref}}]{TM,  }\item[{bool}]{common\+R\+W\+Signature }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+create the \hyperlink{structfunction__decl}{function\+\_\+decl} 
+
+Definition at line 466 of file interface\+\_\+infer.\+cpp.
+
+
+
+References add\+Gimple\+N\+O\+Px\+Virtual(), Frontend\+Flow\+Step\+::\+AppM, test\+\_\+panda\+::args, tree\+\_\+helper\+::\+C\+Get\+Type(), tree\+\_\+manipulation\+::create\+\_\+bit\+\_\+size\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+boolean\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+function\+\_\+decl(), tree\+\_\+manipulation\+::create\+\_\+gimple\+\_\+call(), tree\+\_\+manipulation\+::create\+\_\+void\+\_\+type(), tree\+\_\+manipulation\+::\+Create\+Integer\+Cst(), tree\+\_\+manipulation\+::\+Create\+Nop\+Expr(), tree\+\_\+manipulation\+::\+Create\+Unsigned(), Function\+Edge\+Info\+::direct\+\_\+call, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+mangled\+\_\+fname(), G\+E\+T\+\_\+\+N\+O\+DE, srcp\+::include\+\_\+name, tree\+\_\+helper\+::is\+\_\+int(), tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), Design\+Flow\+Step\+::parameters, tree\+\_\+helper\+::\+Size(), sl, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_a7a20911ad7bad6cbb4afee947f26131e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_a7a20911ad7bad6cbb4afee947f26131e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classinterface__infer_ad97e5d56a1e05d81ed97976e8e8382f7}\label{classinterface__infer_ad97e5d56a1e05d81ed97976e8e8382f7}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}}
+\index{Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{Has\+To\+Be\+Executed()}{HasToBeExecuted()}}
+{\footnotesize\ttfamily bool interface\+\_\+infer\+::\+Has\+To\+Be\+Executed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if this step has actually to be executed. 
+
+\begin{DoxyReturn}{Returns}
+true if the step has to be executed 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFunctionFrontendFlowStep_a12e786363530aa9533e4bd9380130d75}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 1485 of file interface\+\_\+infer.\+cpp.
+
+
+
+References Function\+Frontend\+Flow\+Step\+::bb\+\_\+version.
+
+\mbox{\Hypertarget{classinterface__infer_a6d0b5cf326bca201100be4cb19f1a588}\label{classinterface__infer_a6d0b5cf326bca201100be4cb19f1a588}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void interface\+\_\+infer\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 1480 of file interface\+\_\+infer.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::\+Initialize().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_a6d0b5cf326bca201100be4cb19f1a588_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classinterface__infer_ac613f0dc15f8116799a922fc7fbd726a}\label{classinterface__infer_ac613f0dc15f8116799a922fc7fbd726a}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} interface\+\_\+infer\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Performs the loops analysis. 
+
+load xml interface specification file
+
+pre-\/process the list of statements to bind \hyperlink{structparm__decl}{parm\+\_\+decl} and ssa variables
+
+TO BE F\+I\+X\+ED 
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 1037 of file interface\+\_\+infer.\+cpp.
+
+
+
+References ac\+\_\+type\+\_\+bitwidth(), add\+Gimple\+N\+O\+Px\+Virtual(), Frontend\+Flow\+Step\+::\+AppM, test\+\_\+panda\+::arg, classify\+Arg(), Computepar2ssa(), Compute\+Resources\+Alignment(), xml\+\_\+node\+::convert\+\_\+escaped(), create\+\_\+\+Read\+\_\+function(), create\+\_\+resource(), create\+\_\+\+Write\+\_\+function(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, E\+N\+C\+O\+D\+E\+\_\+\+F\+D\+N\+A\+ME, bloc\+::\+E\+N\+T\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, X\+M\+L\+Dom\+Parser\+::\+Exec(), bloc\+::\+E\+X\+I\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, xml\+\_\+child\+::get\+\_\+children(), X\+M\+L\+Dom\+Parser\+::get\+\_\+document(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+mangled\+\_\+fname(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+pointed\+\_\+type(), Get\+Leaf\+File\+Name(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+helper\+::is\+\_\+a\+\_\+pointer(), Design\+Flow\+Step\+::parameters, test\+\_\+panda\+::parser, tree\+\_\+helper\+::size(), tree\+\_\+helper\+::\+Size(), sl, S\+TR, S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG, test\+\_\+panda\+::type, U\+N\+C\+H\+A\+N\+G\+ED, and write\+Vdef.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8a/classinterface__infer_ac613f0dc15f8116799a922fc7fbd726a_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classinterface__infer_a4b46febd5b45bd3d489232eb93873e66}\label{classinterface__infer_a4b46febd5b45bd3d489232eb93873e66}} 
+\index{interface\+\_\+infer@{interface\+\_\+infer}!write\+Vdef@{write\+Vdef}}
+\index{write\+Vdef@{write\+Vdef}!interface\+\_\+infer@{interface\+\_\+infer}}
+\subsubsection{\texorpdfstring{write\+Vdef}{writeVdef}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned$>$ interface\+\_\+infer\+::write\+Vdef\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 63 of file interface\+\_\+infer.\+hpp.
+
+
+
+Referenced by add\+Gimple\+N\+O\+Px\+Virtual(), and Internal\+Exec().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{interface__infer_8hpp}{interface\+\_\+infer.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{interface__infer_8cpp}{interface\+\_\+infer.\+cpp}\end{DoxyCompactItemize}

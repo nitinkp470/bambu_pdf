@@ -1,0 +1,317 @@
+\hypertarget{classFunctionExpander}{}\section{Function\+Expander Class Reference}
+\label{classFunctionExpander}\index{Function\+Expander@{Function\+Expander}}
+
+
+used to avoid expansion of c library function or type  
+
+
+
+
+{\ttfamily \#include $<$tree\+\_\+helper.\+hpp$>$}
+
+
+
+Collaboration diagram for Function\+Expander\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/da9/classFunctionExpander__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classFunctionExpander_a2b421dee6238b8f68b6ab29b87bc00d0}{serialization} \{ \hyperlink{classFunctionExpander_a2b421dee6238b8f68b6ab29b87bc00d0afd63bae2d2d72c77193793386a179e0b}{none}, 
+\hyperlink{classFunctionExpander_a2b421dee6238b8f68b6ab29b87bc00d0a5c84c616abd1543486ecc1654b0cd73e}{internal}, 
+\hyperlink{classFunctionExpander_a2b421dee6238b8f68b6ab29b87bc00d0ab4a76bc596cbb53a26e52a2bb6e7e1ab}{total}
+ \}\begin{DoxyCompactList}\small\item\em Specify the type of serialization that a function must have. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFunctionExpander_a2b421dee6238b8f68b6ab29b87bc00d0}{serialization} \hyperlink{classFunctionExpander_a33dd15431d0a654915983727430115fb}{get\+\_\+serialization} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Return which type of serialization the given function must have. \end{DoxyCompactList}\item 
+bool \hyperlink{classFunctionExpander_a948db456fe34454cd36aae396f30241a}{is\+\_\+transparent} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Return if function has to be considered transparent even if we haven\textquotesingle{}t body. \end{DoxyCompactList}\item 
+void \hyperlink{classFunctionExpander_aff5d724386bc6bda3ceb080d8b20889d}{check\+\_\+lib\+\_\+type} (const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&var)
+\begin{DoxyCompactList}\small\item\em Check if variable is defined in a c system library header; if yes adds its type to library type. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classFunctionExpander_a23c129a748b0eee89b666bf056162750}{operator()} (const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&t) const
+\begin{DoxyCompactList}\small\item\em check membership to c library function \end{DoxyCompactList}\item 
+\hyperlink{classFunctionExpander_a60b78226d9dafb0699a53eaea11dd882}{Function\+Expander} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classFunctionExpander_aacb59907fe75209a0d72b46de85bc642}{$\sim$\+Function\+Expander} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \hyperlink{classFunctionExpander_ac03b5e196a1f2c49e114fc442b1b6b2a}{no\+\_\+serialize}
+\begin{DoxyCompactList}\small\item\em Set of functions which don\textquotesingle{}t need serialization. \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \hyperlink{classFunctionExpander_ad53e6ea711a172f209a7fbf437fc2c30}{internal\+\_\+serialize}
+\begin{DoxyCompactList}\small\item\em Set of functions which need only internal serialization. \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \hyperlink{classFunctionExpander_a5111c45183f4a133cae17775d8debe26}{transparent}
+\begin{DoxyCompactList}\small\item\em Set of not opaque functions. \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \hyperlink{classFunctionExpander_a736cf8002692b5e0731b45865ee8f16e}{headers}
+\begin{DoxyCompactList}\small\item\em Set of headers file containg standard and system types. \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \hyperlink{classFunctionExpander_ac2448a1dbf050de234c4a698f360f2f5}{lib\+\_\+types}
+\begin{DoxyCompactList}\small\item\em Set of types which are in c system library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+used to avoid expansion of c library function or type 
+
+Definition at line 911 of file tree\+\_\+helper.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classFunctionExpander_a2b421dee6238b8f68b6ab29b87bc00d0}\label{classFunctionExpander_a2b421dee6238b8f68b6ab29b87bc00d0}} 
+\index{Function\+Expander@{Function\+Expander}!serialization@{serialization}}
+\index{serialization@{serialization}!Function\+Expander@{Function\+Expander}}
+\subsubsection{\texorpdfstring{serialization}{serialization}}
+{\footnotesize\ttfamily enum \hyperlink{classFunctionExpander_a2b421dee6238b8f68b6ab29b87bc00d0}{Function\+Expander\+::serialization}}
+
+
+
+Specify the type of serialization that a function must have. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{none@{none}!Function\+Expander@{Function\+Expander}}\index{Function\+Expander@{Function\+Expander}!none@{none}}}\mbox{\Hypertarget{classFunctionExpander_a2b421dee6238b8f68b6ab29b87bc00d0afd63bae2d2d72c77193793386a179e0b}\label{classFunctionExpander_a2b421dee6238b8f68b6ab29b87bc00d0afd63bae2d2d72c77193793386a179e0b}} 
+none&No serialization. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{internal@{internal}!Function\+Expander@{Function\+Expander}}\index{Function\+Expander@{Function\+Expander}!internal@{internal}}}\mbox{\Hypertarget{classFunctionExpander_a2b421dee6238b8f68b6ab29b87bc00d0a5c84c616abd1543486ecc1654b0cd73e}\label{classFunctionExpander_a2b421dee6238b8f68b6ab29b87bc00d0a5c84c616abd1543486ecc1654b0cd73e}} 
+internal&Serialization between call of the same function. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{total@{total}!Function\+Expander@{Function\+Expander}}\index{Function\+Expander@{Function\+Expander}!total@{total}}}\mbox{\Hypertarget{classFunctionExpander_a2b421dee6238b8f68b6ab29b87bc00d0ab4a76bc596cbb53a26e52a2bb6e7e1ab}\label{classFunctionExpander_a2b421dee6238b8f68b6ab29b87bc00d0ab4a76bc596cbb53a26e52a2bb6e7e1ab}} 
+total&Serialization between call of all funcions. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 933 of file tree\+\_\+helper.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFunctionExpander_a60b78226d9dafb0699a53eaea11dd882}\label{classFunctionExpander_a60b78226d9dafb0699a53eaea11dd882}} 
+\index{Function\+Expander@{Function\+Expander}!Function\+Expander@{Function\+Expander}}
+\index{Function\+Expander@{Function\+Expander}!Function\+Expander@{Function\+Expander}}
+\subsubsection{\texorpdfstring{Function\+Expander()}{FunctionExpander()}}
+{\footnotesize\ttfamily Function\+Expander\+::\+Function\+Expander (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 6320 of file tree\+\_\+helper.\+cpp.
+
+\mbox{\Hypertarget{classFunctionExpander_aacb59907fe75209a0d72b46de85bc642}\label{classFunctionExpander_aacb59907fe75209a0d72b46de85bc642}} 
+\index{Function\+Expander@{Function\+Expander}!````~Function\+Expander@{$\sim$\+Function\+Expander}}
+\index{````~Function\+Expander@{$\sim$\+Function\+Expander}!Function\+Expander@{Function\+Expander}}
+\subsubsection{\texorpdfstring{$\sim$\+Function\+Expander()}{~FunctionExpander()}}
+{\footnotesize\ttfamily virtual Function\+Expander\+::$\sim$\+Function\+Expander (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 972 of file tree\+\_\+helper.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classFunctionExpander_aff5d724386bc6bda3ceb080d8b20889d}\label{classFunctionExpander_aff5d724386bc6bda3ceb080d8b20889d}} 
+\index{Function\+Expander@{Function\+Expander}!check\+\_\+lib\+\_\+type@{check\+\_\+lib\+\_\+type}}
+\index{check\+\_\+lib\+\_\+type@{check\+\_\+lib\+\_\+type}!Function\+Expander@{Function\+Expander}}
+\subsubsection{\texorpdfstring{check\+\_\+lib\+\_\+type()}{check\_lib\_type()}}
+{\footnotesize\ttfamily void Function\+Expander\+::check\+\_\+lib\+\_\+type (\begin{DoxyParamCaption}\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{var }\end{DoxyParamCaption})}
+
+
+
+Check if variable is defined in a c system library header; if yes adds its type to library type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the node of the variable \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 6244 of file tree\+\_\+helper.\+cpp.
+
+
+
+References tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+O\+DE, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d5/d38/classFunctionExpander_aff5d724386bc6bda3ceb080d8b20889d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFunctionExpander_a33dd15431d0a654915983727430115fb}\label{classFunctionExpander_a33dd15431d0a654915983727430115fb}} 
+\index{Function\+Expander@{Function\+Expander}!get\+\_\+serialization@{get\+\_\+serialization}}
+\index{get\+\_\+serialization@{get\+\_\+serialization}!Function\+Expander@{Function\+Expander}}
+\subsubsection{\texorpdfstring{get\+\_\+serialization()}{get\_serialization()}}
+{\footnotesize\ttfamily \hyperlink{classFunctionExpander_a2b421dee6238b8f68b6ab29b87bc00d0}{Function\+Expander\+::serialization} Function\+Expander\+::get\+\_\+serialization (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Return which type of serialization the given function must have. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & is the name of the function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the type of serialization 
+\end{DoxyReturn}
+
+
+Definition at line 6226 of file tree\+\_\+helper.\+cpp.
+
+\mbox{\Hypertarget{classFunctionExpander_a948db456fe34454cd36aae396f30241a}\label{classFunctionExpander_a948db456fe34454cd36aae396f30241a}} 
+\index{Function\+Expander@{Function\+Expander}!is\+\_\+transparent@{is\+\_\+transparent}}
+\index{is\+\_\+transparent@{is\+\_\+transparent}!Function\+Expander@{Function\+Expander}}
+\subsubsection{\texorpdfstring{is\+\_\+transparent()}{is\_transparent()}}
+{\footnotesize\ttfamily bool Function\+Expander\+::is\+\_\+transparent (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Return if function has to be considered transparent even if we haven\textquotesingle{}t body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & is the name of the function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the function is transparent 
+\end{DoxyReturn}
+
+
+Definition at line 6239 of file tree\+\_\+helper.\+cpp.
+
+\mbox{\Hypertarget{classFunctionExpander_a23c129a748b0eee89b666bf056162750}\label{classFunctionExpander_a23c129a748b0eee89b666bf056162750}} 
+\index{Function\+Expander@{Function\+Expander}!operator()@{operator()}}
+\index{operator()@{operator()}!Function\+Expander@{Function\+Expander}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily bool Function\+Expander\+::operator() (\begin{DoxyParamCaption}\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+check membership to c library function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & is the treenode of the type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if t is a c library function type 
+\end{DoxyReturn}
+
+
+Definition at line 6276 of file tree\+\_\+helper.\+cpp.
+
+
+
+References tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+O\+DE, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and test\+\_\+panda\+::type.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d38/classFunctionExpander_a23c129a748b0eee89b666bf056162750_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classFunctionExpander_a736cf8002692b5e0731b45865ee8f16e}\label{classFunctionExpander_a736cf8002692b5e0731b45865ee8f16e}} 
+\index{Function\+Expander@{Function\+Expander}!headers@{headers}}
+\index{headers@{headers}!Function\+Expander@{Function\+Expander}}
+\subsubsection{\texorpdfstring{headers}{headers}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$std\+::string$>$ Function\+Expander\+::headers\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set of headers file containg standard and system types. 
+
+
+
+Definition at line 924 of file tree\+\_\+helper.\+hpp.
+
+\mbox{\Hypertarget{classFunctionExpander_ad53e6ea711a172f209a7fbf437fc2c30}\label{classFunctionExpander_ad53e6ea711a172f209a7fbf437fc2c30}} 
+\index{Function\+Expander@{Function\+Expander}!internal\+\_\+serialize@{internal\+\_\+serialize}}
+\index{internal\+\_\+serialize@{internal\+\_\+serialize}!Function\+Expander@{Function\+Expander}}
+\subsubsection{\texorpdfstring{internal\+\_\+serialize}{internal\_serialize}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$std\+::string$>$ Function\+Expander\+::internal\+\_\+serialize\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set of functions which need only internal serialization. 
+
+
+
+Definition at line 918 of file tree\+\_\+helper.\+hpp.
+
+\mbox{\Hypertarget{classFunctionExpander_ac2448a1dbf050de234c4a698f360f2f5}\label{classFunctionExpander_ac2448a1dbf050de234c4a698f360f2f5}} 
+\index{Function\+Expander@{Function\+Expander}!lib\+\_\+types@{lib\+\_\+types}}
+\index{lib\+\_\+types@{lib\+\_\+types}!Function\+Expander@{Function\+Expander}}
+\subsubsection{\texorpdfstring{lib\+\_\+types}{lib\_types}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}$>$ Function\+Expander\+::lib\+\_\+types\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set of types which are in c system library. 
+
+
+
+Definition at line 927 of file tree\+\_\+helper.\+hpp.
+
+\mbox{\Hypertarget{classFunctionExpander_ac03b5e196a1f2c49e114fc442b1b6b2a}\label{classFunctionExpander_ac03b5e196a1f2c49e114fc442b1b6b2a}} 
+\index{Function\+Expander@{Function\+Expander}!no\+\_\+serialize@{no\+\_\+serialize}}
+\index{no\+\_\+serialize@{no\+\_\+serialize}!Function\+Expander@{Function\+Expander}}
+\subsubsection{\texorpdfstring{no\+\_\+serialize}{no\_serialize}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$std\+::string$>$ Function\+Expander\+::no\+\_\+serialize\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set of functions which don\textquotesingle{}t need serialization. 
+
+
+
+Definition at line 915 of file tree\+\_\+helper.\+hpp.
+
+\mbox{\Hypertarget{classFunctionExpander_a5111c45183f4a133cae17775d8debe26}\label{classFunctionExpander_a5111c45183f4a133cae17775d8debe26}} 
+\index{Function\+Expander@{Function\+Expander}!transparent@{transparent}}
+\index{transparent@{transparent}!Function\+Expander@{Function\+Expander}}
+\subsubsection{\texorpdfstring{transparent}{transparent}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$std\+::string$>$ Function\+Expander\+::transparent\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set of not opaque functions. 
+
+
+
+Definition at line 921 of file tree\+\_\+helper.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/\hyperlink{tree__helper_8hpp}{tree\+\_\+helper.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/\hyperlink{tree__helper_8cpp}{tree\+\_\+helper.\+cpp}\end{DoxyCompactItemize}

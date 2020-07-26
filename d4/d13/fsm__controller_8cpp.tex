@@ -1,0 +1,100 @@
+\hypertarget{fsm__controller_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/architecture\+\_\+creation/controller\+\_\+creation/fsm\+\_\+controller.cpp File Reference}
+\label{fsm__controller_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/architecture\+\_\+creation/controller\+\_\+creation/fsm\+\_\+controller.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/architecture\+\_\+creation/controller\+\_\+creation/fsm\+\_\+controller.\+cpp}}
+
+
+Starting from the F\+SM graph, it builds a state transition table.  
+
+
+{\ttfamily \#include \char`\"{}fsm\+\_\+controller.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}behavioral\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}function\+\_\+behavior.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Bambu\+Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}commandport\+\_\+obj.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}conn\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}connection\+\_\+obj.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fu\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}funit\+\_\+obj.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mux\+\_\+obj.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}reg\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}register\+\_\+obj.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}schedule.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}state\+\_\+transition\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}state\+\_\+transition\+\_\+graph\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$iosfwd$>$}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+reindex.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}structural\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}structural\+\_\+objects.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}op\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}time\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}storage\+\_\+value\+\_\+information.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}liveness.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}allocation\+\_\+information.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}copyrights\+\_\+strings.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+Include dependency graph for fsm\+\_\+controller.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dee/fsm__controller_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \hyperlink{fsm__controller_8cpp_afa3010fa10cdba1dfbbba6c779538d56}{input\+\_\+vector\+\_\+to\+\_\+string} (const std\+::vector$<$ long long int $>$ \&to\+\_\+be\+\_\+printed, bool with\+\_\+comma)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Starting from the F\+SM graph, it builds a state transition table. 
+
+\begin{DoxyAuthor}{Author}
+Christian Pilato \href{mailto:pilato@elet.polimi.it}{\tt pilato@elet.\+polimi.\+it} 
+
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{fsm__controller_8cpp_afa3010fa10cdba1dfbbba6c779538d56}\label{fsm__controller_8cpp_afa3010fa10cdba1dfbbba6c779538d56}} 
+\index{fsm\+\_\+controller.\+cpp@{fsm\+\_\+controller.\+cpp}!input\+\_\+vector\+\_\+to\+\_\+string@{input\+\_\+vector\+\_\+to\+\_\+string}}
+\index{input\+\_\+vector\+\_\+to\+\_\+string@{input\+\_\+vector\+\_\+to\+\_\+string}!fsm\+\_\+controller.\+cpp@{fsm\+\_\+controller.\+cpp}}
+\subsubsection{\texorpdfstring{input\+\_\+vector\+\_\+to\+\_\+string()}{input\_vector\_to\_string()}}
+{\footnotesize\ttfamily static std\+::string input\+\_\+vector\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ long long int $>$ \&}]{to\+\_\+be\+\_\+printed,  }\item[{bool}]{with\+\_\+comma }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 152 of file fsm\+\_\+controller.\+cpp.
+
+
+
+References default\+\_\+\+C\+O\+ND.
+
+
+
+Referenced by fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d13/fsm__controller_8cpp_afa3010fa10cdba1dfbbba6c779538d56_icgraph}
+\end{center}
+\end{figure}

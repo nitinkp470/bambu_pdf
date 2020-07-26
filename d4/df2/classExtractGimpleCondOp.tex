@@ -1,0 +1,231 @@
+\hypertarget{classExtractGimpleCondOp}{}\section{Extract\+Gimple\+Cond\+Op Class Reference}
+\label{classExtractGimpleCondOp}\index{Extract\+Gimple\+Cond\+Op@{Extract\+Gimple\+Cond\+Op}}
+
+
+Superclass include.  
+
+
+
+
+{\ttfamily \#include $<$extract\+\_\+gimple\+\_\+cond\+\_\+op.\+hpp$>$}
+
+
+
+Inheritance diagram for Extract\+Gimple\+Cond\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{d7/d29/classExtractGimpleCondOp__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Extract\+Gimple\+Cond\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d82/classExtractGimpleCondOp__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExtractGimpleCondOp_a380c10f0841276b9179b8964b17019f2}{Extract\+Gimple\+Cond\+Op} (const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classExtractGimpleCondOp_aa48e5602260eb94b3cf274d7ab7bc9ed}{$\sim$\+Extract\+Gimple\+Cond\+Op} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classExtractGimpleCondOp_a13ce7e78bf548c98b3ed74e92d77df30}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Updates the tree to have a more compliant C\+FG. \end{DoxyCompactList}\item 
+void \hyperlink{classExtractGimpleCondOp_aa5ad36991f470b0fae011ed6d5c77094}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classExtractGimpleCondOp_a58a0db8419d00874681aa7611a502d6a}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classExtractGimpleCondOp_a446308f9f1e1e19c29156d2f28c19366}{bb\+\_\+modified}
+\begin{DoxyCompactList}\small\item\em flag used to restart code motion step \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Superclass include. 
+
+Utility include Extract cond from \hyperlink{structgimple__cond}{gimple\+\_\+cond} 
+
+Definition at line 52 of file extract\+\_\+gimple\+\_\+cond\+\_\+op.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classExtractGimpleCondOp_a380c10f0841276b9179b8964b17019f2}\label{classExtractGimpleCondOp_a380c10f0841276b9179b8964b17019f2}} 
+\index{Extract\+Gimple\+Cond\+Op@{Extract\+Gimple\+Cond\+Op}!Extract\+Gimple\+Cond\+Op@{Extract\+Gimple\+Cond\+Op}}
+\index{Extract\+Gimple\+Cond\+Op@{Extract\+Gimple\+Cond\+Op}!Extract\+Gimple\+Cond\+Op@{Extract\+Gimple\+Cond\+Op}}
+\subsubsection{\texorpdfstring{Extract\+Gimple\+Cond\+Op()}{ExtractGimpleCondOp()}}
+{\footnotesize\ttfamily Extract\+Gimple\+Cond\+Op\+::\+Extract\+Gimple\+Cond\+Op (\begin{DoxyParamCaption}\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager,  }\item[{const unsigned int}]{\+\_\+function\+\_\+id,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Header include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em AppM} & is the application manager \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+{\em function\+\_\+id} & is the identifier of the function \\
+\hline
+{\em parameters} & is the set of input parameters\\
+\hline
+\end{DoxyParams}
+. include behavior includes tree includes utility include 
+
+Definition at line 61 of file extract\+\_\+gimple\+\_\+cond\+\_\+op.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$\+Extract\+Gimple\+Cond\+Op().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/df2/classExtractGimpleCondOp_a380c10f0841276b9179b8964b17019f2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classExtractGimpleCondOp_aa48e5602260eb94b3cf274d7ab7bc9ed}\label{classExtractGimpleCondOp_aa48e5602260eb94b3cf274d7ab7bc9ed}} 
+\index{Extract\+Gimple\+Cond\+Op@{Extract\+Gimple\+Cond\+Op}!````~Extract\+Gimple\+Cond\+Op@{$\sim$\+Extract\+Gimple\+Cond\+Op}}
+\index{````~Extract\+Gimple\+Cond\+Op@{$\sim$\+Extract\+Gimple\+Cond\+Op}!Extract\+Gimple\+Cond\+Op@{Extract\+Gimple\+Cond\+Op}}
+\subsubsection{\texorpdfstring{$\sim$\+Extract\+Gimple\+Cond\+Op()}{~ExtractGimpleCondOp()}}
+{\footnotesize\ttfamily Extract\+Gimple\+Cond\+Op\+::$\sim$\+Extract\+Gimple\+Cond\+Op (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Extract\+Gimple\+Cond\+Op().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/df2/classExtractGimpleCondOp_aa48e5602260eb94b3cf274d7ab7bc9ed_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classExtractGimpleCondOp_a58a0db8419d00874681aa7611a502d6a}\label{classExtractGimpleCondOp_a58a0db8419d00874681aa7611a502d6a}} 
+\index{Extract\+Gimple\+Cond\+Op@{Extract\+Gimple\+Cond\+Op}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!Extract\+Gimple\+Cond\+Op@{Extract\+Gimple\+Cond\+Op}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ Extract\+Gimple\+Cond\+Op\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 74 of file extract\+\_\+gimple\+\_\+cond\+\_\+op.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and U\+S\+E\+\_\+\+C\+O\+U\+N\+T\+I\+NG.
+
+\mbox{\Hypertarget{classExtractGimpleCondOp_aa5ad36991f470b0fae011ed6d5c77094}\label{classExtractGimpleCondOp_aa5ad36991f470b0fae011ed6d5c77094}} 
+\index{Extract\+Gimple\+Cond\+Op@{Extract\+Gimple\+Cond\+Op}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Extract\+Gimple\+Cond\+Op@{Extract\+Gimple\+Cond\+Op}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Extract\+Gimple\+Cond\+Op\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 69 of file extract\+\_\+gimple\+\_\+cond\+\_\+op.\+cpp.
+
+
+
+References bb\+\_\+modified.
+
+\mbox{\Hypertarget{classExtractGimpleCondOp_a13ce7e78bf548c98b3ed74e92d77df30}\label{classExtractGimpleCondOp_a13ce7e78bf548c98b3ed74e92d77df30}} 
+\index{Extract\+Gimple\+Cond\+Op@{Extract\+Gimple\+Cond\+Op}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!Extract\+Gimple\+Cond\+Op@{Extract\+Gimple\+Cond\+Op}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} Extract\+Gimple\+Cond\+Op\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the tree to have a more compliant C\+FG. 
+
+Temporary removed old gimple cond to remove uses
+
+Update \hyperlink{structgimple__cond}{gimple\+\_\+cond}
+
+Readd gimple cond 
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 100 of file extract\+\_\+gimple\+\_\+cond\+\_\+op.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, bb\+\_\+modified, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+N\+O\+DE, Design\+Flow\+Step\+::parameters, sl, S\+U\+C\+C\+E\+SS, and U\+N\+C\+H\+A\+N\+G\+ED.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classExtractGimpleCondOp_a446308f9f1e1e19c29156d2f28c19366}\label{classExtractGimpleCondOp_a446308f9f1e1e19c29156d2f28c19366}} 
+\index{Extract\+Gimple\+Cond\+Op@{Extract\+Gimple\+Cond\+Op}!bb\+\_\+modified@{bb\+\_\+modified}}
+\index{bb\+\_\+modified@{bb\+\_\+modified}!Extract\+Gimple\+Cond\+Op@{Extract\+Gimple\+Cond\+Op}}
+\subsubsection{\texorpdfstring{bb\+\_\+modified}{bb\_modified}}
+{\footnotesize\ttfamily bool Extract\+Gimple\+Cond\+Op\+::bb\+\_\+modified\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+flag used to restart code motion step 
+
+
+
+Definition at line 56 of file extract\+\_\+gimple\+\_\+cond\+\_\+op.\+hpp.
+
+
+
+Referenced by Initialize(), and Internal\+Exec().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+manipulation/\hyperlink{extract__gimple__cond__op_8hpp}{extract\+\_\+gimple\+\_\+cond\+\_\+op.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+manipulation/\hyperlink{extract__gimple__cond__op_8cpp}{extract\+\_\+gimple\+\_\+cond\+\_\+op.\+cpp}\end{DoxyCompactItemize}

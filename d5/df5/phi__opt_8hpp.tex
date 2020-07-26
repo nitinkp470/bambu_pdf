@@ -1,0 +1,165 @@
+\hypertarget{phi__opt_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/phi\+\_\+opt.hpp File Reference}
+\label{phi__opt_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/phi\+\_\+opt.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/phi\+\_\+opt.\+hpp}}
+
+
+Analysis step that optimize the phis starting from the G\+CC IR.  
+
+
+{\ttfamily \#include \char`\"{}function\+\_\+frontend\+\_\+flow\+\_\+step.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+Include dependency graph for phi\+\_\+opt.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d22/phi__opt_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d4f/phi__opt_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classPhiOpt}{Phi\+Opt}
+\begin{DoxyCompactList}\small\item\em Restructure the tree control flow graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77}{Phi\+Opt\+\_\+\+Pattern\+Type} \{ \newline
+\hyperlink{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a696b031073e74bf2cb98e5ef201d4aa3}{Phi\+Opt\+\_\+\+Pattern\+Type\+::\+U\+N\+K\+N\+O\+WN}, 
+\hyperlink{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a0788d3e3bf2300098b670fc679d3c324}{Phi\+Opt\+\_\+\+Pattern\+Type\+::\+D\+I\+F\+F\+\_\+\+N\+O\+T\+H\+I\+NG}, 
+\hyperlink{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a3fd9ad29544a1e6c10b075d53b816aa7}{Phi\+Opt\+\_\+\+Pattern\+Type\+::\+G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+T\+H\+I\+NG}, 
+\hyperlink{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77af665c1cec598709246afe9c35a29e84c}{Phi\+Opt\+\_\+\+Pattern\+Type\+::\+I\+F\+\_\+\+M\+E\+R\+GE}, 
+\newline
+\hyperlink{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a8060bcbf95f28d69bc461f31c0f02fe3}{Phi\+Opt\+\_\+\+Pattern\+Type\+::\+I\+F\+\_\+\+N\+O\+T\+H\+I\+NG}, 
+\hyperlink{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a9542848bfcc05cc70785e7a67b306f1d}{Phi\+Opt\+\_\+\+Pattern\+Type\+::\+I\+F\+\_\+\+R\+E\+M\+O\+VE}, 
+\hyperlink{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a3e206bd29912cc76f5e97c94aa0fd8e9}{Phi\+Opt\+\_\+\+Pattern\+Type\+::\+M\+U\+L\+T\+I\+\_\+\+M\+E\+R\+GE}, 
+\hyperlink{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77ad7e5a691e765bdd7573a61d72fc84aab}{Phi\+Opt\+\_\+\+Pattern\+Type\+::\+M\+U\+L\+T\+I\+\_\+\+N\+O\+T\+H\+I\+NG}, 
+\newline
+\hyperlink{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a6ec690aba3b9399ed15cd1ed76ba2697}{Phi\+Opt\+\_\+\+Pattern\+Type\+::\+M\+U\+L\+T\+I\+\_\+\+R\+E\+M\+O\+VE}, 
+\hyperlink{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a46335765005ff44b1fe1e38e5d2ddfcc}{Phi\+Opt\+\_\+\+Pattern\+Type\+::\+U\+N\+C\+H\+A\+N\+G\+ED}
+ \}\begin{DoxyCompactList}\small\item\em Identifier of patterns to be transformed by phi\+\_\+opt. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}\textbf{ forward declarations}\par
+{\em Superclass include
+
+Utility include }\begin{DoxyCompactItemize}
+\item 
+\hyperlink{phi__opt_8hpp_a3534c699031037ce3bebffe714643338}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structbloc}{bloc})
+\item 
+\hyperlink{phi__opt_8hpp_aba6750bd83a27ac5d822ce3507f7c67c}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classSchedule}{Schedule})
+\item 
+\hyperlink{phi__opt_8hpp_a52756886a578bcd0db3c2fd210400eb3}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtree__manager}{tree\+\_\+manager})
+\item 
+\hyperlink{phi__opt_8hpp_a80eee8240e9e3240c9e9c7ce10447083}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtree__manipulation}{tree\+\_\+manipulation})
+\item 
+\hyperlink{phi__opt_8hpp_a676de0ccdd1189b2b906e6c884116894}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtree__node}{tree\+\_\+node})
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Analysis step that optimize the phis starting from the G\+CC IR. 
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77}\label{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77}} 
+\index{phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}!Phi\+Opt\+\_\+\+Pattern\+Type@{Phi\+Opt\+\_\+\+Pattern\+Type}}
+\index{Phi\+Opt\+\_\+\+Pattern\+Type@{Phi\+Opt\+\_\+\+Pattern\+Type}!phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}}
+\subsubsection{\texorpdfstring{Phi\+Opt\+\_\+\+Pattern\+Type}{PhiOpt\_PatternType}}
+{\footnotesize\ttfamily enum \hyperlink{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77}{Phi\+Opt\+\_\+\+Pattern\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Identifier of patterns to be transformed by phi\+\_\+opt. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+K\+N\+O\+WN@{U\+N\+K\+N\+O\+WN}!phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}}\index{phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}!U\+N\+K\+N\+O\+WN@{U\+N\+K\+N\+O\+WN}}}\mbox{\Hypertarget{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a696b031073e74bf2cb98e5ef201d4aa3}\label{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a696b031073e74bf2cb98e5ef201d4aa3}} 
+U\+N\+K\+N\+O\+WN&Unknown pattern. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+I\+F\+F\+\_\+\+N\+O\+T\+H\+I\+NG@{D\+I\+F\+F\+\_\+\+N\+O\+T\+H\+I\+NG}!phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}}\index{phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}!D\+I\+F\+F\+\_\+\+N\+O\+T\+H\+I\+NG@{D\+I\+F\+F\+\_\+\+N\+O\+T\+H\+I\+NG}}}\mbox{\Hypertarget{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a0788d3e3bf2300098b670fc679d3c324}\label{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a0788d3e3bf2300098b670fc679d3c324}} 
+D\+I\+F\+F\+\_\+\+N\+O\+T\+H\+I\+NG&Empty basic block with multiple input. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+T\+H\+I\+NG@{G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+T\+H\+I\+NG}!phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}}\index{phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}!G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+T\+H\+I\+NG@{G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+T\+H\+I\+NG}}}\mbox{\Hypertarget{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a3fd9ad29544a1e6c10b075d53b816aa7}\label{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a3fd9ad29544a1e6c10b075d53b816aa7}} 
+G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+T\+H\+I\+NG&Empty basic block dominated by assign can be removed without further changes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+F\+\_\+\+M\+E\+R\+GE@{I\+F\+\_\+\+M\+E\+R\+GE}!phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}}\index{phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}!I\+F\+\_\+\+M\+E\+R\+GE@{I\+F\+\_\+\+M\+E\+R\+GE}}}\mbox{\Hypertarget{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77af665c1cec598709246afe9c35a29e84c}\label{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77af665c1cec598709246afe9c35a29e84c}} 
+I\+F\+\_\+\+M\+E\+R\+GE&Edges coming from if to be merged. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+F\+\_\+\+N\+O\+T\+H\+I\+NG@{I\+F\+\_\+\+N\+O\+T\+H\+I\+NG}!phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}}\index{phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}!I\+F\+\_\+\+N\+O\+T\+H\+I\+NG@{I\+F\+\_\+\+N\+O\+T\+H\+I\+NG}}}\mbox{\Hypertarget{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a8060bcbf95f28d69bc461f31c0f02fe3}\label{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a8060bcbf95f28d69bc461f31c0f02fe3}} 
+I\+F\+\_\+\+N\+O\+T\+H\+I\+NG&Basic block dominated by if can be removed without further changes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+F\+\_\+\+R\+E\+M\+O\+VE@{I\+F\+\_\+\+R\+E\+M\+O\+VE}!phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}}\index{phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}!I\+F\+\_\+\+R\+E\+M\+O\+VE@{I\+F\+\_\+\+R\+E\+M\+O\+VE}}}\mbox{\Hypertarget{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a9542848bfcc05cc70785e7a67b306f1d}\label{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a9542848bfcc05cc70785e7a67b306f1d}} 
+I\+F\+\_\+\+R\+E\+M\+O\+VE&Phi dominated by \hyperlink{structgimple__cond}{gimple\+\_\+cond} to be removed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+U\+L\+T\+I\+\_\+\+M\+E\+R\+GE@{M\+U\+L\+T\+I\+\_\+\+M\+E\+R\+GE}!phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}}\index{phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}!M\+U\+L\+T\+I\+\_\+\+M\+E\+R\+GE@{M\+U\+L\+T\+I\+\_\+\+M\+E\+R\+GE}}}\mbox{\Hypertarget{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a3e206bd29912cc76f5e97c94aa0fd8e9}\label{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a3e206bd29912cc76f5e97c94aa0fd8e9}} 
+M\+U\+L\+T\+I\+\_\+\+M\+E\+R\+GE&Phi dominated by \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} to be merged. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+U\+L\+T\+I\+\_\+\+N\+O\+T\+H\+I\+NG@{M\+U\+L\+T\+I\+\_\+\+N\+O\+T\+H\+I\+NG}!phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}}\index{phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}!M\+U\+L\+T\+I\+\_\+\+N\+O\+T\+H\+I\+NG@{M\+U\+L\+T\+I\+\_\+\+N\+O\+T\+H\+I\+NG}}}\mbox{\Hypertarget{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77ad7e5a691e765bdd7573a61d72fc84aab}\label{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77ad7e5a691e765bdd7573a61d72fc84aab}} 
+M\+U\+L\+T\+I\+\_\+\+N\+O\+T\+H\+I\+NG&Basic block dominated by multi way if can be removed without further changes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+U\+L\+T\+I\+\_\+\+R\+E\+M\+O\+VE@{M\+U\+L\+T\+I\+\_\+\+R\+E\+M\+O\+VE}!phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}}\index{phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}!M\+U\+L\+T\+I\+\_\+\+R\+E\+M\+O\+VE@{M\+U\+L\+T\+I\+\_\+\+R\+E\+M\+O\+VE}}}\mbox{\Hypertarget{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a6ec690aba3b9399ed15cd1ed76ba2697}\label{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a6ec690aba3b9399ed15cd1ed76ba2697}} 
+M\+U\+L\+T\+I\+\_\+\+R\+E\+M\+O\+VE&Phi dominated by \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} to be removed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+C\+H\+A\+N\+G\+ED@{U\+N\+C\+H\+A\+N\+G\+ED}!phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}}\index{phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}!U\+N\+C\+H\+A\+N\+G\+ED@{U\+N\+C\+H\+A\+N\+G\+ED}}}\mbox{\Hypertarget{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a46335765005ff44b1fe1e38e5d2ddfcc}\label{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77a46335765005ff44b1fe1e38e5d2ddfcc}} 
+U\+N\+C\+H\+A\+N\+G\+ED&Transformation blocked by timing. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 69 of file phi\+\_\+opt.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{phi__opt_8hpp_a80eee8240e9e3240c9e9c7ce10447083}\label{phi__opt_8hpp_a80eee8240e9e3240c9e9c7ce10447083}} 
+\index{phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__manipulation}{tree\+\_\+manipulation}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{phi__opt_8hpp_a3534c699031037ce3bebffe714643338}\label{phi__opt_8hpp_a3534c699031037ce3bebffe714643338}} 
+\index{phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structbloc}{bloc}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{phi__opt_8hpp_aba6750bd83a27ac5d822ce3507f7c67c}\label{phi__opt_8hpp_aba6750bd83a27ac5d822ce3507f7c67c}} 
+\index{phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classSchedule}{Schedule}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{phi__opt_8hpp_a52756886a578bcd0db3c2fd210400eb3}\label{phi__opt_8hpp_a52756886a578bcd0db3c2fd210400eb3}} 
+\index{phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__manager}{tree\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{phi__opt_8hpp_a676de0ccdd1189b2b906e6c884116894}\label{phi__opt_8hpp_a676de0ccdd1189b2b906e6c884116894}} 
+\index{phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!phi\+\_\+opt.\+hpp@{phi\+\_\+opt.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__node}{tree\+\_\+node}}]{ }\end{DoxyParamCaption})}
+

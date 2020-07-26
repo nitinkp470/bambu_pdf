@@ -1,0 +1,116 @@
+\hypertarget{fu__binding_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/module/fu\+\_\+binding.cpp File Reference}
+\label{fu__binding_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/module/fu\+\_\+binding.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/module/fu\+\_\+binding.\+cpp}}
+
+
+Class implementation of the functional-\/unit binding data structure.  
+
+
+{\ttfamily \#include \char`\"{}fu\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fu\+\_\+binding\+\_\+cs.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}funit\+\_\+obj.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}call\+\_\+graph\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+target.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}memory.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}memory\+\_\+allocation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}memory\+\_\+cs.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}memory\+\_\+symbol.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}omp\+\_\+functions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}reg\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}functions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}structural\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}structural\+\_\+objects.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constant\+\_\+strings.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utility.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}behavioral\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+reindex.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}conn\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}library\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/algorithm/string/replace.\+hpp$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}language\+\_\+writer.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}allocation\+\_\+information.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+Include dependency graph for fu\+\_\+binding.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/dd9/fu__binding_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{fu__binding_8cpp_a5ca3561fb250500707d89d43319c0559}{C\+H\+A\+N\+G\+E\+\_\+\+S\+D\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+L\+A\+Y\+O\+UT}~0
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \hyperlink{fu__binding_8cpp_ac024f22b124fa6c915a6b8e06c6ff9c2}{get\+Function\+Type} (\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} exp)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class implementation of the functional-\/unit binding data structure. 
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+
+Christian Pilato \href{mailto:pilato@elet.polimi.it}{\tt pilato@elet.\+polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{fu__binding_8cpp_a5ca3561fb250500707d89d43319c0559}\label{fu__binding_8cpp_a5ca3561fb250500707d89d43319c0559}} 
+\index{fu\+\_\+binding.\+cpp@{fu\+\_\+binding.\+cpp}!C\+H\+A\+N\+G\+E\+\_\+\+S\+D\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+L\+A\+Y\+O\+UT@{C\+H\+A\+N\+G\+E\+\_\+\+S\+D\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+L\+A\+Y\+O\+UT}}
+\index{C\+H\+A\+N\+G\+E\+\_\+\+S\+D\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+L\+A\+Y\+O\+UT@{C\+H\+A\+N\+G\+E\+\_\+\+S\+D\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+L\+A\+Y\+O\+UT}!fu\+\_\+binding.\+cpp@{fu\+\_\+binding.\+cpp}}
+\subsubsection{\texorpdfstring{C\+H\+A\+N\+G\+E\+\_\+\+S\+D\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+L\+A\+Y\+O\+UT}{CHANGE\_SDS\_MEMORY\_LAYOUT}}
+{\footnotesize\ttfamily \#define C\+H\+A\+N\+G\+E\+\_\+\+S\+D\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+L\+A\+Y\+O\+UT~0}
+
+
+
+Definition at line 1959 of file fu\+\_\+binding.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{fu__binding_8cpp_ac024f22b124fa6c915a6b8e06c6ff9c2}\label{fu__binding_8cpp_ac024f22b124fa6c915a6b8e06c6ff9c2}} 
+\index{fu\+\_\+binding.\+cpp@{fu\+\_\+binding.\+cpp}!get\+Function\+Type@{get\+Function\+Type}}
+\index{get\+Function\+Type@{get\+Function\+Type}!fu\+\_\+binding.\+cpp@{fu\+\_\+binding.\+cpp}}
+\subsubsection{\texorpdfstring{get\+Function\+Type()}{getFunctionType()}}
+{\footnotesize\ttfamily \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} get\+Function\+Type (\begin{DoxyParamCaption}\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{exp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2857 of file fu\+\_\+binding.\+cpp.
+
+
+
+References G\+E\+T\+\_\+\+N\+O\+DE, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by fu\+\_\+binding\+::manage\+\_\+extern\+\_\+global\+\_\+port(), and fu\+\_\+binding\+::specialise\+\_\+fu().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d48/fu__binding_8cpp_ac024f22b124fa6c915a6b8e06c6ff9c2_icgraph}
+\end{center}
+\end{figure}

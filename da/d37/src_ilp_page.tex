@@ -1,0 +1,104 @@
+\hypertarget{src_ilp_page_ILP_INTRO}{}\section{Introduction}\label{src_ilp_page_ILP_INTRO}
+I\+LP is a set of classes providing several methods to encapsulate the interface to several Integer Linear Programming solvers. It is mainly intended for solving mixed integer programming even if a lot of wrapped solvers are also able to solve different Linear Programming problems. Currently, the wrapped solvers supported by I\+LP are\+:
+\begin{DoxyItemize}
+\item G\+P\+LK (\href{http://www.gnu.org/software/glpk}{\tt http\+://www.\+gnu.\+org/software/glpk}) working as the default solver.
+\item C\+O\+I\+N-\/\+OR (\href{http://www.coin-or.org/}{\tt http\+://www.\+coin-\/or.\+org/}).
+\item L\+P\+\_\+\+S\+O\+L\+VE (\href{http://tech.groups.yahoo.com/group/lp_solve/}{\tt http\+://tech.\+groups.\+yahoo.\+com/group/lp\+\_\+solve/}).
+\end{DoxyItemize}
+
+In mathematics, Linear Programming (LP) problems are optimization problems in which the objective function and the constraints are all linear. The maximization problem (similarly for the minimization) is usually expressed in matrix form\+:
+
+{\itshape maximize} $ \mathbf{c}^T \mathbf{x} $
+
+subject to $ \mathbf{A}\mathbf{x} \le \mathbf{b}, \, \mathbf{x} \ge 0 $
+
+Mixed integer linear programming (M\+IP) problem is a Linear Programming problem in which some variables are additionally required to be integer.
+
+To improve the efficiency of the M\+IP solvers we also exploit Branch and Cut algorithms provided by the considered I\+LP solvers. Branch and cut is a refinement of the standard linear programming based branch and bound approach. It starts by solving the continuous relaxation of an I\+LP formulation, thus obtaining a fractional solution. At this point, the standard branch and bound algorithm would split the current problem into subproblems by fixing some fractional variable to an integer value. The branch and cut approach, on the contrary, first looks for linear inequalities which are violated by the current fractional optimal solution but are respected by all feasible integer solutions of the problem. These inequalities are named cuts or valid inequalities. They are added to the I\+LP formulation and the continuous relaxation is solved once again, achieving a different (tight bound) and a different (hopefully less fractional) solution. The process can be repeated several times. It can even be proved that after a finite number of iterations, the solution will be integer and it will be the optimal solution of the original I\+LP. The disadvantage of such a method however is that the number of iterations required is exponential and the formulation size grows correspondingly, so that solving it becomes too expensive. Therefore, at some stage the generation of valid inequalities is interrupted and standard branching is performed.\hypertarget{src_ilp_page_ILP_EXAMPLE}{}\section{Example}\label{src_ilp_page_ILP_EXAMPLE}
+In formulating the LP problem, the first step is to define the decision variables of the problem. Given the set of the decision variables, the objective function and constraints in terms of these decision variables are defined.
+
+For example, assuming that we have to produce two products\+: U\+SB pen and Hard Drive U\+SB. Their manifacturing requires two stages\+: assembly and testing. Each U\+SB pen requires 2 hours for assembly and 1 hour of testing, while the Hard Drive U\+SB requires 4 hours of assembly and 1 hours of testing. Assuming that in each day we have at maximum 100 hours dedicated to the assemby of the two products and at maximum 40 hours for testing, we would like to identify which is the mix of products maximizing the revenue.
+
+The decision variables choosen are $ X_1 $ representing the number of U\+SB pen produced and $ X_2 $ representing the number of Hard Drive U\+SB produced. The revenue for each unit produced is 0.\+5 euro for U\+SB pen and 10 euro for Hard Drive U\+SB.
+
+The objective function trying to maximize the revenues can be written as\+:
+
+$ R = 0.5 X_1 + 10 X_2 $
+
+The associated constraints are\+:
+
+$ 2 X_1 + 4 X_2 \le 100 $
+
+$ 1 X_1 + 1 X_2 \le 40 $
+
+where all variables are non-\/negative\+:
+
+$ X_1 \ge 0 $, $ X_2 \ge 0 $
+
+The following C++ sample code use the I\+LP library to solve the trivial example before formulated. 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "\hyperlink{meilp__solver_8hpp}{meilp\_solver.hpp}"}
+\textcolor{keywordtype}{int} \hyperlink{test__degree__coloring_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}()
+\{
+  \textcolor{comment}{// Making the ilp problem...}
+  meilp\_solverRef solver=meilp\_solverRef(\textcolor{keyword}{new} \hyperlink{classglpk__solver}{glpk\_solver}()); \textcolor{comment}{//the wrapper will use GLPK as ILP
+       solver.}
+  solver->make(0); \textcolor{comment}{//zero variables}
+
+  \textcolor{comment}{//add the two variables}
+  \textcolor{keywordtype}{int} x1, x2;
+  x1=solver->add\_empty\_column();
+  x2=solver->add\_empty\_column();
+
+  \textcolor{comment}{//add a name to the two variables}
+  solver->set\_col\_name(x1,  \textcolor{stringliteral}{"x1"});
+  solver->set\_col\_name(x2,  \textcolor{stringliteral}{"x2"});
+  \textcolor{comment}{//define the two variables as integer variables}
+  solver->set\_int(x1);
+  solver->set\_int(x2);
+
+  \textcolor{comment}{// creating the objective function filling the variable obj\_coeff}
+  std::map<int,double> obj\_coeff;
+  obj\_coeff[x1] = 0.5;
+  obj\_coeff[x2] = 10;
+  solver->objective\_add(obj\_coeff, \hyperlink{classmeilp__solver_a2f719db6577d73007d942af7e6fe907caae8b9d75adb582264515691d95a5cb57}{meilp\_solver::max});
+
+  \textcolor{comment}{// Add the first constraints}
+  std::map<int,double> row\_coeff;
+  row\_coeff[x1]=2;
+  row\_coeff[x2]=4;
+  solver->add\_row(row\_coeff, 100.0, \hyperlink{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8eaa6e291b624f90483a42ee037a1d9c84b}{meilp\_solver::L}, \textcolor{stringliteral}{"ExampleConstraints1"});
+  row\_coeff.clear();
+
+  \textcolor{comment}{// Add the second constraints}
+  std::map<int,double> row\_coeff;
+  row\_coeff[x1]=1;
+  row\_coeff[x2]=1;
+  solver->add\_row(row\_coeff, 40.0, \hyperlink{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8eaa6e291b624f90483a42ee037a1d9c84b}{meilp\_solver::L}, \textcolor{stringliteral}{"ExampleConstraints2"});
+  row\_coeff.clear();
+
+  \textcolor{comment}{//non-negative variables are specified fixing the range of the variables}
+  solver->set\_lowbo(x1, 0);
+  solver->set\_lowbo(x2, 0);
+
+  \textcolor{comment}{//now we are ready to solve the problem}
+  \textcolor{keywordtype}{int} res = solver->solve();
+  \textcolor{keywordflow}{if}(res == 0)
+  \{
+    \textcolor{comment}{//Extraction of the results}
+    std::vector<double> values;
+    solver->get\_vars\_solution(values);
+
+    \textcolor{comment}{//And finaly we print the solution}
+    std::cout << \textcolor{stringliteral}{"The solution is "};
+    std::vector<double>:iterator it\_end = values.end();
+    \textcolor{keywordflow}{for}(std::vector<double>:iterator it = values.begin(); it != it\_end; it++)
+    \{
+      std::cout << *it << \textcolor{stringliteral}{" "};
+    \}
+    std::cout << std::endl;
+  \}
+  \textcolor{keywordflow}{return} EXIT\_SUCCESS;
+\}
+\end{DoxyCode}
+ 

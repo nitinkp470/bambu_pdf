@@ -1,0 +1,37 @@
+Documentation is a very important part (probably the most important) in an open-\/source project managed by more than one person\+: it is the only mean the other developers can used to know something about your work. It is important to write a clear documentation about what your classes, structures and methods do, but it is also useful to write some tutorials and generic guidelines about how to use the functionalities you implemented.
+
+The documentation of the PandA project is based on Doxygen, an open source documentation creator; you can find lots of details on it on the internet. In particular a good tutorial is present at the following link\+: \href{http://www.stack.nl/~dimitri/doxygen/manual.html}{\tt http\+://www.\+stack.\+nl/$\sim$dimitri/doxygen/manual.\+html}\hypertarget{documentation_how_to_doc_code_how_to}{}\section{Documenting your Code}\label{documentation_how_to_doc_code_how_to}
+Both the external documentation of classes and methods and their internal one are important\+: the former one is mainly used by the user of your code (people who need to call the routines you implemented), while the latter one is important to developers who need to modify your code.
+
+Let\textquotesingle{}s start with the external documentation. It is created by using special code comments and it is used to clearly specify the purpose of the classes, methods and attributes in your code. Though Doxygen acceps many different documentation styles, in the PandA project we decided to use only two\+:
+\begin{DoxyEnumerate}
+\item Documentation of classes and methods must be indicated using Javadoc style \begin{DoxyVerb}/**
+ * ....your documentation.....
+ */
+\end{DoxyVerb}
+
+\item Documentation of class attributes is indicated in a C\# style\+: \begin{DoxyVerb}///......your documentation....
+\end{DoxyVerb}
+ All these tags must be put before the element they refer to (i.\+e. before the declaration of the attribute, class, method they refer to).
+\end{DoxyEnumerate}
+
+All the documentation you write should be clear and meaningful\+:
+\begin{DoxyItemize}
+\item {\bfseries Classes} should contain documentation explaining what they represent (object oriented programming says that every class should be the abstract representation of a real world object) and what are their functionalities (for example look at the already documented classes in the PandA project).
+\item {\bfseries Attributes} should contain documentation listing what that attribute represents and, briefly, how that attribute is used in the code.
+\item {\bfseries Methods} are, probably, the most important part in a project (they contain the functionalities of the code), so their documentation must be very carefully written\+: the role of each parameter must be carefully described, paying also attention to describing special situation which may happen when special values are used (for example\+: \char`\"{}if parameter \textbackslash{}c a is equal to 0 an exception is thrown\char`\"{}....). The method\textquotesingle{}s return value must be also described. Moreover you should write a general explanation of the functionality implemented, possibily breafly describing the adopted algorithm.
+\end{DoxyItemize}
+
+Regarding the documentation inside the code there isn\textquotesingle{}t much to say\+: you can write it using the normal C comment style \begin{DoxyVerb}//......comment.......
+\end{DoxyVerb}
+ where you specify in it what your code does. This documentation may be useful to you to better organinze your ideas when you write the code, but it may also help other people undesrtanding {\bfseries how} you implemented a functionality ({\bfseries what} the functionality is should be indicated using the external method documentation as explained above).\hypertarget{documentation_how_to_ext_docs_how_to}{}\section{Writing External Documentation Pages}\label{documentation_how_to_ext_docs_how_to}
+In addition to the code documentation it may be useful to have standalone documentation pages (such as this one). They are usually placed one per folder and they contain the explanation of the overall functionality implemented by the files in the folder (usually this page contains also some examples on how to use the classes in the folder). There is not much to say about this part, except that it may be very important and useful expecially for the pepole who know nothing about your work.
+
+Actually there is a detail which you may find important when writing these pages\+: conditional documentation creation. This feature is used because PandA is a modular project, you may avoid compiling the whole of it\+: in case a subproject is not compiled, conditional compilation can be used to eliminate the documentation regarding that subproject. In order to use conditional compilation, simply enclose the documentation inside {\ttfamily if} clauses\+: \begin{DoxyVerb}\if BAMBU
+.....documentation about the BAMBU project.....
+\endif
+\end{DoxyVerb}
+\hypertarget{documentation_how_to_doc_compilation_how_to}{}\section{Compiling the Documentation}\label{documentation_how_to_doc_compilation_how_to}
+In order to compile the documentation, simply run \begin{DoxyVerb}$ make documentation
+\end{DoxyVerb}
+ inside the folder where you configured PandA (i.\+e. the folder in which you were when the {\ttfamily configure} command was executed). 

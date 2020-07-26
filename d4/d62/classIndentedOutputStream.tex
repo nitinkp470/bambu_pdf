@@ -1,0 +1,445 @@
+\hypertarget{classIndentedOutputStream}{}\section{Indented\+Output\+Stream Class Reference}
+\label{classIndentedOutputStream}\index{Indented\+Output\+Stream@{Indented\+Output\+Stream}}
+
+
+Class to print indented code.  
+
+
+
+
+{\ttfamily \#include $<$indented\+\_\+output\+\_\+stream.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classIndentedOutputStream_a2430afc5fcbd60ca82b9c3d1cf6fe78f}{Indented\+Output\+Stream} (char o=\textquotesingle{}\{\textquotesingle{}, char c=\textquotesingle{}\}\textquotesingle{}, unsigned int d=3)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hyperlink{classIndentedOutputStream_a0f4421674c5dc1852476993372128509}{$\sim$\+Indented\+Output\+Stream} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \hyperlink{classIndentedOutputStream_ab9c200e93872397c9dd09bf8c2d8b651}{Append} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Append a string to the output. \end{DoxyCompactList}\item 
+void \hyperlink{classIndentedOutputStream_a875a467bf36c8409e362b1c345e66f6a}{Indent} ()
+\begin{DoxyCompactList}\small\item\em Manually increase the indenting of the code. \end{DoxyCompactList}\item 
+void \hyperlink{classIndentedOutputStream_a0f85e6d203422d7f1c690a3e8a1366fa}{Deindent} ()
+\begin{DoxyCompactList}\small\item\em Manually reduce the indenting of the code. \end{DoxyCompactList}\item 
+const std\+::string \hyperlink{classIndentedOutputStream_a69a252892d688978533206a3cca900bb}{Write\+String} ()
+\begin{DoxyCompactList}\small\item\em Write the indented output on a string. \end{DoxyCompactList}\item 
+void \hyperlink{classIndentedOutputStream_a7af26dbbc73375326e27675b25824063}{Write\+File} (const std\+::string \&file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Write the indented output on a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classIndentedOutputStream_adeb5dd8a59cf3f5b24809212f6cc286d}{Append\+Indent} ()
+\begin{DoxyCompactList}\small\item\em Append the indent spaces. \end{DoxyCompactList}\item 
+void \hyperlink{classIndentedOutputStream_aae0d3f029caa08e9ce3b8107ded932b3}{Append\+Char} (const char \&c)
+\begin{DoxyCompactList}\small\item\em Append the current char. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostringstream \hyperlink{classIndentedOutputStream_a0d1bb62525852927c422a0734686902a}{output\+\_\+stream}
+\begin{DoxyCompactList}\small\item\em The actual stream. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classIndentedOutputStream_a92659187ef6887c07649ae881465ddc4}{indent\+\_\+spaces}
+\begin{DoxyCompactList}\small\item\em number of spaces used to indent after a new line print \end{DoxyCompactList}\item 
+char \hyperlink{classIndentedOutputStream_a7c0fd93cd1bf90d28b3791b61d6afdbd}{opening\+\_\+char}
+\begin{DoxyCompactList}\small\item\em char that increments the indent space by a delta \end{DoxyCompactList}\item 
+char \hyperlink{classIndentedOutputStream_a6cd40928cb1d7089072b57486c7f8d75}{closing\+\_\+char}
+\begin{DoxyCompactList}\small\item\em char that increments the indent space by a delta \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classIndentedOutputStream_a11915e0d1ac091ecc3205d71ebc493b6}{delta}
+\begin{DoxyCompactList}\small\item\em delta indent space \end{DoxyCompactList}\item 
+bool \hyperlink{classIndentedOutputStream_ae7357f8c2e52afda355d4e240de611b4}{is\+\_\+line\+\_\+start}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to print indented code. 
+
+Definition at line 61 of file indented\+\_\+output\+\_\+stream.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIndentedOutputStream_a2430afc5fcbd60ca82b9c3d1cf6fe78f}\label{classIndentedOutputStream_a2430afc5fcbd60ca82b9c3d1cf6fe78f}} 
+\index{Indented\+Output\+Stream@{Indented\+Output\+Stream}!Indented\+Output\+Stream@{Indented\+Output\+Stream}}
+\index{Indented\+Output\+Stream@{Indented\+Output\+Stream}!Indented\+Output\+Stream@{Indented\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Indented\+Output\+Stream()}{IndentedOutputStream()}}
+{\footnotesize\ttfamily Indented\+Output\+Stream\+::\+Indented\+Output\+Stream (\begin{DoxyParamCaption}\item[{char}]{o = {\ttfamily \textquotesingle{}\{\textquotesingle{}},  }\item[{char}]{c = {\ttfamily \textquotesingle{}\}\textquotesingle{}},  }\item[{unsigned int}]{d = {\ttfamily 3} }\end{DoxyParamCaption})}
+
+
+
+constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em o} & is the opening character used by \hyperlink{classsimple__indent}{simple\+\_\+indent}. \\
+\hline
+{\em c} & is the closing character used by \hyperlink{classsimple__indent}{simple\+\_\+indent}. \\
+\hline
+{\em d} & is the number of characters used to indent the code. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file indented\+\_\+output\+\_\+stream.\+cpp.
+
+\mbox{\Hypertarget{classIndentedOutputStream_a0f4421674c5dc1852476993372128509}\label{classIndentedOutputStream_a0f4421674c5dc1852476993372128509}} 
+\index{Indented\+Output\+Stream@{Indented\+Output\+Stream}!````~Indented\+Output\+Stream@{$\sim$\+Indented\+Output\+Stream}}
+\index{````~Indented\+Output\+Stream@{$\sim$\+Indented\+Output\+Stream}!Indented\+Output\+Stream@{Indented\+Output\+Stream}}
+\subsubsection{\texorpdfstring{$\sim$\+Indented\+Output\+Stream()}{~IndentedOutputStream()}}
+{\footnotesize\ttfamily Indented\+Output\+Stream\+::$\sim$\+Indented\+Output\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+destructor 
+
+This corresponds to a T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, however it is against C++ rules throw an errror inside a destructor 
+
+Definition at line 60 of file indented\+\_\+output\+\_\+stream.\+cpp.
+
+
+
+References indent\+\_\+spaces, and indentation.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classIndentedOutputStream_ab9c200e93872397c9dd09bf8c2d8b651}\label{classIndentedOutputStream_ab9c200e93872397c9dd09bf8c2d8b651}} 
+\index{Indented\+Output\+Stream@{Indented\+Output\+Stream}!Append@{Append}}
+\index{Append@{Append}!Indented\+Output\+Stream@{Indented\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Append()}{Append()}}
+{\footnotesize\ttfamily void Indented\+Output\+Stream\+::\+Append (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Append a string to the output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & is the string to be printed \\
+\hline
+\end{DoxyParams}
+Specified whether the first character of the string we are going to write must be indented or not 
+
+Definition at line 71 of file indented\+\_\+output\+\_\+stream.\+cpp.
+
+
+
+References Append\+Char(), Append\+Indent(), closing\+\_\+char, Deindent(), delta, indent\+\_\+spaces, is\+\_\+line\+\_\+start, opening\+\_\+char, output\+\_\+stream, S\+T\+D\+\_\+\+C\+L\+O\+S\+I\+N\+G\+\_\+\+C\+H\+AR, S\+T\+D\+\_\+\+O\+P\+E\+N\+I\+N\+G\+\_\+\+C\+H\+AR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and Write\+File().
+
+
+
+Referenced by C\+Writer\+::compute\+\_\+phi\+\_\+nodes(), Create\+Address\+Translation\+::\+Compute\+Address(), H\+L\+S\+Instruction\+Writer\+::declare\+Function(), Instruction\+Writer\+::declare\+Function(), Discrepancy\+Analysis\+C\+Writer\+::\+Declare\+Local\+Variables(), C\+Writer\+::\+Declare\+Type(), C\+Writer\+::\+Declare\+Variable(), C\+Writer\+::\+End\+Function\+Body(), Create\+Address\+Translation\+::\+Exec(), C\+Backend\+::\+Exec(), Basic\+Blocks\+Profiling\+C\+Writer\+::print\+\_\+edge(), Memory\+Initialization\+C\+Writer\+::\+Process(), C\+Writer\+::\+Start\+Function\+Body(), Instruction\+Writer\+::write(), language\+\_\+writer\+::write(), verilog\+\_\+writer\+::write\+\_\+assign(), verilog\+\_\+writer\+::write\+\_\+comment(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+comment(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+component\+\_\+declaration(), verilog\+\_\+writer\+::write\+\_\+header(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+header(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+io\+\_\+signal\+\_\+post\+\_\+fix(), verilog\+\_\+writer\+::write\+\_\+io\+\_\+signal\+\_\+post\+\_\+fix(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+library\+\_\+declaration(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+declaration(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+definition\+\_\+begin(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+definition\+\_\+begin(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+definition\+\_\+end(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+definition\+\_\+end(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+instance\+\_\+begin(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+instance\+\_\+begin(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+instance\+\_\+end(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+instance\+\_\+end(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+internal\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl(), system\+\_\+verilog\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities(), verilog\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities(), verilog\+\_\+writer\+::write\+\_\+port\+\_\+binding(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+port\+\_\+binding(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+port\+\_\+decl\+\_\+header(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+port\+\_\+decl\+\_\+tail(), verilog\+\_\+writer\+::write\+\_\+port\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+port\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+present\+\_\+state\+\_\+update(), verilog\+\_\+writer\+::write\+\_\+present\+\_\+state\+\_\+update(), verilog\+\_\+writer\+::write\+\_\+signal\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+signal\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+state\+\_\+declaration(), verilog\+\_\+writer\+::write\+\_\+state\+\_\+declaration(), verilog\+\_\+writer\+::write\+\_\+timing\+\_\+specification(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions(), verilog\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions(), verilog\+\_\+writer\+::write\+\_\+vector\+\_\+port\+\_\+binding(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+vector\+\_\+port\+\_\+binding(), Discrepancy\+Analysis\+C\+Writer\+::\+Write\+B\+B\+Header(), H\+L\+S\+C\+Writer\+::\+Write\+Binary\+Memory\+Init(), V\+H\+D\+L\+\_\+writer\+::\+Write\+Builtin(), verilog\+\_\+writer\+::\+Write\+Builtin(), C\+Writer\+::\+Write\+Builtin\+Wait\+Call(), Instruction\+Writer\+::\+Write\+Comment(), H\+L\+S\+C\+Writer\+::\+Write\+Expected\+Results(), Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Extra\+Code\+Before\+Every\+Main\+Call(), Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Extra\+Init\+Code(), C\+Writer\+::\+Write\+Function\+Declaration(), Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Global\+Declarations(), Basic\+Blocks\+Profiling\+C\+Writer\+::\+Write\+Global\+Declarations(), C\+Backend\+::\+Write\+Global\+Declarations(), C\+Writer\+::\+Write\+Global\+Declarations(), C\+Writer\+::\+Write\+Hash\+Table\+Implementation(), Edge\+C\+Writer\+::\+Write\+Header(), H\+L\+S\+C\+Writer\+::\+Write\+Header(), C\+Writer\+::\+Write\+Header(), C\+Writer\+::write\+Include(), H\+L\+S\+C\+Writer\+::\+Write\+Main\+Testbench(), H\+L\+S\+C\+Writer\+::\+Write\+Param\+Decl(), H\+L\+S\+C\+Writer\+::\+Write\+Param\+Initialization(), H\+L\+S\+C\+Writer\+::\+Write\+Param\+In\+Memory(), Discrepancy\+Analysis\+C\+Writer\+::write\+Post\+Instruction\+Info(), Discrepancy\+Analysis\+C\+Writer\+::write\+Pre\+Instruction\+Info(), Edge\+C\+Writer\+::write\+Routine\+Instructions(), C\+Writer\+::write\+Routine\+Instructions(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), H\+L\+S\+C\+Writer\+::\+Write\+Simulator\+Init\+Memory(), H\+L\+S\+C\+Writer\+::\+Write\+Testbench\+Function\+Call(), H\+L\+S\+C\+Writer\+::\+Write\+Testbench\+Global\+Vars(), H\+L\+S\+C\+Writer\+::\+Write\+Testbench\+Helper\+Functions(), and H\+L\+S\+C\+Writer\+::\+Write\+Zeroed\+Bytes().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d4/d62/classIndentedOutputStream_ab9c200e93872397c9dd09bf8c2d8b651_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d4/d62/classIndentedOutputStream_ab9c200e93872397c9dd09bf8c2d8b651_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIndentedOutputStream_aae0d3f029caa08e9ce3b8107ded932b3}\label{classIndentedOutputStream_aae0d3f029caa08e9ce3b8107ded932b3}} 
+\index{Indented\+Output\+Stream@{Indented\+Output\+Stream}!Append\+Char@{Append\+Char}}
+\index{Append\+Char@{Append\+Char}!Indented\+Output\+Stream@{Indented\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Append\+Char()}{AppendChar()}}
+{\footnotesize\ttfamily void Indented\+Output\+Stream\+::\+Append\+Char (\begin{DoxyParamCaption}\item[{const char \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Append the current char. 
+
+
+
+Definition at line 156 of file indented\+\_\+output\+\_\+stream.\+cpp.
+
+
+
+References output\+\_\+stream.
+
+
+
+Referenced by Append().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d4/d62/classIndentedOutputStream_aae0d3f029caa08e9ce3b8107ded932b3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIndentedOutputStream_adeb5dd8a59cf3f5b24809212f6cc286d}\label{classIndentedOutputStream_adeb5dd8a59cf3f5b24809212f6cc286d}} 
+\index{Indented\+Output\+Stream@{Indented\+Output\+Stream}!Append\+Indent@{Append\+Indent}}
+\index{Append\+Indent@{Append\+Indent}!Indented\+Output\+Stream@{Indented\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Append\+Indent()}{AppendIndent()}}
+{\footnotesize\ttfamily void Indented\+Output\+Stream\+::\+Append\+Indent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Append the indent spaces. 
+
+
+
+Definition at line 148 of file indented\+\_\+output\+\_\+stream.\+cpp.
+
+
+
+References indent\+\_\+spaces, and output\+\_\+stream.
+
+
+
+Referenced by Append().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d4/d62/classIndentedOutputStream_adeb5dd8a59cf3f5b24809212f6cc286d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIndentedOutputStream_a0f85e6d203422d7f1c690a3e8a1366fa}\label{classIndentedOutputStream_a0f85e6d203422d7f1c690a3e8a1366fa}} 
+\index{Indented\+Output\+Stream@{Indented\+Output\+Stream}!Deindent@{Deindent}}
+\index{Deindent@{Deindent}!Indented\+Output\+Stream@{Indented\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Deindent()}{Deindent()}}
+{\footnotesize\ttfamily void Indented\+Output\+Stream\+::\+Deindent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Manually reduce the indenting of the code. 
+
+
+
+Definition at line 166 of file indented\+\_\+output\+\_\+stream.\+cpp.
+
+
+
+References delta, indent\+\_\+spaces, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Append(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+component\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+definition\+\_\+begin(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+definition\+\_\+end(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+definition\+\_\+end(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+port\+\_\+decl\+\_\+tail(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+present\+\_\+state\+\_\+update(), verilog\+\_\+writer\+::write\+\_\+present\+\_\+state\+\_\+update(), verilog\+\_\+writer\+::write\+\_\+state\+\_\+declaration(), verilog\+\_\+writer\+::write\+\_\+timing\+\_\+specification(), and V\+H\+D\+L\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d4/d62/classIndentedOutputStream_a0f85e6d203422d7f1c690a3e8a1366fa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIndentedOutputStream_a875a467bf36c8409e362b1c345e66f6a}\label{classIndentedOutputStream_a875a467bf36c8409e362b1c345e66f6a}} 
+\index{Indented\+Output\+Stream@{Indented\+Output\+Stream}!Indent@{Indent}}
+\index{Indent@{Indent}!Indented\+Output\+Stream@{Indented\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Indent()}{Indent()}}
+{\footnotesize\ttfamily void Indented\+Output\+Stream\+::\+Indent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Manually increase the indenting of the code. 
+
+
+
+Definition at line 161 of file indented\+\_\+output\+\_\+stream.\+cpp.
+
+
+
+References delta, and indent\+\_\+spaces.
+
+
+
+Referenced by V\+H\+D\+L\+\_\+writer\+::write\+\_\+component\+\_\+declaration(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+definition\+\_\+begin(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+internal\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+port\+\_\+decl\+\_\+header(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+present\+\_\+state\+\_\+update(), verilog\+\_\+writer\+::write\+\_\+present\+\_\+state\+\_\+update(), verilog\+\_\+writer\+::write\+\_\+state\+\_\+declaration(), verilog\+\_\+writer\+::write\+\_\+timing\+\_\+specification(), and V\+H\+D\+L\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d62/classIndentedOutputStream_a875a467bf36c8409e362b1c345e66f6a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIndentedOutputStream_a7af26dbbc73375326e27675b25824063}\label{classIndentedOutputStream_a7af26dbbc73375326e27675b25824063}} 
+\index{Indented\+Output\+Stream@{Indented\+Output\+Stream}!Write\+File@{Write\+File}}
+\index{Write\+File@{Write\+File}!Indented\+Output\+Stream@{Indented\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Write\+File()}{WriteFile()}}
+{\footnotesize\ttfamily void Indented\+Output\+Stream\+::\+Write\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Write the indented output on a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & is the name of the file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 179 of file indented\+\_\+output\+\_\+stream.\+cpp.
+
+
+
+References output\+\_\+stream.
+
+
+
+Referenced by Append(), Create\+Address\+Translation\+::\+Exec(), H\+L\+S\+C\+Writer\+::\+Write\+File(), language\+\_\+writer\+::\+Write\+File(), and C\+Writer\+::\+Write\+File().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d4/d62/classIndentedOutputStream_a7af26dbbc73375326e27675b25824063_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIndentedOutputStream_a69a252892d688978533206a3cca900bb}\label{classIndentedOutputStream_a69a252892d688978533206a3cca900bb}} 
+\index{Indented\+Output\+Stream@{Indented\+Output\+Stream}!Write\+String@{Write\+String}}
+\index{Write\+String@{Write\+String}!Indented\+Output\+Stream@{Indented\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Write\+String()}{WriteString()}}
+{\footnotesize\ttfamily const std\+::string Indented\+Output\+Stream\+::\+Write\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Write the indented output on a string. 
+
+
+
+Definition at line 172 of file indented\+\_\+output\+\_\+stream.\+cpp.
+
+
+
+References output\+\_\+stream.
+
+
+
+Referenced by language\+\_\+writer\+::\+Write\+String().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d62/classIndentedOutputStream_a69a252892d688978533206a3cca900bb_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classIndentedOutputStream_a6cd40928cb1d7089072b57486c7f8d75}\label{classIndentedOutputStream_a6cd40928cb1d7089072b57486c7f8d75}} 
+\index{Indented\+Output\+Stream@{Indented\+Output\+Stream}!closing\+\_\+char@{closing\+\_\+char}}
+\index{closing\+\_\+char@{closing\+\_\+char}!Indented\+Output\+Stream@{Indented\+Output\+Stream}}
+\subsubsection{\texorpdfstring{closing\+\_\+char}{closing\_char}}
+{\footnotesize\ttfamily char Indented\+Output\+Stream\+::closing\+\_\+char\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+char that increments the indent space by a delta 
+
+
+
+Definition at line 74 of file indented\+\_\+output\+\_\+stream.\+hpp.
+
+
+
+Referenced by Append().
+
+\mbox{\Hypertarget{classIndentedOutputStream_a11915e0d1ac091ecc3205d71ebc493b6}\label{classIndentedOutputStream_a11915e0d1ac091ecc3205d71ebc493b6}} 
+\index{Indented\+Output\+Stream@{Indented\+Output\+Stream}!delta@{delta}}
+\index{delta@{delta}!Indented\+Output\+Stream@{Indented\+Output\+Stream}}
+\subsubsection{\texorpdfstring{delta}{delta}}
+{\footnotesize\ttfamily unsigned int Indented\+Output\+Stream\+::delta\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+delta indent space 
+
+
+
+Definition at line 77 of file indented\+\_\+output\+\_\+stream.\+hpp.
+
+
+
+Referenced by Append(), Deindent(), and Indent().
+
+\mbox{\Hypertarget{classIndentedOutputStream_a92659187ef6887c07649ae881465ddc4}\label{classIndentedOutputStream_a92659187ef6887c07649ae881465ddc4}} 
+\index{Indented\+Output\+Stream@{Indented\+Output\+Stream}!indent\+\_\+spaces@{indent\+\_\+spaces}}
+\index{indent\+\_\+spaces@{indent\+\_\+spaces}!Indented\+Output\+Stream@{Indented\+Output\+Stream}}
+\subsubsection{\texorpdfstring{indent\+\_\+spaces}{indent\_spaces}}
+{\footnotesize\ttfamily unsigned int Indented\+Output\+Stream\+::indent\+\_\+spaces\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+number of spaces used to indent after a new line print 
+
+
+
+Definition at line 68 of file indented\+\_\+output\+\_\+stream.\+hpp.
+
+
+
+Referenced by Append(), Append\+Indent(), Deindent(), Indent(), and $\sim$\+Indented\+Output\+Stream().
+
+\mbox{\Hypertarget{classIndentedOutputStream_ae7357f8c2e52afda355d4e240de611b4}\label{classIndentedOutputStream_ae7357f8c2e52afda355d4e240de611b4}} 
+\index{Indented\+Output\+Stream@{Indented\+Output\+Stream}!is\+\_\+line\+\_\+start@{is\+\_\+line\+\_\+start}}
+\index{is\+\_\+line\+\_\+start@{is\+\_\+line\+\_\+start}!Indented\+Output\+Stream@{Indented\+Output\+Stream}}
+\subsubsection{\texorpdfstring{is\+\_\+line\+\_\+start}{is\_line\_start}}
+{\footnotesize\ttfamily bool Indented\+Output\+Stream\+::is\+\_\+line\+\_\+start\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 79 of file indented\+\_\+output\+\_\+stream.\+hpp.
+
+
+
+Referenced by Append().
+
+\mbox{\Hypertarget{classIndentedOutputStream_a7c0fd93cd1bf90d28b3791b61d6afdbd}\label{classIndentedOutputStream_a7c0fd93cd1bf90d28b3791b61d6afdbd}} 
+\index{Indented\+Output\+Stream@{Indented\+Output\+Stream}!opening\+\_\+char@{opening\+\_\+char}}
+\index{opening\+\_\+char@{opening\+\_\+char}!Indented\+Output\+Stream@{Indented\+Output\+Stream}}
+\subsubsection{\texorpdfstring{opening\+\_\+char}{opening\_char}}
+{\footnotesize\ttfamily char Indented\+Output\+Stream\+::opening\+\_\+char\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+char that increments the indent space by a delta 
+
+
+
+Definition at line 71 of file indented\+\_\+output\+\_\+stream.\+hpp.
+
+
+
+Referenced by Append().
+
+\mbox{\Hypertarget{classIndentedOutputStream_a0d1bb62525852927c422a0734686902a}\label{classIndentedOutputStream_a0d1bb62525852927c422a0734686902a}} 
+\index{Indented\+Output\+Stream@{Indented\+Output\+Stream}!output\+\_\+stream@{output\+\_\+stream}}
+\index{output\+\_\+stream@{output\+\_\+stream}!Indented\+Output\+Stream@{Indented\+Output\+Stream}}
+\subsubsection{\texorpdfstring{output\+\_\+stream}{output\_stream}}
+{\footnotesize\ttfamily std\+::ostringstream Indented\+Output\+Stream\+::output\+\_\+stream\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The actual stream. 
+
+
+
+Definition at line 65 of file indented\+\_\+output\+\_\+stream.\+hpp.
+
+
+
+Referenced by Append(), Append\+Char(), Append\+Indent(), Write\+File(), and Write\+String().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/\hyperlink{indented__output__stream_8hpp}{indented\+\_\+output\+\_\+stream.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/\hyperlink{indented__output__stream_8cpp}{indented\+\_\+output\+\_\+stream.\+cpp}\end{DoxyCompactItemize}

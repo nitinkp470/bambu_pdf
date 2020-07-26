@@ -1,0 +1,1017 @@
+\hypertarget{classmeilp__solver}{}\section{meilp\+\_\+solver Class Reference}
+\label{classmeilp__solver}\index{meilp\+\_\+solver@{meilp\+\_\+solver}}
+
+
+Base class providing several methods to encapsulate the interface to several ilp solver.  
+
+
+
+
+{\ttfamily \#include $<$meilp\+\_\+solver.\+hpp$>$}
+
+
+
+Inheritance diagram for meilp\+\_\+solver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{d1/dfc/classmeilp__solver__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8e}{ilp\+\_\+sign} \{ \hyperlink{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8ead282091094a7a81e6711239240c66628}{G}, 
+\hyperlink{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8eaa6e291b624f90483a42ee037a1d9c84b}{L}, 
+\hyperlink{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8ea3477ce228866761c6ab67457f167445f}{E}
+ \}\begin{DoxyCompactList}\small\item\em Possible operator in constraints. \end{DoxyCompactList}
+\item 
+enum \hyperlink{classmeilp__solver_ac258f0ae8866c02ac01796f22db67b7a}{supported\+\_\+solvers} \begin{DoxyCompactList}\small\item\em List of currently supported solvers. \end{DoxyCompactList}
+\item 
+enum \hyperlink{classmeilp__solver_a2f719db6577d73007d942af7e6fe907c}{ilp\+\_\+dir} \{ \hyperlink{classmeilp__solver_a2f719db6577d73007d942af7e6fe907cad3536e763fa5680af413985f8a18e961}{min}, 
+\hyperlink{classmeilp__solver_a2f719db6577d73007d942af7e6fe907caae8b9d75adb582264515691d95a5cb57}{max}
+ \}\begin{DoxyCompactList}\small\item\em Type of objective function. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classmeilp__solver_aeffc63d25af700718897972f6f5dbff6}{$\sim$meilp\+\_\+solver} ()
+\begin{DoxyCompactList}\small\item\em virtual destructor \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmeilp__solver_a8cde2beaa61da22aaec664f3f9a0d253}{make} (int nvars)=0
+\begin{DoxyCompactList}\small\item\em ??? \end{DoxyCompactList}\item 
+virtual int \hyperlink{classmeilp__solver_ac042de10d65f792cc6ef6020b8451837}{solve} ()=0
+\begin{DoxyCompactList}\small\item\em Solve the linear problem. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classmeilp__solver_aec926409e78f416d3272cb8f3ef1e1c0}{solve\+\_\+ilp} ()=0
+\begin{DoxyCompactList}\small\item\em Solve the integer linear problem. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmeilp__solver_a844cb83be66ee0afe42edc2a60fd17cf}{add\+\_\+row} (std\+::map$<$ int, double $>$ \&i\+\_\+coeffs, double i\+\_\+rhs, \hyperlink{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8e}{ilp\+\_\+sign} i\+\_\+sign, const std\+::string \&name)=0
+\begin{DoxyCompactList}\small\item\em Add a constraint to the ilp formulation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmeilp__solver_a6478c7167ffb9c270104ba07cc102c58}{objective\+\_\+add} (std\+::map$<$ int, double $>$ \&i\+\_\+coeffs, \hyperlink{classmeilp__solver_a2f719db6577d73007d942af7e6fe907c}{ilp\+\_\+dir} dir)=0
+\begin{DoxyCompactList}\small\item\em Set the objective function. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmeilp__solver_aef8ccf0980800a5b87d60b7fd030822e}{set\+\_\+binary} (int i)
+\begin{DoxyCompactList}\small\item\em Set a variable to have only binary values. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmeilp__solver_aa9d0154f8daf67a0d815b76c6739546a}{set\+\_\+int} (int i)=0
+\begin{DoxyCompactList}\small\item\em Set a variable to have only integer values. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmeilp__solver_a76c7f0f92e4a828baa788493600ed6ff}{set\+\_\+bnds} (int var, double lowbo, double upbo)
+\begin{DoxyCompactList}\small\item\em Set lower and upper bound of a variable. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmeilp__solver_a3832e317cd19888528a0797f87f40051}{set\+\_\+lowbo} (int var, double bound)
+\begin{DoxyCompactList}\small\item\em Set lower bound of a variable. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmeilp__solver_ab6329596a134f01a88802c37bf3aee0b}{set\+\_\+upbo} (int var, double bound)
+\begin{DoxyCompactList}\small\item\em Set upper bound of a variable. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmeilp__solver_a2d89a5dd8ecf6e2e9dc290f7088f05e9}{get\+\_\+vars\+\_\+solution} (std\+::map$<$ int, double $>$ \&vars) const =0
+\begin{DoxyCompactList}\small\item\em Return the solution of the problem. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classmeilp__solver_a0045d972eeb07fca06d9ac59ef802a86}{get\+\_\+number\+\_\+constraints} () const =0
+\begin{DoxyCompactList}\small\item\em Return the number of constraints. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classmeilp__solver_abcbe8b799332dd2f29c042488e3655ab}{get\+\_\+number\+\_\+variables} () const =0
+\begin{DoxyCompactList}\small\item\em Return the number of variables. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmeilp__solver_a25c13b43b35a744bb0243fe6f8192244}{set\+\_\+col\+\_\+name} (int var, const std\+::string \&name)=0
+\begin{DoxyCompactList}\small\item\em Set name of a variable (column) \end{DoxyCompactList}\item 
+virtual std\+::string \hyperlink{classmeilp__solver_a8bed22d1f0a2a87868f46089c57a6add}{get\+\_\+col\+\_\+name} (int var)=0
+\begin{DoxyCompactList}\small\item\em Get name of a variable (column) \end{DoxyCompactList}\item 
+virtual int \hyperlink{classmeilp__solver_aa1fc55c72dd2b8cf1465dbf99e31127c}{add\+\_\+empty\+\_\+column} ()=0
+\begin{DoxyCompactList}\small\item\em Add an empty column ??? \end{DoxyCompactList}\item 
+void \hyperlink{classmeilp__solver_a4ef0f57f14ac9ce9707f617310635e55}{set\+Maximum\+Seconds} (int M\+A\+X\+\_\+t)
+\begin{DoxyCompactList}\small\item\em ??? \end{DoxyCompactList}\item 
+void \hyperlink{classmeilp__solver_a13730dbd89312c75d175d5e7f66bb358}{set\+\_\+debug\+\_\+level} (int v)
+\begin{DoxyCompactList}\small\item\em Set the verbosity (debug\+\_\+level) \end{DoxyCompactList}\item 
+void \hyperlink{classmeilp__solver_a40f8db00eeeeff115b97ffaf9511bab2}{set\+\_\+priority} (const std\+::map$<$ int, int $>$ \&\+\_\+priority)
+\begin{DoxyCompactList}\small\item\em Set the variable priority. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmeilp__solver_af9f40eca7fda0fae7436fe7a24c589b7}{print\+\_\+to\+\_\+file} (const std\+::string \&file\+\_\+name)=0
+\begin{DoxyCompactList}\small\item\em Print the problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static meilp\+\_\+solver\+Ref \hyperlink{classmeilp__solver_a77048480479b25895144987d41b9098b}{create\+\_\+solver} (\hyperlink{classmeilp__solver_ac258f0ae8866c02ac01796f22db67b7a}{supported\+\_\+solvers} solver\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Factory static member function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmeilp__solver_a36ff660134675780ed9ef03c9d22847d}{meilp\+\_\+solver} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classmeilp__solver_a4c58b5afa4d7061540b8cb93213b8154}{resize} (\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} count)
+\item 
+virtual void \hyperlink{classmeilp__solver_a94b27ed47dbe2872cfc119df010dbc7d}{copy} (const std\+::map$<$ int, double $>$ \&i\+\_\+coeffs)
+\item 
+virtual void \hyperlink{classmeilp__solver_abf7a38326551db34e423396517198895}{set\+\_\+all\+\_\+bounds} ()=0
+\begin{DoxyCompactList}\small\item\em Set the lower and upper of the variables using lower\+\_\+bounds and upper\+\_\+bounds. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmeilp__solver_ae7889c65c08ee542bba4913b853e0714}{print} (std\+::ostream \&os)=0
+\begin{DoxyCompactList}\small\item\em Print the problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double $\ast$ \hyperlink{classmeilp__solver_a58182e78e73639b546873ad280000ea3}{real\+\_\+buffer}
+\begin{DoxyCompactList}\small\item\em values in the constraint buffer \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{classmeilp__solver_a3a2c69fb4724141d6af37b718bc89275}{int\+\_\+buffer}
+\begin{DoxyCompactList}\small\item\em indexes in the constraint buffer \end{DoxyCompactList}\item 
+int \hyperlink{classmeilp__solver_aa9606e3ca41bb53c9bb1bbc1d61d5a64}{unique\+\_\+column\+\_\+id}
+\begin{DoxyCompactList}\small\item\em unique column identifier \end{DoxyCompactList}\item 
+int \hyperlink{classmeilp__solver_aa0beb16cba6ab7284e2d072e3627ae0e}{M\+A\+X\+\_\+time}
+\begin{DoxyCompactList}\small\item\em Time-\/out value. \end{DoxyCompactList}\item 
+int \hyperlink{classmeilp__solver_a9cef2504893ac9d062bfba3c5ebbf0bf}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em debug\+\_\+level \end{DoxyCompactList}\item 
+std\+::map$<$ int, int $>$ \hyperlink{classmeilp__solver_a61dba558fd122faf65d84c0946b71fcd}{priority}
+\begin{DoxyCompactList}\small\item\em variables priority \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ int, double $>$ \hyperlink{classmeilp__solver_ab8b85ba238c96c08cf614258c98dc2c5}{lower\+\_\+bounds}
+\begin{DoxyCompactList}\small\item\em The lower bound of the variables. They will be really set by solve method. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ int, double $>$ \hyperlink{classmeilp__solver_a4b36c84aa8584c2d66dbfa885fe49214}{upper\+\_\+bounds}
+\begin{DoxyCompactList}\small\item\em The upper bound of the variables. They will be really set by solve method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} \hyperlink{classmeilp__solver_a07eb267f2f15c0f56cb1941334c8421d}{nel}
+\begin{DoxyCompactList}\small\item\em number of elements in the constraint buffer \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class providing several methods to encapsulate the interface to several ilp solver. 
+
+Definition at line 73 of file meilp\+\_\+solver.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classmeilp__solver_a2f719db6577d73007d942af7e6fe907c}\label{classmeilp__solver_a2f719db6577d73007d942af7e6fe907c}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!ilp\+\_\+dir@{ilp\+\_\+dir}}
+\index{ilp\+\_\+dir@{ilp\+\_\+dir}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{ilp\+\_\+dir}{ilp\_dir}}
+{\footnotesize\ttfamily enum \hyperlink{classmeilp__solver_a2f719db6577d73007d942af7e6fe907c}{meilp\+\_\+solver\+::ilp\+\_\+dir}}
+
+
+
+Type of objective function. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{min@{min}!meilp\+\_\+solver@{meilp\+\_\+solver}}\index{meilp\+\_\+solver@{meilp\+\_\+solver}!min@{min}}}\mbox{\Hypertarget{classmeilp__solver_a2f719db6577d73007d942af7e6fe907cad3536e763fa5680af413985f8a18e961}\label{classmeilp__solver_a2f719db6577d73007d942af7e6fe907cad3536e763fa5680af413985f8a18e961}} 
+min&Minimization. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{max@{max}!meilp\+\_\+solver@{meilp\+\_\+solver}}\index{meilp\+\_\+solver@{meilp\+\_\+solver}!max@{max}}}\mbox{\Hypertarget{classmeilp__solver_a2f719db6577d73007d942af7e6fe907caae8b9d75adb582264515691d95a5cb57}\label{classmeilp__solver_a2f719db6577d73007d942af7e6fe907caae8b9d75adb582264515691d95a5cb57}} 
+max&Maximization. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 163 of file meilp\+\_\+solver.\+hpp.
+
+\mbox{\Hypertarget{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8e}\label{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8e}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!ilp\+\_\+sign@{ilp\+\_\+sign}}
+\index{ilp\+\_\+sign@{ilp\+\_\+sign}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{ilp\+\_\+sign}{ilp\_sign}}
+{\footnotesize\ttfamily enum \hyperlink{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8e}{meilp\+\_\+solver\+::ilp\+\_\+sign}}
+
+
+
+Possible operator in constraints. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G@{G}!meilp\+\_\+solver@{meilp\+\_\+solver}}\index{meilp\+\_\+solver@{meilp\+\_\+solver}!G@{G}}}\mbox{\Hypertarget{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8ead282091094a7a81e6711239240c66628}\label{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8ead282091094a7a81e6711239240c66628}} 
+G&Greater then. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L@{L}!meilp\+\_\+solver@{meilp\+\_\+solver}}\index{meilp\+\_\+solver@{meilp\+\_\+solver}!L@{L}}}\mbox{\Hypertarget{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8eaa6e291b624f90483a42ee037a1d9c84b}\label{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8eaa6e291b624f90483a42ee037a1d9c84b}} 
+L&Less then. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E@{E}!meilp\+\_\+solver@{meilp\+\_\+solver}}\index{meilp\+\_\+solver@{meilp\+\_\+solver}!E@{E}}}\mbox{\Hypertarget{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8ea3477ce228866761c6ab67457f167445f}\label{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8ea3477ce228866761c6ab67457f167445f}} 
+E&Equal to. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 79 of file meilp\+\_\+solver.\+hpp.
+
+\mbox{\Hypertarget{classmeilp__solver_ac258f0ae8866c02ac01796f22db67b7a}\label{classmeilp__solver_ac258f0ae8866c02ac01796f22db67b7a}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!supported\+\_\+solvers@{supported\+\_\+solvers}}
+\index{supported\+\_\+solvers@{supported\+\_\+solvers}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{supported\+\_\+solvers}{supported\_solvers}}
+{\footnotesize\ttfamily enum \hyperlink{classmeilp__solver_ac258f0ae8866c02ac01796f22db67b7a}{meilp\+\_\+solver\+::supported\+\_\+solvers}}
+
+
+
+List of currently supported solvers. 
+
+
+
+Definition at line 147 of file meilp\+\_\+solver.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmeilp__solver_a36ff660134675780ed9ef03c9d22847d}\label{classmeilp__solver_a36ff660134675780ed9ef03c9d22847d}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{meilp\+\_\+solver()}{meilp\_solver()}}
+{\footnotesize\ttfamily meilp\+\_\+solver\+::meilp\+\_\+solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 64 of file meilp\+\_\+solver.\+cpp.
+
+\mbox{\Hypertarget{classmeilp__solver_aeffc63d25af700718897972f6f5dbff6}\label{classmeilp__solver_aeffc63d25af700718897972f6f5dbff6}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!````~meilp\+\_\+solver@{$\sim$meilp\+\_\+solver}}
+\index{````~meilp\+\_\+solver@{$\sim$meilp\+\_\+solver}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{$\sim$meilp\+\_\+solver()}{~meilp\_solver()}}
+{\footnotesize\ttfamily meilp\+\_\+solver\+::$\sim$meilp\+\_\+solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+virtual destructor 
+
+
+
+Definition at line 68 of file meilp\+\_\+solver.\+cpp.
+
+
+
+References int\+\_\+buffer, nel, and real\+\_\+buffer.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmeilp__solver_aa1fc55c72dd2b8cf1465dbf99e31127c}\label{classmeilp__solver_aa1fc55c72dd2b8cf1465dbf99e31127c}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!add\+\_\+empty\+\_\+column@{add\+\_\+empty\+\_\+column}}
+\index{add\+\_\+empty\+\_\+column@{add\+\_\+empty\+\_\+column}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{add\+\_\+empty\+\_\+column()}{add\_empty\_column()}}
+{\footnotesize\ttfamily virtual int meilp\+\_\+solver\+::add\+\_\+empty\+\_\+column (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Add an empty column ??? 
+
+
+
+Implemented in \hyperlink{classglpk__solver_a7f8f325055100b3b9a9d115b5bb2a613}{glpk\+\_\+solver}.
+
+\mbox{\Hypertarget{classmeilp__solver_a844cb83be66ee0afe42edc2a60fd17cf}\label{classmeilp__solver_a844cb83be66ee0afe42edc2a60fd17cf}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!add\+\_\+row@{add\+\_\+row}}
+\index{add\+\_\+row@{add\+\_\+row}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{add\+\_\+row()}{add\_row()}}
+{\footnotesize\ttfamily virtual void meilp\+\_\+solver\+::add\+\_\+row (\begin{DoxyParamCaption}\item[{std\+::map$<$ int, double $>$ \&}]{i\+\_\+coeffs,  }\item[{double}]{i\+\_\+rhs,  }\item[{\hyperlink{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8e}{ilp\+\_\+sign}}]{i\+\_\+sign,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Add a constraint to the ilp formulation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+\_\+coeffs} & are the coefficients of the variables in the left part \\
+\hline
+{\em i\+\_\+rhs} & is the constant in the right part \\
+\hline
+{\em i\+\_\+sign} & is the operator in the constraints \\
+\hline
+{\em name} & is the name of the constraint \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classglpk__solver_aca58bff8b056f40912822a8063db14d6}{glpk\+\_\+solver}.
+
+\mbox{\Hypertarget{classmeilp__solver_a94b27ed47dbe2872cfc119df010dbc7d}\label{classmeilp__solver_a94b27ed47dbe2872cfc119df010dbc7d}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!copy@{copy}}
+\index{copy@{copy}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void meilp\+\_\+solver\+::copy (\begin{DoxyParamCaption}\item[{const std\+::map$<$ int, double $>$ \&}]{i\+\_\+coeffs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+\_\+coeffs} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 100 of file meilp\+\_\+solver.\+cpp.
+
+
+
+References index, int\+\_\+buffer, real\+\_\+buffer, and resize().
+
+
+
+Referenced by glpk\+\_\+solver\+::add\+\_\+row().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{dc/d7f/classmeilp__solver_a94b27ed47dbe2872cfc119df010dbc7d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{dc/d7f/classmeilp__solver_a94b27ed47dbe2872cfc119df010dbc7d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmeilp__solver_a77048480479b25895144987d41b9098b}\label{classmeilp__solver_a77048480479b25895144987d41b9098b}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!create\+\_\+solver@{create\+\_\+solver}}
+\index{create\+\_\+solver@{create\+\_\+solver}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{create\+\_\+solver()}{create\_solver()}}
+{\footnotesize\ttfamily meilp\+\_\+solver\+Ref meilp\+\_\+solver\+::create\+\_\+solver (\begin{DoxyParamCaption}\item[{\hyperlink{classmeilp__solver_ac258f0ae8866c02ac01796f22db67b7a}{supported\+\_\+solvers}}]{solver\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Factory static member function. 
+
+Given the supported enum create a specialization of \hyperlink{classmeilp__solver}{meilp\+\_\+solver} 
+\begin{DoxyParams}{Parameters}
+{\em solver\+\_\+type} & is the solver. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the solver object. 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file meilp\+\_\+solver.\+cpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by S\+D\+C\+Scheduling\+::\+Internal\+Exec(), and set\+Maximum\+Seconds().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d7f/classmeilp__solver_a77048480479b25895144987d41b9098b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmeilp__solver_a8bed22d1f0a2a87868f46089c57a6add}\label{classmeilp__solver_a8bed22d1f0a2a87868f46089c57a6add}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!get\+\_\+col\+\_\+name@{get\+\_\+col\+\_\+name}}
+\index{get\+\_\+col\+\_\+name@{get\+\_\+col\+\_\+name}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{get\+\_\+col\+\_\+name()}{get\_col\_name()}}
+{\footnotesize\ttfamily virtual std\+::string meilp\+\_\+solver\+::get\+\_\+col\+\_\+name (\begin{DoxyParamCaption}\item[{int}]{var }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get name of a variable (column) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the index of the variables return the name of the variable \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classglpk__solver_a00812df3ae9f05cbddd617425d8398da}{glpk\+\_\+solver}.
+
+\mbox{\Hypertarget{classmeilp__solver_a0045d972eeb07fca06d9ac59ef802a86}\label{classmeilp__solver_a0045d972eeb07fca06d9ac59ef802a86}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!get\+\_\+number\+\_\+constraints@{get\+\_\+number\+\_\+constraints}}
+\index{get\+\_\+number\+\_\+constraints@{get\+\_\+number\+\_\+constraints}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{get\+\_\+number\+\_\+constraints()}{get\_number\_constraints()}}
+{\footnotesize\ttfamily virtual int meilp\+\_\+solver\+::get\+\_\+number\+\_\+constraints (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Return the number of constraints. 
+
+\begin{DoxyReturn}{Returns}
+the number of constraints 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classglpk__solver_ab92636d941e8052c7a24f8fc7de12eb8}{glpk\+\_\+solver}.
+
+\mbox{\Hypertarget{classmeilp__solver_abcbe8b799332dd2f29c042488e3655ab}\label{classmeilp__solver_abcbe8b799332dd2f29c042488e3655ab}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!get\+\_\+number\+\_\+variables@{get\+\_\+number\+\_\+variables}}
+\index{get\+\_\+number\+\_\+variables@{get\+\_\+number\+\_\+variables}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{get\+\_\+number\+\_\+variables()}{get\_number\_variables()}}
+{\footnotesize\ttfamily virtual int meilp\+\_\+solver\+::get\+\_\+number\+\_\+variables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Return the number of variables. 
+
+\begin{DoxyReturn}{Returns}
+the number of variables 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classglpk__solver_a331a217a8d51011ad68bfd97c6844778}{glpk\+\_\+solver}.
+
+\mbox{\Hypertarget{classmeilp__solver_a2d89a5dd8ecf6e2e9dc290f7088f05e9}\label{classmeilp__solver_a2d89a5dd8ecf6e2e9dc290f7088f05e9}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!get\+\_\+vars\+\_\+solution@{get\+\_\+vars\+\_\+solution}}
+\index{get\+\_\+vars\+\_\+solution@{get\+\_\+vars\+\_\+solution}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{get\+\_\+vars\+\_\+solution()}{get\_vars\_solution()}}
+{\footnotesize\ttfamily virtual void meilp\+\_\+solver\+::get\+\_\+vars\+\_\+solution (\begin{DoxyParamCaption}\item[{std\+::map$<$ int, double $>$ \&}]{vars }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Return the solution of the problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vars} & is where solution are stored \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classglpk__solver_a7164da0eb8d9fed8b7cefe548b2f6ee3}{glpk\+\_\+solver}.
+
+\mbox{\Hypertarget{classmeilp__solver_a8cde2beaa61da22aaec664f3f9a0d253}\label{classmeilp__solver_a8cde2beaa61da22aaec664f3f9a0d253}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!make@{make}}
+\index{make@{make}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{make()}{make()}}
+{\footnotesize\ttfamily virtual void meilp\+\_\+solver\+::make (\begin{DoxyParamCaption}\item[{int}]{nvars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+??? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nvars} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classglpk__solver_a1b0f80ab919e5b0b702f050e52835c9a}{glpk\+\_\+solver}.
+
+\mbox{\Hypertarget{classmeilp__solver_a6478c7167ffb9c270104ba07cc102c58}\label{classmeilp__solver_a6478c7167ffb9c270104ba07cc102c58}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!objective\+\_\+add@{objective\+\_\+add}}
+\index{objective\+\_\+add@{objective\+\_\+add}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{objective\+\_\+add()}{objective\_add()}}
+{\footnotesize\ttfamily virtual void meilp\+\_\+solver\+::objective\+\_\+add (\begin{DoxyParamCaption}\item[{std\+::map$<$ int, double $>$ \&}]{i\+\_\+coeffs,  }\item[{\hyperlink{classmeilp__solver_a2f719db6577d73007d942af7e6fe907c}{ilp\+\_\+dir}}]{dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the objective function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I\+\_\+coeffs} & are the coefficients of the variables in the objective function \\
+\hline
+{\em dir} & is the type of objective function \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classglpk__solver_ac1a448337e6c26eae851c455091d699a}{glpk\+\_\+solver}.
+
+\mbox{\Hypertarget{classmeilp__solver_ae7889c65c08ee542bba4913b853e0714}\label{classmeilp__solver_ae7889c65c08ee542bba4913b853e0714}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!print@{print}}
+\index{print@{print}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily virtual void meilp\+\_\+solver\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Print the problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & is the stream on which problem has to be printed \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classglpk__solver_a0a3f1dcdb065e42d04a45a6cd6864b90}{glpk\+\_\+solver}.
+
+\mbox{\Hypertarget{classmeilp__solver_af9f40eca7fda0fae7436fe7a24c589b7}\label{classmeilp__solver_af9f40eca7fda0fae7436fe7a24c589b7}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!print\+\_\+to\+\_\+file@{print\+\_\+to\+\_\+file}}
+\index{print\+\_\+to\+\_\+file@{print\+\_\+to\+\_\+file}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{print\+\_\+to\+\_\+file()}{print\_to\_file()}}
+{\footnotesize\ttfamily virtual void meilp\+\_\+solver\+::print\+\_\+to\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Print the problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & is the name of the file to be written \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classglpk__solver_aaee0e321445ea081d26952772e4e2eef}{glpk\+\_\+solver}.
+
+
+
+Referenced by set\+Maximum\+Seconds().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{dc/d7f/classmeilp__solver_af9f40eca7fda0fae7436fe7a24c589b7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmeilp__solver_a4c58b5afa4d7061540b8cb93213b8154}\label{classmeilp__solver_a4c58b5afa4d7061540b8cb93213b8154}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!resize@{resize}}
+\index{resize@{resize}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily void meilp\+\_\+solver\+::resize (\begin{DoxyParamCaption}\item[{\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 77 of file meilp\+\_\+solver.\+cpp.
+
+
+
+References int\+\_\+buffer, nel, real\+\_\+buffer, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by copy().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d7f/classmeilp__solver_a4c58b5afa4d7061540b8cb93213b8154_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmeilp__solver_abf7a38326551db34e423396517198895}\label{classmeilp__solver_abf7a38326551db34e423396517198895}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!set\+\_\+all\+\_\+bounds@{set\+\_\+all\+\_\+bounds}}
+\index{set\+\_\+all\+\_\+bounds@{set\+\_\+all\+\_\+bounds}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{set\+\_\+all\+\_\+bounds()}{set\_all\_bounds()}}
+{\footnotesize\ttfamily virtual void meilp\+\_\+solver\+::set\+\_\+all\+\_\+bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Set the lower and upper of the variables using lower\+\_\+bounds and upper\+\_\+bounds. 
+
+
+
+Implemented in \hyperlink{classglpk__solver_a452c9cc528757df64c8afd83274e5ae5}{glpk\+\_\+solver}.
+
+\mbox{\Hypertarget{classmeilp__solver_aef8ccf0980800a5b87d60b7fd030822e}\label{classmeilp__solver_aef8ccf0980800a5b87d60b7fd030822e}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!set\+\_\+binary@{set\+\_\+binary}}
+\index{set\+\_\+binary@{set\+\_\+binary}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{set\+\_\+binary()}{set\_binary()}}
+{\footnotesize\ttfamily void meilp\+\_\+solver\+::set\+\_\+binary (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set a variable to have only binary values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is the variable \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 135 of file meilp\+\_\+solver.\+cpp.
+
+
+
+References set\+\_\+bnds(), and set\+\_\+int().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d7f/classmeilp__solver_aef8ccf0980800a5b87d60b7fd030822e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmeilp__solver_a76c7f0f92e4a828baa788493600ed6ff}\label{classmeilp__solver_a76c7f0f92e4a828baa788493600ed6ff}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!set\+\_\+bnds@{set\+\_\+bnds}}
+\index{set\+\_\+bnds@{set\+\_\+bnds}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{set\+\_\+bnds()}{set\_bnds()}}
+{\footnotesize\ttfamily void meilp\+\_\+solver\+::set\+\_\+bnds (\begin{DoxyParamCaption}\item[{int}]{var,  }\item[{double}]{lowbo,  }\item[{double}]{upbo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set lower and upper bound of a variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the variables \\
+\hline
+{\em lowbo} & is the lower bound \\
+\hline
+{\em upbo} & is the upper bound \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 141 of file meilp\+\_\+solver.\+cpp.
+
+
+
+References lower\+\_\+bounds, and upper\+\_\+bounds.
+
+
+
+Referenced by set\+\_\+binary().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d7f/classmeilp__solver_a76c7f0f92e4a828baa788493600ed6ff_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmeilp__solver_a25c13b43b35a744bb0243fe6f8192244}\label{classmeilp__solver_a25c13b43b35a744bb0243fe6f8192244}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!set\+\_\+col\+\_\+name@{set\+\_\+col\+\_\+name}}
+\index{set\+\_\+col\+\_\+name@{set\+\_\+col\+\_\+name}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{set\+\_\+col\+\_\+name()}{set\_col\_name()}}
+{\footnotesize\ttfamily virtual void meilp\+\_\+solver\+::set\+\_\+col\+\_\+name (\begin{DoxyParamCaption}\item[{int}]{var,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set name of a variable (column) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the index of the variables \\
+\hline
+{\em name} & is the name of the variable \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classglpk__solver_aaed1f108a4909b6697fe7a5483bb259a}{glpk\+\_\+solver}.
+
+\mbox{\Hypertarget{classmeilp__solver_a13730dbd89312c75d175d5e7f66bb358}\label{classmeilp__solver_a13730dbd89312c75d175d5e7f66bb358}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!set\+\_\+debug\+\_\+level@{set\+\_\+debug\+\_\+level}}
+\index{set\+\_\+debug\+\_\+level@{set\+\_\+debug\+\_\+level}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{set\+\_\+debug\+\_\+level()}{set\_debug\_level()}}
+{\footnotesize\ttfamily void meilp\+\_\+solver\+::set\+\_\+debug\+\_\+level (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})}
+
+
+
+Set the verbosity (debug\+\_\+level) 
+
+
+
+Definition at line 90 of file meilp\+\_\+solver.\+cpp.
+
+
+
+References debug\+\_\+level, and dl.
+
+
+
+Referenced by set\+Maximum\+Seconds().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d7f/classmeilp__solver_a13730dbd89312c75d175d5e7f66bb358_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmeilp__solver_aa9d0154f8daf67a0d815b76c6739546a}\label{classmeilp__solver_aa9d0154f8daf67a0d815b76c6739546a}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!set\+\_\+int@{set\+\_\+int}}
+\index{set\+\_\+int@{set\+\_\+int}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{set\+\_\+int()}{set\_int()}}
+{\footnotesize\ttfamily virtual void meilp\+\_\+solver\+::set\+\_\+int (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set a variable to have only integer values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is the variables \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classglpk__solver_a036f03d3c3fb34341846be7f077b565d}{glpk\+\_\+solver}.
+
+
+
+Referenced by set\+\_\+binary().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{dc/d7f/classmeilp__solver_aa9d0154f8daf67a0d815b76c6739546a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmeilp__solver_a3832e317cd19888528a0797f87f40051}\label{classmeilp__solver_a3832e317cd19888528a0797f87f40051}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!set\+\_\+lowbo@{set\+\_\+lowbo}}
+\index{set\+\_\+lowbo@{set\+\_\+lowbo}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{set\+\_\+lowbo()}{set\_lowbo()}}
+{\footnotesize\ttfamily void meilp\+\_\+solver\+::set\+\_\+lowbo (\begin{DoxyParamCaption}\item[{int}]{var,  }\item[{double}]{bound }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set lower bound of a variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the variable \\
+\hline
+{\em bound} & is the lower bound \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 147 of file meilp\+\_\+solver.\+cpp.
+
+
+
+References lower\+\_\+bounds.
+
+\mbox{\Hypertarget{classmeilp__solver_a40f8db00eeeeff115b97ffaf9511bab2}\label{classmeilp__solver_a40f8db00eeeeff115b97ffaf9511bab2}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!set\+\_\+priority@{set\+\_\+priority}}
+\index{set\+\_\+priority@{set\+\_\+priority}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{set\+\_\+priority()}{set\_priority()}}
+{\footnotesize\ttfamily void meilp\+\_\+solver\+::set\+\_\+priority (\begin{DoxyParamCaption}\item[{const std\+::map$<$ int, int $>$ \&}]{\+\_\+priority }\end{DoxyParamCaption})}
+
+
+
+Set the variable priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+priority} & is mapping between index variable and priority \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 95 of file meilp\+\_\+solver.\+cpp.
+
+
+
+References priority.
+
+
+
+Referenced by set\+Maximum\+Seconds().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d7f/classmeilp__solver_a40f8db00eeeeff115b97ffaf9511bab2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmeilp__solver_ab6329596a134f01a88802c37bf3aee0b}\label{classmeilp__solver_ab6329596a134f01a88802c37bf3aee0b}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!set\+\_\+upbo@{set\+\_\+upbo}}
+\index{set\+\_\+upbo@{set\+\_\+upbo}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{set\+\_\+upbo()}{set\_upbo()}}
+{\footnotesize\ttfamily void meilp\+\_\+solver\+::set\+\_\+upbo (\begin{DoxyParamCaption}\item[{int}]{var,  }\item[{double}]{bound }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set upper bound of a variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the variable \\
+\hline
+{\em bound} & is the upper bound \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 152 of file meilp\+\_\+solver.\+cpp.
+
+
+
+References upper\+\_\+bounds.
+
+\mbox{\Hypertarget{classmeilp__solver_a4ef0f57f14ac9ce9707f617310635e55}\label{classmeilp__solver_a4ef0f57f14ac9ce9707f617310635e55}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!set\+Maximum\+Seconds@{set\+Maximum\+Seconds}}
+\index{set\+Maximum\+Seconds@{set\+Maximum\+Seconds}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{set\+Maximum\+Seconds()}{setMaximumSeconds()}}
+{\footnotesize\ttfamily void meilp\+\_\+solver\+::set\+Maximum\+Seconds (\begin{DoxyParamCaption}\item[{int}]{M\+A\+X\+\_\+t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+??? 
+
+
+
+Definition at line 280 of file meilp\+\_\+solver.\+hpp.
+
+
+
+References create\+\_\+solver(), print\+\_\+to\+\_\+file(), set\+\_\+debug\+\_\+level(), and set\+\_\+priority().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d7f/classmeilp__solver_a4ef0f57f14ac9ce9707f617310635e55_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmeilp__solver_ac042de10d65f792cc6ef6020b8451837}\label{classmeilp__solver_ac042de10d65f792cc6ef6020b8451837}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!solve@{solve}}
+\index{solve@{solve}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily virtual int meilp\+\_\+solver\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Solve the linear problem. 
+
+
+
+Implemented in \hyperlink{classglpk__solver_ab9787b0a1b68144bfd68fbf95a61ad51}{glpk\+\_\+solver}.
+
+\mbox{\Hypertarget{classmeilp__solver_aec926409e78f416d3272cb8f3ef1e1c0}\label{classmeilp__solver_aec926409e78f416d3272cb8f3ef1e1c0}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!solve\+\_\+ilp@{solve\+\_\+ilp}}
+\index{solve\+\_\+ilp@{solve\+\_\+ilp}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{solve\+\_\+ilp()}{solve\_ilp()}}
+{\footnotesize\ttfamily virtual int meilp\+\_\+solver\+::solve\+\_\+ilp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Solve the integer linear problem. 
+
+
+
+Implemented in \hyperlink{classglpk__solver_ad27b82487380811e19a1adc2628f8b07}{glpk\+\_\+solver}.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classmeilp__solver_a9cef2504893ac9d062bfba3c5ebbf0bf}\label{classmeilp__solver_a9cef2504893ac9d062bfba3c5ebbf0bf}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily int meilp\+\_\+solver\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+debug\+\_\+level 
+
+
+
+Definition at line 104 of file meilp\+\_\+solver.\+hpp.
+
+
+
+Referenced by glpk\+\_\+solver\+::make(), set\+\_\+debug\+\_\+level(), glpk\+\_\+solver\+::solve(), and glpk\+\_\+solver\+::solve\+\_\+ilp().
+
+\mbox{\Hypertarget{classmeilp__solver_a3a2c69fb4724141d6af37b718bc89275}\label{classmeilp__solver_a3a2c69fb4724141d6af37b718bc89275}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!int\+\_\+buffer@{int\+\_\+buffer}}
+\index{int\+\_\+buffer@{int\+\_\+buffer}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{int\+\_\+buffer}{int\_buffer}}
+{\footnotesize\ttfamily int$\ast$ meilp\+\_\+solver\+::int\+\_\+buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+indexes in the constraint buffer 
+
+
+
+Definition at line 95 of file meilp\+\_\+solver.\+hpp.
+
+
+
+Referenced by glpk\+\_\+solver\+::add\+\_\+row(), copy(), resize(), and $\sim$meilp\+\_\+solver().
+
+\mbox{\Hypertarget{classmeilp__solver_ab8b85ba238c96c08cf614258c98dc2c5}\label{classmeilp__solver_ab8b85ba238c96c08cf614258c98dc2c5}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!lower\+\_\+bounds@{lower\+\_\+bounds}}
+\index{lower\+\_\+bounds@{lower\+\_\+bounds}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{lower\+\_\+bounds}{lower\_bounds}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$int, double$>$ meilp\+\_\+solver\+::lower\+\_\+bounds\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The lower bound of the variables. They will be really set by solve method. 
+
+
+
+Definition at line 110 of file meilp\+\_\+solver.\+hpp.
+
+
+
+Referenced by glpk\+\_\+solver\+::set\+\_\+all\+\_\+bounds(), set\+\_\+bnds(), and set\+\_\+lowbo().
+
+\mbox{\Hypertarget{classmeilp__solver_aa0beb16cba6ab7284e2d072e3627ae0e}\label{classmeilp__solver_aa0beb16cba6ab7284e2d072e3627ae0e}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!M\+A\+X\+\_\+time@{M\+A\+X\+\_\+time}}
+\index{M\+A\+X\+\_\+time@{M\+A\+X\+\_\+time}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+time}{MAX\_time}}
+{\footnotesize\ttfamily int meilp\+\_\+solver\+::\+M\+A\+X\+\_\+time\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Time-\/out value. 
+
+
+
+Definition at line 101 of file meilp\+\_\+solver.\+hpp.
+
+
+
+Referenced by glpk\+\_\+solver\+::make().
+
+\mbox{\Hypertarget{classmeilp__solver_a07eb267f2f15c0f56cb1941334c8421d}\label{classmeilp__solver_a07eb267f2f15c0f56cb1941334c8421d}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!nel@{nel}}
+\index{nel@{nel}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{nel}{nel}}
+{\footnotesize\ttfamily \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} meilp\+\_\+solver\+::nel\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+number of elements in the constraint buffer 
+
+
+
+Definition at line 88 of file meilp\+\_\+solver.\+hpp.
+
+
+
+Referenced by resize(), and $\sim$meilp\+\_\+solver().
+
+\mbox{\Hypertarget{classmeilp__solver_a61dba558fd122faf65d84c0946b71fcd}\label{classmeilp__solver_a61dba558fd122faf65d84c0946b71fcd}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!priority@{priority}}
+\index{priority@{priority}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{priority}{priority}}
+{\footnotesize\ttfamily std\+::map$<$int, int$>$ meilp\+\_\+solver\+::priority\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+variables priority 
+
+
+
+Definition at line 107 of file meilp\+\_\+solver.\+hpp.
+
+
+
+Referenced by set\+\_\+priority().
+
+\mbox{\Hypertarget{classmeilp__solver_a58182e78e73639b546873ad280000ea3}\label{classmeilp__solver_a58182e78e73639b546873ad280000ea3}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!real\+\_\+buffer@{real\+\_\+buffer}}
+\index{real\+\_\+buffer@{real\+\_\+buffer}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{real\+\_\+buffer}{real\_buffer}}
+{\footnotesize\ttfamily double$\ast$ meilp\+\_\+solver\+::real\+\_\+buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+values in the constraint buffer 
+
+
+
+Definition at line 92 of file meilp\+\_\+solver.\+hpp.
+
+
+
+Referenced by glpk\+\_\+solver\+::add\+\_\+row(), copy(), resize(), and $\sim$meilp\+\_\+solver().
+
+\mbox{\Hypertarget{classmeilp__solver_aa9606e3ca41bb53c9bb1bbc1d61d5a64}\label{classmeilp__solver_aa9606e3ca41bb53c9bb1bbc1d61d5a64}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!unique\+\_\+column\+\_\+id@{unique\+\_\+column\+\_\+id}}
+\index{unique\+\_\+column\+\_\+id@{unique\+\_\+column\+\_\+id}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{unique\+\_\+column\+\_\+id}{unique\_column\_id}}
+{\footnotesize\ttfamily int meilp\+\_\+solver\+::unique\+\_\+column\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+unique column identifier 
+
+
+
+Definition at line 98 of file meilp\+\_\+solver.\+hpp.
+
+\mbox{\Hypertarget{classmeilp__solver_a4b36c84aa8584c2d66dbfa885fe49214}\label{classmeilp__solver_a4b36c84aa8584c2d66dbfa885fe49214}} 
+\index{meilp\+\_\+solver@{meilp\+\_\+solver}!upper\+\_\+bounds@{upper\+\_\+bounds}}
+\index{upper\+\_\+bounds@{upper\+\_\+bounds}!meilp\+\_\+solver@{meilp\+\_\+solver}}
+\subsubsection{\texorpdfstring{upper\+\_\+bounds}{upper\_bounds}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$int, double$>$ meilp\+\_\+solver\+::upper\+\_\+bounds\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The upper bound of the variables. They will be really set by solve method. 
+
+
+
+Definition at line 113 of file meilp\+\_\+solver.\+hpp.
+
+
+
+Referenced by glpk\+\_\+solver\+::set\+\_\+all\+\_\+bounds(), set\+\_\+bnds(), and set\+\_\+upbo().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/ilp/\hyperlink{meilp__solver_8hpp}{meilp\+\_\+solver.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/ilp/\hyperlink{meilp__solver_8cpp}{meilp\+\_\+solver.\+cpp}\end{DoxyCompactItemize}

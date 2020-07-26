@@ -1,0 +1,674 @@
+\hypertarget{fileIO_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/file\+IO.hpp File Reference}
+\label{fileIO_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/file\+I\+O.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/file\+I\+O.\+hpp}}
+
+
+utility function used to read files.  
+
+
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}file\+\_\+\+I\+O\+\_\+constants.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gzstream.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/filesystem/operations.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/filesystem/path.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/lexical\+\_\+cast.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/system/error\+\_\+code.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/version.\+hpp$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for file\+I\+O.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/de0/fileIO_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0f/fileIO_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{fileIO_8hpp_a45ba202b05caf39795aeca91b0ae547e}{T\+I\+M\+E\+O\+UT}~124
+\begin{DoxyCompactList}\small\item\em Return value of timeout signaling timeout has reached. \end{DoxyCompactList}\item 
+\#define \hyperlink{fileIO_8hpp_a4cf55595a2812cee689e434698cccd30}{U\+L\+I\+M\+IT}~153
+\begin{DoxyCompactList}\small\item\em Return value of an application which was signaled by ulimit. \end{DoxyCompactList}\item 
+\#define \hyperlink{fileIO_8hpp_a4cc9b55754d3df3ec11f67f99be7a575}{E\+X\+E\+E\+XT}~std\+::string(\char`\"{}\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ std\+::istream $>$ \hyperlink{fileIO_8hpp_a997fb60da66e276a7cf23c1b5e40da2b}{file\+I\+O\+\_\+istream\+Ref}
+\begin{DoxyCompactList}\small\item\em Ref\+Count type definition for the input stream object. \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const std\+::istream $>$ \hyperlink{fileIO_8hpp_a5eaa35e47c402b14965b3a3e88cfa5e4}{file\+I\+O\+\_\+istream\+Const\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ std\+::ostream $>$ \hyperlink{fileIO_8hpp_a6f496d9536d170033f25885c80f67def}{file\+I\+O\+\_\+ostream\+Ref}
+\begin{DoxyCompactList}\small\item\em Ref\+Count type definition for the input stream object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{technology__manager_8hpp_a997fb60da66e276a7cf23c1b5e40da2b}{file\+I\+O\+\_\+istream\+Ref} \hyperlink{fileIO_8hpp_a15b8b56b97028df817f74c21273bb37d}{file\+I\+O\+\_\+istream\+\_\+open} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em this function returns an istream compressed or not. \end{DoxyCompactList}\item 
+\hyperlink{technology__manager_8hpp_a997fb60da66e276a7cf23c1b5e40da2b}{file\+I\+O\+\_\+istream\+Ref} \hyperlink{fileIO_8hpp_a4abc5db475b452fe3a205169b516b15d}{file\+I\+O\+\_\+istream\+\_\+open\+\_\+from\+\_\+string} (const std\+::string \&input)
+\begin{DoxyCompactList}\small\item\em Create a file\+I\+O\+\_\+istream\+Ref starting from a string. \end{DoxyCompactList}\item 
+\hyperlink{fileIO_8hpp_a6f496d9536d170033f25885c80f67def}{file\+I\+O\+\_\+ostream\+Ref} \hyperlink{fileIO_8hpp_a9dc74209436d7e87981edbfead02bb70}{file\+I\+O\+\_\+ostream\+\_\+open} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em this function returns an ostream compressed or not. \end{DoxyCompactList}\item 
+void \hyperlink{fileIO_8hpp_a9e4a4139c42a695a20b6fdfaf66b1450}{Copy\+Stdout} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Copy a file to the standard output. \end{DoxyCompactList}\item 
+void \hyperlink{fileIO_8hpp_a0a92df4c13f5280407f0dc36f0b4e831}{rename\+\_\+file} (boost\+::filesystem\+::path from, boost\+::filesystem\+::path to)
+\item 
+std\+::string \hyperlink{fileIO_8hpp_a411d3e74493d96a5d879c6b66179d469}{Get\+Leaf\+File\+Name} (boost\+::filesystem\+::path file)
+\begin{DoxyCompactList}\small\item\em Return the filename (base + extension) without the path. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{fileIO_8hpp_ae8d711c0a728a746691245b16394421f}{Get\+Base\+Name} (boost\+::filesystem\+::path file)
+\begin{DoxyCompactList}\small\item\em Return the file without the extension. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{fileIO_8hpp_aa6a4a2177a3c9af54689a5152b1b09db}{Get\+Directory} (const boost\+::filesystem\+::path file)
+\begin{DoxyCompactList}\small\item\em Return the directory given a file. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{fileIO_8hpp_a807a57096fac653aa5a499cda56f62c2}{Get\+Extension} (const std\+::string \&file)
+\begin{DoxyCompactList}\small\item\em Return the extension of the file. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{fileIO_8hpp_a22360b988d576e8099c44621e3bbdd31}{Get\+Extension} (boost\+::filesystem\+::path file)
+\item 
+std\+::string \hyperlink{fileIO_8hpp_aeb2da633fa019d3a152c3467cf25af73}{Get\+Extension} (const char $\ast$file)
+\item 
+std\+::string \hyperlink{fileIO_8hpp_a38c7bfd299464b059cc7838d9166eac2}{Get\+Current\+Path} ()
+\item 
+bool \hyperlink{fileIO_8hpp_aa0c6c5fdebf85093ea7eb8b30c025085}{Exist\+File} (const std\+::string \&file)
+\item 
+void \hyperlink{fileIO_8hpp_a1ff83f081a58e4129028117a876c7bb1}{Copy\+File} (boost\+::filesystem\+::path file\+\_\+source, boost\+::filesystem\+::path file\+\_\+target)
+\begin{DoxyCompactList}\small\item\em Copy file; if target already exist, overwrite. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{fileIO_8hpp_a9686b1f6f3ff1fdc1d71c4fb9cf95951}{Build\+Path} (const std\+::string \&first\+\_\+part, const std\+::string second\+\_\+part)
+\begin{DoxyCompactList}\small\item\em Build a path by combining two relative paths. \end{DoxyCompactList}\item 
+int \hyperlink{fileIO_8hpp_a25ded685dc3034dda14485028b6483a2}{Panda\+System} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const std\+::string \&system\+\_\+command, const std\+::string \&output=\char`\"{}\char`\"{}, const unsigned int type=3, const bool background=false, const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} timeout=0)
+\begin{DoxyCompactList}\small\item\em System call forcing execution with bash. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+utility function used to read files. 
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+
+Marco Lattuada \href{mailto:lattuada@elet.polimi.it}{\tt lattuada@elet.\+polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{fileIO_8hpp_a4cc9b55754d3df3ec11f67f99be7a575}\label{fileIO_8hpp_a4cc9b55754d3df3ec11f67f99be7a575}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!E\+X\+E\+E\+XT@{E\+X\+E\+E\+XT}}
+\index{E\+X\+E\+E\+XT@{E\+X\+E\+E\+XT}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{E\+X\+E\+E\+XT}{EXEEXT}}
+{\footnotesize\ttfamily \#define E\+X\+E\+E\+XT~std\+::string(\char`\"{}\char`\"{})}
+
+
+
+Definition at line 136 of file file\+I\+O.\+hpp.
+
+\mbox{\Hypertarget{fileIO_8hpp_a45ba202b05caf39795aeca91b0ae547e}\label{fileIO_8hpp_a45ba202b05caf39795aeca91b0ae547e}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!T\+I\+M\+E\+O\+UT@{T\+I\+M\+E\+O\+UT}}
+\index{T\+I\+M\+E\+O\+UT@{T\+I\+M\+E\+O\+UT}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{T\+I\+M\+E\+O\+UT}{TIMEOUT}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+O\+UT~124}
+
+
+
+Return value of timeout signaling timeout has reached. 
+
+
+
+Definition at line 64 of file file\+I\+O.\+hpp.
+
+\mbox{\Hypertarget{fileIO_8hpp_a4cf55595a2812cee689e434698cccd30}\label{fileIO_8hpp_a4cf55595a2812cee689e434698cccd30}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!U\+L\+I\+M\+IT@{U\+L\+I\+M\+IT}}
+\index{U\+L\+I\+M\+IT@{U\+L\+I\+M\+IT}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{U\+L\+I\+M\+IT}{ULIMIT}}
+{\footnotesize\ttfamily \#define U\+L\+I\+M\+IT~153}
+
+
+
+Return value of an application which was signaled by ulimit. 
+
+
+
+Definition at line 67 of file file\+I\+O.\+hpp.
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{fileIO_8hpp_a5eaa35e47c402b14965b3a3e88cfa5e4}\label{fileIO_8hpp_a5eaa35e47c402b14965b3a3e88cfa5e4}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!file\+I\+O\+\_\+istream\+Const\+Ref@{file\+I\+O\+\_\+istream\+Const\+Ref}}
+\index{file\+I\+O\+\_\+istream\+Const\+Ref@{file\+I\+O\+\_\+istream\+Const\+Ref}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{file\+I\+O\+\_\+istream\+Const\+Ref}{fileIO\_istreamConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const std\+::istream$>$ \hyperlink{fileIO_8hpp_a5eaa35e47c402b14965b3a3e88cfa5e4}{file\+I\+O\+\_\+istream\+Const\+Ref}}
+
+
+
+Definition at line 73 of file file\+I\+O.\+hpp.
+
+\mbox{\Hypertarget{fileIO_8hpp_a997fb60da66e276a7cf23c1b5e40da2b}\label{fileIO_8hpp_a997fb60da66e276a7cf23c1b5e40da2b}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!file\+I\+O\+\_\+istream\+Ref@{file\+I\+O\+\_\+istream\+Ref}}
+\index{file\+I\+O\+\_\+istream\+Ref@{file\+I\+O\+\_\+istream\+Ref}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{file\+I\+O\+\_\+istream\+Ref}{fileIO\_istreamRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$std\+::istream$>$ \hyperlink{technology__manager_8hpp_a997fb60da66e276a7cf23c1b5e40da2b}{file\+I\+O\+\_\+istream\+Ref}}
+
+
+
+Ref\+Count type definition for the input stream object. 
+
+
+
+Definition at line 72 of file file\+I\+O.\+hpp.
+
+\mbox{\Hypertarget{fileIO_8hpp_a6f496d9536d170033f25885c80f67def}\label{fileIO_8hpp_a6f496d9536d170033f25885c80f67def}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!file\+I\+O\+\_\+ostream\+Ref@{file\+I\+O\+\_\+ostream\+Ref}}
+\index{file\+I\+O\+\_\+ostream\+Ref@{file\+I\+O\+\_\+ostream\+Ref}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{file\+I\+O\+\_\+ostream\+Ref}{fileIO\_ostreamRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$std\+::ostream$>$ \hyperlink{fileIO_8hpp_a6f496d9536d170033f25885c80f67def}{file\+I\+O\+\_\+ostream\+Ref}}
+
+
+
+Ref\+Count type definition for the input stream object. 
+
+
+
+Definition at line 78 of file file\+I\+O.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{fileIO_8hpp_a9686b1f6f3ff1fdc1d71c4fb9cf95951}\label{fileIO_8hpp_a9686b1f6f3ff1fdc1d71c4fb9cf95951}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!Build\+Path@{Build\+Path}}
+\index{Build\+Path@{Build\+Path}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{Build\+Path()}{BuildPath()}}
+{\footnotesize\ttfamily std\+::string Build\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{first\+\_\+part,  }\item[{const std\+::string}]{second\+\_\+part }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Build a path by combining two relative paths. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+\_\+part} & is the first part to be combined \\
+\hline
+{\em second\+\_\+part} & is the second part to be combined \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 286 of file file\+I\+O.\+hpp.
+
+
+
+Referenced by Test\+Vector\+Parser\+::\+Parse\+X\+M\+L\+File().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d03/fileIO_8hpp_a9686b1f6f3ff1fdc1d71c4fb9cf95951_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fileIO_8hpp_a1ff83f081a58e4129028117a876c7bb1}\label{fileIO_8hpp_a1ff83f081a58e4129028117a876c7bb1}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!Copy\+File@{Copy\+File}}
+\index{Copy\+File@{Copy\+File}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{Copy\+File()}{CopyFile()}}
+{\footnotesize\ttfamily void Copy\+File (\begin{DoxyParamCaption}\item[{boost\+::filesystem\+::path}]{file\+\_\+source,  }\item[{boost\+::filesystem\+::path}]{file\+\_\+target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy file; if target already exist, overwrite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+source} & is the file to be copied \\
+\hline
+{\em file\+\_\+target} & is the destination \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 265 of file file\+I\+O.\+hpp.
+
+
+
+Referenced by Altera\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Xilinx\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Gcc\+Wrapper\+::\+Compile\+File(), and Xilinx\+Backend\+Flow\+::parse\+\_\+timing().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d03/fileIO_8hpp_a1ff83f081a58e4129028117a876c7bb1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fileIO_8hpp_a9e4a4139c42a695a20b6fdfaf66b1450}\label{fileIO_8hpp_a9e4a4139c42a695a20b6fdfaf66b1450}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!Copy\+Stdout@{Copy\+Stdout}}
+\index{Copy\+Stdout@{Copy\+Stdout}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{Copy\+Stdout()}{CopyStdout()}}
+{\footnotesize\ttfamily void Copy\+Stdout (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy a file to the standard output. 
+
+
+
+Definition at line 142 of file file\+I\+O.\+hpp.
+
+
+
+References test\+\_\+panda\+::stdout.
+
+
+
+Referenced by Nano\+Xplore\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Xilinx\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Gcc\+Wrapper\+::\+Compile\+File(), Gcc\+Wrapper\+::\+Create\+Executable(), Simulation\+Tool\+::\+Determine\+Cycles(), Tool\+Manager\+::execute\+\_\+command(), Gcc\+Wrapper\+::\+Fill\+Tree\+Manager(), Icarus\+Wrapper\+::\+Generate\+Script(), Gcc\+Wrapper\+::\+Query\+Gcc\+Config(), and Simulation\+Tool\+::\+Simulate().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d03/fileIO_8hpp_a9e4a4139c42a695a20b6fdfaf66b1450_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fileIO_8hpp_aa0c6c5fdebf85093ea7eb8b30c025085}\label{fileIO_8hpp_aa0c6c5fdebf85093ea7eb8b30c025085}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!Exist\+File@{Exist\+File}}
+\index{Exist\+File@{Exist\+File}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{Exist\+File()}{ExistFile()}}
+{\footnotesize\ttfamily bool Exist\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 255 of file file\+I\+O.\+hpp.
+
+
+
+Referenced by Nano\+Xplore\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Xilinx\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), and Get\+File().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d03/fileIO_8hpp_aa0c6c5fdebf85093ea7eb8b30c025085_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fileIO_8hpp_a15b8b56b97028df817f74c21273bb37d}\label{fileIO_8hpp_a15b8b56b97028df817f74c21273bb37d}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!file\+I\+O\+\_\+istream\+\_\+open@{file\+I\+O\+\_\+istream\+\_\+open}}
+\index{file\+I\+O\+\_\+istream\+\_\+open@{file\+I\+O\+\_\+istream\+\_\+open}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{file\+I\+O\+\_\+istream\+\_\+open()}{fileIO\_istream\_open()}}
+{\footnotesize\ttfamily \hyperlink{technology__manager_8hpp_a997fb60da66e276a7cf23c1b5e40da2b}{file\+I\+O\+\_\+istream\+Ref} file\+I\+O\+\_\+istream\+\_\+open (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+this function returns an istream compressed or not. 
+
+It first check for a compressed file, then search for the compressed version of the file and finally in case no compressed file is found it look for the plain text file. this function is mainly based on the gzstream wrapper and on zlib library. 
+\begin{DoxyParams}{Parameters}
+{\em name} & is the file name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the refcount to the istream 
+\end{DoxyReturn}
+
+
+Definition at line 87 of file file\+I\+O.\+hpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by Backend\+Flow\+::create\+\_\+xml\+\_\+scripts(), Asn\+Parser\+::\+Exec(), Aadl\+Parser\+::\+Exec(), Parameter\+::\+Get\+File\+Format(), Test\+Vector\+Parser\+::\+Parse\+X\+M\+L\+File(), and read\+\_\+technology\+\_\+library().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d03/fileIO_8hpp_a15b8b56b97028df817f74c21273bb37d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fileIO_8hpp_a4abc5db475b452fe3a205169b516b15d}\label{fileIO_8hpp_a4abc5db475b452fe3a205169b516b15d}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!file\+I\+O\+\_\+istream\+\_\+open\+\_\+from\+\_\+string@{file\+I\+O\+\_\+istream\+\_\+open\+\_\+from\+\_\+string}}
+\index{file\+I\+O\+\_\+istream\+\_\+open\+\_\+from\+\_\+string@{file\+I\+O\+\_\+istream\+\_\+open\+\_\+from\+\_\+string}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{file\+I\+O\+\_\+istream\+\_\+open\+\_\+from\+\_\+string()}{fileIO\_istream\_open\_from\_string()}}
+{\footnotesize\ttfamily \hyperlink{technology__manager_8hpp_a997fb60da66e276a7cf23c1b5e40da2b}{file\+I\+O\+\_\+istream\+Ref} file\+I\+O\+\_\+istream\+\_\+open\+\_\+from\+\_\+string (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a file\+I\+O\+\_\+istream\+Ref starting from a string. 
+
+
+
+Definition at line 113 of file file\+I\+O.\+hpp.
+
+
+
+Referenced by C\+Initialization\+Parser\+::\+Parse().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{d1/d03/fileIO_8hpp_a4abc5db475b452fe3a205169b516b15d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fileIO_8hpp_a9dc74209436d7e87981edbfead02bb70}\label{fileIO_8hpp_a9dc74209436d7e87981edbfead02bb70}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!file\+I\+O\+\_\+ostream\+\_\+open@{file\+I\+O\+\_\+ostream\+\_\+open}}
+\index{file\+I\+O\+\_\+ostream\+\_\+open@{file\+I\+O\+\_\+ostream\+\_\+open}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{file\+I\+O\+\_\+ostream\+\_\+open()}{fileIO\_ostream\_open()}}
+{\footnotesize\ttfamily \hyperlink{fileIO_8hpp_a6f496d9536d170033f25885c80f67def}{file\+I\+O\+\_\+ostream\+Ref} file\+I\+O\+\_\+ostream\+\_\+open (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+this function returns an ostream compressed or not. 
+
+this function is mainly based on the gzstream wrapper and on zlib library. 
+\begin{DoxyParams}{Parameters}
+{\em name} & is the file name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the refcount to the ostream 
+\end{DoxyReturn}
+
+
+Definition at line 126 of file file\+I\+O.\+hpp.
+
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{d1/d03/fileIO_8hpp_a9dc74209436d7e87981edbfead02bb70_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fileIO_8hpp_ae8d711c0a728a746691245b16394421f}\label{fileIO_8hpp_ae8d711c0a728a746691245b16394421f}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!Get\+Base\+Name@{Get\+Base\+Name}}
+\index{Get\+Base\+Name@{Get\+Base\+Name}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{Get\+Base\+Name()}{GetBaseName()}}
+{\footnotesize\ttfamily std\+::string Get\+Base\+Name (\begin{DoxyParamCaption}\item[{boost\+::filesystem\+::path}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the file without the extension. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & is the starting file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the file without path and extension 
+\end{DoxyReturn}
+
+
+Definition at line 202 of file file\+I\+O.\+hpp.
+
+
+
+Referenced by Gcc\+Wrapper\+::\+Compile\+File(), and Gcc\+Wrapper\+::\+Fill\+Tree\+Manager().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d03/fileIO_8hpp_ae8d711c0a728a746691245b16394421f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fileIO_8hpp_a38c7bfd299464b059cc7838d9166eac2}\label{fileIO_8hpp_a38c7bfd299464b059cc7838d9166eac2}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!Get\+Current\+Path@{Get\+Current\+Path}}
+\index{Get\+Current\+Path@{Get\+Current\+Path}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{Get\+Current\+Path()}{GetCurrentPath()}}
+{\footnotesize\ttfamily std\+::string Get\+Current\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 246 of file file\+I\+O.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Set\+Common\+Defaults(), and Bambu\+Parameter\+::\+Set\+Defaults().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d03/fileIO_8hpp_a38c7bfd299464b059cc7838d9166eac2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fileIO_8hpp_aa6a4a2177a3c9af54689a5152b1b09db}\label{fileIO_8hpp_aa6a4a2177a3c9af54689a5152b1b09db}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!Get\+Directory@{Get\+Directory}}
+\index{Get\+Directory@{Get\+Directory}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{Get\+Directory()}{GetDirectory()}}
+{\footnotesize\ttfamily std\+::string Get\+Directory (\begin{DoxyParamCaption}\item[{const boost\+::filesystem\+::path}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the directory given a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & is the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the directory 
+\end{DoxyReturn}
+
+
+Definition at line 218 of file file\+I\+O.\+hpp.
+
+
+
+Referenced by Aadl\+Parser\+::\+Exec(), and Test\+Vector\+Parser\+::\+Parse\+X\+M\+L\+File().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d03/fileIO_8hpp_aa6a4a2177a3c9af54689a5152b1b09db_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fileIO_8hpp_a807a57096fac653aa5a499cda56f62c2}\label{fileIO_8hpp_a807a57096fac653aa5a499cda56f62c2}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!Get\+Extension@{Get\+Extension}}
+\index{Get\+Extension@{Get\+Extension}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{Get\+Extension()}{GetExtension()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily std\+::string Get\+Extension (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the extension of the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & is the starting file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the extension of the file 
+\end{DoxyReturn}
+
+
+Definition at line 232 of file file\+I\+O.\+hpp.
+
+
+
+Referenced by Gcc\+Wrapper\+::\+Compile\+File(), V\+I\+V\+A\+D\+O\+\_\+xsim\+\_\+wrapper\+::create\+\_\+project\+\_\+script(), I\+S\+E\+\_\+isim\+\_\+wrapper\+::create\+\_\+project\+\_\+script(), tree\+\_\+panda\+\_\+gcc\+\_\+parameter\+::\+Exec(), create\+\_\+tree\+\_\+manager\+::\+Exec(), xst\+\_\+wrapper\+::\+Generate\+Project\+File(), modelsim\+Wrapper\+::\+Generate\+Script(), Get\+Extension(), Parameter\+::\+Get\+File\+Format(), Lattice\+Backend\+Flow\+::\+Init\+Design\+Parameters(), and Xilinx\+Backend\+Flow\+::\+Init\+Design\+Parameters().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d03/fileIO_8hpp_a807a57096fac653aa5a499cda56f62c2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fileIO_8hpp_a22360b988d576e8099c44621e3bbdd31}\label{fileIO_8hpp_a22360b988d576e8099c44621e3bbdd31}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!Get\+Extension@{Get\+Extension}}
+\index{Get\+Extension@{Get\+Extension}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{Get\+Extension()}{GetExtension()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::string Get\+Extension (\begin{DoxyParamCaption}\item[{boost\+::filesystem\+::path}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 237 of file file\+I\+O.\+hpp.
+
+
+
+References Get\+Extension().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{d1/d03/fileIO_8hpp_a22360b988d576e8099c44621e3bbdd31_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fileIO_8hpp_aeb2da633fa019d3a152c3467cf25af73}\label{fileIO_8hpp_aeb2da633fa019d3a152c3467cf25af73}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!Get\+Extension@{Get\+Extension}}
+\index{Get\+Extension@{Get\+Extension}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{Get\+Extension()}{GetExtension()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::string Get\+Extension (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 241 of file file\+I\+O.\+hpp.
+
+
+
+References Get\+Extension().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{d1/d03/fileIO_8hpp_aeb2da633fa019d3a152c3467cf25af73_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fileIO_8hpp_a411d3e74493d96a5d879c6b66179d469}\label{fileIO_8hpp_a411d3e74493d96a5d879c6b66179d469}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!Get\+Leaf\+File\+Name@{Get\+Leaf\+File\+Name}}
+\index{Get\+Leaf\+File\+Name@{Get\+Leaf\+File\+Name}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{Get\+Leaf\+File\+Name()}{GetLeafFileName()}}
+{\footnotesize\ttfamily std\+::string Get\+Leaf\+File\+Name (\begin{DoxyParamCaption}\item[{boost\+::filesystem\+::path}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the filename (base + extension) without the path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & is the starting file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the file without the path 
+\end{DoxyReturn}
+
+
+Definition at line 188 of file file\+I\+O.\+hpp.
+
+
+
+Referenced by Tool\+Manager\+::determine\+\_\+paths(), Gcc\+Wrapper\+::\+Fill\+Tree\+Manager(), Parameter\+::\+Get\+File\+Format(), Design\+Compiler\+Wrapper\+::import\+\_\+input\+\_\+design(), interface\+\_\+infer\+::\+Internal\+Exec(), read\+\_\+technology\+\_\+library(), and Pragma\+Parser\+::substitute\+Pragmas().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d03/fileIO_8hpp_a411d3e74493d96a5d879c6b66179d469_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fileIO_8hpp_a25ded685dc3034dda14485028b6483a2}\label{fileIO_8hpp_a25ded685dc3034dda14485028b6483a2}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!Panda\+System@{Panda\+System}}
+\index{Panda\+System@{Panda\+System}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{Panda\+System()}{PandaSystem()}}
+{\footnotesize\ttfamily int Panda\+System (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{const std\+::string \&}]{system\+\_\+command,  }\item[{const std\+::string \&}]{output = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const unsigned int}]{type = {\ttfamily 3},  }\item[{const bool}]{background = {\ttfamily false},  }\item[{const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{timeout = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+System call forcing execution with bash. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Param} & is the set of input parameters \\
+\hline
+{\em system\+\_\+command} & is the to be executed \\
+\hline
+{\em output} & is the file where output has to be saved \\
+\hline
+{\em type} & specifies which streams have to be saved; possible values are 0 (none), 1 (stdout), 2 (stderr), 3(stdout and stderr) \\
+\hline
+{\em background} & specifies if the command has to be executed in background \\
+\hline
+{\em timeout} & is the timeout for the command (in minutes) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value returned by the shell 
+\end{DoxyReturn}
+
+
+Definition at line 301 of file file\+I\+O.\+hpp.
+
+
+
+References test\+\_\+panda\+::command, counter, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, S\+T\+R\+\_\+\+C\+S\+T\+\_\+file\+\_\+\+I\+O\+\_\+shell\+\_\+output\+\_\+file, S\+T\+R\+\_\+\+C\+S\+T\+\_\+file\+\_\+\+I\+O\+\_\+shell\+\_\+script, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and test\+\_\+panda\+::type.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Check\+Parameters(), Gcc\+Wrapper\+::\+Compile\+File(), Gcc\+Wrapper\+::\+Create\+Executable(), C\+Testbench\+Execution\+::\+Exec(), Basic\+Blocks\+Profiling\+::\+Exec(), create\+\_\+tree\+\_\+manager\+::\+Exec(), Testbench\+Values\+C\+Generation\+::\+Exec(), Tool\+Manager\+::execute\+\_\+command(), Find\+Max\+C\+F\+G\+Transformations\+::\+Execute\+Bambu(), Non\+Deterministic\+Flows\+::\+Execute\+Tool(), Gcc\+Wrapper\+::\+Fill\+Tree\+Manager(), module\+Generator\+::\+Generate\+H\+D\+L(), Icarus\+Wrapper\+::\+Generate\+Script(), Xilinx\+Taste\+Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), Gcc\+Wrapper\+::\+Get\+Source\+Code\+Lines(), Gcc\+Wrapper\+::\+Get\+System\+Includes(), main(), and Gcc\+Wrapper\+::\+Query\+Gcc\+Config().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d03/fileIO_8hpp_a25ded685dc3034dda14485028b6483a2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fileIO_8hpp_a0a92df4c13f5280407f0dc36f0b4e831}\label{fileIO_8hpp_a0a92df4c13f5280407f0dc36f0b4e831}} 
+\index{file\+I\+O.\+hpp@{file\+I\+O.\+hpp}!rename\+\_\+file@{rename\+\_\+file}}
+\index{rename\+\_\+file@{rename\+\_\+file}!file\+I\+O.\+hpp@{file\+I\+O.\+hpp}}
+\subsubsection{\texorpdfstring{rename\+\_\+file()}{rename\_file()}}
+{\footnotesize\ttfamily void rename\+\_\+file (\begin{DoxyParamCaption}\item[{boost\+::filesystem\+::path}]{from,  }\item[{boost\+::filesystem\+::path}]{to }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 157 of file file\+I\+O.\+hpp.
+
+
+
+Referenced by Gcc\+Wrapper\+::\+Fill\+Tree\+Manager().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{d1/d03/fileIO_8hpp_a0a92df4c13f5280407f0dc36f0b4e831_icgraph}
+\end{center}
+\end{figure}

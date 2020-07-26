@@ -1,0 +1,741 @@
+\hypertarget{classvcd__utility}{}\section{vcd\+\_\+utility Class Reference}
+\label{classvcd__utility}\index{vcd\+\_\+utility@{vcd\+\_\+utility}}
+
+
+{\ttfamily \#include $<$vcd\+\_\+utility.\+hpp$>$}
+
+
+
+Inheritance diagram for vcd\+\_\+utility\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{d1/d4c/classvcd__utility__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for vcd\+\_\+utility\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d07/classvcd__utility__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classvcd__utility_adaefaed1f7e4eedee23f00b0ab5b47ab}{vcd\+\_\+utility} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters}, const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} \hyperlink{classHLS__step_ade85003a99d34134418451ddc46a18e9}{H\+L\+S\+Mgr}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classvcd__utility_a54d787cb05326b8732ba706a68c05023}{$\sim$vcd\+\_\+utility} () override=default
+\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classvcd__utility_ad6098cc9cf2ed44a6ae34f9b896760dd}{Exec} () override
+\begin{DoxyCompactList}\small\item\em Execute the step. \end{DoxyCompactList}\item 
+bool \hyperlink{classvcd__utility_a09e32be65c7938434bf02c9f08a49f0d}{Has\+To\+Be\+Executed} () const override
+\begin{DoxyCompactList}\small\item\em Check if this step has actually to be executed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long long \hyperlink{classvcd__utility_a8860891d7d9c6188515feb8ab0bddcf0}{Get\+Clock\+Period} (const \hyperlink{classvcd__parser_a84b85cb9df5165fca362a9da87c5a02f}{vcd\+\_\+parser\+::vcd\+\_\+trace\+\_\+t} \&vcd\+\_\+trace) const
+\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::tuple$<$ \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type}, \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref}, \hyperlink{hls__step_8hpp_a3ad360b9b11e6bf0683d5562a0ceb169}{H\+L\+S\+Flow\+Step\+\_\+\+Relationship} $>$ $>$ \hyperlink{classvcd__utility_a7c4de52630a3e3fa46286ffae1b94060}{Compute\+H\+L\+S\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\item 
+bool \hyperlink{classvcd__utility_a29d328311cf59d9e96c777dbd4c7734e}{detect\+\_\+mismatch} (const \hyperlink{structvcd__trace__head}{vcd\+\_\+trace\+\_\+head} \&t, const uint64\+\_\+t c\+\_\+context, const std\+::string \&c\+\_\+val)
+\item 
+bool \hyperlink{classvcd__utility_ad2ab80e69aace43ba9a0d7881880cd1b}{detect\+\_\+regular\+\_\+mismatch} (const \hyperlink{structvcd__trace__head}{vcd\+\_\+trace\+\_\+head} \&t, const std\+::string \&c\+\_\+val, const std\+::string \&vcd\+\_\+val) const
+\item 
+bool \hyperlink{classvcd__utility_af72ee3efc398a2cded1b268c1eaf92cd}{detect\+\_\+binary\+\_\+float\+\_\+mismatch} (const std\+::string \&c\+\_\+val, const std\+::string \&resized\+\_\+vcd\+\_\+val) const
+\item 
+bool \hyperlink{classvcd__utility_adb80e05f3d7c891116d8be21c21c84db}{detect\+\_\+binary\+\_\+double\+\_\+mismatch} (const std\+::string \&c\+\_\+val, const std\+::string \&resized\+\_\+vcd\+\_\+val) const
+\item 
+bool \hyperlink{classvcd__utility_a97b5e66d24f1509be52266177627c391}{detect\+\_\+address\+\_\+mismatch} (const \hyperlink{classDiscrepancyOpInfo}{Discrepancy\+Op\+Info} \&op\+\_\+info, const uint64\+\_\+t c\+\_\+context, const std\+::string \&c\+\_\+val, const std\+::string \&vcd\+\_\+val, unsigned int \&base\+\_\+index)
+\item 
+bool \hyperlink{classvcd__utility_adcea7de16b7dbf1c8b74aef06fc959a5}{detect\+\_\+fixed\+\_\+address\+\_\+mismatch} (const \hyperlink{classDiscrepancyOpInfo}{Discrepancy\+Op\+Info} \&op\+\_\+info, const uint64\+\_\+t c\+\_\+context, const std\+::string \&c\+\_\+val, const std\+::string \&vcd\+\_\+val, const unsigned int base\+\_\+index) const
+\item 
+bool \hyperlink{classvcd__utility_a83e132ad97a12d201e14274c167bb2b6}{detect\+\_\+mismatch\+\_\+element} (const \hyperlink{structvcd__trace__head}{vcd\+\_\+trace\+\_\+head} \&t, const uint64\+\_\+t c\+\_\+context, const std\+::string \&c\+\_\+val, const unsigned int el\+\_\+idx)
+\item 
+bool \hyperlink{classvcd__utility_a96a0270243835db1afab5b8c82e3b320}{detect\+\_\+mismatch\+\_\+simple} (const \hyperlink{structvcd__trace__head}{vcd\+\_\+trace\+\_\+head} \&t, const uint64\+\_\+t c\+\_\+context, const std\+::string \&c\+\_\+val, const unsigned int el\+\_\+idx, const std\+::string\+::size\+\_\+type first\+\_\+c\+\_\+bit, const std\+::string\+::size\+\_\+type c\+\_\+size)
+\item 
+void \hyperlink{classvcd__utility_a5ca871239e451e2e15f8866dfcf2558d}{update\+\_\+discr\+\_\+list} (const \hyperlink{structvcd__trace__head}{vcd\+\_\+trace\+\_\+head} \&t, const uint64\+\_\+t c\+\_\+context, const std\+::string \&c\+\_\+val, const unsigned int el\+\_\+idx, const std\+::string\+::size\+\_\+type first\+\_\+c\+\_\+bit, const std\+::string\+::size\+\_\+type c\+\_\+size, const unsigned int base\+\_\+index)
+\item 
+void \hyperlink{classvcd__utility_a9ff21c0bde72b02cd81bd7443eba6353}{print\+\_\+failed\+\_\+vcd\+\_\+head} (const \hyperlink{structvcd__trace__head}{vcd\+\_\+trace\+\_\+head} \&t, bool one\+\_\+hot\+\_\+encoding, const int verbosity) const
+\item 
+void \hyperlink{classvcd__utility_a4f2a5d8b68fe639e2d1eeb4f4c4c429a}{print\+\_\+discrepancy} (const \hyperlink{structDiscrepancyLog}{Discrepancy\+Log} \&l, bool one\+\_\+hot\+\_\+encoding, const int verbosity) const
+\item 
+std\+::string \hyperlink{classvcd__utility_a0871f81ef5071712b79ea90d3831579c}{compute\+\_\+fsm\+\_\+state\+\_\+from\+\_\+vcd\+\_\+string} (const std\+::string \&vcd\+\_\+state\+\_\+string, bool one\+\_\+hot\+\_\+encoding) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \hyperlink{classvcd__utility_ada6cdc0efd5c0b4848cdf922330387a5}{TM}
+\item 
+const \hyperlink{Discrepancy_8hpp_a9fb5a8938b4eeaafdaf7707f583f0193}{Discrepancy\+Ref} \hyperlink{classvcd__utility_a1fba2ae138894471f8fe8ea0efe604fe}{Discr}
+\item 
+unsigned long long \hyperlink{classvcd__utility_abda11f233eaef57efb5530f3a4d2e96c}{possibly\+\_\+lost\+\_\+address} \{0\}
+\item 
+unsigned long long \hyperlink{classvcd__utility_a5f365402f79dfa5cf2fe7f91745f8d8b}{mismatched\+\_\+integers} \{0\}
+\item 
+bool \hyperlink{classvcd__utility_a734d54c2216274c77124a96daad230ba}{allow\+\_\+uninitialized}
+\item 
+std\+::list$<$ \hyperlink{structDiscrepancyLog}{Discrepancy\+Log} $>$ \hyperlink{classvcd__utility_aba0984fc0ce2857599e312b5f273ad17}{discr\+\_\+list}
+\item 
+std\+::list$<$ \hyperlink{structDiscrepancyLog}{Discrepancy\+Log} $>$ \hyperlink{classvcd__utility_a524a718fb71b858a973a4c12527d09ae}{soft\+\_\+discr\+\_\+list}
+\item 
+std\+::string \hyperlink{classvcd__utility_a40821ad341c215284ec3e7cdbeff0961}{present\+\_\+state\+\_\+name}
+\begin{DoxyCompactList}\small\item\em The name of the present state signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 94 of file vcd\+\_\+utility.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classvcd__utility_adaefaed1f7e4eedee23f00b0ab5b47ab}\label{classvcd__utility_adaefaed1f7e4eedee23f00b0ab5b47ab}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{vcd\+\_\+utility()}{vcd\_utility()}}
+{\footnotesize\ttfamily vcd\+\_\+utility\+::vcd\+\_\+utility (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{parameters,  }\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 132 of file vcd\+\_\+utility.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, G\+E\+T\+\_\+\+C\+L\+A\+SS, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, Design\+Flow\+Step\+::parameters, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+\mbox{\Hypertarget{classvcd__utility_a54d787cb05326b8732ba706a68c05023}\label{classvcd__utility_a54d787cb05326b8732ba706a68c05023}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!````~vcd\+\_\+utility@{$\sim$vcd\+\_\+utility}}
+\index{````~vcd\+\_\+utility@{$\sim$vcd\+\_\+utility}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{$\sim$vcd\+\_\+utility()}{~vcd\_utility()}}
+{\footnotesize\ttfamily vcd\+\_\+utility\+::$\sim$vcd\+\_\+utility (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classvcd__utility_a0871f81ef5071712b79ea90d3831579c}\label{classvcd__utility_a0871f81ef5071712b79ea90d3831579c}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!compute\+\_\+fsm\+\_\+state\+\_\+from\+\_\+vcd\+\_\+string@{compute\+\_\+fsm\+\_\+state\+\_\+from\+\_\+vcd\+\_\+string}}
+\index{compute\+\_\+fsm\+\_\+state\+\_\+from\+\_\+vcd\+\_\+string@{compute\+\_\+fsm\+\_\+state\+\_\+from\+\_\+vcd\+\_\+string}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{compute\+\_\+fsm\+\_\+state\+\_\+from\+\_\+vcd\+\_\+string()}{compute\_fsm\_state\_from\_vcd\_string()}}
+{\footnotesize\ttfamily std\+::string vcd\+\_\+utility\+::compute\+\_\+fsm\+\_\+state\+\_\+from\+\_\+vcd\+\_\+string (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vcd\+\_\+state\+\_\+string,  }\item[{bool}]{one\+\_\+hot\+\_\+encoding }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 1151 of file vcd\+\_\+utility.\+cpp.
+
+
+
+References S\+TR.
+
+
+
+Referenced by print\+\_\+discrepancy(), and print\+\_\+failed\+\_\+vcd\+\_\+head().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d51/classvcd__utility_a0871f81ef5071712b79ea90d3831579c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__utility_a7c4de52630a3e3fa46286ffae1b94060}\label{classvcd__utility_a7c4de52630a3e3fa46286ffae1b94060}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!Compute\+H\+L\+S\+Relationships@{Compute\+H\+L\+S\+Relationships}}
+\index{Compute\+H\+L\+S\+Relationships@{Compute\+H\+L\+S\+Relationships}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{Compute\+H\+L\+S\+Relationships()}{ComputeHLSRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::tuple$<$ \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type}, \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref}, \hyperlink{hls__step_8hpp_a3ad360b9b11e6bf0683d5562a0ceb169}{H\+L\+S\+Flow\+Step\+\_\+\+Relationship} $>$ $>$ vcd\+\_\+utility\+::\+Compute\+H\+L\+S\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classHLS__step_aed0ce8cca9a1ef18e705fc1032ad4de5}{H\+L\+S\+\_\+step}.
+
+
+
+Definition at line 144 of file vcd\+\_\+utility.\+cpp.
+
+
+
+References C\+\_\+\+T\+E\+S\+T\+B\+E\+N\+C\+H\+\_\+\+E\+X\+E\+C\+U\+T\+I\+ON, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, T\+E\+S\+T\+B\+E\+N\+C\+H\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+ON, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and T\+O\+P\+\_\+\+F\+U\+N\+C\+T\+I\+ON.
+
+\mbox{\Hypertarget{classvcd__utility_a97b5e66d24f1509be52266177627c391}\label{classvcd__utility_a97b5e66d24f1509be52266177627c391}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!detect\+\_\+address\+\_\+mismatch@{detect\+\_\+address\+\_\+mismatch}}
+\index{detect\+\_\+address\+\_\+mismatch@{detect\+\_\+address\+\_\+mismatch}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{detect\+\_\+address\+\_\+mismatch()}{detect\_address\_mismatch()}}
+{\footnotesize\ttfamily bool vcd\+\_\+utility\+::detect\+\_\+address\+\_\+mismatch (\begin{DoxyParamCaption}\item[{const \hyperlink{classDiscrepancyOpInfo}{Discrepancy\+Op\+Info} \&}]{op\+\_\+info,  }\item[{const uint64\+\_\+t}]{c\+\_\+context,  }\item[{const std\+::string \&}]{c\+\_\+val,  }\item[{const std\+::string \&}]{vcd\+\_\+val,  }\item[{unsigned int \&}]{base\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 866 of file vcd\+\_\+utility.\+cpp.
+
+
+
+References detect\+\_\+fixed\+\_\+address\+\_\+mismatch(), Discr, tree\+\_\+helper\+::get\+\_\+base\+\_\+index(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, Discrepancy\+Op\+Info\+::op\+\_\+id, possibly\+\_\+lost\+\_\+address, Discrepancy\+Op\+Info\+::ssa\+\_\+name\+\_\+node\+\_\+id, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and TM.
+
+
+
+Referenced by detect\+\_\+mismatch\+\_\+simple().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d51/classvcd__utility_a97b5e66d24f1509be52266177627c391_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d51/classvcd__utility_a97b5e66d24f1509be52266177627c391_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__utility_adb80e05f3d7c891116d8be21c21c84db}\label{classvcd__utility_adb80e05f3d7c891116d8be21c21c84db}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!detect\+\_\+binary\+\_\+double\+\_\+mismatch@{detect\+\_\+binary\+\_\+double\+\_\+mismatch}}
+\index{detect\+\_\+binary\+\_\+double\+\_\+mismatch@{detect\+\_\+binary\+\_\+double\+\_\+mismatch}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{detect\+\_\+binary\+\_\+double\+\_\+mismatch()}{detect\_binary\_double\_mismatch()}}
+{\footnotesize\ttfamily bool vcd\+\_\+utility\+::detect\+\_\+binary\+\_\+double\+\_\+mismatch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{c\+\_\+val,  }\item[{const std\+::string \&}]{resized\+\_\+vcd\+\_\+val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 778 of file vcd\+\_\+utility.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::parameters, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by detect\+\_\+regular\+\_\+mismatch().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d51/classvcd__utility_adb80e05f3d7c891116d8be21c21c84db_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__utility_af72ee3efc398a2cded1b268c1eaf92cd}\label{classvcd__utility_af72ee3efc398a2cded1b268c1eaf92cd}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!detect\+\_\+binary\+\_\+float\+\_\+mismatch@{detect\+\_\+binary\+\_\+float\+\_\+mismatch}}
+\index{detect\+\_\+binary\+\_\+float\+\_\+mismatch@{detect\+\_\+binary\+\_\+float\+\_\+mismatch}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{detect\+\_\+binary\+\_\+float\+\_\+mismatch()}{detect\_binary\_float\_mismatch()}}
+{\footnotesize\ttfamily bool vcd\+\_\+utility\+::detect\+\_\+binary\+\_\+float\+\_\+mismatch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{c\+\_\+val,  }\item[{const std\+::string \&}]{resized\+\_\+vcd\+\_\+val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 733 of file vcd\+\_\+utility.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::parameters, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by detect\+\_\+regular\+\_\+mismatch().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d51/classvcd__utility_af72ee3efc398a2cded1b268c1eaf92cd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__utility_adcea7de16b7dbf1c8b74aef06fc959a5}\label{classvcd__utility_adcea7de16b7dbf1c8b74aef06fc959a5}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!detect\+\_\+fixed\+\_\+address\+\_\+mismatch@{detect\+\_\+fixed\+\_\+address\+\_\+mismatch}}
+\index{detect\+\_\+fixed\+\_\+address\+\_\+mismatch@{detect\+\_\+fixed\+\_\+address\+\_\+mismatch}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{detect\+\_\+fixed\+\_\+address\+\_\+mismatch()}{detect\_fixed\_address\_mismatch()}}
+{\footnotesize\ttfamily bool vcd\+\_\+utility\+::detect\+\_\+fixed\+\_\+address\+\_\+mismatch (\begin{DoxyParamCaption}\item[{const \hyperlink{classDiscrepancyOpInfo}{Discrepancy\+Op\+Info} \&}]{op\+\_\+info,  }\item[{const uint64\+\_\+t}]{c\+\_\+context,  }\item[{const std\+::string \&}]{c\+\_\+val,  }\item[{const std\+::string \&}]{vcd\+\_\+val,  }\item[{const unsigned int}]{base\+\_\+index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 823 of file vcd\+\_\+utility.\+cpp.
+
+
+
+References Discr, tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, max(), tree\+\_\+helper\+::size(), Discrepancy\+Op\+Info\+::stg\+\_\+fun\+\_\+id, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and TM.
+
+
+
+Referenced by detect\+\_\+address\+\_\+mismatch().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d51/classvcd__utility_adcea7de16b7dbf1c8b74aef06fc959a5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d51/classvcd__utility_adcea7de16b7dbf1c8b74aef06fc959a5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__utility_a29d328311cf59d9e96c777dbd4c7734e}\label{classvcd__utility_a29d328311cf59d9e96c777dbd4c7734e}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!detect\+\_\+mismatch@{detect\+\_\+mismatch}}
+\index{detect\+\_\+mismatch@{detect\+\_\+mismatch}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{detect\+\_\+mismatch()}{detect\_mismatch()}}
+{\footnotesize\ttfamily bool vcd\+\_\+utility\+::detect\+\_\+mismatch (\begin{DoxyParamCaption}\item[{const \hyperlink{structvcd__trace__head}{vcd\+\_\+trace\+\_\+head} \&}]{t,  }\item[{const uint64\+\_\+t}]{c\+\_\+context,  }\item[{const std\+::string \&}]{c\+\_\+val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 509 of file vcd\+\_\+utility.\+cpp.
+
+
+
+References detect\+\_\+mismatch\+\_\+element(), D\+I\+S\+C\+R\+\_\+\+V\+E\+C\+T\+OR, vcd\+\_\+trace\+\_\+head\+::fullsigname, vcd\+\_\+trace\+\_\+head\+::op\+\_\+info, vcd\+\_\+trace\+\_\+head\+::out\+\_\+var\+\_\+it, Design\+Flow\+Step\+::parameters, Discrepancy\+Op\+Info\+::ssa\+\_\+name, Discrepancy\+Op\+Info\+::ssa\+\_\+name\+\_\+node\+\_\+id, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, Discrepancy\+Op\+Info\+::type, update\+\_\+discr\+\_\+list(), and Discrepancy\+Op\+Info\+::vec\+\_\+base\+\_\+bitsize.
+
+
+
+Referenced by Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d51/classvcd__utility_a29d328311cf59d9e96c777dbd4c7734e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{d8/d51/classvcd__utility_a29d328311cf59d9e96c777dbd4c7734e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__utility_a83e132ad97a12d201e14274c167bb2b6}\label{classvcd__utility_a83e132ad97a12d201e14274c167bb2b6}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!detect\+\_\+mismatch\+\_\+element@{detect\+\_\+mismatch\+\_\+element}}
+\index{detect\+\_\+mismatch\+\_\+element@{detect\+\_\+mismatch\+\_\+element}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{detect\+\_\+mismatch\+\_\+element()}{detect\_mismatch\_element()}}
+{\footnotesize\ttfamily bool vcd\+\_\+utility\+::detect\+\_\+mismatch\+\_\+element (\begin{DoxyParamCaption}\item[{const \hyperlink{structvcd__trace__head}{vcd\+\_\+trace\+\_\+head} \&}]{t,  }\item[{const uint64\+\_\+t}]{c\+\_\+context,  }\item[{const std\+::string \&}]{c\+\_\+val,  }\item[{const unsigned int}]{el\+\_\+idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 566 of file vcd\+\_\+utility.\+cpp.
+
+
+
+References detect\+\_\+mismatch\+\_\+simple(), D\+I\+S\+C\+R\+\_\+\+C\+O\+M\+P\+L\+EX, vcd\+\_\+trace\+\_\+head\+::fullsigname, vcd\+\_\+trace\+\_\+head\+::op\+\_\+info, vcd\+\_\+trace\+\_\+head\+::out\+\_\+var\+\_\+it, Discrepancy\+Op\+Info\+::ssa\+\_\+name, Discrepancy\+Op\+Info\+::ssa\+\_\+name\+\_\+node\+\_\+id, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, Discrepancy\+Op\+Info\+::type, and Discrepancy\+Op\+Info\+::vec\+\_\+base\+\_\+bitsize.
+
+
+
+Referenced by detect\+\_\+mismatch().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d51/classvcd__utility_a83e132ad97a12d201e14274c167bb2b6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d51/classvcd__utility_a83e132ad97a12d201e14274c167bb2b6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__utility_a96a0270243835db1afab5b8c82e3b320}\label{classvcd__utility_a96a0270243835db1afab5b8c82e3b320}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!detect\+\_\+mismatch\+\_\+simple@{detect\+\_\+mismatch\+\_\+simple}}
+\index{detect\+\_\+mismatch\+\_\+simple@{detect\+\_\+mismatch\+\_\+simple}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{detect\+\_\+mismatch\+\_\+simple()}{detect\_mismatch\_simple()}}
+{\footnotesize\ttfamily bool vcd\+\_\+utility\+::detect\+\_\+mismatch\+\_\+simple (\begin{DoxyParamCaption}\item[{const \hyperlink{structvcd__trace__head}{vcd\+\_\+trace\+\_\+head} \&}]{t,  }\item[{const uint64\+\_\+t}]{c\+\_\+context,  }\item[{const std\+::string \&}]{c\+\_\+val,  }\item[{const unsigned int}]{el\+\_\+idx,  }\item[{const std\+::string\+::size\+\_\+type}]{first\+\_\+c\+\_\+bit,  }\item[{const std\+::string\+::size\+\_\+type}]{c\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 639 of file vcd\+\_\+utility.\+cpp.
+
+
+
+References detect\+\_\+address\+\_\+mismatch(), detect\+\_\+regular\+\_\+mismatch(), D\+I\+S\+C\+R\+\_\+\+A\+D\+DR, D\+I\+S\+C\+R\+\_\+\+C\+O\+M\+P\+L\+EX, D\+I\+S\+C\+R\+\_\+\+R\+E\+AL, D\+I\+S\+C\+R\+\_\+\+V\+E\+C\+T\+OR, vcd\+\_\+trace\+\_\+head\+::discrepancy\+\_\+found, mismatched\+\_\+integers, Discrepancy\+Op\+Info\+::op\+\_\+id, vcd\+\_\+trace\+\_\+head\+::op\+\_\+info, vcd\+\_\+trace\+\_\+head\+::out\+\_\+var\+\_\+it, Discrepancy\+Op\+Info\+::ssa\+\_\+name, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, Discrepancy\+Op\+Info\+::type, and update\+\_\+discr\+\_\+list().
+
+
+
+Referenced by detect\+\_\+mismatch\+\_\+element().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d51/classvcd__utility_a96a0270243835db1afab5b8c82e3b320_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d51/classvcd__utility_a96a0270243835db1afab5b8c82e3b320_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__utility_ad2ab80e69aace43ba9a0d7881880cd1b}\label{classvcd__utility_ad2ab80e69aace43ba9a0d7881880cd1b}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!detect\+\_\+regular\+\_\+mismatch@{detect\+\_\+regular\+\_\+mismatch}}
+\index{detect\+\_\+regular\+\_\+mismatch@{detect\+\_\+regular\+\_\+mismatch}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{detect\+\_\+regular\+\_\+mismatch()}{detect\_regular\_mismatch()}}
+{\footnotesize\ttfamily bool vcd\+\_\+utility\+::detect\+\_\+regular\+\_\+mismatch (\begin{DoxyParamCaption}\item[{const \hyperlink{structvcd__trace__head}{vcd\+\_\+trace\+\_\+head} \&}]{t,  }\item[{const std\+::string \&}]{c\+\_\+val,  }\item[{const std\+::string \&}]{vcd\+\_\+val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 926 of file vcd\+\_\+utility.\+cpp.
+
+
+
+References allow\+\_\+uninitialized, detect\+\_\+binary\+\_\+double\+\_\+mismatch(), detect\+\_\+binary\+\_\+float\+\_\+mismatch(), D\+I\+S\+C\+R\+\_\+\+R\+E\+AL, vcd\+\_\+trace\+\_\+head\+::fullsigname, G\+E\+T\+\_\+\+N\+O\+DE, vcd\+\_\+trace\+\_\+head\+::op\+\_\+info, Discrepancy\+Op\+Info\+::ssa\+\_\+name, Discrepancy\+Op\+Info\+::ssa\+\_\+name\+\_\+node\+\_\+id, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, TM, and Discrepancy\+Op\+Info\+::type.
+
+
+
+Referenced by detect\+\_\+mismatch\+\_\+simple().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{d8/d51/classvcd__utility_ad2ab80e69aace43ba9a0d7881880cd1b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d51/classvcd__utility_ad2ab80e69aace43ba9a0d7881880cd1b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__utility_ad6098cc9cf2ed44a6ae34f9b896760dd}\label{classvcd__utility_ad6098cc9cf2ed44a6ae34f9b896760dd}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!Exec@{Exec}}
+\index{Exec@{Exec}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{Exec()}{Exec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} vcd\+\_\+utility\+::\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the step. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classDesignFlowStep_a77d7e38493016766098711ea24f60b89}{Design\+Flow\+Step}.
+
+
+
+Definition at line 206 of file vcd\+\_\+utility.\+cpp.
+
+
+
+References vcd\+\_\+trace\+\_\+head\+::advance(), vcd\+\_\+trace\+\_\+head\+::after\+\_\+discrepancy, vcd\+\_\+trace\+\_\+head\+::checked, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, detect\+\_\+mismatch(), Discr, discr\+\_\+list, vcd\+\_\+trace\+\_\+head\+::discrepancy\+\_\+found, vcd\+\_\+trace\+\_\+head\+::ends\+\_\+after(), vcd\+\_\+trace\+\_\+head\+::exec\+\_\+times\+\_\+in\+\_\+current\+\_\+state, get\+\_\+signal\+\_\+variations(), Get\+Clock\+Period(), H\+I\+E\+R\+A\+R\+C\+H\+Y\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, vcd\+\_\+trace\+\_\+head\+::init\+\_\+fail, vcd\+\_\+trace\+\_\+head\+::initialized, max(), mismatched\+\_\+integers, vcd\+\_\+trace\+\_\+head\+::more\+\_\+executions\+\_\+in\+\_\+this\+\_\+hw\+\_\+state(), Discrepancy\+Op\+Info\+::op\+\_\+id, Design\+Flow\+Step\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, Design\+Flow\+Step\+::parameters, parse\+\_\+discrepancy(), vcd\+\_\+parser\+::parse\+\_\+vcd(), possibly\+\_\+lost\+\_\+address, present\+\_\+state\+\_\+name, print\+\_\+cpu\+\_\+time(), print\+\_\+discrepancy(), print\+\_\+failed\+\_\+vcd\+\_\+head(), vcd\+\_\+trace\+\_\+head\+::running, soft\+\_\+discr\+\_\+list, S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, S\+T\+A\+R\+T\+\_\+\+T\+I\+ME, vcd\+\_\+trace\+\_\+head\+::state, Discrepancy\+Op\+Info\+::stg\+\_\+fun\+\_\+id, S\+T\+O\+P\+\_\+\+T\+I\+ME, S\+TR, S\+U\+C\+C\+E\+SS, vcd\+\_\+trace\+\_\+head\+::suspended, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG, TM, and vcd\+\_\+trace\+\_\+head\+::uninitialized.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d51/classvcd__utility_ad6098cc9cf2ed44a6ae34f9b896760dd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__utility_a8860891d7d9c6188515feb8ab0bddcf0}\label{classvcd__utility_a8860891d7d9c6188515feb8ab0bddcf0}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!Get\+Clock\+Period@{Get\+Clock\+Period}}
+\index{Get\+Clock\+Period@{Get\+Clock\+Period}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{Get\+Clock\+Period()}{GetClockPeriod()}}
+{\footnotesize\ttfamily unsigned long long vcd\+\_\+utility\+::\+Get\+Clock\+Period (\begin{DoxyParamCaption}\item[{const \hyperlink{classvcd__parser_a84b85cb9df5165fca362a9da87c5a02f}{vcd\+\_\+parser\+::vcd\+\_\+trace\+\_\+t} \&}]{vcd\+\_\+trace }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 188 of file vcd\+\_\+utility.\+cpp.
+
+
+
+References C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, Discr, get\+\_\+signal\+\_\+variations(), H\+I\+E\+R\+A\+R\+C\+H\+Y\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d51/classvcd__utility_a8860891d7d9c6188515feb8ab0bddcf0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{d8/d51/classvcd__utility_a8860891d7d9c6188515feb8ab0bddcf0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__utility_a09e32be65c7938434bf02c9f08a49f0d}\label{classvcd__utility_a09e32be65c7938434bf02c9f08a49f0d}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}}
+\index{Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{Has\+To\+Be\+Executed()}{HasToBeExecuted()}}
+{\footnotesize\ttfamily bool vcd\+\_\+utility\+::\+Has\+To\+Be\+Executed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if this step has actually to be executed. 
+
+\begin{DoxyReturn}{Returns}
+true if the step has to be executed 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classDesignFlowStep_a1783abe0c1d162a52da1e413d5d1ef05}{Design\+Flow\+Step}.
+
+
+
+Definition at line 504 of file vcd\+\_\+utility.\+cpp.
+
+\mbox{\Hypertarget{classvcd__utility_a4f2a5d8b68fe639e2d1eeb4f4c4c429a}\label{classvcd__utility_a4f2a5d8b68fe639e2d1eeb4f4c4c429a}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!print\+\_\+discrepancy@{print\+\_\+discrepancy}}
+\index{print\+\_\+discrepancy@{print\+\_\+discrepancy}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{print\+\_\+discrepancy()}{print\_discrepancy()}}
+{\footnotesize\ttfamily void vcd\+\_\+utility\+::print\+\_\+discrepancy (\begin{DoxyParamCaption}\item[{const \hyperlink{structDiscrepancyLog}{Discrepancy\+Log} \&}]{l,  }\item[{bool}]{one\+\_\+hot\+\_\+encoding,  }\item[{const int}]{verbosity }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 984 of file vcd\+\_\+utility.\+cpp.
+
+
+
+References Discrepancy\+Log\+::base\+\_\+index, Discrepancy\+Log\+::bitsize, Discrepancy\+Log\+::c\+\_\+val, compute\+\_\+fsm\+\_\+state\+\_\+from\+\_\+vcd\+\_\+string(), Discrepancy\+Log\+::context, Discr, D\+I\+S\+C\+R\+\_\+\+A\+D\+DR, D\+I\+S\+C\+R\+\_\+\+C\+O\+M\+P\+L\+EX, D\+I\+S\+C\+R\+\_\+\+V\+E\+C\+T\+OR, Discrepancy\+Log\+::fu\+\_\+name, Discrepancy\+Log\+::fullsigname, Discrepancy\+Log\+::fun\+\_\+id, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, max(), Discrepancy\+Log\+::op\+\_\+end\+\_\+time, Discrepancy\+Log\+::op\+\_\+id, Discrepancy\+Log\+::op\+\_\+start\+\_\+state, Discrepancy\+Log\+::op\+\_\+start\+\_\+time, Design\+Flow\+Step\+::output\+\_\+level, tree\+\_\+helper\+::size(), Discrepancy\+Log\+::ssa\+\_\+id, Discrepancy\+Log\+::stmt\+\_\+string, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, TM, Discrepancy\+Log\+::type, and Discrepancy\+Log\+::vcd\+\_\+val.
+
+
+
+Referenced by Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d51/classvcd__utility_a4f2a5d8b68fe639e2d1eeb4f4c4c429a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{d8/d51/classvcd__utility_a4f2a5d8b68fe639e2d1eeb4f4c4c429a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__utility_a9ff21c0bde72b02cd81bd7443eba6353}\label{classvcd__utility_a9ff21c0bde72b02cd81bd7443eba6353}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!print\+\_\+failed\+\_\+vcd\+\_\+head@{print\+\_\+failed\+\_\+vcd\+\_\+head}}
+\index{print\+\_\+failed\+\_\+vcd\+\_\+head@{print\+\_\+failed\+\_\+vcd\+\_\+head}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{print\+\_\+failed\+\_\+vcd\+\_\+head()}{print\_failed\_vcd\_head()}}
+{\footnotesize\ttfamily void vcd\+\_\+utility\+::print\+\_\+failed\+\_\+vcd\+\_\+head (\begin{DoxyParamCaption}\item[{const \hyperlink{structvcd__trace__head}{vcd\+\_\+trace\+\_\+head} \&}]{t,  }\item[{bool}]{one\+\_\+hot\+\_\+encoding,  }\item[{const int}]{verbosity }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 1094 of file vcd\+\_\+utility.\+cpp.
+
+
+
+References compute\+\_\+fsm\+\_\+state\+\_\+from\+\_\+vcd\+\_\+string(), vcd\+\_\+trace\+\_\+head\+::fail\+\_\+none, vcd\+\_\+trace\+\_\+head\+::failed, vcd\+\_\+trace\+\_\+head\+::fsm\+\_\+ss\+\_\+it, vcd\+\_\+trace\+\_\+head\+::fullsigname, vcd\+\_\+trace\+\_\+head\+::function\+\_\+does\+\_\+not\+\_\+start, I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, vcd\+\_\+trace\+\_\+head\+::no\+\_\+end\+\_\+state, vcd\+\_\+trace\+\_\+head\+::no\+\_\+start\+\_\+state, vcd\+\_\+trace\+\_\+head\+::op\+\_\+end\+\_\+time, Discrepancy\+Op\+Info\+::op\+\_\+id, vcd\+\_\+trace\+\_\+head\+::op\+\_\+info, vcd\+\_\+trace\+\_\+head\+::op\+\_\+start\+\_\+time, Design\+Flow\+Step\+::output\+\_\+level, Discrepancy\+Op\+Info\+::stg\+\_\+fun\+\_\+id, S\+TR, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+
+
+Referenced by Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{d8/d51/classvcd__utility_a9ff21c0bde72b02cd81bd7443eba6353_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{d8/d51/classvcd__utility_a9ff21c0bde72b02cd81bd7443eba6353_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__utility_a5ca871239e451e2e15f8866dfcf2558d}\label{classvcd__utility_a5ca871239e451e2e15f8866dfcf2558d}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!update\+\_\+discr\+\_\+list@{update\+\_\+discr\+\_\+list}}
+\index{update\+\_\+discr\+\_\+list@{update\+\_\+discr\+\_\+list}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{update\+\_\+discr\+\_\+list()}{update\_discr\_list()}}
+{\footnotesize\ttfamily void vcd\+\_\+utility\+::update\+\_\+discr\+\_\+list (\begin{DoxyParamCaption}\item[{const \hyperlink{structvcd__trace__head}{vcd\+\_\+trace\+\_\+head} \&}]{t,  }\item[{const uint64\+\_\+t}]{c\+\_\+context,  }\item[{const std\+::string \&}]{c\+\_\+val,  }\item[{const unsigned int}]{el\+\_\+idx,  }\item[{const std\+::string\+::size\+\_\+type}]{first\+\_\+c\+\_\+bit,  }\item[{const std\+::string\+::size\+\_\+type}]{c\+\_\+size,  }\item[{const unsigned int}]{base\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 678 of file vcd\+\_\+utility.\+cpp.
+
+
+
+References D\+I\+S\+C\+R\+\_\+\+A\+D\+DR, discr\+\_\+list, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, vcd\+\_\+trace\+\_\+head\+::op\+\_\+end\+\_\+time, vcd\+\_\+trace\+\_\+head\+::op\+\_\+info, Design\+Flow\+Step\+::parameters, soft\+\_\+discr\+\_\+list, and Discrepancy\+Op\+Info\+::type.
+
+
+
+Referenced by detect\+\_\+mismatch(), and detect\+\_\+mismatch\+\_\+simple().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d51/classvcd__utility_a5ca871239e451e2e15f8866dfcf2558d_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classvcd__utility_a734d54c2216274c77124a96daad230ba}\label{classvcd__utility_a734d54c2216274c77124a96daad230ba}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!allow\+\_\+uninitialized@{allow\+\_\+uninitialized}}
+\index{allow\+\_\+uninitialized@{allow\+\_\+uninitialized}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{allow\+\_\+uninitialized}{allow\_uninitialized}}
+{\footnotesize\ttfamily bool vcd\+\_\+utility\+::allow\+\_\+uninitialized\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 122 of file vcd\+\_\+utility.\+hpp.
+
+
+
+Referenced by detect\+\_\+regular\+\_\+mismatch().
+
+\mbox{\Hypertarget{classvcd__utility_a1fba2ae138894471f8fe8ea0efe604fe}\label{classvcd__utility_a1fba2ae138894471f8fe8ea0efe604fe}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!Discr@{Discr}}
+\index{Discr@{Discr}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{Discr}{Discr}}
+{\footnotesize\ttfamily const \hyperlink{Discrepancy_8hpp_a9fb5a8938b4eeaafdaf7707f583f0193}{Discrepancy\+Ref} vcd\+\_\+utility\+::\+Discr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 116 of file vcd\+\_\+utility.\+hpp.
+
+
+
+Referenced by detect\+\_\+address\+\_\+mismatch(), detect\+\_\+fixed\+\_\+address\+\_\+mismatch(), Exec(), Get\+Clock\+Period(), and print\+\_\+discrepancy().
+
+\mbox{\Hypertarget{classvcd__utility_aba0984fc0ce2857599e312b5f273ad17}\label{classvcd__utility_aba0984fc0ce2857599e312b5f273ad17}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!discr\+\_\+list@{discr\+\_\+list}}
+\index{discr\+\_\+list@{discr\+\_\+list}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{discr\+\_\+list}{discr\_list}}
+{\footnotesize\ttfamily std\+::list$<$\hyperlink{structDiscrepancyLog}{Discrepancy\+Log}$>$ vcd\+\_\+utility\+::discr\+\_\+list\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 124 of file vcd\+\_\+utility.\+hpp.
+
+
+
+Referenced by Exec(), and update\+\_\+discr\+\_\+list().
+
+\mbox{\Hypertarget{classvcd__utility_a5f365402f79dfa5cf2fe7f91745f8d8b}\label{classvcd__utility_a5f365402f79dfa5cf2fe7f91745f8d8b}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!mismatched\+\_\+integers@{mismatched\+\_\+integers}}
+\index{mismatched\+\_\+integers@{mismatched\+\_\+integers}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{mismatched\+\_\+integers}{mismatched\_integers}}
+{\footnotesize\ttfamily unsigned long long vcd\+\_\+utility\+::mismatched\+\_\+integers \{0\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 120 of file vcd\+\_\+utility.\+hpp.
+
+
+
+Referenced by detect\+\_\+mismatch\+\_\+simple(), and Exec().
+
+\mbox{\Hypertarget{classvcd__utility_abda11f233eaef57efb5530f3a4d2e96c}\label{classvcd__utility_abda11f233eaef57efb5530f3a4d2e96c}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!possibly\+\_\+lost\+\_\+address@{possibly\+\_\+lost\+\_\+address}}
+\index{possibly\+\_\+lost\+\_\+address@{possibly\+\_\+lost\+\_\+address}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{possibly\+\_\+lost\+\_\+address}{possibly\_lost\_address}}
+{\footnotesize\ttfamily unsigned long long vcd\+\_\+utility\+::possibly\+\_\+lost\+\_\+address \{0\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 118 of file vcd\+\_\+utility.\+hpp.
+
+
+
+Referenced by detect\+\_\+address\+\_\+mismatch(), and Exec().
+
+\mbox{\Hypertarget{classvcd__utility_a40821ad341c215284ec3e7cdbeff0961}\label{classvcd__utility_a40821ad341c215284ec3e7cdbeff0961}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!present\+\_\+state\+\_\+name@{present\+\_\+state\+\_\+name}}
+\index{present\+\_\+state\+\_\+name@{present\+\_\+state\+\_\+name}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{present\+\_\+state\+\_\+name}{present\_state\_name}}
+{\footnotesize\ttfamily std\+::string vcd\+\_\+utility\+::present\+\_\+state\+\_\+name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The name of the present state signal. 
+
+
+
+Definition at line 129 of file vcd\+\_\+utility.\+hpp.
+
+
+
+Referenced by Exec().
+
+\mbox{\Hypertarget{classvcd__utility_a524a718fb71b858a973a4c12527d09ae}\label{classvcd__utility_a524a718fb71b858a973a4c12527d09ae}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!soft\+\_\+discr\+\_\+list@{soft\+\_\+discr\+\_\+list}}
+\index{soft\+\_\+discr\+\_\+list@{soft\+\_\+discr\+\_\+list}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{soft\+\_\+discr\+\_\+list}{soft\_discr\_list}}
+{\footnotesize\ttfamily std\+::list$<$\hyperlink{structDiscrepancyLog}{Discrepancy\+Log}$>$ vcd\+\_\+utility\+::soft\+\_\+discr\+\_\+list\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 126 of file vcd\+\_\+utility.\+hpp.
+
+
+
+Referenced by Exec(), and update\+\_\+discr\+\_\+list().
+
+\mbox{\Hypertarget{classvcd__utility_ada6cdc0efd5c0b4848cdf922330387a5}\label{classvcd__utility_ada6cdc0efd5c0b4848cdf922330387a5}} 
+\index{vcd\+\_\+utility@{vcd\+\_\+utility}!TM@{TM}}
+\index{TM@{TM}!vcd\+\_\+utility@{vcd\+\_\+utility}}
+\subsubsection{\texorpdfstring{TM}{TM}}
+{\footnotesize\ttfamily const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} vcd\+\_\+utility\+::\+TM\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 114 of file vcd\+\_\+utility.\+hpp.
+
+
+
+Referenced by detect\+\_\+address\+\_\+mismatch(), detect\+\_\+fixed\+\_\+address\+\_\+mismatch(), detect\+\_\+regular\+\_\+mismatch(), Exec(), and print\+\_\+discrepancy().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/vcd/\hyperlink{vcd__utility_8hpp}{vcd\+\_\+utility.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/vcd/\hyperlink{vcd__utility_8cpp}{vcd\+\_\+utility.\+cpp}\end{DoxyCompactItemize}

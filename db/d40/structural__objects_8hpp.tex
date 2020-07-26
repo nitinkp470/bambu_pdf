@@ -1,0 +1,778 @@
+\hypertarget{structural__objects_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/circuit/structural\+\_\+objects.hpp File Reference}
+\label{structural__objects_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/circuit/structural\+\_\+objects.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/circuit/structural\+\_\+objects.\+hpp}}
+
+
+This class describes all classes used to represent a structural object.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+B\+A\+M\+B\+U\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+K\+O\+A\+L\+A\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+T\+E\+C\+H\+N\+O\+L\+O\+G\+Y\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+T\+U\+C\+A\+N\+O\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}simple\+\_\+indent.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utility.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}N\+P\+\_\+functionality.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+Include dependency graph for structural\+\_\+objects.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d15/structural__objects_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/deb/structural__objects_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor}
+\begin{DoxyCompactList}\small\item\em Structure representing the most relevant information about the type of a structural object. \end{DoxyCompactList}\item 
+class \hyperlink{classstructural__object}{structural\+\_\+object}
+\begin{DoxyCompactList}\small\item\em Base object for all the structural objects. \end{DoxyCompactList}\item 
+struct \hyperlink{structport__o}{port\+\_\+o}
+\begin{DoxyCompactList}\small\item\em This class describes a port associated with a component or a channel. \end{DoxyCompactList}\item 
+class \hyperlink{classevent__o}{event\+\_\+o}
+\begin{DoxyCompactList}\small\item\em This class describes a generic event. \end{DoxyCompactList}\item 
+class \hyperlink{classdata__o}{data\+\_\+o}
+\begin{DoxyCompactList}\small\item\em This class describes a generic data declaration object. \end{DoxyCompactList}\item 
+class \hyperlink{classaction__o}{action\+\_\+o}
+\begin{DoxyCompactList}\small\item\em This class describes a generic systemC action. \end{DoxyCompactList}\item 
+class \hyperlink{classconstant__o}{constant\+\_\+o}
+\begin{DoxyCompactList}\small\item\em This class describes a constant value. \end{DoxyCompactList}\item 
+class \hyperlink{classsignal__o}{signal\+\_\+o}
+\begin{DoxyCompactList}\small\item\em This class describes a simple logic/\+R\+TL signal. \end{DoxyCompactList}\item 
+class \hyperlink{classmodule}{module}
+\begin{DoxyCompactList}\small\item\em This class describes a generic module. \end{DoxyCompactList}\item 
+class \hyperlink{classcomponent__o}{component\+\_\+o}
+\begin{DoxyCompactList}\small\item\em This class describes a generic component. \end{DoxyCompactList}\item 
+class \hyperlink{classchannel__o}{channel\+\_\+o}
+\begin{DoxyCompactList}\small\item\em This class describes a generic channel. \end{DoxyCompactList}\item 
+class \hyperlink{classbus__connection__o}{bus\+\_\+connection\+\_\+o}
+\begin{DoxyCompactList}\small\item\em This class describes a generic bus connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{structural__objects_8hpp_aebf80a3c1ea9df50bc240ed1ef97925e}{H\+I\+E\+R\+A\+R\+C\+H\+Y\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}~\char`\"{}/\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_a9972ca8e843ee2f556a4b9f85ac48912}{M\+E\+M\+O\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}~\char`\"{}M\+E\+M\+O\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_aa915835d065f0e9f76a79a7fbaf2ed6b}{P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}~\char`\"{}P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_ac0302218136ae7f765960320b3eb6bb9}{V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}~\char`\"{}V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_a1bd64c5a78c14612e816a6b015f6da43}{C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}~\char`\"{}clock\char`\"{}
+\begin{DoxyCompactList}\small\item\em standard name for ports \end{DoxyCompactList}\item 
+\#define \hyperlink{structural__objects_8hpp_a5c6317e366233a2076dd0671120a7097}{W\+E\+N\+A\+B\+L\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}~\char`\"{}wenable\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_a2dc446d2b5275c99cf6fd7a6100d50b2}{S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}~\char`\"{}start\+\_\+port\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_a266ca5fd3870939a37c0aa13017e02e4}{R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}~\char`\"{}reset\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_ac3c1bb36aca1f69a6ea27d39dc174afc}{D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}~\char`\"{}done\+\_\+port\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_a8a5012246906348205daa3de0c13fff2}{R\+E\+T\+U\+R\+N\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}~\char`\"{}return\+\_\+port\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_adf76eb78025f28d38c8397ed70d01c07}{S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+M\+E\+\_\+\+C\+FC}~\char`\"{}start\+\_\+port\+\_\+\+C\+FC\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_a88516bac60196c8a098e49569e290544}{D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+M\+E\+\_\+\+C\+FC}~\char`\"{}done\+\_\+port\+\_\+\+C\+FC\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_ab0db6d7402fd645fdf8eba8f1108241e}{P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}~\char`\"{}present\+\_\+state\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_a0eddddfe5991128fb86d916b066ac484}{N\+E\+X\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}~\char`\"{}next\+\_\+state\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_a8dd12405a67b2de38f13af90908212de}{N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+CH}~\char`\"{}out\+\_\+mismatch\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_a369cee31116ef84a8d9afac3a09170ec}{N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H\+\_\+\+ID}~\char`\"{}out\+\_\+mismatch\+\_\+id\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_a5d8b598a23ad1da4ed448a001bbccb47}{N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H\+\_\+\+O\+F\+F\+S\+ET}~\char`\"{}out\+\_\+mismatch\+\_\+trace\+\_\+offset\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_aad48eb1896dd957ecc6f8ff1a1bf2abb}{S\+E\+L\+E\+C\+T\+O\+R\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+F\+I\+LE}~\char`\"{}selector\+\_\+register\+\_\+file\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_ae7d8ac2bfcf78c1fcbf9d26246d43681}{S\+U\+S\+P\+E\+N\+S\+I\+ON}~\char`\"{}suspension\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_acc0b9b938e70643d262655e5e50fcda9}{R\+E\+Q\+U\+E\+S\+T\+\_\+\+A\+C\+C\+E\+P\+T\+ED}~\char`\"{}request\+\_\+accepted\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_a156370934017c630244e1f2e44984dea}{T\+A\+S\+K\+S\+\_\+\+P\+O\+O\+L\+\_\+\+E\+ND}~\char`\"{}task\+\_\+pool\+\_\+end\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_ae8dbc3e8298a6fa13df5f5bf5e0cdd3b}{D\+O\+N\+E\+\_\+\+S\+C\+H\+E\+D\+U\+L\+ER}~\char`\"{}done\+\_\+scheduler\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_a00a87324c38c3aef39758ed086b8eb4c}{D\+O\+N\+E\+\_\+\+R\+E\+Q\+U\+E\+ST}~\char`\"{}done\+\_\+request\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_ae0ed54867115f2603e8dce99ad0649a4}{P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX}~\char`\"{}P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+\_\+\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_a83497ab75f6306e50d7a9996a6cacb13}{W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX}~\char`\"{}W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+\_\+\char`\"{}
+\item 
+\#define \hyperlink{structural__objects_8hpp_a842522cace5150638454cbb47e96c02d}{G\+E\+T\+\_\+\+S\+O\+\_\+\+K\+I\+N\+D\+\_\+\+T\+E\+XT}(meth)
+\begin{DoxyCompactList}\small\item\em Macro which defines the get\+\_\+kind\+\_\+text function that returns the parameter as a string. \end{DoxyCompactList}\item 
+\#define \hyperlink{structural__objects_8hpp_a3c7a928b472bffd3f2df976ce3ef1158}{G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+A\+ME}(structural\+\_\+obj)~((structural\+\_\+obj)-\/$>$get\+\_\+type\+Ref()-\/$>$id\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Macro returning the string name of a type. \end{DoxyCompactList}\item 
+\#define \hyperlink{structural__objects_8hpp_a4dfcecfc16ecfc10e9f53a0d5201e86d}{G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+I\+ZE}(structural\+\_\+obj)~((structural\+\_\+obj)-\/$>$get\+\_\+type\+Ref()-\/$>$vector\+\_\+size ? ((structural\+\_\+obj)-\/$>$get\+\_\+type\+Ref()-\/$>$vector\+\_\+size $\ast$ (structural\+\_\+obj)-\/$>$get\+\_\+type\+Ref()-\/$>$size) \+: (structural\+\_\+obj)-\/$>$get\+\_\+type\+Ref()-\/$>$size)
+\begin{DoxyCompactList}\small\item\em Macro returning the size of the type of a structural object. \end{DoxyCompactList}\item 
+\#define \hyperlink{structural__objects_8hpp_a8e898ecf12aa119aca922252788af506}{S\+T\+D\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE}(structural\+\_\+obj)~((structural\+\_\+obj)-\/$>$vector\+\_\+size ? ((structural\+\_\+obj)-\/$>$vector\+\_\+size $\ast$ (structural\+\_\+obj)-\/$>$size) \+: (structural\+\_\+obj)-\/$>$size)
+\begin{DoxyCompactList}\small\item\em Macro returning the size of a type. \end{DoxyCompactList}\item 
+\#define \hyperlink{structural__objects_8hpp_ab4cf2c8974d0c8e130a1af719dd7c09c}{G\+E\+T\+\_\+\+S\+O\+\_\+\+K\+I\+ND}(meth)
+\begin{DoxyCompactList}\small\item\em Macro used to implement get\+\_\+kind() function in \hyperlink{classstructural__object}{structural\+\_\+object} hyerarchy classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor} $>$ \hyperlink{structural__objects_8hpp_a219296792577e3292783725961506c83}{structural\+\_\+type\+\_\+descriptor\+Ref}
+\begin{DoxyCompactList}\small\item\em Ref\+Count type definition of the \hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor} class structure. \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classstructural__object}{structural\+\_\+object} $>$ \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}
+\begin{DoxyCompactList}\small\item\em Ref\+Count type definition of the \hyperlink{classstructural__object}{structural\+\_\+object} class structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439}{so\+\_\+kind} \{ \newline
+\hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a245c4ad59cb98085da034d85a4049427}{component\+\_\+o\+\_\+K}, 
+\hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a0c86d47396583f45c82da0fed48eb87a}{channel\+\_\+o\+\_\+K}, 
+\hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a3d6843f635449fe8b1d543456c17aa57}{bus\+\_\+connection\+\_\+o\+\_\+K}, 
+\hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a4c0a3061d39b1369382b36e83e958aca}{constant\+\_\+o\+\_\+K}, 
+\newline
+\hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439af5cce0652a4b929eb729cea043236e42}{signal\+\_\+o\+\_\+K}, 
+\hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a5a76f150a85399fd0d1ffa0674f44062}{signal\+\_\+vector\+\_\+o\+\_\+K}, 
+\hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439acdcc7e8708a89b5424ed8b41c47f19b0}{port\+\_\+o\+\_\+K}, 
+\hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439aa360a70a63aceee6238bd33e3c104a8d}{port\+\_\+vector\+\_\+o\+\_\+K}, 
+\newline
+\hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439af2d8b6403cf0e58fea46e7b519780992}{event\+\_\+o\+\_\+K}, 
+\hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a36f5b5930ba981751784c2e76a37e132}{data\+\_\+o\+\_\+K}, 
+\hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a41d728c471a40dff2077f61fd6700b29}{action\+\_\+o\+\_\+K}
+ \}\begin{DoxyCompactList}\small\item\em Enumerative type for structural object classes, it is used with get\+\_\+kind() function to know the actual type of a \hyperlink{classstructural__object}{structural\+\_\+object}. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}\textbf{ Forward declarations.}\par
+{\em Autoheader include
+
+S\+TL include }\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structural__objects_8hpp_af67cbe843687472baa608e3f81d42c66}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classstructural__manager}{structural\+\_\+manager})
+\item 
+\hyperlink{structural__objects_8hpp_a6cc986d41bd8485ca4cca564e4602129}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classstructural__object}{structural\+\_\+object})
+\item 
+\hyperlink{structural__objects_8hpp_a1e2174e4f038a0b7f20e1e08332e0e05}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classstructural__object}{structural\+\_\+object})
+\item 
+\hyperlink{structural__objects_8hpp_addad9d423d5c91b257540df3bbf5766c}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor})
+\item 
+\hyperlink{structural__objects_8hpp_a7c20a82ecd2825bfa958fc8191c4d929}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtechnology__manager}{technology\+\_\+manager})
+\item 
+\hyperlink{structural__objects_8hpp_a72446ed20f53edef97fbaa70462e8a88}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structtechnology__node}{technology\+\_\+node})
+\item 
+\hyperlink{structural__objects_8hpp_afb0fcc57e5ac51434559ac6958107584}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structattribute}{attribute})
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+This class describes all classes used to represent a structural object. 
+
+Objects can represent items at different level of abstraction\+: logic, R\+TL and T\+LM.
+
+\begin{DoxyAuthor}{Author}
+Matteo Barbati \href{mailto:mbarbati@gmail.com}{\tt mbarbati@gmail.\+com} 
+
+Christian Pilato \href{mailto:pilato@elet.polimi.it}{\tt pilato@elet.\+polimi.\+it} 
+
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{structural__objects_8hpp_a1bd64c5a78c14612e816a6b015f6da43}\label{structural__objects_8hpp_a1bd64c5a78c14612e816a6b015f6da43}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME@{C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}}
+\index{C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME@{C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}{CLOCK\_PORT\_NAME}}
+{\footnotesize\ttfamily \#define C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME~\char`\"{}clock\char`\"{}}
+
+
+
+standard name for ports 
+
+
+
+Definition at line 104 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by classic\+\_\+datapath\+::add\+\_\+clock\+\_\+reset(), Control\+Flow\+Checker\+::add\+\_\+clock\+\_\+reset(), Controller\+Creator\+Base\+Step\+::add\+\_\+clock\+\_\+reset(), fu\+\_\+binding\+::add\+\_\+gate(), top\+\_\+entity\+\_\+cs\+::add\+\_\+input\+\_\+register(), top\+\_\+entity\+::add\+\_\+input\+\_\+register(), R\+T\+L\+Characterization\+::add\+\_\+input\+\_\+register(), R\+T\+L\+Characterization\+::add\+\_\+output\+\_\+register(), cs\+\_\+interface\+::add\+\_\+parameter\+\_\+port(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+module(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+wrapper(), Parallel\+Memory\+Fu\+Binding\+::add\+\_\+to\+\_\+\+S\+M(), reg\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), State\+Transition\+Graph\+Manager\+::add\+\_\+to\+\_\+\+S\+M(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), Functional\+Unit\+Step\+::\+Analyze\+Fu(), Testbench\+Generation\+Base\+Step\+::begin\+\_\+file\+\_\+reading\+\_\+operation(), build\+\_\+bus\+\_\+interface(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+bus\+\_\+interface(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+complete\+\_\+logic(), minimal\+\_\+interface\+::build\+\_\+wrapper(), build\+Circuit(), allocation\+::\+Build\+Proxy\+Function\+Verilog(), allocation\+::\+Build\+Proxy\+Function\+V\+H\+D\+L(), allocation\+::\+Build\+Proxy\+Wrapper(), datapath\+\_\+parallel\+\_\+cs\+::connect\+\_\+module\+\_\+kernel(), connect\+Clock\+And\+Reset(), create\+\_\+control\+\_\+flow\+\_\+checker(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+array(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Read\+\_\+simple(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Write\+\_\+simple(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), Vcd\+Signal\+Selection\+::\+Exec(), Xilinx\+Taste\+Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), vcd\+\_\+utility\+::\+Get\+Clock\+Period(), language\+\_\+writer\+::\+Get\+H\+D\+L\+Reserved\+Names(), Testbench\+Generation\+Base\+Step\+::initialize\+\_\+input\+\_\+signals(), fu\+\_\+binding\+\_\+cs\+::instantiate\+\_\+component\+\_\+kernel(), datapath\+\_\+parallel\+\_\+cs\+::instantiate\+\_\+component\+\_\+parallel(), cs\+\_\+interface\+::instantiate\+\_\+component\+\_\+parallel(), cs\+\_\+interface\+::\+Internal\+Exec(), Taste\+Interface\+Generation\+::\+Internal\+Exec(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), classic\+\_\+datapath\+::\+Internal\+Exec(), top\+\_\+entity\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), conn\+\_\+binding\+::mux\+\_\+connection(), flopoco\+\_\+wrapper\+::output\+Port\+Declaration(), flopoco\+\_\+wrapper\+::output\+Port\+Map(), propagate\+Interface(), Testbench\+Generation\+Base\+Step\+::read\+\_\+input\+\_\+value\+\_\+from\+\_\+file(), Minimal\+Interface\+Testbench\+::read\+\_\+input\+\_\+value\+\_\+from\+\_\+file\+\_\+\+R\+N\+O\+N\+E(), fu\+\_\+binding\+::specialise\+\_\+fu(), reg\+\_\+binding\+::specialise\+\_\+reg(), module\+Generator\+::specialize\+\_\+fu(), Testbench\+Generation\+Base\+Step\+::testbench\+\_\+controller\+\_\+machine(), Wishbone\+Interface\+Testbench\+::write\+\_\+call(), Minimal\+Interface\+Testbench\+::write\+\_\+call(), Testbench\+Generation\+Base\+Step\+::write\+\_\+hdl\+\_\+testbench(), Minimal\+Interface\+Testbench\+::write\+\_\+input\+\_\+signal\+\_\+declaration(), Minimal\+Interface\+Testbench\+::write\+\_\+interface\+\_\+handler(), Testbench\+Generation\+Base\+Step\+::write\+\_\+max\+\_\+simulation\+\_\+time\+\_\+control(), Wishbone\+Interface\+Testbench\+::write\+\_\+memory\+\_\+handler(), Minimal\+Interface\+Testbench\+::write\+\_\+memory\+\_\+handler(), Testbench\+Generation\+Base\+Step\+::write\+\_\+module\+\_\+begin(), Testbench\+Generation\+Base\+Step\+::write\+\_\+module\+\_\+instantiation(), Testbench\+Generation\+Base\+Step\+::write\+\_\+output\+\_\+checks(), Testbench\+Generation\+Base\+Step\+::write\+\_\+sim\+\_\+time\+\_\+calc(), Testbench\+Generation\+Base\+Step\+::write\+\_\+verilator\+\_\+testbench(), and Wishbone\+Interface\+Testbench\+::write\+\_\+wishbone\+\_\+input\+\_\+signal\+\_\+declaration().
+
+\mbox{\Hypertarget{structural__objects_8hpp_ac3c1bb36aca1f69a6ea27d39dc174afc}\label{structural__objects_8hpp_ac3c1bb36aca1f69a6ea27d39dc174afc}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME@{D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}}
+\index{D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME@{D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}{DONE\_PORT\_NAME}}
+{\footnotesize\ttfamily \#define D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME~\char`\"{}done\+\_\+port\char`\"{}}
+
+
+
+Definition at line 108 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+command\+\_\+ports(), Control\+Flow\+Checker\+::add\+\_\+done\+\_\+port(), Controller\+Creator\+Base\+Step\+::add\+\_\+done\+\_\+port(), classic\+\_\+datapath\+::add\+\_\+ports(), datapath\+\_\+parallel\+\_\+cs\+::add\+\_\+ports(), Parallel\+Memory\+Conn\+Binding\+::add\+\_\+to\+\_\+\+S\+M(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), Omp\+Allocation\+::\+Add\+Panda\+Pthread\+Mutex(), Functional\+Unit\+Step\+::\+Analyze\+Fu(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+complete\+\_\+logic(), minimal\+\_\+interface\+::build\+\_\+wrapper(), datapath\+\_\+parallel\+\_\+cs\+::connect\+\_\+module\+\_\+kernel(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::connect\+\_\+port\+\_\+parallel(), create\+\_\+control\+\_\+flow\+\_\+checker(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Read\+\_\+simple(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Write\+\_\+simple(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), Vcd\+Signal\+Selection\+::\+Exec(), Top\+Entity\+Memory\+Mapped\+::forward\+Ports(), language\+\_\+writer\+::\+Get\+H\+D\+L\+Reserved\+Names(), Top\+Entity\+Memory\+Mapped\+::insert\+Memory\+Mapped\+Register(), Top\+Entity\+Memory\+Mapped\+::insert\+Start\+Done\+Logic(), Top\+Entity\+Memory\+Mapped\+::insert\+Status\+Register(), Taste\+Interface\+Generation\+::\+Internal\+Exec(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), top\+\_\+entity\+::\+Internal\+Exec(), conn\+\_\+binding\+::mux\+\_\+connection(), flopoco\+\_\+wrapper\+::output\+Port\+Declaration(), flopoco\+\_\+wrapper\+::output\+Port\+Map(), propagate\+Interface(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::resize\+\_\+controller\+\_\+parallel(), fu\+\_\+binding\+::specialise\+\_\+fu(), Testbench\+Generation\+Base\+Step\+::write\+\_\+module\+\_\+instantiation(), Testbench\+Generation\+Base\+Step\+::write\+\_\+output\+\_\+checks(), and Minimal\+Interface\+Testbench\+::write\+\_\+output\+\_\+signal\+\_\+declaration().
+
+\mbox{\Hypertarget{structural__objects_8hpp_a88516bac60196c8a098e49569e290544}\label{structural__objects_8hpp_a88516bac60196c8a098e49569e290544}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+M\+E\+\_\+\+C\+FC@{D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+M\+E\+\_\+\+C\+FC}}
+\index{D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+M\+E\+\_\+\+C\+FC@{D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+M\+E\+\_\+\+C\+FC}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+M\+E\+\_\+\+C\+FC}{DONE\_PORT\_NAME\_CFC}}
+{\footnotesize\ttfamily \#define D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+M\+E\+\_\+\+C\+FC~\char`\"{}done\+\_\+port\+\_\+\+C\+FC\char`\"{}}
+
+
+
+Definition at line 111 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), and top\+\_\+entity\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{structural__objects_8hpp_a00a87324c38c3aef39758ed086b8eb4c}\label{structural__objects_8hpp_a00a87324c38c3aef39758ed086b8eb4c}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!D\+O\+N\+E\+\_\+\+R\+E\+Q\+U\+E\+ST@{D\+O\+N\+E\+\_\+\+R\+E\+Q\+U\+E\+ST}}
+\index{D\+O\+N\+E\+\_\+\+R\+E\+Q\+U\+E\+ST@{D\+O\+N\+E\+\_\+\+R\+E\+Q\+U\+E\+ST}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{D\+O\+N\+E\+\_\+\+R\+E\+Q\+U\+E\+ST}{DONE\_REQUEST}}
+{\footnotesize\ttfamily \#define D\+O\+N\+E\+\_\+\+R\+E\+Q\+U\+E\+ST~\char`\"{}done\+\_\+request\char`\"{}}
+
+
+
+Definition at line 122 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port\+\_\+kernel(), datapath\+\_\+cs\+::add\+\_\+ports(), datapath\+\_\+parallel\+\_\+cs\+::add\+\_\+ports(), datapath\+\_\+parallel\+\_\+cs\+::connect\+\_\+module\+\_\+kernel(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::connect\+\_\+port\+\_\+parallel(), fu\+\_\+binding\+\_\+cs\+::instantiate\+\_\+component\+\_\+kernel(), and top\+\_\+entity\+\_\+parallel\+\_\+cs\+::resize\+\_\+controller\+\_\+parallel().
+
+\mbox{\Hypertarget{structural__objects_8hpp_ae8dbc3e8298a6fa13df5f5bf5e0cdd3b}\label{structural__objects_8hpp_ae8dbc3e8298a6fa13df5f5bf5e0cdd3b}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!D\+O\+N\+E\+\_\+\+S\+C\+H\+E\+D\+U\+L\+ER@{D\+O\+N\+E\+\_\+\+S\+C\+H\+E\+D\+U\+L\+ER}}
+\index{D\+O\+N\+E\+\_\+\+S\+C\+H\+E\+D\+U\+L\+ER@{D\+O\+N\+E\+\_\+\+S\+C\+H\+E\+D\+U\+L\+ER}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{D\+O\+N\+E\+\_\+\+S\+C\+H\+E\+D\+U\+L\+ER}{DONE\_SCHEDULER}}
+{\footnotesize\ttfamily \#define D\+O\+N\+E\+\_\+\+S\+C\+H\+E\+D\+U\+L\+ER~\char`\"{}done\+\_\+scheduler\char`\"{}}
+
+
+
+Definition at line 121 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port\+\_\+kernel(), datapath\+\_\+cs\+::add\+\_\+ports(), and fu\+\_\+binding\+\_\+cs\+::instantiate\+\_\+component\+\_\+kernel().
+
+\mbox{\Hypertarget{structural__objects_8hpp_ab4cf2c8974d0c8e130a1af719dd7c09c}\label{structural__objects_8hpp_ab4cf2c8974d0c8e130a1af719dd7c09c}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!G\+E\+T\+\_\+\+S\+O\+\_\+\+K\+I\+ND@{G\+E\+T\+\_\+\+S\+O\+\_\+\+K\+I\+ND}}
+\index{G\+E\+T\+\_\+\+S\+O\+\_\+\+K\+I\+ND@{G\+E\+T\+\_\+\+S\+O\+\_\+\+K\+I\+ND}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+S\+O\+\_\+\+K\+I\+ND}{GET\_SO\_KIND}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+S\+O\+\_\+\+K\+I\+ND(\begin{DoxyParamCaption}\item[{}]{meth }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{enum} \hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439}{so\_kind} get\_kind() const override \(\backslash\)
+   \{                                      \(\backslash\)
+      return (meth##\_K);                  \(\backslash\)
+   \}
+\end{DoxyCode}
+
+
+Macro used to implement get\+\_\+kind() function in \hyperlink{classstructural__object}{structural\+\_\+object} hyerarchy classes. 
+
+
+
+Definition at line 334 of file structural\+\_\+objects.\+hpp.
+
+\mbox{\Hypertarget{structural__objects_8hpp_a842522cace5150638454cbb47e96c02d}\label{structural__objects_8hpp_a842522cace5150638454cbb47e96c02d}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!G\+E\+T\+\_\+\+S\+O\+\_\+\+K\+I\+N\+D\+\_\+\+T\+E\+XT@{G\+E\+T\+\_\+\+S\+O\+\_\+\+K\+I\+N\+D\+\_\+\+T\+E\+XT}}
+\index{G\+E\+T\+\_\+\+S\+O\+\_\+\+K\+I\+N\+D\+\_\+\+T\+E\+XT@{G\+E\+T\+\_\+\+S\+O\+\_\+\+K\+I\+N\+D\+\_\+\+T\+E\+XT}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+S\+O\+\_\+\+K\+I\+N\+D\+\_\+\+T\+E\+XT}{GET\_SO\_KIND\_TEXT}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+S\+O\+\_\+\+K\+I\+N\+D\+\_\+\+T\+E\+XT(\begin{DoxyParamCaption}\item[{}]{meth }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+std::string get\_kind\_text() const override \(\backslash\)
+   \{                                          \(\backslash\)
+      return std::string(#meth);              \(\backslash\)
+   \}
+\end{DoxyCode}
+
+
+Macro which defines the get\+\_\+kind\+\_\+text function that returns the parameter as a string. 
+
+
+
+Definition at line 129 of file structural\+\_\+objects.\+hpp.
+
+\mbox{\Hypertarget{structural__objects_8hpp_a3c7a928b472bffd3f2df976ce3ef1158}\label{structural__objects_8hpp_a3c7a928b472bffd3f2df976ce3ef1158}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+A\+ME@{G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+A\+ME}}
+\index{G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+A\+ME@{G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+A\+ME}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+A\+ME}{GET\_TYPE\_NAME}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+A\+ME(\begin{DoxyParamCaption}\item[{}]{structural\+\_\+obj }\end{DoxyParamCaption})~((structural\+\_\+obj)-\/$>$get\+\_\+type\+Ref()-\/$>$id\+\_\+type)}
+
+
+
+Macro returning the string name of a type. 
+
+
+
+Definition at line 295 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by structural\+\_\+manager\+::build\+\_\+graph(), fu\+\_\+binding\+::check\+\_\+parametrization(), H\+W\+Discrepancy\+Analysis\+::\+Exec(), H\+D\+L\+\_\+manager\+::get\+\_\+mod\+\_\+typename(), H\+D\+L\+\_\+manager\+::get\+\_\+post\+\_\+order\+\_\+structural\+\_\+components(), conn\+\_\+binding\+\_\+cs\+::instantiate\+\_\+suspension\+\_\+component(), fu\+\_\+binding\+::specialise\+\_\+fu(), H\+D\+L\+\_\+manager\+::write\+\_\+flopoco\+\_\+module(), H\+D\+L\+\_\+manager\+::write\+\_\+module(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+definition\+\_\+end(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+internal\+\_\+declaration(), system\+\_\+verilog\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities(), verilog\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities(), V\+H\+D\+L\+\_\+writer\+::\+Write\+Builtin(), and verilog\+\_\+writer\+::\+Write\+Builtin().
+
+\mbox{\Hypertarget{structural__objects_8hpp_a4dfcecfc16ecfc10e9f53a0d5201e86d}\label{structural__objects_8hpp_a4dfcecfc16ecfc10e9f53a0d5201e86d}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+I\+ZE@{G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+I\+ZE}}
+\index{G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+I\+ZE@{G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+I\+ZE}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+I\+ZE}{GET\_TYPE\_SIZE}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+I\+ZE(\begin{DoxyParamCaption}\item[{}]{structural\+\_\+obj }\end{DoxyParamCaption})~((structural\+\_\+obj)-\/$>$get\+\_\+type\+Ref()-\/$>$vector\+\_\+size ? ((structural\+\_\+obj)-\/$>$get\+\_\+type\+Ref()-\/$>$vector\+\_\+size $\ast$ (structural\+\_\+obj)-\/$>$get\+\_\+type\+Ref()-\/$>$size) \+: (structural\+\_\+obj)-\/$>$get\+\_\+type\+Ref()-\/$>$size)}
+
+
+
+Macro returning the size of the type of a structural object. 
+
+
+
+Definition at line 300 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+datapath\+\_\+connection(), top\+\_\+entity\+\_\+cs\+::add\+\_\+input\+\_\+register(), top\+\_\+entity\+::add\+\_\+input\+\_\+register(), R\+T\+L\+Characterization\+::add\+\_\+input\+\_\+register(), R\+T\+L\+Characterization\+::add\+\_\+output\+\_\+register(), top\+\_\+entity\+::add\+\_\+ports(), conn\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), module\+\_\+interface\+::\+Add\+Connection(), module\+\_\+interface\+::\+Add\+Signal(), minimal\+\_\+interface\+::build\+\_\+wrapper(), allocation\+::\+Build\+Proxy\+Function\+V\+H\+D\+L(), W\+B4\+\_\+interface\+::connect\+\_\+with\+\_\+signal\+\_\+name(), constant\+\_\+o\+::get\+\_\+size(), Taste\+Interface\+Generation\+::\+Internal\+Exec(), conn\+\_\+binding\+::mux\+\_\+allocation(), conn\+\_\+binding\+::mux\+\_\+connection(), verilog\+\_\+writer\+::type\+\_\+converter\+\_\+size(), V\+H\+D\+L\+\_\+writer\+::type\+\_\+converter\+\_\+size(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+io\+\_\+signal\+\_\+post\+\_\+fix(), verilog\+\_\+writer\+::write\+\_\+io\+\_\+signal\+\_\+post\+\_\+fix(), Wishbone\+Interface\+Testbench\+::write\+\_\+memory\+\_\+handler(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl(), Testbench\+Generation\+Base\+Step\+::write\+\_\+output\+\_\+checks(), verilog\+\_\+writer\+::write\+\_\+port\+\_\+binding(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+port\+\_\+binding(), verilog\+\_\+writer\+::write\+\_\+vector\+\_\+port\+\_\+binding(), and V\+H\+D\+L\+\_\+writer\+::write\+\_\+vector\+\_\+port\+\_\+binding().
+
+\mbox{\Hypertarget{structural__objects_8hpp_aebf80a3c1ea9df50bc240ed1ef97925e}\label{structural__objects_8hpp_aebf80a3c1ea9df50bc240ed1ef97925e}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!H\+I\+E\+R\+A\+R\+C\+H\+Y\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR@{H\+I\+E\+R\+A\+R\+C\+H\+Y\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}}
+\index{H\+I\+E\+R\+A\+R\+C\+H\+Y\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR@{H\+I\+E\+R\+A\+R\+C\+H\+Y\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{H\+I\+E\+R\+A\+R\+C\+H\+Y\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}{HIERARCHY\_SEPARATOR}}
+{\footnotesize\ttfamily \#define H\+I\+E\+R\+A\+R\+C\+H\+Y\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR~\char`\"{}/\char`\"{}}
+
+
+
+Definition at line 97 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by vcd\+\_\+parser\+::add\+\_\+variation(), structural\+\_\+manager\+::check\+\_\+object(), H\+W\+Call\+Path\+Calculator\+::discover\+\_\+vertex(), H\+W\+Call\+Path\+Calculator\+::examine\+\_\+edge(), vcd\+\_\+utility\+::\+Exec(), Vcd\+Signal\+Selection\+::\+Exec(), structural\+\_\+object\+::get\+\_\+path(), vcd\+\_\+utility\+::\+Get\+Clock\+Period(), H\+W\+Call\+Path\+Calculator\+::start\+\_\+vertex(), vcd\+\_\+parser\+::vcd\+\_\+push\+\_\+def\+\_\+scope(), Testbench\+Generation\+Base\+Step\+::write\+\_\+initial\+\_\+block(), and module\+::xload().
+
+\mbox{\Hypertarget{structural__objects_8hpp_a9972ca8e843ee2f556a4b9f85ac48912}\label{structural__objects_8hpp_a9972ca8e843ee2f556a4b9f85ac48912}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!M\+E\+M\+O\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{M\+E\+M\+O\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}}
+\index{M\+E\+M\+O\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{M\+E\+M\+O\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+O\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}{MEMORY\_PARAMETER}}
+{\footnotesize\ttfamily \#define M\+E\+M\+O\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER~\char`\"{}M\+E\+M\+O\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER\char`\"{}}
+
+
+
+Definition at line 99 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by memory\+::add\+\_\+memory\+\_\+parameter(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+wrapper(), module\+::\+Add\+Parameter(), memory\+::propagate\+\_\+memory\+\_\+parameters(), Testbench\+Generation\+Base\+Step\+::write\+\_\+auxiliary\+\_\+signal\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl(), and verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl().
+
+\mbox{\Hypertarget{structural__objects_8hpp_a0eddddfe5991128fb86d916b066ac484}\label{structural__objects_8hpp_a0eddddfe5991128fb86d916b066ac484}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!N\+E\+X\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME@{N\+E\+X\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}}
+\index{N\+E\+X\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME@{N\+E\+X\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{N\+E\+X\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}{NEXT\_STATE\_PORT\_NAME}}
+{\footnotesize\ttfamily \#define N\+E\+X\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME~\char`\"{}next\+\_\+state\char`\"{}}
+
+
+
+Definition at line 113 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by Control\+Flow\+Checker\+::add\+\_\+present\+\_\+state(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), create\+\_\+control\+\_\+flow\+\_\+checker(), top\+\_\+entity\+::\+Internal\+Exec(), H\+D\+L\+\_\+manager\+::write\+\_\+fsm(), verilog\+\_\+writer\+::write\+\_\+present\+\_\+state\+\_\+update(), verilog\+\_\+writer\+::write\+\_\+state\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions(), and verilog\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions().
+
+\mbox{\Hypertarget{structural__objects_8hpp_a8dd12405a67b2de38f13af90908212de}\label{structural__objects_8hpp_a8dd12405a67b2de38f13af90908212de}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+CH@{N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+CH}}
+\index{N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+CH@{N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+CH}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+CH}{NOTIFIER\_PORT\_MISMATCH}}
+{\footnotesize\ttfamily \#define N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+CH~\char`\"{}out\+\_\+mismatch\char`\"{}}
+
+
+
+Definition at line 114 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by Control\+Flow\+Checker\+::add\+\_\+notifiers().
+
+\mbox{\Hypertarget{structural__objects_8hpp_a369cee31116ef84a8d9afac3a09170ec}\label{structural__objects_8hpp_a369cee31116ef84a8d9afac3a09170ec}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H\+\_\+\+ID@{N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H\+\_\+\+ID}}
+\index{N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H\+\_\+\+ID@{N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H\+\_\+\+ID}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H\+\_\+\+ID}{NOTIFIER\_PORT\_MISMATCH\_ID}}
+{\footnotesize\ttfamily \#define N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H\+\_\+\+ID~\char`\"{}out\+\_\+mismatch\+\_\+id\char`\"{}}
+
+
+
+Definition at line 115 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by Control\+Flow\+Checker\+::add\+\_\+notifiers().
+
+\mbox{\Hypertarget{structural__objects_8hpp_a5d8b598a23ad1da4ed448a001bbccb47}\label{structural__objects_8hpp_a5d8b598a23ad1da4ed448a001bbccb47}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H\+\_\+\+O\+F\+F\+S\+ET@{N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H\+\_\+\+O\+F\+F\+S\+ET}}
+\index{N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H\+\_\+\+O\+F\+F\+S\+ET@{N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H\+\_\+\+O\+F\+F\+S\+ET}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H\+\_\+\+O\+F\+F\+S\+ET}{NOTIFIER\_PORT\_MISMATCH\_OFFSET}}
+{\footnotesize\ttfamily \#define N\+O\+T\+I\+F\+I\+E\+R\+\_\+\+P\+O\+R\+T\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H\+\_\+\+O\+F\+F\+S\+ET~\char`\"{}out\+\_\+mismatch\+\_\+trace\+\_\+offset\char`\"{}}
+
+
+
+Definition at line 116 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by Control\+Flow\+Checker\+::add\+\_\+notifiers().
+
+\mbox{\Hypertarget{structural__objects_8hpp_aa915835d065f0e9f76a79a7fbaf2ed6b}\label{structural__objects_8hpp_aa915835d065f0e9f76a79a7fbaf2ed6b}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}}
+\index{P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}{PIPE\_PARAMETER}}
+{\footnotesize\ttfamily \#define P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER~\char`\"{}P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER\char`\"{}}
+
+
+
+Definition at line 100 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), H\+D\+L\+\_\+manager\+::get\+\_\+mod\+\_\+typename(), fu\+\_\+binding\+::specialise\+\_\+fu(), and H\+D\+L\+\_\+manager\+::write\+\_\+flopoco\+\_\+module().
+
+\mbox{\Hypertarget{structural__objects_8hpp_ab0db6d7402fd645fdf8eba8f1108241e}\label{structural__objects_8hpp_ab0db6d7402fd645fdf8eba8f1108241e}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME@{P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}}
+\index{P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME@{P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}{PRESENT\_STATE\_PORT\_NAME}}
+{\footnotesize\ttfamily \#define P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME~\char`\"{}present\+\_\+state\char`\"{}}
+
+
+
+Definition at line 112 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by Control\+Flow\+Checker\+::add\+\_\+present\+\_\+state(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), create\+\_\+control\+\_\+flow\+\_\+checker(), top\+\_\+entity\+::\+Internal\+Exec(), H\+D\+L\+\_\+manager\+::write\+\_\+fsm(), verilog\+\_\+writer\+::write\+\_\+present\+\_\+state\+\_\+update(), verilog\+\_\+writer\+::write\+\_\+state\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions(), and verilog\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions().
+
+\mbox{\Hypertarget{structural__objects_8hpp_ae0ed54867115f2603e8dce99ad0649a4}\label{structural__objects_8hpp_ae0ed54867115f2603e8dce99ad0649a4}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX@{P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX}}
+\index{P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX@{P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX}{PROXY\_PREFIX}}
+{\footnotesize\ttfamily \#define P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX~\char`\"{}P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+\_\+\char`\"{}}
+
+
+
+Definition at line 123 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by allocation\+::add\+\_\+proxy\+\_\+function\+\_\+module(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+wrapper(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), allocation\+::\+Build\+Proxy\+Function\+Verilog(), allocation\+::\+Build\+Proxy\+Function\+V\+H\+D\+L(), allocation\+::\+Build\+Proxy\+Wrapper(), allocation\+::check\+\_\+proxies(), allocation\+::extract\+\_\+bambu\+\_\+provided(), allocation\+::\+Integrate\+Technology\+Libraries(), add\+\_\+library\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), fu\+\_\+binding\+::kill\+\_\+proxy\+\_\+function\+\_\+units(), fu\+\_\+binding\+::manage\+\_\+killing\+\_\+function\+\_\+proxies(), and resource\+\_\+ordering\+\_\+functor\+::operator()().
+
+\mbox{\Hypertarget{structural__objects_8hpp_acc0b9b938e70643d262655e5e50fcda9}\label{structural__objects_8hpp_acc0b9b938e70643d262655e5e50fcda9}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!R\+E\+Q\+U\+E\+S\+T\+\_\+\+A\+C\+C\+E\+P\+T\+ED@{R\+E\+Q\+U\+E\+S\+T\+\_\+\+A\+C\+C\+E\+P\+T\+ED}}
+\index{R\+E\+Q\+U\+E\+S\+T\+\_\+\+A\+C\+C\+E\+P\+T\+ED@{R\+E\+Q\+U\+E\+S\+T\+\_\+\+A\+C\+C\+E\+P\+T\+ED}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+Q\+U\+E\+S\+T\+\_\+\+A\+C\+C\+E\+P\+T\+ED}{REQUEST\_ACCEPTED}}
+{\footnotesize\ttfamily \#define R\+E\+Q\+U\+E\+S\+T\+\_\+\+A\+C\+C\+E\+P\+T\+ED~\char`\"{}request\+\_\+accepted\char`\"{}}
+
+
+
+Definition at line 119 of file structural\+\_\+objects.\+hpp.
+
+\mbox{\Hypertarget{structural__objects_8hpp_a266ca5fd3870939a37c0aa13017e02e4}\label{structural__objects_8hpp_a266ca5fd3870939a37c0aa13017e02e4}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME@{R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}}
+\index{R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME@{R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}{RESET\_PORT\_NAME}}
+{\footnotesize\ttfamily \#define R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME~\char`\"{}reset\char`\"{}}
+
+
+
+Definition at line 107 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by classic\+\_\+datapath\+::add\+\_\+clock\+\_\+reset(), Control\+Flow\+Checker\+::add\+\_\+clock\+\_\+reset(), Controller\+Creator\+Base\+Step\+::add\+\_\+clock\+\_\+reset(), fu\+\_\+binding\+::add\+\_\+gate(), top\+\_\+entity\+::add\+\_\+input\+\_\+register(), R\+T\+L\+Characterization\+::add\+\_\+input\+\_\+register(), R\+T\+L\+Characterization\+::add\+\_\+output\+\_\+register(), cs\+\_\+interface\+::add\+\_\+parameter\+\_\+port(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+module(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+wrapper(), Parallel\+Memory\+Fu\+Binding\+::add\+\_\+to\+\_\+\+S\+M(), reg\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), State\+Transition\+Graph\+Manager\+::add\+\_\+to\+\_\+\+S\+M(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), Functional\+Unit\+Step\+::\+Analyze\+Fu(), build\+\_\+bus\+\_\+interface(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+bus\+\_\+interface(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+complete\+\_\+logic(), minimal\+\_\+interface\+::build\+\_\+wrapper(), build\+Circuit(), allocation\+::\+Build\+Proxy\+Function\+Verilog(), allocation\+::\+Build\+Proxy\+Function\+V\+H\+D\+L(), allocation\+::\+Build\+Proxy\+Wrapper(), datapath\+\_\+parallel\+\_\+cs\+::connect\+\_\+module\+\_\+kernel(), connect\+Clock\+And\+Reset(), create\+\_\+control\+\_\+flow\+\_\+checker(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+array(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Read\+\_\+simple(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Write\+\_\+simple(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), language\+\_\+writer\+::\+Get\+H\+D\+L\+Reserved\+Names(), Testbench\+Generation\+Base\+Step\+::initialize\+\_\+auxiliary\+\_\+variables(), Testbench\+Generation\+Base\+Step\+::initialize\+\_\+input\+\_\+signals(), fu\+\_\+binding\+\_\+cs\+::instantiate\+\_\+component\+\_\+kernel(), datapath\+\_\+parallel\+\_\+cs\+::instantiate\+\_\+component\+\_\+parallel(), cs\+\_\+interface\+::instantiate\+\_\+component\+\_\+parallel(), cs\+\_\+interface\+::\+Internal\+Exec(), Taste\+Interface\+Generation\+::\+Internal\+Exec(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), classic\+\_\+datapath\+::\+Internal\+Exec(), top\+\_\+entity\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), conn\+\_\+binding\+::mux\+\_\+connection(), flopoco\+\_\+wrapper\+::output\+Port\+Declaration(), flopoco\+\_\+wrapper\+::output\+Port\+Map(), propagate\+Interface(), Testbench\+Generation\+Base\+Step\+::read\+\_\+input\+\_\+value\+\_\+from\+\_\+file(), Minimal\+Interface\+Testbench\+::read\+\_\+input\+\_\+value\+\_\+from\+\_\+file\+\_\+\+R\+N\+O\+N\+E(), fu\+\_\+binding\+::specialise\+\_\+fu(), reg\+\_\+binding\+::specialise\+\_\+reg(), module\+Generator\+::specialize\+\_\+fu(), Testbench\+Generation\+Base\+Step\+::testbench\+\_\+controller\+\_\+machine(), Wishbone\+Interface\+Testbench\+::write\+\_\+call(), Minimal\+Interface\+Testbench\+::write\+\_\+input\+\_\+signal\+\_\+declaration(), Wishbone\+Interface\+Testbench\+::write\+\_\+memory\+\_\+handler(), Testbench\+Generation\+Base\+Step\+::write\+\_\+module\+\_\+instantiation(), system\+\_\+verilog\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities(), and verilog\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities().
+
+\mbox{\Hypertarget{structural__objects_8hpp_a8a5012246906348205daa3de0c13fff2}\label{structural__objects_8hpp_a8a5012246906348205daa3de0c13fff2}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!R\+E\+T\+U\+R\+N\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME@{R\+E\+T\+U\+R\+N\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}}
+\index{R\+E\+T\+U\+R\+N\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME@{R\+E\+T\+U\+R\+N\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+T\+U\+R\+N\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}{RETURN\_PORT\_NAME}}
+{\footnotesize\ttfamily \#define R\+E\+T\+U\+R\+N\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME~\char`\"{}return\+\_\+port\char`\"{}}
+
+
+
+Definition at line 109 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by top\+\_\+entity\+::add\+\_\+ports(), classic\+\_\+datapath\+::add\+\_\+ports(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), Top\+Entity\+Memory\+Mapped\+::forward\+Ports(), language\+\_\+writer\+::\+Get\+H\+D\+L\+Reserved\+Names(), Testbench\+Generation\+Base\+Step\+::init\+\_\+extra\+\_\+signals(), Top\+Entity\+Memory\+Mapped\+::insert\+Memory\+Mapped\+Register(), Taste\+Interface\+Generation\+::\+Internal\+Exec(), propagate\+Interface(), Wishbone\+Interface\+Testbench\+::write\+\_\+call(), Minimal\+Interface\+Testbench\+::write\+\_\+call(), Wishbone\+Interface\+Testbench\+::write\+\_\+file\+\_\+reading\+\_\+operations(), Testbench\+Generation\+Base\+Step\+::write\+\_\+output\+\_\+checks(), Minimal\+Interface\+Testbench\+::write\+\_\+output\+\_\+signal\+\_\+declaration(), Wishbone\+Interface\+Testbench\+::write\+\_\+signals(), H\+L\+S\+C\+Writer\+::\+Write\+Expected\+Results(), H\+L\+S\+C\+Writer\+::\+Write\+Main\+Testbench(), and H\+L\+S\+C\+Writer\+::\+Write\+Testbench\+Function\+Call().
+
+\mbox{\Hypertarget{structural__objects_8hpp_aad48eb1896dd957ecc6f8ff1a1bf2abb}\label{structural__objects_8hpp_aad48eb1896dd957ecc6f8ff1a1bf2abb}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!S\+E\+L\+E\+C\+T\+O\+R\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+F\+I\+LE@{S\+E\+L\+E\+C\+T\+O\+R\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+F\+I\+LE}}
+\index{S\+E\+L\+E\+C\+T\+O\+R\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+F\+I\+LE@{S\+E\+L\+E\+C\+T\+O\+R\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+F\+I\+LE}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{S\+E\+L\+E\+C\+T\+O\+R\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+F\+I\+LE}{SELECTOR\_REGISTER\_FILE}}
+{\footnotesize\ttfamily \#define S\+E\+L\+E\+C\+T\+O\+R\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+F\+I\+LE~\char`\"{}selector\+\_\+register\+\_\+file\char`\"{}}
+
+
+
+Definition at line 117 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port(), top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port\+\_\+kernel(), top\+\_\+entity\+\_\+cs\+::add\+\_\+input\+\_\+register(), datapath\+\_\+cs\+::add\+\_\+ports(), controller\+\_\+cs\+::add\+\_\+selector\+\_\+register\+\_\+file\+\_\+port(), fu\+\_\+binding\+\_\+cs\+::connect\+\_\+selector(), fu\+\_\+binding\+\_\+cs\+::connect\+\_\+selector\+\_\+kernel(), reg\+\_\+binding\+\_\+cs\+::specialise\+\_\+reg(), verilog\+\_\+writer\+::write\+\_\+present\+\_\+state\+\_\+update(), and verilog\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions().
+
+\mbox{\Hypertarget{structural__objects_8hpp_a2dc446d2b5275c99cf6fd7a6100d50b2}\label{structural__objects_8hpp_a2dc446d2b5275c99cf6fd7a6100d50b2}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME@{S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}}
+\index{S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME@{S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}{START\_PORT\_NAME}}
+{\footnotesize\ttfamily \#define S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME~\char`\"{}start\+\_\+port\char`\"{}}
+
+
+
+Definition at line 106 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+command\+\_\+ports(), top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port\+\_\+kernel(), top\+\_\+entity\+\_\+cs\+::add\+\_\+input\+\_\+register(), datapath\+\_\+cs\+::add\+\_\+ports(), classic\+\_\+datapath\+::add\+\_\+ports(), datapath\+\_\+parallel\+\_\+cs\+::add\+\_\+ports(), Control\+Flow\+Checker\+::add\+\_\+start\+\_\+port(), Controller\+Creator\+Base\+Step\+::add\+\_\+start\+\_\+port(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), Omp\+Allocation\+::\+Add\+Panda\+Pthread\+Mutex(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), Functional\+Unit\+Step\+::\+Analyze\+Fu(), Testbench\+Generation\+Base\+Step\+::begin\+\_\+file\+\_\+reading\+\_\+operation(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+complete\+\_\+logic(), minimal\+\_\+interface\+::build\+\_\+wrapper(), allocation\+::\+Build\+Proxy\+Function\+Verilog(), allocation\+::\+Build\+Proxy\+Function\+V\+H\+D\+L(), datapath\+\_\+parallel\+\_\+cs\+::connect\+\_\+module\+\_\+kernel(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::connect\+\_\+port\+\_\+parallel(), create\+\_\+control\+\_\+flow\+\_\+checker(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+array(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Read\+\_\+simple(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Write\+\_\+simple(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), vcd\+\_\+utility\+::\+Exec(), Vcd\+Signal\+Selection\+::\+Exec(), Top\+Entity\+Memory\+Mapped\+::forward\+Ports(), language\+\_\+writer\+::\+Get\+H\+D\+L\+Reserved\+Names(), Testbench\+Generation\+Base\+Step\+::initialize\+\_\+input\+\_\+signals(), Top\+Entity\+Memory\+Mapped\+::insert\+Start\+Done\+Logic(), Top\+Entity\+Memory\+Mapped\+::insert\+Status\+Register(), fu\+\_\+binding\+\_\+cs\+::instantiate\+\_\+component\+\_\+kernel(), conn\+\_\+binding\+\_\+cs\+::instantiate\+\_\+suspension\+\_\+component(), Taste\+Interface\+Generation\+::\+Internal\+Exec(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), top\+\_\+entity\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), conn\+\_\+binding\+::mux\+\_\+connection(), flopoco\+\_\+wrapper\+::output\+Port\+Declaration(), propagate\+Interface(), Testbench\+Generation\+Base\+Step\+::read\+\_\+input\+\_\+value\+\_\+from\+\_\+file(), Minimal\+Interface\+Testbench\+::read\+\_\+input\+\_\+value\+\_\+from\+\_\+file\+\_\+\+R\+N\+O\+N\+E(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::resize\+\_\+controller\+\_\+parallel(), fu\+\_\+binding\+::specialise\+\_\+fu(), module\+Generator\+::specialize\+\_\+fu(), Minimal\+Interface\+Testbench\+::write\+\_\+input\+\_\+signal\+\_\+declaration(), Testbench\+Generation\+Base\+Step\+::write\+\_\+module\+\_\+instantiation(), and Wishbone\+Interface\+Testbench\+::write\+\_\+signals().
+
+\mbox{\Hypertarget{structural__objects_8hpp_adf76eb78025f28d38c8397ed70d01c07}\label{structural__objects_8hpp_adf76eb78025f28d38c8397ed70d01c07}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+M\+E\+\_\+\+C\+FC@{S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+M\+E\+\_\+\+C\+FC}}
+\index{S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+M\+E\+\_\+\+C\+FC@{S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+M\+E\+\_\+\+C\+FC}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+M\+E\+\_\+\+C\+FC}{START\_PORT\_NAME\_CFC}}
+{\footnotesize\ttfamily \#define S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+M\+E\+\_\+\+C\+FC~\char`\"{}start\+\_\+port\+\_\+\+C\+FC\char`\"{}}
+
+
+
+Definition at line 110 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), and top\+\_\+entity\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{structural__objects_8hpp_a8e898ecf12aa119aca922252788af506}\label{structural__objects_8hpp_a8e898ecf12aa119aca922252788af506}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!S\+T\+D\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE@{S\+T\+D\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE}}
+\index{S\+T\+D\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE@{S\+T\+D\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+D\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE}{STD\_GET\_SIZE}}
+{\footnotesize\ttfamily \#define S\+T\+D\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE(\begin{DoxyParamCaption}\item[{}]{structural\+\_\+obj }\end{DoxyParamCaption})~((structural\+\_\+obj)-\/$>$vector\+\_\+size ? ((structural\+\_\+obj)-\/$>$vector\+\_\+size $\ast$ (structural\+\_\+obj)-\/$>$size) \+: (structural\+\_\+obj)-\/$>$size)}
+
+
+
+Macro returning the size of a type. 
+
+
+
+Definition at line 305 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), allocation\+::\+Build\+Proxy\+Wrapper(), reg\+\_\+binding\+::compute\+\_\+bitsize(), H\+D\+L\+\_\+manager\+::get\+\_\+mod\+\_\+typename(), Top\+Entity\+Memory\+Mapped\+::insert\+Memory\+Mapped\+Register(), fu\+\_\+binding\+::join\+\_\+merge\+\_\+split(), fu\+\_\+binding\+::manage\+\_\+extern\+\_\+global\+\_\+port(), reg\+\_\+binding\+::specialise\+\_\+reg(), H\+D\+L\+\_\+manager\+::write\+\_\+flopoco\+\_\+module(), and V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization().
+
+\mbox{\Hypertarget{structural__objects_8hpp_ae7d8ac2bfcf78c1fcbf9d26246d43681}\label{structural__objects_8hpp_ae7d8ac2bfcf78c1fcbf9d26246d43681}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!S\+U\+S\+P\+E\+N\+S\+I\+ON@{S\+U\+S\+P\+E\+N\+S\+I\+ON}}
+\index{S\+U\+S\+P\+E\+N\+S\+I\+ON@{S\+U\+S\+P\+E\+N\+S\+I\+ON}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{S\+U\+S\+P\+E\+N\+S\+I\+ON}{SUSPENSION}}
+{\footnotesize\ttfamily \#define S\+U\+S\+P\+E\+N\+S\+I\+ON~\char`\"{}suspension\char`\"{}}
+
+
+
+Definition at line 118 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port(), datapath\+\_\+cs\+::add\+\_\+ports(), conn\+\_\+binding\+\_\+cs\+::connect\+Out\+Or(), and conn\+\_\+binding\+\_\+cs\+::instantiate\+\_\+suspension\+\_\+component().
+
+\mbox{\Hypertarget{structural__objects_8hpp_a156370934017c630244e1f2e44984dea}\label{structural__objects_8hpp_a156370934017c630244e1f2e44984dea}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!T\+A\+S\+K\+S\+\_\+\+P\+O\+O\+L\+\_\+\+E\+ND@{T\+A\+S\+K\+S\+\_\+\+P\+O\+O\+L\+\_\+\+E\+ND}}
+\index{T\+A\+S\+K\+S\+\_\+\+P\+O\+O\+L\+\_\+\+E\+ND@{T\+A\+S\+K\+S\+\_\+\+P\+O\+O\+L\+\_\+\+E\+ND}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{T\+A\+S\+K\+S\+\_\+\+P\+O\+O\+L\+\_\+\+E\+ND}{TASKS\_POOL\_END}}
+{\footnotesize\ttfamily \#define T\+A\+S\+K\+S\+\_\+\+P\+O\+O\+L\+\_\+\+E\+ND~\char`\"{}task\+\_\+pool\+\_\+end\char`\"{}}
+
+
+
+Definition at line 120 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port\+\_\+kernel(), datapath\+\_\+cs\+::add\+\_\+ports(), datapath\+\_\+parallel\+\_\+cs\+::add\+\_\+ports(), datapath\+\_\+parallel\+\_\+cs\+::connect\+\_\+module\+\_\+kernel(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::connect\+\_\+port\+\_\+parallel(), and fu\+\_\+binding\+\_\+cs\+::instantiate\+\_\+component\+\_\+kernel().
+
+\mbox{\Hypertarget{structural__objects_8hpp_ac0302218136ae7f765960320b3eb6bb9}\label{structural__objects_8hpp_ac0302218136ae7f765960320b3eb6bb9}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}}
+\index{V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}{VALUE\_PARAMETER}}
+{\footnotesize\ttfamily \#define V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER~\char`\"{}V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER\char`\"{}}
+
+
+
+Definition at line 101 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp().
+
+\mbox{\Hypertarget{structural__objects_8hpp_a5c6317e366233a2076dd0671120a7097}\label{structural__objects_8hpp_a5c6317e366233a2076dd0671120a7097}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!W\+E\+N\+A\+B\+L\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME@{W\+E\+N\+A\+B\+L\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}}
+\index{W\+E\+N\+A\+B\+L\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME@{W\+E\+N\+A\+B\+L\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{W\+E\+N\+A\+B\+L\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME}{WENABLE\_PORT\_NAME}}
+{\footnotesize\ttfamily \#define W\+E\+N\+A\+B\+L\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME~\char`\"{}wenable\char`\"{}}
+
+
+
+Definition at line 105 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+command\+\_\+ports(), and language\+\_\+writer\+::\+Get\+H\+D\+L\+Reserved\+Names().
+
+\mbox{\Hypertarget{structural__objects_8hpp_a83497ab75f6306e50d7a9996a6cacb13}\label{structural__objects_8hpp_a83497ab75f6306e50d7a9996a6cacb13}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX@{W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX}}
+\index{W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX@{W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX}{WRAPPED\_PROXY\_PREFIX}}
+{\footnotesize\ttfamily \#define W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX~\char`\"{}W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+\_\+\char`\"{}}
+
+
+
+Definition at line 124 of file structural\+\_\+objects.\+hpp.
+
+
+
+Referenced by allocation\+::add\+\_\+proxy\+\_\+function\+\_\+wrapper(), allocation\+::\+Build\+Proxy\+Wrapper(), allocation\+::check\+\_\+proxies(), allocation\+::extract\+\_\+bambu\+\_\+provided(), allocation\+::\+Integrate\+Technology\+Libraries(), add\+\_\+library\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), and Vcd\+Signal\+Selection\+::\+Select\+Internal\+Signals().
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}\label{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!structural\+\_\+object\+Ref@{structural\+\_\+object\+Ref}}
+\index{structural\+\_\+object\+Ref@{structural\+\_\+object\+Ref}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{structural\+\_\+object\+Ref}{structural\_objectRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classstructural__object}{structural\+\_\+object}$>$ \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}
+
+
+
+Ref\+Count type definition of the \hyperlink{classstructural__object}{structural\+\_\+object} class structure. 
+
+
+
+Definition at line 639 of file structural\+\_\+objects.\+hpp.
+
+\mbox{\Hypertarget{structural__objects_8hpp_a219296792577e3292783725961506c83}\label{structural__objects_8hpp_a219296792577e3292783725961506c83}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!structural\+\_\+type\+\_\+descriptor\+Ref@{structural\+\_\+type\+\_\+descriptor\+Ref}}
+\index{structural\+\_\+type\+\_\+descriptor\+Ref@{structural\+\_\+type\+\_\+descriptor\+Ref}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{structural\+\_\+type\+\_\+descriptor\+Ref}{structural\_type\_descriptorRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor}$>$ \hyperlink{structural__objects_8hpp_a219296792577e3292783725961506c83}{structural\+\_\+type\+\_\+descriptor\+Ref}}
+
+
+
+Ref\+Count type definition of the \hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor} class structure. 
+
+
+
+Definition at line 310 of file structural\+\_\+objects.\+hpp.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439}\label{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!so\+\_\+kind@{so\+\_\+kind}}
+\index{so\+\_\+kind@{so\+\_\+kind}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{so\+\_\+kind}{so\_kind}}
+{\footnotesize\ttfamily enum \hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439}{so\+\_\+kind}}
+
+
+
+Enumerative type for structural object classes, it is used with get\+\_\+kind() function to know the actual type of a \hyperlink{classstructural__object}{structural\+\_\+object}. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{component\+\_\+o\+\_\+K@{component\+\_\+o\+\_\+K}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!component\+\_\+o\+\_\+K@{component\+\_\+o\+\_\+K}}}\mbox{\Hypertarget{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a245c4ad59cb98085da034d85a4049427}\label{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a245c4ad59cb98085da034d85a4049427}} 
+component\+\_\+o\+\_\+K&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{channel\+\_\+o\+\_\+K@{channel\+\_\+o\+\_\+K}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!channel\+\_\+o\+\_\+K@{channel\+\_\+o\+\_\+K}}}\mbox{\Hypertarget{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a0c86d47396583f45c82da0fed48eb87a}\label{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a0c86d47396583f45c82da0fed48eb87a}} 
+channel\+\_\+o\+\_\+K&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{bus\+\_\+connection\+\_\+o\+\_\+K@{bus\+\_\+connection\+\_\+o\+\_\+K}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!bus\+\_\+connection\+\_\+o\+\_\+K@{bus\+\_\+connection\+\_\+o\+\_\+K}}}\mbox{\Hypertarget{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a3d6843f635449fe8b1d543456c17aa57}\label{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a3d6843f635449fe8b1d543456c17aa57}} 
+bus\+\_\+connection\+\_\+o\+\_\+K&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{constant\+\_\+o\+\_\+K@{constant\+\_\+o\+\_\+K}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!constant\+\_\+o\+\_\+K@{constant\+\_\+o\+\_\+K}}}\mbox{\Hypertarget{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a4c0a3061d39b1369382b36e83e958aca}\label{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a4c0a3061d39b1369382b36e83e958aca}} 
+constant\+\_\+o\+\_\+K&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{signal\+\_\+o\+\_\+K@{signal\+\_\+o\+\_\+K}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!signal\+\_\+o\+\_\+K@{signal\+\_\+o\+\_\+K}}}\mbox{\Hypertarget{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439af5cce0652a4b929eb729cea043236e42}\label{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439af5cce0652a4b929eb729cea043236e42}} 
+signal\+\_\+o\+\_\+K&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{signal\+\_\+vector\+\_\+o\+\_\+K@{signal\+\_\+vector\+\_\+o\+\_\+K}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!signal\+\_\+vector\+\_\+o\+\_\+K@{signal\+\_\+vector\+\_\+o\+\_\+K}}}\mbox{\Hypertarget{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a5a76f150a85399fd0d1ffa0674f44062}\label{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a5a76f150a85399fd0d1ffa0674f44062}} 
+signal\+\_\+vector\+\_\+o\+\_\+K&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{port\+\_\+o\+\_\+K@{port\+\_\+o\+\_\+K}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!port\+\_\+o\+\_\+K@{port\+\_\+o\+\_\+K}}}\mbox{\Hypertarget{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439acdcc7e8708a89b5424ed8b41c47f19b0}\label{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439acdcc7e8708a89b5424ed8b41c47f19b0}} 
+port\+\_\+o\+\_\+K&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{port\+\_\+vector\+\_\+o\+\_\+K@{port\+\_\+vector\+\_\+o\+\_\+K}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!port\+\_\+vector\+\_\+o\+\_\+K@{port\+\_\+vector\+\_\+o\+\_\+K}}}\mbox{\Hypertarget{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439aa360a70a63aceee6238bd33e3c104a8d}\label{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439aa360a70a63aceee6238bd33e3c104a8d}} 
+port\+\_\+vector\+\_\+o\+\_\+K&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{event\+\_\+o\+\_\+K@{event\+\_\+o\+\_\+K}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!event\+\_\+o\+\_\+K@{event\+\_\+o\+\_\+K}}}\mbox{\Hypertarget{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439af2d8b6403cf0e58fea46e7b519780992}\label{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439af2d8b6403cf0e58fea46e7b519780992}} 
+event\+\_\+o\+\_\+K&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{data\+\_\+o\+\_\+K@{data\+\_\+o\+\_\+K}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!data\+\_\+o\+\_\+K@{data\+\_\+o\+\_\+K}}}\mbox{\Hypertarget{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a36f5b5930ba981751784c2e76a37e132}\label{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a36f5b5930ba981751784c2e76a37e132}} 
+data\+\_\+o\+\_\+K&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{action\+\_\+o\+\_\+K@{action\+\_\+o\+\_\+K}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!action\+\_\+o\+\_\+K@{action\+\_\+o\+\_\+K}}}\mbox{\Hypertarget{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a41d728c471a40dff2077f61fd6700b29}\label{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a41d728c471a40dff2077f61fd6700b29}} 
+action\+\_\+o\+\_\+K&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 316 of file structural\+\_\+objects.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{structural__objects_8hpp_a6cc986d41bd8485ca4cca564e4602129}\label{structural__objects_8hpp_a6cc986d41bd8485ca4cca564e4602129}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classstructural__object}{structural\+\_\+object}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structural__objects_8hpp_a7c20a82ecd2825bfa958fc8191c4d929}\label{structural__objects_8hpp_a7c20a82ecd2825bfa958fc8191c4d929}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtechnology__manager}{technology\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structural__objects_8hpp_af67cbe843687472baa608e3f81d42c66}\label{structural__objects_8hpp_af67cbe843687472baa608e3f81d42c66}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classstructural__manager}{structural\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structural__objects_8hpp_a1e2174e4f038a0b7f20e1e08332e0e05}\label{structural__objects_8hpp_a1e2174e4f038a0b7f20e1e08332e0e05}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classstructural__object}{structural\+\_\+object}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structural__objects_8hpp_addad9d423d5c91b257540df3bbf5766c}\label{structural__objects_8hpp_addad9d423d5c91b257540df3bbf5766c}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structural__objects_8hpp_a72446ed20f53edef97fbaa70462e8a88}\label{structural__objects_8hpp_a72446ed20f53edef97fbaa70462e8a88}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structtechnology__node}{technology\+\_\+node}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structural__objects_8hpp_afb0fcc57e5ac51434559ac6958107584}\label{structural__objects_8hpp_afb0fcc57e5ac51434559ac6958107584}} 
+\index{structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!structural\+\_\+objects.\+hpp@{structural\+\_\+objects.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structattribute}{attribute}}]{ }\end{DoxyParamCaption})}
+

@@ -1,0 +1,370 @@
+\hypertarget{classmem__xml__allocation}{}\section{mem\+\_\+xml\+\_\+allocation Class Reference}
+\label{classmem__xml__allocation}\index{mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}}
+
+
+{\ttfamily \#include $<$mem\+\_\+xml\+\_\+allocation.\+hpp$>$}
+
+
+
+Inheritance diagram for mem\+\_\+xml\+\_\+allocation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{d9/dbb/classmem__xml__allocation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for mem\+\_\+xml\+\_\+allocation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d34/classmem__xml__allocation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmem__xml__allocation_aae45922d425552e133c3e71339b54ad0}{mem\+\_\+xml\+\_\+allocation} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} \hyperlink{classHLS__step_ade85003a99d34134418451ddc46a18e9}{H\+L\+S\+Mgr}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classmem__xml__allocation_ae7fbf63ff2adab3c7cc127b095f1c225}{$\sim$mem\+\_\+xml\+\_\+allocation} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classmem__xml__allocation_ab52f147c4c950b89428a1c6ad515a7a3}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Execute the step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classmem__xml__allocation_a693defa1d1e5801b490788f19f4aeddc}{parse\+\_\+xml\+\_\+allocation} (const std\+::string \&xml\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Imports the memory configuration from X\+ML file. \end{DoxyCompactList}\item 
+void \hyperlink{classmem__xml__allocation_a07bd3a79034972bb53511ab5d17f00e6}{parse\+\_\+external\+\_\+allocation} (const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$node)
+\begin{DoxyCompactList}\small\item\em Parses the memory allocation related to external variables. \end{DoxyCompactList}\item 
+void \hyperlink{classmem__xml__allocation_ac852d2afeb6ecf0daf13d20befcb9071}{parse\+\_\+internal\+\_\+allocation} (const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$node)
+\begin{DoxyCompactList}\small\item\em Parses the memory allocation related to internal variables. \end{DoxyCompactList}\item 
+void \hyperlink{classmem__xml__allocation_a138ace3d0d2e08742168d52adb53191f}{finalize\+\_\+memory\+\_\+allocation} ()
+\begin{DoxyCompactList}\small\item\em Performs a final analysis of the memory allocation to finalize the datastructure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} $>$ \hyperlink{classmem__xml__allocation_adaba8adf5c7edb3c376325bbeb90adf6}{ext\+\_\+variables}
+\begin{DoxyCompactList}\small\item\em map of symbols that are externally allocated \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, std\+::map$<$ unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} $>$ $>$ \hyperlink{classmem__xml__allocation_a4acb07a082d8ad97b91247f8963f210e}{int\+\_\+variables}
+\begin{DoxyCompactList}\small\item\em map of symbols that are internally allocated \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, std\+::map$<$ unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} $>$ $>$ \hyperlink{classmem__xml__allocation_ad5160a42b79b58420e6686ce43f567f2}{param\+\_\+variables}
+\begin{DoxyCompactList}\small\item\em map of symbols that refer to parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 51 of file mem\+\_\+xml\+\_\+allocation.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmem__xml__allocation_aae45922d425552e133c3e71339b54ad0}\label{classmem__xml__allocation_aae45922d425552e133c3e71339b54ad0}} 
+\index{mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}!mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}}
+\index{mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}!mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}}
+\subsubsection{\texorpdfstring{mem\+\_\+xml\+\_\+allocation()}{mem\_xml\_allocation()}}
+{\footnotesize\ttfamily mem\+\_\+xml\+\_\+allocation\+::mem\+\_\+xml\+\_\+allocation (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file mem\+\_\+xml\+\_\+allocation.\+cpp.
+
+
+
+References X\+M\+L\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+A\+L\+L\+O\+C\+A\+T\+OR, and $\sim$mem\+\_\+xml\+\_\+allocation().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d2/d51/classmem__xml__allocation_aae45922d425552e133c3e71339b54ad0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmem__xml__allocation_ae7fbf63ff2adab3c7cc127b095f1c225}\label{classmem__xml__allocation_ae7fbf63ff2adab3c7cc127b095f1c225}} 
+\index{mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}!````~mem\+\_\+xml\+\_\+allocation@{$\sim$mem\+\_\+xml\+\_\+allocation}}
+\index{````~mem\+\_\+xml\+\_\+allocation@{$\sim$mem\+\_\+xml\+\_\+allocation}!mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}}
+\subsubsection{\texorpdfstring{$\sim$mem\+\_\+xml\+\_\+allocation()}{~mem\_xml\_allocation()}}
+{\footnotesize\ttfamily mem\+\_\+xml\+\_\+allocation\+::$\sim$mem\+\_\+xml\+\_\+allocation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by mem\+\_\+xml\+\_\+allocation().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d2/d51/classmem__xml__allocation_ae7fbf63ff2adab3c7cc127b095f1c225_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmem__xml__allocation_a138ace3d0d2e08742168d52adb53191f}\label{classmem__xml__allocation_a138ace3d0d2e08742168d52adb53191f}} 
+\index{mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}!finalize\+\_\+memory\+\_\+allocation@{finalize\+\_\+memory\+\_\+allocation}}
+\index{finalize\+\_\+memory\+\_\+allocation@{finalize\+\_\+memory\+\_\+allocation}!mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}}
+\subsubsection{\texorpdfstring{finalize\+\_\+memory\+\_\+allocation()}{finalize\_memory\_allocation()}}
+{\footnotesize\ttfamily void mem\+\_\+xml\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Performs a final analysis of the memory allocation to finalize the datastructure. 
+
+
+
+Definition at line 247 of file mem\+\_\+xml\+\_\+allocation.\+cpp.
+
+
+
+References ext\+\_\+variables, memory\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation(), H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, int\+\_\+variables, and param\+\_\+variables.
+
+
+
+Referenced by parse\+\_\+xml\+\_\+allocation().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d51/classmem__xml__allocation_a138ace3d0d2e08742168d52adb53191f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d51/classmem__xml__allocation_a138ace3d0d2e08742168d52adb53191f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmem__xml__allocation_ab52f147c4c950b89428a1c6ad515a7a3}\label{classmem__xml__allocation_ab52f147c4c950b89428a1c6ad515a7a3}} 
+\index{mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} mem\+\_\+xml\+\_\+allocation\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the step. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+clean proxy library 
+
+Implements \hyperlink{classmemory__allocation_a7d2e79df1dbef9bc6682ca310eb408d5}{memory\+\_\+allocation}.
+
+
+
+Definition at line 68 of file mem\+\_\+xml\+\_\+allocation.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, Design\+Flow\+Step\+::parameters, parse\+\_\+xml\+\_\+allocation(), P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, P\+R\+O\+X\+Y\+\_\+\+L\+I\+B\+R\+A\+RY, S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, U\+N\+C\+H\+A\+N\+G\+ED, and W\+O\+R\+K\+\_\+\+L\+I\+B\+R\+A\+RY.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d51/classmem__xml__allocation_ab52f147c4c950b89428a1c6ad515a7a3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmem__xml__allocation_a07bd3a79034972bb53511ab5d17f00e6}\label{classmem__xml__allocation_a07bd3a79034972bb53511ab5d17f00e6}} 
+\index{mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}!parse\+\_\+external\+\_\+allocation@{parse\+\_\+external\+\_\+allocation}}
+\index{parse\+\_\+external\+\_\+allocation@{parse\+\_\+external\+\_\+allocation}!mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}}
+\subsubsection{\texorpdfstring{parse\+\_\+external\+\_\+allocation()}{parse\_external\_allocation()}}
+{\footnotesize\ttfamily void mem\+\_\+xml\+\_\+allocation\+::parse\+\_\+external\+\_\+allocation (\begin{DoxyParamCaption}\item[{const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parses the memory allocation related to external variables. 
+
+
+
+Definition at line 163 of file mem\+\_\+xml\+\_\+allocation.\+cpp.
+
+
+
+References C\+E\+\_\+\+X\+VM, ext\+\_\+variables, xml\+\_\+child\+::get\+\_\+children(), get\+\_\+id(), xml\+\_\+node\+::get\+\_\+name(), L\+O\+A\+D\+\_\+\+X\+V\+FM, and L\+O\+A\+D\+\_\+\+X\+VM.
+
+
+
+Referenced by parse\+\_\+xml\+\_\+allocation().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d51/classmem__xml__allocation_a07bd3a79034972bb53511ab5d17f00e6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d51/classmem__xml__allocation_a07bd3a79034972bb53511ab5d17f00e6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmem__xml__allocation_ac852d2afeb6ecf0daf13d20befcb9071}\label{classmem__xml__allocation_ac852d2afeb6ecf0daf13d20befcb9071}} 
+\index{mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}!parse\+\_\+internal\+\_\+allocation@{parse\+\_\+internal\+\_\+allocation}}
+\index{parse\+\_\+internal\+\_\+allocation@{parse\+\_\+internal\+\_\+allocation}!mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}}
+\subsubsection{\texorpdfstring{parse\+\_\+internal\+\_\+allocation()}{parse\_internal\_allocation()}}
+{\footnotesize\ttfamily void mem\+\_\+xml\+\_\+allocation\+::parse\+\_\+internal\+\_\+allocation (\begin{DoxyParamCaption}\item[{const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parses the memory allocation related to internal variables. 
+
+
+
+Definition at line 189 of file mem\+\_\+xml\+\_\+allocation.\+cpp.
+
+
+
+References C\+E\+\_\+\+X\+VM, xml\+\_\+child\+::get\+\_\+children(), get\+\_\+id(), xml\+\_\+node\+::get\+\_\+name(), int\+\_\+variables, L\+O\+A\+D\+\_\+\+X\+V\+FM, L\+O\+A\+D\+\_\+\+X\+VM, param\+\_\+variables, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by parse\+\_\+xml\+\_\+allocation().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d51/classmem__xml__allocation_ac852d2afeb6ecf0daf13d20befcb9071_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d51/classmem__xml__allocation_ac852d2afeb6ecf0daf13d20befcb9071_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmem__xml__allocation_a693defa1d1e5801b490788f19f4aeddc}\label{classmem__xml__allocation_a693defa1d1e5801b490788f19f4aeddc}} 
+\index{mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}!parse\+\_\+xml\+\_\+allocation@{parse\+\_\+xml\+\_\+allocation}}
+\index{parse\+\_\+xml\+\_\+allocation@{parse\+\_\+xml\+\_\+allocation}!mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}}
+\subsubsection{\texorpdfstring{parse\+\_\+xml\+\_\+allocation()}{parse\_xml\_allocation()}}
+{\footnotesize\ttfamily bool mem\+\_\+xml\+\_\+allocation\+::parse\+\_\+xml\+\_\+allocation (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{xml\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Imports the memory configuration from X\+ML file. 
+
+
+
+Definition at line 96 of file mem\+\_\+xml\+\_\+allocation.\+cpp.
+
+
+
+References memory\+::create\+\_\+memory(), X\+M\+L\+Dom\+Parser\+::\+Exec(), finalize\+\_\+memory\+\_\+allocation(), xml\+\_\+child\+::get\+\_\+children(), X\+M\+L\+Dom\+Parser\+::get\+\_\+document(), xml\+\_\+node\+::get\+\_\+name(), target\+\_\+device\+::get\+\_\+parameter(), target\+\_\+manager\+::get\+\_\+target\+\_\+device(), H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, L\+O\+A\+D\+\_\+\+X\+VM, max(), Design\+Flow\+Step\+::parameters, parse\+\_\+external\+\_\+allocation(), parse\+\_\+internal\+\_\+allocation(), test\+\_\+panda\+::parser, memory\+\_\+allocation\+::setup\+\_\+memory\+\_\+allocation(), and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d51/classmem__xml__allocation_a693defa1d1e5801b490788f19f4aeddc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d2/d51/classmem__xml__allocation_a693defa1d1e5801b490788f19f4aeddc_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classmem__xml__allocation_adaba8adf5c7edb3c376325bbeb90adf6}\label{classmem__xml__allocation_adaba8adf5c7edb3c376325bbeb90adf6}} 
+\index{mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}!ext\+\_\+variables@{ext\+\_\+variables}}
+\index{ext\+\_\+variables@{ext\+\_\+variables}!mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}}
+\subsubsection{\texorpdfstring{ext\+\_\+variables}{ext\_variables}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref}$>$ mem\+\_\+xml\+\_\+allocation\+::ext\+\_\+variables\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+map of symbols that are externally allocated 
+
+
+
+Definition at line 74 of file mem\+\_\+xml\+\_\+allocation.\+hpp.
+
+
+
+Referenced by finalize\+\_\+memory\+\_\+allocation(), and parse\+\_\+external\+\_\+allocation().
+
+\mbox{\Hypertarget{classmem__xml__allocation_a4acb07a082d8ad97b91247f8963f210e}\label{classmem__xml__allocation_a4acb07a082d8ad97b91247f8963f210e}} 
+\index{mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}!int\+\_\+variables@{int\+\_\+variables}}
+\index{int\+\_\+variables@{int\+\_\+variables}!mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}}
+\subsubsection{\texorpdfstring{int\+\_\+variables}{int\_variables}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, std\+::map$<$unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref}$>$ $>$ mem\+\_\+xml\+\_\+allocation\+::int\+\_\+variables\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+map of symbols that are internally allocated 
+
+
+
+Definition at line 77 of file mem\+\_\+xml\+\_\+allocation.\+hpp.
+
+
+
+Referenced by finalize\+\_\+memory\+\_\+allocation(), and parse\+\_\+internal\+\_\+allocation().
+
+\mbox{\Hypertarget{classmem__xml__allocation_ad5160a42b79b58420e6686ce43f567f2}\label{classmem__xml__allocation_ad5160a42b79b58420e6686ce43f567f2}} 
+\index{mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}!param\+\_\+variables@{param\+\_\+variables}}
+\index{param\+\_\+variables@{param\+\_\+variables}!mem\+\_\+xml\+\_\+allocation@{mem\+\_\+xml\+\_\+allocation}}
+\subsubsection{\texorpdfstring{param\+\_\+variables}{param\_variables}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, std\+::map$<$unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref}$>$ $>$ mem\+\_\+xml\+\_\+allocation\+::param\+\_\+variables\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+map of symbols that refer to parameters 
+
+
+
+Definition at line 80 of file mem\+\_\+xml\+\_\+allocation.\+hpp.
+
+
+
+Referenced by finalize\+\_\+memory\+\_\+allocation(), and parse\+\_\+internal\+\_\+allocation().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/memory/\hyperlink{mem__xml__allocation_8hpp}{mem\+\_\+xml\+\_\+allocation.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/memory/\hyperlink{mem__xml__allocation_8cpp}{mem\+\_\+xml\+\_\+allocation.\+cpp}\end{DoxyCompactItemize}

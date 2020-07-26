@@ -1,0 +1,2392 @@
+\hypertarget{technology__node_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/physical\+\_\+library/technology\+\_\+node.hpp File Reference}
+\label{technology__node_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/physical\+\_\+library/technology\+\_\+node.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/physical\+\_\+library/technology\+\_\+node.\+hpp}}
+
+
+Class specification of the data structures used to manage technology information.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+B\+O\+O\+L\+E\+A\+N\+\_\+\+P\+A\+R\+S\+E\+R\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+C\+I\+R\+C\+U\+I\+T\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}simple\+\_\+indent.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utility.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for technology\+\_\+node.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d14/technology__node_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/db1/technology__node_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtechnology__node}{technology\+\_\+node}
+\begin{DoxyCompactList}\small\item\em Abstract pure class for the technology structure. \end{DoxyCompactList}\item 
+struct \hyperlink{structoperation}{operation}
+\begin{DoxyCompactList}\small\item\em This class specifies the characteristic of a particular operation working on a given functional unit. \end{DoxyCompactList}\item 
+struct \hyperlink{structfunctional__unit}{functional\+\_\+unit}
+\begin{DoxyCompactList}\small\item\em This class specifies the characteristic of a particular functional unit. \end{DoxyCompactList}\item 
+struct \hyperlink{structfunctional__unit__template}{functional\+\_\+unit\+\_\+template}
+\begin{DoxyCompactList}\small\item\em This class describe a functional unit template. \end{DoxyCompactList}\item 
+struct \hyperlink{structstorage__unit}{storage\+\_\+unit}
+\begin{DoxyCompactList}\small\item\em This class specifies the characteristic of a particular storage unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{technology__node_8hpp_a8fac733812675e3f521a32863e6a7626}{L\+U\+T\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}~\char`\"{}L\+UT\char`\"{}
+\begin{DoxyCompactList}\small\item\em F\+P\+GA modules. \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__node_8hpp_a147d50ebccb47f183501418c57022e23}{I\+B\+U\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}~\char`\"{}I\+B\+UF\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a6119ebd212d7f6c46990c31b807cea90}{O\+B\+U\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}~\char`\"{}O\+B\+UF\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a92082a6ad93e10690c4c96dac3496de8}{A\+N\+D\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}~\char`\"{}A\+N\+D\+\_\+\+G\+A\+TE\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a7974f9e003d7a03cd6f5ee77776e96bc}{N\+A\+N\+D\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}~\char`\"{}N\+A\+N\+D\+\_\+\+G\+A\+TE\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a87cd9ed4dfee4f2e1b5038b2481a0389}{O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}~\char`\"{}O\+R\+\_\+\+G\+A\+TE\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a1fecfe90c2de839f25b398a9b35de824}{N\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}~\char`\"{}N\+O\+R\+\_\+\+G\+A\+TE\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a9d6515322948561c31b33d0d90b0de86}{X\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}~\char`\"{}X\+O\+R\+\_\+\+G\+A\+TE\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ac79b1d384347df522948c8776307638f}{X\+N\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}~\char`\"{}X\+N\+O\+R\+\_\+\+G\+A\+TE\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a8544e5c1fc3fc2bd6b1acf5a5d64a55d}{N\+O\+T\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}~\char`\"{}N\+O\+T\+\_\+\+G\+A\+TE\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a5a94e3e159e1d4f641a59efa7d5b2c57}{D\+F\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}~\char`\"{}D\+F\+F\+\_\+\+G\+A\+TE\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ae8b9d1b555dd8fd5f07d11d83aa279a3}{B\+U\+F\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}~\char`\"{}B\+U\+F\+F\+\_\+\+G\+A\+TE\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ab8c040a596820ea3cecdddce323c0aa1}{T\+E\+S\+T\+\_\+\+M\+U\+L\+\_\+\+M\+U\+X\+\_\+8}~\char`\"{}T\+E\+S\+T\+\_\+\+M\+U\+L\+\_\+\+M\+U\+X\+\_\+8\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a103587e0b9f68c0e0168e074ea337d20}{M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}~\char`\"{}M\+U\+X\+\_\+\+G\+A\+TE\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a28e32d1bed763ce95ef2b81e84de19d2}{D\+E\+M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}~\char`\"{}D\+E\+M\+U\+X\+\_\+\+G\+A\+TE\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a0d8656a31c26003c7f7343f78fbc7d16}{M\+U\+X\+\_\+\+N\+\_\+\+T\+O\+\_\+1}~\char`\"{}M\+U\+X\+\_\+\+N\+\_\+to\+\_\+1\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_aca7b18cfa2c070acd0834bc26d4a1a9e}{M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD}~\char`\"{}mult\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a9951ea2b802e280908c6dca63e84d813}{U\+I\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD}~\char`\"{}ui\+\_\+mult\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a4cb78dc552f5301dbcfb23ddb7b808a2}{U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD}~\char`\"{}ui\+\_\+const\+\_\+mult\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a6cf4040cda77252daf2597a67cd7feb7}{A\+D\+D\+E\+R\+\_\+\+S\+TD}~\char`\"{}plus\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a3d6b5703564e89ae01148b4af7ec250d}{C\+O\+N\+D\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}~\char`\"{}cond\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a438f6e14fb11b5e891a2f7aaccf146dc}{U\+I\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD}~\char`\"{}ui\+\_\+plus\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ae05525776736ac479ce9a69d5621374c}{U\+I\+\_\+\+A\+L\+I\+G\+N\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD}~\char`\"{}ui\+\_\+align\+\_\+plus\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a5215b88da6ebbe95eb8630516c6d6064}{C\+O\+N\+C\+A\+T4\+\_\+\+S\+TD}~\char`\"{}concat\+\_\+4\+\_\+constructor\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_aa669686801d8dbc94594eff579c0e6dd}{S\+I\+G\+N\+E\+D\+\_\+\+B\+I\+T\+F\+I\+E\+L\+D\+\_\+\+F\+U\+\_\+\+S\+TD}~\char`\"{}Sbitfield\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a110e3fa348b6767b291c4618384dd290}{U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+B\+I\+T\+F\+I\+E\+L\+D\+\_\+\+F\+U\+\_\+\+S\+TD}~\char`\"{}Ubitfield\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_af699db94143f4124666129bf620782c1}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+S\+TD}~\char`\"{}constant\+\_\+value\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a87512319d96fdeb57b51a706802000c2}{A\+S\+S\+I\+G\+N\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}~\char`\"{}A\+S\+S\+I\+G\+N\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a1c7c3ff9f82fc5229a024f0892570f92}{A\+S\+S\+I\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}~\char`\"{}A\+S\+S\+I\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a72c40c6c817342f7b9bfae761b8c871e}{A\+S\+S\+I\+G\+N\+\_\+\+R\+E\+A\+L\+\_\+\+S\+TD}~\char`\"{}A\+S\+S\+I\+G\+N\+\_\+\+R\+E\+A\+L\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_aa8f5758350022862401e5177363facda}{A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+\+B\+O\+O\+L\+\_\+\+S\+TD}~\char`\"{}A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+\+B\+O\+O\+L\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a5cb6f5edb2742f01b9587ff5002064ed}{A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}~\char`\"{}A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a006cc8be32ae69a561cd394dfce6e6f0}{A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}~\char`\"{}A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ab94352bd5058acc79d169c281edfcd93}{A\+D\+D\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}~\char`\"{}addr\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a6d931635424fdd3526ceef704bdc47d6}{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}~\char`\"{}assert\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a947f233a240631e69d568b1e1d8086e4}{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}~\char`\"{}ui\+\_\+assert\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ae5d560a3ae44d330d5e7c68d9b04bcc9}{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+R\+E\+A\+L\+\_\+\+S\+TD}~\char`\"{}fp\+\_\+assert\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a0fef892358f85640d041229ba7f8f11d}{B\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+TD}~\char`\"{}B\+M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+RL\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_aa1635a24ddcb0041699a8aa33cab8233}{B\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+T\+DN}~\char`\"{}B\+M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+LN\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ae8d39e881cbfc81e795acfcbc3fafce8}{M\+E\+M\+C\+P\+Y\+\_\+\+S\+TD}~\char`\"{}\+\_\+\+\_\+internal\+\_\+bambu\+\_\+memcpy\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ae0a9281aa86b663cb20f441e00ebee1c}{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+AM}~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+AM\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ae9dfe5311ee5a110e229823e9649d247}{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+DS}~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+DS\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a3482b973611c11759af3e6f60cd1ce3e}{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+D\+S\+\_\+\+B\+US}~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+D\+S\+\_\+\+B\+US\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a1c60fca6205dce876ac6a13ee1369821}{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+S\+DS}~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+S\+DS\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a6662fc9397f4b6cdded2572ae8568da9}{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1}~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ae2ed964655fc515f935c9245966b6249}{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS}~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a6423e65dac8b43e36261f962b870cedd}{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS}~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a5188984e070070b832e5b9e4f1550394}{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+D\+S\+\_\+\+B\+US}~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+D\+S\+\_\+\+B\+US\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a6a319d3a6c46781887e70ef13f50939f}{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+NN}~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+NN\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a2ba082dcfc83ca7576027b9259f9b030}{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS}~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ab3b1fec86f0990de464fdb1c53a7f9ea}{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+D\+S\+\_\+\+B\+US}~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+D\+S\+\_\+\+B\+US\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a844a2a70ee4ee09862488cf5fdce35d7}{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS}~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a4122846210c7ef5108a5b42679fb498e}{S\+T\+D\+\_\+\+B\+R\+AM}~\char`\"{}S\+T\+D\+\_\+\+B\+R\+AM\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a93621dc071e1d8c61cf20d5f0f038a9c}{S\+T\+D\+\_\+\+B\+R\+A\+MN}~\char`\"{}S\+T\+D\+\_\+\+B\+R\+A\+MN\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a8e1f8b9600c3ec3d9cfe49c75ee08b2a}{M\+E\+M\+L\+O\+A\+D\+\_\+\+S\+TD}~\char`\"{}\+\_\+\+\_\+builtin\+\_\+memload\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a58f792819de683c28a7fb9213762d84c}{M\+E\+M\+S\+T\+O\+R\+E\+\_\+\+S\+TD}~\char`\"{}\+\_\+\+\_\+builtin\+\_\+memstore\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_aae3b03901a463949c1e952b4073efaa9}{M\+E\+M\+L\+O\+A\+D\+\_\+\+S\+T\+DN}~\char`\"{}\+\_\+\+\_\+builtin\+\_\+memload\+\_\+N\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ac21b0b131b4ac3bd6a9895fc3596d494}{M\+E\+M\+S\+T\+O\+R\+E\+\_\+\+S\+T\+DN}~\char`\"{}\+\_\+\+\_\+builtin\+\_\+memstore\+\_\+N\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ab0df8ea5ac22d761745dc5342223e95d}{B\+U\+I\+L\+T\+I\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+TD}~\char`\"{}\+\_\+\+\_\+builtin\+\_\+exit\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a58ee03bdd7c9a1edb44d0b95736cbf86}{B\+U\+I\+L\+T\+I\+N\+\_\+\+A\+B\+O\+R\+T\+\_\+\+S\+TD}~\char`\"{}\+\_\+\+\_\+builtin\+\_\+abort\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a567d29515ff05f5c4ac2f37b9035075e}{B\+U\+I\+L\+T\+I\+N\+\_\+\+W\+A\+I\+T\+\_\+\+C\+A\+L\+L\+\_\+\+S\+TD}~\char`\"{}\+\_\+\+\_\+builtin\+\_\+wait\+\_\+call\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a3f8547f185b2bbe33e4db5a2207d0a2a}{P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL}~\char`\"{}P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a3c3102a11f9c850193c0f30d8781a39f}{P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN}~\char`\"{}P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ac198d8d790b4c688b235ad0ecf20b640}{D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL}~\char`\"{}D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_abaee241e3d72decdd29d29aaea0d0581}{D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN}~\char`\"{}D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_af6a1ccf3cda671d100d1fa71cd4d0aed}{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US}~\char`\"{}A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_aede25a10cf3e7264ab1bc8115951999b}{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+U\+N\+A\+L\+I\+G\+N\+ED}~\char`\"{}S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+U\+N\+A\+L\+I\+G\+N\+ED\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ac67639bb3cfb789f633e5881b66b7221}{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+DS}~\char`\"{}S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+DS\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ab6d751d31f86e5a618443d7016d9c4dc}{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+D\+S\+\_\+\+B\+US}~\char`\"{}S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+D\+S\+\_\+\+B\+US\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ad0e225333063a165a7286ab8922138ec}{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+11}~\char`\"{}M\+E\+M\+\_\+\+A\+C\+C\+\_\+11\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a152041f2f77d87f0207c90edf18d9e5a}{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+N1}~\char`\"{}M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+N1\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_aa7b75769025b8620918b0007dc9d4327}{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+NN}~\char`\"{}M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+NN\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a3adc41e4ab2853d68d3c87d13a3fead0}{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+P1N}~\char`\"{}M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+P1N\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a5c6ff6fe7489626271d23c64ebd15596}{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+CS}~\char`\"{}M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+CS\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_acb47c7ed257822df44bf6a0b94f43bb2}{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D00}~\char`\"{}D00\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a3437bcbf2fbeab04912381be4f232e20}{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+O\+XY}~\char`\"{}P\+R\+O\+XY\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a4ac03889e0365660405961431941beee}{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+P\+R\+O\+XY}~\char`\"{}D\+P\+R\+O\+XY\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_aeb406cd363bd68348f4f10ea32911733}{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+O\+X\+YN}~\char`\"{}P\+R\+O\+X\+YN\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ae161d342ca175bf95cbe6adae6eea981}{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+P\+R\+O\+X\+YN}~\char`\"{}D\+P\+R\+O\+X\+YN\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ab63f2f3fcaa998eca67a4024ad587927}{U\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}~\char`\"{}U\+Udata\+\_\+converter\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a22246d437d7a57556d656f7f564905fa}{I\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}~\char`\"{}I\+Udata\+\_\+converter\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a2d65532745a40c0dac44d237587e3e49}{U\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}~\char`\"{}U\+Idata\+\_\+converter\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_aa6ad70e177f5af869421f073eeb573f7}{I\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}~\char`\"{}I\+Idata\+\_\+converter\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_af56dcf12f508156243697fe6f55df707}{B\+I\+V\+E\+C\+T\+O\+R\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}~\char`\"{}B\+Ivector\+\_\+converter\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_adc95764962c18cabf2b803c0a45efc97}{B\+U\+V\+E\+C\+T\+O\+R\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}~\char`\"{}B\+Uvector\+\_\+converter\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a6ebe9d3df73927fc23b01c17186c0880}{F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}~\char`\"{}F\+Fdata\+\_\+converter\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a099991ad66205a6b27e419b71d1bcf96}{S\+F\+\_\+\+F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+32\+\_\+64\+\_\+\+S\+TD}~\char`\"{}sf\+\_\+\+F\+Fdata\+\_\+converter\+\_\+\+F\+U\+\_\+32\+\_\+64\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ac507cc3664b3558d11e6e77cdc710640}{S\+F\+\_\+\+F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+64\+\_\+32\+\_\+\+S\+TD}~\char`\"{}sf\+\_\+\+F\+Fdata\+\_\+converter\+\_\+\+F\+U\+\_\+64\+\_\+32\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_aef3c4a3bedfca95dbedc338e52767161}{U\+U\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}~\char`\"{}U\+Uconvert\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_aa1c6043b4098afaa062db34d99049d73}{I\+U\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}~\char`\"{}I\+Uconvert\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_af92e54b5d8ec79480b0c6bb59c16cf5e}{U\+I\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}~\char`\"{}U\+Iconvert\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a0d980fffc517d810f6d6253455b65985}{I\+I\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}~\char`\"{}I\+Iconvert\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a5c5cb18b5defa4ca2d1891d797668cf0}{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+I\+NT}~\char`\"{}view\+\_\+convert\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a492087899e6d95e1127436514de5556a}{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+U\+I\+NT}~\char`\"{}ui\+\_\+view\+\_\+convert\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ae27e9ef183ea4c0378e7785520b77810}{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+R\+E\+AL}~\char`\"{}fp\+\_\+view\+\_\+convert\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ada80aae2369e5e98b99b166647209b9c}{E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}~\char`\"{}extract\+\_\+bit\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a478b2f36199b4aa9f8a59d48a0d1ef50}{E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+P\+R\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}~\char`\"{}ui\+\_\+extract\+\_\+bit\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_aa508c7da531791e8f07f88af6330a945}{L\+U\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}~\char`\"{}lut\+\_\+expr\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a05236f62fca8ffc177fb8a53e7856e09}{C\+E\+\_\+\+S\+TD}~\char`\"{}C\+E\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a5ec74c21d415f3d8210c1c21e7675561}{C\+E\+\_\+\+F\+SM}~\char`\"{}C\+E\+\_\+\+F\+SM\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a155211672019b18b34dbbf1e341bb7a1}{C\+E\+\_\+\+B\+Y\+P\+A\+SS}~\char`\"{}C\+E\+\_\+\+B\+Y\+P\+A\+SS\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a5b795c6773c17eb1398c270ce576c63d}{J\+O\+I\+N\+\_\+\+S\+TD}~\char`\"{}J\+O\+I\+N\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a78f0f0aba3fca843e96ca4e1cc1c3f5f}{S\+I\+M\+P\+L\+E\+J\+O\+I\+N\+\_\+\+S\+TD}~\char`\"{}S\+I\+M\+P\+L\+E\+J\+O\+I\+N\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_afdca9ffca614a6cebffa99d7bfb5cc88}{P\+T\+\_\+\+S\+TD}~\char`\"{}P\+T\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a5d8ccb7c87ef499dcf4d7ae944706031}{S\+T\+A\+R\+T\+\_\+\+S\+TD}~\char`\"{}S\+T\+A\+R\+T\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a848ad0f3e2c4e64972b932e0ce3988a0}{C\+O\+N\+D\+\_\+\+S\+TD}~\char`\"{}C\+O\+N\+D\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a577e445f6945f51c8af96affcd861d93}{S\+W\+I\+T\+C\+H\+\_\+\+C\+A\+S\+E\+\_\+\+S\+TD}~\char`\"{}S\+W\+I\+T\+C\+H\+\_\+\+C\+A\+S\+E\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ace6a35a282cb21b36d35a158c2cd67b3}{M\+C\+\_\+\+S\+TD}~\char`\"{}M\+C\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ae34c46608b5e806b981281677921f6b1}{F\+C\+\_\+\+S\+TD}~\char`\"{}F\+C\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a3579f88aad80c8e4e557981a5e04e64e}{register\+\_\+\+S\+TD}~\char`\"{}register\+\_\+\+S\+TD\char`\"{}
+\begin{DoxyCompactList}\small\item\em simple register without reset \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__node_8hpp_a759553c17d989236690c9ea97b741584}{register\+\_\+\+SR}~\char`\"{}register\+\_\+\+SR\char`\"{}
+\begin{DoxyCompactList}\small\item\em register with synchronous reset \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__node_8hpp_af64df9c452f18d706b66a969d9211a0e}{flipflop\+\_\+\+SR}~\char`\"{}flipflop\+\_\+\+SR\char`\"{}
+\begin{DoxyCompactList}\small\item\em flipflop with synchronous reset \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__node_8hpp_a8a0d9052c838b4926754593c6b993e03}{register\+\_\+\+AR}~\char`\"{}register\+\_\+\+AR\char`\"{}
+\begin{DoxyCompactList}\small\item\em register with asynchronous reset \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__node_8hpp_a2ec7e1198adaccbe07c65fd67d53cddf}{flipflop\+\_\+\+AR}~\char`\"{}flipflop\+\_\+\+AR\char`\"{}
+\begin{DoxyCompactList}\small\item\em flipflop with asynchronous reset \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__node_8hpp_a47b6f60e1e6fa29c050427a71e53130b}{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+ME}~\char`\"{}register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+ME\char`\"{}
+\begin{DoxyCompactList}\small\item\em register with asynchronous reset no retime \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__node_8hpp_a2ac12bf4dd0296798866e2bd16dc45c0}{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+I\+NT}~\char`\"{}register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+I\+NT\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_aaa402a7391ba27b0a9e012a391f4ef4f}{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+U\+I\+NT}~\char`\"{}register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+U\+I\+NT\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a632b5efebc43d4ac3e5ce8ad78b483cd}{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+R\+E\+AL}~\char`\"{}register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+R\+E\+AL\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a0597fe7d452aa1ebbf150823d4d85f43}{register\+\_\+\+SE}~\char`\"{}register\+\_\+\+SE\char`\"{}
+\begin{DoxyCompactList}\small\item\em register with synchronous enable \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__node_8hpp_a5514c13619e5271597ae583ac216f647}{register\+\_\+\+S\+R\+SE}~\char`\"{}register\+\_\+\+S\+R\+SE\char`\"{}
+\begin{DoxyCompactList}\small\item\em register with synchronous reset and synchronous enable \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__node_8hpp_ad91aaa31725f17c195d3817b158edf12}{register\+\_\+\+A\+R\+SE}~\char`\"{}register\+\_\+\+A\+R\+SE\char`\"{}
+\begin{DoxyCompactList}\small\item\em register with asynchronous reset and synchronous enable \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__node_8hpp_a8b2ff3bc3705acf8c131cce288c8c760}{register\+\_\+\+S\+A\+R\+SE}~\char`\"{}register\+\_\+\+S\+A\+R\+SE\char`\"{}
+\begin{DoxyCompactList}\small\item\em register with synchronized asynchronous reset and synchronous enable \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__node_8hpp_a71872e4d3a1839ba1332dcaeed2736a4}{M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU}~\char`\"{}memory\+\_\+mapped\+\_\+register\+\_\+\+FU\char`\"{}
+\begin{DoxyCompactList}\small\item\em memory mapped register \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__node_8hpp_a284e2ed195d83061d08f61d8d35bc93b}{R\+E\+T\+U\+R\+N\+\_\+\+M\+M\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU}~\char`\"{}return\+\_\+value\+\_\+mm\+\_\+register\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_afc6202e9e4c0a1c56b705707cda002fe}{N\+O\+T\+Y\+F\+Y\+\_\+\+C\+A\+L\+L\+E\+R\+\_\+\+M\+I\+N\+I\+M\+A\+L\+\_\+\+FU}~\char`\"{}notify\+\_\+caller\+\_\+minimal\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_adc1f2a4bdf8490894e29eacd4a46f765}{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU}~\char`\"{}status\+\_\+register\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a310c6f5ac587ff5955852391433d13e1}{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+N\+O\+\_\+\+N\+O\+T\+I\+F\+I\+E\+D\+\_\+\+FU}~\char`\"{}status\+\_\+register\+\_\+no\+\_\+notified\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a9d94aa3ca2c113b2ca673bcf101c7c6e}{M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU}~\char`\"{}memory\+\_\+mapped\+\_\+register\+N\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a6ef08687e1e474c8f692a18d8b980ed9}{R\+E\+T\+U\+R\+N\+\_\+\+M\+M\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU}~\char`\"{}return\+\_\+value\+\_\+mm\+\_\+register\+N\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ad1ad3fb20e708c4cbc6e7422e95d02f3}{N\+O\+T\+Y\+F\+Y\+\_\+\+C\+A\+L\+L\+E\+R\+\_\+\+M\+I\+N\+I\+M\+A\+L\+N\+\_\+\+FU}~\char`\"{}notify\+\_\+caller\+\_\+minimal\+N\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_ad36fc4476c489decc3b52e9bbea60ebc}{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU}~\char`\"{}status\+\_\+register\+N\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a27c6d4949c2a27ccd26a6e34f0f979cd}{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+N\+O\+\_\+\+N\+O\+T\+I\+F\+I\+E\+D\+N\+\_\+\+FU}~\char`\"{}status\+\_\+register\+\_\+no\+\_\+notified\+N\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{technology__node_8hpp_a7321c1028bebd6a64824ef9c33347fbb}{G\+E\+T\+\_\+\+T\+E\+C\+\_\+\+K\+I\+N\+D\+\_\+\+T\+E\+XT}(meth)
+\begin{DoxyCompactList}\small\item\em Macro which defines the get\+\_\+kind\+\_\+text function that returns the parameter as a string. \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__node_8hpp_ae1904a119914c941407f5e83d8e728e8}{G\+E\+T\+\_\+\+T\+E\+C\+\_\+\+K\+I\+ND}(meth)
+\begin{DoxyCompactList}\small\item\em Macro used to implement get\+\_\+kind() function in \hyperlink{classstructural__object}{structural\+\_\+object} hierarchy classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structtechnology__node}{technology\+\_\+node} $>$ \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}
+\begin{DoxyCompactList}\small\item\em refcount definition of the class \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{structtechnology__node}{technology\+\_\+node} $>$ \hyperlink{technology__node_8hpp_a4a819fb94e95dec66aa48c1a8fb66759}{technology\+\_\+node\+Const\+Ref}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{technology__node_8hpp_ac8c5c7b9c4a4b68049cd228ba6042de2}{tec\+\_\+kind} \{ \hyperlink{technology__node_8hpp_ac8c5c7b9c4a4b68049cd228ba6042de2a4cf60d1c4f15efe6f009b996cbda8119}{operation\+\_\+K}, 
+\hyperlink{technology__node_8hpp_ac8c5c7b9c4a4b68049cd228ba6042de2a5de21d703a0f6d6755b6843cf772880b}{functional\+\_\+unit\+\_\+K}, 
+\hyperlink{technology__node_8hpp_ac8c5c7b9c4a4b68049cd228ba6042de2a8127d87e9a0d9c9aa1a683c77e6b5aec}{functional\+\_\+unit\+\_\+template\+\_\+K}, 
+\hyperlink{technology__node_8hpp_ac8c5c7b9c4a4b68049cd228ba6042de2a62639851991d35da3dc70ab60dfafaaf}{storage\+\_\+unit\+\_\+K}
+ \}\begin{DoxyCompactList}\small\item\em Enumerative type for technology object classes, it is used with get\+\_\+kind() function to know the actual type of a \hyperlink{structtechnology__node}{technology\+\_\+node}. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}\textbf{ forward declarations}\par
+{\em Autoheader include }\begin{DoxyCompactItemize}
+\item 
+\hyperlink{technology__node_8hpp_a72446ed20f53edef97fbaa70462e8a88}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structtechnology__node}{technology\+\_\+node})
+\begin{DoxyCompactList}\small\item\em Ref\+Count type definition of the \hyperlink{structtechnology__node}{technology\+\_\+node} class structure. \end{DoxyCompactList}\item 
+\hyperlink{technology__node_8hpp_a36fc701203269b088b0bbeb88a50eb12}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classxml__node}{xml\+\_\+node})
+\begin{DoxyCompactList}\small\item\em forward decl of xml Element \end{DoxyCompactList}\item 
+\hyperlink{technology__node_8hpp_ac516e596183bd52c5fadd3e9d5315b2b}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtechnology__manager}{technology\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Ref\+Count type definition of the \hyperlink{classtechnology__manager}{technology\+\_\+manager} class structure. \end{DoxyCompactList}\item 
+\hyperlink{technology__node_8hpp_ac5c30465e53a2dee97960f0f406b8be7}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classParameter}{Parameter})
+\item 
+\hyperlink{technology__node_8hpp_afb0fcc57e5ac51434559ac6958107584}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structattribute}{attribute})
+\item 
+\hyperlink{technology__node_8hpp_af99a27ccc7866c4361601d805b817d6d}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classarea__model}{area\+\_\+model})
+\begin{DoxyCompactList}\small\item\em Ref\+Count definition of the resource information of the component. \end{DoxyCompactList}\item 
+\hyperlink{technology__node_8hpp_a2c898e98eed242ab088fb3484775d1ee}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (layout\+\_\+model)
+\begin{DoxyCompactList}\small\item\em Ref\+Count definition of the layout information of the component. \end{DoxyCompactList}\item 
+\hyperlink{technology__node_8hpp_a14e387947c430b23050a3262bd049ceb}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtime__model}{time\+\_\+model})
+\begin{DoxyCompactList}\small\item\em Ref\+Count definition of the timing information of the component. \end{DoxyCompactList}\item 
+\hyperlink{technology__node_8hpp_ae8453f10bf6ff88fd486e3dc7a3c4368}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (power\+\_\+model)
+\begin{DoxyCompactList}\small\item\em Ref\+Count definition of the power information of the component. \end{DoxyCompactList}\item 
+\hyperlink{technology__node_8hpp_aa23fc79a0b701ce9b1cbd0f1bb48b2e2}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtarget__device}{target\+\_\+device})
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Class specification of the data structures used to manage technology information. 
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{technology__node_8hpp_a6cf4040cda77252daf2597a67cd7feb7}\label{technology__node_8hpp_a6cf4040cda77252daf2597a67cd7feb7}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+D\+D\+E\+R\+\_\+\+S\+TD@{A\+D\+D\+E\+R\+\_\+\+S\+TD}}
+\index{A\+D\+D\+E\+R\+\_\+\+S\+TD@{A\+D\+D\+E\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+D\+D\+E\+R\+\_\+\+S\+TD}{ADDER\_STD}}
+{\footnotesize\ttfamily \#define A\+D\+D\+E\+R\+\_\+\+S\+TD~\char`\"{}plus\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 112 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by I\+R\+\_\+lowering\+::expand\+\_\+\+M\+C(), and Allocation\+Information\+::get\+\_\+correction\+\_\+time().
+
+\mbox{\Hypertarget{technology__node_8hpp_ab94352bd5058acc79d169c281edfcd93}\label{technology__node_8hpp_ab94352bd5058acc79d169c281edfcd93}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+D\+D\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD@{A\+D\+D\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}}
+\index{A\+D\+D\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD@{A\+D\+D\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+D\+D\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}{ADDR\_EXPR\_STD}}
+{\footnotesize\ttfamily \#define A\+D\+D\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD~\char`\"{}addr\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 126 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a92082a6ad93e10690c4c96dac3496de8}\label{technology__node_8hpp_a92082a6ad93e10690c4c96dac3496de8}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+N\+D\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{A\+N\+D\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}}
+\index{A\+N\+D\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{A\+N\+D\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+N\+D\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}{AND\_GATE\_STD}}
+{\footnotesize\ttfamily \#define A\+N\+D\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD~\char`\"{}A\+N\+D\+\_\+\+G\+A\+TE\char`\"{}}
+
+
+
+Definition at line 95 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Functional\+Unit\+Step\+::\+Analyze\+Fu(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+complete\+\_\+logic(), Load\+Builtin\+Technology\+::\+Exec(), conn\+\_\+binding\+\_\+cs\+::instantiate\+\_\+suspension\+\_\+component(), and V\+H\+D\+L\+\_\+writer\+::\+Write\+Builtin().
+
+\mbox{\Hypertarget{technology__node_8hpp_ae0a9281aa86b663cb20f441e00ebee1c}\label{technology__node_8hpp_ae0a9281aa86b663cb20f441e00ebee1c}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+AM@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+AM}}
+\index{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+AM@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+AM}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+AM}{ARRAY\_1D\_STD\_BRAM}}
+{\footnotesize\ttfamily \#define A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+AM~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+AM\char`\"{}}
+
+
+
+Definition at line 133 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std(), and allocation\+::\+Integrate\+Technology\+Libraries().
+
+\mbox{\Hypertarget{technology__node_8hpp_a6662fc9397f4b6cdded2572ae8568da9}\label{technology__node_8hpp_a6662fc9397f4b6cdded2572ae8568da9}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1}}
+\index{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1}{ARRAY\_1D\_STD\_BRAM\_N1}}
+{\footnotesize\ttfamily \#define A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\char`\"{}}
+
+
+
+Definition at line 137 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Integrate\+Technology\+Libraries().
+
+\mbox{\Hypertarget{technology__node_8hpp_ae2ed964655fc515f935c9245966b6249}\label{technology__node_8hpp_ae2ed964655fc515f935c9245966b6249}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS}}
+\index{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS}{ARRAY\_1D\_STD\_BRAM\_N1\_SDS}}
+{\footnotesize\ttfamily \#define A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS\char`\"{}}
+
+
+
+Definition at line 138 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Integrate\+Technology\+Libraries().
+
+\mbox{\Hypertarget{technology__node_8hpp_a5188984e070070b832e5b9e4f1550394}\label{technology__node_8hpp_a5188984e070070b832e5b9e4f1550394}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+D\+S\+\_\+\+B\+US@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+D\+S\+\_\+\+B\+US}}
+\index{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+D\+S\+\_\+\+B\+US@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+D\+S\+\_\+\+B\+US}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+D\+S\+\_\+\+B\+US}{ARRAY\_1D\_STD\_BRAM\_N1\_SDS\_BUS}}
+{\footnotesize\ttfamily \#define A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+D\+S\+\_\+\+B\+US~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+D\+S\+\_\+\+B\+US\char`\"{}}
+
+
+
+Definition at line 140 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Integrate\+Technology\+Libraries().
+
+\mbox{\Hypertarget{technology__node_8hpp_a6a319d3a6c46781887e70ef13f50939f}\label{technology__node_8hpp_a6a319d3a6c46781887e70ef13f50939f}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+NN@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+NN}}
+\index{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+NN@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+NN}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+NN}{ARRAY\_1D\_STD\_BRAM\_NN}}
+{\footnotesize\ttfamily \#define A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+NN~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+NN\char`\"{}}
+
+
+
+Definition at line 141 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std(), Allocation\+Information\+::get\+\_\+correction\+\_\+time(), allocation\+::\+Integrate\+Technology\+Libraries(), and Taste\+Interface\+Generation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a2ba082dcfc83ca7576027b9259f9b030}\label{technology__node_8hpp_a2ba082dcfc83ca7576027b9259f9b030}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS}}
+\index{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS}{ARRAY\_1D\_STD\_BRAM\_NN\_SDS}}
+{\footnotesize\ttfamily \#define A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS\char`\"{}}
+
+
+
+Definition at line 142 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by interface\+\_\+infer\+::create\+\_\+resource\+\_\+array(), Allocation\+Information\+::get\+\_\+correction\+\_\+time(), and allocation\+::\+Integrate\+Technology\+Libraries().
+
+\mbox{\Hypertarget{technology__node_8hpp_ab3b1fec86f0990de464fdb1c53a7f9ea}\label{technology__node_8hpp_ab3b1fec86f0990de464fdb1c53a7f9ea}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+D\+S\+\_\+\+B\+US@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+D\+S\+\_\+\+B\+US}}
+\index{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+D\+S\+\_\+\+B\+US@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+D\+S\+\_\+\+B\+US}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+D\+S\+\_\+\+B\+US}{ARRAY\_1D\_STD\_BRAM\_NN\_SDS\_BUS}}
+{\footnotesize\ttfamily \#define A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+D\+S\+\_\+\+B\+US~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+D\+S\+\_\+\+B\+US\char`\"{}}
+
+
+
+Definition at line 143 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::get\+\_\+correction\+\_\+time(), and allocation\+::\+Integrate\+Technology\+Libraries().
+
+\mbox{\Hypertarget{technology__node_8hpp_ae9dfe5311ee5a110e229823e9649d247}\label{technology__node_8hpp_ae9dfe5311ee5a110e229823e9649d247}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+DS@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+DS}}
+\index{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+DS@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+DS}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+DS}{ARRAY\_1D\_STD\_BRAM\_SDS}}
+{\footnotesize\ttfamily \#define A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+DS~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+DS\char`\"{}}
+
+
+
+Definition at line 134 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by interface\+\_\+infer\+::create\+\_\+resource\+\_\+array(), Allocation\+Information\+::get\+\_\+correction\+\_\+time(), and allocation\+::\+Integrate\+Technology\+Libraries().
+
+\mbox{\Hypertarget{technology__node_8hpp_a3482b973611c11759af3e6f60cd1ce3e}\label{technology__node_8hpp_a3482b973611c11759af3e6f60cd1ce3e}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+D\+S\+\_\+\+B\+US@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+D\+S\+\_\+\+B\+US}}
+\index{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+D\+S\+\_\+\+B\+US@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+D\+S\+\_\+\+B\+US}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+D\+S\+\_\+\+B\+US}{ARRAY\_1D\_STD\_BRAM\_SDS\_BUS}}
+{\footnotesize\ttfamily \#define A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+D\+S\+\_\+\+B\+US~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+D\+S\+\_\+\+B\+US\char`\"{}}
+
+
+
+Definition at line 135 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::get\+\_\+correction\+\_\+time(), and allocation\+::\+Integrate\+Technology\+Libraries().
+
+\mbox{\Hypertarget{technology__node_8hpp_a6423e65dac8b43e36261f962b870cedd}\label{technology__node_8hpp_a6423e65dac8b43e36261f962b870cedd}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS}}
+\index{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS}{ARRAY\_1D\_STD\_DISTRAM\_N1\_SDS}}
+{\footnotesize\ttfamily \#define A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS\char`\"{}}
+
+
+
+Definition at line 139 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Integrate\+Technology\+Libraries().
+
+\mbox{\Hypertarget{technology__node_8hpp_a844a2a70ee4ee09862488cf5fdce35d7}\label{technology__node_8hpp_a844a2a70ee4ee09862488cf5fdce35d7}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS}}
+\index{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS}{ARRAY\_1D\_STD\_DISTRAM\_NN\_SDS}}
+{\footnotesize\ttfamily \#define A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS\char`\"{}}
+
+
+
+Definition at line 144 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::get\+\_\+correction\+\_\+time(), and allocation\+::\+Integrate\+Technology\+Libraries().
+
+\mbox{\Hypertarget{technology__node_8hpp_a1c60fca6205dce876ac6a13ee1369821}\label{technology__node_8hpp_a1c60fca6205dce876ac6a13ee1369821}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+S\+DS@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+S\+DS}}
+\index{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+S\+DS@{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+S\+DS}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+S\+DS}{ARRAY\_1D\_STD\_DISTRAM\_SDS}}
+{\footnotesize\ttfamily \#define A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+S\+DS~\char`\"{}A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+S\+DS\char`\"{}}
+
+
+
+Definition at line 136 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::get\+\_\+correction\+\_\+time(), and allocation\+::\+Integrate\+Technology\+Libraries().
+
+\mbox{\Hypertarget{technology__node_8hpp_ae5d560a3ae44d330d5e7c68d9b04bcc9}\label{technology__node_8hpp_ae5d560a3ae44d330d5e7c68d9b04bcc9}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+R\+E\+A\+L\+\_\+\+S\+TD@{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+R\+E\+A\+L\+\_\+\+S\+TD}}
+\index{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+R\+E\+A\+L\+\_\+\+S\+TD@{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+R\+E\+A\+L\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+R\+E\+A\+L\+\_\+\+S\+TD}{ASSERT\_EXPR\_REAL\_STD}}
+{\footnotesize\ttfamily \#define A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+R\+E\+A\+L\+\_\+\+S\+TD~\char`\"{}fp\+\_\+assert\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 129 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a6d931635424fdd3526ceef704bdc47d6}\label{technology__node_8hpp_a6d931635424fdd3526ceef704bdc47d6}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD@{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}}
+\index{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD@{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}{ASSERT\_EXPR\_SIGNED\_STD}}
+{\footnotesize\ttfamily \#define A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD~\char`\"{}assert\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 127 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a947f233a240631e69d568b1e1d8086e4}\label{technology__node_8hpp_a947f233a240631e69d568b1e1d8086e4}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD@{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}}
+\index{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD@{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}{ASSERT\_EXPR\_UNSIGNED\_STD}}
+{\footnotesize\ttfamily \#define A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD~\char`\"{}ui\+\_\+assert\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 128 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a72c40c6c817342f7b9bfae761b8c871e}\label{technology__node_8hpp_a72c40c6c817342f7b9bfae761b8c871e}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+S\+S\+I\+G\+N\+\_\+\+R\+E\+A\+L\+\_\+\+S\+TD@{A\+S\+S\+I\+G\+N\+\_\+\+R\+E\+A\+L\+\_\+\+S\+TD}}
+\index{A\+S\+S\+I\+G\+N\+\_\+\+R\+E\+A\+L\+\_\+\+S\+TD@{A\+S\+S\+I\+G\+N\+\_\+\+R\+E\+A\+L\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+S\+S\+I\+G\+N\+\_\+\+R\+E\+A\+L\+\_\+\+S\+TD}{ASSIGN\_REAL\_STD}}
+{\footnotesize\ttfamily \#define A\+S\+S\+I\+G\+N\+\_\+\+R\+E\+A\+L\+\_\+\+S\+TD~\char`\"{}A\+S\+S\+I\+G\+N\+\_\+\+R\+E\+A\+L\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 122 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), allocation\+::\+Internal\+Exec(), Allocation\+Information\+::is\+\_\+artificial\+\_\+fu(), and Allocation\+Information\+::is\+\_\+assign().
+
+\mbox{\Hypertarget{technology__node_8hpp_a87512319d96fdeb57b51a706802000c2}\label{technology__node_8hpp_a87512319d96fdeb57b51a706802000c2}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+S\+S\+I\+G\+N\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD@{A\+S\+S\+I\+G\+N\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}}
+\index{A\+S\+S\+I\+G\+N\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD@{A\+S\+S\+I\+G\+N\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+S\+S\+I\+G\+N\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}{ASSIGN\_SIGNED\_STD}}
+{\footnotesize\ttfamily \#define A\+S\+S\+I\+G\+N\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD~\char`\"{}A\+S\+S\+I\+G\+N\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 120 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), allocation\+::\+Internal\+Exec(), Allocation\+Information\+::is\+\_\+artificial\+\_\+fu(), and Allocation\+Information\+::is\+\_\+assign().
+
+\mbox{\Hypertarget{technology__node_8hpp_a1c7c3ff9f82fc5229a024f0892570f92}\label{technology__node_8hpp_a1c7c3ff9f82fc5229a024f0892570f92}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+S\+S\+I\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD@{A\+S\+S\+I\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}}
+\index{A\+S\+S\+I\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD@{A\+S\+S\+I\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+S\+S\+I\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}{ASSIGN\_UNSIGNED\_STD}}
+{\footnotesize\ttfamily \#define A\+S\+S\+I\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD~\char`\"{}A\+S\+S\+I\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 121 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), allocation\+::\+Internal\+Exec(), Allocation\+Information\+::is\+\_\+artificial\+\_\+fu(), and Allocation\+Information\+::is\+\_\+assign().
+
+\mbox{\Hypertarget{technology__node_8hpp_a5cb6f5edb2742f01b9587ff5002064ed}\label{technology__node_8hpp_a5cb6f5edb2742f01b9587ff5002064ed}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD@{A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}}
+\index{A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD@{A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}{ASSIGN\_VEC\_SIGNED\_STD}}
+{\footnotesize\ttfamily \#define A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD~\char`\"{}A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 124 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a006cc8be32ae69a561cd394dfce6e6f0}\label{technology__node_8hpp_a006cc8be32ae69a561cd394dfce6e6f0}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD@{A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}}
+\index{A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD@{A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}{ASSIGN\_VEC\_UNSIGNED\_STD}}
+{\footnotesize\ttfamily \#define A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD~\char`\"{}A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 125 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_aa8f5758350022862401e5177363facda}\label{technology__node_8hpp_aa8f5758350022862401e5177363facda}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+\+B\+O\+O\+L\+\_\+\+S\+TD@{A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+\+B\+O\+O\+L\+\_\+\+S\+TD}}
+\index{A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+\+B\+O\+O\+L\+\_\+\+S\+TD@{A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+\+B\+O\+O\+L\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+\+B\+O\+O\+L\+\_\+\+S\+TD}{ASSIGN\_VECTOR\_BOOL\_STD}}
+{\footnotesize\ttfamily \#define A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+\+B\+O\+O\+L\+\_\+\+S\+TD~\char`\"{}A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+\+B\+O\+O\+L\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 123 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), R\+T\+L\+Characterization\+::fix\+\_\+execution\+\_\+time\+\_\+std(), R\+T\+L\+Characterization\+::fix\+\_\+muxes(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_af56dcf12f508156243697fe6f55df707}\label{technology__node_8hpp_af56dcf12f508156243697fe6f55df707}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!B\+I\+V\+E\+C\+T\+O\+R\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD@{B\+I\+V\+E\+C\+T\+O\+R\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}}
+\index{B\+I\+V\+E\+C\+T\+O\+R\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD@{B\+I\+V\+E\+C\+T\+O\+R\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{B\+I\+V\+E\+C\+T\+O\+R\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}{BIVECTOR\_CONVERTER\_STD}}
+{\footnotesize\ttfamily \#define B\+I\+V\+E\+C\+T\+O\+R\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD~\char`\"{}B\+Ivector\+\_\+converter\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 180 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a0fef892358f85640d041229ba7f8f11d}\label{technology__node_8hpp_a0fef892358f85640d041229ba7f8f11d}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!B\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+TD@{B\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+TD}}
+\index{B\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+TD@{B\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{B\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+TD}{BMEMORY\_STD}}
+{\footnotesize\ttfamily \#define B\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+TD~\char`\"{}B\+M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+RL\char`\"{}}
+
+
+
+Definition at line 130 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std().
+
+\mbox{\Hypertarget{technology__node_8hpp_aa1635a24ddcb0041699a8aa33cab8233}\label{technology__node_8hpp_aa1635a24ddcb0041699a8aa33cab8233}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!B\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+T\+DN@{B\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+T\+DN}}
+\index{B\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+T\+DN@{B\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+T\+DN}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{B\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+T\+DN}{BMEMORY\_STDN}}
+{\footnotesize\ttfamily \#define B\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+T\+DN~\char`\"{}B\+M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+LN\char`\"{}}
+
+
+
+Definition at line 131 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std().
+
+\mbox{\Hypertarget{technology__node_8hpp_ae8b9d1b555dd8fd5f07d11d83aa279a3}\label{technology__node_8hpp_ae8b9d1b555dd8fd5f07d11d83aa279a3}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!B\+U\+F\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{B\+U\+F\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}}
+\index{B\+U\+F\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{B\+U\+F\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{B\+U\+F\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}{BUFF\_GATE\_STD}}
+{\footnotesize\ttfamily \#define B\+U\+F\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD~\char`\"{}B\+U\+F\+F\+\_\+\+G\+A\+TE\char`\"{}}
+
+
+
+Definition at line 103 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Load\+Builtin\+Technology\+::\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a58ee03bdd7c9a1edb44d0b95736cbf86}\label{technology__node_8hpp_a58ee03bdd7c9a1edb44d0b95736cbf86}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!B\+U\+I\+L\+T\+I\+N\+\_\+\+A\+B\+O\+R\+T\+\_\+\+S\+TD@{B\+U\+I\+L\+T\+I\+N\+\_\+\+A\+B\+O\+R\+T\+\_\+\+S\+TD}}
+\index{B\+U\+I\+L\+T\+I\+N\+\_\+\+A\+B\+O\+R\+T\+\_\+\+S\+TD@{B\+U\+I\+L\+T\+I\+N\+\_\+\+A\+B\+O\+R\+T\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{B\+U\+I\+L\+T\+I\+N\+\_\+\+A\+B\+O\+R\+T\+\_\+\+S\+TD}{BUILTIN\_ABORT\_STD}}
+{\footnotesize\ttfamily \#define B\+U\+I\+L\+T\+I\+N\+\_\+\+A\+B\+O\+R\+T\+\_\+\+S\+TD~\char`\"{}\+\_\+\+\_\+builtin\+\_\+abort\char`\"{}}
+
+
+
+Definition at line 152 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_ab0df8ea5ac22d761745dc5342223e95d}\label{technology__node_8hpp_ab0df8ea5ac22d761745dc5342223e95d}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!B\+U\+I\+L\+T\+I\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+TD@{B\+U\+I\+L\+T\+I\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+TD}}
+\index{B\+U\+I\+L\+T\+I\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+TD@{B\+U\+I\+L\+T\+I\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{B\+U\+I\+L\+T\+I\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+TD}{BUILTIN\_EXIT\_STD}}
+{\footnotesize\ttfamily \#define B\+U\+I\+L\+T\+I\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+TD~\char`\"{}\+\_\+\+\_\+builtin\+\_\+exit\char`\"{}}
+
+
+
+Definition at line 151 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_a567d29515ff05f5c4ac2f37b9035075e}\label{technology__node_8hpp_a567d29515ff05f5c4ac2f37b9035075e}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!B\+U\+I\+L\+T\+I\+N\+\_\+\+W\+A\+I\+T\+\_\+\+C\+A\+L\+L\+\_\+\+S\+TD@{B\+U\+I\+L\+T\+I\+N\+\_\+\+W\+A\+I\+T\+\_\+\+C\+A\+L\+L\+\_\+\+S\+TD}}
+\index{B\+U\+I\+L\+T\+I\+N\+\_\+\+W\+A\+I\+T\+\_\+\+C\+A\+L\+L\+\_\+\+S\+TD@{B\+U\+I\+L\+T\+I\+N\+\_\+\+W\+A\+I\+T\+\_\+\+C\+A\+L\+L\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{B\+U\+I\+L\+T\+I\+N\+\_\+\+W\+A\+I\+T\+\_\+\+C\+A\+L\+L\+\_\+\+S\+TD}{BUILTIN\_WAIT\_CALL\_STD}}
+{\footnotesize\ttfamily \#define B\+U\+I\+L\+T\+I\+N\+\_\+\+W\+A\+I\+T\+\_\+\+C\+A\+L\+L\+\_\+\+S\+TD~\char`\"{}\+\_\+\+\_\+builtin\+\_\+wait\+\_\+call\char`\"{}}
+
+
+
+Definition at line 153 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_adc95764962c18cabf2b803c0a45efc97}\label{technology__node_8hpp_adc95764962c18cabf2b803c0a45efc97}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!B\+U\+V\+E\+C\+T\+O\+R\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD@{B\+U\+V\+E\+C\+T\+O\+R\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}}
+\index{B\+U\+V\+E\+C\+T\+O\+R\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD@{B\+U\+V\+E\+C\+T\+O\+R\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{B\+U\+V\+E\+C\+T\+O\+R\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}{BUVECTOR\_CONVERTER\_STD}}
+{\footnotesize\ttfamily \#define B\+U\+V\+E\+C\+T\+O\+R\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD~\char`\"{}B\+Uvector\+\_\+converter\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 181 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a155211672019b18b34dbbf1e341bb7a1}\label{technology__node_8hpp_a155211672019b18b34dbbf1e341bb7a1}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!C\+E\+\_\+\+B\+Y\+P\+A\+SS@{C\+E\+\_\+\+B\+Y\+P\+A\+SS}}
+\index{C\+E\+\_\+\+B\+Y\+P\+A\+SS@{C\+E\+\_\+\+B\+Y\+P\+A\+SS}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{C\+E\+\_\+\+B\+Y\+P\+A\+SS}{CE\_BYPASS}}
+{\footnotesize\ttfamily \#define C\+E\+\_\+\+B\+Y\+P\+A\+SS~\char`\"{}C\+E\+\_\+\+B\+Y\+P\+A\+SS\char`\"{}}
+
+
+
+Definition at line 201 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_a5ec74c21d415f3d8210c1c21e7675561}\label{technology__node_8hpp_a5ec74c21d415f3d8210c1c21e7675561}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!C\+E\+\_\+\+F\+SM@{C\+E\+\_\+\+F\+SM}}
+\index{C\+E\+\_\+\+F\+SM@{C\+E\+\_\+\+F\+SM}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{C\+E\+\_\+\+F\+SM}{CE\_FSM}}
+{\footnotesize\ttfamily \#define C\+E\+\_\+\+F\+SM~\char`\"{}C\+E\+\_\+\+F\+SM\char`\"{}}
+
+
+
+Definition at line 200 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_a05236f62fca8ffc177fb8a53e7856e09}\label{technology__node_8hpp_a05236f62fca8ffc177fb8a53e7856e09}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!C\+E\+\_\+\+S\+TD@{C\+E\+\_\+\+S\+TD}}
+\index{C\+E\+\_\+\+S\+TD@{C\+E\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{C\+E\+\_\+\+S\+TD}{CE\_STD}}
+{\footnotesize\ttfamily \#define C\+E\+\_\+\+S\+TD~\char`\"{}C\+E\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 199 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_ad0e225333063a165a7286ab8922138ec}\label{technology__node_8hpp_ad0e225333063a165a7286ab8922138ec}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+11@{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+11}}
+\index{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+11@{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+11}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+11}{CHANNELS\_TYPE\_MEM\_ACC\_11}}
+{\footnotesize\ttfamily \#define C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+11~\char`\"{}M\+E\+M\+\_\+\+A\+C\+C\+\_\+11\char`\"{}}
+
+
+
+Definition at line 164 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::\+Analyze\+Cell(), and Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a5c6ff6fe7489626271d23c64ebd15596}\label{technology__node_8hpp_a5c6ff6fe7489626271d23c64ebd15596}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+CS@{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+CS}}
+\index{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+CS@{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+CS}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+CS}{CHANNELS\_TYPE\_MEM\_ACC\_CS}}
+{\footnotesize\ttfamily \#define C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+CS~\char`\"{}M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+CS\char`\"{}}
+
+
+
+Definition at line 168 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::check\+\_\+for\+\_\+memory\+\_\+compliancy().
+
+\mbox{\Hypertarget{technology__node_8hpp_a152041f2f77d87f0207c90edf18d9e5a}\label{technology__node_8hpp_a152041f2f77d87f0207c90edf18d9e5a}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+N1@{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+N1}}
+\index{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+N1@{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+N1}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+N1}{CHANNELS\_TYPE\_MEM\_ACC\_N1}}
+{\footnotesize\ttfamily \#define C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+N1~\char`\"{}M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+N1\char`\"{}}
+
+
+
+Definition at line 165 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), and Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_aa7b75769025b8620918b0007dc9d4327}\label{technology__node_8hpp_aa7b75769025b8620918b0007dc9d4327}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+NN@{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+NN}}
+\index{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+NN@{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+NN}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+NN}{CHANNELS\_TYPE\_MEM\_ACC\_NN}}
+{\footnotesize\ttfamily \#define C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+NN~\char`\"{}M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+NN\char`\"{}}
+
+
+
+Definition at line 166 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), allocation\+::check\+\_\+for\+\_\+memory\+\_\+compliancy(), Bambu\+Parameter\+::\+Exec(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a3adc41e4ab2853d68d3c87d13a3fead0}\label{technology__node_8hpp_a3adc41e4ab2853d68d3c87d13a3fead0}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+P1N@{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+P1N}}
+\index{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+P1N@{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+P1N}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+P1N}{CHANNELS\_TYPE\_MEM\_ACC\_P1N}}
+{\footnotesize\ttfamily \#define C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+P1N~\char`\"{}M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+P1N\char`\"{}}
+
+
+
+Definition at line 167 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Parallel\+Memory\+Fu\+Binding\+::add\+\_\+to\+\_\+\+S\+M(), allocation\+::check\+\_\+for\+\_\+memory\+\_\+compliancy(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a5215b88da6ebbe95eb8630516c6d6064}\label{technology__node_8hpp_a5215b88da6ebbe95eb8630516c6d6064}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!C\+O\+N\+C\+A\+T4\+\_\+\+S\+TD@{C\+O\+N\+C\+A\+T4\+\_\+\+S\+TD}}
+\index{C\+O\+N\+C\+A\+T4\+\_\+\+S\+TD@{C\+O\+N\+C\+A\+T4\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+C\+A\+T4\+\_\+\+S\+TD}{CONCAT4\_STD}}
+{\footnotesize\ttfamily \#define C\+O\+N\+C\+A\+T4\+\_\+\+S\+TD~\char`\"{}concat\+\_\+4\+\_\+constructor\char`\"{}}
+
+
+
+Definition at line 116 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_a3d6b5703564e89ae01148b4af7ec250d}\label{technology__node_8hpp_a3d6b5703564e89ae01148b4af7ec250d}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!C\+O\+N\+D\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD@{C\+O\+N\+D\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}}
+\index{C\+O\+N\+D\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD@{C\+O\+N\+D\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+D\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}{COND\_EXPR\_STD}}
+{\footnotesize\ttfamily \#define C\+O\+N\+D\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD~\char`\"{}cond\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 113 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::get\+\_\+correction\+\_\+time().
+
+\mbox{\Hypertarget{technology__node_8hpp_a848ad0f3e2c4e64972b932e0ce3988a0}\label{technology__node_8hpp_a848ad0f3e2c4e64972b932e0ce3988a0}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!C\+O\+N\+D\+\_\+\+S\+TD@{C\+O\+N\+D\+\_\+\+S\+TD}}
+\index{C\+O\+N\+D\+\_\+\+S\+TD@{C\+O\+N\+D\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+D\+\_\+\+S\+TD}{COND\_STD}}
+{\footnotesize\ttfamily \#define C\+O\+N\+D\+\_\+\+S\+TD~\char`\"{}C\+O\+N\+D\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 206 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_af699db94143f4124666129bf620782c1}\label{technology__node_8hpp_af699db94143f4124666129bf620782c1}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+S\+TD@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+S\+TD}}
+\index{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+S\+TD@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+S\+TD}{CONSTANT\_STD}}
+{\footnotesize\ttfamily \#define C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+S\+TD~\char`\"{}constant\+\_\+value\char`\"{}}
+
+
+
+Definition at line 119 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by classic\+\_\+datapath\+::add\+\_\+ports(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), Functional\+Unit\+Step\+::\+Analyze\+Fu(), and W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+complete\+\_\+logic().
+
+\mbox{\Hypertarget{technology__node_8hpp_a28e32d1bed763ce95ef2b81e84de19d2}\label{technology__node_8hpp_a28e32d1bed763ce95ef2b81e84de19d2}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!D\+E\+M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{D\+E\+M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}}
+\index{D\+E\+M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{D\+E\+M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{D\+E\+M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}{DEMUX\_GATE\_STD}}
+{\footnotesize\ttfamily \#define D\+E\+M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD~\char`\"{}D\+E\+M\+U\+X\+\_\+\+G\+A\+TE\char`\"{}}
+
+
+
+Definition at line 107 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Functional\+Unit\+Step\+::\+Analyze\+Fu(), and W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+complete\+\_\+logic().
+
+\mbox{\Hypertarget{technology__node_8hpp_a5a94e3e159e1d4f641a59efa7d5b2c57}\label{technology__node_8hpp_a5a94e3e159e1d4f641a59efa7d5b2c57}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!D\+F\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{D\+F\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}}
+\index{D\+F\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{D\+F\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{D\+F\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}{DFF\_GATE\_STD}}
+{\footnotesize\ttfamily \#define D\+F\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD~\char`\"{}D\+F\+F\+\_\+\+G\+A\+TE\char`\"{}}
+
+
+
+Definition at line 102 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Load\+Builtin\+Technology\+::\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_ac198d8d790b4c688b235ad0ecf20b640}\label{technology__node_8hpp_ac198d8d790b4c688b235ad0ecf20b640}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL@{D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL}}
+\index{D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL@{D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL}{DPROXY\_CTRL}}
+{\footnotesize\ttfamily \#define D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL~\char`\"{}D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL\char`\"{}}
+
+
+
+Definition at line 156 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Integrate\+Technology\+Libraries().
+
+\mbox{\Hypertarget{technology__node_8hpp_abaee241e3d72decdd29d29aaea0d0581}\label{technology__node_8hpp_abaee241e3d72decdd29d29aaea0d0581}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN@{D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN}}
+\index{D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN@{D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN}{DPROXY\_CTRLN}}
+{\footnotesize\ttfamily \#define D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN~\char`\"{}D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN\char`\"{}}
+
+
+
+Definition at line 157 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Integrate\+Technology\+Libraries().
+
+\mbox{\Hypertarget{technology__node_8hpp_ada80aae2369e5e98b99b166647209b9c}\label{technology__node_8hpp_ada80aae2369e5e98b99b166647209b9c}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD@{E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}}
+\index{E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD@{E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}{EXTRACT\_BIT\_EXPR\_SIGNED\_STD}}
+{\footnotesize\ttfamily \#define E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD~\char`\"{}extract\+\_\+bit\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 194 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a478b2f36199b4aa9f8a59d48a0d1ef50}\label{technology__node_8hpp_a478b2f36199b4aa9f8a59d48a0d1ef50}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+P\+R\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD@{E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+P\+R\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}}
+\index{E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+P\+R\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD@{E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+P\+R\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+P\+R\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD}{EXTRACT\_BIT\_EXPR\_UNSIGNED\_STD}}
+{\footnotesize\ttfamily \#define E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+P\+R\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD~\char`\"{}ui\+\_\+extract\+\_\+bit\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 195 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_ae34c46608b5e806b981281677921f6b1}\label{technology__node_8hpp_ae34c46608b5e806b981281677921f6b1}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!F\+C\+\_\+\+S\+TD@{F\+C\+\_\+\+S\+TD}}
+\index{F\+C\+\_\+\+S\+TD@{F\+C\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{F\+C\+\_\+\+S\+TD}{FC\_STD}}
+{\footnotesize\ttfamily \#define F\+C\+\_\+\+S\+TD~\char`\"{}F\+C\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 209 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_a6ebe9d3df73927fc23b01c17186c0880}\label{technology__node_8hpp_a6ebe9d3df73927fc23b01c17186c0880}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD@{F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}}
+\index{F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD@{F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}{FFDATA\_CONVERTER\_STD}}
+{\footnotesize\ttfamily \#define F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD~\char`\"{}F\+Fdata\+\_\+converter\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 182 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding\+::add\+\_\+conversion(), conn\+\_\+binding\+::add\+\_\+datapath\+\_\+connection(), conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a2ec7e1198adaccbe07c65fd67d53cddf}\label{technology__node_8hpp_a2ec7e1198adaccbe07c65fd67d53cddf}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!flipflop\+\_\+\+AR@{flipflop\+\_\+\+AR}}
+\index{flipflop\+\_\+\+AR@{flipflop\+\_\+\+AR}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{flipflop\+\_\+\+AR}{flipflop\_AR}}
+{\footnotesize\ttfamily \#define flipflop\+\_\+\+AR~\char`\"{}flipflop\+\_\+\+AR\char`\"{}}
+
+
+
+flipflop with asynchronous reset 
+
+
+
+Definition at line 224 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), and top\+\_\+entity\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_af64df9c452f18d706b66a969d9211a0e}\label{technology__node_8hpp_af64df9c452f18d706b66a969d9211a0e}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!flipflop\+\_\+\+SR@{flipflop\+\_\+\+SR}}
+\index{flipflop\+\_\+\+SR@{flipflop\+\_\+\+SR}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{flipflop\+\_\+\+SR}{flipflop\_SR}}
+{\footnotesize\ttfamily \#define flipflop\+\_\+\+SR~\char`\"{}flipflop\+\_\+\+SR\char`\"{}}
+
+
+
+flipflop with synchronous reset 
+
+
+
+Definition at line 218 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), classic\+\_\+datapath\+::\+Internal\+Exec(), and top\+\_\+entity\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_ae1904a119914c941407f5e83d8e728e8}\label{technology__node_8hpp_ae1904a119914c941407f5e83d8e728e8}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!G\+E\+T\+\_\+\+T\+E\+C\+\_\+\+K\+I\+ND@{G\+E\+T\+\_\+\+T\+E\+C\+\_\+\+K\+I\+ND}}
+\index{G\+E\+T\+\_\+\+T\+E\+C\+\_\+\+K\+I\+ND@{G\+E\+T\+\_\+\+T\+E\+C\+\_\+\+K\+I\+ND}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+T\+E\+C\+\_\+\+K\+I\+ND}{GET\_TEC\_KIND}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+T\+E\+C\+\_\+\+K\+I\+ND(\begin{DoxyParamCaption}\item[{}]{meth }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{enum} \hyperlink{technology__node_8hpp_ac8c5c7b9c4a4b68049cd228ba6042de2}{tec\_kind} get\_kind() const override \(\backslash\)
+   \{                                       \(\backslash\)
+      return (meth##\_K);                   \(\backslash\)
+   \}
+\end{DoxyCode}
+
+
+Macro used to implement get\+\_\+kind() function in \hyperlink{classstructural__object}{structural\+\_\+object} hierarchy classes. 
+
+
+
+Definition at line 275 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by functional\+\_\+unit\+::get\+\_\+name(), functional\+\_\+unit\+\_\+template\+::get\+\_\+name(), operation\+::is\+\_\+primary\+\_\+inputs\+\_\+registered(), and storage\+\_\+unit\+::print().
+
+\mbox{\Hypertarget{technology__node_8hpp_a7321c1028bebd6a64824ef9c33347fbb}\label{technology__node_8hpp_a7321c1028bebd6a64824ef9c33347fbb}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!G\+E\+T\+\_\+\+T\+E\+C\+\_\+\+K\+I\+N\+D\+\_\+\+T\+E\+XT@{G\+E\+T\+\_\+\+T\+E\+C\+\_\+\+K\+I\+N\+D\+\_\+\+T\+E\+XT}}
+\index{G\+E\+T\+\_\+\+T\+E\+C\+\_\+\+K\+I\+N\+D\+\_\+\+T\+E\+XT@{G\+E\+T\+\_\+\+T\+E\+C\+\_\+\+K\+I\+N\+D\+\_\+\+T\+E\+XT}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+T\+E\+C\+\_\+\+K\+I\+N\+D\+\_\+\+T\+E\+XT}{GET\_TEC\_KIND\_TEXT}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+T\+E\+C\+\_\+\+K\+I\+N\+D\+\_\+\+T\+E\+XT(\begin{DoxyParamCaption}\item[{}]{meth }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+std::string get\_kind\_text() const override \(\backslash\)
+   \{                                          \(\backslash\)
+      return std::string(#meth);              \(\backslash\)
+   \}
+\end{DoxyCode}
+
+
+Macro which defines the get\+\_\+kind\+\_\+text function that returns the parameter as a string. 
+
+
+
+Definition at line 254 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by functional\+\_\+unit\+::get\+\_\+name(), functional\+\_\+unit\+\_\+template\+::get\+\_\+name(), operation\+::is\+\_\+primary\+\_\+inputs\+\_\+registered(), and storage\+\_\+unit\+::print().
+
+\mbox{\Hypertarget{technology__node_8hpp_a147d50ebccb47f183501418c57022e23}\label{technology__node_8hpp_a147d50ebccb47f183501418c57022e23}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!I\+B\+U\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{I\+B\+U\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}}
+\index{I\+B\+U\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{I\+B\+U\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{I\+B\+U\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}{IBUF\_GATE\_STD}}
+{\footnotesize\ttfamily \#define I\+B\+U\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD~\char`\"{}I\+B\+UF\char`\"{}}
+
+
+
+Definition at line 91 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Load\+Builtin\+Technology\+::\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a0d980fffc517d810f6d6253455b65985}\label{technology__node_8hpp_a0d980fffc517d810f6d6253455b65985}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!I\+I\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD@{I\+I\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}}
+\index{I\+I\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD@{I\+I\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{I\+I\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}{IICONVERTER\_EXPR\_STD}}
+{\footnotesize\ttfamily \#define I\+I\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD~\char`\"{}I\+Iconvert\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 189 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_aa6ad70e177f5af869421f073eeb573f7}\label{technology__node_8hpp_aa6ad70e177f5af869421f073eeb573f7}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!I\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD@{I\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}}
+\index{I\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD@{I\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{I\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}{IIDATA\_CONVERTER\_STD}}
+{\footnotesize\ttfamily \#define I\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD~\char`\"{}I\+Idata\+\_\+converter\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 179 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+datapath\+\_\+connection(), conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_aa1c6043b4098afaa062db34d99049d73}\label{technology__node_8hpp_aa1c6043b4098afaa062db34d99049d73}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!I\+U\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD@{I\+U\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}}
+\index{I\+U\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD@{I\+U\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{I\+U\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}{IUCONVERTER\_EXPR\_STD}}
+{\footnotesize\ttfamily \#define I\+U\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD~\char`\"{}I\+Uconvert\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 187 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a22246d437d7a57556d656f7f564905fa}\label{technology__node_8hpp_a22246d437d7a57556d656f7f564905fa}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!I\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD@{I\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}}
+\index{I\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD@{I\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{I\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}{IUDATA\_CONVERTER\_STD}}
+{\footnotesize\ttfamily \#define I\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD~\char`\"{}I\+Udata\+\_\+converter\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 177 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding\+::add\+\_\+conversion(), conn\+\_\+binding\+::add\+\_\+datapath\+\_\+connection(), conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp(), mux\+\_\+connection\+\_\+binding\+::connect\+\_\+array\+\_\+index(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a5b795c6773c17eb1398c270ce576c63d}\label{technology__node_8hpp_a5b795c6773c17eb1398c270ce576c63d}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!J\+O\+I\+N\+\_\+\+S\+TD@{J\+O\+I\+N\+\_\+\+S\+TD}}
+\index{J\+O\+I\+N\+\_\+\+S\+TD@{J\+O\+I\+N\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{J\+O\+I\+N\+\_\+\+S\+TD}{JOIN\_STD}}
+{\footnotesize\ttfamily \#define J\+O\+I\+N\+\_\+\+S\+TD~\char`\"{}J\+O\+I\+N\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 202 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_aa508c7da531791e8f07f88af6330a945}\label{technology__node_8hpp_aa508c7da531791e8f07f88af6330a945}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!L\+U\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD@{L\+U\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}}
+\index{L\+U\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD@{L\+U\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{L\+U\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}{LUT\_EXPR\_STD}}
+{\footnotesize\ttfamily \#define L\+U\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD~\char`\"{}lut\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 196 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::\+Analyze\+Cell(), Allocation\+Information\+::get\+\_\+correction\+\_\+time(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a8fac733812675e3f521a32863e6a7626}\label{technology__node_8hpp_a8fac733812675e3f521a32863e6a7626}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!L\+U\+T\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{L\+U\+T\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}}
+\index{L\+U\+T\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{L\+U\+T\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{L\+U\+T\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}{LUT\_GATE\_STD}}
+{\footnotesize\ttfamily \#define L\+U\+T\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD~\char`\"{}L\+UT\char`\"{}}
+
+
+
+F\+P\+GA modules. 
+
+
+
+Definition at line 90 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Functional\+Unit\+Step\+::\+Analyze\+Fu(), and Load\+Builtin\+Technology\+::\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_ace6a35a282cb21b36d35a158c2cd67b3}\label{technology__node_8hpp_ace6a35a282cb21b36d35a158c2cd67b3}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+C\+\_\+\+S\+TD@{M\+C\+\_\+\+S\+TD}}
+\index{M\+C\+\_\+\+S\+TD@{M\+C\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+C\+\_\+\+S\+TD}{MC\_STD}}
+{\footnotesize\ttfamily \#define M\+C\+\_\+\+S\+TD~\char`\"{}M\+C\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 208 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_ae8d39e881cbfc81e795acfcbc3fafce8}\label{technology__node_8hpp_ae8d39e881cbfc81e795acfcbc3fafce8}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+E\+M\+C\+P\+Y\+\_\+\+S\+TD@{M\+E\+M\+C\+P\+Y\+\_\+\+S\+TD}}
+\index{M\+E\+M\+C\+P\+Y\+\_\+\+S\+TD@{M\+E\+M\+C\+P\+Y\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+C\+P\+Y\+\_\+\+S\+TD}{MEMCPY\_STD}}
+{\footnotesize\ttfamily \#define M\+E\+M\+C\+P\+Y\+\_\+\+S\+TD~\char`\"{}\+\_\+\+\_\+internal\+\_\+bambu\+\_\+memcpy\char`\"{}}
+
+
+
+Definition at line 132 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M().
+
+\mbox{\Hypertarget{technology__node_8hpp_a8e1f8b9600c3ec3d9cfe49c75ee08b2a}\label{technology__node_8hpp_a8e1f8b9600c3ec3d9cfe49c75ee08b2a}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+E\+M\+L\+O\+A\+D\+\_\+\+S\+TD@{M\+E\+M\+L\+O\+A\+D\+\_\+\+S\+TD}}
+\index{M\+E\+M\+L\+O\+A\+D\+\_\+\+S\+TD@{M\+E\+M\+L\+O\+A\+D\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+L\+O\+A\+D\+\_\+\+S\+TD}{MEMLOAD\_STD}}
+{\footnotesize\ttfamily \#define M\+E\+M\+L\+O\+A\+D\+\_\+\+S\+TD~\char`\"{}\+\_\+\+\_\+builtin\+\_\+memload\char`\"{}}
+
+
+
+Definition at line 147 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::\+Analyze\+Cell().
+
+\mbox{\Hypertarget{technology__node_8hpp_aae3b03901a463949c1e952b4073efaa9}\label{technology__node_8hpp_aae3b03901a463949c1e952b4073efaa9}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+E\+M\+L\+O\+A\+D\+\_\+\+S\+T\+DN@{M\+E\+M\+L\+O\+A\+D\+\_\+\+S\+T\+DN}}
+\index{M\+E\+M\+L\+O\+A\+D\+\_\+\+S\+T\+DN@{M\+E\+M\+L\+O\+A\+D\+\_\+\+S\+T\+DN}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+L\+O\+A\+D\+\_\+\+S\+T\+DN}{MEMLOAD\_STDN}}
+{\footnotesize\ttfamily \#define M\+E\+M\+L\+O\+A\+D\+\_\+\+S\+T\+DN~\char`\"{}\+\_\+\+\_\+builtin\+\_\+memload\+\_\+N\char`\"{}}
+
+
+
+Definition at line 149 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_acb47c7ed257822df44bf6a0b94f43bb2}\label{technology__node_8hpp_acb47c7ed257822df44bf6a0b94f43bb2}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D00@{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D00}}
+\index{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D00@{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D00}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D00}{MEMORY\_CTRL\_TYPE\_D00}}
+{\footnotesize\ttfamily \#define M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D00~\char`\"{}D00\char`\"{}}
+
+
+
+Definition at line 170 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::get\+\_\+correction\+\_\+time().
+
+\mbox{\Hypertarget{technology__node_8hpp_a4ac03889e0365660405961431941beee}\label{technology__node_8hpp_a4ac03889e0365660405961431941beee}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+P\+R\+O\+XY@{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+P\+R\+O\+XY}}
+\index{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+P\+R\+O\+XY@{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+P\+R\+O\+XY}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+P\+R\+O\+XY}{MEMORY\_CTRL\_TYPE\_DPROXY}}
+{\footnotesize\ttfamily \#define M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+P\+R\+O\+XY~\char`\"{}D\+P\+R\+O\+XY\char`\"{}}
+
+
+
+Definition at line 172 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::check\+\_\+for\+\_\+memory\+\_\+compliancy(), R\+T\+L\+Characterization\+::fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std(), Allocation\+Information\+::get\+\_\+correction\+\_\+time(), Allocation\+Information\+::is\+\_\+direct\+\_\+access\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+direct\+\_\+proxy\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+indirect\+\_\+access\+\_\+memory\+\_\+unit(), and Allocation\+Information\+::is\+\_\+one\+\_\+cycle\+\_\+direct\+\_\+access\+\_\+memory\+\_\+unit().
+
+\mbox{\Hypertarget{technology__node_8hpp_ae161d342ca175bf95cbe6adae6eea981}\label{technology__node_8hpp_ae161d342ca175bf95cbe6adae6eea981}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+P\+R\+O\+X\+YN@{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+P\+R\+O\+X\+YN}}
+\index{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+P\+R\+O\+X\+YN@{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+P\+R\+O\+X\+YN}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+P\+R\+O\+X\+YN}{MEMORY\_CTRL\_TYPE\_DPROXYN}}
+{\footnotesize\ttfamily \#define M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+P\+R\+O\+X\+YN~\char`\"{}D\+P\+R\+O\+X\+YN\char`\"{}}
+
+
+
+Definition at line 174 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::check\+\_\+for\+\_\+memory\+\_\+compliancy(), R\+T\+L\+Characterization\+::fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std(), Allocation\+Information\+::get\+\_\+correction\+\_\+time(), Allocation\+Information\+::is\+\_\+direct\+\_\+access\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+direct\+\_\+proxy\+\_\+memory\+\_\+unit(), and Allocation\+Information\+::is\+\_\+indirect\+\_\+access\+\_\+memory\+\_\+unit().
+
+\mbox{\Hypertarget{technology__node_8hpp_a3437bcbf2fbeab04912381be4f232e20}\label{technology__node_8hpp_a3437bcbf2fbeab04912381be4f232e20}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+O\+XY@{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+O\+XY}}
+\index{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+O\+XY@{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+O\+XY}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+O\+XY}{MEMORY\_CTRL\_TYPE\_PROXY}}
+{\footnotesize\ttfamily \#define M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+O\+XY~\char`\"{}P\+R\+O\+XY\char`\"{}}
+
+
+
+Definition at line 171 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::check\+\_\+for\+\_\+memory\+\_\+compliancy(), R\+T\+L\+Characterization\+::fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std(), Allocation\+Information\+::get\+\_\+correction\+\_\+time(), Allocation\+Information\+::is\+\_\+direct\+\_\+access\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+direct\+\_\+proxy\+\_\+memory\+\_\+unit(), and Allocation\+Information\+::is\+\_\+indirect\+\_\+access\+\_\+memory\+\_\+unit().
+
+\mbox{\Hypertarget{technology__node_8hpp_aeb406cd363bd68348f4f10ea32911733}\label{technology__node_8hpp_aeb406cd363bd68348f4f10ea32911733}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+O\+X\+YN@{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+O\+X\+YN}}
+\index{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+O\+X\+YN@{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+O\+X\+YN}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+O\+X\+YN}{MEMORY\_CTRL\_TYPE\_PROXYN}}
+{\footnotesize\ttfamily \#define M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+O\+X\+YN~\char`\"{}P\+R\+O\+X\+YN\char`\"{}}
+
+
+
+Definition at line 173 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::check\+\_\+for\+\_\+memory\+\_\+compliancy(), R\+T\+L\+Characterization\+::fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std(), Allocation\+Information\+::get\+\_\+correction\+\_\+time(), Allocation\+Information\+::is\+\_\+direct\+\_\+access\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+direct\+\_\+proxy\+\_\+memory\+\_\+unit(), and Allocation\+Information\+::is\+\_\+indirect\+\_\+access\+\_\+memory\+\_\+unit().
+
+\mbox{\Hypertarget{technology__node_8hpp_a71872e4d3a1839ba1332dcaeed2736a4}\label{technology__node_8hpp_a71872e4d3a1839ba1332dcaeed2736a4}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU@{M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU}}
+\index{M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU@{M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU}{MEMORY\_MAPPED\_REGISTER\_FU}}
+{\footnotesize\ttfamily \#define M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU~\char`\"{}memory\+\_\+mapped\+\_\+register\+\_\+\+FU\char`\"{}}
+
+
+
+memory mapped register 
+
+
+
+Definition at line 240 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Top\+Entity\+Memory\+Mapped\+::insert\+Memory\+Mapped\+Register().
+
+\mbox{\Hypertarget{technology__node_8hpp_a9d94aa3ca2c113b2ca673bcf101c7c6e}\label{technology__node_8hpp_a9d94aa3ca2c113b2ca673bcf101c7c6e}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU@{M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU}}
+\index{M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU@{M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU}{MEMORY\_MAPPED\_REGISTERN\_FU}}
+{\footnotesize\ttfamily \#define M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU~\char`\"{}memory\+\_\+mapped\+\_\+register\+N\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 245 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Top\+Entity\+Memory\+Mapped\+::insert\+Memory\+Mapped\+Register().
+
+\mbox{\Hypertarget{technology__node_8hpp_af6a1ccf3cda671d100d1fa71cd4d0aed}\label{technology__node_8hpp_af6a1ccf3cda671d100d1fa71cd4d0aed}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US@{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US}}
+\index{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US@{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US}{MEMORY\_TYPE\_ASYNCHRONOUS}}
+{\footnotesize\ttfamily \#define M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US~\char`\"{}A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US\char`\"{}}
+
+
+
+Definition at line 159 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), Allocation\+Information\+::get\+\_\+correction\+\_\+time(), and Allocation\+Information\+::is\+\_\+one\+\_\+cycle\+\_\+direct\+\_\+access\+\_\+memory\+\_\+unit().
+
+\mbox{\Hypertarget{technology__node_8hpp_ac67639bb3cfb789f633e5881b66b7221}\label{technology__node_8hpp_ac67639bb3cfb789f633e5881b66b7221}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+DS@{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+DS}}
+\index{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+DS@{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+DS}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+DS}{MEMORY\_TYPE\_SYNCHRONOUS\_SDS}}
+{\footnotesize\ttfamily \#define M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+DS~\char`\"{}S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+DS\char`\"{}}
+
+
+
+Definition at line 161 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), and Allocation\+Information\+::get\+\_\+correction\+\_\+time().
+
+\mbox{\Hypertarget{technology__node_8hpp_ab6d751d31f86e5a618443d7016d9c4dc}\label{technology__node_8hpp_ab6d751d31f86e5a618443d7016d9c4dc}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+D\+S\+\_\+\+B\+US@{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+D\+S\+\_\+\+B\+US}}
+\index{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+D\+S\+\_\+\+B\+US@{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+D\+S\+\_\+\+B\+US}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+D\+S\+\_\+\+B\+US}{MEMORY\_TYPE\_SYNCHRONOUS\_SDS\_BUS}}
+{\footnotesize\ttfamily \#define M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+D\+S\+\_\+\+B\+US~\char`\"{}S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+D\+S\+\_\+\+B\+US\char`\"{}}
+
+
+
+Definition at line 162 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), and Allocation\+Information\+::get\+\_\+correction\+\_\+time().
+
+\mbox{\Hypertarget{technology__node_8hpp_aede25a10cf3e7264ab1bc8115951999b}\label{technology__node_8hpp_aede25a10cf3e7264ab1bc8115951999b}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+U\+N\+A\+L\+I\+G\+N\+ED@{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+U\+N\+A\+L\+I\+G\+N\+ED}}
+\index{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+U\+N\+A\+L\+I\+G\+N\+ED@{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+U\+N\+A\+L\+I\+G\+N\+ED}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+U\+N\+A\+L\+I\+G\+N\+ED}{MEMORY\_TYPE\_SYNCHRONOUS\_UNALIGNED}}
+{\footnotesize\ttfamily \#define M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+U\+N\+A\+L\+I\+G\+N\+ED~\char`\"{}S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+U\+N\+A\+L\+I\+G\+N\+ED\char`\"{}}
+
+
+
+Definition at line 160 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), and Allocation\+Information\+::get\+\_\+correction\+\_\+time().
+
+\mbox{\Hypertarget{technology__node_8hpp_a58f792819de683c28a7fb9213762d84c}\label{technology__node_8hpp_a58f792819de683c28a7fb9213762d84c}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+E\+M\+S\+T\+O\+R\+E\+\_\+\+S\+TD@{M\+E\+M\+S\+T\+O\+R\+E\+\_\+\+S\+TD}}
+\index{M\+E\+M\+S\+T\+O\+R\+E\+\_\+\+S\+TD@{M\+E\+M\+S\+T\+O\+R\+E\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+S\+T\+O\+R\+E\+\_\+\+S\+TD}{MEMSTORE\_STD}}
+{\footnotesize\ttfamily \#define M\+E\+M\+S\+T\+O\+R\+E\+\_\+\+S\+TD~\char`\"{}\+\_\+\+\_\+builtin\+\_\+memstore\char`\"{}}
+
+
+
+Definition at line 148 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), and R\+T\+L\+Characterization\+::\+Analyze\+Cell().
+
+\mbox{\Hypertarget{technology__node_8hpp_ac21b0b131b4ac3bd6a9895fc3596d494}\label{technology__node_8hpp_ac21b0b131b4ac3bd6a9895fc3596d494}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+E\+M\+S\+T\+O\+R\+E\+\_\+\+S\+T\+DN@{M\+E\+M\+S\+T\+O\+R\+E\+\_\+\+S\+T\+DN}}
+\index{M\+E\+M\+S\+T\+O\+R\+E\+\_\+\+S\+T\+DN@{M\+E\+M\+S\+T\+O\+R\+E\+\_\+\+S\+T\+DN}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+S\+T\+O\+R\+E\+\_\+\+S\+T\+DN}{MEMSTORE\_STDN}}
+{\footnotesize\ttfamily \#define M\+E\+M\+S\+T\+O\+R\+E\+\_\+\+S\+T\+DN~\char`\"{}\+\_\+\+\_\+builtin\+\_\+memstore\+\_\+N\char`\"{}}
+
+
+
+Definition at line 150 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M().
+
+\mbox{\Hypertarget{technology__node_8hpp_aca7b18cfa2c070acd0834bc26d4a1a9e}\label{technology__node_8hpp_aca7b18cfa2c070acd0834bc26d4a1a9e}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD@{M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD}}
+\index{M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD@{M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD}{MULTIPLIER\_STD}}
+{\footnotesize\ttfamily \#define M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD~\char`\"{}mult\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 109 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::\+Estimate\+Controller\+Delay(), I\+R\+\_\+lowering\+::expand\+\_\+\+M\+C(), and R\+T\+L\+Characterization\+::fix\+\_\+muxes().
+
+\mbox{\Hypertarget{technology__node_8hpp_a103587e0b9f68c0e0168e074ea337d20}\label{technology__node_8hpp_a103587e0b9f68c0e0168e074ea337d20}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}}
+\index{M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}{MUX\_GATE\_STD}}
+{\footnotesize\ttfamily \#define M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD~\char`\"{}M\+U\+X\+\_\+\+G\+A\+TE\char`\"{}}
+
+
+
+Definition at line 106 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Functional\+Unit\+Step\+::\+Analyze\+Fu(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+complete\+\_\+logic(), allocation\+::\+Build\+Proxy\+Wrapper(), R\+T\+L\+Characterization\+::fix\+\_\+muxes(), mux\+\_\+connection\+\_\+binding\+::input\+\_\+logic(), Top\+Entity\+Memory\+Mapped\+::insert\+Memory\+Mapped\+Register(), conn\+\_\+binding\+::mux\+\_\+allocation(), Allocation\+Information\+::mux\+\_\+area\+\_\+unit\+\_\+raw(), and Allocation\+Information\+::mux\+\_\+time\+\_\+unit\+\_\+raw().
+
+\mbox{\Hypertarget{technology__node_8hpp_a0d8656a31c26003c7f7343f78fbc7d16}\label{technology__node_8hpp_a0d8656a31c26003c7f7343f78fbc7d16}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!M\+U\+X\+\_\+\+N\+\_\+\+T\+O\+\_\+1@{M\+U\+X\+\_\+\+N\+\_\+\+T\+O\+\_\+1}}
+\index{M\+U\+X\+\_\+\+N\+\_\+\+T\+O\+\_\+1@{M\+U\+X\+\_\+\+N\+\_\+\+T\+O\+\_\+1}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{M\+U\+X\+\_\+\+N\+\_\+\+T\+O\+\_\+1}{MUX\_N\_TO\_1}}
+{\footnotesize\ttfamily \#define M\+U\+X\+\_\+\+N\+\_\+\+T\+O\+\_\+1~\char`\"{}M\+U\+X\+\_\+\+N\+\_\+to\+\_\+1\char`\"{}}
+
+
+
+Definition at line 108 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::\+Initialize\+Mux\+D\+B().
+
+\mbox{\Hypertarget{technology__node_8hpp_a7974f9e003d7a03cd6f5ee77776e96bc}\label{technology__node_8hpp_a7974f9e003d7a03cd6f5ee77776e96bc}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!N\+A\+N\+D\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{N\+A\+N\+D\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}}
+\index{N\+A\+N\+D\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{N\+A\+N\+D\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{N\+A\+N\+D\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}{NAND\_GATE\_STD}}
+{\footnotesize\ttfamily \#define N\+A\+N\+D\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD~\char`\"{}N\+A\+N\+D\+\_\+\+G\+A\+TE\char`\"{}}
+
+
+
+Definition at line 96 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Functional\+Unit\+Step\+::\+Analyze\+Fu(), and Load\+Builtin\+Technology\+::\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a1fecfe90c2de839f25b398a9b35de824}\label{technology__node_8hpp_a1fecfe90c2de839f25b398a9b35de824}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!N\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{N\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}}
+\index{N\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{N\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{N\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}{NOR\_GATE\_STD}}
+{\footnotesize\ttfamily \#define N\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD~\char`\"{}N\+O\+R\+\_\+\+G\+A\+TE\char`\"{}}
+
+
+
+Definition at line 98 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Functional\+Unit\+Step\+::\+Analyze\+Fu(), and Load\+Builtin\+Technology\+::\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a8544e5c1fc3fc2bd6b1acf5a5d64a55d}\label{technology__node_8hpp_a8544e5c1fc3fc2bd6b1acf5a5d64a55d}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!N\+O\+T\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{N\+O\+T\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}}
+\index{N\+O\+T\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{N\+O\+T\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{N\+O\+T\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}{NOT\_GATE\_STD}}
+{\footnotesize\ttfamily \#define N\+O\+T\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD~\char`\"{}N\+O\+T\+\_\+\+G\+A\+TE\char`\"{}}
+
+
+
+Definition at line 101 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+complete\+\_\+logic(), and Load\+Builtin\+Technology\+::\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_afc6202e9e4c0a1c56b705707cda002fe}\label{technology__node_8hpp_afc6202e9e4c0a1c56b705707cda002fe}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!N\+O\+T\+Y\+F\+Y\+\_\+\+C\+A\+L\+L\+E\+R\+\_\+\+M\+I\+N\+I\+M\+A\+L\+\_\+\+FU@{N\+O\+T\+Y\+F\+Y\+\_\+\+C\+A\+L\+L\+E\+R\+\_\+\+M\+I\+N\+I\+M\+A\+L\+\_\+\+FU}}
+\index{N\+O\+T\+Y\+F\+Y\+\_\+\+C\+A\+L\+L\+E\+R\+\_\+\+M\+I\+N\+I\+M\+A\+L\+\_\+\+FU@{N\+O\+T\+Y\+F\+Y\+\_\+\+C\+A\+L\+L\+E\+R\+\_\+\+M\+I\+N\+I\+M\+A\+L\+\_\+\+FU}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{N\+O\+T\+Y\+F\+Y\+\_\+\+C\+A\+L\+L\+E\+R\+\_\+\+M\+I\+N\+I\+M\+A\+L\+\_\+\+FU}{NOTYFY\_CALLER\_MINIMAL\_FU}}
+{\footnotesize\ttfamily \#define N\+O\+T\+Y\+F\+Y\+\_\+\+C\+A\+L\+L\+E\+R\+\_\+\+M\+I\+N\+I\+M\+A\+L\+\_\+\+FU~\char`\"{}notify\+\_\+caller\+\_\+minimal\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 242 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Top\+Entity\+Memory\+Mapped\+::insert\+Start\+Done\+Logic().
+
+\mbox{\Hypertarget{technology__node_8hpp_ad1ad3fb20e708c4cbc6e7422e95d02f3}\label{technology__node_8hpp_ad1ad3fb20e708c4cbc6e7422e95d02f3}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!N\+O\+T\+Y\+F\+Y\+\_\+\+C\+A\+L\+L\+E\+R\+\_\+\+M\+I\+N\+I\+M\+A\+L\+N\+\_\+\+FU@{N\+O\+T\+Y\+F\+Y\+\_\+\+C\+A\+L\+L\+E\+R\+\_\+\+M\+I\+N\+I\+M\+A\+L\+N\+\_\+\+FU}}
+\index{N\+O\+T\+Y\+F\+Y\+\_\+\+C\+A\+L\+L\+E\+R\+\_\+\+M\+I\+N\+I\+M\+A\+L\+N\+\_\+\+FU@{N\+O\+T\+Y\+F\+Y\+\_\+\+C\+A\+L\+L\+E\+R\+\_\+\+M\+I\+N\+I\+M\+A\+L\+N\+\_\+\+FU}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{N\+O\+T\+Y\+F\+Y\+\_\+\+C\+A\+L\+L\+E\+R\+\_\+\+M\+I\+N\+I\+M\+A\+L\+N\+\_\+\+FU}{NOTYFY\_CALLER\_MINIMALN\_FU}}
+{\footnotesize\ttfamily \#define N\+O\+T\+Y\+F\+Y\+\_\+\+C\+A\+L\+L\+E\+R\+\_\+\+M\+I\+N\+I\+M\+A\+L\+N\+\_\+\+FU~\char`\"{}notify\+\_\+caller\+\_\+minimal\+N\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 247 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Top\+Entity\+Memory\+Mapped\+::insert\+Start\+Done\+Logic().
+
+\mbox{\Hypertarget{technology__node_8hpp_a6119ebd212d7f6c46990c31b807cea90}\label{technology__node_8hpp_a6119ebd212d7f6c46990c31b807cea90}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!O\+B\+U\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{O\+B\+U\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}}
+\index{O\+B\+U\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{O\+B\+U\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{O\+B\+U\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}{OBUF\_GATE\_STD}}
+{\footnotesize\ttfamily \#define O\+B\+U\+F\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD~\char`\"{}O\+B\+UF\char`\"{}}
+
+
+
+Definition at line 92 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Load\+Builtin\+Technology\+::\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a87cd9ed4dfee4f2e1b5038b2481a0389}\label{technology__node_8hpp_a87cd9ed4dfee4f2e1b5038b2481a0389}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}}
+\index{O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}{OR\_GATE\_STD}}
+{\footnotesize\ttfamily \#define O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD~\char`\"{}O\+R\+\_\+\+G\+A\+TE\char`\"{}}
+
+
+
+Definition at line 97 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+command\+\_\+ports(), Functional\+Unit\+Step\+::\+Analyze\+Fu(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+complete\+\_\+logic(), allocation\+::\+Build\+Proxy\+Wrapper(), Load\+Builtin\+Technology\+::\+Exec(), Top\+Entity\+Memory\+Mapped\+::insert\+Start\+Done\+Logic(), conn\+\_\+binding\+\_\+cs\+::instantiate\+\_\+suspension\+\_\+component(), and V\+H\+D\+L\+\_\+writer\+::\+Write\+Builtin().
+
+\mbox{\Hypertarget{technology__node_8hpp_a3f8547f185b2bbe33e4db5a2207d0a2a}\label{technology__node_8hpp_a3f8547f185b2bbe33e4db5a2207d0a2a}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL@{P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL}}
+\index{P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL@{P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL}{PROXY\_CTRL}}
+{\footnotesize\ttfamily \#define P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL~\char`\"{}P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL\char`\"{}}
+
+
+
+Definition at line 154 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Integrate\+Technology\+Libraries().
+
+\mbox{\Hypertarget{technology__node_8hpp_a3c3102a11f9c850193c0f30d8781a39f}\label{technology__node_8hpp_a3c3102a11f9c850193c0f30d8781a39f}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN@{P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN}}
+\index{P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN@{P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN}{PROXY\_CTRLN}}
+{\footnotesize\ttfamily \#define P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN~\char`\"{}P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN\char`\"{}}
+
+
+
+Definition at line 155 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Integrate\+Technology\+Libraries().
+
+\mbox{\Hypertarget{technology__node_8hpp_afdca9ffca614a6cebffa99d7bfb5cc88}\label{technology__node_8hpp_afdca9ffca614a6cebffa99d7bfb5cc88}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!P\+T\+\_\+\+S\+TD@{P\+T\+\_\+\+S\+TD}}
+\index{P\+T\+\_\+\+S\+TD@{P\+T\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{P\+T\+\_\+\+S\+TD}{PT\_STD}}
+{\footnotesize\ttfamily \#define P\+T\+\_\+\+S\+TD~\char`\"{}P\+T\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 204 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_a8a0d9052c838b4926754593c6b993e03}\label{technology__node_8hpp_a8a0d9052c838b4926754593c6b993e03}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!register\+\_\+\+AR@{register\+\_\+\+AR}}
+\index{register\+\_\+\+AR@{register\+\_\+\+AR}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{register\+\_\+\+AR}{register\_AR}}
+{\footnotesize\ttfamily \#define register\+\_\+\+AR~\char`\"{}register\+\_\+\+AR\char`\"{}}
+
+
+
+register with asynchronous reset 
+
+
+
+Definition at line 221 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_a47b6f60e1e6fa29c050427a71e53130b}\label{technology__node_8hpp_a47b6f60e1e6fa29c050427a71e53130b}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+ME@{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+ME}}
+\index{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+ME@{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+ME}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+ME}{register\_AR\_NORETIME}}
+{\footnotesize\ttfamily \#define register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+ME~\char`\"{}register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+ME\char`\"{}}
+
+
+
+register with asynchronous reset no retime 
+
+
+
+Definition at line 227 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::add\+\_\+input\+\_\+register(), R\+T\+L\+Characterization\+::add\+\_\+output\+\_\+register(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), and verilog\+\_\+writer\+::write\+\_\+module\+\_\+declaration().
+
+\mbox{\Hypertarget{technology__node_8hpp_a2ac12bf4dd0296798866e2bd16dc45c0}\label{technology__node_8hpp_a2ac12bf4dd0296798866e2bd16dc45c0}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+I\+NT@{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+I\+NT}}
+\index{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+I\+NT@{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+I\+NT}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+I\+NT}{register\_AR\_NORETIME\_INT}}
+{\footnotesize\ttfamily \#define register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+I\+NT~\char`\"{}register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+I\+NT\char`\"{}}
+
+
+
+Definition at line 228 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::add\+\_\+input\+\_\+register(), R\+T\+L\+Characterization\+::add\+\_\+output\+\_\+register(), and verilog\+\_\+writer\+::write\+\_\+module\+\_\+declaration().
+
+\mbox{\Hypertarget{technology__node_8hpp_a632b5efebc43d4ac3e5ce8ad78b483cd}\label{technology__node_8hpp_a632b5efebc43d4ac3e5ce8ad78b483cd}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+R\+E\+AL@{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+R\+E\+AL}}
+\index{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+R\+E\+AL@{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+R\+E\+AL}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+R\+E\+AL}{register\_AR\_NORETIME\_REAL}}
+{\footnotesize\ttfamily \#define register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+R\+E\+AL~\char`\"{}register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+R\+E\+AL\char`\"{}}
+
+
+
+Definition at line 230 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::add\+\_\+input\+\_\+register(), R\+T\+L\+Characterization\+::add\+\_\+output\+\_\+register(), and verilog\+\_\+writer\+::write\+\_\+module\+\_\+declaration().
+
+\mbox{\Hypertarget{technology__node_8hpp_aaa402a7391ba27b0a9e012a391f4ef4f}\label{technology__node_8hpp_aaa402a7391ba27b0a9e012a391f4ef4f}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+U\+I\+NT@{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+U\+I\+NT}}
+\index{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+U\+I\+NT@{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+U\+I\+NT}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+U\+I\+NT}{register\_AR\_NORETIME\_UINT}}
+{\footnotesize\ttfamily \#define register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+U\+I\+NT~\char`\"{}register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+U\+I\+NT\char`\"{}}
+
+
+
+Definition at line 229 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::add\+\_\+input\+\_\+register(), R\+T\+L\+Characterization\+::add\+\_\+output\+\_\+register(), and verilog\+\_\+writer\+::write\+\_\+module\+\_\+declaration().
+
+\mbox{\Hypertarget{technology__node_8hpp_ad91aaa31725f17c195d3817b158edf12}\label{technology__node_8hpp_ad91aaa31725f17c195d3817b158edf12}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!register\+\_\+\+A\+R\+SE@{register\+\_\+\+A\+R\+SE}}
+\index{register\+\_\+\+A\+R\+SE@{register\+\_\+\+A\+R\+SE}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{register\+\_\+\+A\+R\+SE}{register\_ARSE}}
+{\footnotesize\ttfamily \#define register\+\_\+\+A\+R\+SE~\char`\"{}register\+\_\+\+A\+R\+SE\char`\"{}}
+
+
+
+register with asynchronous reset and synchronous enable 
+
+
+
+Definition at line 236 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_a8b2ff3bc3705acf8c131cce288c8c760}\label{technology__node_8hpp_a8b2ff3bc3705acf8c131cce288c8c760}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!register\+\_\+\+S\+A\+R\+SE@{register\+\_\+\+S\+A\+R\+SE}}
+\index{register\+\_\+\+S\+A\+R\+SE@{register\+\_\+\+S\+A\+R\+SE}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{register\+\_\+\+S\+A\+R\+SE}{register\_SARSE}}
+{\footnotesize\ttfamily \#define register\+\_\+\+S\+A\+R\+SE~\char`\"{}register\+\_\+\+S\+A\+R\+SE\char`\"{}}
+
+
+
+register with synchronized asynchronous reset and synchronous enable 
+
+
+
+Definition at line 238 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by reg\+\_\+binding\+::\+Calculate\+Register\+Name().
+
+\mbox{\Hypertarget{technology__node_8hpp_a0597fe7d452aa1ebbf150823d4d85f43}\label{technology__node_8hpp_a0597fe7d452aa1ebbf150823d4d85f43}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!register\+\_\+\+SE@{register\+\_\+\+SE}}
+\index{register\+\_\+\+SE@{register\+\_\+\+SE}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{register\+\_\+\+SE}{register\_SE}}
+{\footnotesize\ttfamily \#define register\+\_\+\+SE~\char`\"{}register\+\_\+\+SE\char`\"{}}
+
+
+
+register with synchronous enable 
+
+
+
+Definition at line 232 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by reg\+\_\+binding\+::\+Calculate\+Register\+Name(), and Taste\+Interface\+Generation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a759553c17d989236690c9ea97b741584}\label{technology__node_8hpp_a759553c17d989236690c9ea97b741584}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!register\+\_\+\+SR@{register\+\_\+\+SR}}
+\index{register\+\_\+\+SR@{register\+\_\+\+SR}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{register\+\_\+\+SR}{register\_SR}}
+{\footnotesize\ttfamily \#define register\+\_\+\+SR~\char`\"{}register\+\_\+\+SR\char`\"{}}
+
+
+
+register with synchronous reset 
+
+
+
+Definition at line 215 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_a5514c13619e5271597ae583ac216f647}\label{technology__node_8hpp_a5514c13619e5271597ae583ac216f647}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!register\+\_\+\+S\+R\+SE@{register\+\_\+\+S\+R\+SE}}
+\index{register\+\_\+\+S\+R\+SE@{register\+\_\+\+S\+R\+SE}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{register\+\_\+\+S\+R\+SE}{register\_SRSE}}
+{\footnotesize\ttfamily \#define register\+\_\+\+S\+R\+SE~\char`\"{}register\+\_\+\+S\+R\+SE\char`\"{}}
+
+
+
+register with synchronous reset and synchronous enable 
+
+
+
+Definition at line 234 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by reg\+\_\+binding\+::\+Calculate\+Register\+Name().
+
+\mbox{\Hypertarget{technology__node_8hpp_a3579f88aad80c8e4e557981a5e04e64e}\label{technology__node_8hpp_a3579f88aad80c8e4e557981a5e04e64e}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!register\+\_\+\+S\+TD@{register\+\_\+\+S\+TD}}
+\index{register\+\_\+\+S\+TD@{register\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{register\+\_\+\+S\+TD}{register\_STD}}
+{\footnotesize\ttfamily \#define register\+\_\+\+S\+TD~\char`\"{}register\+\_\+\+S\+TD\char`\"{}}
+
+
+
+simple register without reset 
+
+
+
+Definition at line 212 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by top\+\_\+entity\+::add\+\_\+input\+\_\+register(), and reg\+\_\+binding\+::\+Calculate\+Register\+Name().
+
+\mbox{\Hypertarget{technology__node_8hpp_a284e2ed195d83061d08f61d8d35bc93b}\label{technology__node_8hpp_a284e2ed195d83061d08f61d8d35bc93b}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!R\+E\+T\+U\+R\+N\+\_\+\+M\+M\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU@{R\+E\+T\+U\+R\+N\+\_\+\+M\+M\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU}}
+\index{R\+E\+T\+U\+R\+N\+\_\+\+M\+M\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU@{R\+E\+T\+U\+R\+N\+\_\+\+M\+M\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+T\+U\+R\+N\+\_\+\+M\+M\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU}{RETURN\_MM\_REGISTER\_FU}}
+{\footnotesize\ttfamily \#define R\+E\+T\+U\+R\+N\+\_\+\+M\+M\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU~\char`\"{}return\+\_\+value\+\_\+mm\+\_\+register\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 241 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Top\+Entity\+Memory\+Mapped\+::insert\+Memory\+Mapped\+Register().
+
+\mbox{\Hypertarget{technology__node_8hpp_a6ef08687e1e474c8f692a18d8b980ed9}\label{technology__node_8hpp_a6ef08687e1e474c8f692a18d8b980ed9}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!R\+E\+T\+U\+R\+N\+\_\+\+M\+M\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU@{R\+E\+T\+U\+R\+N\+\_\+\+M\+M\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU}}
+\index{R\+E\+T\+U\+R\+N\+\_\+\+M\+M\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU@{R\+E\+T\+U\+R\+N\+\_\+\+M\+M\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+T\+U\+R\+N\+\_\+\+M\+M\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU}{RETURN\_MM\_REGISTERN\_FU}}
+{\footnotesize\ttfamily \#define R\+E\+T\+U\+R\+N\+\_\+\+M\+M\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU~\char`\"{}return\+\_\+value\+\_\+mm\+\_\+register\+N\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 246 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Top\+Entity\+Memory\+Mapped\+::insert\+Memory\+Mapped\+Register().
+
+\mbox{\Hypertarget{technology__node_8hpp_a099991ad66205a6b27e419b71d1bcf96}\label{technology__node_8hpp_a099991ad66205a6b27e419b71d1bcf96}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!S\+F\+\_\+\+F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+32\+\_\+64\+\_\+\+S\+TD@{S\+F\+\_\+\+F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+32\+\_\+64\+\_\+\+S\+TD}}
+\index{S\+F\+\_\+\+F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+32\+\_\+64\+\_\+\+S\+TD@{S\+F\+\_\+\+F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+32\+\_\+64\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{S\+F\+\_\+\+F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+32\+\_\+64\+\_\+\+S\+TD}{SF\_FFDATA\_CONVERTER\_32\_64\_STD}}
+{\footnotesize\ttfamily \#define S\+F\+\_\+\+F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+32\+\_\+64\+\_\+\+S\+TD~\char`\"{}sf\+\_\+\+F\+Fdata\+\_\+converter\+\_\+\+F\+U\+\_\+32\+\_\+64\char`\"{}}
+
+
+
+Definition at line 183 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::extract\+\_\+bambu\+\_\+provided\+\_\+name().
+
+\mbox{\Hypertarget{technology__node_8hpp_ac507cc3664b3558d11e6e77cdc710640}\label{technology__node_8hpp_ac507cc3664b3558d11e6e77cdc710640}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!S\+F\+\_\+\+F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+64\+\_\+32\+\_\+\+S\+TD@{S\+F\+\_\+\+F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+64\+\_\+32\+\_\+\+S\+TD}}
+\index{S\+F\+\_\+\+F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+64\+\_\+32\+\_\+\+S\+TD@{S\+F\+\_\+\+F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+64\+\_\+32\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{S\+F\+\_\+\+F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+64\+\_\+32\+\_\+\+S\+TD}{SF\_FFDATA\_CONVERTER\_64\_32\_STD}}
+{\footnotesize\ttfamily \#define S\+F\+\_\+\+F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+64\+\_\+32\+\_\+\+S\+TD~\char`\"{}sf\+\_\+\+F\+Fdata\+\_\+converter\+\_\+\+F\+U\+\_\+64\+\_\+32\char`\"{}}
+
+
+
+Definition at line 184 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::extract\+\_\+bambu\+\_\+provided\+\_\+name().
+
+\mbox{\Hypertarget{technology__node_8hpp_aa669686801d8dbc94594eff579c0e6dd}\label{technology__node_8hpp_aa669686801d8dbc94594eff579c0e6dd}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!S\+I\+G\+N\+E\+D\+\_\+\+B\+I\+T\+F\+I\+E\+L\+D\+\_\+\+F\+U\+\_\+\+S\+TD@{S\+I\+G\+N\+E\+D\+\_\+\+B\+I\+T\+F\+I\+E\+L\+D\+\_\+\+F\+U\+\_\+\+S\+TD}}
+\index{S\+I\+G\+N\+E\+D\+\_\+\+B\+I\+T\+F\+I\+E\+L\+D\+\_\+\+F\+U\+\_\+\+S\+TD@{S\+I\+G\+N\+E\+D\+\_\+\+B\+I\+T\+F\+I\+E\+L\+D\+\_\+\+F\+U\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{S\+I\+G\+N\+E\+D\+\_\+\+B\+I\+T\+F\+I\+E\+L\+D\+\_\+\+F\+U\+\_\+\+S\+TD}{SIGNED\_BITFIELD\_FU\_STD}}
+{\footnotesize\ttfamily \#define S\+I\+G\+N\+E\+D\+\_\+\+B\+I\+T\+F\+I\+E\+L\+D\+\_\+\+F\+U\+\_\+\+S\+TD~\char`\"{}Sbitfield\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 117 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp().
+
+\mbox{\Hypertarget{technology__node_8hpp_a78f0f0aba3fca843e96ca4e1cc1c3f5f}\label{technology__node_8hpp_a78f0f0aba3fca843e96ca4e1cc1c3f5f}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!S\+I\+M\+P\+L\+E\+J\+O\+I\+N\+\_\+\+S\+TD@{S\+I\+M\+P\+L\+E\+J\+O\+I\+N\+\_\+\+S\+TD}}
+\index{S\+I\+M\+P\+L\+E\+J\+O\+I\+N\+\_\+\+S\+TD@{S\+I\+M\+P\+L\+E\+J\+O\+I\+N\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{S\+I\+M\+P\+L\+E\+J\+O\+I\+N\+\_\+\+S\+TD}{SIMPLEJOIN\_STD}}
+{\footnotesize\ttfamily \#define S\+I\+M\+P\+L\+E\+J\+O\+I\+N\+\_\+\+S\+TD~\char`\"{}S\+I\+M\+P\+L\+E\+J\+O\+I\+N\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 203 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by State\+Transition\+Graph\+Manager\+::add\+\_\+to\+\_\+\+S\+M().
+
+\mbox{\Hypertarget{technology__node_8hpp_a5d8ccb7c87ef499dcf4d7ae944706031}\label{technology__node_8hpp_a5d8ccb7c87ef499dcf4d7ae944706031}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!S\+T\+A\+R\+T\+\_\+\+S\+TD@{S\+T\+A\+R\+T\+\_\+\+S\+TD}}
+\index{S\+T\+A\+R\+T\+\_\+\+S\+TD@{S\+T\+A\+R\+T\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+A\+R\+T\+\_\+\+S\+TD}{START\_STD}}
+{\footnotesize\ttfamily \#define S\+T\+A\+R\+T\+\_\+\+S\+TD~\char`\"{}S\+T\+A\+R\+T\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 205 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_adc1f2a4bdf8490894e29eacd4a46f765}\label{technology__node_8hpp_adc1f2a4bdf8490894e29eacd4a46f765}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU@{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU}}
+\index{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU@{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU}{STATUS\_REGISTER\_FU}}
+{\footnotesize\ttfamily \#define S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+FU~\char`\"{}status\+\_\+register\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 243 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Top\+Entity\+Memory\+Mapped\+::insert\+Status\+Register().
+
+\mbox{\Hypertarget{technology__node_8hpp_a310c6f5ac587ff5955852391433d13e1}\label{technology__node_8hpp_a310c6f5ac587ff5955852391433d13e1}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+N\+O\+\_\+\+N\+O\+T\+I\+F\+I\+E\+D\+\_\+\+FU@{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+N\+O\+\_\+\+N\+O\+T\+I\+F\+I\+E\+D\+\_\+\+FU}}
+\index{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+N\+O\+\_\+\+N\+O\+T\+I\+F\+I\+E\+D\+\_\+\+FU@{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+N\+O\+\_\+\+N\+O\+T\+I\+F\+I\+E\+D\+\_\+\+FU}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+N\+O\+\_\+\+N\+O\+T\+I\+F\+I\+E\+D\+\_\+\+FU}{STATUS\_REGISTER\_NO\_NOTIFIED\_FU}}
+{\footnotesize\ttfamily \#define S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+N\+O\+\_\+\+N\+O\+T\+I\+F\+I\+E\+D\+\_\+\+FU~\char`\"{}status\+\_\+register\+\_\+no\+\_\+notified\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 244 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Top\+Entity\+Memory\+Mapped\+::insert\+Status\+Register().
+
+\mbox{\Hypertarget{technology__node_8hpp_a27c6d4949c2a27ccd26a6e34f0f979cd}\label{technology__node_8hpp_a27c6d4949c2a27ccd26a6e34f0f979cd}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+N\+O\+\_\+\+N\+O\+T\+I\+F\+I\+E\+D\+N\+\_\+\+FU@{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+N\+O\+\_\+\+N\+O\+T\+I\+F\+I\+E\+D\+N\+\_\+\+FU}}
+\index{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+N\+O\+\_\+\+N\+O\+T\+I\+F\+I\+E\+D\+N\+\_\+\+FU@{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+N\+O\+\_\+\+N\+O\+T\+I\+F\+I\+E\+D\+N\+\_\+\+FU}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+N\+O\+\_\+\+N\+O\+T\+I\+F\+I\+E\+D\+N\+\_\+\+FU}{STATUS\_REGISTER\_NO\_NOTIFIEDN\_FU}}
+{\footnotesize\ttfamily \#define S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+N\+O\+\_\+\+N\+O\+T\+I\+F\+I\+E\+D\+N\+\_\+\+FU~\char`\"{}status\+\_\+register\+\_\+no\+\_\+notified\+N\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 249 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Top\+Entity\+Memory\+Mapped\+::insert\+Status\+Register().
+
+\mbox{\Hypertarget{technology__node_8hpp_ad36fc4476c489decc3b52e9bbea60ebc}\label{technology__node_8hpp_ad36fc4476c489decc3b52e9bbea60ebc}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU@{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU}}
+\index{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU@{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU}{STATUS\_REGISTERN\_FU}}
+{\footnotesize\ttfamily \#define S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+N\+\_\+\+FU~\char`\"{}status\+\_\+register\+N\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 248 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Top\+Entity\+Memory\+Mapped\+::insert\+Status\+Register().
+
+\mbox{\Hypertarget{technology__node_8hpp_a4122846210c7ef5108a5b42679fb498e}\label{technology__node_8hpp_a4122846210c7ef5108a5b42679fb498e}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!S\+T\+D\+\_\+\+B\+R\+AM@{S\+T\+D\+\_\+\+B\+R\+AM}}
+\index{S\+T\+D\+\_\+\+B\+R\+AM@{S\+T\+D\+\_\+\+B\+R\+AM}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+D\+\_\+\+B\+R\+AM}{STD\_BRAM}}
+{\footnotesize\ttfamily \#define S\+T\+D\+\_\+\+B\+R\+AM~\char`\"{}S\+T\+D\+\_\+\+B\+R\+AM\char`\"{}}
+
+
+
+Definition at line 145 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by minimal\+\_\+interface\+::build\+\_\+wrapper().
+
+\mbox{\Hypertarget{technology__node_8hpp_a93621dc071e1d8c61cf20d5f0f038a9c}\label{technology__node_8hpp_a93621dc071e1d8c61cf20d5f0f038a9c}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!S\+T\+D\+\_\+\+B\+R\+A\+MN@{S\+T\+D\+\_\+\+B\+R\+A\+MN}}
+\index{S\+T\+D\+\_\+\+B\+R\+A\+MN@{S\+T\+D\+\_\+\+B\+R\+A\+MN}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+D\+\_\+\+B\+R\+A\+MN}{STD\_BRAMN}}
+{\footnotesize\ttfamily \#define S\+T\+D\+\_\+\+B\+R\+A\+MN~\char`\"{}S\+T\+D\+\_\+\+B\+R\+A\+MN\char`\"{}}
+
+
+
+Definition at line 146 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by minimal\+\_\+interface\+::build\+\_\+wrapper().
+
+\mbox{\Hypertarget{technology__node_8hpp_a577e445f6945f51c8af96affcd861d93}\label{technology__node_8hpp_a577e445f6945f51c8af96affcd861d93}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!S\+W\+I\+T\+C\+H\+\_\+\+C\+A\+S\+E\+\_\+\+S\+TD@{S\+W\+I\+T\+C\+H\+\_\+\+C\+A\+S\+E\+\_\+\+S\+TD}}
+\index{S\+W\+I\+T\+C\+H\+\_\+\+C\+A\+S\+E\+\_\+\+S\+TD@{S\+W\+I\+T\+C\+H\+\_\+\+C\+A\+S\+E\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{S\+W\+I\+T\+C\+H\+\_\+\+C\+A\+S\+E\+\_\+\+S\+TD}{SWITCH\_CASE\_STD}}
+{\footnotesize\ttfamily \#define S\+W\+I\+T\+C\+H\+\_\+\+C\+A\+S\+E\+\_\+\+S\+TD~\char`\"{}S\+W\+I\+T\+C\+H\+\_\+\+C\+A\+S\+E\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 207 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_ab8c040a596820ea3cecdddce323c0aa1}\label{technology__node_8hpp_ab8c040a596820ea3cecdddce323c0aa1}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!T\+E\+S\+T\+\_\+\+M\+U\+L\+\_\+\+M\+U\+X\+\_\+8@{T\+E\+S\+T\+\_\+\+M\+U\+L\+\_\+\+M\+U\+X\+\_\+8}}
+\index{T\+E\+S\+T\+\_\+\+M\+U\+L\+\_\+\+M\+U\+X\+\_\+8@{T\+E\+S\+T\+\_\+\+M\+U\+L\+\_\+\+M\+U\+X\+\_\+8}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{T\+E\+S\+T\+\_\+\+M\+U\+L\+\_\+\+M\+U\+X\+\_\+8}{TEST\_MUL\_MUX\_8}}
+{\footnotesize\ttfamily \#define T\+E\+S\+T\+\_\+\+M\+U\+L\+\_\+\+M\+U\+X\+\_\+8~\char`\"{}T\+E\+S\+T\+\_\+\+M\+U\+L\+\_\+\+M\+U\+X\+\_\+8\char`\"{}}
+
+
+
+Definition at line 105 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::fix\+\_\+muxes().
+
+\mbox{\Hypertarget{technology__node_8hpp_a438f6e14fb11b5e891a2f7aaccf146dc}\label{technology__node_8hpp_a438f6e14fb11b5e891a2f7aaccf146dc}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!U\+I\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD@{U\+I\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD}}
+\index{U\+I\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD@{U\+I\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{U\+I\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD}{UI\_ADDER\_STD}}
+{\footnotesize\ttfamily \#define U\+I\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD~\char`\"{}ui\+\_\+plus\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 114 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp(), mux\+\_\+connection\+\_\+binding\+::determine\+\_\+connection(), and mux\+\_\+connection\+\_\+binding\+::dynamic\+\_\+multidimensional\+\_\+array\+\_\+handler().
+
+\mbox{\Hypertarget{technology__node_8hpp_ae05525776736ac479ce9a69d5621374c}\label{technology__node_8hpp_ae05525776736ac479ce9a69d5621374c}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!U\+I\+\_\+\+A\+L\+I\+G\+N\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD@{U\+I\+\_\+\+A\+L\+I\+G\+N\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD}}
+\index{U\+I\+\_\+\+A\+L\+I\+G\+N\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD@{U\+I\+\_\+\+A\+L\+I\+G\+N\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{U\+I\+\_\+\+A\+L\+I\+G\+N\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD}{UI\_ALIGN\_ADDER\_STD}}
+{\footnotesize\ttfamily \#define U\+I\+\_\+\+A\+L\+I\+G\+N\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD~\char`\"{}ui\+\_\+align\+\_\+plus\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 115 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp(), and mux\+\_\+connection\+\_\+binding\+::determine\+\_\+connection().
+
+\mbox{\Hypertarget{technology__node_8hpp_a4cb78dc552f5301dbcfb23ddb7b808a2}\label{technology__node_8hpp_a4cb78dc552f5301dbcfb23ddb7b808a2}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD@{U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD}}
+\index{U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD@{U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD}{UI\_CONST\_MULTIPLIER\_STD}}
+{\footnotesize\ttfamily \#define U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD~\char`\"{}ui\+\_\+const\+\_\+mult\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 111 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp(), mux\+\_\+connection\+\_\+binding\+::determine\+\_\+connection(), and mux\+\_\+connection\+\_\+binding\+::dynamic\+\_\+multidimensional\+\_\+array\+\_\+handler().
+
+\mbox{\Hypertarget{technology__node_8hpp_a9951ea2b802e280908c6dca63e84d813}\label{technology__node_8hpp_a9951ea2b802e280908c6dca63e84d813}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!U\+I\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD@{U\+I\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD}}
+\index{U\+I\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD@{U\+I\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{U\+I\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD}{UI\_MULTIPLIER\_STD}}
+{\footnotesize\ttfamily \#define U\+I\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD~\char`\"{}ui\+\_\+mult\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 110 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp(), and mux\+\_\+connection\+\_\+binding\+::determine\+\_\+connection().
+
+\mbox{\Hypertarget{technology__node_8hpp_af92e54b5d8ec79480b0c6bb59c16cf5e}\label{technology__node_8hpp_af92e54b5d8ec79480b0c6bb59c16cf5e}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!U\+I\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD@{U\+I\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}}
+\index{U\+I\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD@{U\+I\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{U\+I\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}{UICONVERTER\_EXPR\_STD}}
+{\footnotesize\ttfamily \#define U\+I\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD~\char`\"{}U\+Iconvert\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 188 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a2d65532745a40c0dac44d237587e3e49}\label{technology__node_8hpp_a2d65532745a40c0dac44d237587e3e49}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!U\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD@{U\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}}
+\index{U\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD@{U\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{U\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}{UIDATA\_CONVERTER\_STD}}
+{\footnotesize\ttfamily \#define U\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD~\char`\"{}U\+Idata\+\_\+converter\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 178 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding\+::add\+\_\+conversion(), conn\+\_\+binding\+::add\+\_\+datapath\+\_\+connection(), conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a110e3fa348b6767b291c4618384dd290}\label{technology__node_8hpp_a110e3fa348b6767b291c4618384dd290}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+B\+I\+T\+F\+I\+E\+L\+D\+\_\+\+F\+U\+\_\+\+S\+TD@{U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+B\+I\+T\+F\+I\+E\+L\+D\+\_\+\+F\+U\+\_\+\+S\+TD}}
+\index{U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+B\+I\+T\+F\+I\+E\+L\+D\+\_\+\+F\+U\+\_\+\+S\+TD@{U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+B\+I\+T\+F\+I\+E\+L\+D\+\_\+\+F\+U\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+B\+I\+T\+F\+I\+E\+L\+D\+\_\+\+F\+U\+\_\+\+S\+TD}{UNSIGNED\_BITFIELD\_FU\_STD}}
+{\footnotesize\ttfamily \#define U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+B\+I\+T\+F\+I\+E\+L\+D\+\_\+\+F\+U\+\_\+\+S\+TD~\char`\"{}Ubitfield\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 118 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_aef3c4a3bedfca95dbedc338e52767161}\label{technology__node_8hpp_aef3c4a3bedfca95dbedc338e52767161}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!U\+U\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD@{U\+U\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}}
+\index{U\+U\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD@{U\+U\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{U\+U\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD}{UUCONVERTER\_EXPR\_STD}}
+{\footnotesize\ttfamily \#define U\+U\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD~\char`\"{}U\+Uconvert\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 186 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_ab63f2f3fcaa998eca67a4024ad587927}\label{technology__node_8hpp_ab63f2f3fcaa998eca67a4024ad587927}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!U\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD@{U\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}}
+\index{U\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD@{U\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{U\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD}{UUDATA\_CONVERTER\_STD}}
+{\footnotesize\ttfamily \#define U\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD~\char`\"{}U\+Udata\+\_\+converter\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 176 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+datapath\+\_\+connection(), conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp(), Taste\+Interface\+Generation\+::\+Internal\+Exec(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a5c5cb18b5defa4ca2d1891d797668cf0}\label{technology__node_8hpp_a5c5cb18b5defa4ca2d1891d797668cf0}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+I\+NT@{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+I\+NT}}
+\index{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+I\+NT@{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+I\+NT}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+I\+NT}{VIEW\_CONVERT\_STD\_INT}}
+{\footnotesize\ttfamily \#define V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+I\+NT~\char`\"{}view\+\_\+convert\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 190 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by minimal\+\_\+interface\+::build\+\_\+wrapper(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_ae27e9ef183ea4c0378e7785520b77810}\label{technology__node_8hpp_ae27e9ef183ea4c0378e7785520b77810}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+R\+E\+AL@{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+R\+E\+AL}}
+\index{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+R\+E\+AL@{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+R\+E\+AL}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+R\+E\+AL}{VIEW\_CONVERT\_STD\_REAL}}
+{\footnotesize\ttfamily \#define V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+R\+E\+AL~\char`\"{}fp\+\_\+view\+\_\+convert\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 192 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a492087899e6d95e1127436514de5556a}\label{technology__node_8hpp_a492087899e6d95e1127436514de5556a}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+U\+I\+NT@{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+U\+I\+NT}}
+\index{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+U\+I\+NT@{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+U\+I\+NT}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+U\+I\+NT}{VIEW\_CONVERT\_STD\_UINT}}
+{\footnotesize\ttfamily \#define V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+U\+I\+NT~\char`\"{}ui\+\_\+view\+\_\+convert\+\_\+expr\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 191 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by minimal\+\_\+interface\+::build\+\_\+wrapper(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_ac79b1d384347df522948c8776307638f}\label{technology__node_8hpp_ac79b1d384347df522948c8776307638f}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!X\+N\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{X\+N\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}}
+\index{X\+N\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{X\+N\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{X\+N\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}{XNOR\_GATE\_STD}}
+{\footnotesize\ttfamily \#define X\+N\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD~\char`\"{}X\+N\+O\+R\+\_\+\+G\+A\+TE\char`\"{}}
+
+
+
+Definition at line 100 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Functional\+Unit\+Step\+::\+Analyze\+Fu(), and Load\+Builtin\+Technology\+::\+Exec().
+
+\mbox{\Hypertarget{technology__node_8hpp_a9d6515322948561c31b33d0d90b0de86}\label{technology__node_8hpp_a9d6515322948561c31b33d0d90b0de86}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!X\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{X\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}}
+\index{X\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD@{X\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{X\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD}{XOR\_GATE\_STD}}
+{\footnotesize\ttfamily \#define X\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD~\char`\"{}X\+O\+R\+\_\+\+G\+A\+TE\char`\"{}}
+
+
+
+Definition at line 99 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Functional\+Unit\+Step\+::\+Analyze\+Fu(), and Load\+Builtin\+Technology\+::\+Exec().
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{technology__node_8hpp_a4a819fb94e95dec66aa48c1a8fb66759}\label{technology__node_8hpp_a4a819fb94e95dec66aa48c1a8fb66759}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!technology\+\_\+node\+Const\+Ref@{technology\+\_\+node\+Const\+Ref}}
+\index{technology\+\_\+node\+Const\+Ref@{technology\+\_\+node\+Const\+Ref}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{technology\+\_\+node\+Const\+Ref}{technology\_nodeConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{structtechnology__node}{technology\+\_\+node}$>$ \hyperlink{technology__node_8hpp_a4a819fb94e95dec66aa48c1a8fb66759}{technology\+\_\+node\+Const\+Ref}}
+
+
+
+Definition at line 362 of file technology\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}\label{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!technology\+\_\+node\+Ref@{technology\+\_\+node\+Ref}}
+\index{technology\+\_\+node\+Ref@{technology\+\_\+node\+Ref}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{technology\+\_\+node\+Ref}{technology\_nodeRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structtechnology__node}{technology\+\_\+node}$>$ \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}}
+
+
+
+refcount definition of the class 
+
+
+
+Definition at line 361 of file technology\+\_\+node.\+hpp.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{technology__node_8hpp_ac8c5c7b9c4a4b68049cd228ba6042de2}\label{technology__node_8hpp_ac8c5c7b9c4a4b68049cd228ba6042de2}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!tec\+\_\+kind@{tec\+\_\+kind}}
+\index{tec\+\_\+kind@{tec\+\_\+kind}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{tec\+\_\+kind}{tec\_kind}}
+{\footnotesize\ttfamily enum \hyperlink{technology__node_8hpp_ac8c5c7b9c4a4b68049cd228ba6042de2}{tec\+\_\+kind}}
+
+
+
+Enumerative type for technology object classes, it is used with get\+\_\+kind() function to know the actual type of a \hyperlink{structtechnology__node}{technology\+\_\+node}. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{operation\+\_\+K@{operation\+\_\+K}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!operation\+\_\+K@{operation\+\_\+K}}}\mbox{\Hypertarget{technology__node_8hpp_ac8c5c7b9c4a4b68049cd228ba6042de2a4cf60d1c4f15efe6f009b996cbda8119}\label{technology__node_8hpp_ac8c5c7b9c4a4b68049cd228ba6042de2a4cf60d1c4f15efe6f009b996cbda8119}} 
+operation\+\_\+K&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{functional\+\_\+unit\+\_\+K@{functional\+\_\+unit\+\_\+K}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!functional\+\_\+unit\+\_\+K@{functional\+\_\+unit\+\_\+K}}}\mbox{\Hypertarget{technology__node_8hpp_ac8c5c7b9c4a4b68049cd228ba6042de2a5de21d703a0f6d6755b6843cf772880b}\label{technology__node_8hpp_ac8c5c7b9c4a4b68049cd228ba6042de2a5de21d703a0f6d6755b6843cf772880b}} 
+functional\+\_\+unit\+\_\+K&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{functional\+\_\+unit\+\_\+template\+\_\+K@{functional\+\_\+unit\+\_\+template\+\_\+K}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!functional\+\_\+unit\+\_\+template\+\_\+K@{functional\+\_\+unit\+\_\+template\+\_\+K}}}\mbox{\Hypertarget{technology__node_8hpp_ac8c5c7b9c4a4b68049cd228ba6042de2a8127d87e9a0d9c9aa1a683c77e6b5aec}\label{technology__node_8hpp_ac8c5c7b9c4a4b68049cd228ba6042de2a8127d87e9a0d9c9aa1a683c77e6b5aec}} 
+functional\+\_\+unit\+\_\+template\+\_\+K&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{storage\+\_\+unit\+\_\+K@{storage\+\_\+unit\+\_\+K}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!storage\+\_\+unit\+\_\+K@{storage\+\_\+unit\+\_\+K}}}\mbox{\Hypertarget{technology__node_8hpp_ac8c5c7b9c4a4b68049cd228ba6042de2a62639851991d35da3dc70ab60dfafaaf}\label{technology__node_8hpp_ac8c5c7b9c4a4b68049cd228ba6042de2a62639851991d35da3dc70ab60dfafaaf}} 
+storage\+\_\+unit\+\_\+K&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 264 of file technology\+\_\+node.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{technology__node_8hpp_ac5c30465e53a2dee97960f0f406b8be7}\label{technology__node_8hpp_ac5c30465e53a2dee97960f0f406b8be7}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classParameter}{Parameter}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{technology__node_8hpp_a72446ed20f53edef97fbaa70462e8a88}\label{technology__node_8hpp_a72446ed20f53edef97fbaa70462e8a88}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structtechnology__node}{technology\+\_\+node}}]{ }\end{DoxyParamCaption})}
+
+
+
+Ref\+Count type definition of the \hyperlink{structtechnology__node}{technology\+\_\+node} class structure. 
+
+\mbox{\Hypertarget{technology__node_8hpp_a36fc701203269b088b0bbeb88a50eb12}\label{technology__node_8hpp_a36fc701203269b088b0bbeb88a50eb12}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__node}{xml\+\_\+node}}]{ }\end{DoxyParamCaption})}
+
+
+
+forward decl of xml Element 
+
+\mbox{\Hypertarget{technology__node_8hpp_ac516e596183bd52c5fadd3e9d5315b2b}\label{technology__node_8hpp_ac516e596183bd52c5fadd3e9d5315b2b}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtechnology__manager}{technology\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+
+
+
+Ref\+Count type definition of the \hyperlink{classtechnology__manager}{technology\+\_\+manager} class structure. 
+
+\mbox{\Hypertarget{technology__node_8hpp_afb0fcc57e5ac51434559ac6958107584}\label{technology__node_8hpp_afb0fcc57e5ac51434559ac6958107584}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structattribute}{attribute}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{technology__node_8hpp_af99a27ccc7866c4361601d805b817d6d}\label{technology__node_8hpp_af99a27ccc7866c4361601d805b817d6d}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classarea__model}{area\+\_\+model}}]{ }\end{DoxyParamCaption})}
+
+
+
+Ref\+Count definition of the resource information of the component. 
+
+\mbox{\Hypertarget{technology__node_8hpp_a2c898e98eed242ab088fb3484775d1ee}\label{technology__node_8hpp_a2c898e98eed242ab088fb3484775d1ee}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{layout\+\_\+model}]{ }\end{DoxyParamCaption})}
+
+
+
+Ref\+Count definition of the layout information of the component. 
+
+\mbox{\Hypertarget{technology__node_8hpp_a14e387947c430b23050a3262bd049ceb}\label{technology__node_8hpp_a14e387947c430b23050a3262bd049ceb}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtime__model}{time\+\_\+model}}]{ }\end{DoxyParamCaption})}
+
+
+
+Ref\+Count definition of the timing information of the component. 
+
+\mbox{\Hypertarget{technology__node_8hpp_ae8453f10bf6ff88fd486e3dc7a3c4368}\label{technology__node_8hpp_ae8453f10bf6ff88fd486e3dc7a3c4368}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{power\+\_\+model}]{ }\end{DoxyParamCaption})}
+
+
+
+Ref\+Count definition of the power information of the component. 
+
+\mbox{\Hypertarget{technology__node_8hpp_aa23fc79a0b701ce9b1cbd0f1bb48b2e2}\label{technology__node_8hpp_aa23fc79a0b701ce9b1cbd0f1bb48b2e2}} 
+\index{technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+node.\+hpp@{technology\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtarget__device}{target\+\_\+device}}]{ }\end{DoxyParamCaption})}
+

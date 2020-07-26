@@ -1,0 +1,105 @@
+\hypertarget{multiple__entry__if__reduction_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/multiple\+\_\+entry\+\_\+if\+\_\+reduction.hpp File Reference}
+\label{multiple__entry__if__reduction_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp}}
+
+
+Class performing the reduction of n input -\/ m output BB by duplicating the BB over all its predecessors, modifing the statements in order to keep the ssa and moving the phi to all the successor changing their results\textquotesingle{} ssa name N\+O\+TE\+: this works if the BB is composed only conditions and phi statements.  
+
+
+{\ttfamily \#include \char`\"{}function\+\_\+frontend\+\_\+flow\+\_\+step.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+basic\+\_\+block.\+hpp\char`\"{}}\newline
+Include dependency graph for multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d95/multiple__entry__if__reduction_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{d7/d68/multiple__entry__if__reduction_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classMultipleEntryIfReduction}{Multiple\+Entry\+If\+Reduction}
+\begin{DoxyCompactList}\small\item\em Class performing some optimizations exploiting the reduction of BB with n inputs and m outputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}\textbf{ forward declarations}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{multiple__entry__if__reduction_8hpp_ac93788f9eb8bc858debb15f2b4012cac}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classAllocationInformation}{Allocation\+Information})
+\item 
+\hyperlink{multiple__entry__if__reduction_8hpp_a3f3c6dde43d52e6e4f3d00c3097b813c}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classMultipleEntryIfReduction}{Multiple\+Entry\+If\+Reduction})
+\item 
+\hyperlink{multiple__entry__if__reduction_8hpp_a3534c699031037ce3bebffe714643338}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structbloc}{bloc})
+\item 
+\hyperlink{multiple__entry__if__reduction_8hpp_aba6750bd83a27ac5d822ce3507f7c67c}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classSchedule}{Schedule})
+\item 
+\hyperlink{multiple__entry__if__reduction_8hpp_a52756886a578bcd0db3c2fd210400eb3}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtree__manager}{tree\+\_\+manager})
+\item 
+\hyperlink{multiple__entry__if__reduction_8hpp_ad96f9232d309d54be82fed94e085f5b7}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtree__manipulation}{tree\+\_\+manipulation})
+\item 
+\hyperlink{multiple__entry__if__reduction_8hpp_a676de0ccdd1189b2b906e6c884116894}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtree__node}{tree\+\_\+node})
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Class performing the reduction of n input -\/ m output BB by duplicating the BB over all its predecessors, modifing the statements in order to keep the ssa and moving the phi to all the successor changing their results\textquotesingle{} ssa name N\+O\+TE\+: this works if the BB is composed only conditions and phi statements. 
+
+T\+E\+S\+T\+ED ON int function5(int input); int function6(int input); int function(int input, int input2) \{ int a; int b; if(input) \{ a = function1(); b = function3(); \} else \{ a = function2(); b = function4(); \} if(a) \{ b = function5(b); \} else \{ b = function6(b); \} return b; \}
+
+\begin{DoxyAuthor}{Author}
+Andrea Caielli \href{mailto:andrea.caielli@mail.polimi.it}{\tt andrea.\+caielli@mail.\+polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{multiple__entry__if__reduction_8hpp_ac93788f9eb8bc858debb15f2b4012cac}\label{multiple__entry__if__reduction_8hpp_ac93788f9eb8bc858debb15f2b4012cac}} 
+\index{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp@{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp@{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classAllocationInformation}{Allocation\+Information}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{multiple__entry__if__reduction_8hpp_a3f3c6dde43d52e6e4f3d00c3097b813c}\label{multiple__entry__if__reduction_8hpp_a3f3c6dde43d52e6e4f3d00c3097b813c}} 
+\index{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp@{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp@{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classMultipleEntryIfReduction}{Multiple\+Entry\+If\+Reduction}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{multiple__entry__if__reduction_8hpp_a3534c699031037ce3bebffe714643338}\label{multiple__entry__if__reduction_8hpp_a3534c699031037ce3bebffe714643338}} 
+\index{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp@{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp@{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structbloc}{bloc}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{multiple__entry__if__reduction_8hpp_aba6750bd83a27ac5d822ce3507f7c67c}\label{multiple__entry__if__reduction_8hpp_aba6750bd83a27ac5d822ce3507f7c67c}} 
+\index{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp@{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp@{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classSchedule}{Schedule}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{multiple__entry__if__reduction_8hpp_a52756886a578bcd0db3c2fd210400eb3}\label{multiple__entry__if__reduction_8hpp_a52756886a578bcd0db3c2fd210400eb3}} 
+\index{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp@{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp@{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__manager}{tree\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{multiple__entry__if__reduction_8hpp_ad96f9232d309d54be82fed94e085f5b7}\label{multiple__entry__if__reduction_8hpp_ad96f9232d309d54be82fed94e085f5b7}} 
+\index{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp@{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp@{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__manipulation}{tree\+\_\+manipulation}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{multiple__entry__if__reduction_8hpp_a676de0ccdd1189b2b906e6c884116894}\label{multiple__entry__if__reduction_8hpp_a676de0ccdd1189b2b906e6c884116894}} 
+\index{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp@{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp@{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__node}{tree\+\_\+node}}]{ }\end{DoxyParamCaption})}
+

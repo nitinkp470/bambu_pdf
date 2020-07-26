@@ -1,0 +1,325 @@
+\hypertarget{classPragmaAnalysis}{}\section{Pragma\+Analysis Class Reference}
+\label{classPragmaAnalysis}\index{Pragma\+Analysis@{Pragma\+Analysis}}
+
+
+Restructure the tree control flow graph.  
+
+
+
+
+{\ttfamily \#include $<$pragma\+\_\+analysis.\+hpp$>$}
+
+
+
+Inheritance diagram for Pragma\+Analysis\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{d3/d28/classPragmaAnalysis__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Pragma\+Analysis\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d3f/classPragmaAnalysis__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPragmaAnalysis_ac24acf18f50521134b78d1663239498c}{Pragma\+Analysis} (const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classPragmaAnalysis_a552a49a96834beb7ad6439ad037a1fca}{$\sim$\+Pragma\+Analysis} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classPragmaAnalysis_a972bd7b68f27335d6fbf6e1d327c2663}{Exec} () override
+\begin{DoxyCompactList}\small\item\em Performes the analysis of the pragmas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classPragmaAnalysis_a568d30b208cf8dc645246ac355b390bb}{get\+\_\+call\+\_\+parameter} (const unsigned int \hyperlink{classtree__node}{tree\+\_\+node}, const unsigned int param) const
+\begin{DoxyCompactList}\small\item\em Given the index of a function replacing a pragma, returns a parameter. \end{DoxyCompactList}\item 
+void \hyperlink{classPragmaAnalysis_a61f2585acbea186f129a12e0cc7ef7d0}{create\+\_\+map\+\_\+pragma} (const unsigned int \hyperlink{classtree__node}{tree\+\_\+node}) const
+\begin{DoxyCompactList}\small\item\em Create a map pragma. \end{DoxyCompactList}\item 
+void \hyperlink{classPragmaAnalysis_ad01dc50d645a9d61e4bf56fdb2ed34f0}{create\+\_\+omp\+\_\+pragma} (const unsigned int \hyperlink{classtree__node}{tree\+\_\+node}) const
+\begin{DoxyCompactList}\small\item\em Create an omp pragma. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classPragmaAnalysis_a6c0e611acb6414cc71f044fc9ad2e715}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Restructure the tree control flow graph. 
+
+Definition at line 63 of file pragma\+\_\+analysis.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPragmaAnalysis_ac24acf18f50521134b78d1663239498c}\label{classPragmaAnalysis_ac24acf18f50521134b78d1663239498c}} 
+\index{Pragma\+Analysis@{Pragma\+Analysis}!Pragma\+Analysis@{Pragma\+Analysis}}
+\index{Pragma\+Analysis@{Pragma\+Analysis}!Pragma\+Analysis@{Pragma\+Analysis}}
+\subsubsection{\texorpdfstring{Pragma\+Analysis()}{PragmaAnalysis()}}
+{\footnotesize\ttfamily Pragma\+Analysis\+::\+Pragma\+Analysis (\begin{DoxyParamCaption}\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Header include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em AppM} & is the application manager \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+{\em parameters} & is the set of input parameters\\
+\hline
+\end{DoxyParams}
+Codesign include Constants include parser/treegcc include Pragma include S\+TL include Tree include Utility include 
+
+Definition at line 82 of file pragma\+\_\+analysis.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$\+Pragma\+Analysis().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d63/classPragmaAnalysis_ac24acf18f50521134b78d1663239498c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPragmaAnalysis_a552a49a96834beb7ad6439ad037a1fca}\label{classPragmaAnalysis_a552a49a96834beb7ad6439ad037a1fca}} 
+\index{Pragma\+Analysis@{Pragma\+Analysis}!````~Pragma\+Analysis@{$\sim$\+Pragma\+Analysis}}
+\index{````~Pragma\+Analysis@{$\sim$\+Pragma\+Analysis}!Pragma\+Analysis@{Pragma\+Analysis}}
+\subsubsection{\texorpdfstring{$\sim$\+Pragma\+Analysis()}{~PragmaAnalysis()}}
+{\footnotesize\ttfamily Pragma\+Analysis\+::$\sim$\+Pragma\+Analysis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Pragma\+Analysis().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d63/classPragmaAnalysis_a552a49a96834beb7ad6439ad037a1fca_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPragmaAnalysis_a6c0e611acb6414cc71f044fc9ad2e715}\label{classPragmaAnalysis_a6c0e611acb6414cc71f044fc9ad2e715}} 
+\index{Pragma\+Analysis@{Pragma\+Analysis}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!Pragma\+Analysis@{Pragma\+Analysis}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ Pragma\+Analysis\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classApplicationFrontendFlowStep_ab308200c0096ccff3a1ff50e864ed61f}{Application\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 89 of file pragma\+\_\+analysis.\+cpp.
+
+
+
+References C\+R\+E\+A\+T\+E\+\_\+\+T\+R\+E\+E\+\_\+\+M\+A\+N\+A\+G\+ER, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and Frontend\+Flow\+Step\+::\+W\+H\+O\+L\+E\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON.
+
+\mbox{\Hypertarget{classPragmaAnalysis_a61f2585acbea186f129a12e0cc7ef7d0}\label{classPragmaAnalysis_a61f2585acbea186f129a12e0cc7ef7d0}} 
+\index{Pragma\+Analysis@{Pragma\+Analysis}!create\+\_\+map\+\_\+pragma@{create\+\_\+map\+\_\+pragma}}
+\index{create\+\_\+map\+\_\+pragma@{create\+\_\+map\+\_\+pragma}!Pragma\+Analysis@{Pragma\+Analysis}}
+\subsubsection{\texorpdfstring{create\+\_\+map\+\_\+pragma()}{create\_map\_pragma()}}
+{\footnotesize\ttfamily void Pragma\+Analysis\+::create\+\_\+map\+\_\+pragma (\begin{DoxyParamCaption}\item[{const unsigned int}]{tree\+\_\+node }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Create a map pragma. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\+\_\+node} & is the tree index of the gimple containing the call which will be directly replaced by the pragma \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 407 of file pragma\+\_\+analysis.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, get\+\_\+call\+\_\+parameter(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), S\+T\+R\+\_\+\+C\+S\+T\+\_\+pragma\+\_\+function\+\_\+single\+\_\+line\+\_\+two\+\_\+arguments, S\+T\+R\+\_\+\+C\+S\+T\+\_\+pragma\+\_\+keyword\+\_\+recursive, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+OK, T\+O\+K\+\_\+\+B\+B\+\_\+\+I\+N\+D\+EX, T\+O\+K\+\_\+\+H\+W\+\_\+\+C\+O\+M\+P\+O\+N\+E\+NT, T\+O\+K\+\_\+\+I\+S\+\_\+\+B\+L\+O\+CK, T\+O\+K\+\_\+\+O\+P\+EN, T\+O\+K\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+D\+I\+R\+E\+C\+T\+I\+VE, T\+O\+K\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+S\+C\+O\+PE, T\+O\+K\+\_\+\+R\+E\+C\+U\+R\+S\+I\+VE, and T\+O\+K\+\_\+\+S\+R\+CP.
+
+
+
+Referenced by Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d63/classPragmaAnalysis_a61f2585acbea186f129a12e0cc7ef7d0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d63/classPragmaAnalysis_a61f2585acbea186f129a12e0cc7ef7d0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPragmaAnalysis_ad01dc50d645a9d61e4bf56fdb2ed34f0}\label{classPragmaAnalysis_ad01dc50d645a9d61e4bf56fdb2ed34f0}} 
+\index{Pragma\+Analysis@{Pragma\+Analysis}!create\+\_\+omp\+\_\+pragma@{create\+\_\+omp\+\_\+pragma}}
+\index{create\+\_\+omp\+\_\+pragma@{create\+\_\+omp\+\_\+pragma}!Pragma\+Analysis@{Pragma\+Analysis}}
+\subsubsection{\texorpdfstring{create\+\_\+omp\+\_\+pragma()}{create\_omp\_pragma()}}
+{\footnotesize\ttfamily void Pragma\+Analysis\+::create\+\_\+omp\+\_\+pragma (\begin{DoxyParamCaption}\item[{const unsigned int}]{tree\+\_\+node }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Create an omp pragma. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\+\_\+node} & is the tree index of the gimple containing the call which will be directly replaced by the pragma \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 137 of file pragma\+\_\+analysis.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, get\+\_\+call\+\_\+parameter(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), pragma\+\_\+manager\+::\+Get\+Omp\+Pragma\+Type(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+A\+T\+O\+M\+IC, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+B\+A\+R\+R\+I\+ER, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+C\+R\+I\+T\+I\+C\+AL, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+S\+I\+MD, pragma\+\_\+manager\+::omp\+\_\+directive\+\_\+keywords, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+F\+OR, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+P\+A\+R\+A\+L\+L\+EL, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+P\+A\+R\+A\+L\+L\+E\+L\+\_\+\+F\+OR, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+P\+A\+R\+A\+L\+L\+E\+L\+\_\+\+S\+E\+C\+T\+I\+O\+NS, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+S\+E\+C\+T\+I\+ON, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+S\+E\+C\+T\+I\+O\+NS, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+S\+I\+MD, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+T\+A\+R\+G\+ET, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+T\+A\+SK, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+U\+N\+K\+N\+O\+WN, Open\+Parallel\+Sections, S\+T\+R\+\_\+\+C\+S\+T\+\_\+pragma\+\_\+function\+\_\+end, S\+T\+R\+\_\+\+C\+S\+T\+\_\+pragma\+\_\+function\+\_\+single\+\_\+line\+\_\+one\+\_\+argument, S\+T\+R\+\_\+\+C\+S\+T\+\_\+pragma\+\_\+function\+\_\+start, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, T\+OK, T\+O\+K\+\_\+\+B\+B\+\_\+\+I\+N\+D\+EX, T\+O\+K\+\_\+\+I\+S\+\_\+\+B\+L\+O\+CK, T\+O\+K\+\_\+\+M\+E\+M\+D\+EF, T\+O\+K\+\_\+\+M\+E\+M\+U\+SE, T\+O\+K\+\_\+\+O\+P0, T\+O\+K\+\_\+\+O\+P1, T\+O\+K\+\_\+\+O\+P\+EN, T\+O\+K\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+D\+I\+R\+E\+C\+T\+I\+VE, T\+O\+K\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+O\+M\+P\+\_\+\+S\+H\+O\+R\+T\+C\+UT, T\+O\+K\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+S\+C\+O\+PE, T\+O\+K\+\_\+\+S\+R\+CP, and tree\+\_\+node\+::\+To\+String().
+
+
+
+Referenced by Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d63/classPragmaAnalysis_ad01dc50d645a9d61e4bf56fdb2ed34f0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d63/classPragmaAnalysis_ad01dc50d645a9d61e4bf56fdb2ed34f0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPragmaAnalysis_a972bd7b68f27335d6fbf6e1d327c2663}\label{classPragmaAnalysis_a972bd7b68f27335d6fbf6e1d327c2663}} 
+\index{Pragma\+Analysis@{Pragma\+Analysis}!Exec@{Exec}}
+\index{Exec@{Exec}!Pragma\+Analysis@{Pragma\+Analysis}}
+\subsubsection{\texorpdfstring{Exec()}{Exec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} Pragma\+Analysis\+::\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Performes the analysis of the pragmas. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+Erasing first element
+
+Erasing not the first element
+
+No more \hyperlink{structgimple__node}{gimple\+\_\+node} -\/ Finished for this block 
+
+Implements \hyperlink{classApplicationFrontendFlowStep_a2bf060a5ebc1735635dc5c7773387a25}{Application\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 458 of file pragma\+\_\+analysis.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, create\+\_\+map\+\_\+pragma(), create\+\_\+omp\+\_\+pragma(), tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, el, get\+\_\+call\+\_\+parameter(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+manager\+::\+Get\+All\+Functions(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, sl, S\+TR, S\+T\+R\+\_\+\+C\+S\+T\+\_\+pragma\+\_\+function\+\_\+generic, S\+T\+R\+\_\+\+C\+S\+T\+\_\+pragma\+\_\+keyword\+\_\+map, S\+T\+R\+\_\+\+C\+S\+T\+\_\+pragma\+\_\+keyword\+\_\+omp, S\+T\+R\+\_\+\+C\+S\+T\+\_\+pragma\+\_\+prefix, S\+U\+C\+C\+E\+SS, T\+OK, and T\+O\+K\+\_\+\+S\+R\+CP.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d63/classPragmaAnalysis_a972bd7b68f27335d6fbf6e1d327c2663_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPragmaAnalysis_a568d30b208cf8dc645246ac355b390bb}\label{classPragmaAnalysis_a568d30b208cf8dc645246ac355b390bb}} 
+\index{Pragma\+Analysis@{Pragma\+Analysis}!get\+\_\+call\+\_\+parameter@{get\+\_\+call\+\_\+parameter}}
+\index{get\+\_\+call\+\_\+parameter@{get\+\_\+call\+\_\+parameter}!Pragma\+Analysis@{Pragma\+Analysis}}
+\subsubsection{\texorpdfstring{get\+\_\+call\+\_\+parameter()}{get\_call\_parameter()}}
+{\footnotesize\ttfamily std\+::string Pragma\+Analysis\+::get\+\_\+call\+\_\+parameter (\begin{DoxyParamCaption}\item[{const unsigned int}]{tree\+\_\+node,  }\item[{const unsigned int}]{param }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Given the index of a function replacing a pragma, returns a parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classtree__node}{tree\+\_\+node}} & is the index of the call \\
+\hline
+{\em param} & is the index of the parameter (starting from 1) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 117 of file pragma\+\_\+analysis.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, test\+\_\+panda\+::arg, gimple\+\_\+call\+::args, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by create\+\_\+map\+\_\+pragma(), create\+\_\+omp\+\_\+pragma(), and Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{d1/d63/classPragmaAnalysis_a568d30b208cf8dc645246ac355b390bb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d63/classPragmaAnalysis_a568d30b208cf8dc645246ac355b390bb_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{pragma__analysis_8hpp}{pragma\+\_\+analysis.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{pragma__analysis_8cpp}{pragma\+\_\+analysis.\+cpp}\end{DoxyCompactItemize}

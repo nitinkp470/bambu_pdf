@@ -1,0 +1,339 @@
+\hypertarget{classCallGraphBuiltinCall}{}\section{Call\+Graph\+Builtin\+Call Class Reference}
+\label{classCallGraphBuiltinCall}\index{Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}}
+
+
+Pass to add function called through pointers to the call graph.  
+
+
+
+
+{\ttfamily \#include $<$call\+\_\+graph\+\_\+builtin\+\_\+call.\+hpp$>$}
+
+
+
+Inheritance diagram for Call\+Graph\+Builtin\+Call\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{d6/d86/classCallGraphBuiltinCall__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Call\+Graph\+Builtin\+Call\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d3d/classCallGraphBuiltinCall__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCallGraphBuiltinCall_a346a9538118b956780946e49400ba5da}{Call\+Graph\+Builtin\+Call} (const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} AM, unsigned int function\+Id, const Design\+Flow\+Manager\+Const\+Ref D\+FM, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} P)
+\begin{DoxyCompactList}\small\item\em Ctor. \end{DoxyCompactList}\item 
+\hyperlink{classCallGraphBuiltinCall_a12b72c05a50fcdc40473638f0eae9087}{$\sim$\+Call\+Graph\+Builtin\+Call} () override
+\item 
+void \hyperlink{classCallGraphBuiltinCall_a8f754ae1d4aa2a9857d2288768902852}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classCallGraphBuiltinCall_a6c31ba7314cedc5026d47cb1c5b967ed}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Execute the step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classCallGraphBuiltinCall_ac5ca8247365b5b574a96b17b86fcb57b}{Compute\+Frontend\+Relationships} (\hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} RT) const override
+\begin{DoxyCompactList}\small\item\em State relationship with other design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ std\+::string, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ $>$ \hyperlink{classCallGraphBuiltinCall_ac5000af275152e4c862dc90cfe1453d0}{Type\+Declaration\+Map}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCallGraphBuiltinCall_a3c3f8ffb197a72edd1ea375b7ffa5d1d}{look\+For\+Builtin\+Call} (const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} TN)
+\item 
+void \hyperlink{classCallGraphBuiltinCall_a454e14be35421e6dcc70c06ae958d588}{Extend\+Call\+Graph} (unsigned int caller\+Idx, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} fun\+Type, unsigned int stmt\+Idx)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classCallGraphBuiltinCall_a7415263ac5a10f89975d1d8220c5b92b}{modified}
+\item 
+\hyperlink{classCallGraphBuiltinCall_ac5000af275152e4c862dc90cfe1453d0}{Type\+Declaration\+Map} \hyperlink{classCallGraphBuiltinCall_aa7f85e6b78133e24ae7c87ab42bcc497}{type\+To\+Declaration}
+\begin{DoxyCompactList}\small\item\em Map function types to matching declarations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Pass to add function called through pointers to the call graph. 
+
+Definition at line 49 of file call\+\_\+graph\+\_\+builtin\+\_\+call.\+hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classCallGraphBuiltinCall_ac5000af275152e4c862dc90cfe1453d0}\label{classCallGraphBuiltinCall_ac5000af275152e4c862dc90cfe1453d0}} 
+\index{Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}!Type\+Declaration\+Map@{Type\+Declaration\+Map}}
+\index{Type\+Declaration\+Map@{Type\+Declaration\+Map}!Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}}
+\subsubsection{\texorpdfstring{Type\+Declaration\+Map}{TypeDeclarationMap}}
+{\footnotesize\ttfamily typedef std\+::map$<$std\+::string, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ $>$ \hyperlink{classCallGraphBuiltinCall_ac5000af275152e4c862dc90cfe1453d0}{Call\+Graph\+Builtin\+Call\+::\+Type\+Declaration\+Map}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 52 of file call\+\_\+graph\+\_\+builtin\+\_\+call.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCallGraphBuiltinCall_a346a9538118b956780946e49400ba5da}\label{classCallGraphBuiltinCall_a346a9538118b956780946e49400ba5da}} 
+\index{Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}!Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}}
+\index{Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}!Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}}
+\subsubsection{\texorpdfstring{Call\+Graph\+Builtin\+Call()}{CallGraphBuiltinCall()}}
+{\footnotesize\ttfamily Call\+Graph\+Builtin\+Call\+::\+Call\+Graph\+Builtin\+Call (\begin{DoxyParamCaption}\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{AM,  }\item[{unsigned int}]{function\+Id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{D\+FM,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{P }\end{DoxyParamCaption})}
+
+
+
+Ctor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em AM} & Application Manager \\
+\hline
+{\em function\+Id} & Function id of the analyzed function. \\
+\hline
+{\em D\+FM} & Design Flow Manager \\
+\hline
+{\em P} & Set of parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 272 of file call\+\_\+graph\+\_\+builtin\+\_\+call.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, and $\sim$\+Call\+Graph\+Builtin\+Call().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{d6/da0/classCallGraphBuiltinCall_a346a9538118b956780946e49400ba5da_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCallGraphBuiltinCall_a12b72c05a50fcdc40473638f0eae9087}\label{classCallGraphBuiltinCall_a12b72c05a50fcdc40473638f0eae9087}} 
+\index{Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}!````~Call\+Graph\+Builtin\+Call@{$\sim$\+Call\+Graph\+Builtin\+Call}}
+\index{````~Call\+Graph\+Builtin\+Call@{$\sim$\+Call\+Graph\+Builtin\+Call}!Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}}
+\subsubsection{\texorpdfstring{$\sim$\+Call\+Graph\+Builtin\+Call()}{~CallGraphBuiltinCall()}}
+{\footnotesize\ttfamily Call\+Graph\+Builtin\+Call\+::$\sim$\+Call\+Graph\+Builtin\+Call (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Referenced by Call\+Graph\+Builtin\+Call().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{d6/da0/classCallGraphBuiltinCall_a12b72c05a50fcdc40473638f0eae9087_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCallGraphBuiltinCall_ac5ca8247365b5b574a96b17b86fcb57b}\label{classCallGraphBuiltinCall_ac5ca8247365b5b574a96b17b86fcb57b}} 
+\index{Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Call\+Graph\+Builtin\+Call\+::\+Function\+Relationship} $>$ $>$ Call\+Graph\+Builtin\+Call\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{\hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{RT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+State relationship with other design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em RT} & Type of the relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 247 of file call\+\_\+graph\+\_\+builtin\+\_\+call.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+A\+N\+A\+L\+Y\+S\+IS, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and Frontend\+Flow\+Step\+::\+W\+H\+O\+L\+E\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON.
+
+\mbox{\Hypertarget{classCallGraphBuiltinCall_a454e14be35421e6dcc70c06ae958d588}\label{classCallGraphBuiltinCall_a454e14be35421e6dcc70c06ae958d588}} 
+\index{Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}!Extend\+Call\+Graph@{Extend\+Call\+Graph}}
+\index{Extend\+Call\+Graph@{Extend\+Call\+Graph}!Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}}
+\subsubsection{\texorpdfstring{Extend\+Call\+Graph()}{ExtendCallGraph()}}
+{\footnotesize\ttfamily void Call\+Graph\+Builtin\+Call\+::\+Extend\+Call\+Graph (\begin{DoxyParamCaption}\item[{unsigned int}]{caller\+Idx,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{fun\+Type,  }\item[{unsigned int}]{stmt\+Idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 237 of file call\+\_\+graph\+\_\+builtin\+\_\+call.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, tree\+\_\+node\+::index, Function\+Edge\+Info\+::indirect\+\_\+call, modified, tree\+\_\+helper\+::print\+\_\+type(), test\+\_\+panda\+::type, and type\+To\+Declaration.
+
+
+
+Referenced by look\+For\+Builtin\+Call().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/da0/classCallGraphBuiltinCall_a454e14be35421e6dcc70c06ae958d588_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/da0/classCallGraphBuiltinCall_a454e14be35421e6dcc70c06ae958d588_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCallGraphBuiltinCall_a8f754ae1d4aa2a9857d2288768902852}\label{classCallGraphBuiltinCall_a8f754ae1d4aa2a9857d2288768902852}} 
+\index{Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Call\+Graph\+Builtin\+Call\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 280 of file call\+\_\+graph\+\_\+builtin\+\_\+call.\+cpp.
+
+
+
+References modified, and type\+To\+Declaration.
+
+\mbox{\Hypertarget{classCallGraphBuiltinCall_a6c31ba7314cedc5026d47cb1c5b967ed}\label{classCallGraphBuiltinCall_a6c31ba7314cedc5026d47cb1c5b967ed}} 
+\index{Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} Call\+Graph\+Builtin\+Call\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the step. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 286 of file call\+\_\+graph\+\_\+builtin\+\_\+call.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+manager\+::\+Get\+Tree\+Node(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, look\+For\+Builtin\+Call(), modified, tree\+\_\+helper\+::name\+\_\+function(), Design\+Flow\+Step\+::parameters, tree\+\_\+helper\+::print\+\_\+type(), S\+TR, S\+U\+C\+C\+E\+SS, test\+\_\+panda\+::type, type\+To\+Declaration, U\+N\+C\+H\+A\+N\+G\+ED, and tree\+\_\+node\+::visit().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/da0/classCallGraphBuiltinCall_a6c31ba7314cedc5026d47cb1c5b967ed_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCallGraphBuiltinCall_a3c3f8ffb197a72edd1ea375b7ffa5d1d}\label{classCallGraphBuiltinCall_a3c3f8ffb197a72edd1ea375b7ffa5d1d}} 
+\index{Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}!look\+For\+Builtin\+Call@{look\+For\+Builtin\+Call}}
+\index{look\+For\+Builtin\+Call@{look\+For\+Builtin\+Call}!Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}}
+\subsubsection{\texorpdfstring{look\+For\+Builtin\+Call()}{lookForBuiltinCall()}}
+{\footnotesize\ttfamily void Call\+Graph\+Builtin\+Call\+::look\+For\+Builtin\+Call (\begin{DoxyParamCaption}\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{TN }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 57 of file call\+\_\+graph\+\_\+builtin\+\_\+call.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, test\+\_\+panda\+::args, call\+\_\+expr\+::args, gimple\+\_\+call\+::args, B\+U\+I\+L\+T\+I\+N\+\_\+\+W\+A\+I\+T\+\_\+\+C\+A\+LL, C\+A\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Extend\+Call\+Graph(), call\+\_\+expr\+::fn, gimple\+\_\+call\+::fn, Function\+Edge\+Info\+::function\+\_\+address, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+node\+::get\+\_\+kind\+\_\+text(), G\+E\+T\+\_\+\+N\+O\+DE, get\+Function\+Pointer\+Type(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+node\+::index, Function\+Edge\+Info\+::indirect\+\_\+call, modified, tree\+\_\+helper\+::name\+\_\+function(), S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/da0/classCallGraphBuiltinCall_a3c3f8ffb197a72edd1ea375b7ffa5d1d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{d6/da0/classCallGraphBuiltinCall_a3c3f8ffb197a72edd1ea375b7ffa5d1d_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classCallGraphBuiltinCall_a7415263ac5a10f89975d1d8220c5b92b}\label{classCallGraphBuiltinCall_a7415263ac5a10f89975d1d8220c5b92b}} 
+\index{Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}!modified@{modified}}
+\index{modified@{modified}!Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}}
+\subsubsection{\texorpdfstring{modified}{modified}}
+{\footnotesize\ttfamily bool Call\+Graph\+Builtin\+Call\+::modified\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 53 of file call\+\_\+graph\+\_\+builtin\+\_\+call.\+hpp.
+
+
+
+Referenced by Extend\+Call\+Graph(), Initialize(), Internal\+Exec(), and look\+For\+Builtin\+Call().
+
+\mbox{\Hypertarget{classCallGraphBuiltinCall_aa7f85e6b78133e24ae7c87ab42bcc497}\label{classCallGraphBuiltinCall_aa7f85e6b78133e24ae7c87ab42bcc497}} 
+\index{Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}!type\+To\+Declaration@{type\+To\+Declaration}}
+\index{type\+To\+Declaration@{type\+To\+Declaration}!Call\+Graph\+Builtin\+Call@{Call\+Graph\+Builtin\+Call}}
+\subsubsection{\texorpdfstring{type\+To\+Declaration}{typeToDeclaration}}
+{\footnotesize\ttfamily \hyperlink{classCallGraphBuiltinCall_ac5000af275152e4c862dc90cfe1453d0}{Type\+Declaration\+Map} Call\+Graph\+Builtin\+Call\+::type\+To\+Declaration\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map function types to matching declarations. 
+
+
+
+Definition at line 58 of file call\+\_\+graph\+\_\+builtin\+\_\+call.\+hpp.
+
+
+
+Referenced by Extend\+Call\+Graph(), Initialize(), and Internal\+Exec().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{call__graph__builtin__call_8hpp}{call\+\_\+graph\+\_\+builtin\+\_\+call.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{call__graph__builtin__call_8cpp}{call\+\_\+graph\+\_\+builtin\+\_\+call.\+cpp}\end{DoxyCompactItemize}

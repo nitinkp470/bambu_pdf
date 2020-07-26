@@ -1,0 +1,742 @@
+\hypertarget{classIR__lowering}{}\section{I\+R\+\_\+lowering Class Reference}
+\label{classIR__lowering}\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+
+
+Compute the control flow graph for the operations.  
+
+
+
+
+{\ttfamily \#include $<$I\+R\+\_\+lowering.\+hpp$>$}
+
+
+
+Inheritance diagram for I\+R\+\_\+lowering\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{d0/d16/classIR__lowering__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for I\+R\+\_\+lowering\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d9c/classIR__lowering__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classIR__lowering_a793abcd993d95ad4aea585c60c96ed3c}{I\+R\+\_\+lowering} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classIR__lowering_a714d425fd2cb725e5cc9ec803410b510}{$\sim$\+I\+R\+\_\+lowering} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classIR__lowering_a96415d3fb04f24946a5fb657db8a8e22}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Computes the operations C\+FG graph data structure. \end{DoxyCompactList}\item 
+void \hyperlink{classIR__lowering_a88ed11612162d524f892e9329b36380d}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\item 
+void \hyperlink{classIR__lowering_a47d1e16e6d42ddac272d166329013fd4}{Compute\+Relationships} (\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&relationship, const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) override
+\begin{DoxyCompactList}\small\item\em Compute the relationships of a step with other steps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \hyperlink{classIR__lowering_ae6f7d0298f7b68ce521fc42e769a090f}{expand\+\_\+mult\+\_\+const} (\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} op0, unsigned long long int val, const struct \hyperlink{structalgorithm}{algorithm} \&alg, enum \hyperlink{IR__lowering_8hpp_a77bda416aea7fadb7ca07415dc736441}{mult\+\_\+variant} \&variant, const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} stmt, const bloc\+Ref \hyperlink{structblock}{block}, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&type, const std\+::string \&srcp\+\_\+default)
+\begin{DoxyCompactList}\small\item\em A subroutine of expand\+\_\+mult, used for constant multiplications. \end{DoxyCompactList}\item 
+\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \hyperlink{classIR__lowering_ab4fe755c5983da121948673fbcc4faea}{expand\+\_\+smod\+\_\+pow2} (\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} op0, unsigned long long int d, const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} stmt, const bloc\+Ref \hyperlink{structblock}{block}, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&type, const std\+::string \&srcp\+\_\+default)
+\begin{DoxyCompactList}\small\item\em Expand signed modulus of O\+P0 by a power of two D in mode M\+O\+DE. \end{DoxyCompactList}\item 
+\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \hyperlink{classIR__lowering_a8f9128221ba101fb76a525f5db6e324a}{expand\+\_\+sdiv\+\_\+pow2} (\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} op0, unsigned long long int d, const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} stmt, const bloc\+Ref \hyperlink{structblock}{block}, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&type, const std\+::string \&srcp\+\_\+default)
+\begin{DoxyCompactList}\small\item\em Expand signed division of O\+P0 by a power of two D in mode M\+O\+DE. \end{DoxyCompactList}\item 
+\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \hyperlink{classIR__lowering_a00b8351a51bd62d131105fc1098bd0f7}{expand\+\_\+\+MC} (\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} op0, \hyperlink{structinteger__cst}{integer\+\_\+cst} $\ast$ic\+\_\+node, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} old\+\_\+target, const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} stmt, const bloc\+Ref \hyperlink{structblock}{block}, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&type\+\_\+expr, const std\+::string \&srcp\+\_\+default)
+\item 
+bool \hyperlink{classIR__lowering_a374c0d4f54d89c8937343259e202e1b1}{expand\+\_\+target\+\_\+mem\+\_\+ref} (\hyperlink{structtarget__mem__ref461}{target\+\_\+mem\+\_\+ref461} $\ast$tmr, const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} stmt, const bloc\+Ref \hyperlink{structblock}{block}, const std\+::string \&srcp\+\_\+default, bool temp\+\_\+addr)
+\item 
+\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \hyperlink{classIR__lowering_a7c9d4a3404e6c21b09acb961d905ae53}{expand\+\_\+mult\+\_\+highpart} (\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} op0, unsigned long long int ml, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} type\+\_\+expr, int data\+\_\+bitsize, const std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$\+::const\+\_\+iterator it\+\_\+los, const bloc\+Ref \hyperlink{structblock}{block}, const std\+::string \&srcp\+\_\+default)
+\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classIR__lowering_a071c0cd6fc3ab02d7c7581426abe47a4}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\item 
+\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \hyperlink{classIR__lowering_adaba1afb2ed746864d7e0bc9d2b1c25d}{array\+\_\+ref\+\_\+lowering} (array\+\_\+ref $\ast$AR, const std\+::string \&srcp\+\_\+default, std\+::pair$<$ unsigned int, bloc\+Ref $>$ \hyperlink{structblock}{block}, std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$\+::const\+\_\+iterator it\+\_\+los, bool temp\+\_\+addr)
+\item 
+bool \hyperlink{classIR__lowering_a1c9f8a152838d5330a866220393119ff}{reached\+\_\+max\+\_\+transformation\+\_\+limit} (\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} stmt)
+\begin{DoxyCompactList}\small\item\em check if the max transformation limit has been reached \end{DoxyCompactList}\item 
+void \hyperlink{classIR__lowering_ad68af9b9031624406acd7557e3e30c9f}{division\+\_\+by\+\_\+a\+\_\+constant} (const std\+::pair$<$ unsigned int, bloc\+Ref $>$ \&\hyperlink{structblock}{block}, std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$\+::const\+\_\+iterator \&it\+\_\+los, \hyperlink{structgimple__assign}{gimple\+\_\+assign} $\ast$ga, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} op1, enum \hyperlink{tree__common_8hpp_a9efbd7c7191fb190b76c2fd05d6e7b45}{kind} code1, bool \&restart\+\_\+analysis, const std\+::string \&srcp\+\_\+default, const std\+::string \&step\+\_\+name)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \hyperlink{classIR__lowering_a09f29d65e37fa212874e351f82c1fb54}{TM}
+\begin{DoxyCompactList}\small\item\em The tree manager. \end{DoxyCompactList}\item 
+\hyperlink{tree__manipulation_8hpp_a1a9460e3a2f9fc6a96cfd2f24cc9b2a5}{tree\+\_\+manipulation\+Ref} \hyperlink{classIR__lowering_add46902d334d46da094f417dd5cd4ba8}{tree\+\_\+man}
+\begin{DoxyCompactList}\small\item\em The IR manipulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Compute the control flow graph for the operations. 
+
+Definition at line 84 of file I\+R\+\_\+lowering.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIR__lowering_a793abcd993d95ad4aea585c60c96ed3c}\label{classIR__lowering_a793abcd993d95ad4aea585c60c96ed3c}} 
+\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}!I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}!I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+\subsubsection{\texorpdfstring{I\+R\+\_\+lowering()}{IR\_lowering()}}
+{\footnotesize\ttfamily I\+R\+\_\+lowering\+::\+I\+R\+\_\+lowering (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{AppM,  }\item[{unsigned int}]{function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Param} & is the set of the parameters \\
+\hline
+{\em AppM} & is the application manager \\
+\hline
+{\em function\+\_\+id} & is the identifier of the function \\
+\hline
+{\em Design\+Flow\+Manager\+Const\+Ref} & is the design flow manager \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 83 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, G\+E\+T\+\_\+\+C\+L\+A\+SS, and Design\+Flow\+Step\+::parameters.
+
+\mbox{\Hypertarget{classIR__lowering_a714d425fd2cb725e5cc9ec803410b510}\label{classIR__lowering_a714d425fd2cb725e5cc9ec803410b510}} 
+\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}!````~I\+R\+\_\+lowering@{$\sim$\+I\+R\+\_\+lowering}}
+\index{````~I\+R\+\_\+lowering@{$\sim$\+I\+R\+\_\+lowering}!I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+\subsubsection{\texorpdfstring{$\sim$\+I\+R\+\_\+lowering()}{~IR\_lowering()}}
+{\footnotesize\ttfamily I\+R\+\_\+lowering\+::$\sim$\+I\+R\+\_\+lowering (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Compute\+Frontend\+Relationships().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_a714d425fd2cb725e5cc9ec803410b510_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classIR__lowering_adaba1afb2ed746864d7e0bc9d2b1c25d}\label{classIR__lowering_adaba1afb2ed746864d7e0bc9d2b1c25d}} 
+\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}!array\+\_\+ref\+\_\+lowering@{array\+\_\+ref\+\_\+lowering}}
+\index{array\+\_\+ref\+\_\+lowering@{array\+\_\+ref\+\_\+lowering}!I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+\subsubsection{\texorpdfstring{array\+\_\+ref\+\_\+lowering()}{array\_ref\_lowering()}}
+{\footnotesize\ttfamily \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} I\+R\+\_\+lowering\+::array\+\_\+ref\+\_\+lowering (\begin{DoxyParamCaption}\item[{array\+\_\+ref $\ast$}]{AR,  }\item[{const std\+::string \&}]{srcp\+\_\+default,  }\item[{std\+::pair$<$ unsigned int, bloc\+Ref $>$}]{block,  }\item[{std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$\+::const\+\_\+iterator}]{it\+\_\+los,  }\item[{bool}]{temp\+\_\+addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1497 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+References compute\+\_\+n\+\_\+bytes(), tree\+\_\+manipulation\+::create\+\_\+binary\+\_\+operation(), tree\+\_\+manipulation\+::create\+\_\+pointer\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+size\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+unary\+\_\+operation(), tree\+\_\+manipulation\+::\+Create\+Gimple\+Assign(), tree\+\_\+manager\+::\+Create\+Unique\+Integer\+Cst(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, tree\+\_\+helper\+::get\+\_\+array\+\_\+data\+\_\+bitsize(), tree\+\_\+helper\+::get\+\_\+array\+\_\+dimensions(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+type\+\_\+node(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, TM, To\+String(), tree\+\_\+man, and test\+\_\+panda\+::type.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_adaba1afb2ed746864d7e0bc9d2b1c25d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{df/d7d/classIR__lowering_adaba1afb2ed746864d7e0bc9d2b1c25d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIR__lowering_a071c0cd6fc3ab02d7c7581426abe47a4}\label{classIR__lowering_a071c0cd6fc3ab02d7c7581426abe47a4}} 
+\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ I\+R\+\_\+lowering\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 89 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+References B\+L\+O\+C\+K\+\_\+\+F\+IX, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, S\+W\+I\+T\+C\+H\+\_\+\+F\+IX, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and $\sim$\+I\+R\+\_\+lowering().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_a071c0cd6fc3ab02d7c7581426abe47a4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIR__lowering_a47d1e16e6d42ddac272d166329013fd4}\label{classIR__lowering_a47d1e16e6d42ddac272d166329013fd4}} 
+\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}!Compute\+Relationships@{Compute\+Relationships}}
+\index{Compute\+Relationships@{Compute\+Relationships}!I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+\subsubsection{\texorpdfstring{Compute\+Relationships()}{ComputeRelationships()}}
+{\footnotesize\ttfamily void I\+R\+\_\+lowering\+::\+Compute\+Relationships (\begin{DoxyParamCaption}\item[{\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&}]{relationship,  }\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the relationships of a step with other steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dependencies} & is where relationships will be stored \\
+\hline
+{\em relationship\+\_\+type} & is the type of relationship to be computed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classFunctionFrontendFlowStep_a1a815ea7885f3e92e414dadd40c43cba}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 126 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+References Function\+Frontend\+Flow\+Step\+::\+Compute\+Relationships(), Technology\+Flow\+Step\+::\+Compute\+Signature(), Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, L\+O\+A\+D\+\_\+\+T\+E\+C\+H\+N\+O\+L\+O\+GY, Wrefcount$<$ T $>$\+::lock(), Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_a47d1e16e6d42ddac272d166329013fd4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIR__lowering_ad68af9b9031624406acd7557e3e30c9f}\label{classIR__lowering_ad68af9b9031624406acd7557e3e30c9f}} 
+\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}!division\+\_\+by\+\_\+a\+\_\+constant@{division\+\_\+by\+\_\+a\+\_\+constant}}
+\index{division\+\_\+by\+\_\+a\+\_\+constant@{division\+\_\+by\+\_\+a\+\_\+constant}!I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+\subsubsection{\texorpdfstring{division\+\_\+by\+\_\+a\+\_\+constant()}{division\_by\_a\_constant()}}
+{\footnotesize\ttfamily void I\+R\+\_\+lowering\+::division\+\_\+by\+\_\+a\+\_\+constant (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ unsigned int, bloc\+Ref $>$ \&}]{block,  }\item[{std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$\+::const\+\_\+iterator \&}]{it\+\_\+los,  }\item[{\hyperlink{structgimple__assign}{gimple\+\_\+assign} $\ast$}]{ga,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{op1,  }\item[{enum \hyperlink{tree__common_8hpp_a9efbd7c7191fb190b76c2fd05d6e7b45}{kind}}]{code1,  }\item[{bool \&}]{restart\+\_\+analysis,  }\item[{const std\+::string \&}]{srcp\+\_\+default,  }\item[{const std\+::string \&}]{step\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+very special case op1 == 1
+
+Find a suitable multiplier and right shift count instead of multiplying with D.
+
+restrict if needed the input bit-\/widths
+
+We have computed O\+P0 / abs(\+O\+P1). If O\+P1 is negative, negate the quotient. 
+
+Definition at line 378 of file I\+R\+\_\+lowering\+\_\+exec.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+C\+S\+T\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+D\+E\+C\+L\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+F\+A\+K\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, ceil\+\_\+log2(), choose\+\_\+multiplier(), tree\+\_\+manipulation\+::create\+\_\+binary\+\_\+operation(), tree\+\_\+manipulation\+::create\+\_\+unary\+\_\+operation(), tree\+\_\+manipulation\+::\+Create\+Gimple\+Assign(), tree\+\_\+manager\+::\+Create\+Unique\+Integer\+Cst(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, E\+X\+A\+C\+T\+\_\+\+P\+O\+W\+E\+R\+\_\+\+O\+F\+\_\+2\+\_\+\+O\+R\+\_\+\+Z\+E\+R\+O\+\_\+P, expand\+\_\+mult\+\_\+highpart(), expand\+\_\+sdiv\+\_\+pow2(), expand\+\_\+smod\+\_\+pow2(), floor\+\_\+log2(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, invert\+\_\+mod2n(), tree\+\_\+helper\+::is\+\_\+unsigned(), max(), min, gimple\+\_\+assign\+::op0, gimple\+\_\+assign\+::op1, Design\+Flow\+Step\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, tree\+\_\+helper\+::size(), tree\+\_\+helper\+::\+Size(), S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, TM, tree\+\_\+man, and test\+\_\+panda\+::type.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_ad68af9b9031624406acd7557e3e30c9f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_ad68af9b9031624406acd7557e3e30c9f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIR__lowering_a00b8351a51bd62d131105fc1098bd0f7}\label{classIR__lowering_a00b8351a51bd62d131105fc1098bd0f7}} 
+\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}!expand\+\_\+\+MC@{expand\+\_\+\+MC}}
+\index{expand\+\_\+\+MC@{expand\+\_\+\+MC}!I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+\subsubsection{\texorpdfstring{expand\+\_\+\+M\+C()}{expand\_MC()}}
+{\footnotesize\ttfamily \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} I\+R\+\_\+lowering\+::expand\+\_\+\+MC (\begin{DoxyParamCaption}\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{op0,  }\item[{\hyperlink{structinteger__cst}{integer\+\_\+cst} $\ast$}]{ic\+\_\+node,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{old\+\_\+target,  }\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{stmt,  }\item[{const bloc\+Ref}]{block,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{type\+\_\+expr,  }\item[{const std\+::string \&}]{srcp\+\_\+default }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+very special case op1 == 0
+
+very special case op1 == 1
+
+very special case op1 == -\/1
+
+keep the old assign
+
+keep the old assign 
+
+Definition at line 1052 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+References A\+D\+D\+E\+R\+\_\+\+S\+TD, Frontend\+Flow\+Step\+::\+AppM, choose\+\_\+mult\+\_\+variant(), tree\+\_\+manipulation\+::create\+\_\+binary\+\_\+operation(), tree\+\_\+manipulation\+::create\+\_\+unary\+\_\+operation(), tree\+\_\+manipulation\+::\+Create\+Gimple\+Assign(), tree\+\_\+manager\+::\+Create\+Unique\+Integer\+Cst(), E\+X\+A\+C\+T\+\_\+\+P\+O\+W\+E\+R\+\_\+\+O\+F\+\_\+2\+\_\+\+O\+R\+\_\+\+Z\+E\+R\+O\+\_\+P, expand\+\_\+mult\+\_\+const(), floor\+\_\+log2(), technology\+\_\+manager\+::get\+\_\+fu(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), G\+E\+T\+\_\+\+N\+O\+DE, target\+\_\+manager\+::get\+\_\+technology\+\_\+manager(), L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+T\+D\+\_\+\+FU, M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD, resize\+\_\+to\+\_\+1\+\_\+8\+\_\+16\+\_\+32\+\_\+64\+\_\+128\+\_\+256\+\_\+512(), tree\+\_\+helper\+::\+Size(), S\+TR, TM, and tree\+\_\+man.
+
+
+
+Referenced by expand\+\_\+target\+\_\+mem\+\_\+ref(), and Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_a00b8351a51bd62d131105fc1098bd0f7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_a00b8351a51bd62d131105fc1098bd0f7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIR__lowering_ae6f7d0298f7b68ce521fc42e769a090f}\label{classIR__lowering_ae6f7d0298f7b68ce521fc42e769a090f}} 
+\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}!expand\+\_\+mult\+\_\+const@{expand\+\_\+mult\+\_\+const}}
+\index{expand\+\_\+mult\+\_\+const@{expand\+\_\+mult\+\_\+const}!I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+\subsubsection{\texorpdfstring{expand\+\_\+mult\+\_\+const()}{expand\_mult\_const()}}
+{\footnotesize\ttfamily \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} I\+R\+\_\+lowering\+::expand\+\_\+mult\+\_\+const (\begin{DoxyParamCaption}\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{op0,  }\item[{unsigned long long int}]{val,  }\item[{const struct \hyperlink{structalgorithm}{algorithm} \&}]{alg,  }\item[{enum \hyperlink{IR__lowering_8hpp_a77bda416aea7fadb7ca07415dc736441}{mult\+\_\+variant} \&}]{variant,  }\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{stmt,  }\item[{const bloc\+Ref}]{block,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{type,  }\item[{const std\+::string \&}]{srcp\+\_\+default }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A subroutine of expand\+\_\+mult, used for constant multiplications. 
+
+Multiply O\+P0 by V\+AL in mode M\+O\+DE, storing the result in T\+A\+R\+G\+ET if convenient. Use the shift/add sequence described by A\+LG and apply the final fixup specified by V\+A\+R\+I\+A\+NT. Compare only the bits of val and val\+\_\+so\+\_\+far that are significant in the result mode, to avoid sign-\//zero-\/extension confusion. 
+
+Definition at line 735 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+References add\+\_\+variant, alg\+\_\+add\+\_\+factor, alg\+\_\+add\+\_\+t2\+\_\+m, alg\+\_\+add\+\_\+t\+\_\+m2, alg\+\_\+impossible, alg\+\_\+m, alg\+\_\+shift, alg\+\_\+sub\+\_\+factor, alg\+\_\+sub\+\_\+t2\+\_\+m, alg\+\_\+sub\+\_\+t\+\_\+m2, alg\+\_\+unknown, alg\+\_\+zero, tree\+\_\+manipulation\+::create\+\_\+binary\+\_\+operation(), tree\+\_\+manipulation\+::create\+\_\+unary\+\_\+operation(), tree\+\_\+manipulation\+::\+Create\+Gimple\+Assign(), tree\+\_\+manager\+::\+Create\+Unique\+Integer\+Cst(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, algorithm\+::log, negate\+\_\+variant, algorithm\+::op, algorithm\+::ops, tree\+\_\+helper\+::size(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, TM, tree\+\_\+node\+::\+To\+String(), and tree\+\_\+man.
+
+
+
+Referenced by expand\+\_\+\+M\+C().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_ae6f7d0298f7b68ce521fc42e769a090f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_ae6f7d0298f7b68ce521fc42e769a090f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIR__lowering_a7c9d4a3404e6c21b09acb961d905ae53}\label{classIR__lowering_a7c9d4a3404e6c21b09acb961d905ae53}} 
+\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}!expand\+\_\+mult\+\_\+highpart@{expand\+\_\+mult\+\_\+highpart}}
+\index{expand\+\_\+mult\+\_\+highpart@{expand\+\_\+mult\+\_\+highpart}!I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+\subsubsection{\texorpdfstring{expand\+\_\+mult\+\_\+highpart()}{expand\_mult\_highpart()}}
+{\footnotesize\ttfamily \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} I\+R\+\_\+lowering\+::expand\+\_\+mult\+\_\+highpart (\begin{DoxyParamCaption}\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{op0,  }\item[{unsigned long long int}]{ml,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{type\+\_\+expr,  }\item[{int}]{data\+\_\+bitsize,  }\item[{const std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$\+::const\+\_\+iterator}]{it\+\_\+los,  }\item[{const bloc\+Ref}]{block,  }\item[{const std\+::string \&}]{srcp\+\_\+default }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+long long int u0, v0, u1, v1, u0v0, u0v0h, u1v0, u0v0hu1v0, u0v1, u0v0hu1v0u0v1, u0v0hu1v0u0v1h, u1v1; u0 = u \& ((1\+LL$<$$<$32)-\/1); u1 = u $>$$>$32; v0 = v \& ((1\+LL$<$$<$32)-\/1); v1 = v $>$$>$32; u0v0 = u0 $\ast$ v0; u0v0h = u0v0$>$$>$32; u0v0hU = u0v0h \& ((1\+LL$<$$<$32)-\/1);///only for signed computation u1v0 = u1 $\ast$ v0; u0v0hu1v0 = u0v0hU + u1v0; w1 = u0v0hu1v0 \& ((1\+LL$<$$<$32)-\/1); w2 = u0v0hu1v0 $>$$>$32; u0v1 = u0 $\ast$ v1; w1u0v1 = w1+u0v1; w1u0v1h = w1u0v1 $>$$>$ 32; u1v1 = u1 $\ast$ v1; w1u0v1hw2 = w1u0v1h + w2; return w1u0v1hw2 + u1v1;
+
+Definition at line 1293 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+References tree\+\_\+manipulation\+::create\+\_\+binary\+\_\+operation(), tree\+\_\+manipulation\+::\+Create\+Gimple\+Assign(), tree\+\_\+manager\+::\+Create\+Unique\+Integer\+Cst(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::is\+\_\+unsigned(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, TM, and tree\+\_\+man.
+
+
+
+Referenced by division\+\_\+by\+\_\+a\+\_\+constant().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_a7c9d4a3404e6c21b09acb961d905ae53_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_a7c9d4a3404e6c21b09acb961d905ae53_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIR__lowering_a8f9128221ba101fb76a525f5db6e324a}\label{classIR__lowering_a8f9128221ba101fb76a525f5db6e324a}} 
+\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}!expand\+\_\+sdiv\+\_\+pow2@{expand\+\_\+sdiv\+\_\+pow2}}
+\index{expand\+\_\+sdiv\+\_\+pow2@{expand\+\_\+sdiv\+\_\+pow2}!I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+\subsubsection{\texorpdfstring{expand\+\_\+sdiv\+\_\+pow2()}{expand\_sdiv\_pow2()}}
+{\footnotesize\ttfamily \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} I\+R\+\_\+lowering\+::expand\+\_\+sdiv\+\_\+pow2 (\begin{DoxyParamCaption}\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{op0,  }\item[{unsigned long long int}]{d,  }\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{stmt,  }\item[{const bloc\+Ref}]{block,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{type,  }\item[{const std\+::string \&}]{srcp\+\_\+default }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Expand signed division of O\+P0 by a power of two D in mode M\+O\+DE. 
+
+This routine is only called for positive values of D. 
+
+Definition at line 1003 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+References tree\+\_\+manipulation\+::create\+\_\+binary\+\_\+operation(), tree\+\_\+manipulation\+::create\+\_\+boolean\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+ternary\+\_\+operation(), tree\+\_\+manipulation\+::\+Create\+Gimple\+Assign(), tree\+\_\+manager\+::\+Create\+Unique\+Integer\+Cst(), floor\+\_\+log2(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+node\+::index, TM, and tree\+\_\+man.
+
+
+
+Referenced by division\+\_\+by\+\_\+a\+\_\+constant().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_a8f9128221ba101fb76a525f5db6e324a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_a8f9128221ba101fb76a525f5db6e324a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIR__lowering_ab4fe755c5983da121948673fbcc4faea}\label{classIR__lowering_ab4fe755c5983da121948673fbcc4faea}} 
+\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}!expand\+\_\+smod\+\_\+pow2@{expand\+\_\+smod\+\_\+pow2}}
+\index{expand\+\_\+smod\+\_\+pow2@{expand\+\_\+smod\+\_\+pow2}!I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+\subsubsection{\texorpdfstring{expand\+\_\+smod\+\_\+pow2()}{expand\_smod\_pow2()}}
+{\footnotesize\ttfamily \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} I\+R\+\_\+lowering\+::expand\+\_\+smod\+\_\+pow2 (\begin{DoxyParamCaption}\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{op0,  }\item[{unsigned long long int}]{d,  }\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{stmt,  }\item[{const bloc\+Ref}]{block,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{type,  }\item[{const std\+::string \&}]{srcp\+\_\+default }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Expand signed modulus of O\+P0 by a power of two D in mode M\+O\+DE. 
+
+
+
+Definition at line 946 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, tree\+\_\+manipulation\+::create\+\_\+binary\+\_\+operation(), tree\+\_\+manipulation\+::create\+\_\+boolean\+\_\+type(), tree\+\_\+manipulation\+::\+Create\+Gimple\+Assign(), tree\+\_\+manager\+::\+Create\+Unique\+Integer\+Cst(), floor\+\_\+log2(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, Function\+Frontend\+Flow\+Step\+::\+Get\+Name(), tree\+\_\+node\+::index, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, TM, and tree\+\_\+man.
+
+
+
+Referenced by division\+\_\+by\+\_\+a\+\_\+constant().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_ab4fe755c5983da121948673fbcc4faea_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_ab4fe755c5983da121948673fbcc4faea_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIR__lowering_a374c0d4f54d89c8937343259e202e1b1}\label{classIR__lowering_a374c0d4f54d89c8937343259e202e1b1}} 
+\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}!expand\+\_\+target\+\_\+mem\+\_\+ref@{expand\+\_\+target\+\_\+mem\+\_\+ref}}
+\index{expand\+\_\+target\+\_\+mem\+\_\+ref@{expand\+\_\+target\+\_\+mem\+\_\+ref}!I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+\subsubsection{\texorpdfstring{expand\+\_\+target\+\_\+mem\+\_\+ref()}{expand\_target\_mem\_ref()}}
+{\footnotesize\ttfamily bool I\+R\+\_\+lowering\+::expand\+\_\+target\+\_\+mem\+\_\+ref (\begin{DoxyParamCaption}\item[{\hyperlink{structtarget__mem__ref461}{target\+\_\+mem\+\_\+ref461} $\ast$}]{tmr,  }\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{stmt,  }\item[{const bloc\+Ref}]{block,  }\item[{const std\+::string \&}]{srcp\+\_\+default,  }\item[{bool}]{temp\+\_\+addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+nothing to optimize
+
+It is required to de-\/share some IR nodes 
+
+Definition at line 1148 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+References target\+\_\+mem\+\_\+ref461\+::base, tree\+\_\+manipulation\+::create\+\_\+binary\+\_\+operation(), tree\+\_\+manipulation\+::create\+\_\+pointer\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+size\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+unary\+\_\+operation(), tree\+\_\+manipulation\+::\+Create\+Gimple\+Assign(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, expand\+\_\+\+M\+C(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), target\+\_\+mem\+\_\+ref461\+::idx, target\+\_\+mem\+\_\+ref461\+::idx2, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, target\+\_\+mem\+\_\+ref461\+::offset, target\+\_\+mem\+\_\+ref461\+::step, TM, To\+String(), tree\+\_\+man, test\+\_\+panda\+::type, and target\+\_\+mem\+\_\+ref461\+::type.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_a374c0d4f54d89c8937343259e202e1b1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_a374c0d4f54d89c8937343259e202e1b1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIR__lowering_a88ed11612162d524f892e9329b36380d}\label{classIR__lowering_a88ed11612162d524f892e9329b36380d}} 
+\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void I\+R\+\_\+lowering\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 120 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, Design\+Flow\+Step\+::parameters, TM, and tree\+\_\+man.
+
+\mbox{\Hypertarget{classIR__lowering_a96415d3fb04f24946a5fb657db8a8e22}\label{classIR__lowering_a96415d3fb04f24946a5fb657db8a8e22}} 
+\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} I\+R\+\_\+lowering\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes the operations C\+FG graph data structure. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+first analyze phis
+
+It is required to de-\/share some IR nodes
+
+for each basic block B in C\+FG do $>$ Consider all blocks successively
+
+found a a clobber assignment do nothing
+
+required by the C\+L\+A\+N\+G/\+L\+L\+VM plugin
+
+It is required to de-\/share some IR nodes
+
+It is required to de-\/share some IR nodes
+
+required by the C\+L\+A\+N\+G/\+L\+L\+VM plugin
+
+required by the C\+L\+A\+N\+G/\+L\+L\+VM plugin
+
+It is required to de-\/share some IR nodes
+
+normalize op0
+
+It is required to de-\/share some IR nodes
+
+required by the C\+L\+A\+N\+G/\+L\+L\+VM plugin
+
+required by the C\+L\+A\+N\+G/\+L\+L\+VM plugin
+
+expose some part of the \hyperlink{structtarget__mem__ref}{target\+\_\+mem\+\_\+ref} statement
+
+check missing cast
+
+split the \hyperlink{structtarget__mem__ref}{target\+\_\+mem\+\_\+ref} in a address computation statement and in a load statement
+
+It is required to de-\/share some IR nodes
+
+required by the C\+L\+A\+N\+G/\+L\+L\+VM plugin
+
+required by the C\+L\+A\+N\+G/\+L\+L\+VM plugin
+
+check if there is a misaligned access
+
+It is required to de-\/share some IR nodes
+
+required by the C\+L\+A\+N\+G/\+L\+L\+VM plugin
+
+required by the C\+L\+A\+N\+G/\+L\+L\+VM plugin
+
+required by C\+L\+A\+N\+G/\+L\+L\+VM plugin
+
+required by C\+L\+A\+N\+G/\+L\+L\+VM plugin
+
+if the previous transformation still give a multiplication let\textquotesingle{}s check if this multiplication is actually widen\+\_\+mult\+\_\+expr
+
+check if a mult\+\_\+expr may become a widen\+\_\+mult\+\_\+expr
+
+It is required to de-\/share some IR nodes
+
+required by the C\+L\+A\+N\+G/\+L\+L\+VM plugin
+
+required by the C\+L\+A\+N\+G/\+L\+L\+VM plugin
+
+check if there is a misaligned access
+
+check if the mem\+\_\+ref corresponds to an implicit memset and then it will be lowered to simple loop initializing the variable
+
+split the \hyperlink{structtarget__mem__ref}{target\+\_\+mem\+\_\+ref} in a address computation statement and in a store statement
+
+manage something as binary operand
+
+It is required to de-\/share some IR nodes
+
+It is required to de-\/share some IR nodes
+
+required by the C\+L\+A\+N\+G/\+L\+L\+VM plugin
+
+required by the C\+L\+A\+N\+G/\+L\+L\+VM plugin
+
+optimize less than 0 or greater than or equal than 0
+
+It is required to de-\/share some IR nodes
+
+required by the C\+L\+A\+N\+G/\+L\+L\+VM plugin
+
+required by the C\+L\+A\+N\+G/\+L\+L\+VM plugin 
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 907 of file I\+R\+\_\+lowering\+\_\+exec.\+cpp.
+
+
+
+References A\+L\+G\+N\+\_\+\+P\+O\+I\+N\+T\+ER, Frontend\+Flow\+Step\+::\+AppM, test\+\_\+panda\+::arg, array\+\_\+ref\+\_\+lowering(), tree\+\_\+manager\+::\+C\+Get\+Tree\+Reindex(), tree\+\_\+helper\+::\+C\+Get\+Type(), tree\+\_\+manipulation\+::create\+\_\+binary\+\_\+operation(), tree\+\_\+manipulation\+::create\+\_\+boolean\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+integer\+\_\+type\+\_\+with\+\_\+prec(), tree\+\_\+manipulation\+::create\+\_\+pointer\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+size\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+unary\+\_\+operation(), tree\+\_\+manipulation\+::\+Create\+Addr\+Expr(), tree\+\_\+manipulation\+::\+Create\+Gimple\+Assign(), tree\+\_\+manipulation\+::\+Create\+Nop\+Expr(), tree\+\_\+manager\+::\+Create\+Unique\+Integer\+Cst(), tree\+\_\+manipulation\+::\+Create\+Unsigned(), tree\+\_\+manipulation\+::\+Create\+Vector\+Boolean\+Type(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, division\+\_\+by\+\_\+a\+\_\+constant(), expand\+\_\+\+M\+C(), expand\+\_\+target\+\_\+mem\+\_\+ref(), Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, tree\+\_\+helper\+::get\+\_\+base\+\_\+index(), G\+E\+T\+\_\+\+C\+O\+N\+S\+T\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+O\+N\+S\+T\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), tree\+\_\+helper\+::get\+\_\+type\+\_\+node(), tree\+\_\+helper\+::\+Get\+Elements(), Function\+Frontend\+Flow\+Step\+::\+Get\+Name(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+node\+::index, tree\+\_\+helper\+::is\+\_\+a\+\_\+vector(), tree\+\_\+helper\+::is\+\_\+bool(), tree\+\_\+helper\+::is\+\_\+int(), tree\+\_\+helper\+::is\+\_\+real(), tree\+\_\+helper\+::is\+\_\+unsigned(), max(), Design\+Flow\+Step\+::parameters, phi, reached\+\_\+max\+\_\+transformation\+\_\+limit(), resize\+\_\+to\+\_\+1\+\_\+8\+\_\+16\+\_\+32\+\_\+64\+\_\+128\+\_\+256\+\_\+512(), tree\+\_\+helper\+::size(), tree\+\_\+helper\+::\+Size(), sl, S\+TR, S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG, TM, To\+String(), tree\+\_\+man, and test\+\_\+panda\+::type.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{df/d7d/classIR__lowering_a96415d3fb04f24946a5fb657db8a8e22_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIR__lowering_a1c9f8a152838d5330a866220393119ff}\label{classIR__lowering_a1c9f8a152838d5330a866220393119ff}} 
+\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}!reached\+\_\+max\+\_\+transformation\+\_\+limit@{reached\+\_\+max\+\_\+transformation\+\_\+limit}}
+\index{reached\+\_\+max\+\_\+transformation\+\_\+limit@{reached\+\_\+max\+\_\+transformation\+\_\+limit}!I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+\subsubsection{\texorpdfstring{reached\+\_\+max\+\_\+transformation\+\_\+limit()}{reached\_max\_transformation\_limit()}}
+{\footnotesize\ttfamily bool I\+R\+\_\+lowering\+::reached\+\_\+max\+\_\+transformation\+\_\+limit (\begin{DoxyParamCaption}\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{stmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+check if the max transformation limit has been reached 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stmt} & is the current statement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true in case all the next transformations have to be skipped 
+\end{DoxyReturn}
+
+
+Definition at line 1552 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, G\+E\+T\+\_\+\+C\+O\+N\+S\+T\+\_\+\+N\+O\+DE, and tree\+\_\+node\+::get\+\_\+kind().
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{df/d7d/classIR__lowering_a1c9f8a152838d5330a866220393119ff_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d7d/classIR__lowering_a1c9f8a152838d5330a866220393119ff_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classIR__lowering_a09f29d65e37fa212874e351f82c1fb54}\label{classIR__lowering_a09f29d65e37fa212874e351f82c1fb54}} 
+\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}!TM@{TM}}
+\index{TM@{TM}!I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+\subsubsection{\texorpdfstring{TM}{TM}}
+{\footnotesize\ttfamily \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} I\+R\+\_\+lowering\+::\+TM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The tree manager. 
+
+
+
+Definition at line 88 of file I\+R\+\_\+lowering.\+hpp.
+
+
+
+Referenced by array\+\_\+ref\+\_\+lowering(), division\+\_\+by\+\_\+a\+\_\+constant(), expand\+\_\+\+M\+C(), expand\+\_\+mult\+\_\+const(), expand\+\_\+mult\+\_\+highpart(), expand\+\_\+sdiv\+\_\+pow2(), expand\+\_\+smod\+\_\+pow2(), expand\+\_\+target\+\_\+mem\+\_\+ref(), Initialize(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classIR__lowering_add46902d334d46da094f417dd5cd4ba8}\label{classIR__lowering_add46902d334d46da094f417dd5cd4ba8}} 
+\index{I\+R\+\_\+lowering@{I\+R\+\_\+lowering}!tree\+\_\+man@{tree\+\_\+man}}
+\index{tree\+\_\+man@{tree\+\_\+man}!I\+R\+\_\+lowering@{I\+R\+\_\+lowering}}
+\subsubsection{\texorpdfstring{tree\+\_\+man}{tree\_man}}
+{\footnotesize\ttfamily \hyperlink{tree__manipulation_8hpp_a1a9460e3a2f9fc6a96cfd2f24cc9b2a5}{tree\+\_\+manipulation\+Ref} I\+R\+\_\+lowering\+::tree\+\_\+man\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The IR manipulation. 
+
+
+
+Definition at line 91 of file I\+R\+\_\+lowering.\+hpp.
+
+
+
+Referenced by array\+\_\+ref\+\_\+lowering(), division\+\_\+by\+\_\+a\+\_\+constant(), expand\+\_\+\+M\+C(), expand\+\_\+mult\+\_\+const(), expand\+\_\+mult\+\_\+highpart(), expand\+\_\+sdiv\+\_\+pow2(), expand\+\_\+smod\+\_\+pow2(), expand\+\_\+target\+\_\+mem\+\_\+ref(), Initialize(), and Internal\+Exec().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{IR__lowering_8hpp}{I\+R\+\_\+lowering.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{IR__lowering_8cpp}{I\+R\+\_\+lowering.\+cpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{IR__lowering__exec_8cpp}{I\+R\+\_\+lowering\+\_\+exec.\+cpp}\end{DoxyCompactItemize}

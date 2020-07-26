@@ -1,0 +1,1123 @@
+\hypertarget{classlanguage__writer}{}\section{language\+\_\+writer Class Reference}
+\label{classlanguage__writer}\index{language\+\_\+writer@{language\+\_\+writer}}
+
+
+H\+DL writer base class used to specify the interface of the different language writers.  
+
+
+
+
+{\ttfamily \#include $<$language\+\_\+writer.\+hpp$>$}
+
+
+
+Inheritance diagram for language\+\_\+writer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{d3/d8b/classlanguage__writer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for language\+\_\+writer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d23/classlanguage__writer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlanguage__writer_a9eb0746b5252aea753ed97772a58d274}{language\+\_\+writer} (char open\+\_\+char, char close\+\_\+char, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classlanguage__writer_aeb717c1d12571e3808759009be752d59}{parameters})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classlanguage__writer_ae8acf0e28cb5fcd69ef12a32dc019232}{$\sim$language\+\_\+writer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual std\+::string \hyperlink{classlanguage__writer_a6eabf4ff2972e00a392a0d2a8b4c5a3a}{get\+\_\+name} () const =0
+\begin{DoxyCompactList}\small\item\em Returns the name of the language writer. \end{DoxyCompactList}\item 
+virtual std\+::string \hyperlink{classlanguage__writer_a3bcb9c84b283d53ecc1f3c4ee8e9dc38}{get\+\_\+extension} () const =0
+\begin{DoxyCompactList}\small\item\em Returns the filename extension associated with the specification. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_a17a157a423c319a75b20ed1eb8bb6f6e}{write} (const std\+::string \&raw\+String)
+\begin{DoxyCompactList}\small\item\em Writes a raw string into the stream. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_a3e96d627983817f9b84f72cc1fa8bb4f}{write\+\_\+header} ()
+\begin{DoxyCompactList}\small\item\em Writes the header part of the file. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_acb35eb2c22883fcf1f479a091dc4429d}{write\+\_\+comment} (const std\+::string \&comment\+\_\+string)=0
+\begin{DoxyCompactList}\small\item\em Prints a comment. \end{DoxyCompactList}\item 
+virtual std\+::string \hyperlink{classlanguage__writer_a1ac884fda2f8990edf61f914af7b04dd}{type\+\_\+converter} (\hyperlink{structural__objects_8hpp_a219296792577e3292783725961506c83}{structural\+\_\+type\+\_\+descriptor\+Ref} Type)=0
+\begin{DoxyCompactList}\small\item\em Return a language based type string given a \hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor}. \end{DoxyCompactList}\item 
+virtual std\+::string \hyperlink{classlanguage__writer_a154f45ed77a5dff96d190b4e1ccfa366}{type\+\_\+converter\+\_\+size} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir)=0
+\begin{DoxyCompactList}\small\item\em Return a language based size string given the object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_ab43debc2245af8078bb36b157d780aca}{write\+\_\+library\+\_\+declaration} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir)=0
+\begin{DoxyCompactList}\small\item\em Write the declaration of the library. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_a32b5b9395eb518430fca70b1d49ff133}{write\+\_\+module\+\_\+declaration} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir)=0
+\begin{DoxyCompactList}\small\item\em Write the declaration of the module. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_a3971d4b51e6c1762c29f8e0cb0a899f7}{write\+\_\+module\+\_\+internal\+\_\+declaration} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir)=0
+\begin{DoxyCompactList}\small\item\em Write the declaration of internal objects of the module. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_acf6d294fc4f807691e729b0dd13bc998}{write\+\_\+port\+\_\+declaration} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir, bool first\+\_\+port\+\_\+analyzed)=0
+\begin{DoxyCompactList}\small\item\em Write the port declaration starting from a port object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_a99c30813a77c594298e9d4612d2a7e29}{write\+\_\+component\+\_\+declaration} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir)=0
+\begin{DoxyCompactList}\small\item\em Write the declaration of componets. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_ae574f2a7e9cb7904172ce08aab243f8e}{write\+\_\+signal\+\_\+declaration} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir)=0
+\begin{DoxyCompactList}\small\item\em Write the declaration of a signal. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_a53b7db2b1ad81b2ee89ff81705b0f0ff}{write\+\_\+module\+\_\+definition\+\_\+begin} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir)=0
+\begin{DoxyCompactList}\small\item\em Write the begin part in a module declaration. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_a9fa5dba07a53f84fb2936c0c46a511a4}{write\+\_\+module\+\_\+instance\+\_\+begin} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir, const std\+::string \&module\+\_\+name, bool write\+\_\+parametrization)=0
+\begin{DoxyCompactList}\small\item\em Write the initial part of the instance of a module. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_a58bc0c17545d1fc96385a5fbffbe62b2}{write\+\_\+module\+\_\+instance\+\_\+end} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir)=0
+\begin{DoxyCompactList}\small\item\em Write the ending part of the instance of a module. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_aae06225ee079da7199d6f7e9f35fa108}{write\+\_\+port\+\_\+binding} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&port, const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&\hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a363ff33001bb9810eee7a6a61179583b}{top}, bool \&first\+\_\+port\+\_\+analyzed)=0
+\begin{DoxyCompactList}\small\item\em Write the binding of a port. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_a97f0527b8b3b510dc254108379edf440}{write\+\_\+vector\+\_\+port\+\_\+binding} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&port, bool \&first\+\_\+port\+\_\+analyzed)=0
+\item 
+virtual void \hyperlink{classlanguage__writer_a57586ab4a2816a9eeb3658b9f072d02d}{write\+\_\+module\+\_\+definition\+\_\+end} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir)=0
+\begin{DoxyCompactList}\small\item\em Write the end part in a module declaration. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_a1789bbe12e4b1e4f168f4cc25bb7faff}{write\+\_\+io\+\_\+signal\+\_\+post\+\_\+fix} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&port, const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&sig)=0
+\begin{DoxyCompactList}\small\item\em Write some code managing primary ports to signals connections. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_a393febaf037080d4a91588cfa699c8cb}{write\+\_\+module\+\_\+parametrization} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir)=0
+\begin{DoxyCompactList}\small\item\em Module can be parametrized with respect different features. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_aa244ceb9a8c0033a75c5b885df4693c8}{write\+\_\+tail} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir)=0
+\begin{DoxyCompactList}\small\item\em Write the tail part of the file. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_a3325b6d77049e7f4bf39b1c4758df5e8}{write\+\_\+state\+\_\+declaration} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir, const std\+::list$<$ std\+::string $>$ \&list\+\_\+of\+\_\+states, const std\+::string \&reset\+\_\+port, const std\+::string \&reset\+\_\+state, bool one\+\_\+hot)=0
+\begin{DoxyCompactList}\small\item\em write the declaration of all the states of the finite state machine. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_accbef441e192407932159b5a4d885cda}{write\+\_\+present\+\_\+state\+\_\+update} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} cir, const std\+::string \&reset\+\_\+state, const std\+::string \&reset\+\_\+port, const std\+::string \&clock\+\_\+port, const std\+::string \&reset\+\_\+type, bool connect\+\_\+present\+\_\+next\+\_\+state\+\_\+signals)=0
+\begin{DoxyCompactList}\small\item\em write the present\+\_\+state update process \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_a1eb41e600406aea66d35f6da5ef16098}{write\+\_\+transition\+\_\+output\+\_\+functions} (bool single\+\_\+proc, unsigned int output\+\_\+index, const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir, const std\+::string \&reset\+\_\+state, const std\+::string \&reset\+\_\+port, const std\+::string \&start\+\_\+port, const std\+::string \&clock\+\_\+port, std\+::vector$<$ std\+::string $>$\+::const\+\_\+iterator \&first, std\+::vector$<$ std\+::string $>$\+::const\+\_\+iterator \&end)=0
+\begin{DoxyCompactList}\small\item\em Write the transition and output functions. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_a75a800dc2e7afbecf76f1acaae82b6ce}{write\+\_\+\+N\+P\+\_\+functionalities} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir)=0
+\begin{DoxyCompactList}\small\item\em Write in the proper language the behavioral description of the module described in \char`\"{}\+Not Parsed\char`\"{} form. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_a89c790a77df81030bd359a1adcaae433}{write\+\_\+port\+\_\+decl\+\_\+header} ()=0
+\begin{DoxyCompactList}\small\item\em Write the header for generics. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_af20577675f401b5e75b4f0a64484529b}{write\+\_\+port\+\_\+decl\+\_\+tail} ()=0
+\begin{DoxyCompactList}\small\item\em Write the tail for generics. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_ad14ee8909894bca0a7d8874554d91d9b}{write\+\_\+module\+\_\+parametrization\+\_\+decl} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir)=0
+\begin{DoxyCompactList}\small\item\em Write the declaration of the module parameters. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_a49b971e9b90296b0096a78c06219992d}{write\+\_\+assign} (const std\+::string \&op0, const std\+::string \&op1)=0
+\item 
+virtual bool \hyperlink{classlanguage__writer_a10d8bf3a0f71364bc3a72273c1172a34}{has\+\_\+output\+\_\+prefix} () const =0
+\item 
+virtual bool \hyperlink{classlanguage__writer_a5a69f96be3c6c3cab69325058c077d21}{check\+\_\+keyword} (std\+::string id) const =0
+\item 
+virtual void \hyperlink{classlanguage__writer_a30538fe1dc72928281e409f7684ced83}{Write\+Builtin} (const structural\+\_\+object\+Const\+Ref component)=0
+\begin{DoxyCompactList}\small\item\em Write a builtin component. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlanguage__writer_acbb595dd221844492946d60b79c00185}{write\+\_\+timing\+\_\+specification} (const technology\+\_\+manager\+Const\+Ref TM, const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir)
+\item 
+const std\+::string \hyperlink{classlanguage__writer_a12e31915cd8caac0dfaf0bd5737a7a41}{Write\+String} () const
+\begin{DoxyCompactList}\small\item\em Dump the content of the write as a string. \end{DoxyCompactList}\item 
+void \hyperlink{classlanguage__writer_a2450f989cdb4b70610d544931d0add9e}{Write\+File} (const std\+::string \&filename) const
+\begin{DoxyCompactList}\small\item\em Write content to a file. \end{DoxyCompactList}\item 
+\hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ std\+::string $>$ \hyperlink{classlanguage__writer_a814d52423ed277edd092423a51a40a69}{Get\+H\+D\+L\+Reserved\+Names} () const
+\begin{DoxyCompactList}\small\item\em Return the names of auxiliary signals which will be used by backend. \end{DoxyCompactList}\item 
+void \hyperlink{classlanguage__writer_a8fa5e9dadb7566ee668c16555a13157a}{Write\+License} ()
+\begin{DoxyCompactList}\small\item\em Write the license. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{language__writer_8hpp_ab5bb59a651cbff3f3c83b0f51c0b0b71}{language\+\_\+writer\+Ref} \hyperlink{classlanguage__writer_ae0ae8fbdc6d0a7e8a22b4344672c45ef}{create\+\_\+writer} (\hyperlink{language__writer_8hpp_a890069761ca3ce361c42684c789d886c}{H\+D\+L\+Writer\+\_\+\+Language} language, const technology\+\_\+manager\+Const\+Ref TM, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classlanguage__writer_aeb717c1d12571e3808759009be752d59}{parameters})
+\begin{DoxyCompactList}\small\item\em Creates the specialization of the writer based on the desired language. \end{DoxyCompactList}\item 
+static unsigned int \hyperlink{classlanguage__writer_a966840e95ec2f66d5128d6cbc54b89bb}{bitnumber} (unsigned long long n)
+\begin{DoxyCompactList}\small\item\em Counts the number of bits in an unsigned int. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classlanguage__writer_a076458c3656ec8f405db0dbf55889f69}{encode\+\_\+one\+\_\+hot} (unsigned int n\+\_\+states, unsigned int val) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref} \hyperlink{classlanguage__writer_a19ffce0f39dd5b8c6fa606086ebf8820}{indented\+\_\+output\+\_\+stream}
+\begin{DoxyCompactList}\small\item\em Represents the stream we are currently writing to. \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \hyperlink{classlanguage__writer_a47561bf42c96b801a97bb476b85c0603}{list\+\_\+of\+\_\+lib}
+\begin{DoxyCompactList}\small\item\em list of library imported (e.\+g., includes). \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \hyperlink{classlanguage__writer_a4f37d553bed8fa6e09f4c0623ba3ec55}{list\+\_\+of\+\_\+customized\+\_\+gates}
+\begin{DoxyCompactList}\small\item\em list of customized gates \end{DoxyCompactList}\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classlanguage__writer_aeb717c1d12571e3808759009be752d59}{parameters}
+\begin{DoxyCompactList}\small\item\em the set of input parameters \end{DoxyCompactList}\item 
+int \hyperlink{classlanguage__writer_a5e8eec93e3573a1ea49968af8da2996a}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em debugging level of the class \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+H\+DL writer base class used to specify the interface of the different language writers. 
+
+Definition at line 93 of file language\+\_\+writer.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlanguage__writer_a9eb0746b5252aea753ed97772a58d274}\label{classlanguage__writer_a9eb0746b5252aea753ed97772a58d274}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!language\+\_\+writer@{language\+\_\+writer}}
+\index{language\+\_\+writer@{language\+\_\+writer}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{language\+\_\+writer()}{language\_writer()}}
+{\footnotesize\ttfamily language\+\_\+writer\+::language\+\_\+writer (\begin{DoxyParamCaption}\item[{char}]{open\+\_\+char,  }\item[{char}]{close\+\_\+char,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Autoheader include.
+
+constants include . include utility include 
+
+Definition at line 71 of file language\+\_\+writer.\+cpp.
+
+
+
+References $\sim$language\+\_\+writer().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d67/classlanguage__writer_a9eb0746b5252aea753ed97772a58d274_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlanguage__writer_ae8acf0e28cb5fcd69ef12a32dc019232}\label{classlanguage__writer_ae8acf0e28cb5fcd69ef12a32dc019232}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!````~language\+\_\+writer@{$\sim$language\+\_\+writer}}
+\index{````~language\+\_\+writer@{$\sim$language\+\_\+writer}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{$\sim$language\+\_\+writer()}{~language\_writer()}}
+{\footnotesize\ttfamily language\+\_\+writer\+::$\sim$language\+\_\+writer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by language\+\_\+writer().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d67/classlanguage__writer_ae8acf0e28cb5fcd69ef12a32dc019232_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlanguage__writer_a966840e95ec2f66d5128d6cbc54b89bb}\label{classlanguage__writer_a966840e95ec2f66d5128d6cbc54b89bb}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!bitnumber@{bitnumber}}
+\index{bitnumber@{bitnumber}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{bitnumber()}{bitnumber()}}
+{\footnotesize\ttfamily unsigned int language\+\_\+writer\+::bitnumber (\begin{DoxyParamCaption}\item[{unsigned long long}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Counts the number of bits in an unsigned int. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & is the number. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 78 of file language\+\_\+writer.\+cpp.
+
+
+
+Referenced by comp\+\_\+state\+\_\+bitsize(), H\+W\+Discrepancy\+Analysis\+::\+Exec(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+state\+\_\+declaration(), and verilog\+\_\+writer\+::write\+\_\+state\+\_\+declaration().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d67/classlanguage__writer_a966840e95ec2f66d5128d6cbc54b89bb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlanguage__writer_a5a69f96be3c6c3cab69325058c077d21}\label{classlanguage__writer_a5a69f96be3c6c3cab69325058c077d21}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!check\+\_\+keyword@{check\+\_\+keyword}}
+\index{check\+\_\+keyword@{check\+\_\+keyword}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{check\+\_\+keyword()}{check\_keyword()}}
+{\footnotesize\ttfamily virtual bool language\+\_\+writer\+::check\+\_\+keyword (\begin{DoxyParamCaption}\item[{std\+::string}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classverilog__writer_a1595f62191efb28fa23d944791bbdd71}{verilog\+\_\+writer}, and \hyperlink{structVHDL__writer_a5c9eb93fec5f11553f37873b107dd739}{V\+H\+D\+L\+\_\+writer}.
+
+
+
+Referenced by H\+D\+L\+\_\+manager\+::convert\+\_\+to\+\_\+identifier().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d67/classlanguage__writer_a5a69f96be3c6c3cab69325058c077d21_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlanguage__writer_ae0ae8fbdc6d0a7e8a22b4344672c45ef}\label{classlanguage__writer_ae0ae8fbdc6d0a7e8a22b4344672c45ef}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!create\+\_\+writer@{create\+\_\+writer}}
+\index{create\+\_\+writer@{create\+\_\+writer}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{create\+\_\+writer()}{create\_writer()}}
+{\footnotesize\ttfamily \hyperlink{language__writer_8hpp_ab5bb59a651cbff3f3c83b0f51c0b0b71}{language\+\_\+writer\+Ref} language\+\_\+writer\+::create\+\_\+writer (\begin{DoxyParamCaption}\item[{\hyperlink{language__writer_8hpp_a890069761ca3ce361c42684c789d886c}{H\+D\+L\+Writer\+\_\+\+Language}}]{language,  }\item[{const technology\+\_\+manager\+Const\+Ref}]{TM,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{parameters }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates the specialization of the writer based on the desired language. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em language\+\_\+w} & is the desired language \\
+\hline
+{\em TM} & is the technology manager \\
+\hline
+{\em parameters} & is the set of input parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 93 of file language\+\_\+writer.\+cpp.
+
+
+
+References S\+Y\+S\+T\+E\+M\+\_\+\+V\+E\+R\+I\+L\+OG, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, V\+E\+R\+I\+L\+OG, and V\+H\+DL.
+
+
+
+Referenced by allocation\+::\+Build\+Proxy\+Function\+Verilog(), allocation\+::\+Build\+Proxy\+Function\+V\+H\+D\+L(), Generate\+Taste\+H\+D\+L\+Architecture\+::\+Exec(), H\+D\+L\+Function\+Decl\+Fix\+::\+Exec(), H\+D\+L\+Var\+Decl\+Fix\+::\+Internal\+Exec(), H\+D\+L\+\_\+manager\+::write\+\_\+components(), and Testbench\+Generation\+Base\+Step\+::write\+\_\+module\+\_\+instantiation().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d67/classlanguage__writer_ae0ae8fbdc6d0a7e8a22b4344672c45ef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlanguage__writer_a076458c3656ec8f405db0dbf55889f69}\label{classlanguage__writer_a076458c3656ec8f405db0dbf55889f69}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!encode\+\_\+one\+\_\+hot@{encode\+\_\+one\+\_\+hot}}
+\index{encode\+\_\+one\+\_\+hot@{encode\+\_\+one\+\_\+hot}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{encode\+\_\+one\+\_\+hot()}{encode\_one\_hot()}}
+{\footnotesize\ttfamily std\+::string language\+\_\+writer\+::encode\+\_\+one\+\_\+hot (\begin{DoxyParamCaption}\item[{unsigned int}]{n\+\_\+states,  }\item[{unsigned int}]{val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 96 of file language\+\_\+writer.\+hpp.
+
+
+
+Referenced by V\+H\+D\+L\+\_\+writer\+::write\+\_\+state\+\_\+declaration(), and verilog\+\_\+writer\+::write\+\_\+state\+\_\+declaration().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d67/classlanguage__writer_a076458c3656ec8f405db0dbf55889f69_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlanguage__writer_a3bcb9c84b283d53ecc1f3c4ee8e9dc38}\label{classlanguage__writer_a3bcb9c84b283d53ecc1f3c4ee8e9dc38}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!get\+\_\+extension@{get\+\_\+extension}}
+\index{get\+\_\+extension@{get\+\_\+extension}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{get\+\_\+extension()}{get\_extension()}}
+{\footnotesize\ttfamily virtual std\+::string language\+\_\+writer\+::get\+\_\+extension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the filename extension associated with the specification. 
+
+
+
+Implemented in \hyperlink{structVHDL__writer_aa4075167cf0d866eb3ffe02f3fcfb5c1}{V\+H\+D\+L\+\_\+writer}, \hyperlink{classverilog__writer_a4dade87869d04a1a2b166efa8c0a2253}{verilog\+\_\+writer}, and \hyperlink{classsystem__verilog__writer_a7730b4c523fbdf8e41c4416775194b2f}{system\+\_\+verilog\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a6eabf4ff2972e00a392a0d2a8b4c5a3a}\label{classlanguage__writer_a6eabf4ff2972e00a392a0d2a8b4c5a3a}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!get\+\_\+name@{get\+\_\+name}}
+\index{get\+\_\+name@{get\+\_\+name}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{get\+\_\+name()}{get\_name()}}
+{\footnotesize\ttfamily virtual std\+::string language\+\_\+writer\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the name of the language writer. 
+
+
+
+Implemented in \hyperlink{structVHDL__writer_a1bf07f430f6ea252ea65286d2b2b5ded}{V\+H\+D\+L\+\_\+writer}, \hyperlink{classverilog__writer_a59b2afa9a031c6fff601b4f349dd434b}{verilog\+\_\+writer}, and \hyperlink{classsystem__verilog__writer_a176f5235f5fd8ec5a0c84f85382475e3}{system\+\_\+verilog\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a814d52423ed277edd092423a51a40a69}\label{classlanguage__writer_a814d52423ed277edd092423a51a40a69}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!Get\+H\+D\+L\+Reserved\+Names@{Get\+H\+D\+L\+Reserved\+Names}}
+\index{Get\+H\+D\+L\+Reserved\+Names@{Get\+H\+D\+L\+Reserved\+Names}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{Get\+H\+D\+L\+Reserved\+Names()}{GetHDLReservedNames()}}
+{\footnotesize\ttfamily \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ std\+::string $>$ language\+\_\+writer\+::\+Get\+H\+D\+L\+Reserved\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the names of auxiliary signals which will be used by backend. 
+
+
+
+Definition at line 147 of file language\+\_\+writer.\+cpp.
+
+
+
+References C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, C\+O\+P\+Y\+I\+N\+G3\+\_\+\+S\+H\+O\+R\+T\+\_\+\+M\+A\+C\+RO, D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, R\+E\+T\+U\+R\+N\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, and W\+E\+N\+A\+B\+L\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME.
+
+\mbox{\Hypertarget{classlanguage__writer_a10d8bf3a0f71364bc3a72273c1172a34}\label{classlanguage__writer_a10d8bf3a0f71364bc3a72273c1172a34}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!has\+\_\+output\+\_\+prefix@{has\+\_\+output\+\_\+prefix}}
+\index{has\+\_\+output\+\_\+prefix@{has\+\_\+output\+\_\+prefix}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{has\+\_\+output\+\_\+prefix()}{has\_output\_prefix()}}
+{\footnotesize\ttfamily virtual bool language\+\_\+writer\+::has\+\_\+output\+\_\+prefix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classverilog__writer_a33625c1b43ea1ee1fa7331cde5d83c8b}{verilog\+\_\+writer}, and \hyperlink{structVHDL__writer_aa1655e8fca9245faa8c9bed5956d079a}{V\+H\+D\+L\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a1ac884fda2f8990edf61f914af7b04dd}\label{classlanguage__writer_a1ac884fda2f8990edf61f914af7b04dd}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!type\+\_\+converter@{type\+\_\+converter}}
+\index{type\+\_\+converter@{type\+\_\+converter}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{type\+\_\+converter()}{type\_converter()}}
+{\footnotesize\ttfamily virtual std\+::string language\+\_\+writer\+::type\+\_\+converter (\begin{DoxyParamCaption}\item[{\hyperlink{structural__objects_8hpp_a219296792577e3292783725961506c83}{structural\+\_\+type\+\_\+descriptor\+Ref}}]{Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Return a language based type string given a \hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Type} & is the \hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor}. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{structVHDL__writer_aaadfd937b71dd556923b7e20e18cab60}{V\+H\+D\+L\+\_\+writer}, and \hyperlink{classverilog__writer_a20595dc1f543de374aeb4ec2f577971d}{verilog\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a154f45ed77a5dff96d190b4e1ccfa366}\label{classlanguage__writer_a154f45ed77a5dff96d190b4e1ccfa366}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!type\+\_\+converter\+\_\+size@{type\+\_\+converter\+\_\+size}}
+\index{type\+\_\+converter\+\_\+size@{type\+\_\+converter\+\_\+size}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{type\+\_\+converter\+\_\+size()}{type\_converter\_size()}}
+{\footnotesize\ttfamily virtual std\+::string language\+\_\+writer\+::type\+\_\+converter\+\_\+size (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Return a language based size string given the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cir} & is the object \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{structVHDL__writer_aebe9a464e894d42bd3493c104d537e7f}{V\+H\+D\+L\+\_\+writer}, and \hyperlink{classverilog__writer_aa7a775e57ed2f7d4d613352bd239a279}{verilog\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a17a157a423c319a75b20ed1eb8bb6f6e}\label{classlanguage__writer_a17a157a423c319a75b20ed1eb8bb6f6e}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write@{write}}
+\index{write@{write}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void language\+\_\+writer\+::write (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{raw\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Writes a raw string into the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+String} & is the string to be written. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 124 of file language\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), and indented\+\_\+output\+\_\+stream.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d67/classlanguage__writer_a17a157a423c319a75b20ed1eb8bb6f6e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlanguage__writer_a49b971e9b90296b0096a78c06219992d}\label{classlanguage__writer_a49b971e9b90296b0096a78c06219992d}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+assign@{write\+\_\+assign}}
+\index{write\+\_\+assign@{write\+\_\+assign}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+assign()}{write\_assign()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+assign (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{op0,  }\item[{const std\+::string \&}]{op1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classverilog__writer_a67bc3c89705a8863735409e64aa8cf32}{verilog\+\_\+writer}, and \hyperlink{structVHDL__writer_af48ed8414cfbd1a7713d3bab7b4b5218}{V\+H\+D\+L\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_acb35eb2c22883fcf1f479a091dc4429d}\label{classlanguage__writer_acb35eb2c22883fcf1f479a091dc4429d}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+comment@{write\+\_\+comment}}
+\index{write\+\_\+comment@{write\+\_\+comment}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+comment()}{write\_comment()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+comment (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{comment\+\_\+string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Prints a comment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comment\+\_\+string} & is the string to be printed as a comment. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{structVHDL__writer_a9e5dd9daf73ae7621fd861dd1ad81f41}{V\+H\+D\+L\+\_\+writer}, and \hyperlink{classverilog__writer_ab013209d73c10f53c87bb1b7a2666ff0}{verilog\+\_\+writer}.
+
+
+
+Referenced by Write\+License().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d67/classlanguage__writer_acb35eb2c22883fcf1f479a091dc4429d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlanguage__writer_a99c30813a77c594298e9d4612d2a7e29}\label{classlanguage__writer_a99c30813a77c594298e9d4612d2a7e29}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+component\+\_\+declaration@{write\+\_\+component\+\_\+declaration}}
+\index{write\+\_\+component\+\_\+declaration@{write\+\_\+component\+\_\+declaration}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+component\+\_\+declaration()}{write\_component\_declaration()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+component\+\_\+declaration (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write the declaration of componets. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cir} & is the component to be declared. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{structVHDL__writer_a34dbb60f7e32cdaab7b617f5cb5d9943}{V\+H\+D\+L\+\_\+writer}, and \hyperlink{classverilog__writer_a0e4f86c1473978b5c7284b763db4e55a}{verilog\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a3e96d627983817f9b84f72cc1fa8bb4f}\label{classlanguage__writer_a3e96d627983817f9b84f72cc1fa8bb4f}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+header@{write\+\_\+header}}
+\index{write\+\_\+header@{write\+\_\+header}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+header()}{write\_header()}}
+{\footnotesize\ttfamily void language\+\_\+writer\+::write\+\_\+header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Writes the header part of the file. 
+
+Write some lines of comments and possibly global libraries. 
+
+Reimplemented in \hyperlink{structVHDL__writer_aae8bd96734b2cf29299f86ec53cfde3c}{V\+H\+D\+L\+\_\+writer}, and \hyperlink{classverilog__writer_a36a19f7e6beea0b3d1c16389397cf9ea}{verilog\+\_\+writer}.
+
+
+
+Definition at line 129 of file language\+\_\+writer.\+cpp.
+
+\mbox{\Hypertarget{classlanguage__writer_a1789bbe12e4b1e4f168f4cc25bb7faff}\label{classlanguage__writer_a1789bbe12e4b1e4f168f4cc25bb7faff}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+io\+\_\+signal\+\_\+post\+\_\+fix@{write\+\_\+io\+\_\+signal\+\_\+post\+\_\+fix}}
+\index{write\+\_\+io\+\_\+signal\+\_\+post\+\_\+fix@{write\+\_\+io\+\_\+signal\+\_\+post\+\_\+fix}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+io\+\_\+signal\+\_\+post\+\_\+fix()}{write\_io\_signal\_post\_fix()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+io\+\_\+signal\+\_\+post\+\_\+fix (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{port,  }\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{sig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write some code managing primary ports to signals connections. 
+
+\hyperlink{classLoop}{Loop} signals are present for example in this bench circuit\+: I\+N\+P\+U\+T(\+X) O\+U\+T\+P\+U\+T(\+Z) Y = D\+F\+F(\+Z) Z = \hyperlink{tutorial__pnnl__2019_2memory_2third_2solution_2mips_8c_acd1b97556dfbbac61063a63031d2f91d}{A\+N\+D(\+X,\+Y)} The circuit builder adds an internal signal Z\+\_\+sign allowing the write and read of the Z values. 
+\begin{DoxyParams}{Parameters}
+{\em port} & is the primary port for which this problem happens. \\
+\hline
+{\em sig} & is the attached signal. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classverilog__writer_a4f2930898accd739d654c4afb425814c}{verilog\+\_\+writer}, and \hyperlink{structVHDL__writer_ad21dd69e82fa37e50df3660cd177da3c}{V\+H\+D\+L\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_ab43debc2245af8078bb36b157d780aca}\label{classlanguage__writer_ab43debc2245af8078bb36b157d780aca}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+library\+\_\+declaration@{write\+\_\+library\+\_\+declaration}}
+\index{write\+\_\+library\+\_\+declaration@{write\+\_\+library\+\_\+declaration}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+library\+\_\+declaration()}{write\_library\_declaration()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+library\+\_\+declaration (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write the declaration of the library. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cir} & is the component for which the library declarations are written. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{structVHDL__writer_ab617f377af475bddff6b07f327f8b058}{V\+H\+D\+L\+\_\+writer}, and \hyperlink{classverilog__writer_a271c63e96fc1d6907503b0a0698ef6f8}{verilog\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a32b5b9395eb518430fca70b1d49ff133}\label{classlanguage__writer_a32b5b9395eb518430fca70b1d49ff133}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+module\+\_\+declaration@{write\+\_\+module\+\_\+declaration}}
+\index{write\+\_\+module\+\_\+declaration@{write\+\_\+module\+\_\+declaration}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+module\+\_\+declaration()}{write\_module\_declaration()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+module\+\_\+declaration (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write the declaration of the module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cir} & is the module to be written. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{structVHDL__writer_a9387c719414e8fb4e8b086ce9d9bc500}{V\+H\+D\+L\+\_\+writer}, and \hyperlink{classverilog__writer_a1acf62504aefe5c48d6257cf707b59c3}{verilog\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a53b7db2b1ad81b2ee89ff81705b0f0ff}\label{classlanguage__writer_a53b7db2b1ad81b2ee89ff81705b0f0ff}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+module\+\_\+definition\+\_\+begin@{write\+\_\+module\+\_\+definition\+\_\+begin}}
+\index{write\+\_\+module\+\_\+definition\+\_\+begin@{write\+\_\+module\+\_\+definition\+\_\+begin}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+module\+\_\+definition\+\_\+begin()}{write\_module\_definition\_begin()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+module\+\_\+definition\+\_\+begin (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write the begin part in a module declaration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cir} & is the top component to be declared. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{structVHDL__writer_a36282fe093991df0bd1b5c1df8466fd6}{V\+H\+D\+L\+\_\+writer}, and \hyperlink{classverilog__writer_a8c7225cfbd24b813da3fc7a790ff1e1c}{verilog\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a57586ab4a2816a9eeb3658b9f072d02d}\label{classlanguage__writer_a57586ab4a2816a9eeb3658b9f072d02d}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+module\+\_\+definition\+\_\+end@{write\+\_\+module\+\_\+definition\+\_\+end}}
+\index{write\+\_\+module\+\_\+definition\+\_\+end@{write\+\_\+module\+\_\+definition\+\_\+end}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+module\+\_\+definition\+\_\+end()}{write\_module\_definition\_end()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+module\+\_\+definition\+\_\+end (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write the end part in a module declaration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cir} & is the top component to be declared. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{structVHDL__writer_af09ad7bcc11cb6cbcc0d92957db60283}{V\+H\+D\+L\+\_\+writer}, and \hyperlink{classverilog__writer_aeb32328c5b805c13c4fc86a5576e82d4}{verilog\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a9fa5dba07a53f84fb2936c0c46a511a4}\label{classlanguage__writer_a9fa5dba07a53f84fb2936c0c46a511a4}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+module\+\_\+instance\+\_\+begin@{write\+\_\+module\+\_\+instance\+\_\+begin}}
+\index{write\+\_\+module\+\_\+instance\+\_\+begin@{write\+\_\+module\+\_\+instance\+\_\+begin}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+module\+\_\+instance\+\_\+begin()}{write\_module\_instance\_begin()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+module\+\_\+instance\+\_\+begin (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir,  }\item[{const std\+::string \&}]{module\+\_\+name,  }\item[{bool}]{write\+\_\+parametrization }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write the initial part of the instance of a module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cir} & is the module to be instanced. \\
+\hline
+{\em component\+\_\+name} & is the name of the module to be instanced. It has to be specified since V\+H\+DL and verilog can print in different ways \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{structVHDL__writer_ab73e2cc602653d648cb732dc34421854}{V\+H\+D\+L\+\_\+writer}, and \hyperlink{classverilog__writer_a1e0cb32347eba52c36780f6f179dfa6c}{verilog\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a58bc0c17545d1fc96385a5fbffbe62b2}\label{classlanguage__writer_a58bc0c17545d1fc96385a5fbffbe62b2}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+module\+\_\+instance\+\_\+end@{write\+\_\+module\+\_\+instance\+\_\+end}}
+\index{write\+\_\+module\+\_\+instance\+\_\+end@{write\+\_\+module\+\_\+instance\+\_\+end}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+module\+\_\+instance\+\_\+end()}{write\_module\_instance\_end()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+module\+\_\+instance\+\_\+end (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write the ending part of the instance of a module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cir} & is the module to be instanced. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{structVHDL__writer_a8aac905135d17dd707703da3b73dd6d5}{V\+H\+D\+L\+\_\+writer}, and \hyperlink{classverilog__writer_ac10a9da13d7ad6c60d862998383a3695}{verilog\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a3971d4b51e6c1762c29f8e0cb0a899f7}\label{classlanguage__writer_a3971d4b51e6c1762c29f8e0cb0a899f7}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+module\+\_\+internal\+\_\+declaration@{write\+\_\+module\+\_\+internal\+\_\+declaration}}
+\index{write\+\_\+module\+\_\+internal\+\_\+declaration@{write\+\_\+module\+\_\+internal\+\_\+declaration}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+module\+\_\+internal\+\_\+declaration()}{write\_module\_internal\_declaration()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+module\+\_\+internal\+\_\+declaration (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write the declaration of internal objects of the module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cir} & is the module to be written. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{structVHDL__writer_a30331328811ba735b896a60304e09074}{V\+H\+D\+L\+\_\+writer}, and \hyperlink{classverilog__writer_a7384e2a4f2485bcadb61747e2371f64e}{verilog\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a393febaf037080d4a91588cfa699c8cb}\label{classlanguage__writer_a393febaf037080d4a91588cfa699c8cb}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+module\+\_\+parametrization@{write\+\_\+module\+\_\+parametrization}}
+\index{write\+\_\+module\+\_\+parametrization@{write\+\_\+module\+\_\+parametrization}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+module\+\_\+parametrization()}{write\_module\_parametrization()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+module\+\_\+parametrization (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Module can be parametrized with respect different features. 
+
+Port vectors are parametrized with the number of port associated, while ports are parametrized in case the type is a integer with the number of bits. The id of the module is modified by adding the parameters at its end. For example an A\+N\+D\+\_\+\+G\+A\+TE with a port\+\_\+vector of 2 will be declared as\+: A\+N\+D\+\_\+\+G\+A\+T\+E\+\_\+2. Moreover, a multiplier with the first input of four bits, the second input with eight bits and an output of twelve bits will be declared as\+: M\+U\+L\+T\+\_\+4\+\_\+8\+\_\+12. Note that parametrization has a meaning only in case the functionality come from the S\+TD technology library. 
+\begin{DoxyParams}{Parameters}
+{\em cir} & is the component to be declared. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classverilog__writer_aa097c810dcf1d52f5559ad89def6da17}{verilog\+\_\+writer}, and \hyperlink{structVHDL__writer_ad9ae71cdd9eefe75ccaffac7aad2c909}{V\+H\+D\+L\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_ad14ee8909894bca0a7d8874554d91d9b}\label{classlanguage__writer_ad14ee8909894bca0a7d8874554d91d9b}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+module\+\_\+parametrization\+\_\+decl@{write\+\_\+module\+\_\+parametrization\+\_\+decl}}
+\index{write\+\_\+module\+\_\+parametrization\+\_\+decl@{write\+\_\+module\+\_\+parametrization\+\_\+decl}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+module\+\_\+parametrization\+\_\+decl()}{write\_module\_parametrization\_decl()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write the declaration of the module parameters. 
+
+
+
+Implemented in \hyperlink{classverilog__writer_a429d09829b565c8bb4b243b0eb089546}{verilog\+\_\+writer}, and \hyperlink{structVHDL__writer_a0c54febb526f68c5d71314576086ec3b}{V\+H\+D\+L\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a75a800dc2e7afbecf76f1acaae82b6ce}\label{classlanguage__writer_a75a800dc2e7afbecf76f1acaae82b6ce}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+\+N\+P\+\_\+functionalities@{write\+\_\+\+N\+P\+\_\+functionalities}}
+\index{write\+\_\+\+N\+P\+\_\+functionalities@{write\+\_\+\+N\+P\+\_\+functionalities}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+\+N\+P\+\_\+functionalities()}{write\_NP\_functionalities()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write in the proper language the behavioral description of the module described in \char`\"{}\+Not Parsed\char`\"{} form. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cir} & is the component. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classverilog__writer_ab4539a1601893c0c86f57bb66da56e45}{verilog\+\_\+writer}, \hyperlink{structVHDL__writer_a479a39c4d3b15e8052100fca87a45717}{V\+H\+D\+L\+\_\+writer}, and \hyperlink{classsystem__verilog__writer_ad9f3428bb7369c26e54a1b7ff7119d9c}{system\+\_\+verilog\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_aae06225ee079da7199d6f7e9f35fa108}\label{classlanguage__writer_aae06225ee079da7199d6f7e9f35fa108}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+port\+\_\+binding@{write\+\_\+port\+\_\+binding}}
+\index{write\+\_\+port\+\_\+binding@{write\+\_\+port\+\_\+binding}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+port\+\_\+binding()}{write\_port\_binding()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+port\+\_\+binding (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{port,  }\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{top,  }\item[{bool \&}]{first\+\_\+port\+\_\+analyzed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write the binding of a port. 
+
+It follows the name binding style. 
+\begin{DoxyParams}{Parameters}
+{\em port} & is the port to be bounded. \\
+\hline
+{\em top} & is the component owner of the component that has the port to be bounded. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{structVHDL__writer_ab460a8caf690d621561c8ea8705d7438}{V\+H\+D\+L\+\_\+writer}, and \hyperlink{classverilog__writer_a6c09eb18456ab75a1086e45ec464cae8}{verilog\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a89c790a77df81030bd359a1adcaae433}\label{classlanguage__writer_a89c790a77df81030bd359a1adcaae433}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+port\+\_\+decl\+\_\+header@{write\+\_\+port\+\_\+decl\+\_\+header}}
+\index{write\+\_\+port\+\_\+decl\+\_\+header@{write\+\_\+port\+\_\+decl\+\_\+header}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+port\+\_\+decl\+\_\+header()}{write\_port\_decl\_header()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+port\+\_\+decl\+\_\+header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write the header for generics. 
+
+
+
+Implemented in \hyperlink{classverilog__writer_a326f7f3aadac6d88b989a477360feb47}{verilog\+\_\+writer}, and \hyperlink{structVHDL__writer_a19481913996a5ac739d788aa43f9a2a9}{V\+H\+D\+L\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_af20577675f401b5e75b4f0a64484529b}\label{classlanguage__writer_af20577675f401b5e75b4f0a64484529b}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+port\+\_\+decl\+\_\+tail@{write\+\_\+port\+\_\+decl\+\_\+tail}}
+\index{write\+\_\+port\+\_\+decl\+\_\+tail@{write\+\_\+port\+\_\+decl\+\_\+tail}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+port\+\_\+decl\+\_\+tail()}{write\_port\_decl\_tail()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+port\+\_\+decl\+\_\+tail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write the tail for generics. 
+
+
+
+Implemented in \hyperlink{classverilog__writer_adb76a5b50df9958409d5bde95d2dae79}{verilog\+\_\+writer}, and \hyperlink{structVHDL__writer_af421fa8d57e933193276a0cb76ccd0a3}{V\+H\+D\+L\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_acf6d294fc4f807691e729b0dd13bc998}\label{classlanguage__writer_acf6d294fc4f807691e729b0dd13bc998}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+port\+\_\+declaration@{write\+\_\+port\+\_\+declaration}}
+\index{write\+\_\+port\+\_\+declaration@{write\+\_\+port\+\_\+declaration}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+port\+\_\+declaration()}{write\_port\_declaration()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+port\+\_\+declaration (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir,  }\item[{bool}]{first\+\_\+port\+\_\+analyzed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write the port declaration starting from a port object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cir} & is the port to be written. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{structVHDL__writer_a2d88694c56cecd9e97117da37c3cf0d3}{V\+H\+D\+L\+\_\+writer}, and \hyperlink{classverilog__writer_a1b1655ecdaf1a37e7b9cf5dca23b8219}{verilog\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_accbef441e192407932159b5a4d885cda}\label{classlanguage__writer_accbef441e192407932159b5a4d885cda}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+present\+\_\+state\+\_\+update@{write\+\_\+present\+\_\+state\+\_\+update}}
+\index{write\+\_\+present\+\_\+state\+\_\+update@{write\+\_\+present\+\_\+state\+\_\+update}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+present\+\_\+state\+\_\+update()}{write\_present\_state\_update()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+present\+\_\+state\+\_\+update (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{cir,  }\item[{const std\+::string \&}]{reset\+\_\+state,  }\item[{const std\+::string \&}]{reset\+\_\+port,  }\item[{const std\+::string \&}]{clock\+\_\+port,  }\item[{const std\+::string \&}]{reset\+\_\+type,  }\item[{bool}]{connect\+\_\+present\+\_\+next\+\_\+state\+\_\+signals }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+write the present\+\_\+state update process 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reset\+\_\+state} & is the reset state. \\
+\hline
+{\em reset\+\_\+port} & is the reset port. \\
+\hline
+{\em clock\+\_\+port} & is the clock port. \\
+\hline
+{\em synch\+\_\+reset} & when true the F\+SM will have an synchronous reset \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classverilog__writer_ab1e052e8bfd33f42202ec7c834c80039}{verilog\+\_\+writer}, and \hyperlink{structVHDL__writer_a24689039313dfd370692b4c13f2c8862}{V\+H\+D\+L\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_ae574f2a7e9cb7904172ce08aab243f8e}\label{classlanguage__writer_ae574f2a7e9cb7904172ce08aab243f8e}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+signal\+\_\+declaration@{write\+\_\+signal\+\_\+declaration}}
+\index{write\+\_\+signal\+\_\+declaration@{write\+\_\+signal\+\_\+declaration}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+signal\+\_\+declaration()}{write\_signal\_declaration()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+signal\+\_\+declaration (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write the declaration of a signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cir} & is the signal to be declared. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{structVHDL__writer_abbe0d08a850b90049d20cbc3ded0e132}{V\+H\+D\+L\+\_\+writer}, and \hyperlink{classverilog__writer_ad10d67870682d947144dac0629560742}{verilog\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a3325b6d77049e7f4bf39b1c4758df5e8}\label{classlanguage__writer_a3325b6d77049e7f4bf39b1c4758df5e8}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+state\+\_\+declaration@{write\+\_\+state\+\_\+declaration}}
+\index{write\+\_\+state\+\_\+declaration@{write\+\_\+state\+\_\+declaration}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+state\+\_\+declaration()}{write\_state\_declaration()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+state\+\_\+declaration (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir,  }\item[{const std\+::list$<$ std\+::string $>$ \&}]{list\+\_\+of\+\_\+states,  }\item[{const std\+::string \&}]{reset\+\_\+port,  }\item[{const std\+::string \&}]{reset\+\_\+state,  }\item[{bool}]{one\+\_\+hot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+write the declaration of all the states of the finite state machine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+\_\+of\+\_\+states} & is the list of all the states. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classverilog__writer_a97913d24c2a3524e21363688c90f3eb0}{verilog\+\_\+writer}, and \hyperlink{structVHDL__writer_a0c98259dd9ea0a8ac551a7204e3a734f}{V\+H\+D\+L\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_aa244ceb9a8c0033a75c5b885df4693c8}\label{classlanguage__writer_aa244ceb9a8c0033a75c5b885df4693c8}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+tail@{write\+\_\+tail}}
+\index{write\+\_\+tail@{write\+\_\+tail}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+tail()}{write\_tail()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+tail (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write the tail part of the file. 
+
+Write some lines of comments and some debugging code. 
+\begin{DoxyParams}{Parameters}
+{\em cir} & is the top component. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classverilog__writer_ab65a214d6736e0fa5de6f2d5d085227f}{verilog\+\_\+writer}, and \hyperlink{structVHDL__writer_aaba770cf999a1be1ead3e65623adc02f}{V\+H\+D\+L\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_acbb595dd221844492946d60b79c00185}\label{classlanguage__writer_acbb595dd221844492946d60b79c00185}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+timing\+\_\+specification@{write\+\_\+timing\+\_\+specification}}
+\index{write\+\_\+timing\+\_\+specification@{write\+\_\+timing\+\_\+specification}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+timing\+\_\+specification()}{write\_timing\_specification()}}
+{\footnotesize\ttfamily void language\+\_\+writer\+::write\+\_\+timing\+\_\+specification (\begin{DoxyParamCaption}\item[{const technology\+\_\+manager\+Const\+Ref}]{TM,  }\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \hyperlink{classverilog__writer_a19adf1be19b905787d523ecbf8e654aa}{verilog\+\_\+writer}.
+
+
+
+Definition at line 133 of file language\+\_\+writer.\+cpp.
+
+\mbox{\Hypertarget{classlanguage__writer_a1eb41e600406aea66d35f6da5ef16098}\label{classlanguage__writer_a1eb41e600406aea66d35f6da5ef16098}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+transition\+\_\+output\+\_\+functions@{write\+\_\+transition\+\_\+output\+\_\+functions}}
+\index{write\+\_\+transition\+\_\+output\+\_\+functions@{write\+\_\+transition\+\_\+output\+\_\+functions}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+transition\+\_\+output\+\_\+functions()}{write\_transition\_output\_functions()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions (\begin{DoxyParamCaption}\item[{bool}]{single\+\_\+proc,  }\item[{unsigned int}]{output\+\_\+index,  }\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir,  }\item[{const std\+::string \&}]{reset\+\_\+state,  }\item[{const std\+::string \&}]{reset\+\_\+port,  }\item[{const std\+::string \&}]{start\+\_\+port,  }\item[{const std\+::string \&}]{clock\+\_\+port,  }\item[{std\+::vector$<$ std\+::string $>$\+::const\+\_\+iterator \&}]{first,  }\item[{std\+::vector$<$ std\+::string $>$\+::const\+\_\+iterator \&}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write the transition and output functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cir} & is the component. \\
+\hline
+{\em reset\+\_\+port} & is the reset port. \\
+\hline
+{\em clock\+\_\+port} & is the clock port. \\
+\hline
+{\em first} & if the first iterator of the state table. \\
+\hline
+{\em end} & if the end iterator of the state table. \\
+\hline
+{\em n\+\_\+states} & is the number of states. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classverilog__writer_a2c853b73efc5ca8215061d1055168718}{verilog\+\_\+writer}, and \hyperlink{structVHDL__writer_a8a3178b0a3f07604df38e02882851374}{V\+H\+D\+L\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a97f0527b8b3b510dc254108379edf440}\label{classlanguage__writer_a97f0527b8b3b510dc254108379edf440}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!write\+\_\+vector\+\_\+port\+\_\+binding@{write\+\_\+vector\+\_\+port\+\_\+binding}}
+\index{write\+\_\+vector\+\_\+port\+\_\+binding@{write\+\_\+vector\+\_\+port\+\_\+binding}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{write\+\_\+vector\+\_\+port\+\_\+binding()}{write\_vector\_port\_binding()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::write\+\_\+vector\+\_\+port\+\_\+binding (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{port,  }\item[{bool \&}]{first\+\_\+port\+\_\+analyzed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{structVHDL__writer_a8930dbb88b219d4ab659d65925541684}{V\+H\+D\+L\+\_\+writer}, and \hyperlink{classverilog__writer_ab9c4a8bd3452e3bb5d3efd13638b48c3}{verilog\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a30538fe1dc72928281e409f7684ced83}\label{classlanguage__writer_a30538fe1dc72928281e409f7684ced83}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!Write\+Builtin@{Write\+Builtin}}
+\index{Write\+Builtin@{Write\+Builtin}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{Write\+Builtin()}{WriteBuiltin()}}
+{\footnotesize\ttfamily virtual void language\+\_\+writer\+::\+Write\+Builtin (\begin{DoxyParamCaption}\item[{const structural\+\_\+object\+Const\+Ref}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write a builtin component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & is the component to be printed \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classverilog__writer_ae6de8e08344d96fdc22cfef1974b59fa}{verilog\+\_\+writer}, and \hyperlink{structVHDL__writer_a1058749b23119ee23449b16921619e04}{V\+H\+D\+L\+\_\+writer}.
+
+\mbox{\Hypertarget{classlanguage__writer_a2450f989cdb4b70610d544931d0add9e}\label{classlanguage__writer_a2450f989cdb4b70610d544931d0add9e}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!Write\+File@{Write\+File}}
+\index{Write\+File@{Write\+File}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{Write\+File()}{WriteFile()}}
+{\footnotesize\ttfamily void language\+\_\+writer\+::\+Write\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const}
+
+
+
+Write content to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::stringg} & filename; \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 142 of file language\+\_\+writer.\+cpp.
+
+
+
+References indented\+\_\+output\+\_\+stream, and Indented\+Output\+Stream\+::\+Write\+File().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d67/classlanguage__writer_a2450f989cdb4b70610d544931d0add9e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlanguage__writer_a8fa5e9dadb7566ee668c16555a13157a}\label{classlanguage__writer_a8fa5e9dadb7566ee668c16555a13157a}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!Write\+License@{Write\+License}}
+\index{Write\+License@{Write\+License}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{Write\+License()}{WriteLicense()}}
+{\footnotesize\ttfamily \hyperlink{copyrights__strings_8hpp_abea9b8595a799d03cb5badf253359627}{C\+O\+P\+Y\+I\+N\+G3\+\_\+\+S\+H\+O\+R\+T\+\_\+\+M\+A\+C\+RO} void language\+\_\+writer\+::\+Write\+License (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Write the license. 
+
+
+
+Definition at line 161 of file language\+\_\+writer.\+cpp.
+
+
+
+References write\+\_\+comment().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d67/classlanguage__writer_a8fa5e9dadb7566ee668c16555a13157a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlanguage__writer_a12e31915cd8caac0dfaf0bd5737a7a41}\label{classlanguage__writer_a12e31915cd8caac0dfaf0bd5737a7a41}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!Write\+String@{Write\+String}}
+\index{Write\+String@{Write\+String}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{Write\+String()}{WriteString()}}
+{\footnotesize\ttfamily const std\+::string language\+\_\+writer\+::\+Write\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Dump the content of the write as a string. 
+
+
+
+Definition at line 137 of file language\+\_\+writer.\+cpp.
+
+
+
+References indented\+\_\+output\+\_\+stream, and Indented\+Output\+Stream\+::\+Write\+String().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d67/classlanguage__writer_a12e31915cd8caac0dfaf0bd5737a7a41_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classlanguage__writer_a5e8eec93e3573a1ea49968af8da2996a}\label{classlanguage__writer_a5e8eec93e3573a1ea49968af8da2996a}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily int language\+\_\+writer\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+debugging level of the class 
+
+
+
+Definition at line 117 of file language\+\_\+writer.\+hpp.
+
+
+
+Referenced by system\+\_\+verilog\+\_\+writer\+::system\+\_\+verilog\+\_\+writer(), V\+H\+D\+L\+\_\+writer\+::type\+\_\+converter\+\_\+size(), verilog\+\_\+writer\+::verilog\+\_\+writer(), V\+H\+D\+L\+\_\+writer\+::\+V\+H\+D\+L\+\_\+writer(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+port\+\_\+binding(), verilog\+\_\+writer\+::write\+\_\+state\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions(), verilog\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions(), verilog\+\_\+writer\+::write\+\_\+vector\+\_\+port\+\_\+binding(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+vector\+\_\+port\+\_\+binding(), and V\+H\+D\+L\+\_\+writer\+::\+Write\+Builtin().
+
+\mbox{\Hypertarget{classlanguage__writer_a19ffce0f39dd5b8c6fa606086ebf8820}\label{classlanguage__writer_a19ffce0f39dd5b8c6fa606086ebf8820}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!indented\+\_\+output\+\_\+stream@{indented\+\_\+output\+\_\+stream}}
+\index{indented\+\_\+output\+\_\+stream@{indented\+\_\+output\+\_\+stream}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{indented\+\_\+output\+\_\+stream}{indented\_output\_stream}}
+{\footnotesize\ttfamily const \hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref} language\+\_\+writer\+::indented\+\_\+output\+\_\+stream\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Represents the stream we are currently writing to. 
+
+
+
+Definition at line 105 of file language\+\_\+writer.\+hpp.
+
+
+
+Referenced by write(), verilog\+\_\+writer\+::write\+\_\+assign(), verilog\+\_\+writer\+::write\+\_\+comment(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+comment(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+component\+\_\+declaration(), verilog\+\_\+writer\+::write\+\_\+header(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+header(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+io\+\_\+signal\+\_\+post\+\_\+fix(), verilog\+\_\+writer\+::write\+\_\+io\+\_\+signal\+\_\+post\+\_\+fix(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+library\+\_\+declaration(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+declaration(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+definition\+\_\+begin(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+definition\+\_\+begin(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+definition\+\_\+end(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+definition\+\_\+end(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+instance\+\_\+begin(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+instance\+\_\+begin(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+instance\+\_\+end(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+instance\+\_\+end(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+internal\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl(), system\+\_\+verilog\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities(), verilog\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities(), verilog\+\_\+writer\+::write\+\_\+port\+\_\+binding(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+port\+\_\+binding(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+port\+\_\+decl\+\_\+header(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+port\+\_\+decl\+\_\+tail(), verilog\+\_\+writer\+::write\+\_\+port\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+port\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+present\+\_\+state\+\_\+update(), verilog\+\_\+writer\+::write\+\_\+present\+\_\+state\+\_\+update(), verilog\+\_\+writer\+::write\+\_\+signal\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+signal\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+state\+\_\+declaration(), verilog\+\_\+writer\+::write\+\_\+state\+\_\+declaration(), verilog\+\_\+writer\+::write\+\_\+timing\+\_\+specification(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions(), verilog\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions(), verilog\+\_\+writer\+::write\+\_\+vector\+\_\+port\+\_\+binding(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+vector\+\_\+port\+\_\+binding(), V\+H\+D\+L\+\_\+writer\+::\+Write\+Builtin(), verilog\+\_\+writer\+::\+Write\+Builtin(), Write\+File(), and Write\+String().
+
+\mbox{\Hypertarget{classlanguage__writer_a4f37d553bed8fa6e09f4c0623ba3ec55}\label{classlanguage__writer_a4f37d553bed8fa6e09f4c0623ba3ec55}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!list\+\_\+of\+\_\+customized\+\_\+gates@{list\+\_\+of\+\_\+customized\+\_\+gates}}
+\index{list\+\_\+of\+\_\+customized\+\_\+gates@{list\+\_\+of\+\_\+customized\+\_\+gates}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{list\+\_\+of\+\_\+customized\+\_\+gates}{list\_of\_customized\_gates}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$std\+::string$>$ language\+\_\+writer\+::list\+\_\+of\+\_\+customized\+\_\+gates\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+list of customized gates 
+
+
+
+Definition at line 111 of file language\+\_\+writer.\+hpp.
+
+\mbox{\Hypertarget{classlanguage__writer_a47561bf42c96b801a97bb476b85c0603}\label{classlanguage__writer_a47561bf42c96b801a97bb476b85c0603}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!list\+\_\+of\+\_\+lib@{list\+\_\+of\+\_\+lib}}
+\index{list\+\_\+of\+\_\+lib@{list\+\_\+of\+\_\+lib}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{list\+\_\+of\+\_\+lib}{list\_of\_lib}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$std\+::string$>$ language\+\_\+writer\+::list\+\_\+of\+\_\+lib\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+list of library imported (e.\+g., includes). 
+
+
+
+Definition at line 108 of file language\+\_\+writer.\+hpp.
+
+\mbox{\Hypertarget{classlanguage__writer_aeb717c1d12571e3808759009be752d59}\label{classlanguage__writer_aeb717c1d12571e3808759009be752d59}} 
+\index{language\+\_\+writer@{language\+\_\+writer}!parameters@{parameters}}
+\index{parameters@{parameters}!language\+\_\+writer@{language\+\_\+writer}}
+\subsubsection{\texorpdfstring{parameters}{parameters}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} language\+\_\+writer\+::parameters\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+the set of input parameters 
+
+
+
+Definition at line 114 of file language\+\_\+writer.\+hpp.
+
+
+
+Referenced by system\+\_\+verilog\+\_\+writer\+::get\+\_\+extension(), verilog\+\_\+writer\+::get\+\_\+extension(), V\+H\+D\+L\+\_\+writer\+::get\+\_\+extension(), system\+\_\+verilog\+\_\+writer\+::system\+\_\+verilog\+\_\+writer(), verilog\+\_\+writer\+::verilog\+\_\+writer(), V\+H\+D\+L\+\_\+writer\+::\+V\+H\+D\+L\+\_\+writer(), system\+\_\+verilog\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities(), verilog\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+present\+\_\+state\+\_\+update(), verilog\+\_\+writer\+::write\+\_\+present\+\_\+state\+\_\+update(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+state\+\_\+declaration(), and verilog\+\_\+writer\+::write\+\_\+state\+\_\+declaration().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+H\+D\+L/\hyperlink{language__writer_8hpp}{language\+\_\+writer.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+H\+D\+L/\hyperlink{language__writer_8cpp}{language\+\_\+writer.\+cpp}\end{DoxyCompactItemize}

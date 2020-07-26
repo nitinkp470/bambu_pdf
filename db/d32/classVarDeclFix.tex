@@ -1,0 +1,372 @@
+\hypertarget{classVarDeclFix}{}\section{Var\+Decl\+Fix Class Reference}
+\label{classVarDeclFix}\index{Var\+Decl\+Fix@{Var\+Decl\+Fix}}
+
+
+Pre-\/analysis step.  
+
+
+
+
+{\ttfamily \#include $<$var\+\_\+decl\+\_\+fix.\+hpp$>$}
+
+
+
+Inheritance diagram for Var\+Decl\+Fix\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{d2/d4b/classVarDeclFix__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Var\+Decl\+Fix\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d48/classVarDeclFix__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVarDeclFix_a8183b24fc37a61ac7045b26ddcc648a8}{Var\+Decl\+Fix} (const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, unsigned int fun\+\_\+id, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters}, const \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type} \hyperlink{classFrontendFlowStep_ad49067d6a17119d47316149ab757b60d}{frontend\+\_\+flow\+\_\+step\+\_\+type}=\hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bba6735641c577494a8121e03b3c838ee21}{V\+A\+R\+\_\+\+D\+E\+C\+L\+\_\+\+F\+IX})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classVarDeclFix_a6f0e5d0cab5b56639d77e0612816707f}{$\sim$\+Var\+Decl\+Fix} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classVarDeclFix_a41dbca562077d47c2d67bc7b7d2ef41d}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Fixes the \hyperlink{structvar__decl}{var\+\_\+decl} duplication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const std\+::string \hyperlink{classVarDeclFix_a20e7d8b00a37444085e46773a6483d3b}{Normalize} (const std\+::string \&identifier) const
+\begin{DoxyCompactList}\small\item\em Return the normalized identifier; in this class it is the identifier itself. \end{DoxyCompactList}\item 
+void \hyperlink{classVarDeclFix_a97f89fbe958790b6ae93d617e2b7686c}{recursive\+\_\+examinate} (const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&tn)
+\begin{DoxyCompactList}\small\item\em Recursive examinate tree node. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classVarDeclFix_a7262f23287cc6f446ab8de503ecac130}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ unsigned int $>$ \hyperlink{classVarDeclFix_a38ff6b42820b7feb6218edd5a031d473}{already\+\_\+examinated\+\_\+decls}
+\begin{DoxyCompactList}\small\item\em Already considered \hyperlink{structdecl__node}{decl\+\_\+node}. \end{DoxyCompactList}\item 
+\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::string $>$ \hyperlink{classVarDeclFix_aa2aa0bb5e898f1c86710d3b6e65c430d}{already\+\_\+examinated\+\_\+names}
+\begin{DoxyCompactList}\small\item\em Already found variable and parameter names. \end{DoxyCompactList}\item 
+\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::string $>$ \hyperlink{classVarDeclFix_a2b661a70923003acd493dc63b428898f}{already\+\_\+examinated\+\_\+type\+\_\+names}
+\begin{DoxyCompactList}\small\item\em Already found type names. \end{DoxyCompactList}\item 
+\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ unsigned int $>$ \hyperlink{classVarDeclFix_a17a0e73aeb82b6490d4654ecc3b28f5e}{already\+\_\+visited\+\_\+ae}
+\begin{DoxyCompactList}\small\item\em Already visited address expression (used to avoid infite recursion) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Pre-\/analysis step. 
+
+It transforms the raw intermediate representation removing \hyperlink{structvar__decl}{var\+\_\+decl} duplication\+: two var\+\_\+decls with the same variable name in the same function. 
+
+Definition at line 65 of file var\+\_\+decl\+\_\+fix.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVarDeclFix_a8183b24fc37a61ac7045b26ddcc648a8}\label{classVarDeclFix_a8183b24fc37a61ac7045b26ddcc648a8}} 
+\index{Var\+Decl\+Fix@{Var\+Decl\+Fix}!Var\+Decl\+Fix@{Var\+Decl\+Fix}}
+\index{Var\+Decl\+Fix@{Var\+Decl\+Fix}!Var\+Decl\+Fix@{Var\+Decl\+Fix}}
+\subsubsection{\texorpdfstring{Var\+Decl\+Fix()}{VarDeclFix()}}
+{\footnotesize\ttfamily Var\+Decl\+Fix\+::\+Var\+Decl\+Fix (\begin{DoxyParamCaption}\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{unsigned int}]{\+\_\+function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters,  }\item[{const \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}}]{\+\_\+frontend\+\_\+flow\+\_\+step\+\_\+type = {\ttfamily \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bba6735641c577494a8121e03b3c838ee21}{V\+A\+R\+\_\+\+D\+E\+C\+L\+\_\+\+F\+IX}} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Autoheader include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em AppM} & is the application manager \\
+\hline
+{\em fun\+\_\+id} & is the function index \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+{\em parameters} & is the set of input parameters \\
+\hline
+{\em frontend\+\_\+flow\+\_\+step\+\_\+type} & is the type of step; it is different for subclasses\\
+\hline
+\end{DoxyParams}
+Header include Behavior include \hyperlink{classParameter}{Parameter} include parser/treegcc include S\+TD include S\+TL include Tree include Utility include 
+
+Definition at line 82 of file var\+\_\+decl\+\_\+fix.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$\+Var\+Decl\+Fix().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d32/classVarDeclFix_a8183b24fc37a61ac7045b26ddcc648a8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVarDeclFix_a6f0e5d0cab5b56639d77e0612816707f}\label{classVarDeclFix_a6f0e5d0cab5b56639d77e0612816707f}} 
+\index{Var\+Decl\+Fix@{Var\+Decl\+Fix}!````~Var\+Decl\+Fix@{$\sim$\+Var\+Decl\+Fix}}
+\index{````~Var\+Decl\+Fix@{$\sim$\+Var\+Decl\+Fix}!Var\+Decl\+Fix@{Var\+Decl\+Fix}}
+\subsubsection{\texorpdfstring{$\sim$\+Var\+Decl\+Fix()}{~VarDeclFix()}}
+{\footnotesize\ttfamily Var\+Decl\+Fix\+::$\sim$\+Var\+Decl\+Fix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Var\+Decl\+Fix().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d32/classVarDeclFix_a6f0e5d0cab5b56639d77e0612816707f_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classVarDeclFix_a7262f23287cc6f446ab8de503ecac130}\label{classVarDeclFix_a7262f23287cc6f446ab8de503ecac130}} 
+\index{Var\+Decl\+Fix@{Var\+Decl\+Fix}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!Var\+Decl\+Fix@{Var\+Decl\+Fix}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ Var\+Decl\+Fix\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 90 of file var\+\_\+decl\+\_\+fix.\+cpp.
+
+
+
+References C\+H\+E\+C\+K\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+T\+Y\+PE, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+\mbox{\Hypertarget{classVarDeclFix_a41dbca562077d47c2d67bc7b7d2ef41d}\label{classVarDeclFix_a41dbca562077d47c2d67bc7b7d2ef41d}} 
+\index{Var\+Decl\+Fix@{Var\+Decl\+Fix}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!Var\+Decl\+Fix@{Var\+Decl\+Fix}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} Var\+Decl\+Fix\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Fixes the \hyperlink{structvar__decl}{var\+\_\+decl} duplication. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 120 of file var\+\_\+decl\+\_\+fix.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, test\+\_\+panda\+::arg, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::\+Get\+Tree\+Node(), recursive\+\_\+examinate(), sl, and S\+U\+C\+C\+E\+SS.
+
+
+
+Referenced by H\+D\+L\+Var\+Decl\+Fix\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d32/classVarDeclFix_a41dbca562077d47c2d67bc7b7d2ef41d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d32/classVarDeclFix_a41dbca562077d47c2d67bc7b7d2ef41d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVarDeclFix_a20e7d8b00a37444085e46773a6483d3b}\label{classVarDeclFix_a20e7d8b00a37444085e46773a6483d3b}} 
+\index{Var\+Decl\+Fix@{Var\+Decl\+Fix}!Normalize@{Normalize}}
+\index{Normalize@{Normalize}!Var\+Decl\+Fix@{Var\+Decl\+Fix}}
+\subsubsection{\texorpdfstring{Normalize()}{Normalize()}}
+{\footnotesize\ttfamily const std\+::string Var\+Decl\+Fix\+::\+Normalize (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{identifier }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Return the normalized identifier; in this class it is the identifier itself. 
+
+Subclasses can specialize it 
+\begin{DoxyParams}{Parameters}
+{\em identifier} & is the identifier to be normalized \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the normalized identifier 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classHDLVarDeclFix_ae06ae2d02410b645529a7b03fad9f0aa}{H\+D\+L\+Var\+Decl\+Fix}.
+
+
+
+Definition at line 507 of file var\+\_\+decl\+\_\+fix.\+cpp.
+
+
+
+Referenced by recursive\+\_\+examinate().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d32/classVarDeclFix_a20e7d8b00a37444085e46773a6483d3b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVarDeclFix_a97f89fbe958790b6ae93d617e2b7686c}\label{classVarDeclFix_a97f89fbe958790b6ae93d617e2b7686c}} 
+\index{Var\+Decl\+Fix@{Var\+Decl\+Fix}!recursive\+\_\+examinate@{recursive\+\_\+examinate}}
+\index{recursive\+\_\+examinate@{recursive\+\_\+examinate}!Var\+Decl\+Fix@{Var\+Decl\+Fix}}
+\subsubsection{\texorpdfstring{recursive\+\_\+examinate()}{recursive\_examinate()}}
+{\footnotesize\ttfamily void Var\+Decl\+Fix\+::recursive\+\_\+examinate (\begin{DoxyParamCaption}\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{tn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Recursive examinate tree node. 
+
+create a new \hyperlink{structidentifier__node}{identifier\+\_\+node} tree node
+
+create a new \hyperlink{structidentifier__node}{identifier\+\_\+node} tree node
+
+create a new \hyperlink{structidentifier__node}{identifier\+\_\+node} tree node 
+
+Definition at line 144 of file var\+\_\+decl\+\_\+fix.\+cpp.
+
+
+
+References already\+\_\+examinated\+\_\+decls, already\+\_\+examinated\+\_\+names, already\+\_\+examinated\+\_\+type\+\_\+names, already\+\_\+visited\+\_\+ae, Frontend\+Flow\+Step\+::\+AppM, test\+\_\+panda\+::arg, test\+\_\+panda\+::args, call\+\_\+expr\+::args, gimple\+\_\+call\+::args, target\+\_\+mem\+\_\+ref\+::base, target\+\_\+mem\+\_\+ref461\+::base, C\+A\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+node\+::get\+\_\+kind\+\_\+text(), G\+E\+T\+\_\+\+N\+O\+DE, target\+\_\+mem\+\_\+ref\+::idx, target\+\_\+mem\+\_\+ref461\+::idx, target\+\_\+mem\+\_\+ref461\+::idx2, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, constructor\+::list\+\_\+of\+\_\+idx\+\_\+valu, N\+O\+D\+E\+\_\+\+N\+O\+T\+\_\+\+Y\+E\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+EC, Normalize(), tree\+\_\+helper\+::normalized\+\_\+\+I\+D(), unary\+\_\+expr\+::op, gimple\+\_\+return\+::op, gimple\+\_\+while\+::op0, binary\+\_\+expr\+::op0, ternary\+\_\+expr\+::op0, quaternary\+\_\+expr\+::op0, gimple\+\_\+cond\+::op0, gimple\+\_\+switch\+::op0, gimple\+\_\+for\+::op1, binary\+\_\+expr\+::op1, ternary\+\_\+expr\+::op1, quaternary\+\_\+expr\+::op1, gimple\+\_\+for\+::op2, ternary\+\_\+expr\+::op2, quaternary\+\_\+expr\+::op2, quaternary\+\_\+expr\+::op3, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, S\+TR, target\+\_\+mem\+\_\+ref\+::symbol, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+DE, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, T\+OK, T\+O\+K\+\_\+\+S\+T\+RG, tree\+\_\+node\+::\+To\+String(), and ssa\+\_\+name\+::var.
+
+
+
+Referenced by H\+D\+L\+Var\+Decl\+Fix\+::\+Internal\+Exec(), and Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d32/classVarDeclFix_a97f89fbe958790b6ae93d617e2b7686c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d32/classVarDeclFix_a97f89fbe958790b6ae93d617e2b7686c_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classVarDeclFix_a38ff6b42820b7feb6218edd5a031d473}\label{classVarDeclFix_a38ff6b42820b7feb6218edd5a031d473}} 
+\index{Var\+Decl\+Fix@{Var\+Decl\+Fix}!already\+\_\+examinated\+\_\+decls@{already\+\_\+examinated\+\_\+decls}}
+\index{already\+\_\+examinated\+\_\+decls@{already\+\_\+examinated\+\_\+decls}!Var\+Decl\+Fix@{Var\+Decl\+Fix}}
+\subsubsection{\texorpdfstring{already\+\_\+examinated\+\_\+decls}{already\_examinated\_decls}}
+{\footnotesize\ttfamily \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$unsigned int$>$ Var\+Decl\+Fix\+::already\+\_\+examinated\+\_\+decls\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Already considered \hyperlink{structdecl__node}{decl\+\_\+node}. 
+
+
+
+Definition at line 69 of file var\+\_\+decl\+\_\+fix.\+hpp.
+
+
+
+Referenced by recursive\+\_\+examinate().
+
+\mbox{\Hypertarget{classVarDeclFix_aa2aa0bb5e898f1c86710d3b6e65c430d}\label{classVarDeclFix_aa2aa0bb5e898f1c86710d3b6e65c430d}} 
+\index{Var\+Decl\+Fix@{Var\+Decl\+Fix}!already\+\_\+examinated\+\_\+names@{already\+\_\+examinated\+\_\+names}}
+\index{already\+\_\+examinated\+\_\+names@{already\+\_\+examinated\+\_\+names}!Var\+Decl\+Fix@{Var\+Decl\+Fix}}
+\subsubsection{\texorpdfstring{already\+\_\+examinated\+\_\+names}{already\_examinated\_names}}
+{\footnotesize\ttfamily \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$std\+::string$>$ Var\+Decl\+Fix\+::already\+\_\+examinated\+\_\+names\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Already found variable and parameter names. 
+
+
+
+Definition at line 72 of file var\+\_\+decl\+\_\+fix.\+hpp.
+
+
+
+Referenced by H\+D\+L\+Var\+Decl\+Fix\+::\+Internal\+Exec(), and recursive\+\_\+examinate().
+
+\mbox{\Hypertarget{classVarDeclFix_a2b661a70923003acd493dc63b428898f}\label{classVarDeclFix_a2b661a70923003acd493dc63b428898f}} 
+\index{Var\+Decl\+Fix@{Var\+Decl\+Fix}!already\+\_\+examinated\+\_\+type\+\_\+names@{already\+\_\+examinated\+\_\+type\+\_\+names}}
+\index{already\+\_\+examinated\+\_\+type\+\_\+names@{already\+\_\+examinated\+\_\+type\+\_\+names}!Var\+Decl\+Fix@{Var\+Decl\+Fix}}
+\subsubsection{\texorpdfstring{already\+\_\+examinated\+\_\+type\+\_\+names}{already\_examinated\_type\_names}}
+{\footnotesize\ttfamily \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$std\+::string$>$ Var\+Decl\+Fix\+::already\+\_\+examinated\+\_\+type\+\_\+names\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Already found type names. 
+
+
+
+Definition at line 75 of file var\+\_\+decl\+\_\+fix.\+hpp.
+
+
+
+Referenced by recursive\+\_\+examinate().
+
+\mbox{\Hypertarget{classVarDeclFix_a17a0e73aeb82b6490d4654ecc3b28f5e}\label{classVarDeclFix_a17a0e73aeb82b6490d4654ecc3b28f5e}} 
+\index{Var\+Decl\+Fix@{Var\+Decl\+Fix}!already\+\_\+visited\+\_\+ae@{already\+\_\+visited\+\_\+ae}}
+\index{already\+\_\+visited\+\_\+ae@{already\+\_\+visited\+\_\+ae}!Var\+Decl\+Fix@{Var\+Decl\+Fix}}
+\subsubsection{\texorpdfstring{already\+\_\+visited\+\_\+ae}{already\_visited\_ae}}
+{\footnotesize\ttfamily \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$unsigned int$>$ Var\+Decl\+Fix\+::already\+\_\+visited\+\_\+ae\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Already visited address expression (used to avoid infite recursion) 
+
+
+
+Definition at line 78 of file var\+\_\+decl\+\_\+fix.\+hpp.
+
+
+
+Referenced by recursive\+\_\+examinate().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{var__decl__fix_8hpp}{var\+\_\+decl\+\_\+fix.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{var__decl__fix_8cpp}{var\+\_\+decl\+\_\+fix.\+cpp}\end{DoxyCompactItemize}

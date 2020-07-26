@@ -1,0 +1,893 @@
+\hypertarget{classlibrary__manager}{}\section{library\+\_\+manager Class Reference}
+\label{classlibrary__manager}\index{library\+\_\+manager@{library\+\_\+manager}}
+
+
+This class manages the specific library structure.  
+
+
+
+
+{\ttfamily \#include $<$library\+\_\+manager.\+hpp$>$}
+
+
+
+Collaboration diagram for library\+\_\+manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dfe/classlibrary__manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ std\+::string, \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} $>$ \hyperlink{classlibrary__manager_a17941addb97906d7b41c5b0b0317fde2}{fu\+\_\+map\+\_\+type}
+\begin{DoxyCompactList}\small\item\em typedef for the identification of the functional units contained into the library \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Library output formats}\par
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classlibrary__manager_a5914a62c60d05c22f2547de9d8ef20de}{info\+\_\+t} \{ \hyperlink{classlibrary__manager_a5914a62c60d05c22f2547de9d8ef20dea6a31f2ebb20dd6acab09c1d34dc2e6c4}{X\+ML}
+ \}\begin{DoxyCompactList}\small\item\em available information for the library \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classlibrary__manager_a3622c3c263ac844696f221967db3af38}{is\+\_\+virtual} () const
+\begin{DoxyCompactList}\small\item\em Check if the library is virtual or not. \end{DoxyCompactList}\item 
+void \hyperlink{classlibrary__manager_aff9014fb417452bac4f6ab7942038f42}{set\+\_\+dont\+\_\+use} (const std\+::string \&\hyperlink{classlibrary__manager_a6d92e10c68ec4a2975d832b0650c7168}{name})
+\begin{DoxyCompactList}\small\item\em Set a cell to be not used. \end{DoxyCompactList}\item 
+void \hyperlink{classlibrary__manager_a0cda95a89f54b1af796a67f7d871acc0}{remove\+\_\+dont\+\_\+use} (const std\+::string \&\hyperlink{classlibrary__manager_a6d92e10c68ec4a2975d832b0650c7168}{name})
+\begin{DoxyCompactList}\small\item\em Set a cell to be used. \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \hyperlink{classlibrary__manager_a6906feae6af8bf096f52848de12479fa}{get\+\_\+dont\+\_\+use\+\_\+cells} () const
+\begin{DoxyCompactList}\small\item\em Return the cells not to be used for the synthesis. \end{DoxyCompactList}\item 
+\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} \hyperlink{classlibrary__manager_aa04c3b1e52eadbd800212b36b8770b2a}{get\+\_\+dont\+\_\+use\+\_\+num} () const
+\item 
+void \hyperlink{classlibrary__manager_acdc0bce98076c59ca92b316fcb11ab13}{set\+\_\+info} (unsigned int type, const std\+::string \&information)
+\item 
+bool \hyperlink{classlibrary__manager_a926d994ff986bfee4adf363c88ce5acf}{is\+\_\+info} (unsigned int type) const
+\item 
+std\+::string \hyperlink{classlibrary__manager_a61e98740a159d328dc986c4729844162}{get\+\_\+info} (const \hyperlink{classlibrary__manager_a5914a62c60d05c22f2547de9d8ef20de}{info\+\_\+t} type, const \hyperlink{target__device_8hpp_a476becc690220f0805ce73006449c732}{Target\+Device\+\_\+\+Type} dv\+\_\+type)
+\item 
+void \hyperlink{classlibrary__manager_aceba51458eebf43796ae8e9555410738}{erase\+\_\+info} ()
+\item 
+void \hyperlink{classlibrary__manager_a696beb5208cbe5a27144d59757b72682}{xwrite} (\hyperlink{classxml__element}{xml\+\_\+element} $\ast$rootnode, \hyperlink{target__device_8hpp_a476becc690220f0805ce73006449c732}{Target\+Device\+\_\+\+Type} dv\+\_\+type)
+\item 
+std\+::string \hyperlink{classlibrary__manager_a7e17dbc69eacaabce39da9168451c3c8}{get\+\_\+library\+\_\+name} () const
+\item 
+void \hyperlink{classlibrary__manager_a7be2eb51058e7ea1f0e7f465f1bc2e19}{add} (const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} \&node)
+\item 
+void \hyperlink{classlibrary__manager_a390325203aa42f2c6d71f601fd1ba8f4}{update} (const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} \&node)
+\item 
+bool \hyperlink{classlibrary__manager_a8b79f093ebc0949d2e87ba84e185a361}{is\+\_\+fu} (const std\+::string \&\hyperlink{classlibrary__manager_a6d92e10c68ec4a2975d832b0650c7168}{name}) const
+\item 
+\hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} \hyperlink{classlibrary__manager_a70a66a780470a75540aee74e21a5c3bf}{get\+\_\+fu} (const std\+::string \&\hyperlink{classlibrary__manager_a6d92e10c68ec4a2975d832b0650c7168}{name}) const
+\item 
+void \hyperlink{classlibrary__manager_a7ae8884cb2871b3cab0ea9b83dcb5829}{remove\+\_\+fu} (const std\+::string \&\hyperlink{classlibrary__manager_a6d92e10c68ec4a2975d832b0650c7168}{name})
+\item 
+\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} \hyperlink{classlibrary__manager_a7de047085c8a9e56751b635aeee4657e}{get\+\_\+gate\+\_\+count} () const
+\item 
+const \hyperlink{classlibrary__manager_a17941addb97906d7b41c5b0b0317fde2}{fu\+\_\+map\+\_\+type} \& \hyperlink{classlibrary__manager_a5e6cca29a6c2e2f96563c059371cd79e}{get\+\_\+library\+\_\+fu} () const
+\begin{DoxyCompactList}\small\item\em Return the list of the resources contained into the given library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Constructors and destructors.}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlibrary__manager_af71a5b63e8589cc3e9d81e2748f571b5}{library\+\_\+manager} (\hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classlibrary__manager_a456f9321dfda42ab5d48c9636ab43320}{Param}, bool std=true)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary__manager_adf29fa335541787d0fea1a8b0db9dcc6}{library\+\_\+manager} (std\+::string library\+\_\+name, \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classlibrary__manager_a456f9321dfda42ab5d48c9636ab43320}{Param}, bool std=true)
+\item 
+\hyperlink{classlibrary__manager_a51dd14df3ed399e17d62fddfacf54557}{$\sim$library\+\_\+manager} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classlibrary__manager_a2256397a16a3d834c1cf9921824316be}{xload} (const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$node, const \hyperlink{library__manager_8hpp_aacc6d633b0aa80ecfeb1180fd480ae68}{library\+\_\+manager\+Ref} \&LM, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&\hyperlink{classlibrary__manager_a456f9321dfda42ab5d48c9636ab43320}{Param}, const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref} \&device)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classlibrary__manager_a4e550de1a50f9e84f65c2fdd930f02b8}{set\+\_\+default\+\_\+attributes} ()
+\begin{DoxyCompactList}\small\item\em Set the default attributes for the library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classlibrary__manager_a456f9321dfda42ab5d48c9636ab43320}{Param}
+\begin{DoxyCompactList}\small\item\em class containing all the parameters \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classlibrary__manager_a6d92e10c68ec4a2975d832b0650c7168}{name}
+\begin{DoxyCompactList}\small\item\em string identifier of the library \end{DoxyCompactList}\item 
+\hyperlink{classlibrary__manager_a17941addb97906d7b41c5b0b0317fde2}{fu\+\_\+map\+\_\+type} \hyperlink{classlibrary__manager_a56275437810dccb628120827741c7822}{fu\+\_\+map}
+\begin{DoxyCompactList}\small\item\em datastructure to identify the units that are contained into the library \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{classlibrary__manager_ae96defe4ac96f8ce7d5c336e3b7a3adb}{ordered\+\_\+attributes}
+\item 
+std\+::map$<$ std\+::string, \hyperlink{library__manager_8hpp_a46399d2eacc03fb10f84fb33987ab8e3}{attribute\+Ref} $>$ \hyperlink{classlibrary__manager_aeedcfac2940fb2d4e5ae1d88bdbf089e}{attributes}
+\begin{DoxyCompactList}\small\item\em attributes of the library \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, std\+::string $>$ \hyperlink{classlibrary__manager_a1dbe9b8f22a6e8f19086159723bfb0a6}{info}
+\begin{DoxyCompactList}\small\item\em files that provide information about the library \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary__manager_a9b6c57463b3f9c936b5907b51b6487e1}{is\+\_\+std}
+\begin{DoxyCompactList}\small\item\em flag to check if the library is standard (i.\+e., provided in input) or virtual \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \hyperlink{classlibrary__manager_a6166670fafe2b957bd18c46fc0406ee2}{dont\+\_\+use}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class manages the specific library structure. 
+
+Definition at line 129 of file library\+\_\+manager.\+hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classlibrary__manager_a17941addb97906d7b41c5b0b0317fde2}\label{classlibrary__manager_a17941addb97906d7b41c5b0b0317fde2}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!fu\+\_\+map\+\_\+type@{fu\+\_\+map\+\_\+type}}
+\index{fu\+\_\+map\+\_\+type@{fu\+\_\+map\+\_\+type}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{fu\+\_\+map\+\_\+type}{fu\_map\_type}}
+{\footnotesize\ttfamily typedef std\+::map$<$std\+::string, \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}$>$ \hyperlink{classlibrary__manager_a17941addb97906d7b41c5b0b0317fde2}{library\+\_\+manager\+::fu\+\_\+map\+\_\+type}}
+
+
+
+typedef for the identification of the functional units contained into the library 
+
+
+
+Definition at line 133 of file library\+\_\+manager.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classlibrary__manager_a5914a62c60d05c22f2547de9d8ef20de}\label{classlibrary__manager_a5914a62c60d05c22f2547de9d8ef20de}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!info\+\_\+t@{info\+\_\+t}}
+\index{info\+\_\+t@{info\+\_\+t}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{info\+\_\+t}{info\_t}}
+{\footnotesize\ttfamily enum \hyperlink{classlibrary__manager_a5914a62c60d05c22f2547de9d8ef20de}{library\+\_\+manager\+::info\+\_\+t}}
+
+
+
+available information for the library 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{X\+ML@{X\+ML}!library\+\_\+manager@{library\+\_\+manager}}\index{library\+\_\+manager@{library\+\_\+manager}!X\+ML@{X\+ML}}}\mbox{\Hypertarget{classlibrary__manager_a5914a62c60d05c22f2547de9d8ef20dea6a31f2ebb20dd6acab09c1d34dc2e6c4}\label{classlibrary__manager_a5914a62c60d05c22f2547de9d8ef20dea6a31f2ebb20dd6acab09c1d34dc2e6c4}} 
+X\+ML&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 140 of file library\+\_\+manager.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlibrary__manager_af71a5b63e8589cc3e9d81e2748f571b5}\label{classlibrary__manager_af71a5b63e8589cc3e9d81e2748f571b5}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!library\+\_\+manager@{library\+\_\+manager}}
+\index{library\+\_\+manager@{library\+\_\+manager}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{library\+\_\+manager()}{library\_manager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily library\+\_\+manager\+::library\+\_\+manager (\begin{DoxyParamCaption}\item[{\hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{bool}]{std = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 232 of file library\+\_\+manager.\+cpp.
+
+
+
+References set\+\_\+default\+\_\+attributes().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_af71a5b63e8589cc3e9d81e2748f571b5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlibrary__manager_adf29fa335541787d0fea1a8b0db9dcc6}\label{classlibrary__manager_adf29fa335541787d0fea1a8b0db9dcc6}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!library\+\_\+manager@{library\+\_\+manager}}
+\index{library\+\_\+manager@{library\+\_\+manager}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{library\+\_\+manager()}{library\_manager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily library\+\_\+manager\+::library\+\_\+manager (\begin{DoxyParamCaption}\item[{std\+::string}]{library\+\_\+name,  }\item[{\hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{bool}]{std = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 237 of file library\+\_\+manager.\+cpp.
+
+
+
+References set\+\_\+default\+\_\+attributes(), and $\sim$library\+\_\+manager().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_adf29fa335541787d0fea1a8b0db9dcc6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlibrary__manager_a51dd14df3ed399e17d62fddfacf54557}\label{classlibrary__manager_a51dd14df3ed399e17d62fddfacf54557}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!````~library\+\_\+manager@{$\sim$library\+\_\+manager}}
+\index{````~library\+\_\+manager@{$\sim$library\+\_\+manager}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{$\sim$library\+\_\+manager()}{~library\_manager()}}
+{\footnotesize\ttfamily library\+\_\+manager\+::$\sim$library\+\_\+manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by library\+\_\+manager().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_a51dd14df3ed399e17d62fddfacf54557_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary__manager_a7be2eb51058e7ea1f0e7f465f1bc2e19}\label{classlibrary__manager_a7be2eb51058e7ea1f0e7f465f1bc2e19}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!add@{add}}
+\index{add@{add}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void library\+\_\+manager\+::add (\begin{DoxyParamCaption}\item[{const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} \&}]{node }\end{DoxyParamCaption})}
+
+adding a cells invalidates the library view currently stored 
+
+Definition at line 394 of file library\+\_\+manager.\+cpp.
+
+
+
+References erase\+\_\+info(), fu\+\_\+map, and technology\+\_\+node\+::get\+\_\+name().
+
+
+
+Referenced by Functional\+Unit\+Step\+::\+Analyze\+Fu(), and xload().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_a7be2eb51058e7ea1f0e7f465f1bc2e19_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_a7be2eb51058e7ea1f0e7f465f1bc2e19_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlibrary__manager_aceba51458eebf43796ae8e9555410738}\label{classlibrary__manager_aceba51458eebf43796ae8e9555410738}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!erase\+\_\+info@{erase\+\_\+info}}
+\index{erase\+\_\+info@{erase\+\_\+info}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{erase\+\_\+info()}{erase\_info()}}
+{\footnotesize\ttfamily void library\+\_\+manager\+::erase\+\_\+info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 519 of file library\+\_\+manager.\+cpp.
+
+
+
+References info.
+
+
+
+Referenced by add(), remove\+\_\+fu(), and update().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_aceba51458eebf43796ae8e9555410738_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlibrary__manager_a6906feae6af8bf096f52848de12479fa}\label{classlibrary__manager_a6906feae6af8bf096f52848de12479fa}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!get\+\_\+dont\+\_\+use\+\_\+cells@{get\+\_\+dont\+\_\+use\+\_\+cells}}
+\index{get\+\_\+dont\+\_\+use\+\_\+cells@{get\+\_\+dont\+\_\+use\+\_\+cells}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+dont\+\_\+use\+\_\+cells()}{get\_dont\_use\_cells()}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ library\+\_\+manager\+::get\+\_\+dont\+\_\+use\+\_\+cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the cells not to be used for the synthesis. 
+
+
+
+Definition at line 601 of file library\+\_\+manager.\+cpp.
+
+
+
+References dont\+\_\+use.
+
+\mbox{\Hypertarget{classlibrary__manager_aa04c3b1e52eadbd800212b36b8770b2a}\label{classlibrary__manager_aa04c3b1e52eadbd800212b36b8770b2a}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!get\+\_\+dont\+\_\+use\+\_\+num@{get\+\_\+dont\+\_\+use\+\_\+num}}
+\index{get\+\_\+dont\+\_\+use\+\_\+num@{get\+\_\+dont\+\_\+use\+\_\+num}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+dont\+\_\+use\+\_\+num()}{get\_dont\_use\_num()}}
+{\footnotesize\ttfamily \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} library\+\_\+manager\+::get\+\_\+dont\+\_\+use\+\_\+num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 606 of file library\+\_\+manager.\+cpp.
+
+
+
+References dont\+\_\+use.
+
+\mbox{\Hypertarget{classlibrary__manager_a70a66a780470a75540aee74e21a5c3bf}\label{classlibrary__manager_a70a66a780470a75540aee74e21a5c3bf}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!get\+\_\+fu@{get\+\_\+fu}}
+\index{get\+\_\+fu@{get\+\_\+fu}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+fu()}{get\_fu()}}
+{\footnotesize\ttfamily \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} library\+\_\+manager\+::get\+\_\+fu (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 503 of file library\+\_\+manager.\+cpp.
+
+
+
+References fu\+\_\+map, is\+\_\+fu(), and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by allocation\+::\+Build\+Proxy\+Wrapper(), fun\+\_\+dominator\+\_\+allocation\+::\+Exec(), R\+T\+L\+Characterization\+::\+Exec(), allocation\+::extract\+\_\+bambu\+\_\+provided(), R\+T\+L\+Characterization\+::fix\+\_\+execution\+\_\+time\+\_\+std(), R\+T\+L\+Characterization\+::fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std(), allocation\+::\+Integrate\+Technology\+Libraries(), allocation\+::\+Internal\+Exec(), and module\+Generator\+::specialize\+\_\+fu().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{d8/d35/classlibrary__manager_a70a66a780470a75540aee74e21a5c3bf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_a70a66a780470a75540aee74e21a5c3bf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlibrary__manager_a7de047085c8a9e56751b635aeee4657e}\label{classlibrary__manager_a7de047085c8a9e56751b635aeee4657e}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!get\+\_\+gate\+\_\+count@{get\+\_\+gate\+\_\+count}}
+\index{get\+\_\+gate\+\_\+count@{get\+\_\+gate\+\_\+count}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+gate\+\_\+count()}{get\_gate\_count()}}
+{\footnotesize\ttfamily \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} library\+\_\+manager\+::get\+\_\+gate\+\_\+count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 509 of file library\+\_\+manager.\+cpp.
+
+
+
+References fu\+\_\+map.
+
+\mbox{\Hypertarget{classlibrary__manager_a61e98740a159d328dc986c4729844162}\label{classlibrary__manager_a61e98740a159d328dc986c4729844162}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!get\+\_\+info@{get\+\_\+info}}
+\index{get\+\_\+info@{get\+\_\+info}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+info()}{get\_info()}}
+{\footnotesize\ttfamily std\+::string library\+\_\+manager\+::get\+\_\+info (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary__manager_a5914a62c60d05c22f2547de9d8ef20de}{info\+\_\+t}}]{type,  }\item[{const \hyperlink{target__device_8hpp_a476becc690220f0805ce73006449c732}{Target\+Device\+\_\+\+Type}}]{dv\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 524 of file library\+\_\+manager.\+cpp.
+
+
+
+References get\+\_\+library\+\_\+name(), info, is\+\_\+info(), name, N\+O\+T\+\_\+\+Y\+E\+T\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM, Param, P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, set\+\_\+info(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, write\+\_\+xml\+\_\+technology\+\_\+\+File(), and X\+ML.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_a61e98740a159d328dc986c4729844162_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlibrary__manager_a5e6cca29a6c2e2f96563c059371cd79e}\label{classlibrary__manager_a5e6cca29a6c2e2f96563c059371cd79e}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!get\+\_\+library\+\_\+fu@{get\+\_\+library\+\_\+fu}}
+\index{get\+\_\+library\+\_\+fu@{get\+\_\+library\+\_\+fu}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+library\+\_\+fu()}{get\_library\_fu()}}
+{\footnotesize\ttfamily const \hyperlink{classlibrary__manager_a17941addb97906d7b41c5b0b0317fde2}{fu\+\_\+map\+\_\+type}\& library\+\_\+manager\+::get\+\_\+library\+\_\+fu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the list of the resources contained into the given library. 
+
+\begin{DoxyReturn}{Returns}
+a datastructure that maps the name of the cells contained into the library with the related \hyperlink{structtechnology__node}{technology\+\_\+node}\textquotesingle{}s 
+\end{DoxyReturn}
+
+
+Definition at line 250 of file library\+\_\+manager.\+hpp.
+
+
+
+Referenced by Generate\+Fu\+List\+::\+Exec(), Fix\+Characterization\+::\+Exec(), allocation\+::\+Internal\+Exec(), technology\+\_\+manager\+::print(), technology\+\_\+manager\+::xload(), technology\+\_\+manager\+::xwrite(), and R\+T\+L\+Characterization\+::xwrite\+\_\+characterization().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_a5e6cca29a6c2e2f96563c059371cd79e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlibrary__manager_a7e17dbc69eacaabce39da9168451c3c8}\label{classlibrary__manager_a7e17dbc69eacaabce39da9168451c3c8}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!get\+\_\+library\+\_\+name@{get\+\_\+library\+\_\+name}}
+\index{get\+\_\+library\+\_\+name@{get\+\_\+library\+\_\+name}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+library\+\_\+name()}{get\_library\_name()}}
+{\footnotesize\ttfamily std\+::string library\+\_\+manager\+::get\+\_\+library\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 389 of file library\+\_\+manager.\+cpp.
+
+
+
+References name.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::\+Analyze\+Cell(), allocation\+::check\+\_\+proxies(), allocation\+::check\+\_\+templated\+\_\+units(), R\+T\+L\+Characterization\+::fix\+\_\+execution\+\_\+time\+\_\+std(), R\+T\+L\+Characterization\+::fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std(), get\+\_\+info(), technology\+\_\+manager\+::xload(), and R\+T\+L\+Characterization\+::xwrite\+\_\+characterization().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_a7e17dbc69eacaabce39da9168451c3c8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlibrary__manager_a8b79f093ebc0949d2e87ba84e185a361}\label{classlibrary__manager_a8b79f093ebc0949d2e87ba84e185a361}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!is\+\_\+fu@{is\+\_\+fu}}
+\index{is\+\_\+fu@{is\+\_\+fu}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{is\+\_\+fu()}{is\_fu()}}
+{\footnotesize\ttfamily bool library\+\_\+manager\+::is\+\_\+fu (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 498 of file library\+\_\+manager.\+cpp.
+
+
+
+References fu\+\_\+map.
+
+
+
+Referenced by allocation\+::\+Build\+Proxy\+Wrapper(), allocation\+::extract\+\_\+bambu\+\_\+provided(), get\+\_\+fu(), and xload().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_a8b79f093ebc0949d2e87ba84e185a361_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlibrary__manager_a926d994ff986bfee4adf363c88ce5acf}\label{classlibrary__manager_a926d994ff986bfee4adf363c88ce5acf}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!is\+\_\+info@{is\+\_\+info}}
+\index{is\+\_\+info@{is\+\_\+info}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{is\+\_\+info()}{is\_info()}}
+{\footnotesize\ttfamily bool library\+\_\+manager\+::is\+\_\+info (\begin{DoxyParamCaption}\item[{unsigned int}]{type }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 572 of file library\+\_\+manager.\+cpp.
+
+
+
+References info.
+
+
+
+Referenced by get\+\_\+info().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_a926d994ff986bfee4adf363c88ce5acf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlibrary__manager_a3622c3c263ac844696f221967db3af38}\label{classlibrary__manager_a3622c3c263ac844696f221967db3af38}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!is\+\_\+virtual@{is\+\_\+virtual}}
+\index{is\+\_\+virtual@{is\+\_\+virtual}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{is\+\_\+virtual()}{is\_virtual()}}
+{\footnotesize\ttfamily bool library\+\_\+manager\+::is\+\_\+virtual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if the library is virtual or not. 
+
+\begin{DoxyReturn}{Returns}
+true if the library is virtual, false otherwise (i.\+e., it is a standard library or, however, a library already characterized) 
+\end{DoxyReturn}
+
+
+Definition at line 577 of file library\+\_\+manager.\+cpp.
+
+
+
+References is\+\_\+std.
+
+\mbox{\Hypertarget{classlibrary__manager_a0cda95a89f54b1af796a67f7d871acc0}\label{classlibrary__manager_a0cda95a89f54b1af796a67f7d871acc0}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!remove\+\_\+dont\+\_\+use@{remove\+\_\+dont\+\_\+use}}
+\index{remove\+\_\+dont\+\_\+use@{remove\+\_\+dont\+\_\+use}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{remove\+\_\+dont\+\_\+use()}{remove\_dont\_use()}}
+{\footnotesize\ttfamily void library\+\_\+manager\+::remove\+\_\+dont\+\_\+use (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Set a cell to be used. 
+
+
+
+Definition at line 611 of file library\+\_\+manager.\+cpp.
+
+
+
+References dont\+\_\+use.
+
+\mbox{\Hypertarget{classlibrary__manager_a7ae8884cb2871b3cab0ea9b83dcb5829}\label{classlibrary__manager_a7ae8884cb2871b3cab0ea9b83dcb5829}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!remove\+\_\+fu@{remove\+\_\+fu}}
+\index{remove\+\_\+fu@{remove\+\_\+fu}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{remove\+\_\+fu()}{remove\_fu()}}
+{\footnotesize\ttfamily void library\+\_\+manager\+::remove\+\_\+fu (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 582 of file library\+\_\+manager.\+cpp.
+
+
+
+References erase\+\_\+info(), and fu\+\_\+map.
+
+
+
+Referenced by add\+\_\+library\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_a7ae8884cb2871b3cab0ea9b83dcb5829_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_a7ae8884cb2871b3cab0ea9b83dcb5829_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlibrary__manager_a4e550de1a50f9e84f65c2fdd930f02b8}\label{classlibrary__manager_a4e550de1a50f9e84f65c2fdd930f02b8}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!set\+\_\+default\+\_\+attributes@{set\+\_\+default\+\_\+attributes}}
+\index{set\+\_\+default\+\_\+attributes@{set\+\_\+default\+\_\+attributes}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{set\+\_\+default\+\_\+attributes()}{set\_default\_attributes()}}
+{\footnotesize\ttfamily void library\+\_\+manager\+::set\+\_\+default\+\_\+attributes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set the default attributes for the library. 
+
+
+
+Definition at line 200 of file library\+\_\+manager.\+cpp.
+
+
+
+References attribute\+::attribute(), attributes, attribute\+::content, attribute\+::\+I\+N\+T32, ordered\+\_\+attributes, and attribute\+::\+S\+T\+R\+I\+NG.
+
+
+
+Referenced by library\+\_\+manager().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_a4e550de1a50f9e84f65c2fdd930f02b8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d8/d35/classlibrary__manager_a4e550de1a50f9e84f65c2fdd930f02b8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlibrary__manager_aff9014fb417452bac4f6ab7942038f42}\label{classlibrary__manager_aff9014fb417452bac4f6ab7942038f42}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!set\+\_\+dont\+\_\+use@{set\+\_\+dont\+\_\+use}}
+\index{set\+\_\+dont\+\_\+use@{set\+\_\+dont\+\_\+use}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{set\+\_\+dont\+\_\+use()}{set\_dont\_use()}}
+{\footnotesize\ttfamily void library\+\_\+manager\+::set\+\_\+dont\+\_\+use (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Set a cell to be not used. 
+
+
+
+Definition at line 592 of file library\+\_\+manager.\+cpp.
+
+
+
+References dont\+\_\+use, and fu\+\_\+map.
+
+\mbox{\Hypertarget{classlibrary__manager_acdc0bce98076c59ca92b316fcb11ab13}\label{classlibrary__manager_acdc0bce98076c59ca92b316fcb11ab13}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!set\+\_\+info@{set\+\_\+info}}
+\index{set\+\_\+info@{set\+\_\+info}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{set\+\_\+info()}{set\_info()}}
+{\footnotesize\ttfamily void library\+\_\+manager\+::set\+\_\+info (\begin{DoxyParamCaption}\item[{unsigned int}]{type,  }\item[{const std\+::string \&}]{information }\end{DoxyParamCaption})}
+
+
+
+Definition at line 514 of file library\+\_\+manager.\+cpp.
+
+
+
+References info, and test\+\_\+panda\+::type.
+
+
+
+Referenced by Write\+Technology\+::\+Exec(), get\+\_\+info(), read\+\_\+technology\+\_\+library(), write\+\_\+xml\+\_\+technology\+\_\+\+File(), technology\+\_\+manager\+::xload(), and technology\+\_\+manager\+::xwrite().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_acdc0bce98076c59ca92b316fcb11ab13_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlibrary__manager_a390325203aa42f2c6d71f601fd1ba8f4}\label{classlibrary__manager_a390325203aa42f2c6d71f601fd1ba8f4}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!update@{update}}
+\index{update@{update}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void library\+\_\+manager\+::update (\begin{DoxyParamCaption}\item[{const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} \&}]{node }\end{DoxyParamCaption})}
+
+adding a cells invalidates the library view currently stored 
+
+Definition at line 402 of file library\+\_\+manager.\+cpp.
+
+
+
+References attributes, operation\+::bounded, erase\+\_\+info(), fu\+\_\+map, technology\+\_\+node\+::get\+\_\+name(), operation\+::operation\+\_\+name, ordered\+\_\+attributes, operation\+::pipe\+\_\+parameters, operation\+::portsize\+\_\+parameters, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and operation\+::time\+\_\+m.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_a390325203aa42f2c6d71f601fd1ba8f4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlibrary__manager_a2256397a16a3d834c1cf9921824316be}\label{classlibrary__manager_a2256397a16a3d834c1cf9921824316be}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!xload@{xload}}
+\index{xload@{xload}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{xload()}{xload()}}
+{\footnotesize\ttfamily void library\+\_\+manager\+::xload (\begin{DoxyParamCaption}\item[{const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{node,  }\item[{const \hyperlink{library__manager_8hpp_aacc6d633b0aa80ecfeb1180fd480ae68}{library\+\_\+manager\+Ref} \&}]{LM,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&}]{Param,  }\item[{const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref} \&}]{device }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Check if a more recently characterized version of the same cell already exists in the library 
+
+Definition at line 244 of file library\+\_\+manager.\+cpp.
+
+
+
+References add(), attributes, functional\+\_\+unit\+::\+C\+O\+M\+B\+I\+N\+A\+T\+I\+O\+N\+AL, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, fu\+\_\+map, xml\+\_\+child\+::get\+\_\+children(), xml\+\_\+text\+\_\+node\+::get\+\_\+content(), technology\+\_\+node\+::get\+\_\+name(), info, is\+\_\+fu(), name, ordered\+\_\+attributes, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG, attribute\+::xload(), and technology\+\_\+node\+::xload().
+
+
+
+Referenced by technology\+\_\+manager\+::xload().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_a2256397a16a3d834c1cf9921824316be_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_a2256397a16a3d834c1cf9921824316be_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classlibrary__manager_a696beb5208cbe5a27144d59757b72682}\label{classlibrary__manager_a696beb5208cbe5a27144d59757b72682}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!xwrite@{xwrite}}
+\index{xwrite@{xwrite}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{xwrite()}{xwrite()}}
+{\footnotesize\ttfamily void library\+\_\+manager\+::xwrite (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{rootnode,  }\item[{\hyperlink{target__device_8hpp_a476becc690220f0805ce73006449c732}{Target\+Device\+\_\+\+Type}}]{dv\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 352 of file library\+\_\+manager.\+cpp.
+
+
+
+References xml\+\_\+child\+::add\+\_\+child\+\_\+element(), xml\+\_\+child\+::add\+\_\+child\+\_\+text(), attributes, fu\+\_\+map, info, name, ordered\+\_\+attributes, Param, and attribute\+\_\+sequence\+::set\+\_\+attribute().
+
+
+
+Referenced by write\+\_\+xml\+\_\+technology\+\_\+\+File(), and technology\+\_\+manager\+::xwrite().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_a696beb5208cbe5a27144d59757b72682_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d35/classlibrary__manager_a696beb5208cbe5a27144d59757b72682_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classlibrary__manager_aeedcfac2940fb2d4e5ae1d88bdbf089e}\label{classlibrary__manager_aeedcfac2940fb2d4e5ae1d88bdbf089e}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!attributes@{attributes}}
+\index{attributes@{attributes}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{attributes}{attributes}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \hyperlink{library__manager_8hpp_a46399d2eacc03fb10f84fb33987ab8e3}{attribute\+Ref}$>$ library\+\_\+manager\+::attributes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+attributes of the library 
+
+
+
+Definition at line 168 of file library\+\_\+manager.\+hpp.
+
+
+
+Referenced by set\+\_\+default\+\_\+attributes(), update(), xload(), and xwrite().
+
+\mbox{\Hypertarget{classlibrary__manager_a6166670fafe2b957bd18c46fc0406ee2}\label{classlibrary__manager_a6166670fafe2b957bd18c46fc0406ee2}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!dont\+\_\+use@{dont\+\_\+use}}
+\index{dont\+\_\+use@{dont\+\_\+use}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{dont\+\_\+use}{dont\_use}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$std\+::string$>$ library\+\_\+manager\+::dont\+\_\+use\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 181 of file library\+\_\+manager.\+hpp.
+
+
+
+Referenced by get\+\_\+dont\+\_\+use\+\_\+cells(), get\+\_\+dont\+\_\+use\+\_\+num(), remove\+\_\+dont\+\_\+use(), and set\+\_\+dont\+\_\+use().
+
+\mbox{\Hypertarget{classlibrary__manager_a56275437810dccb628120827741c7822}\label{classlibrary__manager_a56275437810dccb628120827741c7822}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!fu\+\_\+map@{fu\+\_\+map}}
+\index{fu\+\_\+map@{fu\+\_\+map}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{fu\+\_\+map}{fu\_map}}
+{\footnotesize\ttfamily \hyperlink{classlibrary__manager_a17941addb97906d7b41c5b0b0317fde2}{fu\+\_\+map\+\_\+type} library\+\_\+manager\+::fu\+\_\+map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+datastructure to identify the units that are contained into the library 
+
+
+
+Definition at line 163 of file library\+\_\+manager.\+hpp.
+
+
+
+Referenced by add(), get\+\_\+fu(), get\+\_\+gate\+\_\+count(), is\+\_\+fu(), remove\+\_\+fu(), set\+\_\+dont\+\_\+use(), update(), xload(), and xwrite().
+
+\mbox{\Hypertarget{classlibrary__manager_a1dbe9b8f22a6e8f19086159723bfb0a6}\label{classlibrary__manager_a1dbe9b8f22a6e8f19086159723bfb0a6}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!info@{info}}
+\index{info@{info}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{info}{info}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, std\+::string$>$ library\+\_\+manager\+::info\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+files that provide information about the library 
+
+
+
+Definition at line 171 of file library\+\_\+manager.\+hpp.
+
+
+
+Referenced by erase\+\_\+info(), get\+\_\+info(), is\+\_\+info(), set\+\_\+info(), xload(), and xwrite().
+
+\mbox{\Hypertarget{classlibrary__manager_a9b6c57463b3f9c936b5907b51b6487e1}\label{classlibrary__manager_a9b6c57463b3f9c936b5907b51b6487e1}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!is\+\_\+std@{is\+\_\+std}}
+\index{is\+\_\+std@{is\+\_\+std}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{is\+\_\+std}{is\_std}}
+{\footnotesize\ttfamily bool library\+\_\+manager\+::is\+\_\+std\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+flag to check if the library is standard (i.\+e., provided in input) or virtual 
+
+
+
+Definition at line 174 of file library\+\_\+manager.\+hpp.
+
+
+
+Referenced by is\+\_\+virtual().
+
+\mbox{\Hypertarget{classlibrary__manager_a6d92e10c68ec4a2975d832b0650c7168}\label{classlibrary__manager_a6d92e10c68ec4a2975d832b0650c7168}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!name@{name}}
+\index{name@{name}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string library\+\_\+manager\+::name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+string identifier of the library 
+
+
+
+Definition at line 160 of file library\+\_\+manager.\+hpp.
+
+
+
+Referenced by get\+\_\+info(), get\+\_\+library\+\_\+name(), xload(), and xwrite().
+
+\mbox{\Hypertarget{classlibrary__manager_ae96defe4ac96f8ce7d5c336e3b7a3adb}\label{classlibrary__manager_ae96defe4ac96f8ce7d5c336e3b7a3adb}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!ordered\+\_\+attributes@{ordered\+\_\+attributes}}
+\index{ordered\+\_\+attributes@{ordered\+\_\+attributes}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{ordered\+\_\+attributes}{ordered\_attributes}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ library\+\_\+manager\+::ordered\+\_\+attributes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 165 of file library\+\_\+manager.\+hpp.
+
+
+
+Referenced by set\+\_\+default\+\_\+attributes(), update(), xload(), and xwrite().
+
+\mbox{\Hypertarget{classlibrary__manager_a456f9321dfda42ab5d48c9636ab43320}\label{classlibrary__manager_a456f9321dfda42ab5d48c9636ab43320}} 
+\index{library\+\_\+manager@{library\+\_\+manager}!Param@{Param}}
+\index{Param@{Param}!library\+\_\+manager@{library\+\_\+manager}}
+\subsubsection{\texorpdfstring{Param}{Param}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} library\+\_\+manager\+::\+Param\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+class containing all the parameters 
+
+
+
+Definition at line 157 of file library\+\_\+manager.\+hpp.
+
+
+
+Referenced by get\+\_\+info(), and xwrite().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/physical\+\_\+library/\hyperlink{library__manager_8hpp}{library\+\_\+manager.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/physical\+\_\+library/\hyperlink{library__manager_8cpp}{library\+\_\+manager.\+cpp}\end{DoxyCompactItemize}

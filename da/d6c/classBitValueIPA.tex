@@ -1,0 +1,321 @@
+\hypertarget{classBitValueIPA}{}\section{Bit\+Value\+I\+PA Class Reference}
+\label{classBitValueIPA}\index{Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}}
+
+
+Inter-\/\+Procedural extension of the Bit Value analysis as described in Bit\+Value Inference\+: Detecting and Exploiting Narrow Bitwidth Computations Mihai Budiu Seth Copen Goldstein \href{http://www.cs.cmu.edu/~seth/papers/budiu-tr00.pdf}{\tt http\+://www.\+cs.\+cmu.\+edu/$\sim$seth/papers/budiu-\/tr00.\+pdf}.  
+
+
+
+
+{\ttfamily \#include $<$Bit\+Value\+I\+P\+A.\+hpp$>$}
+
+
+
+Inheritance diagram for Bit\+Value\+I\+PA\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd7/classBitValueIPA__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bit\+Value\+I\+PA\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d2d/classBitValueIPA__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBitValueIPA_aa139744d704f77b52956f5ee3a9fd80c}{Bit\+Value\+I\+PA} (const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters})
+\begin{DoxyCompactList}\small\item\em S\+TD include. \end{DoxyCompactList}\item 
+\hyperlink{classBitValueIPA_a58528bc1a3e758b534fc3180dfcc2cf3}{$\sim$\+Bit\+Value\+I\+PA} () override
+\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classBitValueIPA_a83d4228b39c126b0007701f32409a71c}{Exec} () override
+\begin{DoxyCompactList}\small\item\em Execute the step. \end{DoxyCompactList}\item 
+bool \hyperlink{classBitValueIPA_aaf4e7bb4cee74b03ae5e8fd94e593f2d}{Has\+To\+Be\+Executed} () const override
+\begin{DoxyCompactList}\small\item\em Check if this step has actually to be executed. \end{DoxyCompactList}\item 
+void \hyperlink{classBitValueIPA_a00d93654fdcf33acbd281faa1915dbbd}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classBitValueIPA_a0e16342c15cf3d4544c1f96e40837e0a}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\item 
+void \hyperlink{classBitValueIPA_a0599406c42da912fe0c0d768bf52e73a}{Compute\+Relationships} (\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&relationships, const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) override
+\begin{DoxyCompactList}\small\item\em Compute the relationships of a step with other steps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classBitValueIPA_a26c174c45034e2f71f54c6f12e60905c}{fun\+\_\+id\+\_\+to\+\_\+restart}
+\begin{DoxyCompactList}\small\item\em stores the function ids of the functions whose \hyperlink{classBit__Value}{Bit\+\_\+\+Value} intra procedural steps have to be invalidated by this step \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, unsigned int $>$ \hyperlink{classBitValueIPA_a516ec9530d59d434020c42ea8a22b4f4}{last\+\_\+bitvalue\+\_\+ver}
+\item 
+std\+::map$<$ unsigned int, unsigned int $>$ \hyperlink{classBitValueIPA_a021bda2f1b73a5221fd0c4b25f80ef1a}{last\+\_\+bb\+\_\+ver}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Inter-\/\+Procedural extension of the Bit Value analysis as described in Bit\+Value Inference\+: Detecting and Exploiting Narrow Bitwidth Computations Mihai Budiu Seth Copen Goldstein \href{http://www.cs.cmu.edu/~seth/papers/budiu-tr00.pdf}{\tt http\+://www.\+cs.\+cmu.\+edu/$\sim$seth/papers/budiu-\/tr00.\+pdf}. 
+
+Definition at line 59 of file Bit\+Value\+I\+P\+A.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBitValueIPA_aa139744d704f77b52956f5ee3a9fd80c}\label{classBitValueIPA_aa139744d704f77b52956f5ee3a9fd80c}} 
+\index{Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}!Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}}
+\index{Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}!Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}}
+\subsubsection{\texorpdfstring{Bit\+Value\+I\+P\+A()}{BitValueIPA()}}
+{\footnotesize\ttfamily Bit\+Value\+I\+P\+A\+::\+Bit\+Value\+I\+PA (\begin{DoxyParamCaption}\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{AppM,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{parameters }\end{DoxyParamCaption})}
+
+
+
+S\+TD include. 
+
+
+
+Definition at line 79 of file Bit\+Value\+I\+P\+A.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$\+Bit\+Value\+I\+P\+A().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d6c/classBitValueIPA_aa139744d704f77b52956f5ee3a9fd80c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBitValueIPA_a58528bc1a3e758b534fc3180dfcc2cf3}\label{classBitValueIPA_a58528bc1a3e758b534fc3180dfcc2cf3}} 
+\index{Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}!````~Bit\+Value\+I\+PA@{$\sim$\+Bit\+Value\+I\+PA}}
+\index{````~Bit\+Value\+I\+PA@{$\sim$\+Bit\+Value\+I\+PA}!Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}}
+\subsubsection{\texorpdfstring{$\sim$\+Bit\+Value\+I\+P\+A()}{~BitValueIPA()}}
+{\footnotesize\ttfamily Bit\+Value\+I\+P\+A\+::$\sim$\+Bit\+Value\+I\+PA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Referenced by Bit\+Value\+I\+P\+A().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d6c/classBitValueIPA_a58528bc1a3e758b534fc3180dfcc2cf3_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBitValueIPA_a0e16342c15cf3d4544c1f96e40837e0a}\label{classBitValueIPA_a0e16342c15cf3d4544c1f96e40837e0a}} 
+\index{Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ Bit\+Value\+I\+P\+A\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classApplicationFrontendFlowStep_ab308200c0096ccff3a1ff50e864ed61f}{Application\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 87 of file Bit\+Value\+I\+P\+A.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+A\+L\+L\+\_\+\+F\+U\+N\+C\+T\+I\+O\+NS, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, M\+E\+M\+\_\+\+C\+G\+\_\+\+E\+XT, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+\mbox{\Hypertarget{classBitValueIPA_a0599406c42da912fe0c0d768bf52e73a}\label{classBitValueIPA_a0599406c42da912fe0c0d768bf52e73a}} 
+\index{Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}!Compute\+Relationships@{Compute\+Relationships}}
+\index{Compute\+Relationships@{Compute\+Relationships}!Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}}
+\subsubsection{\texorpdfstring{Compute\+Relationships()}{ComputeRelationships()}}
+{\footnotesize\ttfamily void Bit\+Value\+I\+P\+A\+::\+Compute\+Relationships (\begin{DoxyParamCaption}\item[{\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&}]{relationship,  }\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Compute the relationships of a step with other steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dependencies} & is where relationships will be stored \\
+\hline
+{\em relationship\+\_\+type} & is the type of relationship to be computed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classFrontendFlowStep_a532ee0d76d7a10c373b4a7478a7eee18}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 117 of file Bit\+Value\+I\+P\+A.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, Frontend\+Flow\+Step\+::\+Compute\+Relationships(), Function\+Frontend\+Flow\+Step\+::\+Compute\+Signature(), Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, fun\+\_\+id\+\_\+to\+\_\+restart, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Wrefcount$<$ T $>$\+::lock(), N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d6c/classBitValueIPA_a0599406c42da912fe0c0d768bf52e73a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBitValueIPA_a83d4228b39c126b0007701f32409a71c}\label{classBitValueIPA_a83d4228b39c126b0007701f32409a71c}} 
+\index{Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}!Exec@{Exec}}
+\index{Exec@{Exec}!Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}}
+\subsubsection{\texorpdfstring{Exec()}{Exec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} Bit\+Value\+I\+P\+A\+::\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the step. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+In case of indirect calls (e.\+g., pointer to function) no Bit Value I\+PA can be done. 
+
+Implements \hyperlink{classApplicationFrontendFlowStep_a2bf060a5ebc1735635dc5c7773387a25}{Application\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 149 of file Bit\+Value\+I\+P\+A.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, Bit\+Lattice\+Manipulator\+::best, function\+\_\+decl\+::bit\+\_\+values, bitstring\+\_\+to\+\_\+string(), function\+\_\+decl\+::body, tree\+\_\+helper\+::\+C\+Get\+Type(), Bit\+Lattice\+Manipulator\+::clear(), tree\+\_\+helper\+::\+Compute\+Ssa\+Uses(), create\+\_\+bitstring\+\_\+from\+\_\+constant(), create\+\_\+u\+\_\+bitstring(), create\+\_\+x\+\_\+bitstring(), Bit\+Lattice\+Manipulator\+::current, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, fun\+\_\+id\+\_\+to\+\_\+restart, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+node\+::get\+\_\+kind\+\_\+text(), G\+E\+T\+\_\+\+N\+O\+DE, Function\+Behavior\+::\+Get\+B\+B\+Version(), Function\+Behavior\+::\+Get\+Bit\+Value\+Version(), tree\+\_\+helper\+::\+Get\+Function\+Return\+Type(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Bit\+Lattice\+Manipulator\+::inf(), Bit\+Lattice\+Manipulator\+::is\+\_\+handled\+\_\+by\+\_\+bitvalue(), tree\+\_\+helper\+::is\+\_\+int(), last\+\_\+bb\+\_\+ver, last\+\_\+bitvalue\+\_\+ver, function\+\_\+decl\+::list\+\_\+of\+\_\+args, Bit\+Lattice\+Manipulator\+::mix(), test\+\_\+panda\+::restart, Bit\+Lattice\+Manipulator\+::signed\+\_\+var, tree\+\_\+helper\+::\+Size(), sl, S\+TR, string\+\_\+to\+\_\+bitstring(), S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, Bit\+Lattice\+Manipulator\+::\+TM, U\+N\+C\+H\+A\+N\+G\+ED, and Bit\+Lattice\+Manipulator\+::update\+\_\+current().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d6c/classBitValueIPA_a83d4228b39c126b0007701f32409a71c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBitValueIPA_aaf4e7bb4cee74b03ae5e8fd94e593f2d}\label{classBitValueIPA_aaf4e7bb4cee74b03ae5e8fd94e593f2d}} 
+\index{Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}!Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}}
+\index{Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}!Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}}
+\subsubsection{\texorpdfstring{Has\+To\+Be\+Executed()}{HasToBeExecuted()}}
+{\footnotesize\ttfamily bool Bit\+Value\+I\+P\+A\+::\+Has\+To\+Be\+Executed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if this step has actually to be executed. 
+
+\begin{DoxyReturn}{Returns}
+true if the step has to be executed 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classApplicationFrontendFlowStep_ad99f4dcbab470c65eea79ae0291a4bd5}{Application\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 135 of file Bit\+Value\+I\+P\+A.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, Function\+Behavior\+::\+Get\+B\+B\+Version(), Function\+Behavior\+::\+Get\+Bit\+Value\+Version(), last\+\_\+bb\+\_\+ver, and last\+\_\+bitvalue\+\_\+ver.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d6c/classBitValueIPA_aaf4e7bb4cee74b03ae5e8fd94e593f2d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBitValueIPA_a00d93654fdcf33acbd281faa1915dbbd}\label{classBitValueIPA_a00d93654fdcf33acbd281faa1915dbbd}} 
+\index{Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Bit\+Value\+I\+P\+A\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 895 of file Bit\+Value\+I\+P\+A.\+cpp.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classBitValueIPA_a26c174c45034e2f71f54c6f12e60905c}\label{classBitValueIPA_a26c174c45034e2f71f54c6f12e60905c}} 
+\index{Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}!fun\+\_\+id\+\_\+to\+\_\+restart@{fun\+\_\+id\+\_\+to\+\_\+restart}}
+\index{fun\+\_\+id\+\_\+to\+\_\+restart@{fun\+\_\+id\+\_\+to\+\_\+restart}!Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}}
+\subsubsection{\texorpdfstring{fun\+\_\+id\+\_\+to\+\_\+restart}{fun\_id\_to\_restart}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ Bit\+Value\+I\+P\+A\+::fun\+\_\+id\+\_\+to\+\_\+restart\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+stores the function ids of the functions whose \hyperlink{classBit__Value}{Bit\+\_\+\+Value} intra procedural steps have to be invalidated by this step 
+
+
+
+Definition at line 66 of file Bit\+Value\+I\+P\+A.\+hpp.
+
+
+
+Referenced by Compute\+Relationships(), and Exec().
+
+\mbox{\Hypertarget{classBitValueIPA_a021bda2f1b73a5221fd0c4b25f80ef1a}\label{classBitValueIPA_a021bda2f1b73a5221fd0c4b25f80ef1a}} 
+\index{Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}!last\+\_\+bb\+\_\+ver@{last\+\_\+bb\+\_\+ver}}
+\index{last\+\_\+bb\+\_\+ver@{last\+\_\+bb\+\_\+ver}!Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}}
+\subsubsection{\texorpdfstring{last\+\_\+bb\+\_\+ver}{last\_bb\_ver}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, unsigned int$>$ Bit\+Value\+I\+P\+A\+::last\+\_\+bb\+\_\+ver\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 70 of file Bit\+Value\+I\+P\+A.\+hpp.
+
+
+
+Referenced by Exec(), and Has\+To\+Be\+Executed().
+
+\mbox{\Hypertarget{classBitValueIPA_a516ec9530d59d434020c42ea8a22b4f4}\label{classBitValueIPA_a516ec9530d59d434020c42ea8a22b4f4}} 
+\index{Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}!last\+\_\+bitvalue\+\_\+ver@{last\+\_\+bitvalue\+\_\+ver}}
+\index{last\+\_\+bitvalue\+\_\+ver@{last\+\_\+bitvalue\+\_\+ver}!Bit\+Value\+I\+PA@{Bit\+Value\+I\+PA}}
+\subsubsection{\texorpdfstring{last\+\_\+bitvalue\+\_\+ver}{last\_bitvalue\_ver}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, unsigned int$>$ Bit\+Value\+I\+P\+A\+::last\+\_\+bitvalue\+\_\+ver\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 68 of file Bit\+Value\+I\+P\+A.\+hpp.
+
+
+
+Referenced by Exec(), and Has\+To\+Be\+Executed().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{BitValueIPA_8hpp}{Bit\+Value\+I\+P\+A.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{BitValueIPA_8cpp}{Bit\+Value\+I\+P\+A.\+cpp}\end{DoxyCompactItemize}

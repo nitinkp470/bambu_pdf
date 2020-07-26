@@ -1,0 +1,856 @@
+\hypertarget{classCBackend}{}\section{C\+Backend Class Reference}
+\label{classCBackend}\index{C\+Backend@{C\+Backend}}
+
+
+Class simply used to drive the backend in order to print C code.  
+
+
+
+
+{\ttfamily \#include $<$c\+\_\+backend.\+hpp$>$}
+
+
+
+Inheritance diagram for C\+Backend\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{d7/d6e/classCBackend__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+Backend\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d20/classCBackend__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classCBackend_abadfd9ef309ba4d12e648fe2e3fff08b}{Type} \{ \hyperlink{classCBackend_abadfd9ef309ba4d12e648fe2e3fff08bac7f88561cc85e7035d39ec9ccd25c413}{C\+B\+\_\+\+S\+E\+Q\+U\+E\+N\+T\+I\+AL}
+ \}\begin{DoxyCompactList}\small\item\em The types of backend. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCBackend_ae558a515c1e10643bf4016ab63493160}{$\sim$\+C\+Backend} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classCBackend_a9c77a707b51fd49230668549eb1fd8db}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classCBackend_ab35c39606dc2d39998ccd35edf7c82df}{Exec} () override
+\begin{DoxyCompactList}\small\item\em Execute the step. \end{DoxyCompactList}\item 
+bool \hyperlink{classCBackend_a9cedb79a577526fabd2e396c6697eaf1}{Has\+To\+Be\+Executed} () const override
+\begin{DoxyCompactList}\small\item\em Check if this step has actually to be executed. \end{DoxyCompactList}\item 
+const std\+::string \hyperlink{classCBackend_aa66a47377656d5f70e26c4dd96de7ab6}{Get\+Signature} () const override
+\begin{DoxyCompactList}\small\item\em Return a unified identifier of this design step. \end{DoxyCompactList}\item 
+const std\+::string \hyperlink{classCBackend_af879cc47d9bc18eb778390825b85667d}{Get\+Name} () const override
+\begin{DoxyCompactList}\small\item\em Return the name of this design step. \end{DoxyCompactList}\item 
+const Design\+Flow\+Step\+Factory\+Const\+Ref \hyperlink{classCBackend_ae88e75e47f68079871cad2be17fde136}{C\+Get\+Design\+Flow\+Step\+Factory} () const override
+\begin{DoxyCompactList}\small\item\em Return the factory to create this type of steps. \end{DoxyCompactList}\item 
+const \hyperlink{c__writer_8hpp_a4e9c4dfe17e35f981e27b6dd97f9632c}{C\+Writer\+Ref} \hyperlink{classCBackend_a38b67519696c9c3cc4c395fcf16b973d}{Get\+C\+Writer} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::string \hyperlink{classCBackend_a25f706fe1466ee3c15d680c21f1d3025}{Compute\+Signature} (const \hyperlink{classCBackend_abadfd9ef309ba4d12e648fe2e3fff08b}{Type} type)
+\begin{DoxyCompactList}\small\item\em Compute the signature for a c backend step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCBackend_abadfd9ef309ba4d12e648fe2e3fff08b}{Type} \hyperlink{classCBackend_a2aab793665999e9eb573a5fd10d88dd8}{c\+\_\+backend\+\_\+type}
+\begin{DoxyCompactList}\small\item\em The type of this instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCBackend_abe204a588efad9a8205dc02097420473}{compute\+\_\+variables} (const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} in\+Graph, const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ unsigned int $>$ \&gbl\+Variables, std\+::list$<$ unsigned int $>$ \&fun\+Params, \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ unsigned int $>$ \&computed\+\_\+variables)
+\begin{DoxyCompactList}\small\item\em Computes the variables which have to be declared for a function. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCBackend_a6f6d94270928c1a0b1100d79272daa2f}{Analyze\+Include} (unsigned int \hyperlink{tutorial__pact__2019_2Introduction_2third_2include_2Keccak_8h_a028c9bdc8344cca38ab522a337074797}{index}, const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} BH, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \&includes)
+\begin{DoxyCompactList}\small\item\em Analyze a variable or a type to identify the includes to be added. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCBackend_a4d3545310fee36bb8cfad7a893a8eb31}{write\+Includes} ()
+\begin{DoxyCompactList}\small\item\em Writes the file header, i.\+e the comments at the beginning of the file. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCBackend_abe2034d792eff87acf84b9212bae06c9}{Write\+Global\+Declarations} ()
+\begin{DoxyCompactList}\small\item\em Write the global declarations. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCBackend_aa3c46605226753185304ebc7b9adf463}{write\+Implementations} ()
+\item 
+void \hyperlink{classCBackend_a2acdf81972285d1505ad178769bf5d53}{Compute\+Relationships} (\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&relationship, const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) override
+\begin{DoxyCompactList}\small\item\em Compute the relationships of a step with other steps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ unsigned int $>$ \hyperlink{classCBackend_ab4058b823fc1c0cef4183ce282dcad79}{already\+\_\+visited}
+\begin{DoxyCompactList}\small\item\em The set of already analyzed nodes during search of header to include; it is used to avoid infinite recursion. \end{DoxyCompactList}\item 
+const \hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref} \hyperlink{classCBackend_a80c09865e76c594c3ad883da02d87abc}{indented\+\_\+output\+\_\+stream}
+\begin{DoxyCompactList}\small\item\em The output stream. \end{DoxyCompactList}\item 
+const \hyperlink{c__writer_8hpp_a4e9c4dfe17e35f981e27b6dd97f9632c}{C\+Writer\+Ref} \hyperlink{classCBackend_a8ebae22824a6201f7cc467ad69b4450a}{writer}
+\begin{DoxyCompactList}\small\item\em the writer \end{DoxyCompactList}\item 
+const std\+::string \hyperlink{classCBackend_a11ed652bd65b639d749423ff23867161}{file\+\_\+name}
+\begin{DoxyCompactList}\small\item\em The name of the file to be created. \end{DoxyCompactList}\item 
+const \hyperlink{application__manager_8hpp_abb985163a2a3fb747f6f03b1eaadbb44}{application\+\_\+manager\+Const\+Ref} \hyperlink{classCBackend_ae615cda6d03bdb848968b1eb1e79c273}{AppM}
+\begin{DoxyCompactList}\small\item\em the manager of the application \end{DoxyCompactList}\item 
+const \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref} \hyperlink{classCBackend_a0323ee15f4a2e60c99c730caa2960b5b}{TM}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classtree__manager}{tree\+\_\+manager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCBackend_a1e313cf2e64972680a630fffda96ef7e}{C\+Backend} (const \hyperlink{classCBackend_abadfd9ef309ba4d12e648fe2e3fff08b}{Type} type, const \hyperlink{c__backend__information_8hpp_affe03f2ae5a23aa0efcd9d958c85280d}{C\+Backend\+Information\+Const\+Ref} c\+\_\+backend\+\_\+information, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{application__manager_8hpp_abb985163a2a3fb747f6f03b1eaadbb44}{application\+\_\+manager\+Const\+Ref} \hyperlink{classCBackend_ae615cda6d03bdb848968b1eb1e79c273}{AppM}, std\+::string \hyperlink{classCBackend_a11ed652bd65b639d749423ff23867161}{file\+\_\+name}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classCBackend_a64653afeec4c9a88d1111ab3944449ca}{functions\+\_\+to\+\_\+be\+\_\+declared}
+\begin{DoxyCompactList}\small\item\em This set usually is equal to the set of functions without a body. \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classCBackend_adbc767949e8531de9f3d49f4fa4a6533}{functions\+\_\+to\+\_\+be\+\_\+defined}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCBackend_a42d2c18c6162a3c1113cb8c3fec36a4f}{C\+Backend\+Step\+Factory}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class simply used to drive the backend in order to print C code. 
+
+Definition at line 90 of file c\+\_\+backend.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classCBackend_abadfd9ef309ba4d12e648fe2e3fff08b}\label{classCBackend_abadfd9ef309ba4d12e648fe2e3fff08b}} 
+\index{C\+Backend@{C\+Backend}!Type@{Type}}
+\index{Type@{Type}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \hyperlink{classCBackend_abadfd9ef309ba4d12e648fe2e3fff08b}{C\+Backend\+::\+Type}}
+
+
+
+The types of backend. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+B\+\_\+\+S\+E\+Q\+U\+E\+N\+T\+I\+AL@{C\+B\+\_\+\+S\+E\+Q\+U\+E\+N\+T\+I\+AL}!C\+Backend@{C\+Backend}}\index{C\+Backend@{C\+Backend}!C\+B\+\_\+\+S\+E\+Q\+U\+E\+N\+T\+I\+AL@{C\+B\+\_\+\+S\+E\+Q\+U\+E\+N\+T\+I\+AL}}}\mbox{\Hypertarget{classCBackend_abadfd9ef309ba4d12e648fe2e3fff08bac7f88561cc85e7035d39ec9ccd25c413}\label{classCBackend_abadfd9ef309ba4d12e648fe2e3fff08bac7f88561cc85e7035d39ec9ccd25c413}} 
+C\+B\+\_\+\+S\+E\+Q\+U\+E\+N\+T\+I\+AL&Sequential c without instrumentation. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 149 of file c\+\_\+backend.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCBackend_a1e313cf2e64972680a630fffda96ef7e}\label{classCBackend_a1e313cf2e64972680a630fffda96ef7e}} 
+\index{C\+Backend@{C\+Backend}!C\+Backend@{C\+Backend}}
+\index{C\+Backend@{C\+Backend}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{C\+Backend()}{CBackend()}}
+{\footnotesize\ttfamily C\+Backend\+::\+C\+Backend (\begin{DoxyParamCaption}\item[{const \hyperlink{classCBackend_abadfd9ef309ba4d12e648fe2e3fff08b}{Type}}]{\+\_\+c\+\_\+backend\+\_\+type,  }\item[{const \hyperlink{c__backend__information_8hpp_affe03f2ae5a23aa0efcd9d958c85280d}{C\+Backend\+Information\+Const\+Ref}}]{c\+\_\+backend\+\_\+information,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{application__manager_8hpp_abb985163a2a3fb747f6f03b1eaadbb44}{application\+\_\+manager\+Const\+Ref}}]{\+\_\+\+AppM,  }\item[{std\+::string}]{\+\_\+file\+\_\+name,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Constructor. 
+
+Header include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & is the type of c backend to be created \\
+\hline
+{\em c\+\_\+backend\+\_\+information} & is the information about the backend to be created \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow graph manager \\
+\hline
+{\em AppM} & is the manager of the application \\
+\hline
+{\em file\+\_\+name} & is the file to be created \\
+\hline
+{\em Param} & is the set of input parameters\\
+\hline
+\end{DoxyParams}
+design\+\_\+flows include design\+\_\+flows/backend/\+ToC design\+\_\+flows/backend/\+To\+C/source\+\_\+code\+\_\+writers include frontend\+\_\+analysis Behavior include \hyperlink{structGraph}{Graph} include Paramter include S\+TD include S\+TL include tree includes Utility include 
+
+Definition at line 123 of file c\+\_\+backend.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$\+C\+Backend().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/de2/classCBackend_a1e313cf2e64972680a630fffda96ef7e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCBackend_ae558a515c1e10643bf4016ab63493160}\label{classCBackend_ae558a515c1e10643bf4016ab63493160}} 
+\index{C\+Backend@{C\+Backend}!````~C\+Backend@{$\sim$\+C\+Backend}}
+\index{````~C\+Backend@{$\sim$\+C\+Backend}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{$\sim$\+C\+Backend()}{~CBackend()}}
+{\footnotesize\ttfamily C\+Backend\+::$\sim$\+C\+Backend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by C\+Backend().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/de2/classCBackend_ae558a515c1e10643bf4016ab63493160_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCBackend_a6f6d94270928c1a0b1100d79272daa2f}\label{classCBackend_a6f6d94270928c1a0b1100d79272daa2f}} 
+\index{C\+Backend@{C\+Backend}!Analyze\+Include@{Analyze\+Include}}
+\index{Analyze\+Include@{Analyze\+Include}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{Analyze\+Include()}{AnalyzeInclude()}}
+{\footnotesize\ttfamily void C\+Backend\+::\+Analyze\+Include (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{BH,  }\item[{\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \&}]{includes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Analyze a variable or a type to identify the includes to be added. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & is the index of the variable or of the type \\
+\hline
+{\em BH} & is the behavioral helper \\
+\hline
+{\em includes} & is where include has to be inseted \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 310 of file c\+\_\+backend.\+cpp.
+
+
+
+References already\+\_\+visited, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Behavioral\+Helper\+::get\+\_\+definition(), tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), tree\+\_\+helper\+::\+Get\+Types\+To\+Be\+Declared\+After(), tree\+\_\+helper\+::\+Get\+Types\+To\+Be\+Declared\+Before(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Design\+Flow\+Step\+::parameters, S\+TR, TM, and test\+\_\+panda\+::type.
+
+
+
+Referenced by write\+Includes().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/de2/classCBackend_a6f6d94270928c1a0b1100d79272daa2f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/de2/classCBackend_a6f6d94270928c1a0b1100d79272daa2f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCBackend_ae88e75e47f68079871cad2be17fde136}\label{classCBackend_ae88e75e47f68079871cad2be17fde136}} 
+\index{C\+Backend@{C\+Backend}!C\+Get\+Design\+Flow\+Step\+Factory@{C\+Get\+Design\+Flow\+Step\+Factory}}
+\index{C\+Get\+Design\+Flow\+Step\+Factory@{C\+Get\+Design\+Flow\+Step\+Factory}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{C\+Get\+Design\+Flow\+Step\+Factory()}{CGetDesignFlowStepFactory()}}
+{\footnotesize\ttfamily const Design\+Flow\+Step\+Factory\+Const\+Ref C\+Backend\+::\+C\+Get\+Design\+Flow\+Step\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return the factory to create this type of steps. 
+
+
+
+Implements \hyperlink{classDesignFlowStep_a5510a8d296670a07f6b53312c448994c}{Design\+Flow\+Step}.
+
+
+
+Definition at line 372 of file c\+\_\+backend.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, and Wrefcount$<$ T $>$\+::lock().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{d3/de2/classCBackend_ae88e75e47f68079871cad2be17fde136_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCBackend_abe204a588efad9a8205dc02097420473}\label{classCBackend_abe204a588efad9a8205dc02097420473}} 
+\index{C\+Backend@{C\+Backend}!compute\+\_\+variables@{compute\+\_\+variables}}
+\index{compute\+\_\+variables@{compute\+\_\+variables}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{compute\+\_\+variables()}{compute\_variables()}}
+{\footnotesize\ttfamily void C\+Backend\+::compute\+\_\+variables (\begin{DoxyParamCaption}\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{in\+Graph,  }\item[{const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ unsigned int $>$ \&}]{gbl\+Variables,  }\item[{std\+::list$<$ unsigned int $>$ \&}]{fun\+Params,  }\item[{\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ unsigned int $>$ \&}]{computed\+\_\+variables }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Computes the variables which have to be declared for a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Graph} & is the data flow graph of the function \\
+\hline
+{\em gbl\+Variables} & is the set containing the node ids of the global variables \\
+\hline
+{\em fun\+Params} & is the list of function parameters \\
+\hline
+{\em computed\+\_\+variables} & is the set where the computed variables will be stored \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 347 of file c\+\_\+backend.\+cpp.
+
+
+
+References Op\+Graph\+::\+C\+Get\+Op\+Node\+Info().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/de2/classCBackend_abe204a588efad9a8205dc02097420473_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCBackend_a2acdf81972285d1505ad178769bf5d53}\label{classCBackend_a2acdf81972285d1505ad178769bf5d53}} 
+\index{C\+Backend@{C\+Backend}!Compute\+Relationships@{Compute\+Relationships}}
+\index{Compute\+Relationships@{Compute\+Relationships}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{Compute\+Relationships()}{ComputeRelationships()}}
+{\footnotesize\ttfamily void C\+Backend\+::\+Compute\+Relationships (\begin{DoxyParamCaption}\item[{\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&}]{relationship,  }\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Compute the relationships of a step with other steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dependencies} & is where relationships will be stored \\
+\hline
+{\em relationship\+\_\+type} & is the type of relationship to be computed \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classDesignFlowStep_a65bf7bcb603189a7ddcf930c3a9fd7fe}{Design\+Flow\+Step}.
+
+
+
+Definition at line 433 of file c\+\_\+backend.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+A\+L\+L\+\_\+\+F\+U\+N\+C\+T\+I\+O\+NS, AppM, B\+A\+S\+I\+C\+\_\+\+B\+L\+O\+C\+K\+S\+\_\+\+C\+F\+G\+\_\+\+C\+O\+M\+P\+U\+T\+A\+T\+I\+ON, c\+\_\+backend\+\_\+type, C\+B\+\_\+\+S\+E\+Q\+U\+E\+N\+T\+I\+AL, Application\+Frontend\+Flow\+Step\+::\+Compute\+Signature(), H\+L\+S\+Function\+Step\+::\+Compute\+Signature(), Compute\+Signature(), Frontend\+Flow\+Step\+Factory\+::\+Create\+Application\+Frontend\+Flow\+Step(), H\+L\+S\+Flow\+Step\+Factory\+::\+Create\+H\+L\+S\+Flow\+Step(), Frontend\+Flow\+Step\+::\+Create\+Steps(), Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+A\+N\+A\+L\+Y\+S\+IS, H\+L\+S\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+I\+S\+\_\+\+F\+L\+OW, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Wrefcount$<$ T $>$\+::lock(), L\+O\+O\+P\+\_\+\+C\+O\+M\+P\+U\+T\+A\+T\+I\+ON, O\+P\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+\+C\+F\+G\+\_\+\+C\+O\+M\+P\+U\+T\+A\+T\+I\+ON, Design\+Flow\+Step\+::parameters, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, T\+E\+S\+T\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+\+P\+A\+R\+S\+ER, T\+E\+S\+T\+B\+E\+N\+C\+H\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+ON, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, V\+A\+R\+\_\+\+A\+N\+A\+L\+Y\+S\+IS, and Frontend\+Flow\+Step\+::\+W\+H\+O\+L\+E\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/de2/classCBackend_a2acdf81972285d1505ad178769bf5d53_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCBackend_a25f706fe1466ee3c15d680c21f1d3025}\label{classCBackend_a25f706fe1466ee3c15d680c21f1d3025}} 
+\index{C\+Backend@{C\+Backend}!Compute\+Signature@{Compute\+Signature}}
+\index{Compute\+Signature@{Compute\+Signature}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{Compute\+Signature()}{ComputeSignature()}}
+{\footnotesize\ttfamily const std\+::string C\+Backend\+::\+Compute\+Signature (\begin{DoxyParamCaption}\item[{const \hyperlink{classCBackend_abadfd9ef309ba4d12e648fe2e3fff08b}{Type}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compute the signature for a c backend step. 
+
+
+
+Definition at line 382 of file c\+\_\+backend.\+cpp.
+
+
+
+References C\+B\+\_\+\+S\+E\+Q\+U\+E\+N\+T\+I\+AL, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+
+
+Referenced by C\+Testbench\+Execution\+::\+Compute\+Relationships(), Basic\+Blocks\+Profiling\+::\+Compute\+Relationships(), Testbench\+Values\+C\+Generation\+::\+Compute\+Relationships(), Compute\+Relationships(), and Get\+Signature().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/de2/classCBackend_a25f706fe1466ee3c15d680c21f1d3025_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCBackend_ab35c39606dc2d39998ccd35edf7c82df}\label{classCBackend_ab35c39606dc2d39998ccd35edf7c82df}} 
+\index{C\+Backend@{C\+Backend}!Exec@{Exec}}
+\index{Exec@{Exec}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{Exec()}{Exec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} C\+Backend\+::\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the step. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classDesignFlowStep_a77d7e38493016766098711ea24f60b89}{Design\+Flow\+Step}.
+
+
+
+Definition at line 143 of file c\+\_\+backend.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, file\+\_\+name, Time\+Stamp\+::\+Get\+Current\+Time\+Stamp(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, indented\+\_\+output\+\_\+stream, Design\+Flow\+Step\+::parameters, S\+U\+C\+C\+E\+SS, Write\+Global\+Declarations(), write\+Implementations(), write\+Includes(), and writer.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/de2/classCBackend_ab35c39606dc2d39998ccd35edf7c82df_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCBackend_a38b67519696c9c3cc4c395fcf16b973d}\label{classCBackend_a38b67519696c9c3cc4c395fcf16b973d}} 
+\index{C\+Backend@{C\+Backend}!Get\+C\+Writer@{Get\+C\+Writer}}
+\index{Get\+C\+Writer@{Get\+C\+Writer}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{Get\+C\+Writer()}{GetCWriter()}}
+{\footnotesize\ttfamily const \hyperlink{c__writer_8hpp_a4e9c4dfe17e35f981e27b6dd97f9632c}{C\+Writer\+Ref} C\+Backend\+::\+Get\+C\+Writer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+the associated c writer 
+\end{DoxyReturn}
+
+
+Definition at line 138 of file c\+\_\+backend.\+cpp.
+
+
+
+References writer.
+
+\mbox{\Hypertarget{classCBackend_af879cc47d9bc18eb778390825b85667d}\label{classCBackend_af879cc47d9bc18eb778390825b85667d}} 
+\index{C\+Backend@{C\+Backend}!Get\+Name@{Get\+Name}}
+\index{Get\+Name@{Get\+Name}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{Get\+Name()}{GetName()}}
+{\footnotesize\ttfamily const std\+::string C\+Backend\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return the name of this design step. 
+
+\begin{DoxyReturn}{Returns}
+the name of the pass (for debug purpose) 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classDesignFlowStep_a01e5ebfab88db3b3b7f832f80075fad8}{Design\+Flow\+Step}.
+
+
+
+Definition at line 428 of file c\+\_\+backend.\+cpp.
+
+
+
+References Get\+Signature().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/de2/classCBackend_af879cc47d9bc18eb778390825b85667d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCBackend_aa66a47377656d5f70e26c4dd96de7ab6}\label{classCBackend_aa66a47377656d5f70e26c4dd96de7ab6}} 
+\index{C\+Backend@{C\+Backend}!Get\+Signature@{Get\+Signature}}
+\index{Get\+Signature@{Get\+Signature}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{Get\+Signature()}{GetSignature()}}
+{\footnotesize\ttfamily const std\+::string C\+Backend\+::\+Get\+Signature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return a unified identifier of this design step. 
+
+\begin{DoxyReturn}{Returns}
+the signature of the design step 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classDesignFlowStep_ab111e3d4058615c2dedc0505978d4699}{Design\+Flow\+Step}.
+
+
+
+Definition at line 377 of file c\+\_\+backend.\+cpp.
+
+
+
+References c\+\_\+backend\+\_\+type, and Compute\+Signature().
+
+
+
+Referenced by Get\+Name().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/de2/classCBackend_aa66a47377656d5f70e26c4dd96de7ab6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/de2/classCBackend_aa66a47377656d5f70e26c4dd96de7ab6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCBackend_a9cedb79a577526fabd2e396c6697eaf1}\label{classCBackend_a9cedb79a577526fabd2e396c6697eaf1}} 
+\index{C\+Backend@{C\+Backend}!Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}}
+\index{Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{Has\+To\+Be\+Executed()}{HasToBeExecuted()}}
+{\footnotesize\ttfamily bool C\+Backend\+::\+Has\+To\+Be\+Executed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if this step has actually to be executed. 
+
+\begin{DoxyReturn}{Returns}
+true if the step has to be executed 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classDesignFlowStep_a1783abe0c1d162a52da1e413d5d1ef05}{Design\+Flow\+Step}.
+
+
+
+Definition at line 169 of file c\+\_\+backend.\+cpp.
+
+\mbox{\Hypertarget{classCBackend_a9c77a707b51fd49230668549eb1fd8db}\label{classCBackend_a9c77a707b51fd49230668549eb1fd8db}} 
+\index{C\+Backend@{C\+Backend}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void C\+Backend\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 174 of file c\+\_\+backend.\+cpp.
+
+
+
+References already\+\_\+visited, AppM, c\+\_\+backend\+\_\+type, file\+\_\+name, functions\+\_\+to\+\_\+be\+\_\+declared, functions\+\_\+to\+\_\+be\+\_\+defined, and writer.
+
+\mbox{\Hypertarget{classCBackend_abe2034d792eff87acf84b9212bae06c9}\label{classCBackend_abe2034d792eff87acf84b9212bae06c9}} 
+\index{C\+Backend@{C\+Backend}!Write\+Global\+Declarations@{Write\+Global\+Declarations}}
+\index{Write\+Global\+Declarations@{Write\+Global\+Declarations}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{Write\+Global\+Declarations()}{WriteGlobalDeclarations()}}
+{\footnotesize\ttfamily void C\+Backend\+::\+Write\+Global\+Declarations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Write the global declarations. 
+
+
+
+Definition at line 191 of file c\+\_\+backend.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), AppM, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Behavioral\+Helper\+::function\+\_\+has\+\_\+to\+\_\+be\+\_\+printed(), functions\+\_\+to\+\_\+be\+\_\+declared, functions\+\_\+to\+\_\+be\+\_\+defined, Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, indented\+\_\+output\+\_\+stream, Design\+Flow\+Step\+::parameters, and writer.
+
+
+
+Referenced by Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/de2/classCBackend_abe2034d792eff87acf84b9212bae06c9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/de2/classCBackend_abe2034d792eff87acf84b9212bae06c9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCBackend_aa3c46605226753185304ebc7b9adf463}\label{classCBackend_aa3c46605226753185304ebc7b9adf463}} 
+\index{C\+Backend@{C\+Backend}!write\+Implementations@{write\+Implementations}}
+\index{write\+Implementations@{write\+Implementations}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{write\+Implementations()}{writeImplementations()}}
+{\footnotesize\ttfamily void C\+Backend\+::write\+Implementations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 236 of file c\+\_\+backend.\+cpp.
+
+
+
+References AppM, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Behavioral\+Helper\+::function\+\_\+has\+\_\+to\+\_\+be\+\_\+printed(), functions\+\_\+to\+\_\+be\+\_\+defined, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, and writer.
+
+
+
+Referenced by Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/de2/classCBackend_aa3c46605226753185304ebc7b9adf463_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/de2/classCBackend_aa3c46605226753185304ebc7b9adf463_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCBackend_a4d3545310fee36bb8cfad7a893a8eb31}\label{classCBackend_a4d3545310fee36bb8cfad7a893a8eb31}} 
+\index{C\+Backend@{C\+Backend}!write\+Includes@{write\+Includes}}
+\index{write\+Includes@{write\+Includes}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{write\+Includes()}{writeIncludes()}}
+{\footnotesize\ttfamily void C\+Backend\+::write\+Includes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Writes the file header, i.\+e the comments at the beginning of the file. 
+
+
+
+Definition at line 251 of file c\+\_\+backend.\+cpp.
+
+
+
+References Analyze\+Include(), AppM, Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Behavior\+::\+D\+FG, E\+N\+T\+R\+Y\+\_\+\+ID, E\+X\+I\+T\+\_\+\+ID, functions\+\_\+to\+\_\+be\+\_\+defined, Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), Behavioral\+Helper\+::get\+\_\+parameters(), Behavioral\+Helper\+::get\+\_\+type(), Behavioral\+Helper\+::get\+\_\+typecast(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, index, Behavioral\+Helper\+::\+Print\+Variable(), S\+TR, and writer.
+
+
+
+Referenced by Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/de2/classCBackend_a4d3545310fee36bb8cfad7a893a8eb31_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{d3/de2/classCBackend_a4d3545310fee36bb8cfad7a893a8eb31_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classCBackend_a42d2c18c6162a3c1113cb8c3fec36a4f}\label{classCBackend_a42d2c18c6162a3c1113cb8c3fec36a4f}} 
+\index{C\+Backend@{C\+Backend}!C\+Backend\+Step\+Factory@{C\+Backend\+Step\+Factory}}
+\index{C\+Backend\+Step\+Factory@{C\+Backend\+Step\+Factory}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{C\+Backend\+Step\+Factory}{CBackendStepFactory}}
+{\footnotesize\ttfamily friend class \hyperlink{classCBackendStepFactory}{C\+Backend\+Step\+Factory}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 187 of file c\+\_\+backend.\+hpp.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classCBackend_ab4058b823fc1c0cef4183ce282dcad79}\label{classCBackend_ab4058b823fc1c0cef4183ce282dcad79}} 
+\index{C\+Backend@{C\+Backend}!already\+\_\+visited@{already\+\_\+visited}}
+\index{already\+\_\+visited@{already\+\_\+visited}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{already\+\_\+visited}{already\_visited}}
+{\footnotesize\ttfamily \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$unsigned int$>$ C\+Backend\+::already\+\_\+visited\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The set of already analyzed nodes during search of header to include; it is used to avoid infinite recursion. 
+
+
+
+Definition at line 94 of file c\+\_\+backend.\+hpp.
+
+
+
+Referenced by Analyze\+Include(), and Initialize().
+
+\mbox{\Hypertarget{classCBackend_ae615cda6d03bdb848968b1eb1e79c273}\label{classCBackend_ae615cda6d03bdb848968b1eb1e79c273}} 
+\index{C\+Backend@{C\+Backend}!AppM@{AppM}}
+\index{AppM@{AppM}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{AppM}{AppM}}
+{\footnotesize\ttfamily const \hyperlink{application__manager_8hpp_abb985163a2a3fb747f6f03b1eaadbb44}{application\+\_\+manager\+Const\+Ref} C\+Backend\+::\+AppM\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+the manager of the application 
+
+
+
+Definition at line 106 of file c\+\_\+backend.\+hpp.
+
+
+
+Referenced by Compute\+Relationships(), Initialize(), Write\+Global\+Declarations(), write\+Implementations(), and write\+Includes().
+
+\mbox{\Hypertarget{classCBackend_a2aab793665999e9eb573a5fd10d88dd8}\label{classCBackend_a2aab793665999e9eb573a5fd10d88dd8}} 
+\index{C\+Backend@{C\+Backend}!c\+\_\+backend\+\_\+type@{c\+\_\+backend\+\_\+type}}
+\index{c\+\_\+backend\+\_\+type@{c\+\_\+backend\+\_\+type}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{c\+\_\+backend\+\_\+type}{c\_backend\_type}}
+{\footnotesize\ttfamily const \hyperlink{classCBackend_abadfd9ef309ba4d12e648fe2e3fff08b}{Type} C\+Backend\+::c\+\_\+backend\+\_\+type}
+
+
+
+The type of this instance. 
+
+
+
+Definition at line 183 of file c\+\_\+backend.\+hpp.
+
+
+
+Referenced by Compute\+Relationships(), Get\+Signature(), and Initialize().
+
+\mbox{\Hypertarget{classCBackend_a11ed652bd65b639d749423ff23867161}\label{classCBackend_a11ed652bd65b639d749423ff23867161}} 
+\index{C\+Backend@{C\+Backend}!file\+\_\+name@{file\+\_\+name}}
+\index{file\+\_\+name@{file\+\_\+name}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{file\+\_\+name}{file\_name}}
+{\footnotesize\ttfamily const std\+::string C\+Backend\+::file\+\_\+name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The name of the file to be created. 
+
+
+
+Definition at line 103 of file c\+\_\+backend.\+hpp.
+
+
+
+Referenced by Exec(), and Initialize().
+
+\mbox{\Hypertarget{classCBackend_a64653afeec4c9a88d1111ab3944449ca}\label{classCBackend_a64653afeec4c9a88d1111ab3944449ca}} 
+\index{C\+Backend@{C\+Backend}!functions\+\_\+to\+\_\+be\+\_\+declared@{functions\+\_\+to\+\_\+be\+\_\+declared}}
+\index{functions\+\_\+to\+\_\+be\+\_\+declared@{functions\+\_\+to\+\_\+be\+\_\+declared}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{functions\+\_\+to\+\_\+be\+\_\+declared}{functions\_to\_be\_declared}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ C\+Backend\+::functions\+\_\+to\+\_\+be\+\_\+declared\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This set usually is equal to the set of functions without a body. 
+
+
+
+Definition at line 190 of file c\+\_\+backend.\+hpp.
+
+
+
+Referenced by Initialize(), and Write\+Global\+Declarations().
+
+\mbox{\Hypertarget{classCBackend_adbc767949e8531de9f3d49f4fa4a6533}\label{classCBackend_adbc767949e8531de9f3d49f4fa4a6533}} 
+\index{C\+Backend@{C\+Backend}!functions\+\_\+to\+\_\+be\+\_\+defined@{functions\+\_\+to\+\_\+be\+\_\+defined}}
+\index{functions\+\_\+to\+\_\+be\+\_\+defined@{functions\+\_\+to\+\_\+be\+\_\+defined}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{functions\+\_\+to\+\_\+be\+\_\+defined}{functions\_to\_be\_defined}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ C\+Backend\+::functions\+\_\+to\+\_\+be\+\_\+defined\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 193 of file c\+\_\+backend.\+hpp.
+
+
+
+Referenced by Initialize(), Write\+Global\+Declarations(), write\+Implementations(), and write\+Includes().
+
+\mbox{\Hypertarget{classCBackend_a80c09865e76c594c3ad883da02d87abc}\label{classCBackend_a80c09865e76c594c3ad883da02d87abc}} 
+\index{C\+Backend@{C\+Backend}!indented\+\_\+output\+\_\+stream@{indented\+\_\+output\+\_\+stream}}
+\index{indented\+\_\+output\+\_\+stream@{indented\+\_\+output\+\_\+stream}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{indented\+\_\+output\+\_\+stream}{indented\_output\_stream}}
+{\footnotesize\ttfamily const \hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref} C\+Backend\+::indented\+\_\+output\+\_\+stream\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The output stream. 
+
+
+
+Definition at line 97 of file c\+\_\+backend.\+hpp.
+
+
+
+Referenced by Exec(), and Write\+Global\+Declarations().
+
+\mbox{\Hypertarget{classCBackend_a0323ee15f4a2e60c99c730caa2960b5b}\label{classCBackend_a0323ee15f4a2e60c99c730caa2960b5b}} 
+\index{C\+Backend@{C\+Backend}!TM@{TM}}
+\index{TM@{TM}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{TM}{TM}}
+{\footnotesize\ttfamily const \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref} C\+Backend\+::\+TM\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The \hyperlink{classtree__manager}{tree\+\_\+manager}. 
+
+
+
+Definition at line 109 of file c\+\_\+backend.\+hpp.
+
+
+
+Referenced by Analyze\+Include().
+
+\mbox{\Hypertarget{classCBackend_a8ebae22824a6201f7cc467ad69b4450a}\label{classCBackend_a8ebae22824a6201f7cc467ad69b4450a}} 
+\index{C\+Backend@{C\+Backend}!writer@{writer}}
+\index{writer@{writer}!C\+Backend@{C\+Backend}}
+\subsubsection{\texorpdfstring{writer}{writer}}
+{\footnotesize\ttfamily const \hyperlink{c__writer_8hpp_a4e9c4dfe17e35f981e27b6dd97f9632c}{C\+Writer\+Ref} C\+Backend\+::writer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+the writer 
+
+
+
+Definition at line 100 of file c\+\_\+backend.\+hpp.
+
+
+
+Referenced by Exec(), Get\+C\+Writer(), Initialize(), Write\+Global\+Declarations(), write\+Implementations(), and write\+Includes().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+C/prog\+Models/\hyperlink{c__backend_8hpp}{c\+\_\+backend.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+C/prog\+Models/\hyperlink{c__backend_8cpp}{c\+\_\+backend.\+cpp}\end{DoxyCompactItemize}

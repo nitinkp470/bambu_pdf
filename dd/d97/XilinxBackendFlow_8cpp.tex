@@ -1,0 +1,280 @@
+\hypertarget{XilinxBackendFlow_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/xilinx/\+Xilinx\+Backend\+Flow.cpp File Reference}
+\label{XilinxBackendFlow_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/xilinx/\+Xilinx\+Backend\+Flow.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/xilinx/\+Xilinx\+Backend\+Flow.\+cpp}}
+
+
+Implementation of the wrapper to Xilinx tools.  
+
+
+{\ttfamily \#include \char`\"{}Xilinx\+Backend\+Flow.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+X\+I\+L\+I\+N\+X.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+V\+I\+V\+A\+D\+O\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}synthesis\+\_\+constants.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}L\+U\+T\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}area\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}clb\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}map\+\_\+wrapper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}target\+\_\+device.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}target\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}time\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}trce\+\_\+wrapper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Xilinx\+Wrapper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}file\+I\+O.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+dom\+\_\+parser.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+script\+\_\+command.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}structural\+\_\+objects.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Virtex-\/4.\+data\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Virtex-\/5.\+data\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Virtex-\/6.\+data\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Virtex-\/7.\+data\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Virtex-\/7-\/\+V\+V\+D.\+data\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Artix-\/7-\/\+V\+V\+D.\+data\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Zynq-\/\+V\+V\+D.\+data\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Zynq-\/\+Y\+O\+S\+Y\+S-\/\+V\+V\+D.\+data\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Zynq.\+data\char`\"{}}\newline
+Include dependency graph for Xilinx\+Backend\+Flow.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/df6/XilinxBackendFlow_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{XilinxBackendFlow_8cpp_ac200bd20b5aa8fd3a9fb1945a2d46389}{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}~\char`\"{}X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS\char`\"{}
+\begin{DoxyCompactList}\small\item\em Header include. \end{DoxyCompactList}\item 
+\#define \hyperlink{XilinxBackendFlow_8cpp_aa46e4ff5dd54a4d69cea57b9fc563cda}{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS}~\char`\"{}X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS\char`\"{}
+\item 
+\#define \hyperlink{XilinxBackendFlow_8cpp_a92b7a77f6bd057c5060df693bd8042d7}{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED}~\char`\"{}X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED\char`\"{}
+\item 
+\#define \hyperlink{XilinxBackendFlow_8cpp_aadbc46e5d7040a3d26f558babae13616}{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO}~\char`\"{}X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO\char`\"{}
+\item 
+\#define \hyperlink{XilinxBackendFlow_8cpp_ae361208c27a266515cd9f2f2b02d069e}{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED}~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED\char`\"{}
+\item 
+\#define \hyperlink{XilinxBackendFlow_8cpp_ae53771b08d27bc1ced707c9a7b102fd8}{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+CE}~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+CE\char`\"{}
+\item 
+\#define \hyperlink{XilinxBackendFlow_8cpp_a0ef3810870a8b5ccf5f238f56d1e2fe3}{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS\char`\"{}
+\item 
+\#define \hyperlink{XilinxBackendFlow_8cpp_a1a5e2cd5934e8b9d7898ca9842b8016d}{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS}~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS\char`\"{}
+\item 
+\#define \hyperlink{XilinxBackendFlow_8cpp_aaf1f8d0c28136d4b476f4c65828820f1}{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO}~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO\char`\"{}
+\item 
+\#define \hyperlink{XilinxBackendFlow_8cpp_a9aef3d286a777722c81adea764bcc0f0}{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+I\+O\+P\+IN}~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+I\+O\+P\+IN\char`\"{}
+\item 
+\#define \hyperlink{XilinxBackendFlow_8cpp_a4093688ee5b3ed3a0e34764df01e3453}{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+D\+S\+PS}~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+D\+S\+PS\char`\"{}
+\item 
+\#define \hyperlink{XilinxBackendFlow_8cpp_a3ebbc80dd2f029e3d60acbccc235cfa3}{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+O\+U\+T\+P\+UT}~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+O\+U\+T\+P\+UT\char`\"{}
+\item 
+\#define \hyperlink{XilinxBackendFlow_8cpp_af4c647b4ffaebb85c0608381caaa4724}{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+P\+O\+W\+ER}~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+P\+O\+W\+ER\char`\"{}
+\item 
+\#define \hyperlink{XilinxBackendFlow_8cpp_ab5e579051d39ea061e3e8bd3b2f1cd51}{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+D\+E\+S\+I\+G\+N\+\_\+\+D\+E\+L\+AY}~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+D\+E\+S\+I\+G\+N\+\_\+\+D\+E\+L\+AY\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of the wrapper to Xilinx tools. 
+
+Implementation of the methods to wrap synthesis tools by Xilinx
+
+\begin{DoxyAuthor}{Author}
+Christian Pilato \href{mailto:pilato@elet.polimi.it}{\tt pilato@elet.\+polimi.\+it} 
+
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+
+Marco Lattuada \href{mailto:marco.lattuada@polimi.it}{\tt marco.\+lattuada@polimi.\+it} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{XilinxBackendFlow_8cpp_aaf1f8d0c28136d4b476f4c65828820f1}\label{XilinxBackendFlow_8cpp_aaf1f8d0c28136d4b476f4c65828820f1}} 
+\index{Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}!V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO}}
+\index{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO}!Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO}{VIVADO\_XILINX\_BLOCK\_RAMFIFO}}
+{\footnotesize\ttfamily \#define V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO\char`\"{}}
+
+
+
+Definition at line 84 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Xilinx\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{XilinxBackendFlow_8cpp_ab5e579051d39ea061e3e8bd3b2f1cd51}\label{XilinxBackendFlow_8cpp_ab5e579051d39ea061e3e8bd3b2f1cd51}} 
+\index{Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}!V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+D\+E\+S\+I\+G\+N\+\_\+\+D\+E\+L\+AY@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+D\+E\+S\+I\+G\+N\+\_\+\+D\+E\+L\+AY}}
+\index{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+D\+E\+S\+I\+G\+N\+\_\+\+D\+E\+L\+AY@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+D\+E\+S\+I\+G\+N\+\_\+\+D\+E\+L\+AY}!Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+D\+E\+S\+I\+G\+N\+\_\+\+D\+E\+L\+AY}{VIVADO\_XILINX\_DESIGN\_DELAY}}
+{\footnotesize\ttfamily \#define V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+D\+E\+S\+I\+G\+N\+\_\+\+D\+E\+L\+AY~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+D\+E\+S\+I\+G\+N\+\_\+\+D\+E\+L\+AY\char`\"{}}
+
+
+
+Definition at line 89 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Xilinx\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{XilinxBackendFlow_8cpp_a4093688ee5b3ed3a0e34764df01e3453}\label{XilinxBackendFlow_8cpp_a4093688ee5b3ed3a0e34764df01e3453}} 
+\index{Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}!V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+D\+S\+PS@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+D\+S\+PS}}
+\index{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+D\+S\+PS@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+D\+S\+PS}!Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+D\+S\+PS}{VIVADO\_XILINX\_DSPS}}
+{\footnotesize\ttfamily \#define V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+D\+S\+PS~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+D\+S\+PS\char`\"{}}
+
+
+
+Definition at line 86 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Xilinx\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{XilinxBackendFlow_8cpp_a9aef3d286a777722c81adea764bcc0f0}\label{XilinxBackendFlow_8cpp_a9aef3d286a777722c81adea764bcc0f0}} 
+\index{Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}!V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+I\+O\+P\+IN@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+I\+O\+P\+IN}}
+\index{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+I\+O\+P\+IN@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+I\+O\+P\+IN}!Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+I\+O\+P\+IN}{VIVADO\_XILINX\_IOPIN}}
+{\footnotesize\ttfamily \#define V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+I\+O\+P\+IN~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+I\+O\+P\+IN\char`\"{}}
+
+
+
+Definition at line 85 of file Xilinx\+Backend\+Flow.\+cpp.
+
+\mbox{\Hypertarget{XilinxBackendFlow_8cpp_ae361208c27a266515cd9f2f2b02d069e}\label{XilinxBackendFlow_8cpp_ae361208c27a266515cd9f2f2b02d069e}} 
+\index{Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}!V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED}}
+\index{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED}!Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED}{VIVADO\_XILINX\_LUT\_FLIP\_FLOP\_PAIRS\_USED}}
+{\footnotesize\ttfamily \#define V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED\char`\"{}}
+
+
+
+Definition at line 80 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Xilinx\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{XilinxBackendFlow_8cpp_a3ebbc80dd2f029e3d60acbccc235cfa3}\label{XilinxBackendFlow_8cpp_a3ebbc80dd2f029e3d60acbccc235cfa3}} 
+\index{Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}!V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+O\+U\+T\+P\+UT@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+O\+U\+T\+P\+UT}}
+\index{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+O\+U\+T\+P\+UT@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+O\+U\+T\+P\+UT}!Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+O\+U\+T\+P\+UT}{VIVADO\_XILINX\_OUTPUT}}
+{\footnotesize\ttfamily \#define V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+O\+U\+T\+P\+UT~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+O\+U\+T\+P\+UT\char`\"{}}
+
+
+
+Definition at line 87 of file Xilinx\+Backend\+Flow.\+cpp.
+
+\mbox{\Hypertarget{XilinxBackendFlow_8cpp_af4c647b4ffaebb85c0608381caaa4724}\label{XilinxBackendFlow_8cpp_af4c647b4ffaebb85c0608381caaa4724}} 
+\index{Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}!V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+P\+O\+W\+ER@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+P\+O\+W\+ER}}
+\index{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+P\+O\+W\+ER@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+P\+O\+W\+ER}!Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+P\+O\+W\+ER}{VIVADO\_XILINX\_POWER}}
+{\footnotesize\ttfamily \#define V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+P\+O\+W\+ER~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+P\+O\+W\+ER\char`\"{}}
+
+
+
+Definition at line 88 of file Xilinx\+Backend\+Flow.\+cpp.
+
+\mbox{\Hypertarget{XilinxBackendFlow_8cpp_ae53771b08d27bc1ced707c9a7b102fd8}\label{XilinxBackendFlow_8cpp_ae53771b08d27bc1ced707c9a7b102fd8}} 
+\index{Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}!V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+CE@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+CE}}
+\index{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+CE@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+CE}!Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+CE}{VIVADO\_XILINX\_SLICE}}
+{\footnotesize\ttfamily \#define V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+CE~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+CE\char`\"{}}
+
+
+
+Definition at line 81 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Xilinx\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{XilinxBackendFlow_8cpp_a1a5e2cd5934e8b9d7898ca9842b8016d}\label{XilinxBackendFlow_8cpp_a1a5e2cd5934e8b9d7898ca9842b8016d}} 
+\index{Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}!V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS}}
+\index{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS}!Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS}{VIVADO\_XILINX\_SLICE\_LUTS}}
+{\footnotesize\ttfamily \#define V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS\char`\"{}}
+
+
+
+Definition at line 83 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Xilinx\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{XilinxBackendFlow_8cpp_a0ef3810870a8b5ccf5f238f56d1e2fe3}\label{XilinxBackendFlow_8cpp_a0ef3810870a8b5ccf5f238f56d1e2fe3}} 
+\index{Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}!V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}}
+\index{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS@{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}!Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}{VIVADO\_XILINX\_SLICE\_REGISTERS}}
+{\footnotesize\ttfamily \#define V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS~\char`\"{}X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS\char`\"{}}
+
+
+
+Definition at line 82 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Xilinx\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{XilinxBackendFlow_8cpp_aadbc46e5d7040a3d26f558babae13616}\label{XilinxBackendFlow_8cpp_aadbc46e5d7040a3d26f558babae13616}} 
+\index{Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}!X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO@{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO}}
+\index{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO@{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO}!Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO}{XST\_NUMBER\_OF\_BLOCK\_RAMFIFO}}
+{\footnotesize\ttfamily \#define X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO~\char`\"{}X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO\char`\"{}}
+
+
+
+Definition at line 78 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Xilinx\+Backend\+Flow\+::xparse\+\_\+xst\+\_\+utilization().
+
+\mbox{\Hypertarget{XilinxBackendFlow_8cpp_a92b7a77f6bd057c5060df693bd8042d7}\label{XilinxBackendFlow_8cpp_a92b7a77f6bd057c5060df693bd8042d7}} 
+\index{Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}!X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED@{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED}}
+\index{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED@{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED}!Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED}{XST\_NUMBER\_OF\_LUT\_FLIP\_FLOP\_PAIRS\_USED}}
+{\footnotesize\ttfamily \#define X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED~\char`\"{}X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED\char`\"{}}
+
+
+
+Definition at line 77 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Xilinx\+Backend\+Flow\+::xparse\+\_\+xst\+\_\+utilization().
+
+\mbox{\Hypertarget{XilinxBackendFlow_8cpp_aa46e4ff5dd54a4d69cea57b9fc563cda}\label{XilinxBackendFlow_8cpp_aa46e4ff5dd54a4d69cea57b9fc563cda}} 
+\index{Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}!X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS@{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS}}
+\index{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS@{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS}!Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS}{XST\_NUMBER\_OF\_SLICE\_LUTS}}
+{\footnotesize\ttfamily \#define X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS~\char`\"{}X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS\char`\"{}}
+
+
+
+Definition at line 76 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Xilinx\+Backend\+Flow\+::xparse\+\_\+xst\+\_\+utilization().
+
+\mbox{\Hypertarget{XilinxBackendFlow_8cpp_ac200bd20b5aa8fd3a9fb1945a2d46389}\label{XilinxBackendFlow_8cpp_ac200bd20b5aa8fd3a9fb1945a2d46389}} 
+\index{Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}!X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS@{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}}
+\index{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS@{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}!Xilinx\+Backend\+Flow.\+cpp@{Xilinx\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}{XST\_NUMBER\_OF\_SLICE\_REGISTERS}}
+{\footnotesize\ttfamily \#define X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS~\char`\"{}X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS\char`\"{}}
+
+
+
+Header include. 
+
+constants include circuit include 
+
+Definition at line 75 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Xilinx\+Backend\+Flow\+::xparse\+\_\+xst\+\_\+utilization().
+

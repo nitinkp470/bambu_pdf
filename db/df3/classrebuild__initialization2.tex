@@ -1,0 +1,355 @@
+\hypertarget{classrebuild__initialization2}{}\section{rebuild\+\_\+initialization2 Class Reference}
+\label{classrebuild__initialization2}\index{rebuild\+\_\+initialization2@{rebuild\+\_\+initialization2}}
+
+
+Rebuild initialization function flow front-\/end step done after \hyperlink{classIR__lowering}{I\+R\+\_\+lowering}.  
+
+
+
+
+{\ttfamily \#include $<$rebuild\+\_\+initializations.\+hpp$>$}
+
+
+
+Inheritance diagram for rebuild\+\_\+initialization2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{db/d24/classrebuild__initialization2__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for rebuild\+\_\+initialization2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/de8/classrebuild__initialization2__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrebuild__initialization2_abe06363a4f1a11e01c21af0572a75916}{rebuild\+\_\+initialization2} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classrebuild__initialization2_a33310f23ecaf85b79995c19975a21476}{$\sim$rebuild\+\_\+initialization2} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classrebuild__initialization2_ab0a55d5d212cac19ff646a5ca54deab6}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Rebuild initialization function flow front-\/end step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classrebuild__initialization2_a43438dd8a7fb5bca487cd7c234c6342a}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\item 
+bool \hyperlink{classrebuild__initialization2_ae04cac56986ff94ce40cb7e9279e0628}{extract\+\_\+var\+\_\+decl\+\_\+ppe} (\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} addr\+\_\+assign\+\_\+op1, unsigned \&vd\+\_\+index, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&vd\+\_\+node)
+\begin{DoxyCompactList}\small\item\em extract\+\_\+var\+\_\+decl\+\_\+ppe \end{DoxyCompactList}\item 
+bool \hyperlink{classrebuild__initialization2_a0be02ce2244d4da31a1bc1856ed218ca}{extract\+\_\+var\+\_\+decl} (const mem\+\_\+ref $\ast$me, unsigned \&vd\+\_\+index, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&vd\+\_\+node, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&addr\+\_\+assign\+\_\+op1)
+\begin{DoxyCompactList}\small\item\em extract\+\_\+var\+\_\+decl return the variable decl referred by the mem\+\_\+ref given it is resolvable \end{DoxyCompactList}\item 
+bool \hyperlink{classrebuild__initialization2_a677aa83a6003323f11929da9609b7344}{look\+\_\+for\+\_\+\+R\+O\+Ms} ()
+\begin{DoxyCompactList}\small\item\em look\+\_\+for\+\_\+\+R\+O\+Ms transforms the IR by looking for an initial sequence of writes followed by read only instructions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Rebuild initialization function flow front-\/end step done after \hyperlink{classIR__lowering}{I\+R\+\_\+lowering}. 
+
+Definition at line 100 of file rebuild\+\_\+initializations.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrebuild__initialization2_abe06363a4f1a11e01c21af0572a75916}\label{classrebuild__initialization2_abe06363a4f1a11e01c21af0572a75916}} 
+\index{rebuild\+\_\+initialization2@{rebuild\+\_\+initialization2}!rebuild\+\_\+initialization2@{rebuild\+\_\+initialization2}}
+\index{rebuild\+\_\+initialization2@{rebuild\+\_\+initialization2}!rebuild\+\_\+initialization2@{rebuild\+\_\+initialization2}}
+\subsubsection{\texorpdfstring{rebuild\+\_\+initialization2()}{rebuild\_initialization2()}}
+{\footnotesize\ttfamily rebuild\+\_\+initialization2\+::rebuild\+\_\+initialization2 (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{AppM,  }\item[{unsigned int}]{function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Param} & is the set of the parameters \\
+\hline
+{\em AppM} & is the application manager \\
+\hline
+{\em function\+\_\+id} & is the identifier of the function \\
+\hline
+{\em Design\+Flow\+Manager\+Const\+Ref} & is the design flow manager \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 202 of file rebuild\+\_\+initializations.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, and G\+E\+T\+\_\+\+C\+L\+A\+SS.
+
+\mbox{\Hypertarget{classrebuild__initialization2_a33310f23ecaf85b79995c19975a21476}\label{classrebuild__initialization2_a33310f23ecaf85b79995c19975a21476}} 
+\index{rebuild\+\_\+initialization2@{rebuild\+\_\+initialization2}!````~rebuild\+\_\+initialization2@{$\sim$rebuild\+\_\+initialization2}}
+\index{````~rebuild\+\_\+initialization2@{$\sim$rebuild\+\_\+initialization2}!rebuild\+\_\+initialization2@{rebuild\+\_\+initialization2}}
+\subsubsection{\texorpdfstring{$\sim$rebuild\+\_\+initialization2()}{~rebuild\_initialization2()}}
+{\footnotesize\ttfamily rebuild\+\_\+initialization2\+::$\sim$rebuild\+\_\+initialization2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Compute\+Frontend\+Relationships().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/df3/classrebuild__initialization2_a33310f23ecaf85b79995c19975a21476_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classrebuild__initialization2_a43438dd8a7fb5bca487cd7c234c6342a}\label{classrebuild__initialization2_a43438dd8a7fb5bca487cd7c234c6342a}} 
+\index{rebuild\+\_\+initialization2@{rebuild\+\_\+initialization2}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!rebuild\+\_\+initialization2@{rebuild\+\_\+initialization2}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ rebuild\+\_\+initialization2\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 208 of file rebuild\+\_\+initializations.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and $\sim$rebuild\+\_\+initialization2().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/df3/classrebuild__initialization2_a43438dd8a7fb5bca487cd7c234c6342a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrebuild__initialization2_a0be02ce2244d4da31a1bc1856ed218ca}\label{classrebuild__initialization2_a0be02ce2244d4da31a1bc1856ed218ca}} 
+\index{rebuild\+\_\+initialization2@{rebuild\+\_\+initialization2}!extract\+\_\+var\+\_\+decl@{extract\+\_\+var\+\_\+decl}}
+\index{extract\+\_\+var\+\_\+decl@{extract\+\_\+var\+\_\+decl}!rebuild\+\_\+initialization2@{rebuild\+\_\+initialization2}}
+\subsubsection{\texorpdfstring{extract\+\_\+var\+\_\+decl()}{extract\_var\_decl()}}
+{\footnotesize\ttfamily bool rebuild\+\_\+initialization2\+::extract\+\_\+var\+\_\+decl (\begin{DoxyParamCaption}\item[{const mem\+\_\+ref $\ast$}]{me,  }\item[{unsigned \&}]{vd\+\_\+index,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{vd\+\_\+node,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{addr\+\_\+assign\+\_\+op1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+extract\+\_\+var\+\_\+decl return the variable decl referred by the mem\+\_\+ref given it is resolvable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em me} & is the memory reference node \\
+\hline
+{\em vd\+\_\+index} & is the variable decl index \\
+\hline
+{\em vd\+\_\+node} & is the variable decl tree re-\/index node \\
+\hline
+{\em addr\+\_\+assign\+\_\+op1} & is the pointer expression used by the mem\+\_\+ref \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true in case it is possible to compute the variable decl referred, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 414 of file rebuild\+\_\+initializations.\+cpp.
+
+
+
+References extract\+\_\+var\+\_\+decl\+\_\+ppe(), extract\+Op1(), tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+O\+DE, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, unexpeted\+Pattern(), and var\+Found().
+
+
+
+Referenced by look\+\_\+for\+\_\+\+R\+O\+Ms().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/df3/classrebuild__initialization2_a0be02ce2244d4da31a1bc1856ed218ca_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/df3/classrebuild__initialization2_a0be02ce2244d4da31a1bc1856ed218ca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrebuild__initialization2_ae04cac56986ff94ce40cb7e9279e0628}\label{classrebuild__initialization2_ae04cac56986ff94ce40cb7e9279e0628}} 
+\index{rebuild\+\_\+initialization2@{rebuild\+\_\+initialization2}!extract\+\_\+var\+\_\+decl\+\_\+ppe@{extract\+\_\+var\+\_\+decl\+\_\+ppe}}
+\index{extract\+\_\+var\+\_\+decl\+\_\+ppe@{extract\+\_\+var\+\_\+decl\+\_\+ppe}!rebuild\+\_\+initialization2@{rebuild\+\_\+initialization2}}
+\subsubsection{\texorpdfstring{extract\+\_\+var\+\_\+decl\+\_\+ppe()}{extract\_var\_decl\_ppe()}}
+{\footnotesize\ttfamily bool rebuild\+\_\+initialization2\+::extract\+\_\+var\+\_\+decl\+\_\+ppe (\begin{DoxyParamCaption}\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{addr\+\_\+assign\+\_\+op1,  }\item[{unsigned \&}]{vd\+\_\+index,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{vd\+\_\+node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+extract\+\_\+var\+\_\+decl\+\_\+ppe 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vd\+\_\+index} & is the variable decl index \\
+\hline
+{\em vd\+\_\+node} & is the variable decl tree re-\/index node \\
+\hline
+\end{DoxyParams}
+starting from this condition offset is not anymore null 
+
+Definition at line 268 of file rebuild\+\_\+initializations.\+cpp.
+
+
+
+References extract\+Op1(), tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), G\+E\+T\+\_\+\+N\+O\+DE, unexpeted\+Pattern(), and var\+Found().
+
+
+
+Referenced by extract\+\_\+var\+\_\+decl().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/df3/classrebuild__initialization2_ae04cac56986ff94ce40cb7e9279e0628_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/df3/classrebuild__initialization2_ae04cac56986ff94ce40cb7e9279e0628_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrebuild__initialization2_ab0a55d5d212cac19ff646a5ca54deab6}\label{classrebuild__initialization2_ab0a55d5d212cac19ff646a5ca54deab6}} 
+\index{rebuild\+\_\+initialization2@{rebuild\+\_\+initialization2}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!rebuild\+\_\+initialization2@{rebuild\+\_\+initialization2}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} rebuild\+\_\+initialization2\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Rebuild initialization function flow front-\/end step. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 1136 of file rebuild\+\_\+initializations.\+cpp.
+
+
+
+References Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, look\+\_\+for\+\_\+\+R\+O\+Ms(), S\+U\+C\+C\+E\+SS, and U\+N\+C\+H\+A\+N\+G\+ED.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/df3/classrebuild__initialization2_ab0a55d5d212cac19ff646a5ca54deab6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrebuild__initialization2_a677aa83a6003323f11929da9609b7344}\label{classrebuild__initialization2_a677aa83a6003323f11929da9609b7344}} 
+\index{rebuild\+\_\+initialization2@{rebuild\+\_\+initialization2}!look\+\_\+for\+\_\+\+R\+O\+Ms@{look\+\_\+for\+\_\+\+R\+O\+Ms}}
+\index{look\+\_\+for\+\_\+\+R\+O\+Ms@{look\+\_\+for\+\_\+\+R\+O\+Ms}!rebuild\+\_\+initialization2@{rebuild\+\_\+initialization2}}
+\subsubsection{\texorpdfstring{look\+\_\+for\+\_\+\+R\+O\+Ms()}{look\_for\_ROMs()}}
+{\footnotesize\ttfamily bool rebuild\+\_\+initialization2\+::look\+\_\+for\+\_\+\+R\+O\+Ms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+look\+\_\+for\+\_\+\+R\+O\+Ms transforms the IR by looking for an initial sequence of writes followed by read only instructions. 
+
+In case the writes have constant offset and the written values are constants a constant array may be defined. for each basic block B in C\+FG compute constant\+Vars candidates
+
+are we writing a constant value
+
+first check if the variable is initialized
+
+then we check if the variable is an array
+
+then in case we are fine we classify as good candidate for being a constant var
+
+if it is still a good candidate
+
+check if the offset is constant
+
+index is constant
+
+index is constant
+
+else do nothing
+
+compute the C\+FG
+
+add vertices
+
+add edges
+
+add a connection between entry and exit thus avoiding problems with non terminating code
+
+check if reads are consistent with writes\+: writes are always dominating the following reads
+
+list all constant variables found 
+
+Definition at line 549 of file rebuild\+\_\+initializations.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, tree\+\_\+manager\+::\+C\+Get\+Tree\+Node(), tree\+\_\+manager\+::\+C\+Get\+Tree\+Reindex(), tree\+\_\+manipulation\+::create\+\_\+default\+\_\+integer\+\_\+type(), tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), tree\+\_\+manipulation\+::\+Create\+Integer\+Cst(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, bloc\+::\+E\+N\+T\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, bloc\+::\+E\+X\+I\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, extract\+\_\+var\+\_\+decl(), found\+Non\+Constant, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, tree\+\_\+helper\+::get\+\_\+array\+\_\+dim\+\_\+and\+\_\+bitsize(), tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+helper\+::get\+\_\+type\+\_\+node(), get\+Assign(), tree\+\_\+helper\+::\+Get\+Elements(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, index, tree\+\_\+helper\+::is\+\_\+an\+\_\+array(), graph\+::\+Is\+Reachable(), tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), Design\+Flow\+Step\+::parameters, sl, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+OK, T\+O\+K\+\_\+\+S\+R\+CP, T\+O\+K\+\_\+\+T\+Y\+PE, To\+String(), tree\+\_\+node\+::\+To\+String(), and unexpeted\+Pattern2.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/df3/classrebuild__initialization2_a677aa83a6003323f11929da9609b7344_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{db/df3/classrebuild__initialization2_a677aa83a6003323f11929da9609b7344_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{rebuild__initializations_8hpp}{rebuild\+\_\+initializations.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{rebuild__initializations_8cpp}{rebuild\+\_\+initializations.\+cpp}\end{DoxyCompactItemize}

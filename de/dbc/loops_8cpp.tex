@@ -1,0 +1,91 @@
+\hypertarget{loops_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/algorithms/loops\+\_\+detection/loops.cpp File Reference}
+\label{loops_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/algorithms/loops\+\_\+detection/loops.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/algorithms/loops\+\_\+detection/loops.\+cpp}}
+
+
+implementation of loops finding algorithm  
+
+
+{\ttfamily \#include \char`\"{}loops.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+H\+O\+S\+T\+\_\+\+P\+R\+O\+F\+I\+L\+I\+N\+G\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/graph/depth\+\_\+first\+\_\+search.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/graph\+\_\+traits.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/lexical\+\_\+cast.\+hpp$>$}\newline
+{\ttfamily \#include $<$iosfwd$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}Dominance.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vertex.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}basic\+\_\+block.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}basic\+\_\+blocks\+\_\+graph\+\_\+constructor.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}behavioral\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}behavioral\+\_\+writer\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}function\+\_\+behavior.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hash\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}loop.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+basic\+\_\+block.\+hpp\char`\"{}}\newline
+Include dependency graph for loops.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/da6/loops_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structdjgraph__dfs__tree__visitor}{djgraph\+\_\+dfs\+\_\+tree\+\_\+visitor}
+\begin{DoxyCompactList}\small\item\em Header include. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{loops_8cpp_a7ccad56f29a4ccb6348ea3c77c852da2}{check\+\_\+ancestor} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} x, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} y, const \hyperlink{structvertex2obj}{vertex2obj}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&parent\+\_\+depth\+\_\+search\+\_\+spanning\+\_\+tree)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+implementation of loops finding algorithm 
+
+\hyperlink{classLoops}{Loops} are detection described in in Vugranam C. Sreedhar, Guang R. Gao, Yong-\/\+Fong Lee\+: Identifying \hyperlink{classLoops}{Loops} Using DJ Graphs. A\+CM Trans. Program. Lang. Syst. 18(6)\+: 649-\/658 (1996)
+
+\begin{DoxyAuthor}{Author}
+Marco Garatti \href{mailto:m.garatti@gmail.com}{\tt m.\+garatti@gmail.\+com} 
+
+Marco Lattuada \href{mailto:marco.lattuada@polimi.it}{\tt marco.\+lattuada@polimi.\+it} 
+
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{loops_8cpp_a7ccad56f29a4ccb6348ea3c77c852da2}\label{loops_8cpp_a7ccad56f29a4ccb6348ea3c77c852da2}} 
+\index{loops.\+cpp@{loops.\+cpp}!check\+\_\+ancestor@{check\+\_\+ancestor}}
+\index{check\+\_\+ancestor@{check\+\_\+ancestor}!loops.\+cpp@{loops.\+cpp}}
+\subsubsection{\texorpdfstring{check\+\_\+ancestor()}{check\_ancestor()}}
+{\footnotesize\ttfamily static bool check\+\_\+ancestor (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{x,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{y,  }\item[{const \hyperlink{structvertex2obj}{vertex2obj}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&}]{parent\+\_\+depth\+\_\+search\+\_\+spanning\+\_\+tree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 198 of file loops.\+cpp.
+
+
+
+Referenced by Loops\+::\+Detect\+Loops().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/dbc/loops_8cpp_a7ccad56f29a4ccb6348ea3c77c852da2_icgraph}
+\end{center}
+\end{figure}

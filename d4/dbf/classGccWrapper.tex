@@ -1,0 +1,1183 @@
+\hypertarget{classGccWrapper}{}\section{Gcc\+Wrapper Class Reference}
+\label{classGccWrapper}\index{Gcc\+Wrapper@{Gcc\+Wrapper}}
+
+
+Main class for wrapping the G\+CC compiler.  
+
+
+
+
+{\ttfamily \#include $<$gcc\+\_\+wrapper.\+hpp$>$}
+
+
+
+Collaboration diagram for Gcc\+Wrapper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d9e/classGccWrapper__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classGccWrapper_1_1Compiler}{Compiler}
+\begin{DoxyCompactList}\small\item\em Class storing information of a compiler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGccWrapper_a0d0fefb5b807d15af703e65b5c04be78}{Gcc\+Wrapper} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classGccWrapper_ae052c2164d449f57b725ab2d2fc41779}{Param}, const \hyperlink{gcc__wrapper_8hpp_abb9d9a5cb3a1bf5d402dbc841a6708aa}{Gcc\+Wrapper\+\_\+\+Compiler\+Target} compiler, const \hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788d}{Gcc\+Wrapper\+\_\+\+Optimization\+Set} \hyperlink{classGccWrapper_a5494d211289aec8f9b4231c860489c6a}{OS})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classGccWrapper_ab7a6fb46dd178ce5cebe8f4d2f368c3f}{$\sim$\+Gcc\+Wrapper} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classGccWrapper_a6ddec058ff78ec89be3b4f7b65b7d669}{Fill\+Tree\+Manager} (const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} TM, std\+::map$<$ std\+::string, std\+::string $>$ \&input\+\_\+files)
+\begin{DoxyCompactList}\small\item\em This function fills the tree manager with the nodes created from a set of source files. \end{DoxyCompactList}\item 
+void \hyperlink{classGccWrapper_a61564c5b5c0731306ac6e722d1826522}{Get\+System\+Includes} (std\+::vector$<$ std\+::string $>$ \&includes) const
+\begin{DoxyCompactList}\small\item\em Return the list of gcc system include. \end{DoxyCompactList}\item 
+void \hyperlink{classGccWrapper_ab7fc5dafe65775ce866c205c60fd8413}{Get\+Gcc\+Config} () const
+\begin{DoxyCompactList}\small\item\em Dump the gcc configuration. \end{DoxyCompactList}\item 
+void \hyperlink{classGccWrapper_a6ddadf157967ed22e87a5453f3bb25db}{Query\+Gcc\+Config} (const std\+::string \&gcc\+\_\+option) const
+\begin{DoxyCompactList}\small\item\em Function that print of stdout some useful information passing the given option. \end{DoxyCompactList}\item 
+void \hyperlink{classGccWrapper_ac2cc3fad0dd5560c7dc07e56bf19ec02}{Create\+Executable} (const std\+::list$<$ std\+::string $>$ \&file\+\_\+names, const std\+::string \&executable\+\_\+name, const std\+::string \&extra\+\_\+gcc\+\_\+options) const
+\begin{DoxyCompactList}\small\item\em Create an executable starting from source code. \end{DoxyCompactList}\item 
+void \hyperlink{classGccWrapper_a22e1843178f153216c1f7775e00938d7}{Create\+Executable} (const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ std\+::string $>$ \&file\+\_\+names, const std\+::string \&executable\+\_\+name, const std\+::string \&extra\+\_\+gcc\+\_\+options) const
+\begin{DoxyCompactList}\small\item\em Create an executable starting from source code. \end{DoxyCompactList}\item 
+void \hyperlink{classGccWrapper_a89445158bf3052bd6dfaca4372016516}{Read\+Xml} (const std\+::string \&file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Read gcc configuration from file. \end{DoxyCompactList}\item 
+void \hyperlink{classGccWrapper_a34ebfe793ec69e13bea2d0996d3c9bcd}{Write\+Xml} (const std\+::string \&file\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Write gcc configuration on file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} \hyperlink{classGccWrapper_aaea934b26fbfbd9e8ff802b9efc87b7f}{Get\+Source\+Code\+Lines} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classGccWrapper_ae052c2164d449f57b725ab2d2fc41779}{Param})
+\begin{DoxyCompactList}\small\item\em Return the total number of lines of the benchmark. \end{DoxyCompactList}\item 
+static std\+::string \hyperlink{classGccWrapper_a5df0314ce8643d1216b6981a333dc385}{Write\+Optimization\+Level} (const \hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788d}{Gcc\+Wrapper\+\_\+\+Optimization\+Set} optimiation\+\_\+level)
+\begin{DoxyCompactList}\small\item\em Writes the optimization level as a string. \end{DoxyCompactList}\item 
+static void \hyperlink{classGccWrapper_ac7ff70c47c923a35ae9820b32b2e9e44}{Check\+Gcc\+Compatible\+Version} (const std\+::string \&gcc\+\_\+version, const std\+::string \&plugin\+\_\+version)
+\begin{DoxyCompactList}\small\item\em Check if the combination gcc-\/plugin is supported; if not it throws error. \end{DoxyCompactList}\item 
+static \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} \hyperlink{classGccWrapper_abc1a0fb1d8c8bd5d9cac9ac120a8f2b2}{C\+Get\+Pointer\+Size} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} parameters)
+\begin{DoxyCompactList}\small\item\em Return the size of the pointer in bit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \hyperlink{classGccWrapper_afa95c1f83a36684f6aeec040aa3b281c}{current\+\_\+gcc\+\_\+version}
+\begin{DoxyCompactList}\small\item\em The version of the gcc. \end{DoxyCompactList}\item 
+static std\+::string \hyperlink{classGccWrapper_a96b3eea05021578e49f12fa1502c4ddf}{current\+\_\+plugin\+\_\+version}
+\begin{DoxyCompactList}\small\item\em The version of the plugin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGccWrapper_a8cd41a8c53b37b900efb3363a9612bdc}{Compile\+File} (const std\+::string \&original\+\_\+file\+\_\+name, std\+::string \&real\+\_\+file\+\_\+name, const std\+::string \&parameters\+\_\+line, \hyperlink{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9}{Gcc\+Wrapper\+\_\+\+Compiler\+Mode} cm=\hyperlink{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9a1cce81afdcb3d459d409b402ef97749f}{Gcc\+Wrapper\+\_\+\+Compiler\+Mode\+::\+C\+M\+\_\+\+S\+TD})
+\begin{DoxyCompactList}\small\item\em Invoke gcc to compile file(s) \end{DoxyCompactList}\item 
+\hyperlink{classGccWrapper_1_1Compiler}{Compiler} \hyperlink{classGccWrapper_a2de0745c83e81e349b84a99b68b2519e}{Get\+Compiler} () const
+\begin{DoxyCompactList}\small\item\em Return the compiler for a given target. \end{DoxyCompactList}\item 
+void \hyperlink{classGccWrapper_a4a76e5df0a374c835ce31580a2da8c7a}{Initialize\+Gcc\+Parameters} ()
+\begin{DoxyCompactList}\small\item\em Initialize the gcc parameters line. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classGccWrapper_ab15234a29c83e2ed44b89297ebbcd0d1}{Write\+Optimizations\+String} ()
+\begin{DoxyCompactList}\small\item\em Write the string containing gcc optimization options. \end{DoxyCompactList}\item 
+const std\+::string \hyperlink{classGccWrapper_a7adb23681d3cc41de3bd7063ec636de7}{Add\+Source\+Code\+Includes} (const std\+::list$<$ std\+::string $>$ \&source\+\_\+files) const
+\begin{DoxyCompactList}\small\item\em Add includes of source file directories. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classGccWrapper_a22a070d6d7a5770090dc5a119e4fc0bc}{clang\+\_\+recipes} (const \hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788d}{Gcc\+Wrapper\+\_\+\+Optimization\+Set} optimization\+\_\+level, const \hyperlink{gcc__wrapper_8hpp_abb9d9a5cb3a1bf5d402dbc841a6708aa}{Gcc\+Wrapper\+\_\+\+Compiler\+Target} \hyperlink{classGccWrapper_a1f804f17bfd3b629339dd13a908560dd}{compiler\+\_\+target}, const std\+::string \&expand\+Mem\+Ops\+\_\+plugin\+\_\+obj, const std\+::string \&expand\+Mem\+Ops\+\_\+plugin\+\_\+name, const std\+::string \&Gepi\+Canon\+\_\+plugin\+\_\+obj, const std\+::string \&Gepi\+Canon\+\_\+plugin\+\_\+name, const std\+::string \&C\+S\+R\+O\+A\+\_\+plugin\+\_\+obj, const std\+::string \&C\+S\+R\+O\+A\+\_\+plugin\+\_\+name, const std\+::string \&fname)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} \hyperlink{classGccWrapper_a49f7bc99f88ca39191d6dc27bb658097}{Convert\+Version} (const std\+::string \&version)
+\begin{DoxyCompactList}\small\item\em Convert a string version to a number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classGccWrapper_ae052c2164d449f57b725ab2d2fc41779}{Param}
+\begin{DoxyCompactList}\small\item\em The set of input parameters. \end{DoxyCompactList}\item 
+const \hyperlink{gcc__wrapper_8hpp_abb9d9a5cb3a1bf5d402dbc841a6708aa}{Gcc\+Wrapper\+\_\+\+Compiler\+Target} \hyperlink{classGccWrapper_a1f804f17bfd3b629339dd13a908560dd}{compiler\+\_\+target}
+\begin{DoxyCompactList}\small\item\em The target compiler to be used. \end{DoxyCompactList}\item 
+const \hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788d}{Gcc\+Wrapper\+\_\+\+Optimization\+Set} \hyperlink{classGccWrapper_a5494d211289aec8f9b4231c860489c6a}{OS}
+\begin{DoxyCompactList}\small\item\em The set of optimizations to be applied. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classGccWrapper_aeffcdf6e69bf53f0de5f019ad102f879}{gcc\+\_\+compiling\+\_\+parameters}
+\begin{DoxyCompactList}\small\item\em The gcc parameters line for compiling a file. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classGccWrapper_a73c1cdd4e9d5004d193fd3af499b10fe}{gcc\+\_\+linking\+\_\+parameters}
+\begin{DoxyCompactList}\small\item\em The gcc parameters line for creating an executable. \end{DoxyCompactList}\item 
+\hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ std\+::string $>$ \hyperlink{classGccWrapper_a87bb70af9d7789b3ac105df1c5c510b6}{already\+\_\+processed\+\_\+files}
+\begin{DoxyCompactList}\small\item\em The set of files for which tree manager has already been computed. \end{DoxyCompactList}\item 
+int \hyperlink{classGccWrapper_ad81479e81dbbfbfc2ef21f26b61f43b9}{output\+\_\+level}
+\begin{DoxyCompactList}\small\item\em debug level \end{DoxyCompactList}\item 
+int \hyperlink{classGccWrapper_aea072d54f5b88f2dabd9cf0b2d87fb86}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em debug level \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \hyperlink{classGccWrapper_a90f60d17b1e94c6e869dcb056082af47}{parameter\+\_\+values}
+\begin{DoxyCompactList}\small\item\em The values of optimizations parameters. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, bool $>$ \hyperlink{classGccWrapper_a15724cca480e7b872a6b69ff095810af}{optimization\+\_\+flags}
+\begin{DoxyCompactList}\small\item\em The set of activated optimizations. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \hyperlink{classGccWrapper_a24765bcab5d2b4128453ed922fe38a44}{optimization\+\_\+values}
+\begin{DoxyCompactList}\small\item\em The value of parametric activate optimizations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main class for wrapping the G\+CC compiler. 
+
+It allows an X\+ML configuration file to be specified where the parameters and the related values are stored. 
+
+Definition at line 180 of file gcc\+\_\+wrapper.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGccWrapper_a0d0fefb5b807d15af703e65b5c04be78}\label{classGccWrapper_a0d0fefb5b807d15af703e65b5c04be78}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Gcc\+Wrapper()}{GccWrapper()}}
+{\footnotesize\ttfamily Gcc\+Wrapper\+::\+Gcc\+Wrapper (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{const \hyperlink{gcc__wrapper_8hpp_abb9d9a5cb3a1bf5d402dbc841a6708aa}{Gcc\+Wrapper\+\_\+\+Compiler\+Target}}]{compiler,  }\item[{const \hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788d}{Gcc\+Wrapper\+\_\+\+Optimization\+Set}}]{OS }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Param} & is the set of parameters \\
+\hline
+{\em compiler} & is the compiler to be used \\
+\hline
+{\em OS} & is the optimization set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 267 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References Initialize\+Gcc\+Parameters(), Param, Write\+Xml(), and $\sim$\+Gcc\+Wrapper().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a0d0fefb5b807d15af703e65b5c04be78_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_ab7a6fb46dd178ce5cebe8f4d2f368c3f}\label{classGccWrapper_ab7a6fb46dd178ce5cebe8f4d2f368c3f}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!````~Gcc\+Wrapper@{$\sim$\+Gcc\+Wrapper}}
+\index{````~Gcc\+Wrapper@{$\sim$\+Gcc\+Wrapper}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{$\sim$\+Gcc\+Wrapper()}{~GccWrapper()}}
+{\footnotesize\ttfamily Gcc\+Wrapper\+::$\sim$\+Gcc\+Wrapper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Gcc\+Wrapper().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_ab7a6fb46dd178ce5cebe8f4d2f368c3f_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGccWrapper_a7adb23681d3cc41de3bd7063ec636de7}\label{classGccWrapper_a7adb23681d3cc41de3bd7063ec636de7}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Add\+Source\+Code\+Includes@{Add\+Source\+Code\+Includes}}
+\index{Add\+Source\+Code\+Includes@{Add\+Source\+Code\+Includes}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Add\+Source\+Code\+Includes()}{AddSourceCodeIncludes()}}
+{\footnotesize\ttfamily const std\+::string Gcc\+Wrapper\+::\+Add\+Source\+Code\+Includes (\begin{DoxyParamCaption}\item[{const std\+::list$<$ std\+::string $>$ \&}]{source\+\_\+files }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Add includes of source file directories. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source\+\_\+files} & are the source files to be considered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the string to be passed to gcc 
+\end{DoxyReturn}
+Adding includes of original source code files 
+
+Definition at line 2735 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References gcc\+\_\+compiling\+\_\+parameters.
+
+
+
+Referenced by Compile\+File(), and Create\+Executable().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a7adb23681d3cc41de3bd7063ec636de7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_abc1a0fb1d8c8bd5d9cac9ac120a8f2b2}\label{classGccWrapper_abc1a0fb1d8c8bd5d9cac9ac120a8f2b2}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!C\+Get\+Pointer\+Size@{C\+Get\+Pointer\+Size}}
+\index{C\+Get\+Pointer\+Size@{C\+Get\+Pointer\+Size}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{C\+Get\+Pointer\+Size()}{CGetPointerSize()}}
+{\footnotesize\ttfamily \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} Gcc\+Wrapper\+::\+C\+Get\+Pointer\+Size (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{parameters }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Return the size of the pointer in bit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & is the set of input parameters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the size of pointers in bit 
+\end{DoxyReturn}
+
+
+Definition at line 3130 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by Bit\+\_\+\+Value\+::pointer\+\_\+resizing().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_abc1a0fb1d8c8bd5d9cac9ac120a8f2b2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_ac7ff70c47c923a35ae9820b32b2e9e44}\label{classGccWrapper_ac7ff70c47c923a35ae9820b32b2e9e44}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Check\+Gcc\+Compatible\+Version@{Check\+Gcc\+Compatible\+Version}}
+\index{Check\+Gcc\+Compatible\+Version@{Check\+Gcc\+Compatible\+Version}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Check\+Gcc\+Compatible\+Version()}{CheckGccCompatibleVersion()}}
+{\footnotesize\ttfamily void Gcc\+Wrapper\+::\+Check\+Gcc\+Compatible\+Version (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{gcc\+\_\+version,  }\item[{const std\+::string \&}]{plugin\+\_\+version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if the combination gcc-\/plugin is supported; if not it throws error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gcc\+\_\+version} & is the gcc version in form x.\+x.\+x \\
+\hline
+{\em plugin\+\_\+version} & is the plugin version in form x.\+x \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3108 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References Convert\+Version(), current\+\_\+gcc\+\_\+version, current\+\_\+plugin\+\_\+version, S\+T\+R\+\_\+\+C\+S\+T\+\_\+gcc\+\_\+first\+\_\+not\+\_\+supported, S\+T\+R\+\_\+\+C\+S\+T\+\_\+gcc\+\_\+max\+\_\+plugin\+\_\+version, S\+T\+R\+\_\+\+C\+S\+T\+\_\+gcc\+\_\+min\+\_\+plugin\+\_\+version, S\+T\+R\+\_\+\+C\+S\+T\+\_\+gcc\+\_\+supported\+\_\+versions, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_ac7ff70c47c923a35ae9820b32b2e9e44_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_a22a070d6d7a5770090dc5a119e4fc0bc}\label{classGccWrapper_a22a070d6d7a5770090dc5a119e4fc0bc}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!clang\+\_\+recipes@{clang\+\_\+recipes}}
+\index{clang\+\_\+recipes@{clang\+\_\+recipes}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{clang\+\_\+recipes()}{clang\_recipes()}}
+{\footnotesize\ttfamily std\+::string Gcc\+Wrapper\+::clang\+\_\+recipes (\begin{DoxyParamCaption}\item[{const \hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788d}{Gcc\+Wrapper\+\_\+\+Optimization\+Set}}]{optimization\+\_\+level,  }\item[{const \hyperlink{gcc__wrapper_8hpp_abb9d9a5cb3a1bf5d402dbc841a6708aa}{Gcc\+Wrapper\+\_\+\+Compiler\+Target}}]{compiler\+\_\+target,  }\item[{const std\+::string \&}]{expand\+Mem\+Ops\+\_\+plugin\+\_\+obj,  }\item[{const std\+::string \&}]{expand\+Mem\+Ops\+\_\+plugin\+\_\+name,  }\item[{const std\+::string \&}]{Gepi\+Canon\+\_\+plugin\+\_\+obj,  }\item[{const std\+::string \&}]{Gepi\+Canon\+\_\+plugin\+\_\+name,  }\item[{const std\+::string \&}]{C\+S\+R\+O\+A\+\_\+plugin\+\_\+obj,  }\item[{const std\+::string \&}]{C\+S\+R\+O\+A\+\_\+plugin\+\_\+name,  }\item[{const std\+::string \&}]{fname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 2765 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References O0, O2, O3, Param, S\+TR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and Write\+Optimization\+Level().
+
+
+
+Referenced by Fill\+Tree\+Manager().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a22a070d6d7a5770090dc5a119e4fc0bc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a22a070d6d7a5770090dc5a119e4fc0bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_a8cd41a8c53b37b900efb3363a9612bdc}\label{classGccWrapper_a8cd41a8c53b37b900efb3363a9612bdc}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Compile\+File@{Compile\+File}}
+\index{Compile\+File@{Compile\+File}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Compile\+File()}{CompileFile()}}
+{\footnotesize\ttfamily void Gcc\+Wrapper\+::\+Compile\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{original\+\_\+file\+\_\+name,  }\item[{std\+::string \&}]{real\+\_\+file\+\_\+name,  }\item[{const std\+::string \&}]{parameters\+\_\+line,  }\item[{\hyperlink{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9}{Gcc\+Wrapper\+\_\+\+Compiler\+Mode}}]{cm = {\ttfamily \hyperlink{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9a1cce81afdcb3d459d409b402ef97749f}{Gcc\+Wrapper\+\_\+\+Compiler\+Mode\+::\+C\+M\+\_\+\+S\+TD}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Invoke gcc to compile file(s) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original\+\_\+file\+\_\+name} & is the original file passed through command line; this information is necessary to retrieve include directory \\
+\hline
+{\em real\+\_\+rile\+\_\+name} & stores the source code file which is actually compiled; the function can modified it in case of empty file \\
+\hline
+{\em parameters\+\_\+line} & are the parameters to be passed to gcc \\
+\hline
+{\em empty\+\_\+file} & tells if .001.\+tu tree has to be produced \\
+\hline
+{\em enable} & Analyzer plugin. \\
+\hline
+\end{DoxyParams}
+The gcc output
+
+needed to avoid problem with glibc inlines
+
+needed to avoid problem with iostream
+
+Adding source code includes
+
+remove some extra option not compatible with clang
+
+manage optimization level
+
+assembler files are not allowed so in some cases we pass a C file renamed with extension .S 
+
+Definition at line 280 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References Add\+Source\+Code\+Includes(), C\+M\+\_\+\+A\+N\+A\+L\+Y\+Z\+ER, C\+M\+\_\+\+E\+M\+P\+TY, C\+M\+\_\+\+L\+TO, C\+M\+\_\+\+S\+TD, test\+\_\+panda\+::command, C\+O\+M\+P\+I\+L\+I\+N\+G\+\_\+\+EC, Copy\+File(), Copy\+Stdout(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, dump\+\_\+exec\+\_\+time(), Get\+Base\+Name(), Get\+Compiler(), Get\+Extension(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Is\+Error(), output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, Panda\+System(), Param, P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, S\+T\+A\+R\+T\+\_\+\+T\+I\+ME, S\+T\+O\+P\+\_\+\+T\+I\+ME, S\+TR, S\+T\+R\+\_\+\+C\+S\+T\+\_\+gcc\+\_\+obj\+\_\+file, S\+T\+R\+\_\+\+C\+S\+T\+\_\+gcc\+\_\+output, S\+T\+R\+\_\+\+C\+S\+T\+\_\+panda\+\_\+sizeof, S\+T\+R\+\_\+\+C\+S\+T\+\_\+string\+\_\+sizeof, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+DE.
+
+
+
+Referenced by Fill\+Tree\+Manager().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a8cd41a8c53b37b900efb3363a9612bdc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a8cd41a8c53b37b900efb3363a9612bdc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_a49f7bc99f88ca39191d6dc27bb658097}\label{classGccWrapper_a49f7bc99f88ca39191d6dc27bb658097}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Convert\+Version@{Convert\+Version}}
+\index{Convert\+Version@{Convert\+Version}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Convert\+Version()}{ConvertVersion()}}
+{\footnotesize\ttfamily \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} Gcc\+Wrapper\+::\+Convert\+Version (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Convert a string version to a number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em version} & is the version to be converted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding number 
+\end{DoxyReturn}
+
+
+Definition at line 2752 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References index, and Split\+String().
+
+
+
+Referenced by Check\+Gcc\+Compatible\+Version().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{d4/dbf/classGccWrapper_a49f7bc99f88ca39191d6dc27bb658097_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a49f7bc99f88ca39191d6dc27bb658097_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_ac2cc3fad0dd5560c7dc07e56bf19ec02}\label{classGccWrapper_ac2cc3fad0dd5560c7dc07e56bf19ec02}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Create\+Executable@{Create\+Executable}}
+\index{Create\+Executable@{Create\+Executable}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Create\+Executable()}{CreateExecutable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Gcc\+Wrapper\+::\+Create\+Executable (\begin{DoxyParamCaption}\item[{const std\+::list$<$ std\+::string $>$ \&}]{file\+\_\+names,  }\item[{const std\+::string \&}]{executable\+\_\+name,  }\item[{const std\+::string \&}]{extra\+\_\+gcc\+\_\+options }\end{DoxyParamCaption}) const}
+
+
+
+Create an executable starting from source code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+names} & is the list of string; it must be a list since in some cases the order matters \\
+\hline
+{\em executable\+\_\+name} & is the name of the executable \\
+\hline
+{\em extra\+\_\+gcc\+\_\+options} & is extra options to be used only for this compilation \\
+\hline
+\end{DoxyParams}
+needed to avoid problem with glibc inlines 
+
+Definition at line 2320 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References Add\+Source\+Code\+Includes(), test\+\_\+panda\+::command, C\+O\+M\+P\+I\+L\+I\+N\+G\+\_\+\+EC, Copy\+Stdout(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Gcc\+Wrapper\+::\+Compiler\+::extra\+\_\+options, Gcc\+Wrapper\+::\+Compiler\+::gcc, gcc\+\_\+compiling\+\_\+parameters, gcc\+\_\+linking\+\_\+parameters, Get\+Compiler(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Is\+Error(), optimization\+\_\+flags, output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, Panda\+System(), Param, parameter\+\_\+values, test\+\_\+panda\+::parameters, S\+T\+R\+\_\+\+C\+S\+T\+\_\+gcc\+\_\+output, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+DE.
+
+
+
+Referenced by Create\+Executable().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_ac2cc3fad0dd5560c7dc07e56bf19ec02_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_ac2cc3fad0dd5560c7dc07e56bf19ec02_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_a22e1843178f153216c1f7775e00938d7}\label{classGccWrapper_a22e1843178f153216c1f7775e00938d7}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Create\+Executable@{Create\+Executable}}
+\index{Create\+Executable@{Create\+Executable}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Create\+Executable()}{CreateExecutable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Gcc\+Wrapper\+::\+Create\+Executable (\begin{DoxyParamCaption}\item[{const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ std\+::string $>$ \&}]{file\+\_\+names,  }\item[{const std\+::string \&}]{executable\+\_\+name,  }\item[{const std\+::string \&}]{extra\+\_\+gcc\+\_\+options }\end{DoxyParamCaption}) const}
+
+
+
+Create an executable starting from source code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+names} & is the set of filename \\
+\hline
+{\em executable\+\_\+name} & is the name of the executable \\
+\hline
+{\em extra\+\_\+gcc\+\_\+options} & is extra options to be used only for this compilation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2313 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References Create\+Executable().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a22e1843178f153216c1f7775e00938d7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_a6ddec058ff78ec89be3b4f7b65b7d669}\label{classGccWrapper_a6ddec058ff78ec89be3b4f7b65b7d669}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Fill\+Tree\+Manager@{Fill\+Tree\+Manager}}
+\index{Fill\+Tree\+Manager@{Fill\+Tree\+Manager}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Fill\+Tree\+Manager()}{FillTreeManager()}}
+{\footnotesize\ttfamily void Gcc\+Wrapper\+::\+Fill\+Tree\+Manager (\begin{DoxyParamCaption}\item[{const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref}}]{TM,  }\item[{std\+::map$<$ std\+::string, std\+::string $>$ \&}]{input\+\_\+files }\end{DoxyParamCaption})}
+
+
+
+This function fills the tree manager with the nodes created from a set of source files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TM} & is where \hyperlink{classtree__manager}{tree\+\_\+manager} will be stored \\
+\hline
+{\em source\+\_\+files} & are the source files to be compiled; key is the original source code file, value is the transformed source code file \\
+\hline
+\end{DoxyParams}
+check for aligned option
+
+create obj
+
+Recomputing leaf\+\_\+name since source\+\_\+file.\+second should be modified in the previous call 
+
+Definition at line 523 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References already\+\_\+processed\+\_\+files, clang\+\_\+recipes(), C\+M\+\_\+\+A\+N\+A\+L\+Y\+Z\+ER, C\+M\+\_\+\+E\+M\+P\+TY, C\+M\+\_\+\+L\+TO, C\+M\+\_\+\+S\+TD, test\+\_\+panda\+::command, Compile\+File(), C\+O\+M\+P\+I\+L\+I\+N\+G\+\_\+\+EC, Copy\+Stdout(), Gcc\+Wrapper\+::\+Compiler\+::\+C\+S\+R\+O\+A\+\_\+plugin\+\_\+name, Gcc\+Wrapper\+::\+Compiler\+::\+C\+S\+R\+O\+A\+\_\+plugin\+\_\+obj, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, dump\+\_\+exec\+\_\+time(), Gcc\+Wrapper\+::\+Compiler\+::expand\+Mem\+Ops\+\_\+plugin\+\_\+name, Gcc\+Wrapper\+::\+Compiler\+::expand\+Mem\+Ops\+\_\+plugin\+\_\+obj, gcc\+\_\+compiling\+\_\+parameters, Gcc\+Wrapper\+::\+Compiler\+::\+Gepi\+Canon\+\_\+plugin\+\_\+name, Gcc\+Wrapper\+::\+Compiler\+::\+Gepi\+Canon\+\_\+plugin\+\_\+obj, Get\+Base\+Name(), Get\+Compiler(), Get\+Leaf\+File\+Name(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, I\+N\+F\+E\+R\+R\+E\+D\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+ON, Gcc\+Wrapper\+::\+Compiler\+::is\+\_\+clang, Is\+Error(), Gcc\+Wrapper\+::\+Compiler\+::llvm\+\_\+link, Gcc\+Wrapper\+::\+Compiler\+::llvm\+\_\+opt, tree\+\_\+manager\+::merge\+\_\+tree\+\_\+managers(), O3, O4, O5, optimization\+\_\+flags, output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, Panda\+System(), Param, Parse\+Tree\+File(), P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, rename\+\_\+file(), Gcc\+Wrapper\+::\+Compiler\+::ssa\+\_\+plugin\+\_\+name, Gcc\+Wrapper\+::\+Compiler\+::ssa\+\_\+plugin\+\_\+obj, S\+T\+A\+R\+T\+\_\+\+T\+I\+ME, S\+T\+O\+P\+\_\+\+T\+I\+ME, S\+T\+R\+\_\+\+C\+S\+T\+\_\+gcc\+\_\+empty\+\_\+suffix, S\+T\+R\+\_\+\+C\+S\+T\+\_\+gcc\+\_\+output, S\+T\+R\+\_\+\+C\+S\+T\+\_\+gcc\+\_\+rtl\+\_\+suffix, S\+T\+R\+\_\+\+C\+S\+T\+\_\+gcc\+\_\+tree\+\_\+suffix, S\+T\+R\+\_\+\+C\+S\+T\+\_\+llvm\+\_\+obj\+\_\+file, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+DE, T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG, Gcc\+Wrapper\+::\+Compiler\+::topfname\+\_\+plugin\+\_\+name, and Gcc\+Wrapper\+::\+Compiler\+::topfname\+\_\+plugin\+\_\+obj.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a6ddec058ff78ec89be3b4f7b65b7d669_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_a2de0745c83e81e349b84a99b68b2519e}\label{classGccWrapper_a2de0745c83e81e349b84a99b68b2519e}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Get\+Compiler@{Get\+Compiler}}
+\index{Get\+Compiler@{Get\+Compiler}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Get\+Compiler()}{GetCompiler()}}
+{\footnotesize\ttfamily \hyperlink{classGccWrapper_1_1Compiler}{Gcc\+Wrapper\+::\+Compiler} Gcc\+Wrapper\+::\+Get\+Compiler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Return the compiler for a given target. 
+
+\begin{DoxyReturn}{Returns}
+a structure containing information about compiler 
+\end{DoxyReturn}
+
+
+Definition at line 1604 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References Gcc\+Wrapper\+::\+Compiler\+::\+A\+S\+T\+Analyzer\+\_\+plugin\+\_\+name, Gcc\+Wrapper\+::\+Compiler\+::\+A\+S\+T\+Analyzer\+\_\+plugin\+\_\+obj, compiler\+\_\+target, Gcc\+Wrapper\+::\+Compiler\+::cpp, Gcc\+Wrapper\+::\+Compiler\+::\+C\+S\+R\+O\+A\+\_\+plugin\+\_\+name, Gcc\+Wrapper\+::\+Compiler\+::\+C\+S\+R\+O\+A\+\_\+plugin\+\_\+obj, C\+T\+\_\+\+N\+O\+\_\+\+G\+CC, Gcc\+Wrapper\+::\+Compiler\+::empty\+\_\+plugin\+\_\+name, Gcc\+Wrapper\+::\+Compiler\+::empty\+\_\+plugin\+\_\+obj, Gcc\+Wrapper\+::\+Compiler\+::expand\+Mem\+Ops\+\_\+plugin\+\_\+name, Gcc\+Wrapper\+::\+Compiler\+::expand\+Mem\+Ops\+\_\+plugin\+\_\+obj, Gcc\+Wrapper\+::\+Compiler\+::extra\+\_\+options, Gcc\+Wrapper\+::\+Compiler\+::gcc, Gcc\+Wrapper\+::\+Compiler\+::\+Gepi\+Canon\+\_\+plugin\+\_\+name, Gcc\+Wrapper\+::\+Compiler\+::\+Gepi\+Canon\+\_\+plugin\+\_\+obj, Gcc\+Wrapper\+::\+Compiler\+::is\+\_\+clang, Gcc\+Wrapper\+::\+Compiler\+::llvm\+\_\+link, Gcc\+Wrapper\+::\+Compiler\+::llvm\+\_\+opt, optimization\+\_\+flags, Param, Gcc\+Wrapper\+::\+Compiler\+::ssa\+\_\+plugin\+\_\+name, Gcc\+Wrapper\+::\+Compiler\+::ssa\+\_\+plugin\+\_\+obj, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, Gcc\+Wrapper\+::\+Compiler\+::topfname\+\_\+plugin\+\_\+name, and Gcc\+Wrapper\+::\+Compiler\+::topfname\+\_\+plugin\+\_\+obj.
+
+
+
+Referenced by Compile\+File(), Create\+Executable(), Fill\+Tree\+Manager(), Get\+System\+Includes(), and Query\+Gcc\+Config().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a2de0745c83e81e349b84a99b68b2519e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_ab7fc5dafe65775ce866c205c60fd8413}\label{classGccWrapper_ab7fc5dafe65775ce866c205c60fd8413}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Get\+Gcc\+Config@{Get\+Gcc\+Config}}
+\index{Get\+Gcc\+Config@{Get\+Gcc\+Config}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Get\+Gcc\+Config()}{GetGccConfig()}}
+{\footnotesize\ttfamily void Gcc\+Wrapper\+::\+Get\+Gcc\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Dump the gcc configuration. 
+
+
+
+Definition at line 2256 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References Query\+Gcc\+Config().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_ab7fc5dafe65775ce866c205c60fd8413_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_aaea934b26fbfbd9e8ff802b9efc87b7f}\label{classGccWrapper_aaea934b26fbfbd9e8ff802b9efc87b7f}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Get\+Source\+Code\+Lines@{Get\+Source\+Code\+Lines}}
+\index{Get\+Source\+Code\+Lines@{Get\+Source\+Code\+Lines}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Get\+Source\+Code\+Lines()}{GetSourceCodeLines()}}
+{\footnotesize\ttfamily \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} Gcc\+Wrapper\+::\+Get\+Source\+Code\+Lines (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Return the total number of lines of the benchmark. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Param} & is the set of input parameters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the total number of lines of the benchmark 
+\end{DoxyReturn}
+The output file 
+
+Definition at line 2274 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References test\+\_\+panda\+::command, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Is\+Error(), Panda\+System(), S\+T\+R\+\_\+\+C\+S\+T\+\_\+file\+\_\+\+I\+O\+\_\+shell\+\_\+output\+\_\+file, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{d4/dbf/classGccWrapper_aaea934b26fbfbd9e8ff802b9efc87b7f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_a61564c5b5c0731306ac6e722d1826522}\label{classGccWrapper_a61564c5b5c0731306ac6e722d1826522}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Get\+System\+Includes@{Get\+System\+Includes}}
+\index{Get\+System\+Includes@{Get\+System\+Includes}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Get\+System\+Includes()}{GetSystemIncludes()}}
+{\footnotesize\ttfamily void Gcc\+Wrapper\+::\+Get\+System\+Includes (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$ \&}]{includes }\end{DoxyParamCaption}) const}
+
+
+
+Return the list of gcc system include. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em includes} & is where result will be stored \\
+\hline
+\end{DoxyParams}
+This string contains the path and name of the compiler to be invoked 
+
+Definition at line 2216 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References test\+\_\+panda\+::command, Gcc\+Wrapper\+::\+Compiler\+::cpp, Get\+Compiler(), Is\+Error(), output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Panda\+System(), Param, P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, Split\+String(), S\+T\+R\+\_\+\+C\+S\+T\+\_\+gcc\+\_\+include, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and util\+\_\+print\+\_\+cpu\+\_\+stats().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a61564c5b5c0731306ac6e722d1826522_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_a4a76e5df0a374c835ce31580a2da8c7a}\label{classGccWrapper_a4a76e5df0a374c835ce31580a2da8c7a}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Initialize\+Gcc\+Parameters@{Initialize\+Gcc\+Parameters}}
+\index{Initialize\+Gcc\+Parameters@{Initialize\+Gcc\+Parameters}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Initialize\+Gcc\+Parameters()}{InitializeGccParameters()}}
+{\footnotesize\ttfamily void Gcc\+Wrapper\+::\+Initialize\+Gcc\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialize the gcc parameters line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em OS} & is the optimizations set to be considered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the string with the parameters 
+\end{DoxyReturn}
+If we are compiling with sparc-\/elf-\/gcc
+
+Filling optimizations map
+
+Adding standard
+
+Adding defines
+
+Adding undefines
+
+Adding warnings
+
+Adding includes
+
+Adding libraries
+
+Adding library directories
+
+Adding no parse 
+
+Definition at line 825 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References compiler\+\_\+target, C\+T\+\_\+\+N\+O\+\_\+\+G\+CC, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, gcc\+\_\+compiling\+\_\+parameters, gcc\+\_\+linking\+\_\+parameters, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, O0, O1, O2, O3, O4, O5, Ofast, Og, optimization\+\_\+flags, Os, OS, Oz, Param, parameter\+\_\+values, Read\+Xml(), T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, Write\+Optimization\+Level(), and Write\+Optimizations\+String().
+
+
+
+Referenced by Gcc\+Wrapper().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a4a76e5df0a374c835ce31580a2da8c7a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a4a76e5df0a374c835ce31580a2da8c7a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_a6ddadf157967ed22e87a5453f3bb25db}\label{classGccWrapper_a6ddadf157967ed22e87a5453f3bb25db}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Query\+Gcc\+Config@{Query\+Gcc\+Config}}
+\index{Query\+Gcc\+Config@{Query\+Gcc\+Config}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Query\+Gcc\+Config()}{QueryGccConfig()}}
+{\footnotesize\ttfamily void Gcc\+Wrapper\+::\+Query\+Gcc\+Config (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{gcc\+\_\+option }\end{DoxyParamCaption}) const}
+
+
+
+Function that print of stdout some useful information passing the given option. 
+
+
+
+Definition at line 2261 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References test\+\_\+panda\+::command, Copy\+Stdout(), Gcc\+Wrapper\+::\+Compiler\+::gcc, Get\+Compiler(), Is\+Error(), Panda\+System(), Param, S\+T\+R\+\_\+\+C\+S\+T\+\_\+file\+\_\+\+I\+O\+\_\+shell\+\_\+output\+\_\+file, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by Get\+Gcc\+Config().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a6ddadf157967ed22e87a5453f3bb25db_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a6ddadf157967ed22e87a5453f3bb25db_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_a89445158bf3052bd6dfaca4372016516}\label{classGccWrapper_a89445158bf3052bd6dfaca4372016516}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Read\+Xml@{Read\+Xml}}
+\index{Read\+Xml@{Read\+Xml}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Read\+Xml()}{ReadXml()}}
+{\footnotesize\ttfamily void Gcc\+Wrapper\+::\+Read\+Xml (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Read gcc configuration from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & is the name of the file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2500 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References X\+M\+L\+Dom\+Parser\+::\+Exec(), gcc\+\_\+compiling\+\_\+parameters, gcc\+\_\+linking\+\_\+parameters, attribute\+\_\+sequence\+::get\+\_\+attribute(), xml\+\_\+child\+::get\+\_\+children(), X\+M\+L\+Dom\+Parser\+::get\+\_\+document(), xml\+\_\+attribute\+::get\+\_\+value(), optimization\+\_\+flags, optimization\+\_\+values, parameter\+\_\+values, test\+\_\+panda\+::parser, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+defines, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+includes, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+libraries, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+library\+\_\+directories, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+name, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+optimization\+\_\+flags, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+optimization\+\_\+values, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+optimizations, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+parameter\+\_\+values, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+standard, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+undefines, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+value, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+warnings, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and Write\+Optimizations\+String().
+
+
+
+Referenced by Initialize\+Gcc\+Parameters().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a89445158bf3052bd6dfaca4372016516_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a89445158bf3052bd6dfaca4372016516_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_a5df0314ce8643d1216b6981a333dc385}\label{classGccWrapper_a5df0314ce8643d1216b6981a333dc385}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Write\+Optimization\+Level@{Write\+Optimization\+Level}}
+\index{Write\+Optimization\+Level@{Write\+Optimization\+Level}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Write\+Optimization\+Level()}{WriteOptimizationLevel()}}
+{\footnotesize\ttfamily std\+::string Gcc\+Wrapper\+::\+Write\+Optimization\+Level (\begin{DoxyParamCaption}\item[{const \hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788d}{Gcc\+Wrapper\+\_\+\+Optimization\+Set}}]{optimiation\+\_\+level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes the optimization level as a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em optimization\+\_\+level} & is the optimization level to be printed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the optimization level in string format 
+\end{DoxyReturn}
+
+
+Definition at line 2415 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References O0, O1, O2, O3, O4, O5, Ofast, Og, Os, Oz, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+
+
+Referenced by clang\+\_\+recipes(), and Initialize\+Gcc\+Parameters().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a5df0314ce8643d1216b6981a333dc385_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_ab15234a29c83e2ed44b89297ebbcd0d1}\label{classGccWrapper_ab15234a29c83e2ed44b89297ebbcd0d1}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Write\+Optimizations\+String@{Write\+Optimizations\+String}}
+\index{Write\+Optimizations\+String@{Write\+Optimizations\+String}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Write\+Optimizations\+String()}{WriteOptimizationsString()}}
+{\footnotesize\ttfamily std\+::string Gcc\+Wrapper\+::\+Write\+Optimizations\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Write the string containing gcc optimization options. 
+
+\begin{DoxyReturn}{Returns}
+the string with optimization options to be passed to the gcc 
+\end{DoxyReturn}
+Preparing optimizations string 
+
+Definition at line 2461 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References optimization\+\_\+flags, optimization\+\_\+values, parameter\+\_\+values, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Initialize\+Gcc\+Parameters(), and Read\+Xml().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_ab15234a29c83e2ed44b89297ebbcd0d1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGccWrapper_a34ebfe793ec69e13bea2d0996d3c9bcd}\label{classGccWrapper_a34ebfe793ec69e13bea2d0996d3c9bcd}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Write\+Xml@{Write\+Xml}}
+\index{Write\+Xml@{Write\+Xml}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Write\+Xml()}{WriteXml()}}
+{\footnotesize\ttfamily void Gcc\+Wrapper\+::\+Write\+Xml (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name }\end{DoxyParamCaption}) const}
+
+
+
+Write gcc configuration on file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & is the name of the file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2703 of file gcc\+\_\+wrapper.\+cpp.
+
+
+
+References xml\+\_\+child\+::add\+\_\+child\+\_\+element(), xml\+\_\+document\+::create\+\_\+root\+\_\+node(), optimization\+\_\+flags, optimization\+\_\+values, parameter\+\_\+values, attribute\+\_\+sequence\+::set\+\_\+attribute(), S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+name, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+optimization\+\_\+flag, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+optimization\+\_\+value, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+optimizations, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+parameter\+\_\+value, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+parameter\+\_\+values, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+root, S\+T\+R\+\_\+\+X\+M\+L\+\_\+gcc\+\_\+value, and xml\+\_\+document\+::write\+\_\+to\+\_\+file\+\_\+formatted().
+
+
+
+Referenced by Gcc\+Wrapper().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a34ebfe793ec69e13bea2d0996d3c9bcd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbf/classGccWrapper_a34ebfe793ec69e13bea2d0996d3c9bcd_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classGccWrapper_a87bb70af9d7789b3ac105df1c5c510b6}\label{classGccWrapper_a87bb70af9d7789b3ac105df1c5c510b6}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!already\+\_\+processed\+\_\+files@{already\+\_\+processed\+\_\+files}}
+\index{already\+\_\+processed\+\_\+files@{already\+\_\+processed\+\_\+files}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{already\+\_\+processed\+\_\+files}{already\_processed\_files}}
+{\footnotesize\ttfamily \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$std\+::string$>$ Gcc\+Wrapper\+::already\+\_\+processed\+\_\+files\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The set of files for which tree manager has already been computed. 
+
+
+
+Definition at line 257 of file gcc\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by Fill\+Tree\+Manager().
+
+\mbox{\Hypertarget{classGccWrapper_a1f804f17bfd3b629339dd13a908560dd}\label{classGccWrapper_a1f804f17bfd3b629339dd13a908560dd}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!compiler\+\_\+target@{compiler\+\_\+target}}
+\index{compiler\+\_\+target@{compiler\+\_\+target}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{compiler\+\_\+target}{compiler\_target}}
+{\footnotesize\ttfamily const \hyperlink{gcc__wrapper_8hpp_abb9d9a5cb3a1bf5d402dbc841a6708aa}{Gcc\+Wrapper\+\_\+\+Compiler\+Target} Gcc\+Wrapper\+::compiler\+\_\+target\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The target compiler to be used. 
+
+
+
+Definition at line 245 of file gcc\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by Get\+Compiler(), and Initialize\+Gcc\+Parameters().
+
+\mbox{\Hypertarget{classGccWrapper_afa95c1f83a36684f6aeec040aa3b281c}\label{classGccWrapper_afa95c1f83a36684f6aeec040aa3b281c}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!current\+\_\+gcc\+\_\+version@{current\+\_\+gcc\+\_\+version}}
+\index{current\+\_\+gcc\+\_\+version@{current\+\_\+gcc\+\_\+version}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{current\+\_\+gcc\+\_\+version}{current\_gcc\_version}}
+{\footnotesize\ttfamily std\+::string Gcc\+Wrapper\+::current\+\_\+gcc\+\_\+version\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The version of the gcc. 
+
+Autoheader include.
+
+Header include Behavior include Constants include Frontend include H\+LS include R\+TL include S\+TD include S\+TL include Tree includes Utility include X\+ML includes used for writing and reading the configuration file 
+
+Definition at line 349 of file gcc\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by Check\+Gcc\+Compatible\+Version(), and tree\+\_\+manager\+::print().
+
+\mbox{\Hypertarget{classGccWrapper_a96b3eea05021578e49f12fa1502c4ddf}\label{classGccWrapper_a96b3eea05021578e49f12fa1502c4ddf}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!current\+\_\+plugin\+\_\+version@{current\+\_\+plugin\+\_\+version}}
+\index{current\+\_\+plugin\+\_\+version@{current\+\_\+plugin\+\_\+version}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{current\+\_\+plugin\+\_\+version}{current\_plugin\_version}}
+{\footnotesize\ttfamily std\+::string Gcc\+Wrapper\+::current\+\_\+plugin\+\_\+version\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The version of the plugin. 
+
+
+
+Definition at line 352 of file gcc\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by Check\+Gcc\+Compatible\+Version(), and tree\+\_\+manager\+::print().
+
+\mbox{\Hypertarget{classGccWrapper_aea072d54f5b88f2dabd9cf0b2d87fb86}\label{classGccWrapper_aea072d54f5b88f2dabd9cf0b2d87fb86}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily int Gcc\+Wrapper\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+debug level 
+
+
+
+Definition at line 263 of file gcc\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by Compile\+File(), Create\+Executable(), Fill\+Tree\+Manager(), Get\+Source\+Code\+Lines(), and Initialize\+Gcc\+Parameters().
+
+\mbox{\Hypertarget{classGccWrapper_aeffcdf6e69bf53f0de5f019ad102f879}\label{classGccWrapper_aeffcdf6e69bf53f0de5f019ad102f879}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!gcc\+\_\+compiling\+\_\+parameters@{gcc\+\_\+compiling\+\_\+parameters}}
+\index{gcc\+\_\+compiling\+\_\+parameters@{gcc\+\_\+compiling\+\_\+parameters}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{gcc\+\_\+compiling\+\_\+parameters}{gcc\_compiling\_parameters}}
+{\footnotesize\ttfamily std\+::string Gcc\+Wrapper\+::gcc\+\_\+compiling\+\_\+parameters\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The gcc parameters line for compiling a file. 
+
+
+
+Definition at line 251 of file gcc\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by Add\+Source\+Code\+Includes(), Create\+Executable(), Fill\+Tree\+Manager(), Initialize\+Gcc\+Parameters(), and Read\+Xml().
+
+\mbox{\Hypertarget{classGccWrapper_a73c1cdd4e9d5004d193fd3af499b10fe}\label{classGccWrapper_a73c1cdd4e9d5004d193fd3af499b10fe}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!gcc\+\_\+linking\+\_\+parameters@{gcc\+\_\+linking\+\_\+parameters}}
+\index{gcc\+\_\+linking\+\_\+parameters@{gcc\+\_\+linking\+\_\+parameters}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{gcc\+\_\+linking\+\_\+parameters}{gcc\_linking\_parameters}}
+{\footnotesize\ttfamily std\+::string Gcc\+Wrapper\+::gcc\+\_\+linking\+\_\+parameters\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The gcc parameters line for creating an executable. 
+
+
+
+Definition at line 254 of file gcc\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by Create\+Executable(), Initialize\+Gcc\+Parameters(), and Read\+Xml().
+
+\mbox{\Hypertarget{classGccWrapper_a15724cca480e7b872a6b69ff095810af}\label{classGccWrapper_a15724cca480e7b872a6b69ff095810af}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!optimization\+\_\+flags@{optimization\+\_\+flags}}
+\index{optimization\+\_\+flags@{optimization\+\_\+flags}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{optimization\+\_\+flags}{optimization\_flags}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, bool$>$ Gcc\+Wrapper\+::optimization\+\_\+flags\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The set of activated optimizations. 
+
+
+
+Definition at line 269 of file gcc\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by Create\+Executable(), Fill\+Tree\+Manager(), Get\+Compiler(), Initialize\+Gcc\+Parameters(), Read\+Xml(), Write\+Optimizations\+String(), and Write\+Xml().
+
+\mbox{\Hypertarget{classGccWrapper_a24765bcab5d2b4128453ed922fe38a44}\label{classGccWrapper_a24765bcab5d2b4128453ed922fe38a44}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!optimization\+\_\+values@{optimization\+\_\+values}}
+\index{optimization\+\_\+values@{optimization\+\_\+values}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{optimization\+\_\+values}{optimization\_values}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$ Gcc\+Wrapper\+::optimization\+\_\+values\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The value of parametric activate optimizations. 
+
+
+
+Definition at line 272 of file gcc\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by Read\+Xml(), Write\+Optimizations\+String(), and Write\+Xml().
+
+\mbox{\Hypertarget{classGccWrapper_a5494d211289aec8f9b4231c860489c6a}\label{classGccWrapper_a5494d211289aec8f9b4231c860489c6a}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!OS@{OS}}
+\index{OS@{OS}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{OS}{OS}}
+{\footnotesize\ttfamily const \hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788d}{Gcc\+Wrapper\+\_\+\+Optimization\+Set} Gcc\+Wrapper\+::\+OS\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The set of optimizations to be applied. 
+
+
+
+Definition at line 248 of file gcc\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by Initialize\+Gcc\+Parameters().
+
+\mbox{\Hypertarget{classGccWrapper_ad81479e81dbbfbfc2ef21f26b61f43b9}\label{classGccWrapper_ad81479e81dbbfbfc2ef21f26b61f43b9}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!output\+\_\+level@{output\+\_\+level}}
+\index{output\+\_\+level@{output\+\_\+level}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{output\+\_\+level}{output\_level}}
+{\footnotesize\ttfamily int Gcc\+Wrapper\+::output\+\_\+level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+debug level 
+
+
+
+Definition at line 260 of file gcc\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by Compile\+File(), Create\+Executable(), Fill\+Tree\+Manager(), and Get\+System\+Includes().
+
+\mbox{\Hypertarget{classGccWrapper_ae052c2164d449f57b725ab2d2fc41779}\label{classGccWrapper_ae052c2164d449f57b725ab2d2fc41779}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!Param@{Param}}
+\index{Param@{Param}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{Param}{Param}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Gcc\+Wrapper\+::\+Param\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The set of input parameters. 
+
+
+
+Definition at line 242 of file gcc\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by clang\+\_\+recipes(), Compile\+File(), Create\+Executable(), Fill\+Tree\+Manager(), Gcc\+Wrapper(), Get\+Compiler(), Get\+System\+Includes(), Initialize\+Gcc\+Parameters(), and Query\+Gcc\+Config().
+
+\mbox{\Hypertarget{classGccWrapper_a90f60d17b1e94c6e869dcb056082af47}\label{classGccWrapper_a90f60d17b1e94c6e869dcb056082af47}} 
+\index{Gcc\+Wrapper@{Gcc\+Wrapper}!parameter\+\_\+values@{parameter\+\_\+values}}
+\index{parameter\+\_\+values@{parameter\+\_\+values}!Gcc\+Wrapper@{Gcc\+Wrapper}}
+\subsubsection{\texorpdfstring{parameter\+\_\+values}{parameter\_values}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$ Gcc\+Wrapper\+::parameter\+\_\+values\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The values of optimizations parameters. 
+
+
+
+Definition at line 266 of file gcc\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by Create\+Executable(), Initialize\+Gcc\+Parameters(), Read\+Xml(), Write\+Optimizations\+String(), and Write\+Xml().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/treegcc/\hyperlink{gcc__wrapper_8hpp}{gcc\+\_\+wrapper.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/treegcc/\hyperlink{gcc__wrapper_8cpp}{gcc\+\_\+wrapper.\+cpp}\end{DoxyCompactItemize}

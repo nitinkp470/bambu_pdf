@@ -1,0 +1,443 @@
+\hypertarget{SynthesisTool_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/\+Synthesis\+Tool.hpp File Reference}
+\label{SynthesisTool_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/\+Synthesis\+Tool.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/\+Synthesis\+Tool.\+hpp}}
+
+
+Abstract class for a generic synthesis tool.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Design\+Parameters.\+hpp\char`\"{}}\newline
+Include dependency graph for Synthesis\+Tool.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dd6/SynthesisTool_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d0c/SynthesisTool_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classSynthesisTool}{Synthesis\+Tool}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{SynthesisTool_8hpp_a738c053a85adb95e9271f8a66a07a64d}{A\+D\+D\+\_\+\+R\+E\+S\+\_\+\+V\+AR}(name)~xml\+\_\+reserved\+\_\+vars.\+push\+\_\+back(\hyperlink{xml__script__command_8hpp_a77453d591123aae088dbc1d0efe15f00}{xml\+\_\+set\+\_\+variable\+\_\+t\+Ref}(new \hyperlink{classxml__set__variable__t}{xml\+\_\+set\+\_\+variable\+\_\+t}((name), nullptr, nullptr)))
+\item 
+\#define \hyperlink{SynthesisTool_8hpp_af03e36b91c99762a275062b79d825134}{P\+A\+R\+A\+M\+\_\+top\+\_\+id}~\char`\"{}top\+\_\+id\char`\"{}
+\item 
+\#define \hyperlink{SynthesisTool_8hpp_a3cef893351a0c7b896da3db0bbf42ac5}{P\+A\+R\+A\+M\+\_\+target\+\_\+device}~\char`\"{}target\+\_\+device\char`\"{}
+\item 
+\#define \hyperlink{SynthesisTool_8hpp_abb3d225c0275d7c7f5172c04e5f45c59}{P\+A\+R\+A\+M\+\_\+target\+\_\+family}~\char`\"{}target\+\_\+family\char`\"{}
+\item 
+\#define \hyperlink{SynthesisTool_8hpp_ab8577767ccfc06e7645a2f8e69c08e37}{P\+A\+R\+A\+M\+\_\+\+H\+D\+L\+\_\+files}~\char`\"{}H\+D\+L\+\_\+files\char`\"{}
+\item 
+\#define \hyperlink{SynthesisTool_8hpp_ad1de19d840df01cdcf4fb7666f14ccac}{P\+A\+R\+A\+M\+\_\+clk\+\_\+name}~\char`\"{}clk\+\_\+name\char`\"{}
+\item 
+\#define \hyperlink{SynthesisTool_8hpp_a9969a6c028a3d960001ef8fde3a3ebf4}{P\+A\+R\+A\+M\+\_\+clk\+\_\+period}~\char`\"{}clk\+\_\+period\char`\"{}
+\item 
+\#define \hyperlink{SynthesisTool_8hpp_a10bef30ccaeb227530ef2a07233fe770}{P\+A\+R\+A\+M\+\_\+clk\+\_\+period\+\_\+default}~(1.\+0 / 50)
+\item 
+\#define \hyperlink{SynthesisTool_8hpp_a0c87291cd35a70a963c2cfcd464f00fd}{P\+A\+R\+A\+M\+\_\+clk\+\_\+freq}~\char`\"{}clk\+\_\+freq\char`\"{}
+\item 
+\#define \hyperlink{SynthesisTool_8hpp_a3f1969683c83da924e7e00f3058263a1}{P\+A\+R\+A\+M\+\_\+time\+\_\+constrained}~\char`\"{}time\+\_\+constrained\char`\"{}
+\item 
+\#define \hyperlink{SynthesisTool_8hpp_a2e8d0f3383b0b791c178981e78619f28}{P\+A\+R\+A\+M\+\_\+is\+\_\+combinational}~\char`\"{}is\+\_\+combinational\char`\"{}
+\item 
+\#define \hyperlink{SynthesisTool_8hpp_a55f89a669823dfab0df589b35542fba3}{P\+A\+R\+A\+M\+\_\+sdc\+\_\+file}~\char`\"{}sdc\+\_\+file\char`\"{}
+\item 
+\#define \hyperlink{SynthesisTool_8hpp_a33c921c7e81c93de0fa6768b340071e9}{P\+A\+R\+A\+M\+\_\+backend\+\_\+script\+\_\+extensions}~\char`\"{}backend\+\_\+script\+\_\+extensions\char`\"{}
+\item 
+\#define \hyperlink{SynthesisTool_8hpp_af4314d7c3209b0f6275049e4ab30a48f}{P\+A\+R\+A\+M\+\_\+has\+\_\+script\+\_\+extensions}~\char`\"{}has\+\_\+script\+\_\+extensions\char`\"{}
+\item 
+\#define \hyperlink{SynthesisTool_8hpp_a6ee473728a9fd8bfa2a4748e1a690a0e}{P\+A\+R\+A\+M\+\_\+has\+\_\+\+V\+H\+D\+L\+\_\+library}~\char`\"{}has\+\_\+\+V\+H\+D\+L\+\_\+library\char`\"{}
+\item 
+\#define \hyperlink{SynthesisTool_8hpp_a7ca856c50608cf304fd4e97905564889}{P\+A\+R\+A\+M\+\_\+\+V\+H\+D\+L\+\_\+library}~\char`\"{}V\+H\+D\+L\+\_\+library\char`\"{}
+\item 
+\#define \hyperlink{SynthesisTool_8hpp_a3ebe77fd3b596299bb55a26edad35340}{P\+A\+R\+A\+M\+\_\+connect\+\_\+iob}~\char`\"{}connect\+\_\+iob\char`\"{}
+\item 
+\#define \hyperlink{SynthesisTool_8hpp_aff6fd29b88ce1d8c4a63937d2f91a5b2}{P\+A\+R\+A\+M\+\_\+fu}~\char`\"{}fu\char`\"{}
+\begin{DoxyCompactList}\small\item\em used by Intel/\+Altera Characterization \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classSynthesisTool}{Synthesis\+Tool} $>$ \hyperlink{SynthesisTool_8hpp_af82cb8fc071612a27507a7c212097e58}{Synthesis\+Tool\+Ref}
+\begin{DoxyCompactList}\small\item\em refcount definition of the class \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{SynthesisTool_8hpp_ac5c30465e53a2dee97960f0f406b8be7}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classParameter}{Parameter})
+\begin{DoxyCompactList}\small\item\em Autoheader include. \end{DoxyCompactList}\item 
+\hyperlink{SynthesisTool_8hpp_aac7eac7e34f4f4bde5723e48566d4348}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classSynthesisTool}{Synthesis\+Tool})
+\item 
+\hyperlink{SynthesisTool_8hpp_a3e5b731d02e6c0f421259a6689eb0feb}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classToolManager}{Tool\+Manager})
+\item 
+\hyperlink{SynthesisTool_8hpp_a9019f722eb332cab949d4fd603fb994b}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structDesignParameters}{Design\+Parameters})
+\item 
+\hyperlink{SynthesisTool_8hpp_a36fc701203269b088b0bbeb88a50eb12}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classxml__node}{xml\+\_\+node})
+\item 
+\hyperlink{SynthesisTool_8hpp_afa2bf932b12322d835ea06b64887fdd7}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classxml__script__node__t}{xml\+\_\+script\+\_\+node\+\_\+t})
+\item 
+\hyperlink{SynthesisTool_8hpp_a0ffab18e5110132afa6b246fe4234cab}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classxml__set__variable__t}{xml\+\_\+set\+\_\+variable\+\_\+t})
+\item 
+\hyperlink{SynthesisTool_8hpp_a65ea90967517fbcea257e40b53dda5bd}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classxml__parameter__t}{xml\+\_\+parameter\+\_\+t})
+\item 
+\hyperlink{SynthesisTool_8hpp_aa23fc79a0b701ce9b1cbd0f1bb48b2e2}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtarget__device}{target\+\_\+device})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class for a generic synthesis tool. 
+
+\begin{DoxyAuthor}{Author}
+Christian Pilato \href{mailto:pilato@elet.polimi.it}{\tt pilato@elet.\+polimi.\+it} \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{SynthesisTool_8hpp_a738c053a85adb95e9271f8a66a07a64d}\label{SynthesisTool_8hpp_a738c053a85adb95e9271f8a66a07a64d}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!A\+D\+D\+\_\+\+R\+E\+S\+\_\+\+V\+AR@{A\+D\+D\+\_\+\+R\+E\+S\+\_\+\+V\+AR}}
+\index{A\+D\+D\+\_\+\+R\+E\+S\+\_\+\+V\+AR@{A\+D\+D\+\_\+\+R\+E\+S\+\_\+\+V\+AR}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{A\+D\+D\+\_\+\+R\+E\+S\+\_\+\+V\+AR}{ADD\_RES\_VAR}}
+{\footnotesize\ttfamily \#define A\+D\+D\+\_\+\+R\+E\+S\+\_\+\+V\+AR(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~xml\+\_\+reserved\+\_\+vars.\+push\+\_\+back(\hyperlink{xml__script__command_8hpp_a77453d591123aae088dbc1d0efe15f00}{xml\+\_\+set\+\_\+variable\+\_\+t\+Ref}(new \hyperlink{classxml__set__variable__t}{xml\+\_\+set\+\_\+variable\+\_\+t}((name), nullptr, nullptr)))}
+
+
+
+Definition at line 64 of file Synthesis\+Tool.\+hpp.
+
+
+
+Referenced by ngdbuild\+\_\+wrapper\+::init\+\_\+reserved\+\_\+vars(), par\+\_\+wrapper\+::init\+\_\+reserved\+\_\+vars(), map\+\_\+wrapper\+::init\+\_\+reserved\+\_\+vars(), trce\+\_\+wrapper\+::init\+\_\+reserved\+\_\+vars(), xst\+\_\+wrapper\+::init\+\_\+reserved\+\_\+vars(), and Design\+Compiler\+Wrapper\+::init\+\_\+reserved\+\_\+vars().
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_a33c921c7e81c93de0fa6768b340071e9}\label{SynthesisTool_8hpp_a33c921c7e81c93de0fa6768b340071e9}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!P\+A\+R\+A\+M\+\_\+backend\+\_\+script\+\_\+extensions@{P\+A\+R\+A\+M\+\_\+backend\+\_\+script\+\_\+extensions}}
+\index{P\+A\+R\+A\+M\+\_\+backend\+\_\+script\+\_\+extensions@{P\+A\+R\+A\+M\+\_\+backend\+\_\+script\+\_\+extensions}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+\_\+backend\+\_\+script\+\_\+extensions}{PARAM\_backend\_script\_extensions}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+\_\+backend\+\_\+script\+\_\+extensions~\char`\"{}backend\+\_\+script\+\_\+extensions\char`\"{}}
+
+
+
+Definition at line 77 of file Synthesis\+Tool.\+hpp.
+
+
+
+Referenced by Xilinx\+Taste\+Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), and Backend\+Flow\+::\+Generate\+Synthesis\+Scripts().
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_a0c87291cd35a70a963c2cfcd464f00fd}\label{SynthesisTool_8hpp_a0c87291cd35a70a963c2cfcd464f00fd}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!P\+A\+R\+A\+M\+\_\+clk\+\_\+freq@{P\+A\+R\+A\+M\+\_\+clk\+\_\+freq}}
+\index{P\+A\+R\+A\+M\+\_\+clk\+\_\+freq@{P\+A\+R\+A\+M\+\_\+clk\+\_\+freq}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+\_\+clk\+\_\+freq}{PARAM\_clk\_freq}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+\_\+clk\+\_\+freq~\char`\"{}clk\+\_\+freq\char`\"{}}
+
+
+
+Definition at line 73 of file Synthesis\+Tool.\+hpp.
+
+
+
+Referenced by Backend\+Flow\+::\+Generate\+Synthesis\+Scripts().
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_ad1de19d840df01cdcf4fb7666f14ccac}\label{SynthesisTool_8hpp_ad1de19d840df01cdcf4fb7666f14ccac}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!P\+A\+R\+A\+M\+\_\+clk\+\_\+name@{P\+A\+R\+A\+M\+\_\+clk\+\_\+name}}
+\index{P\+A\+R\+A\+M\+\_\+clk\+\_\+name@{P\+A\+R\+A\+M\+\_\+clk\+\_\+name}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+\_\+clk\+\_\+name}{PARAM\_clk\_name}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+\_\+clk\+\_\+name~\char`\"{}clk\+\_\+name\char`\"{}}
+
+
+
+Definition at line 70 of file Synthesis\+Tool.\+hpp.
+
+
+
+Referenced by Xilinx\+Backend\+Flow\+::create\+\_\+cf(), vivado\+\_\+flow\+\_\+wrapper\+::create\+\_\+sdc(), A\+S\+I\+C\+Backend\+Flow\+::create\+\_\+sdc(), Altera\+Backend\+Flow\+::create\+\_\+sdc(), Lattice\+Backend\+Flow\+::create\+\_\+sdc(), Xilinx\+Taste\+Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), and Backend\+Flow\+::\+Generate\+Synthesis\+Scripts().
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_a9969a6c028a3d960001ef8fde3a3ebf4}\label{SynthesisTool_8hpp_a9969a6c028a3d960001ef8fde3a3ebf4}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!P\+A\+R\+A\+M\+\_\+clk\+\_\+period@{P\+A\+R\+A\+M\+\_\+clk\+\_\+period}}
+\index{P\+A\+R\+A\+M\+\_\+clk\+\_\+period@{P\+A\+R\+A\+M\+\_\+clk\+\_\+period}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+\_\+clk\+\_\+period}{PARAM\_clk\_period}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+\_\+clk\+\_\+period~\char`\"{}clk\+\_\+period\char`\"{}}
+
+
+
+Definition at line 71 of file Synthesis\+Tool.\+hpp.
+
+
+
+Referenced by Nano\+Xplore\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Xilinx\+Backend\+Flow\+::create\+\_\+cf(), vivado\+\_\+flow\+\_\+wrapper\+::create\+\_\+sdc(), A\+S\+I\+C\+Backend\+Flow\+::create\+\_\+sdc(), Lattice\+Backend\+Flow\+::create\+\_\+sdc(), Altera\+Backend\+Flow\+::create\+\_\+sdc(), and Backend\+Flow\+::\+Generate\+Synthesis\+Scripts().
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_a10bef30ccaeb227530ef2a07233fe770}\label{SynthesisTool_8hpp_a10bef30ccaeb227530ef2a07233fe770}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!P\+A\+R\+A\+M\+\_\+clk\+\_\+period\+\_\+default@{P\+A\+R\+A\+M\+\_\+clk\+\_\+period\+\_\+default}}
+\index{P\+A\+R\+A\+M\+\_\+clk\+\_\+period\+\_\+default@{P\+A\+R\+A\+M\+\_\+clk\+\_\+period\+\_\+default}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+\_\+clk\+\_\+period\+\_\+default}{PARAM\_clk\_period\_default}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+\_\+clk\+\_\+period\+\_\+default~(1.\+0 / 50)}
+
+
+
+Definition at line 72 of file Synthesis\+Tool.\+hpp.
+
+
+
+Referenced by Backend\+Flow\+::\+Generate\+Synthesis\+Scripts().
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_a3ebe77fd3b596299bb55a26edad35340}\label{SynthesisTool_8hpp_a3ebe77fd3b596299bb55a26edad35340}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!P\+A\+R\+A\+M\+\_\+connect\+\_\+iob@{P\+A\+R\+A\+M\+\_\+connect\+\_\+iob}}
+\index{P\+A\+R\+A\+M\+\_\+connect\+\_\+iob@{P\+A\+R\+A\+M\+\_\+connect\+\_\+iob}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+\_\+connect\+\_\+iob}{PARAM\_connect\_iob}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+\_\+connect\+\_\+iob~\char`\"{}connect\+\_\+iob\char`\"{}}
+
+
+
+Definition at line 81 of file Synthesis\+Tool.\+hpp.
+
+
+
+Referenced by vivado\+\_\+flow\+\_\+wrapper\+::create\+\_\+sdc(), Altera\+Backend\+Flow\+::create\+\_\+sdc(), Lattice\+Backend\+Flow\+::create\+\_\+sdc(), Xilinx\+Taste\+Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), and Backend\+Flow\+::\+Generate\+Synthesis\+Scripts().
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_aff6fd29b88ce1d8c4a63937d2f91a5b2}\label{SynthesisTool_8hpp_aff6fd29b88ce1d8c4a63937d2f91a5b2}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!P\+A\+R\+A\+M\+\_\+fu@{P\+A\+R\+A\+M\+\_\+fu}}
+\index{P\+A\+R\+A\+M\+\_\+fu@{P\+A\+R\+A\+M\+\_\+fu}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+\_\+fu}{PARAM\_fu}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+\_\+fu~\char`\"{}fu\char`\"{}}
+
+
+
+used by Intel/\+Altera Characterization 
+
+
+
+Definition at line 84 of file Synthesis\+Tool.\+hpp.
+
+
+
+Referenced by Backend\+Flow\+::\+Generate\+Synthesis\+Scripts().
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_af4314d7c3209b0f6275049e4ab30a48f}\label{SynthesisTool_8hpp_af4314d7c3209b0f6275049e4ab30a48f}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!P\+A\+R\+A\+M\+\_\+has\+\_\+script\+\_\+extensions@{P\+A\+R\+A\+M\+\_\+has\+\_\+script\+\_\+extensions}}
+\index{P\+A\+R\+A\+M\+\_\+has\+\_\+script\+\_\+extensions@{P\+A\+R\+A\+M\+\_\+has\+\_\+script\+\_\+extensions}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+\_\+has\+\_\+script\+\_\+extensions}{PARAM\_has\_script\_extensions}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+\_\+has\+\_\+script\+\_\+extensions~\char`\"{}has\+\_\+script\+\_\+extensions\char`\"{}}
+
+
+
+Definition at line 78 of file Synthesis\+Tool.\+hpp.
+
+
+
+Referenced by Xilinx\+Taste\+Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), and Backend\+Flow\+::\+Generate\+Synthesis\+Scripts().
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_a6ee473728a9fd8bfa2a4748e1a690a0e}\label{SynthesisTool_8hpp_a6ee473728a9fd8bfa2a4748e1a690a0e}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!P\+A\+R\+A\+M\+\_\+has\+\_\+\+V\+H\+D\+L\+\_\+library@{P\+A\+R\+A\+M\+\_\+has\+\_\+\+V\+H\+D\+L\+\_\+library}}
+\index{P\+A\+R\+A\+M\+\_\+has\+\_\+\+V\+H\+D\+L\+\_\+library@{P\+A\+R\+A\+M\+\_\+has\+\_\+\+V\+H\+D\+L\+\_\+library}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+\_\+has\+\_\+\+V\+H\+D\+L\+\_\+library}{PARAM\_has\_VHDL\_library}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+\_\+has\+\_\+\+V\+H\+D\+L\+\_\+library~\char`\"{}has\+\_\+\+V\+H\+D\+L\+\_\+library\char`\"{}}
+
+
+
+Definition at line 79 of file Synthesis\+Tool.\+hpp.
+
+
+
+Referenced by Xilinx\+Taste\+Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), and Backend\+Flow\+::\+Generate\+Synthesis\+Scripts().
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_ab8577767ccfc06e7645a2f8e69c08e37}\label{SynthesisTool_8hpp_ab8577767ccfc06e7645a2f8e69c08e37}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!P\+A\+R\+A\+M\+\_\+\+H\+D\+L\+\_\+files@{P\+A\+R\+A\+M\+\_\+\+H\+D\+L\+\_\+files}}
+\index{P\+A\+R\+A\+M\+\_\+\+H\+D\+L\+\_\+files@{P\+A\+R\+A\+M\+\_\+\+H\+D\+L\+\_\+files}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+\_\+\+H\+D\+L\+\_\+files}{PARAM\_HDL\_files}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+\_\+\+H\+D\+L\+\_\+files~\char`\"{}H\+D\+L\+\_\+files\char`\"{}}
+
+
+
+Definition at line 69 of file Synthesis\+Tool.\+hpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::\+Evaluate\+Variables(), xst\+\_\+wrapper\+::\+Generate\+Project\+File(), Xilinx\+Taste\+Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), Altera\+Backend\+Flow\+::\+Init\+Design\+Parameters(), Lattice\+Backend\+Flow\+::\+Init\+Design\+Parameters(), Nano\+Xplore\+Backend\+Flow\+::\+Init\+Design\+Parameters(), and Xilinx\+Backend\+Flow\+::\+Init\+Design\+Parameters().
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_a2e8d0f3383b0b791c178981e78619f28}\label{SynthesisTool_8hpp_a2e8d0f3383b0b791c178981e78619f28}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!P\+A\+R\+A\+M\+\_\+is\+\_\+combinational@{P\+A\+R\+A\+M\+\_\+is\+\_\+combinational}}
+\index{P\+A\+R\+A\+M\+\_\+is\+\_\+combinational@{P\+A\+R\+A\+M\+\_\+is\+\_\+combinational}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+\_\+is\+\_\+combinational}{PARAM\_is\_combinational}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+\_\+is\+\_\+combinational~\char`\"{}is\+\_\+combinational\char`\"{}}
+
+
+
+Definition at line 75 of file Synthesis\+Tool.\+hpp.
+
+
+
+Referenced by Xilinx\+Backend\+Flow\+::create\+\_\+cf(), vivado\+\_\+flow\+\_\+wrapper\+::create\+\_\+sdc(), A\+S\+I\+C\+Backend\+Flow\+::create\+\_\+sdc(), Altera\+Backend\+Flow\+::create\+\_\+sdc(), Lattice\+Backend\+Flow\+::create\+\_\+sdc(), Xilinx\+Taste\+Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), and Backend\+Flow\+::\+Generate\+Synthesis\+Scripts().
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_a55f89a669823dfab0df589b35542fba3}\label{SynthesisTool_8hpp_a55f89a669823dfab0df589b35542fba3}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!P\+A\+R\+A\+M\+\_\+sdc\+\_\+file@{P\+A\+R\+A\+M\+\_\+sdc\+\_\+file}}
+\index{P\+A\+R\+A\+M\+\_\+sdc\+\_\+file@{P\+A\+R\+A\+M\+\_\+sdc\+\_\+file}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+\_\+sdc\+\_\+file}{PARAM\_sdc\_file}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+\_\+sdc\+\_\+file~\char`\"{}sdc\+\_\+file\char`\"{}}
+
+
+
+Definition at line 76 of file Synthesis\+Tool.\+hpp.
+
+
+
+Referenced by vivado\+\_\+flow\+\_\+wrapper\+::create\+\_\+sdc(), A\+S\+I\+C\+Backend\+Flow\+::create\+\_\+sdc(), Altera\+Backend\+Flow\+::create\+\_\+sdc(), Lattice\+Backend\+Flow\+::create\+\_\+sdc(), and Design\+Compiler\+Wrapper\+::\+Evaluate\+Variables().
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_a3cef893351a0c7b896da3db0bbf42ac5}\label{SynthesisTool_8hpp_a3cef893351a0c7b896da3db0bbf42ac5}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!P\+A\+R\+A\+M\+\_\+target\+\_\+device@{P\+A\+R\+A\+M\+\_\+target\+\_\+device}}
+\index{P\+A\+R\+A\+M\+\_\+target\+\_\+device@{P\+A\+R\+A\+M\+\_\+target\+\_\+device}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+\_\+target\+\_\+device}{PARAM\_target\_device}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+\_\+target\+\_\+device~\char`\"{}target\+\_\+device\char`\"{}}
+
+
+
+Definition at line 67 of file Synthesis\+Tool.\+hpp.
+
+
+
+Referenced by Altera\+Backend\+Flow\+::\+Init\+Design\+Parameters(), Lattice\+Backend\+Flow\+::\+Init\+Design\+Parameters(), Nano\+Xplore\+Backend\+Flow\+::\+Init\+Design\+Parameters(), and Xilinx\+Backend\+Flow\+::\+Init\+Design\+Parameters().
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_abb3d225c0275d7c7f5172c04e5f45c59}\label{SynthesisTool_8hpp_abb3d225c0275d7c7f5172c04e5f45c59}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!P\+A\+R\+A\+M\+\_\+target\+\_\+family@{P\+A\+R\+A\+M\+\_\+target\+\_\+family}}
+\index{P\+A\+R\+A\+M\+\_\+target\+\_\+family@{P\+A\+R\+A\+M\+\_\+target\+\_\+family}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+\_\+target\+\_\+family}{PARAM\_target\_family}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+\_\+target\+\_\+family~\char`\"{}target\+\_\+family\char`\"{}}
+
+
+
+Definition at line 68 of file Synthesis\+Tool.\+hpp.
+
+
+
+Referenced by Altera\+Backend\+Flow\+::\+Init\+Design\+Parameters(), and Lattice\+Backend\+Flow\+::\+Init\+Design\+Parameters().
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_a3f1969683c83da924e7e00f3058263a1}\label{SynthesisTool_8hpp_a3f1969683c83da924e7e00f3058263a1}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!P\+A\+R\+A\+M\+\_\+time\+\_\+constrained@{P\+A\+R\+A\+M\+\_\+time\+\_\+constrained}}
+\index{P\+A\+R\+A\+M\+\_\+time\+\_\+constrained@{P\+A\+R\+A\+M\+\_\+time\+\_\+constrained}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+\_\+time\+\_\+constrained}{PARAM\_time\_constrained}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+\_\+time\+\_\+constrained~\char`\"{}time\+\_\+constrained\char`\"{}}
+
+
+
+Definition at line 74 of file Synthesis\+Tool.\+hpp.
+
+
+
+Referenced by Xilinx\+Taste\+Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), and Backend\+Flow\+::\+Generate\+Synthesis\+Scripts().
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_af03e36b91c99762a275062b79d825134}\label{SynthesisTool_8hpp_af03e36b91c99762a275062b79d825134}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!P\+A\+R\+A\+M\+\_\+top\+\_\+id@{P\+A\+R\+A\+M\+\_\+top\+\_\+id}}
+\index{P\+A\+R\+A\+M\+\_\+top\+\_\+id@{P\+A\+R\+A\+M\+\_\+top\+\_\+id}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+\_\+top\+\_\+id}{PARAM\_top\_id}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+\_\+top\+\_\+id~\char`\"{}top\+\_\+id\char`\"{}}
+
+
+
+Definition at line 66 of file Synthesis\+Tool.\+hpp.
+
+
+
+Referenced by Altera\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), map\+\_\+wrapper\+::\+Evaluate\+Variables(), trce\+\_\+wrapper\+::\+Evaluate\+Variables(), xst\+\_\+wrapper\+::\+Evaluate\+Variables(), xst\+\_\+wrapper\+::\+Generate\+Project\+File(), Xilinx\+Taste\+Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), and Backend\+Flow\+::\+Generate\+Synthesis\+Scripts().
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_a7ca856c50608cf304fd4e97905564889}\label{SynthesisTool_8hpp_a7ca856c50608cf304fd4e97905564889}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!P\+A\+R\+A\+M\+\_\+\+V\+H\+D\+L\+\_\+library@{P\+A\+R\+A\+M\+\_\+\+V\+H\+D\+L\+\_\+library}}
+\index{P\+A\+R\+A\+M\+\_\+\+V\+H\+D\+L\+\_\+library@{P\+A\+R\+A\+M\+\_\+\+V\+H\+D\+L\+\_\+library}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+\_\+\+V\+H\+D\+L\+\_\+library}{PARAM\_VHDL\_library}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+\_\+\+V\+H\+D\+L\+\_\+library~\char`\"{}V\+H\+D\+L\+\_\+library\char`\"{}}
+
+
+
+Definition at line 80 of file Synthesis\+Tool.\+hpp.
+
+
+
+Referenced by Xilinx\+Taste\+Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), and Backend\+Flow\+::\+Generate\+Synthesis\+Scripts().
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{SynthesisTool_8hpp_af82cb8fc071612a27507a7c212097e58}\label{SynthesisTool_8hpp_af82cb8fc071612a27507a7c212097e58}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!Synthesis\+Tool\+Ref@{Synthesis\+Tool\+Ref}}
+\index{Synthesis\+Tool\+Ref@{Synthesis\+Tool\+Ref}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{Synthesis\+Tool\+Ref}{SynthesisToolRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classSynthesisTool}{Synthesis\+Tool}$>$ \hyperlink{SynthesisTool_8hpp_af82cb8fc071612a27507a7c212097e58}{Synthesis\+Tool\+Ref}}
+
+
+
+refcount definition of the class 
+
+
+
+Definition at line 260 of file Synthesis\+Tool.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{SynthesisTool_8hpp_ac5c30465e53a2dee97960f0f406b8be7}\label{SynthesisTool_8hpp_ac5c30465e53a2dee97960f0f406b8be7}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classParameter}{Parameter}}]{ }\end{DoxyParamCaption})}
+
+
+
+Autoheader include. 
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_aac7eac7e34f4f4bde5723e48566d4348}\label{SynthesisTool_8hpp_aac7eac7e34f4f4bde5723e48566d4348}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classSynthesisTool}{Synthesis\+Tool}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_a3e5b731d02e6c0f421259a6689eb0feb}\label{SynthesisTool_8hpp_a3e5b731d02e6c0f421259a6689eb0feb}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classToolManager}{Tool\+Manager}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_a9019f722eb332cab949d4fd603fb994b}\label{SynthesisTool_8hpp_a9019f722eb332cab949d4fd603fb994b}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structDesignParameters}{Design\+Parameters}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_a36fc701203269b088b0bbeb88a50eb12}\label{SynthesisTool_8hpp_a36fc701203269b088b0bbeb88a50eb12}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__node}{xml\+\_\+node}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_afa2bf932b12322d835ea06b64887fdd7}\label{SynthesisTool_8hpp_afa2bf932b12322d835ea06b64887fdd7}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__script__node__t}{xml\+\_\+script\+\_\+node\+\_\+t}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_a0ffab18e5110132afa6b246fe4234cab}\label{SynthesisTool_8hpp_a0ffab18e5110132afa6b246fe4234cab}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__set__variable__t}{xml\+\_\+set\+\_\+variable\+\_\+t}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_a65ea90967517fbcea257e40b53dda5bd}\label{SynthesisTool_8hpp_a65ea90967517fbcea257e40b53dda5bd}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__parameter__t}{xml\+\_\+parameter\+\_\+t}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{SynthesisTool_8hpp_aa23fc79a0b701ce9b1cbd0f1bb48b2e2}\label{SynthesisTool_8hpp_aa23fc79a0b701ce9b1cbd0f1bb48b2e2}} 
+\index{Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!Synthesis\+Tool.\+hpp@{Synthesis\+Tool.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtarget__device}{target\+\_\+device}}]{ }\end{DoxyParamCaption})}
+

@@ -1,0 +1,359 @@
+\hypertarget{structOpNodeInfo}{}\section{Op\+Node\+Info Struct Reference}
+\label{structOpNodeInfo}\index{Op\+Node\+Info@{Op\+Node\+Info}}
+
+
+Information associated with a generic operation node.  
+
+
+
+
+{\ttfamily \#include $<$op\+\_\+graph.\+hpp$>$}
+
+
+
+Inheritance diagram for Op\+Node\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{df/d22/structOpNodeInfo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Op\+Node\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d05/structOpNodeInfo__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structOpNodeInfo_a756bde8314600d48ef576baea924d165}{Op\+Node\+Info} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{structOpNodeInfo_ab13421a387f9fe59dd73a080d0cdb8de}{$\sim$\+Op\+Node\+Info} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{structOpNodeInfo_a0ce82bb59facad4a65403621b9fe88c6}{Initialize} ()
+\begin{DoxyCompactList}\small\item\em Initialize variable maps. \end{DoxyCompactList}\item 
+const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ \& \hyperlink{structOpNodeInfo_aea18a24d98562fb66b276ac3240e294e}{Get\+Variables} (const \hyperlink{function__behavior_8hpp_aff0ab7827d49a7aca1f277e0ff126755}{Function\+Behavior\+\_\+\+Variable\+Type} variable\+\_\+type, const \hyperlink{function__behavior_8hpp_a68c28bfcfefbe63cece191e941af0409}{Function\+Behavior\+\_\+\+Variable\+Access\+Type} access\+\_\+type) const
+\begin{DoxyCompactList}\small\item\em Return a set of accessed scalar variables. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structOpNodeInfo_a5eb05c908fcd5a42b4ea921f21ac6393}{Get\+Node\+Id} () const
+\begin{DoxyCompactList}\small\item\em Return the node id of the operation associated with the vertex. \end{DoxyCompactList}\item 
+void \hyperlink{structOpNodeInfo_a8b9d0224e6ca9d88447fe8d7a7c093d8}{Print} (std\+::ostream \&stream, const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} behavioral\+\_\+helper, const bool dotty\+\_\+format) const
+\begin{DoxyCompactList}\small\item\em Print the content of this node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ \hyperlink{structOpNodeInfo_af4643b1d75b6daa18efdecdc7d01c03a}{cited\+\_\+variables}
+\begin{DoxyCompactList}\small\item\em set of cited variables (i.\+e., variables which are included in the c printing of this statement) \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ \hyperlink{function__behavior_8hpp_aff0ab7827d49a7aca1f277e0ff126755}{Function\+Behavior\+\_\+\+Variable\+Type}, \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ \hyperlink{function__behavior_8hpp_a68c28bfcfefbe63cece191e941af0409}{Function\+Behavior\+\_\+\+Variable\+Access\+Type}, \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ $>$ $>$ \hyperlink{structOpNodeInfo_a5df54db9835f77f508db845c3726c639}{variables}
+\begin{DoxyCompactList}\small\item\em set of scalar ssa accessed in this node \end{DoxyCompactList}\item 
+std\+::list$<$ unsigned int $>$ \hyperlink{structOpNodeInfo_aea9c21705c836eb3960ab8df56215d8e}{actual\+\_\+parameters}
+\begin{DoxyCompactList}\small\item\em Set of actual parameters of called function (used in pthread backend. \end{DoxyCompactList}\item 
+\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \hyperlink{structOpNodeInfo_ad4732d50b380fd617f577967b00ecd02}{node}
+\begin{DoxyCompactList}\small\item\em The tree node associated with this vertex. \end{DoxyCompactList}\item 
+\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ unsigned int $>$ \hyperlink{structOpNodeInfo_a560909ca1b3ecdb9d2e820113acb76bc}{called}
+\begin{DoxyCompactList}\small\item\em Store the index of called functions. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structOpNodeInfo_adf1ca07b35dbffaafe72c5b4a209d9ee}{bb\+\_\+index}
+\begin{DoxyCompactList}\small\item\em Store the index of the basic block which this operation vertex belongs to. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structOpNodeInfo_ad609377fed2c03245d26ebfd8117371d}{cer}
+\begin{DoxyCompactList}\small\item\em Store the index of the control equivalent region. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Information associated with a generic operation node. 
+
+Definition at line 361 of file op\+\_\+graph.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structOpNodeInfo_a756bde8314600d48ef576baea924d165}\label{structOpNodeInfo_a756bde8314600d48ef576baea924d165}} 
+\index{Op\+Node\+Info@{Op\+Node\+Info}!Op\+Node\+Info@{Op\+Node\+Info}}
+\index{Op\+Node\+Info@{Op\+Node\+Info}!Op\+Node\+Info@{Op\+Node\+Info}}
+\subsubsection{\texorpdfstring{Op\+Node\+Info()}{OpNodeInfo()}}
+{\footnotesize\ttfamily Op\+Node\+Info\+::\+Op\+Node\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 78 of file op\+\_\+graph.\+cpp.
+
+
+
+References Initialize().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d53/structOpNodeInfo_a756bde8314600d48ef576baea924d165_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structOpNodeInfo_ab13421a387f9fe59dd73a080d0cdb8de}\label{structOpNodeInfo_ab13421a387f9fe59dd73a080d0cdb8de}} 
+\index{Op\+Node\+Info@{Op\+Node\+Info}!````~Op\+Node\+Info@{$\sim$\+Op\+Node\+Info}}
+\index{````~Op\+Node\+Info@{$\sim$\+Op\+Node\+Info}!Op\+Node\+Info@{Op\+Node\+Info}}
+\subsubsection{\texorpdfstring{$\sim$\+Op\+Node\+Info()}{~OpNodeInfo()}}
+{\footnotesize\ttfamily Op\+Node\+Info\+::$\sim$\+Op\+Node\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Initialize().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d53/structOpNodeInfo_ab13421a387f9fe59dd73a080d0cdb8de_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structOpNodeInfo_a5eb05c908fcd5a42b4ea921f21ac6393}\label{structOpNodeInfo_a5eb05c908fcd5a42b4ea921f21ac6393}} 
+\index{Op\+Node\+Info@{Op\+Node\+Info}!Get\+Node\+Id@{Get\+Node\+Id}}
+\index{Get\+Node\+Id@{Get\+Node\+Id}!Op\+Node\+Info@{Op\+Node\+Info}}
+\subsubsection{\texorpdfstring{Get\+Node\+Id()}{GetNodeId()}}
+{\footnotesize\ttfamily unsigned int Op\+Node\+Info\+::\+Get\+Node\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the node id of the operation associated with the vertex. 
+
+
+
+Definition at line 140 of file op\+\_\+graph.\+cpp.
+
+
+
+References E\+N\+T\+RY, E\+N\+T\+R\+Y\+\_\+\+ID, E\+X\+IT, E\+X\+I\+T\+\_\+\+ID, tree\+\_\+node\+::index, node, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and Typed\+Node\+Info\+::vertex\+\_\+name.
+
+\mbox{\Hypertarget{structOpNodeInfo_aea18a24d98562fb66b276ac3240e294e}\label{structOpNodeInfo_aea18a24d98562fb66b276ac3240e294e}} 
+\index{Op\+Node\+Info@{Op\+Node\+Info}!Get\+Variables@{Get\+Variables}}
+\index{Get\+Variables@{Get\+Variables}!Op\+Node\+Info@{Op\+Node\+Info}}
+\subsubsection{\texorpdfstring{Get\+Variables()}{GetVariables()}}
+{\footnotesize\ttfamily const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ \& Op\+Node\+Info\+::\+Get\+Variables (\begin{DoxyParamCaption}\item[{const \hyperlink{function__behavior_8hpp_aff0ab7827d49a7aca1f277e0ff126755}{Function\+Behavior\+\_\+\+Variable\+Type}}]{variable\+\_\+type,  }\item[{const \hyperlink{function__behavior_8hpp_a68c28bfcfefbe63cece191e941af0409}{Function\+Behavior\+\_\+\+Variable\+Access\+Type}}]{access\+\_\+type }\end{DoxyParamCaption}) const}
+
+
+
+Return a set of accessed scalar variables. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em variable\+\_\+type} & is the type of variables to be considered \\
+\hline
+{\em access\+\_\+type} & is the type of accesses to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 111 of file op\+\_\+graph.\+cpp.
+
+
+
+References E\+N\+T\+RY, E\+X\+IT, G\+E\+T\+\_\+\+N\+O\+DE, node, N\+OP, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, variables, and Typed\+Node\+Info\+::vertex\+\_\+name.
+
+\mbox{\Hypertarget{structOpNodeInfo_a0ce82bb59facad4a65403621b9fe88c6}\label{structOpNodeInfo_a0ce82bb59facad4a65403621b9fe88c6}} 
+\index{Op\+Node\+Info@{Op\+Node\+Info}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Op\+Node\+Info@{Op\+Node\+Info}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Op\+Node\+Info\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize variable maps. 
+
+This is necessary to be sure that the set exists (even if empty) 
+
+Definition at line 83 of file op\+\_\+graph.\+cpp.
+
+
+
+References A\+D\+D\+R\+E\+SS, D\+E\+F\+I\+N\+I\+T\+I\+ON, M\+E\+M\+O\+RY, O\+V\+ER, S\+C\+A\+L\+AR, U\+SE, variables, V\+I\+R\+T\+U\+AL, and $\sim$\+Op\+Node\+Info().
+
+
+
+Referenced by Op\+Node\+Info().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d53/structOpNodeInfo_a0ce82bb59facad4a65403621b9fe88c6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d53/structOpNodeInfo_a0ce82bb59facad4a65403621b9fe88c6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structOpNodeInfo_a8b9d0224e6ca9d88447fe8d7a7c093d8}\label{structOpNodeInfo_a8b9d0224e6ca9d88447fe8d7a7c093d8}} 
+\index{Op\+Node\+Info@{Op\+Node\+Info}!Print@{Print}}
+\index{Print@{Print}!Op\+Node\+Info@{Op\+Node\+Info}}
+\subsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Op\+Node\+Info\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{behavioral\+\_\+helper,  }\item[{const bool}]{dotty\+\_\+format }\end{DoxyParamCaption}) const}
+
+
+
+Print the content of this node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & is the stream on which this node has to be printed \\
+\hline
+{\em behavioral\+\_\+helper} & is the helper associated with the function \\
+\hline
+{\em dotty\+\_\+format} & specifies if the output has to be formatted for a dotty label \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 200 of file op\+\_\+graph.\+cpp.
+
+
+
+References cited\+\_\+variables, M\+E\+M\+O\+RY, Print\+Memories\+Lists(), Print\+Variables\+List(), Print\+Variables\+Lists(), S\+C\+A\+L\+AR, variables, and V\+I\+R\+T\+U\+AL.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d53/structOpNodeInfo_a8b9d0224e6ca9d88447fe8d7a7c093d8_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structOpNodeInfo_aea9c21705c836eb3960ab8df56215d8e}\label{structOpNodeInfo_aea9c21705c836eb3960ab8df56215d8e}} 
+\index{Op\+Node\+Info@{Op\+Node\+Info}!actual\+\_\+parameters@{actual\+\_\+parameters}}
+\index{actual\+\_\+parameters@{actual\+\_\+parameters}!Op\+Node\+Info@{Op\+Node\+Info}}
+\subsubsection{\texorpdfstring{actual\+\_\+parameters}{actual\_parameters}}
+{\footnotesize\ttfamily std\+::list$<$unsigned int$>$ Op\+Node\+Info\+::actual\+\_\+parameters}
+
+
+
+Set of actual parameters of called function (used in pthread backend. 
+
+
+
+Definition at line 375 of file op\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{structOpNodeInfo_adf1ca07b35dbffaafe72c5b4a209d9ee}\label{structOpNodeInfo_adf1ca07b35dbffaafe72c5b4a209d9ee}} 
+\index{Op\+Node\+Info@{Op\+Node\+Info}!bb\+\_\+index@{bb\+\_\+index}}
+\index{bb\+\_\+index@{bb\+\_\+index}!Op\+Node\+Info@{Op\+Node\+Info}}
+\subsubsection{\texorpdfstring{bb\+\_\+index}{bb\_index}}
+{\footnotesize\ttfamily unsigned int Op\+Node\+Info\+::bb\+\_\+index}
+
+
+
+Store the index of the basic block which this operation vertex belongs to. 
+
+
+
+Definition at line 384 of file op\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{structOpNodeInfo_a560909ca1b3ecdb9d2e820113acb76bc}\label{structOpNodeInfo_a560909ca1b3ecdb9d2e820113acb76bc}} 
+\index{Op\+Node\+Info@{Op\+Node\+Info}!called@{called}}
+\index{called@{called}!Op\+Node\+Info@{Op\+Node\+Info}}
+\subsubsection{\texorpdfstring{called}{called}}
+{\footnotesize\ttfamily \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$unsigned int$>$ Op\+Node\+Info\+::called}
+
+
+
+Store the index of called functions. 
+
+
+
+Definition at line 381 of file op\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{structOpNodeInfo_ad609377fed2c03245d26ebfd8117371d}\label{structOpNodeInfo_ad609377fed2c03245d26ebfd8117371d}} 
+\index{Op\+Node\+Info@{Op\+Node\+Info}!cer@{cer}}
+\index{cer@{cer}!Op\+Node\+Info@{Op\+Node\+Info}}
+\subsubsection{\texorpdfstring{cer}{cer}}
+{\footnotesize\ttfamily unsigned int Op\+Node\+Info\+::cer}
+
+
+
+Store the index of the control equivalent region. 
+
+
+
+Definition at line 387 of file op\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{structOpNodeInfo_af4643b1d75b6daa18efdecdc7d01c03a}\label{structOpNodeInfo_af4643b1d75b6daa18efdecdc7d01c03a}} 
+\index{Op\+Node\+Info@{Op\+Node\+Info}!cited\+\_\+variables@{cited\+\_\+variables}}
+\index{cited\+\_\+variables@{cited\+\_\+variables}!Op\+Node\+Info@{Op\+Node\+Info}}
+\subsubsection{\texorpdfstring{cited\+\_\+variables}{cited\_variables}}
+{\footnotesize\ttfamily \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$unsigned int$>$ Op\+Node\+Info\+::cited\+\_\+variables}
+
+
+
+set of cited variables (i.\+e., variables which are included in the c printing of this statement) 
+
+
+
+Definition at line 364 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Print().
+
+\mbox{\Hypertarget{structOpNodeInfo_ad4732d50b380fd617f577967b00ecd02}\label{structOpNodeInfo_ad4732d50b380fd617f577967b00ecd02}} 
+\index{Op\+Node\+Info@{Op\+Node\+Info}!node@{node}}
+\index{node@{node}!Op\+Node\+Info@{Op\+Node\+Info}}
+\subsubsection{\texorpdfstring{node}{node}}
+{\footnotesize\ttfamily \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} Op\+Node\+Info\+::node}
+
+
+
+The tree node associated with this vertex. 
+
+
+
+Definition at line 378 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Get\+Node\+Id(), and Get\+Variables().
+
+\mbox{\Hypertarget{structOpNodeInfo_a5df54db9835f77f508db845c3726c639}\label{structOpNodeInfo_a5df54db9835f77f508db845c3726c639}} 
+\index{Op\+Node\+Info@{Op\+Node\+Info}!variables@{variables}}
+\index{variables@{variables}!Op\+Node\+Info@{Op\+Node\+Info}}
+\subsubsection{\texorpdfstring{variables}{variables}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$\hyperlink{function__behavior_8hpp_aff0ab7827d49a7aca1f277e0ff126755}{Function\+Behavior\+\_\+\+Variable\+Type}, \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$\hyperlink{function__behavior_8hpp_a68c28bfcfefbe63cece191e941af0409}{Function\+Behavior\+\_\+\+Variable\+Access\+Type}, \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$unsigned int$>$ $>$ $>$ Op\+Node\+Info\+::variables}
+
+
+
+set of scalar ssa accessed in this node 
+
+
+
+Definition at line 367 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Get\+Variables(), Initialize(), Print(), Print\+Memories\+Lists(), and Print\+Variables\+Lists().
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/\hyperlink{op__graph_8hpp}{op\+\_\+graph.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/\hyperlink{op__graph_8cpp}{op\+\_\+graph.\+cpp}\end{DoxyCompactItemize}

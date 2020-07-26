@@ -1,0 +1,335 @@
+\hypertarget{classAlteraBackendFlow}{}\section{Altera\+Backend\+Flow Class Reference}
+\label{classAlteraBackendFlow}\index{Altera\+Backend\+Flow@{Altera\+Backend\+Flow}}
+
+
+superclass include  
+
+
+
+
+{\ttfamily \#include $<$Altera\+Backend\+Flow.\+hpp$>$}
+
+
+
+Inheritance diagram for Altera\+Backend\+Flow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{db/d5f/classAlteraBackendFlow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Altera\+Backend\+Flow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d3d/classAlteraBackendFlow__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAlteraBackendFlow_aeb3203a30034d5650f1dd14133887224}{Altera\+Backend\+Flow} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classBackendFlow_a7d21e7cf0afc64b13e0009c9e351873d}{Param}, const std\+::string \&\hyperlink{classBackendFlow_acb230ccab7e32cf0a88811097ff8c3f8}{flow\+\_\+name}, const \hyperlink{target__manager_8hpp_aee0b586a84fb6eb4faefa6e41e1735a9}{target\+\_\+manager\+Ref} \hyperlink{classBackendFlow_a693ab6eaf29b1836eb91dcd92eb0189f}{target})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classAlteraBackendFlow_a5d0a20b521fcadf6e5cd03e9ce876351}{$\sim$\+Altera\+Backend\+Flow} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classAlteraBackendFlow_aef7d0e07aaf000ba9d93cdde6761daeb}{Init\+Design\+Parameters} () override
+\begin{DoxyCompactList}\small\item\em Initializes the parameters. \end{DoxyCompactList}\item 
+void \hyperlink{classAlteraBackendFlow_a02d5cfd65ba8c97fd8b3c9781014c22c}{Execute\+Synthesis} () override
+\begin{DoxyCompactList}\small\item\em Checks if the execution can be performed and, in case, performs the synthesis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classAlteraBackendFlow_a4138bec7596448fb21b796dd31e65d6f}{Write\+Flow\+Configuration} (std\+::ostream \&script) override
+\begin{DoxyCompactList}\small\item\em Writes the proper flow configuration in the output script. \end{DoxyCompactList}\item 
+void \hyperlink{classAlteraBackendFlow_ac566361f8b25433c52b90ec30b100d35}{xparse\+\_\+utilization} (const std\+::string \&fn)
+\begin{DoxyCompactList}\small\item\em Parses device utilization. \end{DoxyCompactList}\item 
+void \hyperlink{classAlteraBackendFlow_a36da7a0f6807798fbbb334b6cb5d4677}{Check\+Synthesis\+Results} () override
+\begin{DoxyCompactList}\small\item\em Checks the synthesis results and fills the corresponding datastructures. \end{DoxyCompactList}\item 
+void \hyperlink{classAlteraBackendFlow_a176b73daf2c6c80d929647205b95571d}{create\+\_\+sdc} (const \hyperlink{DesignParameters_8hpp_ae36bb1c4c9150d0eeecfe1f96f42d157}{Design\+Parameters\+Ref} dp)
+\begin{DoxyCompactList}\small\item\em Creates the constraint file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, double $>$ \hyperlink{classAlteraBackendFlow_a9ac59d97dbc735fef9f6ccb673ca179f}{design\+\_\+values}
+\begin{DoxyCompactList}\small\item\em design values reported by the tools \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+superclass include 
+
+Definition at line 50 of file Altera\+Backend\+Flow.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAlteraBackendFlow_aeb3203a30034d5650f1dd14133887224}\label{classAlteraBackendFlow_aeb3203a30034d5650f1dd14133887224}} 
+\index{Altera\+Backend\+Flow@{Altera\+Backend\+Flow}!Altera\+Backend\+Flow@{Altera\+Backend\+Flow}}
+\index{Altera\+Backend\+Flow@{Altera\+Backend\+Flow}!Altera\+Backend\+Flow@{Altera\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{Altera\+Backend\+Flow()}{AlteraBackendFlow()}}
+{\footnotesize\ttfamily Altera\+Backend\+Flow\+::\+Altera\+Backend\+Flow (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{const std\+::string \&}]{flow\+\_\+name,  }\item[{const \hyperlink{target__manager_8hpp_aee0b586a84fb6eb4faefa6e41e1735a9}{target\+\_\+manager\+Ref}}]{target }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 86 of file Altera\+Backend\+Flow.\+cpp.
+
+
+
+References Backend\+Flow\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, Backend\+Flow\+::default\+\_\+data, G\+E\+T\+\_\+\+C\+L\+A\+SS, target\+\_\+device\+::get\+\_\+parameter(), target\+\_\+device\+::has\+\_\+parameter(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Backend\+Flow\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, Backend\+Flow\+::\+Param, Backend\+Flow\+::parse\+\_\+flow(), test\+\_\+panda\+::parser, P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, Backend\+Flow\+::target, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and $\sim$\+Altera\+Backend\+Flow().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d83/classAlteraBackendFlow_aeb3203a30034d5650f1dd14133887224_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAlteraBackendFlow_a5d0a20b521fcadf6e5cd03e9ce876351}\label{classAlteraBackendFlow_a5d0a20b521fcadf6e5cd03e9ce876351}} 
+\index{Altera\+Backend\+Flow@{Altera\+Backend\+Flow}!````~Altera\+Backend\+Flow@{$\sim$\+Altera\+Backend\+Flow}}
+\index{````~Altera\+Backend\+Flow@{$\sim$\+Altera\+Backend\+Flow}!Altera\+Backend\+Flow@{Altera\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{$\sim$\+Altera\+Backend\+Flow()}{~AlteraBackendFlow()}}
+{\footnotesize\ttfamily Altera\+Backend\+Flow\+::$\sim$\+Altera\+Backend\+Flow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Altera\+Backend\+Flow().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{d2/d83/classAlteraBackendFlow_a5d0a20b521fcadf6e5cd03e9ce876351_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAlteraBackendFlow_a36da7a0f6807798fbbb334b6cb5d4677}\label{classAlteraBackendFlow_a36da7a0f6807798fbbb334b6cb5d4677}} 
+\index{Altera\+Backend\+Flow@{Altera\+Backend\+Flow}!Check\+Synthesis\+Results@{Check\+Synthesis\+Results}}
+\index{Check\+Synthesis\+Results@{Check\+Synthesis\+Results}!Altera\+Backend\+Flow@{Altera\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{Check\+Synthesis\+Results()}{CheckSynthesisResults()}}
+{\footnotesize\ttfamily void Altera\+Backend\+Flow\+::\+Check\+Synthesis\+Results (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Checks the synthesis results and fills the corresponding datastructures. 
+
+
+
+Implements \hyperlink{classBackendFlow_ad2096d43b7c9c47611d719188215f23f}{Backend\+Flow}.
+
+
+
+Definition at line 215 of file Altera\+Backend\+Flow.\+cpp.
+
+
+
+References Backend\+Flow\+::actual\+\_\+parameters, clb\+\_\+model\+::\+A\+L\+MS, A\+L\+T\+E\+R\+A\+\_\+\+A\+LM, A\+L\+T\+E\+R\+A\+\_\+\+D\+SP, A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+AX, A\+L\+T\+E\+R\+A\+\_\+\+LE, A\+L\+T\+E\+R\+A\+\_\+\+M\+EM, A\+L\+T\+E\+R\+A\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS, Backend\+Flow\+::area\+\_\+m, clb\+\_\+model\+::\+B\+R\+AM, L\+U\+T\+\_\+model\+::\+C\+O\+M\+B\+I\+N\+A\+T\+I\+O\+N\+A\+L\+\_\+\+D\+E\+L\+AY, Copy\+File(), area\+\_\+model\+::create\+\_\+model(), time\+\_\+model\+::create\+\_\+model(), design\+\_\+values, clb\+\_\+model\+::\+D\+SP, Backend\+Flow\+::flow\+\_\+name, F\+P\+GA, clb\+\_\+model\+::\+L\+O\+G\+I\+C\+\_\+\+E\+L\+E\+M\+E\+N\+TS, Backend\+Flow\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM, Backend\+Flow\+::\+Param, P\+A\+R\+A\+M\+\_\+quartus\+\_\+report, P\+A\+R\+A\+M\+\_\+top\+\_\+id, Design\+Parameters\+::parameter\+\_\+values, P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, clb\+\_\+model\+::\+R\+E\+G\+I\+S\+T\+E\+RS, S\+T\+R\+\_\+\+C\+S\+T\+\_\+synthesis\+\_\+timing\+\_\+violation\+\_\+report, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, Backend\+Flow\+::time\+\_\+m, and xparse\+\_\+utilization().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d83/classAlteraBackendFlow_a36da7a0f6807798fbbb334b6cb5d4677_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAlteraBackendFlow_a176b73daf2c6c80d929647205b95571d}\label{classAlteraBackendFlow_a176b73daf2c6c80d929647205b95571d}} 
+\index{Altera\+Backend\+Flow@{Altera\+Backend\+Flow}!create\+\_\+sdc@{create\+\_\+sdc}}
+\index{create\+\_\+sdc@{create\+\_\+sdc}!Altera\+Backend\+Flow@{Altera\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{create\+\_\+sdc()}{create\_sdc()}}
+{\footnotesize\ttfamily void Altera\+Backend\+Flow\+::create\+\_\+sdc (\begin{DoxyParamCaption}\item[{const \hyperlink{DesignParameters_8hpp_ae36bb1c4c9150d0eeecfe1f96f42d157}{Design\+Parameters\+Ref}}]{dp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates the constraint file. 
+
+
+
+Definition at line 279 of file Altera\+Backend\+Flow.\+cpp.
+
+
+
+References Design\+Parameters\+::component\+\_\+name, Backend\+Flow\+::get\+\_\+flow\+\_\+name(), Backend\+Flow\+::out\+\_\+dir, Backend\+Flow\+::\+Param, P\+A\+R\+A\+M\+\_\+clk\+\_\+name, P\+A\+R\+A\+M\+\_\+clk\+\_\+period, P\+A\+R\+A\+M\+\_\+connect\+\_\+iob, P\+A\+R\+A\+M\+\_\+is\+\_\+combinational, P\+A\+R\+A\+M\+\_\+sdc\+\_\+file, and Design\+Parameters\+::parameter\+\_\+values.
+
+
+
+Referenced by Init\+Design\+Parameters().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d83/classAlteraBackendFlow_a176b73daf2c6c80d929647205b95571d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{d2/d83/classAlteraBackendFlow_a176b73daf2c6c80d929647205b95571d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAlteraBackendFlow_a02d5cfd65ba8c97fd8b3c9781014c22c}\label{classAlteraBackendFlow_a02d5cfd65ba8c97fd8b3c9781014c22c}} 
+\index{Altera\+Backend\+Flow@{Altera\+Backend\+Flow}!Execute\+Synthesis@{Execute\+Synthesis}}
+\index{Execute\+Synthesis@{Execute\+Synthesis}!Altera\+Backend\+Flow@{Altera\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{Execute\+Synthesis()}{ExecuteSynthesis()}}
+{\footnotesize\ttfamily void Altera\+Backend\+Flow\+::\+Execute\+Synthesis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the execution can be performed and, in case, performs the synthesis. 
+
+
+
+Reimplemented from \hyperlink{classBackendFlow_af0e8f1973185540298eaa3ac4bee3b2c}{Backend\+Flow}.
+
+
+
+Definition at line 341 of file Altera\+Backend\+Flow.\+cpp.
+
+
+
+References Backend\+Flow\+::\+Execute\+Synthesis(), and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d83/classAlteraBackendFlow_a02d5cfd65ba8c97fd8b3c9781014c22c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAlteraBackendFlow_aef7d0e07aaf000ba9d93cdde6761daeb}\label{classAlteraBackendFlow_aef7d0e07aaf000ba9d93cdde6761daeb}} 
+\index{Altera\+Backend\+Flow@{Altera\+Backend\+Flow}!Init\+Design\+Parameters@{Init\+Design\+Parameters}}
+\index{Init\+Design\+Parameters@{Init\+Design\+Parameters}!Altera\+Backend\+Flow@{Altera\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{Init\+Design\+Parameters()}{InitDesignParameters()}}
+{\footnotesize\ttfamily void Altera\+Backend\+Flow\+::\+Init\+Design\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initializes the parameters. 
+
+
+
+Reimplemented from \hyperlink{classBackendFlow_a367d9917dc257ed6aa0bb5e97f57d2d4}{Backend\+Flow}.
+
+
+
+Definition at line 308 of file Altera\+Backend\+Flow.\+cpp.
+
+
+
+References Backend\+Flow\+::actual\+\_\+parameters, create\+\_\+sdc(), target\+\_\+device\+::get\+\_\+parameter(), Backend\+Flow\+::\+Param, P\+A\+R\+A\+M\+\_\+\+H\+D\+L\+\_\+files, P\+A\+R\+A\+M\+\_\+sources\+\_\+macro\+\_\+list, P\+A\+R\+A\+M\+\_\+target\+\_\+device, P\+A\+R\+A\+M\+\_\+target\+\_\+family, Design\+Parameters\+::parameter\+\_\+values, Backend\+Flow\+::steps, and Backend\+Flow\+::target.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d83/classAlteraBackendFlow_aef7d0e07aaf000ba9d93cdde6761daeb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAlteraBackendFlow_a4138bec7596448fb21b796dd31e65d6f}\label{classAlteraBackendFlow_a4138bec7596448fb21b796dd31e65d6f}} 
+\index{Altera\+Backend\+Flow@{Altera\+Backend\+Flow}!Write\+Flow\+Configuration@{Write\+Flow\+Configuration}}
+\index{Write\+Flow\+Configuration@{Write\+Flow\+Configuration}!Altera\+Backend\+Flow@{Altera\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{Write\+Flow\+Configuration()}{WriteFlowConfiguration()}}
+{\footnotesize\ttfamily void Altera\+Backend\+Flow\+::\+Write\+Flow\+Configuration (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{script }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Writes the proper flow configuration in the output script. 
+
+
+
+Implements \hyperlink{classBackendFlow_acd93b1846b958eb6b7e10b9894bf5615}{Backend\+Flow}.
+
+
+
+Definition at line 254 of file Altera\+Backend\+Flow.\+cpp.
+
+
+
+References Backend\+Flow\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Backend\+Flow\+::\+Param, and S\+TR.
+
+\mbox{\Hypertarget{classAlteraBackendFlow_ac566361f8b25433c52b90ec30b100d35}\label{classAlteraBackendFlow_ac566361f8b25433c52b90ec30b100d35}} 
+\index{Altera\+Backend\+Flow@{Altera\+Backend\+Flow}!xparse\+\_\+utilization@{xparse\+\_\+utilization}}
+\index{xparse\+\_\+utilization@{xparse\+\_\+utilization}!Altera\+Backend\+Flow@{Altera\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{xparse\+\_\+utilization()}{xparse\_utilization()}}
+{\footnotesize\ttfamily void Altera\+Backend\+Flow\+::xparse\+\_\+utilization (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parses device utilization. 
+
+
+
+Definition at line 135 of file Altera\+Backend\+Flow.\+cpp.
+
+
+
+References C\+E\+\_\+\+X\+VM, design\+\_\+values, X\+M\+L\+Dom\+Parser\+::\+Exec(), xml\+\_\+child\+::get\+\_\+children(), X\+M\+L\+Dom\+Parser\+::get\+\_\+document(), xml\+\_\+node\+::get\+\_\+name(), L\+O\+A\+D\+\_\+\+X\+VM, test\+\_\+panda\+::parser, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by Check\+Synthesis\+Results().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d83/classAlteraBackendFlow_ac566361f8b25433c52b90ec30b100d35_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{d2/d83/classAlteraBackendFlow_ac566361f8b25433c52b90ec30b100d35_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classAlteraBackendFlow_a9ac59d97dbc735fef9f6ccb673ca179f}\label{classAlteraBackendFlow_a9ac59d97dbc735fef9f6ccb673ca179f}} 
+\index{Altera\+Backend\+Flow@{Altera\+Backend\+Flow}!design\+\_\+values@{design\+\_\+values}}
+\index{design\+\_\+values@{design\+\_\+values}!Altera\+Backend\+Flow@{Altera\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{design\+\_\+values}{design\_values}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, double$>$ Altera\+Backend\+Flow\+::design\+\_\+values\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+design values reported by the tools 
+
+
+
+Definition at line 53 of file Altera\+Backend\+Flow.\+hpp.
+
+
+
+Referenced by Check\+Synthesis\+Results(), and xparse\+\_\+utilization().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/altera/\hyperlink{AlteraBackendFlow_8hpp}{Altera\+Backend\+Flow.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/altera/\hyperlink{AlteraBackendFlow_8cpp}{Altera\+Backend\+Flow.\+cpp}\end{DoxyCompactItemize}

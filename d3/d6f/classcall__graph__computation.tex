@@ -1,0 +1,299 @@
+\hypertarget{classcall__graph__computation}{}\section{call\+\_\+graph\+\_\+computation Class Reference}
+\label{classcall__graph__computation}\index{call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}}
+
+
+Build call graph structures starting from the \hyperlink{classtree__manager}{tree\+\_\+manager}.  
+
+
+
+
+{\ttfamily \#include $<$call\+\_\+graph\+\_\+computation.\+hpp$>$}
+
+
+
+Inheritance diagram for call\+\_\+graph\+\_\+computation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{d7/ddc/classcall__graph__computation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for call\+\_\+graph\+\_\+computation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d55/classcall__graph__computation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcall__graph__computation_a91e8b90eb5bc3b1b9db1b9487cd51f9b}{call\+\_\+graph\+\_\+computation} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classcall__graph__computation_a47744b276b33fb2f3a223cad69a218ac}{$\sim$call\+\_\+graph\+\_\+computation} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classcall__graph__computation_a59dbe3059afb5101f03f746b52e49d0e}{Exec} () override
+\begin{DoxyCompactList}\small\item\em Computes the call graph data structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcall__graph__computation_aa08581de981bf5549768d841274af95c}{call\+\_\+graph\+\_\+computation\+\_\+recursive} (const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \&TM, const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&tn, unsigned int node\+\_\+stmt, enum \hyperlink{structFunctionEdgeInfo_a39413ce8498ca68ed43c3f171f2607ef}{Function\+Edge\+Info\+::\+Call\+Type} call\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Recursive analysis of the tree nodes looking for call expressions. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classcall__graph__computation_a65af3a72351009e38a143bd50b60bb21}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{call__graph__manager_8hpp_aefd741adcd456a04c45fd3df98acdb2c}{Call\+Graph\+Manager\+Ref} \hyperlink{classcall__graph__computation_a0fc3513c7a0653b51c5a8b9f5607e3a5}{C\+GM}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classCallGraphManager}{Call\+Graph\+Manager} used to modify the call graph. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classcall__graph__computation_a100a2728b8a5952e3e969c1beeb7a883}{current}
+\begin{DoxyCompactList}\small\item\em Index of current function. \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \hyperlink{classcall__graph__computation_add82c2da1d89c88376c84c30415e94d1}{already\+\_\+visited}
+\begin{DoxyCompactList}\small\item\em set of already examined addr\+\_\+expr used to avoid circular recursion \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Build call graph structures starting from the \hyperlink{classtree__manager}{tree\+\_\+manager}. 
+
+Definition at line 71 of file call\+\_\+graph\+\_\+computation.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcall__graph__computation_a91e8b90eb5bc3b1b9db1b9487cd51f9b}\label{classcall__graph__computation_a91e8b90eb5bc3b1b9db1b9487cd51f9b}} 
+\index{call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}!call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}}
+\index{call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}!call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}}
+\subsubsection{\texorpdfstring{call\+\_\+graph\+\_\+computation()}{call\_graph\_computation()}}
+{\footnotesize\ttfamily call\+\_\+graph\+\_\+computation\+::call\+\_\+graph\+\_\+computation (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters,  }\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Header include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Param} & is the set of the parameters \\
+\hline
+{\em AppM} & is the application manager \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager\\
+\hline
+\end{DoxyParams}
+Behavior include \hyperlink{classParameter}{Parameter} include Tree include Utility include 
+
+Definition at line 71 of file call\+\_\+graph\+\_\+computation.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$call\+\_\+graph\+\_\+computation().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d6f/classcall__graph__computation_a91e8b90eb5bc3b1b9db1b9487cd51f9b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcall__graph__computation_a47744b276b33fb2f3a223cad69a218ac}\label{classcall__graph__computation_a47744b276b33fb2f3a223cad69a218ac}} 
+\index{call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}!````~call\+\_\+graph\+\_\+computation@{$\sim$call\+\_\+graph\+\_\+computation}}
+\index{````~call\+\_\+graph\+\_\+computation@{$\sim$call\+\_\+graph\+\_\+computation}!call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}}
+\subsubsection{\texorpdfstring{$\sim$call\+\_\+graph\+\_\+computation()}{~call\_graph\_computation()}}
+{\footnotesize\ttfamily call\+\_\+graph\+\_\+computation\+::$\sim$call\+\_\+graph\+\_\+computation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by call\+\_\+graph\+\_\+computation().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d6f/classcall__graph__computation_a47744b276b33fb2f3a223cad69a218ac_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcall__graph__computation_aa08581de981bf5549768d841274af95c}\label{classcall__graph__computation_aa08581de981bf5549768d841274af95c}} 
+\index{call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}!call\+\_\+graph\+\_\+computation\+\_\+recursive@{call\+\_\+graph\+\_\+computation\+\_\+recursive}}
+\index{call\+\_\+graph\+\_\+computation\+\_\+recursive@{call\+\_\+graph\+\_\+computation\+\_\+recursive}!call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}}
+\subsubsection{\texorpdfstring{call\+\_\+graph\+\_\+computation\+\_\+recursive()}{call\_graph\_computation\_recursive()}}
+{\footnotesize\ttfamily void call\+\_\+graph\+\_\+computation\+::call\+\_\+graph\+\_\+computation\+\_\+recursive (\begin{DoxyParamCaption}\item[{const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \&}]{TM,  }\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{tn,  }\item[{unsigned int}]{node\+\_\+stmt,  }\item[{enum \hyperlink{structFunctionEdgeInfo_a39413ce8498ca68ed43c3f171f2607ef}{Function\+Edge\+Info\+::\+Call\+Type}}]{call\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Recursive analysis of the tree nodes looking for call expressions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TM} & is the tree manager. \\
+\hline
+{\em tn} & is current tree node. \\
+\hline
+{\em node\+\_\+stmt} & is the analyzed tree node \\
+\hline
+{\em call\+\_\+type} & is the type of call to be added \\
+\hline
+\end{DoxyParams}
+check for nested function
+
+var decl performs an assignment when init is not null 
+
+Definition at line 188 of file call\+\_\+graph\+\_\+computation.\+cpp.
+
+
+
+References C\+A\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+F\+A\+K\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+GM, current, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Edge\+Info\+::direct\+\_\+call, tree\+\_\+helper\+::find\+\_\+obj\+\_\+type\+\_\+ref\+\_\+function(), fun(), tree\+\_\+manager\+::get\+\_\+implementation\+\_\+node(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, N\+E\+S\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+S\+\_\+\+EC, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+DE, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+
+
+Referenced by Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d6f/classcall__graph__computation_aa08581de981bf5549768d841274af95c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d6f/classcall__graph__computation_aa08581de981bf5549768d841274af95c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcall__graph__computation_a65af3a72351009e38a143bd50b60bb21}\label{classcall__graph__computation_a65af3a72351009e38a143bd50b60bb21}} 
+\index{call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ call\+\_\+graph\+\_\+computation\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classApplicationFrontendFlowStep_ab308200c0096ccff3a1ff50e864ed61f}{Application\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 79 of file call\+\_\+graph\+\_\+computation.\+cpp.
+
+
+
+References C\+R\+E\+A\+T\+E\+\_\+\+T\+R\+E\+E\+\_\+\+M\+A\+N\+A\+G\+ER, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and Frontend\+Flow\+Step\+::\+W\+H\+O\+L\+E\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON.
+
+\mbox{\Hypertarget{classcall__graph__computation_a59dbe3059afb5101f03f746b52e49d0e}\label{classcall__graph__computation_a59dbe3059afb5101f03f746b52e49d0e}} 
+\index{call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}!Exec@{Exec}}
+\index{Exec@{Exec}!call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}}
+\subsubsection{\texorpdfstring{Exec()}{Exec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} call\+\_\+graph\+\_\+computation\+::\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes the call graph data structure. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classApplicationFrontendFlowStep_a2bf060a5ebc1735635dc5c7773387a25}{Application\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 114 of file call\+\_\+graph\+\_\+computation.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, call\+\_\+graph\+\_\+computation\+\_\+recursive(), C\+GM, current, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, fun(), Function\+Edge\+Info\+::function\+\_\+address, tree\+\_\+manager\+::get\+\_\+implementation\+\_\+node(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+manager\+::\+Get\+All\+Functions(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+helper\+::name\+\_\+function(), N\+E\+S\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+S\+\_\+\+EC, Design\+Flow\+Step\+::parameters, sl, S\+TR, S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+DE.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d6f/classcall__graph__computation_a59dbe3059afb5101f03f746b52e49d0e_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classcall__graph__computation_add82c2da1d89c88376c84c30415e94d1}\label{classcall__graph__computation_add82c2da1d89c88376c84c30415e94d1}} 
+\index{call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}!already\+\_\+visited@{already\+\_\+visited}}
+\index{already\+\_\+visited@{already\+\_\+visited}!call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}}
+\subsubsection{\texorpdfstring{already\+\_\+visited}{already\_visited}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}$>$ call\+\_\+graph\+\_\+computation\+::already\+\_\+visited\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set of already examined addr\+\_\+expr used to avoid circular recursion 
+
+
+
+Definition at line 81 of file call\+\_\+graph\+\_\+computation.\+hpp.
+
+\mbox{\Hypertarget{classcall__graph__computation_a0fc3513c7a0653b51c5a8b9f5607e3a5}\label{classcall__graph__computation_a0fc3513c7a0653b51c5a8b9f5607e3a5}} 
+\index{call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}!C\+GM@{C\+GM}}
+\index{C\+GM@{C\+GM}!call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}}
+\subsubsection{\texorpdfstring{C\+GM}{CGM}}
+{\footnotesize\ttfamily const \hyperlink{call__graph__manager_8hpp_aefd741adcd456a04c45fd3df98acdb2c}{Call\+Graph\+Manager\+Ref} call\+\_\+graph\+\_\+computation\+::\+C\+GM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The \hyperlink{classCallGraphManager}{Call\+Graph\+Manager} used to modify the call graph. 
+
+
+
+Definition at line 75 of file call\+\_\+graph\+\_\+computation.\+hpp.
+
+
+
+Referenced by call\+\_\+graph\+\_\+computation\+\_\+recursive(), and Exec().
+
+\mbox{\Hypertarget{classcall__graph__computation_a100a2728b8a5952e3e969c1beeb7a883}\label{classcall__graph__computation_a100a2728b8a5952e3e969c1beeb7a883}} 
+\index{call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}!current@{current}}
+\index{current@{current}!call\+\_\+graph\+\_\+computation@{call\+\_\+graph\+\_\+computation}}
+\subsubsection{\texorpdfstring{current}{current}}
+{\footnotesize\ttfamily unsigned int call\+\_\+graph\+\_\+computation\+::current\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Index of current function. 
+
+
+
+Definition at line 78 of file call\+\_\+graph\+\_\+computation.\+hpp.
+
+
+
+Referenced by call\+\_\+graph\+\_\+computation\+\_\+recursive(), and Exec().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{call__graph__computation_8hpp}{call\+\_\+graph\+\_\+computation.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{call__graph__computation_8cpp}{call\+\_\+graph\+\_\+computation.\+cpp}\end{DoxyCompactItemize}

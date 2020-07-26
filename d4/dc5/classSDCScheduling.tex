@@ -1,0 +1,848 @@
+\hypertarget{classSDCScheduling}{}\section{S\+D\+C\+Scheduling Class Reference}
+\label{classSDCScheduling}\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+
+
+{\ttfamily \#include $<$sdc\+\_\+scheduling.\+hpp$>$}
+
+
+
+Inheritance diagram for S\+D\+C\+Scheduling\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{da/d67/classSDCScheduling__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for S\+D\+C\+Scheduling\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d12/classSDCScheduling__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSDCScheduling_a892cbceb7ab8685568dd700c3cd00a2a}{S\+D\+C\+Scheduling} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters}, const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} \hyperlink{classHLS__step_ade85003a99d34134418451ddc46a18e9}{H\+L\+S\+Mgr}, unsigned int function\+\_\+id, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref} \hyperlink{classHLS__step_a843be75ba53b81876aa3c8b870ae8a55}{hls\+\_\+flow\+\_\+step\+\_\+specialization})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classSDCScheduling_ac3ba79175a36258e60ebf591fb0054e4}{$\sim$\+S\+D\+C\+Scheduling} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classSDCScheduling_a28390f2bb68bc997c4827f5dbd240ca5}{Compute\+Relationships} (\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&relationship, const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) override
+\begin{DoxyCompactList}\small\item\em Compute the relationships of a step with other steps. \end{DoxyCompactList}\item 
+bool \hyperlink{classSDCScheduling_a2c5241704adbd9ab53968c7cbf549560}{Has\+To\+Be\+Executed} () const override
+\begin{DoxyCompactList}\small\item\em Check if this step has actually to be executed. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classSDCScheduling_afd40bf8d626a3ad4f3a6943365933833}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Execute the step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ std\+::vector$<$ unsigned int $>$ $>$ \hyperlink{classSDCScheduling_a3f80309c4288473c20955008832e39cf}{movements\+\_\+list}
+\begin{DoxyCompactList}\small\item\em Result of S\+P\+E\+C\+U\+L\+A\+T\+I\+V\+E\+\_\+\+L\+O\+OP\+: the list of movement to be performed (first element is the operation, second element is the old basic block, third element is the new basic block) Movements have to be performed in order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classSDCScheduling_ae7d1f9a68a81ac64d667bc7e03b93679}{Exec\+Loop} ()
+\begin{DoxyCompactList}\small\item\em Execute the S\+D\+C\+Scheduling\+\_\+\+Algorithm\+::\+S\+P\+E\+C\+U\+L\+A\+T\+I\+V\+E\+\_\+\+L\+O\+OP version of the algorithm. \end{DoxyCompactList}\item 
+void \hyperlink{classSDCScheduling_a6776ee26349c16c789a5b2c33c1fa9ff}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step. \end{DoxyCompactList}\item 
+void \hyperlink{classSDCScheduling_afbe0541a2c1778638bbe1c1251771b8d}{Add\+Delay\+Constraints} (const meilp\+\_\+solver\+Ref solver, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} filtered\+\_\+op\+\_\+graph, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} debug\+\_\+filtered\+\_\+op\+\_\+graph, const std\+::set$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{classbb__vertex__order__by__map}{bb\+\_\+vertex\+\_\+order\+\_\+by\+\_\+map} $>$ \&loop\+\_\+bbs)
+\begin{DoxyCompactList}\small\item\em Add constraints to force execution in different steps of operations which cannot be chained. \end{DoxyCompactList}\item 
+void \hyperlink{classSDCScheduling_a1ba2f8b6af879bd8e641a0604ecaf70c}{Add\+Dependence\+Constraint} (const meilp\+\_\+solver\+Ref solver, const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} first\+\_\+operation, const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} second\+\_\+operation, const bool simultaneous) const
+\begin{DoxyCompactList}\small\item\em Add constraints to force consecutive execution of dependent operations. \end{DoxyCompactList}\item 
+void \hyperlink{classSDCScheduling_a39750be65287d266d7cf259d91667246}{Add\+Stage\+Constraints} (const meilp\+\_\+solver\+Ref solver, const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \hyperlink{structoperation}{operation}) const
+\begin{DoxyCompactList}\small\item\em Add constraints to force consecutive execution of different pipeline stages. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::tuple$<$ \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type}, \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref}, \hyperlink{hls__step_8hpp_a3ad360b9b11e6bf0683d5562a0ceb169}{H\+L\+S\+Flow\+Step\+\_\+\+Relationship} $>$ $>$ \hyperlink{classSDCScheduling_aec06b6a8117baa3496c1ee294c4341ab}{Compute\+H\+L\+S\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Compute the relationship of this step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} \hyperlink{classSDCScheduling_acad9a2e9882b3b4e795008f1c2f412d8}{op\+\_\+graph}
+\begin{DoxyCompactList}\small\item\em The operation graph used to perform scheduling. \end{DoxyCompactList}\item 
+\hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref} \hyperlink{classSDCScheduling_a8b1faca802e0fdba5802b2a36e2129fc}{basic\+\_\+block\+\_\+graph}
+\begin{DoxyCompactList}\small\item\em The basic block cfg graph. \end{DoxyCompactList}\item 
+\hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} \hyperlink{classSDCScheduling_a81eb66c6269c6d47e758cdd9cb5d0394}{feedback\+\_\+op\+\_\+graph}
+\begin{DoxyCompactList}\small\item\em The operation graph with feedback used to perform scheduling. \end{DoxyCompactList}\item 
+\hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} \hyperlink{classSDCScheduling_a1a6c5e7876d16458e880b67554d5fbe8}{behavioral\+\_\+helper}
+\begin{DoxyCompactList}\small\item\em The behavioral helper. \end{DoxyCompactList}\item 
+\hyperlink{allocation__information_8hpp_a54287618a63bf87e31ddb17ba01e7ca7}{Allocation\+Information\+Const\+Ref} \hyperlink{classSDCScheduling_a24d76430568b1aa0a5b27ea46c8ebe47}{allocation\+\_\+information}
+\begin{DoxyCompactList}\small\item\em The allocation. \end{DoxyCompactList}\item 
+\hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref} \hyperlink{classSDCScheduling_af2ac518cfdb99a49305bf28c878af96f}{res\+\_\+binding}
+\begin{DoxyCompactList}\small\item\em The binding. \end{DoxyCompactList}\item 
+double \hyperlink{classSDCScheduling_a3790335edbf15cf7529bf6a8c8d5854b}{clock\+\_\+period}
+\begin{DoxyCompactList}\small\item\em The clock period. \end{DoxyCompactList}\item 
+double \hyperlink{classSDCScheduling_aee3e9b8bbe23ac358ba87fa4ae58c91a}{margin}
+\begin{DoxyCompactList}\small\item\em The margin which has to be introduced with respect to clock period. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ std\+::pair$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, unsigned int $>$, unsigned int $>$ \hyperlink{classSDCScheduling_a5f9740ba599a1ec7528cbd098de603bf}{operation\+\_\+to\+\_\+varindex}
+\begin{DoxyCompactList}\small\item\em Map operation-\/stage to variable index. \end{DoxyCompactList}\item 
+\hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{classSDCScheduling_abd16d929f99a17c322b35db0d6ddfa25}{unbounded\+\_\+operations}
+\begin{DoxyCompactList}\small\item\em The set of unbounded operations. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ unsigned int, \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ $>$ \hyperlink{classSDCScheduling_a0a0a1d02753e664c45b75f2473a14e79}{sharing\+\_\+operations}
+\begin{DoxyCompactList}\small\item\em For each shared resource, the operations mapped on it. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ $>$ \hyperlink{classSDCScheduling_a5deb967dd6434ccdca93c2a8ecfb6c96}{full\+\_\+reachability\+\_\+map}
+\begin{DoxyCompactList}\small\item\em Set of reachable operations (in scheduling graph) \end{DoxyCompactList}\item 
+\hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ \hyperlink{classSDCScheduling_a2ed924e6855e557c34362b40c7e92485}{limited\+\_\+resources}
+\begin{DoxyCompactList}\small\item\em The set of limited resources. \end{DoxyCompactList}\item 
+\hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ \hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor} $>$ \hyperlink{classSDCScheduling_a9f2850cc4d2504a67b0f252e39f0f629}{temp\+\_\+edges}
+\begin{DoxyCompactList}\small\item\em The set of temporary flow edges added to the op\+\_\+graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 63 of file sdc\+\_\+scheduling.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSDCScheduling_a892cbceb7ab8685568dd700c3cd00a2a}\label{classSDCScheduling_a892cbceb7ab8685568dd700c3cd00a2a}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{S\+D\+C\+Scheduling()}{SDCScheduling()}}
+{\footnotesize\ttfamily S\+D\+C\+Scheduling\+::\+S\+D\+C\+Scheduling (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{parameters,  }\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr,  }\item[{unsigned int}]{function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref}}]{hls\+\_\+flow\+\_\+step\+\_\+specialization }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & is the set of input parameters \\
+\hline
+{\em H\+L\+Smgr} & is the H\+LS manager \\
+\hline
+{\em function\+\_\+id} & is the function index of the function \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the hls design flow \\
+\hline
+{\em hls\+\_\+flow\+\_\+step\+\_\+specialization} & specifies how specialize this step \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 233 of file sdc\+\_\+scheduling.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$\+S\+D\+C\+Scheduling().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dc5/classSDCScheduling_a892cbceb7ab8685568dd700c3cd00a2a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSDCScheduling_ac3ba79175a36258e60ebf591fb0054e4}\label{classSDCScheduling_ac3ba79175a36258e60ebf591fb0054e4}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!````~S\+D\+C\+Scheduling@{$\sim$\+S\+D\+C\+Scheduling}}
+\index{````~S\+D\+C\+Scheduling@{$\sim$\+S\+D\+C\+Scheduling}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{$\sim$\+S\+D\+C\+Scheduling()}{~SDCScheduling()}}
+{\footnotesize\ttfamily S\+D\+C\+Scheduling\+::$\sim$\+S\+D\+C\+Scheduling (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by S\+D\+C\+Scheduling().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dc5/classSDCScheduling_ac3ba79175a36258e60ebf591fb0054e4_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSDCScheduling_afbe0541a2c1778638bbe1c1251771b8d}\label{classSDCScheduling_afbe0541a2c1778638bbe1c1251771b8d}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!Add\+Delay\+Constraints@{Add\+Delay\+Constraints}}
+\index{Add\+Delay\+Constraints@{Add\+Delay\+Constraints}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{Add\+Delay\+Constraints()}{AddDelayConstraints()}}
+{\footnotesize\ttfamily void S\+D\+C\+Scheduling\+::\+Add\+Delay\+Constraints (\begin{DoxyParamCaption}\item[{const meilp\+\_\+solver\+Ref}]{solver,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{filtered\+\_\+op\+\_\+graph,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{debug\+\_\+filtered\+\_\+op\+\_\+graph,  }\item[{const std\+::set$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{classbb__vertex__order__by__map}{bb\+\_\+vertex\+\_\+order\+\_\+by\+\_\+map} $>$ \&}]{loop\+\_\+bbs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add constraints to force execution in different steps of operations which cannot be chained. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em solver} & is the solver to which constraints have to be added \\
+\hline
+{\em op\+\_\+graph} & is the operation graph \\
+\hline
+{\em operation} & is the first operation to be considered \\
+\hline
+\end{DoxyParams}
+The asap starting and ending time
+
+Reverse reachability
+
+For each vertex the set of \char`\"{}live\char`\"{} operations; an operation is live if its distance is less than the clock period
+
+For each vertex the operation for which a constraint has to be added
+
+The execution time of the current operation -\/ for the current operation we must consider last stage N\+O\+TE\+:\+: Chaining after unbound operation is not allowed
+
+Stage period of first cycle of operations with registered inputs is 0
+
+Computing starting time
+
+Operations cannot be chained if the chain is longer than clock period
+
+Another predecessor (source2) has already a constraint with (other), so we can skip this constraint 
+
+Definition at line 241 of file sdc\+\_\+scheduling.\+cpp.
+
+
+
+References allocation\+\_\+information, hls\+::allocation\+\_\+information, basic\+\_\+block\+\_\+graph, behavioral\+\_\+helper, Allocation\+Information\+::\+Can\+Be\+Chained(), C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), clock\+\_\+period, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, graph\+::\+Exists\+Edge(), H\+L\+S\+Function\+Step\+::fun\+Id, Allocation\+Information\+::get\+\_\+initiation\+\_\+time(), G\+E\+T\+\_\+\+N\+A\+ME, G\+E\+T\+\_\+\+T\+Y\+PE, Allocation\+Information\+::\+Get\+Cond\+Expr\+Time\+Latency(), Allocation\+Information\+::\+Get\+Connection\+Time(), Allocation\+Information\+::\+Get\+Cycle\+Latency(), Allocation\+Information\+::\+Get\+Fu\+Type(), graph\+::\+Get\+Selector(), Allocation\+Information\+::\+Get\+Time\+Latency(), H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Allocation\+Information\+::is\+\_\+operation\+\_\+bounded(), Allocation\+Information\+::is\+\_\+operation\+\_\+\+P\+I\+\_\+registered(), meilp\+\_\+solver\+::L, margin, Function\+Behavior\+::ogc, op\+\_\+graph, operation\+\_\+to\+\_\+varindex, S\+TR, temp\+\_\+edges, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, graph\+::\+Topological\+Sort(), T\+Y\+P\+E\+\_\+\+P\+HI, T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE, Abs\+Control\+Step\+::\+U\+N\+K\+N\+O\+WN, and fu\+\_\+binding\+::\+U\+N\+K\+N\+O\+WN.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dc5/classSDCScheduling_afbe0541a2c1778638bbe1c1251771b8d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dc5/classSDCScheduling_afbe0541a2c1778638bbe1c1251771b8d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSDCScheduling_a1ba2f8b6af879bd8e641a0604ecaf70c}\label{classSDCScheduling_a1ba2f8b6af879bd8e641a0604ecaf70c}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!Add\+Dependence\+Constraint@{Add\+Dependence\+Constraint}}
+\index{Add\+Dependence\+Constraint@{Add\+Dependence\+Constraint}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{Add\+Dependence\+Constraint()}{AddDependenceConstraint()}}
+{\footnotesize\ttfamily void S\+D\+C\+Scheduling\+::\+Add\+Dependence\+Constraint (\begin{DoxyParamCaption}\item[{const meilp\+\_\+solver\+Ref}]{solver,  }\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{first\+\_\+operation,  }\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{second\+\_\+operation,  }\item[{const bool}]{simultaneous }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add constraints to force consecutive execution of dependent operations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em solver} & is the solver to which constraints have to be added \\
+\hline
+{\em source} & is the first operation \\
+\hline
+{\em target} & is the second operation \\
+\hline
+{\em simultaneous} & tells if the two operations can be executed in the same clock cycle (chained) or not \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 450 of file sdc\+\_\+scheduling.\+cpp.
+
+
+
+References allocation\+\_\+information, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+N\+A\+ME, Allocation\+Information\+::\+Get\+Cycle\+Latency(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, meilp\+\_\+solver\+::L, op\+\_\+graph, and operation\+\_\+to\+\_\+varindex.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dc5/classSDCScheduling_a1ba2f8b6af879bd8e641a0604ecaf70c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dc5/classSDCScheduling_a1ba2f8b6af879bd8e641a0604ecaf70c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSDCScheduling_a39750be65287d266d7cf259d91667246}\label{classSDCScheduling_a39750be65287d266d7cf259d91667246}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!Add\+Stage\+Constraints@{Add\+Stage\+Constraints}}
+\index{Add\+Stage\+Constraints@{Add\+Stage\+Constraints}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{Add\+Stage\+Constraints()}{AddStageConstraints()}}
+{\footnotesize\ttfamily void S\+D\+C\+Scheduling\+::\+Add\+Stage\+Constraints (\begin{DoxyParamCaption}\item[{const meilp\+\_\+solver\+Ref}]{solver,  }\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{operation }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add constraints to force consecutive execution of different pipeline stages. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em solver} & is the solver to which constraints have to be added \\
+\hline
+{\em operation} & is the pipelined operation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 461 of file sdc\+\_\+scheduling.\+cpp.
+
+
+
+References allocation\+\_\+information, meilp\+\_\+solver\+::E, G\+E\+T\+\_\+\+N\+A\+ME, Allocation\+Information\+::\+Get\+Cycle\+Latency(), op\+\_\+graph, operation\+\_\+to\+\_\+varindex, and S\+TR.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dc5/classSDCScheduling_a39750be65287d266d7cf259d91667246_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dc5/classSDCScheduling_a39750be65287d266d7cf259d91667246_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSDCScheduling_aec06b6a8117baa3496c1ee294c4341ab}\label{classSDCScheduling_aec06b6a8117baa3496c1ee294c4341ab}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!Compute\+H\+L\+S\+Relationships@{Compute\+H\+L\+S\+Relationships}}
+\index{Compute\+H\+L\+S\+Relationships@{Compute\+H\+L\+S\+Relationships}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{Compute\+H\+L\+S\+Relationships()}{ComputeHLSRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::tuple$<$ \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type}, \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref}, \hyperlink{hls__step_8hpp_a3ad360b9b11e6bf0683d5562a0ceb169}{H\+L\+S\+Flow\+Step\+\_\+\+Relationship} $>$ $>$ S\+D\+C\+Scheduling\+::\+Compute\+H\+L\+S\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Compute the relationship of this step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the steps in relationship with this 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classScheduling_a60e98bfbe377334ea3f3c0de2f2ab758}{Scheduling}.
+
+
+
+Definition at line 503 of file sdc\+\_\+scheduling.\+cpp.
+
+
+
+References A\+L\+L\+O\+C\+A\+T\+I\+ON, C\+A\+L\+L\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+NS, Scheduling\+::\+Compute\+H\+L\+S\+Relationships(), Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::parameters, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dc5/classSDCScheduling_aec06b6a8117baa3496c1ee294c4341ab_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSDCScheduling_a28390f2bb68bc997c4827f5dbd240ca5}\label{classSDCScheduling_a28390f2bb68bc997c4827f5dbd240ca5}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!Compute\+Relationships@{Compute\+Relationships}}
+\index{Compute\+Relationships@{Compute\+Relationships}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{Compute\+Relationships()}{ComputeRelationships()}}
+{\footnotesize\ttfamily void S\+D\+C\+Scheduling\+::\+Compute\+Relationships (\begin{DoxyParamCaption}\item[{\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&}]{relationship,  }\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the relationships of a step with other steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dependencies} & is where relationships will be stored \\
+\hline
+{\em relationship\+\_\+type} & is the type of relationship to be computed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classHLSFunctionStep_ab3864e8dbd73b0eabc25f386a0cece54}{H\+L\+S\+Function\+Step}.
+
+
+
+Definition at line 474 of file sdc\+\_\+scheduling.\+cpp.
+
+
+
+References H\+L\+S\+Function\+Step\+::\+Compute\+Relationships(), Function\+Frontend\+Flow\+Step\+::\+Compute\+Signature(), Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, H\+L\+S\+Function\+Step\+::fun\+Id, Design\+Flow\+Step\+::\+Get\+Status(), H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Wrefcount$<$ T $>$\+::lock(), N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX, Design\+Flow\+Step\+::parameters, and S\+U\+C\+C\+E\+SS.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dc5/classSDCScheduling_a28390f2bb68bc997c4827f5dbd240ca5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSDCScheduling_ae7d1f9a68a81ac64d667bc7e03b93679}\label{classSDCScheduling_ae7d1f9a68a81ac64d667bc7e03b93679}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!Exec\+Loop@{Exec\+Loop}}
+\index{Exec\+Loop@{Exec\+Loop}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{Exec\+Loop()}{ExecLoop()}}
+{\footnotesize\ttfamily void S\+D\+C\+Scheduling\+::\+Exec\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Execute the S\+D\+C\+Scheduling\+\_\+\+Algorithm\+::\+S\+P\+E\+C\+U\+L\+A\+T\+I\+V\+E\+\_\+\+L\+O\+OP version of the algorithm. 
+
+\mbox{\Hypertarget{classSDCScheduling_a2c5241704adbd9ab53968c7cbf549560}\label{classSDCScheduling_a2c5241704adbd9ab53968c7cbf549560}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}}
+\index{Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{Has\+To\+Be\+Executed()}{HasToBeExecuted()}}
+{\footnotesize\ttfamily bool S\+D\+C\+Scheduling\+::\+Has\+To\+Be\+Executed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if this step has actually to be executed. 
+
+\begin{DoxyReturn}{Returns}
+true if the step has to be executed 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classHLSFunctionStep_ac70d2df8fd475639bf9b5c8d492b2d62}{H\+L\+S\+Function\+Step}.
+
+
+
+Definition at line 536 of file sdc\+\_\+scheduling.\+cpp.
+
+
+
+References H\+L\+S\+Function\+Step\+::bb\+\_\+version, and H\+L\+S\+Function\+Step\+::\+Has\+To\+Be\+Executed().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dc5/classSDCScheduling_a2c5241704adbd9ab53968c7cbf549560_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSDCScheduling_a6776ee26349c16c789a5b2c33c1fa9ff}\label{classSDCScheduling_a6776ee26349c16c789a5b2c33c1fa9ff}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void S\+D\+C\+Scheduling\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step. 
+
+Build the full reachability map
+
+For the limited resource, the operations assigned to it
+
+If number of resources is limited but larger than number of operations
+
+Removing not actually limited resources 
+
+Reimplemented from \hyperlink{classScheduling_a178619eced00400e3a023a0b32784f8d}{Scheduling}.
+
+
+
+Definition at line 1409 of file sdc\+\_\+scheduling.\+cpp.
+
+
+
+References allocation\+\_\+information, hls\+::allocation\+\_\+information, basic\+\_\+block\+\_\+graph, Function\+Behavior\+::\+BB, behavioral\+\_\+helper, Function\+Behavior\+::\+C\+Get\+B\+B\+Graph(), B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), Function\+Behavior\+::\+C\+Get\+Op\+Graph(), clock\+\_\+period, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, feedback\+\_\+op\+\_\+graph, Function\+Behavior\+::\+F\+F\+L\+S\+A\+O\+DG, Function\+Behavior\+::\+F\+L\+S\+A\+O\+DG, full\+\_\+reachability\+\_\+map, H\+L\+S\+Function\+Step\+::fun\+Id, Allocation\+Information\+::get\+\_\+fu\+\_\+name(), G\+E\+T\+\_\+\+N\+A\+ME, Allocation\+Information\+::get\+\_\+number\+\_\+fu(), Allocation\+Information\+::get\+\_\+number\+\_\+fu\+\_\+types(), Allocation\+Information\+::\+Get\+Clock\+Period\+Margin(), Allocation\+Information\+::\+Get\+Fu\+Type(), H\+L\+S\+Function\+Step\+::\+H\+LS, hls\+::\+H\+L\+S\+\_\+C, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Scheduling\+::\+Initialize(), Allocation\+Information\+::is\+\_\+operation\+\_\+bounded(), limited\+\_\+resources, margin, op\+\_\+graph, hls\+::operations, res\+\_\+binding, graph\+::\+Reverse\+Topological\+Sort(), hls\+::\+Rfu, sharing\+\_\+operations, S\+TR, and unbounded\+\_\+operations.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dc5/classSDCScheduling_a6776ee26349c16c789a5b2c33c1fa9ff_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSDCScheduling_afd40bf8d626a3ad4f3a6943365933833}\label{classSDCScheduling_afd40bf8d626a3ad4f3a6943365933833}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} S\+D\+C\+Scheduling\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the step. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+Vertices not yet added to any tree
+
+F\+I\+X\+ME\+: for the moment the considered graph contains control dependence edges
+
+Create the solver
+
+Compute variables Map real operation-\/stage to variable index
+
+Create the variables representing the ending of a path Map tree leaf to variable index
+
+next\+\_\+var\+\_\+index has been incremented but the + 1 is the makespan
+
+Set integer variables and lower bound
+
+Add consecutive stages constraints
+
+Add dependence constraints\+: target can start in the same clock cycle in which source ends
+
+Not control dependence
+
+Non speculable operation
+
+Add timing constraints\+: target can start in the same clock cycle in which source ends only with chaining
+
+For each basic block, the set of unbounded operations found on the paths to it
+
+For each basic block, the set of pipelined operations found on the paths to it
+
+For each basic block, for each functional unit fu, the list of the last n operations executed (n is the number of resource of type fu) -\/ Value is a set since there can be different paths reaching current basic block
+
+N\+O\+TE\+: unbounded operation can start during last stage of multi cycle operation
+
+N\+O\+TE\+: unbounded operation can start during last stage of multi cycle operation
+
+N\+O\+TE\+: unbounded operation can start during last stage of multi cycle operation
+
+Resource constraints
+
+Adding last operation constraint\+: return must be executed after all the other operations.
+
+last cannot be scheduleded with unbounded operations
+
+Setting path end to be the real end
+
+Setting objective function
+
+set the binding information
+
+Check which statements have to be moved For each statement the basic blocks above which it cannot be moved. Phi cannot be moved Operations which depend from the phi cannot be moved before the phi and so on
+
+Set of operations which cannot be moved (at the moment) because of dependencies from gimple phi
+
+IF is not a barrier for controlled operations
+
+Loads which do not have resource limitation can be moved but not speculated; speculation should be prevented by control edges
+
+Computing bb barrier starting from bb barrier of predecesso
+
+Update dominator
+
+If the current is in the barrier, do not check for the candidate 
+
+Implements \hyperlink{classHLSFunctionStep_a8db4c00d080655984d98143206fc9fa8}{H\+L\+S\+Function\+Step}.
+
+
+
+Definition at line 544 of file sdc\+\_\+scheduling.\+cpp.
+
+
+
+References Add\+Delay\+Constraints(), Add\+Dependence\+Constraint(), Add\+Stage\+Constraints(), A\+S\+L\+A\+P\+::\+A\+L\+A\+P\+\_\+fast, allocation\+\_\+information, basic\+\_\+block\+\_\+graph, behavioral\+\_\+helper, fu\+\_\+binding\+::bind(), C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, Function\+Behavior\+::\+C\+Get\+B\+B\+Graph(), B\+B\+Graph\+::\+C\+Get\+B\+B\+Graph\+Info(), B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), Function\+Behavior\+::\+C\+Get\+Loops(), Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), Function\+Behavior\+::\+Check\+Reachability(), meilp\+\_\+solver\+::create\+\_\+solver(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, Function\+Behavior\+::\+D\+O\+M\+\_\+\+T\+R\+EE, graph\+::\+Exists\+Edge(), Function\+Behavior\+::\+F\+L\+S\+A\+O\+D\+DG, Function\+Behavior\+::\+F\+L\+S\+A\+O\+DG, H\+L\+S\+Function\+Step\+::fun\+Id, meilp\+\_\+solver\+::G, Function\+Behavior\+::get\+\_\+bb\+\_\+map\+\_\+levels(), Schedule\+::get\+\_\+cstep(), Allocation\+Information\+::get\+\_\+fu\+\_\+name(), Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), G\+E\+T\+\_\+\+N\+A\+ME, Allocation\+Information\+::get\+\_\+number\+\_\+fu(), G\+E\+T\+\_\+\+T\+Y\+PE, Allocation\+Information\+::\+Get\+Cycle\+Latency(), Allocation\+Information\+::\+Get\+Fu\+Type(), graph\+::\+Get\+Selector(), H\+L\+S\+Function\+Step\+::\+H\+LS, hls\+::\+H\+L\+S\+\_\+C, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Allocation\+Information\+::is\+\_\+operation\+\_\+bounded(), limited\+\_\+resources, meilp\+\_\+solver\+::min, movements\+\_\+list, Function\+Behavior\+::ogc, op\+\_\+graph, operation\+\_\+to\+\_\+varindex, Design\+Flow\+Step\+::parameters, res\+\_\+binding, hls\+::\+Rsch, Schedule\+::set\+\_\+csteps(), Schedule\+::set\+\_\+execution(), Schedule\+::set\+\_\+execution\+\_\+end(), Scheduling\+::speculation, S\+TR, S\+U\+C\+C\+E\+SS, temp\+\_\+edges, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, T\+Y\+P\+E\+\_\+\+E\+X\+T\+E\+R\+N\+AL, T\+Y\+P\+E\+\_\+\+IF, T\+Y\+P\+E\+\_\+\+L\+A\+B\+EL, T\+Y\+P\+E\+\_\+\+L\+A\+S\+T\+\_\+\+OP, T\+Y\+P\+E\+\_\+\+L\+O\+AD, T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+IF, T\+Y\+P\+E\+\_\+\+P\+HI, T\+Y\+P\+E\+\_\+\+R\+ET, T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE, T\+Y\+P\+E\+\_\+\+S\+W\+I\+T\+CH, T\+Y\+P\+E\+\_\+\+V\+P\+HI, Schedule\+::\+Update\+Time(), and Op\+Graph\+::\+Write\+Dot().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dc5/classSDCScheduling_afd40bf8d626a3ad4f3a6943365933833_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classSDCScheduling_a24d76430568b1aa0a5b27ea46c8ebe47}\label{classSDCScheduling_a24d76430568b1aa0a5b27ea46c8ebe47}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!allocation\+\_\+information@{allocation\+\_\+information}}
+\index{allocation\+\_\+information@{allocation\+\_\+information}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{allocation\+\_\+information}{allocation\_information}}
+{\footnotesize\ttfamily \hyperlink{allocation__information_8hpp_a54287618a63bf87e31ddb17ba01e7ca7}{Allocation\+Information\+Const\+Ref} S\+D\+C\+Scheduling\+::allocation\+\_\+information\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The allocation. 
+
+
+
+Definition at line 79 of file sdc\+\_\+scheduling.\+hpp.
+
+
+
+Referenced by Add\+Delay\+Constraints(), Add\+Dependence\+Constraint(), Add\+Stage\+Constraints(), Initialize(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classSDCScheduling_a8b1faca802e0fdba5802b2a36e2129fc}\label{classSDCScheduling_a8b1faca802e0fdba5802b2a36e2129fc}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!basic\+\_\+block\+\_\+graph@{basic\+\_\+block\+\_\+graph}}
+\index{basic\+\_\+block\+\_\+graph@{basic\+\_\+block\+\_\+graph}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{basic\+\_\+block\+\_\+graph}{basic\_block\_graph}}
+{\footnotesize\ttfamily \hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref} S\+D\+C\+Scheduling\+::basic\+\_\+block\+\_\+graph\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The basic block cfg graph. 
+
+
+
+Definition at line 70 of file sdc\+\_\+scheduling.\+hpp.
+
+
+
+Referenced by Add\+Delay\+Constraints(), Initialize(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classSDCScheduling_a1a6c5e7876d16458e880b67554d5fbe8}\label{classSDCScheduling_a1a6c5e7876d16458e880b67554d5fbe8}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!behavioral\+\_\+helper@{behavioral\+\_\+helper}}
+\index{behavioral\+\_\+helper@{behavioral\+\_\+helper}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{behavioral\+\_\+helper}{behavioral\_helper}}
+{\footnotesize\ttfamily \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} S\+D\+C\+Scheduling\+::behavioral\+\_\+helper\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The behavioral helper. 
+
+
+
+Definition at line 76 of file sdc\+\_\+scheduling.\+hpp.
+
+
+
+Referenced by Add\+Delay\+Constraints(), Initialize(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classSDCScheduling_a3790335edbf15cf7529bf6a8c8d5854b}\label{classSDCScheduling_a3790335edbf15cf7529bf6a8c8d5854b}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!clock\+\_\+period@{clock\+\_\+period}}
+\index{clock\+\_\+period@{clock\+\_\+period}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{clock\+\_\+period}{clock\_period}}
+{\footnotesize\ttfamily double S\+D\+C\+Scheduling\+::clock\+\_\+period\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The clock period. 
+
+
+
+Definition at line 85 of file sdc\+\_\+scheduling.\+hpp.
+
+
+
+Referenced by Add\+Delay\+Constraints(), and Initialize().
+
+\mbox{\Hypertarget{classSDCScheduling_a81eb66c6269c6d47e758cdd9cb5d0394}\label{classSDCScheduling_a81eb66c6269c6d47e758cdd9cb5d0394}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!feedback\+\_\+op\+\_\+graph@{feedback\+\_\+op\+\_\+graph}}
+\index{feedback\+\_\+op\+\_\+graph@{feedback\+\_\+op\+\_\+graph}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{feedback\+\_\+op\+\_\+graph}{feedback\_op\_graph}}
+{\footnotesize\ttfamily \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} S\+D\+C\+Scheduling\+::feedback\+\_\+op\+\_\+graph\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The operation graph with feedback used to perform scheduling. 
+
+
+
+Definition at line 73 of file sdc\+\_\+scheduling.\+hpp.
+
+
+
+Referenced by Initialize().
+
+\mbox{\Hypertarget{classSDCScheduling_a5deb967dd6434ccdca93c2a8ecfb6c96}\label{classSDCScheduling_a5deb967dd6434ccdca93c2a8ecfb6c96}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!full\+\_\+reachability\+\_\+map@{full\+\_\+reachability\+\_\+map}}
+\index{full\+\_\+reachability\+\_\+map@{full\+\_\+reachability\+\_\+map}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{full\+\_\+reachability\+\_\+map}{full\_reachability\_map}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ $>$ S\+D\+C\+Scheduling\+::full\+\_\+reachability\+\_\+map\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set of reachable operations (in scheduling graph) 
+
+
+
+Definition at line 100 of file sdc\+\_\+scheduling.\+hpp.
+
+
+
+Referenced by Initialize().
+
+\mbox{\Hypertarget{classSDCScheduling_a2ed924e6855e557c34362b40c7e92485}\label{classSDCScheduling_a2ed924e6855e557c34362b40c7e92485}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!limited\+\_\+resources@{limited\+\_\+resources}}
+\index{limited\+\_\+resources@{limited\+\_\+resources}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{limited\+\_\+resources}{limited\_resources}}
+{\footnotesize\ttfamily \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$unsigned int$>$ S\+D\+C\+Scheduling\+::limited\+\_\+resources\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The set of limited resources. 
+
+
+
+Definition at line 103 of file sdc\+\_\+scheduling.\+hpp.
+
+
+
+Referenced by Initialize(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classSDCScheduling_aee3e9b8bbe23ac358ba87fa4ae58c91a}\label{classSDCScheduling_aee3e9b8bbe23ac358ba87fa4ae58c91a}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!margin@{margin}}
+\index{margin@{margin}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{margin}{margin}}
+{\footnotesize\ttfamily double S\+D\+C\+Scheduling\+::margin\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The margin which has to be introduced with respect to clock period. 
+
+
+
+Definition at line 88 of file sdc\+\_\+scheduling.\+hpp.
+
+
+
+Referenced by Add\+Delay\+Constraints(), and Initialize().
+
+\mbox{\Hypertarget{classSDCScheduling_a3f80309c4288473c20955008832e39cf}\label{classSDCScheduling_a3f80309c4288473c20955008832e39cf}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!movements\+\_\+list@{movements\+\_\+list}}
+\index{movements\+\_\+list@{movements\+\_\+list}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{movements\+\_\+list}{movements\_list}}
+{\footnotesize\ttfamily std\+::list$<$std\+::vector$<$unsigned int$>$ $>$ S\+D\+C\+Scheduling\+::movements\+\_\+list}
+
+
+
+Result of S\+P\+E\+C\+U\+L\+A\+T\+I\+V\+E\+\_\+\+L\+O\+OP\+: the list of movement to be performed (first element is the operation, second element is the old basic block, third element is the new basic block) Movements have to be performed in order. 
+
+
+
+Definition at line 158 of file sdc\+\_\+scheduling.\+hpp.
+
+
+
+Referenced by Internal\+Exec().
+
+\mbox{\Hypertarget{classSDCScheduling_acad9a2e9882b3b4e795008f1c2f412d8}\label{classSDCScheduling_acad9a2e9882b3b4e795008f1c2f412d8}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!op\+\_\+graph@{op\+\_\+graph}}
+\index{op\+\_\+graph@{op\+\_\+graph}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{op\+\_\+graph}{op\_graph}}
+{\footnotesize\ttfamily \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} S\+D\+C\+Scheduling\+::op\+\_\+graph\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The operation graph used to perform scheduling. 
+
+
+
+Definition at line 67 of file sdc\+\_\+scheduling.\+hpp.
+
+
+
+Referenced by Add\+Delay\+Constraints(), Add\+Dependence\+Constraint(), Add\+Stage\+Constraints(), Initialize(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classSDCScheduling_a5f9740ba599a1ec7528cbd098de603bf}\label{classSDCScheduling_a5f9740ba599a1ec7528cbd098de603bf}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!operation\+\_\+to\+\_\+varindex@{operation\+\_\+to\+\_\+varindex}}
+\index{operation\+\_\+to\+\_\+varindex@{operation\+\_\+to\+\_\+varindex}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{operation\+\_\+to\+\_\+varindex}{operation\_to\_varindex}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$std\+::pair$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, unsigned int$>$, unsigned int$>$ S\+D\+C\+Scheduling\+::operation\+\_\+to\+\_\+varindex\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Map operation-\/stage to variable index. 
+
+
+
+Definition at line 91 of file sdc\+\_\+scheduling.\+hpp.
+
+
+
+Referenced by Add\+Delay\+Constraints(), Add\+Dependence\+Constraint(), Add\+Stage\+Constraints(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classSDCScheduling_af2ac518cfdb99a49305bf28c878af96f}\label{classSDCScheduling_af2ac518cfdb99a49305bf28c878af96f}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!res\+\_\+binding@{res\+\_\+binding}}
+\index{res\+\_\+binding@{res\+\_\+binding}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{res\+\_\+binding}{res\_binding}}
+{\footnotesize\ttfamily \hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref} S\+D\+C\+Scheduling\+::res\+\_\+binding\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The binding. 
+
+
+
+Definition at line 82 of file sdc\+\_\+scheduling.\+hpp.
+
+
+
+Referenced by Initialize(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classSDCScheduling_a0a0a1d02753e664c45b75f2473a14e79}\label{classSDCScheduling_a0a0a1d02753e664c45b75f2473a14e79}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!sharing\+\_\+operations@{sharing\+\_\+operations}}
+\index{sharing\+\_\+operations@{sharing\+\_\+operations}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{sharing\+\_\+operations}{sharing\_operations}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$unsigned int, \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ $>$ S\+D\+C\+Scheduling\+::sharing\+\_\+operations\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+For each shared resource, the operations mapped on it. 
+
+
+
+Definition at line 97 of file sdc\+\_\+scheduling.\+hpp.
+
+
+
+Referenced by Initialize().
+
+\mbox{\Hypertarget{classSDCScheduling_a9f2850cc4d2504a67b0f252e39f0f629}\label{classSDCScheduling_a9f2850cc4d2504a67b0f252e39f0f629}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!temp\+\_\+edges@{temp\+\_\+edges}}
+\index{temp\+\_\+edges@{temp\+\_\+edges}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{temp\+\_\+edges}{temp\_edges}}
+{\footnotesize\ttfamily \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$\hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor}$>$ S\+D\+C\+Scheduling\+::temp\+\_\+edges\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The set of temporary flow edges added to the op\+\_\+graph. 
+
+
+
+Definition at line 107 of file sdc\+\_\+scheduling.\+hpp.
+
+
+
+Referenced by Add\+Delay\+Constraints(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classSDCScheduling_abd16d929f99a17c322b35db0d6ddfa25}\label{classSDCScheduling_abd16d929f99a17c322b35db0d6ddfa25}} 
+\index{S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}!unbounded\+\_\+operations@{unbounded\+\_\+operations}}
+\index{unbounded\+\_\+operations@{unbounded\+\_\+operations}!S\+D\+C\+Scheduling@{S\+D\+C\+Scheduling}}
+\subsubsection{\texorpdfstring{unbounded\+\_\+operations}{unbounded\_operations}}
+{\footnotesize\ttfamily \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ S\+D\+C\+Scheduling\+::unbounded\+\_\+operations\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The set of unbounded operations. 
+
+
+
+Definition at line 94 of file sdc\+\_\+scheduling.\+hpp.
+
+
+
+Referenced by Initialize().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/scheduling/\hyperlink{sdc__scheduling_8hpp}{sdc\+\_\+scheduling.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/scheduling/\hyperlink{sdc__scheduling_8cpp}{sdc\+\_\+scheduling.\+cpp}\end{DoxyCompactItemize}

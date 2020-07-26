@@ -1,0 +1,268 @@
+\hypertarget{cpu__time_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/cpu\+\_\+time.hpp File Reference}
+\label{cpu__time_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/cpu\+\_\+time.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/cpu\+\_\+time.\+hpp}}
+
+
+Include a set of utilities used to manage C\+PU time measures.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+O\+P\+E\+N\+M\+P.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/lexical\+\_\+cast.\+hpp$>$}\newline
+{\ttfamily \#include $<$sys/times.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Include dependency graph for cpu\+\_\+time.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d9c/cpu__time_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/deb/cpu__time_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cpu__time_8hpp_acec4b053e3d8d1060afb6ce50573eafe}{T\+I\+M\+E\+S\+\_\+\+T\+I\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+S\+EC}~60
+\item 
+\#define \hyperlink{cpu__time_8hpp_a342c5a60514643572d9391dc374a8531}{S\+T\+A\+R\+T\+\_\+\+T\+I\+ME}(time\+\_\+var)~time\+\_\+var = \hyperlink{cpu__time_8hpp_aa749c981cc2e977172b0903e44025b56}{p\+\_\+cpu\+\_\+time}()
+\begin{DoxyCompactList}\small\item\em Macro used to store the start time into time\+\_\+var. \end{DoxyCompactList}\item 
+\#define \hyperlink{cpu__time_8hpp_a0974d99ac6029a378a23a1e93fb317c7}{S\+T\+O\+P\+\_\+\+T\+I\+ME}(time\+\_\+var)~time\+\_\+var = \hyperlink{cpu__time_8hpp_aa749c981cc2e977172b0903e44025b56}{p\+\_\+cpu\+\_\+time}() -\/ (time\+\_\+var)
+\begin{DoxyCompactList}\small\item\em Macro used to store the elapsed time into time\+\_\+var. \end{DoxyCompactList}\item 
+\#define \hyperlink{cpu__time_8hpp_a57b0e1014480e3a766218e18d1a2d472}{S\+T\+A\+R\+T\+\_\+\+W\+T\+I\+ME}(time\+\_\+var)~time\+\_\+var = \hyperlink{cpu__time_8hpp_a84cb452e1dbd61f3d1504ad0a30f044b}{p\+\_\+cpu\+\_\+wtime}()
+\begin{DoxyCompactList}\small\item\em Macro used to store the start time into time\+\_\+var. \end{DoxyCompactList}\item 
+\#define \hyperlink{cpu__time_8hpp_a946014b33991697c3a80e6cf5f80783a}{S\+T\+O\+P\+\_\+\+W\+T\+I\+ME}(time\+\_\+var)~time\+\_\+var = \hyperlink{cpu__time_8hpp_a84cb452e1dbd61f3d1504ad0a30f044b}{p\+\_\+cpu\+\_\+wtime}() -\/ (time\+\_\+var)
+\begin{DoxyCompactList}\small\item\em Macro used to store the elapsed time into time\+\_\+var. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+long int \hyperlink{cpu__time_8hpp_aa749c981cc2e977172b0903e44025b56}{p\+\_\+cpu\+\_\+time} ()
+\begin{DoxyCompactList}\small\item\em return a long which represents the elapsed processor time in milliseconds since some constant reference \end{DoxyCompactList}\item 
+std\+::string \hyperlink{cpu__time_8hpp_aa14c5d95c5fb24f430415b6b0620dea8}{print\+\_\+cpu\+\_\+time} (long int t)
+\begin{DoxyCompactList}\small\item\em massage a long which represents a time interval in milliseconds, into a string suitable for output \end{DoxyCompactList}\item 
+void \hyperlink{cpu__time_8hpp_aa082a00c9030fe0daf74ee49c832cad8}{dump\+\_\+exec\+\_\+time} (const std\+::string \&thing, long et)
+\item 
+long int \hyperlink{cpu__time_8hpp_a84cb452e1dbd61f3d1504ad0a30f044b}{p\+\_\+cpu\+\_\+wtime} ()
+\begin{DoxyCompactList}\small\item\em return a long which represents the elapsed wall processor time in milliseconds since some constant reference \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Include a set of utilities used to manage C\+PU time measures. 
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{cpu__time_8hpp_a342c5a60514643572d9391dc374a8531}\label{cpu__time_8hpp_a342c5a60514643572d9391dc374a8531}} 
+\index{cpu\+\_\+time.\+hpp@{cpu\+\_\+time.\+hpp}!S\+T\+A\+R\+T\+\_\+\+T\+I\+ME@{S\+T\+A\+R\+T\+\_\+\+T\+I\+ME}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+I\+ME@{S\+T\+A\+R\+T\+\_\+\+T\+I\+ME}!cpu\+\_\+time.\+hpp@{cpu\+\_\+time.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+A\+R\+T\+\_\+\+T\+I\+ME}{START\_TIME}}
+{\footnotesize\ttfamily \#define S\+T\+A\+R\+T\+\_\+\+T\+I\+ME(\begin{DoxyParamCaption}\item[{}]{time\+\_\+var }\end{DoxyParamCaption})~time\+\_\+var = \hyperlink{cpu__time_8hpp_aa749c981cc2e977172b0903e44025b56}{p\+\_\+cpu\+\_\+time}()}
+
+
+
+Macro used to store the start time into time\+\_\+var. 
+
+
+
+Definition at line 129 of file cpu\+\_\+time.\+hpp.
+
+
+
+Referenced by Gcc\+Wrapper\+::\+Compile\+File(), vcd\+\_\+utility\+::\+Exec(), Design\+Flow\+Manager\+::\+Exec(), Gcc\+Wrapper\+::\+Fill\+Tree\+Manager(), vertex\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), unique\+\_\+binding\+\_\+register\+::\+Internal\+Exec(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), chordal\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), easy\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), values\+\_\+scheme\+::\+Internal\+Exec(), weighted\+\_\+clique\+\_\+register\+::\+Internal\+Exec(), mux\+\_\+connection\+\_\+binding\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), main(), and read\+\_\+technology\+\_\+library().
+
+\mbox{\Hypertarget{cpu__time_8hpp_a57b0e1014480e3a766218e18d1a2d472}\label{cpu__time_8hpp_a57b0e1014480e3a766218e18d1a2d472}} 
+\index{cpu\+\_\+time.\+hpp@{cpu\+\_\+time.\+hpp}!S\+T\+A\+R\+T\+\_\+\+W\+T\+I\+ME@{S\+T\+A\+R\+T\+\_\+\+W\+T\+I\+ME}}
+\index{S\+T\+A\+R\+T\+\_\+\+W\+T\+I\+ME@{S\+T\+A\+R\+T\+\_\+\+W\+T\+I\+ME}!cpu\+\_\+time.\+hpp@{cpu\+\_\+time.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+A\+R\+T\+\_\+\+W\+T\+I\+ME}{START\_WTIME}}
+{\footnotesize\ttfamily \#define S\+T\+A\+R\+T\+\_\+\+W\+T\+I\+ME(\begin{DoxyParamCaption}\item[{}]{time\+\_\+var }\end{DoxyParamCaption})~time\+\_\+var = \hyperlink{cpu__time_8hpp_a84cb452e1dbd61f3d1504ad0a30f044b}{p\+\_\+cpu\+\_\+wtime}()}
+
+
+
+Macro used to store the start time into time\+\_\+var. 
+
+
+
+Definition at line 148 of file cpu\+\_\+time.\+hpp.
+
+\mbox{\Hypertarget{cpu__time_8hpp_a0974d99ac6029a378a23a1e93fb317c7}\label{cpu__time_8hpp_a0974d99ac6029a378a23a1e93fb317c7}} 
+\index{cpu\+\_\+time.\+hpp@{cpu\+\_\+time.\+hpp}!S\+T\+O\+P\+\_\+\+T\+I\+ME@{S\+T\+O\+P\+\_\+\+T\+I\+ME}}
+\index{S\+T\+O\+P\+\_\+\+T\+I\+ME@{S\+T\+O\+P\+\_\+\+T\+I\+ME}!cpu\+\_\+time.\+hpp@{cpu\+\_\+time.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+O\+P\+\_\+\+T\+I\+ME}{STOP\_TIME}}
+{\footnotesize\ttfamily \#define S\+T\+O\+P\+\_\+\+T\+I\+ME(\begin{DoxyParamCaption}\item[{}]{time\+\_\+var }\end{DoxyParamCaption})~time\+\_\+var = \hyperlink{cpu__time_8hpp_aa749c981cc2e977172b0903e44025b56}{p\+\_\+cpu\+\_\+time}() -\/ (time\+\_\+var)}
+
+
+
+Macro used to store the elapsed time into time\+\_\+var. 
+
+
+
+Definition at line 132 of file cpu\+\_\+time.\+hpp.
+
+
+
+Referenced by Gcc\+Wrapper\+::\+Compile\+File(), vcd\+\_\+utility\+::\+Exec(), Design\+Flow\+Manager\+::\+Exec(), Gcc\+Wrapper\+::\+Fill\+Tree\+Manager(), vertex\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), unique\+\_\+binding\+\_\+register\+::\+Internal\+Exec(), standard\+\_\+hls\+::\+Internal\+Exec(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), chordal\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), easy\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), values\+\_\+scheme\+::\+Internal\+Exec(), weighted\+\_\+clique\+\_\+register\+::\+Internal\+Exec(), mux\+\_\+connection\+\_\+binding\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), main(), and read\+\_\+technology\+\_\+library().
+
+\mbox{\Hypertarget{cpu__time_8hpp_a946014b33991697c3a80e6cf5f80783a}\label{cpu__time_8hpp_a946014b33991697c3a80e6cf5f80783a}} 
+\index{cpu\+\_\+time.\+hpp@{cpu\+\_\+time.\+hpp}!S\+T\+O\+P\+\_\+\+W\+T\+I\+ME@{S\+T\+O\+P\+\_\+\+W\+T\+I\+ME}}
+\index{S\+T\+O\+P\+\_\+\+W\+T\+I\+ME@{S\+T\+O\+P\+\_\+\+W\+T\+I\+ME}!cpu\+\_\+time.\+hpp@{cpu\+\_\+time.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+O\+P\+\_\+\+W\+T\+I\+ME}{STOP\_WTIME}}
+{\footnotesize\ttfamily \#define S\+T\+O\+P\+\_\+\+W\+T\+I\+ME(\begin{DoxyParamCaption}\item[{}]{time\+\_\+var }\end{DoxyParamCaption})~time\+\_\+var = \hyperlink{cpu__time_8hpp_a84cb452e1dbd61f3d1504ad0a30f044b}{p\+\_\+cpu\+\_\+wtime}() -\/ (time\+\_\+var)}
+
+
+
+Macro used to store the elapsed time into time\+\_\+var. 
+
+
+
+Definition at line 151 of file cpu\+\_\+time.\+hpp.
+
+\mbox{\Hypertarget{cpu__time_8hpp_acec4b053e3d8d1060afb6ce50573eafe}\label{cpu__time_8hpp_acec4b053e3d8d1060afb6ce50573eafe}} 
+\index{cpu\+\_\+time.\+hpp@{cpu\+\_\+time.\+hpp}!T\+I\+M\+E\+S\+\_\+\+T\+I\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+S\+EC@{T\+I\+M\+E\+S\+\_\+\+T\+I\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+S\+EC}}
+\index{T\+I\+M\+E\+S\+\_\+\+T\+I\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+S\+EC@{T\+I\+M\+E\+S\+\_\+\+T\+I\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+S\+EC}!cpu\+\_\+time.\+hpp@{cpu\+\_\+time.\+hpp}}
+\subsubsection{\texorpdfstring{T\+I\+M\+E\+S\+\_\+\+T\+I\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+S\+EC}{TIMES\_TICKS\_PER\_SEC}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+S\+\_\+\+T\+I\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+S\+EC~60}
+
+
+
+Definition at line 73 of file cpu\+\_\+time.\+hpp.
+
+
+
+Referenced by p\+\_\+cpu\+\_\+time().
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{cpu__time_8hpp_aa082a00c9030fe0daf74ee49c832cad8}\label{cpu__time_8hpp_aa082a00c9030fe0daf74ee49c832cad8}} 
+\index{cpu\+\_\+time.\+hpp@{cpu\+\_\+time.\+hpp}!dump\+\_\+exec\+\_\+time@{dump\+\_\+exec\+\_\+time}}
+\index{dump\+\_\+exec\+\_\+time@{dump\+\_\+exec\+\_\+time}!cpu\+\_\+time.\+hpp@{cpu\+\_\+time.\+hpp}}
+\subsubsection{\texorpdfstring{dump\+\_\+exec\+\_\+time()}{dump\_exec\_time()}}
+{\footnotesize\ttfamily void dump\+\_\+exec\+\_\+time (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{thing,  }\item[{long}]{et }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 122 of file cpu\+\_\+time.\+hpp.
+
+
+
+References I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, and print\+\_\+cpu\+\_\+time().
+
+
+
+Referenced by Gcc\+Wrapper\+::\+Compile\+File(), Gcc\+Wrapper\+::\+Fill\+Tree\+Manager(), and main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{d8/de0/cpu__time_8hpp_aa082a00c9030fe0daf74ee49c832cad8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/de0/cpu__time_8hpp_aa082a00c9030fe0daf74ee49c832cad8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cpu__time_8hpp_aa749c981cc2e977172b0903e44025b56}\label{cpu__time_8hpp_aa749c981cc2e977172b0903e44025b56}} 
+\index{cpu\+\_\+time.\+hpp@{cpu\+\_\+time.\+hpp}!p\+\_\+cpu\+\_\+time@{p\+\_\+cpu\+\_\+time}}
+\index{p\+\_\+cpu\+\_\+time@{p\+\_\+cpu\+\_\+time}!cpu\+\_\+time.\+hpp@{cpu\+\_\+time.\+hpp}}
+\subsubsection{\texorpdfstring{p\+\_\+cpu\+\_\+time()}{p\_cpu\_time()}}
+{\footnotesize\ttfamily long int p\+\_\+cpu\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return a long which represents the elapsed processor time in milliseconds since some constant reference 
+
+
+
+Definition at line 80 of file cpu\+\_\+time.\+hpp.
+
+
+
+References times(), and T\+I\+M\+E\+S\+\_\+\+T\+I\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+S\+EC.
+
+
+
+Referenced by p\+\_\+cpu\+\_\+wtime().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{d8/de0/cpu__time_8hpp_aa749c981cc2e977172b0903e44025b56_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{d8/de0/cpu__time_8hpp_aa749c981cc2e977172b0903e44025b56_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cpu__time_8hpp_a84cb452e1dbd61f3d1504ad0a30f044b}\label{cpu__time_8hpp_a84cb452e1dbd61f3d1504ad0a30f044b}} 
+\index{cpu\+\_\+time.\+hpp@{cpu\+\_\+time.\+hpp}!p\+\_\+cpu\+\_\+wtime@{p\+\_\+cpu\+\_\+wtime}}
+\index{p\+\_\+cpu\+\_\+wtime@{p\+\_\+cpu\+\_\+wtime}!cpu\+\_\+time.\+hpp@{cpu\+\_\+time.\+hpp}}
+\subsubsection{\texorpdfstring{p\+\_\+cpu\+\_\+wtime()}{p\_cpu\_wtime()}}
+{\footnotesize\ttfamily long int p\+\_\+cpu\+\_\+wtime (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return a long which represents the elapsed wall processor time in milliseconds since some constant reference 
+
+
+
+Definition at line 138 of file cpu\+\_\+time.\+hpp.
+
+
+
+References p\+\_\+cpu\+\_\+time().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{d8/de0/cpu__time_8hpp_a84cb452e1dbd61f3d1504ad0a30f044b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cpu__time_8hpp_aa14c5d95c5fb24f430415b6b0620dea8}\label{cpu__time_8hpp_aa14c5d95c5fb24f430415b6b0620dea8}} 
+\index{cpu\+\_\+time.\+hpp@{cpu\+\_\+time.\+hpp}!print\+\_\+cpu\+\_\+time@{print\+\_\+cpu\+\_\+time}}
+\index{print\+\_\+cpu\+\_\+time@{print\+\_\+cpu\+\_\+time}!cpu\+\_\+time.\+hpp@{cpu\+\_\+time.\+hpp}}
+\subsubsection{\texorpdfstring{print\+\_\+cpu\+\_\+time()}{print\_cpu\_time()}}
+{\footnotesize\ttfamily std\+::string print\+\_\+cpu\+\_\+time (\begin{DoxyParamCaption}\item[{long int}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+massage a long which represents a time interval in milliseconds, into a string suitable for output 
+
+
+
+Definition at line 110 of file cpu\+\_\+time.\+hpp.
+
+
+
+Referenced by dump\+\_\+exec\+\_\+time(), vcd\+\_\+utility\+::\+Exec(), Design\+Flow\+Manager\+::\+Exec(), vertex\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), unique\+\_\+binding\+\_\+register\+::\+Internal\+Exec(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), chordal\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), easy\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), values\+\_\+scheme\+::\+Internal\+Exec(), weighted\+\_\+clique\+\_\+register\+::\+Internal\+Exec(), mux\+\_\+connection\+\_\+binding\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), main(), Design\+Compiler\+Wrapper\+::parse\+\_\+synthesis\+\_\+reports(), and read\+\_\+technology\+\_\+library().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/de0/cpu__time_8hpp_aa14c5d95c5fb24f430415b6b0620dea8_icgraph}
+\end{center}
+\end{figure}

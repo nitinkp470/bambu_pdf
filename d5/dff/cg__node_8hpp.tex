@@ -1,0 +1,364 @@
+\hypertarget{cg__node_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/circuit/cg\+\_\+node.hpp File Reference}
+\label{cg__node_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/circuit/cg\+\_\+node.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/circuit/cg\+\_\+node.\+hpp}}
+
+
+Node, edge and graph description of the graph associated with a structural description.  
+
+
+{\ttfamily \#include \char`\"{}edge\+\_\+info.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graph\+\_\+info.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}typed\+\_\+node\+\_\+info.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+Include dependency graph for cg\+\_\+node.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd2/cg__node_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d34/cg__node_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcg__node__info}{cg\+\_\+node\+\_\+info}
+\begin{DoxyCompactList}\small\item\em Information associated with a circuit graph node. \end{DoxyCompactList}\item 
+struct \hyperlink{structcg__edge__info}{cg\+\_\+edge\+\_\+info}
+\begin{DoxyCompactList}\small\item\em Information associated with a circuit graph edge. \end{DoxyCompactList}\item 
+struct \hyperlink{structcg__graph__info}{cg\+\_\+graph\+\_\+info}
+\begin{DoxyCompactList}\small\item\em Information associated with the whole graph of a circuit. \end{DoxyCompactList}\item 
+class \hyperlink{classcg__edge__writer}{cg\+\_\+edge\+\_\+writer}
+\item 
+class \hyperlink{classcg__label__writer}{cg\+\_\+label\+\_\+writer}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cg__node_8hpp_a7244572d50af1202e0ae8b84a5a84a33}{D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1
+\begin{DoxyCompactList}\small\item\em Data line selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{cg__node_8hpp_a5118b0d11272c582273ebd4120628a2d}{C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~2
+\begin{DoxyCompactList}\small\item\em Clock line selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{cg__node_8hpp_ac0d08b9fcd0f88c36836e1ee06ec6f4b}{C\+H\+A\+N\+N\+E\+L\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~4
+\begin{DoxyCompactList}\small\item\em Channel line selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{cg__node_8hpp_a8a58f9fc42c0f543f0de53a45cf1e04d}{A\+L\+L\+\_\+\+L\+I\+N\+E\+S\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~\hyperlink{cg__node_8hpp_a7244572d50af1202e0ae8b84a5a84a33}{D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{cg__node_8hpp_a5118b0d11272c582273ebd4120628a2d}{C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{cg__node_8hpp_ac0d08b9fcd0f88c36836e1ee06ec6f4b}{C\+H\+A\+N\+N\+E\+L\+\_\+\+S\+E\+L\+E\+C\+T\+OR}
+\begin{DoxyCompactList}\small\item\em All lines selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{cg__node_8hpp_acfb812e44ded96829675278ee629c51f}{P\+U\+R\+E\+\_\+\+D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~\hyperlink{cg__node_8hpp_a7244572d50af1202e0ae8b84a5a84a33}{D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{cg__node_8hpp_ac0d08b9fcd0f88c36836e1ee06ec6f4b}{C\+H\+A\+N\+N\+E\+L\+\_\+\+S\+E\+L\+E\+C\+T\+OR}
+\begin{DoxyCompactList}\small\item\em All but clock lines selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{cg__node_8hpp_ac835adc7fa68d3a52dcd987d7e8f1215}{G\+E\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE}(data,  node\+\_\+index)~\hyperlink{graph_8hpp_ad3607daf827c59148c71b9b124a4063c}{Cget\+\_\+node\+\_\+info}$<$\hyperlink{structcg__node__info}{cg\+\_\+node\+\_\+info}$>$(node\+\_\+index, $\ast$(data))-\/$>$reference
+\item 
+\#define \hyperlink{cg__node_8hpp_a374f60f53902e16ed24ba5a5a95b49c6}{G\+E\+T\+\_\+\+C\+R\+I\+T\+I\+C\+AL}(data,  node\+\_\+index)~\hyperlink{graph_8hpp_ad3607daf827c59148c71b9b124a4063c}{Cget\+\_\+node\+\_\+info}$<$\hyperlink{structcg__node__info}{cg\+\_\+node\+\_\+info}$>$(node\+\_\+index, $\ast$(data))-\/$>$is\+\_\+critical
+\item 
+\#define \hyperlink{cg__node_8hpp_ab1a9ee329b0592c8e6bfbceeb23ff791}{G\+E\+T\+\_\+\+F\+R\+O\+M\+\_\+\+P\+O\+RT}(data,  edge\+\_\+index)~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structcg__edge__info}{cg\+\_\+edge\+\_\+info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$from\+\_\+port
+\begin{DoxyCompactList}\small\item\em Helper macro returning the from port. \end{DoxyCompactList}\item 
+\#define \hyperlink{cg__node_8hpp_a8593c92231c4f3227ea67e62b41bc211}{G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+C\+R\+I\+T\+I\+C\+AL}(data,  edge\+\_\+index)~\hyperlink{graph_8hpp_ad3607daf827c59148c71b9b124a4063c}{Cget\+\_\+node\+\_\+info}$<$\hyperlink{structcg__edge__info}{cg\+\_\+edge\+\_\+info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$is\+\_\+critical
+\begin{DoxyCompactList}\small\item\em Helper macro returning if the edge is timing critical. \end{DoxyCompactList}\item 
+\#define \hyperlink{cg__node_8hpp_aba3e70eb534e8cdd9a61580eeceb3dfe}{E\+D\+G\+E\+\_\+\+A\+D\+D\+\_\+\+F\+R\+O\+M\+\_\+\+P\+O\+RT}(data,  edge\+\_\+index,  from)~\hyperlink{graph_8hpp_a6f62027ffd273c758af9090b09796af4}{get\+\_\+edge\+\_\+info}$<$\hyperlink{structcg__edge__info}{cg\+\_\+edge\+\_\+info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$from\+\_\+port = from
+\begin{DoxyCompactList}\small\item\em Add a from port to the edge. \end{DoxyCompactList}\item 
+\#define \hyperlink{cg__node_8hpp_a0d0e1870e02b914d124d48868923528f}{G\+E\+T\+\_\+\+T\+O\+\_\+\+P\+O\+RT}(data,  edge\+\_\+index)~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structcg__edge__info}{cg\+\_\+edge\+\_\+info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$to\+\_\+port
+\begin{DoxyCompactList}\small\item\em Helper macro returning the to port/channel. \end{DoxyCompactList}\item 
+\#define \hyperlink{cg__node_8hpp_a58cce1b96ec2285e5c93506987043239}{E\+D\+G\+E\+\_\+\+A\+D\+D\+\_\+\+T\+O\+\_\+\+P\+O\+RT}(data,  edge\+\_\+index,  \+\_\+to)~\hyperlink{graph_8hpp_a6f62027ffd273c758af9090b09796af4}{get\+\_\+edge\+\_\+info}$<$\hyperlink{structcg__edge__info}{cg\+\_\+edge\+\_\+info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$to\+\_\+port = \+\_\+to
+\begin{DoxyCompactList}\small\item\em Add a to port/channel to the edge. \end{DoxyCompactList}\item 
+\#define \hyperlink{cg__node_8hpp_a8675da0327e02df3b37cbe93a5d735df}{E\+D\+G\+E\+\_\+\+S\+E\+T\+\_\+\+C\+R\+I\+T\+I\+C\+AL}(data,  edge\+\_\+index,  critical)~\hyperlink{graph_8hpp_a6f62027ffd273c758af9090b09796af4}{get\+\_\+edge\+\_\+info}$<$\hyperlink{structcg__edge__info}{cg\+\_\+edge\+\_\+info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$is\+\_\+critical = critical
+\begin{DoxyCompactList}\small\item\em Set the edge as critical. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}\textbf{ Forward declarations.}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{cg__node_8hpp_a1e2174e4f038a0b7f20e1e08332e0e05}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classstructural__object}{structural\+\_\+object})
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Node, edge and graph description of the graph associated with a structural description. 
+
+\begin{DoxyAuthor}{Author}
+Matteo Barbati \href{mailto:matteo.mbarbati@gmail.com}{\tt matteo.\+mbarbati@gmail.\+com} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{cg__node_8hpp_a8a58f9fc42c0f543f0de53a45cf1e04d}\label{cg__node_8hpp_a8a58f9fc42c0f543f0de53a45cf1e04d}} 
+\index{cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}!A\+L\+L\+\_\+\+L\+I\+N\+E\+S\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{A\+L\+L\+\_\+\+L\+I\+N\+E\+S\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{A\+L\+L\+\_\+\+L\+I\+N\+E\+S\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{A\+L\+L\+\_\+\+L\+I\+N\+E\+S\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{A\+L\+L\+\_\+\+L\+I\+N\+E\+S\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{ALL\_LINES\_SELECTOR}}
+{\footnotesize\ttfamily \#define A\+L\+L\+\_\+\+L\+I\+N\+E\+S\+\_\+\+S\+E\+L\+E\+C\+T\+OR~\hyperlink{cg__node_8hpp_a7244572d50af1202e0ae8b84a5a84a33}{D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{cg__node_8hpp_a5118b0d11272c582273ebd4120628a2d}{C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{cg__node_8hpp_ac0d08b9fcd0f88c36836e1ee06ec6f4b}{C\+H\+A\+N\+N\+E\+L\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+
+
+
+All lines selector. 
+
+
+
+Definition at line 69 of file cg\+\_\+node.\+hpp.
+
+
+
+Referenced by structural\+\_\+manager\+::\+I\+N\+I\+T(), and structural\+\_\+manager\+::structural\+\_\+manager().
+
+\mbox{\Hypertarget{cg__node_8hpp_ac0d08b9fcd0f88c36836e1ee06ec6f4b}\label{cg__node_8hpp_ac0d08b9fcd0f88c36836e1ee06ec6f4b}} 
+\index{cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}!C\+H\+A\+N\+N\+E\+L\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{C\+H\+A\+N\+N\+E\+L\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{C\+H\+A\+N\+N\+E\+L\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{C\+H\+A\+N\+N\+E\+L\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{C\+H\+A\+N\+N\+E\+L\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{CHANNEL\_SELECTOR}}
+{\footnotesize\ttfamily \#define C\+H\+A\+N\+N\+E\+L\+\_\+\+S\+E\+L\+E\+C\+T\+OR~4}
+
+
+
+Channel line selector. 
+
+
+
+Definition at line 67 of file cg\+\_\+node.\+hpp.
+
+
+
+Referenced by add\+\_\+directed\+\_\+edge(), and cg\+\_\+edge\+\_\+writer\+::operator()().
+
+\mbox{\Hypertarget{cg__node_8hpp_a5118b0d11272c582273ebd4120628a2d}\label{cg__node_8hpp_a5118b0d11272c582273ebd4120628a2d}} 
+\index{cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}!C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{CLOCK\_SELECTOR}}
+{\footnotesize\ttfamily \#define C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR~2}
+
+
+
+Clock line selector. 
+
+
+
+Definition at line 65 of file cg\+\_\+node.\+hpp.
+
+
+
+Referenced by add\+\_\+directed\+\_\+edge\+\_\+single(), and cg\+\_\+edge\+\_\+writer\+::operator()().
+
+\mbox{\Hypertarget{cg__node_8hpp_a7244572d50af1202e0ae8b84a5a84a33}\label{cg__node_8hpp_a7244572d50af1202e0ae8b84a5a84a33}} 
+\index{cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}!D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{DATA\_SELECTOR}}
+{\footnotesize\ttfamily \#define D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1}
+
+
+
+Data line selector. 
+
+
+
+Definition at line 63 of file cg\+\_\+node.\+hpp.
+
+
+
+Referenced by add\+\_\+directed\+\_\+edge(), add\+\_\+directed\+\_\+edge\+\_\+single(), and cg\+\_\+edge\+\_\+writer\+::operator()().
+
+\mbox{\Hypertarget{cg__node_8hpp_aba3e70eb534e8cdd9a61580eeceb3dfe}\label{cg__node_8hpp_aba3e70eb534e8cdd9a61580eeceb3dfe}} 
+\index{cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}!E\+D\+G\+E\+\_\+\+A\+D\+D\+\_\+\+F\+R\+O\+M\+\_\+\+P\+O\+RT@{E\+D\+G\+E\+\_\+\+A\+D\+D\+\_\+\+F\+R\+O\+M\+\_\+\+P\+O\+RT}}
+\index{E\+D\+G\+E\+\_\+\+A\+D\+D\+\_\+\+F\+R\+O\+M\+\_\+\+P\+O\+RT@{E\+D\+G\+E\+\_\+\+A\+D\+D\+\_\+\+F\+R\+O\+M\+\_\+\+P\+O\+RT}!cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{E\+D\+G\+E\+\_\+\+A\+D\+D\+\_\+\+F\+R\+O\+M\+\_\+\+P\+O\+RT}{EDGE\_ADD\_FROM\_PORT}}
+{\footnotesize\ttfamily \#define E\+D\+G\+E\+\_\+\+A\+D\+D\+\_\+\+F\+R\+O\+M\+\_\+\+P\+O\+RT(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{edge\+\_\+index,  }\item[{}]{from }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_a6f62027ffd273c758af9090b09796af4}{get\+\_\+edge\+\_\+info}$<$\hyperlink{structcg__edge__info}{cg\+\_\+edge\+\_\+info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$from\+\_\+port = from}
+
+
+
+Add a from port to the edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the graph. \\
+\hline
+{\em edge\+\_\+index} & is the index of the cdfg edge. \\
+\hline
+{\em from} & is the from port. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 147 of file cg\+\_\+node.\+hpp.
+
+
+
+Referenced by circuit\+\_\+add\+\_\+edge().
+
+\mbox{\Hypertarget{cg__node_8hpp_a58cce1b96ec2285e5c93506987043239}\label{cg__node_8hpp_a58cce1b96ec2285e5c93506987043239}} 
+\index{cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}!E\+D\+G\+E\+\_\+\+A\+D\+D\+\_\+\+T\+O\+\_\+\+P\+O\+RT@{E\+D\+G\+E\+\_\+\+A\+D\+D\+\_\+\+T\+O\+\_\+\+P\+O\+RT}}
+\index{E\+D\+G\+E\+\_\+\+A\+D\+D\+\_\+\+T\+O\+\_\+\+P\+O\+RT@{E\+D\+G\+E\+\_\+\+A\+D\+D\+\_\+\+T\+O\+\_\+\+P\+O\+RT}!cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{E\+D\+G\+E\+\_\+\+A\+D\+D\+\_\+\+T\+O\+\_\+\+P\+O\+RT}{EDGE\_ADD\_TO\_PORT}}
+{\footnotesize\ttfamily \#define E\+D\+G\+E\+\_\+\+A\+D\+D\+\_\+\+T\+O\+\_\+\+P\+O\+RT(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{edge\+\_\+index,  }\item[{}]{\+\_\+to }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_a6f62027ffd273c758af9090b09796af4}{get\+\_\+edge\+\_\+info}$<$\hyperlink{structcg__edge__info}{cg\+\_\+edge\+\_\+info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$to\+\_\+port = \+\_\+to}
+
+
+
+Add a to port/channel to the edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the graph. \\
+\hline
+{\em edge\+\_\+index} & is the index of the cdfg edge. \\
+\hline
+{\em from} & is the from port. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 162 of file cg\+\_\+node.\+hpp.
+
+
+
+Referenced by circuit\+\_\+add\+\_\+edge().
+
+\mbox{\Hypertarget{cg__node_8hpp_a8675da0327e02df3b37cbe93a5d735df}\label{cg__node_8hpp_a8675da0327e02df3b37cbe93a5d735df}} 
+\index{cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}!E\+D\+G\+E\+\_\+\+S\+E\+T\+\_\+\+C\+R\+I\+T\+I\+C\+AL@{E\+D\+G\+E\+\_\+\+S\+E\+T\+\_\+\+C\+R\+I\+T\+I\+C\+AL}}
+\index{E\+D\+G\+E\+\_\+\+S\+E\+T\+\_\+\+C\+R\+I\+T\+I\+C\+AL@{E\+D\+G\+E\+\_\+\+S\+E\+T\+\_\+\+C\+R\+I\+T\+I\+C\+AL}!cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{E\+D\+G\+E\+\_\+\+S\+E\+T\+\_\+\+C\+R\+I\+T\+I\+C\+AL}{EDGE\_SET\_CRITICAL}}
+{\footnotesize\ttfamily \#define E\+D\+G\+E\+\_\+\+S\+E\+T\+\_\+\+C\+R\+I\+T\+I\+C\+AL(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{edge\+\_\+index,  }\item[{}]{critical }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_a6f62027ffd273c758af9090b09796af4}{get\+\_\+edge\+\_\+info}$<$\hyperlink{structcg__edge__info}{cg\+\_\+edge\+\_\+info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$is\+\_\+critical = critical}
+
+
+
+Set the edge as critical. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the graph. \\
+\hline
+{\em edge\+\_\+index} & is the index of the cdfg edge. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 169 of file cg\+\_\+node.\+hpp.
+
+
+
+Referenced by circuit\+\_\+add\+\_\+edge().
+
+\mbox{\Hypertarget{cg__node_8hpp_a374f60f53902e16ed24ba5a5a95b49c6}\label{cg__node_8hpp_a374f60f53902e16ed24ba5a5a95b49c6}} 
+\index{cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}!G\+E\+T\+\_\+\+C\+R\+I\+T\+I\+C\+AL@{G\+E\+T\+\_\+\+C\+R\+I\+T\+I\+C\+AL}}
+\index{G\+E\+T\+\_\+\+C\+R\+I\+T\+I\+C\+AL@{G\+E\+T\+\_\+\+C\+R\+I\+T\+I\+C\+AL}!cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+C\+R\+I\+T\+I\+C\+AL}{GET\_CRITICAL}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+C\+R\+I\+T\+I\+C\+AL(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{node\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_ad3607daf827c59148c71b9b124a4063c}{Cget\+\_\+node\+\_\+info}$<$\hyperlink{structcg__node__info}{cg\+\_\+node\+\_\+info}$>$(node\+\_\+index, $\ast$(data))-\/$>$is\+\_\+critical}
+
+
+
+Definition at line 102 of file cg\+\_\+node.\+hpp.
+
+
+
+Referenced by cg\+\_\+label\+\_\+writer\+::operator()().
+
+\mbox{\Hypertarget{cg__node_8hpp_a8593c92231c4f3227ea67e62b41bc211}\label{cg__node_8hpp_a8593c92231c4f3227ea67e62b41bc211}} 
+\index{cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}!G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+C\+R\+I\+T\+I\+C\+AL@{G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+C\+R\+I\+T\+I\+C\+AL}}
+\index{G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+C\+R\+I\+T\+I\+C\+AL@{G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+C\+R\+I\+T\+I\+C\+AL}!cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+C\+R\+I\+T\+I\+C\+AL}{GET\_EDGE\_CRITICAL}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+C\+R\+I\+T\+I\+C\+AL(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{edge\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_ad3607daf827c59148c71b9b124a4063c}{Cget\+\_\+node\+\_\+info}$<$\hyperlink{structcg__edge__info}{cg\+\_\+edge\+\_\+info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$is\+\_\+critical}
+
+
+
+Helper macro returning if the edge is timing critical. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the graph. \\
+\hline
+{\em edge\+\_\+index} & is the index of the edge. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 139 of file cg\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{cg__node_8hpp_ab1a9ee329b0592c8e6bfbceeb23ff791}\label{cg__node_8hpp_ab1a9ee329b0592c8e6bfbceeb23ff791}} 
+\index{cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}!G\+E\+T\+\_\+\+F\+R\+O\+M\+\_\+\+P\+O\+RT@{G\+E\+T\+\_\+\+F\+R\+O\+M\+\_\+\+P\+O\+RT}}
+\index{G\+E\+T\+\_\+\+F\+R\+O\+M\+\_\+\+P\+O\+RT@{G\+E\+T\+\_\+\+F\+R\+O\+M\+\_\+\+P\+O\+RT}!cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+F\+R\+O\+M\+\_\+\+P\+O\+RT}{GET\_FROM\_PORT}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+F\+R\+O\+M\+\_\+\+P\+O\+RT(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{edge\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structcg__edge__info}{cg\+\_\+edge\+\_\+info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$from\+\_\+port}
+
+
+
+Helper macro returning the from port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the graph. \\
+\hline
+{\em edge\+\_\+index} & is the index of the edge. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 132 of file cg\+\_\+node.\+hpp.
+
+
+
+Referenced by circuit\+\_\+add\+\_\+edge().
+
+\mbox{\Hypertarget{cg__node_8hpp_ac835adc7fa68d3a52dcd987d7e8f1215}\label{cg__node_8hpp_ac835adc7fa68d3a52dcd987d7e8f1215}} 
+\index{cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}!G\+E\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE@{G\+E\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE}}
+\index{G\+E\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE@{G\+E\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE}!cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE}{GET\_REFERENCE}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{node\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_ad3607daf827c59148c71b9b124a4063c}{Cget\+\_\+node\+\_\+info}$<$\hyperlink{structcg__node__info}{cg\+\_\+node\+\_\+info}$>$(node\+\_\+index, $\ast$(data))-\/$>$reference}
+
+
+
+Definition at line 100 of file cg\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{cg__node_8hpp_a0d0e1870e02b914d124d48868923528f}\label{cg__node_8hpp_a0d0e1870e02b914d124d48868923528f}} 
+\index{cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}!G\+E\+T\+\_\+\+T\+O\+\_\+\+P\+O\+RT@{G\+E\+T\+\_\+\+T\+O\+\_\+\+P\+O\+RT}}
+\index{G\+E\+T\+\_\+\+T\+O\+\_\+\+P\+O\+RT@{G\+E\+T\+\_\+\+T\+O\+\_\+\+P\+O\+RT}!cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+T\+O\+\_\+\+P\+O\+RT}{GET\_TO\_PORT}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+T\+O\+\_\+\+P\+O\+RT(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{edge\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structcg__edge__info}{cg\+\_\+edge\+\_\+info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$to\+\_\+port}
+
+
+
+Helper macro returning the to port/channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the graph. \\
+\hline
+{\em edge\+\_\+index} & is the index of the edge. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 154 of file cg\+\_\+node.\+hpp.
+
+
+
+Referenced by circuit\+\_\+add\+\_\+edge().
+
+\mbox{\Hypertarget{cg__node_8hpp_acfb812e44ded96829675278ee629c51f}\label{cg__node_8hpp_acfb812e44ded96829675278ee629c51f}} 
+\index{cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}!P\+U\+R\+E\+\_\+\+D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{P\+U\+R\+E\+\_\+\+D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{P\+U\+R\+E\+\_\+\+D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{P\+U\+R\+E\+\_\+\+D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{P\+U\+R\+E\+\_\+\+D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{PURE\_DATA\_SELECTOR}}
+{\footnotesize\ttfamily \#define P\+U\+R\+E\+\_\+\+D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR~\hyperlink{cg__node_8hpp_a7244572d50af1202e0ae8b84a5a84a33}{D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{cg__node_8hpp_ac0d08b9fcd0f88c36836e1ee06ec6f4b}{C\+H\+A\+N\+N\+E\+L\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+
+
+
+All but clock lines selector. 
+
+
+
+Definition at line 71 of file cg\+\_\+node.\+hpp.
+
+
+
+Referenced by structural\+\_\+manager\+::\+I\+N\+I\+T(), and structural\+\_\+manager\+::structural\+\_\+manager().
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{cg__node_8hpp_a1e2174e4f038a0b7f20e1e08332e0e05}\label{cg__node_8hpp_a1e2174e4f038a0b7f20e1e08332e0e05}} 
+\index{cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!cg\+\_\+node.\+hpp@{cg\+\_\+node.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classstructural__object}{structural\+\_\+object}}]{ }\end{DoxyParamCaption})}
+

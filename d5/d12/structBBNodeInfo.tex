@@ -1,0 +1,331 @@
+\hypertarget{structBBNodeInfo}{}\section{B\+B\+Node\+Info Struct Reference}
+\label{structBBNodeInfo}\index{B\+B\+Node\+Info@{B\+B\+Node\+Info}}
+
+
+Definition of the node\+\_\+info object for the basic\+\_\+block graph.  
+
+
+
+
+{\ttfamily \#include $<$basic\+\_\+block.\+hpp$>$}
+
+
+
+Inheritance diagram for B\+B\+Node\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{da/d3e/structBBNodeInfo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for B\+B\+Node\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{d4/d31/structBBNodeInfo__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structBBNodeInfo_a723cf7c7bc69baf4b23553951df9f949}{B\+B\+Node\+Info} ()
+\begin{DoxyCompactList}\small\item\em Empty constructor. \end{DoxyCompactList}\item 
+\hyperlink{structBBNodeInfo_a68cd849a452fa046ebe832ae6682dc74}{B\+B\+Node\+Info} (bloc\+Ref \+\_\+block)
+\begin{DoxyCompactList}\small\item\em Constructor which uses gcc information. \end{DoxyCompactList}\item 
+void \hyperlink{structBBNodeInfo_a837355045673c67780f13ebb70eca2c0}{add\+\_\+operation\+\_\+node} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} op)
+\begin{DoxyCompactList}\small\item\em Adds an operation to the list of the statements. \end{DoxyCompactList}\item 
+\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \hyperlink{structBBNodeInfo_ad6f05340841980bf4e373f226f82be23}{get\+\_\+first\+\_\+operation} () const
+\begin{DoxyCompactList}\small\item\em Returns the first operation vertex associated with the basic block. \end{DoxyCompactList}\item 
+\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \hyperlink{structBBNodeInfo_a4a5d501afc8153738187ea681a0d14ad}{get\+\_\+last\+\_\+operation} () const
+\begin{DoxyCompactList}\small\item\em Returns the last operation vertex associated with the basic block. \end{DoxyCompactList}\item 
+bool \hyperlink{structBBNodeInfo_aecee6ebacff5a3995739e889c0a35c1a}{empty} () const
+\begin{DoxyCompactList}\small\item\em Returns true if there is no node associated with the basic block. \end{DoxyCompactList}\item 
+\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} \hyperlink{structBBNodeInfo_a49f0b957871c3d7660d048e0bb63e171}{size} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of vertices of the graph representing the original program, associated with the current vertex of the basic block graph. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structBBNodeInfo_a0b125a0b615083e9fe380beb78b0bd0e}{get\+\_\+bb\+\_\+index} () const
+\begin{DoxyCompactList}\small\item\em Returns the index of the basic block. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \& \hyperlink{structBBNodeInfo_ac807a421ffa8d922408050cc1e41a535}{get\+\_\+live\+\_\+in} () const
+\begin{DoxyCompactList}\small\item\em Returns the live in of the basic block. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \& \hyperlink{structBBNodeInfo_ab38bfe567b8a4c7a4d6c278a45cb22d4}{get\+\_\+live\+\_\+out} () const
+\begin{DoxyCompactList}\small\item\em Returns the live in of the basic block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{structBBNodeInfo_acbdf26d1151e519acbaaae9d5abedc94}{loop\+\_\+id}
+\begin{DoxyCompactList}\small\item\em id of the loop to which basic block belongs to (0 if it doesn\textquotesingle{}t belong to any loop) \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structBBNodeInfo_a4cd45e5f9383ffe98e751a33ae1f1633}{cer}
+\begin{DoxyCompactList}\small\item\em id of the control equivalent region \end{DoxyCompactList}\item 
+bloc\+Ref \hyperlink{structBBNodeInfo_a1e0c9fddf2bc58caafddaecb7163c8b5}{block}
+\begin{DoxyCompactList}\small\item\em Structure associated with this basic block in the G\+CC tree. \end{DoxyCompactList}\item 
+std\+::list$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{structBBNodeInfo_a209fdd5fbe87c3f104221f20c81e0984}{statements\+\_\+list}
+\begin{DoxyCompactList}\small\item\em List of operation vertices associated with basic block node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definition of the node\+\_\+info object for the basic\+\_\+block graph. 
+
+This object info defines the list of vertices associated with the basic block node. 
+
+Definition at line 100 of file basic\+\_\+block.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structBBNodeInfo_a723cf7c7bc69baf4b23553951df9f949}\label{structBBNodeInfo_a723cf7c7bc69baf4b23553951df9f949}} 
+\index{B\+B\+Node\+Info@{B\+B\+Node\+Info}!B\+B\+Node\+Info@{B\+B\+Node\+Info}}
+\index{B\+B\+Node\+Info@{B\+B\+Node\+Info}!B\+B\+Node\+Info@{B\+B\+Node\+Info}}
+\subsubsection{\texorpdfstring{B\+B\+Node\+Info()}{BBNodeInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily B\+B\+Node\+Info\+::\+B\+B\+Node\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Empty constructor. 
+
+
+
+Definition at line 63 of file basic\+\_\+block.\+cpp.
+
+\mbox{\Hypertarget{structBBNodeInfo_a68cd849a452fa046ebe832ae6682dc74}\label{structBBNodeInfo_a68cd849a452fa046ebe832ae6682dc74}} 
+\index{B\+B\+Node\+Info@{B\+B\+Node\+Info}!B\+B\+Node\+Info@{B\+B\+Node\+Info}}
+\index{B\+B\+Node\+Info@{B\+B\+Node\+Info}!B\+B\+Node\+Info@{B\+B\+Node\+Info}}
+\subsubsection{\texorpdfstring{B\+B\+Node\+Info()}{BBNodeInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily B\+B\+Node\+Info\+::\+B\+B\+Node\+Info (\begin{DoxyParamCaption}\item[{bloc\+Ref}]{\+\_\+block }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor which uses gcc information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+block} & is the block in the gcc dump \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 67 of file basic\+\_\+block.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structBBNodeInfo_a837355045673c67780f13ebb70eca2c0}\label{structBBNodeInfo_a837355045673c67780f13ebb70eca2c0}} 
+\index{B\+B\+Node\+Info@{B\+B\+Node\+Info}!add\+\_\+operation\+\_\+node@{add\+\_\+operation\+\_\+node}}
+\index{add\+\_\+operation\+\_\+node@{add\+\_\+operation\+\_\+node}!B\+B\+Node\+Info@{B\+B\+Node\+Info}}
+\subsubsection{\texorpdfstring{add\+\_\+operation\+\_\+node()}{add\_operation\_node()}}
+{\footnotesize\ttfamily void B\+B\+Node\+Info\+::add\+\_\+operation\+\_\+node (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{op }\end{DoxyParamCaption})}
+
+
+
+Adds an operation to the list of the statements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & is the operation to be added \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 71 of file basic\+\_\+block.\+cpp.
+
+
+
+References statements\+\_\+list.
+
+\mbox{\Hypertarget{structBBNodeInfo_aecee6ebacff5a3995739e889c0a35c1a}\label{structBBNodeInfo_aecee6ebacff5a3995739e889c0a35c1a}} 
+\index{B\+B\+Node\+Info@{B\+B\+Node\+Info}!empty@{empty}}
+\index{empty@{empty}!B\+B\+Node\+Info@{B\+B\+Node\+Info}}
+\subsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool B\+B\+Node\+Info\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if there is no node associated with the basic block. 
+
+\begin{DoxyReturn}{Returns}
+true if there is no node associated with the basic block 
+\end{DoxyReturn}
+
+
+Definition at line 91 of file basic\+\_\+block.\+cpp.
+
+
+
+References statements\+\_\+list.
+
+\mbox{\Hypertarget{structBBNodeInfo_a0b125a0b615083e9fe380beb78b0bd0e}\label{structBBNodeInfo_a0b125a0b615083e9fe380beb78b0bd0e}} 
+\index{B\+B\+Node\+Info@{B\+B\+Node\+Info}!get\+\_\+bb\+\_\+index@{get\+\_\+bb\+\_\+index}}
+\index{get\+\_\+bb\+\_\+index@{get\+\_\+bb\+\_\+index}!B\+B\+Node\+Info@{B\+B\+Node\+Info}}
+\subsubsection{\texorpdfstring{get\+\_\+bb\+\_\+index()}{get\_bb\_index()}}
+{\footnotesize\ttfamily unsigned int B\+B\+Node\+Info\+::get\+\_\+bb\+\_\+index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the index of the basic block. 
+
+
+
+Definition at line 96 of file basic\+\_\+block.\+cpp.
+
+\mbox{\Hypertarget{structBBNodeInfo_ad6f05340841980bf4e373f226f82be23}\label{structBBNodeInfo_ad6f05340841980bf4e373f226f82be23}} 
+\index{B\+B\+Node\+Info@{B\+B\+Node\+Info}!get\+\_\+first\+\_\+operation@{get\+\_\+first\+\_\+operation}}
+\index{get\+\_\+first\+\_\+operation@{get\+\_\+first\+\_\+operation}!B\+B\+Node\+Info@{B\+B\+Node\+Info}}
+\subsubsection{\texorpdfstring{get\+\_\+first\+\_\+operation()}{get\_first\_operation()}}
+{\footnotesize\ttfamily \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} B\+B\+Node\+Info\+::get\+\_\+first\+\_\+operation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the first operation vertex associated with the basic block. 
+
+\begin{DoxyReturn}{Returns}
+the first operation vertex of the basic block. 
+\end{DoxyReturn}
+
+
+Definition at line 81 of file basic\+\_\+block.\+cpp.
+
+
+
+References statements\+\_\+list.
+
+\mbox{\Hypertarget{structBBNodeInfo_a4a5d501afc8153738187ea681a0d14ad}\label{structBBNodeInfo_a4a5d501afc8153738187ea681a0d14ad}} 
+\index{B\+B\+Node\+Info@{B\+B\+Node\+Info}!get\+\_\+last\+\_\+operation@{get\+\_\+last\+\_\+operation}}
+\index{get\+\_\+last\+\_\+operation@{get\+\_\+last\+\_\+operation}!B\+B\+Node\+Info@{B\+B\+Node\+Info}}
+\subsubsection{\texorpdfstring{get\+\_\+last\+\_\+operation()}{get\_last\_operation()}}
+{\footnotesize\ttfamily \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} B\+B\+Node\+Info\+::get\+\_\+last\+\_\+operation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the last operation vertex associated with the basic block. 
+
+\begin{DoxyReturn}{Returns}
+the last operation statement of the basic block. 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file basic\+\_\+block.\+cpp.
+
+
+
+References statements\+\_\+list.
+
+\mbox{\Hypertarget{structBBNodeInfo_ac807a421ffa8d922408050cc1e41a535}\label{structBBNodeInfo_ac807a421ffa8d922408050cc1e41a535}} 
+\index{B\+B\+Node\+Info@{B\+B\+Node\+Info}!get\+\_\+live\+\_\+in@{get\+\_\+live\+\_\+in}}
+\index{get\+\_\+live\+\_\+in@{get\+\_\+live\+\_\+in}!B\+B\+Node\+Info@{B\+B\+Node\+Info}}
+\subsubsection{\texorpdfstring{get\+\_\+live\+\_\+in()}{get\_live\_in()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \& B\+B\+Node\+Info\+::get\+\_\+live\+\_\+in (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the live in of the basic block. 
+
+
+
+Definition at line 101 of file basic\+\_\+block.\+cpp.
+
+\mbox{\Hypertarget{structBBNodeInfo_ab38bfe567b8a4c7a4d6c278a45cb22d4}\label{structBBNodeInfo_ab38bfe567b8a4c7a4d6c278a45cb22d4}} 
+\index{B\+B\+Node\+Info@{B\+B\+Node\+Info}!get\+\_\+live\+\_\+out@{get\+\_\+live\+\_\+out}}
+\index{get\+\_\+live\+\_\+out@{get\+\_\+live\+\_\+out}!B\+B\+Node\+Info@{B\+B\+Node\+Info}}
+\subsubsection{\texorpdfstring{get\+\_\+live\+\_\+out()}{get\_live\_out()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \& B\+B\+Node\+Info\+::get\+\_\+live\+\_\+out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the live in of the basic block. 
+
+
+
+Definition at line 106 of file basic\+\_\+block.\+cpp.
+
+\mbox{\Hypertarget{structBBNodeInfo_a49f0b957871c3d7660d048e0bb63e171}\label{structBBNodeInfo_a49f0b957871c3d7660d048e0bb63e171}} 
+\index{B\+B\+Node\+Info@{B\+B\+Node\+Info}!size@{size}}
+\index{size@{size}!B\+B\+Node\+Info@{B\+B\+Node\+Info}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} B\+B\+Node\+Info\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of vertices of the graph representing the original program, associated with the current vertex of the basic block graph. 
+
+\begin{DoxyReturn}{Returns}
+size of basic block 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file basic\+\_\+block.\+cpp.
+
+
+
+References statements\+\_\+list.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structBBNodeInfo_a1e0c9fddf2bc58caafddaecb7163c8b5}\label{structBBNodeInfo_a1e0c9fddf2bc58caafddaecb7163c8b5}} 
+\index{B\+B\+Node\+Info@{B\+B\+Node\+Info}!block@{block}}
+\index{block@{block}!B\+B\+Node\+Info@{B\+B\+Node\+Info}}
+\subsubsection{\texorpdfstring{block}{block}}
+{\footnotesize\ttfamily bloc\+Ref B\+B\+Node\+Info\+::block}
+
+
+
+Structure associated with this basic block in the G\+CC tree. 
+
+
+
+Definition at line 110 of file basic\+\_\+block.\+hpp.
+
+\mbox{\Hypertarget{structBBNodeInfo_a4cd45e5f9383ffe98e751a33ae1f1633}\label{structBBNodeInfo_a4cd45e5f9383ffe98e751a33ae1f1633}} 
+\index{B\+B\+Node\+Info@{B\+B\+Node\+Info}!cer@{cer}}
+\index{cer@{cer}!B\+B\+Node\+Info@{B\+B\+Node\+Info}}
+\subsubsection{\texorpdfstring{cer}{cer}}
+{\footnotesize\ttfamily unsigned int B\+B\+Node\+Info\+::cer}
+
+
+
+id of the control equivalent region 
+
+
+
+Definition at line 107 of file basic\+\_\+block.\+hpp.
+
+\mbox{\Hypertarget{structBBNodeInfo_acbdf26d1151e519acbaaae9d5abedc94}\label{structBBNodeInfo_acbdf26d1151e519acbaaae9d5abedc94}} 
+\index{B\+B\+Node\+Info@{B\+B\+Node\+Info}!loop\+\_\+id@{loop\+\_\+id}}
+\index{loop\+\_\+id@{loop\+\_\+id}!B\+B\+Node\+Info@{B\+B\+Node\+Info}}
+\subsubsection{\texorpdfstring{loop\+\_\+id}{loop\_id}}
+{\footnotesize\ttfamily unsigned int B\+B\+Node\+Info\+::loop\+\_\+id}
+
+
+
+id of the loop to which basic block belongs to (0 if it doesn\textquotesingle{}t belong to any loop) 
+
+
+
+Definition at line 104 of file basic\+\_\+block.\+hpp.
+
+\mbox{\Hypertarget{structBBNodeInfo_a209fdd5fbe87c3f104221f20c81e0984}\label{structBBNodeInfo_a209fdd5fbe87c3f104221f20c81e0984}} 
+\index{B\+B\+Node\+Info@{B\+B\+Node\+Info}!statements\+\_\+list@{statements\+\_\+list}}
+\index{statements\+\_\+list@{statements\+\_\+list}!B\+B\+Node\+Info@{B\+B\+Node\+Info}}
+\subsubsection{\texorpdfstring{statements\+\_\+list}{statements\_list}}
+{\footnotesize\ttfamily std\+::list$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ B\+B\+Node\+Info\+::statements\+\_\+list}
+
+
+
+List of operation vertices associated with basic block node. 
+
+
+
+Definition at line 113 of file basic\+\_\+block.\+hpp.
+
+
+
+Referenced by add\+\_\+operation\+\_\+node(), empty(), get\+\_\+first\+\_\+operation(), get\+\_\+last\+\_\+operation(), and size().
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/\hyperlink{basic__block_8hpp}{basic\+\_\+block.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/\hyperlink{basic__block_8cpp}{basic\+\_\+block.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,1363 @@
+\hypertarget{classparametric__list__based}{}\section{parametric\+\_\+list\+\_\+based Class Reference}
+\label{classparametric__list__based}\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+
+
+Class managing list based scheduling algorithms.  
+
+
+
+
+{\ttfamily \#include $<$parametric\+\_\+list\+\_\+based.\+hpp$>$}
+
+
+
+Inheritance diagram for parametric\+\_\+list\+\_\+based\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{d8/db8/classparametric__list__based__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for parametric\+\_\+list\+\_\+based\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d1f/classparametric__list__based__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classparametric__list__based_a10067b837be6ed6afd89010346ec51d3}{parametric\+\_\+list\+\_\+based} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters}, const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} \hyperlink{classHLS__step_ade85003a99d34134418451ddc46a18e9}{H\+L\+S\+Mgr}, unsigned int function\+\_\+id, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref} \hyperlink{classHLS__step_a843be75ba53b81876aa3c8b870ae8a55}{hls\+\_\+flow\+\_\+step\+\_\+specialization})
+\begin{DoxyCompactList}\small\item\em This is the constructor of the list\+\_\+based. \end{DoxyCompactList}\item 
+\hyperlink{classparametric__list__based_a088790da3c76d207bee5fb68b4fecea0}{$\sim$parametric\+\_\+list\+\_\+based} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classparametric__list__based_a15e5fa8f17cfb775d16ab6d541c7822a}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Execute the step. \end{DoxyCompactList}\item 
+void \hyperlink{classparametric__list__based_abc6a741625056fc292a4ef5e58297ad4}{exec} (const \hyperlink{classOpVertexSet}{Op\+Vertex\+Set} \&operations, Control\+Step current\+\_\+cycle)
+\begin{DoxyCompactList}\small\item\em Function that computes the List-\/\+Based scheduling of the graph. \end{DoxyCompactList}\item 
+void \hyperlink{classparametric__list__based_a33b5a6aadaf0f36b342b434126ebbf79}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\item 
+void \hyperlink{classparametric__list__based_af4154cabe85bbd707fc5ee05981e54b0}{Compute\+Relationships} (\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&relationship, const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) override
+\begin{DoxyCompactList}\small\item\em Compute the relationships of a step with other steps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classparametric__list__based_a054abcf6ebfca65a3c67458cb77d7e63}{compute\+\_\+exec\+\_\+stage\+\_\+time} (const unsigned int fu\+\_\+type, double \&stage\+\_\+period, const Control\+Step cs, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} op\+\_\+graph, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} v, double \&op\+\_\+execution\+\_\+time, double \&phi\+\_\+extra\+\_\+time, double current\+\_\+starting\+\_\+time, double setup\+\_\+hold\+\_\+time)
+\item 
+void \hyperlink{classparametric__list__based_a02e229e9aa133401c91ddf50fdd78604}{compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} v, const unsigned int fu\+\_\+type, const Control\+Step cs, double \&current\+\_\+starting\+\_\+time, double \&current\+\_\+ending\+\_\+time, double \&stage\+\_\+period, bool \&cannot\+\_\+be\+\_\+chained, \hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref} res\+\_\+binding, const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref} schedule, double \&phi\+\_\+extra\+\_\+time, double setup\+\_\+hold\+\_\+time, \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ std\+::pair$<$ unsigned int, unsigned int $>$, double $>$ \&local\+\_\+fo\+\_\+correction\+\_\+map)
+\begin{DoxyCompactList}\small\item\em Given the control step in which an operation is scheduled, compute the exact starting and ending time of an operation. \end{DoxyCompactList}\item 
+void \hyperlink{classparametric__list__based_aea554a314bf6dd38be5cc93a617cea30}{compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} v, const unsigned int fu\+\_\+type, const Control\+Step cs, double \&\hyperlink{classparametric__list__based_a48af95dd945034fdad7f1f0d5502c13c}{starting\+\_\+time}, double \&\hyperlink{classparametric__list__based_a0b92fb6107c2c1bdb966db10baf57a30}{ending\+\_\+time}, double \&op\+\_\+execution\+\_\+time, double \&stage\+\_\+period, unsigned int \&n\+\_\+cycles, bool \&has\+\_\+a\+\_\+store\+\_\+unbounded\+\_\+as\+\_\+in, \hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref} res\+\_\+binding, const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref} schedule, double \&phi\+\_\+extra\+\_\+time, double setup\+\_\+hold\+\_\+time, \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ std\+::pair$<$ unsigned int, unsigned int $>$, double $>$ \&local\+\_\+connection\+\_\+map)
+\item 
+void \hyperlink{classparametric__list__based_a86a22e0ca2f49d25402fd437d8be06a3}{update\+\_\+starting\+\_\+ending\+\_\+time} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} candidate\+\_\+v, \hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref} res\+\_\+binding, \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} op\+\_\+dfg\+\_\+graph, const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref} schedule)
+\begin{DoxyCompactList}\small\item\em update starting and ending time by moving candidate\+\_\+v as late as possible without increasing the whole latency \end{DoxyCompactList}\item 
+void \hyperlink{classparametric__list__based_a155c333d3654eb3f35cc055b6b97265c}{update\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} candidate\+\_\+v, \hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref} res\+\_\+binding, \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} op\+D\+FG, const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref} schedule)
+\item 
+void \hyperlink{classparametric__list__based_aff2bc058e15e80cd66b5e33245771289}{update\+\_\+vertices\+\_\+timing} (const Control\+Step vertex\+\_\+cstep, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} current\+\_\+v, const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref} schedule, std\+::list$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&vertices\+\_\+analyzed, \hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref} res\+\_\+binding, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} op\+D\+FG)
+\begin{DoxyCompactList}\small\item\em update the starting and ending time of the vertices scheduled in the same cs of current\+\_\+v \end{DoxyCompactList}\item 
+bool \hyperlink{classparametric__list__based_a3295dddee18a9c4091ad9bec2b23cc9f}{B\+B\+\_\+update\+\_\+resources\+\_\+use} (unsigned int \&used\+\_\+resources, const unsigned int fu\+\_\+type) const
+\begin{DoxyCompactList}\small\item\em Update the resource map. \end{DoxyCompactList}\item 
+void \hyperlink{classparametric__list__based_af39742ae903d232505b44c793bf6c236}{add\+\_\+to\+\_\+priority\+\_\+queues} (\hyperlink{parametric__list__based_8hpp_a13050eea5e8f82ebc18423a4a1b4deb1}{Priority\+Queues} \&priority\+\_\+queue, std\+::set$<$ unsigned int, \hyperlink{structresource__ordering__functor}{resource\+\_\+ordering\+\_\+functor} $>$ \&ready\+\_\+resources, const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} v) const
+\begin{DoxyCompactList}\small\item\em Adds the vertex v to the priority queues. \end{DoxyCompactList}\item 
+double \hyperlink{classparametric__list__based_aa040a68024272d93c52aed13f00881bf}{compute\+\_\+slack} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} current\+\_\+op, const Control\+Step current\+\_\+vertex\+\_\+cstep, double setup\+\_\+hold\+\_\+time)
+\begin{DoxyCompactList}\small\item\em compute the slack of a given operation and in case specify if is pipelined \end{DoxyCompactList}\item 
+void \hyperlink{classparametric__list__based_aa979330060c40188e1c74bbae270ac2b}{update\+\_\+vertices\+\_\+slack} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} current\+\_\+v, const \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} schedule, \hyperlink{classOpVertexSet}{Op\+Vertex\+Set} \&vertices\+\_\+analyzed, double setup\+\_\+hold\+\_\+time, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} op\+D\+FG)
+\begin{DoxyCompactList}\small\item\em update the slack of vertices of current\+\_\+v and of all the vertices in chaining with it \end{DoxyCompactList}\item 
+bool \hyperlink{classparametric__list__based_a6043550d51c621f3b47d804c79428a51}{store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+in} (unsigned int current\+\_\+vertex\+\_\+cstep, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} v)
+\begin{DoxyCompactList}\small\item\em store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load checks if a store is chained with a load operation or vice versa \end{DoxyCompactList}\item 
+bool \hyperlink{classparametric__list__based_ae448d283c1cda365d88c00d67dd4e447}{store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+out} (unsigned int current\+\_\+vertex\+\_\+cstep, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} v)
+\item 
+void \hyperlink{classparametric__list__based_a578ba2b5ccd255dc25d53274d3e301bc}{do\+\_\+balanced\+\_\+scheduling} (std\+::deque$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&sub\+\_\+levels, const \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} schedule, const \hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref} res\+\_\+binding, const double setup\+\_\+hold\+\_\+time, const double scheduling\+\_\+mux\+\_\+margins, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} op\+D\+FG)
+\begin{DoxyCompactList}\small\item\em perform balanced scheduling on an existing solution \end{DoxyCompactList}\item 
+void \hyperlink{classparametric__list__based_a3015cd6577b9542929207800840b6acf}{do\+\_\+balanced\+\_\+scheduling1} (std\+::deque$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&sub\+\_\+levels, const \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} schedule, const \hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref} res\+\_\+binding, const double setup\+\_\+hold\+\_\+time, const double scheduling\+\_\+mux\+\_\+margins, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} op\+D\+FG, bool seen\+\_\+cstep\+\_\+has\+\_\+\+R\+E\+T\+\_\+conflict)
+\begin{DoxyCompactList}\small\item\em different version of balanced scheduling. \end{DoxyCompactList}\item 
+bool \hyperlink{classparametric__list__based_a6457256257347530f45f19ca4b85b6bc}{check\+\_\+non\+\_\+direct\+\_\+operation\+\_\+chaining} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} current\+\_\+v, unsigned int v\+\_\+fu\+\_\+type, const Control\+Step cs, const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref} schedule, \hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref} res\+\_\+binding) const
+\item 
+bool \hyperlink{classparametric__list__based_a9fc96b3511360dc67e2cff71077a8d80}{check\+\_\+direct\+\_\+operation\+\_\+chaining} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} current\+\_\+v, const Control\+Step cs, const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref} schedule, \hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref} res\+\_\+binding) const
+\item 
+bool \hyperlink{classparametric__list__based_a582b8b501406c0dbd5245d1db2aa34a7}{check\+\_\+\+L\+O\+A\+D\+\_\+chaining} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} current\+\_\+v, const Control\+Step cs, const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref} schedule) const
+\item 
+void \hyperlink{classparametric__list__based_a4ffd85836c234c7ded92b33e992f20bb}{Check\+Schedulability\+Conditions} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&current\+\_\+vertex, Control\+Step current\+\_\+cycle, double \&current\+\_\+starting\+\_\+time, double \&current\+\_\+ending\+\_\+time, double \&current\+\_\+stage\+\_\+period, \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ std\+::pair$<$ unsigned int, unsigned int $>$, double $>$ \&local\+\_\+connection\+\_\+map, double current\+\_\+cycle\+\_\+starting\+\_\+time, double current\+\_\+cycle\+\_\+ending\+\_\+time, double setup\+\_\+hold\+\_\+time, double \&phi\+\_\+extra\+\_\+time, double scheduling\+\_\+mux\+\_\+margins, bool unbounded, bool cstep\+\_\+has\+\_\+\+R\+E\+T\+\_\+conflict, unsigned int fu\+\_\+type, const \hyperlink{structvertex2obj}{vertex2obj}$<$ Control\+Step $>$ \&current\+\_\+\+A\+S\+AP, const \hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref} res\+\_\+binding, const \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} schedule, bool \&predecessors\+Cond, bool \&pipelining\+Cond, bool \&cannot\+Be\+Chained0, bool \&chaining\+Ret\+Cond, bool \&cannot\+Be\+Chained1, bool \&async\+Cond, bool \&cannot\+Be\+Chained2, bool \&Multi\+Cond0, bool \&Multi\+Cond1, bool \&non\+Direct\+Mem\+Cond)
+\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::tuple$<$ \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type}, \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref}, \hyperlink{hls__step_8hpp_a3ad360b9b11e6bf0683d5562a0ceb169}{H\+L\+S\+Flow\+Step\+\_\+\+Relationship} $>$ $>$ \hyperlink{classparametric__list__based_a677ad6063a17ccb5313d608c4009947c}{Compute\+H\+L\+S\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Compute the relationship of this step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{parametric__list__based_8hpp_af0e38be9a93de210a888144f6a52e498}{Parametric\+List\+Based\+\_\+\+Metric} \hyperlink{classparametric__list__based_a9c6cc1104ca3c70cee7e55305bae7933}{parametric\+\_\+list\+\_\+based\+\_\+metric}
+\begin{DoxyCompactList}\small\item\em The used metric. \end{DoxyCompactList}\item 
+\hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} \hyperlink{classparametric__list__based_af8c4c141aa0606a9dcf33b234f4b98da}{flow\+\_\+graph}
+\begin{DoxyCompactList}\small\item\em The dependence graph. \end{DoxyCompactList}\item 
+\hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} \hyperlink{classparametric__list__based_a98268bf165c0c6b4236a7ea55b24d268}{flow\+\_\+graph\+\_\+with\+\_\+feedbacks}
+\begin{DoxyCompactList}\small\item\em The dependence graph with feedbacks. \end{DoxyCompactList}\item 
+\hyperlink{structvertex2float}{vertex2float} \hyperlink{classparametric__list__based_a48af95dd945034fdad7f1f0d5502c13c}{starting\+\_\+time}
+\begin{DoxyCompactList}\small\item\em The starting time given the scheduling (used for chaining) \end{DoxyCompactList}\item 
+\hyperlink{classOpVertexMap}{Op\+Vertex\+Map}$<$ double $>$ \hyperlink{classparametric__list__based_a0b92fb6107c2c1bdb966db10baf57a30}{ending\+\_\+time}
+\begin{DoxyCompactList}\small\item\em The ending time given the scheduling (used for chaining) \end{DoxyCompactList}\item 
+double \hyperlink{classparametric__list__based_af67d32b45cbe56df18bd4c1356d3ac0e}{clock\+\_\+cycle}
+\begin{DoxyCompactList}\small\item\em The clock cycle. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$ std\+::pair$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, unsigned int $>$, bool $>$ \hyperlink{classparametric__list__based_afe0501bc0000245623bd0064a37f1a60}{is\+\_\+complex}
+\begin{DoxyCompactList}\small\item\em memoization table used for connection estimation \end{DoxyCompactList}\item 
+\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} \hyperlink{classparametric__list__based_a4df4ac930c63d346ceb4e79d6283de11}{executions\+\_\+number}
+\begin{DoxyCompactList}\small\item\em Number of executions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const double \hyperlink{classparametric__list__based_a25940f1c2f39d4ae48464c75e19f89d0}{E\+P\+S\+I\+L\+ON} = 0.\+000000001
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class managing list based scheduling algorithms. 
+
+Definition at line 144 of file parametric\+\_\+list\+\_\+based.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classparametric__list__based_a10067b837be6ed6afd89010346ec51d3}\label{classparametric__list__based_a10067b837be6ed6afd89010346ec51d3}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{parametric\+\_\+list\+\_\+based()}{parametric\_list\_based()}}
+{\footnotesize\ttfamily parametric\+\_\+list\+\_\+based\+::parametric\+\_\+list\+\_\+based (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{parameters,  }\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr,  }\item[{unsigned int}]{function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref}}]{hls\+\_\+flow\+\_\+step\+\_\+specialization }\end{DoxyParamCaption})}
+
+
+
+This is the constructor of the list\+\_\+based. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & is the set of input parameters \\
+\hline
+{\em H\+L\+Smgr} & is the H\+LS manager \\
+\hline
+{\em function\+\_\+id} & is the function index of the function \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the hls design flow \\
+\hline
+{\em hls\+\_\+flow\+\_\+step\+\_\+specialization} & specifies how specialize this step \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 298 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$parametric\+\_\+list\+\_\+based().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a10067b837be6ed6afd89010346ec51d3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_a088790da3c76d207bee5fb68b4fecea0}\label{classparametric__list__based_a088790da3c76d207bee5fb68b4fecea0}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!````~parametric\+\_\+list\+\_\+based@{$\sim$parametric\+\_\+list\+\_\+based}}
+\index{````~parametric\+\_\+list\+\_\+based@{$\sim$parametric\+\_\+list\+\_\+based}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{$\sim$parametric\+\_\+list\+\_\+based()}{~parametric\_list\_based()}}
+{\footnotesize\ttfamily parametric\+\_\+list\+\_\+based\+::$\sim$parametric\+\_\+list\+\_\+based (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by parametric\+\_\+list\+\_\+based().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a088790da3c76d207bee5fb68b4fecea0_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classparametric__list__based_af39742ae903d232505b44c793bf6c236}\label{classparametric__list__based_af39742ae903d232505b44c793bf6c236}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!add\+\_\+to\+\_\+priority\+\_\+queues@{add\+\_\+to\+\_\+priority\+\_\+queues}}
+\index{add\+\_\+to\+\_\+priority\+\_\+queues@{add\+\_\+to\+\_\+priority\+\_\+queues}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{add\+\_\+to\+\_\+priority\+\_\+queues()}{add\_to\_priority\_queues()}}
+{\footnotesize\ttfamily void parametric\+\_\+list\+\_\+based\+::add\+\_\+to\+\_\+priority\+\_\+queues (\begin{DoxyParamCaption}\item[{\hyperlink{parametric__list__based_8hpp_a13050eea5e8f82ebc18423a4a1b4deb1}{Priority\+Queues} \&}]{priority\+\_\+queue,  }\item[{std\+::set$<$ unsigned int, \hyperlink{structresource__ordering__functor}{resource\+\_\+ordering\+\_\+functor} $>$ \&}]{ready\+\_\+resources,  }\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Adds the vertex v to the priority queues. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em priority\+\_\+trees} & are the priority\+\_\+queues \\
+\hline
+{\em ready\+\_\+resources} & is the set of resources which have at least one ready operation \\
+\hline
+{\em v} & is the vertex. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1465 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References hls\+::allocation\+\_\+information, Allocation\+Information\+::can\+\_\+implement\+\_\+set(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, flow\+\_\+graph, Allocation\+Information\+::get\+\_\+fu\+\_\+name(), G\+E\+T\+\_\+\+N\+A\+ME, H\+L\+S\+Function\+Step\+::\+H\+LS, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, and Allocation\+Information\+::is\+\_\+vertex\+\_\+bounded\+\_\+with().
+
+
+
+Referenced by exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_af39742ae903d232505b44c793bf6c236_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_af39742ae903d232505b44c793bf6c236_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_a3295dddee18a9c4091ad9bec2b23cc9f}\label{classparametric__list__based_a3295dddee18a9c4091ad9bec2b23cc9f}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!B\+B\+\_\+update\+\_\+resources\+\_\+use@{B\+B\+\_\+update\+\_\+resources\+\_\+use}}
+\index{B\+B\+\_\+update\+\_\+resources\+\_\+use@{B\+B\+\_\+update\+\_\+resources\+\_\+use}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{B\+B\+\_\+update\+\_\+resources\+\_\+use()}{BB\_update\_resources\_use()}}
+{\footnotesize\ttfamily bool parametric\+\_\+list\+\_\+based\+::\+B\+B\+\_\+update\+\_\+resources\+\_\+use (\begin{DoxyParamCaption}\item[{unsigned int \&}]{used\+\_\+resources,  }\item[{const unsigned int}]{fu\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update the resource map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em used\+\_\+resources\+\_\+fu} & is the resource map. \\
+\hline
+{\em fu\+\_\+type} & is the functional unit type on which operation is scheduled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the assignment is feasible 
+\end{DoxyReturn}
+
+
+Definition at line 1454 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References hls\+::allocation\+\_\+information, Allocation\+Information\+::get\+\_\+number\+\_\+fu(), and H\+L\+S\+Function\+Step\+::\+H\+LS.
+
+
+
+Referenced by exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a3295dddee18a9c4091ad9bec2b23cc9f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a3295dddee18a9c4091ad9bec2b23cc9f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_a9fc96b3511360dc67e2cff71077a8d80}\label{classparametric__list__based_a9fc96b3511360dc67e2cff71077a8d80}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!check\+\_\+direct\+\_\+operation\+\_\+chaining@{check\+\_\+direct\+\_\+operation\+\_\+chaining}}
+\index{check\+\_\+direct\+\_\+operation\+\_\+chaining@{check\+\_\+direct\+\_\+operation\+\_\+chaining}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{check\+\_\+direct\+\_\+operation\+\_\+chaining()}{check\_direct\_operation\_chaining()}}
+{\footnotesize\ttfamily bool parametric\+\_\+list\+\_\+based\+::check\+\_\+direct\+\_\+operation\+\_\+chaining (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{current\+\_\+v,  }\item[{const Control\+Step}]{cs,  }\item[{const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref}}]{schedule,  }\item[{\hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref}}]{res\+\_\+binding }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+compute the set of operations on the control step frontier 
+
+Definition at line 2384 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References hls\+::allocation\+\_\+information, flow\+\_\+graph, fu\+\_\+binding\+::get\+\_\+assign(), G\+E\+T\+\_\+\+T\+Y\+PE, H\+L\+S\+Function\+Step\+::\+H\+LS, Allocation\+Information\+::is\+\_\+direct\+\_\+access\+\_\+memory\+\_\+unit(), and T\+Y\+P\+E\+\_\+\+L\+O\+AD.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a9fc96b3511360dc67e2cff71077a8d80_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_a582b8b501406c0dbd5245d1db2aa34a7}\label{classparametric__list__based_a582b8b501406c0dbd5245d1db2aa34a7}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!check\+\_\+\+L\+O\+A\+D\+\_\+chaining@{check\+\_\+\+L\+O\+A\+D\+\_\+chaining}}
+\index{check\+\_\+\+L\+O\+A\+D\+\_\+chaining@{check\+\_\+\+L\+O\+A\+D\+\_\+chaining}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{check\+\_\+\+L\+O\+A\+D\+\_\+chaining()}{check\_LOAD\_chaining()}}
+{\footnotesize\ttfamily bool parametric\+\_\+list\+\_\+based\+::check\+\_\+\+L\+O\+A\+D\+\_\+chaining (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{current\+\_\+v,  }\item[{const Control\+Step}]{cs,  }\item[{const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref}}]{schedule }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+compute the set of operations on the control step frontier 
+
+Definition at line 2407 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References flow\+\_\+graph, G\+E\+T\+\_\+\+T\+Y\+PE, and T\+Y\+P\+E\+\_\+\+L\+O\+AD.
+
+
+
+Referenced by compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap(), and compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a582b8b501406c0dbd5245d1db2aa34a7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_a6457256257347530f45f19ca4b85b6bc}\label{classparametric__list__based_a6457256257347530f45f19ca4b85b6bc}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!check\+\_\+non\+\_\+direct\+\_\+operation\+\_\+chaining@{check\+\_\+non\+\_\+direct\+\_\+operation\+\_\+chaining}}
+\index{check\+\_\+non\+\_\+direct\+\_\+operation\+\_\+chaining@{check\+\_\+non\+\_\+direct\+\_\+operation\+\_\+chaining}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{check\+\_\+non\+\_\+direct\+\_\+operation\+\_\+chaining()}{check\_non\_direct\_operation\_chaining()}}
+{\footnotesize\ttfamily bool parametric\+\_\+list\+\_\+based\+::check\+\_\+non\+\_\+direct\+\_\+operation\+\_\+chaining (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{current\+\_\+v,  }\item[{unsigned int}]{v\+\_\+fu\+\_\+type,  }\item[{const Control\+Step}]{cs,  }\item[{const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref}}]{schedule,  }\item[{\hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref}}]{res\+\_\+binding }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+Set of already analyzed operations
+
+compute the set of operations on the control step frontier 
+
+Definition at line 2342 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References hls\+::allocation\+\_\+information, flow\+\_\+graph, fu\+\_\+binding\+::get\+\_\+assign(), Allocation\+Information\+::get\+\_\+memory\+\_\+var(), Allocation\+Information\+::get\+\_\+number\+\_\+channels(), Allocation\+Information\+::get\+\_\+proxy\+\_\+memory\+\_\+var(), G\+E\+T\+\_\+\+T\+Y\+PE, H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, Allocation\+Information\+::is\+\_\+indirect\+\_\+access\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+one\+\_\+cycle\+\_\+direct\+\_\+access\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+readonly\+\_\+memory\+\_\+unit(), hls\+::\+Param, Design\+Flow\+Step\+::parameters, R\+E\+M\+O\+V\+E\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+O\+\_\+\+I\+N\+D\+I\+R\+E\+CT, and T\+Y\+P\+E\+\_\+\+L\+O\+AD.
+
+
+
+Referenced by compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap(), and compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a6457256257347530f45f19ca4b85b6bc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a6457256257347530f45f19ca4b85b6bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_a4ffd85836c234c7ded92b33e992f20bb}\label{classparametric__list__based_a4ffd85836c234c7ded92b33e992f20bb}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!Check\+Schedulability\+Conditions@{Check\+Schedulability\+Conditions}}
+\index{Check\+Schedulability\+Conditions@{Check\+Schedulability\+Conditions}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{Check\+Schedulability\+Conditions()}{CheckSchedulabilityConditions()}}
+{\footnotesize\ttfamily void parametric\+\_\+list\+\_\+based\+::\+Check\+Schedulability\+Conditions (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&}]{current\+\_\+vertex,  }\item[{Control\+Step}]{current\+\_\+cycle,  }\item[{double \&}]{current\+\_\+starting\+\_\+time,  }\item[{double \&}]{current\+\_\+ending\+\_\+time,  }\item[{double \&}]{current\+\_\+stage\+\_\+period,  }\item[{\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ std\+::pair$<$ unsigned int, unsigned int $>$, double $>$ \&}]{local\+\_\+connection\+\_\+map,  }\item[{double}]{current\+\_\+cycle\+\_\+starting\+\_\+time,  }\item[{double}]{current\+\_\+cycle\+\_\+ending\+\_\+time,  }\item[{double}]{setup\+\_\+hold\+\_\+time,  }\item[{double \&}]{phi\+\_\+extra\+\_\+time,  }\item[{double}]{scheduling\+\_\+mux\+\_\+margins,  }\item[{bool}]{unbounded,  }\item[{bool}]{cstep\+\_\+has\+\_\+\+R\+E\+T\+\_\+conflict,  }\item[{unsigned int}]{fu\+\_\+type,  }\item[{const \hyperlink{structvertex2obj}{vertex2obj}$<$ Control\+Step $>$ \&}]{current\+\_\+\+A\+S\+AP,  }\item[{const \hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref}}]{res\+\_\+binding,  }\item[{const \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref}}]{schedule,  }\item[{bool \&}]{predecessors\+Cond,  }\item[{bool \&}]{pipelining\+Cond,  }\item[{bool \&}]{cannot\+Be\+Chained0,  }\item[{bool \&}]{chaining\+Ret\+Cond,  }\item[{bool \&}]{cannot\+Be\+Chained1,  }\item[{bool \&}]{async\+Cond,  }\item[{bool \&}]{cannot\+Be\+Chained2,  }\item[{bool \&}]{Multi\+Cond0,  }\item[{bool \&}]{Multi\+Cond1,  }\item[{bool \&}]{non\+Direct\+Mem\+Cond }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 334 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References hls\+::allocation\+\_\+information, clock\+\_\+cycle, compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), E\+P\+S\+I\+L\+ON, flow\+\_\+graph, Allocation\+Information\+::get\+\_\+cycles(), Allocation\+Information\+::get\+\_\+initiation\+\_\+time(), Allocation\+Information\+::get\+\_\+memory\+\_\+var(), Allocation\+Information\+::get\+\_\+number\+\_\+channels(), Allocation\+Information\+::get\+\_\+proxy\+\_\+memory\+\_\+var(), G\+E\+T\+\_\+\+T\+Y\+PE, H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, Allocation\+Information\+::is\+\_\+direct\+\_\+access\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+one\+\_\+cycle\+\_\+direct\+\_\+access\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+readonly\+\_\+memory\+\_\+unit(), hls\+::\+Param, Design\+Flow\+Step\+::parameters, T\+Y\+P\+E\+\_\+\+L\+O\+AD, T\+Y\+P\+E\+\_\+\+R\+ET, and T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE.
+
+
+
+Referenced by exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a4ffd85836c234c7ded92b33e992f20bb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a4ffd85836c234c7ded92b33e992f20bb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_a054abcf6ebfca65a3c67458cb77d7e63}\label{classparametric__list__based_a054abcf6ebfca65a3c67458cb77d7e63}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!compute\+\_\+exec\+\_\+stage\+\_\+time@{compute\+\_\+exec\+\_\+stage\+\_\+time}}
+\index{compute\+\_\+exec\+\_\+stage\+\_\+time@{compute\+\_\+exec\+\_\+stage\+\_\+time}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{compute\+\_\+exec\+\_\+stage\+\_\+time()}{compute\_exec\_stage\_time()}}
+{\footnotesize\ttfamily void parametric\+\_\+list\+\_\+based\+::compute\+\_\+exec\+\_\+stage\+\_\+time (\begin{DoxyParamCaption}\item[{const unsigned int}]{fu\+\_\+type,  }\item[{double \&}]{stage\+\_\+period,  }\item[{const Control\+Step}]{cs,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{op\+\_\+graph,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{v,  }\item[{double \&}]{op\+\_\+execution\+\_\+time,  }\item[{double \&}]{phi\+\_\+extra\+\_\+time,  }\item[{double}]{current\+\_\+starting\+\_\+time,  }\item[{double}]{setup\+\_\+hold\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+check for P\+H\+Is attached to the output. They may require one or more muxes.
+
+corrections for the memory controllers
+
+corrections in case the unit first fits in a clock period and then after all the additions does not fit anymore
+
+recompute the execution time from scratch
+
+Stage period has already been used for computing ending time of operation If the operation has registered inputs, the stage period of first stage is 0 (mux delay is described by connection time) 
+
+Definition at line 1329 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References hls\+::allocation\+\_\+information, Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), clock\+\_\+cycle, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, E\+P\+S\+I\+L\+ON, flow\+\_\+graph, flow\+\_\+graph\+\_\+with\+\_\+feedbacks, from\+\_\+strongtype\+\_\+cast(), Allocation\+Information\+::get\+\_\+correction\+\_\+time(), Allocation\+Information\+::get\+\_\+cycles(), Allocation\+Information\+::get\+\_\+execution\+\_\+time(), Allocation\+Information\+::get\+\_\+initiation\+\_\+time(), G\+E\+T\+\_\+\+N\+A\+ME, Allocation\+Information\+::\+Get\+Connection\+Time(), Allocation\+Information\+::\+Get\+Fu\+Type(), Allocation\+Information\+::\+Get\+Time\+Latency(), H\+L\+S\+Function\+Step\+::\+H\+LS, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Allocation\+Information\+::is\+\_\+indirect\+\_\+access\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+operation\+\_\+\+P\+I\+\_\+registered(), max(), Allocation\+Information\+::mux\+\_\+time\+\_\+unit(), Design\+Flow\+Step\+::parameters, S\+C\+A\+L\+AR, S\+TR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and U\+SE.
+
+
+
+Referenced by compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap(), and compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a054abcf6ebfca65a3c67458cb77d7e63_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a054abcf6ebfca65a3c67458cb77d7e63_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_aa040a68024272d93c52aed13f00881bf}\label{classparametric__list__based_aa040a68024272d93c52aed13f00881bf}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!compute\+\_\+slack@{compute\+\_\+slack}}
+\index{compute\+\_\+slack@{compute\+\_\+slack}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{compute\+\_\+slack()}{compute\_slack()}}
+{\footnotesize\ttfamily double parametric\+\_\+list\+\_\+based\+::compute\+\_\+slack (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{current\+\_\+op,  }\item[{const Control\+Step}]{current\+\_\+vertex\+\_\+cstep,  }\item[{double}]{setup\+\_\+hold\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+compute the slack of a given operation and in case specify if is pipelined 
+
+
+
+Definition at line 1582 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References clock\+\_\+cycle, E\+P\+S\+I\+L\+ON, from\+\_\+strongtype\+\_\+cast(), H\+L\+S\+Function\+Step\+::\+H\+LS, hls\+::\+H\+L\+S\+\_\+C, and starting\+\_\+time.
+
+
+
+Referenced by update\+\_\+vertices\+\_\+slack().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d7/d47/classparametric__list__based_aa040a68024272d93c52aed13f00881bf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_aa040a68024272d93c52aed13f00881bf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_aea554a314bf6dd38be5cc93a617cea30}\label{classparametric__list__based_aea554a314bf6dd38be5cc93a617cea30}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap@{compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap}}
+\index{compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap@{compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap()}{compute\_starting\_ending\_time\_alap()}}
+{\footnotesize\ttfamily void parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{v,  }\item[{const unsigned int}]{fu\+\_\+type,  }\item[{const Control\+Step}]{cs,  }\item[{double \&}]{starting\+\_\+time,  }\item[{double \&}]{ending\+\_\+time,  }\item[{double \&}]{op\+\_\+execution\+\_\+time,  }\item[{double \&}]{stage\+\_\+period,  }\item[{unsigned int \&}]{n\+\_\+cycles,  }\item[{bool \&}]{has\+\_\+a\+\_\+store\+\_\+unbounded\+\_\+as\+\_\+in,  }\item[{\hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref}}]{res\+\_\+binding,  }\item[{const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref}}]{schedule,  }\item[{double \&}]{phi\+\_\+extra\+\_\+time,  }\item[{double}]{setup\+\_\+hold\+\_\+time,  }\item[{\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ std\+::pair$<$ unsigned int, unsigned int $>$, double $>$ \&}]{local\+\_\+connection\+\_\+map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+ending time is equal to the connection time plus the maximum between the controller time and the operation ending time 
+
+Definition at line 1394 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References hls\+::allocation\+\_\+information, Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), check\+\_\+\+L\+O\+A\+D\+\_\+chaining(), check\+\_\+non\+\_\+direct\+\_\+operation\+\_\+chaining(), clock\+\_\+cycle, compute\+\_\+exec\+\_\+stage\+\_\+time(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, ending\+\_\+time, Allocation\+Information\+::\+Estimate\+Controller\+Delay(), flow\+\_\+graph, from\+\_\+strongtype\+\_\+cast(), fu\+\_\+binding\+::get\+\_\+assign(), Allocation\+Information\+::get\+\_\+cycles(), Allocation\+Information\+::get\+\_\+memory\+\_\+var(), G\+E\+T\+\_\+\+N\+A\+ME, Allocation\+Information\+::get\+\_\+number\+\_\+channels(), Allocation\+Information\+::get\+\_\+proxy\+\_\+memory\+\_\+var(), G\+E\+T\+\_\+\+T\+Y\+PE, Allocation\+Information\+::\+Get\+Connection\+Time(), H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, Allocation\+Information\+::is\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+one\+\_\+cycle\+\_\+direct\+\_\+access\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+operation\+\_\+bounded(), Allocation\+Information\+::is\+\_\+operation\+\_\+\+P\+I\+\_\+registered(), Allocation\+Information\+::is\+\_\+readonly\+\_\+memory\+\_\+unit(), max(), min, hls\+::\+Param, Design\+Flow\+Step\+::parameters, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, starting\+\_\+time, S\+TR, T\+Y\+P\+E\+\_\+\+L\+O\+AD, and T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE.
+
+
+
+Referenced by do\+\_\+balanced\+\_\+scheduling(), and do\+\_\+balanced\+\_\+scheduling1().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_aea554a314bf6dd38be5cc93a617cea30_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_aea554a314bf6dd38be5cc93a617cea30_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_a02e229e9aa133401c91ddf50fdd78604}\label{classparametric__list__based_a02e229e9aa133401c91ddf50fdd78604}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap@{compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap}}
+\index{compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap@{compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap()}{compute\_starting\_ending\_time\_asap()}}
+{\footnotesize\ttfamily void parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{v,  }\item[{const unsigned int}]{fu\+\_\+type,  }\item[{const Control\+Step}]{cs,  }\item[{double \&}]{current\+\_\+starting\+\_\+time,  }\item[{double \&}]{current\+\_\+ending\+\_\+time,  }\item[{double \&}]{stage\+\_\+period,  }\item[{bool \&}]{cannot\+\_\+be\+\_\+chained,  }\item[{\hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref}}]{res\+\_\+binding,  }\item[{const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref}}]{schedule,  }\item[{double \&}]{phi\+\_\+extra\+\_\+time,  }\item[{double}]{setup\+\_\+hold\+\_\+time,  }\item[{\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ std\+::pair$<$ unsigned int, unsigned int $>$, double $>$ \&}]{local\+\_\+fo\+\_\+correction\+\_\+map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Given the control step in which an operation is scheduled, compute the exact starting and ending time of an operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & is the vertex of the operation \\
+\hline
+{\em fu\+\_\+type} & is the functional unit type \\
+\hline
+{\em cs} & is the control step \\
+\hline
+{\em current\+\_\+starting\+\_\+time} & is where starting\+\_\+time will be stored \\
+\hline
+{\em current\+\_\+ending\+\_\+time} & is where ending\+\_\+time will be stored \\
+\hline
+{\em stage\+\_\+period} & is the minimum period of the pipelined unit fu\+\_\+type \\
+\hline
+\end{DoxyParams}
+ending time is equal to the connection time plus the maximum between the controller time and the operation ending time
+
+Check for chaining 
+
+Definition at line 1265 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References hls\+::allocation\+\_\+information, Allocation\+Information\+::\+Can\+Be\+Chained(), Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), check\+\_\+\+L\+O\+A\+D\+\_\+chaining(), check\+\_\+non\+\_\+direct\+\_\+operation\+\_\+chaining(), clock\+\_\+cycle, compute\+\_\+exec\+\_\+stage\+\_\+time(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, ending\+\_\+time, Allocation\+Information\+::\+Estimate\+Controller\+Delay(), flow\+\_\+graph, from\+\_\+strongtype\+\_\+cast(), fu\+\_\+binding\+::get\+\_\+assign(), Allocation\+Information\+::get\+\_\+memory\+\_\+var(), G\+E\+T\+\_\+\+N\+A\+ME, Allocation\+Information\+::get\+\_\+number\+\_\+channels(), Allocation\+Information\+::get\+\_\+proxy\+\_\+memory\+\_\+var(), G\+E\+T\+\_\+\+T\+Y\+PE, Allocation\+Information\+::\+Get\+Connection\+Time(), H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Allocation\+Information\+::is\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+one\+\_\+cycle\+\_\+direct\+\_\+access\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+readonly\+\_\+memory\+\_\+unit(), max(), hls\+::\+Param, Design\+Flow\+Step\+::parameters, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, starting\+\_\+time, S\+TR, T\+Y\+P\+E\+\_\+\+L\+O\+AD, T\+Y\+P\+E\+\_\+\+P\+HI, T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE, and T\+Y\+P\+E\+\_\+\+V\+P\+HI.
+
+
+
+Referenced by Check\+Schedulability\+Conditions().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a02e229e9aa133401c91ddf50fdd78604_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a02e229e9aa133401c91ddf50fdd78604_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_a677ad6063a17ccb5313d608c4009947c}\label{classparametric__list__based_a677ad6063a17ccb5313d608c4009947c}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!Compute\+H\+L\+S\+Relationships@{Compute\+H\+L\+S\+Relationships}}
+\index{Compute\+H\+L\+S\+Relationships@{Compute\+H\+L\+S\+Relationships}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{Compute\+H\+L\+S\+Relationships()}{ComputeHLSRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::tuple$<$ \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type}, \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref}, \hyperlink{hls__step_8hpp_a3ad360b9b11e6bf0683d5562a0ceb169}{H\+L\+S\+Flow\+Step\+\_\+\+Relationship} $>$ $>$ parametric\+\_\+list\+\_\+based\+::\+Compute\+H\+L\+S\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Compute the relationship of this step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the steps in relationship with this 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classHLS__step_aed0ce8cca9a1ef18e705fc1032ad4de5}{H\+L\+S\+\_\+step}.
+
+
+
+Definition at line 2431 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References Scheduling\+::\+Compute\+H\+L\+S\+Relationships(), Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, H\+L\+S\+Function\+Step\+::fun\+Id, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::parameters, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a677ad6063a17ccb5313d608c4009947c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_af4154cabe85bbd707fc5ee05981e54b0}\label{classparametric__list__based_af4154cabe85bbd707fc5ee05981e54b0}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!Compute\+Relationships@{Compute\+Relationships}}
+\index{Compute\+Relationships@{Compute\+Relationships}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{Compute\+Relationships()}{ComputeRelationships()}}
+{\footnotesize\ttfamily void parametric\+\_\+list\+\_\+based\+::\+Compute\+Relationships (\begin{DoxyParamCaption}\item[{\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&}]{relationship,  }\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the relationships of a step with other steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dependencies} & is where relationships will be stored \\
+\hline
+{\em relationship\+\_\+type} & is the type of relationship to be computed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classHLSFunctionStep_ab3864e8dbd73b0eabc25f386a0cece54}{H\+L\+S\+Function\+Step}.
+
+
+
+Definition at line 313 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References H\+L\+S\+Function\+Step\+::\+Compute\+Relationships(), Function\+Frontend\+Flow\+Step\+::\+Compute\+Signature(), Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, executions\+\_\+number, H\+L\+S\+Function\+Step\+::fun\+Id, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Wrefcount$<$ T $>$\+::lock(), N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX, and Design\+Flow\+Step\+::parameters.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_af4154cabe85bbd707fc5ee05981e54b0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_a578ba2b5ccd255dc25d53274d3e301bc}\label{classparametric__list__based_a578ba2b5ccd255dc25d53274d3e301bc}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!do\+\_\+balanced\+\_\+scheduling@{do\+\_\+balanced\+\_\+scheduling}}
+\index{do\+\_\+balanced\+\_\+scheduling@{do\+\_\+balanced\+\_\+scheduling}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{do\+\_\+balanced\+\_\+scheduling()}{do\_balanced\_scheduling()}}
+{\footnotesize\ttfamily void parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling (\begin{DoxyParamCaption}\item[{std\+::deque$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&}]{sub\+\_\+levels,  }\item[{const \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref}}]{schedule,  }\item[{const \hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref}}]{res\+\_\+binding,  }\item[{const double}]{setup\+\_\+hold\+\_\+time,  }\item[{const double}]{scheduling\+\_\+mux\+\_\+margins,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{op\+D\+FG }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+perform balanced scheduling on an existing solution 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sub\+\_\+levels} & is the list of sorted vertices \\
+\hline
+{\em schedule} & is the current scheduling \\
+\hline
+{\em res\+\_\+binding} & is the current resource binding \\
+\hline
+{\em setup\+\_\+hold\+\_\+time} & is the delay for the setup and hold of registers \\
+\hline
+\end{DoxyParams}
+balanced scheduling step 1\+: dependencies computation
+
+step 2\+: compute operation distribution
+
+check if time has unbounded vertices or the return statement
+
+only 1 unbounded operation is allowed in a control step
+
+unbounded operations could not be moved
+
+Chaining is possible but not allowed
+
+Chaining with S\+T\+O\+R\+Es/\+L\+O\+A\+Ds is not possible
+
+pipelined operation does not fit at the begin
+
+pipelined operation does not fit at the end
+
+Multi-\/cycles operations cannot be scheduled together with unbounded operations
+
+operation does not fit at the end
+
+operation does not fit in the cycle
+
+try to keep the previous latency 
+
+Definition at line 1786 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References hls\+::allocation\+\_\+information, Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), clock\+\_\+cycle, compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap(), ending\+\_\+time, Schedule\+::ending\+\_\+times, flow\+\_\+graph, from\+\_\+strongtype\+\_\+cast(), Allocation\+Information\+::get\+\_\+area(), fu\+\_\+binding\+::get\+\_\+assign(), Schedule\+::get\+\_\+cstep(), Allocation\+Information\+::get\+\_\+\+D\+S\+Ps(), Allocation\+Information\+::get\+\_\+initiation\+\_\+time(), Allocation\+Information\+::get\+\_\+number\+\_\+fu(), G\+E\+T\+\_\+\+T\+Y\+PE, H\+L\+S\+Function\+Step\+::\+H\+LS, I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+U\+I\+NT, Allocation\+Information\+::is\+\_\+operation\+\_\+bounded(), Allocation\+Information\+::is\+\_\+vertex\+\_\+bounded(), max(), min, N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX, Design\+Flow\+Step\+::parameters, Schedule\+::set\+\_\+execution(), Schedule\+::set\+\_\+execution\+\_\+end(), starting\+\_\+time, Schedule\+::starting\+\_\+times, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+Y\+P\+E\+\_\+\+I\+N\+IT, T\+Y\+P\+E\+\_\+\+L\+A\+B\+EL, T\+Y\+P\+E\+\_\+\+L\+O\+AD, T\+Y\+P\+E\+\_\+\+P\+HI, T\+Y\+P\+E\+\_\+\+R\+ET, T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE, T\+Y\+P\+E\+\_\+\+V\+P\+HI, update\+\_\+starting\+\_\+ending\+\_\+time(), and update\+\_\+vertices\+\_\+slack().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a578ba2b5ccd255dc25d53274d3e301bc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_a3015cd6577b9542929207800840b6acf}\label{classparametric__list__based_a3015cd6577b9542929207800840b6acf}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!do\+\_\+balanced\+\_\+scheduling1@{do\+\_\+balanced\+\_\+scheduling1}}
+\index{do\+\_\+balanced\+\_\+scheduling1@{do\+\_\+balanced\+\_\+scheduling1}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{do\+\_\+balanced\+\_\+scheduling1()}{do\_balanced\_scheduling1()}}
+{\footnotesize\ttfamily void parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1 (\begin{DoxyParamCaption}\item[{std\+::deque$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&}]{sub\+\_\+levels,  }\item[{const \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref}}]{schedule,  }\item[{const \hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref}}]{res\+\_\+binding,  }\item[{const double}]{setup\+\_\+hold\+\_\+time,  }\item[{const double}]{scheduling\+\_\+mux\+\_\+margins,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{op\+D\+FG,  }\item[{bool}]{seen\+\_\+cstep\+\_\+has\+\_\+\+R\+E\+T\+\_\+conflict }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+different version of balanced scheduling. 
+
+It re-\/schedules the operation trying to improve their slack. 
+\begin{DoxyParams}{Parameters}
+{\em sub\+\_\+levels} & is the list of sorted vertices \\
+\hline
+{\em schedule} & is the current scheduling \\
+\hline
+{\em res\+\_\+binding} & is the current resource binding \\
+\hline
+{\em setup\+\_\+hold\+\_\+time} & is the delay for the setup and hold of registers \\
+\hline
+\end{DoxyParams}
+balanced scheduling step 1\+: dependencies computation
+
+step 2\+: compute operation distribution
+
+check if time has unbounded vertices, the return or the I\+F/\+S\+W\+I\+T\+CH statements
+
+recompute the number of cycles removing the return cycle
+
+only 1 unbounded operation is allowed in a control step
+
+unbounded operations could not be moved
+
+no room for fu\+\_\+type at time time
+
+Chaining is possible but not allowed
+
+Chaining with S\+T\+O\+R\+Es/\+L\+O\+A\+Ds is not possible
+
+pipelined operation does not fit at the begin
+
+pipelined operation does not fit at the end
+
+Multi-\/cycles operations cannot be scheduled together with unbounded operations
+
+operation does not fit at the end
+
+operation does not fit in the cycle
+
+try to keep the previous latency
+
+try to reduce as much as possible the chaining between operations
+
+no room for fu\+\_\+type at time time 
+
+Definition at line 1984 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References hls\+::allocation\+\_\+information, Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), clock\+\_\+cycle, Allocation\+Information\+::compute\+\_\+normalized\+\_\+area(), compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, ending\+\_\+time, Schedule\+::ending\+\_\+times, E\+P\+S\+I\+L\+ON, flow\+\_\+graph, from\+\_\+strongtype\+\_\+cast(), fu\+\_\+binding\+::get\+\_\+assign(), Schedule\+::get\+\_\+cstep(), Allocation\+Information\+::get\+\_\+fu\+\_\+name(), Allocation\+Information\+::get\+\_\+initiation\+\_\+time(), G\+E\+T\+\_\+\+N\+A\+ME, Allocation\+Information\+::get\+\_\+number\+\_\+fu(), Schedule\+::get\+\_\+slack(), G\+E\+T\+\_\+\+T\+Y\+PE, H\+L\+S\+Function\+Step\+::\+H\+LS, hls\+::\+H\+L\+S\+\_\+C, I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+U\+I\+NT, Allocation\+Information\+::is\+\_\+operation\+\_\+bounded(), Allocation\+Information\+::is\+\_\+vertex\+\_\+bounded(), max(), min, N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX, Design\+Flow\+Step\+::parameters, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Schedule\+::set\+\_\+execution(), Schedule\+::set\+\_\+execution\+\_\+end(), starting\+\_\+time, Schedule\+::starting\+\_\+times, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+Y\+P\+E\+\_\+\+I\+N\+IT, T\+Y\+P\+E\+\_\+\+L\+A\+B\+EL, T\+Y\+P\+E\+\_\+\+L\+O\+AD, T\+Y\+P\+E\+\_\+\+P\+HI, T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE, T\+Y\+P\+E\+\_\+\+V\+P\+HI, update\+\_\+starting\+\_\+ending\+\_\+time(), update\+\_\+vertices\+\_\+slack(), and update\+\_\+vertices\+\_\+timing().
+
+
+
+Referenced by exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a3015cd6577b9542929207800840b6acf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a3015cd6577b9542929207800840b6acf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_abc6a741625056fc292a4ef5e58297ad4}\label{classparametric__list__based_abc6a741625056fc292a4ef5e58297ad4}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!exec@{exec}}
+\index{exec@{exec}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{exec()}{exec()}}
+{\footnotesize\ttfamily void parametric\+\_\+list\+\_\+based\+::exec (\begin{DoxyParamCaption}\item[{const \hyperlink{classOpVertexSet}{Op\+Vertex\+Set} \&}]{operations,  }\item[{Control\+Step}]{current\+\_\+cycle }\end{DoxyParamCaption})}
+
+
+
+Function that computes the List-\/\+Based scheduling of the graph. 
+
+The scheduling
+
+Current A\+S\+AP
+
+The binding
+
+Number of predecessors of a vertex already scheduled
+
+The clock cycle
+
+The setup+hold time delay
+
+The set of resources for which the list of ready operations is not empty
+
+Set of ready operations (needed for update priority)
+
+vertices still live at the beginning of the current control step
+
+select the type of graph
+
+Number of operation to be scheduled
+
+compute asap and alap
+
+compute the set of vertices without input edges. At least one vertex is expected
+
+Updating structure for already scheduled operations
+
+Check if all its predecessors have been scheduled. In this case the vertex is ready
+
+Setting priority
+
+priory queues set up
+
+definition of the data structure used to check if a resource is available given a vertex in case a vertex is not included in a map this mean that the used resources are zero. First index is the functional unit type, second index is the controller node, third index is the condition
+
+Operations which can be scheduled in this control step because precedences are satisfied, but they can\textquotesingle{}t be scheduled in this control step for some reasons Index is the functional unit type
+
+Adding information about operation still live
+
+Ignore empty list
+
+Ignore already scheduled operation
+
+remove current\+\_\+vertex from the queue
+
+true if operation is schedulable check if there exist enough resources available
+
+check compatibility
+
+put these type of operations as last operation scheduled for the basic block
+
+starting time of the operation
+
+ending time of the operation
+
+stage period for pipelined units
+
+checking if predecessors have finished
+
+scheduling is now possible
+
+update resource usage
+
+check if there exist enough resources available
+
+update cstep\+\_\+vuses
+
+even if it is bounded we would like to prevent non-\/direct memory accesses running together with unbounded operations
+
+set the schedule information
+
+set the binding information
+
+Check if some successors have become ready
+
+check if to\+\_\+v should be considered as ready
+
+update priorities and possibly rehash the queues
+
+clear the vises
+
+move to the next cycle
+
+update starting and ending time of operations by running them as late as possible
+
+compute the vertices slack 
+
+Definition at line 381 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References add\+\_\+to\+\_\+priority\+\_\+queues(), A\+S\+L\+A\+P\+::\+A\+L\+A\+P\+\_\+fast, A\+S\+L\+A\+P\+::\+A\+L\+A\+P\+\_\+with\+\_\+partial\+\_\+scheduling, hls\+::allocation\+\_\+information, B\+B\+\_\+update\+\_\+resources\+\_\+use(), fu\+\_\+binding\+::bind(), Function\+Behavior\+::\+C\+FG, Op\+Graph\+::\+C\+Get\+Op\+Graph\+Info(), Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), check\+\_\+if\+\_\+is\+\_\+live\+\_\+in\+\_\+next\+\_\+cycle(), Check\+Schedulability\+Conditions(), clock\+\_\+cycle, C\+T\+R\+L\+\_\+\+S\+T\+E\+P\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+ER, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Behavior\+::\+D\+FG, do\+\_\+balanced\+\_\+scheduling1(), D\+Y\+N\+A\+M\+I\+C\+\_\+\+M\+O\+B\+I\+L\+I\+TY, ending\+\_\+time, Function\+Behavior\+::\+F\+F\+L\+S\+A\+O\+DG, flow\+\_\+graph, flow\+\_\+graph\+\_\+with\+\_\+feedbacks, Function\+Behavior\+::\+F\+L\+S\+A\+O\+DG, from\+\_\+strongtype\+\_\+cast(), H\+L\+S\+Function\+Step\+::fun\+Id, fu\+\_\+binding\+::get\+\_\+assign(), Allocation\+Information\+::get\+\_\+execution\+\_\+time(), Allocation\+Information\+::get\+\_\+fu\+\_\+name(), Allocation\+Information\+::get\+\_\+initiation\+\_\+time(), tree\+\_\+helper\+::get\+\_\+mangled\+\_\+fname(), Allocation\+Information\+::get\+\_\+memory\+\_\+var(), G\+E\+T\+\_\+\+N\+A\+ME, Allocation\+Information\+::get\+\_\+number\+\_\+fu(), Allocation\+Information\+::get\+\_\+number\+\_\+fu\+\_\+types(), Allocation\+Information\+::get\+\_\+proxy\+\_\+memory\+\_\+var(), Allocation\+Information\+::get\+\_\+setup\+\_\+hold\+\_\+time(), G\+E\+T\+\_\+\+T\+Y\+PE, H\+L\+S\+Function\+Step\+::\+H\+LS, hls\+::\+H\+L\+S\+\_\+C, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Allocation\+Information\+::is\+\_\+direct\+\_\+access\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+operation\+\_\+bounded(), max(), Allocation\+Information\+::mux\+\_\+time\+\_\+unit(), Schedule\+::num\+\_\+scheduled(), hls\+::\+Param, Design\+Flow\+Step\+::parameters, parametric\+\_\+list\+\_\+based\+\_\+metric, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, hls\+::\+Rfu, hls\+::\+Rsch, Function\+Behavior\+::\+SG, Scheduling\+::speculation, starting\+\_\+time, S\+T\+A\+T\+I\+C\+\_\+\+F\+I\+X\+ED, S\+T\+A\+T\+I\+C\+\_\+\+M\+O\+B\+I\+L\+I\+TY, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG, T\+Y\+P\+E\+\_\+\+F\+OR, T\+Y\+P\+E\+\_\+\+G\+O\+TO, T\+Y\+P\+E\+\_\+\+IF, T\+Y\+P\+E\+\_\+\+L\+O\+AD, T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+IF, T\+Y\+P\+E\+\_\+\+R\+ET, T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE, T\+Y\+P\+E\+\_\+\+S\+W\+I\+T\+CH, T\+Y\+P\+E\+\_\+\+W\+H\+I\+LE, update\+\_\+starting\+\_\+ending\+\_\+time(), update\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), and update\+\_\+vertices\+\_\+slack().
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d47/classparametric__list__based_abc6a741625056fc292a4ef5e58297ad4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{d7/d47/classparametric__list__based_abc6a741625056fc292a4ef5e58297ad4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_a33b5a6aadaf0f36b342b434126ebbf79}\label{classparametric__list__based_a33b5a6aadaf0f36b342b434126ebbf79}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void parametric\+\_\+list\+\_\+based\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classHLSFunctionStep_a966629ba62a8188ff4fa783ab0d4e319}{H\+L\+S\+Function\+Step}.
+
+
+
+Definition at line 327 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References Function\+Behavior\+::\+C\+FG, Function\+Behavior\+::\+C\+Get\+Op\+Graph(), ending\+\_\+time, H\+L\+S\+Function\+Step\+::fun\+Id, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, and Scheduling\+::\+Initialize().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a33b5a6aadaf0f36b342b434126ebbf79_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_a15e5fa8f17cfb775d16ab6d541c7822a}\label{classparametric__list__based_a15e5fa8f17cfb775d16ab6d541c7822a}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the step. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+Find the minimum slack 
+
+Implements \hyperlink{classHLSFunctionStep_a8db4c00d080655984d98143206fc9fa8}{H\+L\+S\+Function\+Step}.
+
+
+
+Definition at line 1494 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References hls\+::allocation\+\_\+information, Function\+Behavior\+::\+C\+FG, Function\+Behavior\+::\+C\+Get\+B\+B\+Graph(), B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), Function\+Behavior\+::\+C\+Get\+Op\+Graph(), clock\+\_\+cycle, xml\+\_\+document\+::create\+\_\+root\+\_\+node(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, ending\+\_\+time, E\+P\+S\+I\+L\+ON, exec(), executions\+\_\+number, Function\+Behavior\+::\+F\+D\+FG, flow\+\_\+graph, from\+\_\+strongtype\+\_\+cast(), H\+L\+S\+Function\+Step\+::fun\+Id, Schedule\+::get\+\_\+cstep\+\_\+end(), Schedule\+::get\+\_\+csteps(), Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), G\+E\+T\+\_\+\+N\+A\+ME, Allocation\+Information\+::get\+\_\+setup\+\_\+hold\+\_\+time(), Scheduling\+::get\+\_\+spec(), Allocation\+Information\+::get\+Minimum\+Slack(), H\+L\+S\+Function\+Step\+::\+H\+LS, hls\+::\+H\+L\+S\+\_\+C, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, max(), min, hls\+::operations, Design\+Flow\+Step\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Design\+Flow\+Step\+::parameters, Schedule\+::print(), print\+\_\+cpu\+\_\+time(), P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, hls\+::\+Rfu, hls\+::\+Rsch, Schedule\+::set\+\_\+spec(), Allocation\+Information\+::set\+Minimum\+Slack(), S\+T\+A\+R\+T\+\_\+\+T\+I\+ME, S\+T\+O\+P\+\_\+\+T\+I\+ME, S\+TR, S\+U\+C\+C\+E\+SS, xml\+\_\+document\+::write\+\_\+to\+\_\+file\+\_\+formatted(), Schedule\+::\+Write\+Dot(), and hls\+::xwrite().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d47/classparametric__list__based_a15e5fa8f17cfb775d16ab6d541c7822a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_a6043550d51c621f3b47d804c79428a51}\label{classparametric__list__based_a6043550d51c621f3b47d804c79428a51}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+in@{store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+in}}
+\index{store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+in@{store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+in}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+in()}{store\_in\_chaining\_with\_load\_in()}}
+{\footnotesize\ttfamily bool parametric\+\_\+list\+\_\+based\+::store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+in (\begin{DoxyParamCaption}\item[{unsigned int}]{current\+\_\+vertex\+\_\+cstep,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load checks if a store is chained with a load operation or vice versa 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+vertex\+\_\+cstep} & control step of vertex v \\
+\hline
+{\em v} & vertex considered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true in case vertex v is a store or a load operation and it is chained with a load or store operation 
+\end{DoxyReturn}
+
+
+Definition at line 1736 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), clock\+\_\+cycle, ending\+\_\+time, flow\+\_\+graph, G\+E\+T\+\_\+\+T\+Y\+PE, T\+Y\+P\+E\+\_\+\+L\+O\+AD, and T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a6043550d51c621f3b47d804c79428a51_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_ae448d283c1cda365d88c00d67dd4e447}\label{classparametric__list__based_ae448d283c1cda365d88c00d67dd4e447}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+out@{store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+out}}
+\index{store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+out@{store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+out}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+out()}{store\_in\_chaining\_with\_load\_out()}}
+{\footnotesize\ttfamily bool parametric\+\_\+list\+\_\+based\+::store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+out (\begin{DoxyParamCaption}\item[{unsigned int}]{current\+\_\+vertex\+\_\+cstep,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1761 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), clock\+\_\+cycle, flow\+\_\+graph, G\+E\+T\+\_\+\+T\+Y\+PE, starting\+\_\+time, T\+Y\+P\+E\+\_\+\+L\+O\+AD, and T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_ae448d283c1cda365d88c00d67dd4e447_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_a86a22e0ca2f49d25402fd437d8be06a3}\label{classparametric__list__based_a86a22e0ca2f49d25402fd437d8be06a3}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!update\+\_\+starting\+\_\+ending\+\_\+time@{update\+\_\+starting\+\_\+ending\+\_\+time}}
+\index{update\+\_\+starting\+\_\+ending\+\_\+time@{update\+\_\+starting\+\_\+ending\+\_\+time}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{update\+\_\+starting\+\_\+ending\+\_\+time()}{update\_starting\_ending\_time()}}
+{\footnotesize\ttfamily void parametric\+\_\+list\+\_\+based\+::update\+\_\+starting\+\_\+ending\+\_\+time (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{candidate\+\_\+v,  }\item[{\hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref}}]{res\+\_\+binding,  }\item[{\hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{op\+\_\+dfg\+\_\+graph,  }\item[{const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref}}]{schedule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+update starting and ending time by moving candidate\+\_\+v as late as possible without increasing the whole latency 
+
+non-\/pipelined operations move towards the control step border 
+
+Definition at line 1647 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References hls\+::allocation\+\_\+information, clock\+\_\+cycle, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, ending\+\_\+time, E\+P\+S\+I\+L\+ON, from\+\_\+strongtype\+\_\+cast(), fu\+\_\+binding\+::get\+\_\+assign(), Allocation\+Information\+::get\+\_\+initiation\+\_\+time(), G\+E\+T\+\_\+\+N\+A\+ME, H\+L\+S\+Function\+Step\+::\+H\+LS, Allocation\+Information\+::is\+\_\+operation\+\_\+bounded(), max(), min, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, starting\+\_\+time, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by do\+\_\+balanced\+\_\+scheduling(), do\+\_\+balanced\+\_\+scheduling1(), exec(), and update\+\_\+vertices\+\_\+timing().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a86a22e0ca2f49d25402fd437d8be06a3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a86a22e0ca2f49d25402fd437d8be06a3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_a155c333d3654eb3f35cc055b6b97265c}\label{classparametric__list__based_a155c333d3654eb3f35cc055b6b97265c}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!update\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap@{update\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap}}
+\index{update\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap@{update\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{update\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap()}{update\_starting\_ending\_time\_asap()}}
+{\footnotesize\ttfamily void parametric\+\_\+list\+\_\+based\+::update\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{candidate\+\_\+v,  }\item[{\hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref}}]{res\+\_\+binding,  }\item[{\hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{op\+D\+FG,  }\item[{const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref}}]{schedule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+non-\/pipelined operations move towards the control step border 
+
+Definition at line 1693 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References hls\+::allocation\+\_\+information, clock\+\_\+cycle, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, ending\+\_\+time, from\+\_\+strongtype\+\_\+cast(), fu\+\_\+binding\+::get\+\_\+assign(), Allocation\+Information\+::get\+\_\+initiation\+\_\+time(), G\+E\+T\+\_\+\+N\+A\+ME, H\+L\+S\+Function\+Step\+::\+H\+LS, Allocation\+Information\+::is\+\_\+operation\+\_\+bounded(), max(), P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, starting\+\_\+time, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a155c333d3654eb3f35cc055b6b97265c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_a155c333d3654eb3f35cc055b6b97265c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_aa979330060c40188e1c74bbae270ac2b}\label{classparametric__list__based_aa979330060c40188e1c74bbae270ac2b}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!update\+\_\+vertices\+\_\+slack@{update\+\_\+vertices\+\_\+slack}}
+\index{update\+\_\+vertices\+\_\+slack@{update\+\_\+vertices\+\_\+slack}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{update\+\_\+vertices\+\_\+slack()}{update\_vertices\_slack()}}
+{\footnotesize\ttfamily void parametric\+\_\+list\+\_\+based\+::update\+\_\+vertices\+\_\+slack (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{current\+\_\+v,  }\item[{const \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref}}]{schedule,  }\item[{\hyperlink{classOpVertexSet}{Op\+Vertex\+Set} \&}]{vertices\+\_\+analyzed,  }\item[{double}]{setup\+\_\+hold\+\_\+time,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{op\+D\+FG }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+update the slack of vertices of current\+\_\+v and of all the vertices in chaining with it 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+v} & is the considered vertex \\
+\hline
+{\em schedule} & is the scheduling data structure \\
+\hline
+{\em vertices\+\_\+analyzed} & is the set of vertices having the slack updated \\
+\hline
+\end{DoxyParams}
+compute the set of operations on the clock frontier 
+
+Definition at line 1592 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References compute\+\_\+slack(), Schedule\+::get\+\_\+cstep(), min, and Schedule\+::set\+\_\+slack().
+
+
+
+Referenced by do\+\_\+balanced\+\_\+scheduling(), do\+\_\+balanced\+\_\+scheduling1(), and exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_aa979330060c40188e1c74bbae270ac2b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_aa979330060c40188e1c74bbae270ac2b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparametric__list__based_aff2bc058e15e80cd66b5e33245771289}\label{classparametric__list__based_aff2bc058e15e80cd66b5e33245771289}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!update\+\_\+vertices\+\_\+timing@{update\+\_\+vertices\+\_\+timing}}
+\index{update\+\_\+vertices\+\_\+timing@{update\+\_\+vertices\+\_\+timing}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{update\+\_\+vertices\+\_\+timing()}{update\_vertices\_timing()}}
+{\footnotesize\ttfamily void parametric\+\_\+list\+\_\+based\+::update\+\_\+vertices\+\_\+timing (\begin{DoxyParamCaption}\item[{const Control\+Step}]{vertex\+\_\+cstep,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{current\+\_\+v,  }\item[{const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref}}]{schedule,  }\item[{std\+::list$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&}]{vertices\+\_\+analyzed,  }\item[{\hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref}}]{res\+\_\+binding,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{op\+D\+FG }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+update the starting and ending time of the vertices scheduled in the same cs of current\+\_\+v 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+\_\+cstep} & is the control step of vertex current\+\_\+v before its rescheduling \\
+\hline
+{\em current\+\_\+v} & is the current vertex \\
+\hline
+{\em schedule} & is the current scheduling \\
+\hline
+{\em vertices\+\_\+analyzed} & is the set of vertices updated \\
+\hline
+{\em res\+\_\+binding} & is the current resource binding \\
+\hline
+\end{DoxyParams}
+compute the set of operations on the clock frontier 
+
+Definition at line 1624 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+References update\+\_\+starting\+\_\+ending\+\_\+time().
+
+
+
+Referenced by do\+\_\+balanced\+\_\+scheduling1().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_aff2bc058e15e80cd66b5e33245771289_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d47/classparametric__list__based_aff2bc058e15e80cd66b5e33245771289_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classparametric__list__based_af67d32b45cbe56df18bd4c1356d3ac0e}\label{classparametric__list__based_af67d32b45cbe56df18bd4c1356d3ac0e}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!clock\+\_\+cycle@{clock\+\_\+cycle}}
+\index{clock\+\_\+cycle@{clock\+\_\+cycle}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{clock\+\_\+cycle}{clock\_cycle}}
+{\footnotesize\ttfamily double parametric\+\_\+list\+\_\+based\+::clock\+\_\+cycle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The clock cycle. 
+
+
+
+Definition at line 167 of file parametric\+\_\+list\+\_\+based.\+hpp.
+
+
+
+Referenced by Check\+Schedulability\+Conditions(), compute\+\_\+exec\+\_\+stage\+\_\+time(), compute\+\_\+slack(), compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap(), compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), do\+\_\+balanced\+\_\+scheduling(), do\+\_\+balanced\+\_\+scheduling1(), exec(), Internal\+Exec(), store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+in(), store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+out(), update\+\_\+starting\+\_\+ending\+\_\+time(), and update\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap().
+
+\mbox{\Hypertarget{classparametric__list__based_a0b92fb6107c2c1bdb966db10baf57a30}\label{classparametric__list__based_a0b92fb6107c2c1bdb966db10baf57a30}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!ending\+\_\+time@{ending\+\_\+time}}
+\index{ending\+\_\+time@{ending\+\_\+time}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{ending\+\_\+time}{ending\_time}}
+{\footnotesize\ttfamily \hyperlink{classOpVertexMap}{Op\+Vertex\+Map}$<$double$>$ parametric\+\_\+list\+\_\+based\+::ending\+\_\+time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The ending time given the scheduling (used for chaining) 
+
+
+
+Definition at line 164 of file parametric\+\_\+list\+\_\+based.\+hpp.
+
+
+
+Referenced by compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap(), compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), do\+\_\+balanced\+\_\+scheduling(), do\+\_\+balanced\+\_\+scheduling1(), exec(), Initialize(), Internal\+Exec(), store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+in(), update\+\_\+starting\+\_\+ending\+\_\+time(), and update\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap().
+
+\mbox{\Hypertarget{classparametric__list__based_a25940f1c2f39d4ae48464c75e19f89d0}\label{classparametric__list__based_a25940f1c2f39d4ae48464c75e19f89d0}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!E\+P\+S\+I\+L\+ON@{E\+P\+S\+I\+L\+ON}}
+\index{E\+P\+S\+I\+L\+ON@{E\+P\+S\+I\+L\+ON}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{E\+P\+S\+I\+L\+ON}{EPSILON}}
+{\footnotesize\ttfamily const double parametric\+\_\+list\+\_\+based\+::\+E\+P\+S\+I\+L\+ON = 0.\+000000001\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 147 of file parametric\+\_\+list\+\_\+based.\+hpp.
+
+
+
+Referenced by Check\+Schedulability\+Conditions(), compute\+\_\+exec\+\_\+stage\+\_\+time(), compute\+\_\+slack(), do\+\_\+balanced\+\_\+scheduling1(), Internal\+Exec(), and update\+\_\+starting\+\_\+ending\+\_\+time().
+
+\mbox{\Hypertarget{classparametric__list__based_a4df4ac930c63d346ceb4e79d6283de11}\label{classparametric__list__based_a4df4ac930c63d346ceb4e79d6283de11}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!executions\+\_\+number@{executions\+\_\+number}}
+\index{executions\+\_\+number@{executions\+\_\+number}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{executions\+\_\+number}{executions\_number}}
+{\footnotesize\ttfamily \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} parametric\+\_\+list\+\_\+based\+::executions\+\_\+number\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of executions. 
+
+
+
+Definition at line 173 of file parametric\+\_\+list\+\_\+based.\+hpp.
+
+
+
+Referenced by Compute\+Relationships(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classparametric__list__based_af8c4c141aa0606a9dcf33b234f4b98da}\label{classparametric__list__based_af8c4c141aa0606a9dcf33b234f4b98da}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!flow\+\_\+graph@{flow\+\_\+graph}}
+\index{flow\+\_\+graph@{flow\+\_\+graph}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{flow\+\_\+graph}{flow\_graph}}
+{\footnotesize\ttfamily \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} parametric\+\_\+list\+\_\+based\+::flow\+\_\+graph\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The dependence graph. 
+
+
+
+Definition at line 155 of file parametric\+\_\+list\+\_\+based.\+hpp.
+
+
+
+Referenced by add\+\_\+to\+\_\+priority\+\_\+queues(), check\+\_\+direct\+\_\+operation\+\_\+chaining(), check\+\_\+\+L\+O\+A\+D\+\_\+chaining(), check\+\_\+non\+\_\+direct\+\_\+operation\+\_\+chaining(), Check\+Schedulability\+Conditions(), compute\+\_\+exec\+\_\+stage\+\_\+time(), compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap(), compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), do\+\_\+balanced\+\_\+scheduling(), do\+\_\+balanced\+\_\+scheduling1(), exec(), Internal\+Exec(), store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+in(), and store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+out().
+
+\mbox{\Hypertarget{classparametric__list__based_a98268bf165c0c6b4236a7ea55b24d268}\label{classparametric__list__based_a98268bf165c0c6b4236a7ea55b24d268}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!flow\+\_\+graph\+\_\+with\+\_\+feedbacks@{flow\+\_\+graph\+\_\+with\+\_\+feedbacks}}
+\index{flow\+\_\+graph\+\_\+with\+\_\+feedbacks@{flow\+\_\+graph\+\_\+with\+\_\+feedbacks}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{flow\+\_\+graph\+\_\+with\+\_\+feedbacks}{flow\_graph\_with\_feedbacks}}
+{\footnotesize\ttfamily \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} parametric\+\_\+list\+\_\+based\+::flow\+\_\+graph\+\_\+with\+\_\+feedbacks\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The dependence graph with feedbacks. 
+
+
+
+Definition at line 158 of file parametric\+\_\+list\+\_\+based.\+hpp.
+
+
+
+Referenced by compute\+\_\+exec\+\_\+stage\+\_\+time(), and exec().
+
+\mbox{\Hypertarget{classparametric__list__based_afe0501bc0000245623bd0064a37f1a60}\label{classparametric__list__based_afe0501bc0000245623bd0064a37f1a60}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!is\+\_\+complex@{is\+\_\+complex}}
+\index{is\+\_\+complex@{is\+\_\+complex}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{is\+\_\+complex}{is\_complex}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$std\+::pair$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, unsigned int$>$, bool$>$ parametric\+\_\+list\+\_\+based\+::is\+\_\+complex\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+memoization table used for connection estimation 
+
+
+
+Definition at line 170 of file parametric\+\_\+list\+\_\+based.\+hpp.
+
+\mbox{\Hypertarget{classparametric__list__based_a9c6cc1104ca3c70cee7e55305bae7933}\label{classparametric__list__based_a9c6cc1104ca3c70cee7e55305bae7933}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!parametric\+\_\+list\+\_\+based\+\_\+metric@{parametric\+\_\+list\+\_\+based\+\_\+metric}}
+\index{parametric\+\_\+list\+\_\+based\+\_\+metric@{parametric\+\_\+list\+\_\+based\+\_\+metric}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{parametric\+\_\+list\+\_\+based\+\_\+metric}{parametric\_list\_based\_metric}}
+{\footnotesize\ttfamily const \hyperlink{parametric__list__based_8hpp_af0e38be9a93de210a888144f6a52e498}{Parametric\+List\+Based\+\_\+\+Metric} parametric\+\_\+list\+\_\+based\+::parametric\+\_\+list\+\_\+based\+\_\+metric\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The used metric. 
+
+
+
+Definition at line 152 of file parametric\+\_\+list\+\_\+based.\+hpp.
+
+
+
+Referenced by exec().
+
+\mbox{\Hypertarget{classparametric__list__based_a48af95dd945034fdad7f1f0d5502c13c}\label{classparametric__list__based_a48af95dd945034fdad7f1f0d5502c13c}} 
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!starting\+\_\+time@{starting\+\_\+time}}
+\index{starting\+\_\+time@{starting\+\_\+time}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\subsubsection{\texorpdfstring{starting\+\_\+time}{starting\_time}}
+{\footnotesize\ttfamily \hyperlink{structvertex2float}{vertex2float} parametric\+\_\+list\+\_\+based\+::starting\+\_\+time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The starting time given the scheduling (used for chaining) 
+
+
+
+Definition at line 161 of file parametric\+\_\+list\+\_\+based.\+hpp.
+
+
+
+Referenced by compute\+\_\+slack(), compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap(), compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), do\+\_\+balanced\+\_\+scheduling(), do\+\_\+balanced\+\_\+scheduling1(), exec(), store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+out(), update\+\_\+starting\+\_\+ending\+\_\+time(), and update\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/scheduling/\hyperlink{parametric__list__based_8hpp}{parametric\+\_\+list\+\_\+based.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/scheduling/\hyperlink{parametric__list__based_8cpp}{parametric\+\_\+list\+\_\+based.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,252 @@
+\hypertarget{classparm2ssa}{}\section{parm2ssa Class Reference}
+\label{classparm2ssa}\index{parm2ssa@{parm2ssa}}
+
+
+Pre-\/analysis step.  
+
+
+
+
+{\ttfamily \#include $<$parm2ssa.\+hpp$>$}
+
+
+
+Inheritance diagram for parm2ssa\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{da/dcc/classparm2ssa__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for parm2ssa\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d3f/classparm2ssa__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classparm2ssa_aea62eab6928519e95df8a544661df5a3}{parm2ssa} (const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classparm2ssa_abd777e7c92f2b7c714bd73422a11c9af}{$\sim$parm2ssa} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classparm2ssa_ae308e612abcdd8e6cb9dcf490e774065}{Exec} () override
+\begin{DoxyCompactList}\small\item\em Fixes the \hyperlink{structvar__decl}{var\+\_\+decl} duplication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classparm2ssa_a44867e8c5b5462d813b189778657809e}{recursive\+\_\+analysis} (\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&tn, const std\+::string \&\hyperlink{structsrcp}{srcp})
+\begin{DoxyCompactList}\small\item\em Recursive tree node analysis. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classparm2ssa_aeb5979e5ccbcd6e55fea2eb82aaddec5}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ unsigned int $>$ \hyperlink{classparm2ssa_aa34aab725ce5a54255507b9da590cef5}{already\+\_\+visited\+\_\+ae}
+\begin{DoxyCompactList}\small\item\em Already visited address expression (used to avoid infinite recursion) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Pre-\/analysis step. 
+
+computing the relation between \hyperlink{structparm__decl}{parm\+\_\+decl} and the associated \hyperlink{structssa__name}{ssa\+\_\+name}. 
+
+Definition at line 67 of file parm2ssa.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classparm2ssa_aea62eab6928519e95df8a544661df5a3}\label{classparm2ssa_aea62eab6928519e95df8a544661df5a3}} 
+\index{parm2ssa@{parm2ssa}!parm2ssa@{parm2ssa}}
+\index{parm2ssa@{parm2ssa}!parm2ssa@{parm2ssa}}
+\subsubsection{\texorpdfstring{parm2ssa()}{parm2ssa()}}
+{\footnotesize\ttfamily parm2ssa\+::parm2ssa (\begin{DoxyParamCaption}\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Header include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em AppM} & is the application manager \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+{\em parameters} & is the set of input parameters\\
+\hline
+\end{DoxyParams}
+Behavior include \hyperlink{structGraph}{Graph} include \hyperlink{classParameter}{Parameter} include S\+TD include S\+TL include Tree include Utility include 
+
+Definition at line 79 of file parm2ssa.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$parm2ssa().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{dc/d7a/classparm2ssa_aea62eab6928519e95df8a544661df5a3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparm2ssa_abd777e7c92f2b7c714bd73422a11c9af}\label{classparm2ssa_abd777e7c92f2b7c714bd73422a11c9af}} 
+\index{parm2ssa@{parm2ssa}!````~parm2ssa@{$\sim$parm2ssa}}
+\index{````~parm2ssa@{$\sim$parm2ssa}!parm2ssa@{parm2ssa}}
+\subsubsection{\texorpdfstring{$\sim$parm2ssa()}{~parm2ssa()}}
+{\footnotesize\ttfamily parm2ssa\+::$\sim$parm2ssa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by parm2ssa().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{dc/d7a/classparm2ssa_abd777e7c92f2b7c714bd73422a11c9af_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classparm2ssa_aeb5979e5ccbcd6e55fea2eb82aaddec5}\label{classparm2ssa_aeb5979e5ccbcd6e55fea2eb82aaddec5}} 
+\index{parm2ssa@{parm2ssa}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!parm2ssa@{parm2ssa}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ parm2ssa\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classApplicationFrontendFlowStep_ab308200c0096ccff3a1ff50e864ed61f}{Application\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 86 of file parm2ssa.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+A\+L\+L\+\_\+\+F\+U\+N\+C\+T\+I\+O\+NS, C\+O\+M\+P\+L\+E\+T\+E\+\_\+\+C\+A\+L\+L\+\_\+\+G\+R\+A\+PH, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and Frontend\+Flow\+Step\+::\+W\+H\+O\+L\+E\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON.
+
+\mbox{\Hypertarget{classparm2ssa_ae308e612abcdd8e6cb9dcf490e774065}\label{classparm2ssa_ae308e612abcdd8e6cb9dcf490e774065}} 
+\index{parm2ssa@{parm2ssa}!Exec@{Exec}}
+\index{Exec@{Exec}!parm2ssa@{parm2ssa}}
+\subsubsection{\texorpdfstring{Exec()}{Exec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} parm2ssa\+::\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Fixes the \hyperlink{structvar__decl}{var\+\_\+decl} duplication. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classApplicationFrontendFlowStep_a2bf060a5ebc1735635dc5c7773387a25}{Application\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 113 of file parm2ssa.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, test\+\_\+panda\+::arg, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::\+Get\+Tree\+Node(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, phi, tree\+\_\+helper\+::print\+\_\+function\+\_\+name(), recursive\+\_\+analysis(), sl, S\+TR, and S\+U\+C\+C\+E\+SS.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d7a/classparm2ssa_ae308e612abcdd8e6cb9dcf490e774065_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classparm2ssa_a44867e8c5b5462d813b189778657809e}\label{classparm2ssa_a44867e8c5b5462d813b189778657809e}} 
+\index{parm2ssa@{parm2ssa}!recursive\+\_\+analysis@{recursive\+\_\+analysis}}
+\index{recursive\+\_\+analysis@{recursive\+\_\+analysis}!parm2ssa@{parm2ssa}}
+\subsubsection{\texorpdfstring{recursive\+\_\+analysis()}{recursive\_analysis()}}
+{\footnotesize\ttfamily void parm2ssa\+::recursive\+\_\+analysis (\begin{DoxyParamCaption}\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{tn,  }\item[{const std\+::string \&}]{srcp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Recursive tree node analysis. 
+
+
+
+Definition at line 151 of file parm2ssa.\+cpp.
+
+
+
+References already\+\_\+visited\+\_\+ae, Frontend\+Flow\+Step\+::\+AppM, test\+\_\+panda\+::arg, C\+A\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+node\+::get\+\_\+kind\+\_\+text(), G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, N\+O\+D\+E\+\_\+\+N\+O\+T\+\_\+\+Y\+E\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+EC, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+DE, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and tree\+\_\+node\+::\+To\+String().
+
+
+
+Referenced by Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{dc/d7a/classparm2ssa_a44867e8c5b5462d813b189778657809e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{dc/d7a/classparm2ssa_a44867e8c5b5462d813b189778657809e_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classparm2ssa_aa34aab725ce5a54255507b9da590cef5}\label{classparm2ssa_aa34aab725ce5a54255507b9da590cef5}} 
+\index{parm2ssa@{parm2ssa}!already\+\_\+visited\+\_\+ae@{already\+\_\+visited\+\_\+ae}}
+\index{already\+\_\+visited\+\_\+ae@{already\+\_\+visited\+\_\+ae}!parm2ssa@{parm2ssa}}
+\subsubsection{\texorpdfstring{already\+\_\+visited\+\_\+ae}{already\_visited\_ae}}
+{\footnotesize\ttfamily \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$unsigned int$>$ parm2ssa\+::already\+\_\+visited\+\_\+ae\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Already visited address expression (used to avoid infinite recursion) 
+
+
+
+Definition at line 71 of file parm2ssa.\+hpp.
+
+
+
+Referenced by recursive\+\_\+analysis().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{parm2ssa_8hpp}{parm2ssa.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{parm2ssa_8cpp}{parm2ssa.\+cpp}\end{DoxyCompactItemize}

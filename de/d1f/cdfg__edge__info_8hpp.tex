@@ -1,0 +1,469 @@
+\hypertarget{cdfg__edge__info_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/cdfg\+\_\+edge\+\_\+info.hpp File Reference}
+\label{cdfg__edge__info_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/cdfg\+\_\+edge\+\_\+info.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/cdfg\+\_\+edge\+\_\+info.\+hpp}}
+
+
+Data structures used to represent an edge in operation and basic block graphs.  
+
+
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}edge\+\_\+info.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for cdfg\+\_\+edge\+\_\+info.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d39/cdfg__edge__info_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d86/cdfg__edge__info_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}
+\begin{DoxyCompactList}\small\item\em Information associated with an operation or basic block graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_a9b80141d4cb668a73355a243954e151f}{T\+R\+E\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(1 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em Constants identifying the type of the edges in both operation and basic block graphs. \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_a9d8f3fb331a4bad8c1e00de6b860c4c2}{C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(1 $<$$<$ 1)
+\begin{DoxyCompactList}\small\item\em Control flow graph edge selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_a8de6b2ac1600ef0e4b85c3cb491e325b}{F\+B\+\_\+\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(1 $<$$<$ 2)
+\begin{DoxyCompactList}\small\item\em Feedback control flow edge selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_aae792cfe55ec660e7e611fa8c7761574}{F\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(\hyperlink{cdfg__edge__info_8hpp_a9d8f3fb331a4bad8c1e00de6b860c4c2}{C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{cdfg__edge__info_8hpp_a8de6b2ac1600ef0e4b85c3cb491e325b}{F\+B\+\_\+\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})
+\begin{DoxyCompactList}\small\item\em Control flow graph with feedback edges. \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_ae9ba127b2bce757619817f7f35faad9d}{C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(1 $<$$<$ 3)
+\begin{DoxyCompactList}\small\item\em Control dependence edge selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_acc71451858388286c42127edfe9526c9}{F\+B\+\_\+\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(1 $<$$<$ 4)
+\begin{DoxyCompactList}\small\item\em Feedback control dependence edge selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_ace7aef3af8493cf726201463ceb3d323}{F\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(\hyperlink{cdfg__edge__info_8hpp_ae9ba127b2bce757619817f7f35faad9d}{C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{cdfg__edge__info_8hpp_acc71451858388286c42127edfe9526c9}{F\+B\+\_\+\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})
+\begin{DoxyCompactList}\small\item\em Control dependence graph selector with feedback edges. \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_a3731692936f56a6e8929846900d9a1b6}{E\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(1 $<$$<$ 5)
+\begin{DoxyCompactList}\small\item\em Extended control flow graph selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_a383f6d8fab8cdc7285c7fc4d167a5071}{T\+\_\+\+C\+O\+ND}~(std\+::numeric\+\_\+limits$<$unsigned int$>$\+::\hyperlink{tutorial__pact__2019_2Target-Customization_2first_2hint_8c_a28f422940797ea297699ba55d89171c5}{max}())
+\begin{DoxyCompactList}\small\item\em constant used to represent control edges representing a true edge of a conditional statement. \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_abfe46b85c1701b4a87f12f7e62f2fa09}{F\+\_\+\+C\+O\+ND}~(std\+::numeric\+\_\+limits$<$unsigned int$>$\+::\hyperlink{tutorial__pact__2019_2Target-Customization_2first_2hint_8c_a28f422940797ea297699ba55d89171c5}{max}() -\/ 1)
+\begin{DoxyCompactList}\small\item\em constant used to represent control edges representing a false edge of a conditional statement. \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_ab96ee5c2ceb388b0e23050932c87a793}{N\+O\+\_\+\+C\+O\+ND}~(std\+::numeric\+\_\+limits$<$unsigned int$>$\+::\hyperlink{tutorial__pact__2019_2Target-Customization_2first_2hint_8c_a28f422940797ea297699ba55d89171c5}{max}() -\/ 2)
+\begin{DoxyCompactList}\small\item\em constant used to represent control edges representing a standard control edge. \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_a28b75381a9f70d42453c519064c6f6d5}{default\+\_\+\+C\+O\+ND}~(std\+::numeric\+\_\+limits$<$unsigned int$>$\+::\hyperlink{tutorial__pact__2019_2Target-Customization_2first_2hint_8c_a28f422940797ea297699ba55d89171c5}{max}() -\/ 3)
+\begin{DoxyCompactList}\small\item\em constant used to represent label \char`\"{}default\char`\"{} of a switch construct \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_aaadcba335c854e99373f4c99b51f8a1e}{C\+D\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK}(data,  edge\+\_\+index)~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data)) and \hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$Cdg\+EdgeT()
+\begin{DoxyCompactList}\small\item\em check if the edge is a then control dependence edge \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_a3ce6cf7fd383faf85b7c35d1c11919f4}{C\+D\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK}(data,  edge\+\_\+index)~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data)) and \hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$Cdg\+EdgeF()
+\begin{DoxyCompactList}\small\item\em check if the edge is a else control dependence edge \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_a7c1cb99c62d97723d6bf9cb618d471e0}{C\+F\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK}(data,  edge\+\_\+index)~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data)) and \hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$Cfg\+EdgeT()
+\begin{DoxyCompactList}\small\item\em check if the edge is a then control flow edge \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_a22f45963f6cd985be85f0cf43e2a8fef}{C\+F\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK}(data,  edge\+\_\+index)~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data)) and \hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$Cfg\+EdgeF()
+\begin{DoxyCompactList}\small\item\em check if the edge is a else control flow edge \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_a512f146ef1a1c2adc4f65c2395198d07}{F\+L\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK}(data,  edge\+\_\+index)~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data)) and \hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$Flg\+EdgeT()
+\begin{DoxyCompactList}\small\item\em check if the edge is a then flow edge \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_a94daa74eef5a9ceba8f136a97de5b1a0}{F\+L\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK}(data,  edge\+\_\+index)~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data)) and \hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$Flg\+EdgeF()
+\begin{DoxyCompactList}\small\item\em check if the edge is a else flow edge \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfg__edge__info_8hpp_a72a78c4dcc11c654aed12f8595a86b3b}{E\+D\+G\+E\+\_\+\+G\+E\+T\+\_\+\+N\+O\+D\+E\+ID}(data,  edge\+\_\+index,  type)~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$get\+\_\+node\+ID(type)
+\begin{DoxyCompactList}\small\item\em Helper macro returning the Node\+ID of a certain type associated with an edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{cdfg__edge__info_8hpp_a942a3103598e9f83b960660212b20cef}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classBehavioralHelper}{Behavioral\+Helper})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Data structures used to represent an edge in operation and basic block graphs. 
+
+\begin{DoxyAuthor}{Author}
+Marco Lattuada \href{mailto:lattuada@elet.polimi.it}{\tt lattuada@elet.\+polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_a3ce6cf7fd383faf85b7c35d1c11919f4}\label{cdfg__edge__info_8hpp_a3ce6cf7fd383faf85b7c35d1c11919f4}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!C\+D\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK@{C\+D\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK}}
+\index{C\+D\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK@{C\+D\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{C\+D\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK}{CDG\_FALSE\_CHECK}}
+{\footnotesize\ttfamily \#define C\+D\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{edge\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data)) and \hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$Cdg\+EdgeF()}
+
+
+
+check if the edge is a else control dependence edge 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the graph. \\
+\hline
+{\em edge\+\_\+index} & is the index of the cdfg edge. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 160 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_ae9ba127b2bce757619817f7f35faad9d}\label{cdfg__edge__info_8hpp_ae9ba127b2bce757619817f7f35faad9d}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{CDG\_SELECTOR}}
+{\footnotesize\ttfamily \#define C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(1 $<$$<$ 3)}
+
+
+
+Control dependence edge selector. 
+
+
+
+Definition at line 70 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+
+
+Referenced by Basic\+Blocks\+Graph\+Constructor\+::add\+\_\+bb\+\_\+edge\+\_\+info(), S\+D\+C\+Scheduling\+::\+Add\+Delay\+Constraints(), Vectorize\+::\+Add\+Guards(), B\+B\+Edge\+Info\+::cdg\+\_\+edge\+\_\+\+F(), B\+B\+Edge\+Info\+::cdg\+\_\+edge\+\_\+\+T(), Cdfg\+Edge\+Info\+::\+Cdg\+Edge\+F(), Cdfg\+Edge\+Info\+::\+Cdg\+Edge\+T(), Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Vectorize\+::\+Classify\+Loop(), Scheduling\+::compute\+\_\+b\+\_\+tag(), Scheduling\+::init\+\_\+switch\+\_\+maps(), B\+B\+Cdg\+Computation\+::\+Initialize(), Op\+Cdg\+Computation\+::\+Initialize(), B\+B\+Cdg\+Computation\+::\+Internal\+Exec(), Op\+Cdg\+Computation\+::\+Internal\+Exec(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), Op\+Edge\+Writer\+::operator()(), B\+B\+Edge\+Writer\+::operator()(), Cdfg\+Edge\+Info\+::\+Switch(), and B\+B\+Edge\+Info\+::switch\+\_\+p().
+
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_aaadcba335c854e99373f4c99b51f8a1e}\label{cdfg__edge__info_8hpp_aaadcba335c854e99373f4c99b51f8a1e}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!C\+D\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK@{C\+D\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK}}
+\index{C\+D\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK@{C\+D\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{C\+D\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK}{CDG\_TRUE\_CHECK}}
+{\footnotesize\ttfamily \#define C\+D\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{edge\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data)) and \hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$Cdg\+EdgeT()}
+
+
+
+check if the edge is a then control dependence edge 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the graph. \\
+\hline
+{\em edge\+\_\+index} & is the index of the cdfg edge. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 153 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+
+
+Referenced by Scheduling\+::compute\+\_\+b\+\_\+tag().
+
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_a22f45963f6cd985be85f0cf43e2a8fef}\label{cdfg__edge__info_8hpp_a22f45963f6cd985be85f0cf43e2a8fef}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!C\+F\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK@{C\+F\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK}}
+\index{C\+F\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK@{C\+F\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{C\+F\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK}{CFG\_FALSE\_CHECK}}
+{\footnotesize\ttfamily \#define C\+F\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{edge\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data)) and \hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$Cfg\+EdgeF()}
+
+
+
+check if the edge is a else control flow edge 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the graph. \\
+\hline
+{\em edge\+\_\+index} & is the index of the cdfg edge. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 174 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_a9d8f3fb331a4bad8c1e00de6b860c4c2}\label{cdfg__edge__info_8hpp_a9d8f3fb331a4bad8c1e00de6b860c4c2}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{CFG\_SELECTOR}}
+{\footnotesize\ttfamily \#define C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(1 $<$$<$ 1)}
+
+
+
+Control flow graph edge selector. 
+
+
+
+Definition at line 63 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+
+
+Referenced by Basic\+Blocks\+Graph\+Constructor\+::add\+\_\+bb\+\_\+edge\+\_\+info(), B\+B\+Edge\+Info\+::cfg\+\_\+edge\+\_\+\+F(), B\+B\+Edge\+Info\+::cfg\+\_\+edge\+\_\+\+T(), Cdfg\+Edge\+Info\+::\+Cfg\+Edge\+F(), Cdfg\+Edge\+Info\+::\+Cfg\+Edge\+T(), Function\+Behavior\+::\+C\+Get\+Op\+Graph(), operations\+\_\+cfg\+\_\+computation\+::connect\+\_\+start\+\_\+nodes(), Basic\+Blocks\+Graph\+Constructor\+::connect\+\_\+to\+\_\+entry(), Basic\+Blocks\+Graph\+Constructor\+::connect\+\_\+to\+\_\+exit(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), Op\+Cdg\+Computation\+::\+Internal\+Exec(), B\+B\+Cdg\+Computation\+::\+Internal\+Exec(), Basic\+Blocks\+Cfg\+Computation\+::\+Internal\+Exec(), bb\+\_\+feedback\+\_\+edges\+\_\+computation\+::\+Internal\+Exec(), op\+\_\+feedback\+\_\+edges\+\_\+computation\+::\+Internal\+Exec(), Build\+Virtual\+Phi\+::\+Internal\+Exec(), simple\+\_\+code\+\_\+motion\+::\+Internal\+Exec(), C\+S\+E\+::\+Internal\+Exec(), multi\+\_\+way\+\_\+if\+::\+Internal\+Exec(), rebuild\+\_\+initialization2\+::look\+\_\+for\+\_\+\+R\+O\+Ms(), Op\+Edge\+Writer\+::operator()(), B\+B\+Edge\+Writer\+::operator()(), Cdfg\+Edge\+Info\+::\+Switch(), B\+B\+Edge\+Info\+::switch\+\_\+p(), Function\+Frontend\+Flow\+Step\+::\+Write\+B\+B\+Graph\+Dot(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and C\+Writer\+::write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_a7c1cb99c62d97723d6bf9cb618d471e0}\label{cdfg__edge__info_8hpp_a7c1cb99c62d97723d6bf9cb618d471e0}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!C\+F\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK@{C\+F\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK}}
+\index{C\+F\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK@{C\+F\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{C\+F\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK}{CFG\_TRUE\_CHECK}}
+{\footnotesize\ttfamily \#define C\+F\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{edge\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data)) and \hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$Cfg\+EdgeT()}
+
+
+
+check if the edge is a then control flow edge 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the graph. \\
+\hline
+{\em edge\+\_\+index} & is the index of the cdfg edge. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 167 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+
+
+Referenced by Op\+Order\+Computation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_a28b75381a9f70d42453c519064c6f6d5}\label{cdfg__edge__info_8hpp_a28b75381a9f70d42453c519064c6f6d5}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!default\+\_\+\+C\+O\+ND@{default\+\_\+\+C\+O\+ND}}
+\index{default\+\_\+\+C\+O\+ND@{default\+\_\+\+C\+O\+ND}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{default\+\_\+\+C\+O\+ND}{default\_COND}}
+{\footnotesize\ttfamily \#define default\+\_\+\+C\+O\+ND~(std\+::numeric\+\_\+limits$<$unsigned int$>$\+::\hyperlink{tutorial__pact__2019_2Target-Customization_2first_2hint_8c_a28f422940797ea297699ba55d89171c5}{max}() -\/ 3)}
+
+
+
+constant used to represent label \char`\"{}default\char`\"{} of a switch construct 
+
+
+
+Definition at line 86 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), input\+\_\+vector\+\_\+to\+\_\+string(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), Basic\+Blocks\+Cfg\+Computation\+::\+Internal\+Exec(), Behavioral\+Helper\+::print\+\_\+constant(), Cdfg\+Edge\+Info\+::\+Print\+Labels(), Behavioral\+Helper\+::\+Print\+Variable(), Function\+Frontend\+Flow\+Step\+::\+Write\+B\+B\+Graph\+Dot(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and C\+Writer\+::write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_a3731692936f56a6e8929846900d9a1b6}\label{cdfg__edge__info_8hpp_a3731692936f56a6e8929846900d9a1b6}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!E\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{E\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{E\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{E\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{E\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{ECFG\_SELECTOR}}
+{\footnotesize\ttfamily \#define E\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(1 $<$$<$ 5)}
+
+
+
+Extended control flow graph selector. 
+
+
+
+Definition at line 77 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+
+
+Referenced by Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Add\+Bb\+Ecfg\+Edges\+::\+Internal\+Exec(), and B\+B\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_a72a78c4dcc11c654aed12f8595a86b3b}\label{cdfg__edge__info_8hpp_a72a78c4dcc11c654aed12f8595a86b3b}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!E\+D\+G\+E\+\_\+\+G\+E\+T\+\_\+\+N\+O\+D\+E\+ID@{E\+D\+G\+E\+\_\+\+G\+E\+T\+\_\+\+N\+O\+D\+E\+ID}}
+\index{E\+D\+G\+E\+\_\+\+G\+E\+T\+\_\+\+N\+O\+D\+E\+ID@{E\+D\+G\+E\+\_\+\+G\+E\+T\+\_\+\+N\+O\+D\+E\+ID}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{E\+D\+G\+E\+\_\+\+G\+E\+T\+\_\+\+N\+O\+D\+E\+ID}{EDGE\_GET\_NODEID}}
+{\footnotesize\ttfamily \#define E\+D\+G\+E\+\_\+\+G\+E\+T\+\_\+\+N\+O\+D\+E\+ID(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{edge\+\_\+index,  }\item[{}]{type }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$get\+\_\+node\+ID(type)}
+
+
+
+Helper macro returning the Node\+ID of a certain type associated with an edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the graph. \\
+\hline
+{\em edge\+\_\+index} & is the index of the cdfg edge. \\
+\hline
+{\em type} & is the type of wanted node\+ID \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 196 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+
+
+Referenced by Scheduling\+::compute\+\_\+b\+\_\+tag(), and Scheduling\+::init\+\_\+switch\+\_\+maps().
+
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_abfe46b85c1701b4a87f12f7e62f2fa09}\label{cdfg__edge__info_8hpp_abfe46b85c1701b4a87f12f7e62f2fa09}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!F\+\_\+\+C\+O\+ND@{F\+\_\+\+C\+O\+ND}}
+\index{F\+\_\+\+C\+O\+ND@{F\+\_\+\+C\+O\+ND}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{F\+\_\+\+C\+O\+ND}{F\_COND}}
+{\footnotesize\ttfamily \#define F\+\_\+\+C\+O\+ND~(std\+::numeric\+\_\+limits$<$unsigned int$>$\+::\hyperlink{tutorial__pact__2019_2Target-Customization_2first_2hint_8c_a28f422940797ea297699ba55d89171c5}{max}() -\/ 1)}
+
+
+
+constant used to represent control edges representing a false edge of a conditional statement. 
+
+
+
+Definition at line 82 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+
+
+Referenced by B\+B\+Edge\+Info\+::cdg\+\_\+edge\+\_\+\+F(), Cdfg\+Edge\+Info\+::\+Cdg\+Edge\+F(), B\+B\+Edge\+Info\+::cfg\+\_\+edge\+\_\+\+F(), Cdfg\+Edge\+Info\+::\+Cfg\+Edge\+F(), operations\+\_\+cfg\+\_\+computation\+::connect\+\_\+start\+\_\+nodes(), Op\+Edge\+Info\+::\+Flg\+Edge\+F(), mux\+\_\+connection\+\_\+binding\+::input\+\_\+logic(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), Basic\+Blocks\+Cfg\+Computation\+::\+Internal\+Exec(), and Cdfg\+Edge\+Info\+::\+Print\+Labels().
+
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_acc71451858388286c42127edfe9526c9}\label{cdfg__edge__info_8hpp_acc71451858388286c42127edfe9526c9}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!F\+B\+\_\+\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+B\+\_\+\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{F\+B\+\_\+\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FB\_CDG\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+B\+\_\+\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(1 $<$$<$ 4)}
+
+
+
+Feedback control dependence edge selector. 
+
+
+
+Definition at line 72 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+
+
+Referenced by Basic\+Blocks\+Graph\+Constructor\+::add\+\_\+bb\+\_\+edge\+\_\+info(), and Op\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_a8de6b2ac1600ef0e4b85c3cb491e325b}\label{cdfg__edge__info_8hpp_a8de6b2ac1600ef0e4b85c3cb491e325b}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!F\+B\+\_\+\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+B\+\_\+\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{F\+B\+\_\+\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FB\_CFG\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+B\+\_\+\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(1 $<$$<$ 2)}
+
+
+
+Feedback control flow edge selector. 
+
+
+
+Definition at line 65 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+
+
+Referenced by Basic\+Blocks\+Graph\+Constructor\+::add\+\_\+bb\+\_\+edge\+\_\+info(), Vectorize\+::\+Add\+Guards(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), Loops\+Analysis\+Bambu\+::\+Internal\+Exec(), Add\+Op\+Phi\+Flow\+Edges\+::\+Internal\+Exec(), op\+\_\+feedback\+\_\+edges\+\_\+computation\+::\+Internal\+Exec(), bb\+\_\+feedback\+\_\+edges\+\_\+computation\+::\+Internal\+Exec(), Add\+Bb\+Ecfg\+Edges\+::\+Internal\+Exec(), Build\+Virtual\+Phi\+::\+Internal\+Exec(), Multiple\+Entry\+If\+Reduction\+::\+Internal\+Exec(), Op\+Edge\+Writer\+::operator()(), B\+B\+Edge\+Writer\+::operator()(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and C\+Writer\+::write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_ace7aef3af8493cf726201463ceb3d323}\label{cdfg__edge__info_8hpp_ace7aef3af8493cf726201463ceb3d323}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!F\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{F\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FCDG\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(\hyperlink{cdfg__edge__info_8hpp_ae9ba127b2bce757619817f7f35faad9d}{C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{cdfg__edge__info_8hpp_acc71451858388286c42127edfe9526c9}{F\+B\+\_\+\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})}
+
+
+
+Control dependence graph selector with feedback edges. 
+
+
+
+Definition at line 74 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+
+
+Referenced by Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Op\+Edge\+Writer\+::operator()(), and B\+B\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_aae792cfe55ec660e7e611fa8c7761574}\label{cdfg__edge__info_8hpp_aae792cfe55ec660e7e611fa8c7761574}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!F\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{F\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FCFG\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(\hyperlink{cdfg__edge__info_8hpp_a9d8f3fb331a4bad8c1e00de6b860c4c2}{C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{cdfg__edge__info_8hpp_a8de6b2ac1600ef0e4b85c3cb491e325b}{F\+B\+\_\+\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})}
+
+
+
+Control flow graph with feedback edges. 
+
+
+
+Definition at line 67 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+
+
+Referenced by Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Op\+Edge\+Writer\+::operator()(), and B\+B\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_a94daa74eef5a9ceba8f136a97de5b1a0}\label{cdfg__edge__info_8hpp_a94daa74eef5a9ceba8f136a97de5b1a0}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!F\+L\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK@{F\+L\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK}}
+\index{F\+L\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK@{F\+L\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{F\+L\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK}{FLG\_FALSE\_CHECK}}
+{\footnotesize\ttfamily \#define F\+L\+G\+\_\+\+F\+A\+L\+S\+E\+\_\+\+C\+H\+E\+CK(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{edge\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data)) and \hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$Flg\+EdgeF()}
+
+
+
+check if the edge is a else flow edge 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the graph. \\
+\hline
+{\em edge\+\_\+index} & is the index of the cdfg edge. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 188 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_a512f146ef1a1c2adc4f65c2395198d07}\label{cdfg__edge__info_8hpp_a512f146ef1a1c2adc4f65c2395198d07}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!F\+L\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK@{F\+L\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK}}
+\index{F\+L\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK@{F\+L\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{F\+L\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK}{FLG\_TRUE\_CHECK}}
+{\footnotesize\ttfamily \#define F\+L\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{edge\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data)) and \hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$\hyperlink{structCdfgEdgeInfo}{Cdfg\+Edge\+Info}$>$(edge\+\_\+index, $\ast$(data))-\/$>$Flg\+EdgeT()}
+
+
+
+check if the edge is a then flow edge 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the graph. \\
+\hline
+{\em edge\+\_\+index} & is the index of the cdfg edge. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 181 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_ab96ee5c2ceb388b0e23050932c87a793}\label{cdfg__edge__info_8hpp_ab96ee5c2ceb388b0e23050932c87a793}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!N\+O\+\_\+\+C\+O\+ND@{N\+O\+\_\+\+C\+O\+ND}}
+\index{N\+O\+\_\+\+C\+O\+ND@{N\+O\+\_\+\+C\+O\+ND}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{N\+O\+\_\+\+C\+O\+ND}{NO\_COND}}
+{\footnotesize\ttfamily \#define N\+O\+\_\+\+C\+O\+ND~(std\+::numeric\+\_\+limits$<$unsigned int$>$\+::\hyperlink{tutorial__pact__2019_2Target-Customization_2first_2hint_8c_a28f422940797ea297699ba55d89171c5}{max}() -\/ 2)}
+
+
+
+constant used to represent control edges representing a standard control edge. 
+
+
+
+Definition at line 84 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_a383f6d8fab8cdc7285c7fc4d167a5071}\label{cdfg__edge__info_8hpp_a383f6d8fab8cdc7285c7fc4d167a5071}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!T\+\_\+\+C\+O\+ND@{T\+\_\+\+C\+O\+ND}}
+\index{T\+\_\+\+C\+O\+ND@{T\+\_\+\+C\+O\+ND}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{T\+\_\+\+C\+O\+ND}{T\_COND}}
+{\footnotesize\ttfamily \#define T\+\_\+\+C\+O\+ND~(std\+::numeric\+\_\+limits$<$unsigned int$>$\+::\hyperlink{tutorial__pact__2019_2Target-Customization_2first_2hint_8c_a28f422940797ea297699ba55d89171c5}{max}())}
+
+
+
+constant used to represent control edges representing a true edge of a conditional statement. 
+
+
+
+Definition at line 80 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+
+
+Referenced by B\+B\+Edge\+Info\+::cdg\+\_\+edge\+\_\+\+T(), Cdfg\+Edge\+Info\+::\+Cdg\+Edge\+T(), B\+B\+Edge\+Info\+::cfg\+\_\+edge\+\_\+\+T(), Cdfg\+Edge\+Info\+::\+Cfg\+Edge\+T(), operations\+\_\+cfg\+\_\+computation\+::connect\+\_\+start\+\_\+nodes(), Op\+Edge\+Info\+::\+Flg\+Edge\+T(), mux\+\_\+conn\+::get\+\_\+string(), mux\+\_\+connection\+\_\+binding\+::input\+\_\+logic(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), Basic\+Blocks\+Cfg\+Computation\+::\+Internal\+Exec(), conn\+\_\+binding\+::mux\+\_\+allocation(), and Cdfg\+Edge\+Info\+::\+Print\+Labels().
+
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_a9b80141d4cb668a73355a243954e151f}\label{cdfg__edge__info_8hpp_a9b80141d4cb668a73355a243954e151f}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!T\+R\+E\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{T\+R\+E\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{T\+R\+E\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{T\+R\+E\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{T\+R\+E\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{TRED\_SELECTOR}}
+{\footnotesize\ttfamily \#define T\+R\+E\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(1 $<$$<$ 0)}
+
+
+
+Constants identifying the type of the edges in both operation and basic block graphs. 
+
+Transitive reducted edge selector 
+
+Definition at line 60 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{cdfg__edge__info_8hpp_a942a3103598e9f83b960660212b20cef}\label{cdfg__edge__info_8hpp_a942a3103598e9f83b960660212b20cef}} 
+\index{cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!cdfg\+\_\+edge\+\_\+info.\+hpp@{cdfg\+\_\+edge\+\_\+info.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classBehavioralHelper}{Behavioral\+Helper}}]{ }\end{DoxyParamCaption})}
+

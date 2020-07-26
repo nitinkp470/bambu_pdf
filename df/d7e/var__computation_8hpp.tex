@@ -1,0 +1,90 @@
+\hypertarget{var__computation_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/var\+\_\+computation.hpp File Reference}
+\label{var__computation_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/var\+\_\+computation.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/var\+\_\+computation.\+hpp}}
+
+
+Analyzes operations and creates the sets of read and written variables.  
+
+
+{\ttfamily \#include \char`\"{}function\+\_\+frontend\+\_\+flow\+\_\+step.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utility.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graph.\+hpp\char`\"{}}\newline
+Include dependency graph for var\+\_\+computation.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d83/var__computation_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dcb/var__computation_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classVarComputation}{Var\+Computation}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}\textbf{ forward declarations}\par
+{\em Superclass include }\begin{DoxyCompactItemize}
+\item 
+\hyperlink{var__computation_8hpp_a8e26113055c7c92a04ad2fa27ac84e5d}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classBehavioralHelper}{Behavioral\+Helper})
+\item 
+\hyperlink{var__computation_8hpp_aa56a904ab331b5f5d3b11f8608689159}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classoperations__graph__constructor}{operations\+\_\+graph\+\_\+constructor})
+\item 
+\hyperlink{var__computation_8hpp_aed6251ce31927fa1d8a5985bbc098105}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structOpGraph}{Op\+Graph})
+\item 
+\hyperlink{var__computation_8hpp_a52756886a578bcd0db3c2fd210400eb3}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtree__manager}{tree\+\_\+manager})
+\item 
+\hyperlink{var__computation_8hpp_a5e5c6c3bccb026bcd977e354651411ab}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtree__node}{tree\+\_\+node})
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Analyzes operations and creates the sets of read and written variables. 
+
+\begin{DoxyAuthor}{Author}
+Christian Pilato \href{mailto:pilato@elet.polimi.it}{\tt pilato@elet.\+polimi.\+it} 
+
+Marco Lattuada \href{mailto:lattuada@elet.polimi.it}{\tt lattuada@elet.\+polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{var__computation_8hpp_aed6251ce31927fa1d8a5985bbc098105}\label{var__computation_8hpp_aed6251ce31927fa1d8a5985bbc098105}} 
+\index{var\+\_\+computation.\+hpp@{var\+\_\+computation.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!var\+\_\+computation.\+hpp@{var\+\_\+computation.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structOpGraph}{Op\+Graph}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{var__computation_8hpp_a5e5c6c3bccb026bcd977e354651411ab}\label{var__computation_8hpp_a5e5c6c3bccb026bcd977e354651411ab}} 
+\index{var\+\_\+computation.\+hpp@{var\+\_\+computation.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!var\+\_\+computation.\+hpp@{var\+\_\+computation.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__node}{tree\+\_\+node}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{var__computation_8hpp_a8e26113055c7c92a04ad2fa27ac84e5d}\label{var__computation_8hpp_a8e26113055c7c92a04ad2fa27ac84e5d}} 
+\index{var\+\_\+computation.\+hpp@{var\+\_\+computation.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!var\+\_\+computation.\+hpp@{var\+\_\+computation.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classBehavioralHelper}{Behavioral\+Helper}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{var__computation_8hpp_aa56a904ab331b5f5d3b11f8608689159}\label{var__computation_8hpp_aa56a904ab331b5f5d3b11f8608689159}} 
+\index{var\+\_\+computation.\+hpp@{var\+\_\+computation.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!var\+\_\+computation.\+hpp@{var\+\_\+computation.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classoperations__graph__constructor}{operations\+\_\+graph\+\_\+constructor}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{var__computation_8hpp_a52756886a578bcd0db3c2fd210400eb3}\label{var__computation_8hpp_a52756886a578bcd0db3c2fd210400eb3}} 
+\index{var\+\_\+computation.\+hpp@{var\+\_\+computation.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!var\+\_\+computation.\+hpp@{var\+\_\+computation.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__manager}{tree\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+

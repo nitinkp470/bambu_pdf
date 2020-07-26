@@ -1,0 +1,367 @@
+\hypertarget{structDiscrepancy}{}\section{Discrepancy Struct Reference}
+\label{structDiscrepancy}\index{Discrepancy@{Discrepancy}}
+
+
+{\ttfamily \#include $<$Discrepancy.\+hpp$>$}
+
+
+
+Collaboration diagram for Discrepancy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d28/structDiscrepancy__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structDiscrepancy_a2b4af9043dce1074c182a0c4f8661e53}{Discrepancy} ()
+\item 
+void \hyperlink{structDiscrepancy_aef5d866bbdca6c194b1513f5fdd22efc}{clear} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Discrepancy_8hpp_aa1d62da21f69dae54811e632cadaf6b2}{Call\+Sites\+Info\+Ref} \hyperlink{structDiscrepancy_ab6c0caf5016e197a993fecb5712c8d10}{call\+\_\+sites\+\_\+info}
+\begin{DoxyCompactList}\small\item\em Reference to a struct holding info on the call sites. \end{DoxyCompactList}\item 
+\hyperlink{Discrepancy_8hpp_a17b9b60c3df0b3aa36e80b29c6b1168c}{H\+W\+Discrepancy\+Info\+Ref} \hyperlink{structDiscrepancy_a996c85a4aeed53e65901fdaec07630ae}{hw\+\_\+discrepancy\+\_\+info}
+\begin{DoxyCompactList}\small\item\em Reference to a struct holding info on the control flow traces for hw discrepancy analysis. \end{DoxyCompactList}\item 
+\hyperlink{classUnfoldedCallGraph}{Unfolded\+Call\+Graph} \hyperlink{structDiscrepancy_a95678490e9b1083fc917b21c9adaaca2}{Discrepancy\+Call\+Graph}
+\begin{DoxyCompactList}\small\item\em Reference to the unfolded call graph used for the discrepancy analysis. \end{DoxyCompactList}\item 
+\hyperlink{UnfoldedCallGraph_8hpp_a6c87395c9d950d587c8e4db39b93e3e2}{Unfolded\+Vertex\+Descriptor} \hyperlink{structDiscrepancy_a72a1643010c0f91d5925ca916cc1782e}{unfolded\+\_\+root\+\_\+v}
+\begin{DoxyCompactList}\small\item\em Unfolded\+Vertex\+Descriptor of the root of the Discrepancy\+Call\+Graph. \end{DoxyCompactList}\item 
+\hyperlink{classvcd__parser_a00f10dd896fdc534014c6192eed18d55}{vcd\+\_\+parser\+::vcd\+\_\+filter\+\_\+t} \hyperlink{structDiscrepancy_af3c55dd244654a9c89dc7e41f8909664}{selected\+\_\+vcd\+\_\+signals}
+\begin{DoxyCompactList}\small\item\em A map to store the vcd signals to be dumped. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ unsigned int, std\+::string $>$ \hyperlink{structDiscrepancy_a67ee727c44bf0c2e7e5995d67e7099d3}{opid\+\_\+to\+\_\+outsignal}
+\begin{DoxyCompactList}\small\item\em A map to store the name of the output signal of every operation. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ \hyperlink{UnfoldedCallGraph_8hpp_a6c87395c9d950d587c8e4db39b93e3e2}{Unfolded\+Vertex\+Descriptor}, std\+::string $>$ \hyperlink{structDiscrepancy_aa61fa1c5f2ec0207409fbf6147e5f6a2}{unfolded\+\_\+v\+\_\+to\+\_\+scope}
+\begin{DoxyCompactList}\small\item\em Map every vertex of the \hyperlink{classUnfoldedCallGraph}{Unfolded\+Call\+Graph} to a scope in HW. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ $>$ \hyperlink{structDiscrepancy_a4f56a1d98d80c8f3294e01c5c2c1cc85}{f\+\_\+id\+\_\+to\+\_\+scope}
+\begin{DoxyCompactList}\small\item\em Map every fun\+\_\+id to the set of HW scopes of the functional modules. \end{DoxyCompactList}\item 
+\hyperlink{classTreeNodeSet}{Tree\+Node\+Set} \hyperlink{structDiscrepancy_a948b9a53adc3a65cda0046eb6c5e516a}{ssa\+\_\+to\+\_\+skip}
+\begin{DoxyCompactList}\small\item\em Set of tree nodes representing the \hyperlink{structssa__name}{ssa\+\_\+name} to be skipped in discrepancy analysis. \end{DoxyCompactList}\item 
+\hyperlink{classTreeNodeSet}{Tree\+Node\+Set} \hyperlink{structDiscrepancy_a9c2015c8e6d41e5ff0ec2b713527f132}{ssa\+\_\+to\+\_\+skip\+\_\+if\+\_\+address}
+\begin{DoxyCompactList}\small\item\em Set of tree nodes. \end{DoxyCompactList}\item 
+\hyperlink{classTreeNodeSet}{Tree\+Node\+Set} \hyperlink{structDiscrepancy_aefe1a7cac365946d3357a5e9c771506e}{address\+\_\+ssa}
+\begin{DoxyCompactList}\small\item\em Set of tree nodes representing the \hyperlink{structssa__name}{ssa\+\_\+name} to be treated as addresses in discrepancy analysis. \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{classDiscrepancyOpInfo}{Discrepancy\+Op\+Info}, std\+::list$<$ std\+::pair$<$ uint64\+\_\+t, std\+::string $>$ $>$ $>$ \hyperlink{structDiscrepancy_a9906d402084177f51a92df1731fa25ce}{c\+\_\+op\+\_\+trace}
+\begin{DoxyCompactList}\small\item\em Map a discrepancy info to the list of pairs representing the corresponding assignments in C. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ unsigned int, std\+::map$<$ uint64\+\_\+t, std\+::list$<$ unsigned int $>$ $>$ $>$ \hyperlink{structDiscrepancy_aba40ab7fce0dd3b52d3c2a7261ec7c29}{c\+\_\+control\+\_\+flow\+\_\+trace}
+\begin{DoxyCompactList}\small\item\em This contains the control flow traces gathered from software execution. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ uint64\+\_\+t, \hyperlink{custom__map_8hpp_a7314a7df1cdb3a3acf478ab86e95c226}{Custom\+Unordered\+Map\+Stable}$<$ unsigned int, uint64\+\_\+t $>$ $>$ \hyperlink{structDiscrepancy_a225dda03d26685febf8c24f7fd77e420}{c\+\_\+addr\+\_\+map}
+\begin{DoxyCompactList}\small\item\em Address map used for address discrepancy analysis. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ uint64\+\_\+t, std\+::string $>$ \hyperlink{structDiscrepancy_a0deb6094e1991bebff7fd36ef2704458}{context\+\_\+to\+\_\+scope}
+\begin{DoxyCompactList}\small\item\em Maps every call context in the discrepancy trace to the corresponding scope in the generated HW. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{structDiscrepancy_a9a9f2847e0060eaf86f97162ee66d865}{c\+\_\+trace\+\_\+filename}
+\begin{DoxyCompactList}\small\item\em name of the file that contains the c trace to parse \end{DoxyCompactList}\item 
+unsigned long long \hyperlink{structDiscrepancy_aeb8b28098a68db7393b30d939f6702c2}{n\+\_\+total\+\_\+operations} = 0
+\item 
+unsigned long long \hyperlink{structDiscrepancy_a6f30a7f808cbb365f0013d805cda2c3e}{n\+\_\+checked\+\_\+operations} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 125 of file Discrepancy.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structDiscrepancy_a2b4af9043dce1074c182a0c4f8661e53}\label{structDiscrepancy_a2b4af9043dce1074c182a0c4f8661e53}} 
+\index{Discrepancy@{Discrepancy}!Discrepancy@{Discrepancy}}
+\index{Discrepancy@{Discrepancy}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{Discrepancy()}{Discrepancy()}}
+{\footnotesize\ttfamily Discrepancy\+::\+Discrepancy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 210 of file Discrepancy.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structDiscrepancy_aef5d866bbdca6c194b1513f5fdd22efc}\label{structDiscrepancy_aef5d866bbdca6c194b1513f5fdd22efc}} 
+\index{Discrepancy@{Discrepancy}!clear@{clear}}
+\index{clear@{clear}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Discrepancy\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 212 of file Discrepancy.\+hpp.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structDiscrepancy_aefe1a7cac365946d3357a5e9c771506e}\label{structDiscrepancy_aefe1a7cac365946d3357a5e9c771506e}} 
+\index{Discrepancy@{Discrepancy}!address\+\_\+ssa@{address\+\_\+ssa}}
+\index{address\+\_\+ssa@{address\+\_\+ssa}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{address\+\_\+ssa}{address\_ssa}}
+{\footnotesize\ttfamily \hyperlink{classTreeNodeSet}{Tree\+Node\+Set} Discrepancy\+::address\+\_\+ssa}
+
+
+
+Set of tree nodes representing the \hyperlink{structssa__name}{ssa\+\_\+name} to be treated as addresses in discrepancy analysis. 
+
+
+
+Definition at line 171 of file Discrepancy.\+hpp.
+
+
+
+Referenced by Discrepancy\+Analysis\+C\+Writer\+::write\+Post\+Instruction\+Info().
+
+\mbox{\Hypertarget{structDiscrepancy_a225dda03d26685febf8c24f7fd77e420}\label{structDiscrepancy_a225dda03d26685febf8c24f7fd77e420}} 
+\index{Discrepancy@{Discrepancy}!c\+\_\+addr\+\_\+map@{c\+\_\+addr\+\_\+map}}
+\index{c\+\_\+addr\+\_\+map@{c\+\_\+addr\+\_\+map}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{c\+\_\+addr\+\_\+map}{c\_addr\_map}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$uint64\+\_\+t, \hyperlink{custom__map_8hpp_a7314a7df1cdb3a3acf478ab86e95c226}{Custom\+Unordered\+Map\+Stable}$<$unsigned int, uint64\+\_\+t$>$ $>$ Discrepancy\+::c\+\_\+addr\+\_\+map}
+
+
+
+Address map used for address discrepancy analysis. 
+
+The primary key is the context, the secondary key is the variable id, the mapped value is the base address 
+
+Definition at line 195 of file Discrepancy.\+hpp.
+
+\mbox{\Hypertarget{structDiscrepancy_aba40ab7fce0dd3b52d3c2a7261ec7c29}\label{structDiscrepancy_aba40ab7fce0dd3b52d3c2a7261ec7c29}} 
+\index{Discrepancy@{Discrepancy}!c\+\_\+control\+\_\+flow\+\_\+trace@{c\+\_\+control\+\_\+flow\+\_\+trace}}
+\index{c\+\_\+control\+\_\+flow\+\_\+trace@{c\+\_\+control\+\_\+flow\+\_\+trace}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{c\+\_\+control\+\_\+flow\+\_\+trace}{c\_control\_flow\_trace}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$unsigned int, std\+::map$<$uint64\+\_\+t, std\+::list$<$unsigned int$>$ $>$ $>$ Discrepancy\+::c\+\_\+control\+\_\+flow\+\_\+trace}
+
+
+
+This contains the control flow traces gathered from software execution. 
+
+The primary key is is a function id, the secondary key is a software call context id, the mapped value is a list of BB identifiers traversed during the execution of the call in that context. 
+
+Definition at line 188 of file Discrepancy.\+hpp.
+
+\mbox{\Hypertarget{structDiscrepancy_a9906d402084177f51a92df1731fa25ce}\label{structDiscrepancy_a9906d402084177f51a92df1731fa25ce}} 
+\index{Discrepancy@{Discrepancy}!c\+\_\+op\+\_\+trace@{c\+\_\+op\+\_\+trace}}
+\index{c\+\_\+op\+\_\+trace@{c\+\_\+op\+\_\+trace}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{c\+\_\+op\+\_\+trace}{c\_op\_trace}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{classDiscrepancyOpInfo}{Discrepancy\+Op\+Info}, std\+::list$<$std\+::pair$<$uint64\+\_\+t, std\+::string$>$ $>$ $>$ Discrepancy\+::c\+\_\+op\+\_\+trace}
+
+
+
+Map a discrepancy info to the list of pairs representing the corresponding assignments in C. 
+
+The firts element of every pair is the context, the second element of the pair (the string) is the binary string representation assigned by the operation identified by the primary key. 
+
+Definition at line 180 of file Discrepancy.\+hpp.
+
+\mbox{\Hypertarget{structDiscrepancy_a9a9f2847e0060eaf86f97162ee66d865}\label{structDiscrepancy_a9a9f2847e0060eaf86f97162ee66d865}} 
+\index{Discrepancy@{Discrepancy}!c\+\_\+trace\+\_\+filename@{c\+\_\+trace\+\_\+filename}}
+\index{c\+\_\+trace\+\_\+filename@{c\+\_\+trace\+\_\+filename}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{c\+\_\+trace\+\_\+filename}{c\_trace\_filename}}
+{\footnotesize\ttfamily std\+::string Discrepancy\+::c\+\_\+trace\+\_\+filename}
+
+
+
+name of the file that contains the c trace to parse 
+
+
+
+Definition at line 204 of file Discrepancy.\+hpp.
+
+
+
+Referenced by Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Extra\+Init\+Code().
+
+\mbox{\Hypertarget{structDiscrepancy_ab6c0caf5016e197a993fecb5712c8d10}\label{structDiscrepancy_ab6c0caf5016e197a993fecb5712c8d10}} 
+\index{Discrepancy@{Discrepancy}!call\+\_\+sites\+\_\+info@{call\+\_\+sites\+\_\+info}}
+\index{call\+\_\+sites\+\_\+info@{call\+\_\+sites\+\_\+info}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{call\+\_\+sites\+\_\+info}{call\_sites\_info}}
+{\footnotesize\ttfamily \hyperlink{Discrepancy_8hpp_aa1d62da21f69dae54811e632cadaf6b2}{Call\+Sites\+Info\+Ref} Discrepancy\+::call\+\_\+sites\+\_\+info}
+
+
+
+Reference to a struct holding info on the call sites. 
+
+
+
+Definition at line 128 of file Discrepancy.\+hpp.
+
+\mbox{\Hypertarget{structDiscrepancy_a0deb6094e1991bebff7fd36ef2704458}\label{structDiscrepancy_a0deb6094e1991bebff7fd36ef2704458}} 
+\index{Discrepancy@{Discrepancy}!context\+\_\+to\+\_\+scope@{context\+\_\+to\+\_\+scope}}
+\index{context\+\_\+to\+\_\+scope@{context\+\_\+to\+\_\+scope}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{context\+\_\+to\+\_\+scope}{context\_to\_scope}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$uint64\+\_\+t, std\+::string$>$ Discrepancy\+::context\+\_\+to\+\_\+scope}
+
+
+
+Maps every call context in the discrepancy trace to the corresponding scope in the generated HW. 
+
+
+
+Definition at line 201 of file Discrepancy.\+hpp.
+
+\mbox{\Hypertarget{structDiscrepancy_a95678490e9b1083fc917b21c9adaaca2}\label{structDiscrepancy_a95678490e9b1083fc917b21c9adaaca2}} 
+\index{Discrepancy@{Discrepancy}!Discrepancy\+Call\+Graph@{Discrepancy\+Call\+Graph}}
+\index{Discrepancy\+Call\+Graph@{Discrepancy\+Call\+Graph}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{Discrepancy\+Call\+Graph}{DiscrepancyCallGraph}}
+{\footnotesize\ttfamily \hyperlink{classUnfoldedCallGraph}{Unfolded\+Call\+Graph} Discrepancy\+::\+Discrepancy\+Call\+Graph}
+
+
+
+Reference to the unfolded call graph used for the discrepancy analysis. 
+
+
+
+Definition at line 134 of file Discrepancy.\+hpp.
+
+\mbox{\Hypertarget{structDiscrepancy_a4f56a1d98d80c8f3294e01c5c2c1cc85}\label{structDiscrepancy_a4f56a1d98d80c8f3294e01c5c2c1cc85}} 
+\index{Discrepancy@{Discrepancy}!f\+\_\+id\+\_\+to\+\_\+scope@{f\+\_\+id\+\_\+to\+\_\+scope}}
+\index{f\+\_\+id\+\_\+to\+\_\+scope@{f\+\_\+id\+\_\+to\+\_\+scope}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{f\+\_\+id\+\_\+to\+\_\+scope}{f\_id\_to\_scope}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$std\+::string$>$ $>$ Discrepancy\+::f\+\_\+id\+\_\+to\+\_\+scope}
+
+
+
+Map every fun\+\_\+id to the set of HW scopes of the functional modules. 
+
+
+
+Definition at line 155 of file Discrepancy.\+hpp.
+
+\mbox{\Hypertarget{structDiscrepancy_a996c85a4aeed53e65901fdaec07630ae}\label{structDiscrepancy_a996c85a4aeed53e65901fdaec07630ae}} 
+\index{Discrepancy@{Discrepancy}!hw\+\_\+discrepancy\+\_\+info@{hw\+\_\+discrepancy\+\_\+info}}
+\index{hw\+\_\+discrepancy\+\_\+info@{hw\+\_\+discrepancy\+\_\+info}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{hw\+\_\+discrepancy\+\_\+info}{hw\_discrepancy\_info}}
+{\footnotesize\ttfamily \hyperlink{Discrepancy_8hpp_a17b9b60c3df0b3aa36e80b29c6b1168c}{H\+W\+Discrepancy\+Info\+Ref} Discrepancy\+::hw\+\_\+discrepancy\+\_\+info}
+
+
+
+Reference to a struct holding info on the control flow traces for hw discrepancy analysis. 
+
+
+
+Definition at line 131 of file Discrepancy.\+hpp.
+
+\mbox{\Hypertarget{structDiscrepancy_a6f30a7f808cbb365f0013d805cda2c3e}\label{structDiscrepancy_a6f30a7f808cbb365f0013d805cda2c3e}} 
+\index{Discrepancy@{Discrepancy}!n\+\_\+checked\+\_\+operations@{n\+\_\+checked\+\_\+operations}}
+\index{n\+\_\+checked\+\_\+operations@{n\+\_\+checked\+\_\+operations}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{n\+\_\+checked\+\_\+operations}{n\_checked\_operations}}
+{\footnotesize\ttfamily unsigned long long Discrepancy\+::n\+\_\+checked\+\_\+operations = 0}
+
+
+
+Definition at line 208 of file Discrepancy.\+hpp.
+
+
+
+Referenced by Discrepancy\+Analysis\+C\+Writer\+::write\+Post\+Instruction\+Info().
+
+\mbox{\Hypertarget{structDiscrepancy_aeb8b28098a68db7393b30d939f6702c2}\label{structDiscrepancy_aeb8b28098a68db7393b30d939f6702c2}} 
+\index{Discrepancy@{Discrepancy}!n\+\_\+total\+\_\+operations@{n\+\_\+total\+\_\+operations}}
+\index{n\+\_\+total\+\_\+operations@{n\+\_\+total\+\_\+operations}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{n\+\_\+total\+\_\+operations}{n\_total\_operations}}
+{\footnotesize\ttfamily unsigned long long Discrepancy\+::n\+\_\+total\+\_\+operations = 0}
+
+
+
+Definition at line 206 of file Discrepancy.\+hpp.
+
+\mbox{\Hypertarget{structDiscrepancy_a67ee727c44bf0c2e7e5995d67e7099d3}\label{structDiscrepancy_a67ee727c44bf0c2e7e5995d67e7099d3}} 
+\index{Discrepancy@{Discrepancy}!opid\+\_\+to\+\_\+outsignal@{opid\+\_\+to\+\_\+outsignal}}
+\index{opid\+\_\+to\+\_\+outsignal@{opid\+\_\+to\+\_\+outsignal}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{opid\+\_\+to\+\_\+outsignal}{opid\_to\_outsignal}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$unsigned int, std\+::string$>$ Discrepancy\+::opid\+\_\+to\+\_\+outsignal}
+
+
+
+A map to store the name of the output signal of every operation. 
+
+The key is the operation id, the mapped value is the signal name 
+
+Definition at line 149 of file Discrepancy.\+hpp.
+
+\mbox{\Hypertarget{structDiscrepancy_af3c55dd244654a9c89dc7e41f8909664}\label{structDiscrepancy_af3c55dd244654a9c89dc7e41f8909664}} 
+\index{Discrepancy@{Discrepancy}!selected\+\_\+vcd\+\_\+signals@{selected\+\_\+vcd\+\_\+signals}}
+\index{selected\+\_\+vcd\+\_\+signals@{selected\+\_\+vcd\+\_\+signals}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{selected\+\_\+vcd\+\_\+signals}{selected\_vcd\_signals}}
+{\footnotesize\ttfamily \hyperlink{classvcd__parser_a00f10dd896fdc534014c6192eed18d55}{vcd\+\_\+parser\+::vcd\+\_\+filter\+\_\+t} Discrepancy\+::selected\+\_\+vcd\+\_\+signals}
+
+
+
+A map to store the vcd signals to be dumped. 
+
+The key is the scope, and the mapped set contains all the signals to be dumped for that scope 
+
+Definition at line 143 of file Discrepancy.\+hpp.
+
+\mbox{\Hypertarget{structDiscrepancy_a948b9a53adc3a65cda0046eb6c5e516a}\label{structDiscrepancy_a948b9a53adc3a65cda0046eb6c5e516a}} 
+\index{Discrepancy@{Discrepancy}!ssa\+\_\+to\+\_\+skip@{ssa\+\_\+to\+\_\+skip}}
+\index{ssa\+\_\+to\+\_\+skip@{ssa\+\_\+to\+\_\+skip}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{ssa\+\_\+to\+\_\+skip}{ssa\_to\_skip}}
+{\footnotesize\ttfamily \hyperlink{classTreeNodeSet}{Tree\+Node\+Set} Discrepancy\+::ssa\+\_\+to\+\_\+skip}
+
+
+
+Set of tree nodes representing the \hyperlink{structssa__name}{ssa\+\_\+name} to be skipped in discrepancy analysis. 
+
+
+
+Definition at line 160 of file Discrepancy.\+hpp.
+
+
+
+Referenced by Discrepancy\+Analysis\+C\+Writer\+::write\+Post\+Instruction\+Info().
+
+\mbox{\Hypertarget{structDiscrepancy_a9c2015c8e6d41e5ff0ec2b713527f132}\label{structDiscrepancy_a9c2015c8e6d41e5ff0ec2b713527f132}} 
+\index{Discrepancy@{Discrepancy}!ssa\+\_\+to\+\_\+skip\+\_\+if\+\_\+address@{ssa\+\_\+to\+\_\+skip\+\_\+if\+\_\+address}}
+\index{ssa\+\_\+to\+\_\+skip\+\_\+if\+\_\+address@{ssa\+\_\+to\+\_\+skip\+\_\+if\+\_\+address}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{ssa\+\_\+to\+\_\+skip\+\_\+if\+\_\+address}{ssa\_to\_skip\_if\_address}}
+{\footnotesize\ttfamily \hyperlink{classTreeNodeSet}{Tree\+Node\+Set} Discrepancy\+::ssa\+\_\+to\+\_\+skip\+\_\+if\+\_\+address}
+
+
+
+Set of tree nodes. 
+
+S\+SA in this set must not be checked in the discrepancy analysis if they are also marked as addresses. 
+
+Definition at line 166 of file Discrepancy.\+hpp.
+
+
+
+Referenced by Discrepancy\+Analysis\+C\+Writer\+::write\+Post\+Instruction\+Info().
+
+\mbox{\Hypertarget{structDiscrepancy_a72a1643010c0f91d5925ca916cc1782e}\label{structDiscrepancy_a72a1643010c0f91d5925ca916cc1782e}} 
+\index{Discrepancy@{Discrepancy}!unfolded\+\_\+root\+\_\+v@{unfolded\+\_\+root\+\_\+v}}
+\index{unfolded\+\_\+root\+\_\+v@{unfolded\+\_\+root\+\_\+v}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{unfolded\+\_\+root\+\_\+v}{unfolded\_root\_v}}
+{\footnotesize\ttfamily \hyperlink{UnfoldedCallGraph_8hpp_a6c87395c9d950d587c8e4db39b93e3e2}{Unfolded\+Vertex\+Descriptor} Discrepancy\+::unfolded\+\_\+root\+\_\+v}
+
+
+
+Unfolded\+Vertex\+Descriptor of the root of the Discrepancy\+Call\+Graph. 
+
+
+
+Definition at line 137 of file Discrepancy.\+hpp.
+
+\mbox{\Hypertarget{structDiscrepancy_aa61fa1c5f2ec0207409fbf6147e5f6a2}\label{structDiscrepancy_aa61fa1c5f2ec0207409fbf6147e5f6a2}} 
+\index{Discrepancy@{Discrepancy}!unfolded\+\_\+v\+\_\+to\+\_\+scope@{unfolded\+\_\+v\+\_\+to\+\_\+scope}}
+\index{unfolded\+\_\+v\+\_\+to\+\_\+scope@{unfolded\+\_\+v\+\_\+to\+\_\+scope}!Discrepancy@{Discrepancy}}
+\subsubsection{\texorpdfstring{unfolded\+\_\+v\+\_\+to\+\_\+scope}{unfolded\_v\_to\_scope}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$\hyperlink{UnfoldedCallGraph_8hpp_a6c87395c9d950d587c8e4db39b93e3e2}{Unfolded\+Vertex\+Descriptor}, std\+::string$>$ Discrepancy\+::unfolded\+\_\+v\+\_\+to\+\_\+scope}
+
+
+
+Map every vertex of the \hyperlink{classUnfoldedCallGraph}{Unfolded\+Call\+Graph} to a scope in HW. 
+
+
+
+Definition at line 152 of file Discrepancy.\+hpp.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/vcd/\hyperlink{Discrepancy_8hpp}{Discrepancy.\+hpp}\end{DoxyCompactItemize}

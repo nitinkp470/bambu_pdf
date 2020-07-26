@@ -1,0 +1,965 @@
+\hypertarget{classBit__Value}{}\section{Bit\+\_\+\+Value Class Reference}
+\label{classBit__Value}\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+
+
+Full implementation of Bit Value analysis as described in Bit\+Value Inference\+: Detecting and Exploiting Narrow Bitwidth Computations Mihai Budiu Seth Copen Goldstein \href{http://www.cs.cmu.edu/~seth/papers/budiu-tr00.pdf}{\tt http\+://www.\+cs.\+cmu.\+edu/$\sim$seth/papers/budiu-\/tr00.\+pdf}.  
+
+
+
+
+{\ttfamily \#include $<$Bit\+\_\+\+Value.\+hpp$>$}
+
+
+
+Inheritance diagram for Bit\+\_\+\+Value\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{db/dcf/classBit__Value__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bit\+\_\+\+Value\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d24/classBit__Value__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBit__Value_a81d98acfc22db158a1955ca04bdf3fb8}{Bit\+\_\+\+Value} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \+\_\+\+AppM, unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classBit__Value_a29d884fb981b7171381735969e63f138}{$\sim$\+Bit\+\_\+\+Value} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classBit__Value_afa7bcd5d1e9e4683bd7301de7a90e9b3}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em perform the bit value analysis \end{DoxyCompactList}\item 
+void \hyperlink{classBit__Value_ad953c9d31beaef0358204674ef9308e5}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\item 
+bool \hyperlink{classBit__Value_abcdc2de278483e5b1771f6f90081330a}{Has\+To\+Be\+Executed} () const override
+\begin{DoxyCompactList}\small\item\em Check if this step has actually to be executed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classBit__Value_a680cd4a8faa401adb3262c2cfd8fc06f}{print\+\_\+bitstring\+\_\+map} (const \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ unsigned int, std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$$>$ \&map) const
+\begin{DoxyCompactList}\small\item\em Debugging function used to print the contents of the current and best maps. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classBit__Value_a91a36b568a7e9ddf21b7069ee4ecc518}{pointer\+\_\+resizing} (unsigned int output\+\_\+id) const
+\item 
+unsigned int \hyperlink{classBit__Value_a71f649375c0d473c2f5b91ecc6c89365}{lsb\+\_\+to\+\_\+zero} (const addr\+\_\+expr $\ast$ae) const
+\item 
+void \hyperlink{classBit__Value_acb5ecbfd885e6478546792c4a446364c}{initialize} ()
+\begin{DoxyCompactList}\small\item\em Initializes best with C type as bitstring, signed\+\_\+var and arguments using the information taken from the syntax tree given by the application manager. \end{DoxyCompactList}\item 
+void \hyperlink{classBit__Value_a03e2a690b6edfac4100e93554c43629c}{clear\+\_\+current} ()
+\begin{DoxyCompactList}\small\item\em Clears all the entry in the current map, except for the input arguments. \end{DoxyCompactList}\item 
+void \hyperlink{classBit__Value_ade90e85e32dd5a1c2c4d11c221a69fd2}{forward} ()
+\begin{DoxyCompactList}\small\item\em Applies the forward algorithm, as described in the paper, analyzing each assignment statement following the program order, and each phi. \end{DoxyCompactList}\item 
+void \hyperlink{classBit__Value_a45f7af464b055789135126c85c65deea}{backward} ()
+\begin{DoxyCompactList}\small\item\em Applies the backward algorithm, as described in the paper, analyzing each assignment statement starting from the output, going up to the inputs, and each phi. \end{DoxyCompactList}\item 
+std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ \hyperlink{classBit__Value_abe0b4a87f9114bc82818b51dbdf0aca7}{forward\+\_\+transfer} (const \hyperlink{structgimple__assign}{gimple\+\_\+assign} $\ast$ga) const
+\begin{DoxyCompactList}\small\item\em Takes a gimple assignment, analyzes the operation performed from the rhs and its input bitstring, and generate a bitstring from the output. \end{DoxyCompactList}\item 
+std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ \hyperlink{classBit__Value_aec80afe9154981787b03d1a8c48df061}{backward\+\_\+transfer} (const \hyperlink{structgimple__assign}{gimple\+\_\+assign} $\ast$ga, unsigned int output\+\_\+id) const
+\begin{DoxyCompactList}\small\item\em Compute the inputs back propagation values, given a gimple assignment and the uid of the output variable. \end{DoxyCompactList}\item 
+bool \hyperlink{classBit__Value_a2c7439f99c654aefc5ebf88e517fa6e6}{update\+\_\+\+IR} ()
+\begin{DoxyCompactList}\small\item\em Updates the bitvalues of the intermediate representation with the values taken from the input map. \end{DoxyCompactList}\item 
+bool \hyperlink{classBit__Value_a8d3cd62d0c1494696fa746657ad23a7e}{manage\+\_\+forward\+\_\+binary\+\_\+operands} (const \hyperlink{structbinary__expr}{binary\+\_\+expr} $\ast$\hyperlink{structoperation}{operation}, unsigned int \&arg1\+\_\+uid, unsigned int \&arg2\+\_\+uid, std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ \&arg1\+\_\+bitstring, std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ \&arg2\+\_\+bitstring) const
+\begin{DoxyCompactList}\small\item\em Given a binary operation, fetches the uid of the arguments and the relative bitstrings. \end{DoxyCompactList}\item 
+std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ \hyperlink{classBit__Value_ad2b5f1be449648c702b1cfe905c6f7ab}{backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses} (const \hyperlink{structssa__name}{ssa\+\_\+name} \&ssa, const \hyperlink{structstatement__list}{statement\+\_\+list} \&\hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_ace9c0991f7fffe6ab436175d7fff821e}{sl}, unsigned int bb\+\_\+loop\+\_\+id) const
+\begin{DoxyCompactList}\small\item\em Given an \hyperlink{structssa__name}{ssa\+\_\+name} it computes the resulting bitstring from backward propagation from the places where that ssa is used. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classBit__Value_afd25b019269ed85825562c64edf120ed}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classBit__Value_ad7a83cc547266256277faf96c9774c4f}{not\+\_\+frontend}
+\begin{DoxyCompactList}\small\item\em True if this step is not executed in the frontend. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$ unsigned int, unsigned int $>$ \hyperlink{classBit__Value_a97724dd3554d471ea1ad42f5b5b4f1cf}{direct\+\_\+call\+\_\+id\+\_\+to\+\_\+called\+\_\+id}
+\begin{DoxyCompactList}\small\item\em Maps the id of a gimple statement to the id of the function called in that statement. \end{DoxyCompactList}\item 
+\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ unsigned int $>$ \hyperlink{classBit__Value_afb50fdc59b857254fab26a29218c65b7}{arguments}
+\begin{DoxyCompactList}\small\item\em Contains the input parameters of the function that\textquotesingle{}s being analyzed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ $>$ $>$ $>$ \hyperlink{classBit__Value_a60afcc57dc9bc4992577b81eb752c396}{plus\+\_\+expr\+\_\+map}
+\begin{DoxyCompactList}\small\item\em Map storing the implementation of the forward\+\_\+transfer\textquotesingle{}s plus\+\_\+expr. \end{DoxyCompactList}\item 
+static const std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ $>$ $>$ $>$ \hyperlink{classBit__Value_a14e017ca4c0bf5fd112f293bd7d1af3b}{minus\+\_\+expr\+\_\+map}
+\begin{DoxyCompactList}\small\item\em Map storing the implementation of the forward\+\_\+transfer\textquotesingle{}s minus\+\_\+expr. \end{DoxyCompactList}\item 
+static const std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ $>$ \hyperlink{classBit__Value_a64fd76ea6cbb0dccb62dd90302d5122d}{bit\+\_\+ior\+\_\+expr\+\_\+map}
+\begin{DoxyCompactList}\small\item\em Map storing the implementation of the forward\+\_\+transfer\textquotesingle{}s bit\+\_\+ior\+\_\+expr\+\_\+map. \end{DoxyCompactList}\item 
+static const std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ $>$ \hyperlink{classBit__Value_aa5fbce787906cfea58af464a5db01721}{bit\+\_\+xor\+\_\+expr\+\_\+map}
+\begin{DoxyCompactList}\small\item\em Map storing the implementation of the forward\+\_\+transfer\textquotesingle{}s bit\+\_\+xor\+\_\+expr\+\_\+map. \end{DoxyCompactList}\item 
+static const std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ $>$ \hyperlink{classBit__Value_a269f2f5c0db02d71e3f940c98b5b36e6}{bit\+\_\+and\+\_\+expr\+\_\+map}
+\begin{DoxyCompactList}\small\item\em Map storing the implementation of the forward\+\_\+transfer\textquotesingle{}s bit\+\_\+and\+\_\+expr\+\_\+map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Full implementation of Bit Value analysis as described in Bit\+Value Inference\+: Detecting and Exploiting Narrow Bitwidth Computations Mihai Budiu Seth Copen Goldstein \href{http://www.cs.cmu.edu/~seth/papers/budiu-tr00.pdf}{\tt http\+://www.\+cs.\+cmu.\+edu/$\sim$seth/papers/budiu-\/tr00.\+pdf}. 
+
+Definition at line 77 of file Bit\+\_\+\+Value.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBit__Value_a81d98acfc22db158a1955ca04bdf3fb8}\label{classBit__Value_a81d98acfc22db158a1955ca04bdf3fb8}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{Bit\+\_\+\+Value()}{Bit\_Value()}}
+{\footnotesize\ttfamily Bit\+\_\+\+Value\+::\+Bit\+\_\+\+Value (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{unsigned int}]{function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+Param} & is the set of the parameters \\
+\hline
+{\em \+\_\+\+AppM} & is the application manager \\
+\hline
+{\em function\+\_\+id} & is the identifier of the function \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 888 of file Bit\+\_\+\+Value.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$\+Bit\+\_\+\+Value().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{df/d4b/classBit__Value_a81d98acfc22db158a1955ca04bdf3fb8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBit__Value_a29d884fb981b7171381735969e63f138}\label{classBit__Value_a29d884fb981b7171381735969e63f138}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!````~Bit\+\_\+\+Value@{$\sim$\+Bit\+\_\+\+Value}}
+\index{````~Bit\+\_\+\+Value@{$\sim$\+Bit\+\_\+\+Value}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{$\sim$\+Bit\+\_\+\+Value()}{~Bit\_Value()}}
+{\footnotesize\ttfamily Bit\+\_\+\+Value\+::$\sim$\+Bit\+\_\+\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Bit\+\_\+\+Value().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{df/d4b/classBit__Value_a29d884fb981b7171381735969e63f138_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBit__Value_a45f7af464b055789135126c85c65deea}\label{classBit__Value_a45f7af464b055789135126c85c65deea}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!backward@{backward}}
+\index{backward@{backward}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{backward()}{backward()}}
+{\footnotesize\ttfamily void Bit\+\_\+\+Value\+::backward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Applies the backward algorithm, as described in the paper, analyzing each assignment statement starting from the output, going up to the inputs, and each phi. 
+
+Uses the \hyperlink{classBit__Value_aec80afe9154981787b03d1a8c48df061}{backward\+\_\+transfer()} function to compute the output\textquotesingle{}s bitstring, that stores in current. The algorithm loops until current is modified. \begin{DoxySeeAlso}{See also}
+\hyperlink{classBit__Value_aec80afe9154981787b03d1a8c48df061}{backward\+\_\+transfer()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 202 of file Bit\+\_\+\+Value\+\_\+backward.\+cpp.
+
+
+
+References backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses(), Bit\+Lattice\+Manipulator\+::best, bitstring\+\_\+constant(), tree\+\_\+helper\+::\+C\+Get\+Type(), Bit\+Lattice\+Manipulator\+::current, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Bit\+Lattice\+Manipulator\+::is\+\_\+handled\+\_\+by\+\_\+bitvalue(), sl, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, Bit\+Lattice\+Manipulator\+::\+TM, and Bit\+Lattice\+Manipulator\+::update\+\_\+current().
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_a45f7af464b055789135126c85c65deea_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{df/d4b/classBit__Value_a45f7af464b055789135126c85c65deea_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBit__Value_ad2b5f1be449648c702b1cfe905c6f7ab}\label{classBit__Value_ad2b5f1be449648c702b1cfe905c6f7ab}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses@{backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses}}
+\index{backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses@{backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses()}{backward\_compute\_result\_from\_uses()}}
+{\footnotesize\ttfamily std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ Bit\+\_\+\+Value\+::backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses (\begin{DoxyParamCaption}\item[{const \hyperlink{structssa__name}{ssa\+\_\+name} \&}]{ssa,  }\item[{const \hyperlink{structstatement__list}{statement\+\_\+list} \&}]{sl,  }\item[{unsigned int}]{bb\+\_\+loop\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Given an \hyperlink{structssa__name}{ssa\+\_\+name} it computes the resulting bitstring from backward propagation from the places where that ssa is used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ssa} & the \hyperlink{structssa__name}{ssa\+\_\+name} to process \\
+\hline
+{\em sl} & is the statment list of the function where ssa is defined \\
+\hline
+{\em bb\+\_\+loop\+\_\+id} & is the loop\+\_\+id of the basic block where ssa is defined \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the computed bitstring
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Giulio Stramondo 
+
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+
+Pietro Fezzardi \href{mailto:pietrofezzardi@gmail.com}{\tt pietrofezzardi@gmail.\+com} 
+\end{DoxyAuthor}
+
+
+Definition at line 59 of file Bit\+\_\+\+Value\+\_\+backward.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, backward\+\_\+transfer(), Bit\+Lattice\+Manipulator\+::best, bitstring\+\_\+to\+\_\+string(), ssa\+\_\+name\+::\+C\+Get\+Use\+Stmts(), create\+\_\+u\+\_\+bitstring(), create\+\_\+x\+\_\+bitstring(), Bit\+Lattice\+Manipulator\+::current, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, direct\+\_\+call\+\_\+id\+\_\+to\+\_\+called\+\_\+id, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+node\+::get\+\_\+kind\+\_\+text(), G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+node\+::index, Bit\+Lattice\+Manipulator\+::inf(), statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, tree\+\_\+helper\+::\+Size(), S\+TR, string\+\_\+to\+\_\+bitstring(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and Bit\+Lattice\+Manipulator\+::\+TM.
+
+
+
+Referenced by backward().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_ad2b5f1be449648c702b1cfe905c6f7ab_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_ad2b5f1be449648c702b1cfe905c6f7ab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBit__Value_aec80afe9154981787b03d1a8c48df061}\label{classBit__Value_aec80afe9154981787b03d1a8c48df061}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!backward\+\_\+transfer@{backward\+\_\+transfer}}
+\index{backward\+\_\+transfer@{backward\+\_\+transfer}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{backward\+\_\+transfer()}{backward\_transfer()}}
+{\footnotesize\ttfamily std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ Bit\+\_\+\+Value\+::backward\+\_\+transfer (\begin{DoxyParamCaption}\item[{const \hyperlink{structgimple__assign}{gimple\+\_\+assign} $\ast$}]{ga,  }\item[{unsigned int}]{output\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compute the inputs back propagation values, given a gimple assignment and the uid of the output variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ga} & gimple assignment that is being analyzed \\
+\hline
+{\em output\+\_\+id} & uid of the output of the given gimple assignment. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+computed backpropagation bitstring 
+\end{DoxyReturn}
+first check if the gimple assign still produces something of relevant and it is not a \hyperlink{structcall__expr}{call\+\_\+expr}
+
+we cannot say anything on abs\+\_\+expr 
+
+Definition at line 295 of file Bit\+\_\+\+Value\+\_\+backward.\+cpp.
+
+
+
+References call\+\_\+expr\+::args, Bit\+Lattice\+Manipulator\+::best, Bit\+Lattice\+Manipulator\+::bit\+\_\+inf(), bitstring\+\_\+to\+\_\+string(), tree\+\_\+helper\+::\+C\+Get\+Type(), create\+\_\+u\+\_\+bitstring(), Bit\+Lattice\+Manipulator\+::current, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, direct\+\_\+call\+\_\+id\+\_\+to\+\_\+called\+\_\+id, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, index, tree\+\_\+node\+::index, Bit\+Lattice\+Manipulator\+::inf(), tree\+\_\+helper\+::is\+\_\+int(), O\+NE, gimple\+\_\+assign\+::op0, gimple\+\_\+assign\+::op1, pointer\+\_\+resizing(), Bit\+Lattice\+Manipulator\+::sign\+\_\+extend\+\_\+bitstring(), tree\+\_\+helper\+::size(), tree\+\_\+helper\+::\+Size(), S\+TR, string\+\_\+to\+\_\+bitstring(), gimple\+\_\+assign\+::temporary\+\_\+address, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, Bit\+Lattice\+Manipulator\+::\+TM, tree\+\_\+node\+::\+To\+String(), X, and Z\+E\+RO.
+
+
+
+Referenced by backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_aec80afe9154981787b03d1a8c48df061_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_aec80afe9154981787b03d1a8c48df061_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBit__Value_a03e2a690b6edfac4100e93554c43629c}\label{classBit__Value_a03e2a690b6edfac4100e93554c43629c}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!clear\+\_\+current@{clear\+\_\+current}}
+\index{clear\+\_\+current@{clear\+\_\+current}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{clear\+\_\+current()}{clear\_current()}}
+{\footnotesize\ttfamily void Bit\+\_\+\+Value\+::clear\+\_\+current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Clears all the entry in the current map, except for the input arguments. 
+
+
+
+Definition at line 1682 of file Bit\+\_\+\+Value.\+cpp.
+
+
+
+References arguments, Bit\+Lattice\+Manipulator\+::best, Bit\+Lattice\+Manipulator\+::current, and Function\+Frontend\+Flow\+Step\+::function\+\_\+id.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_a03e2a690b6edfac4100e93554c43629c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBit__Value_afd25b019269ed85825562c64edf120ed}\label{classBit__Value_afd25b019269ed85825562c64edf120ed}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ Bit\+\_\+\+Value\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 896 of file Bit\+\_\+\+Value.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and U\+S\+E\+\_\+\+C\+O\+U\+N\+T\+I\+NG.
+
+\mbox{\Hypertarget{classBit__Value_ade90e85e32dd5a1c2c4d11c221a69fd2}\label{classBit__Value_ade90e85e32dd5a1c2c4d11c221a69fd2}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!forward@{forward}}
+\index{forward@{forward}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{forward()}{forward()}}
+{\footnotesize\ttfamily void Bit\+\_\+\+Value\+::forward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Applies the forward algorithm, as described in the paper, analyzing each assignment statement following the program order, and each phi. 
+
+Uses the \hyperlink{classBit__Value_abe0b4a87f9114bc82818b51dbdf0aca7}{forward\+\_\+transfer()} function to compute the output\textquotesingle{}s bitstring, that stores in current. The algorithm loops until current is modified. \begin{DoxySeeAlso}{See also}
+\hyperlink{classBit__Value_abe0b4a87f9114bc82818b51dbdf0aca7}{forward\+\_\+transfer()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2194 of file Bit\+\_\+\+Value\+\_\+forward.\+cpp.
+
+
+
+References Bit\+Lattice\+Manipulator\+::best, bitstring\+\_\+to\+\_\+string(), tree\+\_\+helper\+::\+C\+Get\+Type(), create\+\_\+u\+\_\+bitstring(), create\+\_\+x\+\_\+bitstring(), Bit\+Lattice\+Manipulator\+::current, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, forward\+\_\+transfer(), Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+required\+\_\+values(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Bit\+Lattice\+Manipulator\+::inf(), Bit\+Lattice\+Manipulator\+::is\+\_\+handled\+\_\+by\+\_\+bitvalue(), tree\+\_\+helper\+::is\+\_\+int(), phi, tree\+\_\+helper\+::\+Size(), sl, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, Bit\+Lattice\+Manipulator\+::\+TM, and Bit\+Lattice\+Manipulator\+::update\+\_\+current().
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_ade90e85e32dd5a1c2c4d11c221a69fd2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{df/d4b/classBit__Value_ade90e85e32dd5a1c2c4d11c221a69fd2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBit__Value_abe0b4a87f9114bc82818b51dbdf0aca7}\label{classBit__Value_abe0b4a87f9114bc82818b51dbdf0aca7}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!forward\+\_\+transfer@{forward\+\_\+transfer}}
+\index{forward\+\_\+transfer@{forward\+\_\+transfer}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{forward\+\_\+transfer()}{forward\_transfer()}}
+{\footnotesize\ttfamily std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ Bit\+\_\+\+Value\+::forward\+\_\+transfer (\begin{DoxyParamCaption}\item[{const \hyperlink{structgimple__assign}{gimple\+\_\+assign} $\ast$}]{ga }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Takes a gimple assignment, analyzes the operation performed from the rhs and its input bitstring, and generate a bitstring from the output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ga} & assignment to analyze \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output bitstring 
+\end{DoxyReturn}
+
+
+Definition at line 107 of file Bit\+\_\+\+Value\+\_\+forward.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, Bit\+Lattice\+Manipulator\+::best, bit\+\_\+and\+\_\+expr\+\_\+map, bit\+\_\+ior\+\_\+expr\+\_\+map, bit\+\_\+xor\+\_\+expr\+\_\+map, bitstring\+\_\+to\+\_\+string(), tree\+\_\+helper\+::\+C\+Get\+Type(), create\+\_\+u\+\_\+bitstring(), Bit\+Lattice\+Manipulator\+::current, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, direct\+\_\+call\+\_\+id\+\_\+to\+\_\+called\+\_\+id, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, index, tree\+\_\+node\+::index, Bit\+Lattice\+Manipulator\+::inf(), tree\+\_\+helper\+::is\+\_\+bool(), Bit\+Lattice\+Manipulator\+::is\+\_\+handled\+\_\+by\+\_\+bitvalue(), tree\+\_\+helper\+::is\+\_\+int(), lsb\+\_\+to\+\_\+zero(), manage\+\_\+forward\+\_\+binary\+\_\+operands(), max(), min, minus\+\_\+expr\+\_\+map, O\+NE, gimple\+\_\+assign\+::op0, gimple\+\_\+assign\+::op1, plus\+\_\+expr\+\_\+map, Bit\+Lattice\+Manipulator\+::sign\+\_\+extend\+\_\+bitstring(), tree\+\_\+helper\+::\+Size(), S\+TR, string\+\_\+to\+\_\+bitstring(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, Bit\+Lattice\+Manipulator\+::\+TM, U, X, and Z\+E\+RO.
+
+
+
+Referenced by forward().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_abe0b4a87f9114bc82818b51dbdf0aca7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_abe0b4a87f9114bc82818b51dbdf0aca7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBit__Value_abcdc2de278483e5b1771f6f90081330a}\label{classBit__Value_abcdc2de278483e5b1771f6f90081330a}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}}
+\index{Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{Has\+To\+Be\+Executed()}{HasToBeExecuted()}}
+{\footnotesize\ttfamily bool Bit\+\_\+\+Value\+::\+Has\+To\+Be\+Executed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if this step has actually to be executed. 
+
+\begin{DoxyReturn}{Returns}
+true if the step has to be executed 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFunctionFrontendFlowStep_a12e786363530aa9533e4bd9380130d75}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 1746 of file Bit\+\_\+\+Value.\+cpp.
+
+
+
+References Function\+Frontend\+Flow\+Step\+::bitvalue\+\_\+version, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, and Function\+Frontend\+Flow\+Step\+::\+Has\+To\+Be\+Executed().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_abcdc2de278483e5b1771f6f90081330a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBit__Value_acb5ecbfd885e6478546792c4a446364c}\label{classBit__Value_acb5ecbfd885e6478546792c4a446364c}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!initialize@{initialize}}
+\index{initialize@{initialize}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Bit\+\_\+\+Value\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes best with C type as bitstring, signed\+\_\+var and arguments using the information taken from the syntax tree given by the application manager. 
+
+Scan all the gimple assign statements in each bloc if the left hand side is signed this is inserted into the signed\+\_\+var set (this information is used by the signextension)
+
+for each lhs variable in the \hyperlink{structgimple__assign}{gimple\+\_\+assign} instruction and entry is created in the best map the entry in the map is of the type $<$\hyperlink{tree__node_8hpp_a00ddbcaa37bcf886161a188d57bcbde6}{G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+D\+E(lhs)}, bit\+\_\+string of $<$\+U$>$s of the variable lenght$>$ for each \hyperlink{structgimple__assign}{gimple\+\_\+assign} the used variables are checked against the values in the parm set in order to identify the parameters of the function when those are found their ssa index node is added in the best map and in the arguments map ( used by the \hyperlink{classBitLatticeManipulator_a42eb6c4e6540a538398764f35761dbe3}{clear()} function )
+
+Scans each phi in the bloc (not virtual) res of the phi is added to the signed\+\_\+var set if it\textquotesingle{}s signed, and to the best map
+
+The edge of each phi are scanned, if the edge is carrying a constant of type \hyperlink{structinteger__cst}{integer\+\_\+cst} the index of the \hyperlink{structinteger__cst}{integer\+\_\+cst} node is used to identify it, one entry is created for the best table mapping the \hyperlink{structinteger__cst}{integer\+\_\+cst} index to its bitstring representation if the value of the constant is negative it\textquotesingle{}s added to the signed\+\_\+var set
+
+if the edge is carrying a ssa variable it\textquotesingle{}s checked if its a parameter, if it is, it is added to the arguments set and, it is added to the best map check if this assignment is a load from a constant array
+
+and now something for the written variables
+
+check if this assignment is a load from a constant array 
+
+Definition at line 1015 of file Bit\+\_\+\+Value.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, arguments, Bit\+Lattice\+Manipulator\+::best, bitstring\+\_\+to\+\_\+string(), Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), tree\+\_\+helper\+::\+C\+Get\+Type(), Bit\+Lattice\+Manipulator\+::clear(), Bit\+Lattice\+Manipulator\+::constructor\+\_\+bitstring(), create\+\_\+bitstring\+\_\+from\+\_\+constant(), create\+\_\+u\+\_\+bitstring(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, direct\+\_\+call\+\_\+id\+\_\+to\+\_\+called\+\_\+id, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, tree\+\_\+helper\+::get\+\_\+base\+\_\+index(), Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+required\+\_\+values(), tree\+\_\+helper\+::\+Get\+Function\+Return\+Type(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+node\+::index, Bit\+Lattice\+Manipulator\+::inf(), Bit\+Lattice\+Manipulator\+::is\+\_\+handled\+\_\+by\+\_\+bitvalue(), tree\+\_\+helper\+::is\+\_\+int(), tree\+\_\+helper\+::is\+\_\+natural(), O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, phi, print\+\_\+bitstring\+\_\+map(), Bit\+Lattice\+Manipulator\+::sign\+\_\+extend\+\_\+bitstring(), Bit\+Lattice\+Manipulator\+::sign\+\_\+reduce\+\_\+bitstring(), Bit\+Lattice\+Manipulator\+::signed\+\_\+var, tree\+\_\+helper\+::\+Size(), sl, S\+TR, Bit\+Lattice\+Manipulator\+::string\+\_\+cst\+\_\+bitstring(), string\+\_\+to\+\_\+bitstring(), Bit\+Lattice\+Manipulator\+::sup(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, Bit\+Lattice\+Manipulator\+::\+TM, and Z\+E\+RO.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_acb5ecbfd885e6478546792c4a446364c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{df/d4b/classBit__Value_acb5ecbfd885e6478546792c4a446364c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBit__Value_ad953c9d31beaef0358204674ef9308e5}\label{classBit__Value_ad953c9d31beaef0358204674ef9308e5}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Bit\+\_\+\+Value\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 1740 of file Bit\+\_\+\+Value.\+cpp.
+
+
+
+References Application\+Frontend\+Flow\+Step\+::\+Compute\+Signature(), Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, E\+M\+P\+TY, Wrefcount$<$ T $>$\+::lock(), and not\+\_\+frontend.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_ad953c9d31beaef0358204674ef9308e5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBit__Value_afa7bcd5d1e9e4683bd7301de7a90e9b3}\label{classBit__Value_afa7bcd5d1e9e4683bd7301de7a90e9b3}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} Bit\+\_\+\+Value\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+perform the bit value analysis 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 1698 of file Bit\+\_\+\+Value.\+cpp.
+
+
+
+References arguments, backward(), Bit\+Lattice\+Manipulator\+::best, Function\+Frontend\+Flow\+Step\+::bitvalue\+\_\+version, Bit\+Lattice\+Manipulator\+::clear(), clear\+\_\+current(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, direct\+\_\+call\+\_\+id\+\_\+to\+\_\+called\+\_\+id, forward(), Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, initialize(), Bit\+Lattice\+Manipulator\+::mix(), print\+\_\+bitstring\+\_\+map(), P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, test\+\_\+panda\+::restart, S\+U\+C\+C\+E\+SS, U\+N\+C\+H\+A\+N\+G\+ED, and update\+\_\+\+I\+R().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{df/d4b/classBit__Value_afa7bcd5d1e9e4683bd7301de7a90e9b3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBit__Value_a71f649375c0d473c2f5b91ecc6c89365}\label{classBit__Value_a71f649375c0d473c2f5b91ecc6c89365}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!lsb\+\_\+to\+\_\+zero@{lsb\+\_\+to\+\_\+zero}}
+\index{lsb\+\_\+to\+\_\+zero@{lsb\+\_\+to\+\_\+zero}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{lsb\+\_\+to\+\_\+zero()}{lsb\_to\_zero()}}
+{\footnotesize\ttfamily unsigned int Bit\+\_\+\+Value\+::lsb\+\_\+to\+\_\+zero (\begin{DoxyParamCaption}\item[{const addr\+\_\+expr $\ast$}]{ae }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 870 of file Bit\+\_\+\+Value.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, G\+E\+T\+\_\+\+N\+O\+DE, and index.
+
+
+
+Referenced by forward\+\_\+transfer().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_a71f649375c0d473c2f5b91ecc6c89365_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBit__Value_a8d3cd62d0c1494696fa746657ad23a7e}\label{classBit__Value_a8d3cd62d0c1494696fa746657ad23a7e}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!manage\+\_\+forward\+\_\+binary\+\_\+operands@{manage\+\_\+forward\+\_\+binary\+\_\+operands}}
+\index{manage\+\_\+forward\+\_\+binary\+\_\+operands@{manage\+\_\+forward\+\_\+binary\+\_\+operands}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{manage\+\_\+forward\+\_\+binary\+\_\+operands()}{manage\_forward\_binary\_operands()}}
+{\footnotesize\ttfamily bool Bit\+\_\+\+Value\+::manage\+\_\+forward\+\_\+binary\+\_\+operands (\begin{DoxyParamCaption}\item[{const \hyperlink{structbinary__expr}{binary\+\_\+expr} $\ast$}]{operation,  }\item[{unsigned int \&}]{arg1\+\_\+uid,  }\item[{unsigned int \&}]{arg2\+\_\+uid,  }\item[{std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ \&}]{arg1\+\_\+bitstring,  }\item[{std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ \&}]{arg2\+\_\+bitstring }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Given a binary operation, fetches the uid of the arguments and the relative bitstrings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em operation} & where the inputs are going to be extracted from. \\
+\hline
+{\em arg1\+\_\+uid} & where the uid of the first argument is going to be stored \\
+\hline
+{\em arg2\+\_\+uid} & where the uid of the second argument is going to be stored \\
+\hline
+{\em arg1\+\_\+bitstring} & where the bitstring ( taken from best ) relative to argument 1 is going to be saved. \\
+\hline
+{\em arg2\+\_\+bitstring} & where the bitstring ( taken from best ) relative to argument 2 is going to be saved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE, if the operation was successful, F\+A\+L\+SE otherwise.
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Giulio Stramondo 
+
+Pietro Fezzardi \href{mailto:pietrofezzardi@gmail.com}{\tt pietrofezzardi@gmail.\+com} 
+
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+\end{DoxyAuthor}
+
+
+Definition at line 54 of file Bit\+\_\+\+Value\+\_\+forward.\+cpp.
+
+
+
+References Bit\+Lattice\+Manipulator\+::best, bitstring\+\_\+to\+\_\+string(), tree\+\_\+helper\+::\+C\+Get\+Type(), create\+\_\+u\+\_\+bitstring(), Bit\+Lattice\+Manipulator\+::current, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Bit\+Lattice\+Manipulator\+::is\+\_\+handled\+\_\+by\+\_\+bitvalue(), binary\+\_\+expr\+::op0, binary\+\_\+expr\+::op1, tree\+\_\+helper\+::\+Size(), S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by forward\+\_\+transfer().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_a8d3cd62d0c1494696fa746657ad23a7e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_a8d3cd62d0c1494696fa746657ad23a7e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBit__Value_a91a36b568a7e9ddf21b7069ee4ecc518}\label{classBit__Value_a91a36b568a7e9ddf21b7069ee4ecc518}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!pointer\+\_\+resizing@{pointer\+\_\+resizing}}
+\index{pointer\+\_\+resizing@{pointer\+\_\+resizing}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{pointer\+\_\+resizing()}{pointer\_resizing()}}
+{\footnotesize\ttfamily unsigned int Bit\+\_\+\+Value\+::pointer\+\_\+resizing (\begin{DoxyParamCaption}\item[{unsigned int}]{output\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+check if it clash with the alignment\+: 
+
+Definition at line 812 of file Bit\+\_\+\+Value.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, Gcc\+Wrapper\+::\+C\+Get\+Pointer\+Size(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, tree\+\_\+helper\+::get\+\_\+base\+\_\+index(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, index, not\+\_\+frontend, Design\+Flow\+Step\+::parameters, tree\+\_\+helper\+::size(), S\+TR, and Bit\+Lattice\+Manipulator\+::\+TM.
+
+
+
+Referenced by backward\+\_\+transfer().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_a91a36b568a7e9ddf21b7069ee4ecc518_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_a91a36b568a7e9ddf21b7069ee4ecc518_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBit__Value_a680cd4a8faa401adb3262c2cfd8fc06f}\label{classBit__Value_a680cd4a8faa401adb3262c2cfd8fc06f}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!print\+\_\+bitstring\+\_\+map@{print\+\_\+bitstring\+\_\+map}}
+\index{print\+\_\+bitstring\+\_\+map@{print\+\_\+bitstring\+\_\+map}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{print\+\_\+bitstring\+\_\+map()}{print\_bitstring\_map()}}
+{\footnotesize\ttfamily void Bit\+\_\+\+Value\+::print\+\_\+bitstring\+\_\+map (\begin{DoxyParamCaption}\item[{const \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ unsigned int, std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$$>$ \&}]{map }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Debugging function used to print the contents of the current and best maps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & map to be printed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 926 of file Bit\+\_\+\+Value.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, bitstring\+\_\+to\+\_\+string(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Behavioral\+Helper\+::\+Print\+Variable(), and S\+TR.
+
+
+
+Referenced by initialize(), and Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_a680cd4a8faa401adb3262c2cfd8fc06f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_a680cd4a8faa401adb3262c2cfd8fc06f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBit__Value_a2c7439f99c654aefc5ebf88e517fa6e6}\label{classBit__Value_a2c7439f99c654aefc5ebf88e517fa6e6}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!update\+\_\+\+IR@{update\+\_\+\+IR}}
+\index{update\+\_\+\+IR@{update\+\_\+\+IR}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{update\+\_\+\+I\+R()}{update\_IR()}}
+{\footnotesize\ttfamily bool Bit\+\_\+\+Value\+::update\+\_\+\+IR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates the bitvalues of the intermediate representation with the values taken from the input map. 
+
+
+
+Definition at line 941 of file Bit\+\_\+\+Value.\+cpp.
+
+
+
+References Bit\+Lattice\+Manipulator\+::best, bitstring\+\_\+to\+\_\+string(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+node\+::get\+\_\+kind\+\_\+text(), G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and Bit\+Lattice\+Manipulator\+::\+TM.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4b/classBit__Value_a2c7439f99c654aefc5ebf88e517fa6e6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{df/d4b/classBit__Value_a2c7439f99c654aefc5ebf88e517fa6e6_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classBit__Value_afb50fdc59b857254fab26a29218c65b7}\label{classBit__Value_afb50fdc59b857254fab26a29218c65b7}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!arguments@{arguments}}
+\index{arguments@{arguments}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{arguments}{arguments}}
+{\footnotesize\ttfamily \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$unsigned int$>$ Bit\+\_\+\+Value\+::arguments\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contains the input parameters of the function that\textquotesingle{}s being analyzed. 
+
+
+
+Definition at line 118 of file Bit\+\_\+\+Value.\+hpp.
+
+
+
+Referenced by clear\+\_\+current(), initialize(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classBit__Value_a269f2f5c0db02d71e3f940c98b5b36e6}\label{classBit__Value_a269f2f5c0db02d71e3f940c98b5b36e6}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!bit\+\_\+and\+\_\+expr\+\_\+map@{bit\+\_\+and\+\_\+expr\+\_\+map}}
+\index{bit\+\_\+and\+\_\+expr\+\_\+map@{bit\+\_\+and\+\_\+expr\+\_\+map}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{bit\+\_\+and\+\_\+expr\+\_\+map}{bit\_and\_expr\_map}}
+{\footnotesize\ttfamily const std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ $>$ Bit\+\_\+\+Value\+::bit\+\_\+and\+\_\+expr\+\_\+map\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Map storing the implementation of the forward\+\_\+transfer\textquotesingle{}s bit\+\_\+and\+\_\+expr\+\_\+map. 
+
+
+
+Definition at line 103 of file Bit\+\_\+\+Value.\+hpp.
+
+
+
+Referenced by forward\+\_\+transfer().
+
+\mbox{\Hypertarget{classBit__Value_a64fd76ea6cbb0dccb62dd90302d5122d}\label{classBit__Value_a64fd76ea6cbb0dccb62dd90302d5122d}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!bit\+\_\+ior\+\_\+expr\+\_\+map@{bit\+\_\+ior\+\_\+expr\+\_\+map}}
+\index{bit\+\_\+ior\+\_\+expr\+\_\+map@{bit\+\_\+ior\+\_\+expr\+\_\+map}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{bit\+\_\+ior\+\_\+expr\+\_\+map}{bit\_ior\_expr\_map}}
+{\footnotesize\ttfamily const std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ $>$ Bit\+\_\+\+Value\+::bit\+\_\+ior\+\_\+expr\+\_\+map\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Map storing the implementation of the forward\+\_\+transfer\textquotesingle{}s bit\+\_\+ior\+\_\+expr\+\_\+map. 
+
+
+
+Definition at line 93 of file Bit\+\_\+\+Value.\+hpp.
+
+
+
+Referenced by forward\+\_\+transfer().
+
+\mbox{\Hypertarget{classBit__Value_aa5fbce787906cfea58af464a5db01721}\label{classBit__Value_aa5fbce787906cfea58af464a5db01721}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!bit\+\_\+xor\+\_\+expr\+\_\+map@{bit\+\_\+xor\+\_\+expr\+\_\+map}}
+\index{bit\+\_\+xor\+\_\+expr\+\_\+map@{bit\+\_\+xor\+\_\+expr\+\_\+map}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{bit\+\_\+xor\+\_\+expr\+\_\+map}{bit\_xor\_expr\_map}}
+{\footnotesize\ttfamily const std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ $>$ Bit\+\_\+\+Value\+::bit\+\_\+xor\+\_\+expr\+\_\+map\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Map storing the implementation of the forward\+\_\+transfer\textquotesingle{}s bit\+\_\+xor\+\_\+expr\+\_\+map. 
+
+
+
+Definition at line 98 of file Bit\+\_\+\+Value.\+hpp.
+
+
+
+Referenced by forward\+\_\+transfer().
+
+\mbox{\Hypertarget{classBit__Value_a97724dd3554d471ea1ad42f5b5b4f1cf}\label{classBit__Value_a97724dd3554d471ea1ad42f5b5b4f1cf}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!direct\+\_\+call\+\_\+id\+\_\+to\+\_\+called\+\_\+id@{direct\+\_\+call\+\_\+id\+\_\+to\+\_\+called\+\_\+id}}
+\index{direct\+\_\+call\+\_\+id\+\_\+to\+\_\+called\+\_\+id@{direct\+\_\+call\+\_\+id\+\_\+to\+\_\+called\+\_\+id}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{direct\+\_\+call\+\_\+id\+\_\+to\+\_\+called\+\_\+id}{direct\_call\_id\_to\_called\_id}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$unsigned int, unsigned int$>$ Bit\+\_\+\+Value\+::direct\+\_\+call\+\_\+id\+\_\+to\+\_\+called\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Maps the id of a gimple statement to the id of the function called in that statement. 
+
+This relationship is created only for direct calls, because for indirect calls there is not a one-\/to-\/one relationship 
+
+Definition at line 113 of file Bit\+\_\+\+Value.\+hpp.
+
+
+
+Referenced by backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses(), backward\+\_\+transfer(), forward\+\_\+transfer(), initialize(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classBit__Value_a14e017ca4c0bf5fd112f293bd7d1af3b}\label{classBit__Value_a14e017ca4c0bf5fd112f293bd7d1af3b}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!minus\+\_\+expr\+\_\+map@{minus\+\_\+expr\+\_\+map}}
+\index{minus\+\_\+expr\+\_\+map@{minus\+\_\+expr\+\_\+map}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{minus\+\_\+expr\+\_\+map}{minus\_expr\_map}}
+{\footnotesize\ttfamily const std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ $>$ $>$ $>$ Bit\+\_\+\+Value\+::minus\+\_\+expr\+\_\+map\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Map storing the implementation of the forward\+\_\+transfer\textquotesingle{}s minus\+\_\+expr. 
+
+
+
+Definition at line 88 of file Bit\+\_\+\+Value.\+hpp.
+
+
+
+Referenced by forward\+\_\+transfer().
+
+\mbox{\Hypertarget{classBit__Value_ad7a83cc547266256277faf96c9774c4f}\label{classBit__Value_ad7a83cc547266256277faf96c9774c4f}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!not\+\_\+frontend@{not\+\_\+frontend}}
+\index{not\+\_\+frontend@{not\+\_\+frontend}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{not\+\_\+frontend}{not\_frontend}}
+{\footnotesize\ttfamily bool Bit\+\_\+\+Value\+::not\+\_\+frontend\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+True if this step is not executed in the frontend. 
+
+
+
+Definition at line 106 of file Bit\+\_\+\+Value.\+hpp.
+
+
+
+Referenced by Initialize(), and pointer\+\_\+resizing().
+
+\mbox{\Hypertarget{classBit__Value_a60afcc57dc9bc4992577b81eb752c396}\label{classBit__Value_a60afcc57dc9bc4992577b81eb752c396}} 
+\index{Bit\+\_\+\+Value@{Bit\+\_\+\+Value}!plus\+\_\+expr\+\_\+map@{plus\+\_\+expr\+\_\+map}}
+\index{plus\+\_\+expr\+\_\+map@{plus\+\_\+expr\+\_\+map}!Bit\+\_\+\+Value@{Bit\+\_\+\+Value}}
+\subsubsection{\texorpdfstring{plus\+\_\+expr\+\_\+map}{plus\_expr\_map}}
+{\footnotesize\ttfamily const std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, std\+::map$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}, std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ $>$ $>$ $>$ Bit\+\_\+\+Value\+::plus\+\_\+expr\+\_\+map\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Map storing the implementation of the forward\+\_\+transfer\textquotesingle{}s plus\+\_\+expr. 
+
+Header include.
+
+. include behavior includes design\+\_\+flows include frontend\+\_\+analysis H\+LS include H\+L\+S/memory include S\+TD include S\+TL includes tree include wrapper/treegcc include 
+
+Definition at line 83 of file Bit\+\_\+\+Value.\+hpp.
+
+
+
+Referenced by forward\+\_\+transfer().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{Bit__Value_8hpp}{Bit\+\_\+\+Value.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{Bit__Value_8cpp}{Bit\+\_\+\+Value.\+cpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{Bit__Value__backward_8cpp}{Bit\+\_\+\+Value\+\_\+backward.\+cpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{Bit__Value__forward_8cpp}{Bit\+\_\+\+Value\+\_\+forward.\+cpp}\end{DoxyCompactItemize}

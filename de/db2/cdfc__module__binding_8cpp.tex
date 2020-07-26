@@ -1,0 +1,317 @@
+\hypertarget{cdfc__module__binding_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/module/cdfc\+\_\+module\+\_\+binding.cpp File Reference}
+\label{cdfc__module__binding_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/module/cdfc\+\_\+module\+\_\+binding.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/module/cdfc\+\_\+module\+\_\+binding.\+cpp}}
+
+
+Class implementation of the module binding algorithm.  
+
+
+{\ttfamily \#include \char`\"{}cdfc\+\_\+module\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/filesystem/operations.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}clique\+\_\+covering.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}behavioral\+\_\+writer\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}function\+\_\+behavior.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}op\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/range/adaptor/reversed.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+constraints.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+target.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mux\+\_\+connection\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fu\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}parallel\+\_\+memory\+\_\+fu\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}module\+\_\+binding\+\_\+check.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}reg\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}weighted\+\_\+clique\+\_\+register.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}design\+\_\+flow\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}design\+\_\+flow\+\_\+step.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+flow\+\_\+step\+\_\+factory.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}storage\+\_\+value\+\_\+information.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}storage\+\_\+value\+\_\+insertion.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}chaining\+\_\+information.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}liveness.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}memory.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}allocation\+\_\+information.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}schedule.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}state\+\_\+transition\+\_\+graph\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iosfwd$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}time\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}behavioral\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cpu\+\_\+time.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hash\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+Include dependency graph for cdfc\+\_\+module\+\_\+binding.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dc2/cdfc__module__binding_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtopological__based__sorting__visitor}{topological\+\_\+based\+\_\+sorting\+\_\+visitor$<$ Output\+Iterator $>$}
+\item 
+struct \hyperlink{structcdfc__resource__ordering__functor}{cdfc\+\_\+resource\+\_\+ordering\+\_\+functor}
+\begin{DoxyCompactList}\small\item\em Functor used to compare which of two resources has to be considered first during the binding. \end{DoxyCompactList}\item 
+struct \hyperlink{structslack__based__filtering}{slack\+\_\+based\+\_\+filtering}
+\item 
+class \hyperlink{classCdfcWriter}{Cdfc\+Writer}
+\item 
+class \hyperlink{classCdfcEdgeWriter}{Cdfc\+Edge\+Writer}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cdfc__module__binding_8cpp_a4db0d1806c6ccba316dc6de4e0a5a69b}{T\+O\+O\+S\+M\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+I\+Z\+E\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+A\+R\+EA}~0.\+9
+\begin{DoxyCompactList}\small\item\em . include \end{DoxyCompactList}\item 
+\#define \hyperlink{cdfc__module__binding_8cpp_a786b86f33e0e3605ecf166d2eb4ca268}{D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+M\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+I\+Z\+E\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+A\+R\+EA}~1.\+0
+\item 
+\#define \hyperlink{cdfc__module__binding_8cpp_a08450f0d5114b3b113f38c98ab028a7b}{M\+O\+D\+U\+L\+E\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+IN}~1.\+0
+\item 
+\#define \hyperlink{cdfc__module__binding_8cpp_a4ba089ede1a2e3d49b662b8340c8cb18}{D\+S\+P\+\_\+\+M\+A\+R\+G\+IN}~1.\+0
+\item 
+\#define \hyperlink{cdfc__module__binding_8cpp_a22eb2851c9f7e0cc7ebd58b8603651e5}{C\+L\+O\+C\+K\+\_\+\+M\+A\+R\+G\+IN}~0.\+97
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Vertex\+List\+Graph , typename Output\+Iterator , typename P , typename T , typename R $>$ }\\void \hyperlink{cdfc__module__binding_8cpp_a416dfc8f9a6f83aa50f2c6db4b7e5293}{topological\+\_\+based\+\_\+sorting} (const Vertex\+List\+Graph \&g, std\+::vector$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&c2s, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} sdg, Output\+Iterator \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a94c9e596a4bd69287e35733185c25ff9}{result}, const boost\+::bgl\+\_\+named\+\_\+params$<$ P, T, \hyperlink{tutorial__pnnl__2019_2memory_2third_2solution_2mips_8c_a5c71a5e59a53413cd6c270266d63b031}{R} $>$ \&params)
+\item 
+{\footnotesize template$<$typename Vertex\+List\+Graph , typename Output\+Iterator $>$ }\\void \hyperlink{cdfc__module__binding_8cpp_a09c06d6e69cb80c0dfd726292e37fe85}{topological\+\_\+based\+\_\+sorting} (const Vertex\+List\+Graph \&g, std\+::vector$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&c2s, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} sdg, Output\+Iterator \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a94c9e596a4bd69287e35733185c25ff9}{result})
+\item 
+{\footnotesize template$<$bool do\+\_\+estimation, bool do\+\_\+conversion, typename vertex\+\_\+type , class cluster\+\_\+type , bool I\+S\+\_\+\+D\+E\+B\+U\+G\+G\+I\+NG = true$>$ }\\void \hyperlink{cdfc__module__binding_8cpp_a226a268712fceea2ef03807ef0d73c6b}{estimate\+\_\+muxes} (const \hyperlink{cdfc__module__binding_8hpp_add937cbd74df34342adc0bb9231809a8}{connection\+\_\+relation} \&con\+\_\+rel, unsigned int mux\+\_\+prec, double \&tot\+\_\+mux\+\_\+delay, double \&tot\+\_\+mux\+\_\+area, const cluster\+\_\+type \&cluster, unsigned int \&total\+\_\+muxes, unsigned int \&n\+\_\+shared, const typename std\+::map$<$ vertex\+\_\+type, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&converter, const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} H\+L\+S\+Mgr, const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} H\+LS, int debug\+\_\+level)
+\item 
+static bool \hyperlink{cdfc__module__binding_8cpp_acff75604c9d7e119f169a8e6bb760d13}{compute\+\_\+condition1} (const std\+::string \&lib\+\_\+name, const \hyperlink{allocation__information_8hpp_a54287618a63bf87e31ddb17ba01e7ca7}{Allocation\+Information\+Const\+Ref} allocation\+\_\+information, double local\+\_\+mux\+\_\+time, unsigned int fu\+\_\+s1)
+\item 
+static bool \hyperlink{cdfc__module__binding_8cpp_a74d0816776a1f30997ef15c458f5a889}{compute\+\_\+condition2} (bool cond1, unsigned int fu\+\_\+prec, double resource\+\_\+area, const double small\+\_\+normalized\+\_\+resource\+\_\+area)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class implementation of the module binding algorithm. 
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+\end{DoxyItemize}
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{cdfc__module__binding_8cpp_a22eb2851c9f7e0cc7ebd58b8603651e5}\label{cdfc__module__binding_8cpp_a22eb2851c9f7e0cc7ebd58b8603651e5}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}!C\+L\+O\+C\+K\+\_\+\+M\+A\+R\+G\+IN@{C\+L\+O\+C\+K\+\_\+\+M\+A\+R\+G\+IN}}
+\index{C\+L\+O\+C\+K\+\_\+\+M\+A\+R\+G\+IN@{C\+L\+O\+C\+K\+\_\+\+M\+A\+R\+G\+IN}!cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}}
+\subsubsection{\texorpdfstring{C\+L\+O\+C\+K\+\_\+\+M\+A\+R\+G\+IN}{CLOCK\_MARGIN}}
+{\footnotesize\ttfamily \#define C\+L\+O\+C\+K\+\_\+\+M\+A\+R\+G\+IN~0.\+97}
+
+
+
+Definition at line 160 of file cdfc\+\_\+module\+\_\+binding.\+cpp.
+
+
+
+Referenced by cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{cdfc__module__binding_8cpp_a786b86f33e0e3605ecf166d2eb4ca268}\label{cdfc__module__binding_8cpp_a786b86f33e0e3605ecf166d2eb4ca268}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}!D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+M\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+I\+Z\+E\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+A\+R\+EA@{D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+M\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+I\+Z\+E\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+A\+R\+EA}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+M\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+I\+Z\+E\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+A\+R\+EA@{D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+M\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+I\+Z\+E\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+A\+R\+EA}!cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}}
+\subsubsection{\texorpdfstring{D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+M\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+I\+Z\+E\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+A\+R\+EA}{DEFAULT\_SMALL\_NORMALIZED\_RESOURCE\_AREA}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+M\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+I\+Z\+E\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+A\+R\+EA~1.\+0}
+
+
+
+Definition at line 157 of file cdfc\+\_\+module\+\_\+binding.\+cpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8cpp_a4ba089ede1a2e3d49b662b8340c8cb18}\label{cdfc__module__binding_8cpp_a4ba089ede1a2e3d49b662b8340c8cb18}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}!D\+S\+P\+\_\+\+M\+A\+R\+G\+IN@{D\+S\+P\+\_\+\+M\+A\+R\+G\+IN}}
+\index{D\+S\+P\+\_\+\+M\+A\+R\+G\+IN@{D\+S\+P\+\_\+\+M\+A\+R\+G\+IN}!cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}}
+\subsubsection{\texorpdfstring{D\+S\+P\+\_\+\+M\+A\+R\+G\+IN}{DSP\_MARGIN}}
+{\footnotesize\ttfamily \#define D\+S\+P\+\_\+\+M\+A\+R\+G\+IN~1.\+0}
+
+
+
+Definition at line 159 of file cdfc\+\_\+module\+\_\+binding.\+cpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8cpp_a08450f0d5114b3b113f38c98ab028a7b}\label{cdfc__module__binding_8cpp_a08450f0d5114b3b113f38c98ab028a7b}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}!M\+O\+D\+U\+L\+E\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+IN@{M\+O\+D\+U\+L\+E\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+IN}}
+\index{M\+O\+D\+U\+L\+E\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+IN@{M\+O\+D\+U\+L\+E\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+IN}!cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}}
+\subsubsection{\texorpdfstring{M\+O\+D\+U\+L\+E\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+IN}{MODULE\_BINDING\_MUX\_MARGIN}}
+{\footnotesize\ttfamily \#define M\+O\+D\+U\+L\+E\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+IN~1.\+0}
+
+
+
+Definition at line 158 of file cdfc\+\_\+module\+\_\+binding.\+cpp.
+
+
+
+Referenced by cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{cdfc__module__binding_8cpp_a4db0d1806c6ccba316dc6de4e0a5a69b}\label{cdfc__module__binding_8cpp_a4db0d1806c6ccba316dc6de4e0a5a69b}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}!T\+O\+O\+S\+M\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+I\+Z\+E\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+A\+R\+EA@{T\+O\+O\+S\+M\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+I\+Z\+E\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+A\+R\+EA}}
+\index{T\+O\+O\+S\+M\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+I\+Z\+E\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+A\+R\+EA@{T\+O\+O\+S\+M\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+I\+Z\+E\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+A\+R\+EA}!cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}}
+\subsubsection{\texorpdfstring{T\+O\+O\+S\+M\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+I\+Z\+E\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+A\+R\+EA}{TOOSMALL\_NORMALIZED\_RESOURCE\_AREA}}
+{\footnotesize\ttfamily \#define T\+O\+O\+S\+M\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+I\+Z\+E\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+A\+R\+EA~0.\+9}
+
+
+
+. include 
+
+algorithms/clique\+\_\+covering include behavior includes boost include \hyperlink{structGraph}{Graph} include H\+LS includes H\+L\+S/binding/interconnection H\+L\+S/binding/module include H\+L\+S/binding/module include H\+L\+S/binding/register include H\+L\+S/binding/register/algorithms include required by register binding H\+L\+S/binding/storage\+\_\+value\+\_\+insertion includes H\+L\+S/chaining include H\+L\+S/liveness include H\+L\+S/memory include H\+L\+S/module\+\_\+allocation include H\+L\+S/scheduling include H\+L\+S/stg include S\+TD includes S\+TL includes technology include technology/physical\+\_\+library include technology/physical\+\_\+library/models include tree includes utility include 
+
+Definition at line 156 of file cdfc\+\_\+module\+\_\+binding.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{cdfc__module__binding_8cpp_acff75604c9d7e119f169a8e6bb760d13}\label{cdfc__module__binding_8cpp_acff75604c9d7e119f169a8e6bb760d13}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}!compute\+\_\+condition1@{compute\+\_\+condition1}}
+\index{compute\+\_\+condition1@{compute\+\_\+condition1}!cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}}
+\subsubsection{\texorpdfstring{compute\+\_\+condition1()}{compute\_condition1()}}
+{\footnotesize\ttfamily static bool compute\+\_\+condition1 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{lib\+\_\+name,  }\item[{const \hyperlink{allocation__information_8hpp_a54287618a63bf87e31ddb17ba01e7ca7}{Allocation\+Information\+Const\+Ref}}]{allocation\+\_\+information,  }\item[{double}]{local\+\_\+mux\+\_\+time,  }\item[{unsigned int}]{fu\+\_\+s1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 817 of file cdfc\+\_\+module\+\_\+binding.\+cpp.
+
+
+
+References Allocation\+Information\+::get\+\_\+number\+\_\+channels(), Allocation\+Information\+::get\+\_\+number\+\_\+fu(), Allocation\+Information\+::get\+\_\+worst\+\_\+number\+\_\+of\+\_\+cycles(), I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+U\+I\+NT, P\+R\+O\+X\+Y\+\_\+\+L\+I\+B\+R\+A\+RY, and W\+O\+R\+K\+\_\+\+L\+I\+B\+R\+A\+RY.
+
+
+
+Referenced by cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/db2/cdfc__module__binding_8cpp_acff75604c9d7e119f169a8e6bb760d13_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{de/db2/cdfc__module__binding_8cpp_acff75604c9d7e119f169a8e6bb760d13_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cdfc__module__binding_8cpp_a74d0816776a1f30997ef15c458f5a889}\label{cdfc__module__binding_8cpp_a74d0816776a1f30997ef15c458f5a889}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}!compute\+\_\+condition2@{compute\+\_\+condition2}}
+\index{compute\+\_\+condition2@{compute\+\_\+condition2}!cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}}
+\subsubsection{\texorpdfstring{compute\+\_\+condition2()}{compute\_condition2()}}
+{\footnotesize\ttfamily static bool compute\+\_\+condition2 (\begin{DoxyParamCaption}\item[{bool}]{cond1,  }\item[{unsigned int}]{fu\+\_\+prec,  }\item[{double}]{resource\+\_\+area,  }\item[{const double}]{small\+\_\+normalized\+\_\+resource\+\_\+area }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 825 of file cdfc\+\_\+module\+\_\+binding.\+cpp.
+
+
+
+References cdfc\+\_\+module\+\_\+binding\+::small\+\_\+normalized\+\_\+resource\+\_\+area.
+
+
+
+Referenced by cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{de/db2/cdfc__module__binding_8cpp_a74d0816776a1f30997ef15c458f5a889_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cdfc__module__binding_8cpp_a226a268712fceea2ef03807ef0d73c6b}\label{cdfc__module__binding_8cpp_a226a268712fceea2ef03807ef0d73c6b}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}!estimate\+\_\+muxes@{estimate\+\_\+muxes}}
+\index{estimate\+\_\+muxes@{estimate\+\_\+muxes}!cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}}
+\subsubsection{\texorpdfstring{estimate\+\_\+muxes()}{estimate\_muxes()}}
+{\footnotesize\ttfamily template$<$bool do\+\_\+estimation, bool do\+\_\+conversion, typename vertex\+\_\+type , class cluster\+\_\+type , bool I\+S\+\_\+\+D\+E\+B\+U\+G\+G\+I\+NG = true$>$ \\
+void estimate\+\_\+muxes (\begin{DoxyParamCaption}\item[{const \hyperlink{cdfc__module__binding_8hpp_add937cbd74df34342adc0bb9231809a8}{connection\+\_\+relation} \&}]{con\+\_\+rel,  }\item[{unsigned int}]{mux\+\_\+prec,  }\item[{double \&}]{tot\+\_\+mux\+\_\+delay,  }\item[{double \&}]{tot\+\_\+mux\+\_\+area,  }\item[{const cluster\+\_\+type \&}]{cluster,  }\item[{unsigned int \&}]{total\+\_\+muxes,  }\item[{unsigned int \&}]{n\+\_\+shared,  }\item[{const typename std\+::map$<$ vertex\+\_\+type, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&}]{converter,  }\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr,  }\item[{const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref}}]{H\+LS,  }\item[{int}]{debug\+\_\+level }\end{DoxyParamCaption})}
+
+it is not chained but from the mux binding it counts as input to the mux tree
+
+compute the maximum number of mux ins 
+
+Definition at line 318 of file cdfc\+\_\+module\+\_\+binding.\+cpp.
+
+
+
+References D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR, F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR, Function\+Behavior\+::\+F\+D\+FG, fu\+\_\+binding\+::get\+\_\+assign(), fu\+\_\+binding\+::get\+\_\+index(), fu\+\_\+binding\+::get\+\_\+ports\+\_\+are\+\_\+swapped(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+U\+I\+NT, insert(), max(), no\+\_\+def, no\+\_\+phi\+\_\+chained, no\+\_\+phi\+\_\+no\+\_\+chained, phi, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/db2/cdfc__module__binding_8cpp_a226a268712fceea2ef03807ef0d73c6b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cdfc__module__binding_8cpp_a416dfc8f9a6f83aa50f2c6db4b7e5293}\label{cdfc__module__binding_8cpp_a416dfc8f9a6f83aa50f2c6db4b7e5293}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}!topological\+\_\+based\+\_\+sorting@{topological\+\_\+based\+\_\+sorting}}
+\index{topological\+\_\+based\+\_\+sorting@{topological\+\_\+based\+\_\+sorting}!cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}}
+\subsubsection{\texorpdfstring{topological\+\_\+based\+\_\+sorting()}{topological\_based\_sorting()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph , typename Output\+Iterator , typename P , typename T , typename R $>$ \\
+void topological\+\_\+based\+\_\+sorting (\begin{DoxyParamCaption}\item[{const Vertex\+List\+Graph \&}]{g,  }\item[{std\+::vector$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&}]{c2s,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{sdg,  }\item[{Output\+Iterator}]{result,  }\item[{const boost\+::bgl\+\_\+named\+\_\+params$<$ P, T, \hyperlink{tutorial__pnnl__2019_2memory_2third_2solution_2mips_8c_a5c71a5e59a53413cd6c270266d63b031}{R} $>$ \&}]{params }\end{DoxyParamCaption})}
+
+
+
+Definition at line 188 of file cdfc\+\_\+module\+\_\+binding.\+cpp.
+
+
+
+Referenced by cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), and topological\+\_\+based\+\_\+sorting().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/db2/cdfc__module__binding_8cpp_a416dfc8f9a6f83aa50f2c6db4b7e5293_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cdfc__module__binding_8cpp_a09c06d6e69cb80c0dfd726292e37fe85}\label{cdfc__module__binding_8cpp_a09c06d6e69cb80c0dfd726292e37fe85}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}!topological\+\_\+based\+\_\+sorting@{topological\+\_\+based\+\_\+sorting}}
+\index{topological\+\_\+based\+\_\+sorting@{topological\+\_\+based\+\_\+sorting}!cdfc\+\_\+module\+\_\+binding.\+cpp@{cdfc\+\_\+module\+\_\+binding.\+cpp}}
+\subsubsection{\texorpdfstring{topological\+\_\+based\+\_\+sorting()}{topological\_based\_sorting()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph , typename Output\+Iterator $>$ \\
+void topological\+\_\+based\+\_\+sorting (\begin{DoxyParamCaption}\item[{const Vertex\+List\+Graph \&}]{g,  }\item[{std\+::vector$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&}]{c2s,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{sdg,  }\item[{Output\+Iterator}]{result }\end{DoxyParamCaption})}
+
+
+
+Definition at line 195 of file cdfc\+\_\+module\+\_\+binding.\+cpp.
+
+
+
+References topological\+\_\+based\+\_\+sorting().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/db2/cdfc__module__binding_8cpp_a09c06d6e69cb80c0dfd726292e37fe85_cgraph}
+\end{center}
+\end{figure}

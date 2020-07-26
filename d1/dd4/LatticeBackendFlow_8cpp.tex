@@ -1,0 +1,143 @@
+\hypertarget{LatticeBackendFlow_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/lattice/\+Lattice\+Backend\+Flow.cpp File Reference}
+\label{LatticeBackendFlow_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/lattice/\+Lattice\+Backend\+Flow.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/lattice/\+Lattice\+Backend\+Flow.\+cpp}}
+
+
+Implementation of the wrapper to Lattice tools.  
+
+
+{\ttfamily \#include \char`\"{}Lattice\+Backend\+Flow.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+L\+A\+T\+T\+I\+C\+E.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+L\+A\+T\+T\+I\+C\+E\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}L\+U\+T\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Lattice\+Wrapper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}area\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}clb\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}target\+\_\+device.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}target\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}time\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}file\+I\+O.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+dom\+\_\+parser.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+script\+\_\+command.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}structural\+\_\+objects.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Lattice\+E\+C\+P3.\+data\char`\"{}}\newline
+Include dependency graph for Lattice\+Backend\+Flow.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d58/LatticeBackendFlow_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{LatticeBackendFlow_8cpp_aee22ac213415e414740a81fcb6b6fb1c}{L\+A\+T\+T\+I\+C\+E\+\_\+\+S\+L\+I\+CE}~\char`\"{}L\+A\+T\+T\+I\+C\+E\+\_\+\+S\+L\+I\+CE\char`\"{}
+\begin{DoxyCompactList}\small\item\em Header include. \end{DoxyCompactList}\item 
+\#define \hyperlink{LatticeBackendFlow_8cpp_ab36dff3500b3218ff2ebbde53cae9446}{L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+E\+L\+AY}~\char`\"{}L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+E\+L\+AY\char`\"{}
+\item 
+\#define \hyperlink{LatticeBackendFlow_8cpp_a1bc91b12f39ec7963b872aa887a850cc}{L\+A\+T\+T\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}~\char`\"{}L\+A\+T\+T\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS\char`\"{}
+\item 
+\#define \hyperlink{LatticeBackendFlow_8cpp_a4073646f0fa8a819ed7a60f95177ceb5}{L\+A\+T\+T\+I\+C\+E\+\_\+\+I\+O\+P\+IN}~\char`\"{}L\+A\+T\+T\+I\+C\+E\+\_\+\+I\+O\+P\+IN\char`\"{}
+\item 
+\#define \hyperlink{LatticeBackendFlow_8cpp_a2b68eab051af22a1e732a6a525acaea3}{L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+SP}~\char`\"{}L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+S\+PS\char`\"{}
+\item 
+\#define \hyperlink{LatticeBackendFlow_8cpp_ac72de2f4b5b3eacdebb1799771644349}{L\+A\+T\+T\+I\+C\+E\+\_\+\+M\+EM}~\char`\"{}L\+A\+T\+T\+I\+C\+E\+\_\+\+M\+EM\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of the wrapper to Lattice tools. 
+
+Implementation of the methods to wrap synthesis tools by Lattice
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{LatticeBackendFlow_8cpp_ab36dff3500b3218ff2ebbde53cae9446}\label{LatticeBackendFlow_8cpp_ab36dff3500b3218ff2ebbde53cae9446}} 
+\index{Lattice\+Backend\+Flow.\+cpp@{Lattice\+Backend\+Flow.\+cpp}!L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+E\+L\+AY@{L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+E\+L\+AY}}
+\index{L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+E\+L\+AY@{L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+E\+L\+AY}!Lattice\+Backend\+Flow.\+cpp@{Lattice\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+E\+L\+AY}{LATTICE\_DELAY}}
+{\footnotesize\ttfamily \#define L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+E\+L\+AY~\char`\"{}L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+E\+L\+AY\char`\"{}}
+
+
+
+Definition at line 69 of file Lattice\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Lattice\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{LatticeBackendFlow_8cpp_a2b68eab051af22a1e732a6a525acaea3}\label{LatticeBackendFlow_8cpp_a2b68eab051af22a1e732a6a525acaea3}} 
+\index{Lattice\+Backend\+Flow.\+cpp@{Lattice\+Backend\+Flow.\+cpp}!L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+SP@{L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+SP}}
+\index{L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+SP@{L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+SP}!Lattice\+Backend\+Flow.\+cpp@{Lattice\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+SP}{LATTICE\_DSP}}
+{\footnotesize\ttfamily \#define L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+SP~\char`\"{}L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+S\+PS\char`\"{}}
+
+
+
+Definition at line 72 of file Lattice\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Lattice\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{LatticeBackendFlow_8cpp_a4073646f0fa8a819ed7a60f95177ceb5}\label{LatticeBackendFlow_8cpp_a4073646f0fa8a819ed7a60f95177ceb5}} 
+\index{Lattice\+Backend\+Flow.\+cpp@{Lattice\+Backend\+Flow.\+cpp}!L\+A\+T\+T\+I\+C\+E\+\_\+\+I\+O\+P\+IN@{L\+A\+T\+T\+I\+C\+E\+\_\+\+I\+O\+P\+IN}}
+\index{L\+A\+T\+T\+I\+C\+E\+\_\+\+I\+O\+P\+IN@{L\+A\+T\+T\+I\+C\+E\+\_\+\+I\+O\+P\+IN}!Lattice\+Backend\+Flow.\+cpp@{Lattice\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{L\+A\+T\+T\+I\+C\+E\+\_\+\+I\+O\+P\+IN}{LATTICE\_IOPIN}}
+{\footnotesize\ttfamily \#define L\+A\+T\+T\+I\+C\+E\+\_\+\+I\+O\+P\+IN~\char`\"{}L\+A\+T\+T\+I\+C\+E\+\_\+\+I\+O\+P\+IN\char`\"{}}
+
+
+
+Definition at line 71 of file Lattice\+Backend\+Flow.\+cpp.
+
+\mbox{\Hypertarget{LatticeBackendFlow_8cpp_ac72de2f4b5b3eacdebb1799771644349}\label{LatticeBackendFlow_8cpp_ac72de2f4b5b3eacdebb1799771644349}} 
+\index{Lattice\+Backend\+Flow.\+cpp@{Lattice\+Backend\+Flow.\+cpp}!L\+A\+T\+T\+I\+C\+E\+\_\+\+M\+EM@{L\+A\+T\+T\+I\+C\+E\+\_\+\+M\+EM}}
+\index{L\+A\+T\+T\+I\+C\+E\+\_\+\+M\+EM@{L\+A\+T\+T\+I\+C\+E\+\_\+\+M\+EM}!Lattice\+Backend\+Flow.\+cpp@{Lattice\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{L\+A\+T\+T\+I\+C\+E\+\_\+\+M\+EM}{LATTICE\_MEM}}
+{\footnotesize\ttfamily \#define L\+A\+T\+T\+I\+C\+E\+\_\+\+M\+EM~\char`\"{}L\+A\+T\+T\+I\+C\+E\+\_\+\+M\+EM\char`\"{}}
+
+
+
+Definition at line 73 of file Lattice\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Lattice\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{LatticeBackendFlow_8cpp_a1bc91b12f39ec7963b872aa887a850cc}\label{LatticeBackendFlow_8cpp_a1bc91b12f39ec7963b872aa887a850cc}} 
+\index{Lattice\+Backend\+Flow.\+cpp@{Lattice\+Backend\+Flow.\+cpp}!L\+A\+T\+T\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS@{L\+A\+T\+T\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}}
+\index{L\+A\+T\+T\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS@{L\+A\+T\+T\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}!Lattice\+Backend\+Flow.\+cpp@{Lattice\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{L\+A\+T\+T\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}{LATTICE\_REGISTERS}}
+{\footnotesize\ttfamily \#define L\+A\+T\+T\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS~\char`\"{}L\+A\+T\+T\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS\char`\"{}}
+
+
+
+Definition at line 70 of file Lattice\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Lattice\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{LatticeBackendFlow_8cpp_aee22ac213415e414740a81fcb6b6fb1c}\label{LatticeBackendFlow_8cpp_aee22ac213415e414740a81fcb6b6fb1c}} 
+\index{Lattice\+Backend\+Flow.\+cpp@{Lattice\+Backend\+Flow.\+cpp}!L\+A\+T\+T\+I\+C\+E\+\_\+\+S\+L\+I\+CE@{L\+A\+T\+T\+I\+C\+E\+\_\+\+S\+L\+I\+CE}}
+\index{L\+A\+T\+T\+I\+C\+E\+\_\+\+S\+L\+I\+CE@{L\+A\+T\+T\+I\+C\+E\+\_\+\+S\+L\+I\+CE}!Lattice\+Backend\+Flow.\+cpp@{Lattice\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{L\+A\+T\+T\+I\+C\+E\+\_\+\+S\+L\+I\+CE}{LATTICE\_SLICE}}
+{\footnotesize\ttfamily \#define L\+A\+T\+T\+I\+C\+E\+\_\+\+S\+L\+I\+CE~\char`\"{}L\+A\+T\+T\+I\+C\+E\+\_\+\+S\+L\+I\+CE\char`\"{}}
+
+
+
+Header include. 
+
+circuit include 
+
+Definition at line 68 of file Lattice\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Lattice\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+

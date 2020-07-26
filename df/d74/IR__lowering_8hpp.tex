@@ -1,0 +1,131 @@
+\hypertarget{IR__lowering_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\+I\+R\+\_\+lowering.hpp File Reference}
+\label{IR__lowering_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\+I\+R\+\_\+lowering.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\+I\+R\+\_\+lowering.\+hpp}}
+
+
+Decompose some complex gimple statements into set of simple operations.  
+
+
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}design\+\_\+flow\+\_\+step.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}frontend\+\_\+flow\+\_\+step.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}function\+\_\+frontend\+\_\+flow\+\_\+step.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+Include dependency graph for I\+R\+\_\+lowering.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d46/IR__lowering_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/deb/IR__lowering_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classIR__lowering}{I\+R\+\_\+lowering}
+\begin{DoxyCompactList}\small\item\em Compute the control flow graph for the operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{IR__lowering_8hpp_a77bda416aea7fadb7ca07415dc736441}{mult\+\_\+variant} \{ \hyperlink{IR__lowering_8hpp_a77bda416aea7fadb7ca07415dc736441aa0618682af0b57e59f9a9670b611f8e9}{basic\+\_\+variant}, 
+\hyperlink{IR__lowering_8hpp_a77bda416aea7fadb7ca07415dc736441a94eb250204a11167d2c5ad0046d520c8}{negate\+\_\+variant}, 
+\hyperlink{IR__lowering_8hpp_a77bda416aea7fadb7ca07415dc736441a6e9db9ca9ae0ea016b4aba34e0875b40}{add\+\_\+variant}
+ \}\begin{DoxyCompactList}\small\item\em Indicates the type of fixup needed after a constant multiplication. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}\textbf{ forward declarations}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{IR__lowering_8hpp_a3534c699031037ce3bebffe714643338}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structbloc}{bloc})
+\item 
+enum \hyperlink{tree__common_8hpp_a9efbd7c7191fb190b76c2fd05d6e7b45}{kind} int \hyperlink{IR__lowering_8hpp_aa81aebec058b71fb1c8415d2b791d3e0}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classIR__lowering}{I\+R\+\_\+lowering})
+\item 
+\hyperlink{IR__lowering_8hpp_a52756886a578bcd0db3c2fd210400eb3}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtree__manager}{tree\+\_\+manager})
+\item 
+\hyperlink{IR__lowering_8hpp_ad96f9232d309d54be82fed94e085f5b7}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtree__manipulation}{tree\+\_\+manipulation})
+\item 
+\hyperlink{IR__lowering_8hpp_a676de0ccdd1189b2b906e6c884116894}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtree__node}{tree\+\_\+node})
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Decompose some complex gimple statements into set of simple operations. 
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{IR__lowering_8hpp_a77bda416aea7fadb7ca07415dc736441}\label{IR__lowering_8hpp_a77bda416aea7fadb7ca07415dc736441}} 
+\index{I\+R\+\_\+lowering.\+hpp@{I\+R\+\_\+lowering.\+hpp}!mult\+\_\+variant@{mult\+\_\+variant}}
+\index{mult\+\_\+variant@{mult\+\_\+variant}!I\+R\+\_\+lowering.\+hpp@{I\+R\+\_\+lowering.\+hpp}}
+\subsubsection{\texorpdfstring{mult\+\_\+variant}{mult\_variant}}
+{\footnotesize\ttfamily enum \hyperlink{IR__lowering_8hpp_a77bda416aea7fadb7ca07415dc736441}{mult\+\_\+variant}}
+
+
+
+Indicates the type of fixup needed after a constant multiplication. 
+
+B\+A\+S\+I\+C\+\_\+\+V\+A\+R\+I\+A\+NT means no fixup is needed, N\+E\+G\+A\+T\+E\+\_\+\+V\+A\+R\+I\+A\+NT means that the result should be negated, and A\+D\+D\+\_\+\+V\+A\+R\+I\+A\+NT means that the multiplicand should be added to the result. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{basic\+\_\+variant@{basic\+\_\+variant}!I\+R\+\_\+lowering.\+hpp@{I\+R\+\_\+lowering.\+hpp}}\index{I\+R\+\_\+lowering.\+hpp@{I\+R\+\_\+lowering.\+hpp}!basic\+\_\+variant@{basic\+\_\+variant}}}\mbox{\Hypertarget{IR__lowering_8hpp_a77bda416aea7fadb7ca07415dc736441aa0618682af0b57e59f9a9670b611f8e9}\label{IR__lowering_8hpp_a77bda416aea7fadb7ca07415dc736441aa0618682af0b57e59f9a9670b611f8e9}} 
+basic\+\_\+variant&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{negate\+\_\+variant@{negate\+\_\+variant}!I\+R\+\_\+lowering.\+hpp@{I\+R\+\_\+lowering.\+hpp}}\index{I\+R\+\_\+lowering.\+hpp@{I\+R\+\_\+lowering.\+hpp}!negate\+\_\+variant@{negate\+\_\+variant}}}\mbox{\Hypertarget{IR__lowering_8hpp_a77bda416aea7fadb7ca07415dc736441a94eb250204a11167d2c5ad0046d520c8}\label{IR__lowering_8hpp_a77bda416aea7fadb7ca07415dc736441a94eb250204a11167d2c5ad0046d520c8}} 
+negate\+\_\+variant&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{add\+\_\+variant@{add\+\_\+variant}!I\+R\+\_\+lowering.\+hpp@{I\+R\+\_\+lowering.\+hpp}}\index{I\+R\+\_\+lowering.\+hpp@{I\+R\+\_\+lowering.\+hpp}!add\+\_\+variant@{add\+\_\+variant}}}\mbox{\Hypertarget{IR__lowering_8hpp_a77bda416aea7fadb7ca07415dc736441a6e9db9ca9ae0ea016b4aba34e0875b40}\label{IR__lowering_8hpp_a77bda416aea7fadb7ca07415dc736441a6e9db9ca9ae0ea016b4aba34e0875b40}} 
+add\+\_\+variant&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 74 of file I\+R\+\_\+lowering.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{IR__lowering_8hpp_a3534c699031037ce3bebffe714643338}\label{IR__lowering_8hpp_a3534c699031037ce3bebffe714643338}} 
+\index{I\+R\+\_\+lowering.\+hpp@{I\+R\+\_\+lowering.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!I\+R\+\_\+lowering.\+hpp@{I\+R\+\_\+lowering.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structbloc}{bloc}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{IR__lowering_8hpp_aa81aebec058b71fb1c8415d2b791d3e0}\label{IR__lowering_8hpp_aa81aebec058b71fb1c8415d2b791d3e0}} 
+\index{I\+R\+\_\+lowering.\+hpp@{I\+R\+\_\+lowering.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!I\+R\+\_\+lowering.\+hpp@{I\+R\+\_\+lowering.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily enum \hyperlink{tree__common_8hpp_a9efbd7c7191fb190b76c2fd05d6e7b45}{kind} int R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classIR__lowering}{I\+R\+\_\+lowering}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{IR__lowering_8hpp_a52756886a578bcd0db3c2fd210400eb3}\label{IR__lowering_8hpp_a52756886a578bcd0db3c2fd210400eb3}} 
+\index{I\+R\+\_\+lowering.\+hpp@{I\+R\+\_\+lowering.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!I\+R\+\_\+lowering.\+hpp@{I\+R\+\_\+lowering.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__manager}{tree\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{IR__lowering_8hpp_ad96f9232d309d54be82fed94e085f5b7}\label{IR__lowering_8hpp_ad96f9232d309d54be82fed94e085f5b7}} 
+\index{I\+R\+\_\+lowering.\+hpp@{I\+R\+\_\+lowering.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!I\+R\+\_\+lowering.\+hpp@{I\+R\+\_\+lowering.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__manipulation}{tree\+\_\+manipulation}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{IR__lowering_8hpp_a676de0ccdd1189b2b906e6c884116894}\label{IR__lowering_8hpp_a676de0ccdd1189b2b906e6c884116894}} 
+\index{I\+R\+\_\+lowering.\+hpp@{I\+R\+\_\+lowering.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!I\+R\+\_\+lowering.\+hpp@{I\+R\+\_\+lowering.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__node}{tree\+\_\+node}}]{ }\end{DoxyParamCaption})}
+

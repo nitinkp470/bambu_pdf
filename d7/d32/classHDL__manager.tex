@@ -1,0 +1,855 @@
+\hypertarget{classHDL__manager}{}\section{H\+D\+L\+\_\+manager Class Reference}
+\label{classHDL__manager}\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+
+
+{\ttfamily \#include $<$H\+D\+L\+\_\+manager.\+hpp$>$}
+
+
+
+Collaboration diagram for H\+D\+L\+\_\+manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{dc/d1f/classHDL__manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHDL__manager_a55652cd604850136dde5693069e6c890}{H\+D\+L\+\_\+manager} (const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} hls\+\_\+manager, const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref} \hyperlink{classHDL__manager_a39fc9442d1cb94063f582ea205251c4b}{device}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classHDL__manager_a45df650b0a63aaf4771fd72ffa22bfa5}{parameters})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classHDL__manager_a7798274aa9ff6b40af902d6356ef2f46}{H\+D\+L\+\_\+manager} (const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} \hyperlink{classHDL__manager_a97f281a1319403619497d1d3fec65787}{H\+L\+S\+Mgr}, const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref} \hyperlink{classHDL__manager_a39fc9442d1cb94063f582ea205251c4b}{device}, const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} \hyperlink{classHDL__manager_ad3199056804702202557a71f2d78d14e}{SM}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classHDL__manager_a45df650b0a63aaf4771fd72ffa22bfa5}{parameters})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classHDL__manager_a4ee4c8c0fa6151e95741b6adc10b58f1}{$\sim$\+H\+D\+L\+\_\+manager} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classHDL__manager_a0884dfde508d0a59bc176d65b51fc5b7}{hdl\+\_\+gen} (const std\+::string \&file\+\_\+name, const std\+::list$<$ \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} $>$ \&cirs, bool equation, std\+::list$<$ std\+::string $>$ \&hdl\+\_\+files, std\+::list$<$ std\+::string $>$ \&aux\+\_\+files)
+\begin{DoxyCompactList}\small\item\em Generates H\+DL code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \hyperlink{classHDL__manager_a4e2cbf9a5efaf0260a29e64ec3906500}{convert\+\_\+to\+\_\+identifier} (const \hyperlink{classlanguage__writer}{language\+\_\+writer} $\ast$lan, const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em Converts a generic string to a language compliant identifier. \end{DoxyCompactList}\item 
+static std\+::string \hyperlink{classHDL__manager_a17d23ec3794851853505d45852d9af72}{convert\+\_\+to\+\_\+identifier} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em Converts a generic string to a language compliant identifier. \end{DoxyCompactList}\item 
+static std\+::string \hyperlink{classHDL__manager_a94b432648de92166282cf3dc67524cec}{get\+\_\+mod\+\_\+typename} (const \hyperlink{classlanguage__writer}{language\+\_\+writer} $\ast$lan, const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir)
+\begin{DoxyCompactList}\small\item\em Returns the module typename taking into account even the flopoco customizations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classHDL__manager_a5f8b1b3812244b35f3d58f639903e3d8}{get\+\_\+post\+\_\+order\+\_\+structural\+\_\+components} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} cir, std\+::list$<$ \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} $>$ \&list\+\_\+of\+\_\+com) const
+\begin{DoxyCompactList}\small\item\em Returns the list of components that have a structural-\/based description. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classHDL__manager_aaaf408848659946f286bce9799a7da8a}{write\+\_\+components} (const std\+::string \&filename, const \hyperlink{language__writer_8hpp_a890069761ca3ce361c42684c789d886c}{H\+D\+L\+Writer\+\_\+\+Language} language, const std\+::list$<$ \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} $>$ \&components, bool equation, std\+::list$<$ std\+::string $>$ \&aux\+\_\+files) const
+\begin{DoxyCompactList}\small\item\em Generates the H\+DL description for the given components in the specified language. \end{DoxyCompactList}\item 
+void \hyperlink{classHDL__manager_a0bc13e709384a03c49b4130be2035c92}{write\+\_\+components} (const std\+::string \&filename, const std\+::list$<$ \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} $>$ \&components, bool equation, std\+::list$<$ std\+::string $>$ \&hdl\+\_\+files, std\+::list$<$ std\+::string $>$ \&aux\+\_\+files)
+\begin{DoxyCompactList}\small\item\em Determines the proper language for each component and generates the corresponding H\+DL descriptions. \end{DoxyCompactList}\item 
+void \hyperlink{classHDL__manager_a0e67d86aca71fada08a10096cac3396a}{write\+\_\+module} (const \hyperlink{language__writer_8hpp_ab5bb59a651cbff3f3c83b0f51c0b0b71}{language\+\_\+writer\+Ref} writer, const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} cir, bool equation, std\+::list$<$ std\+::string $>$ \&aux\+\_\+files) const
+\begin{DoxyCompactList}\small\item\em Writes the module description. \end{DoxyCompactList}\item 
+void \hyperlink{classHDL__manager_aea3affebb889f7cdfbcbf62a6473b9b2}{write\+\_\+flopoco\+\_\+module} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir, std\+::list$<$ std\+::string $>$ \&aux\+\_\+files) const
+\begin{DoxyCompactList}\small\item\em Writes the Flo\+Po\+Co module description to a V\+H\+DL file. \end{DoxyCompactList}\item 
+void \hyperlink{classHDL__manager_a61d257b049c62e280a5867a06f4f4e2c}{io\+\_\+signal\+\_\+fix\+\_\+ith} (const \hyperlink{language__writer_8hpp_ab5bb59a651cbff3f3c83b0f51c0b0b71}{language\+\_\+writer\+Ref} writer, const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} po, bool \&lspf) const
+\begin{DoxyCompactList}\small\item\em Writes signal port connection post fix. \end{DoxyCompactList}\item 
+bool \hyperlink{classHDL__manager_a75c6d3979d2d925fcbc76cbe9c9e5614}{is\+\_\+fsm} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir) const
+\begin{DoxyCompactList}\small\item\em Returns true if the module has a F\+SM description associated with, false otherwise. \end{DoxyCompactList}\item 
+void \hyperlink{classHDL__manager_a87ef5b67f3ed867fff727d9b3f161795}{write\+\_\+fsm} (const \hyperlink{language__writer_8hpp_ab5bb59a651cbff3f3c83b0f51c0b0b71}{language\+\_\+writer\+Ref} writer, const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir, const std\+::string \&fsm\+\_\+desc) const
+\begin{DoxyCompactList}\small\item\em Writes a mealy/moore finite state machine behavioral description. \end{DoxyCompactList}\item 
+void \hyperlink{classHDL__manager_aa30e28273b99d8dbf65bceae373a963d}{write\+\_\+behavioral} (const \hyperlink{language__writer_8hpp_ab5bb59a651cbff3f3c83b0f51c0b0b71}{language\+\_\+writer\+Ref} writer, const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&cir, const std\+::string \&behav) const
+\begin{DoxyCompactList}\small\item\em Writes the behavioral description associated with the component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} \hyperlink{classHDL__manager_a97f281a1319403619497d1d3fec65787}{H\+L\+S\+Mgr}
+\begin{DoxyCompactList}\small\item\em The high level synthesis manager. \end{DoxyCompactList}\item 
+const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref} \hyperlink{classHDL__manager_a39fc9442d1cb94063f582ea205251c4b}{device}
+\begin{DoxyCompactList}\small\item\em reference to the target device \end{DoxyCompactList}\item 
+const technology\+\_\+manager\+Const\+Ref \hyperlink{classHDL__manager_a36b97521740a378e93cded4e641c4759}{TM}
+\begin{DoxyCompactList}\small\item\em reference to the class containing all the technology information \end{DoxyCompactList}\item 
+const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} \hyperlink{classHDL__manager_ad3199056804702202557a71f2d78d14e}{SM}
+\begin{DoxyCompactList}\small\item\em The structural manager containing top. \end{DoxyCompactList}\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classHDL__manager_a45df650b0a63aaf4771fd72ffa22bfa5}{parameters}
+\begin{DoxyCompactList}\small\item\em The set of input parameters. \end{DoxyCompactList}\item 
+const int \hyperlink{classHDL__manager_aeaabccc887359c7ae08e66f00d2654d6}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em The debug level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 76 of file H\+D\+L\+\_\+manager.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHDL__manager_a55652cd604850136dde5693069e6c890}\label{classHDL__manager_a55652cd604850136dde5693069e6c890}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{H\+D\+L\+\_\+manager()}{HDL\_manager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily H\+D\+L\+\_\+manager\+::\+H\+D\+L\+\_\+manager (\begin{DoxyParamCaption}\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{hls\+\_\+manager,  }\item[{const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref}}]{device,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{parameters }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hls\+\_\+manager} & is the high level synthesis manager \\
+\hline
+{\em device} & is the data structure containing information about the target device \\
+\hline
+{\em parameters} & is the data structure containing all the parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 111 of file H\+D\+L\+\_\+manager.\+cpp.
+
+
+
+References $\sim$\+H\+D\+L\+\_\+manager().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_a55652cd604850136dde5693069e6c890_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHDL__manager_a7798274aa9ff6b40af902d6356ef2f46}\label{classHDL__manager_a7798274aa9ff6b40af902d6356ef2f46}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{H\+D\+L\+\_\+manager()}{HDL\_manager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily H\+D\+L\+\_\+manager\+::\+H\+D\+L\+\_\+manager (\begin{DoxyParamCaption}\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{\+\_\+\+H\+L\+S\+Mgr,  }\item[{const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref}}]{\+\_\+device,  }\item[{const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref}}]{\+\_\+\+SM,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Header include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em H\+LS} & is the high level synthesis manager \\
+\hline
+{\em device} & is the data structure containing information about the target device \\
+\hline
+{\em SM} & is the structural manager containing the top component \\
+\hline
+{\em parameters} & is the data structure containing all the parameters\\
+\hline
+\end{DoxyParams}
+Autoheader include boost include design\+\_\+flows include design\+\_\+flows/backend/\+To\+H\+DL includes H\+LS include S\+TL include technology includes 
+
+Definition at line 98 of file H\+D\+L\+\_\+manager.\+cpp.
+
+\mbox{\Hypertarget{classHDL__manager_a4ee4c8c0fa6151e95741b6adc10b58f1}\label{classHDL__manager_a4ee4c8c0fa6151e95741b6adc10b58f1}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!````~H\+D\+L\+\_\+manager@{$\sim$\+H\+D\+L\+\_\+manager}}
+\index{````~H\+D\+L\+\_\+manager@{$\sim$\+H\+D\+L\+\_\+manager}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{$\sim$\+H\+D\+L\+\_\+manager()}{~HDL\_manager()}}
+{\footnotesize\ttfamily H\+D\+L\+\_\+manager\+::$\sim$\+H\+D\+L\+\_\+manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by H\+D\+L\+\_\+manager().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_a4ee4c8c0fa6151e95741b6adc10b58f1_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classHDL__manager_a4e2cbf9a5efaf0260a29e64ec3906500}\label{classHDL__manager_a4e2cbf9a5efaf0260a29e64ec3906500}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!convert\+\_\+to\+\_\+identifier@{convert\+\_\+to\+\_\+identifier}}
+\index{convert\+\_\+to\+\_\+identifier@{convert\+\_\+to\+\_\+identifier}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{convert\+\_\+to\+\_\+identifier()}{convert\_to\_identifier()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string H\+D\+L\+\_\+manager\+::convert\+\_\+to\+\_\+identifier (\begin{DoxyParamCaption}\item[{const \hyperlink{classlanguage__writer}{language\+\_\+writer} $\ast$}]{lan,  }\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts a generic string to a language compliant identifier. 
+
+
+
+Definition at line 1061 of file H\+D\+L\+\_\+manager.\+cpp.
+
+
+
+References language\+\_\+writer\+::check\+\_\+keyword(), and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+
+
+Referenced by convert\+\_\+to\+\_\+identifier(), fix\+\_\+identifier(), get\+\_\+mod\+\_\+typename(), Testbench\+Generation\+Base\+Step\+::initialize\+\_\+input\+\_\+signals(), V\+H\+D\+L\+\_\+writer\+::type\+\_\+converter\+\_\+size(), Testbench\+Generation\+Base\+Step\+::write\+\_\+auxiliary\+\_\+signal\+\_\+declaration(), Wishbone\+Interface\+Testbench\+::write\+\_\+call(), Wishbone\+Interface\+Testbench\+::write\+\_\+file\+\_\+reading\+\_\+operations(), Minimal\+Interface\+Testbench\+::write\+\_\+file\+\_\+reading\+\_\+operations(), write\+\_\+flopoco\+\_\+module(), write\+\_\+fsm(), Minimal\+Interface\+Testbench\+::write\+\_\+input\+\_\+signal\+\_\+declaration(), Minimal\+Interface\+Testbench\+::write\+\_\+interface\+\_\+handler(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+io\+\_\+signal\+\_\+post\+\_\+fix(), verilog\+\_\+writer\+::write\+\_\+io\+\_\+signal\+\_\+post\+\_\+fix(), write\+\_\+module(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+definition\+\_\+end(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+instance\+\_\+begin(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+instance\+\_\+begin(), Testbench\+Generation\+Base\+Step\+::write\+\_\+module\+\_\+instantiation(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+internal\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl(), system\+\_\+verilog\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities(), verilog\+\_\+writer\+::write\+\_\+\+N\+P\+\_\+functionalities(), Testbench\+Generation\+Base\+Step\+::write\+\_\+output\+\_\+checks(), Minimal\+Interface\+Testbench\+::write\+\_\+output\+\_\+signal\+\_\+declaration(), verilog\+\_\+writer\+::write\+\_\+port\+\_\+binding(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+port\+\_\+binding(), verilog\+\_\+writer\+::write\+\_\+port\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+port\+\_\+declaration(), verilog\+\_\+writer\+::write\+\_\+signal\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+signal\+\_\+declaration(), Wishbone\+Interface\+Testbench\+::write\+\_\+signals(), Minimal\+Interface\+Testbench\+::write\+\_\+slave\+\_\+initializations(), verilog\+\_\+writer\+::write\+\_\+state\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions(), verilog\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions(), verilog\+\_\+writer\+::write\+\_\+vector\+\_\+port\+\_\+binding(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+vector\+\_\+port\+\_\+binding(), Wishbone\+Interface\+Testbench\+::write\+\_\+wishbone\+\_\+input\+\_\+signal\+\_\+declaration(), Wishbone\+Interface\+Testbench\+::write\+\_\+wishbone\+\_\+output\+\_\+signal\+\_\+declaration(), V\+H\+D\+L\+\_\+writer\+::\+Write\+Builtin(), and verilog\+\_\+writer\+::\+Write\+Builtin().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_a4e2cbf9a5efaf0260a29e64ec3906500_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d32/classHDL__manager_a4e2cbf9a5efaf0260a29e64ec3906500_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHDL__manager_a17d23ec3794851853505d45852d9af72}\label{classHDL__manager_a17d23ec3794851853505d45852d9af72}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!convert\+\_\+to\+\_\+identifier@{convert\+\_\+to\+\_\+identifier}}
+\index{convert\+\_\+to\+\_\+identifier@{convert\+\_\+to\+\_\+identifier}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{convert\+\_\+to\+\_\+identifier()}{convert\_to\_identifier()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string H\+D\+L\+\_\+manager\+::convert\+\_\+to\+\_\+identifier (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts a generic string to a language compliant identifier. 
+
+
+
+Definition at line 1094 of file H\+D\+L\+\_\+manager.\+cpp.
+
+
+
+References convert\+\_\+to\+\_\+identifier().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_a17d23ec3794851853505d45852d9af72_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHDL__manager_a94b432648de92166282cf3dc67524cec}\label{classHDL__manager_a94b432648de92166282cf3dc67524cec}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!get\+\_\+mod\+\_\+typename@{get\+\_\+mod\+\_\+typename}}
+\index{get\+\_\+mod\+\_\+typename@{get\+\_\+mod\+\_\+typename}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+mod\+\_\+typename()}{get\_mod\_typename()}}
+{\footnotesize\ttfamily std\+::string H\+D\+L\+\_\+manager\+::get\+\_\+mod\+\_\+typename (\begin{DoxyParamCaption}\item[{const \hyperlink{classlanguage__writer}{language\+\_\+writer} $\ast$}]{lan,  }\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the module typename taking into account even the flopoco customizations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lan} & is the chosen language writer object. \\
+\hline
+{\em cir} & is the module. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1100 of file H\+D\+L\+\_\+manager.\+cpp.
+
+
+
+References convert\+\_\+to\+\_\+identifier(), N\+P\+\_\+functionality\+::\+F\+L\+O\+P\+O\+C\+O\+\_\+\+P\+R\+O\+V\+I\+D\+ED, N\+P\+\_\+functionality\+::get\+\_\+\+N\+P\+\_\+functionality(), G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+A\+ME, P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER, S\+T\+D\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE, and S\+TR.
+
+
+
+Referenced by find\+\_\+eq\+\_\+module\+::operator()(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+component\+\_\+declaration(), write\+\_\+module(), and Testbench\+Generation\+Base\+Step\+::write\+\_\+module\+\_\+instantiation().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_a94b432648de92166282cf3dc67524cec_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_a94b432648de92166282cf3dc67524cec_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHDL__manager_a5f8b1b3812244b35f3d58f639903e3d8}\label{classHDL__manager_a5f8b1b3812244b35f3d58f639903e3d8}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!get\+\_\+post\+\_\+order\+\_\+structural\+\_\+components@{get\+\_\+post\+\_\+order\+\_\+structural\+\_\+components}}
+\index{get\+\_\+post\+\_\+order\+\_\+structural\+\_\+components@{get\+\_\+post\+\_\+order\+\_\+structural\+\_\+components}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+post\+\_\+order\+\_\+structural\+\_\+components()}{get\_post\_order\_structural\_components()}}
+{\footnotesize\ttfamily void H\+D\+L\+\_\+manager\+::get\+\_\+post\+\_\+order\+\_\+structural\+\_\+components (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{cir,  }\item[{std\+::list$<$ \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} $>$ \&}]{list\+\_\+of\+\_\+com }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns the list of components that have a structural-\/based description. 
+
+This list of components is relative sorted such that if a component C\+\_\+i uses a component C\+\_\+j then C\+\_\+j is before C\+\_\+i. To obtain this list the hierarchy is visited in a post-\/order fashion. 
+\begin{DoxyParams}{Parameters}
+{\em lan} & is the chosen language writer object. \\
+\hline
+{\em cir} & is the structural object under analysis. \\
+\hline
+{\em list\+\_\+of\+\_\+com} & is the list of components. \\
+\hline
+\end{DoxyParams}
+no action for signals and bus 
+
+Definition at line 380 of file H\+D\+L\+\_\+manager.\+cpp.
+
+
+
+References action\+\_\+o\+\_\+K, bus\+\_\+connection\+\_\+o\+\_\+K, channel\+\_\+o\+\_\+K, component\+\_\+o\+\_\+K, constant\+\_\+o\+\_\+K, data\+\_\+o\+\_\+K, event\+\_\+o\+\_\+K, N\+P\+\_\+functionality\+::exist\+\_\+\+N\+P\+\_\+functionality(), functional\+\_\+unit\+\_\+K, functional\+\_\+unit\+\_\+template\+\_\+K, technology\+\_\+node\+::get\+\_\+kind(), structural\+\_\+object\+::get\+\_\+kind(), N\+P\+\_\+functionality\+::get\+\_\+\+N\+P\+\_\+functionality(), G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+A\+ME, N\+P\+\_\+functionality\+::\+I\+P\+\_\+\+C\+O\+M\+P\+O\+N\+E\+NT, port\+\_\+o\+\_\+K, port\+\_\+vector\+\_\+o\+\_\+K, signal\+\_\+o\+\_\+K, signal\+\_\+vector\+\_\+o\+\_\+K, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and TM.
+
+
+
+Referenced by hdl\+\_\+gen().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_a5f8b1b3812244b35f3d58f639903e3d8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_a5f8b1b3812244b35f3d58f639903e3d8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHDL__manager_a0884dfde508d0a59bc176d65b51fc5b7}\label{classHDL__manager_a0884dfde508d0a59bc176d65b51fc5b7}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!hdl\+\_\+gen@{hdl\+\_\+gen}}
+\index{hdl\+\_\+gen@{hdl\+\_\+gen}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{hdl\+\_\+gen()}{hdl\_gen()}}
+{\footnotesize\ttfamily void H\+D\+L\+\_\+manager\+::hdl\+\_\+gen (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name,  }\item[{const std\+::list$<$ \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} $>$ \&}]{cirs,  }\item[{bool}]{equation,  }\item[{std\+::list$<$ std\+::string $>$ \&}]{hdl\+\_\+files,  }\item[{std\+::list$<$ std\+::string $>$ \&}]{aux\+\_\+files }\end{DoxyParamCaption})}
+
+
+
+Generates H\+DL code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & is the name to be created \\
+\hline
+{\em cirs} & are the structural objects representing the components to be generated \\
+\hline
+{\em equation} & specifies if the equation-\/based version of the component has to be generated \\
+\hline
+{\em the} & created files (file\+\_\+name + other files) \\
+\hline
+{\em the} & created aux files \\
+\hline
+\end{DoxyParams}
+compute the list of components for which a structural description exist.
+
+generate the H\+DL descriptions for all the components 
+
+Definition at line 323 of file H\+D\+L\+\_\+manager.\+cpp.
+
+
+
+References debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, get\+\_\+post\+\_\+order\+\_\+structural\+\_\+components(), P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and write\+\_\+components().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_a0884dfde508d0a59bc176d65b51fc5b7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHDL__manager_a61d257b049c62e280a5867a06f4f4e2c}\label{classHDL__manager_a61d257b049c62e280a5867a06f4f4e2c}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!io\+\_\+signal\+\_\+fix\+\_\+ith@{io\+\_\+signal\+\_\+fix\+\_\+ith}}
+\index{io\+\_\+signal\+\_\+fix\+\_\+ith@{io\+\_\+signal\+\_\+fix\+\_\+ith}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{io\+\_\+signal\+\_\+fix\+\_\+ith()}{io\_signal\_fix\_ith()}}
+{\footnotesize\ttfamily void H\+D\+L\+\_\+manager\+::io\+\_\+signal\+\_\+fix\+\_\+ith (\begin{DoxyParamCaption}\item[{const \hyperlink{language__writer_8hpp_ab5bb59a651cbff3f3c83b0f51c0b0b71}{language\+\_\+writer\+Ref}}]{writer,  }\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{po,  }\item[{bool \&}]{lspf }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Writes signal port connection post fix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lan} & is the chosen language writer object. \\
+\hline
+{\em po} & is the primary port. \\
+\hline
+{\em lspf} & is true when the first post is written \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 473 of file H\+D\+L\+\_\+manager.\+cpp.
+
+
+
+References constant\+\_\+o\+\_\+K, structural\+\_\+object\+::get\+\_\+kind(), structural\+\_\+object\+::get\+\_\+owner(), port\+\_\+o\+\_\+K, port\+\_\+vector\+\_\+o\+\_\+K, signal\+\_\+o\+\_\+K, signal\+\_\+vector\+\_\+o\+\_\+K, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by write\+\_\+module().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_a61d257b049c62e280a5867a06f4f4e2c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_a61d257b049c62e280a5867a06f4f4e2c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHDL__manager_a75c6d3979d2d925fcbc76cbe9c9e5614}\label{classHDL__manager_a75c6d3979d2d925fcbc76cbe9c9e5614}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!is\+\_\+fsm@{is\+\_\+fsm}}
+\index{is\+\_\+fsm@{is\+\_\+fsm}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{is\+\_\+fsm()}{is\_fsm()}}
+{\footnotesize\ttfamily bool H\+D\+L\+\_\+manager\+::is\+\_\+fsm (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns true if the module has a F\+SM description associated with, false otherwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cir} & is the module. \\
+\hline
+\end{DoxyParams}
+check for a fsm description 
+
+Definition at line 367 of file H\+D\+L\+\_\+manager.\+cpp.
+
+
+
+References N\+P\+\_\+functionality\+::exist\+\_\+\+N\+P\+\_\+functionality(), N\+P\+\_\+functionality\+::\+F\+SM, N\+P\+\_\+functionality\+::\+F\+S\+M\+\_\+\+CS, N\+P\+\_\+functionality\+::get\+\_\+\+N\+P\+\_\+functionality(), and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by write\+\_\+module().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{d7/d32/classHDL__manager_a75c6d3979d2d925fcbc76cbe9c9e5614_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_a75c6d3979d2d925fcbc76cbe9c9e5614_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHDL__manager_aa30e28273b99d8dbf65bceae373a963d}\label{classHDL__manager_aa30e28273b99d8dbf65bceae373a963d}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!write\+\_\+behavioral@{write\+\_\+behavioral}}
+\index{write\+\_\+behavioral@{write\+\_\+behavioral}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{write\+\_\+behavioral()}{write\_behavioral()}}
+{\footnotesize\ttfamily void H\+D\+L\+\_\+manager\+::write\+\_\+behavioral (\begin{DoxyParamCaption}\item[{const \hyperlink{language__writer_8hpp_ab5bb59a651cbff3f3c83b0f51c0b0b71}{language\+\_\+writer\+Ref}}]{writer,  }\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir,  }\item[{const std\+::string \&}]{behav }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Writes the behavioral description associated with the component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em writer} & is the chosen language writer object. \\
+\hline
+{\em cir} & is the module. \\
+\hline
+{\em behav} & is the string-\/based behavioral description. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 957 of file H\+D\+L\+\_\+manager.\+cpp.
+
+
+
+References Split\+String(), and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by write\+\_\+module().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{d7/d32/classHDL__manager_aa30e28273b99d8dbf65bceae373a963d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_aa30e28273b99d8dbf65bceae373a963d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHDL__manager_aaaf408848659946f286bce9799a7da8a}\label{classHDL__manager_aaaf408848659946f286bce9799a7da8a}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!write\+\_\+components@{write\+\_\+components}}
+\index{write\+\_\+components@{write\+\_\+components}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{write\+\_\+components()}{write\_components()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string H\+D\+L\+\_\+manager\+::write\+\_\+components (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const \hyperlink{language__writer_8hpp_a890069761ca3ce361c42684c789d886c}{H\+D\+L\+Writer\+\_\+\+Language}}]{language,  }\item[{const std\+::list$<$ \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} $>$ \&}]{components,  }\item[{bool}]{equation,  }\item[{std\+::list$<$ std\+::string $>$ \&}]{aux\+\_\+files }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Generates the H\+DL description for the given components in the specified language. 
+
+write the header of the file
+
+write all modules
+
+we write the definition of the object stored in library
+
+write the tail of the file 
+
+Definition at line 125 of file H\+D\+L\+\_\+manager.\+cpp.
+
+
+
+References language\+\_\+writer\+::create\+\_\+writer(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, N\+P\+\_\+functionality\+::\+F\+L\+O\+P\+O\+C\+O\+\_\+\+P\+R\+O\+V\+I\+D\+ED, N\+P\+\_\+functionality\+::get\+\_\+\+N\+P\+\_\+functionality(), Time\+Stamp\+::\+Get\+Current\+Time\+Stamp(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, parameters, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, TM, V\+E\+R\+I\+L\+OG, N\+P\+\_\+functionality\+::\+V\+E\+R\+I\+L\+O\+G\+\_\+\+F\+I\+L\+E\+\_\+\+P\+R\+O\+V\+I\+D\+ED, V\+H\+DL, N\+P\+\_\+functionality\+::\+V\+H\+D\+L\+\_\+\+F\+I\+L\+E\+\_\+\+P\+R\+O\+V\+I\+D\+ED, and write\+\_\+module().
+
+
+
+Referenced by hdl\+\_\+gen(), and write\+\_\+components().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_aaaf408848659946f286bce9799a7da8a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{d7/d32/classHDL__manager_aaaf408848659946f286bce9799a7da8a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHDL__manager_a0bc13e709384a03c49b4130be2035c92}\label{classHDL__manager_a0bc13e709384a03c49b4130be2035c92}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!write\+\_\+components@{write\+\_\+components}}
+\index{write\+\_\+components@{write\+\_\+components}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{write\+\_\+components()}{write\_components()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void H\+D\+L\+\_\+manager\+::write\+\_\+components (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const std\+::list$<$ \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} $>$ \&}]{components,  }\item[{bool}]{equation,  }\item[{std\+::list$<$ std\+::string $>$ \&}]{hdl\+\_\+files,  }\item[{std\+::list$<$ std\+::string $>$ \&}]{aux\+\_\+files }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Determines the proper language for each component and generates the corresponding H\+DL descriptions. 
+
+default language
+
+determine the proper language for each component
+
+generate the auxiliary files
+
+add the generated file to the global list 
+
+Definition at line 212 of file H\+D\+L\+\_\+manager.\+cpp.
+
+
+
+References debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, N\+P\+\_\+functionality\+::exist\+\_\+\+N\+P\+\_\+functionality(), N\+P\+\_\+functionality\+::\+F\+L\+O\+P\+O\+C\+O\+\_\+\+P\+R\+O\+V\+I\+D\+ED, N\+P\+\_\+functionality\+::\+F\+SM, N\+P\+\_\+functionality\+::\+F\+S\+M\+\_\+\+CS, N\+P\+\_\+functionality\+::get\+\_\+\+N\+P\+\_\+functionality(), parameters, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, S\+Y\+S\+T\+E\+M\+\_\+\+V\+E\+R\+I\+L\+OG, N\+P\+\_\+functionality\+::\+S\+Y\+S\+T\+E\+M\+\_\+\+V\+E\+R\+I\+L\+O\+G\+\_\+\+P\+R\+O\+V\+I\+D\+ED, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG, TM, test\+\_\+panda\+::type, N\+P\+\_\+functionality\+::\+U\+N\+K\+N\+O\+WN, V\+E\+R\+I\+L\+OG, N\+P\+\_\+functionality\+::\+V\+E\+R\+I\+L\+O\+G\+\_\+\+F\+I\+L\+E\+\_\+\+P\+R\+O\+V\+I\+D\+ED, N\+P\+\_\+functionality\+::\+V\+E\+R\+I\+L\+O\+G\+\_\+\+P\+R\+O\+V\+I\+D\+ED, V\+H\+DL, N\+P\+\_\+functionality\+::\+V\+H\+D\+L\+\_\+\+F\+I\+L\+E\+\_\+\+P\+R\+O\+V\+I\+D\+ED, N\+P\+\_\+functionality\+::\+V\+H\+D\+L\+\_\+\+P\+R\+O\+V\+I\+D\+ED, and write\+\_\+components().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_a0bc13e709384a03c49b4130be2035c92_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHDL__manager_aea3affebb889f7cdfbcbf62a6473b9b2}\label{classHDL__manager_aea3affebb889f7cdfbcbf62a6473b9b2}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!write\+\_\+flopoco\+\_\+module@{write\+\_\+flopoco\+\_\+module}}
+\index{write\+\_\+flopoco\+\_\+module@{write\+\_\+flopoco\+\_\+module}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{write\+\_\+flopoco\+\_\+module()}{write\_flopoco\_module()}}
+{\footnotesize\ttfamily void H\+D\+L\+\_\+manager\+::write\+\_\+flopoco\+\_\+module (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir,  }\item[{std\+::list$<$ std\+::string $>$ \&}]{aux\+\_\+files }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Writes the Flo\+Po\+Co module description to a V\+H\+DL file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cir} & is the module to be fixed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 919 of file H\+D\+L\+\_\+manager.\+cpp.
+
+
+
+References convert\+\_\+to\+\_\+identifier(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, N\+P\+\_\+functionality\+::\+F\+L\+O\+P\+O\+C\+O\+\_\+\+P\+R\+O\+V\+I\+D\+ED, G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+A\+ME, P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, S\+T\+D\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE, S\+TR, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by write\+\_\+module().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_aea3affebb889f7cdfbcbf62a6473b9b2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_aea3affebb889f7cdfbcbf62a6473b9b2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHDL__manager_a87ef5b67f3ed867fff727d9b3f161795}\label{classHDL__manager_a87ef5b67f3ed867fff727d9b3f161795}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!write\+\_\+fsm@{write\+\_\+fsm}}
+\index{write\+\_\+fsm@{write\+\_\+fsm}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{write\+\_\+fsm()}{write\_fsm()}}
+{\footnotesize\ttfamily void H\+D\+L\+\_\+manager\+::write\+\_\+fsm (\begin{DoxyParamCaption}\item[{const \hyperlink{language__writer_8hpp_ab5bb59a651cbff3f3c83b0f51c0b0b71}{language\+\_\+writer\+Ref}}]{writer,  }\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{cir,  }\item[{const std\+::string \&}]{fsm\+\_\+desc }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Writes a mealy/moore finite state machine behavioral description. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em writer} & is the chosen language writer object. \\
+\hline
+{\em cir} & is the module. \\
+\hline
+{\em fsm\+\_\+desc} & is the string-\/based F\+SM description. \\
+\hline
+\end{DoxyParams}
+write state declaration.
+
+write the present\+\_\+state update
+
+write transition and output functions 
+
+Definition at line 970 of file H\+D\+L\+\_\+manager.\+cpp.
+
+
+
+References convert\+\_\+to\+\_\+identifier(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, device, structural\+\_\+object\+::find\+\_\+member(), refcount$<$ T $>$\+::get(), N\+E\+X\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, parameters, port\+\_\+o\+\_\+K, P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Split\+String(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and test\+\_\+panda\+::tokens.
+
+
+
+Referenced by write\+\_\+module().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_a87ef5b67f3ed867fff727d9b3f161795_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_a87ef5b67f3ed867fff727d9b3f161795_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHDL__manager_a0e67d86aca71fada08a10096cac3396a}\label{classHDL__manager_a0e67d86aca71fada08a10096cac3396a}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!write\+\_\+module@{write\+\_\+module}}
+\index{write\+\_\+module@{write\+\_\+module}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{write\+\_\+module()}{write\_module()}}
+{\footnotesize\ttfamily void H\+D\+L\+\_\+manager\+::write\+\_\+module (\begin{DoxyParamCaption}\item[{const \hyperlink{language__writer_8hpp_ab5bb59a651cbff3f3c83b0f51c0b0b71}{language\+\_\+writer\+Ref}}]{writer,  }\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{cir,  }\item[{bool}]{equation,  }\item[{std\+::list$<$ std\+::string $>$ \&}]{aux\+\_\+files }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Writes the module description. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lan} & is the chosen language writer object. \\
+\hline
+{\em cir} & is the module to be written. The analysis does not consider the inner objects but just one level of the hierarchy. \\
+\hline
+\end{DoxyParams}
+write module declaration
+
+write library declaration component
+
+write IO port declarations
+
+close the interface declaration and start the implementation
+
+specify the timing annotations to the components
+
+specify timing characterization
+
+write components declarations write signal declarations
+
+write module\+\_\+instantiation begin
+
+write module instantiation \& connection binding
+
+write IO ports binding
+
+First output and then input. Some backend could have benefits from this ordering. Some customization are possible, like direct translation of gates into built-\/in statements.
+
+write loop signal post fix
+
+for generic ports the post fix is not required. A generic port is never attached to a signal.
+
+check if there is some behavior attached to the module
+
+write module\+\_\+instantiation end 
+
+Definition at line 503 of file H\+D\+L\+\_\+manager.\+cpp.
+
+
+
+References action\+\_\+o\+\_\+K, bus\+\_\+connection\+\_\+o\+\_\+K, channel\+\_\+o\+\_\+K, component\+\_\+o\+\_\+K, constant\+\_\+o\+\_\+K, convert\+\_\+to\+\_\+identifier(), data\+\_\+o\+\_\+K, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+A\+R\+A\+N\+O\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, N\+P\+\_\+functionality\+::\+E\+Q\+U\+A\+T\+I\+ON, event\+\_\+o\+\_\+K, N\+P\+\_\+functionality\+::exist\+\_\+\+N\+P\+\_\+functionality(), N\+P\+\_\+functionality\+::\+F\+L\+O\+P\+O\+C\+O\+\_\+\+P\+R\+O\+V\+I\+D\+ED, N\+P\+\_\+functionality\+::\+F\+SM, N\+P\+\_\+functionality\+::\+F\+S\+M\+\_\+\+CS, functional\+\_\+unit\+\_\+K, functional\+\_\+unit\+\_\+template\+\_\+K, refcount$<$ T $>$\+::get(), module\+::get\+\_\+authors(), structural\+\_\+object\+::get\+\_\+black\+\_\+box(), module\+::get\+\_\+copyright(), module\+::get\+\_\+description(), module\+::get\+\_\+gen\+\_\+port(), module\+::get\+\_\+gen\+\_\+port\+\_\+size(), structural\+\_\+object\+::get\+\_\+id(), module\+::get\+\_\+in\+\_\+out\+\_\+port(), module\+::get\+\_\+in\+\_\+out\+\_\+port\+\_\+size(), module\+::get\+\_\+in\+\_\+port(), module\+::get\+\_\+in\+\_\+port\+\_\+size(), module\+::get\+\_\+internal\+\_\+object(), module\+::get\+\_\+internal\+\_\+objects\+\_\+size(), technology\+\_\+node\+::get\+\_\+kind(), module\+::get\+\_\+license(), get\+\_\+mod\+\_\+typename(), N\+P\+\_\+functionality\+::get\+\_\+\+N\+P\+\_\+functionality(), module\+::get\+\_\+\+N\+P\+\_\+functionality(), module\+::get\+\_\+out\+\_\+port(), module\+::get\+\_\+out\+\_\+port\+\_\+size(), structural\+\_\+object\+::get\+\_\+path(), G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+A\+ME, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, io\+\_\+signal\+\_\+fix\+\_\+ith(), N\+P\+\_\+functionality\+::\+I\+P\+\_\+\+C\+O\+M\+P\+O\+N\+E\+NT, is\+\_\+fsm(), parameters, port\+\_\+o\+\_\+K, port\+\_\+vector\+\_\+o\+\_\+K, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, signal\+\_\+o\+\_\+K, signal\+\_\+vector\+\_\+o\+\_\+K, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, TM, write\+\_\+behavioral(), write\+\_\+flopoco\+\_\+module(), and write\+\_\+fsm().
+
+
+
+Referenced by write\+\_\+components().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d32/classHDL__manager_a0e67d86aca71fada08a10096cac3396a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d32/classHDL__manager_a0e67d86aca71fada08a10096cac3396a_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classHDL__manager_aeaabccc887359c7ae08e66f00d2654d6}\label{classHDL__manager_aeaabccc887359c7ae08e66f00d2654d6}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily const int H\+D\+L\+\_\+manager\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The debug level. 
+
+
+
+Definition at line 100 of file H\+D\+L\+\_\+manager.\+hpp.
+
+
+
+Referenced by hdl\+\_\+gen(), write\+\_\+components(), write\+\_\+flopoco\+\_\+module(), write\+\_\+fsm(), and write\+\_\+module().
+
+\mbox{\Hypertarget{classHDL__manager_a39fc9442d1cb94063f582ea205251c4b}\label{classHDL__manager_a39fc9442d1cb94063f582ea205251c4b}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!device@{device}}
+\index{device@{device}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{device}{device}}
+{\footnotesize\ttfamily const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref} H\+D\+L\+\_\+manager\+::device\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+reference to the target device 
+
+
+
+Definition at line 83 of file H\+D\+L\+\_\+manager.\+hpp.
+
+
+
+Referenced by write\+\_\+fsm().
+
+\mbox{\Hypertarget{classHDL__manager_a97f281a1319403619497d1d3fec65787}\label{classHDL__manager_a97f281a1319403619497d1d3fec65787}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!H\+L\+S\+Mgr@{H\+L\+S\+Mgr}}
+\index{H\+L\+S\+Mgr@{H\+L\+S\+Mgr}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{H\+L\+S\+Mgr}{HLSMgr}}
+{\footnotesize\ttfamily const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} H\+D\+L\+\_\+manager\+::\+H\+L\+S\+Mgr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The high level synthesis manager. 
+
+
+
+Definition at line 80 of file H\+D\+L\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classHDL__manager_a45df650b0a63aaf4771fd72ffa22bfa5}\label{classHDL__manager_a45df650b0a63aaf4771fd72ffa22bfa5}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!parameters@{parameters}}
+\index{parameters@{parameters}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{parameters}{parameters}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} H\+D\+L\+\_\+manager\+::parameters\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The set of input parameters. 
+
+
+
+Definition at line 97 of file H\+D\+L\+\_\+manager.\+hpp.
+
+
+
+Referenced by write\+\_\+components(), write\+\_\+fsm(), and write\+\_\+module().
+
+\mbox{\Hypertarget{classHDL__manager_ad3199056804702202557a71f2d78d14e}\label{classHDL__manager_ad3199056804702202557a71f2d78d14e}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!SM@{SM}}
+\index{SM@{SM}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{SM}{SM}}
+{\footnotesize\ttfamily const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} H\+D\+L\+\_\+manager\+::\+SM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The structural manager containing top. 
+
+
+
+Definition at line 94 of file H\+D\+L\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classHDL__manager_a36b97521740a378e93cded4e641c4759}\label{classHDL__manager_a36b97521740a378e93cded4e641c4759}} 
+\index{H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}!TM@{TM}}
+\index{TM@{TM}!H\+D\+L\+\_\+manager@{H\+D\+L\+\_\+manager}}
+\subsubsection{\texorpdfstring{TM}{TM}}
+{\footnotesize\ttfamily const technology\+\_\+manager\+Const\+Ref H\+D\+L\+\_\+manager\+::\+TM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+reference to the class containing all the technology information 
+
+
+
+Definition at line 86 of file H\+D\+L\+\_\+manager.\+hpp.
+
+
+
+Referenced by get\+\_\+post\+\_\+order\+\_\+structural\+\_\+components(), write\+\_\+components(), and write\+\_\+module().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+H\+D\+L/\hyperlink{HDL__manager_8hpp}{H\+D\+L\+\_\+manager.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+H\+D\+L/\hyperlink{HDL__manager_8cpp}{H\+D\+L\+\_\+manager.\+cpp}\end{DoxyCompactItemize}

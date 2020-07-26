@@ -1,0 +1,1111 @@
+\hypertarget{classflopoco__wrapper}{}\section{flopoco\+\_\+wrapper Class Reference}
+\label{classflopoco__wrapper}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+
+
+Main class for wrapping the Flo\+Po\+Co code generator.  
+
+
+
+
+{\ttfamily \#include $<$flopoco\+\_\+wrapper.\+hpp$>$}
+
+
+
+Collaboration diagram for flopoco\+\_\+wrapper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d9e/classflopoco__wrapper__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classflopoco__wrapper_a96975b686fca80c7a78c8e3a3fde4ddc}{flopoco\+\_\+wrapper} (int \+\_\+debug\+\_\+level, const std\+::string \&F\+U\+\_\+target)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classflopoco__wrapper_a0231fbfc514e9b11f4f2dfddc6d6240c}{$\sim$flopoco\+\_\+wrapper} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classflopoco__wrapper_ad3cabcc4456dfdc78938fe6c8e83d1db}{flopoco\+\_\+wrapper} (const \hyperlink{classflopoco__wrapper}{flopoco\+\_\+wrapper} \&inst)=delete
+\item 
+void \hyperlink{classflopoco__wrapper_a1bf6c7e46b20a7db7a71f46f8483637e}{add\+\_\+\+FU} (const std\+::string \&F\+U\+\_\+type, unsigned int F\+U\+\_\+prec\+\_\+in, unsigned int F\+U\+\_\+prec\+\_\+out, const std\+::string \&F\+U\+\_\+name, const std\+::string \&pipe\+\_\+parameter)
+\begin{DoxyCompactList}\small\item\em Adds a Functional Unit to the wrapper. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classflopoco__wrapper_a0d439a47ce9842523b91cd5763bd5fe1}{get\+\_\+\+F\+U\+Pipeline\+Depth} (const std\+::string \&F\+U\+\_\+name, const unsigned int F\+U\+\_\+prec\+\_\+in, const unsigned int F\+U\+\_\+prec\+\_\+out, const std\+::string \&pipe\+\_\+parameter) const
+\begin{DoxyCompactList}\small\item\em Returns the Functional Unit\textquotesingle{}s Pipeline Depth. \end{DoxyCompactList}\item 
+int \hyperlink{classflopoco__wrapper_ac9b07db0e6bdc7bb6a7477fe26aba92f}{write\+V\+H\+DL} (const std\+::string \&F\+U\+\_\+name, const unsigned int F\+U\+\_\+prec\+\_\+in, const unsigned int F\+U\+\_\+prec\+\_\+out, std\+::string pipe\+\_\+parameter, std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Writes the V\+H\+DL for a Functional Unit to the default file name, which is \char`\"{}\+F\+U\+\_\+name.\+vhdl\char`\"{} Returns -\/1 if some problem occurred, 0 if the file was successfully written, 1 if the FU was already written to a file. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classflopoco__wrapper_a64395db4a7b5f9b7a716dac3907c838f}{write\+V\+H\+D\+Lcommon} ()
+\begin{DoxyCompactList}\small\item\em write the common components \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::string $>$ \& \hyperlink{classflopoco__wrapper_aac67dab400a5a7d2ab1bbeed047e3a57}{get\+\_\+files\+\_\+written} ()
+\begin{DoxyCompactList}\small\item\em Returns the Functional Units that have been written to a V\+H\+DL file. \end{DoxyCompactList}\item 
+bool \hyperlink{classflopoco__wrapper_ac7bd64c1720604606984f0f020fdbf54}{is\+\_\+unit\+\_\+written} (const std\+::string \&F\+U\+\_\+name, const unsigned int F\+U\+\_\+prec\+\_\+in, const unsigned int F\+U\+\_\+prec\+\_\+out, const std\+::string \&pipe\+\_\+parameter) const
+\begin{DoxyCompactList}\small\item\em Checks if a Functional Unit have been written to a V\+H\+DL file. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::string $>$ \hyperlink{classflopoco__wrapper_a833928904625afde91a9c1d6ac78e35c}{get\+\_\+in\+\_\+ports} (const std\+::string \&F\+U\+\_\+name, const unsigned int F\+U\+\_\+prec\+\_\+in, const unsigned int F\+U\+\_\+prec\+\_\+out, const unsigned int expected\+\_\+ports, const std\+::string \&pipe\+\_\+parameter) const
+\begin{DoxyCompactList}\small\item\em Return the names of input and output ports (multiple names, thus a vector of strings) \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::string $>$ \hyperlink{classflopoco__wrapper_ac68016486d105000e2df59fc924eec32}{get\+\_\+out\+\_\+ports} (const std\+::string \&F\+U\+\_\+name, const unsigned int F\+U\+\_\+prec\+\_\+in, const unsigned int F\+U\+\_\+prec\+\_\+out, const unsigned int expected\+\_\+ports, const std\+::string \&pipe\+\_\+parameter) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classflopoco__wrapper_ab0789242cbc4e02a7fdb1a159441f706}{D\+E\+C\+O\+D\+E\+\_\+\+B\+I\+TS} (unsigned int F\+U\+\_\+prec, unsigned int \&n\+\_\+mant, unsigned int \&n\+\_\+exp)
+\begin{DoxyCompactList}\small\item\em Retrieve mantissa and exponent for a given precision. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const double \hyperlink{classflopoco__wrapper_aa0540c8401c605f646a3fca9c5fa93d6}{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY} = 100.\+0
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5ac}{port\+\_\+type} \{ \hyperlink{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5acaadfc029e013c69994857c176817524e1}{port\+\_\+in}, 
+\hyperlink{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5aca0e55e856f54269c6e56c87c3d0fa3c26}{port\+\_\+out}, 
+\hyperlink{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5acaa7cb8baf6e528caaac7e1ca59e30e5b4}{clk}, 
+\hyperlink{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5aca22d5d3c908b6df3a3c25916ae92afac0}{rst}
+ \}\begin{DoxyCompactList}\small\item\em Port types. \end{DoxyCompactList}
+\item 
+enum \hyperlink{classflopoco__wrapper_a143045f6fc28429886895b54849d901d}{component\+\_\+type} \{ \hyperlink{classflopoco__wrapper_a143045f6fc28429886895b54849d901da220d30905d43d389f7da5eb936be0ccd}{top}, 
+\hyperlink{classflopoco__wrapper_a143045f6fc28429886895b54849d901da3fabac808b332449f59629c19e1be40e}{wrapped}, 
+\hyperlink{classflopoco__wrapper_a143045f6fc28429886895b54849d901da9e84139dbc08049588447f7ad3a4fa62}{in\+\_\+wrap}, 
+\hyperlink{classflopoco__wrapper_a143045f6fc28429886895b54849d901da9cf75e6d3f28ddf083e84aed286964f2}{out\+\_\+wrap}
+ \}\begin{DoxyCompactList}\small\item\em Component types. \end{DoxyCompactList}
+\item 
+enum \hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358}{unit\+\_\+type} \{ \newline
+\hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358ac1e7d2a83d74c04b76a3f4bc6f6384b1}{U\+T\+\_\+\+A\+DD}, 
+\hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358ab7baacb5ea5a362c4a86fa583cf9bbdf}{U\+T\+\_\+\+S\+UB}, 
+\hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a2124a521d64f8da7ae4ca6bb50dee09d}{U\+T\+\_\+\+M\+U\+LT}, 
+\hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a790192d7365c29f2837bce1ef75d81f2}{U\+T\+\_\+\+D\+IV}, 
+\newline
+\hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a8239150af5879e5c8da1560fc46ed5fa}{U\+T\+\_\+\+F\+F\+\_\+\+C\+O\+NV}, 
+\hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a1267c2aa98375cc4372879ed23f3bf45}{U\+T\+\_\+\+A\+D\+D\+S\+UB}, 
+\hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a95bebb033ac9a0a725dc4f7a716ef181}{U\+T\+\_\+\+U\+F\+I\+X2\+FP}, 
+\hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a1eac1787424c3e8b16b1b2a423eb8c76}{U\+T\+\_\+\+I\+F\+I\+X2\+FP}, 
+\newline
+\hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a9e50fe902bdd9b5400c91c5d241767aa}{U\+T\+\_\+\+F\+P2\+U\+F\+IX}, 
+\hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358acb1dd6922a021461acdf03621be30964}{U\+T\+\_\+\+F\+P2\+I\+F\+IX}, 
+\hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358aeb9fc71e9a1d6b5b35c757ad309dc6db}{U\+T\+\_\+\+E\+XP}, 
+\hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a46393176e53df2a203af94a62e9c2bab}{U\+T\+\_\+\+S\+Q\+RT}, 
+\newline
+\hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a4753b82b731e1836ea9cf3ed196ccd9e}{U\+T\+\_\+compare\+\_\+expr}, 
+\hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a4977a57f8d6ad8daee4b50db6e9a8815}{U\+T\+\_\+\+L\+OG}, 
+\hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a7ee4b536893a766ad8817cb688b4fd85}{U\+T\+\_\+\+P\+OW}, 
+\hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358aef6e995db2f42f7fd6e20041b3d8bd7e}{U\+T\+\_\+\+U\+N\+K\+N\+O\+WN}
+ \}\begin{DoxyCompactList}\small\item\em unit type \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+flopoco\+::\+Operator $\ast$ \hyperlink{classflopoco__wrapper_ab45f79d64c8bd0e1d73dc7833a6d15ad}{get\+\_\+\+FU} (std\+::string F\+U\+\_\+name\+\_\+stored) const
+\begin{DoxyCompactList}\small\item\em Returns one of the generated Functional Units. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::string $>$ \hyperlink{classflopoco__wrapper_ae65f581fe20c9fa4595857e5f296c619}{get\+\_\+ports} (const std\+::string \&F\+U\+\_\+name\+\_\+stored, unsigned int expected\+\_\+ports, \hyperlink{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5ac}{port\+\_\+type} \hyperlink{classflopoco__wrapper_aa187461f66472ae2d77d3c8425895de7}{type}, bool check\+\_\+ports=true) const
+\begin{DoxyCompactList}\small\item\em Returns the names of ports, according to the needed port type (port\+\_\+in or port\+\_\+out) \end{DoxyCompactList}\item 
+const std\+::string \hyperlink{classflopoco__wrapper_a582a468cce4977d1a2af23e5f719af2c}{get\+\_\+port} (\hyperlink{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5ac}{port\+\_\+type} \hyperlink{classflopoco__wrapper_aa187461f66472ae2d77d3c8425895de7}{type}) const
+\begin{DoxyCompactList}\small\item\em Returns the name of a port, according to the needed port type (clock or reset) \end{DoxyCompactList}\item 
+int \hyperlink{classflopoco__wrapper_afc229ae93b5772fadc22ead428f29036}{Internal\+Write\+V\+H\+DL} (const std\+::string \&F\+U\+\_\+name, const unsigned int F\+U\+\_\+prec\+\_\+in, const unsigned int F\+U\+\_\+prec\+\_\+out, const std\+::string \&F\+U\+\_\+file, const std\+::string \&pipe\+\_\+parameter)
+\begin{DoxyCompactList}\small\item\em Writes the V\+H\+DL for a Functional Unit to the desired file name Returns -\/1 if some problem occurred, 0 if the file was successfully written, 1 if the FU was already written to a file. \end{DoxyCompactList}\item 
+void \hyperlink{classflopoco__wrapper_a7e97147311b48f0fc5d3463bc88896bf}{output\+Header\+V\+H\+DL} (const std\+::string \&F\+U\+\_\+name\+\_\+stored, std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Helper methods for automatic V\+H\+DL code generation\+: \end{DoxyCompactList}\item 
+void \hyperlink{classflopoco__wrapper_ad0575cadd6eee1f9c3bcdac90eb05b0e}{output\+Wrap\+V\+H\+DL} (const std\+::string \&F\+U\+\_\+name\+\_\+stored, std\+::ostream \&os, const std\+::string \&pipe\+\_\+parameter)
+\item 
+void \hyperlink{classflopoco__wrapper_a121477e55d07d3d493c879d80ddb5770}{output\+Port\+Declaration} (const std\+::string \&F\+U\+\_\+prefix, const std\+::string \&F\+U\+\_\+name\+\_\+stored, std\+::ostream \&os, \hyperlink{classflopoco__wrapper_a143045f6fc28429886895b54849d901d}{component\+\_\+type} \hyperlink{classflopoco__wrapper_aa187461f66472ae2d77d3c8425895de7}{type}, const std\+::string \&pipe\+\_\+parameter)
+\item 
+void \hyperlink{classflopoco__wrapper_a1220164a60b0fbd7e1257e1401dd0897}{output\+Signals} (const std\+::string \&F\+U\+\_\+name\+\_\+stored, std\+::ostream \&os)
+\item 
+void \hyperlink{classflopoco__wrapper_aeaeed1e93ec604948ffff0085503cd3b}{output\+Port\+Map} (const std\+::string \&F\+U\+\_\+name\+\_\+stored, std\+::ostream \&os, const std\+::string \&pipe\+\_\+parameter)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classflopoco__wrapper_a4adf4414034e81e388ddbdb16e7da779}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em Current debug level. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ std\+::string, flopoco\+::\+Operator $\ast$ $>$ \hyperlink{classflopoco__wrapper_a6b4e28e7702c15a3b88902608b390776}{F\+Us}
+\begin{DoxyCompactList}\small\item\em Generated Functional Units. \end{DoxyCompactList}\item 
+\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::string $>$ \hyperlink{classflopoco__wrapper_ae066c877bb6b1ddc5a887c97119a4381}{F\+U\+\_\+files}
+\begin{DoxyCompactList}\small\item\em Set of Functional Units written to a .vhdl file. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ std\+::string, std\+::pair$<$ unsigned int, unsigned int $>$ $>$ \hyperlink{classflopoco__wrapper_a60ec3d02b4bbc3dbeaa0115db26357db}{F\+U\+\_\+to\+\_\+prec}
+\begin{DoxyCompactList}\small\item\em Maps a Functional Unit to its precision. \end{DoxyCompactList}\item 
+\hyperlink{classsimple__indent}{simple\+\_\+indent} \hyperlink{classflopoco__wrapper_ac82c51dbab511806a11535b78b7c106e}{PP}
+\begin{DoxyCompactList}\small\item\em Pretty print functor object used to indent the generated code. \end{DoxyCompactList}\item 
+\hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358}{unit\+\_\+type} \hyperlink{classflopoco__wrapper_aa187461f66472ae2d77d3c8425895de7}{type}
+\item 
+bool \hyperlink{classflopoco__wrapper_ae20312084bdfebdcdff953831960a990}{signed\+\_\+p}
+\item 
+std\+::vector$<$ flopoco\+::\+Operator $\ast$ $>$ \hyperlink{classflopoco__wrapper_aae89e35cfb20857850eec60323e5f8a3}{oplist}
+\item 
+flopoco\+::\+Target $\ast$ \hyperlink{classflopoco__wrapper_a6a7d2c36ac45fb5a5c14e33134df2855}{target}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main class for wrapping the Flo\+Po\+Co code generator. 
+
+Definition at line 96 of file flopoco\+\_\+wrapper.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classflopoco__wrapper_a143045f6fc28429886895b54849d901d}\label{classflopoco__wrapper_a143045f6fc28429886895b54849d901d}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!component\+\_\+type@{component\+\_\+type}}
+\index{component\+\_\+type@{component\+\_\+type}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{component\+\_\+type}{component\_type}}
+{\footnotesize\ttfamily enum \hyperlink{classflopoco__wrapper_a143045f6fc28429886895b54849d901d}{flopoco\+\_\+wrapper\+::component\+\_\+type}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Component types. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{top@{top}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!top@{top}}}\mbox{\Hypertarget{classflopoco__wrapper_a143045f6fc28429886895b54849d901da220d30905d43d389f7da5eb936be0ccd}\label{classflopoco__wrapper_a143045f6fc28429886895b54849d901da220d30905d43d389f7da5eb936be0ccd}} 
+top&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{wrapped@{wrapped}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!wrapped@{wrapped}}}\mbox{\Hypertarget{classflopoco__wrapper_a143045f6fc28429886895b54849d901da3fabac808b332449f59629c19e1be40e}\label{classflopoco__wrapper_a143045f6fc28429886895b54849d901da3fabac808b332449f59629c19e1be40e}} 
+wrapped&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{in\+\_\+wrap@{in\+\_\+wrap}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!in\+\_\+wrap@{in\+\_\+wrap}}}\mbox{\Hypertarget{classflopoco__wrapper_a143045f6fc28429886895b54849d901da9e84139dbc08049588447f7ad3a4fa62}\label{classflopoco__wrapper_a143045f6fc28429886895b54849d901da9e84139dbc08049588447f7ad3a4fa62}} 
+in\+\_\+wrap&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{out\+\_\+wrap@{out\+\_\+wrap}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!out\+\_\+wrap@{out\+\_\+wrap}}}\mbox{\Hypertarget{classflopoco__wrapper_a143045f6fc28429886895b54849d901da9cf75e6d3f28ddf083e84aed286964f2}\label{classflopoco__wrapper_a143045f6fc28429886895b54849d901da9cf75e6d3f28ddf083e84aed286964f2}} 
+out\+\_\+wrap&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 120 of file flopoco\+\_\+wrapper.\+hpp.
+
+\mbox{\Hypertarget{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5ac}\label{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5ac}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!port\+\_\+type@{port\+\_\+type}}
+\index{port\+\_\+type@{port\+\_\+type}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{port\+\_\+type}{port\_type}}
+{\footnotesize\ttfamily enum \hyperlink{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5ac}{flopoco\+\_\+wrapper\+::port\+\_\+type}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Port types. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{port\+\_\+in@{port\+\_\+in}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!port\+\_\+in@{port\+\_\+in}}}\mbox{\Hypertarget{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5acaadfc029e013c69994857c176817524e1}\label{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5acaadfc029e013c69994857c176817524e1}} 
+port\+\_\+in&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{port\+\_\+out@{port\+\_\+out}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!port\+\_\+out@{port\+\_\+out}}}\mbox{\Hypertarget{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5aca0e55e856f54269c6e56c87c3d0fa3c26}\label{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5aca0e55e856f54269c6e56c87c3d0fa3c26}} 
+port\+\_\+out&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{clk@{clk}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!clk@{clk}}}\mbox{\Hypertarget{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5acaa7cb8baf6e528caaac7e1ca59e30e5b4}\label{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5acaa7cb8baf6e528caaac7e1ca59e30e5b4}} 
+clk&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rst@{rst}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!rst@{rst}}}\mbox{\Hypertarget{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5aca22d5d3c908b6df3a3c25916ae92afac0}\label{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5aca22d5d3c908b6df3a3c25916ae92afac0}} 
+rst&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 112 of file flopoco\+\_\+wrapper.\+hpp.
+
+\mbox{\Hypertarget{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358}\label{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!unit\+\_\+type@{unit\+\_\+type}}
+\index{unit\+\_\+type@{unit\+\_\+type}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{unit\+\_\+type}{unit\_type}}
+{\footnotesize\ttfamily enum \hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358}{flopoco\+\_\+wrapper\+::unit\+\_\+type}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+unit type 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+T\+\_\+\+A\+DD@{U\+T\+\_\+\+A\+DD}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!U\+T\+\_\+\+A\+DD@{U\+T\+\_\+\+A\+DD}}}\mbox{\Hypertarget{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358ac1e7d2a83d74c04b76a3f4bc6f6384b1}\label{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358ac1e7d2a83d74c04b76a3f4bc6f6384b1}} 
+U\+T\+\_\+\+A\+DD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+T\+\_\+\+S\+UB@{U\+T\+\_\+\+S\+UB}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!U\+T\+\_\+\+S\+UB@{U\+T\+\_\+\+S\+UB}}}\mbox{\Hypertarget{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358ab7baacb5ea5a362c4a86fa583cf9bbdf}\label{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358ab7baacb5ea5a362c4a86fa583cf9bbdf}} 
+U\+T\+\_\+\+S\+UB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+T\+\_\+\+M\+U\+LT@{U\+T\+\_\+\+M\+U\+LT}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!U\+T\+\_\+\+M\+U\+LT@{U\+T\+\_\+\+M\+U\+LT}}}\mbox{\Hypertarget{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a2124a521d64f8da7ae4ca6bb50dee09d}\label{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a2124a521d64f8da7ae4ca6bb50dee09d}} 
+U\+T\+\_\+\+M\+U\+LT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+T\+\_\+\+D\+IV@{U\+T\+\_\+\+D\+IV}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!U\+T\+\_\+\+D\+IV@{U\+T\+\_\+\+D\+IV}}}\mbox{\Hypertarget{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a790192d7365c29f2837bce1ef75d81f2}\label{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a790192d7365c29f2837bce1ef75d81f2}} 
+U\+T\+\_\+\+D\+IV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+T\+\_\+\+F\+F\+\_\+\+C\+O\+NV@{U\+T\+\_\+\+F\+F\+\_\+\+C\+O\+NV}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!U\+T\+\_\+\+F\+F\+\_\+\+C\+O\+NV@{U\+T\+\_\+\+F\+F\+\_\+\+C\+O\+NV}}}\mbox{\Hypertarget{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a8239150af5879e5c8da1560fc46ed5fa}\label{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a8239150af5879e5c8da1560fc46ed5fa}} 
+U\+T\+\_\+\+F\+F\+\_\+\+C\+O\+NV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+T\+\_\+\+A\+D\+D\+S\+UB@{U\+T\+\_\+\+A\+D\+D\+S\+UB}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!U\+T\+\_\+\+A\+D\+D\+S\+UB@{U\+T\+\_\+\+A\+D\+D\+S\+UB}}}\mbox{\Hypertarget{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a1267c2aa98375cc4372879ed23f3bf45}\label{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a1267c2aa98375cc4372879ed23f3bf45}} 
+U\+T\+\_\+\+A\+D\+D\+S\+UB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+T\+\_\+\+U\+F\+I\+X2\+FP@{U\+T\+\_\+\+U\+F\+I\+X2\+FP}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!U\+T\+\_\+\+U\+F\+I\+X2\+FP@{U\+T\+\_\+\+U\+F\+I\+X2\+FP}}}\mbox{\Hypertarget{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a95bebb033ac9a0a725dc4f7a716ef181}\label{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a95bebb033ac9a0a725dc4f7a716ef181}} 
+U\+T\+\_\+\+U\+F\+I\+X2\+FP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+T\+\_\+\+I\+F\+I\+X2\+FP@{U\+T\+\_\+\+I\+F\+I\+X2\+FP}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!U\+T\+\_\+\+I\+F\+I\+X2\+FP@{U\+T\+\_\+\+I\+F\+I\+X2\+FP}}}\mbox{\Hypertarget{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a1eac1787424c3e8b16b1b2a423eb8c76}\label{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a1eac1787424c3e8b16b1b2a423eb8c76}} 
+U\+T\+\_\+\+I\+F\+I\+X2\+FP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+T\+\_\+\+F\+P2\+U\+F\+IX@{U\+T\+\_\+\+F\+P2\+U\+F\+IX}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!U\+T\+\_\+\+F\+P2\+U\+F\+IX@{U\+T\+\_\+\+F\+P2\+U\+F\+IX}}}\mbox{\Hypertarget{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a9e50fe902bdd9b5400c91c5d241767aa}\label{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a9e50fe902bdd9b5400c91c5d241767aa}} 
+U\+T\+\_\+\+F\+P2\+U\+F\+IX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+T\+\_\+\+F\+P2\+I\+F\+IX@{U\+T\+\_\+\+F\+P2\+I\+F\+IX}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!U\+T\+\_\+\+F\+P2\+I\+F\+IX@{U\+T\+\_\+\+F\+P2\+I\+F\+IX}}}\mbox{\Hypertarget{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358acb1dd6922a021461acdf03621be30964}\label{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358acb1dd6922a021461acdf03621be30964}} 
+U\+T\+\_\+\+F\+P2\+I\+F\+IX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+T\+\_\+\+E\+XP@{U\+T\+\_\+\+E\+XP}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!U\+T\+\_\+\+E\+XP@{U\+T\+\_\+\+E\+XP}}}\mbox{\Hypertarget{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358aeb9fc71e9a1d6b5b35c757ad309dc6db}\label{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358aeb9fc71e9a1d6b5b35c757ad309dc6db}} 
+U\+T\+\_\+\+E\+XP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+T\+\_\+\+S\+Q\+RT@{U\+T\+\_\+\+S\+Q\+RT}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!U\+T\+\_\+\+S\+Q\+RT@{U\+T\+\_\+\+S\+Q\+RT}}}\mbox{\Hypertarget{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a46393176e53df2a203af94a62e9c2bab}\label{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a46393176e53df2a203af94a62e9c2bab}} 
+U\+T\+\_\+\+S\+Q\+RT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+T\+\_\+compare\+\_\+expr@{U\+T\+\_\+compare\+\_\+expr}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!U\+T\+\_\+compare\+\_\+expr@{U\+T\+\_\+compare\+\_\+expr}}}\mbox{\Hypertarget{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a4753b82b731e1836ea9cf3ed196ccd9e}\label{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a4753b82b731e1836ea9cf3ed196ccd9e}} 
+U\+T\+\_\+compare\+\_\+expr&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+T\+\_\+\+L\+OG@{U\+T\+\_\+\+L\+OG}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!U\+T\+\_\+\+L\+OG@{U\+T\+\_\+\+L\+OG}}}\mbox{\Hypertarget{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a4977a57f8d6ad8daee4b50db6e9a8815}\label{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a4977a57f8d6ad8daee4b50db6e9a8815}} 
+U\+T\+\_\+\+L\+OG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+T\+\_\+\+P\+OW@{U\+T\+\_\+\+P\+OW}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!U\+T\+\_\+\+P\+OW@{U\+T\+\_\+\+P\+OW}}}\mbox{\Hypertarget{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a7ee4b536893a766ad8817cb688b4fd85}\label{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358a7ee4b536893a766ad8817cb688b4fd85}} 
+U\+T\+\_\+\+P\+OW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+T\+\_\+\+U\+N\+K\+N\+O\+WN@{U\+T\+\_\+\+U\+N\+K\+N\+O\+WN}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!U\+T\+\_\+\+U\+N\+K\+N\+O\+WN@{U\+T\+\_\+\+U\+N\+K\+N\+O\+WN}}}\mbox{\Hypertarget{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358aef6e995db2f42f7fd6e20041b3d8bd7e}\label{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358aef6e995db2f42f7fd6e20041b3d8bd7e}} 
+U\+T\+\_\+\+U\+N\+K\+N\+O\+WN&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 128 of file flopoco\+\_\+wrapper.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classflopoco__wrapper_a96975b686fca80c7a78c8e3a3fde4ddc}\label{classflopoco__wrapper_a96975b686fca80c7a78c8e3a3fde4ddc}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{flopoco\+\_\+wrapper()}{flopoco\_wrapper()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily flopoco\+\_\+wrapper\+::flopoco\+\_\+wrapper (\begin{DoxyParamCaption}\item[{int}]{\+\_\+debug\+\_\+level,  }\item[{const std\+::string \&}]{F\+U\+\_\+target }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em debug} & is the current debug level \\
+\hline
+\end{DoxyParams}
+does not exist so we use Virtex 6 target
+
+does not exist so we use Virtex 6 target
+
+does not exist so we use Virtex 6 target
+
+does not exist so we use Virtex 6 target
+
+does not exist so we use Virtex 6 target
+
+does not exist so we use Virtex 6 target
+
+does not exist so we use Virtex 6 target
+
+does not exist so we use Virtex 6 target
+
+sollya initialization 
+
+Definition at line 151 of file flopoco\+\_\+wrapper.\+cpp.
+
+
+
+References target, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+\mbox{\Hypertarget{classflopoco__wrapper_a0231fbfc514e9b11f4f2dfddc6d6240c}\label{classflopoco__wrapper_a0231fbfc514e9b11f4f2dfddc6d6240c}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!````~flopoco\+\_\+wrapper@{$\sim$flopoco\+\_\+wrapper}}
+\index{````~flopoco\+\_\+wrapper@{$\sim$flopoco\+\_\+wrapper}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{$\sim$flopoco\+\_\+wrapper()}{~flopoco\_wrapper()}}
+{\footnotesize\ttfamily flopoco\+\_\+wrapper\+::$\sim$flopoco\+\_\+wrapper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line 221 of file flopoco\+\_\+wrapper.\+cpp.
+
+\mbox{\Hypertarget{classflopoco__wrapper_ad3cabcc4456dfdc78938fe6c8e83d1db}\label{classflopoco__wrapper_ad3cabcc4456dfdc78938fe6c8e83d1db}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{flopoco\+\_\+wrapper()}{flopoco\_wrapper()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily flopoco\+\_\+wrapper\+::flopoco\+\_\+wrapper (\begin{DoxyParamCaption}\item[{const \hyperlink{classflopoco__wrapper}{flopoco\+\_\+wrapper} \&}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classflopoco__wrapper_a1bf6c7e46b20a7db7a71f46f8483637e}\label{classflopoco__wrapper_a1bf6c7e46b20a7db7a71f46f8483637e}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!add\+\_\+\+FU@{add\+\_\+\+FU}}
+\index{add\+\_\+\+FU@{add\+\_\+\+FU}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{add\+\_\+\+F\+U()}{add\_FU()}}
+{\footnotesize\ttfamily void flopoco\+\_\+wrapper\+::add\+\_\+\+FU (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{F\+U\+\_\+type,  }\item[{unsigned int}]{F\+U\+\_\+prec\+\_\+in,  }\item[{unsigned int}]{F\+U\+\_\+prec\+\_\+out,  }\item[{const std\+::string \&}]{F\+U\+\_\+name,  }\item[{const std\+::string \&}]{pipe\+\_\+parameter }\end{DoxyParamCaption})}
+
+
+
+Adds a Functional Unit to the wrapper. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F\+U\+\_\+type} & is a string representing the FU type \\
+\hline
+{\em F\+U\+\_\+prec\+\_\+in} & is a number representing the FU input precision \\
+\hline
+{\em F\+U\+\_\+prec\+\_\+out} & is a number representing the FU output precision \\
+\hline
+{\em F\+U\+\_\+name} & is a string representing the FU name \\
+\hline
+{\em pipe\+\_\+parameter} & is a string defining the design frequency, in case is not empty \\
+\hline
+\end{DoxyParams}
+set the target frequency 
+
+Definition at line 226 of file flopoco\+\_\+wrapper.\+cpp.
+
+
+
+References debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+C\+O\+D\+E\+\_\+\+B\+I\+T\+S(), D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY, E\+N\+C\+O\+D\+E\+\_\+\+N\+A\+ME, F\+U\+\_\+to\+\_\+prec, F\+Us, I\+N\+\_\+\+W\+R\+A\+P\+\_\+\+P\+R\+E\+F\+IX, O\+P\+L\+I\+ST, O\+U\+T\+\_\+\+W\+R\+A\+P\+\_\+\+P\+R\+E\+F\+IX, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, signed\+\_\+p, S\+TR, target, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, type, U\+T\+\_\+\+A\+DD, U\+T\+\_\+\+A\+D\+D\+S\+UB, U\+T\+\_\+compare\+\_\+expr, U\+T\+\_\+\+D\+IV, U\+T\+\_\+\+E\+XP, U\+T\+\_\+\+F\+F\+\_\+\+C\+O\+NV, U\+T\+\_\+\+F\+P2\+I\+F\+IX, U\+T\+\_\+\+F\+P2\+U\+F\+IX, U\+T\+\_\+\+I\+F\+I\+X2\+FP, U\+T\+\_\+\+L\+OG, U\+T\+\_\+\+M\+U\+LT, U\+T\+\_\+\+P\+OW, U\+T\+\_\+\+S\+Q\+RT, U\+T\+\_\+\+S\+UB, U\+T\+\_\+\+U\+F\+I\+X2\+FP, U\+T\+\_\+\+U\+N\+K\+N\+O\+WN, and W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+E\+F\+IX.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dbf/classflopoco__wrapper_a1bf6c7e46b20a7db7a71f46f8483637e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classflopoco__wrapper_ab0789242cbc4e02a7fdb1a159441f706}\label{classflopoco__wrapper_ab0789242cbc4e02a7fdb1a159441f706}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!D\+E\+C\+O\+D\+E\+\_\+\+B\+I\+TS@{D\+E\+C\+O\+D\+E\+\_\+\+B\+I\+TS}}
+\index{D\+E\+C\+O\+D\+E\+\_\+\+B\+I\+TS@{D\+E\+C\+O\+D\+E\+\_\+\+B\+I\+TS}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{D\+E\+C\+O\+D\+E\+\_\+\+B\+I\+T\+S()}{DECODE\_BITS()}}
+{\footnotesize\ttfamily void flopoco\+\_\+wrapper\+::\+D\+E\+C\+O\+D\+E\+\_\+\+B\+I\+TS (\begin{DoxyParamCaption}\item[{unsigned int}]{F\+U\+\_\+prec,  }\item[{unsigned int \&}]{n\+\_\+mant,  }\item[{unsigned int \&}]{n\+\_\+exp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve mantissa and exponent for a given precision. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F\+U\+\_\+prec} & is a number representing the FU precision \\
+\hline
+{\em n\+\_\+mant} & is the number of bits for the mantissa \\
+\hline
+{\em n\+\_\+exp} & is the number of bits for the exponent \\
+\hline
+\end{DoxyParams}
+Intel 80 bit extended precision padded with 16bits 
+
+Definition at line 970 of file flopoco\+\_\+wrapper.\+cpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by add\+\_\+\+F\+U().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dbf/classflopoco__wrapper_ab0789242cbc4e02a7fdb1a159441f706_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classflopoco__wrapper_aac67dab400a5a7d2ab1bbeed047e3a57}\label{classflopoco__wrapper_aac67dab400a5a7d2ab1bbeed047e3a57}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!get\+\_\+files\+\_\+written@{get\+\_\+files\+\_\+written}}
+\index{get\+\_\+files\+\_\+written@{get\+\_\+files\+\_\+written}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{get\+\_\+files\+\_\+written()}{get\_files\_written()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$std\+::string$>$\& flopoco\+\_\+wrapper\+::get\+\_\+files\+\_\+written (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the Functional Units that have been written to a V\+H\+DL file. 
+
+
+
+Definition at line 254 of file flopoco\+\_\+wrapper.\+hpp.
+
+\mbox{\Hypertarget{classflopoco__wrapper_ab45f79d64c8bd0e1d73dc7833a6d15ad}\label{classflopoco__wrapper_ab45f79d64c8bd0e1d73dc7833a6d15ad}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!get\+\_\+\+FU@{get\+\_\+\+FU}}
+\index{get\+\_\+\+FU@{get\+\_\+\+FU}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{get\+\_\+\+F\+U()}{get\_FU()}}
+{\footnotesize\ttfamily flopoco\+::\+Operator $\ast$ flopoco\+\_\+wrapper\+::get\+\_\+\+FU (\begin{DoxyParamCaption}\item[{std\+::string}]{F\+U\+\_\+name\+\_\+stored }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns one of the generated Functional Units. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F\+U\+\_\+name\+\_\+stored} & is a string representing the stored FU name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 492 of file flopoco\+\_\+wrapper.\+cpp.
+
+
+
+References F\+Us, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by get\+\_\+\+F\+U\+Pipeline\+Depth(), and get\+\_\+ports().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dbf/classflopoco__wrapper_ab45f79d64c8bd0e1d73dc7833a6d15ad_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classflopoco__wrapper_a0d439a47ce9842523b91cd5763bd5fe1}\label{classflopoco__wrapper_a0d439a47ce9842523b91cd5763bd5fe1}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!get\+\_\+\+F\+U\+Pipeline\+Depth@{get\+\_\+\+F\+U\+Pipeline\+Depth}}
+\index{get\+\_\+\+F\+U\+Pipeline\+Depth@{get\+\_\+\+F\+U\+Pipeline\+Depth}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{get\+\_\+\+F\+U\+Pipeline\+Depth()}{get\_FUPipelineDepth()}}
+{\footnotesize\ttfamily unsigned int flopoco\+\_\+wrapper\+::get\+\_\+\+F\+U\+Pipeline\+Depth (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{F\+U\+\_\+name,  }\item[{const unsigned int}]{F\+U\+\_\+prec\+\_\+in,  }\item[{const unsigned int}]{F\+U\+\_\+prec\+\_\+out,  }\item[{const std\+::string \&}]{pipe\+\_\+parameter }\end{DoxyParamCaption}) const}
+
+
+
+Returns the Functional Unit\textquotesingle{}s Pipeline Depth. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F\+U\+\_\+name} & is the Functional Unit whose Pipeline Depth is returned \\
+\hline
+{\em F\+U\+\_\+prec\+\_\+in} & is a number representing the FU input precision \\
+\hline
+{\em F\+U\+\_\+prec\+\_\+out} & is a number representing the FU output precision \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 481 of file flopoco\+\_\+wrapper.\+cpp.
+
+
+
+References E\+N\+C\+O\+D\+E\+\_\+\+N\+A\+ME, get\+\_\+\+F\+U(), I\+N\+\_\+\+W\+R\+A\+P\+\_\+\+P\+R\+E\+F\+IX, O\+U\+T\+\_\+\+W\+R\+A\+P\+\_\+\+P\+R\+E\+F\+IX, type, U\+T\+\_\+compare\+\_\+expr, U\+T\+\_\+\+F\+P2\+I\+F\+IX, U\+T\+\_\+\+F\+P2\+U\+F\+IX, U\+T\+\_\+\+I\+F\+I\+X2\+FP, U\+T\+\_\+\+U\+F\+I\+X2\+FP, and W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+E\+F\+IX.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{d7/dbf/classflopoco__wrapper_a0d439a47ce9842523b91cd5763bd5fe1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classflopoco__wrapper_a833928904625afde91a9c1d6ac78e35c}\label{classflopoco__wrapper_a833928904625afde91a9c1d6ac78e35c}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!get\+\_\+in\+\_\+ports@{get\+\_\+in\+\_\+ports}}
+\index{get\+\_\+in\+\_\+ports@{get\+\_\+in\+\_\+ports}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{get\+\_\+in\+\_\+ports()}{get\_in\_ports()}}
+{\footnotesize\ttfamily const std\+::vector$<$std\+::string$>$ flopoco\+\_\+wrapper\+::get\+\_\+in\+\_\+ports (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{F\+U\+\_\+name,  }\item[{const unsigned int}]{F\+U\+\_\+prec\+\_\+in,  }\item[{const unsigned int}]{F\+U\+\_\+prec\+\_\+out,  }\item[{const unsigned int}]{expected\+\_\+ports,  }\item[{const std\+::string \&}]{pipe\+\_\+parameter }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the names of input and output ports (multiple names, thus a vector of strings) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F\+U\+\_\+name} & is a string representing the FU name \\
+\hline
+{\em expected\+\_\+ports} & is the number of expected ports to be returned \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 273 of file flopoco\+\_\+wrapper.\+hpp.
+
+
+
+References E\+N\+C\+O\+D\+E\+\_\+\+N\+A\+ME, and W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+E\+F\+IX.
+
+\mbox{\Hypertarget{classflopoco__wrapper_ac68016486d105000e2df59fc924eec32}\label{classflopoco__wrapper_ac68016486d105000e2df59fc924eec32}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!get\+\_\+out\+\_\+ports@{get\+\_\+out\+\_\+ports}}
+\index{get\+\_\+out\+\_\+ports@{get\+\_\+out\+\_\+ports}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{get\+\_\+out\+\_\+ports()}{get\_out\_ports()}}
+{\footnotesize\ttfamily const std\+::vector$<$std\+::string$>$ flopoco\+\_\+wrapper\+::get\+\_\+out\+\_\+ports (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{F\+U\+\_\+name,  }\item[{const unsigned int}]{F\+U\+\_\+prec\+\_\+in,  }\item[{const unsigned int}]{F\+U\+\_\+prec\+\_\+out,  }\item[{const unsigned int}]{expected\+\_\+ports,  }\item[{const std\+::string \&}]{pipe\+\_\+parameter }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 277 of file flopoco\+\_\+wrapper.\+hpp.
+
+
+
+References E\+N\+C\+O\+D\+E\+\_\+\+N\+A\+ME, and W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+E\+F\+IX.
+
+\mbox{\Hypertarget{classflopoco__wrapper_a582a468cce4977d1a2af23e5f719af2c}\label{classflopoco__wrapper_a582a468cce4977d1a2af23e5f719af2c}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!get\+\_\+port@{get\+\_\+port}}
+\index{get\+\_\+port@{get\+\_\+port}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{get\+\_\+port()}{get\_port()}}
+{\footnotesize\ttfamily const std\+::string flopoco\+\_\+wrapper\+::get\+\_\+port (\begin{DoxyParamCaption}\item[{\hyperlink{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5ac}{port\+\_\+type}}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns the name of a port, according to the needed port type (clock or reset) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & is the type of the required port \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 960 of file flopoco\+\_\+wrapper.\+cpp.
+
+
+
+References clk, rst, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+
+
+Referenced by output\+Port\+Declaration(), and output\+Port\+Map().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dbf/classflopoco__wrapper_a582a468cce4977d1a2af23e5f719af2c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classflopoco__wrapper_ae65f581fe20c9fa4595857e5f296c619}\label{classflopoco__wrapper_ae65f581fe20c9fa4595857e5f296c619}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!get\+\_\+ports@{get\+\_\+ports}}
+\index{get\+\_\+ports@{get\+\_\+ports}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{get\+\_\+ports()}{get\_ports()}}
+{\footnotesize\ttfamily const std\+::vector$<$ std\+::string $>$ flopoco\+\_\+wrapper\+::get\+\_\+ports (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{F\+U\+\_\+name\+\_\+stored,  }\item[{unsigned int}]{expected\+\_\+ports,  }\item[{\hyperlink{classflopoco__wrapper_af27fdf36f1f15e00384aeee46b6de5ac}{port\+\_\+type}}]{type,  }\item[{bool}]{check\+\_\+ports = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns the names of ports, according to the needed port type (port\+\_\+in or port\+\_\+out) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F\+U\+\_\+name\+\_\+stored} & is a string representing the stored FU name \\
+\hline
+{\em F\+U\+\_\+prec} & is a number representing the FU precision \\
+\hline
+{\em expected\+\_\+ports} & is the number of expected ports to be returned \\
+\hline
+{\em type} & is the type of the required ports \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 944 of file flopoco\+\_\+wrapper.\+cpp.
+
+
+
+References get\+\_\+\+F\+U(), port\+\_\+in, port\+\_\+out, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by output\+Port\+Declaration(), output\+Port\+Map(), output\+Signals(), and output\+Wrap\+V\+H\+D\+L().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{d7/dbf/classflopoco__wrapper_ae65f581fe20c9fa4595857e5f296c619_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dbf/classflopoco__wrapper_ae65f581fe20c9fa4595857e5f296c619_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classflopoco__wrapper_afc229ae93b5772fadc22ead428f29036}\label{classflopoco__wrapper_afc229ae93b5772fadc22ead428f29036}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!Internal\+Write\+V\+H\+DL@{Internal\+Write\+V\+H\+DL}}
+\index{Internal\+Write\+V\+H\+DL@{Internal\+Write\+V\+H\+DL}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{Internal\+Write\+V\+H\+D\+L()}{InternalWriteVHDL()}}
+{\footnotesize\ttfamily int flopoco\+\_\+wrapper\+::\+Internal\+Write\+V\+H\+DL (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{F\+U\+\_\+name,  }\item[{const unsigned int}]{F\+U\+\_\+prec\+\_\+in,  }\item[{const unsigned int}]{F\+U\+\_\+prec\+\_\+out,  }\item[{const std\+::string \&}]{F\+U\+\_\+file,  }\item[{const std\+::string \&}]{pipe\+\_\+parameter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Writes the V\+H\+DL for a Functional Unit to the desired file name Returns -\/1 if some problem occurred, 0 if the file was successfully written, 1 if the FU was already written to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F\+U\+\_\+name} & is the Functional Unit whose code must be output \\
+\hline
+{\em F\+U\+\_\+prec\+\_\+in\+\_\+in} & is a number representing the FU input precision \\
+\hline
+{\em F\+U\+\_\+prec\+\_\+out} & is a number representing the FU output precision \\
+\hline
+{\em F\+U\+\_\+file} & is the name of the file, without extension, where the V\+H\+DL code should be put (i.\+e. \char`\"{}\+F\+P\+Adder\char`\"{}, not \char`\"{}\+F\+P\+Adder.\+vhdl\char`\"{}) \\
+\hline
+{\em pipe\+\_\+parameter} & is a string defining the design frequency, in case is not empty \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 874 of file flopoco\+\_\+wrapper.\+cpp.
+
+
+
+References debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, E\+N\+C\+O\+D\+E\+\_\+\+N\+A\+ME, F\+U\+\_\+files, O\+P\+L\+I\+ST, output\+Wrap\+V\+H\+D\+L(), and P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX.
+
+
+
+Referenced by write\+V\+H\+D\+L().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dbf/classflopoco__wrapper_afc229ae93b5772fadc22ead428f29036_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dbf/classflopoco__wrapper_afc229ae93b5772fadc22ead428f29036_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classflopoco__wrapper_ac7bd64c1720604606984f0f020fdbf54}\label{classflopoco__wrapper_ac7bd64c1720604606984f0f020fdbf54}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!is\+\_\+unit\+\_\+written@{is\+\_\+unit\+\_\+written}}
+\index{is\+\_\+unit\+\_\+written@{is\+\_\+unit\+\_\+written}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{is\+\_\+unit\+\_\+written()}{is\_unit\_written()}}
+{\footnotesize\ttfamily bool flopoco\+\_\+wrapper\+::is\+\_\+unit\+\_\+written (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{F\+U\+\_\+name,  }\item[{const unsigned int}]{F\+U\+\_\+prec\+\_\+in,  }\item[{const unsigned int}]{F\+U\+\_\+prec\+\_\+out,  }\item[{const std\+::string \&}]{pipe\+\_\+parameter }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a Functional Unit have been written to a V\+H\+DL file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F\+U\+\_\+name} & is the Functional Unit whose existence must be checked \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 263 of file flopoco\+\_\+wrapper.\+hpp.
+
+
+
+References E\+N\+C\+O\+D\+E\+\_\+\+N\+A\+ME, and F\+I\+L\+E\+\_\+\+E\+XT.
+
+\mbox{\Hypertarget{classflopoco__wrapper_a7e97147311b48f0fc5d3463bc88896bf}\label{classflopoco__wrapper_a7e97147311b48f0fc5d3463bc88896bf}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!output\+Header\+V\+H\+DL@{output\+Header\+V\+H\+DL}}
+\index{output\+Header\+V\+H\+DL@{output\+Header\+V\+H\+DL}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{output\+Header\+V\+H\+D\+L()}{outputHeaderVHDL()}}
+{\footnotesize\ttfamily void flopoco\+\_\+wrapper\+::output\+Header\+V\+H\+DL (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{F\+U\+\_\+name\+\_\+stored,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Helper methods for automatic V\+H\+DL code generation\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F\+U\+\_\+prefix} & is a string representing the prefix to prepend to F\+U\+\_\+name, when needed \\
+\hline
+{\em F\+U\+\_\+name\+\_\+stored} & is a string representing the stored FU name \\
+\hline
+{\em os} & is the stream where the V\+H\+DL code should be put \\
+\hline
+{\em type} & is the type of component under examination \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 864 of file flopoco\+\_\+wrapper.\+cpp.
+
+
+
+Referenced by output\+Wrap\+V\+H\+D\+L().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dbf/classflopoco__wrapper_a7e97147311b48f0fc5d3463bc88896bf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classflopoco__wrapper_a121477e55d07d3d493c879d80ddb5770}\label{classflopoco__wrapper_a121477e55d07d3d493c879d80ddb5770}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!output\+Port\+Declaration@{output\+Port\+Declaration}}
+\index{output\+Port\+Declaration@{output\+Port\+Declaration}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{output\+Port\+Declaration()}{outputPortDeclaration()}}
+{\footnotesize\ttfamily void flopoco\+\_\+wrapper\+::output\+Port\+Declaration (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{F\+U\+\_\+prefix,  }\item[{const std\+::string \&}]{F\+U\+\_\+name\+\_\+stored,  }\item[{std\+::ostream \&}]{os,  }\item[{\hyperlink{classflopoco__wrapper_a143045f6fc28429886895b54849d901d}{component\+\_\+type}}]{type,  }\item[{const std\+::string \&}]{pipe\+\_\+parameter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 740 of file flopoco\+\_\+wrapper.\+cpp.
+
+
+
+References clk, C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, F\+L\+O\+P\+O\+C\+O\+\_\+\+A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+B\+I\+TS, F\+U\+\_\+to\+\_\+prec, get\+\_\+port(), get\+\_\+ports(), in\+\_\+wrap, out\+\_\+wrap, port\+\_\+in, port\+\_\+out, PP, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, rst, S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, S\+TR, top, type, U\+T\+\_\+\+A\+D\+D\+S\+UB, U\+T\+\_\+compare\+\_\+expr, U\+T\+\_\+\+E\+XP, U\+T\+\_\+\+F\+F\+\_\+\+C\+O\+NV, U\+T\+\_\+\+F\+P2\+I\+F\+IX, U\+T\+\_\+\+F\+P2\+U\+F\+IX, U\+T\+\_\+\+I\+F\+I\+X2\+FP, U\+T\+\_\+\+L\+OG, U\+T\+\_\+\+P\+OW, U\+T\+\_\+\+S\+Q\+RT, U\+T\+\_\+\+U\+F\+I\+X2\+FP, and wrapped.
+
+
+
+Referenced by output\+Wrap\+V\+H\+D\+L().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dbf/classflopoco__wrapper_a121477e55d07d3d493c879d80ddb5770_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dbf/classflopoco__wrapper_a121477e55d07d3d493c879d80ddb5770_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classflopoco__wrapper_aeaeed1e93ec604948ffff0085503cd3b}\label{classflopoco__wrapper_aeaeed1e93ec604948ffff0085503cd3b}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!output\+Port\+Map@{output\+Port\+Map}}
+\index{output\+Port\+Map@{output\+Port\+Map}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{output\+Port\+Map()}{outputPortMap()}}
+{\footnotesize\ttfamily void flopoco\+\_\+wrapper\+::output\+Port\+Map (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{F\+U\+\_\+name\+\_\+stored,  }\item[{std\+::ostream \&}]{os,  }\item[{const std\+::string \&}]{pipe\+\_\+parameter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 582 of file flopoco\+\_\+wrapper.\+cpp.
+
+
+
+References clk, C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, F\+U\+\_\+to\+\_\+prec, get\+\_\+port(), get\+\_\+ports(), I\+N\+\_\+\+W\+R\+A\+P\+\_\+\+P\+R\+E\+F\+IX, O\+U\+T\+\_\+\+W\+R\+A\+P\+\_\+\+P\+R\+E\+F\+IX, port\+\_\+in, port\+\_\+out, PP, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, rst, S\+TR, type, U\+T\+\_\+\+A\+D\+D\+S\+UB, U\+T\+\_\+compare\+\_\+expr, U\+T\+\_\+\+E\+XP, U\+T\+\_\+\+F\+P2\+I\+F\+IX, U\+T\+\_\+\+F\+P2\+U\+F\+IX, U\+T\+\_\+\+I\+F\+I\+X2\+FP, U\+T\+\_\+\+L\+OG, U\+T\+\_\+\+P\+OW, U\+T\+\_\+\+S\+Q\+RT, U\+T\+\_\+\+S\+UB, U\+T\+\_\+\+U\+F\+I\+X2\+FP, and W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+E\+F\+IX.
+
+
+
+Referenced by output\+Wrap\+V\+H\+D\+L().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dbf/classflopoco__wrapper_aeaeed1e93ec604948ffff0085503cd3b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dbf/classflopoco__wrapper_aeaeed1e93ec604948ffff0085503cd3b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classflopoco__wrapper_a1220164a60b0fbd7e1257e1401dd0897}\label{classflopoco__wrapper_a1220164a60b0fbd7e1257e1401dd0897}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!output\+Signals@{output\+Signals}}
+\index{output\+Signals@{output\+Signals}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{output\+Signals()}{outputSignals()}}
+{\footnotesize\ttfamily void flopoco\+\_\+wrapper\+::output\+Signals (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{F\+U\+\_\+name\+\_\+stored,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 692 of file flopoco\+\_\+wrapper.\+cpp.
+
+
+
+References F\+U\+\_\+to\+\_\+prec, get\+\_\+ports(), max(), port\+\_\+in, port\+\_\+out, PP, S\+TR, type, U\+T\+\_\+\+A\+D\+D\+S\+UB, U\+T\+\_\+compare\+\_\+expr, U\+T\+\_\+\+F\+F\+\_\+\+C\+O\+NV, U\+T\+\_\+\+F\+P2\+I\+F\+IX, U\+T\+\_\+\+F\+P2\+U\+F\+IX, U\+T\+\_\+\+I\+F\+I\+X2\+FP, U\+T\+\_\+\+S\+UB, U\+T\+\_\+\+U\+F\+I\+X2\+FP, and W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+E\+F\+IX.
+
+
+
+Referenced by output\+Wrap\+V\+H\+D\+L().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dbf/classflopoco__wrapper_a1220164a60b0fbd7e1257e1401dd0897_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dbf/classflopoco__wrapper_a1220164a60b0fbd7e1257e1401dd0897_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classflopoco__wrapper_ad0575cadd6eee1f9c3bcdac90eb05b0e}\label{classflopoco__wrapper_ad0575cadd6eee1f9c3bcdac90eb05b0e}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!output\+Wrap\+V\+H\+DL@{output\+Wrap\+V\+H\+DL}}
+\index{output\+Wrap\+V\+H\+DL@{output\+Wrap\+V\+H\+DL}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{output\+Wrap\+V\+H\+D\+L()}{outputWrapVHDL()}}
+{\footnotesize\ttfamily void flopoco\+\_\+wrapper\+::output\+Wrap\+V\+H\+DL (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{F\+U\+\_\+name\+\_\+stored,  }\item[{std\+::ostream \&}]{os,  }\item[{const std\+::string \&}]{pipe\+\_\+parameter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 499 of file flopoco\+\_\+wrapper.\+cpp.
+
+
+
+References simple\+\_\+indent\+::deindent(), F\+U\+\_\+to\+\_\+prec, get\+\_\+ports(), in\+\_\+wrap, I\+N\+\_\+\+W\+R\+A\+P\+\_\+\+P\+R\+E\+F\+IX, simple\+\_\+indent\+::indent(), out\+\_\+wrap, O\+U\+T\+\_\+\+W\+R\+A\+P\+\_\+\+P\+R\+E\+F\+IX, output\+Header\+V\+H\+D\+L(), output\+Port\+Declaration(), output\+Port\+Map(), output\+Signals(), port\+\_\+in, port\+\_\+out, PP, S\+TR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, top, type, U\+T\+\_\+compare\+\_\+expr, U\+T\+\_\+\+F\+P2\+I\+F\+IX, U\+T\+\_\+\+F\+P2\+U\+F\+IX, U\+T\+\_\+\+I\+F\+I\+X2\+FP, U\+T\+\_\+\+U\+F\+I\+X2\+FP, wrapped, and W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+E\+F\+IX.
+
+
+
+Referenced by Internal\+Write\+V\+H\+D\+L().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dbf/classflopoco__wrapper_ad0575cadd6eee1f9c3bcdac90eb05b0e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dbf/classflopoco__wrapper_ad0575cadd6eee1f9c3bcdac90eb05b0e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classflopoco__wrapper_ac9b07db0e6bdc7bb6a7477fe26aba92f}\label{classflopoco__wrapper_ac9b07db0e6bdc7bb6a7477fe26aba92f}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!write\+V\+H\+DL@{write\+V\+H\+DL}}
+\index{write\+V\+H\+DL@{write\+V\+H\+DL}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{write\+V\+H\+D\+L()}{writeVHDL()}}
+{\footnotesize\ttfamily int flopoco\+\_\+wrapper\+::write\+V\+H\+DL (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{F\+U\+\_\+name,  }\item[{const unsigned int}]{F\+U\+\_\+prec\+\_\+in,  }\item[{const unsigned int}]{F\+U\+\_\+prec\+\_\+out,  }\item[{std\+::string}]{pipe\+\_\+parameter,  }\item[{std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Writes the V\+H\+DL for a Functional Unit to the default file name, which is \char`\"{}\+F\+U\+\_\+name.\+vhdl\char`\"{} Returns -\/1 if some problem occurred, 0 if the file was successfully written, 1 if the FU was already written to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F\+U\+\_\+name} & is the Functional Unit whose code must be output \\
+\hline
+{\em F\+U\+\_\+prec\+\_\+in\+\_\+in} & is a number representing the FU input precision \\
+\hline
+{\em F\+U\+\_\+prec\+\_\+out} & is a number representing the FU output precision \\
+\hline
+{\em pipe\+\_\+parameter} & is a string defining the design frequency, in case is not empty \\
+\hline
+{\em filename} & is where the name of the produced file will be stored \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 911 of file flopoco\+\_\+wrapper.\+cpp.
+
+
+
+References E\+N\+C\+O\+D\+E\+\_\+\+N\+A\+ME, F\+I\+L\+E\+\_\+\+E\+XT, and Internal\+Write\+V\+H\+D\+L().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dbf/classflopoco__wrapper_ac9b07db0e6bdc7bb6a7477fe26aba92f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classflopoco__wrapper_a64395db4a7b5f9b7a716dac3907c838f}\label{classflopoco__wrapper_a64395db4a7b5f9b7a716dac3907c838f}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!write\+V\+H\+D\+Lcommon@{write\+V\+H\+D\+Lcommon}}
+\index{write\+V\+H\+D\+Lcommon@{write\+V\+H\+D\+Lcommon}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{write\+V\+H\+D\+Lcommon()}{writeVHDLcommon()}}
+{\footnotesize\ttfamily std\+::string flopoco\+\_\+wrapper\+::write\+V\+H\+D\+Lcommon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+write the common components 
+
+\begin{DoxyReturn}{Returns}
+the name of the generated 
+\end{DoxyReturn}
+
+
+Definition at line 917 of file flopoco\+\_\+wrapper.\+cpp.
+
+
+
+References F\+I\+L\+E\+\_\+\+E\+XT, flopoco\+::filename, target, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classflopoco__wrapper_a4adf4414034e81e388ddbdb16e7da779}\label{classflopoco__wrapper_a4adf4414034e81e388ddbdb16e7da779}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily int flopoco\+\_\+wrapper\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current debug level. 
+
+
+
+Definition at line 101 of file flopoco\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by add\+\_\+\+F\+U(), and Internal\+Write\+V\+H\+D\+L().
+
+\mbox{\Hypertarget{classflopoco__wrapper_aa0540c8401c605f646a3fca9c5fa93d6}\label{classflopoco__wrapper_aa0540c8401c605f646a3fca9c5fa93d6}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY@{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY@{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY}{DEFAULT\_TARGET\_FREQUENCY}}
+{\footnotesize\ttfamily const double flopoco\+\_\+wrapper\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY = 100.\+0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 293 of file flopoco\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by add\+\_\+\+F\+U().
+
+\mbox{\Hypertarget{classflopoco__wrapper_ae066c877bb6b1ddc5a887c97119a4381}\label{classflopoco__wrapper_ae066c877bb6b1ddc5a887c97119a4381}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!F\+U\+\_\+files@{F\+U\+\_\+files}}
+\index{F\+U\+\_\+files@{F\+U\+\_\+files}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{F\+U\+\_\+files}{FU\_files}}
+{\footnotesize\ttfamily \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$std\+::string$>$ flopoco\+\_\+wrapper\+::\+F\+U\+\_\+files\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set of Functional Units written to a .vhdl file. 
+
+
+
+Definition at line 106 of file flopoco\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by Internal\+Write\+V\+H\+D\+L().
+
+\mbox{\Hypertarget{classflopoco__wrapper_a60ec3d02b4bbc3dbeaa0115db26357db}\label{classflopoco__wrapper_a60ec3d02b4bbc3dbeaa0115db26357db}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!F\+U\+\_\+to\+\_\+prec@{F\+U\+\_\+to\+\_\+prec}}
+\index{F\+U\+\_\+to\+\_\+prec@{F\+U\+\_\+to\+\_\+prec}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{F\+U\+\_\+to\+\_\+prec}{FU\_to\_prec}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$std\+::string, std\+::pair$<$unsigned int, unsigned int$>$ $>$ flopoco\+\_\+wrapper\+::\+F\+U\+\_\+to\+\_\+prec\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Maps a Functional Unit to its precision. 
+
+
+
+Definition at line 108 of file flopoco\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by add\+\_\+\+F\+U(), output\+Port\+Declaration(), output\+Port\+Map(), output\+Signals(), and output\+Wrap\+V\+H\+D\+L().
+
+\mbox{\Hypertarget{classflopoco__wrapper_a6b4e28e7702c15a3b88902608b390776}\label{classflopoco__wrapper_a6b4e28e7702c15a3b88902608b390776}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!F\+Us@{F\+Us}}
+\index{F\+Us@{F\+Us}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{F\+Us}{FUs}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$std\+::string, flopoco\+::\+Operator$\ast$$>$ flopoco\+\_\+wrapper\+::\+F\+Us\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Generated Functional Units. 
+
+
+
+Definition at line 104 of file flopoco\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by add\+\_\+\+F\+U(), and get\+\_\+\+F\+U().
+
+\mbox{\Hypertarget{classflopoco__wrapper_aae89e35cfb20857850eec60323e5f8a3}\label{classflopoco__wrapper_aae89e35cfb20857850eec60323e5f8a3}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!oplist@{oplist}}
+\index{oplist@{oplist}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{oplist}{oplist}}
+{\footnotesize\ttfamily std\+::vector$<$flopoco\+::\+Operator$\ast$$>$ flopoco\+\_\+wrapper\+::oplist\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 152 of file flopoco\+\_\+wrapper.\+hpp.
+
+\mbox{\Hypertarget{classflopoco__wrapper_ac82c51dbab511806a11535b78b7c106e}\label{classflopoco__wrapper_ac82c51dbab511806a11535b78b7c106e}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!PP@{PP}}
+\index{PP@{PP}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{PP}{PP}}
+{\footnotesize\ttfamily \hyperlink{classsimple__indent}{simple\+\_\+indent} flopoco\+\_\+wrapper\+::\+PP\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pretty print functor object used to indent the generated code. 
+
+
+
+Definition at line 110 of file flopoco\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by output\+Port\+Declaration(), output\+Port\+Map(), output\+Signals(), and output\+Wrap\+V\+H\+D\+L().
+
+\mbox{\Hypertarget{classflopoco__wrapper_ae20312084bdfebdcdff953831960a990}\label{classflopoco__wrapper_ae20312084bdfebdcdff953831960a990}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!signed\+\_\+p@{signed\+\_\+p}}
+\index{signed\+\_\+p@{signed\+\_\+p}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{signed\+\_\+p}{signed\_p}}
+{\footnotesize\ttfamily bool flopoco\+\_\+wrapper\+::signed\+\_\+p\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 150 of file flopoco\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by add\+\_\+\+F\+U().
+
+\mbox{\Hypertarget{classflopoco__wrapper_a6a7d2c36ac45fb5a5c14e33134df2855}\label{classflopoco__wrapper_a6a7d2c36ac45fb5a5c14e33134df2855}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!target@{target}}
+\index{target@{target}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{target}{target}}
+{\footnotesize\ttfamily flopoco\+::\+Target$\ast$ flopoco\+\_\+wrapper\+::target\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 154 of file flopoco\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by add\+\_\+\+F\+U(), flopoco\+\_\+wrapper(), and write\+V\+H\+D\+Lcommon().
+
+\mbox{\Hypertarget{classflopoco__wrapper_aa187461f66472ae2d77d3c8425895de7}\label{classflopoco__wrapper_aa187461f66472ae2d77d3c8425895de7}} 
+\index{flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}!type@{type}}
+\index{type@{type}!flopoco\+\_\+wrapper@{flopoco\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \hyperlink{classflopoco__wrapper_a5e24209a3f08ad68bcc6e69ce2924358}{unit\+\_\+type} flopoco\+\_\+wrapper\+::type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 148 of file flopoco\+\_\+wrapper.\+hpp.
+
+
+
+Referenced by add\+\_\+\+F\+U(), get\+\_\+\+F\+U\+Pipeline\+Depth(), output\+Port\+Declaration(), output\+Port\+Map(), output\+Signals(), and output\+Wrap\+V\+H\+D\+L().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/flopoco/\hyperlink{flopoco__wrapper_8hpp}{flopoco\+\_\+wrapper.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/flopoco/\hyperlink{flopoco__wrapper_8cpp}{flopoco\+\_\+wrapper.\+cpp}\end{DoxyCompactItemize}

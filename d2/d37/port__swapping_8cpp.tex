@@ -1,0 +1,103 @@
+\hypertarget{port__swapping_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/interconnection/port\+\_\+swapping.cpp File Reference}
+\label{port__swapping_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/interconnection/port\+\_\+swapping.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/interconnection/port\+\_\+swapping.\+cpp}}
+
+
+Implementation of the port swapping algorithm described in the following paper\+: Hao Cong, Song Chen and T.  
+
+
+{\ttfamily \#include \char`\"{}port\+\_\+swapping.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/graph/random\+\_\+spanning\+\_\+tree.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}allocation\+\_\+information.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fu\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}liveness.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}reg\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}storage\+\_\+value\+\_\+information.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}token\+\_\+interface.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include \char`\"{}behavioral\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+helper.\+hpp\char`\"{}}\newline
+Include dependency graph for port\+\_\+swapping.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d0c/port__swapping_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{port__swapping_8cpp_a81df6a2dd425f2f9accb4da2dc5482ea}{S\+E\+T\+\_\+A}~0
+\begin{DoxyCompactList}\small\item\em Header include. \end{DoxyCompactList}\item 
+\#define \hyperlink{port__swapping_8cpp_a4641921da1f5632a6bd98b2f20b6628d}{S\+E\+T\+\_\+B}~1
+\item 
+\#define \hyperlink{port__swapping_8cpp_a2e1d05a2a370043d1f8450202d60a832}{S\+E\+T\+\_\+\+AB}~2
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of the port swapping algorithm described in the following paper\+: Hao Cong, Song Chen and T. 
+
+Yoshimura, \char`\"{}\+Port assignment for interconnect reduction in high-\/level synthesis,\char`\"{} Proceedings of Technical Program of 2012 V\+L\+SI Design, Automation and Test, Hsinchu, 2012, pp. 1-\/4.
+
+\begin{DoxyAuthor}{Author}
+Alessandro Comodi \href{mailto:alessandro.comodi@mail.polimi.it}{\tt alessandro.\+comodi@mail.\+polimi.\+it} 
+
+Davide Conficconi \href{mailto:davide.conficconi@mail.polimi.it}{\tt davide.\+conficconi@mail.\+polimi.\+it} 
+
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{port__swapping_8cpp_a81df6a2dd425f2f9accb4da2dc5482ea}\label{port__swapping_8cpp_a81df6a2dd425f2f9accb4da2dc5482ea}} 
+\index{port\+\_\+swapping.\+cpp@{port\+\_\+swapping.\+cpp}!S\+E\+T\+\_\+A@{S\+E\+T\+\_\+A}}
+\index{S\+E\+T\+\_\+A@{S\+E\+T\+\_\+A}!port\+\_\+swapping.\+cpp@{port\+\_\+swapping.\+cpp}}
+\subsubsection{\texorpdfstring{S\+E\+T\+\_\+A}{SET\_A}}
+{\footnotesize\ttfamily \#define S\+E\+T\+\_\+A~0}
+
+
+
+Header include. 
+
+. include boost include parser/treegcc include S\+TD include 
+
+Definition at line 71 of file port\+\_\+swapping.\+cpp.
+
+
+
+Referenced by port\+\_\+swapping\+::\+Internal\+Exec(), and port\+\_\+swapping\+::vertex\+\_\+levels().
+
+\mbox{\Hypertarget{port__swapping_8cpp_a2e1d05a2a370043d1f8450202d60a832}\label{port__swapping_8cpp_a2e1d05a2a370043d1f8450202d60a832}} 
+\index{port\+\_\+swapping.\+cpp@{port\+\_\+swapping.\+cpp}!S\+E\+T\+\_\+\+AB@{S\+E\+T\+\_\+\+AB}}
+\index{S\+E\+T\+\_\+\+AB@{S\+E\+T\+\_\+\+AB}!port\+\_\+swapping.\+cpp@{port\+\_\+swapping.\+cpp}}
+\subsubsection{\texorpdfstring{S\+E\+T\+\_\+\+AB}{SET\_AB}}
+{\footnotesize\ttfamily \#define S\+E\+T\+\_\+\+AB~2}
+
+
+
+Definition at line 73 of file port\+\_\+swapping.\+cpp.
+
+
+
+Referenced by port\+\_\+swapping\+::\+Internal\+Exec(), and port\+\_\+swapping\+::port\+\_\+swapping\+\_\+algorithm().
+
+\mbox{\Hypertarget{port__swapping_8cpp_a4641921da1f5632a6bd98b2f20b6628d}\label{port__swapping_8cpp_a4641921da1f5632a6bd98b2f20b6628d}} 
+\index{port\+\_\+swapping.\+cpp@{port\+\_\+swapping.\+cpp}!S\+E\+T\+\_\+B@{S\+E\+T\+\_\+B}}
+\index{S\+E\+T\+\_\+B@{S\+E\+T\+\_\+B}!port\+\_\+swapping.\+cpp@{port\+\_\+swapping.\+cpp}}
+\subsubsection{\texorpdfstring{S\+E\+T\+\_\+B}{SET\_B}}
+{\footnotesize\ttfamily \#define S\+E\+T\+\_\+B~1}
+
+
+
+Definition at line 72 of file port\+\_\+swapping.\+cpp.
+
+
+
+Referenced by port\+\_\+swapping\+::\+Internal\+Exec(), and port\+\_\+swapping\+::vertex\+\_\+levels().
+

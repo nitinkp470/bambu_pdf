@@ -1,0 +1,405 @@
+\hypertarget{xml__script__command_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/xml\+\_\+script\+\_\+command.hpp File Reference}
+\label{xml__script__command_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/xml\+\_\+script\+\_\+command.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/xml\+\_\+script\+\_\+command.\+hpp}}
+
+
+Classes for handling configuration files.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}polixml.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Design\+Parameters.\+hpp\char`\"{}}\newline
+Include dependency graph for xml\+\_\+script\+\_\+command.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d88/xml__script__command_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d6f/xml__script__command_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classxml__script__node__t}{xml\+\_\+script\+\_\+node\+\_\+t}
+\begin{DoxyCompactList}\small\item\em This is the abstract class which describes a generic synthesis script node, and some static helper methods. \end{DoxyCompactList}\item 
+class \hyperlink{classxml__set__entry__t}{xml\+\_\+set\+\_\+entry\+\_\+t}
+\begin{DoxyCompactList}\small\item\em String entry of a multiple values variable (set). \end{DoxyCompactList}\item 
+class \hyperlink{classxml__set__variable__t}{xml\+\_\+set\+\_\+variable\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Variable assignment, either single value or multiple entries set. \end{DoxyCompactList}\item 
+class \hyperlink{classxml__parameter__t}{xml\+\_\+parameter\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Command line parameter. \end{DoxyCompactList}\item 
+class \hyperlink{classxml__command__t}{xml\+\_\+command\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Command line of the synthesis tool. \end{DoxyCompactList}\item 
+class \hyperlink{classxml__shell__t}{xml\+\_\+shell\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Command line of the native shell. \end{DoxyCompactList}\item 
+class \hyperlink{classxml__ite__block__t}{xml\+\_\+ite\+\_\+block\+\_\+t}
+\begin{DoxyCompactList}\small\item\em If/\+Then/\+Else block, evaluated at compile-\/time. \end{DoxyCompactList}\item 
+class \hyperlink{structxml__foreach__t}{xml\+\_\+foreach\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Foreach block, where the set of script nodes is applied to each parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{xml__script__command_8hpp_ad887f382be39b8e4b4ee14858e64e212}{T\+A\+G\+\_\+\+V\+A\+R\+I\+A\+B\+LE}~\char`\"{}set\char`\"{}
+\item 
+\#define \hyperlink{xml__script__command_8hpp_aae31c2fea837ed5a6d876df0a6686415}{T\+A\+G\+\_\+\+E\+N\+T\+RY}~\char`\"{}entry\char`\"{}
+\item 
+\#define \hyperlink{xml__script__command_8hpp_aaf9f34ea55a4e7935ba633885c0af827}{T\+A\+G\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}~\char`\"{}param\char`\"{}
+\item 
+\#define \hyperlink{xml__script__command_8hpp_afe8712d8744ed465c8a7e6af536d55fb}{T\+A\+G\+\_\+\+C\+O\+M\+M\+A\+ND}~\char`\"{}cmd\char`\"{}
+\item 
+\#define \hyperlink{xml__script__command_8hpp_a792dca3f276aa03ca6816c17495060b9}{T\+A\+G\+\_\+\+S\+H\+E\+LL}~\char`\"{}sh\char`\"{}
+\item 
+\#define \hyperlink{xml__script__command_8hpp_a711a59f1e9728293980b225201b19fc8}{T\+A\+G\+\_\+\+I\+T\+E\+\_\+\+B\+L\+O\+CK}~\char`\"{}if\char`\"{}
+\item 
+\#define \hyperlink{xml__script__command_8hpp_a3d8b84edc7924c426de8038cc9d4e0e0}{T\+A\+G\+\_\+\+F\+O\+R\+E\+A\+CH}~\char`\"{}foreach\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classxml__script__node__t}{xml\+\_\+script\+\_\+node\+\_\+t} $>$ \hyperlink{xml__script__command_8hpp_a1fe3d50ade66bc35e41be9b68bbbcd02}{xml\+\_\+script\+\_\+node\+\_\+t\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classxml__set__entry__t}{xml\+\_\+set\+\_\+entry\+\_\+t} $>$ \hyperlink{xml__script__command_8hpp_aeb61f959795afd2b743d3bec00ee66fa}{xml\+\_\+set\+\_\+entry\+\_\+t\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classxml__set__variable__t}{xml\+\_\+set\+\_\+variable\+\_\+t} $>$ \hyperlink{xml__script__command_8hpp_a77453d591123aae088dbc1d0efe15f00}{xml\+\_\+set\+\_\+variable\+\_\+t\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classxml__parameter__t}{xml\+\_\+parameter\+\_\+t} $>$ \hyperlink{xml__script__command_8hpp_aec6b63d2a298703bc3ead113609b27a6}{xml\+\_\+parameter\+\_\+t\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classxml__command__t}{xml\+\_\+command\+\_\+t} $>$ \hyperlink{xml__script__command_8hpp_ac889d0676a649f6df5130301413aad12}{xml\+\_\+command\+\_\+t\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classxml__shell__t}{xml\+\_\+shell\+\_\+t} $>$ \hyperlink{xml__script__command_8hpp_aa126051c14d16987ae8581ce2889cead}{xml\+\_\+shell\+\_\+t\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classxml__ite__block__t}{xml\+\_\+ite\+\_\+block\+\_\+t} $>$ \hyperlink{xml__script__command_8hpp_a481278177bd1d2ebc3a242a6a34f882e}{xml\+\_\+ite\+\_\+block\+\_\+t\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structxml__foreach__t}{xml\+\_\+foreach\+\_\+t} $>$ \hyperlink{xml__script__command_8hpp_a250dd3e356502b6384faf5ed0c3d3eca}{xml\+\_\+foreach\+\_\+t\+Ref}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59b}{xml\+\_\+script\+\_\+node\+\_\+enum\+\_\+t} \{ \newline
+\hyperlink{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59baf61b72eeff33bbe0201392e0261c5df1}{N\+O\+D\+E\+\_\+\+U\+N\+K\+N\+O\+WN} = 0, 
+\hyperlink{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59bac916e12685d561ef7a995e699baf2b6a}{N\+O\+D\+E\+\_\+\+E\+N\+T\+RY} = 1, 
+\hyperlink{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59bad58e0efc3099e78e211e66b24ec463d4}{N\+O\+D\+E\+\_\+\+V\+A\+R\+I\+A\+B\+LE} = 2, 
+\hyperlink{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59ba2470491e94afae241cc3a61bcd2b3758}{N\+O\+D\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER} = 3, 
+\newline
+\hyperlink{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59ba4a6220ccfd02a146984172245ed3dda9}{N\+O\+D\+E\+\_\+\+C\+O\+M\+M\+A\+ND} = 4, 
+\hyperlink{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59ba5a7733145493b15b14f646223a1f975b}{N\+O\+D\+E\+\_\+\+S\+H\+E\+LL} = 5, 
+\hyperlink{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59ba8878306d32178f553c9ccc473ec89c3f}{N\+O\+D\+E\+\_\+\+I\+T\+E\+\_\+\+B\+L\+O\+CK} = 6, 
+\hyperlink{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59ba9f66a9dd8d2fa6c2cd3b7d2082d4cff7}{N\+O\+D\+E\+\_\+\+F\+O\+R\+E\+A\+CH} = 7
+ \}\begin{DoxyCompactList}\small\item\em Node types. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{xml__script__command_8hpp_afa2bf932b12322d835ea06b64887fdd7}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classxml__script__node__t}{xml\+\_\+script\+\_\+node\+\_\+t})
+\item 
+\hyperlink{xml__script__command_8hpp_a0ffab18e5110132afa6b246fe4234cab}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classxml__set__variable__t}{xml\+\_\+set\+\_\+variable\+\_\+t})
+\item 
+\hyperlink{xml__script__command_8hpp_a2054b67c984e0dbce3c60aae43ea9168}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classxml__set__entry__t}{xml\+\_\+set\+\_\+entry\+\_\+t})
+\item 
+\hyperlink{xml__script__command_8hpp_a65ea90967517fbcea257e40b53dda5bd}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classxml__parameter__t}{xml\+\_\+parameter\+\_\+t})
+\item 
+\hyperlink{xml__script__command_8hpp_a23e763e4ea3924aeb349d0d6540094ba}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classxml__command__t}{xml\+\_\+command\+\_\+t})
+\item 
+\hyperlink{xml__script__command_8hpp_a8cad85dbb137899cc13f74501c147e5a}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classxml__shell__t}{xml\+\_\+shell\+\_\+t})
+\item 
+\hyperlink{xml__script__command_8hpp_a4123219d9341f4696847e186d1e5afcf}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classxml__ite__block__t}{xml\+\_\+ite\+\_\+block\+\_\+t})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classes for handling configuration files. 
+
+This file contains the interfaces for the classes used by synthesis tools when handling script generator configuration files.
+
+\begin{DoxyAuthor}{Author}
+Andrea Zoppi \href{mailto:texzk@email.it}{\tt texzk@email.\+it} \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{xml__script__command_8hpp_afe8712d8744ed465c8a7e6af536d55fb}\label{xml__script__command_8hpp_afe8712d8744ed465c8a7e6af536d55fb}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!T\+A\+G\+\_\+\+C\+O\+M\+M\+A\+ND@{T\+A\+G\+\_\+\+C\+O\+M\+M\+A\+ND}}
+\index{T\+A\+G\+\_\+\+C\+O\+M\+M\+A\+ND@{T\+A\+G\+\_\+\+C\+O\+M\+M\+A\+ND}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{T\+A\+G\+\_\+\+C\+O\+M\+M\+A\+ND}{TAG\_COMMAND}}
+{\footnotesize\ttfamily \#define T\+A\+G\+\_\+\+C\+O\+M\+M\+A\+ND~\char`\"{}cmd\char`\"{}}
+
+
+
+Definition at line 69 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+
+
+Referenced by xml\+\_\+script\+\_\+node\+\_\+t\+::create(), xml\+\_\+script\+\_\+node\+\_\+t\+::find\+\_\+type(), and xml\+\_\+command\+\_\+t\+::get\+\_\+xml\+\_\+name().
+
+\mbox{\Hypertarget{xml__script__command_8hpp_aae31c2fea837ed5a6d876df0a6686415}\label{xml__script__command_8hpp_aae31c2fea837ed5a6d876df0a6686415}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!T\+A\+G\+\_\+\+E\+N\+T\+RY@{T\+A\+G\+\_\+\+E\+N\+T\+RY}}
+\index{T\+A\+G\+\_\+\+E\+N\+T\+RY@{T\+A\+G\+\_\+\+E\+N\+T\+RY}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{T\+A\+G\+\_\+\+E\+N\+T\+RY}{TAG\_ENTRY}}
+{\footnotesize\ttfamily \#define T\+A\+G\+\_\+\+E\+N\+T\+RY~\char`\"{}entry\char`\"{}}
+
+
+
+Definition at line 67 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+
+
+Referenced by xml\+\_\+script\+\_\+node\+\_\+t\+::create(), xml\+\_\+script\+\_\+node\+\_\+t\+::find\+\_\+type(), xml\+\_\+set\+\_\+entry\+\_\+t\+::get\+\_\+xml\+\_\+name(), xml\+\_\+parameter\+\_\+t\+::xml\+\_\+parameter\+\_\+t(), and xml\+\_\+set\+\_\+variable\+\_\+t\+::xml\+\_\+set\+\_\+variable\+\_\+t().
+
+\mbox{\Hypertarget{xml__script__command_8hpp_a3d8b84edc7924c426de8038cc9d4e0e0}\label{xml__script__command_8hpp_a3d8b84edc7924c426de8038cc9d4e0e0}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!T\+A\+G\+\_\+\+F\+O\+R\+E\+A\+CH@{T\+A\+G\+\_\+\+F\+O\+R\+E\+A\+CH}}
+\index{T\+A\+G\+\_\+\+F\+O\+R\+E\+A\+CH@{T\+A\+G\+\_\+\+F\+O\+R\+E\+A\+CH}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{T\+A\+G\+\_\+\+F\+O\+R\+E\+A\+CH}{TAG\_FOREACH}}
+{\footnotesize\ttfamily \#define T\+A\+G\+\_\+\+F\+O\+R\+E\+A\+CH~\char`\"{}foreach\char`\"{}}
+
+
+
+Definition at line 72 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+
+
+Referenced by xml\+\_\+script\+\_\+node\+\_\+t\+::create(), xml\+\_\+script\+\_\+node\+\_\+t\+::find\+\_\+type(), and xml\+\_\+foreach\+\_\+t\+::get\+\_\+xml\+\_\+name().
+
+\mbox{\Hypertarget{xml__script__command_8hpp_a711a59f1e9728293980b225201b19fc8}\label{xml__script__command_8hpp_a711a59f1e9728293980b225201b19fc8}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!T\+A\+G\+\_\+\+I\+T\+E\+\_\+\+B\+L\+O\+CK@{T\+A\+G\+\_\+\+I\+T\+E\+\_\+\+B\+L\+O\+CK}}
+\index{T\+A\+G\+\_\+\+I\+T\+E\+\_\+\+B\+L\+O\+CK@{T\+A\+G\+\_\+\+I\+T\+E\+\_\+\+B\+L\+O\+CK}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{T\+A\+G\+\_\+\+I\+T\+E\+\_\+\+B\+L\+O\+CK}{TAG\_ITE\_BLOCK}}
+{\footnotesize\ttfamily \#define T\+A\+G\+\_\+\+I\+T\+E\+\_\+\+B\+L\+O\+CK~\char`\"{}if\char`\"{}}
+
+
+
+Definition at line 71 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+
+
+Referenced by xml\+\_\+script\+\_\+node\+\_\+t\+::create(), xml\+\_\+script\+\_\+node\+\_\+t\+::find\+\_\+type(), and xml\+\_\+ite\+\_\+block\+\_\+t\+::get\+\_\+xml\+\_\+name().
+
+\mbox{\Hypertarget{xml__script__command_8hpp_aaf9f34ea55a4e7935ba633885c0af827}\label{xml__script__command_8hpp_aaf9f34ea55a4e7935ba633885c0af827}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!T\+A\+G\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{T\+A\+G\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}}
+\index{T\+A\+G\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{T\+A\+G\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{T\+A\+G\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}{TAG\_PARAMETER}}
+{\footnotesize\ttfamily \#define T\+A\+G\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER~\char`\"{}param\char`\"{}}
+
+
+
+Definition at line 68 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+
+
+Referenced by xml\+\_\+script\+\_\+node\+\_\+t\+::create(), xml\+\_\+script\+\_\+node\+\_\+t\+::find\+\_\+type(), xml\+\_\+parameter\+\_\+t\+::get\+\_\+xml\+\_\+name(), xml\+\_\+command\+\_\+t\+::xml\+\_\+command\+\_\+t(), and xml\+\_\+shell\+\_\+t\+::xml\+\_\+shell\+\_\+t().
+
+\mbox{\Hypertarget{xml__script__command_8hpp_a792dca3f276aa03ca6816c17495060b9}\label{xml__script__command_8hpp_a792dca3f276aa03ca6816c17495060b9}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!T\+A\+G\+\_\+\+S\+H\+E\+LL@{T\+A\+G\+\_\+\+S\+H\+E\+LL}}
+\index{T\+A\+G\+\_\+\+S\+H\+E\+LL@{T\+A\+G\+\_\+\+S\+H\+E\+LL}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{T\+A\+G\+\_\+\+S\+H\+E\+LL}{TAG\_SHELL}}
+{\footnotesize\ttfamily \#define T\+A\+G\+\_\+\+S\+H\+E\+LL~\char`\"{}sh\char`\"{}}
+
+
+
+Definition at line 70 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+
+
+Referenced by xml\+\_\+script\+\_\+node\+\_\+t\+::create(), xml\+\_\+script\+\_\+node\+\_\+t\+::find\+\_\+type(), and xml\+\_\+shell\+\_\+t\+::get\+\_\+xml\+\_\+name().
+
+\mbox{\Hypertarget{xml__script__command_8hpp_ad887f382be39b8e4b4ee14858e64e212}\label{xml__script__command_8hpp_ad887f382be39b8e4b4ee14858e64e212}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!T\+A\+G\+\_\+\+V\+A\+R\+I\+A\+B\+LE@{T\+A\+G\+\_\+\+V\+A\+R\+I\+A\+B\+LE}}
+\index{T\+A\+G\+\_\+\+V\+A\+R\+I\+A\+B\+LE@{T\+A\+G\+\_\+\+V\+A\+R\+I\+A\+B\+LE}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{T\+A\+G\+\_\+\+V\+A\+R\+I\+A\+B\+LE}{TAG\_VARIABLE}}
+{\footnotesize\ttfamily \#define T\+A\+G\+\_\+\+V\+A\+R\+I\+A\+B\+LE~\char`\"{}set\char`\"{}}
+
+
+
+Definition at line 66 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+
+
+Referenced by xml\+\_\+script\+\_\+node\+\_\+t\+::create(), xml\+\_\+script\+\_\+node\+\_\+t\+::find\+\_\+type(), and xml\+\_\+set\+\_\+variable\+\_\+t\+::get\+\_\+xml\+\_\+name().
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{xml__script__command_8hpp_ac889d0676a649f6df5130301413aad12}\label{xml__script__command_8hpp_ac889d0676a649f6df5130301413aad12}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!xml\+\_\+command\+\_\+t\+Ref@{xml\+\_\+command\+\_\+t\+Ref}}
+\index{xml\+\_\+command\+\_\+t\+Ref@{xml\+\_\+command\+\_\+t\+Ref}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{xml\+\_\+command\+\_\+t\+Ref}{xml\_command\_tRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classxml__command__t}{xml\+\_\+command\+\_\+t}$>$ \hyperlink{xml__script__command_8hpp_ac889d0676a649f6df5130301413aad12}{xml\+\_\+command\+\_\+t\+Ref}}
+
+
+
+Definition at line 249 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+\mbox{\Hypertarget{xml__script__command_8hpp_a250dd3e356502b6384faf5ed0c3d3eca}\label{xml__script__command_8hpp_a250dd3e356502b6384faf5ed0c3d3eca}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!xml\+\_\+foreach\+\_\+t\+Ref@{xml\+\_\+foreach\+\_\+t\+Ref}}
+\index{xml\+\_\+foreach\+\_\+t\+Ref@{xml\+\_\+foreach\+\_\+t\+Ref}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{xml\+\_\+foreach\+\_\+t\+Ref}{xml\_foreach\_tRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structxml__foreach__t}{xml\+\_\+foreach\+\_\+t}$>$ \hyperlink{xml__script__command_8hpp_a250dd3e356502b6384faf5ed0c3d3eca}{xml\+\_\+foreach\+\_\+t\+Ref}}
+
+
+
+Definition at line 320 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+\mbox{\Hypertarget{xml__script__command_8hpp_a481278177bd1d2ebc3a242a6a34f882e}\label{xml__script__command_8hpp_a481278177bd1d2ebc3a242a6a34f882e}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!xml\+\_\+ite\+\_\+block\+\_\+t\+Ref@{xml\+\_\+ite\+\_\+block\+\_\+t\+Ref}}
+\index{xml\+\_\+ite\+\_\+block\+\_\+t\+Ref@{xml\+\_\+ite\+\_\+block\+\_\+t\+Ref}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{xml\+\_\+ite\+\_\+block\+\_\+t\+Ref}{xml\_ite\_block\_tRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classxml__ite__block__t}{xml\+\_\+ite\+\_\+block\+\_\+t}$>$ \hyperlink{xml__script__command_8hpp_a481278177bd1d2ebc3a242a6a34f882e}{xml\+\_\+ite\+\_\+block\+\_\+t\+Ref}}
+
+
+
+Definition at line 299 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+\mbox{\Hypertarget{xml__script__command_8hpp_aec6b63d2a298703bc3ead113609b27a6}\label{xml__script__command_8hpp_aec6b63d2a298703bc3ead113609b27a6}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!xml\+\_\+parameter\+\_\+t\+Ref@{xml\+\_\+parameter\+\_\+t\+Ref}}
+\index{xml\+\_\+parameter\+\_\+t\+Ref@{xml\+\_\+parameter\+\_\+t\+Ref}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{xml\+\_\+parameter\+\_\+t\+Ref}{xml\_parameter\_tRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classxml__parameter__t}{xml\+\_\+parameter\+\_\+t}$>$ \hyperlink{xml__script__command_8hpp_aec6b63d2a298703bc3ead113609b27a6}{xml\+\_\+parameter\+\_\+t\+Ref}}
+
+
+
+Definition at line 223 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+\mbox{\Hypertarget{xml__script__command_8hpp_a1fe3d50ade66bc35e41be9b68bbbcd02}\label{xml__script__command_8hpp_a1fe3d50ade66bc35e41be9b68bbbcd02}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!xml\+\_\+script\+\_\+node\+\_\+t\+Ref@{xml\+\_\+script\+\_\+node\+\_\+t\+Ref}}
+\index{xml\+\_\+script\+\_\+node\+\_\+t\+Ref@{xml\+\_\+script\+\_\+node\+\_\+t\+Ref}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{xml\+\_\+script\+\_\+node\+\_\+t\+Ref}{xml\_script\_node\_tRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classxml__script__node__t}{xml\+\_\+script\+\_\+node\+\_\+t}$>$ \hyperlink{xml__script__command_8hpp_a1fe3d50ade66bc35e41be9b68bbbcd02}{xml\+\_\+script\+\_\+node\+\_\+t\+Ref}}
+
+
+
+Definition at line 147 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+\mbox{\Hypertarget{xml__script__command_8hpp_aeb61f959795afd2b743d3bec00ee66fa}\label{xml__script__command_8hpp_aeb61f959795afd2b743d3bec00ee66fa}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!xml\+\_\+set\+\_\+entry\+\_\+t\+Ref@{xml\+\_\+set\+\_\+entry\+\_\+t\+Ref}}
+\index{xml\+\_\+set\+\_\+entry\+\_\+t\+Ref@{xml\+\_\+set\+\_\+entry\+\_\+t\+Ref}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{xml\+\_\+set\+\_\+entry\+\_\+t\+Ref}{xml\_set\_entry\_tRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classxml__set__entry__t}{xml\+\_\+set\+\_\+entry\+\_\+t}$>$ \hyperlink{xml__script__command_8hpp_aeb61f959795afd2b743d3bec00ee66fa}{xml\+\_\+set\+\_\+entry\+\_\+t\+Ref}}
+
+
+
+Definition at line 170 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+\mbox{\Hypertarget{xml__script__command_8hpp_a77453d591123aae088dbc1d0efe15f00}\label{xml__script__command_8hpp_a77453d591123aae088dbc1d0efe15f00}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!xml\+\_\+set\+\_\+variable\+\_\+t\+Ref@{xml\+\_\+set\+\_\+variable\+\_\+t\+Ref}}
+\index{xml\+\_\+set\+\_\+variable\+\_\+t\+Ref@{xml\+\_\+set\+\_\+variable\+\_\+t\+Ref}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{xml\+\_\+set\+\_\+variable\+\_\+t\+Ref}{xml\_set\_variable\_tRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classxml__set__variable__t}{xml\+\_\+set\+\_\+variable\+\_\+t}$>$ \hyperlink{xml__script__command_8hpp_a77453d591123aae088dbc1d0efe15f00}{xml\+\_\+set\+\_\+variable\+\_\+t\+Ref}}
+
+
+
+Definition at line 195 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+\mbox{\Hypertarget{xml__script__command_8hpp_aa126051c14d16987ae8581ce2889cead}\label{xml__script__command_8hpp_aa126051c14d16987ae8581ce2889cead}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!xml\+\_\+shell\+\_\+t\+Ref@{xml\+\_\+shell\+\_\+t\+Ref}}
+\index{xml\+\_\+shell\+\_\+t\+Ref@{xml\+\_\+shell\+\_\+t\+Ref}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{xml\+\_\+shell\+\_\+t\+Ref}{xml\_shell\_tRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classxml__shell__t}{xml\+\_\+shell\+\_\+t}$>$ \hyperlink{xml__script__command_8hpp_aa126051c14d16987ae8581ce2889cead}{xml\+\_\+shell\+\_\+t\+Ref}}
+
+
+
+Definition at line 275 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59b}\label{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59b}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!xml\+\_\+script\+\_\+node\+\_\+enum\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+enum\+\_\+t}}
+\index{xml\+\_\+script\+\_\+node\+\_\+enum\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+enum\+\_\+t}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{xml\+\_\+script\+\_\+node\+\_\+enum\+\_\+t}{xml\_script\_node\_enum\_t}}
+{\footnotesize\ttfamily enum \hyperlink{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59b}{xml\+\_\+script\+\_\+node\+\_\+enum\+\_\+t}}
+
+
+
+Node types. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+D\+E\+\_\+\+U\+N\+K\+N\+O\+WN@{N\+O\+D\+E\+\_\+\+U\+N\+K\+N\+O\+WN}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!N\+O\+D\+E\+\_\+\+U\+N\+K\+N\+O\+WN@{N\+O\+D\+E\+\_\+\+U\+N\+K\+N\+O\+WN}}}\mbox{\Hypertarget{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59baf61b72eeff33bbe0201392e0261c5df1}\label{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59baf61b72eeff33bbe0201392e0261c5df1}} 
+N\+O\+D\+E\+\_\+\+U\+N\+K\+N\+O\+WN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+D\+E\+\_\+\+E\+N\+T\+RY@{N\+O\+D\+E\+\_\+\+E\+N\+T\+RY}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!N\+O\+D\+E\+\_\+\+E\+N\+T\+RY@{N\+O\+D\+E\+\_\+\+E\+N\+T\+RY}}}\mbox{\Hypertarget{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59bac916e12685d561ef7a995e699baf2b6a}\label{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59bac916e12685d561ef7a995e699baf2b6a}} 
+N\+O\+D\+E\+\_\+\+E\+N\+T\+RY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+D\+E\+\_\+\+V\+A\+R\+I\+A\+B\+LE@{N\+O\+D\+E\+\_\+\+V\+A\+R\+I\+A\+B\+LE}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!N\+O\+D\+E\+\_\+\+V\+A\+R\+I\+A\+B\+LE@{N\+O\+D\+E\+\_\+\+V\+A\+R\+I\+A\+B\+LE}}}\mbox{\Hypertarget{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59bad58e0efc3099e78e211e66b24ec463d4}\label{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59bad58e0efc3099e78e211e66b24ec463d4}} 
+N\+O\+D\+E\+\_\+\+V\+A\+R\+I\+A\+B\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+D\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{N\+O\+D\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!N\+O\+D\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{N\+O\+D\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}}}\mbox{\Hypertarget{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59ba2470491e94afae241cc3a61bcd2b3758}\label{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59ba2470491e94afae241cc3a61bcd2b3758}} 
+N\+O\+D\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+D\+E\+\_\+\+C\+O\+M\+M\+A\+ND@{N\+O\+D\+E\+\_\+\+C\+O\+M\+M\+A\+ND}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!N\+O\+D\+E\+\_\+\+C\+O\+M\+M\+A\+ND@{N\+O\+D\+E\+\_\+\+C\+O\+M\+M\+A\+ND}}}\mbox{\Hypertarget{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59ba4a6220ccfd02a146984172245ed3dda9}\label{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59ba4a6220ccfd02a146984172245ed3dda9}} 
+N\+O\+D\+E\+\_\+\+C\+O\+M\+M\+A\+ND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+D\+E\+\_\+\+S\+H\+E\+LL@{N\+O\+D\+E\+\_\+\+S\+H\+E\+LL}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!N\+O\+D\+E\+\_\+\+S\+H\+E\+LL@{N\+O\+D\+E\+\_\+\+S\+H\+E\+LL}}}\mbox{\Hypertarget{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59ba5a7733145493b15b14f646223a1f975b}\label{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59ba5a7733145493b15b14f646223a1f975b}} 
+N\+O\+D\+E\+\_\+\+S\+H\+E\+LL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+D\+E\+\_\+\+I\+T\+E\+\_\+\+B\+L\+O\+CK@{N\+O\+D\+E\+\_\+\+I\+T\+E\+\_\+\+B\+L\+O\+CK}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!N\+O\+D\+E\+\_\+\+I\+T\+E\+\_\+\+B\+L\+O\+CK@{N\+O\+D\+E\+\_\+\+I\+T\+E\+\_\+\+B\+L\+O\+CK}}}\mbox{\Hypertarget{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59ba8878306d32178f553c9ccc473ec89c3f}\label{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59ba8878306d32178f553c9ccc473ec89c3f}} 
+N\+O\+D\+E\+\_\+\+I\+T\+E\+\_\+\+B\+L\+O\+CK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+D\+E\+\_\+\+F\+O\+R\+E\+A\+CH@{N\+O\+D\+E\+\_\+\+F\+O\+R\+E\+A\+CH}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!N\+O\+D\+E\+\_\+\+F\+O\+R\+E\+A\+CH@{N\+O\+D\+E\+\_\+\+F\+O\+R\+E\+A\+CH}}}\mbox{\Hypertarget{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59ba9f66a9dd8d2fa6c2cd3b7d2082d4cff7}\label{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59ba9f66a9dd8d2fa6c2cd3b7d2082d4cff7}} 
+N\+O\+D\+E\+\_\+\+F\+O\+R\+E\+A\+CH&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 75 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{xml__script__command_8hpp_afa2bf932b12322d835ea06b64887fdd7}\label{xml__script__command_8hpp_afa2bf932b12322d835ea06b64887fdd7}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__script__node__t}{xml\+\_\+script\+\_\+node\+\_\+t}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{xml__script__command_8hpp_a0ffab18e5110132afa6b246fe4234cab}\label{xml__script__command_8hpp_a0ffab18e5110132afa6b246fe4234cab}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__set__variable__t}{xml\+\_\+set\+\_\+variable\+\_\+t}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{xml__script__command_8hpp_a2054b67c984e0dbce3c60aae43ea9168}\label{xml__script__command_8hpp_a2054b67c984e0dbce3c60aae43ea9168}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__set__entry__t}{xml\+\_\+set\+\_\+entry\+\_\+t}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{xml__script__command_8hpp_a65ea90967517fbcea257e40b53dda5bd}\label{xml__script__command_8hpp_a65ea90967517fbcea257e40b53dda5bd}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__parameter__t}{xml\+\_\+parameter\+\_\+t}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{xml__script__command_8hpp_a23e763e4ea3924aeb349d0d6540094ba}\label{xml__script__command_8hpp_a23e763e4ea3924aeb349d0d6540094ba}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__command__t}{xml\+\_\+command\+\_\+t}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{xml__script__command_8hpp_a8cad85dbb137899cc13f74501c147e5a}\label{xml__script__command_8hpp_a8cad85dbb137899cc13f74501c147e5a}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__shell__t}{xml\+\_\+shell\+\_\+t}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{xml__script__command_8hpp_a4123219d9341f4696847e186d1e5afcf}\label{xml__script__command_8hpp_a4123219d9341f4696847e186d1e5afcf}} 
+\index{xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!xml\+\_\+script\+\_\+command.\+hpp@{xml\+\_\+script\+\_\+command.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__ite__block__t}{xml\+\_\+ite\+\_\+block\+\_\+t}}]{ }\end{DoxyParamCaption})}
+

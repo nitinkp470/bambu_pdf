@@ -1,0 +1,1093 @@
+\hypertarget{Parameter_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+Parameter.hpp File Reference}
+\label{Parameter_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+Parameter.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+Parameter.\+hpp}}
+
+
+this class is used to manage the command-\/line or X\+ML options.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+B\+A\+M\+B\+U\+\_\+\+R\+E\+S\+U\+L\+T\+S\+\_\+\+X\+M\+L.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+C\+O\+D\+E\+\_\+\+E\+S\+T\+I\+M\+A\+T\+I\+O\+N\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+D\+E\+S\+I\+G\+N\+\_\+\+A\+N\+A\+L\+Y\+S\+I\+S\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+D\+I\+O\+P\+S\+I\+S.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+F\+R\+O\+M\+\_\+\+A\+A\+D\+L\+\_\+\+A\+S\+N\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+F\+R\+O\+M\+\_\+\+A\+R\+C\+H\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+F\+R\+O\+M\+\_\+\+C\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+F\+R\+O\+M\+\_\+\+L\+I\+B\+E\+R\+T\+Y.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+F\+R\+O\+M\+\_\+\+P\+S\+P\+L\+I\+B\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+F\+R\+O\+M\+\_\+\+S\+D\+F3\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+H\+L\+S\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+H\+O\+S\+T\+\_\+\+P\+R\+O\+F\+I\+L\+I\+N\+G\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+R\+E\+G\+R\+E\+S\+S\+O\+R\+S\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+C\+O\+D\+E\+\_\+\+S\+T\+A\+T\+I\+S\+T\+I\+C\+S\+\_\+\+X\+M\+L.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+P\+R\+O\+F\+I\+L\+I\+N\+G.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+T\+E\+C\+H\+N\+O\+L\+O\+G\+Y\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+T\+O\+\_\+\+C\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+R\+E\+L\+E\+A\+S\+E.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/algorithm/string.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/lexical\+\_\+cast.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/preprocessor/cat.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/preprocessor/seq/for\+\_\+each.\+hpp$>$}\newline
+{\ttfamily \#include $<$climits$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for Parameter.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d1b/Parameter_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d32/Parameter_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classOptionMap}{Option\+Map}
+\item 
+class \hyperlink{classParameter}{Parameter}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Parameter_8hpp_ac7a3dae667108b0c1d290e24df93bfd3}{P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+P\+A\+R\+S\+ED}~I\+N\+T\+\_\+\+M\+IN
+\begin{DoxyCompactList}\small\item\em An integer value to return if parameters have been right parsed. \end{DoxyCompactList}\item 
+\#define \hyperlink{Parameter_8hpp_a3a68ccc0daa7bcde02326132db204ab9}{P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+N\+O\+T\+P\+A\+R\+S\+ED}~I\+N\+T\+\_\+\+M\+AX
+\item 
+\#define \hyperlink{Parameter_8hpp_a00b24dffcabc104c52ada49e7fbbdd8a}{B\+A\+M\+B\+U\+\_\+\+O\+P\+T\+I\+O\+NS}
+\item 
+\#define \hyperlink{Parameter_8hpp_aea97fda8b7d7529bb5382fc336971ab2}{F\+R\+A\+M\+E\+W\+O\+R\+K\+\_\+\+O\+P\+T\+I\+O\+NS}
+\item 
+\#define \hyperlink{Parameter_8hpp_a226c8642dcc039876c7819ad0133ee82}{G\+C\+C\+\_\+\+O\+P\+T\+I\+O\+NS}
+\item 
+\#define \hyperlink{Parameter_8hpp_a5bb504fdbd834adc97575c3451abd3b6}{G\+E\+C\+C\+O\+\_\+\+O\+P\+T\+I\+O\+NS}~(algorithms)(analyses)
+\item 
+\#define \hyperlink{Parameter_8hpp_abf224f431bd205a7643d1d3336c0b471}{K\+O\+A\+L\+A\+\_\+\+O\+P\+T\+I\+O\+NS}
+\item 
+\#define \hyperlink{Parameter_8hpp_a96bcef36cf9dddcbfd6fbe61547b5631}{S\+Y\+N\+T\+H\+E\+S\+I\+S\+\_\+\+O\+P\+T\+I\+O\+NS}
+\item 
+\#define \hyperlink{Parameter_8hpp_a2cec55e275758cf59d73822e3d860ba5}{S\+P\+I\+D\+E\+R\+\_\+\+O\+P\+T\+I\+O\+NS}
+\item 
+\#define \hyperlink{Parameter_8hpp_a9e7fc9974106643fbb737083a819e70d}{E\+U\+C\+A\+L\+I\+P\+T\+U\+S\+\_\+\+O\+P\+T\+I\+O\+NS}~(component\+\_\+name)
+\item 
+\#define \hyperlink{Parameter_8hpp_aeea634ea16a9f58b3c0f2c3f405d9291}{T\+R\+E\+E\+\_\+\+P\+A\+N\+D\+A\+\_\+\+G\+C\+C\+\_\+\+O\+P\+T\+I\+O\+NS}~(archive\+\_\+files)(obj\+\_\+files)(compress\+\_\+archive)
+\item 
+\#define \hyperlink{Parameter_8hpp_aecf9868b172fc8712eb852da4be98666}{Z\+E\+B\+U\+\_\+\+O\+P\+T\+I\+O\+NS}
+\item 
+\#define \hyperlink{Parameter_8hpp_a20a93a6435a56d6d122217e04b71cebc}{O\+P\+T\+I\+O\+N\+S\+\_\+\+E\+N\+UM}(r,  data,  elem)~B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+C\+AT(O\+P\+T\+\_\+, elem),
+\item 
+\#define \hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE}~512
+\item 
+\#define \hyperlink{Parameter_8hpp_acdf36d10abf1030c38a789e08c841e24}{O\+P\+T\+\_\+\+R\+E\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+S\+\_\+\+X\+ML}~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE}
+\item 
+\#define \hyperlink{Parameter_8hpp_aed47efc444f3785be1afcb5c5b4c87c5}{O\+P\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+S\+\_\+\+X\+ML}~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 1
+\item 
+\#define \hyperlink{Parameter_8hpp_aa1b1b54b09ae8968daa0de8c61080186}{O\+P\+T\+\_\+\+D\+E\+B\+U\+G\+\_\+\+C\+L\+A\+S\+S\+ES}~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 2
+\item 
+\#define \hyperlink{Parameter_8hpp_a1f6d5aa43a6aae43e7faf19062e405d8}{O\+P\+T\+\_\+\+B\+E\+N\+C\+H\+M\+A\+R\+K\+\_\+\+N\+A\+ME}~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 3
+\item 
+\#define \hyperlink{Parameter_8hpp_ac8ad3d472fd597ae9c04ab9871f6562c}{O\+P\+T\+\_\+\+B\+E\+N\+C\+H\+M\+A\+R\+K\+\_\+\+F\+A\+K\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS}~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 4
+\item 
+\#define \hyperlink{Parameter_8hpp_a07927144d612c79aab0a0b581d283aaa}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+E\+R\+R\+O\+R\+\_\+\+O\+N\+\_\+\+W\+A\+R\+N\+I\+NG}~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 5
+\item 
+\#define \hyperlink{Parameter_8hpp_a231eeee77a57524f061ff082bd717c5d}{O\+P\+T\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+T\+E\+M\+P\+O\+R\+A\+R\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+O\+RY}~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 6
+\item 
+\#define \hyperlink{Parameter_8hpp_a6b7b971208fd0b41b3c27b4e99f29239}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+R\+I\+N\+T\+\_\+\+D\+OT}~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 7
+\item 
+\#define \hyperlink{Parameter_8hpp_a7b36f059fe2cd93ecb950d1932a5d0c4}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+S\+E\+ED}~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 8
+\item 
+\#define \hyperlink{Parameter_8hpp_a7a58b3370be89f53b04bcb8faa3dbf47}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+N\+O\+\_\+\+C\+L\+E\+AN}~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 9
+\item 
+\#define \hyperlink{Parameter_8hpp_a14fa4f83721138b3296d93b4046653cd}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+N\+A\+ME}~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 10
+\item 
+\#define \hyperlink{Parameter_8hpp_ae03d35766c9bec5d0f7d43185ee223e9}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+F\+G\+\_\+\+M\+A\+X\+\_\+\+T\+R\+A\+N\+S\+F\+O\+R\+M\+A\+T\+I\+O\+NS}~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 11
+\item 
+\#define \hyperlink{Parameter_8hpp_aa9f0915da1ea6a4c75c44a0738f56386}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+A\+N\+D\+A\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 12
+\item 
+\#define \hyperlink{Parameter_8hpp_a79e3f2687ef72054fe541f192cb82ac4}{C\+O\+M\+M\+O\+N\+\_\+\+S\+H\+O\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+S\+T\+R\+I\+NG}~\char`\"{}h\+Vv\+:d\+:\char`\"{}
+\begin{DoxyCompactList}\small\item\em define the default tool short option string \end{DoxyCompactList}\item 
+\#define \hyperlink{Parameter_8hpp_a0a494648e2b9bfa5bb4f658229d2e587}{C\+O\+M\+M\+O\+N\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}
+\begin{DoxyCompactList}\small\item\em define default T\+O\+OL long options \end{DoxyCompactList}\item 
+\#define \hyperlink{Parameter_8hpp_abcffe73cebe9542a3d4c20dbc37c6e6f}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+O\+P\+T\+I\+O\+NS}~1024
+\item 
+\#define \hyperlink{Parameter_8hpp_ac1f1c095ccf8aa08babd592db91b3823}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+U\+T\+E\+\_\+\+S\+I\+Z\+E\+OF}~1 + \hyperlink{Parameter_8hpp_abcffe73cebe9542a3d4c20dbc37c6e6f}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+O\+P\+T\+I\+O\+NS}
+\item 
+\#define \hyperlink{Parameter_8hpp_a85b30285a0fcffc063fa80021240564d}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+I\+L\+ER}~1 + \hyperlink{Parameter_8hpp_ac1f1c095ccf8aa08babd592db91b3823}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+U\+T\+E\+\_\+\+S\+I\+Z\+E\+OF}
+\item 
+\#define \hyperlink{Parameter_8hpp_ac0a7adb9c9d551c210bd8f83d7549602}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+G\+C\+C\+\_\+\+C\+O\+N\+F\+IG}~1 + \hyperlink{Parameter_8hpp_a85b30285a0fcffc063fa80021240564d}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+I\+L\+ER}
+\item 
+\#define \hyperlink{Parameter_8hpp_a8750a1cd6a895a9019f0b8ae7d49e193}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+S\+Y\+S\+D\+IR}~1 + \hyperlink{Parameter_8hpp_ac0a7adb9c9d551c210bd8f83d7549602}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+G\+C\+C\+\_\+\+C\+O\+N\+F\+IG}
+\item 
+\#define \hyperlink{Parameter_8hpp_abe145078878ef7448650a132114e8f2a}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+A\+R\+AM}~1 + \hyperlink{Parameter_8hpp_a8750a1cd6a895a9019f0b8ae7d49e193}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+S\+Y\+S\+D\+IR}
+\item 
+\#define \hyperlink{Parameter_8hpp_aeac3d43fb27caf4fdbce4b5e57afb00c}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+R\+E\+A\+D\+\_\+\+G\+C\+C\+\_\+\+X\+ML}~1 + \hyperlink{Parameter_8hpp_abe145078878ef7448650a132114e8f2a}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+A\+R\+AM}
+\item 
+\#define \hyperlink{Parameter_8hpp_a949b4f0cc785b89a54df175619e3396a}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+S\+TD}~1 + \hyperlink{Parameter_8hpp_aeac3d43fb27caf4fdbce4b5e57afb00c}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+R\+E\+A\+D\+\_\+\+G\+C\+C\+\_\+\+X\+ML}
+\item 
+\#define \hyperlink{Parameter_8hpp_a0dd4d965779db3b2e0d95dc772c83cec}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+R\+AW}~1 + \hyperlink{Parameter_8hpp_a949b4f0cc785b89a54df175619e3396a}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+S\+TD}
+\item 
+\#define \hyperlink{Parameter_8hpp_adbac33b6d2257e985eefb8ffeb026aee}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+G\+C\+C\+\_\+\+X\+ML}~1 + \hyperlink{Parameter_8hpp_a0dd4d965779db3b2e0d95dc772c83cec}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+R\+AW}
+\item 
+\#define \hyperlink{Parameter_8hpp_a7c93c9b6381137750d88b03f94a188c8}{L\+A\+S\+T\+\_\+\+G\+C\+C\+\_\+\+O\+PT}~\hyperlink{Parameter_8hpp_adbac33b6d2257e985eefb8ffeb026aee}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+G\+C\+C\+\_\+\+X\+ML}
+\item 
+\#define \hyperlink{Parameter_8hpp_a8c75e51aaee4c4936cdb24af20831a98}{G\+C\+C\+\_\+\+S\+H\+O\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+S\+T\+R\+I\+NG}~\char`\"{}cf\+:\+I\+:\+D\+:\+U\+:\+O\+::l\+:\+L\+:\+W\+:\+Em\+:g\+::\char`\"{}
+\begin{DoxyCompactList}\small\item\em define the G\+CC short option string \end{DoxyCompactList}\item 
+\#define \hyperlink{Parameter_8hpp_ad8db0ecbaa8caa46efa1b442b4339e24}{G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+R\+A\+W\+\_\+\+X\+ML}~\{\char`\"{}use-\/raw\char`\"{}, no\+\_\+argument, nullptr, \hyperlink{Parameter_8hpp_a0dd4d965779db3b2e0d95dc772c83cec}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+R\+AW}\}, \{\char`\"{}read-\/G\+CC-\/X\+ML\char`\"{}, required\+\_\+argument, nullptr, \hyperlink{Parameter_8hpp_aeac3d43fb27caf4fdbce4b5e57afb00c}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+R\+E\+A\+D\+\_\+\+G\+C\+C\+\_\+\+X\+ML}\}, \{\char`\"{}write-\/G\+CC-\/X\+ML\char`\"{}, required\+\_\+argument, nullptr, \hyperlink{Parameter_8hpp_adbac33b6d2257e985eefb8ffeb026aee}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+G\+C\+C\+\_\+\+X\+ML}\},
+\item 
+\#define \hyperlink{Parameter_8hpp_a0e0bda7de92b57778688e3d28d3bcf36}{G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+C\+O\+M\+P\+I\+L\+ER}~\{\char`\"{}compiler\char`\"{}, required\+\_\+argument, nullptr, \hyperlink{Parameter_8hpp_a85b30285a0fcffc063fa80021240564d}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+I\+L\+ER}\},
+\item 
+\#define \hyperlink{Parameter_8hpp_a8e878d9642c321f39c47a348536a6f50}{G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classParameter}{Parameter} $>$ \hyperlink{Parameter_8hpp_a379beb25e5350c4c5585247ed50be3f9}{Parameter\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{classParameter}{Parameter} $>$ \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{Parameter_8hpp_a6d9441db52e537f5588658b218875976}{enum\+\_\+option} \{ \hyperlink{Parameter_8hpp_a6d9441db52e537f5588658b218875976a773c4e9916739e9d01fa94d4bff6edec}{B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+S\+E\+Q\+\_\+\+F\+O\+R\+\_\+\+E\+A\+CH}
+ \}\begin{DoxyCompactList}\small\item\em Possible options. \end{DoxyCompactList}
+\item 
+enum \hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1}{Parameters\+\_\+\+File\+Format} \{ \newline
+\hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1aea9db344c8347e557e7eaad8a0fc5b77}{Parameters\+\_\+\+File\+Format\+::\+F\+F\+\_\+\+U\+N\+K\+N\+O\+WN} = 0, 
+\hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a72a8a46ce227952cc584edfdeeb8996b}{Parameters\+\_\+\+File\+Format\+::\+F\+F\+\_\+\+C\+SV}, 
+\hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1adaa1f55ac638bf395d022bb56d8bc375}{Parameters\+\_\+\+File\+Format\+::\+F\+F\+\_\+\+T\+EX}, 
+\hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1aaba745eb18544169e9731aa7f5df2020}{Parameters\+\_\+\+File\+Format\+::\+F\+F\+\_\+\+T\+G\+FF}, 
+\newline
+\hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a8415413f5b0393fded24250210667167}{Parameters\+\_\+\+File\+Format\+::\+F\+F\+\_\+\+V\+E\+R\+I\+L\+OG}, 
+\hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a35aa57b094b712364d7ab770d5deddea}{Parameters\+\_\+\+File\+Format\+::\+F\+F\+\_\+\+V\+H\+DL}, 
+\hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1ab9945de0d852464e4f8022f35de083b6}{Parameters\+\_\+\+File\+Format\+::\+F\+F\+\_\+\+X\+ML}, 
+\hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1add576a7516295ede09806cecbdd916e6}{Parameters\+\_\+\+File\+Format\+::\+F\+F\+\_\+\+X\+M\+L\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L\+\_\+\+S\+E\+T\+UP}, 
+\newline
+\hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1aca95796ea23fe77037acb67dad830571}{Parameters\+\_\+\+File\+Format\+::\+F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+C\+O\+M\+P\+O\+N\+E\+NT}, 
+\hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a9846cef9d1a38b553841c65f37142b98}{Parameters\+\_\+\+File\+Format\+::\+F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+D\+E\+S\+I\+GN}, 
+\hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1aceed688c41f552876788f9be8419b364}{Parameters\+\_\+\+File\+Format\+::\+F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+OR}, 
+\hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a8e46b9bea8e8a76a76deb3d5403a2753}{Parameters\+\_\+\+File\+Format\+::\+F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+C\+O\+N\+F\+IG}, 
+\newline
+\hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a287d29da0555028f2ac9a9d240fe0402}{Parameters\+\_\+\+File\+Format\+::\+F\+F\+\_\+\+X\+M\+L\+\_\+\+S\+K\+I\+P\+\_\+\+R\+OW}, 
+\hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a669d65f085e99f00498f15a8ba15e822}{Parameters\+\_\+\+File\+Format\+::\+F\+F\+\_\+\+X\+M\+L\+\_\+\+S\+Y\+M\+\_\+\+S\+IM}, 
+\hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1aab9d75959fa5ce919672df5b430f09fc}{Parameters\+\_\+\+File\+Format\+::\+F\+F\+\_\+\+X\+M\+L\+\_\+\+T\+E\+X\+\_\+\+T\+A\+B\+LE}, 
+\hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1aca593a8e7dc8f643603b739d44b6806c}{Parameters\+\_\+\+File\+Format\+::\+F\+F\+\_\+\+X\+M\+L\+\_\+\+W\+G\+T\+\_\+\+GM}, 
+\newline
+\hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a19fd1c61a28e74a51bcab34bb50a155f}{Parameters\+\_\+\+File\+Format\+::\+F\+F\+\_\+\+X\+M\+L\+\_\+\+W\+G\+T\+\_\+\+S\+YM}
+ \}\begin{DoxyCompactList}\small\item\em File formats. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this class is used to manage the command-\/line or X\+ML options. 
+
+It has to be specialized with respect to the tool
+
+\begin{DoxyAuthor}{Author}
+Christian Pilato \href{mailto:pilato@elet.polimi.it}{\tt pilato@elet.\+polimi.\+it} 
+
+Marco Lattuada \href{mailto:lattuada@elet.polimi.it}{\tt lattuada@elet.\+polimi.\+it} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Parameter_8hpp_a00b24dffcabc104c52ada49e7fbbdd8a}\label{Parameter_8hpp_a00b24dffcabc104c52ada49e7fbbdd8a}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!B\+A\+M\+B\+U\+\_\+\+O\+P\+T\+I\+O\+NS@{B\+A\+M\+B\+U\+\_\+\+O\+P\+T\+I\+O\+NS}}
+\index{B\+A\+M\+B\+U\+\_\+\+O\+P\+T\+I\+O\+NS@{B\+A\+M\+B\+U\+\_\+\+O\+P\+T\+I\+O\+NS}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{B\+A\+M\+B\+U\+\_\+\+O\+P\+T\+I\+O\+NS}{BAMBU\_OPTIONS}}
+{\footnotesize\ttfamily \#define B\+A\+M\+B\+U\+\_\+\+O\+P\+T\+I\+O\+NS}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(\hyperlink{classchaining}{chaining})(chaining\_algorithm)(constraints\_file)(context\_switch)(controller\_architecture)(
+      datapath\_architecture)(distram\_threshold)(DSP\_allocation\_coefficient)(DSP\_margin\_combinational)(DSP\_margin\_pipelined)
+      (estimate\_logic\_and\_connections)(            \(\backslash\)
+       \hyperlink{classevaluation}{evaluation})(evaluation\_mode)(evaluation\_objectives)(experimental\_setup)(export\_core)(
+      export\_core\_mode)(fsm\_encoding)(fu\_binding\_algorithm)(generate\_testbench)(generate\_vcd)(hls\_flow)(hls\_div)(
+      hls\_fpdiv)(interface)(interface\_type)(additional\_top)(  \(\backslash\)
+       data\_bus\_bitsize)(addr\_bus\_bitsize)(libm\_std\_rounding)(liveness\_algorithm)(scheduling\_mux\_margins)(
+      scheduling\_priority)(scheduling\_algorithm)(simulate)(simulator)(simulation\_output)(speculative)(pipelining)(
+      storage\_value\_insertion\_algorithm)(stg)( \(\backslash\)
+       stg\_algorithm)(register\_allocation\_algorithm)(register\_grouping)(registered\_inputs)(resp\_model)(
+      datapath\_interconnection\_algorithm)(insert\_memory\_profile)(timing\_simulation)(top\_file)(assert\_debug)(
+      memory\_allocation\_algorithm)(                     \(\backslash\)
+       memory\_allocation\_policy)(xml\_memory\_allocation)(rom\_duplication)(base\_address)(sync\_reset)(
+      level\_reset)(reg\_init\_value)(clock\_period\_resource\_fraction)(channels\_type)(channels\_number)(memory\_controller\_type)
+      (soft\_float)(soft\_fp)(                  \(\backslash\)
+       softfloat\_subnormal)(max\_sim\_cycles)(sparse\_memory)(max\_ulp)(skip\_pipe\_parameter)(
+      gcc\_serialize\_memory\_accesses)(unaligned\_access)(aligned\_access)(backend\_script\_extensions)(backend\_sdc\_extensions)(
+      VHDL\_library)(bitvalue\_ipa)(                      \(\backslash\)
+       use\_asynchronous\_memories)(do\_not\_chain\_memories)(bram\_high\_latency)(cdfc\_module\_binding\_algorithm)(
+      function\_allocation\_algorithm)(testbench\_input\_string)(testbench\_input\_xml)(
+      weighted\_clique\_register\_algorithm)(disable\_function\_proxy)(            \(\backslash\)
+       memory\_mapped\_top)(do\_not\_expose\_globals)(connect\_iob)(profiling\_output)(disable\_bounded\_function)(
+      discrepancy)(discrepancy\_force)(discrepancy\_hw)(discrepancy\_no\_load\_pointers)(discrepancy\_only)(
+      discrepancy\_permissive\_ptrs)(dry\_run\_evaluation)(    \(\backslash\)
+       find\_max\_cfg\_transformations)(generate\_taste\_architecture)(initial\_internal\_address)(mem\_delay\_read)
+      (mem\_delay\_write)(memory\_banks\_number)(mixed\_design)(no\_parse\_c\_python)(num\_accelerators)(post\_rescheduling)
+      (technology\_file)(                      \(\backslash\)
+       testbench\_extra\_gcc\_flags)(timing\_violation\_abort)(top\_design\_name)(visualizer)(serialize\_output)(
+      use\_ALUs)
+\end{DoxyCode}
+
+
+Definition at line 118 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Parameter().
+
+\mbox{\Hypertarget{Parameter_8hpp_a0a494648e2b9bfa5bb4f658229d2e587}\label{Parameter_8hpp_a0a494648e2b9bfa5bb4f658229d2e587}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!C\+O\+M\+M\+O\+N\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS@{C\+O\+M\+M\+O\+N\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}}
+\index{C\+O\+M\+M\+O\+N\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS@{C\+O\+M\+M\+O\+N\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+M\+M\+O\+N\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}{COMMON\_LONG\_OPTIONS}}
+{\footnotesize\ttfamily \#define C\+O\+M\+M\+O\+N\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{\textcolor{stringliteral}{"help"}, no\_argument, \textcolor{keyword}{nullptr}, \textcolor{charliteral}{'h'}\}, \{\textcolor{stringliteral}{"verbosity"}, required\_argument, \textcolor{keyword}{nullptr}, \textcolor{charliteral}{'v'}\}, \{\textcolor{stringliteral}{"version"}, 
+      no\_argument, \textcolor{keyword}{nullptr}, \textcolor{charliteral}{'V'}\}, \{\textcolor{stringliteral}{"read-parameters-XML"}, required\_argument, \textcolor{keyword}{nullptr}, 
+      \hyperlink{Parameter_8hpp_acdf36d10abf1030c38a789e08c841e24}{OPT\_READ\_PARAMETERS\_XML}\},                                                \(\backslash\)
+       \{\textcolor{stringliteral}{"write-parameters-XML"}, required\_argument, \textcolor{keyword}{nullptr}, 
+      \hyperlink{Parameter_8hpp_aed47efc444f3785be1afcb5c5b4c87c5}{OPT\_WRITE\_PARAMETERS\_XML}\}, \{\textcolor{stringliteral}{"debug"}, required\_argument, \textcolor{keyword}{nullptr}, \textcolor{charliteral}{'d'}\}, \{\textcolor{stringliteral}{"
+      debug-classes"}, required\_argument, \textcolor{keyword}{nullptr}, \hyperlink{Parameter_8hpp_aa1b1b54b09ae8968daa0de8c61080186}{OPT\_DEBUG\_CLASSES}\}, \{\textcolor{stringliteral}{"no-clean"}, no\_argument, \textcolor{keyword}{nullptr}, 
+      \hyperlink{Parameter_8hpp_a7a58b3370be89f53b04bcb8faa3dbf47}{INPUT\_OPT\_NO\_CLEAN}\}, \(\backslash\)
+       \{\textcolor{stringliteral}{"benchmark-name"}, required\_argument, \textcolor{keyword}{nullptr}, \hyperlink{Parameter_8hpp_a1f6d5aa43a6aae43e7faf19062e405d8}{OPT\_BENCHMARK\_NAME}\}, \{\textcolor{stringliteral}{"
+      configuration-name"}, required\_argument, \textcolor{keyword}{nullptr}, \hyperlink{Parameter_8hpp_a14fa4f83721138b3296d93b4046653cd}{INPUT\_OPT\_CONFIGURATION\_NAME}\}, \{\textcolor{stringliteral}{"
+      benchmark-fake-parameters"}, required\_argument, \textcolor{keyword}{nullptr}, \hyperlink{Parameter_8hpp_ac8ad3d472fd597ae9c04ab9871f6562c}{OPT\_BENCHMARK\_FAKE\_PARAMETERS}\},  
+           \(\backslash\)
+       \{\textcolor{stringliteral}{"output-temporary-directory"}, required\_argument, \textcolor{keyword}{nullptr}, 
+      \hyperlink{Parameter_8hpp_a231eeee77a57524f061ff082bd717c5d}{OPT\_OUTPUT\_TEMPORARY\_DIRECTORY}\}, \{\textcolor{stringliteral}{"error-on-warning"}, no\_argument, \textcolor{keyword}{nullptr}, 
+      \hyperlink{Parameter_8hpp_a07927144d612c79aab0a0b581d283aaa}{INPUT\_OPT\_ERROR\_ON\_WARNING}\}, \{\textcolor{stringliteral}{"print-dot"}, no\_argument, \textcolor{keyword}{nullptr}, 
+      \hyperlink{Parameter_8hpp_a6b7b971208fd0b41b3c27b4e99f29239}{INPUT\_OPT\_PRINT\_DOT}\},                         \(\backslash\)
+       \{\textcolor{stringliteral}{"seed"}, required\_argument, \textcolor{keyword}{nullptr}, \hyperlink{Parameter_8hpp_a7b36f059fe2cd93ecb950d1932a5d0c4}{INPUT\_OPT\_SEED}\}, \{\textcolor{stringliteral}{"cfg-max-transformations"}, 
+      required\_argument, \textcolor{keyword}{nullptr}, \hyperlink{Parameter_8hpp_ae03d35766c9bec5d0f7d43185ee223e9}{INPUT\_OPT\_CFG\_MAX\_TRANSFORMATIONS}\},                
+                                                                                           \(\backslash\)
+   \{                                                                                                       
+                                                                                                                  
+                                            \(\backslash\)
+      \textcolor{stringliteral}{"panda-parameter"}, required\_argument, \textcolor{keyword}{nullptr}, \hyperlink{Parameter_8hpp_aa9f0915da1ea6a4c75c44a0738f56386}{INPUT\_OPT\_PANDA\_PARAMETER}    
+                                                                                                                  
+                                                                     \(\backslash\)
+   \}
+\end{DoxyCode}
+
+
+define default T\+O\+OL long options 
+
+
+
+Definition at line 213 of file Parameter.\+hpp.
+
+
+
+Referenced by tree\+\_\+panda\+\_\+gcc\+\_\+parameter\+::\+Exec(), Spider\+Parameter\+::\+Exec(), Eucalyptus\+Parameter\+::\+Exec(), and Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{Parameter_8hpp_a79e3f2687ef72054fe541f192cb82ac4}\label{Parameter_8hpp_a79e3f2687ef72054fe541f192cb82ac4}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!C\+O\+M\+M\+O\+N\+\_\+\+S\+H\+O\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+S\+T\+R\+I\+NG@{C\+O\+M\+M\+O\+N\+\_\+\+S\+H\+O\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+S\+T\+R\+I\+NG}}
+\index{C\+O\+M\+M\+O\+N\+\_\+\+S\+H\+O\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+S\+T\+R\+I\+NG@{C\+O\+M\+M\+O\+N\+\_\+\+S\+H\+O\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+S\+T\+R\+I\+NG}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+M\+M\+O\+N\+\_\+\+S\+H\+O\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+S\+T\+R\+I\+NG}{COMMON\_SHORT\_OPTIONS\_STRING}}
+{\footnotesize\ttfamily \#define C\+O\+M\+M\+O\+N\+\_\+\+S\+H\+O\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+S\+T\+R\+I\+NG~\char`\"{}h\+Vv\+:d\+:\char`\"{}}
+
+
+
+define the default tool short option string 
+
+
+
+Definition at line 210 of file Parameter.\+hpp.
+
+
+
+Referenced by tree\+\_\+panda\+\_\+gcc\+\_\+parameter\+::\+Exec(), Spider\+Parameter\+::\+Exec(), Eucalyptus\+Parameter\+::\+Exec(), and Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}\label{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE@{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE@{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE}{DEFAULT\_OPT\_BASE}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE~512}
+
+
+
+Definition at line 194 of file Parameter.\+hpp.
+
+\mbox{\Hypertarget{Parameter_8hpp_a9e7fc9974106643fbb737083a819e70d}\label{Parameter_8hpp_a9e7fc9974106643fbb737083a819e70d}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!E\+U\+C\+A\+L\+I\+P\+T\+U\+S\+\_\+\+O\+P\+T\+I\+O\+NS@{E\+U\+C\+A\+L\+I\+P\+T\+U\+S\+\_\+\+O\+P\+T\+I\+O\+NS}}
+\index{E\+U\+C\+A\+L\+I\+P\+T\+U\+S\+\_\+\+O\+P\+T\+I\+O\+NS@{E\+U\+C\+A\+L\+I\+P\+T\+U\+S\+\_\+\+O\+P\+T\+I\+O\+NS}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{E\+U\+C\+A\+L\+I\+P\+T\+U\+S\+\_\+\+O\+P\+T\+I\+O\+NS}{EUCALIPTUS\_OPTIONS}}
+{\footnotesize\ttfamily \#define E\+U\+C\+A\+L\+I\+P\+T\+U\+S\+\_\+\+O\+P\+T\+I\+O\+NS~(component\+\_\+name)}
+
+
+
+Definition at line 158 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Parameter().
+
+\mbox{\Hypertarget{Parameter_8hpp_aea97fda8b7d7529bb5382fc336971ab2}\label{Parameter_8hpp_aea97fda8b7d7529bb5382fc336971ab2}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!F\+R\+A\+M\+E\+W\+O\+R\+K\+\_\+\+O\+P\+T\+I\+O\+NS@{F\+R\+A\+M\+E\+W\+O\+R\+K\+\_\+\+O\+P\+T\+I\+O\+NS}}
+\index{F\+R\+A\+M\+E\+W\+O\+R\+K\+\_\+\+O\+P\+T\+I\+O\+NS@{F\+R\+A\+M\+E\+W\+O\+R\+K\+\_\+\+O\+P\+T\+I\+O\+NS}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{F\+R\+A\+M\+E\+W\+O\+R\+K\+\_\+\+O\+P\+T\+I\+O\+NS}{FRAMEWORK\_OPTIONS}}
+{\footnotesize\ttfamily \#define F\+R\+A\+M\+E\+W\+O\+R\+K\+\_\+\+O\+P\+T\+I\+O\+NS}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(architecture)(\hyperlink{namespacetest__panda_a6adac05e8fa7baf5d3b2f9874ca64d1e}{benchmark\_name})(cat\_args)(cfg\_max\_transformations)(compatible\_compilers)(
+      compute\_size\_of)(\hyperlink{namespacetest__panda_ab653321a83e07bf3e50afa94f982010a}{configuration\_name})(debug\_level)(default\_compiler)(dot\_directory)(
+      dump\_profiling\_data)(file\_costs)(file\_input\_data)(host\_compiler)(ilp\_max\_time)( \(\backslash\)
+       ilp\_solver)(input\_file)(input\_format)(model\_costs)(no\_clean)(no\_parse\_files)(no\_return\_zero)(
+      output\_file)(output\_level)(output\_temporary\_directory)(output\_directory)(panda\_parameter)(parse\_pragma)(
+      pretty\_print)(print\_dot)(profiling\_file)(         \(\backslash\)
+       profiling\_method)(program\_name)(read\_parameter\_xml)(revision)(seed)(task\_threshold)(
+      test\_multiple\_non\_deterministic\_flows)(test\_single\_non\_deterministic\_flow)(top\_functions\_names)(use\_rtl)(
+      xml\_input\_configuration)(xml\_output\_configuration)(       \(\backslash\)
+       write\_parameter\_xml)
+\end{DoxyCode}
+
+
+Definition at line 130 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Parameter().
+
+\mbox{\Hypertarget{Parameter_8hpp_a8e878d9642c321f39c47a348536a6f50}\label{Parameter_8hpp_a8e878d9642c321f39c47a348536a6f50}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS@{G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}}
+\index{G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS@{G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}{GCC\_LONG\_OPTIONS}}
+{\footnotesize\ttfamily \#define G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{Parameter_8hpp_a0e0bda7de92b57778688e3d28d3bcf36}{GCC\_LONG\_OPTIONS\_COMPILER}\{\textcolor{stringliteral}{"std"}, required\_argument, \textcolor{keyword}{nullptr}, 
+      \hyperlink{Parameter_8hpp_a949b4f0cc785b89a54df175619e3396a}{INPUT\_OPT\_STD}\}, \hyperlink{Parameter_8hpp_ad8db0ecbaa8caa46efa1b442b4339e24}{GCC\_LONG\_OPTIONS\_RAW\_XML}\{\textcolor{stringliteral}{"param"}, required\_argument, \textcolor{keyword}{
+      nullptr}, \hyperlink{Parameter_8hpp_abe145078878ef7448650a132114e8f2a}{INPUT\_OPT\_PARAM}\}, \{\textcolor{stringliteral}{"Include-sysdir"}, no\_argument, \textcolor{keyword}{nullptr}, 
+      \hyperlink{Parameter_8hpp_a8750a1cd6a895a9019f0b8ae7d49e193}{INPUT\_OPT\_INCLUDE\_SYSDIR}\}, \(\backslash\)
+       \{\textcolor{stringliteral}{"gcc-config"}, no\_argument, \textcolor{keyword}{nullptr}, \hyperlink{Parameter_8hpp_ac0a7adb9c9d551c210bd8f83d7549602}{INPUT\_OPT\_GCC\_CONFIG}\}, \{\textcolor{stringliteral}{"compute-sizeof"}, 
+      no\_argument, \textcolor{keyword}{nullptr}, \hyperlink{Parameter_8hpp_ac1f1c095ccf8aa08babd592db91b3823}{INPUT\_OPT\_COMPUTE\_SIZEOF}\},                                     
+                                                               \(\backslash\)
+   \{                                                                                                       
+                                                                                                                  
+                   \(\backslash\)
+      \textcolor{stringliteral}{"extra-gcc-options"}, required\_argument, \textcolor{keyword}{nullptr}, \hyperlink{Parameter_8hpp_abcffe73cebe9542a3d4c20dbc37c6e6f}{INPUT\_OPT\_CUSTOM\_OPTIONS}    
+                                                                                                                  
+                                           \(\backslash\)
+   \}
+\end{DoxyCode}
+
+
+Definition at line 245 of file Parameter.\+hpp.
+
+
+
+Referenced by tree\+\_\+panda\+\_\+gcc\+\_\+parameter\+::\+Exec(), and Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{Parameter_8hpp_a0e0bda7de92b57778688e3d28d3bcf36}\label{Parameter_8hpp_a0e0bda7de92b57778688e3d28d3bcf36}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+C\+O\+M\+P\+I\+L\+ER@{G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+C\+O\+M\+P\+I\+L\+ER}}
+\index{G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+C\+O\+M\+P\+I\+L\+ER@{G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+C\+O\+M\+P\+I\+L\+ER}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+C\+O\+M\+P\+I\+L\+ER}{GCC\_LONG\_OPTIONS\_COMPILER}}
+{\footnotesize\ttfamily \#define G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+C\+O\+M\+P\+I\+L\+ER~\{\char`\"{}compiler\char`\"{}, required\+\_\+argument, nullptr, \hyperlink{Parameter_8hpp_a85b30285a0fcffc063fa80021240564d}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+I\+L\+ER}\},}
+
+
+
+Definition at line 243 of file Parameter.\+hpp.
+
+\mbox{\Hypertarget{Parameter_8hpp_ad8db0ecbaa8caa46efa1b442b4339e24}\label{Parameter_8hpp_ad8db0ecbaa8caa46efa1b442b4339e24}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+R\+A\+W\+\_\+\+X\+ML@{G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+R\+A\+W\+\_\+\+X\+ML}}
+\index{G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+R\+A\+W\+\_\+\+X\+ML@{G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+R\+A\+W\+\_\+\+X\+ML}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+R\+A\+W\+\_\+\+X\+ML}{GCC\_LONG\_OPTIONS\_RAW\_XML}}
+{\footnotesize\ttfamily \#define G\+C\+C\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+R\+A\+W\+\_\+\+X\+ML~\{\char`\"{}use-\/raw\char`\"{}, no\+\_\+argument, nullptr, \hyperlink{Parameter_8hpp_a0dd4d965779db3b2e0d95dc772c83cec}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+R\+AW}\}, \{\char`\"{}read-\/G\+CC-\/X\+ML\char`\"{}, required\+\_\+argument, nullptr, \hyperlink{Parameter_8hpp_aeac3d43fb27caf4fdbce4b5e57afb00c}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+R\+E\+A\+D\+\_\+\+G\+C\+C\+\_\+\+X\+ML}\}, \{\char`\"{}write-\/G\+CC-\/X\+ML\char`\"{}, required\+\_\+argument, nullptr, \hyperlink{Parameter_8hpp_adbac33b6d2257e985eefb8ffeb026aee}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+G\+C\+C\+\_\+\+X\+ML}\},}
+
+
+
+Definition at line 239 of file Parameter.\+hpp.
+
+\mbox{\Hypertarget{Parameter_8hpp_a226c8642dcc039876c7819ad0133ee82}\label{Parameter_8hpp_a226c8642dcc039876c7819ad0133ee82}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!G\+C\+C\+\_\+\+O\+P\+T\+I\+O\+NS@{G\+C\+C\+\_\+\+O\+P\+T\+I\+O\+NS}}
+\index{G\+C\+C\+\_\+\+O\+P\+T\+I\+O\+NS@{G\+C\+C\+\_\+\+O\+P\+T\+I\+O\+NS}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{G\+C\+C\+\_\+\+O\+P\+T\+I\+O\+NS}{GCC\_OPTIONS}}
+{\footnotesize\ttfamily \#define G\+C\+C\+\_\+\+O\+P\+T\+I\+O\+NS}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(gcc\_config)(gcc\_costs)(gcc\_defines)(gcc\_extra\_options)(gcc\_include\_sysdir)(gcc\_includes)(gcc\_libraries)(
+      gcc\_library\_directories)(gcc\_openmp\_simd)(gcc\_opt\_level)(gcc\_m32\_mx32)(gcc\_optimizations)(gcc\_optimization\_set
+      )(gcc\_parameters)(gcc\_plugindir)( \(\backslash\)
+       gcc\_read\_xml)(gcc\_standard)(gcc\_undefines)(gcc\_warnings)(gcc\_c)(gcc\_E)(gcc\_S)(gcc\_write\_xml)
+\end{DoxyCode}
+
+
+Definition at line 136 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Parameter().
+
+\mbox{\Hypertarget{Parameter_8hpp_a8c75e51aaee4c4936cdb24af20831a98}\label{Parameter_8hpp_a8c75e51aaee4c4936cdb24af20831a98}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!G\+C\+C\+\_\+\+S\+H\+O\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+S\+T\+R\+I\+NG@{G\+C\+C\+\_\+\+S\+H\+O\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+S\+T\+R\+I\+NG}}
+\index{G\+C\+C\+\_\+\+S\+H\+O\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+S\+T\+R\+I\+NG@{G\+C\+C\+\_\+\+S\+H\+O\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+S\+T\+R\+I\+NG}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{G\+C\+C\+\_\+\+S\+H\+O\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+S\+T\+R\+I\+NG}{GCC\_SHORT\_OPTIONS\_STRING}}
+{\footnotesize\ttfamily \#define G\+C\+C\+\_\+\+S\+H\+O\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+S\+T\+R\+I\+NG~\char`\"{}cf\+:\+I\+:\+D\+:\+U\+:\+O\+::l\+:\+L\+:\+W\+:\+Em\+:g\+::\char`\"{}}
+
+
+
+define the G\+CC short option string 
+
+
+
+Definition at line 236 of file Parameter.\+hpp.
+
+
+
+Referenced by tree\+\_\+panda\+\_\+gcc\+\_\+parameter\+::\+Exec(), and Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{Parameter_8hpp_a5bb504fdbd834adc97575c3451abd3b6}\label{Parameter_8hpp_a5bb504fdbd834adc97575c3451abd3b6}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!G\+E\+C\+C\+O\+\_\+\+O\+P\+T\+I\+O\+NS@{G\+E\+C\+C\+O\+\_\+\+O\+P\+T\+I\+O\+NS}}
+\index{G\+E\+C\+C\+O\+\_\+\+O\+P\+T\+I\+O\+NS@{G\+E\+C\+C\+O\+\_\+\+O\+P\+T\+I\+O\+NS}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+C\+C\+O\+\_\+\+O\+P\+T\+I\+O\+NS}{GECCO\_OPTIONS}}
+{\footnotesize\ttfamily \#define G\+E\+C\+C\+O\+\_\+\+O\+P\+T\+I\+O\+NS~(algorithms)(analyses)}
+
+
+
+Definition at line 140 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Parameter().
+
+\mbox{\Hypertarget{Parameter_8hpp_ae03d35766c9bec5d0f7d43185ee223e9}\label{Parameter_8hpp_ae03d35766c9bec5d0f7d43185ee223e9}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+F\+G\+\_\+\+M\+A\+X\+\_\+\+T\+R\+A\+N\+S\+F\+O\+R\+M\+A\+T\+I\+O\+NS@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+F\+G\+\_\+\+M\+A\+X\+\_\+\+T\+R\+A\+N\+S\+F\+O\+R\+M\+A\+T\+I\+O\+NS}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+F\+G\+\_\+\+M\+A\+X\+\_\+\+T\+R\+A\+N\+S\+F\+O\+R\+M\+A\+T\+I\+O\+NS@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+F\+G\+\_\+\+M\+A\+X\+\_\+\+T\+R\+A\+N\+S\+F\+O\+R\+M\+A\+T\+I\+O\+NS}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+F\+G\+\_\+\+M\+A\+X\+\_\+\+T\+R\+A\+N\+S\+F\+O\+R\+M\+A\+T\+I\+O\+NS}{INPUT\_OPT\_CFG\_MAX\_TRANSFORMATIONS}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+F\+G\+\_\+\+M\+A\+X\+\_\+\+T\+R\+A\+N\+S\+F\+O\+R\+M\+A\+T\+I\+O\+NS~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 11}
+
+
+
+Definition at line 206 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_a85b30285a0fcffc063fa80021240564d}\label{Parameter_8hpp_a85b30285a0fcffc063fa80021240564d}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+I\+L\+ER@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+I\+L\+ER}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+I\+L\+ER@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+I\+L\+ER}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+I\+L\+ER}{INPUT\_OPT\_COMPILER}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+I\+L\+ER~1 + \hyperlink{Parameter_8hpp_ac1f1c095ccf8aa08babd592db91b3823}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+U\+T\+E\+\_\+\+S\+I\+Z\+E\+OF}}
+
+
+
+Definition at line 225 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_ac1f1c095ccf8aa08babd592db91b3823}\label{Parameter_8hpp_ac1f1c095ccf8aa08babd592db91b3823}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+U\+T\+E\+\_\+\+S\+I\+Z\+E\+OF@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+U\+T\+E\+\_\+\+S\+I\+Z\+E\+OF}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+U\+T\+E\+\_\+\+S\+I\+Z\+E\+OF@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+U\+T\+E\+\_\+\+S\+I\+Z\+E\+OF}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+U\+T\+E\+\_\+\+S\+I\+Z\+E\+OF}{INPUT\_OPT\_COMPUTE\_SIZEOF}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+U\+T\+E\+\_\+\+S\+I\+Z\+E\+OF~1 + \hyperlink{Parameter_8hpp_abcffe73cebe9542a3d4c20dbc37c6e6f}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+O\+P\+T\+I\+O\+NS}}
+
+
+
+Definition at line 224 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_a14fa4f83721138b3296d93b4046653cd}\label{Parameter_8hpp_a14fa4f83721138b3296d93b4046653cd}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+N\+A\+ME@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+N\+A\+ME}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+N\+A\+ME@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+N\+A\+ME}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+N\+A\+ME}{INPUT\_OPT\_CONFIGURATION\_NAME}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+N\+A\+ME~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 10}
+
+
+
+Definition at line 205 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_abcffe73cebe9542a3d4c20dbc37c6e6f}\label{Parameter_8hpp_abcffe73cebe9542a3d4c20dbc37c6e6f}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+O\+P\+T\+I\+O\+NS@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+O\+P\+T\+I\+O\+NS}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+O\+P\+T\+I\+O\+NS@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+O\+P\+T\+I\+O\+NS}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+O\+P\+T\+I\+O\+NS}{INPUT\_OPT\_CUSTOM\_OPTIONS}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+O\+P\+T\+I\+O\+NS~1024}
+
+
+
+Definition at line 223 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_a07927144d612c79aab0a0b581d283aaa}\label{Parameter_8hpp_a07927144d612c79aab0a0b581d283aaa}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+E\+R\+R\+O\+R\+\_\+\+O\+N\+\_\+\+W\+A\+R\+N\+I\+NG@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+E\+R\+R\+O\+R\+\_\+\+O\+N\+\_\+\+W\+A\+R\+N\+I\+NG}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+E\+R\+R\+O\+R\+\_\+\+O\+N\+\_\+\+W\+A\+R\+N\+I\+NG@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+E\+R\+R\+O\+R\+\_\+\+O\+N\+\_\+\+W\+A\+R\+N\+I\+NG}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+E\+R\+R\+O\+R\+\_\+\+O\+N\+\_\+\+W\+A\+R\+N\+I\+NG}{INPUT\_OPT\_ERROR\_ON\_WARNING}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+E\+R\+R\+O\+R\+\_\+\+O\+N\+\_\+\+W\+A\+R\+N\+I\+NG~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 5}
+
+
+
+Definition at line 200 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_ac0a7adb9c9d551c210bd8f83d7549602}\label{Parameter_8hpp_ac0a7adb9c9d551c210bd8f83d7549602}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+G\+C\+C\+\_\+\+C\+O\+N\+F\+IG@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+G\+C\+C\+\_\+\+C\+O\+N\+F\+IG}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+G\+C\+C\+\_\+\+C\+O\+N\+F\+IG@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+G\+C\+C\+\_\+\+C\+O\+N\+F\+IG}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+G\+C\+C\+\_\+\+C\+O\+N\+F\+IG}{INPUT\_OPT\_GCC\_CONFIG}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+G\+C\+C\+\_\+\+C\+O\+N\+F\+IG~1 + \hyperlink{Parameter_8hpp_a85b30285a0fcffc063fa80021240564d}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+O\+M\+P\+I\+L\+ER}}
+
+
+
+Definition at line 226 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_a8750a1cd6a895a9019f0b8ae7d49e193}\label{Parameter_8hpp_a8750a1cd6a895a9019f0b8ae7d49e193}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+S\+Y\+S\+D\+IR@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+S\+Y\+S\+D\+IR}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+S\+Y\+S\+D\+IR@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+S\+Y\+S\+D\+IR}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+S\+Y\+S\+D\+IR}{INPUT\_OPT\_INCLUDE\_SYSDIR}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+S\+Y\+S\+D\+IR~1 + \hyperlink{Parameter_8hpp_ac0a7adb9c9d551c210bd8f83d7549602}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+G\+C\+C\+\_\+\+C\+O\+N\+F\+IG}}
+
+
+
+Definition at line 227 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_a7a58b3370be89f53b04bcb8faa3dbf47}\label{Parameter_8hpp_a7a58b3370be89f53b04bcb8faa3dbf47}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+N\+O\+\_\+\+C\+L\+E\+AN@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+N\+O\+\_\+\+C\+L\+E\+AN}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+N\+O\+\_\+\+C\+L\+E\+AN@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+N\+O\+\_\+\+C\+L\+E\+AN}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+N\+O\+\_\+\+C\+L\+E\+AN}{INPUT\_OPT\_NO\_CLEAN}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+N\+O\+\_\+\+C\+L\+E\+AN~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 9}
+
+
+
+Definition at line 204 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_aa9f0915da1ea6a4c75c44a0738f56386}\label{Parameter_8hpp_aa9f0915da1ea6a4c75c44a0738f56386}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+A\+N\+D\+A\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+A\+N\+D\+A\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+A\+N\+D\+A\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+A\+N\+D\+A\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+A\+N\+D\+A\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}{INPUT\_OPT\_PANDA\_PARAMETER}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+A\+N\+D\+A\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 12}
+
+
+
+Definition at line 207 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_abe145078878ef7448650a132114e8f2a}\label{Parameter_8hpp_abe145078878ef7448650a132114e8f2a}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+A\+R\+AM@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+A\+R\+AM}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+A\+R\+AM@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+A\+R\+AM}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+A\+R\+AM}{INPUT\_OPT\_PARAM}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+A\+R\+AM~1 + \hyperlink{Parameter_8hpp_a8750a1cd6a895a9019f0b8ae7d49e193}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+S\+Y\+S\+D\+IR}}
+
+
+
+Definition at line 228 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_a6b7b971208fd0b41b3c27b4e99f29239}\label{Parameter_8hpp_a6b7b971208fd0b41b3c27b4e99f29239}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+R\+I\+N\+T\+\_\+\+D\+OT@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+R\+I\+N\+T\+\_\+\+D\+OT}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+R\+I\+N\+T\+\_\+\+D\+OT@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+R\+I\+N\+T\+\_\+\+D\+OT}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+R\+I\+N\+T\+\_\+\+D\+OT}{INPUT\_OPT\_PRINT\_DOT}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+R\+I\+N\+T\+\_\+\+D\+OT~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 7}
+
+
+
+Definition at line 202 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_aeac3d43fb27caf4fdbce4b5e57afb00c}\label{Parameter_8hpp_aeac3d43fb27caf4fdbce4b5e57afb00c}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+R\+E\+A\+D\+\_\+\+G\+C\+C\+\_\+\+X\+ML@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+R\+E\+A\+D\+\_\+\+G\+C\+C\+\_\+\+X\+ML}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+R\+E\+A\+D\+\_\+\+G\+C\+C\+\_\+\+X\+ML@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+R\+E\+A\+D\+\_\+\+G\+C\+C\+\_\+\+X\+ML}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+R\+E\+A\+D\+\_\+\+G\+C\+C\+\_\+\+X\+ML}{INPUT\_OPT\_READ\_GCC\_XML}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+R\+E\+A\+D\+\_\+\+G\+C\+C\+\_\+\+X\+ML~1 + \hyperlink{Parameter_8hpp_abe145078878ef7448650a132114e8f2a}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+P\+A\+R\+AM}}
+
+
+
+Definition at line 229 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_a7b36f059fe2cd93ecb950d1932a5d0c4}\label{Parameter_8hpp_a7b36f059fe2cd93ecb950d1932a5d0c4}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+S\+E\+ED@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+S\+E\+ED}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+S\+E\+ED@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+S\+E\+ED}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+S\+E\+ED}{INPUT\_OPT\_SEED}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+S\+E\+ED~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 8}
+
+
+
+Definition at line 203 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_a949b4f0cc785b89a54df175619e3396a}\label{Parameter_8hpp_a949b4f0cc785b89a54df175619e3396a}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+S\+TD@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+S\+TD}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+S\+TD@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+S\+TD}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+S\+TD}{INPUT\_OPT\_STD}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+S\+TD~1 + \hyperlink{Parameter_8hpp_aeac3d43fb27caf4fdbce4b5e57afb00c}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+R\+E\+A\+D\+\_\+\+G\+C\+C\+\_\+\+X\+ML}}
+
+
+
+Definition at line 230 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_a0dd4d965779db3b2e0d95dc772c83cec}\label{Parameter_8hpp_a0dd4d965779db3b2e0d95dc772c83cec}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+R\+AW@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+R\+AW}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+R\+AW@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+R\+AW}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+R\+AW}{INPUT\_OPT\_USE\_RAW}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+R\+AW~1 + \hyperlink{Parameter_8hpp_a949b4f0cc785b89a54df175619e3396a}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+S\+TD}}
+
+
+
+Definition at line 231 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_adbac33b6d2257e985eefb8ffeb026aee}\label{Parameter_8hpp_adbac33b6d2257e985eefb8ffeb026aee}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+G\+C\+C\+\_\+\+X\+ML@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+G\+C\+C\+\_\+\+X\+ML}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+G\+C\+C\+\_\+\+X\+ML@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+G\+C\+C\+\_\+\+X\+ML}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+G\+C\+C\+\_\+\+X\+ML}{INPUT\_OPT\_WRITE\_GCC\_XML}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+G\+C\+C\+\_\+\+X\+ML~1 + \hyperlink{Parameter_8hpp_a0dd4d965779db3b2e0d95dc772c83cec}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+R\+AW}}
+
+
+
+Definition at line 232 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_abf224f431bd205a7643d1d3336c0b471}\label{Parameter_8hpp_abf224f431bd205a7643d1d3336c0b471}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!K\+O\+A\+L\+A\+\_\+\+O\+P\+T\+I\+O\+NS@{K\+O\+A\+L\+A\+\_\+\+O\+P\+T\+I\+O\+NS}}
+\index{K\+O\+A\+L\+A\+\_\+\+O\+P\+T\+I\+O\+NS@{K\+O\+A\+L\+A\+\_\+\+O\+P\+T\+I\+O\+NS}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{K\+O\+A\+L\+A\+\_\+\+O\+P\+T\+I\+O\+NS}{KOALA\_OPTIONS}}
+{\footnotesize\ttfamily \#define K\+O\+A\+L\+A\+\_\+\+O\+P\+T\+I\+O\+NS}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(aig\_analysis)(aig\_analysis\_algorithm)(apply\_reduction\_to\_standard\_library)(characterization\_with\_DC)(
+      circuit\_debug\_level)(complete\_library\_post\_covering)(complete\_library\_pre\_covering)(covering)(csv\_file)(
+      design\_compiler\_effort)(                     \(\backslash\)
+       drive\_strength\_values)(equation)(evolutionary\_reduction)(explore\_cell\_variants)(extract\_features)(
+      generated\_library\_name)(group\_glue)(has\_complete\_characterization)(hdl\_backend)(icarus\_debug\_level)(
+      input\_libraries)(library)(library\_optimization)( \(\backslash\)
+       library\_optimization\_algorithm)(lib\_output\_format)(max\_area)(max\_delay)(output\_libraries)(
+      output\_name)(regularity\_abstraction\_level)(regularity\_algorithm)(regularity\_coloring\_type)(regularity\_covering)(
+      regularity\_extraction)(regularity\_fast)(     \(\backslash\)
+       regularity\_forward)(regularity\_hierarchical)(regularity\_include\_sequential)(regularity\_max\_inputs)(
+      regularity\_min\_frequency)(regularity\_min\_size)(regularity\_window\_size)(reordering)(perform\_resynthesis)(
+      print\_templates)(                           \(\backslash\)
+       reimplement\_standard\_cells)(separate\_templates)(set\_constraint)(set\_optimization\_goal)(skew\_values)(
+      split\_roots)(store\_library\_creator\_db)(synthesis\_tool\_xml)(template\_file)(xml\_library\_cells)(
+      xml\_library\_statistics)
+\end{DoxyCode}
+
+
+Definition at line 142 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Parameter().
+
+\mbox{\Hypertarget{Parameter_8hpp_a7c93c9b6381137750d88b03f94a188c8}\label{Parameter_8hpp_a7c93c9b6381137750d88b03f94a188c8}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!L\+A\+S\+T\+\_\+\+G\+C\+C\+\_\+\+O\+PT@{L\+A\+S\+T\+\_\+\+G\+C\+C\+\_\+\+O\+PT}}
+\index{L\+A\+S\+T\+\_\+\+G\+C\+C\+\_\+\+O\+PT@{L\+A\+S\+T\+\_\+\+G\+C\+C\+\_\+\+O\+PT}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{L\+A\+S\+T\+\_\+\+G\+C\+C\+\_\+\+O\+PT}{LAST\_GCC\_OPT}}
+{\footnotesize\ttfamily \#define L\+A\+S\+T\+\_\+\+G\+C\+C\+\_\+\+O\+PT~\hyperlink{Parameter_8hpp_adbac33b6d2257e985eefb8ffeb026aee}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+G\+C\+C\+\_\+\+X\+ML}}
+
+
+
+Definition at line 233 of file Parameter.\+hpp.
+
+\mbox{\Hypertarget{Parameter_8hpp_ac8ad3d472fd597ae9c04ab9871f6562c}\label{Parameter_8hpp_ac8ad3d472fd597ae9c04ab9871f6562c}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!O\+P\+T\+\_\+\+B\+E\+N\+C\+H\+M\+A\+R\+K\+\_\+\+F\+A\+K\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS@{O\+P\+T\+\_\+\+B\+E\+N\+C\+H\+M\+A\+R\+K\+\_\+\+F\+A\+K\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS}}
+\index{O\+P\+T\+\_\+\+B\+E\+N\+C\+H\+M\+A\+R\+K\+\_\+\+F\+A\+K\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS@{O\+P\+T\+\_\+\+B\+E\+N\+C\+H\+M\+A\+R\+K\+\_\+\+F\+A\+K\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+B\+E\+N\+C\+H\+M\+A\+R\+K\+\_\+\+F\+A\+K\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS}{OPT\_BENCHMARK\_FAKE\_PARAMETERS}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+B\+E\+N\+C\+H\+M\+A\+R\+K\+\_\+\+F\+A\+K\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 4}
+
+
+
+Definition at line 199 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_a1f6d5aa43a6aae43e7faf19062e405d8}\label{Parameter_8hpp_a1f6d5aa43a6aae43e7faf19062e405d8}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!O\+P\+T\+\_\+\+B\+E\+N\+C\+H\+M\+A\+R\+K\+\_\+\+N\+A\+ME@{O\+P\+T\+\_\+\+B\+E\+N\+C\+H\+M\+A\+R\+K\+\_\+\+N\+A\+ME}}
+\index{O\+P\+T\+\_\+\+B\+E\+N\+C\+H\+M\+A\+R\+K\+\_\+\+N\+A\+ME@{O\+P\+T\+\_\+\+B\+E\+N\+C\+H\+M\+A\+R\+K\+\_\+\+N\+A\+ME}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+B\+E\+N\+C\+H\+M\+A\+R\+K\+\_\+\+N\+A\+ME}{OPT\_BENCHMARK\_NAME}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+B\+E\+N\+C\+H\+M\+A\+R\+K\+\_\+\+N\+A\+ME~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 3}
+
+
+
+Definition at line 198 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_aa1b1b54b09ae8968daa0de8c61080186}\label{Parameter_8hpp_aa1b1b54b09ae8968daa0de8c61080186}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!O\+P\+T\+\_\+\+D\+E\+B\+U\+G\+\_\+\+C\+L\+A\+S\+S\+ES@{O\+P\+T\+\_\+\+D\+E\+B\+U\+G\+\_\+\+C\+L\+A\+S\+S\+ES}}
+\index{O\+P\+T\+\_\+\+D\+E\+B\+U\+G\+\_\+\+C\+L\+A\+S\+S\+ES@{O\+P\+T\+\_\+\+D\+E\+B\+U\+G\+\_\+\+C\+L\+A\+S\+S\+ES}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+E\+B\+U\+G\+\_\+\+C\+L\+A\+S\+S\+ES}{OPT\_DEBUG\_CLASSES}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+E\+B\+U\+G\+\_\+\+C\+L\+A\+S\+S\+ES~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 2}
+
+
+
+Definition at line 197 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_a231eeee77a57524f061ff082bd717c5d}\label{Parameter_8hpp_a231eeee77a57524f061ff082bd717c5d}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!O\+P\+T\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+T\+E\+M\+P\+O\+R\+A\+R\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+O\+RY@{O\+P\+T\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+T\+E\+M\+P\+O\+R\+A\+R\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+O\+RY}}
+\index{O\+P\+T\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+T\+E\+M\+P\+O\+R\+A\+R\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+O\+RY@{O\+P\+T\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+T\+E\+M\+P\+O\+R\+A\+R\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+O\+RY}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+T\+E\+M\+P\+O\+R\+A\+R\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+O\+RY}{OPT\_OUTPUT\_TEMPORARY\_DIRECTORY}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+T\+E\+M\+P\+O\+R\+A\+R\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+O\+RY~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 6}
+
+
+
+Definition at line 201 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_acdf36d10abf1030c38a789e08c841e24}\label{Parameter_8hpp_acdf36d10abf1030c38a789e08c841e24}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!O\+P\+T\+\_\+\+R\+E\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+S\+\_\+\+X\+ML@{O\+P\+T\+\_\+\+R\+E\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+S\+\_\+\+X\+ML}}
+\index{O\+P\+T\+\_\+\+R\+E\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+S\+\_\+\+X\+ML@{O\+P\+T\+\_\+\+R\+E\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+S\+\_\+\+X\+ML}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+R\+E\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+S\+\_\+\+X\+ML}{OPT\_READ\_PARAMETERS\_XML}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+R\+E\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+S\+\_\+\+X\+ML~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE}}
+
+
+
+Definition at line 195 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_aed47efc444f3785be1afcb5c5b4c87c5}\label{Parameter_8hpp_aed47efc444f3785be1afcb5c5b4c87c5}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!O\+P\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+S\+\_\+\+X\+ML@{O\+P\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+S\+\_\+\+X\+ML}}
+\index{O\+P\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+S\+\_\+\+X\+ML@{O\+P\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+S\+\_\+\+X\+ML}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+S\+\_\+\+X\+ML}{OPT\_WRITE\_PARAMETERS\_XML}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+S\+\_\+\+X\+ML~\hyperlink{Parameter_8hpp_a7d317c0b2fa243a84b1d3e20c35071f7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE} + 1}
+
+
+
+Definition at line 196 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Manage\+Default\+Options().
+
+\mbox{\Hypertarget{Parameter_8hpp_a20a93a6435a56d6d122217e04b71cebc}\label{Parameter_8hpp_a20a93a6435a56d6d122217e04b71cebc}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!O\+P\+T\+I\+O\+N\+S\+\_\+\+E\+N\+UM@{O\+P\+T\+I\+O\+N\+S\+\_\+\+E\+N\+UM}}
+\index{O\+P\+T\+I\+O\+N\+S\+\_\+\+E\+N\+UM@{O\+P\+T\+I\+O\+N\+S\+\_\+\+E\+N\+UM}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+I\+O\+N\+S\+\_\+\+E\+N\+UM}{OPTIONS\_ENUM}}
+{\footnotesize\ttfamily \#define O\+P\+T\+I\+O\+N\+S\+\_\+\+E\+N\+UM(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{data,  }\item[{}]{elem }\end{DoxyParamCaption})~B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+C\+AT(O\+P\+T\+\_\+, elem),}
+
+
+
+Definition at line 168 of file Parameter.\+hpp.
+
+\mbox{\Hypertarget{Parameter_8hpp_a3a68ccc0daa7bcde02326132db204ab9}\label{Parameter_8hpp_a3a68ccc0daa7bcde02326132db204ab9}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+N\+O\+T\+P\+A\+R\+S\+ED@{P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+N\+O\+T\+P\+A\+R\+S\+ED}}
+\index{P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+N\+O\+T\+P\+A\+R\+S\+ED@{P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+N\+O\+T\+P\+A\+R\+S\+ED}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+N\+O\+T\+P\+A\+R\+S\+ED}{PARAMETER\_NOTPARSED}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+N\+O\+T\+P\+A\+R\+S\+ED~I\+N\+T\+\_\+\+M\+AX}
+
+
+
+Definition at line 116 of file Parameter.\+hpp.
+
+
+
+Referenced by tree\+\_\+panda\+\_\+gcc\+\_\+parameter\+::\+Exec(), Spider\+Parameter\+::\+Exec(), Eucalyptus\+Parameter\+::\+Exec(), Bambu\+Parameter\+::\+Exec(), and main().
+
+\mbox{\Hypertarget{Parameter_8hpp_ac7a3dae667108b0c1d290e24df93bfd3}\label{Parameter_8hpp_ac7a3dae667108b0c1d290e24df93bfd3}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+P\+A\+R\+S\+ED@{P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+P\+A\+R\+S\+ED}}
+\index{P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+P\+A\+R\+S\+ED@{P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+P\+A\+R\+S\+ED}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+P\+A\+R\+S\+ED}{PARAMETER\_PARSED}}
+{\footnotesize\ttfamily \#define P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+P\+A\+R\+S\+ED~I\+N\+T\+\_\+\+M\+IN}
+
+
+
+An integer value to return if parameters have been right parsed. 
+
+
+
+Definition at line 115 of file Parameter.\+hpp.
+
+
+
+Referenced by tree\+\_\+panda\+\_\+gcc\+\_\+parameter\+::\+Exec(), Spider\+Parameter\+::\+Exec(), Eucalyptus\+Parameter\+::\+Exec(), Bambu\+Parameter\+::\+Exec(), and main().
+
+\mbox{\Hypertarget{Parameter_8hpp_a2cec55e275758cf59d73822e3d860ba5}\label{Parameter_8hpp_a2cec55e275758cf59d73822e3d860ba5}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!S\+P\+I\+D\+E\+R\+\_\+\+O\+P\+T\+I\+O\+NS@{S\+P\+I\+D\+E\+R\+\_\+\+O\+P\+T\+I\+O\+NS}}
+\index{S\+P\+I\+D\+E\+R\+\_\+\+O\+P\+T\+I\+O\+NS@{S\+P\+I\+D\+E\+R\+\_\+\+O\+P\+T\+I\+O\+NS}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{S\+P\+I\+D\+E\+R\+\_\+\+O\+P\+T\+I\+O\+NS}{SPIDER\_OPTIONS}}
+{\footnotesize\ttfamily \#define S\+P\+I\+D\+E\+R\+\_\+\+O\+P\+T\+I\+O\+NS}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(accuracy)(aggregated\_features)(cross\_validation)(experimental\_setup\_file)(interval\_level)(
+      latex\_format\_file)(max\_bound)(maximum\_error)(min\_bound)(minimum\_significance)(normalization\_file)(normalization\_sequences)(
+      output\_format)(precision)( \(\backslash\)
+       processing\_element\_type)(skip\_rows)(surviving\_benchmarks)
+\end{DoxyCode}
+
+
+Definition at line 154 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Parameter().
+
+\mbox{\Hypertarget{Parameter_8hpp_a96bcef36cf9dddcbfd6fbe61547b5631}\label{Parameter_8hpp_a96bcef36cf9dddcbfd6fbe61547b5631}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!S\+Y\+N\+T\+H\+E\+S\+I\+S\+\_\+\+O\+P\+T\+I\+O\+NS@{S\+Y\+N\+T\+H\+E\+S\+I\+S\+\_\+\+O\+P\+T\+I\+O\+NS}}
+\index{S\+Y\+N\+T\+H\+E\+S\+I\+S\+\_\+\+O\+P\+T\+I\+O\+NS@{S\+Y\+N\+T\+H\+E\+S\+I\+S\+\_\+\+O\+P\+T\+I\+O\+NS}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{S\+Y\+N\+T\+H\+E\+S\+I\+S\+\_\+\+O\+P\+T\+I\+O\+NS}{SYNTHESIS\_OPTIONS}}
+{\footnotesize\ttfamily \#define S\+Y\+N\+T\+H\+E\+S\+I\+S\+\_\+\+O\+P\+T\+I\+O\+NS}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(clock\_period)(clock\_name)(reset\_name)(start\_name)(done\_name)(design\_analysis\_steps)(
+      design\_compiler\_compile\_log)(design\_compiler\_split\_log)(design\_parameters)(design\_hierarchy)(device\_string)(dump\_genlib)(
+      estimate\_library)(export\_ip\_core)( \(\backslash\)
+       import\_ip\_core)(input\_liberty\_library\_file)(ip\_xact\_architecture\_template)(ip\_xact\_parameters)(
+      is\_structural)(lib2xml)(min\_metric)(parse\_edif)(rtl)(synthesis\_flow)(structural\_HDL)(
+      \hyperlink{classtarget__device}{target\_device})(target\_library)(target\_library\_source)(   \(\backslash\)
+       target\_technology)(target\_technology\_file)(target\_device\_file)(target\_device\_script)(
+      target\_device\_type)(top\_component)(uniquify)(writer\_language)
+\end{DoxyCode}
+
+
+Definition at line 149 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Parameter().
+
+\mbox{\Hypertarget{Parameter_8hpp_aeea634ea16a9f58b3c0f2c3f405d9291}\label{Parameter_8hpp_aeea634ea16a9f58b3c0f2c3f405d9291}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!T\+R\+E\+E\+\_\+\+P\+A\+N\+D\+A\+\_\+\+G\+C\+C\+\_\+\+O\+P\+T\+I\+O\+NS@{T\+R\+E\+E\+\_\+\+P\+A\+N\+D\+A\+\_\+\+G\+C\+C\+\_\+\+O\+P\+T\+I\+O\+NS}}
+\index{T\+R\+E\+E\+\_\+\+P\+A\+N\+D\+A\+\_\+\+G\+C\+C\+\_\+\+O\+P\+T\+I\+O\+NS@{T\+R\+E\+E\+\_\+\+P\+A\+N\+D\+A\+\_\+\+G\+C\+C\+\_\+\+O\+P\+T\+I\+O\+NS}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{T\+R\+E\+E\+\_\+\+P\+A\+N\+D\+A\+\_\+\+G\+C\+C\+\_\+\+O\+P\+T\+I\+O\+NS}{TREE\_PANDA\_GCC\_OPTIONS}}
+{\footnotesize\ttfamily \#define T\+R\+E\+E\+\_\+\+P\+A\+N\+D\+A\+\_\+\+G\+C\+C\+\_\+\+O\+P\+T\+I\+O\+NS~(archive\+\_\+files)(obj\+\_\+files)(compress\+\_\+archive)}
+
+
+
+Definition at line 160 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Parameter().
+
+\mbox{\Hypertarget{Parameter_8hpp_aecf9868b172fc8712eb852da4be98666}\label{Parameter_8hpp_aecf9868b172fc8712eb852da4be98666}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!Z\+E\+B\+U\+\_\+\+O\+P\+T\+I\+O\+NS@{Z\+E\+B\+U\+\_\+\+O\+P\+T\+I\+O\+NS}}
+\index{Z\+E\+B\+U\+\_\+\+O\+P\+T\+I\+O\+NS@{Z\+E\+B\+U\+\_\+\+O\+P\+T\+I\+O\+NS}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{Z\+E\+B\+U\+\_\+\+O\+P\+T\+I\+O\+NS}{ZEBU\_OPTIONS}}
+{\footnotesize\ttfamily \#define Z\+E\+B\+U\+\_\+\+O\+P\+T\+I\+O\+NS}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(alternative\_metrics)(analysis\_level)(blackbox)(cache\_analysis)(compare\_model\_max\_iterations)(
+      compare\_measure\_regions)(compare\_models)(cpus\_number)(cuda\_optimization)(examined\_model)(default\_fork\_cost)(
+      diopsis\_instrumentation)(driving\_component\_type)( \(\backslash\)
+       driving\_metric)(dump\_schedule)(evaluate\_pointed\_size)(exec\_argv)(frontend\_statistics)(golden\_model)(
+      fork\_join\_backend)(hand\_mapping)(ignore\_mapping)(ignore\_parallelism)(mapping)(measure\_profile\_overhead)(
+      memory\_profiling)(no\_sequential)(           \(\backslash\)
+       normalize\_models)(partitioning)(partitioning\_algorithm)(partitioning\_functions)(path)(
+      performance\_estimation)(platform\_base\_dir)(prof\_resolution)(profile\_loop\_max\_iterations)(profile\_minutes\_timeout)(
+      runs\_number)(simit\_fork\_cost)(                  \(\backslash\)
+       source\_code\_statistics)(resolution)(run)(sequence\_length)(shorter\_sequence)(symbolic\_simulation)(
+      trace\_buffer\_size)(tsim\_instrumentation)(tollerance)(without\_operating\_system)(without\_transformation)
+\end{DoxyCode}
+
+
+Definition at line 162 of file Parameter.\+hpp.
+
+
+
+Referenced by Parameter\+::\+Parameter().
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}\label{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!Parameter\+Const\+Ref@{Parameter\+Const\+Ref}}
+\index{Parameter\+Const\+Ref@{Parameter\+Const\+Ref}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{Parameter\+Const\+Ref}{ParameterConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{classParameter}{Parameter}$>$ \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}
+
+
+
+Definition at line 808 of file Parameter.\+hpp.
+
+\mbox{\Hypertarget{Parameter_8hpp_a379beb25e5350c4c5585247ed50be3f9}\label{Parameter_8hpp_a379beb25e5350c4c5585247ed50be3f9}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!Parameter\+Ref@{Parameter\+Ref}}
+\index{Parameter\+Ref@{Parameter\+Ref}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{Parameter\+Ref}{ParameterRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classParameter}{Parameter}$>$ \hyperlink{Parameter_8hpp_a379beb25e5350c4c5585247ed50be3f9}{Parameter\+Ref}}
+
+
+
+Definition at line 807 of file Parameter.\+hpp.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{Parameter_8hpp_a6d9441db52e537f5588658b218875976}\label{Parameter_8hpp_a6d9441db52e537f5588658b218875976}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!enum\+\_\+option@{enum\+\_\+option}}
+\index{enum\+\_\+option@{enum\+\_\+option}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{enum\+\_\+option}{enum\_option}}
+{\footnotesize\ttfamily enum \hyperlink{Parameter_8hpp_a6d9441db52e537f5588658b218875976}{enum\+\_\+option}}
+
+
+
+Possible options. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+S\+E\+Q\+\_\+\+F\+O\+R\+\_\+\+E\+A\+CH@{B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+S\+E\+Q\+\_\+\+F\+O\+R\+\_\+\+E\+A\+CH}!Parameter.\+hpp@{Parameter.\+hpp}}\index{Parameter.\+hpp@{Parameter.\+hpp}!B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+S\+E\+Q\+\_\+\+F\+O\+R\+\_\+\+E\+A\+CH@{B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+S\+E\+Q\+\_\+\+F\+O\+R\+\_\+\+E\+A\+CH}}}\mbox{\Hypertarget{Parameter_8hpp_a6d9441db52e537f5588658b218875976a773c4e9916739e9d01fa94d4bff6edec}\label{Parameter_8hpp_a6d9441db52e537f5588658b218875976a773c4e9916739e9d01fa94d4bff6edec}} 
+B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+S\+E\+Q\+\_\+\+F\+O\+R\+\_\+\+E\+A\+CH&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 172 of file Parameter.\+hpp.
+
+\mbox{\Hypertarget{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1}\label{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1}} 
+\index{Parameter.\+hpp@{Parameter.\+hpp}!Parameters\+\_\+\+File\+Format@{Parameters\+\_\+\+File\+Format}}
+\index{Parameters\+\_\+\+File\+Format@{Parameters\+\_\+\+File\+Format}!Parameter.\+hpp@{Parameter.\+hpp}}
+\subsubsection{\texorpdfstring{Parameters\+\_\+\+File\+Format}{Parameters\_FileFormat}}
+{\footnotesize\ttfamily enum \hyperlink{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1}{Parameters\+\_\+\+File\+Format}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+File formats. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+F\+\_\+\+U\+N\+K\+N\+O\+WN@{F\+F\+\_\+\+U\+N\+K\+N\+O\+WN}!Parameter.\+hpp@{Parameter.\+hpp}}\index{Parameter.\+hpp@{Parameter.\+hpp}!F\+F\+\_\+\+U\+N\+K\+N\+O\+WN@{F\+F\+\_\+\+U\+N\+K\+N\+O\+WN}}}\mbox{\Hypertarget{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1aea9db344c8347e557e7eaad8a0fc5b77}\label{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1aea9db344c8347e557e7eaad8a0fc5b77}} 
+F\+F\+\_\+\+U\+N\+K\+N\+O\+WN&U\+N\+K\+N\+O\+WN. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+F\+\_\+\+C\+SV@{F\+F\+\_\+\+C\+SV}!Parameter.\+hpp@{Parameter.\+hpp}}\index{Parameter.\+hpp@{Parameter.\+hpp}!F\+F\+\_\+\+C\+SV@{F\+F\+\_\+\+C\+SV}}}\mbox{\Hypertarget{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a72a8a46ce227952cc584edfdeeb8996b}\label{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a72a8a46ce227952cc584edfdeeb8996b}} 
+F\+F\+\_\+\+C\+SV&(Input) comma separated value \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+F\+\_\+\+T\+EX@{F\+F\+\_\+\+T\+EX}!Parameter.\+hpp@{Parameter.\+hpp}}\index{Parameter.\+hpp@{Parameter.\+hpp}!F\+F\+\_\+\+T\+EX@{F\+F\+\_\+\+T\+EX}}}\mbox{\Hypertarget{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1adaa1f55ac638bf395d022bb56d8bc375}\label{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1adaa1f55ac638bf395d022bb56d8bc375}} 
+F\+F\+\_\+\+T\+EX&(Output) Latex table \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+F\+\_\+\+T\+G\+FF@{F\+F\+\_\+\+T\+G\+FF}!Parameter.\+hpp@{Parameter.\+hpp}}\index{Parameter.\+hpp@{Parameter.\+hpp}!F\+F\+\_\+\+T\+G\+FF@{F\+F\+\_\+\+T\+G\+FF}}}\mbox{\Hypertarget{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1aaba745eb18544169e9731aa7f5df2020}\label{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1aaba745eb18544169e9731aa7f5df2020}} 
+F\+F\+\_\+\+T\+G\+FF&(Input) task graph for free \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+F\+\_\+\+V\+E\+R\+I\+L\+OG@{F\+F\+\_\+\+V\+E\+R\+I\+L\+OG}!Parameter.\+hpp@{Parameter.\+hpp}}\index{Parameter.\+hpp@{Parameter.\+hpp}!F\+F\+\_\+\+V\+E\+R\+I\+L\+OG@{F\+F\+\_\+\+V\+E\+R\+I\+L\+OG}}}\mbox{\Hypertarget{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a8415413f5b0393fded24250210667167}\label{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a8415413f5b0393fded24250210667167}} 
+F\+F\+\_\+\+V\+E\+R\+I\+L\+OG&(Input) verilog \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+F\+\_\+\+V\+H\+DL@{F\+F\+\_\+\+V\+H\+DL}!Parameter.\+hpp@{Parameter.\+hpp}}\index{Parameter.\+hpp@{Parameter.\+hpp}!F\+F\+\_\+\+V\+H\+DL@{F\+F\+\_\+\+V\+H\+DL}}}\mbox{\Hypertarget{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a35aa57b094b712364d7ab770d5deddea}\label{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a35aa57b094b712364d7ab770d5deddea}} 
+F\+F\+\_\+\+V\+H\+DL&(Input) vhdl \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+F\+\_\+\+X\+ML@{F\+F\+\_\+\+X\+ML}!Parameter.\+hpp@{Parameter.\+hpp}}\index{Parameter.\+hpp@{Parameter.\+hpp}!F\+F\+\_\+\+X\+ML@{F\+F\+\_\+\+X\+ML}}}\mbox{\Hypertarget{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1ab9945de0d852464e4f8022f35de083b6}\label{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1ab9945de0d852464e4f8022f35de083b6}} 
+F\+F\+\_\+\+X\+ML&(Input/\+Output) X\+ML \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+F\+\_\+\+X\+M\+L\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L\+\_\+\+S\+E\+T\+UP@{F\+F\+\_\+\+X\+M\+L\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L\+\_\+\+S\+E\+T\+UP}!Parameter.\+hpp@{Parameter.\+hpp}}\index{Parameter.\+hpp@{Parameter.\+hpp}!F\+F\+\_\+\+X\+M\+L\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L\+\_\+\+S\+E\+T\+UP@{F\+F\+\_\+\+X\+M\+L\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L\+\_\+\+S\+E\+T\+UP}}}\mbox{\Hypertarget{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1add576a7516295ede09806cecbdd916e6}\label{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1add576a7516295ede09806cecbdd916e6}} 
+F\+F\+\_\+\+X\+M\+L\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L\+\_\+\+S\+E\+T\+UP&(Input) X\+ML storing experimental setup \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+C\+O\+M\+P\+O\+N\+E\+NT@{F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+C\+O\+M\+P\+O\+N\+E\+NT}!Parameter.\+hpp@{Parameter.\+hpp}}\index{Parameter.\+hpp@{Parameter.\+hpp}!F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+C\+O\+M\+P\+O\+N\+E\+NT@{F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+C\+O\+M\+P\+O\+N\+E\+NT}}}\mbox{\Hypertarget{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1aca95796ea23fe77037acb67dad830571}\label{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1aca95796ea23fe77037acb67dad830571}} 
+F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+C\+O\+M\+P\+O\+N\+E\+NT&(Input) X\+ML storing I\+P-\/\+X\+A\+CT component \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+D\+E\+S\+I\+GN@{F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+D\+E\+S\+I\+GN}!Parameter.\+hpp@{Parameter.\+hpp}}\index{Parameter.\+hpp@{Parameter.\+hpp}!F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+D\+E\+S\+I\+GN@{F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+D\+E\+S\+I\+GN}}}\mbox{\Hypertarget{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a9846cef9d1a38b553841c65f37142b98}\label{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a9846cef9d1a38b553841c65f37142b98}} 
+F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+D\+E\+S\+I\+GN&(Input) X\+ML storing I\+P-\/\+X\+A\+CT design \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+OR@{F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+OR}!Parameter.\+hpp@{Parameter.\+hpp}}\index{Parameter.\+hpp@{Parameter.\+hpp}!F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+OR@{F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+OR}}}\mbox{\Hypertarget{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1aceed688c41f552876788f9be8419b364}\label{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1aceed688c41f552876788f9be8419b364}} 
+F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+OR&(Input) X\+ML storing I\+P-\/\+X\+A\+CT generator chain \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+C\+O\+N\+F\+IG@{F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+C\+O\+N\+F\+IG}!Parameter.\+hpp@{Parameter.\+hpp}}\index{Parameter.\+hpp@{Parameter.\+hpp}!F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+C\+O\+N\+F\+IG@{F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+C\+O\+N\+F\+IG}}}\mbox{\Hypertarget{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a8e46b9bea8e8a76a76deb3d5403a2753}\label{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a8e46b9bea8e8a76a76deb3d5403a2753}} 
+F\+F\+\_\+\+X\+M\+L\+\_\+\+I\+P\+\_\+\+X\+A\+C\+T\+\_\+\+C\+O\+N\+F\+IG&(Input) X\+ML storing I\+P-\/\+X\+A\+CT design configuration \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+F\+\_\+\+X\+M\+L\+\_\+\+S\+K\+I\+P\+\_\+\+R\+OW@{F\+F\+\_\+\+X\+M\+L\+\_\+\+S\+K\+I\+P\+\_\+\+R\+OW}!Parameter.\+hpp@{Parameter.\+hpp}}\index{Parameter.\+hpp@{Parameter.\+hpp}!F\+F\+\_\+\+X\+M\+L\+\_\+\+S\+K\+I\+P\+\_\+\+R\+OW@{F\+F\+\_\+\+X\+M\+L\+\_\+\+S\+K\+I\+P\+\_\+\+R\+OW}}}\mbox{\Hypertarget{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a287d29da0555028f2ac9a9d240fe0402}\label{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a287d29da0555028f2ac9a9d240fe0402}} 
+F\+F\+\_\+\+X\+M\+L\+\_\+\+S\+K\+I\+P\+\_\+\+R\+OW&(Input) X\+ML benchhmarks to be execluded from training set \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+F\+\_\+\+X\+M\+L\+\_\+\+S\+Y\+M\+\_\+\+S\+IM@{F\+F\+\_\+\+X\+M\+L\+\_\+\+S\+Y\+M\+\_\+\+S\+IM}!Parameter.\+hpp@{Parameter.\+hpp}}\index{Parameter.\+hpp@{Parameter.\+hpp}!F\+F\+\_\+\+X\+M\+L\+\_\+\+S\+Y\+M\+\_\+\+S\+IM@{F\+F\+\_\+\+X\+M\+L\+\_\+\+S\+Y\+M\+\_\+\+S\+IM}}}\mbox{\Hypertarget{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a669d65f085e99f00498f15a8ba15e822}\label{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a669d65f085e99f00498f15a8ba15e822}} 
+F\+F\+\_\+\+X\+M\+L\+\_\+\+S\+Y\+M\+\_\+\+S\+IM&(Input) X\+ML storing symbolic symulation results \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+F\+\_\+\+X\+M\+L\+\_\+\+T\+E\+X\+\_\+\+T\+A\+B\+LE@{F\+F\+\_\+\+X\+M\+L\+\_\+\+T\+E\+X\+\_\+\+T\+A\+B\+LE}!Parameter.\+hpp@{Parameter.\+hpp}}\index{Parameter.\+hpp@{Parameter.\+hpp}!F\+F\+\_\+\+X\+M\+L\+\_\+\+T\+E\+X\+\_\+\+T\+A\+B\+LE@{F\+F\+\_\+\+X\+M\+L\+\_\+\+T\+E\+X\+\_\+\+T\+A\+B\+LE}}}\mbox{\Hypertarget{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1aab9d75959fa5ce919672df5b430f09fc}\label{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1aab9d75959fa5ce919672df5b430f09fc}} 
+F\+F\+\_\+\+X\+M\+L\+\_\+\+T\+E\+X\+\_\+\+T\+A\+B\+LE&(Input) X\+ML storing format of latex table to be produced \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+F\+\_\+\+X\+M\+L\+\_\+\+W\+G\+T\+\_\+\+GM@{F\+F\+\_\+\+X\+M\+L\+\_\+\+W\+G\+T\+\_\+\+GM}!Parameter.\+hpp@{Parameter.\+hpp}}\index{Parameter.\+hpp@{Parameter.\+hpp}!F\+F\+\_\+\+X\+M\+L\+\_\+\+W\+G\+T\+\_\+\+GM@{F\+F\+\_\+\+X\+M\+L\+\_\+\+W\+G\+T\+\_\+\+GM}}}\mbox{\Hypertarget{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1aca593a8e7dc8f643603b739d44b6806c}\label{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1aca593a8e7dc8f643603b739d44b6806c}} 
+F\+F\+\_\+\+X\+M\+L\+\_\+\+W\+G\+T\+\_\+\+GM&(Output) X\+ML weights of single operations computed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+F\+\_\+\+X\+M\+L\+\_\+\+W\+G\+T\+\_\+\+S\+YM@{F\+F\+\_\+\+X\+M\+L\+\_\+\+W\+G\+T\+\_\+\+S\+YM}!Parameter.\+hpp@{Parameter.\+hpp}}\index{Parameter.\+hpp@{Parameter.\+hpp}!F\+F\+\_\+\+X\+M\+L\+\_\+\+W\+G\+T\+\_\+\+S\+YM@{F\+F\+\_\+\+X\+M\+L\+\_\+\+W\+G\+T\+\_\+\+S\+YM}}}\mbox{\Hypertarget{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a19fd1c61a28e74a51bcab34bb50a155f}\label{Parameter_8hpp_a67fa05fdc413fd22ad4f96d04e4f99f1a19fd1c61a28e74a51bcab34bb50a155f}} 
+F\+F\+\_\+\+X\+M\+L\+\_\+\+W\+G\+T\+\_\+\+S\+YM&(Input/\+Output) X\+ML symbolic weights \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 255 of file Parameter.\+hpp.
+

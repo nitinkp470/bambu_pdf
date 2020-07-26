@@ -1,0 +1,784 @@
+\hypertarget{classvcd__parser}{}\section{vcd\+\_\+parser Class Reference}
+\label{classvcd__parser}\index{vcd\+\_\+parser@{vcd\+\_\+parser}}
+
+
+{\ttfamily \#include $<$vcd\+\_\+parser.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{custom__map_8hpp_af22b2f058635373912f810498e5b1052}{Unordered\+Map\+Std}$<$ std\+::string, \hyperlink{custom__set_8hpp_a1f63d303cef2790dc0a0ff7feae38f83}{Unordered\+Set\+Std\+Stable}$<$ std\+::string $>$ $>$ \hyperlink{classvcd__parser_a00f10dd896fdc534014c6192eed18d55}{vcd\+\_\+filter\+\_\+t}
+\begin{DoxyCompactList}\small\item\em this is the type used to select which signals have to be filtered during parsing. \end{DoxyCompactList}\item 
+typedef \hyperlink{custom__map_8hpp_af22b2f058635373912f810498e5b1052}{Unordered\+Map\+Std}$<$ std\+::string, \hyperlink{custom__map_8hpp_a7314a7df1cdb3a3acf478ab86e95c226}{Custom\+Unordered\+Map\+Stable}$<$ std\+::string, std\+::list$<$ \hyperlink{structsig__variation}{sig\+\_\+variation} $>$ $>$ $>$ \hyperlink{classvcd__parser_a84b85cb9df5165fca362a9da87c5a02f}{vcd\+\_\+trace\+\_\+t}
+\begin{DoxyCompactList}\small\item\em this type is the result of a parse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classvcd__parser_afb44b21eb8fb3e809277f73f4456dc1d}{vcd\+\_\+parser} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&params)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hyperlink{classvcd__parser_a84b85cb9df5165fca362a9da87c5a02f}{vcd\+\_\+trace\+\_\+t} \hyperlink{classvcd__parser_ad8b4e2abd642bf137a99ea67ea139e95}{parse\+\_\+vcd} (const std\+::string \&vcd\+\_\+file\+\_\+to\+\_\+parse, const \hyperlink{classvcd__parser_a00f10dd896fdc534014c6192eed18d55}{vcd\+\_\+parser\+::vcd\+\_\+filter\+\_\+t} \&selected\+\_\+signals)
+\begin{DoxyCompactList}\small\item\em parses a file selecting only a predefined set of signals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classvcd__parser_a591daeaca11ad1bea3fd9a3c5c4b99de}{vcd\+\_\+parse\+\_\+sim} ()
+\begin{DoxyCompactList}\small\item\em Parses all lines that occur in the simulation portion of the V\+CD file. \end{DoxyCompactList}\item 
+int \hyperlink{classvcd__parser_af2b5f48a0d18667c418a500fb78b52e7}{vcd\+\_\+parse\+\_\+def} ()
+\item 
+int \hyperlink{classvcd__parser_a8bb5288c3fe26415a1a154a1edabf418}{vcd\+\_\+parse\+\_\+skip\+\_\+to\+\_\+end} ()
+\begin{DoxyCompactList}\small\item\em Parses specified file until \$end keyword is seen, ignoring all text inbetween. \end{DoxyCompactList}\item 
+int \hyperlink{classvcd__parser_add86b6565edba7e85a6508594798f56a}{vcd\+\_\+parse\+\_\+def\+\_\+var} (const std\+::string \&scope)
+\begin{DoxyCompactList}\small\item\em Parses definition \$var keyword line until \$end keyword is seen. \end{DoxyCompactList}\item 
+void \hyperlink{classvcd__parser_a94636524ca1126b352560c72b646a8cc}{vcd\+\_\+push\+\_\+def\+\_\+scope} (std\+::stack$<$ std\+::string $>$ \&scope)
+\begin{DoxyCompactList}\small\item\em Parses definition \$scope keyword line until \$end keyword is seen. \end{DoxyCompactList}\item 
+void \hyperlink{classvcd__parser_a59e4c34514e6722d541aa013d02eaa32}{vcd\+\_\+pop\+\_\+def\+\_\+scope} (std\+::stack$<$ std\+::string $>$ \&scope)
+\item 
+int \hyperlink{classvcd__parser_aa27eaa7b2cd3eb398d6b06a6253cc3be}{vcd\+\_\+parse\+\_\+sim\+\_\+vector} (char $\ast$value, unsigned long timestamp)
+\begin{DoxyCompactList}\small\item\em Reads the next token from the file and calls the appropriate fuction. \end{DoxyCompactList}\item 
+int \hyperlink{classvcd__parser_a0cec69a0f950aa8fb3cf7804b6f89045}{vcd\+\_\+parse\+\_\+sim\+\_\+real} (char $\ast$value, unsigned long timestamp)
+\begin{DoxyCompactList}\small\item\em Reads the next token from the file and calls the appropriate function. \end{DoxyCompactList}\item 
+bool \hyperlink{classvcd__parser_a493834428198caf956a97a730693b3d2}{check\+\_\+filter\+\_\+list} (const std\+::string \&scope\+\_\+str, const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Checks if a signal is to be monitored. \end{DoxyCompactList}\item 
+void \hyperlink{classvcd__parser_a044276a15d40eb898d7b34584c11776c}{vcd\+\_\+add\+\_\+signal} (const std\+::string \&scope, const std\+::string \&name, const std\+::string \&vcd\+\_\+id, const std\+::string \&type, const bool isvect, const unsigned int msb, const unsigned int lsb)
+\begin{DoxyCompactList}\small\item\em insert a signal in the maps needed for selecting the vcd data and for relating it back to H\+DL and C variables \end{DoxyCompactList}\item 
+bool \hyperlink{classvcd__parser_a094db21ee543d294fda6891691016dee}{check\+\_\+signals} () const
+\begin{DoxyCompactList}\small\item\em check if the port vectors declarations are consistent \end{DoxyCompactList}\item 
+void \hyperlink{classvcd__parser_a249f081203e3ccdb3af66ea16587d30d}{init\+\_\+variations} ()
+\item 
+void \hyperlink{classvcd__parser_ae385037530fb4eb1d8eac4853b92a758}{add\+\_\+variation} (const std\+::string \&id, const std\+::string \&value, unsigned long long ts)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{classvcd__parser_a7652385eeffd952c7d74bfabe5c95cc6}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em Debug Level. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classvcd__parser_a6f6031b88cb087f0f7b6d76b0ce977a1}{vcd\+\_\+filename}
+\begin{DoxyCompactList}\small\item\em name of the vcd file to parse \end{DoxyCompactList}\item 
+F\+I\+LE $\ast$ \hyperlink{classvcd__parser_aa351a83f30a9cb117d73f08f75928950}{vcd\+\_\+fp}
+\begin{DoxyCompactList}\small\item\em file pointer to the vcd file to parse \end{DoxyCompactList}\item 
+unsigned long \hyperlink{classvcd__parser_af1b9f01ff54bcc68ca2ec468fa4b245b}{sig\+\_\+n}
+\begin{DoxyCompactList}\small\item\em total number of signals in the vcd file \end{DoxyCompactList}\item 
+\hyperlink{classvcd__parser_a00f10dd896fdc534014c6192eed18d55}{vcd\+\_\+filter\+\_\+t} \hyperlink{classvcd__parser_a4d2f4adb4710f472ba5dcd7c1cdf98a9}{filtered\+\_\+signals}
+\begin{DoxyCompactList}\small\item\em set of signals to select from the vcd file. \end{DoxyCompactList}\item 
+\hyperlink{classvcd__parser_a84b85cb9df5165fca362a9da87c5a02f}{vcd\+\_\+trace\+\_\+t} \hyperlink{classvcd__parser_a4196e255ed8ca87224c6f521effe9d4e}{parse\+\_\+result}
+\begin{DoxyCompactList}\small\item\em holds the parsed vcd trace during the parsing \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::pair$<$ std\+::string, std\+::string $>$, \hyperlink{classvcd__sig__info}{vcd\+\_\+sig\+\_\+info} $>$ \hyperlink{classvcd__parser_a5998e29d09f04bc34b5748770bac3877}{scope\+\_\+and\+\_\+name\+\_\+to\+\_\+sig\+\_\+info}
+\begin{DoxyCompactList}\small\item\em maps every pair (scope, signal name) to the corresponding sig\+\_\+info \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ std\+::string, std\+::string $>$ $>$ $>$ \hyperlink{classvcd__parser_aa85bc91897a99c588fb56c54a05fc359}{vcd\+\_\+id\+\_\+to\+\_\+scope\+\_\+and\+\_\+name}
+\begin{DoxyCompactList}\small\item\em maps every signal id in the vcd to the set of the corresponding pairs (scope, hdl signal name) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 84 of file vcd\+\_\+parser.\+hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classvcd__parser_a00f10dd896fdc534014c6192eed18d55}\label{classvcd__parser_a00f10dd896fdc534014c6192eed18d55}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!vcd\+\_\+filter\+\_\+t@{vcd\+\_\+filter\+\_\+t}}
+\index{vcd\+\_\+filter\+\_\+t@{vcd\+\_\+filter\+\_\+t}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{vcd\+\_\+filter\+\_\+t}{vcd\_filter\_t}}
+{\footnotesize\ttfamily typedef \hyperlink{custom__map_8hpp_af22b2f058635373912f810498e5b1052}{Unordered\+Map\+Std}$<$std\+::string, \hyperlink{custom__set_8hpp_a1f63d303cef2790dc0a0ff7feae38f83}{Unordered\+Set\+Std\+Stable}$<$std\+::string$>$ $>$ \hyperlink{classvcd__parser_a00f10dd896fdc534014c6192eed18d55}{vcd\+\_\+parser\+::vcd\+\_\+filter\+\_\+t}}
+
+
+
+this is the type used to select which signals have to be filtered during parsing. 
+
+the key of the map is a std\+::string representing a scope. the value type is a Unordered\+Set\+Std containing all the names of the signal that have to be selected in that scope 
+
+Definition at line 100 of file vcd\+\_\+parser.\+hpp.
+
+\mbox{\Hypertarget{classvcd__parser_a84b85cb9df5165fca362a9da87c5a02f}\label{classvcd__parser_a84b85cb9df5165fca362a9da87c5a02f}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!vcd\+\_\+trace\+\_\+t@{vcd\+\_\+trace\+\_\+t}}
+\index{vcd\+\_\+trace\+\_\+t@{vcd\+\_\+trace\+\_\+t}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{vcd\+\_\+trace\+\_\+t}{vcd\_trace\_t}}
+{\footnotesize\ttfamily typedef \hyperlink{custom__map_8hpp_af22b2f058635373912f810498e5b1052}{Unordered\+Map\+Std}$<$std\+::string, \hyperlink{custom__map_8hpp_a7314a7df1cdb3a3acf478ab86e95c226}{Custom\+Unordered\+Map\+Stable}$<$std\+::string, std\+::list$<$\hyperlink{structsig__variation}{sig\+\_\+variation}$>$ $>$ $>$ \hyperlink{classvcd__parser_a84b85cb9df5165fca362a9da87c5a02f}{vcd\+\_\+parser\+::vcd\+\_\+trace\+\_\+t}}
+
+
+
+this type is the result of a parse. 
+
+the primary key is the scope. the secondary key is the name of the signal. the value type is std\+::list of \hyperlink{structsig__variation}{sig\+\_\+variation} representing the waveform 
+
+Definition at line 108 of file vcd\+\_\+parser.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classvcd__parser_afb44b21eb8fb3e809277f73f4456dc1d}\label{classvcd__parser_afb44b21eb8fb3e809277f73f4456dc1d}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{vcd\+\_\+parser()}{vcd\_parser()}}
+{\footnotesize\ttfamily vcd\+\_\+parser\+::vcd\+\_\+parser (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+constructor 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em params} & is the class holding bambu parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Pietro Fezzardi \href{mailto:pietrofezzardi@gmail.com}{\tt pietrofezzardi@gmail.\+com} 
+\end{DoxyAuthor}
+
+
+Definition at line 48 of file vcd\+\_\+parser.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classvcd__parser_ae385037530fb4eb1d8eac4853b92a758}\label{classvcd__parser_ae385037530fb4eb1d8eac4853b92a758}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!add\+\_\+variation@{add\+\_\+variation}}
+\index{add\+\_\+variation@{add\+\_\+variation}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{add\+\_\+variation()}{add\_variation()}}
+{\footnotesize\ttfamily void vcd\+\_\+parser\+::add\+\_\+variation (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id,  }\item[{const std\+::string \&}]{value,  }\item[{unsigned long long}]{ts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 581 of file vcd\+\_\+parser.\+cpp.
+
+
+
+References H\+I\+E\+R\+A\+R\+C\+H\+Y\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR, vcd\+\_\+sig\+\_\+info\+::lsb, vcd\+\_\+sig\+\_\+info\+::msb, parse\+\_\+result, scope\+\_\+and\+\_\+name\+\_\+to\+\_\+sig\+\_\+info, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, vcd\+\_\+sig\+\_\+info\+::vcd\+\_\+id\+\_\+to\+\_\+bit, and vcd\+\_\+id\+\_\+to\+\_\+scope\+\_\+and\+\_\+name.
+
+
+
+Referenced by vcd\+\_\+parse\+\_\+sim(), vcd\+\_\+parse\+\_\+sim\+\_\+real(), and vcd\+\_\+parse\+\_\+sim\+\_\+vector().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_ae385037530fb4eb1d8eac4853b92a758_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__parser_a493834428198caf956a97a730693b3d2}\label{classvcd__parser_a493834428198caf956a97a730693b3d2}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!check\+\_\+filter\+\_\+list@{check\+\_\+filter\+\_\+list}}
+\index{check\+\_\+filter\+\_\+list@{check\+\_\+filter\+\_\+list}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{check\+\_\+filter\+\_\+list()}{check\_filter\_list()}}
+{\footnotesize\ttfamily bool vcd\+\_\+parser\+::check\+\_\+filter\+\_\+list (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{scope\+\_\+str,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if a signal is to be monitored. 
+
+\begin{DoxyReturn}{Returns}
+\+: true if the signal has to be monitored, false if not. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & is the name of the signal to be monitored. \\
+\hline
+\mbox{\tt in,out}  & {\em scope\+\_\+str} & in input this is the signal scope in the vcd; if the signal has to be monitored the string referenced by this parameter is modified, trimming the initial part of the scope to avoid simulator-\/dependent path names. After this change the remaining part of the path starts from the top functional unit \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 507 of file vcd\+\_\+parser.\+cpp.
+
+
+
+References filtered\+\_\+signals.
+
+
+
+Referenced by vcd\+\_\+parse\+\_\+def\+\_\+var().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_a493834428198caf956a97a730693b3d2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__parser_a094db21ee543d294fda6891691016dee}\label{classvcd__parser_a094db21ee543d294fda6891691016dee}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!check\+\_\+signals@{check\+\_\+signals}}
+\index{check\+\_\+signals@{check\+\_\+signals}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{check\+\_\+signals()}{check\_signals()}}
+{\footnotesize\ttfamily bool vcd\+\_\+parser\+::check\+\_\+signals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+check if the port vectors declarations are consistent 
+
+
+
+Definition at line 551 of file vcd\+\_\+parser.\+cpp.
+
+
+
+References D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, vcd\+\_\+sig\+\_\+info\+::is\+\_\+vec, vcd\+\_\+sig\+\_\+info\+::lsb, vcd\+\_\+sig\+\_\+info\+::msb, P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, scope\+\_\+and\+\_\+name\+\_\+to\+\_\+sig\+\_\+info, and vcd\+\_\+sig\+\_\+info\+::vcd\+\_\+id\+\_\+to\+\_\+bit.
+
+
+
+Referenced by vcd\+\_\+parse\+\_\+def().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_a094db21ee543d294fda6891691016dee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__parser_a249f081203e3ccdb3af66ea16587d30d}\label{classvcd__parser_a249f081203e3ccdb3af66ea16587d30d}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!init\+\_\+variations@{init\+\_\+variations}}
+\index{init\+\_\+variations@{init\+\_\+variations}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{init\+\_\+variations()}{init\_variations()}}
+{\footnotesize\ttfamily void vcd\+\_\+parser\+::init\+\_\+variations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 568 of file vcd\+\_\+parser.\+cpp.
+
+
+
+References vcd\+\_\+sig\+\_\+info\+::lsb, vcd\+\_\+sig\+\_\+info\+::msb, parse\+\_\+result, scope\+\_\+and\+\_\+name\+\_\+to\+\_\+sig\+\_\+info, and vcd\+\_\+id\+\_\+to\+\_\+scope\+\_\+and\+\_\+name.
+
+
+
+Referenced by vcd\+\_\+parse\+\_\+sim().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_a249f081203e3ccdb3af66ea16587d30d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__parser_ad8b4e2abd642bf137a99ea67ea139e95}\label{classvcd__parser_ad8b4e2abd642bf137a99ea67ea139e95}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!parse\+\_\+vcd@{parse\+\_\+vcd}}
+\index{parse\+\_\+vcd@{parse\+\_\+vcd}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{parse\+\_\+vcd()}{parse\_vcd()}}
+{\footnotesize\ttfamily \hyperlink{classvcd__parser_a84b85cb9df5165fca362a9da87c5a02f}{vcd\+\_\+parser\+::vcd\+\_\+trace\+\_\+t} vcd\+\_\+parser\+::parse\+\_\+vcd (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vcd\+\_\+file\+\_\+to\+\_\+parse,  }\item[{const \hyperlink{classvcd__parser_a00f10dd896fdc534014c6192eed18d55}{vcd\+\_\+parser\+::vcd\+\_\+filter\+\_\+t} \&}]{selected\+\_\+signals }\end{DoxyParamCaption})}
+
+
+
+parses a file selecting only a predefined set of signals. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em vcd\+\_\+file\+\_\+to\+\_\+parse} & name of the file to parse \\
+\hline
+\mbox{\tt in}  & {\em selected\+\_\+signals} & signals to be selected. all signals are selected if this parameter is empty \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: the traces of the selected vcd signals 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file vcd\+\_\+parser.\+cpp.
+
+
+
+References debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, filtered\+\_\+signals, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, parse\+\_\+result, scope\+\_\+and\+\_\+name\+\_\+to\+\_\+sig\+\_\+info, sig\+\_\+n, S\+TR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, vcd\+\_\+filename, vcd\+\_\+fp, vcd\+\_\+id\+\_\+to\+\_\+scope\+\_\+and\+\_\+name, vcd\+\_\+parse\+\_\+def(), and vcd\+\_\+parse\+\_\+sim().
+
+
+
+Referenced by vcd\+\_\+utility\+::\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_ad8b4e2abd642bf137a99ea67ea139e95_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{d2/d25/classvcd__parser_ad8b4e2abd642bf137a99ea67ea139e95_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__parser_a044276a15d40eb898d7b34584c11776c}\label{classvcd__parser_a044276a15d40eb898d7b34584c11776c}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!vcd\+\_\+add\+\_\+signal@{vcd\+\_\+add\+\_\+signal}}
+\index{vcd\+\_\+add\+\_\+signal@{vcd\+\_\+add\+\_\+signal}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{vcd\+\_\+add\+\_\+signal()}{vcd\_add\_signal()}}
+{\footnotesize\ttfamily void vcd\+\_\+parser\+::vcd\+\_\+add\+\_\+signal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{scope,  }\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{vcd\+\_\+id,  }\item[{const std\+::string \&}]{type,  }\item[{const bool}]{isvect,  }\item[{const unsigned int}]{msb,  }\item[{const unsigned int}]{lsb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+insert a signal in the maps needed for selecting the vcd data and for relating it back to H\+DL and C variables 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em scope} & is the string representing the scope in the parsed vcd \\
+\hline
+\mbox{\tt in}  & {\em name} & the signal name in the parsed vcd \\
+\hline
+\mbox{\tt in}  & {\em vcd\+\_\+id} & a string used as unique identifier for the signal in the vcd \\
+\hline
+\mbox{\tt in}  & {\em type} & string describing the signal type \\
+\hline
+\mbox{\tt in}  & {\em isvect} & true if the signal is a bit vector \\
+\hline
+\mbox{\tt in}  & {\em msb} & most significant bit of the signal \\
+\hline
+\mbox{\tt in}  & {\em lsb} & less significant bit of the signal \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 522 of file vcd\+\_\+parser.\+cpp.
+
+
+
+References vcd\+\_\+sig\+\_\+info\+::is\+\_\+vec, vcd\+\_\+sig\+\_\+info\+::lsb, max(), min, vcd\+\_\+sig\+\_\+info\+::msb, parse\+\_\+result, scope\+\_\+and\+\_\+name\+\_\+to\+\_\+sig\+\_\+info, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, vcd\+\_\+sig\+\_\+info\+::type, and vcd\+\_\+id\+\_\+to\+\_\+scope\+\_\+and\+\_\+name.
+
+
+
+Referenced by vcd\+\_\+parse\+\_\+def\+\_\+var().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{d2/d25/classvcd__parser_a044276a15d40eb898d7b34584c11776c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_a044276a15d40eb898d7b34584c11776c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__parser_af2b5f48a0d18667c418a500fb78b52e7}\label{classvcd__parser_af2b5f48a0d18667c418a500fb78b52e7}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!vcd\+\_\+parse\+\_\+def@{vcd\+\_\+parse\+\_\+def}}
+\index{vcd\+\_\+parse\+\_\+def@{vcd\+\_\+parse\+\_\+def}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{vcd\+\_\+parse\+\_\+def()}{vcd\_parse\_def()}}
+{\footnotesize\ttfamily int vcd\+\_\+parser\+::vcd\+\_\+parse\+\_\+def (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 318 of file vcd\+\_\+parser.\+cpp.
+
+
+
+References check\+\_\+signals(), S\+TR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, vcd\+\_\+filename, vcd\+\_\+fp, vcd\+\_\+parse\+\_\+def\+\_\+var(), vcd\+\_\+parse\+\_\+skip\+\_\+to\+\_\+end(), vcd\+\_\+pop\+\_\+def\+\_\+scope(), and vcd\+\_\+push\+\_\+def\+\_\+scope().
+
+
+
+Referenced by parse\+\_\+vcd().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_af2b5f48a0d18667c418a500fb78b52e7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_af2b5f48a0d18667c418a500fb78b52e7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__parser_add86b6565edba7e85a6508594798f56a}\label{classvcd__parser_add86b6565edba7e85a6508594798f56a}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!vcd\+\_\+parse\+\_\+def\+\_\+var@{vcd\+\_\+parse\+\_\+def\+\_\+var}}
+\index{vcd\+\_\+parse\+\_\+def\+\_\+var@{vcd\+\_\+parse\+\_\+def\+\_\+var}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{vcd\+\_\+parse\+\_\+def\+\_\+var()}{vcd\_parse\_def\_var()}}
+{\footnotesize\ttfamily int vcd\+\_\+parser\+::vcd\+\_\+parse\+\_\+def\+\_\+var (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{scope }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parses definition \$var keyword line until \$end keyword is seen. 
+
+
+
+Definition at line 142 of file vcd\+\_\+parser.\+cpp.
+
+
+
+References check\+\_\+filter\+\_\+list(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, sig\+\_\+n, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, test\+\_\+panda\+::type, vcd\+\_\+add\+\_\+signal(), and vcd\+\_\+fp.
+
+
+
+Referenced by vcd\+\_\+parse\+\_\+def().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_add86b6565edba7e85a6508594798f56a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_add86b6565edba7e85a6508594798f56a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__parser_a591daeaca11ad1bea3fd9a3c5c4b99de}\label{classvcd__parser_a591daeaca11ad1bea3fd9a3c5c4b99de}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!vcd\+\_\+parse\+\_\+sim@{vcd\+\_\+parse\+\_\+sim}}
+\index{vcd\+\_\+parse\+\_\+sim@{vcd\+\_\+parse\+\_\+sim}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{vcd\+\_\+parse\+\_\+sim()}{vcd\_parse\_sim()}}
+{\footnotesize\ttfamily int vcd\+\_\+parser\+::vcd\+\_\+parse\+\_\+sim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parses all lines that occur in the simulation portion of the V\+CD file. 
+
+
+
+Definition at line 440 of file vcd\+\_\+parser.\+cpp.
+
+
+
+References add\+\_\+variation(), init\+\_\+variations(), S\+TR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, vcd\+\_\+filename, vcd\+\_\+fp, vcd\+\_\+parse\+\_\+sim\+\_\+real(), vcd\+\_\+parse\+\_\+sim\+\_\+vector(), and vcd\+\_\+parse\+\_\+skip\+\_\+to\+\_\+end().
+
+
+
+Referenced by parse\+\_\+vcd().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_a591daeaca11ad1bea3fd9a3c5c4b99de_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_a591daeaca11ad1bea3fd9a3c5c4b99de_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__parser_a0cec69a0f950aa8fb3cf7804b6f89045}\label{classvcd__parser_a0cec69a0f950aa8fb3cf7804b6f89045}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!vcd\+\_\+parse\+\_\+sim\+\_\+real@{vcd\+\_\+parse\+\_\+sim\+\_\+real}}
+\index{vcd\+\_\+parse\+\_\+sim\+\_\+real@{vcd\+\_\+parse\+\_\+sim\+\_\+real}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{vcd\+\_\+parse\+\_\+sim\+\_\+real()}{vcd\_parse\_sim\_real()}}
+{\footnotesize\ttfamily int vcd\+\_\+parser\+::vcd\+\_\+parse\+\_\+sim\+\_\+real (\begin{DoxyParamCaption}\item[{char $\ast$}]{value,  }\item[{unsigned long}]{timestamp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reads the next token from the file and calls the appropriate function. 
+
+
+
+Definition at line 415 of file vcd\+\_\+parser.\+cpp.
+
+
+
+References add\+\_\+variation(), T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and vcd\+\_\+fp.
+
+
+
+Referenced by vcd\+\_\+parse\+\_\+sim().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_a0cec69a0f950aa8fb3cf7804b6f89045_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_a0cec69a0f950aa8fb3cf7804b6f89045_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__parser_aa27eaa7b2cd3eb398d6b06a6253cc3be}\label{classvcd__parser_aa27eaa7b2cd3eb398d6b06a6253cc3be}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!vcd\+\_\+parse\+\_\+sim\+\_\+vector@{vcd\+\_\+parse\+\_\+sim\+\_\+vector}}
+\index{vcd\+\_\+parse\+\_\+sim\+\_\+vector@{vcd\+\_\+parse\+\_\+sim\+\_\+vector}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{vcd\+\_\+parse\+\_\+sim\+\_\+vector()}{vcd\_parse\_sim\_vector()}}
+{\footnotesize\ttfamily int vcd\+\_\+parser\+::vcd\+\_\+parse\+\_\+sim\+\_\+vector (\begin{DoxyParamCaption}\item[{char $\ast$}]{value,  }\item[{unsigned long}]{timestamp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reads the next token from the file and calls the appropriate fuction. 
+
+
+
+Definition at line 389 of file vcd\+\_\+parser.\+cpp.
+
+
+
+References add\+\_\+variation(), T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and vcd\+\_\+fp.
+
+
+
+Referenced by vcd\+\_\+parse\+\_\+sim().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_aa27eaa7b2cd3eb398d6b06a6253cc3be_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_aa27eaa7b2cd3eb398d6b06a6253cc3be_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__parser_a8bb5288c3fe26415a1a154a1edabf418}\label{classvcd__parser_a8bb5288c3fe26415a1a154a1edabf418}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!vcd\+\_\+parse\+\_\+skip\+\_\+to\+\_\+end@{vcd\+\_\+parse\+\_\+skip\+\_\+to\+\_\+end}}
+\index{vcd\+\_\+parse\+\_\+skip\+\_\+to\+\_\+end@{vcd\+\_\+parse\+\_\+skip\+\_\+to\+\_\+end}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{vcd\+\_\+parse\+\_\+skip\+\_\+to\+\_\+end()}{vcd\_parse\_skip\_to\_end()}}
+{\footnotesize\ttfamily int vcd\+\_\+parser\+::vcd\+\_\+parse\+\_\+skip\+\_\+to\+\_\+end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parses specified file until \$end keyword is seen, ignoring all text inbetween. 
+
+
+
+Definition at line 112 of file vcd\+\_\+parser.\+cpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and vcd\+\_\+fp.
+
+
+
+Referenced by vcd\+\_\+parse\+\_\+def(), and vcd\+\_\+parse\+\_\+sim().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_a8bb5288c3fe26415a1a154a1edabf418_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__parser_a59e4c34514e6722d541aa013d02eaa32}\label{classvcd__parser_a59e4c34514e6722d541aa013d02eaa32}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!vcd\+\_\+pop\+\_\+def\+\_\+scope@{vcd\+\_\+pop\+\_\+def\+\_\+scope}}
+\index{vcd\+\_\+pop\+\_\+def\+\_\+scope@{vcd\+\_\+pop\+\_\+def\+\_\+scope}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{vcd\+\_\+pop\+\_\+def\+\_\+scope()}{vcd\_pop\_def\_scope()}}
+{\footnotesize\ttfamily void vcd\+\_\+parser\+::vcd\+\_\+pop\+\_\+def\+\_\+scope (\begin{DoxyParamCaption}\item[{std\+::stack$<$ std\+::string $>$ \&}]{scope }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 289 of file vcd\+\_\+parser.\+cpp.
+
+
+
+References debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and vcd\+\_\+fp.
+
+
+
+Referenced by vcd\+\_\+parse\+\_\+def().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_a59e4c34514e6722d541aa013d02eaa32_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvcd__parser_a94636524ca1126b352560c72b646a8cc}\label{classvcd__parser_a94636524ca1126b352560c72b646a8cc}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!vcd\+\_\+push\+\_\+def\+\_\+scope@{vcd\+\_\+push\+\_\+def\+\_\+scope}}
+\index{vcd\+\_\+push\+\_\+def\+\_\+scope@{vcd\+\_\+push\+\_\+def\+\_\+scope}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{vcd\+\_\+push\+\_\+def\+\_\+scope()}{vcd\_push\_def\_scope()}}
+{\footnotesize\ttfamily void vcd\+\_\+parser\+::vcd\+\_\+push\+\_\+def\+\_\+scope (\begin{DoxyParamCaption}\item[{std\+::stack$<$ std\+::string $>$ \&}]{scope }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parses definition \$scope keyword line until \$end keyword is seen. 
+
+
+
+Definition at line 268 of file vcd\+\_\+parser.\+cpp.
+
+
+
+References debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, H\+I\+E\+R\+A\+R\+C\+H\+Y\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, S\+TR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and vcd\+\_\+fp.
+
+
+
+Referenced by vcd\+\_\+parse\+\_\+def().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/classvcd__parser_a94636524ca1126b352560c72b646a8cc_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classvcd__parser_a7652385eeffd952c7d74bfabe5c95cc6}\label{classvcd__parser_a7652385eeffd952c7d74bfabe5c95cc6}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily const int vcd\+\_\+parser\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Debug Level. 
+
+
+
+Definition at line 123 of file vcd\+\_\+parser.\+hpp.
+
+
+
+Referenced by parse\+\_\+vcd(), vcd\+\_\+parse\+\_\+def\+\_\+var(), vcd\+\_\+pop\+\_\+def\+\_\+scope(), and vcd\+\_\+push\+\_\+def\+\_\+scope().
+
+\mbox{\Hypertarget{classvcd__parser_a4d2f4adb4710f472ba5dcd7c1cdf98a9}\label{classvcd__parser_a4d2f4adb4710f472ba5dcd7c1cdf98a9}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!filtered\+\_\+signals@{filtered\+\_\+signals}}
+\index{filtered\+\_\+signals@{filtered\+\_\+signals}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{filtered\+\_\+signals}{filtered\_signals}}
+{\footnotesize\ttfamily \hyperlink{classvcd__parser_a00f10dd896fdc534014c6192eed18d55}{vcd\+\_\+filter\+\_\+t} vcd\+\_\+parser\+::filtered\+\_\+signals\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set of signals to select from the vcd file. 
+
+if it\textquotesingle{}s empty all the signals will be selected, otherwise the data about uninteresting signals are discarded to save memory 
+
+Definition at line 147 of file vcd\+\_\+parser.\+hpp.
+
+
+
+Referenced by check\+\_\+filter\+\_\+list(), and parse\+\_\+vcd().
+
+\mbox{\Hypertarget{classvcd__parser_a4196e255ed8ca87224c6f521effe9d4e}\label{classvcd__parser_a4196e255ed8ca87224c6f521effe9d4e}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!parse\+\_\+result@{parse\+\_\+result}}
+\index{parse\+\_\+result@{parse\+\_\+result}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{parse\+\_\+result}{parse\_result}}
+{\footnotesize\ttfamily \hyperlink{classvcd__parser_a84b85cb9df5165fca362a9da87c5a02f}{vcd\+\_\+trace\+\_\+t} vcd\+\_\+parser\+::parse\+\_\+result\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the parsed vcd trace during the parsing 
+
+
+
+Definition at line 154 of file vcd\+\_\+parser.\+hpp.
+
+
+
+Referenced by add\+\_\+variation(), init\+\_\+variations(), parse\+\_\+vcd(), and vcd\+\_\+add\+\_\+signal().
+
+\mbox{\Hypertarget{classvcd__parser_a5998e29d09f04bc34b5748770bac3877}\label{classvcd__parser_a5998e29d09f04bc34b5748770bac3877}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!scope\+\_\+and\+\_\+name\+\_\+to\+\_\+sig\+\_\+info@{scope\+\_\+and\+\_\+name\+\_\+to\+\_\+sig\+\_\+info}}
+\index{scope\+\_\+and\+\_\+name\+\_\+to\+\_\+sig\+\_\+info@{scope\+\_\+and\+\_\+name\+\_\+to\+\_\+sig\+\_\+info}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{scope\+\_\+and\+\_\+name\+\_\+to\+\_\+sig\+\_\+info}{scope\_and\_name\_to\_sig\_info}}
+{\footnotesize\ttfamily std\+::map$<$std\+::pair$<$std\+::string, std\+::string$>$, \hyperlink{classvcd__sig__info}{vcd\+\_\+sig\+\_\+info}$>$ vcd\+\_\+parser\+::scope\+\_\+and\+\_\+name\+\_\+to\+\_\+sig\+\_\+info\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+maps every pair (scope, signal name) to the corresponding sig\+\_\+info 
+
+
+
+Definition at line 159 of file vcd\+\_\+parser.\+hpp.
+
+
+
+Referenced by add\+\_\+variation(), check\+\_\+signals(), init\+\_\+variations(), parse\+\_\+vcd(), and vcd\+\_\+add\+\_\+signal().
+
+\mbox{\Hypertarget{classvcd__parser_af1b9f01ff54bcc68ca2ec468fa4b245b}\label{classvcd__parser_af1b9f01ff54bcc68ca2ec468fa4b245b}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!sig\+\_\+n@{sig\+\_\+n}}
+\index{sig\+\_\+n@{sig\+\_\+n}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{sig\+\_\+n}{sig\_n}}
+{\footnotesize\ttfamily unsigned long vcd\+\_\+parser\+::sig\+\_\+n\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+total number of signals in the vcd file 
+
+
+
+Definition at line 140 of file vcd\+\_\+parser.\+hpp.
+
+
+
+Referenced by parse\+\_\+vcd(), and vcd\+\_\+parse\+\_\+def\+\_\+var().
+
+\mbox{\Hypertarget{classvcd__parser_a6f6031b88cb087f0f7b6d76b0ce977a1}\label{classvcd__parser_a6f6031b88cb087f0f7b6d76b0ce977a1}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!vcd\+\_\+filename@{vcd\+\_\+filename}}
+\index{vcd\+\_\+filename@{vcd\+\_\+filename}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{vcd\+\_\+filename}{vcd\_filename}}
+{\footnotesize\ttfamily std\+::string vcd\+\_\+parser\+::vcd\+\_\+filename\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+name of the vcd file to parse 
+
+
+
+Definition at line 130 of file vcd\+\_\+parser.\+hpp.
+
+
+
+Referenced by parse\+\_\+vcd(), vcd\+\_\+parse\+\_\+def(), and vcd\+\_\+parse\+\_\+sim().
+
+\mbox{\Hypertarget{classvcd__parser_aa351a83f30a9cb117d73f08f75928950}\label{classvcd__parser_aa351a83f30a9cb117d73f08f75928950}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!vcd\+\_\+fp@{vcd\+\_\+fp}}
+\index{vcd\+\_\+fp@{vcd\+\_\+fp}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{vcd\+\_\+fp}{vcd\_fp}}
+{\footnotesize\ttfamily F\+I\+LE$\ast$ vcd\+\_\+parser\+::vcd\+\_\+fp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+file pointer to the vcd file to parse 
+
+
+
+Definition at line 135 of file vcd\+\_\+parser.\+hpp.
+
+
+
+Referenced by parse\+\_\+vcd(), vcd\+\_\+parse\+\_\+def(), vcd\+\_\+parse\+\_\+def\+\_\+var(), vcd\+\_\+parse\+\_\+sim(), vcd\+\_\+parse\+\_\+sim\+\_\+real(), vcd\+\_\+parse\+\_\+sim\+\_\+vector(), vcd\+\_\+parse\+\_\+skip\+\_\+to\+\_\+end(), vcd\+\_\+pop\+\_\+def\+\_\+scope(), and vcd\+\_\+push\+\_\+def\+\_\+scope().
+
+\mbox{\Hypertarget{classvcd__parser_aa85bc91897a99c588fb56c54a05fc359}\label{classvcd__parser_aa85bc91897a99c588fb56c54a05fc359}} 
+\index{vcd\+\_\+parser@{vcd\+\_\+parser}!vcd\+\_\+id\+\_\+to\+\_\+scope\+\_\+and\+\_\+name@{vcd\+\_\+id\+\_\+to\+\_\+scope\+\_\+and\+\_\+name}}
+\index{vcd\+\_\+id\+\_\+to\+\_\+scope\+\_\+and\+\_\+name@{vcd\+\_\+id\+\_\+to\+\_\+scope\+\_\+and\+\_\+name}!vcd\+\_\+parser@{vcd\+\_\+parser}}
+\subsubsection{\texorpdfstring{vcd\+\_\+id\+\_\+to\+\_\+scope\+\_\+and\+\_\+name}{vcd\_id\_to\_scope\_and\_name}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$std\+::pair$<$std\+::string, std\+::string$>$ $>$ $>$ vcd\+\_\+parser\+::vcd\+\_\+id\+\_\+to\+\_\+scope\+\_\+and\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+maps every signal id in the vcd to the set of the corresponding pairs (scope, hdl signal name) 
+
+
+
+Definition at line 164 of file vcd\+\_\+parser.\+hpp.
+
+
+
+Referenced by add\+\_\+variation(), init\+\_\+variations(), parse\+\_\+vcd(), and vcd\+\_\+add\+\_\+signal().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/parser/vcd/\hyperlink{vcd__parser_8hpp}{vcd\+\_\+parser.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/parser/vcd/\hyperlink{vcd__parser_8cpp}{vcd\+\_\+parser.\+cpp}\end{DoxyCompactItemize}

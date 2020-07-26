@@ -1,0 +1,540 @@
+\hypertarget{classcommandport__obj}{}\section{commandport\+\_\+obj Class Reference}
+\label{classcommandport__obj}\index{commandport\+\_\+obj@{commandport\+\_\+obj}}
+
+
+This class manages command ports into datapath.  
+
+
+
+
+{\ttfamily \#include $<$commandport\+\_\+obj.\+hpp$>$}
+
+
+
+Inheritance diagram for commandport\+\_\+obj\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{df/da7/classcommandport__obj__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for commandport\+\_\+obj\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d54/classcommandport__obj__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322e}{command\+\_\+type} \{ \newline
+\hyperlink{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ea8bfca134f7e7b3a34850a3b6b2c8c690}{O\+P\+E\+R\+A\+T\+I\+ON} = 0, 
+\hyperlink{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322eae08950e61fe552fe27e7f02c325e95a8}{C\+O\+N\+D\+I\+T\+I\+ON}, 
+\hyperlink{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322eab826a845fd4c73aeb0139b53e2de3947}{S\+W\+I\+T\+CH}, 
+\hyperlink{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ea620514cd07c5f46f13630020fea6f582}{M\+U\+L\+T\+I\+IF}, 
+\newline
+\hyperlink{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ea7f2ac71980ebff6704ec35a1f492845f}{S\+E\+L\+E\+C\+T\+OR}, 
+\hyperlink{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ea5b94c296f0bd96a0e7d6cb1e3f9f9acf}{A\+L\+U\+S\+E\+L\+E\+C\+T\+OR}, 
+\hyperlink{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ea15ab2305310b2ac662b06feadc1c01a3}{U\+N\+B\+O\+U\+N\+D\+ED}, 
+\hyperlink{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ead0e51b3a389f0d3fad95130875aa0ea5}{M\+U\+L\+T\+I\+\_\+\+U\+N\+B\+O\+U\+N\+D\+ED}, 
+\newline
+\hyperlink{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ea87b1b3fe10417a789ca1b9c82a4a7afb}{W\+R\+E\+N\+A\+B\+LE}
+ \}\begin{DoxyCompactList}\small\item\em Available command types. \end{DoxyCompactList}
+\item 
+typedef std\+::pair$<$ unsigned int, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{classcommandport__obj_a469b1d6eb72e39848c242838513d742b}{data\+\_\+operation\+\_\+pair}
+\item 
+typedef std\+::tuple$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{classcommandport__obj_a469b1d6eb72e39848c242838513d742b}{data\+\_\+operation\+\_\+pair} $>$ \hyperlink{classcommandport__obj_aae52b929cff6d84d461b91d88baa3203}{transition}
+\begin{DoxyCompactList}\small\item\em describe a transition from a source state to the target state plus the \hyperlink{classtree__node}{tree\+\_\+node} of the data transferred and the operation vertex where the computation is performed \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcommandport__obj_afa7782482a04c58e664ec83fca431aed}{commandport\+\_\+obj} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&signal\+\_\+, unsigned int \+\_\+mode, const std\+::string \&\+\_\+name)
+\begin{DoxyCompactList}\small\item\em This is the constructor of the \hyperlink{classcommandport__obj}{commandport\+\_\+obj} class. \end{DoxyCompactList}\item 
+\hyperlink{classcommandport__obj_a1e7f9bee49cac57a8ef84dbc9c37a456}{commandport\+\_\+obj} (\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} \+\_\+elem, unsigned int \+\_\+mode, const std\+::string \&\+\_\+name)
+\item 
+\hyperlink{classcommandport__obj_a6ac25c311a74ce97e4c703b336ae9981}{$\sim$commandport\+\_\+obj} () override=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \& \hyperlink{classcommandport__obj_a4bc4437635b608689e863e7db4668ac9}{get\+\_\+vertex} () const
+\begin{DoxyCompactList}\small\item\em Gets the vertex associated with port. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classcommandport__obj_ada79dd1f72e9fe0d7526090639096afe}{get\+\_\+command\+\_\+type} () const
+\begin{DoxyCompactList}\small\item\em Gets command type. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{classcommandport__obj_aae52b929cff6d84d461b91d88baa3203}{transition} $>$ \& \hyperlink{classcommandport__obj_a9e26909bdc9060ccef63a64b9f0bf89e}{get\+\_\+activations} () const
+\item 
+void \hyperlink{classcommandport__obj_aa0cb7794affc8302cb3c19e3bf47c70c}{add\+\_\+activation} (const \hyperlink{classcommandport__obj_aae52b929cff6d84d461b91d88baa3203}{transition} \&act)
+\item 
+void \hyperlink{classcommandport__obj_a3f2c860a8418fe49dc6e866d5f14e7d7}{set\+\_\+controller\+\_\+obj} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&\+\_\+\+SM)
+\begin{DoxyCompactList}\small\item\em Sets \hyperlink{classstructural__object}{structural\+\_\+object} associated to this object. \end{DoxyCompactList}\item 
+const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \& \hyperlink{classcommandport__obj_a746c7362dd398aa7f7136f9a93153837}{get\+\_\+controller\+\_\+obj} () const
+\begin{DoxyCompactList}\small\item\em Gets \hyperlink{classstructural__object}{structural\+\_\+object} associated to this object. \end{DoxyCompactList}\item 
+const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} \& \hyperlink{classcommandport__obj_ace1e0dbfe89561ffebf2f68fc7ba5c01}{get\+\_\+elem} () const
+\item 
+void \hyperlink{classcommandport__obj_ad8ccac87ff5cc3880fdc8bacd1233f8c}{set\+\_\+phi\+\_\+write\+\_\+enable} ()
+\item 
+bool \hyperlink{classcommandport__obj_a6b439abbd878de897af649fb41ceeb74}{get\+\_\+phi\+\_\+write\+\_\+enable} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::string \hyperlink{classcommandport__obj_aa6c5c7124b925fa46de54d8efddc5bf0}{get\+\_\+mode\+\_\+string} (unsigned int \+\_\+mode)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \hyperlink{classcommandport__obj_ac538468677e17a5d6692e9a05ecc58fc}{signal}
+\begin{DoxyCompactList}\small\item\em T\+O\+DO\+: substitute with a functor operation vertex associated with the command port signal (if type is condition or operation) or state vertex associated with the command port signal. \end{DoxyCompactList}\item 
+\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} \hyperlink{classcommandport__obj_af40c778f133bfc50cd03633da1da2457}{elem}
+\item 
+unsigned int \hyperlink{classcommandport__obj_aabeb96a9f2bde943f4fe1a396c9af7eb}{mode}
+\begin{DoxyCompactList}\small\item\em It\textquotesingle{}s command type for the port. \end{DoxyCompactList}\item 
+bool \hyperlink{classcommandport__obj_a8d4afc69efc8cb93baf1fc619f539074}{is\+\_\+a\+\_\+phi\+\_\+write\+\_\+enable}
+\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{classcommandport__obj_aae52b929cff6d84d461b91d88baa3203}{transition} $>$ \hyperlink{classcommandport__obj_adb662a06af834f7d81165f47283353a1}{activations}
+\item 
+\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \hyperlink{classcommandport__obj_a9aec5239255143976852aedfafaa12c6}{controller\+\_\+\+SM}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classstructural__object}{structural\+\_\+object} associated with the element inside the controller \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class manages command ports into datapath. 
+
+It contains information about operation vertex giving command if it is operation or a condition. It also contains information about port direction. All these command ports are connected to controller. 
+
+Definition at line 70 of file commandport\+\_\+obj.\+hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classcommandport__obj_a469b1d6eb72e39848c242838513d742b}\label{classcommandport__obj_a469b1d6eb72e39848c242838513d742b}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!data\+\_\+operation\+\_\+pair@{data\+\_\+operation\+\_\+pair}}
+\index{data\+\_\+operation\+\_\+pair@{data\+\_\+operation\+\_\+pair}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{data\+\_\+operation\+\_\+pair}{data\_operation\_pair}}
+{\footnotesize\ttfamily typedef std\+::pair$<$unsigned int, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ \hyperlink{classcommandport__obj_a469b1d6eb72e39848c242838513d742b}{commandport\+\_\+obj\+::data\+\_\+operation\+\_\+pair}}
+
+
+
+Definition at line 87 of file commandport\+\_\+obj.\+hpp.
+
+\mbox{\Hypertarget{classcommandport__obj_aae52b929cff6d84d461b91d88baa3203}\label{classcommandport__obj_aae52b929cff6d84d461b91d88baa3203}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!transition@{transition}}
+\index{transition@{transition}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{transition}{transition}}
+{\footnotesize\ttfamily typedef std\+::tuple$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{classcommandport__obj_a469b1d6eb72e39848c242838513d742b}{data\+\_\+operation\+\_\+pair}$>$ \hyperlink{classcommandport__obj_aae52b929cff6d84d461b91d88baa3203}{commandport\+\_\+obj\+::transition}}
+
+
+
+describe a transition from a source state to the target state plus the \hyperlink{classtree__node}{tree\+\_\+node} of the data transferred and the operation vertex where the computation is performed 
+
+
+
+Definition at line 89 of file commandport\+\_\+obj.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322e}\label{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322e}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!command\+\_\+type@{command\+\_\+type}}
+\index{command\+\_\+type@{command\+\_\+type}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{command\+\_\+type}{command\_type}}
+{\footnotesize\ttfamily enum \hyperlink{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322e}{commandport\+\_\+obj\+::command\+\_\+type}}
+
+
+
+Available command types. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+P\+E\+R\+A\+T\+I\+ON@{O\+P\+E\+R\+A\+T\+I\+ON}!commandport\+\_\+obj@{commandport\+\_\+obj}}\index{commandport\+\_\+obj@{commandport\+\_\+obj}!O\+P\+E\+R\+A\+T\+I\+ON@{O\+P\+E\+R\+A\+T\+I\+ON}}}\mbox{\Hypertarget{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ea8bfca134f7e7b3a34850a3b6b2c8c690}\label{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ea8bfca134f7e7b3a34850a3b6b2c8c690}} 
+O\+P\+E\+R\+A\+T\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+N\+D\+I\+T\+I\+ON@{C\+O\+N\+D\+I\+T\+I\+ON}!commandport\+\_\+obj@{commandport\+\_\+obj}}\index{commandport\+\_\+obj@{commandport\+\_\+obj}!C\+O\+N\+D\+I\+T\+I\+ON@{C\+O\+N\+D\+I\+T\+I\+ON}}}\mbox{\Hypertarget{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322eae08950e61fe552fe27e7f02c325e95a8}\label{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322eae08950e61fe552fe27e7f02c325e95a8}} 
+C\+O\+N\+D\+I\+T\+I\+ON&operation enable \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+W\+I\+T\+CH@{S\+W\+I\+T\+CH}!commandport\+\_\+obj@{commandport\+\_\+obj}}\index{commandport\+\_\+obj@{commandport\+\_\+obj}!S\+W\+I\+T\+CH@{S\+W\+I\+T\+CH}}}\mbox{\Hypertarget{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322eab826a845fd4c73aeb0139b53e2de3947}\label{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322eab826a845fd4c73aeb0139b53e2de3947}} 
+S\+W\+I\+T\+CH&conditional value. it represents a readcond if it goes to the controller or a condition if it goes to the datapath \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+U\+L\+T\+I\+IF@{M\+U\+L\+T\+I\+IF}!commandport\+\_\+obj@{commandport\+\_\+obj}}\index{commandport\+\_\+obj@{commandport\+\_\+obj}!M\+U\+L\+T\+I\+IF@{M\+U\+L\+T\+I\+IF}}}\mbox{\Hypertarget{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ea620514cd07c5f46f13630020fea6f582}\label{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ea620514cd07c5f46f13630020fea6f582}} 
+M\+U\+L\+T\+I\+IF&switch value, it represents the value of the switch statement \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+E\+L\+E\+C\+T\+OR@{S\+E\+L\+E\+C\+T\+OR}!commandport\+\_\+obj@{commandport\+\_\+obj}}\index{commandport\+\_\+obj@{commandport\+\_\+obj}!S\+E\+L\+E\+C\+T\+OR@{S\+E\+L\+E\+C\+T\+OR}}}\mbox{\Hypertarget{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ea7f2ac71980ebff6704ec35a1f492845f}\label{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ea7f2ac71980ebff6704ec35a1f492845f}} 
+S\+E\+L\+E\+C\+T\+OR&represents the multi conditions \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+U\+S\+E\+L\+E\+C\+T\+OR@{A\+L\+U\+S\+E\+L\+E\+C\+T\+OR}!commandport\+\_\+obj@{commandport\+\_\+obj}}\index{commandport\+\_\+obj@{commandport\+\_\+obj}!A\+L\+U\+S\+E\+L\+E\+C\+T\+OR@{A\+L\+U\+S\+E\+L\+E\+C\+T\+OR}}}\mbox{\Hypertarget{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ea5b94c296f0bd96a0e7d6cb1e3f9f9acf}\label{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ea5b94c296f0bd96a0e7d6cb1e3f9f9acf}} 
+A\+L\+U\+S\+E\+L\+E\+C\+T\+OR&mux selector \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+B\+O\+U\+N\+D\+ED@{U\+N\+B\+O\+U\+N\+D\+ED}!commandport\+\_\+obj@{commandport\+\_\+obj}}\index{commandport\+\_\+obj@{commandport\+\_\+obj}!U\+N\+B\+O\+U\+N\+D\+ED@{U\+N\+B\+O\+U\+N\+D\+ED}}}\mbox{\Hypertarget{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ea15ab2305310b2ac662b06feadc1c01a3}\label{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ea15ab2305310b2ac662b06feadc1c01a3}} 
+U\+N\+B\+O\+U\+N\+D\+ED&A\+LU selector. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+U\+L\+T\+I\+\_\+\+U\+N\+B\+O\+U\+N\+D\+ED@{M\+U\+L\+T\+I\+\_\+\+U\+N\+B\+O\+U\+N\+D\+ED}!commandport\+\_\+obj@{commandport\+\_\+obj}}\index{commandport\+\_\+obj@{commandport\+\_\+obj}!M\+U\+L\+T\+I\+\_\+\+U\+N\+B\+O\+U\+N\+D\+ED@{M\+U\+L\+T\+I\+\_\+\+U\+N\+B\+O\+U\+N\+D\+ED}}}\mbox{\Hypertarget{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ead0e51b3a389f0d3fad95130875aa0ea5}\label{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ead0e51b3a389f0d3fad95130875aa0ea5}} 
+M\+U\+L\+T\+I\+\_\+\+U\+N\+B\+O\+U\+N\+D\+ED&signal representing a communication for an unbounded object (function call) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+R\+E\+N\+A\+B\+LE@{W\+R\+E\+N\+A\+B\+LE}!commandport\+\_\+obj@{commandport\+\_\+obj}}\index{commandport\+\_\+obj@{commandport\+\_\+obj}!W\+R\+E\+N\+A\+B\+LE@{W\+R\+E\+N\+A\+B\+LE}}}\mbox{\Hypertarget{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ea87b1b3fe10417a789ca1b9c82a4a7afb}\label{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322ea87b1b3fe10417a789ca1b9c82a4a7afb}} 
+W\+R\+E\+N\+A\+B\+LE&signal representing when a multi unbounded call ends enable for register writing \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 74 of file commandport\+\_\+obj.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcommandport__obj_afa7782482a04c58e664ec83fca431aed}\label{classcommandport__obj_afa7782482a04c58e664ec83fca431aed}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{commandport\+\_\+obj()}{commandport\_obj()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily commandport\+\_\+obj\+::commandport\+\_\+obj (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&}]{signal\+\_\+,  }\item[{unsigned int}]{\+\_\+mode,  }\item[{const std\+::string \&}]{\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This is the constructor of the \hyperlink{classcommandport__obj}{commandport\+\_\+obj} class. 
+
+It initializes type for \hyperlink{classgeneric__obj}{generic\+\_\+obj} superclass 
+\begin{DoxyParams}{Parameters}
+{\em signal\+\_\+} & is vertex associated to port \\
+\hline
+{\em mode} & is command type \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 115 of file commandport\+\_\+obj.\+hpp.
+
+
+
+References C\+O\+N\+D\+I\+T\+I\+ON, M\+U\+L\+T\+I\+IF, O\+P\+E\+R\+A\+T\+I\+ON, S\+W\+I\+T\+CH, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and U\+N\+B\+O\+U\+N\+D\+ED.
+
+\mbox{\Hypertarget{classcommandport__obj_a1e7f9bee49cac57a8ef84dbc9c37a456}\label{classcommandport__obj_a1e7f9bee49cac57a8ef84dbc9c37a456}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{commandport\+\_\+obj()}{commandport\_obj()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily commandport\+\_\+obj\+::commandport\+\_\+obj (\begin{DoxyParamCaption}\item[{\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{\+\_\+elem,  }\item[{unsigned int}]{\+\_\+mode,  }\item[{const std\+::string \&}]{\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 120 of file commandport\+\_\+obj.\+hpp.
+
+
+
+References A\+L\+U\+S\+E\+L\+E\+C\+T\+OR, M\+U\+L\+T\+I\+\_\+\+U\+N\+B\+O\+U\+N\+D\+ED, S\+E\+L\+E\+C\+T\+OR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, W\+R\+E\+N\+A\+B\+LE, and $\sim$commandport\+\_\+obj().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d56/classcommandport__obj_a1e7f9bee49cac57a8ef84dbc9c37a456_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcommandport__obj_a6ac25c311a74ce97e4c703b336ae9981}\label{classcommandport__obj_a6ac25c311a74ce97e4c703b336ae9981}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!````~commandport\+\_\+obj@{$\sim$commandport\+\_\+obj}}
+\index{````~commandport\+\_\+obj@{$\sim$commandport\+\_\+obj}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{$\sim$commandport\+\_\+obj()}{~commandport\_obj()}}
+{\footnotesize\ttfamily commandport\+\_\+obj\+::$\sim$commandport\+\_\+obj (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by commandport\+\_\+obj().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d56/classcommandport__obj_a6ac25c311a74ce97e4c703b336ae9981_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcommandport__obj_aa0cb7794affc8302cb3c19e3bf47c70c}\label{classcommandport__obj_aa0cb7794affc8302cb3c19e3bf47c70c}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!add\+\_\+activation@{add\+\_\+activation}}
+\index{add\+\_\+activation@{add\+\_\+activation}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{add\+\_\+activation()}{add\_activation()}}
+{\footnotesize\ttfamily void commandport\+\_\+obj\+::add\+\_\+activation (\begin{DoxyParamCaption}\item[{const \hyperlink{classcommandport__obj_aae52b929cff6d84d461b91d88baa3203}{transition} \&}]{act }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 154 of file commandport\+\_\+obj.\+hpp.
+
+\mbox{\Hypertarget{classcommandport__obj_a9e26909bdc9060ccef63a64b9f0bf89e}\label{classcommandport__obj_a9e26909bdc9060ccef63a64b9f0bf89e}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!get\+\_\+activations@{get\+\_\+activations}}
+\index{get\+\_\+activations@{get\+\_\+activations}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{get\+\_\+activations()}{get\_activations()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{classcommandport__obj_aae52b929cff6d84d461b91d88baa3203}{transition}$>$\& commandport\+\_\+obj\+::get\+\_\+activations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 149 of file commandport\+\_\+obj.\+hpp.
+
+
+
+References activations.
+
+\mbox{\Hypertarget{classcommandport__obj_ada79dd1f72e9fe0d7526090639096afe}\label{classcommandport__obj_ada79dd1f72e9fe0d7526090639096afe}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!get\+\_\+command\+\_\+type@{get\+\_\+command\+\_\+type}}
+\index{get\+\_\+command\+\_\+type@{get\+\_\+command\+\_\+type}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{get\+\_\+command\+\_\+type()}{get\_command\_type()}}
+{\footnotesize\ttfamily unsigned int commandport\+\_\+obj\+::get\+\_\+command\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets command type. 
+
+\begin{DoxyReturn}{Returns}
+an integer associated with command type 
+\end{DoxyReturn}
+
+
+Definition at line 144 of file commandport\+\_\+obj.\+hpp.
+
+
+
+References mode.
+
+\mbox{\Hypertarget{classcommandport__obj_a746c7362dd398aa7f7136f9a93153837}\label{classcommandport__obj_a746c7362dd398aa7f7136f9a93153837}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!get\+\_\+controller\+\_\+obj@{get\+\_\+controller\+\_\+obj}}
+\index{get\+\_\+controller\+\_\+obj@{get\+\_\+controller\+\_\+obj}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{get\+\_\+controller\+\_\+obj()}{get\_controller\_obj()}}
+{\footnotesize\ttfamily const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}\& commandport\+\_\+obj\+::get\+\_\+controller\+\_\+obj (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets \hyperlink{classstructural__object}{structural\+\_\+object} associated to this object. 
+
+\begin{DoxyReturn}{Returns}
+a reference to \hyperlink{classstructural__object}{structural\+\_\+object} associated 
+\end{DoxyReturn}
+
+
+Definition at line 172 of file commandport\+\_\+obj.\+hpp.
+
+
+
+References controller\+\_\+\+SM.
+
+\mbox{\Hypertarget{classcommandport__obj_ace1e0dbfe89561ffebf2f68fc7ba5c01}\label{classcommandport__obj_ace1e0dbfe89561ffebf2f68fc7ba5c01}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!get\+\_\+elem@{get\+\_\+elem}}
+\index{get\+\_\+elem@{get\+\_\+elem}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{get\+\_\+elem()}{get\_elem()}}
+{\footnotesize\ttfamily const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}\& commandport\+\_\+obj\+::get\+\_\+elem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 177 of file commandport\+\_\+obj.\+hpp.
+
+
+
+References A\+L\+U\+S\+E\+L\+E\+C\+T\+OR, elem, M\+U\+L\+T\+I\+\_\+\+U\+N\+B\+O\+U\+N\+D\+ED, S\+E\+L\+E\+C\+T\+OR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and W\+R\+E\+N\+A\+B\+LE.
+
+\mbox{\Hypertarget{classcommandport__obj_aa6c5c7124b925fa46de54d8efddc5bf0}\label{classcommandport__obj_aa6c5c7124b925fa46de54d8efddc5bf0}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!get\+\_\+mode\+\_\+string@{get\+\_\+mode\+\_\+string}}
+\index{get\+\_\+mode\+\_\+string@{get\+\_\+mode\+\_\+string}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{get\+\_\+mode\+\_\+string()}{get\_mode\_string()}}
+{\footnotesize\ttfamily static const std\+::string commandport\+\_\+obj\+::get\+\_\+mode\+\_\+string (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 183 of file commandport\+\_\+obj.\+hpp.
+
+
+
+References C\+O\+N\+D\+I\+T\+I\+ON, M\+U\+L\+T\+I\+\_\+\+U\+N\+B\+O\+U\+N\+D\+ED, M\+U\+L\+T\+I\+IF, O\+P\+E\+R\+A\+T\+I\+ON, S\+E\+L\+E\+C\+T\+OR, S\+W\+I\+T\+CH, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, U\+N\+B\+O\+U\+N\+D\+ED, and W\+R\+E\+N\+A\+B\+LE.
+
+
+
+Referenced by conn\+\_\+binding\+::bind\+\_\+command\+\_\+port(), and conn\+\_\+binding\+::bind\+\_\+selector\+\_\+port().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d56/classcommandport__obj_aa6c5c7124b925fa46de54d8efddc5bf0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcommandport__obj_a6b439abbd878de897af649fb41ceeb74}\label{classcommandport__obj_a6b439abbd878de897af649fb41ceeb74}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!get\+\_\+phi\+\_\+write\+\_\+enable@{get\+\_\+phi\+\_\+write\+\_\+enable}}
+\index{get\+\_\+phi\+\_\+write\+\_\+enable@{get\+\_\+phi\+\_\+write\+\_\+enable}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{get\+\_\+phi\+\_\+write\+\_\+enable()}{get\_phi\_write\_enable()}}
+{\footnotesize\ttfamily bool commandport\+\_\+obj\+::get\+\_\+phi\+\_\+write\+\_\+enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 214 of file commandport\+\_\+obj.\+hpp.
+
+
+
+References is\+\_\+a\+\_\+phi\+\_\+write\+\_\+enable.
+
+\mbox{\Hypertarget{classcommandport__obj_a4bc4437635b608689e863e7db4668ac9}\label{classcommandport__obj_a4bc4437635b608689e863e7db4668ac9}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!get\+\_\+vertex@{get\+\_\+vertex}}
+\index{get\+\_\+vertex@{get\+\_\+vertex}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{get\+\_\+vertex()}{get\_vertex()}}
+{\footnotesize\ttfamily const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}\& commandport\+\_\+obj\+::get\+\_\+vertex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the vertex associated with port. 
+
+\begin{DoxyReturn}{Returns}
+reference to vertex 
+\end{DoxyReturn}
+
+
+Definition at line 134 of file commandport\+\_\+obj.\+hpp.
+
+
+
+References C\+O\+N\+D\+I\+T\+I\+ON, M\+U\+L\+T\+I\+IF, O\+P\+E\+R\+A\+T\+I\+ON, signal, S\+W\+I\+T\+CH, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and U\+N\+B\+O\+U\+N\+D\+ED.
+
+\mbox{\Hypertarget{classcommandport__obj_a3f2c860a8418fe49dc6e866d5f14e7d7}\label{classcommandport__obj_a3f2c860a8418fe49dc6e866d5f14e7d7}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!set\+\_\+controller\+\_\+obj@{set\+\_\+controller\+\_\+obj}}
+\index{set\+\_\+controller\+\_\+obj@{set\+\_\+controller\+\_\+obj}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{set\+\_\+controller\+\_\+obj()}{set\_controller\_obj()}}
+{\footnotesize\ttfamily void commandport\+\_\+obj\+::set\+\_\+controller\+\_\+obj (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{\+\_\+\+SM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets \hyperlink{classstructural__object}{structural\+\_\+object} associated to this object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+SM} & is reference to \hyperlink{classstructural__object}{structural\+\_\+object} to be associated \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 163 of file commandport\+\_\+obj.\+hpp.
+
+\mbox{\Hypertarget{classcommandport__obj_ad8ccac87ff5cc3880fdc8bacd1233f8c}\label{classcommandport__obj_ad8ccac87ff5cc3880fdc8bacd1233f8c}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!set\+\_\+phi\+\_\+write\+\_\+enable@{set\+\_\+phi\+\_\+write\+\_\+enable}}
+\index{set\+\_\+phi\+\_\+write\+\_\+enable@{set\+\_\+phi\+\_\+write\+\_\+enable}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{set\+\_\+phi\+\_\+write\+\_\+enable()}{set\_phi\_write\_enable()}}
+{\footnotesize\ttfamily void commandport\+\_\+obj\+::set\+\_\+phi\+\_\+write\+\_\+enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 209 of file commandport\+\_\+obj.\+hpp.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classcommandport__obj_adb662a06af834f7d81165f47283353a1}\label{classcommandport__obj_adb662a06af834f7d81165f47283353a1}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!activations@{activations}}
+\index{activations@{activations}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{activations}{activations}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{classcommandport__obj_aae52b929cff6d84d461b91d88baa3203}{transition}$>$ commandport\+\_\+obj\+::activations\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 104 of file commandport\+\_\+obj.\+hpp.
+
+
+
+Referenced by get\+\_\+activations().
+
+\mbox{\Hypertarget{classcommandport__obj_a9aec5239255143976852aedfafaa12c6}\label{classcommandport__obj_a9aec5239255143976852aedfafaa12c6}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!controller\+\_\+\+SM@{controller\+\_\+\+SM}}
+\index{controller\+\_\+\+SM@{controller\+\_\+\+SM}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{controller\+\_\+\+SM}{controller\_SM}}
+{\footnotesize\ttfamily \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} commandport\+\_\+obj\+::controller\+\_\+\+SM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{classstructural__object}{structural\+\_\+object} associated with the element inside the controller 
+
+
+
+Definition at line 107 of file commandport\+\_\+obj.\+hpp.
+
+
+
+Referenced by get\+\_\+controller\+\_\+obj().
+
+\mbox{\Hypertarget{classcommandport__obj_af40c778f133bfc50cd03633da1da2457}\label{classcommandport__obj_af40c778f133bfc50cd03633da1da2457}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!elem@{elem}}
+\index{elem@{elem}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{elem}{elem}}
+{\footnotesize\ttfamily \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} commandport\+\_\+obj\+::elem\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 97 of file commandport\+\_\+obj.\+hpp.
+
+
+
+Referenced by get\+\_\+elem().
+
+\mbox{\Hypertarget{classcommandport__obj_a8d4afc69efc8cb93baf1fc619f539074}\label{classcommandport__obj_a8d4afc69efc8cb93baf1fc619f539074}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!is\+\_\+a\+\_\+phi\+\_\+write\+\_\+enable@{is\+\_\+a\+\_\+phi\+\_\+write\+\_\+enable}}
+\index{is\+\_\+a\+\_\+phi\+\_\+write\+\_\+enable@{is\+\_\+a\+\_\+phi\+\_\+write\+\_\+enable}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{is\+\_\+a\+\_\+phi\+\_\+write\+\_\+enable}{is\_a\_phi\_write\_enable}}
+{\footnotesize\ttfamily bool commandport\+\_\+obj\+::is\+\_\+a\+\_\+phi\+\_\+write\+\_\+enable\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 102 of file commandport\+\_\+obj.\+hpp.
+
+
+
+Referenced by get\+\_\+phi\+\_\+write\+\_\+enable().
+
+\mbox{\Hypertarget{classcommandport__obj_aabeb96a9f2bde943f4fe1a396c9af7eb}\label{classcommandport__obj_aabeb96a9f2bde943f4fe1a396c9af7eb}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!mode@{mode}}
+\index{mode@{mode}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily unsigned int commandport\+\_\+obj\+::mode\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+It\textquotesingle{}s command type for the port. 
+
+
+
+Definition at line 100 of file commandport\+\_\+obj.\+hpp.
+
+
+
+Referenced by get\+\_\+command\+\_\+type().
+
+\mbox{\Hypertarget{classcommandport__obj_ac538468677e17a5d6692e9a05ecc58fc}\label{classcommandport__obj_ac538468677e17a5d6692e9a05ecc58fc}} 
+\index{commandport\+\_\+obj@{commandport\+\_\+obj}!signal@{signal}}
+\index{signal@{signal}!commandport\+\_\+obj@{commandport\+\_\+obj}}
+\subsubsection{\texorpdfstring{signal}{signal}}
+{\footnotesize\ttfamily \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} commandport\+\_\+obj\+::signal\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+T\+O\+DO\+: substitute with a functor operation vertex associated with the command port signal (if type is condition or operation) or state vertex associated with the command port signal. 
+
+
+
+Definition at line 95 of file commandport\+\_\+obj.\+hpp.
+
+
+
+Referenced by get\+\_\+vertex().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/virtual\+\_\+components/\hyperlink{commandport__obj_8hpp}{commandport\+\_\+obj.\+hpp}\end{DoxyCompactItemize}

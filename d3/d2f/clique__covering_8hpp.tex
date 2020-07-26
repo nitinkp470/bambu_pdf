@@ -1,0 +1,282 @@
+\hypertarget{clique__covering_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/algorithms/clique\+\_\+covering/clique\+\_\+covering.hpp File Reference}
+\label{clique__covering_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/algorithms/clique\+\_\+covering/clique\+\_\+covering.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/algorithms/clique\+\_\+covering/clique\+\_\+covering.\+hpp}}
+
+
+This header file includes four different algorithms heuristically solving the clique covering problem.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$boost/graph/adjacency\+\_\+list.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/filtered\+\_\+graph.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/graphviz.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/incremental\+\_\+components.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/properties.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/pending/disjoint\+\_\+sets.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/tuple/tuple.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/version.\+hpp$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$boost/numeric/ublas/matrix.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}bipartite\+\_\+matching.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dsatur2\+\_\+coloring.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}clique\+\_\+covering\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+Include dependency graph for clique\+\_\+covering.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d54/clique__covering_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dca/clique__covering_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcheck__clique}{check\+\_\+clique$<$ vertex\+\_\+type $>$}
+\begin{DoxyCompactList}\small\item\em Autoheader include. \end{DoxyCompactList}\item 
+struct \hyperlink{structfilter__clique}{filter\+\_\+clique$<$ vertex\+\_\+type $>$}
+\begin{DoxyCompactList}\small\item\em Functor used to reduce the size of clique\+: the rationale of filtering is that too many sharing may create problem to the timing closure of the design. \end{DoxyCompactList}\item 
+class \hyperlink{classclique__covering}{clique\+\_\+covering$<$ Vertex\+Type $>$}
+\item 
+class \hyperlink{classcompatibility__edge__writer}{compatibility\+\_\+edge\+\_\+writer}
+\begin{DoxyCompactList}\small\item\em Functor used by boost\+::write\+\_\+graphviz to write the edge info. \end{DoxyCompactList}\item 
+class \hyperlink{classcompatibility__node__info__writer}{compatibility\+\_\+node\+\_\+info\+\_\+writer}
+\begin{DoxyCompactList}\small\item\em Functor used by boost\+::write\+\_\+graphviz to write the node info. \end{DoxyCompactList}\item 
+class \hyperlink{classTTT__maximal__weighted__clique}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique$<$ Graph $>$}
+\begin{DoxyCompactList}\small\item\em Class computing the maximal weighted clique from a generic graph. \end{DoxyCompactList}\item 
+class \hyperlink{classTTT__maximal__weighted__clique__fast}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique\+\_\+fast$<$ Graph $>$}
+\begin{DoxyCompactList}\small\item\em fast version that just returns the first maximal clique found \end{DoxyCompactList}\item 
+class \hyperlink{classcoloring__based__clique__covering}{coloring\+\_\+based\+\_\+clique\+\_\+covering$<$ vertex\+\_\+type $>$}
+\item 
+class \hyperlink{classTTT__based__clique__covering__fast}{T\+T\+T\+\_\+based\+\_\+clique\+\_\+covering\+\_\+fast$<$ vertex\+\_\+type $>$}
+\begin{DoxyCompactList}\small\item\em second fast version of the \hyperlink{classTTT__based__clique__covering}{T\+T\+T\+\_\+based\+\_\+clique\+\_\+covering}. The first maximal clique found is used by the greedy clique covering. \end{DoxyCompactList}\item 
+class \hyperlink{classTTT__based__clique__covering}{T\+T\+T\+\_\+based\+\_\+clique\+\_\+covering$<$ vertex\+\_\+type $>$}
+\item 
+class \hyperlink{classTS__based__clique__covering}{T\+S\+\_\+based\+\_\+clique\+\_\+covering$<$ vertex\+\_\+type $>$}
+\item 
+class \hyperlink{classRTS__based__clique__covering}{R\+T\+S\+\_\+based\+\_\+clique\+\_\+covering$<$ vertex\+\_\+type $>$}
+\item 
+struct \hyperlink{structy__independent__cost}{y\+\_\+independent\+\_\+cost}
+\begin{DoxyCompactList}\small\item\em functor cost where the cost just depend on x \end{DoxyCompactList}\item 
+struct \hyperlink{structfull__cost__matrix}{full\+\_\+cost\+\_\+matrix}
+\item 
+class \hyperlink{classbipartite__matching__clique__covering}{bipartite\+\_\+matching\+\_\+clique\+\_\+covering$<$ vertex\+\_\+type $>$}
+\begin{DoxyCompactList}\small\item\em clique covering based on bipartite matching procedure \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9}{Clique\+Covering\+\_\+\+Algorithm} \{ \newline
+\hyperlink{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9ab4e22cd297ddeaee21f6d7281e6c4507}{Clique\+Covering\+\_\+\+Algorithm\+::\+C\+O\+L\+O\+R\+I\+NG} = 0, 
+\hyperlink{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9a73d3b4fc0ad5841cedaeef22200700ed}{Clique\+Covering\+\_\+\+Algorithm\+::\+W\+E\+I\+G\+H\+T\+E\+D\+\_\+\+C\+O\+L\+O\+R\+I\+NG}, 
+\hyperlink{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9a94b0c72c5a43d698094b2d594a3cec7d}{Clique\+Covering\+\_\+\+Algorithm\+::\+T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG}, 
+\hyperlink{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9a256e4145bd86b575fbb44f57926359a3}{Clique\+Covering\+\_\+\+Algorithm\+::\+T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G2}, 
+\newline
+\hyperlink{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9a1bd1c352b1efea494b28783b0e4bf5a8}{Clique\+Covering\+\_\+\+Algorithm\+::\+T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G\+\_\+\+F\+A\+ST}, 
+\hyperlink{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9a50ef1e60af17b53c21cc3139582d9bce}{Clique\+Covering\+\_\+\+Algorithm\+::\+T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G\+\_\+\+F\+A\+S\+T2}, 
+\hyperlink{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9a61e69f5e26ba15c9940ac1973b314c66}{Clique\+Covering\+\_\+\+Algorithm\+::\+T\+S\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG}, 
+\hyperlink{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9aaa0c9caf3f4d11423dacb705fe173a61}{Clique\+Covering\+\_\+\+Algorithm\+::\+T\+S\+\_\+\+W\+E\+I\+G\+H\+T\+E\+D\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG}, 
+\newline
+\hyperlink{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9ae44a87998e13aa3585a4aeedc9d722a6}{Clique\+Covering\+\_\+\+Algorithm\+::\+B\+I\+P\+A\+R\+T\+I\+T\+E\+\_\+\+M\+A\+T\+C\+H\+I\+NG}
+ \}\begin{DoxyCompactList}\small\item\em Defines all clique covering algorithm. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename I\+Iter1 , typename Container , typename O\+Iter $>$ }\\O\+Iter \hyperlink{clique__covering_8hpp_a1979e13cfb8f608824c7e709e5d804f1}{unordered\+\_\+set\+\_\+difference} (I\+Iter1 first1, I\+Iter1 last1, Container second, O\+Iter \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a94c9e596a4bd69287e35733185c25ff9}{result})
+\begin{DoxyCompactList}\small\item\em unordered\+\_\+set\+\_\+difference \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename I\+Iter1 , typename Container , typename O\+Iter $>$ }\\O\+Iter \hyperlink{clique__covering_8hpp_ab2bb059d8dc2fac915426dbc3888701b}{unordered\+\_\+set\+\_\+intersection} (I\+Iter1 first1, I\+Iter1 last1, Container second, O\+Iter \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a94c9e596a4bd69287e35733185c25ff9}{result})
+\begin{DoxyCompactList}\small\item\em unordered\+\_\+set\+\_\+intersection \end{DoxyCompactList}\item 
+const std\+::string \hyperlink{clique__covering_8hpp_ab4029b1fff89651e8eea322d9ced18d4}{Clique\+Covering\+\_\+\+Algorithm\+To\+String} (const \hyperlink{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9}{Clique\+Covering\+\_\+\+Algorithm} clique\+\_\+covering\+\_\+algorithm)
+\begin{DoxyCompactList}\small\item\em Return the name corresponding to an clique covering algorithm enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This header file includes four different algorithms heuristically solving the clique covering problem. 
+
+This header has 4 classes solving clique covering problem. Three of them consider the weighted of the edges during the clique selection.
+
+The first two heuristics are based on these two papers\+:
+\begin{DoxyItemize}
+\item E. Tomita, A. Tanaka, H. Takahashi \char`\"{}\+The worst-\/case time complexity for generating all maximal cliques and computational experiments\char`\"{}, Theoretical Computer Science, Volume 363, Issue 1, 2006.
+\item K. C. Dukka Bahadur, Tatsuya Akutsu, Etsuji Tomita, and Tomokazu Seki. \char`\"{}\+Protein side-\/chain packing problem\+: a maximum edge-\/weight clique algorithmic approach\char`\"{}, In Proceedings of the second conference on Asia-\/\+Pacific bioinformatics -\/ Volume 29 (A\+P\+BC \textquotesingle{}04), Yi-\/\+Ping Phoebe Chen (Ed.), Vol. 29. Australian Computer Society, Inc., Darlinghurst, Australia, Australia, 191-\/200. The third one is a simple clique covering obtained by coloring the complement graph. The last one performs iteratively the clique covering on a filtered graph induced by different edge weights.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9}\label{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9}} 
+\index{clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}!Clique\+Covering\+\_\+\+Algorithm@{Clique\+Covering\+\_\+\+Algorithm}}
+\index{Clique\+Covering\+\_\+\+Algorithm@{Clique\+Covering\+\_\+\+Algorithm}!clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}}
+\subsubsection{\texorpdfstring{Clique\+Covering\+\_\+\+Algorithm}{CliqueCovering\_Algorithm}}
+{\footnotesize\ttfamily enum \hyperlink{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9}{Clique\+Covering\+\_\+\+Algorithm}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Defines all clique covering algorithm. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+L\+O\+R\+I\+NG@{C\+O\+L\+O\+R\+I\+NG}!clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}}\index{clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}!C\+O\+L\+O\+R\+I\+NG@{C\+O\+L\+O\+R\+I\+NG}}}\mbox{\Hypertarget{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9ab4e22cd297ddeaee21f6d7281e6c4507}\label{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9ab4e22cd297ddeaee21f6d7281e6c4507}} 
+C\+O\+L\+O\+R\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+E\+I\+G\+H\+T\+E\+D\+\_\+\+C\+O\+L\+O\+R\+I\+NG@{W\+E\+I\+G\+H\+T\+E\+D\+\_\+\+C\+O\+L\+O\+R\+I\+NG}!clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}}\index{clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}!W\+E\+I\+G\+H\+T\+E\+D\+\_\+\+C\+O\+L\+O\+R\+I\+NG@{W\+E\+I\+G\+H\+T\+E\+D\+\_\+\+C\+O\+L\+O\+R\+I\+NG}}}\mbox{\Hypertarget{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9a73d3b4fc0ad5841cedaeef22200700ed}\label{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9a73d3b4fc0ad5841cedaeef22200700ed}} 
+W\+E\+I\+G\+H\+T\+E\+D\+\_\+\+C\+O\+L\+O\+R\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG@{T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG}!clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}}\index{clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}!T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG@{T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG}}}\mbox{\Hypertarget{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9a94b0c72c5a43d698094b2d594a3cec7d}\label{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9a94b0c72c5a43d698094b2d594a3cec7d}} 
+T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G2@{T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G2}!clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}}\index{clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}!T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G2@{T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G2}}}\mbox{\Hypertarget{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9a256e4145bd86b575fbb44f57926359a3}\label{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9a256e4145bd86b575fbb44f57926359a3}} 
+T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G\+\_\+\+F\+A\+ST@{T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G\+\_\+\+F\+A\+ST}!clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}}\index{clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}!T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G\+\_\+\+F\+A\+ST@{T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G\+\_\+\+F\+A\+ST}}}\mbox{\Hypertarget{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9a1bd1c352b1efea494b28783b0e4bf5a8}\label{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9a1bd1c352b1efea494b28783b0e4bf5a8}} 
+T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G\+\_\+\+F\+A\+ST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G\+\_\+\+F\+A\+S\+T2@{T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G\+\_\+\+F\+A\+S\+T2}!clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}}\index{clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}!T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G\+\_\+\+F\+A\+S\+T2@{T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G\+\_\+\+F\+A\+S\+T2}}}\mbox{\Hypertarget{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9a50ef1e60af17b53c21cc3139582d9bce}\label{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9a50ef1e60af17b53c21cc3139582d9bce}} 
+T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G\+\_\+\+F\+A\+S\+T2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG@{T\+S\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG}!clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}}\index{clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}!T\+S\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG@{T\+S\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG}}}\mbox{\Hypertarget{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9a61e69f5e26ba15c9940ac1973b314c66}\label{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9a61e69f5e26ba15c9940ac1973b314c66}} 
+T\+S\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+\_\+\+W\+E\+I\+G\+H\+T\+E\+D\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG@{T\+S\+\_\+\+W\+E\+I\+G\+H\+T\+E\+D\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG}!clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}}\index{clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}!T\+S\+\_\+\+W\+E\+I\+G\+H\+T\+E\+D\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG@{T\+S\+\_\+\+W\+E\+I\+G\+H\+T\+E\+D\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG}}}\mbox{\Hypertarget{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9aaa0c9caf3f4d11423dacb705fe173a61}\label{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9aaa0c9caf3f4d11423dacb705fe173a61}} 
+T\+S\+\_\+\+W\+E\+I\+G\+H\+T\+E\+D\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+I\+P\+A\+R\+T\+I\+T\+E\+\_\+\+M\+A\+T\+C\+H\+I\+NG@{B\+I\+P\+A\+R\+T\+I\+T\+E\+\_\+\+M\+A\+T\+C\+H\+I\+NG}!clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}}\index{clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}!B\+I\+P\+A\+R\+T\+I\+T\+E\+\_\+\+M\+A\+T\+C\+H\+I\+NG@{B\+I\+P\+A\+R\+T\+I\+T\+E\+\_\+\+M\+A\+T\+C\+H\+I\+NG}}}\mbox{\Hypertarget{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9ae44a87998e13aa3585a4aeedc9d722a6}\label{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9ae44a87998e13aa3585a4aeedc9d722a6}} 
+B\+I\+P\+A\+R\+T\+I\+T\+E\+\_\+\+M\+A\+T\+C\+H\+I\+NG&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 150 of file clique\+\_\+covering.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{clique__covering_8hpp_ab4029b1fff89651e8eea322d9ced18d4}\label{clique__covering_8hpp_ab4029b1fff89651e8eea322d9ced18d4}} 
+\index{clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}!Clique\+Covering\+\_\+\+Algorithm\+To\+String@{Clique\+Covering\+\_\+\+Algorithm\+To\+String}}
+\index{Clique\+Covering\+\_\+\+Algorithm\+To\+String@{Clique\+Covering\+\_\+\+Algorithm\+To\+String}!clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}}
+\subsubsection{\texorpdfstring{Clique\+Covering\+\_\+\+Algorithm\+To\+String()}{CliqueCovering\_AlgorithmToString()}}
+{\footnotesize\ttfamily const std\+::string Clique\+Covering\+\_\+\+Algorithm\+To\+String (\begin{DoxyParamCaption}\item[{const \hyperlink{clique__covering_8hpp_acc23ade19dac4d6935b7792353e207d9}{Clique\+Covering\+\_\+\+Algorithm}}]{clique\+\_\+covering\+\_\+algorithm }\end{DoxyParamCaption})}
+
+
+
+Return the name corresponding to an clique covering algorithm enum. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clique\+\_\+covering\+\_\+algorithm} & is the clique covering algorithm \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the name
+\end{DoxyReturn}
+Return the name corresponding to an clique covering algorithm enum. 
+
+Definition at line 41 of file clique\+\_\+covering.\+cpp.
+
+
+
+References B\+I\+P\+A\+R\+T\+I\+T\+E\+\_\+\+M\+A\+T\+C\+H\+I\+NG, C\+O\+L\+O\+R\+I\+NG, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, T\+S\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG, T\+S\+\_\+\+W\+E\+I\+G\+H\+T\+E\+D\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG, T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+NG, T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G2, T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G\+\_\+\+F\+A\+ST, T\+T\+T\+\_\+\+C\+L\+I\+Q\+U\+E\+\_\+\+C\+O\+V\+E\+R\+I\+N\+G\+\_\+\+F\+A\+S\+T2, and W\+E\+I\+G\+H\+T\+E\+D\+\_\+\+C\+O\+L\+O\+R\+I\+NG.
+
+
+
+Referenced by Weighted\+Clique\+Register\+Binding\+Specialization\+::\+Get\+Kind\+Text(), and C\+D\+F\+C\+Module\+Binding\+Specialization\+::\+Get\+Kind\+Text().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d2f/clique__covering_8hpp_ab4029b1fff89651e8eea322d9ced18d4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{clique__covering_8hpp_a1979e13cfb8f608824c7e709e5d804f1}\label{clique__covering_8hpp_a1979e13cfb8f608824c7e709e5d804f1}} 
+\index{clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}!unordered\+\_\+set\+\_\+difference@{unordered\+\_\+set\+\_\+difference}}
+\index{unordered\+\_\+set\+\_\+difference@{unordered\+\_\+set\+\_\+difference}!clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}}
+\subsubsection{\texorpdfstring{unordered\+\_\+set\+\_\+difference()}{unordered\_set\_difference()}}
+{\footnotesize\ttfamily template$<$typename I\+Iter1 , typename Container , typename O\+Iter $>$ \\
+O\+Iter unordered\+\_\+set\+\_\+difference (\begin{DoxyParamCaption}\item[{I\+Iter1}]{first1,  }\item[{I\+Iter1}]{last1,  }\item[{Container}]{second,  }\item[{O\+Iter}]{result }\end{DoxyParamCaption})}
+
+
+
+unordered\+\_\+set\+\_\+difference 
+
+
+
+Definition at line 119 of file clique\+\_\+covering.\+hpp.
+
+
+
+References result.
+
+
+
+Referenced by T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique$<$ Graph $>$\+::expand(), and T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique\+\_\+fast$<$ Graph $>$\+::expand().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d2f/clique__covering_8hpp_a1979e13cfb8f608824c7e709e5d804f1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{clique__covering_8hpp_ab2bb059d8dc2fac915426dbc3888701b}\label{clique__covering_8hpp_ab2bb059d8dc2fac915426dbc3888701b}} 
+\index{clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}!unordered\+\_\+set\+\_\+intersection@{unordered\+\_\+set\+\_\+intersection}}
+\index{unordered\+\_\+set\+\_\+intersection@{unordered\+\_\+set\+\_\+intersection}!clique\+\_\+covering.\+hpp@{clique\+\_\+covering.\+hpp}}
+\subsubsection{\texorpdfstring{unordered\+\_\+set\+\_\+intersection()}{unordered\_set\_intersection()}}
+{\footnotesize\ttfamily template$<$typename I\+Iter1 , typename Container , typename O\+Iter $>$ \\
+O\+Iter unordered\+\_\+set\+\_\+intersection (\begin{DoxyParamCaption}\item[{I\+Iter1}]{first1,  }\item[{I\+Iter1}]{last1,  }\item[{Container}]{second,  }\item[{O\+Iter}]{result }\end{DoxyParamCaption})}
+
+
+
+unordered\+\_\+set\+\_\+intersection 
+
+
+
+Definition at line 135 of file clique\+\_\+covering.\+hpp.
+
+
+
+References result.
+
+
+
+Referenced by T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique$<$ Graph $>$\+::expand(), T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique\+\_\+fast$<$ Graph $>$\+::expand(), T\+S\+\_\+based\+\_\+clique\+\_\+covering$<$ vertex\+\_\+type $>$\+::select\+\_\+edge(), and T\+S\+\_\+based\+\_\+clique\+\_\+covering$<$ vertex\+\_\+type $>$\+::select\+\_\+edge\+\_\+start().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d2f/clique__covering_8hpp_ab2bb059d8dc2fac915426dbc3888701b_icgraph}
+\end{center}
+\end{figure}

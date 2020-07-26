@@ -1,0 +1,1192 @@
+\hypertarget{classtechnology__manager}{}\section{technology\+\_\+manager Class Reference}
+\label{classtechnology__manager}\index{technology\+\_\+manager@{technology\+\_\+manager}}
+
+
+This class manages the technology library structures.  
+
+
+
+
+{\ttfamily \#include $<$technology\+\_\+manager.\+hpp$>$}
+
+
+
+Collaboration diagram for technology\+\_\+manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d3d/classtechnology__manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ std\+::string, \hyperlink{library__manager_8hpp_aacc6d633b0aa80ecfeb1180fd480ae68}{library\+\_\+manager\+Ref} $>$ \hyperlink{classtechnology__manager_a97826ddbca97f92f63e34c5ef5948319}{library\+\_\+map\+\_\+type}
+\begin{DoxyCompactList}\small\item\em definition of the type for identifying the libraries \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classtechnology__manager_ab25d130e2a4fe506fcb50d5c0f46d8bd}{C\+Get\+Setup\+Hold\+Time} () const
+\begin{DoxyCompactList}\small\item\em Return the setup hold time. \end{DoxyCompactList}\item 
+\hyperlink{structTimeStamp}{Time\+Stamp} \hyperlink{classtechnology__manager_a4e1d25b7ad4c37cae201f371a7c4a9a1}{C\+Get\+Setup\+Hold\+Time\+Stamp} () const
+\begin{DoxyCompactList}\small\item\em Return the characterization timestamp of the setup hold time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Constructors and destructors.}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtechnology__manager_aca933b39a83c4a9638a79ad19f8b9ff5}{technology\+\_\+manager} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classtechnology__manager_a47edc9b47d477c53cde3442aa27dab05}{Param})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classtechnology__manager_a6b6006913417ce77e17560eae5dc7813}{$\sim$technology\+\_\+manager} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Factory functions. Used to build and fill the technology data structures}\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classtechnology__manager_aab46c03c87a27bec53894e1d3ae9b97b}{add} (const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} curr, const std\+::string \&Library)
+\begin{DoxyCompactList}\small\item\em Add the given \hyperlink{structfunctional__unit}{functional\+\_\+unit} to the specified library. \end{DoxyCompactList}\item 
+void \hyperlink{classtechnology__manager_a2a5555fe0295bf0881902f5fd2730c0b}{add\+\_\+operation} (const std\+::string \&Library, const std\+::string \&fu\+\_\+name, const std\+::string \&operation\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Add an operation to the specified functional unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Query functions. Used to extract some information from the technology data structure.}\par
+\begin{DoxyCompactItemize}
+\item 
+const std\+::vector$<$ std\+::string $>$ \& \hyperlink{classtechnology__manager_a627c7ca63f6fd50d575f5ebffcec34a2}{get\+\_\+library\+\_\+list} () const
+\begin{DoxyCompactList}\small\item\em Return the list of the libraries. \end{DoxyCompactList}\item 
+bool \hyperlink{classtechnology__manager_ae2841df8f1c076ccb3ba874e271fc7a5}{can\+\_\+implement} (const std\+::string \&fu\+\_\+name, const std\+::string \&op\+\_\+name, const std\+::string \&Library) const
+\begin{DoxyCompactList}\small\item\em Check if an operation can be implemented by a given component in a given library. \end{DoxyCompactList}\item 
+\hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} \hyperlink{classtechnology__manager_ad77d7800d227bbb41c5206d4c2f30260}{get\+\_\+fu} (const std\+::string \&fu\+\_\+name, const std\+::string \&Library) const
+\begin{DoxyCompactList}\small\item\em Return the reference to a component given its name. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classtechnology__manager_a6197597d8ed453fe9f989f94a59429ef}{get\+\_\+library} (const std\+::string \&Name) const
+\begin{DoxyCompactList}\small\item\em Return the higher priority library where the given component is stored. \end{DoxyCompactList}\item 
+void \hyperlink{classtechnology__manager_a17d5f85564ae7e7578966d0875ce9444}{erase\+\_\+library} (const std\+::string \&Name)
+\begin{DoxyCompactList}\small\item\em Release the given library. \end{DoxyCompactList}\item 
+bool \hyperlink{classtechnology__manager_ae07845b64a58c7b505ee7efe03f5c220}{is\+\_\+library\+\_\+manager} (const std\+::string \&Name) const
+\begin{DoxyCompactList}\small\item\em Check if a library is contained into the data structure. \end{DoxyCompactList}\item 
+\hyperlink{library__manager_8hpp_aacc6d633b0aa80ecfeb1180fd480ae68}{library\+\_\+manager\+Ref} \hyperlink{classtechnology__manager_af288b80068545def60e503ceddc109ae}{get\+\_\+library\+\_\+manager} (const std\+::string \&Name) const
+\begin{DoxyCompactList}\small\item\em Return the library data structure corresponding to the given library id. \end{DoxyCompactList}\item 
+Control\+Step \hyperlink{classtechnology__manager_a3ecefabcf1bf5c310eb41ceaca891420}{get\+\_\+initiation\+\_\+time} (const std\+::string \&fu\+\_\+name, const std\+::string \&op\+\_\+name, const std\+::string \&Library) const
+\begin{DoxyCompactList}\small\item\em Return the initiation time for a given operation type and a given component. \end{DoxyCompactList}\item 
+double \hyperlink{classtechnology__manager_ad7e2f48066e8764d8de84c9d9f9894c8}{get\+\_\+execution\+\_\+time} (const std\+::string \&fu\+\_\+name, const std\+::string \&op\+\_\+name, const std\+::string \&Library) const
+\begin{DoxyCompactList}\small\item\em Return the execution time for a given operation type and a given component. \end{DoxyCompactList}\item 
+double \hyperlink{classtechnology__manager_ad5be680d6dcff25992d05aa9ca8652b9}{get\+\_\+area} (const std\+::string \&fu\+\_\+name, const std\+::string \&Library) const
+\begin{DoxyCompactList}\small\item\em Return the area for a given component. \end{DoxyCompactList}\item 
+bool \hyperlink{classtechnology__manager_a32b1731a83b59180ae9eadb890b99486}{Is\+Builtin} (const std\+::string \&component\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Return true if a component is builtin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ X\+ML functions.}\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classtechnology__manager_a3e17fc1041f0bb59220379c4c9ee0eb7}{xload} (const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$node, const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref} device)
+\begin{DoxyCompactList}\small\item\em Load a technology manager from an xml file. \end{DoxyCompactList}\item 
+void \hyperlink{classtechnology__manager_acba7aabee7df6c10583d4fa5e1c52d73}{xwrite} (\hyperlink{classxml__element}{xml\+\_\+element} $\ast$rootnode, \hyperlink{target__device_8hpp_a476becc690220f0805ce73006449c732}{Target\+Device\+\_\+\+Type} dv\+\_\+type, const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \&\hyperlink{classtechnology__manager_a3ca0b8fe373cdba4c0e7a92fe44b1380}{libraries}=\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$())
+\begin{DoxyCompactList}\small\item\em add library elements operation node to an xml tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Static Public Attributes}
+\begin{Indent}\textbf{ Library output formats}\par
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \hyperlink{classtechnology__manager_a8f97d158b7359918f01d1d7407710b53}{X\+ML} = 1 $<$$<$ 0
+\begin{DoxyCompactList}\small\item\em Autoheader include. \end{DoxyCompactList}\item 
+static const unsigned int \hyperlink{classtechnology__manager_a96f8db8f26d28892091b5320bfc239cd}{L\+IB}
+\item 
+static const unsigned int \hyperlink{classtechnology__manager_a95297bf9462e6c57d648a588b28220fd}{L\+EF} = 1 $<$$<$ 2
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structfunctional__unit}{functional\+\_\+unit} $\ast$ \hyperlink{classtechnology__manager_a0bac2f5f755bb68d306334e434ca1d2b}{C\+Get\+Setup\+Hold\+FU} () const
+\begin{DoxyCompactList}\small\item\em Return the functional unit used to compute the setup hold time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classtechnology__manager_a47edc9b47d477c53cde3442aa27dab05}{Param}
+\begin{DoxyCompactList}\small\item\em class containing all the parameters \end{DoxyCompactList}\item 
+int \hyperlink{classtechnology__manager_a7e86acf1f25325a4ce1e25ac2aca64a8}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em The debug level for this class. \end{DoxyCompactList}\item 
+\hyperlink{classtechnology__manager_a97826ddbca97f92f63e34c5ef5948319}{library\+\_\+map\+\_\+type} \hyperlink{classtechnology__manager_ae958fbcf7fa0f7837c8da2af7b6b9e69}{library\+\_\+map}
+\begin{DoxyCompactList}\small\item\em map between library name and the corresponding data structure \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{classtechnology__manager_a3ca0b8fe373cdba4c0e7a92fe44b1380}{libraries}
+\begin{DoxyCompactList}\small\item\em (reverse) ordered list of libraries; it gives a priority ordering for searching the nodes \end{DoxyCompactList}\item 
+\hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ std\+::string $>$ \hyperlink{classtechnology__manager_a8cfeed1c0e67d56143d76cd67c482fcf}{builtins}
+\begin{DoxyCompactList}\small\item\em The builtin components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classtechnology__manager_a2dc219c556df071c0061c3e9ddfa1dca}{allocation}
+\begin{DoxyCompactList}\small\item\em friend definition for class allocation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Print functions.}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classtechnology__manager_a7f3288b8143532843313a11ac7d53eda}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classtechnology__manager}{technology\+\_\+manager} \&s)
+\begin{DoxyCompactList}\small\item\em Friend definition of the $<$$<$ operator. \end{DoxyCompactList}\item 
+std\+::ostream \& \hyperlink{classtechnology__manager_a15b9b3e0d9c8aeef181027d6cbfee9ef}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{technology__manager_8hpp_a4b9ecd440c804109c962654f9227244e}{technology\+\_\+manager\+Ref} \&s)
+\begin{DoxyCompactList}\small\item\em Friend definition of the $<$$<$ operator. \end{DoxyCompactList}\item 
+void \hyperlink{classtechnology__manager_a945cc92ea4b049fa9e973981a7a1dc9f}{print} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Function that prints the class \hyperlink{classtechnology__manager}{technology\+\_\+manager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class manages the technology library structures. 
+
+Definition at line 121 of file technology\+\_\+manager.\+hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classtechnology__manager_a97826ddbca97f92f63e34c5ef5948319}\label{classtechnology__manager_a97826ddbca97f92f63e34c5ef5948319}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!library\+\_\+map\+\_\+type@{library\+\_\+map\+\_\+type}}
+\index{library\+\_\+map\+\_\+type@{library\+\_\+map\+\_\+type}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{library\+\_\+map\+\_\+type}{library\_map\_type}}
+{\footnotesize\ttfamily typedef \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$std\+::string, \hyperlink{library__manager_8hpp_aacc6d633b0aa80ecfeb1180fd480ae68}{library\+\_\+manager\+Ref}$>$ \hyperlink{classtechnology__manager_a97826ddbca97f92f63e34c5ef5948319}{technology\+\_\+manager\+::library\+\_\+map\+\_\+type}}
+
+
+
+definition of the type for identifying the libraries 
+
+
+
+Definition at line 134 of file technology\+\_\+manager.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtechnology__manager_aca933b39a83c4a9638a79ad19f8b9ff5}\label{classtechnology__manager_aca933b39a83c4a9638a79ad19f8b9ff5}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!technology\+\_\+manager@{technology\+\_\+manager}}
+\index{technology\+\_\+manager@{technology\+\_\+manager}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{technology\+\_\+manager()}{technology\_manager()}}
+{\footnotesize\ttfamily technology\+\_\+manager\+::technology\+\_\+manager (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 92 of file technology\+\_\+manager.\+cpp.
+
+
+
+References debug\+\_\+level, G\+E\+T\+\_\+\+C\+L\+A\+SS, Param, and $\sim$technology\+\_\+manager().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{df/dc7/classtechnology__manager_aca933b39a83c4a9638a79ad19f8b9ff5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_a6b6006913417ce77e17560eae5dc7813}\label{classtechnology__manager_a6b6006913417ce77e17560eae5dc7813}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!````~technology\+\_\+manager@{$\sim$technology\+\_\+manager}}
+\index{````~technology\+\_\+manager@{$\sim$technology\+\_\+manager}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{$\sim$technology\+\_\+manager()}{~technology\_manager()}}
+{\footnotesize\ttfamily technology\+\_\+manager\+::$\sim$technology\+\_\+manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by technology\+\_\+manager().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{df/dc7/classtechnology__manager_a6b6006913417ce77e17560eae5dc7813_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtechnology__manager_aab46c03c87a27bec53894e1d3ae9b97b}\label{classtechnology__manager_aab46c03c87a27bec53894e1d3ae9b97b}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!add@{add}}
+\index{add@{add}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void technology\+\_\+manager\+::add (\begin{DoxyParamCaption}\item[{const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}}]{curr,  }\item[{const std\+::string \&}]{Library }\end{DoxyParamCaption})}
+
+
+
+Add the given \hyperlink{structfunctional__unit}{functional\+\_\+unit} to the specified library. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr} & is the added element \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 207 of file technology\+\_\+manager.\+cpp.
+
+
+
+References C\+G\+\_\+\+L\+I\+B\+R\+A\+RY, D\+E\+S\+I\+GN, libraries, library\+\_\+map, and Param.
+
+
+
+Referenced by add\+\_\+operation(), erase\+\_\+library(), get\+\_\+area(), allocation\+::\+Internal\+Exec(), and xload().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_aab46c03c87a27bec53894e1d3ae9b97b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_a2a5555fe0295bf0881902f5fd2730c0b}\label{classtechnology__manager_a2a5555fe0295bf0881902f5fd2730c0b}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!add\+\_\+operation@{add\+\_\+operation}}
+\index{add\+\_\+operation@{add\+\_\+operation}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{add\+\_\+operation()}{add\_operation()}}
+{\footnotesize\ttfamily void technology\+\_\+manager\+::add\+\_\+operation (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{Library,  }\item[{const std\+::string \&}]{fu\+\_\+name,  }\item[{const std\+::string \&}]{operation\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Add an operation to the specified functional unit. 
+
+
+
+Definition at line 196 of file technology\+\_\+manager.\+cpp.
+
+
+
+References add(), get\+\_\+fu(), library\+\_\+map, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by allocation\+::add\+\_\+proxy\+\_\+function\+\_\+module(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+wrapper(), Omp\+Allocation\+::\+Add\+Panda\+Pthread\+Mutex(), Initialize\+H\+L\+S\+::\+Internal\+Exec(), and add\+\_\+library\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_a2a5555fe0295bf0881902f5fd2730c0b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_a2a5555fe0295bf0881902f5fd2730c0b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_ae2841df8f1c076ccb3ba874e271fc7a5}\label{classtechnology__manager_ae2841df8f1c076ccb3ba874e271fc7a5}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!can\+\_\+implement@{can\+\_\+implement}}
+\index{can\+\_\+implement@{can\+\_\+implement}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{can\+\_\+implement()}{can\_implement()}}
+{\footnotesize\ttfamily bool technology\+\_\+manager\+::can\+\_\+implement (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fu\+\_\+name,  }\item[{const std\+::string \&}]{op\+\_\+name,  }\item[{const std\+::string \&}]{Library }\end{DoxyParamCaption}) const}
+
+
+
+Check if an operation can be implemented by a given component in a given library. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fu\+\_\+name} & is the name of the component. \\
+\hline
+{\em op\+\_\+name} & is the name of the operation. \\
+\hline
+{\em Library} & is library name where the unit is stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when the operation can be implemented, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file technology\+\_\+manager.\+cpp.
+
+
+
+References get\+\_\+fu().
+
+
+
+Referenced by get\+\_\+library\+\_\+list().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{df/dc7/classtechnology__manager_ae2841df8f1c076ccb3ba874e271fc7a5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_ae2841df8f1c076ccb3ba874e271fc7a5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_a0bac2f5f755bb68d306334e434ca1d2b}\label{classtechnology__manager_a0bac2f5f755bb68d306334e434ca1d2b}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!C\+Get\+Setup\+Hold\+FU@{C\+Get\+Setup\+Hold\+FU}}
+\index{C\+Get\+Setup\+Hold\+FU@{C\+Get\+Setup\+Hold\+FU}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{C\+Get\+Setup\+Hold\+F\+U()}{CGetSetupHoldFU()}}
+{\footnotesize\ttfamily const \hyperlink{structfunctional__unit}{functional\+\_\+unit} $\ast$ technology\+\_\+manager\+::\+C\+Get\+Setup\+Hold\+FU (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Return the functional unit used to compute the setup hold time. 
+
+\begin{DoxyReturn}{Returns}
+the functional unit used to compute the setup hold time 
+\end{DoxyReturn}
+
+
+Definition at line 518 of file technology\+\_\+manager.\+cpp.
+
+
+
+References get\+\_\+fu(), L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+T\+D\+\_\+\+FU, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by C\+Get\+Setup\+Hold\+Time(), and C\+Get\+Setup\+Hold\+Time\+Stamp().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{df/dc7/classtechnology__manager_a0bac2f5f755bb68d306334e434ca1d2b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_a0bac2f5f755bb68d306334e434ca1d2b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_ab25d130e2a4fe506fcb50d5c0f46d8bd}\label{classtechnology__manager_ab25d130e2a4fe506fcb50d5c0f46d8bd}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!C\+Get\+Setup\+Hold\+Time@{C\+Get\+Setup\+Hold\+Time}}
+\index{C\+Get\+Setup\+Hold\+Time@{C\+Get\+Setup\+Hold\+Time}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{C\+Get\+Setup\+Hold\+Time()}{CGetSetupHoldTime()}}
+{\footnotesize\ttfamily double technology\+\_\+manager\+::\+C\+Get\+Setup\+Hold\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the setup hold time. 
+
+\begin{DoxyReturn}{Returns}
+the setup hold time 
+\end{DoxyReturn}
+
+
+Definition at line 525 of file technology\+\_\+manager.\+cpp.
+
+
+
+References C\+Get\+Setup\+Hold\+F\+U(), and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Fix\+Characterization\+::\+Initialize().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_ab25d130e2a4fe506fcb50d5c0f46d8bd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{df/dc7/classtechnology__manager_ab25d130e2a4fe506fcb50d5c0f46d8bd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_a4e1d25b7ad4c37cae201f371a7c4a9a1}\label{classtechnology__manager_a4e1d25b7ad4c37cae201f371a7c4a9a1}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!C\+Get\+Setup\+Hold\+Time\+Stamp@{C\+Get\+Setup\+Hold\+Time\+Stamp}}
+\index{C\+Get\+Setup\+Hold\+Time\+Stamp@{C\+Get\+Setup\+Hold\+Time\+Stamp}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{C\+Get\+Setup\+Hold\+Time\+Stamp()}{CGetSetupHoldTimeStamp()}}
+{\footnotesize\ttfamily \hyperlink{structTimeStamp}{Time\+Stamp} technology\+\_\+manager\+::\+C\+Get\+Setup\+Hold\+Time\+Stamp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the characterization timestamp of the setup hold time. 
+
+\begin{DoxyReturn}{Returns}
+the characterization timestamp of the setup hold time 
+\end{DoxyReturn}
+
+
+Definition at line 534 of file technology\+\_\+manager.\+cpp.
+
+
+
+References C\+Get\+Setup\+Hold\+F\+U(), and functional\+\_\+unit\+::characterization\+\_\+timestamp.
+
+
+
+Referenced by Fix\+Characterization\+::\+Initialize().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_a4e1d25b7ad4c37cae201f371a7c4a9a1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_a4e1d25b7ad4c37cae201f371a7c4a9a1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_a17d5f85564ae7e7578966d0875ce9444}\label{classtechnology__manager_a17d5f85564ae7e7578966d0875ce9444}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!erase\+\_\+library@{erase\+\_\+library}}
+\index{erase\+\_\+library@{erase\+\_\+library}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{erase\+\_\+library()}{erase\_library()}}
+{\footnotesize\ttfamily void technology\+\_\+manager\+::erase\+\_\+library (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{Name }\end{DoxyParamCaption})}
+
+
+
+Release the given library. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Name} & is the name of the library to be erased. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 490 of file technology\+\_\+manager.\+cpp.
+
+
+
+References add(), libraries, and library\+\_\+map.
+
+
+
+Referenced by get\+\_\+library\+\_\+list(), and mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_a17d5f85564ae7e7578966d0875ce9444_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_a17d5f85564ae7e7578966d0875ce9444_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_ad5be680d6dcff25992d05aa9ca8652b9}\label{classtechnology__manager_ad5be680d6dcff25992d05aa9ca8652b9}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!get\+\_\+area@{get\+\_\+area}}
+\index{get\+\_\+area@{get\+\_\+area}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+area()}{get\_area()}}
+{\footnotesize\ttfamily double technology\+\_\+manager\+::get\+\_\+area (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fu\+\_\+name,  }\item[{const std\+::string \&}]{Library }\end{DoxyParamCaption}) const}
+
+
+
+Return the area for a given component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fu\+\_\+name} & is the name of the component. \\
+\hline
+{\em Library} & is library name where the unit is stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the area for the library component 
+\end{DoxyReturn}
+
+
+Definition at line 148 of file technology\+\_\+manager.\+cpp.
+
+
+
+References add(), builtins, get\+\_\+fu(), and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by get\+\_\+library\+\_\+list().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_ad5be680d6dcff25992d05aa9ca8652b9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_ad5be680d6dcff25992d05aa9ca8652b9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_ad7e2f48066e8764d8de84c9d9f9894c8}\label{classtechnology__manager_ad7e2f48066e8764d8de84c9d9f9894c8}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!get\+\_\+execution\+\_\+time@{get\+\_\+execution\+\_\+time}}
+\index{get\+\_\+execution\+\_\+time@{get\+\_\+execution\+\_\+time}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+execution\+\_\+time()}{get\_execution\_time()}}
+{\footnotesize\ttfamily double technology\+\_\+manager\+::get\+\_\+execution\+\_\+time (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fu\+\_\+name,  }\item[{const std\+::string \&}]{op\+\_\+name,  }\item[{const std\+::string \&}]{Library }\end{DoxyParamCaption}) const}
+
+
+
+Return the execution time for a given operation type and a given component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fu\+\_\+name} & is the name of the component. \\
+\hline
+{\em op\+\_\+name} & is the name of the operation. \\
+\hline
+{\em res} & is true when there is the pair (fu\+\_\+name, op\+\_\+name), false otherwise. \\
+\hline
+{\em Library} & is library name where the unit is stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the execution time for (fu\+\_\+name, op\+\_\+name) 
+\end{DoxyReturn}
+
+
+Definition at line 138 of file technology\+\_\+manager.\+cpp.
+
+
+
+References get\+\_\+fu(), and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by get\+\_\+library\+\_\+list().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{df/dc7/classtechnology__manager_ad7e2f48066e8764d8de84c9d9f9894c8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_ad7e2f48066e8764d8de84c9d9f9894c8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_ad77d7800d227bbb41c5206d4c2f30260}\label{classtechnology__manager_ad77d7800d227bbb41c5206d4c2f30260}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!get\+\_\+fu@{get\+\_\+fu}}
+\index{get\+\_\+fu@{get\+\_\+fu}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+fu()}{get\_fu()}}
+{\footnotesize\ttfamily \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} technology\+\_\+manager\+::get\+\_\+fu (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fu\+\_\+name,  }\item[{const std\+::string \&}]{Library }\end{DoxyParamCaption}) const}
+
+
+
+Return the reference to a component given its name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fu\+\_\+name} & is the name of the component. \\
+\hline
+{\em Library} & is library name where the unit is stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the reference to a component 
+\end{DoxyReturn}
+
+
+Definition at line 120 of file technology\+\_\+manager.\+cpp.
+
+
+
+References library\+\_\+map, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by add\+\_\+operation(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+module(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+wrapper(), Omp\+Allocation\+::\+Add\+Panda\+Pthread\+Mutex(), Functional\+Unit\+Step\+::\+Analyze\+Fu(), can\+\_\+implement(), C\+Get\+Setup\+Hold\+F\+U(), Allocation\+Information\+::\+Estimate\+Controller\+Delay(), Fix\+Characterization\+::\+Exec(), I\+R\+\_\+lowering\+::expand\+\_\+\+M\+C(), allocation\+::extract\+\_\+bambu\+\_\+provided(), R\+T\+L\+Characterization\+::fix\+\_\+execution\+\_\+time\+\_\+std(), R\+T\+L\+Characterization\+::fix\+\_\+muxes(), R\+T\+L\+Characterization\+::fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std(), Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), get\+\_\+area(), allocation\+::get\+\_\+compliant\+\_\+pipelined\+\_\+unit(), Allocation\+Information\+::get\+\_\+correction\+\_\+time(), get\+\_\+execution\+\_\+time(), allocation\+::get\+\_\+fu(), Allocation\+Information\+::get\+\_\+fu(), get\+\_\+initiation\+\_\+time(), get\+\_\+library\+\_\+list(), Allocation\+Information\+::\+Initialize\+Mux\+D\+B(), Omp\+Allocation\+::\+Integrate\+Technology\+Libraries(), allocation\+::\+Integrate\+Technology\+Libraries(), Initialize\+H\+L\+S\+::\+Internal\+Exec(), add\+\_\+library\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), Allocation\+Information\+::mux\+\_\+area\+\_\+unit\+\_\+raw(), Allocation\+Information\+::mux\+\_\+time\+\_\+unit\+\_\+raw(), and xload().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{df/dc7/classtechnology__manager_ad77d7800d227bbb41c5206d4c2f30260_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_a3ecefabcf1bf5c310eb41ceaca891420}\label{classtechnology__manager_a3ecefabcf1bf5c310eb41ceaca891420}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!get\+\_\+initiation\+\_\+time@{get\+\_\+initiation\+\_\+time}}
+\index{get\+\_\+initiation\+\_\+time@{get\+\_\+initiation\+\_\+time}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+initiation\+\_\+time()}{get\_initiation\_time()}}
+{\footnotesize\ttfamily Control\+Step technology\+\_\+manager\+::get\+\_\+initiation\+\_\+time (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fu\+\_\+name,  }\item[{const std\+::string \&}]{op\+\_\+name,  }\item[{const std\+::string \&}]{Library }\end{DoxyParamCaption}) const}
+
+
+
+Return the initiation time for a given operation type and a given component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fu\+\_\+name} & is the name of the component. \\
+\hline
+{\em op\+\_\+name} & is the name of the operation. \\
+\hline
+{\em res} & is true when there is the pair (fu\+\_\+name, op\+\_\+name), false otherwise. \\
+\hline
+{\em Library} & is library name where the unit is stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the initiation\+\_\+time for (fu\+\_\+name, op\+\_\+name). 
+\end{DoxyReturn}
+
+
+Definition at line 128 of file technology\+\_\+manager.\+cpp.
+
+
+
+References get\+\_\+fu(), and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by get\+\_\+library\+\_\+list().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{df/dc7/classtechnology__manager_a3ecefabcf1bf5c310eb41ceaca891420_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_a3ecefabcf1bf5c310eb41ceaca891420_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_a6197597d8ed453fe9f989f94a59429ef}\label{classtechnology__manager_a6197597d8ed453fe9f989f94a59429ef}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!get\+\_\+library@{get\+\_\+library}}
+\index{get\+\_\+library@{get\+\_\+library}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+library()}{get\_library()}}
+{\footnotesize\ttfamily std\+::string technology\+\_\+manager\+::get\+\_\+library (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{Name }\end{DoxyParamCaption}) const}
+
+
+
+Return the higher priority library where the given component is stored. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Name} & is the name of the component. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the identifier of the library where the unit is contained 
+\end{DoxyReturn}
+empty string. it means that the cell is not contained into any library 
+
+Definition at line 455 of file technology\+\_\+manager.\+cpp.
+
+
+
+References libraries, library\+\_\+map, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+command\+\_\+ports(), conn\+\_\+binding\+::add\+\_\+datapath\+\_\+connection(), top\+\_\+entity\+::add\+\_\+input\+\_\+register(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), Functional\+Unit\+Step\+::\+Analyze\+Fu(), compute\+Resources(), fun\+\_\+dominator\+\_\+allocation\+::\+Exec(), Fix\+Characterization\+::\+Exec(), Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), allocation\+::get\+\_\+fu(), Allocation\+Information\+::get\+\_\+fu(), get\+\_\+library\+\_\+list(), R\+T\+L\+Characterization\+::\+Initialize(), allocation\+::\+Integrate\+Technology\+Libraries(), Taste\+Interface\+Generation\+::\+Internal\+Exec(), and allocation\+::\+Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_a6197597d8ed453fe9f989f94a59429ef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_a627c7ca63f6fd50d575f5ebffcec34a2}\label{classtechnology__manager_a627c7ca63f6fd50d575f5ebffcec34a2}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!get\+\_\+library\+\_\+list@{get\+\_\+library\+\_\+list}}
+\index{get\+\_\+library\+\_\+list@{get\+\_\+library\+\_\+list}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+library\+\_\+list()}{get\_library\_list()}}
+{\footnotesize\ttfamily const std\+::vector$<$std\+::string$>$\& technology\+\_\+manager\+::get\+\_\+library\+\_\+list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the list of the libraries. 
+
+\begin{DoxyReturn}{Returns}
+a vector containing the identifiers of the libraries contained into the technology manager 
+\end{DoxyReturn}
+
+
+Definition at line 219 of file technology\+\_\+manager.\+hpp.
+
+
+
+References can\+\_\+implement(), erase\+\_\+library(), flopoco\+::filename, get\+\_\+area(), get\+\_\+execution\+\_\+time(), get\+\_\+fu(), get\+\_\+initiation\+\_\+time(), get\+\_\+library(), get\+\_\+library\+\_\+manager(), is\+\_\+library\+\_\+manager(), Is\+Builtin(), libraries, print(), xload(), and xwrite().
+
+
+
+Referenced by Generate\+Fu\+List\+::\+Exec(), Write\+Technology\+::\+Exec(), Fix\+Characterization\+::\+Exec(), allocation\+::\+Internal\+Exec(), and read\+\_\+technology\+\_\+\+File().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_a627c7ca63f6fd50d575f5ebffcec34a2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_a627c7ca63f6fd50d575f5ebffcec34a2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_af288b80068545def60e503ceddc109ae}\label{classtechnology__manager_af288b80068545def60e503ceddc109ae}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!get\+\_\+library\+\_\+manager@{get\+\_\+library\+\_\+manager}}
+\index{get\+\_\+library\+\_\+manager@{get\+\_\+library\+\_\+manager}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+library\+\_\+manager()}{get\_library\_manager()}}
+{\footnotesize\ttfamily \hyperlink{library__manager_8hpp_aacc6d633b0aa80ecfeb1180fd480ae68}{library\+\_\+manager\+Ref} technology\+\_\+manager\+::get\+\_\+library\+\_\+manager (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{Name }\end{DoxyParamCaption}) const}
+
+
+
+Return the library data structure corresponding to the given library id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Name} & is the name of the library. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the reference to the data structure of the library 
+\end{DoxyReturn}
+
+
+Definition at line 479 of file technology\+\_\+manager.\+cpp.
+
+
+
+References library\+\_\+map, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Functional\+Unit\+Step\+::\+Analyze\+Fu(), allocation\+::\+Build\+Proxy\+Wrapper(), fun\+\_\+dominator\+\_\+allocation\+::\+Exec(), Generate\+Fu\+List\+::\+Exec(), Write\+Technology\+::\+Exec(), Fix\+Characterization\+::\+Exec(), allocation\+::extract\+\_\+bambu\+\_\+provided(), get\+\_\+library\+\_\+list(), R\+T\+L\+Characterization\+::\+Initialize(), allocation\+::\+Integrate\+Technology\+Libraries(), add\+\_\+library\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), read\+\_\+technology\+\_\+library(), module\+Generator\+::specialize\+\_\+fu(), and xwrite().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_af288b80068545def60e503ceddc109ae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_ae07845b64a58c7b505ee7efe03f5c220}\label{classtechnology__manager_ae07845b64a58c7b505ee7efe03f5c220}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!is\+\_\+library\+\_\+manager@{is\+\_\+library\+\_\+manager}}
+\index{is\+\_\+library\+\_\+manager@{is\+\_\+library\+\_\+manager}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{is\+\_\+library\+\_\+manager()}{is\_library\_manager()}}
+{\footnotesize\ttfamily bool technology\+\_\+manager\+::is\+\_\+library\+\_\+manager (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{Name }\end{DoxyParamCaption}) const}
+
+
+
+Check if a library is contained into the data structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Name} & is the name of the library. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there is a data structure corresponding to the library name, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 485 of file technology\+\_\+manager.\+cpp.
+
+
+
+References library\+\_\+map.
+
+
+
+Referenced by get\+\_\+library\+\_\+list(), read\+\_\+technology\+\_\+library(), and xwrite().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_ae07845b64a58c7b505ee7efe03f5c220_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_a32b1731a83b59180ae9eadb890b99486}\label{classtechnology__manager_a32b1731a83b59180ae9eadb890b99486}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!Is\+Builtin@{Is\+Builtin}}
+\index{Is\+Builtin@{Is\+Builtin}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{Is\+Builtin()}{IsBuiltin()}}
+{\footnotesize\ttfamily bool technology\+\_\+manager\+::\+Is\+Builtin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{component\+\_\+name }\end{DoxyParamCaption}) const}
+
+
+
+Return true if a component is builtin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component\+\_\+name} & is the name of the component \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the component is builtin 
+\end{DoxyReturn}
+
+
+Definition at line 513 of file technology\+\_\+manager.\+cpp.
+
+
+
+References builtins.
+
+
+
+Referenced by get\+\_\+library\+\_\+list().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_a32b1731a83b59180ae9eadb890b99486_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_a945cc92ea4b049fa9e973981a7a1dc9f}\label{classtechnology__manager_a945cc92ea4b049fa9e973981a7a1dc9f}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!print@{print}}
+\index{print@{print}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void technology\+\_\+manager\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const}
+
+
+
+Function that prints the class \hyperlink{classtechnology__manager}{technology\+\_\+manager}. 
+
+
+
+Definition at line 99 of file technology\+\_\+manager.\+cpp.
+
+
+
+References library\+\_\+manager\+::get\+\_\+library\+\_\+fu(), libraries, and library\+\_\+map.
+
+
+
+Referenced by get\+\_\+library\+\_\+list(), Load\+Technology\+::\+Print\+Final\+I\+R(), and allocation\+::\+Print\+Initial\+I\+R().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{df/dc7/classtechnology__manager_a945cc92ea4b049fa9e973981a7a1dc9f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_a945cc92ea4b049fa9e973981a7a1dc9f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_a3e17fc1041f0bb59220379c4c9ee0eb7}\label{classtechnology__manager_a3e17fc1041f0bb59220379c4c9ee0eb7}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!xload@{xload}}
+\index{xload@{xload}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{xload()}{xload()}}
+{\footnotesize\ttfamily void technology\+\_\+manager\+::xload (\begin{DoxyParamCaption}\item[{const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{node,  }\item[{const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref}}]{device }\end{DoxyParamCaption})}
+
+
+
+Load a technology manager from an xml file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & is a node of the xml tree. \\
+\hline
+\end{DoxyParams}
+First part of the condition is for skip template 
+
+Definition at line 222 of file technology\+\_\+manager.\+cpp.
+
+
+
+References add(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, xml\+\_\+child\+::get\+\_\+children(), get\+\_\+fu(), library\+\_\+manager\+::get\+\_\+library\+\_\+fu(), library\+\_\+manager\+::get\+\_\+library\+\_\+name(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, libraries, library\+\_\+map, Param, library\+\_\+manager\+::set\+\_\+info(), Split\+String(), S\+TR, library\+\_\+manager\+::xload(), and library\+\_\+manager\+::\+X\+ML.
+
+
+
+Referenced by Load\+Default\+Technology\+::\+Exec(), get\+\_\+library\+\_\+list(), read\+\_\+technology\+\_\+\+File(), and target\+\_\+device\+::xload().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_a3e17fc1041f0bb59220379c4c9ee0eb7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_a3e17fc1041f0bb59220379c4c9ee0eb7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtechnology__manager_acba7aabee7df6c10583d4fa5e1c52d73}\label{classtechnology__manager_acba7aabee7df6c10583d4fa5e1c52d73}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!xwrite@{xwrite}}
+\index{xwrite@{xwrite}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{xwrite()}{xwrite()}}
+{\footnotesize\ttfamily void technology\+\_\+manager\+::xwrite (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{rootnode,  }\item[{\hyperlink{target__device_8hpp_a476becc690220f0805ce73006449c732}{Target\+Device\+\_\+\+Type}}]{dv\+\_\+type,  }\item[{const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \&}]{libraries = {\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$std\+:\+:string$>$()} }\end{DoxyParamCaption})}
+
+
+
+add library elements operation node to an xml tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rootnode} & is the root node at which the xml representation of the operation is attached. \\
+\hline
+\end{DoxyParams}
+Set of libraries sorted by name 
+
+Definition at line 352 of file technology\+\_\+manager.\+cpp.
+
+
+
+References xml\+\_\+document\+::create\+\_\+root\+\_\+node(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, flopoco\+::filename, library\+\_\+manager\+::get\+\_\+library\+\_\+fu(), get\+\_\+library\+\_\+manager(), is\+\_\+library\+\_\+manager(), library\+\_\+map, library\+\_\+manager\+::set\+\_\+info(), xml\+\_\+document\+::write\+\_\+to\+\_\+file\+\_\+formatted(), and library\+\_\+manager\+::xwrite().
+
+
+
+Referenced by Write\+Technology\+::\+Exec(), and get\+\_\+library\+\_\+list().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_acba7aabee7df6c10583d4fa5e1c52d73_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dc7/classtechnology__manager_acba7aabee7df6c10583d4fa5e1c52d73_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classtechnology__manager_a2dc219c556df071c0061c3e9ddfa1dca}\label{classtechnology__manager_a2dc219c556df071c0061c3e9ddfa1dca}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!allocation@{allocation}}
+\index{allocation@{allocation}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{allocation}{allocation}}
+{\footnotesize\ttfamily friend class \hyperlink{classallocation}{allocation}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+friend definition for class allocation 
+
+
+
+Definition at line 172 of file technology\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classtechnology__manager_a7f3288b8143532843313a11ac7d53eda}\label{classtechnology__manager_a7f3288b8143532843313a11ac7d53eda}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classtechnology__manager}{technology\+\_\+manager} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Friend definition of the $<$$<$ operator. 
+
+
+
+Definition at line 365 of file technology\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classtechnology__manager_a15b9b3e0d9c8aeef181027d6cbfee9ef}\label{classtechnology__manager_a15b9b3e0d9c8aeef181027d6cbfee9ef}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{technology__manager_8hpp_a4b9ecd440c804109c962654f9227244e}{technology\+\_\+manager\+Ref} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Friend definition of the $<$$<$ operator. 
+
+Pointer version. 
+
+Definition at line 373 of file technology\+\_\+manager.\+hpp.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classtechnology__manager_a8cfeed1c0e67d56143d76cd67c482fcf}\label{classtechnology__manager_a8cfeed1c0e67d56143d76cd67c482fcf}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!builtins@{builtins}}
+\index{builtins@{builtins}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{builtins}{builtins}}
+{\footnotesize\ttfamily \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$std\+::string$>$ technology\+\_\+manager\+::builtins\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The builtin components. 
+
+
+
+Definition at line 150 of file technology\+\_\+manager.\+hpp.
+
+
+
+Referenced by get\+\_\+area(), and Is\+Builtin().
+
+\mbox{\Hypertarget{classtechnology__manager_a7e86acf1f25325a4ce1e25ac2aca64a8}\label{classtechnology__manager_a7e86acf1f25325a4ce1e25ac2aca64a8}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily int technology\+\_\+manager\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The debug level for this class. 
+
+
+
+Definition at line 141 of file technology\+\_\+manager.\+hpp.
+
+
+
+Referenced by technology\+\_\+manager(), xload(), and xwrite().
+
+\mbox{\Hypertarget{classtechnology__manager_a95297bf9462e6c57d648a588b28220fd}\label{classtechnology__manager_a95297bf9462e6c57d648a588b28220fd}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!L\+EF@{L\+EF}}
+\index{L\+EF@{L\+EF}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{L\+EF}{LEF}}
+{\footnotesize\ttfamily const unsigned int technology\+\_\+manager\+::\+L\+EF = 1 $<$$<$ 2\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 130 of file technology\+\_\+manager.\+hpp.
+
+
+
+Referenced by write\+\_\+technology\+\_\+\+File().
+
+\mbox{\Hypertarget{classtechnology__manager_a96f8db8f26d28892091b5320bfc239cd}\label{classtechnology__manager_a96f8db8f26d28892091b5320bfc239cd}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!L\+IB@{L\+IB}}
+\index{L\+IB@{L\+IB}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{L\+IB}{LIB}}
+{\footnotesize\ttfamily const unsigned int technology\+\_\+manager\+::\+L\+IB\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 129 of file technology\+\_\+manager.\+hpp.
+
+
+
+Referenced by write\+\_\+technology\+\_\+\+File().
+
+\mbox{\Hypertarget{classtechnology__manager_a3ca0b8fe373cdba4c0e7a92fe44b1380}\label{classtechnology__manager_a3ca0b8fe373cdba4c0e7a92fe44b1380}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!libraries@{libraries}}
+\index{libraries@{libraries}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{libraries}{libraries}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ technology\+\_\+manager\+::libraries\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+(reverse) ordered list of libraries; it gives a priority ordering for searching the nodes 
+
+
+
+Definition at line 147 of file technology\+\_\+manager.\+hpp.
+
+
+
+Referenced by add(), erase\+\_\+library(), get\+\_\+library(), get\+\_\+library\+\_\+list(), print(), and xload().
+
+\mbox{\Hypertarget{classtechnology__manager_ae958fbcf7fa0f7837c8da2af7b6b9e69}\label{classtechnology__manager_ae958fbcf7fa0f7837c8da2af7b6b9e69}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!library\+\_\+map@{library\+\_\+map}}
+\index{library\+\_\+map@{library\+\_\+map}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{library\+\_\+map}{library\_map}}
+{\footnotesize\ttfamily \hyperlink{classtechnology__manager_a97826ddbca97f92f63e34c5ef5948319}{library\+\_\+map\+\_\+type} technology\+\_\+manager\+::library\+\_\+map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+map between library name and the corresponding data structure 
+
+
+
+Definition at line 144 of file technology\+\_\+manager.\+hpp.
+
+
+
+Referenced by add(), add\+\_\+operation(), erase\+\_\+library(), get\+\_\+fu(), get\+\_\+library(), get\+\_\+library\+\_\+manager(), is\+\_\+library\+\_\+manager(), print(), xload(), and xwrite().
+
+\mbox{\Hypertarget{classtechnology__manager_a47edc9b47d477c53cde3442aa27dab05}\label{classtechnology__manager_a47edc9b47d477c53cde3442aa27dab05}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!Param@{Param}}
+\index{Param@{Param}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{Param}{Param}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} technology\+\_\+manager\+::\+Param\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+class containing all the parameters 
+
+
+
+Definition at line 138 of file technology\+\_\+manager.\+hpp.
+
+
+
+Referenced by add(), technology\+\_\+manager(), and xload().
+
+\mbox{\Hypertarget{classtechnology__manager_a8f97d158b7359918f01d1d7407710b53}\label{classtechnology__manager_a8f97d158b7359918f01d1d7407710b53}} 
+\index{technology\+\_\+manager@{technology\+\_\+manager}!X\+ML@{X\+ML}}
+\index{X\+ML@{X\+ML}!technology\+\_\+manager@{technology\+\_\+manager}}
+\subsubsection{\texorpdfstring{X\+ML}{XML}}
+{\footnotesize\ttfamily const unsigned int technology\+\_\+manager\+::\+X\+ML = 1 $<$$<$ 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Autoheader include. 
+
+S\+TL include 
+
+Definition at line 128 of file technology\+\_\+manager.\+hpp.
+
+
+
+Referenced by read\+\_\+technology\+\_\+library(), and write\+\_\+technology\+\_\+\+File().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/\hyperlink{technology__manager_8hpp}{technology\+\_\+manager.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/\hyperlink{technology__manager_8cpp}{technology\+\_\+manager.\+cpp}\end{DoxyCompactItemize}

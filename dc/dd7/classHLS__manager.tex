@@ -1,0 +1,871 @@
+\hypertarget{classHLS__manager}{}\section{H\+L\+S\+\_\+manager Class Reference}
+\label{classHLS__manager}\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+
+
+{\ttfamily \#include $<$hls\+\_\+manager.\+hpp$>$}
+
+
+
+Inheritance diagram for H\+L\+S\+\_\+manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{d8/dc3/classHLS__manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for H\+L\+S\+\_\+manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d57/classHLS__manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::tuple$<$ unsigned int, unsigned int $>$ \hyperlink{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}{io\+\_\+binding\+\_\+type}
+\begin{DoxyCompactList}\small\item\em tuple set used to represent the required values or the constant default value associated with the inputs of a node \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHLS__manager_aa1e62cc57b722b661605ea798812ab79}{H\+L\+S\+\_\+manager} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classapplication__manager_ae975e0d3da59a3180f343fa936d72353}{Param}, const \hyperlink{hls__target_8hpp_a390f1d55d3b31739665ff2776abe2a3f}{H\+L\+S\+\_\+target\+Ref} \hyperlink{classHLS__manager_ac138185e1aa74471d0a571287a60870b}{H\+L\+S\+\_\+T})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classHLS__manager_a2ec17f0c6f719db1769935ef838105d1}{$\sim$\+H\+L\+S\+\_\+manager} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} \hyperlink{classHLS__manager_a9bf8850e21fc2d43665009fab8d3c095}{get\+\_\+\+H\+LS} (unsigned int fun\+Id) const
+\begin{DoxyCompactList}\small\item\em Returns the H\+LS datastructure associated with a specific function. \end{DoxyCompactList}\item 
+\hyperlink{hls__target_8hpp_a390f1d55d3b31739665ff2776abe2a3f}{H\+L\+S\+\_\+target\+Ref} \hyperlink{classHLS__manager_a8e61638717813ff15e1a5051815c111e}{get\+\_\+\+H\+L\+S\+\_\+target} () const
+\begin{DoxyCompactList}\small\item\em Returns the datastructure associated with the H\+LS target. \end{DoxyCompactList}\item 
+const \hyperlink{BackendFlow_8hpp_addb01ef393ed4ea8a79765c8ebfcf5a0}{Backend\+Flow\+Ref} \hyperlink{classHLS__manager_aff13fa7f6ea495bbb5979294d336edb5}{get\+\_\+backend\+\_\+flow} ()
+\begin{DoxyCompactList}\small\item\em Returns the backend flow. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classHLS__manager_adb55871297598407cb473ef10647048b}{get\+\_\+constant\+\_\+string} (unsigned int node, unsigned int precision)
+\begin{DoxyCompactList}\small\item\em Return the specified constant in string format. \end{DoxyCompactList}\item 
+void \hyperlink{classHLS__manager_adc098d176fadc4a0fb07eeb325022b6d}{xwrite} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Writes the current H\+LS project into an X\+ML file. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}{io\+\_\+binding\+\_\+type} $>$ \hyperlink{classHLS__manager_a478b55ce1c14b09a98e3aa266bdde269}{get\+\_\+required\+\_\+values} (unsigned int fun\+\_\+id, const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&v) const
+\begin{DoxyCompactList}\small\item\em Returns the values required by a vertex. \end{DoxyCompactList}\item 
+bool \hyperlink{classHLS__manager_afb452aef787733de4a11d00cc4e1f36a}{is\+\_\+register\+\_\+compatible} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em helper function that return true in case the variable is register compatible \end{DoxyCompactList}\item 
+bool \hyperlink{classHLS__manager_a2f8e9a8fb92f0d197f5b5e0eee2821bc}{is\+\_\+reading\+\_\+writing\+\_\+function} (unsigned fun\+ID) const
+\begin{DoxyCompactList}\small\item\em is\+\_\+reading\+\_\+writing\+\_\+function \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} $>$ \hyperlink{classHLS__manager_a86f96e84a4f71c2d6a5edac106fad44d}{Get\+All\+Implementations} () const
+\begin{DoxyCompactList}\small\item\em Returns all the implementations resulting from the synthesis. \end{DoxyCompactList}\item 
+bool \hyperlink{classHLS__manager_a022c7d48031f428b5814d0493ac46d1e}{Is\+Single\+Write\+Memory} () const
+\begin{DoxyCompactList}\small\item\em Return if single write memory is exploited. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classHLS__manager_a1ec303c0c29f40a1e9faa003fc71d8ed}{Get\+Mem\+Version} () const
+\begin{DoxyCompactList}\small\item\em Return the version of the memory intermediate representation. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classHLS__manager_a7503f3dcbbb837cd94ad7052bdfb189a}{Update\+Mem\+Version} ()
+\begin{DoxyCompactList}\small\item\em Update the version of the memory intermediate representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} \hyperlink{classHLS__manager_a0b8d2323f8e04cfe68b27e5ec8c4566c}{create\+\_\+\+H\+LS} (const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} H\+L\+S\+Mgr, unsigned int function\+Id)
+\begin{DoxyCompactList}\small\item\em Creates the H\+LS flow starting from the given specification. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classHLS__manager_a6dff7a61a281742bbc63efdfb3e10ac8}{base\+\_\+address}
+\begin{DoxyCompactList}\small\item\em base address for memory space addressing \end{DoxyCompactList}\item 
+long \hyperlink{classHLS__manager_a0f5b6cd7a1597845253492c70ab321f7}{H\+L\+S\+\_\+execution\+\_\+time}
+\begin{DoxyCompactList}\small\item\em H\+LS execution time. \end{DoxyCompactList}\item 
+\hyperlink{functions_8hpp_add94a569c98f4302fc92c66ad9075a0e}{functions\+Ref} \hyperlink{classHLS__manager_aeb7b92f50edc0b210b0a4b126df3bdee}{Rfuns}
+\begin{DoxyCompactList}\small\item\em information about function allocation \end{DoxyCompactList}\item 
+\hyperlink{memory_8hpp_aec1333ec6cd561731fb3ed3e55b9caf5}{memory\+Ref} \hyperlink{classHLS__manager_a6c75d253702801f3cc60f35c65b0bf58}{Rmem}
+\begin{DoxyCompactList}\small\item\em information about memory allocation \end{DoxyCompactList}\item 
+\hyperlink{SimulationInformation_8hpp_a136ebb6fe92363bc51639d8f1422834f}{Simulation\+Information\+Ref} \hyperlink{classHLS__manager_a8daa9fa4877abca7d7fee57333840de6}{R\+Sim}
+\begin{DoxyCompactList}\small\item\em information about the simulation \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ std\+::string, std\+::vector$<$ double $>$ $>$ \hyperlink{classHLS__manager_a43957c7e13f4ed31cdac9636d20bc638}{evaluations}
+\begin{DoxyCompactList}\small\item\em Evaluations. \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::string $>$ \hyperlink{classHLS__manager_a98809821a94ac786b2564bc01451a357}{aux\+\_\+files}
+\begin{DoxyCompactList}\small\item\em The auxiliary files. \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::string $>$ \hyperlink{classHLS__manager_aa9cb0d2a7ccfcbfd7cf33b4e195752ed}{hdl\+\_\+files}
+\begin{DoxyCompactList}\small\item\em The H\+DL files. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::map$<$ std\+::string, std\+::string $>$ $>$ \hyperlink{classHLS__manager_ad77152ba7f522e214719ec634c93da3d}{design\+\_\+interface}
+\begin{DoxyCompactList}\small\item\em store the design interface directives coming from an xml file\+: function\+\_\+name-\/$>$parameter\+\_\+name-\/$>$interface\+\_\+type \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::map$<$ std\+::string, std\+::string $>$ $>$ \hyperlink{classHLS__manager_abd07511b7c43284d488e91b0188fc70c}{design\+\_\+interface\+\_\+arraysize}
+\begin{DoxyCompactList}\small\item\em store the design interface array size coming from an xml file\+: function\+\_\+name-\/$>$parameter\+\_\+name-\/$>$interface\+\_\+arraysize \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::map$<$ std\+::string, std\+::string $>$ $>$ \hyperlink{classHLS__manager_ad3f5bf7e9716c1ca11f291f3cc940c17}{design\+\_\+interface\+\_\+typename}
+\begin{DoxyCompactList}\small\item\em store the design interface typenames coming from an xml file\+: function\+\_\+name-\/$>$parameter\+\_\+name-\/$>$interface\+\_\+typename \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::vector$<$ std\+::string $>$ $>$ \hyperlink{classHLS__manager_abe078d82e1b4bcd0d90e35641752ddb1}{design\+\_\+interface\+\_\+typename\+\_\+signature}
+\begin{DoxyCompactList}\small\item\em store the design interface signature coming from an xml file\+: function\+\_\+name-\/$>$typename\+\_\+signature \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::map$<$ std\+::string, std\+::string $>$ $>$ \hyperlink{classHLS__manager_a1b6155e191406f48cb6acb62f1b7452a}{design\+\_\+interface\+\_\+typenameinclude}
+\begin{DoxyCompactList}\small\item\em store the design interface typename includes coming from an xml file\+: function\+\_\+name-\/$>$parameter\+\_\+name-\/$>$interface\+\_\+typenameinclude \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::map$<$ unsigned, std\+::map$<$ std\+::string, std\+::list$<$ unsigned $>$ $>$ $>$ $>$ \hyperlink{classHLS__manager_a17a38a245c68dd49cc486c7b63863d9c}{design\+\_\+interface\+\_\+loads}
+\begin{DoxyCompactList}\small\item\em store the design interface read references of parameters\+: function\+\_\+name-\/$>$bb\+\_\+index-\/$>$parameter\+\_\+name-\/$>$list\+\_\+of\+\_\+loads \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::map$<$ unsigned, std\+::map$<$ std\+::string, std\+::list$<$ unsigned $>$ $>$ $>$ $>$ \hyperlink{classHLS__manager_a0fa12a49e2a498dfd7cd08a581e3727d}{design\+\_\+interface\+\_\+stores}
+\begin{DoxyCompactList}\small\item\em store the design interface write references of parameters\+: function\+\_\+name-\/$>$bb\+\_\+index-\/$>$parameter\+\_\+name-\/$>$list\+\_\+of\+\_\+stores \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned, std\+::map$<$ std\+::string, std\+::map$<$ std\+::string, unsigned int $>$ $>$ $>$ \hyperlink{classHLS__manager_af8513cdb4d4acde603c9c9a84b42c19f}{design\+\_\+interface\+\_\+constraints}
+\begin{DoxyCompactList}\small\item\em store the constraints on resources added to manage the I/O interfaces\+: function\+\_\+id-\/$>$library\+\_\+name-\/$>$resource\+\_\+function\+\_\+name-\/$>$number of resources \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::pair$<$ std\+::string, std\+::string $>$, unsigned $>$ \hyperlink{classHLS__manager_a72db23fe6f872fbbb85ca81ec4468c0d}{global\+\_\+resource\+\_\+constraints}
+\begin{DoxyCompactList}\small\item\em global resource constraints \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{hls__target_8hpp_a390f1d55d3b31739665ff2776abe2a3f}{H\+L\+S\+\_\+target\+Ref} \hyperlink{classHLS__manager_ac138185e1aa74471d0a571287a60870b}{H\+L\+S\+\_\+T}
+\begin{DoxyCompactList}\small\item\em information about the target device/technology for the synthesis \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} $>$ \hyperlink{classHLS__manager_a40f9e16abe8d9637c1dae00884ff7bb1}{hls\+Map}
+\begin{DoxyCompactList}\small\item\em map between the function id and the corresponding H\+LS datastructure \end{DoxyCompactList}\item 
+\hyperlink{BackendFlow_8hpp_addb01ef393ed4ea8a79765c8ebfcf5a0}{Backend\+Flow\+Ref} \hyperlink{classHLS__manager_aaad9c20dcbaf5165fd2383b4a5583ad1}{back\+\_\+flow}
+\begin{DoxyCompactList}\small\item\em reference to the datastructure implementing the backend flow \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classHLS__manager_a98389ee79c39eb27fb1d690e09c17f05}{memory\+\_\+version}
+\begin{DoxyCompactList}\small\item\em The version of memory representation on which this step was applied. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 64 of file hls\+\_\+manager.\+hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}\label{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!io\+\_\+binding\+\_\+type@{io\+\_\+binding\+\_\+type}}
+\index{io\+\_\+binding\+\_\+type@{io\+\_\+binding\+\_\+type}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{io\+\_\+binding\+\_\+type}{io\_binding\_type}}
+{\footnotesize\ttfamily typedef std\+::tuple$<$unsigned int, unsigned int$>$ \hyperlink{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}{H\+L\+S\+\_\+manager\+::io\+\_\+binding\+\_\+type}}
+
+
+
+tuple set used to represent the required values or the constant default value associated with the inputs of a node 
+
+
+
+Definition at line 68 of file hls\+\_\+manager.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHLS__manager_aa1e62cc57b722b661605ea798812ab79}\label{classHLS__manager_aa1e62cc57b722b661605ea798812ab79}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{H\+L\+S\+\_\+manager()}{HLS\_manager()}}
+{\footnotesize\ttfamily H\+L\+S\+\_\+manager\+::\+H\+L\+S\+\_\+manager (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+\+Param,  }\item[{const \hyperlink{hls__target_8hpp_a390f1d55d3b31739665ff2776abe2a3f}{H\+L\+S\+\_\+target\+Ref}}]{\+\_\+\+H\+L\+S\+\_\+T }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Header include.
+
+. include behavior include 
+
+Definition at line 81 of file hls\+\_\+manager.\+cpp.
+
+
+
+References functions, application\+\_\+manager\+::\+Param, Rfuns, and $\sim$\+H\+L\+S\+\_\+manager().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dd7/classHLS__manager_aa1e62cc57b722b661605ea798812ab79_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__manager_a2ec17f0c6f719db1769935ef838105d1}\label{classHLS__manager_a2ec17f0c6f719db1769935ef838105d1}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!````~H\+L\+S\+\_\+manager@{$\sim$\+H\+L\+S\+\_\+manager}}
+\index{````~H\+L\+S\+\_\+manager@{$\sim$\+H\+L\+S\+\_\+manager}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{$\sim$\+H\+L\+S\+\_\+manager()}{~HLS\_manager()}}
+{\footnotesize\ttfamily H\+L\+S\+\_\+manager\+::$\sim$\+H\+L\+S\+\_\+manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by H\+L\+S\+\_\+manager().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dd7/classHLS__manager_a2ec17f0c6f719db1769935ef838105d1_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classHLS__manager_a0b8d2323f8e04cfe68b27e5ec8c4566c}\label{classHLS__manager_a0b8d2323f8e04cfe68b27e5ec8c4566c}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!create\+\_\+\+H\+LS@{create\+\_\+\+H\+LS}}
+\index{create\+\_\+\+H\+LS@{create\+\_\+\+H\+LS}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{create\+\_\+\+H\+L\+S()}{create\_HLS()}}
+{\footnotesize\ttfamily \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} H\+L\+S\+\_\+manager\+::create\+\_\+\+H\+LS (\begin{DoxyParamCaption}\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr,  }\item[{unsigned int}]{function\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates the H\+LS flow starting from the given specification. 
+
+creates the new H\+LS data structure associated with the function 
+
+Definition at line 116 of file hls\+\_\+manager.\+cpp.
+
+
+
+References Function\+Behavior\+::\+C\+FG, I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+U\+I\+NT, tree\+\_\+helper\+::name\+\_\+function(), and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Initialize\+H\+L\+S\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dd7/classHLS__manager_a0b8d2323f8e04cfe68b27e5ec8c4566c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dd7/classHLS__manager_a0b8d2323f8e04cfe68b27e5ec8c4566c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__manager_aff13fa7f6ea495bbb5979294d336edb5}\label{classHLS__manager_aff13fa7f6ea495bbb5979294d336edb5}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!get\+\_\+backend\+\_\+flow@{get\+\_\+backend\+\_\+flow}}
+\index{get\+\_\+backend\+\_\+flow@{get\+\_\+backend\+\_\+flow}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+backend\+\_\+flow()}{get\_backend\_flow()}}
+{\footnotesize\ttfamily const \hyperlink{BackendFlow_8hpp_addb01ef393ed4ea8a79765c8ebfcf5a0}{Backend\+Flow\+Ref} H\+L\+S\+\_\+manager\+::get\+\_\+backend\+\_\+flow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the backend flow. 
+
+
+
+Definition at line 217 of file hls\+\_\+manager.\+cpp.
+
+
+
+References back\+\_\+flow, Backend\+Flow\+::\+Create\+Flow(), H\+L\+S\+\_\+T, and application\+\_\+manager\+::\+Param.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dd7/classHLS__manager_aff13fa7f6ea495bbb5979294d336edb5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__manager_adb55871297598407cb473ef10647048b}\label{classHLS__manager_adb55871297598407cb473ef10647048b}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!get\+\_\+constant\+\_\+string@{get\+\_\+constant\+\_\+string}}
+\index{get\+\_\+constant\+\_\+string@{get\+\_\+constant\+\_\+string}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+constant\+\_\+string()}{get\_constant\_string()}}
+{\footnotesize\ttfamily std\+::string H\+L\+S\+\_\+manager\+::get\+\_\+constant\+\_\+string (\begin{DoxyParamCaption}\item[{unsigned int}]{node,  }\item[{unsigned int}]{precision }\end{DoxyParamCaption})}
+
+
+
+Return the specified constant in string format. 
+
+
+
+Definition at line 146 of file hls\+\_\+manager.\+cpp.
+
+
+
+References convert\+\_\+fp\+\_\+to\+\_\+string(), convert\+\_\+to\+\_\+binary(), get\+\_\+constant\+\_\+string(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), tree\+\_\+helper\+::is\+\_\+a\+\_\+complex(), tree\+\_\+helper\+::is\+\_\+a\+\_\+vector(), tree\+\_\+helper\+::is\+\_\+real(), tree\+\_\+helper\+::size(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and application\+\_\+manager\+::\+TM.
+
+
+
+Referenced by get\+\_\+constant\+\_\+string().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dd7/classHLS__manager_adb55871297598407cb473ef10647048b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{dc/dd7/classHLS__manager_adb55871297598407cb473ef10647048b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__manager_a9bf8850e21fc2d43665009fab8d3c095}\label{classHLS__manager_a9bf8850e21fc2d43665009fab8d3c095}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!get\+\_\+\+H\+LS@{get\+\_\+\+H\+LS}}
+\index{get\+\_\+\+H\+LS@{get\+\_\+\+H\+LS}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+\+H\+L\+S()}{get\_HLS()}}
+{\footnotesize\ttfamily \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} H\+L\+S\+\_\+manager\+::get\+\_\+\+H\+LS (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+Id }\end{DoxyParamCaption}) const}
+
+
+
+Returns the H\+LS datastructure associated with a specific function. 
+
+
+
+Definition at line 102 of file hls\+\_\+manager.\+cpp.
+
+
+
+References hls\+Map.
+
+\mbox{\Hypertarget{classHLS__manager_a8e61638717813ff15e1a5051815c111e}\label{classHLS__manager_a8e61638717813ff15e1a5051815c111e}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!get\+\_\+\+H\+L\+S\+\_\+target@{get\+\_\+\+H\+L\+S\+\_\+target}}
+\index{get\+\_\+\+H\+L\+S\+\_\+target@{get\+\_\+\+H\+L\+S\+\_\+target}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+\+H\+L\+S\+\_\+target()}{get\_HLS\_target()}}
+{\footnotesize\ttfamily \hyperlink{hls__target_8hpp_a390f1d55d3b31739665ff2776abe2a3f}{H\+L\+S\+\_\+target\+Ref} H\+L\+S\+\_\+manager\+::get\+\_\+\+H\+L\+S\+\_\+target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the datastructure associated with the H\+LS target. 
+
+
+
+Definition at line 111 of file hls\+\_\+manager.\+cpp.
+
+
+
+References H\+L\+S\+\_\+T.
+
+
+
+Referenced by Is\+Single\+Write\+Memory().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dd7/classHLS__manager_a8e61638717813ff15e1a5051815c111e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__manager_a478b55ce1c14b09a98e3aa266bdde269}\label{classHLS__manager_a478b55ce1c14b09a98e3aa266bdde269}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!get\+\_\+required\+\_\+values@{get\+\_\+required\+\_\+values}}
+\index{get\+\_\+required\+\_\+values@{get\+\_\+required\+\_\+values}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{get\+\_\+required\+\_\+values()}{get\_required\_values()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}{H\+L\+S\+\_\+manager\+::io\+\_\+binding\+\_\+type} $>$ H\+L\+S\+\_\+manager\+::get\+\_\+required\+\_\+values (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+\_\+id,  }\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&}]{v }\end{DoxyParamCaption}) const}
+
+
+
+Returns the values required by a vertex. 
+
+
+
+Definition at line 256 of file hls\+\_\+manager.\+cpp.
+
+
+
+References Function\+Behavior\+::\+C\+FG, application\+\_\+manager\+::\+C\+Get\+Function\+Behavior(), Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), E\+N\+T\+R\+Y\+\_\+\+ID, E\+X\+I\+T\+\_\+\+ID, tree\+\_\+helper\+::get\+\_\+required\+\_\+values(), tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), and application\+\_\+manager\+::\+TM.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dd7/classHLS__manager_a478b55ce1c14b09a98e3aa266bdde269_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__manager_a86f96e84a4f71c2d6a5edac106fad44d}\label{classHLS__manager_a86f96e84a4f71c2d6a5edac106fad44d}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!Get\+All\+Implementations@{Get\+All\+Implementations}}
+\index{Get\+All\+Implementations@{Get\+All\+Implementations}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{Get\+All\+Implementations()}{GetAllImplementations()}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref}$>$ H\+L\+S\+\_\+manager\+::\+Get\+All\+Implementations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns all the implementations resulting from the synthesis. 
+
+\mbox{\Hypertarget{classHLS__manager_a1ec303c0c29f40a1e9faa003fc71d8ed}\label{classHLS__manager_a1ec303c0c29f40a1e9faa003fc71d8ed}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!Get\+Mem\+Version@{Get\+Mem\+Version}}
+\index{Get\+Mem\+Version@{Get\+Mem\+Version}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{Get\+Mem\+Version()}{GetMemVersion()}}
+{\footnotesize\ttfamily unsigned int H\+L\+S\+\_\+manager\+::\+Get\+Mem\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the version of the memory intermediate representation. 
+
+\begin{DoxyReturn}{Returns}
+bb\+\_\+version 
+\end{DoxyReturn}
+
+
+Definition at line 288 of file hls\+\_\+manager.\+cpp.
+
+
+
+References memory\+\_\+version.
+
+\mbox{\Hypertarget{classHLS__manager_a2f8e9a8fb92f0d197f5b5e0eee2821bc}\label{classHLS__manager_a2f8e9a8fb92f0d197f5b5e0eee2821bc}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!is\+\_\+reading\+\_\+writing\+\_\+function@{is\+\_\+reading\+\_\+writing\+\_\+function}}
+\index{is\+\_\+reading\+\_\+writing\+\_\+function@{is\+\_\+reading\+\_\+writing\+\_\+function}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{is\+\_\+reading\+\_\+writing\+\_\+function()}{is\_reading\_writing\_function()}}
+{\footnotesize\ttfamily bool H\+L\+S\+\_\+manager\+::is\+\_\+reading\+\_\+writing\+\_\+function (\begin{DoxyParamCaption}\item[{unsigned}]{fun\+ID }\end{DoxyParamCaption}) const}
+
+
+
+is\+\_\+reading\+\_\+writing\+\_\+function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fun\+ID} & is the function identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true in case the function performs at least a load or a store 
+\end{DoxyReturn}
+
+
+Definition at line 273 of file hls\+\_\+manager.\+cpp.
+
+
+
+References tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and application\+\_\+manager\+::\+TM.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dd7/classHLS__manager_a2f8e9a8fb92f0d197f5b5e0eee2821bc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__manager_afb452aef787733de4a11d00cc4e1f36a}\label{classHLS__manager_afb452aef787733de4a11d00cc4e1f36a}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!is\+\_\+register\+\_\+compatible@{is\+\_\+register\+\_\+compatible}}
+\index{is\+\_\+register\+\_\+compatible@{is\+\_\+register\+\_\+compatible}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{is\+\_\+register\+\_\+compatible()}{is\_register\_compatible()}}
+{\footnotesize\ttfamily bool H\+L\+S\+\_\+manager\+::is\+\_\+register\+\_\+compatible (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+helper function that return true in case the variable is register compatible 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true in case var is register compatible 
+\end{DoxyReturn}
+
+
+Definition at line 266 of file hls\+\_\+manager.\+cpp.
+
+
+
+References memory\+::has\+\_\+base\+\_\+address(), tree\+\_\+helper\+::is\+\_\+parameter(), tree\+\_\+helper\+::is\+\_\+ssa\+\_\+name(), tree\+\_\+helper\+::is\+\_\+virtual(), Rmem, and application\+\_\+manager\+::\+TM.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dd7/classHLS__manager_afb452aef787733de4a11d00cc4e1f36a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__manager_a022c7d48031f428b5814d0493ac46d1e}\label{classHLS__manager_a022c7d48031f428b5814d0493ac46d1e}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!Is\+Single\+Write\+Memory@{Is\+Single\+Write\+Memory}}
+\index{Is\+Single\+Write\+Memory@{Is\+Single\+Write\+Memory}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{Is\+Single\+Write\+Memory()}{IsSingleWriteMemory()}}
+{\footnotesize\ttfamily bool H\+L\+S\+\_\+manager\+::\+Is\+Single\+Write\+Memory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return if single write memory is exploited. 
+
+
+
+Definition at line 281 of file hls\+\_\+manager.\+cpp.
+
+
+
+References get\+\_\+\+H\+L\+S\+\_\+target(), target\+\_\+device\+::get\+\_\+parameter(), target\+\_\+manager\+::get\+\_\+target\+\_\+device(), target\+\_\+device\+::has\+\_\+parameter(), and application\+\_\+manager\+::\+Param.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dd7/classHLS__manager_a022c7d48031f428b5814d0493ac46d1e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__manager_a7503f3dcbbb837cd94ad7052bdfb189a}\label{classHLS__manager_a7503f3dcbbb837cd94ad7052bdfb189a}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!Update\+Mem\+Version@{Update\+Mem\+Version}}
+\index{Update\+Mem\+Version@{Update\+Mem\+Version}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{Update\+Mem\+Version()}{UpdateMemVersion()}}
+{\footnotesize\ttfamily unsigned int H\+L\+S\+\_\+manager\+::\+Update\+Mem\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Update the version of the memory intermediate representation. 
+
+\begin{DoxyReturn}{Returns}
+the new version 
+\end{DoxyReturn}
+
+
+Definition at line 293 of file hls\+\_\+manager.\+cpp.
+
+
+
+References memory\+\_\+version.
+
+\mbox{\Hypertarget{classHLS__manager_adc098d176fadc4a0fb07eeb325022b6d}\label{classHLS__manager_adc098d176fadc4a0fb07eeb325022b6d}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!xwrite@{xwrite}}
+\index{xwrite@{xwrite}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{xwrite()}{xwrite()}}
+{\footnotesize\ttfamily void H\+L\+S\+\_\+manager\+::xwrite (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Writes the current H\+LS project into an X\+ML file. 
+
+
+
+Definition at line 224 of file hls\+\_\+manager.\+cpp.
+
+
+
+References application\+\_\+manager\+::call\+\_\+graph\+\_\+manager, application\+\_\+manager\+::\+C\+Get\+Function\+Behavior(), xml\+\_\+document\+::create\+\_\+root\+\_\+node(), Function\+Behavior\+::\+F\+D\+FG, hls\+Map, Rmem, xml\+\_\+document\+::write\+\_\+to\+\_\+file\+\_\+formatted(), hls\+::xwrite(), and memory\+::xwrite().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dd7/classHLS__manager_adc098d176fadc4a0fb07eeb325022b6d_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classHLS__manager_a98809821a94ac786b2564bc01451a357}\label{classHLS__manager_a98809821a94ac786b2564bc01451a357}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!aux\+\_\+files@{aux\+\_\+files}}
+\index{aux\+\_\+files@{aux\+\_\+files}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{aux\+\_\+files}{aux\_files}}
+{\footnotesize\ttfamily std\+::list$<$std\+::string$>$ H\+L\+S\+\_\+manager\+::aux\+\_\+files}
+
+
+
+The auxiliary files. 
+
+
+
+Definition at line 103 of file hls\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classHLS__manager_aaad9c20dcbaf5165fd2383b4a5583ad1}\label{classHLS__manager_aaad9c20dcbaf5165fd2383b4a5583ad1}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!back\+\_\+flow@{back\+\_\+flow}}
+\index{back\+\_\+flow@{back\+\_\+flow}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{back\+\_\+flow}{back\_flow}}
+{\footnotesize\ttfamily \hyperlink{BackendFlow_8hpp_addb01ef393ed4ea8a79765c8ebfcf5a0}{Backend\+Flow\+Ref} H\+L\+S\+\_\+manager\+::back\+\_\+flow\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+reference to the datastructure implementing the backend flow 
+
+
+
+Definition at line 78 of file hls\+\_\+manager.\+hpp.
+
+
+
+Referenced by get\+\_\+backend\+\_\+flow().
+
+\mbox{\Hypertarget{classHLS__manager_a6dff7a61a281742bbc63efdfb3e10ac8}\label{classHLS__manager_a6dff7a61a281742bbc63efdfb3e10ac8}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!base\+\_\+address@{base\+\_\+address}}
+\index{base\+\_\+address@{base\+\_\+address}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{base\+\_\+address}{base\_address}}
+{\footnotesize\ttfamily unsigned int H\+L\+S\+\_\+manager\+::base\+\_\+address}
+
+
+
+base address for memory space addressing 
+
+
+
+Definition at line 85 of file hls\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classHLS__manager_ad77152ba7f522e214719ec634c93da3d}\label{classHLS__manager_ad77152ba7f522e214719ec634c93da3d}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!design\+\_\+interface@{design\+\_\+interface}}
+\index{design\+\_\+interface@{design\+\_\+interface}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{design\+\_\+interface}{design\_interface}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::map$<$std\+::string, std\+::string$>$ $>$ H\+L\+S\+\_\+manager\+::design\+\_\+interface}
+
+
+
+store the design interface directives coming from an xml file\+: function\+\_\+name-\/$>$parameter\+\_\+name-\/$>$interface\+\_\+type 
+
+
+
+Definition at line 114 of file hls\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classHLS__manager_abd07511b7c43284d488e91b0188fc70c}\label{classHLS__manager_abd07511b7c43284d488e91b0188fc70c}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!design\+\_\+interface\+\_\+arraysize@{design\+\_\+interface\+\_\+arraysize}}
+\index{design\+\_\+interface\+\_\+arraysize@{design\+\_\+interface\+\_\+arraysize}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{design\+\_\+interface\+\_\+arraysize}{design\_interface\_arraysize}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::map$<$std\+::string, std\+::string$>$ $>$ H\+L\+S\+\_\+manager\+::design\+\_\+interface\+\_\+arraysize}
+
+
+
+store the design interface array size coming from an xml file\+: function\+\_\+name-\/$>$parameter\+\_\+name-\/$>$interface\+\_\+arraysize 
+
+
+
+Definition at line 116 of file hls\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classHLS__manager_af8513cdb4d4acde603c9c9a84b42c19f}\label{classHLS__manager_af8513cdb4d4acde603c9c9a84b42c19f}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!design\+\_\+interface\+\_\+constraints@{design\+\_\+interface\+\_\+constraints}}
+\index{design\+\_\+interface\+\_\+constraints@{design\+\_\+interface\+\_\+constraints}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{design\+\_\+interface\+\_\+constraints}{design\_interface\_constraints}}
+{\footnotesize\ttfamily std\+::map$<$unsigned, std\+::map$<$std\+::string, std\+::map$<$std\+::string, unsigned int$>$ $>$ $>$ H\+L\+S\+\_\+manager\+::design\+\_\+interface\+\_\+constraints}
+
+
+
+store the constraints on resources added to manage the I/O interfaces\+: function\+\_\+id-\/$>$library\+\_\+name-\/$>$resource\+\_\+function\+\_\+name-\/$>$number of resources 
+
+
+
+Definition at line 129 of file hls\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classHLS__manager_a17a38a245c68dd49cc486c7b63863d9c}\label{classHLS__manager_a17a38a245c68dd49cc486c7b63863d9c}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!design\+\_\+interface\+\_\+loads@{design\+\_\+interface\+\_\+loads}}
+\index{design\+\_\+interface\+\_\+loads@{design\+\_\+interface\+\_\+loads}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{design\+\_\+interface\+\_\+loads}{design\_interface\_loads}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::map$<$unsigned, std\+::map$<$std\+::string, std\+::list$<$unsigned$>$ $>$ $>$ $>$ H\+L\+S\+\_\+manager\+::design\+\_\+interface\+\_\+loads}
+
+
+
+store the design interface read references of parameters\+: function\+\_\+name-\/$>$bb\+\_\+index-\/$>$parameter\+\_\+name-\/$>$list\+\_\+of\+\_\+loads 
+
+
+
+Definition at line 124 of file hls\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classHLS__manager_a0fa12a49e2a498dfd7cd08a581e3727d}\label{classHLS__manager_a0fa12a49e2a498dfd7cd08a581e3727d}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!design\+\_\+interface\+\_\+stores@{design\+\_\+interface\+\_\+stores}}
+\index{design\+\_\+interface\+\_\+stores@{design\+\_\+interface\+\_\+stores}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{design\+\_\+interface\+\_\+stores}{design\_interface\_stores}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::map$<$unsigned, std\+::map$<$std\+::string, std\+::list$<$unsigned$>$ $>$ $>$ $>$ H\+L\+S\+\_\+manager\+::design\+\_\+interface\+\_\+stores}
+
+
+
+store the design interface write references of parameters\+: function\+\_\+name-\/$>$bb\+\_\+index-\/$>$parameter\+\_\+name-\/$>$list\+\_\+of\+\_\+stores 
+
+
+
+Definition at line 126 of file hls\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classHLS__manager_ad3f5bf7e9716c1ca11f291f3cc940c17}\label{classHLS__manager_ad3f5bf7e9716c1ca11f291f3cc940c17}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!design\+\_\+interface\+\_\+typename@{design\+\_\+interface\+\_\+typename}}
+\index{design\+\_\+interface\+\_\+typename@{design\+\_\+interface\+\_\+typename}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{design\+\_\+interface\+\_\+typename}{design\_interface\_typename}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::map$<$std\+::string, std\+::string$>$ $>$ H\+L\+S\+\_\+manager\+::design\+\_\+interface\+\_\+typename}
+
+
+
+store the design interface typenames coming from an xml file\+: function\+\_\+name-\/$>$parameter\+\_\+name-\/$>$interface\+\_\+typename 
+
+
+
+Definition at line 118 of file hls\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classHLS__manager_abe078d82e1b4bcd0d90e35641752ddb1}\label{classHLS__manager_abe078d82e1b4bcd0d90e35641752ddb1}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!design\+\_\+interface\+\_\+typename\+\_\+signature@{design\+\_\+interface\+\_\+typename\+\_\+signature}}
+\index{design\+\_\+interface\+\_\+typename\+\_\+signature@{design\+\_\+interface\+\_\+typename\+\_\+signature}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{design\+\_\+interface\+\_\+typename\+\_\+signature}{design\_interface\_typename\_signature}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::vector$<$std\+::string$>$ $>$ H\+L\+S\+\_\+manager\+::design\+\_\+interface\+\_\+typename\+\_\+signature}
+
+
+
+store the design interface signature coming from an xml file\+: function\+\_\+name-\/$>$typename\+\_\+signature 
+
+
+
+Definition at line 120 of file hls\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classHLS__manager_a1b6155e191406f48cb6acb62f1b7452a}\label{classHLS__manager_a1b6155e191406f48cb6acb62f1b7452a}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!design\+\_\+interface\+\_\+typenameinclude@{design\+\_\+interface\+\_\+typenameinclude}}
+\index{design\+\_\+interface\+\_\+typenameinclude@{design\+\_\+interface\+\_\+typenameinclude}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{design\+\_\+interface\+\_\+typenameinclude}{design\_interface\_typenameinclude}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::map$<$std\+::string, std\+::string$>$ $>$ H\+L\+S\+\_\+manager\+::design\+\_\+interface\+\_\+typenameinclude}
+
+
+
+store the design interface typename includes coming from an xml file\+: function\+\_\+name-\/$>$parameter\+\_\+name-\/$>$interface\+\_\+typenameinclude 
+
+
+
+Definition at line 122 of file hls\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classHLS__manager_a43957c7e13f4ed31cdac9636d20bc638}\label{classHLS__manager_a43957c7e13f4ed31cdac9636d20bc638}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!evaluations@{evaluations}}
+\index{evaluations@{evaluations}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{evaluations}{evaluations}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$std\+::string, std\+::vector$<$double$>$ $>$ H\+L\+S\+\_\+manager\+::evaluations}
+
+
+
+Evaluations. 
+
+
+
+Definition at line 100 of file hls\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classHLS__manager_a72db23fe6f872fbbb85ca81ec4468c0d}\label{classHLS__manager_a72db23fe6f872fbbb85ca81ec4468c0d}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!global\+\_\+resource\+\_\+constraints@{global\+\_\+resource\+\_\+constraints}}
+\index{global\+\_\+resource\+\_\+constraints@{global\+\_\+resource\+\_\+constraints}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{global\+\_\+resource\+\_\+constraints}{global\_resource\_constraints}}
+{\footnotesize\ttfamily std\+::map$<$std\+::pair$<$std\+::string, std\+::string$>$, unsigned$>$ H\+L\+S\+\_\+manager\+::global\+\_\+resource\+\_\+constraints}
+
+
+
+global resource constraints 
+
+
+
+Definition at line 132 of file hls\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classHLS__manager_aa9cb0d2a7ccfcbfd7cf33b4e195752ed}\label{classHLS__manager_aa9cb0d2a7ccfcbfd7cf33b4e195752ed}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!hdl\+\_\+files@{hdl\+\_\+files}}
+\index{hdl\+\_\+files@{hdl\+\_\+files}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{hdl\+\_\+files}{hdl\_files}}
+{\footnotesize\ttfamily std\+::list$<$std\+::string$>$ H\+L\+S\+\_\+manager\+::hdl\+\_\+files}
+
+
+
+The H\+DL files. 
+
+
+
+Definition at line 106 of file hls\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classHLS__manager_a0f5b6cd7a1597845253492c70ab321f7}\label{classHLS__manager_a0f5b6cd7a1597845253492c70ab321f7}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!H\+L\+S\+\_\+execution\+\_\+time@{H\+L\+S\+\_\+execution\+\_\+time}}
+\index{H\+L\+S\+\_\+execution\+\_\+time@{H\+L\+S\+\_\+execution\+\_\+time}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{H\+L\+S\+\_\+execution\+\_\+time}{HLS\_execution\_time}}
+{\footnotesize\ttfamily long H\+L\+S\+\_\+manager\+::\+H\+L\+S\+\_\+execution\+\_\+time}
+
+
+
+H\+LS execution time. 
+
+
+
+Definition at line 88 of file hls\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classHLS__manager_ac138185e1aa74471d0a571287a60870b}\label{classHLS__manager_ac138185e1aa74471d0a571287a60870b}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!H\+L\+S\+\_\+T@{H\+L\+S\+\_\+T}}
+\index{H\+L\+S\+\_\+T@{H\+L\+S\+\_\+T}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{H\+L\+S\+\_\+T}{HLS\_T}}
+{\footnotesize\ttfamily \hyperlink{hls__target_8hpp_a390f1d55d3b31739665ff2776abe2a3f}{H\+L\+S\+\_\+target\+Ref} H\+L\+S\+\_\+manager\+::\+H\+L\+S\+\_\+T\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+information about the target device/technology for the synthesis 
+
+
+
+Definition at line 72 of file hls\+\_\+manager.\+hpp.
+
+
+
+Referenced by get\+\_\+backend\+\_\+flow(), and get\+\_\+\+H\+L\+S\+\_\+target().
+
+\mbox{\Hypertarget{classHLS__manager_a40f9e16abe8d9637c1dae00884ff7bb1}\label{classHLS__manager_a40f9e16abe8d9637c1dae00884ff7bb1}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!hls\+Map@{hls\+Map}}
+\index{hls\+Map@{hls\+Map}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{hls\+Map}{hlsMap}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref}$>$ H\+L\+S\+\_\+manager\+::hls\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+map between the function id and the corresponding H\+LS datastructure 
+
+
+
+Definition at line 75 of file hls\+\_\+manager.\+hpp.
+
+
+
+Referenced by get\+\_\+\+H\+L\+S(), and xwrite().
+
+\mbox{\Hypertarget{classHLS__manager_a98389ee79c39eb27fb1d690e09c17f05}\label{classHLS__manager_a98389ee79c39eb27fb1d690e09c17f05}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!memory\+\_\+version@{memory\+\_\+version}}
+\index{memory\+\_\+version@{memory\+\_\+version}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{memory\+\_\+version}{memory\_version}}
+{\footnotesize\ttfamily unsigned int H\+L\+S\+\_\+manager\+::memory\+\_\+version\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The version of memory representation on which this step was applied. 
+
+
+
+Definition at line 81 of file hls\+\_\+manager.\+hpp.
+
+
+
+Referenced by Get\+Mem\+Version(), and Update\+Mem\+Version().
+
+\mbox{\Hypertarget{classHLS__manager_aeb7b92f50edc0b210b0a4b126df3bdee}\label{classHLS__manager_aeb7b92f50edc0b210b0a4b126df3bdee}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!Rfuns@{Rfuns}}
+\index{Rfuns@{Rfuns}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{Rfuns}{Rfuns}}
+{\footnotesize\ttfamily \hyperlink{functions_8hpp_add94a569c98f4302fc92c66ad9075a0e}{functions\+Ref} H\+L\+S\+\_\+manager\+::\+Rfuns}
+
+
+
+information about function allocation 
+
+
+
+Definition at line 91 of file hls\+\_\+manager.\+hpp.
+
+
+
+Referenced by H\+L\+S\+\_\+manager().
+
+\mbox{\Hypertarget{classHLS__manager_a6c75d253702801f3cc60f35c65b0bf58}\label{classHLS__manager_a6c75d253702801f3cc60f35c65b0bf58}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!Rmem@{Rmem}}
+\index{Rmem@{Rmem}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{Rmem}{Rmem}}
+{\footnotesize\ttfamily \hyperlink{memory_8hpp_aec1333ec6cd561731fb3ed3e55b9caf5}{memory\+Ref} H\+L\+S\+\_\+manager\+::\+Rmem}
+
+
+
+information about memory allocation 
+
+
+
+Definition at line 94 of file hls\+\_\+manager.\+hpp.
+
+
+
+Referenced by is\+\_\+register\+\_\+compatible(), and xwrite().
+
+\mbox{\Hypertarget{classHLS__manager_a8daa9fa4877abca7d7fee57333840de6}\label{classHLS__manager_a8daa9fa4877abca7d7fee57333840de6}} 
+\index{H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}!R\+Sim@{R\+Sim}}
+\index{R\+Sim@{R\+Sim}!H\+L\+S\+\_\+manager@{H\+L\+S\+\_\+manager}}
+\subsubsection{\texorpdfstring{R\+Sim}{RSim}}
+{\footnotesize\ttfamily \hyperlink{SimulationInformation_8hpp_a136ebb6fe92363bc51639d8f1422834f}{Simulation\+Information\+Ref} H\+L\+S\+\_\+manager\+::\+R\+Sim}
+
+
+
+information about the simulation 
+
+
+
+Definition at line 97 of file hls\+\_\+manager.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/\hyperlink{hls__manager_8hpp}{hls\+\_\+manager.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/\hyperlink{hls__manager_8cpp}{hls\+\_\+manager.\+cpp}\end{DoxyCompactItemize}

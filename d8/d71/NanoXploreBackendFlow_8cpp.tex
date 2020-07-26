@@ -1,0 +1,206 @@
+\hypertarget{NanoXploreBackendFlow_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/nanoxplore/\+Nano\+Xplore\+Backend\+Flow.cpp File Reference}
+\label{NanoXploreBackendFlow_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/nanoxplore/\+Nano\+Xplore\+Backend\+Flow.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/nanoxplore/\+Nano\+Xplore\+Backend\+Flow.\+cpp}}
+
+
+Wrapper to Nano\+Xplore synthesis tools.  
+
+
+{\ttfamily \#include \char`\"{}Nano\+Xplore\+Backend\+Flow.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+N\+A\+N\+O\+X\+P\+L\+O\+R\+E.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+B\+Y\+P\+A\+S\+S.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+I\+C\+E\+N\+S\+E.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}synthesis\+\_\+constants.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}L\+U\+T\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}area\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}clb\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}target\+\_\+device.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}target\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}time\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Nano\+Xplore\+Wrapper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}file\+I\+O.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+dom\+\_\+parser.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+script\+\_\+command.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}structural\+\_\+objects.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}N\+G-\/medium.\+data\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}N\+G-\/large.\+data\char`\"{}}\newline
+Include dependency graph for Nano\+Xplore\+Backend\+Flow.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d5d/NanoXploreBackendFlow_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{NanoXploreBackendFlow_8cpp_a6bac3971fc7c79228070565635ba25df}{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+FE}~\char`\"{}N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+FE\char`\"{}
+\begin{DoxyCompactList}\small\item\em Header include. \end{DoxyCompactList}\item 
+\#define \hyperlink{NanoXploreBackendFlow_8cpp_a539e52b9ec8e4542f703e34ffb0175e0}{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+U\+TS}~\char`\"{}N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+U\+TS\char`\"{}
+\item 
+\#define \hyperlink{NanoXploreBackendFlow_8cpp_a1e04f5bae1eff30bd157e434deb94e99}{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+S\+L\+A\+CK}~\char`\"{}N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+S\+L\+A\+CK\char`\"{}
+\item 
+\#define \hyperlink{NanoXploreBackendFlow_8cpp_a2c19b8a0003edf73148db0eff4437521}{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}~\char`\"{}N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS\char`\"{}
+\item 
+\#define \hyperlink{NanoXploreBackendFlow_8cpp_ae6ab4004871cca257e353d0faadb024a}{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+I\+O\+P\+IN}~\char`\"{}N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+I\+O\+P\+IN\char`\"{}
+\item 
+\#define \hyperlink{NanoXploreBackendFlow_8cpp_af1e199ecb0481ffaf673b38774ef25e6}{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+D\+SP}~\char`\"{}N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+D\+S\+PS\char`\"{}
+\item 
+\#define \hyperlink{NanoXploreBackendFlow_8cpp_ae1d597c5c818c2f6c05930bd93383e52}{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+M\+EM}~\char`\"{}N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+M\+EM\char`\"{}
+\item 
+\#define \hyperlink{NanoXploreBackendFlow_8cpp_af5e0137600d59011e9acedbc00cebaf8}{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+P\+O\+W\+ER}~\char`\"{}N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+P\+O\+W\+ER\char`\"{}
+\item 
+\#define \hyperlink{NanoXploreBackendFlow_8cpp_a5e4953e9454af52fdc229a8e9787a3c9}{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+I\+C\+E\+N\+S\+E\+\_\+\+S\+ET}~std\+::string(\char`\"{}export L\+M\+\_\+\+L\+I\+C\+E\+N\+S\+E\+\_\+\+F\+I\+LE=\char`\"{}) + S\+TR(N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+I\+C\+E\+N\+SE) + std\+::string(\char`\"{};\char`\"{})
+\item 
+\#define \hyperlink{NanoXploreBackendFlow_8cpp_a58699876df91164d6d99b7bfafec66c9}{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+S\+ET}~std\+::string(\char`\"{}export N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+B\+Y\+P\+A\+SS=\char`\"{}) + S\+TR(N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+B\+Y\+P\+A\+SS) + std\+::string(\char`\"{};\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Wrapper to Nano\+Xplore synthesis tools. 
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{NanoXploreBackendFlow_8cpp_a58699876df91164d6d99b7bfafec66c9}\label{NanoXploreBackendFlow_8cpp_a58699876df91164d6d99b7bfafec66c9}} 
+\index{Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}!N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+S\+ET@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+S\+ET}}
+\index{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+S\+ET@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+S\+ET}!Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+S\+ET}{NANOXPLORE\_BYPASS\_SET}}
+{\footnotesize\ttfamily \#define N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+S\+ET~std\+::string(\char`\"{}export N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+B\+Y\+P\+A\+SS=\char`\"{}) + S\+TR(N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+B\+Y\+P\+A\+SS) + std\+::string(\char`\"{};\char`\"{})}
+
+
+
+Definition at line 80 of file Nano\+Xplore\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Nano\+Xplore\+Backend\+Flow\+::\+Write\+Flow\+Configuration().
+
+\mbox{\Hypertarget{NanoXploreBackendFlow_8cpp_af1e199ecb0481ffaf673b38774ef25e6}\label{NanoXploreBackendFlow_8cpp_af1e199ecb0481ffaf673b38774ef25e6}} 
+\index{Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}!N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+D\+SP@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+D\+SP}}
+\index{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+D\+SP@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+D\+SP}!Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+D\+SP}{NANOXPLORE\_DSP}}
+{\footnotesize\ttfamily \#define N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+D\+SP~\char`\"{}N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+D\+S\+PS\char`\"{}}
+
+
+
+Definition at line 75 of file Nano\+Xplore\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Nano\+Xplore\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{NanoXploreBackendFlow_8cpp_a6bac3971fc7c79228070565635ba25df}\label{NanoXploreBackendFlow_8cpp_a6bac3971fc7c79228070565635ba25df}} 
+\index{Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}!N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+FE@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+FE}}
+\index{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+FE@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+FE}!Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+FE}{NANOXPLORE\_FE}}
+{\footnotesize\ttfamily \#define N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+FE~\char`\"{}N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+FE\char`\"{}}
+
+
+
+Header include. 
+
+constants include circuit include 
+
+Definition at line 70 of file Nano\+Xplore\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Nano\+Xplore\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{NanoXploreBackendFlow_8cpp_ae6ab4004871cca257e353d0faadb024a}\label{NanoXploreBackendFlow_8cpp_ae6ab4004871cca257e353d0faadb024a}} 
+\index{Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}!N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+I\+O\+P\+IN@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+I\+O\+P\+IN}}
+\index{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+I\+O\+P\+IN@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+I\+O\+P\+IN}!Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+I\+O\+P\+IN}{NANOXPLORE\_IOPIN}}
+{\footnotesize\ttfamily \#define N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+I\+O\+P\+IN~\char`\"{}N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+I\+O\+P\+IN\char`\"{}}
+
+
+
+Definition at line 74 of file Nano\+Xplore\+Backend\+Flow.\+cpp.
+
+\mbox{\Hypertarget{NanoXploreBackendFlow_8cpp_a5e4953e9454af52fdc229a8e9787a3c9}\label{NanoXploreBackendFlow_8cpp_a5e4953e9454af52fdc229a8e9787a3c9}} 
+\index{Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}!N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+I\+C\+E\+N\+S\+E\+\_\+\+S\+ET@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+I\+C\+E\+N\+S\+E\+\_\+\+S\+ET}}
+\index{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+I\+C\+E\+N\+S\+E\+\_\+\+S\+ET@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+I\+C\+E\+N\+S\+E\+\_\+\+S\+ET}!Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+I\+C\+E\+N\+S\+E\+\_\+\+S\+ET}{NANOXPLORE\_LICENSE\_SET}}
+{\footnotesize\ttfamily \#define N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+I\+C\+E\+N\+S\+E\+\_\+\+S\+ET~std\+::string(\char`\"{}export L\+M\+\_\+\+L\+I\+C\+E\+N\+S\+E\+\_\+\+F\+I\+LE=\char`\"{}) + S\+TR(N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+I\+C\+E\+N\+SE) + std\+::string(\char`\"{};\char`\"{})}
+
+
+
+Definition at line 79 of file Nano\+Xplore\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Nano\+Xplore\+Backend\+Flow\+::\+Write\+Flow\+Configuration().
+
+\mbox{\Hypertarget{NanoXploreBackendFlow_8cpp_a539e52b9ec8e4542f703e34ffb0175e0}\label{NanoXploreBackendFlow_8cpp_a539e52b9ec8e4542f703e34ffb0175e0}} 
+\index{Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}!N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+U\+TS@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+U\+TS}}
+\index{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+U\+TS@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+U\+TS}!Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+U\+TS}{NANOXPLORE\_LUTS}}
+{\footnotesize\ttfamily \#define N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+U\+TS~\char`\"{}N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+L\+U\+TS\char`\"{}}
+
+
+
+Definition at line 71 of file Nano\+Xplore\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Nano\+Xplore\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{NanoXploreBackendFlow_8cpp_ae1d597c5c818c2f6c05930bd93383e52}\label{NanoXploreBackendFlow_8cpp_ae1d597c5c818c2f6c05930bd93383e52}} 
+\index{Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}!N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+M\+EM@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+M\+EM}}
+\index{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+M\+EM@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+M\+EM}!Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+M\+EM}{NANOXPLORE\_MEM}}
+{\footnotesize\ttfamily \#define N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+M\+EM~\char`\"{}N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+M\+EM\char`\"{}}
+
+
+
+Definition at line 76 of file Nano\+Xplore\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Nano\+Xplore\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{NanoXploreBackendFlow_8cpp_af5e0137600d59011e9acedbc00cebaf8}\label{NanoXploreBackendFlow_8cpp_af5e0137600d59011e9acedbc00cebaf8}} 
+\index{Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}!N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+P\+O\+W\+ER@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+P\+O\+W\+ER}}
+\index{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+P\+O\+W\+ER@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+P\+O\+W\+ER}!Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+P\+O\+W\+ER}{NANOXPLORE\_POWER}}
+{\footnotesize\ttfamily \#define N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+P\+O\+W\+ER~\char`\"{}N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+P\+O\+W\+ER\char`\"{}}
+
+
+
+Definition at line 77 of file Nano\+Xplore\+Backend\+Flow.\+cpp.
+
+\mbox{\Hypertarget{NanoXploreBackendFlow_8cpp_a2c19b8a0003edf73148db0eff4437521}\label{NanoXploreBackendFlow_8cpp_a2c19b8a0003edf73148db0eff4437521}} 
+\index{Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}!N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}}
+\index{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}!Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}{NANOXPLORE\_REGISTERS}}
+{\footnotesize\ttfamily \#define N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS~\char`\"{}N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS\char`\"{}}
+
+
+
+Definition at line 73 of file Nano\+Xplore\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Nano\+Xplore\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{NanoXploreBackendFlow_8cpp_a1e04f5bae1eff30bd157e434deb94e99}\label{NanoXploreBackendFlow_8cpp_a1e04f5bae1eff30bd157e434deb94e99}} 
+\index{Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}!N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+S\+L\+A\+CK@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+S\+L\+A\+CK}}
+\index{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+S\+L\+A\+CK@{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+S\+L\+A\+CK}!Nano\+Xplore\+Backend\+Flow.\+cpp@{Nano\+Xplore\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+S\+L\+A\+CK}{NANOXPLORE\_SLACK}}
+{\footnotesize\ttfamily \#define N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+S\+L\+A\+CK~\char`\"{}N\+A\+N\+O\+X\+P\+L\+O\+R\+E\+\_\+\+S\+L\+A\+CK\char`\"{}}
+
+
+
+Definition at line 72 of file Nano\+Xplore\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Nano\+Xplore\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+

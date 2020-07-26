@@ -1,0 +1,921 @@
+\hypertarget{classVectorize}{}\section{Vectorize Class Reference}
+\label{classVectorize}\index{Vectorize@{Vectorize}}
+
+
+{\ttfamily \#include $<$vectorize.\+hpp$>$}
+
+
+
+Inheritance diagram for Vectorize\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{d5/dc6/classVectorize__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Vectorize\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d6c/classVectorize__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVectorize_a63e3a9d5b2598be2d76c34bc9c09ebf6}{Vectorize} (const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classVectorize_a404b305e082437652cbc33be7ddb8904}{$\sim$\+Vectorize} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classVectorize_aecc4f293d0b0f625f26005582886ca48}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Restructures the unstructured code. \end{DoxyCompactList}\item 
+bool \hyperlink{classVectorize_a2001b38db34ec3dcff8e011436c3cd32}{Has\+To\+Be\+Executed} () const override
+\begin{DoxyCompactList}\small\item\em Check if this step has actually to be executed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classVectorize_a434b71764ac7af86698c3f2cee6e8a25}{Simd\+Loop} \{ \hyperlink{classVectorize_a434b71764ac7af86698c3f2cee6e8a25a820a006204fea8f1ce2c831eed7972cf}{S\+I\+M\+D\+\_\+\+N\+O\+NE}, 
+\hyperlink{classVectorize_a434b71764ac7af86698c3f2cee6e8a25aee07074f050562592ddf7dad47ba2c39}{S\+I\+M\+D\+\_\+\+I\+N\+N\+ER}, 
+\hyperlink{classVectorize_a434b71764ac7af86698c3f2cee6e8a25a084e802e3f781dd9e5599a22b403459b}{S\+I\+M\+D\+\_\+\+O\+U\+T\+ER}
+ \}\begin{DoxyCompactList}\small\item\em Enum used to classify the loop according to the required transformation. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classVectorize_a0043972f172aca39c296d6a3a4559015}{Classify\+Loop} (const Loop\+Const\+Ref loop, const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} parallel\+\_\+degree)
+\begin{DoxyCompactList}\small\item\em Classify a loop. \end{DoxyCompactList}\item 
+void \hyperlink{classVectorize_acc3c1a7baaaf386b05c44ec4c8d6f3ce}{Classify\+Tree\+Node} (const unsigned int loop\+\_\+id, const \hyperlink{tree__node_8hpp_a3cf5d02292c940f3892425a5b5fdec3c}{tree\+\_\+node\+Const\+Ref} \hyperlink{classtree__node}{tree\+\_\+node})
+\begin{DoxyCompactList}\small\item\em Classify a statement. \end{DoxyCompactList}\item 
+bool \hyperlink{classVectorize_a34c9105b57eff7b44aa7671815adc537}{Look\+For\+Scalar} (const \hyperlink{tree__node_8hpp_a3cf5d02292c940f3892425a5b5fdec3c}{tree\+\_\+node\+Const\+Ref} \hyperlink{classtree__node}{tree\+\_\+node})
+\begin{DoxyCompactList}\small\item\em Check recursively if at least an ssa operand is defined an operation outside simd outer loop. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classVectorize_a9be0e93006fb6ab2ec0b36616b374069}{Transform} (const unsigned int tree\+\_\+node\+\_\+index, const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} parallel\+\_\+degree, const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} scalar\+\_\+index, std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&created\+\_\+statements, std\+::vector$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&created\+\_\+phis)
+\begin{DoxyCompactList}\small\item\em Transform a tree node. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classVectorize_ae0735ec00e07e40a9bc81fce55521bfc}{Duplicate\+Increment} (const unsigned int loop\+\_\+id, const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} statement)
+\begin{DoxyCompactList}\small\item\em Duplicate increment statement and update uses of defined variable when necessary. \end{DoxyCompactList}\item 
+void \hyperlink{classVectorize_a48aec19b5e26bacfd5cc28103057526a}{Add\+Guards} ()
+\begin{DoxyCompactList}\small\item\em Add the guards for predicated operations. \end{DoxyCompactList}\item 
+void \hyperlink{classVectorize_ad00739ff3efe2a9d5b2676fbc2a461be}{Fix\+Phis} ()
+\begin{DoxyCompactList}\small\item\em Fix the phis to consider implicitly predicated operations. \end{DoxyCompactList}\item 
+void \hyperlink{classVectorize_ac12fc968628410acaa5e3dd126907021}{Set\+Predication} ()
+\begin{DoxyCompactList}\small\item\em Set predicate of predicated instructions. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classVectorize_a949af411d288a13db50925106f15054c}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$ unsigned int, unsigned int $>$ \hyperlink{classVectorize_a16af9f9417f7b35c9f8e5f1e9921dade}{scalar\+\_\+to\+\_\+vector}
+\begin{DoxyCompactList}\small\item\em Map between scalar tree node and vector tree node. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ unsigned int, \hyperlink{custom__map_8hpp_a7314a7df1cdb3a3acf478ab86e95c226}{Custom\+Unordered\+Map\+Stable}$<$ \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}, unsigned int $>$ $>$ \hyperlink{classVectorize_ac7ee428043e0e6f75f68a3798d01b9f5}{scalar\+\_\+to\+\_\+scalar}
+\begin{DoxyCompactList}\small\item\em Map between scalar tree node and versioned scalar tree node. \end{DoxyCompactList}\item 
+const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \hyperlink{classVectorize_ad94e0c79493654ba1a0f667d4988eb35}{TM}
+\begin{DoxyCompactList}\small\item\em The tree manager. \end{DoxyCompactList}\item 
+const \hyperlink{tree__manipulation_8hpp_a1a9460e3a2f9fc6a96cfd2f24cc9b2a5}{tree\+\_\+manipulation\+Ref} \hyperlink{classVectorize_a2f6a50c2c425d62e05eddd680be94af7}{tree\+\_\+man}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classtree__manipulation}{tree\+\_\+manipulation}. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ unsigned int, long long int $>$ \hyperlink{classVectorize_a4a4c98fd5fb2cd313641f200da09a73d}{iv\+\_\+increment}
+\begin{DoxyCompactList}\small\item\em T\+He increment of induction variables; id is the index of the ssa name defined in the init gimple. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ unsigned int, unsigned int $>$ \hyperlink{classVectorize_a44e94b6872650e5a3d7af8e248a01d14}{gimple\+\_\+id\+\_\+to\+\_\+bb}
+\begin{DoxyCompactList}\small\item\em Map gimple node index to basic block index. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ unsigned int, \hyperlink{classVectorize_a434b71764ac7af86698c3f2cee6e8a25}{Simd\+Loop} $>$ \hyperlink{classVectorize_a449629be4c36693f9c5ca0fb74ed0068}{simd\+\_\+loop\+\_\+type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classLoop}{Loop} classification. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ unsigned int, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} $>$ \hyperlink{classVectorize_a07595ac2162b05302337bfe473b37a39}{loop\+\_\+parallel\+\_\+degree}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classLoop}{Loop} parallel degree. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ unsigned int, bool $>$ \hyperlink{classVectorize_a9cb02388e4050f92e61fe5d2b8849acf}{basic\+\_\+block\+\_\+divergence}
+\begin{DoxyCompactList}\small\item\em Basic block classification\+: if value is true, the basic block can be executed or not in parallel instances. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ unsigned int, \hyperlink{vectorize_8hpp_a0176e2f61ce5ea7a3495a511cf46b2c1}{Transformation} $>$ \hyperlink{classVectorize_a6dde3b3f2f317c29b924ed156f940f59}{transformations}
+\begin{DoxyCompactList}\small\item\em Statement classification. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ unsigned int, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \hyperlink{classVectorize_a7fa9592fc159a4d6c12cb9ce0d0d4ec8}{guards}
+\begin{DoxyCompactList}\small\item\em The guards for each basic block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 67 of file vectorize.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVectorize_a434b71764ac7af86698c3f2cee6e8a25}\label{classVectorize_a434b71764ac7af86698c3f2cee6e8a25}} 
+\index{Vectorize@{Vectorize}!Simd\+Loop@{Simd\+Loop}}
+\index{Simd\+Loop@{Simd\+Loop}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{Simd\+Loop}{SimdLoop}}
+{\footnotesize\ttfamily enum \hyperlink{classVectorize_a434b71764ac7af86698c3f2cee6e8a25}{Vectorize\+::\+Simd\+Loop}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Enum used to classify the loop according to the required transformation. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+I\+M\+D\+\_\+\+N\+O\+NE@{S\+I\+M\+D\+\_\+\+N\+O\+NE}!Vectorize@{Vectorize}}\index{Vectorize@{Vectorize}!S\+I\+M\+D\+\_\+\+N\+O\+NE@{S\+I\+M\+D\+\_\+\+N\+O\+NE}}}\mbox{\Hypertarget{classVectorize_a434b71764ac7af86698c3f2cee6e8a25a820a006204fea8f1ce2c831eed7972cf}\label{classVectorize_a434b71764ac7af86698c3f2cee6e8a25a820a006204fea8f1ce2c831eed7972cf}} 
+S\+I\+M\+D\+\_\+\+N\+O\+NE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+I\+M\+D\+\_\+\+I\+N\+N\+ER@{S\+I\+M\+D\+\_\+\+I\+N\+N\+ER}!Vectorize@{Vectorize}}\index{Vectorize@{Vectorize}!S\+I\+M\+D\+\_\+\+I\+N\+N\+ER@{S\+I\+M\+D\+\_\+\+I\+N\+N\+ER}}}\mbox{\Hypertarget{classVectorize_a434b71764ac7af86698c3f2cee6e8a25aee07074f050562592ddf7dad47ba2c39}\label{classVectorize_a434b71764ac7af86698c3f2cee6e8a25aee07074f050562592ddf7dad47ba2c39}} 
+S\+I\+M\+D\+\_\+\+I\+N\+N\+ER&No transformation is required. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+I\+M\+D\+\_\+\+O\+U\+T\+ER@{S\+I\+M\+D\+\_\+\+O\+U\+T\+ER}!Vectorize@{Vectorize}}\index{Vectorize@{Vectorize}!S\+I\+M\+D\+\_\+\+O\+U\+T\+ER@{S\+I\+M\+D\+\_\+\+O\+U\+T\+ER}}}\mbox{\Hypertarget{classVectorize_a434b71764ac7af86698c3f2cee6e8a25a084e802e3f781dd9e5599a22b403459b}\label{classVectorize_a434b71764ac7af86698c3f2cee6e8a25a084e802e3f781dd9e5599a22b403459b}} 
+S\+I\+M\+D\+\_\+\+O\+U\+T\+ER&\hyperlink{classLoop}{Loop} is nested in a outer simd loop. \hyperlink{classLoop}{Loop} is a outer simd \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 86 of file vectorize.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVectorize_a63e3a9d5b2598be2d76c34bc9c09ebf6}\label{classVectorize_a63e3a9d5b2598be2d76c34bc9c09ebf6}} 
+\index{Vectorize@{Vectorize}!Vectorize@{Vectorize}}
+\index{Vectorize@{Vectorize}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{Vectorize()}{Vectorize()}}
+{\footnotesize\ttfamily Vectorize\+::\+Vectorize (\begin{DoxyParamCaption}\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{AppM,  }\item[{unsigned int}]{function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{parameters }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em AppM} & is the application manager \\
+\hline
+{\em function\+\_\+id} & is the identifier of the function \\
+\hline
+{\em Design\+Flow\+Manager\+Const\+Ref} & is the design flow manager \\
+\hline
+{\em parameters} & is the set of input parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 107 of file vectorize.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, G\+E\+T\+\_\+\+C\+L\+A\+SS, and $\sim$\+Vectorize().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d5/da5/classVectorize_a63e3a9d5b2598be2d76c34bc9c09ebf6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVectorize_a404b305e082437652cbc33be7ddb8904}\label{classVectorize_a404b305e082437652cbc33be7ddb8904}} 
+\index{Vectorize@{Vectorize}!````~Vectorize@{$\sim$\+Vectorize}}
+\index{````~Vectorize@{$\sim$\+Vectorize}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{$\sim$\+Vectorize()}{~Vectorize()}}
+{\footnotesize\ttfamily Vectorize\+::$\sim$\+Vectorize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Vectorize().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d5/da5/classVectorize_a404b305e082437652cbc33be7ddb8904_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classVectorize_a48aec19b5e26bacfd5cc28103057526a}\label{classVectorize_a48aec19b5e26bacfd5cc28103057526a}} 
+\index{Vectorize@{Vectorize}!Add\+Guards@{Add\+Guards}}
+\index{Add\+Guards@{Add\+Guards}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{Add\+Guards()}{AddGuards()}}
+{\footnotesize\ttfamily void Vectorize\+::\+Add\+Guards (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Add the guards for predicated operations. 
+
+The guards for combination of basic\+\_\+block condition
+
+Endif
+
+Header
+
+Create the ssa defined by phi
+
+Create the phi
+
+We cannot use Create\+And\+Expr to add the created statement since we need to add at the beginning of the current basic block instad of the end
+
+Fix phi 
+
+Definition at line 860 of file vectorize.\+cpp.
+
+
+
+References basic\+\_\+block\+\_\+divergence, Function\+Behavior\+::\+BB, B\+B\+\_\+\+E\+N\+T\+RY, Function\+Behavior\+::\+C\+D\+G\+\_\+\+BB, C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, tree\+\_\+manager\+::\+C\+Get\+Tree\+Node(), tree\+\_\+manipulation\+::create\+\_\+boolean\+\_\+type(), tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), tree\+\_\+manipulation\+::\+Create\+And\+Expr(), tree\+\_\+manipulation\+::\+Create\+Integer\+Cst(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, F\+B\+\_\+\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, Function\+Behavior\+::\+F\+BB, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, tree\+\_\+manager\+::get\+\_\+next\+\_\+vers(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), guards, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), simd\+\_\+loop\+\_\+type, S\+I\+M\+D\+\_\+\+N\+O\+NE, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, TM, T\+OK, T\+O\+K\+\_\+\+R\+ES, T\+O\+K\+\_\+\+S\+C\+PE, T\+O\+K\+\_\+\+S\+R\+CP, T\+O\+K\+\_\+\+T\+Y\+PE, T\+O\+K\+\_\+\+V\+E\+RS, T\+O\+K\+\_\+\+V\+I\+R\+T\+U\+AL, T\+O\+K\+\_\+\+V\+O\+L\+A\+T\+I\+LE, and tree\+\_\+man.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/da5/classVectorize_a48aec19b5e26bacfd5cc28103057526a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{d5/da5/classVectorize_a48aec19b5e26bacfd5cc28103057526a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVectorize_a0043972f172aca39c296d6a3a4559015}\label{classVectorize_a0043972f172aca39c296d6a3a4559015}} 
+\index{Vectorize@{Vectorize}!Classify\+Loop@{Classify\+Loop}}
+\index{Classify\+Loop@{Classify\+Loop}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{Classify\+Loop()}{ClassifyLoop()}}
+{\footnotesize\ttfamily void Vectorize\+::\+Classify\+Loop (\begin{DoxyParamCaption}\item[{const Loop\+Const\+Ref}]{loop,  }\item[{const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{parallel\+\_\+degree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Classify a loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loop} & is the loop to be analyzed \\
+\hline
+{\em parallel\+\_\+degree} & specifies the degree of parallelism \\
+\hline
+\end{DoxyParams}
+F\+I\+X\+ME\+: the parallel degree is set to default for doall loop and not read from pragma
+
+The number of iterations can be not multiple of the parallel degree of outer loop
+
+The header cannot diverge
+
+The control condition which enables execution of header
+
+Classify the remaining basic blocks
+
+The control condition which enables execution of header
+
+Classify the remaining basic blocks
+
+If the current parallel degree is different from the parallel loop of the outer loop, this is an outer simd loop 
+
+Definition at line 115 of file vectorize.\+cpp.
+
+
+
+References basic\+\_\+block\+\_\+divergence, Function\+Behavior\+::\+C\+D\+G\+\_\+\+BB, C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, C\+O\+U\+N\+T\+A\+B\+L\+E\+\_\+\+L\+O\+OP, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+O\+A\+L\+L\+\_\+\+L\+O\+OP, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, loop\+\_\+parallel\+\_\+degree, Design\+Flow\+Step\+::parameters, S\+I\+M\+D\+\_\+\+I\+N\+N\+ER, simd\+\_\+loop\+\_\+type, S\+I\+M\+D\+\_\+\+N\+O\+NE, S\+I\+M\+D\+\_\+\+O\+U\+T\+ER, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/da5/classVectorize_a0043972f172aca39c296d6a3a4559015_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVectorize_acc3c1a7baaaf386b05c44ec4c8d6f3ce}\label{classVectorize_acc3c1a7baaaf386b05c44ec4c8d6f3ce}} 
+\index{Vectorize@{Vectorize}!Classify\+Tree\+Node@{Classify\+Tree\+Node}}
+\index{Classify\+Tree\+Node@{Classify\+Tree\+Node}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{Classify\+Tree\+Node()}{ClassifyTreeNode()}}
+{\footnotesize\ttfamily void Vectorize\+::\+Classify\+Tree\+Node (\begin{DoxyParamCaption}\item[{const unsigned int}]{loop\+\_\+id,  }\item[{const \hyperlink{tree__node_8hpp_a3cf5d02292c940f3892425a5b5fdec3c}{tree\+\_\+node\+Const\+Ref}}]{tree\+\_\+node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Classify a statement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loop\+\_\+id} & is the id of the looop of the statement \\
+\hline
+{\em \hyperlink{classtree__node}{tree\+\_\+node}} & is the \hyperlink{classtree__node}{tree\+\_\+node} to be classified \\
+\hline
+\end{DoxyParams}
+Check if the statement is the increment operation of an outer loop
+
+This gimple assign could already be analyzed because of induction variable gimple phi
+
+F\+I\+X\+ME\+: allocation does not support this
+
+F\+I\+X\+ME\+: C backend for vec\+\_\+lshift\+\_\+expr is wrong
+
+Check if the phi is the init operation of an outer loop
+
+Check if the phi is in the header of an outer loop
+
+Check if the gimple cond belongs to an exit of the loop
+
+Check that one of the outgoing edge is a feedback edge 
+
+Definition at line 253 of file vectorize.\+cpp.
+
+
+
+References basic\+\_\+block\+\_\+divergence, Function\+Behavior\+::\+BB, C\+A\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+C\+S\+T\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+F\+A\+K\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, B\+B\+Graph\+::\+C\+Get\+B\+B\+Graph\+Info(), B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), tree\+\_\+helper\+::\+C\+Get\+Type(), C\+O\+N\+D\+\_\+\+C\+ON, C\+O\+N\+D\+\_\+\+D\+IV, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Behavior\+::\+F\+BB, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, tree\+\_\+manager\+::function\+\_\+index(), G\+E\+T\+\_\+\+C\+O\+N\+S\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+O\+DE, I\+NC, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, I\+N\+IT, iv\+\_\+increment, N\+O\+NE, S\+C\+A\+L\+AR, S\+I\+MD, simd\+\_\+loop\+\_\+type, S\+I\+M\+D\+\_\+\+N\+O\+NE, S\+I\+M\+D\+\_\+\+O\+U\+T\+ER, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, TM, To\+String(), tree\+\_\+node\+::\+To\+String(), and transformations.
+
+
+
+Referenced by Duplicate\+Increment(), and Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/da5/classVectorize_acc3c1a7baaaf386b05c44ec4c8d6f3ce_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/da5/classVectorize_acc3c1a7baaaf386b05c44ec4c8d6f3ce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVectorize_a949af411d288a13db50925106f15054c}\label{classVectorize_a949af411d288a13db50925106f15054c}} 
+\index{Vectorize@{Vectorize}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ Vectorize\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 1246 of file vectorize.\+cpp.
+
+
+
+References B\+B\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+C\+O\+M\+P\+U\+T\+A\+T\+I\+ON, B\+B\+\_\+\+O\+R\+D\+E\+R\+\_\+\+C\+O\+M\+P\+U\+T\+A\+T\+I\+ON, B\+B\+\_\+\+R\+E\+A\+C\+H\+A\+B\+I\+L\+I\+T\+Y\+\_\+\+C\+O\+M\+P\+U\+T\+A\+T\+I\+ON, tree\+\_\+manager\+::\+C\+Get\+Tree\+Node(), Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+N\+O\+DE, Design\+Flow\+Step\+::\+Get\+Status(), Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, sl, S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and TM.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/da5/classVectorize_a949af411d288a13db50925106f15054c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVectorize_ae0735ec00e07e40a9bc81fce55521bfc}\label{classVectorize_ae0735ec00e07e40a9bc81fce55521bfc}} 
+\index{Vectorize@{Vectorize}!Duplicate\+Increment@{Duplicate\+Increment}}
+\index{Duplicate\+Increment@{Duplicate\+Increment}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{Duplicate\+Increment()}{DuplicateIncrement()}}
+{\footnotesize\ttfamily unsigned int Vectorize\+::\+Duplicate\+Increment (\begin{DoxyParamCaption}\item[{const unsigned int}]{loop\+\_\+id,  }\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{statement }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Duplicate increment statement and update uses of defined variable when necessary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loop\+\_\+id} & is the id of the loop to which the statement belongs \\
+\hline
+{\em statement} & is the statement to be duplicated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the created statement 
+\end{DoxyReturn}
+First reclassify the original increment as simd
+
+First create the new \hyperlink{structssa__name}{ssa\+\_\+name}
+
+Duplicate increment
+
+Replace uses
+
+First create the new \hyperlink{structssa__name}{ssa\+\_\+name}
+
+Duplicate computation of condition
+
+Look for phi computing the guard of header
+
+We create a local variable since first argument of replace\+\_\+ssa\+\_\+name is passed by reference. Statement root will not be modified by replace\+\_\+ssa\+\_\+name but only their successors 
+
+Definition at line 659 of file vectorize.\+cpp.
+
+
+
+References tree\+\_\+manager\+::\+C\+Get\+Tree\+Node(), Classify\+Tree\+Node(), tree\+\_\+node\+\_\+dup\+::create\+\_\+tree\+\_\+node(), tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Loop\+::exit\+\_\+block\+\_\+iter\+\_\+begin(), Function\+Behavior\+::\+F\+BB, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, G\+E\+T\+\_\+\+C\+O\+N\+S\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+next\+\_\+vers(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), Loop\+::\+Get\+Header(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), guards, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+node\+::index, Loop\+::\+Is\+Reducible(), tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), Loop\+::num\+\_\+exits(), phi, tree\+\_\+manager\+::\+Replace\+Tree\+Node(), S\+I\+MD, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, TM, T\+OK, T\+O\+K\+\_\+\+M\+AX, T\+O\+K\+\_\+\+M\+IN, T\+O\+K\+\_\+\+T\+Y\+PE, T\+O\+K\+\_\+\+V\+AR, T\+O\+K\+\_\+\+V\+E\+RS, T\+O\+K\+\_\+\+V\+I\+R\+T\+U\+AL, T\+O\+K\+\_\+\+V\+O\+L\+A\+T\+I\+LE, tree\+\_\+node\+::\+To\+String(), and transformations.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/da5/classVectorize_ae0735ec00e07e40a9bc81fce55521bfc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/da5/classVectorize_ae0735ec00e07e40a9bc81fce55521bfc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVectorize_ad00739ff3efe2a9d5b2676fbc2a461be}\label{classVectorize_ad00739ff3efe2a9d5b2676fbc2a461be}} 
+\index{Vectorize@{Vectorize}!Fix\+Phis@{Fix\+Phis}}
+\index{Fix\+Phis@{Fix\+Phis}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{Fix\+Phis()}{FixPhis()}}
+{\footnotesize\ttfamily void Vectorize\+::\+Fix\+Phis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fix the phis to consider implicitly predicated operations. 
+
+Check if the input basic block diverge
+
+Create the ssa with the new input of the phi
+
+Create the assign 
+
+Definition at line 1058 of file vectorize.\+cpp.
+
+
+
+References basic\+\_\+block\+\_\+divergence, Function\+Behavior\+::\+C\+D\+G\+\_\+\+BB, tree\+\_\+helper\+::\+C\+Get\+Type(), tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Behavior\+::\+D\+O\+M\+\_\+\+T\+R\+EE, Function\+Behavior\+::\+F\+BB, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, tree\+\_\+manager\+::get\+\_\+next\+\_\+vers(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), guards, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), phi, simd\+\_\+loop\+\_\+type, S\+I\+M\+D\+\_\+\+N\+O\+NE, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, TM, T\+OK, T\+O\+K\+\_\+\+O\+P0, T\+O\+K\+\_\+\+O\+P1, T\+O\+K\+\_\+\+O\+P2, T\+O\+K\+\_\+\+S\+R\+CP, T\+O\+K\+\_\+\+T\+Y\+PE, T\+O\+K\+\_\+\+V\+AR, T\+O\+K\+\_\+\+V\+E\+RS, T\+O\+K\+\_\+\+V\+I\+R\+T\+U\+AL, T\+O\+K\+\_\+\+V\+O\+L\+A\+T\+I\+LE, tree\+\_\+node\+::\+To\+String(), and test\+\_\+panda\+::type.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/da5/classVectorize_ad00739ff3efe2a9d5b2676fbc2a461be_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d5/da5/classVectorize_ad00739ff3efe2a9d5b2676fbc2a461be_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVectorize_a2001b38db34ec3dcff8e011436c3cd32}\label{classVectorize_a2001b38db34ec3dcff8e011436c3cd32}} 
+\index{Vectorize@{Vectorize}!Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}}
+\index{Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{Has\+To\+Be\+Executed()}{HasToBeExecuted()}}
+{\footnotesize\ttfamily bool Vectorize\+::\+Has\+To\+Be\+Executed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if this step has actually to be executed. 
+
+\begin{DoxyReturn}{Returns}
+true if the step has to be executed 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFunctionFrontendFlowStep_a12e786363530aa9533e4bd9380130d75}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 2823 of file vectorize.\+cpp.
+
+
+
+References Function\+Frontend\+Flow\+Step\+::bb\+\_\+version, D\+O\+A\+L\+L\+\_\+\+L\+O\+OP, and Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior.
+
+\mbox{\Hypertarget{classVectorize_aecc4f293d0b0f625f26005582886ca48}\label{classVectorize_aecc4f293d0b0f625f26005582886ca48}} 
+\index{Vectorize@{Vectorize}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} Vectorize\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Restructures the unstructured code. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+Classify loop
+
+Add the guards
+
+Fix the phi
+
+Predicate instructions which cannot be speculated
+
+Classify statement
+
+Duplicate the increment operation when necessary
+
+Perform the transformation
+
+Remove old statements
+
+Remove old phis
+
+Add new statements
+
+Add new phis 
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 1308 of file vectorize.\+cpp.
+
+
+
+References Add\+Guards(), Function\+Behavior\+::\+BB, B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), Classify\+Loop(), Classify\+Tree\+Node(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Duplicate\+Increment(), Fix\+Phis(), Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, G\+E\+T\+\_\+\+C\+O\+N\+S\+T\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), Function\+Frontend\+Flow\+Step\+::\+Get\+Name(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), I\+NC, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, loop\+\_\+parallel\+\_\+degree, Design\+Flow\+Step\+::parameters, phi, tree\+\_\+manager\+::\+Print\+Gimple(), Set\+Predication(), simd\+\_\+loop\+\_\+type, S\+I\+M\+D\+\_\+\+N\+O\+NE, S\+TR, S\+U\+C\+C\+E\+SS, TM, Transform(), transformations, U\+N\+C\+H\+A\+N\+G\+ED, and Function\+Frontend\+Flow\+Step\+::\+Write\+B\+B\+Graph\+Dot().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/da5/classVectorize_aecc4f293d0b0f625f26005582886ca48_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVectorize_a34c9105b57eff7b44aa7671815adc537}\label{classVectorize_a34c9105b57eff7b44aa7671815adc537}} 
+\index{Vectorize@{Vectorize}!Look\+For\+Scalar@{Look\+For\+Scalar}}
+\index{Look\+For\+Scalar@{Look\+For\+Scalar}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{Look\+For\+Scalar()}{LookForScalar()}}
+{\footnotesize\ttfamily bool Vectorize\+::\+Look\+For\+Scalar (\begin{DoxyParamCaption}\item[{const \hyperlink{tree__node_8hpp_a3cf5d02292c940f3892425a5b5fdec3c}{tree\+\_\+node\+Const\+Ref}}]{tree\+\_\+node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Check recursively if at least an ssa operand is defined an operation outside simd outer loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classtree__node}{tree\+\_\+node}} & is the root of the tree to be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if at least a scalar operand is found 
+\end{DoxyReturn}
+
+
+Definition at line 796 of file vectorize.\+cpp.
+
+
+
+References C\+A\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+C\+S\+T\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+D\+E\+C\+L\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+F\+A\+K\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+\mbox{\Hypertarget{classVectorize_ac12fc968628410acaa5e3dd126907021}\label{classVectorize_ac12fc968628410acaa5e3dd126907021}} 
+\index{Vectorize@{Vectorize}!Set\+Predication@{Set\+Predication}}
+\index{Set\+Predication@{Set\+Predication}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{Set\+Predication()}{SetPredication()}}
+{\footnotesize\ttfamily void Vectorize\+::\+Set\+Predication (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set predicate of predicated instructions. 
+
+
+
+Definition at line 1214 of file vectorize.\+cpp.
+
+
+
+References basic\+\_\+block\+\_\+divergence, Function\+Behavior\+::\+BB, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, G\+E\+T\+\_\+\+N\+O\+DE, guards, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, and S\+TR.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/da5/classVectorize_ac12fc968628410acaa5e3dd126907021_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVectorize_a9be0e93006fb6ab2ec0b36616b374069}\label{classVectorize_a9be0e93006fb6ab2ec0b36616b374069}} 
+\index{Vectorize@{Vectorize}!Transform@{Transform}}
+\index{Transform@{Transform}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{Transform()}{Transform()}}
+{\footnotesize\ttfamily unsigned int Vectorize\+::\+Transform (\begin{DoxyParamCaption}\item[{const unsigned int}]{tree\+\_\+node\+\_\+index,  }\item[{const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{parallel\+\_\+degree,  }\item[{const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{scalar\+\_\+index,  }\item[{std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&}]{created\+\_\+statements,  }\item[{std\+::vector$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&}]{created\+\_\+phis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Transform a tree node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree\+\_\+node\+\_\+index} & is the tree node to be transformed \\
+\hline
+{\em parallel\+\_\+degree} & is the degree of parallelism \\
+\hline
+{\em scalar\+\_\+index} & is the index of the vector when parallel statements are created as multiple statements \\
+\hline
+{\em created\+\_\+statements} & is the list of statements created during transformation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the tree node of the transformed node 
+\end{DoxyReturn}
+The current init
+
+Creating scalar from simd
+
+Build bit\+\_\+field\+\_\+ref to extract the scalar
+
+vector of boolean types are mapped on vector of unsigned integer
+
+Split of phi node goes to the beginning of the list of statement
+
+Creating scalar from simd
+
+Build bit\+\_\+field\+\_\+ref to extract the scalar
+
+vector of boolean types are mapped on vector of integer
+
+Build simd from scalar
+
+Build constructor for right part
+
+Build bit\+\_\+field\+\_\+ref to extract the scalar
+
+vector of boolean types are mapped on vector of integer
+
+Workaround due to cycle in the tree between void\+\_\+type and \hyperlink{structtype__decl}{type\+\_\+decl}
+
+Size of new type
+
+F\+I\+X\+ME\+: check if the function has to parallelized
+
+Build constructor
+
+Creating scalar from simd
+
+Build bit\+\_\+field\+\_\+ref to extract the scalar
+
+vector of boolean types are mapped on vector of integer
+
+Split of phi node goes to the beginning of the list of statement 
+
+Definition at line 1450 of file vectorize.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, test\+\_\+panda\+::arg, Function\+Behavior\+::\+BB, C\+A\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+C\+S\+T\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+D\+E\+C\+L\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+F\+A\+K\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, B\+B\+Graph\+::\+C\+Get\+B\+B\+Graph\+Info(), B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), tree\+\_\+helper\+::\+C\+Get\+Type(), C\+O\+N\+D\+\_\+\+C\+ON, C\+O\+N\+D\+\_\+\+D\+IV, tree\+\_\+manipulation\+::create\+\_\+default\+\_\+unsigned\+\_\+integer\+\_\+type(), tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), tree\+\_\+manipulation\+::\+Create\+Integer\+Cst(), tree\+\_\+manipulation\+::\+Create\+Or\+Expr(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Edge\+Info\+::direct\+\_\+call, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+C\+O\+N\+S\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+node\+::get\+\_\+kind\+\_\+text(), tree\+\_\+manager\+::get\+\_\+next\+\_\+vers(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), B\+B\+Graph\+::\+Get\+B\+B\+Node\+Info(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), I\+NC, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, index, tree\+\_\+node\+::index, I\+N\+IT, iv\+\_\+increment, tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), N\+O\+NE, Frontend\+Flow\+Step\+::\+Print\+Tree\+Manager(), pointer\+\_\+type\+::ptd, S\+C\+A\+L\+AR, scalar\+\_\+to\+\_\+scalar, scalar\+\_\+to\+\_\+vector, S\+I\+MD, tree\+\_\+helper\+::\+Size(), S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, TM, T\+OK, T\+O\+K\+\_\+\+A\+D\+DR, T\+O\+K\+\_\+\+A\+L\+GN, T\+O\+K\+\_\+\+A\+R\+T\+I\+F\+I\+C\+I\+AL, T\+O\+K\+\_\+\+A\+T\+T\+R\+I\+B\+U\+T\+ES, T\+O\+K\+\_\+\+B\+A\+SE, T\+O\+K\+\_\+C, T\+O\+K\+\_\+\+C\+H\+AN, T\+O\+K\+\_\+\+C\+L\+O\+B\+B\+ER, T\+O\+K\+\_\+\+E\+L\+TS, T\+O\+K\+\_\+\+E\+X\+T\+E\+RN, T\+O\+K\+\_\+\+FN, T\+O\+K\+\_\+\+I\+DX, T\+O\+K\+\_\+\+I\+D\+X2, T\+O\+K\+\_\+\+I\+N\+IT, T\+O\+K\+\_\+\+L\+I\+B\+B\+A\+M\+BU, T\+O\+K\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+Y\+S\+T\+EM, T\+O\+K\+\_\+\+M\+AX, T\+O\+K\+\_\+\+M\+IN, T\+O\+K\+\_\+\+M\+N\+GL, T\+O\+K\+\_\+\+N\+A\+ME, T\+O\+K\+\_\+\+O\+F\+F\+S\+ET, T\+O\+K\+\_\+\+OP, T\+O\+K\+\_\+\+O\+P0, T\+O\+K\+\_\+\+O\+P1, T\+O\+K\+\_\+\+O\+P2, T\+O\+K\+\_\+\+O\+P3, T\+O\+K\+\_\+\+O\+P4, T\+O\+K\+\_\+\+O\+P5, T\+O\+K\+\_\+\+O\+P6, T\+O\+K\+\_\+\+O\+P7, T\+O\+K\+\_\+\+O\+P8, T\+O\+K\+\_\+\+O\+P\+E\+R\+A\+T\+I\+N\+G\+\_\+\+S\+Y\+S\+T\+EM, T\+O\+K\+\_\+\+O\+P\+E\+R\+A\+T\+OR, T\+O\+K\+\_\+\+O\+R\+IG, T\+O\+K\+\_\+\+O\+R\+I\+G\+\_\+\+V\+E\+RS, T\+O\+K\+\_\+\+P\+A\+C\+K\+ED, T\+O\+K\+\_\+\+P\+R\+E\+D\+I\+C\+A\+TE, T\+O\+K\+\_\+\+P\+TD, T\+O\+K\+\_\+\+Q\+U\+AL, T\+O\+K\+\_\+\+R\+E\+G\+I\+S\+T\+ER, T\+O\+K\+\_\+\+R\+ES, T\+O\+K\+\_\+\+S\+C\+PE, T\+O\+K\+\_\+\+S\+I\+ZE, T\+O\+K\+\_\+\+S\+M\+T\+\_\+\+A\+NN, T\+O\+K\+\_\+\+S\+R\+CP, T\+O\+K\+\_\+\+S\+T\+A\+T\+IC, T\+O\+K\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+S\+T\+A\+T\+IC, T\+O\+K\+\_\+\+S\+T\+EP, T\+O\+K\+\_\+\+S\+T\+RG, T\+O\+K\+\_\+\+S\+Y\+S\+T\+EM, T\+O\+K\+\_\+\+T\+M\+P\+L\+\_\+\+A\+R\+GS, T\+O\+K\+\_\+\+T\+M\+P\+L\+\_\+\+P\+A\+R\+MS, T\+O\+K\+\_\+\+T\+Y\+PE, T\+O\+K\+\_\+\+U\+N\+QL, T\+O\+K\+\_\+\+U\+S\+E\+\_\+\+T\+M\+PL, T\+O\+K\+\_\+\+U\+S\+ED, T\+O\+K\+\_\+\+V\+AR, T\+O\+K\+\_\+\+V\+E\+RS, T\+O\+K\+\_\+\+V\+I\+R\+T\+U\+AL, T\+O\+K\+\_\+\+V\+O\+L\+A\+T\+I\+LE, To\+String(), tree\+\_\+node\+::\+To\+String(), transformations, tree\+\_\+man, and test\+\_\+panda\+::type.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/da5/classVectorize_a9be0e93006fb6ab2ec0b36616b374069_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{d5/da5/classVectorize_a9be0e93006fb6ab2ec0b36616b374069_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classVectorize_a9cb02388e4050f92e61fe5d2b8849acf}\label{classVectorize_a9cb02388e4050f92e61fe5d2b8849acf}} 
+\index{Vectorize@{Vectorize}!basic\+\_\+block\+\_\+divergence@{basic\+\_\+block\+\_\+divergence}}
+\index{basic\+\_\+block\+\_\+divergence@{basic\+\_\+block\+\_\+divergence}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{basic\+\_\+block\+\_\+divergence}{basic\_block\_divergence}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$unsigned int, bool$>$ Vectorize\+::basic\+\_\+block\+\_\+divergence\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Basic block classification\+: if value is true, the basic block can be executed or not in parallel instances. 
+
+
+
+Definition at line 103 of file vectorize.\+hpp.
+
+
+
+Referenced by Add\+Guards(), Classify\+Loop(), Classify\+Tree\+Node(), Fix\+Phis(), and Set\+Predication().
+
+\mbox{\Hypertarget{classVectorize_a44e94b6872650e5a3d7af8e248a01d14}\label{classVectorize_a44e94b6872650e5a3d7af8e248a01d14}} 
+\index{Vectorize@{Vectorize}!gimple\+\_\+id\+\_\+to\+\_\+bb@{gimple\+\_\+id\+\_\+to\+\_\+bb}}
+\index{gimple\+\_\+id\+\_\+to\+\_\+bb@{gimple\+\_\+id\+\_\+to\+\_\+bb}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{gimple\+\_\+id\+\_\+to\+\_\+bb}{gimple\_id\_to\_bb}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$unsigned int, unsigned int$>$ Vectorize\+::gimple\+\_\+id\+\_\+to\+\_\+bb\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map gimple node index to basic block index. 
+
+
+
+Definition at line 94 of file vectorize.\+hpp.
+
+\mbox{\Hypertarget{classVectorize_a7fa9592fc159a4d6c12cb9ce0d0d4ec8}\label{classVectorize_a7fa9592fc159a4d6c12cb9ce0d0d4ec8}} 
+\index{Vectorize@{Vectorize}!guards@{guards}}
+\index{guards@{guards}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{guards}{guards}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$unsigned int, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}$>$ Vectorize\+::guards\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The guards for each basic block. 
+
+
+
+Definition at line 109 of file vectorize.\+hpp.
+
+
+
+Referenced by Add\+Guards(), Duplicate\+Increment(), Fix\+Phis(), and Set\+Predication().
+
+\mbox{\Hypertarget{classVectorize_a4a4c98fd5fb2cd313641f200da09a73d}\label{classVectorize_a4a4c98fd5fb2cd313641f200da09a73d}} 
+\index{Vectorize@{Vectorize}!iv\+\_\+increment@{iv\+\_\+increment}}
+\index{iv\+\_\+increment@{iv\+\_\+increment}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{iv\+\_\+increment}{iv\_increment}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$unsigned int, long long int$>$ Vectorize\+::iv\+\_\+increment\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+T\+He increment of induction variables; id is the index of the ssa name defined in the init gimple. 
+
+
+
+Definition at line 83 of file vectorize.\+hpp.
+
+
+
+Referenced by Classify\+Tree\+Node(), and Transform().
+
+\mbox{\Hypertarget{classVectorize_a07595ac2162b05302337bfe473b37a39}\label{classVectorize_a07595ac2162b05302337bfe473b37a39}} 
+\index{Vectorize@{Vectorize}!loop\+\_\+parallel\+\_\+degree@{loop\+\_\+parallel\+\_\+degree}}
+\index{loop\+\_\+parallel\+\_\+degree@{loop\+\_\+parallel\+\_\+degree}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{loop\+\_\+parallel\+\_\+degree}{loop\_parallel\_degree}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$unsigned int, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}$>$ Vectorize\+::loop\+\_\+parallel\+\_\+degree\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{classLoop}{Loop} parallel degree. 
+
+
+
+Definition at line 100 of file vectorize.\+hpp.
+
+
+
+Referenced by Classify\+Loop(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classVectorize_ac7ee428043e0e6f75f68a3798d01b9f5}\label{classVectorize_ac7ee428043e0e6f75f68a3798d01b9f5}} 
+\index{Vectorize@{Vectorize}!scalar\+\_\+to\+\_\+scalar@{scalar\+\_\+to\+\_\+scalar}}
+\index{scalar\+\_\+to\+\_\+scalar@{scalar\+\_\+to\+\_\+scalar}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{scalar\+\_\+to\+\_\+scalar}{scalar\_to\_scalar}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$unsigned int, \hyperlink{custom__map_8hpp_a7314a7df1cdb3a3acf478ab86e95c226}{Custom\+Unordered\+Map\+Stable}$<$\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}, unsigned int$>$ $>$ Vectorize\+::scalar\+\_\+to\+\_\+scalar\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map between scalar tree node and versioned scalar tree node. 
+
+
+
+Definition at line 74 of file vectorize.\+hpp.
+
+
+
+Referenced by Transform().
+
+\mbox{\Hypertarget{classVectorize_a16af9f9417f7b35c9f8e5f1e9921dade}\label{classVectorize_a16af9f9417f7b35c9f8e5f1e9921dade}} 
+\index{Vectorize@{Vectorize}!scalar\+\_\+to\+\_\+vector@{scalar\+\_\+to\+\_\+vector}}
+\index{scalar\+\_\+to\+\_\+vector@{scalar\+\_\+to\+\_\+vector}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{scalar\+\_\+to\+\_\+vector}{scalar\_to\_vector}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$unsigned int, unsigned int$>$ Vectorize\+::scalar\+\_\+to\+\_\+vector\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map between scalar tree node and vector tree node. 
+
+
+
+Definition at line 71 of file vectorize.\+hpp.
+
+
+
+Referenced by Transform().
+
+\mbox{\Hypertarget{classVectorize_a449629be4c36693f9c5ca0fb74ed0068}\label{classVectorize_a449629be4c36693f9c5ca0fb74ed0068}} 
+\index{Vectorize@{Vectorize}!simd\+\_\+loop\+\_\+type@{simd\+\_\+loop\+\_\+type}}
+\index{simd\+\_\+loop\+\_\+type@{simd\+\_\+loop\+\_\+type}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{simd\+\_\+loop\+\_\+type}{simd\_loop\_type}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$unsigned int, \hyperlink{classVectorize_a434b71764ac7af86698c3f2cee6e8a25}{Simd\+Loop}$>$ Vectorize\+::simd\+\_\+loop\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{classLoop}{Loop} classification. 
+
+
+
+Definition at line 97 of file vectorize.\+hpp.
+
+
+
+Referenced by Add\+Guards(), Classify\+Loop(), Classify\+Tree\+Node(), Fix\+Phis(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classVectorize_ad94e0c79493654ba1a0f667d4988eb35}\label{classVectorize_ad94e0c79493654ba1a0f667d4988eb35}} 
+\index{Vectorize@{Vectorize}!TM@{TM}}
+\index{TM@{TM}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{TM}{TM}}
+{\footnotesize\ttfamily const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} Vectorize\+::\+TM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The tree manager. 
+
+
+
+Definition at line 77 of file vectorize.\+hpp.
+
+
+
+Referenced by Add\+Guards(), Classify\+Tree\+Node(), Compute\+Frontend\+Relationships(), Duplicate\+Increment(), Fix\+Phis(), Internal\+Exec(), and Transform().
+
+\mbox{\Hypertarget{classVectorize_a6dde3b3f2f317c29b924ed156f940f59}\label{classVectorize_a6dde3b3f2f317c29b924ed156f940f59}} 
+\index{Vectorize@{Vectorize}!transformations@{transformations}}
+\index{transformations@{transformations}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{transformations}{transformations}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$unsigned int, \hyperlink{vectorize_8hpp_a0176e2f61ce5ea7a3495a511cf46b2c1}{Transformation}$>$ Vectorize\+::transformations\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Statement classification. 
+
+
+
+Definition at line 106 of file vectorize.\+hpp.
+
+
+
+Referenced by Classify\+Tree\+Node(), Duplicate\+Increment(), Internal\+Exec(), and Transform().
+
+\mbox{\Hypertarget{classVectorize_a2f6a50c2c425d62e05eddd680be94af7}\label{classVectorize_a2f6a50c2c425d62e05eddd680be94af7}} 
+\index{Vectorize@{Vectorize}!tree\+\_\+man@{tree\+\_\+man}}
+\index{tree\+\_\+man@{tree\+\_\+man}!Vectorize@{Vectorize}}
+\subsubsection{\texorpdfstring{tree\+\_\+man}{tree\_man}}
+{\footnotesize\ttfamily const \hyperlink{tree__manipulation_8hpp_a1a9460e3a2f9fc6a96cfd2f24cc9b2a5}{tree\+\_\+manipulation\+Ref} Vectorize\+::tree\+\_\+man\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The \hyperlink{classtree__manipulation}{tree\+\_\+manipulation}. 
+
+
+
+Definition at line 80 of file vectorize.\+hpp.
+
+
+
+Referenced by Add\+Guards(), and Transform().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{vectorize_8hpp}{vectorize.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{vectorize_8cpp}{vectorize.\+cpp}\end{DoxyCompactItemize}

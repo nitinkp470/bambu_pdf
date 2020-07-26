@@ -1,0 +1,199 @@
+\hypertarget{programming_style_programming_intro}{}\section{Introduction}\label{programming_style_programming_intro}
+In this document we plan to shortly explain some useful guidelines to help you writing \char`\"{}good\char`\"{} code into the PandA Project. The main features which will be explained are\+:
+\begin{DoxyItemize}
+\item \hyperlink{programming_style_prog_style}{Coding Style}
+\item \hyperlink{programming_style_special_function}{C++ Specific Functions}
+\item \hyperlink{programming_style_check_errors}{Error Checking}
+\item \hyperlink{programming_style_header_including}{How to Deal with Header Files}
+\item \hyperlink{programming_style_refcounts_how_to}{Using Refcounts instead of Pointers}
+\item \hyperlink{programming_style_debugging_statements}{Debugging Statements}
+\end{DoxyItemize}\hypertarget{programming_style_prog_style}{}\section{Coding Style}\label{programming_style_prog_style}
+This section explains the coding style used through out the PandA project; you are strongly advised to follow it.
+\begin{DoxyItemize}
+\item \hyperlink{structGraph}{Graph} parenthesis are opened and close on a new line with respect to the instruction they refer to\+: \begin{DoxyVerb}for(int i = 0; i < n; i++)
+{
+   ...........
+}
+\end{DoxyVerb}
+
+\item Indentation must be enforced by the use of 3 spaces, not the tabulator character.
+\item Doxygen (see \hyperlink{documentation_how_to}{How To Create Good Documentation}) comments of classes and methods must be written as\+: \begin{DoxyVerb}/**
+ * ....your documentation.....
+ */
+\end{DoxyVerb}
+ while the comments of class attributes are indicated as\+: \begin{DoxyVerb}///......your documentation....
+\end{DoxyVerb}
+
+\end{DoxyItemize}
+
+An important aspect, not only connected with the programming style, but also with the efficiency of the produced code regards the use of the {\ttfamily const} keyword; this keyword means that the object it refers to can\textquotesingle{}t be modified. In presence of this keyword, the C++ compiler performs optimizations which speed-\/up the execution; in particular use it after a method declaration\+: \begin{DoxyVerb}void print() const;
+\end{DoxyVerb}
+ This means that \char`\"{}this\char`\"{} (i.\+e. the internal representation of the class which contains the method) isn\textquotesingle{}t modified by the method call.
+
+Finally something not directly connected with the programing style\+: when, in a class or in a struct you call methods belonging to the struct itself or access attributes of that structure (or class), use always the \char`\"{}this-\/$>$\char`\"{} elements. This is absolutely not necessary in order to have a working code, but it helps understanding your code\+: it is, for example, immediately clear what are the local variables of the method you are in and what are the global attributes of the structure (or class). Example\+: \begin{DoxyVerb}class MyClass
+{
+   int attr1;
+
+   void method1()
+   {
+      std::cout << this->attr1 << std::endl;
+   }
+};
+\end{DoxyVerb}
+ Note the use of \char`\"{}this-\/$>$attr1\char`\"{} and not simply \char`\"{}attr1\char`\"{}.\hypertarget{programming_style_special_function}{}\section{C++ Specific Functions}\label{programming_style_special_function}
+We would like to use pure C++ instructions and coding style, hence functions such as {\ttfamily printf}, {\ttfamily sprintf} or {\ttfamily atoi} shouldn\textquotesingle{}t be used. Most of the replacements for these functions can be found in the S\+TL standard C++ library (\href{http://www.sgi.com/tech/stl/}{\tt http\+://www.\+sgi.\+com/tech/stl/}) or in the B\+O\+O\+ST library (\href{http://www.boost.org/}{\tt http\+://www.\+boost.\+org/}); for example\+: -\/{\ttfamily printf} can be replaced by the {\ttfamily $<$$<$} operator\+: in order to write something to the standard output you do\+: \begin{DoxyVerb}int a = 5;
+std::cout << "Writing to stdout the number " << a << std::endl;
+\end{DoxyVerb}
+
+\begin{DoxyItemize}
+\item functions to convert a type into something else can be replaces by the boost\+::lexical\+\_\+cast method; for example to convert an integer number into a string you may do\+: \begin{DoxyVerb}int a = 5;
+std::string newString(boost::lexical_cast<std::string>(a));
+\end{DoxyVerb}
+
+\end{DoxyItemize}\hypertarget{programming_style_check_errors}{}\section{Error Checking}\label{programming_style_check_errors}
+Using exceptions and assertion to check errors is a good programming habit; you are strongly advised to used exceptions whenever you feel in order to signal that a method terminated because of an error or because of a particular condition. You may define your own exceptions and most of the time you should do this. Anyway PandA provides two mechanisms you may use to signal that en error occurred and that the program must terminate\+:
+\begin{DoxyEnumerate}
+\item {\ttfamily \hyperlink{exceptions_8hpp_ab529baaeae1796fcefb26624f95fb5e0}{T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R(msg)}} is a macro included in \hyperlink{exceptions_8hpp}{src/utility/exceptions.\+hpp}; when used, it terminates the program writing the \char`\"{}msg\char`\"{} string to the screen.
+\item {\ttfamily \hyperlink{exceptions_8hpp_a6b69ed2bbf57b0c84148bced41c772e6}{T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+R\+T(cond, msg)}} is a macro included in \hyperlink{exceptions_8hpp}{src/utility/exceptions.\+hpp}; it is used to check that the boolean condition \char`\"{}cond\char`\"{} is true, otherwise the program termiantes and \char`\"{}msg\char`\"{} is written to the screen.
+\end{DoxyEnumerate}
+
+Yuo may also write your own exception types, but first of all give a look in src/exceptions\+: this directory contains the definition of many common exceptions which are used throughout PandA, so you may find what you need here. Moreover, when defining you own exceptions, you may used the ones in src/exceptions as example.\hypertarget{programming_style_header_including}{}\section{How to Deal with Header Files}\label{programming_style_header_including}
+In order to speed-\/up the compilation and in order to avoid some weird errors that sometimes happen, you should try to put all the {\ttfamily \#include} directives in the .cpp file and not in the .hpp. Instead of the inclusion in the hpp file you can use forward declarations. An example to make the concept clearer; lets suppose I have file1.\+hpp and file1.\+cpp which need the declaration of the class contained in file2.\+hpp\+: \begin{DoxyVerb}file2.hpp:
+
+   class class2
+   {
+      /**
+       * A method....
+       */
+      void doSomething();
+   };
+
+file1.hpp:
+
+   //Instead of including file2.hpp I make a
+   //forward declaration of class2
+   class class2;
+
+   /**
+    * This is class1
+    */
+   class class1
+   {
+      //Attribute of type Class2
+      class2 &attibuteClass2;
+
+      /**
+       * Constructor of class1
+       */
+      class1(class2 &_attr);
+
+      /**
+       * A method....
+       */
+      void oneMethod();
+   };
+
+file1.cpp:
+
+   #include "file1.hpp"
+   #include "file2.hpp"
+
+   /**
+    * Constructor of class1
+    */
+   class1::class1(class2 &_attr) : attibuteClass2(_attr){}
+
+   void class1::oneMethod()
+   {
+      this->attibuteClass2.doSomething();
+   }
+\end{DoxyVerb}
+
+
+Of course you can do that unless the implementation of part (or of all) the functionality is in your .hpp file\+: \begin{DoxyVerb}file2.hpp:
+
+   class class2
+   {
+      /**
+       * A method....
+       */
+      void doSomething();
+   };
+
+file1.hpp:
+
+   //I have to include file2.hpp, a forward declaration is not enough
+   #include "file2.hpp"
+
+   /**
+    * This is class1
+    */
+   class class1
+   {
+      //Attribute of type Class2
+      class2 &attibuteClass2;
+
+      /**
+       * Constructor of class1
+       */
+      class1(class2 &_attr);
+
+      /**
+       * A method....
+       */
+      void oneMethod()   
+      {
+         this->attibuteClass2.doSomething();
+      }
+   };
+
+file1.cpp:
+
+   #include "file1.hpp"
+   #include "file2.hpp"
+
+   /**
+    * Constructor of class1
+    */
+   class1::class1(class2 &_attr) : attibuteClass2(_attr){}
+\end{DoxyVerb}
+ In this situation we are forced to include \char`\"{}file2.\+hpp\char`\"{} in \char`\"{}file1.\+hpp\char`\"{} file\+: this because in \char`\"{}file1.\+hpp\char`\"{} we don\textquotesingle{}t simply use the declaration of class2 but also the details about its internal implementation (i.\+e. the knowledge of the method {\ttfamily do\+Something}).
+
+Regarding header files, you know that at the beginning of the file you have to used an {\ttfamily \#ifndef} clause (this is done in order to avoid multiple compilations of the definitions contained in the file). The convention used is that the argument of the {\ttfamily \#ifndef} must be the upper case version of the name of the file itself. For example for file \char`\"{}name\+Example.\+hpp\char`\"{}\+: \begin{DoxyVerb}#ifndef NAMEEXAMPLE_HPP
+#define NAMEEXAMPLE_HPP
+
+//your code here .......
+
+#endif
+\end{DoxyVerb}
+\hypertarget{programming_style_refcounts_how_to}{}\section{Using Refcounts instead of Pointers}\label{programming_style_refcounts_how_to}
+It is common knowledge that it is possible to easily create pointers to C++ objects (using the {\ttfamily new} keyword), and that these pointers can be passed around in your program. The main limitation of this approach regards the fact that the developer must remember to deallocate these dynamically created objects, no garbage collection is performed (as opposed to what happens with the Java language). PandA uses a special a trick to implements a kind of garbage collection\+: the {\bfseries refcount}; if you are using the boost library with a version greater than 1.\+33 then the refcount mechanism inside boost is automatically enabled, otherwise you will be using the library contained in \hyperlink{refcount_8hpp}{src/utility/refcount.\+hpp} (actually all the developers must include in their files \hyperlink{refcount_8hpp}{src/utility/refcount.\+hpp}\+: then the file itself decides whether it is appropriate to use the boost library or not).
+
+This is a simple example on the utilization of refcounts\+: \begin{DoxyVerb}#include "refcount.hpp"
+
+int main()
+{
+   //Creation of a dynamic object
+   class1 *dynObject = new class1();
+
+   //Wrapping of the object into a refcount
+   refcount<class1> dynObjectRef(dynObject);
+
+   //Utilization of the refcount
+   dynObjectRef->oneMethod();
+}
+\end{DoxyVerb}
+
+
+Note that in case you use refcounts, the forward declaration (technique seen in the previous paragraph) changes a bit\+: using \char`\"{}class class\+Name;\char`\"{} for the forward declaration may not be enough, it your code uses refcounts you need to substitute \char`\"{}class class\+Name;\char`\"{} with \char`\"{}\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L(class\+Name);\char`\"{}.
+
+{\bfseries Wherever it is possible you should use refcounts instead of pointers to objects.}\hypertarget{programming_style_debugging_statements}{}\section{Debugging Statements}\label{programming_style_debugging_statements}
+It is important to often insert in your code debugging statements, which prints useful information about the state of your program; all the helper mechanisms which can be used for this purpose are contained in file \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}. So far five verbosity levels are defined, the lowest the less verbose, the highest the most. You may used the {\ttfamily P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX} macro to print your messages. Note that it may happen that the debugging statements you want to used are something more than a mere message\+: you may then insert your own debug instructions in the code, but make sure they are inserted into a \char`\"{}\#ifndef N\+D\+E\+B\+U\+G\char`\"{} statement\+: this way, it the variable N\+D\+E\+B\+UG is defines (so if we are producing a release of the code), no debug statement is inserted and the code can run faster. For example \begin{DoxyVerb}#ifndef NDEBUG
+if(this->debugLevel >= DEBUG_LEVEL_PEDANTIC)
+{
+   for(int i = 0; i < this->numFunctions; i++)
+      this->taskGraph[i]->writeDot((std::string("TaskGraph") + boost::lexical_cast<std::string>(i)).c_str());
+}
+#endif
+\end{DoxyVerb}
+ 

@@ -1,0 +1,332 @@
+\hypertarget{basic__block_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/basic\+\_\+block.hpp File Reference}
+\label{basic__block_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/basic\+\_\+block.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/basic\+\_\+block.\+hpp}}
+
+
+Class specification of the basic\+\_\+block structure.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+U\+N\+O\+R\+D\+E\+R\+E\+D.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cdfg\+\_\+edge\+\_\+info.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}edge\+\_\+info.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graph\+\_\+info.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}node\+\_\+info.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+Include dependency graph for basic\+\_\+block.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d0e/basic__block_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/db8/basic__block_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structBBNodeInfo}{B\+B\+Node\+Info}
+\begin{DoxyCompactList}\small\item\em Definition of the node\+\_\+info object for the basic\+\_\+block graph. \end{DoxyCompactList}\item 
+struct \hyperlink{structBBEdgeInfo}{B\+B\+Edge\+Info}
+\begin{DoxyCompactList}\small\item\em Information associated with a basic block edge. \end{DoxyCompactList}\item 
+struct \hyperlink{structBBGraphInfo}{B\+B\+Graph\+Info}
+\begin{DoxyCompactList}\small\item\em Information associated with the whole basic-\/block graph. \end{DoxyCompactList}\item 
+class \hyperlink{classBBGraphsCollection}{B\+B\+Graphs\+Collection}
+\begin{DoxyCompactList}\small\item\em This structure defines graphs where nodes are basic\+\_\+blocks. \end{DoxyCompactList}\item 
+struct \hyperlink{structBBGraph}{B\+B\+Graph}
+\begin{DoxyCompactList}\small\item\em Class used to describe a particular graph with basic blocks as nodes. \end{DoxyCompactList}\item 
+class \hyperlink{classBBVertexSorter}{B\+B\+Vertex\+Sorter}
+\item 
+class \hyperlink{classBBEdgeSorter}{B\+B\+Edge\+Sorter}
+\item 
+class \hyperlink{classbb__vertex__order__by__map}{bb\+\_\+vertex\+\_\+order\+\_\+by\+\_\+map}
+\begin{DoxyCompactList}\small\item\em The key comparison function for vertices set based on levels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{basic__block_8hpp_a94ffedf472f09a5b3017ae6786116a40}{D\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(1 $<$$<$ 7)
+\begin{DoxyCompactList}\small\item\em Selectors used only in basic block graphs; numbers continue from \hyperlink{cdfg__edge__info_8hpp}{cdfg\+\_\+edge\+\_\+info.\+hpp}. \end{DoxyCompactList}\item 
+\#define \hyperlink{basic__block_8hpp_a921f317aaf73f086dc9ef152f2f11203}{P\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(1 $<$$<$ 8)
+\begin{DoxyCompactList}\small\item\em post-\/dominator graph edge selector \end{DoxyCompactList}\item 
+\#define \hyperlink{basic__block_8hpp_ad8ffcdd00077d687cf6d7e01a4bffef3}{J\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(1 $<$$<$ 9)
+\begin{DoxyCompactList}\small\item\em j graph edge selector for dj graph (used during loop computation) \end{DoxyCompactList}\item 
+\#define \hyperlink{basic__block_8hpp_ae3d6e778caeb5a9723c253c067f36a34}{P\+P\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(1 $<$$<$ 10)
+\begin{DoxyCompactList}\small\item\em Path Profiling Basic Block edge selector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structBBNodeInfo}{B\+B\+Node\+Info} $>$ \hyperlink{basic__block_8hpp_a3e08f6abf5bad7d4434f60438049fcf9}{B\+B\+Node\+Info\+Ref}
+\begin{DoxyCompactList}\small\item\em refcount definition of the class \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{structBBNodeInfo}{B\+B\+Node\+Info} $>$ \hyperlink{basic__block_8hpp_a72638f01c84faeea976a7a0cc2484a5d}{B\+B\+Node\+Info\+Const\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structBBEdgeInfo}{B\+B\+Edge\+Info} $>$ \hyperlink{basic__block_8hpp_a2d5b9344939ba07dd3288e6c16079ef3}{B\+B\+Edge\+Info\+Ref}
+\begin{DoxyCompactList}\small\item\em refcount definition of the class \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{structBBEdgeInfo}{B\+B\+Edge\+Info} $>$ \hyperlink{basic__block_8hpp_adfb5e3720b7f09fc43816c9ef954dbb5}{B\+B\+Edge\+Info\+Const\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structBBGraphInfo}{B\+B\+Graph\+Info} $>$ \hyperlink{basic__block_8hpp_a7fedb7a9906aec21ae08b9f603e42b6d}{B\+B\+Graph\+Info\+Ref}
+\begin{DoxyCompactList}\small\item\em refcount definition of the class \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{structBBGraphInfo}{B\+B\+Graph\+Info} $>$ \hyperlink{basic__block_8hpp_a36fb0dc395f0395a8a09dca03b034e78}{B\+B\+Graph\+Info\+Const\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classBBGraphsCollection}{B\+B\+Graphs\+Collection} $>$ \hyperlink{basic__block_8hpp_ab2c15dfa325570d7a3e0e364c2f5fdfa}{B\+B\+Graphs\+Collection\+Ref}
+\begin{DoxyCompactList}\small\item\em refcount definition of the class \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{classBBGraphsCollection}{B\+B\+Graphs\+Collection} $>$ \hyperlink{basic__block_8hpp_a73849516bb7eabab8f054a3e98b9fa3e}{B\+B\+Graphs\+Collection\+Const\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structBBGraph}{B\+B\+Graph} $>$ \hyperlink{basic__block_8hpp_a0e7f233d1b83cad0bfd5aa865f0d3532}{B\+B\+Graph\+Ref}
+\begin{DoxyCompactList}\small\item\em refcount definition of the class \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{structBBGraph}{B\+B\+Graph} $>$ \hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}\textbf{ forward declarations}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{basic__block_8hpp_a1ebc790473397287ace33b9a88e5b9b3}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classapplication__manager}{application\+\_\+manager})
+\item 
+\hyperlink{basic__block_8hpp_a3534c699031037ce3bebffe714643338}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structbloc}{bloc})
+\item 
+\hyperlink{basic__block_8hpp_ac5c30465e53a2dee97960f0f406b8be7}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classParameter}{Parameter})
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Class specification of the basic\+\_\+block structure. 
+
+This structure is used to represent graphs where nodes are basic\+\_\+block. A basic block is a sequence of instructions with only one entry and only one exit. If any of the instructions are executed, they will be all executed, and in sequence from first to last. Jumps, if any, start a block, and jumps end a block.
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+
+Marco Lattuada \href{mailto:lattuada@elet.polimi.it}{\tt lattuada@elet.\+polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{basic__block_8hpp_a94ffedf472f09a5b3017ae6786116a40}\label{basic__block_8hpp_a94ffedf472f09a5b3017ae6786116a40}} 
+\index{basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}!D\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{D\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{D\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{D\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}}
+\subsubsection{\texorpdfstring{D\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{D\_SELECTOR}}
+{\footnotesize\ttfamily \#define D\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(1 $<$$<$ 7)}
+
+
+
+Selectors used only in basic block graphs; numbers continue from \hyperlink{cdfg__edge__info_8hpp}{cdfg\+\_\+edge\+\_\+info.\+hpp}. 
+
+dominator graph edge selector 
+
+Definition at line 85 of file basic\+\_\+block.\+hpp.
+
+
+
+Referenced by dom\+\_\+post\+\_\+dom\+\_\+computation\+::\+Internal\+Exec(), C\+S\+E\+::\+Internal\+Exec(), and B\+B\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{basic__block_8hpp_ad8ffcdd00077d687cf6d7e01a4bffef3}\label{basic__block_8hpp_ad8ffcdd00077d687cf6d7e01a4bffef3}} 
+\index{basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}!J\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{J\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{J\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{J\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}}
+\subsubsection{\texorpdfstring{J\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{J\_SELECTOR}}
+{\footnotesize\ttfamily \#define J\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(1 $<$$<$ 9)}
+
+
+
+j graph edge selector for dj graph (used during loop computation) 
+
+
+
+Definition at line 91 of file basic\+\_\+block.\+hpp.
+
+
+
+Referenced by Loops\+::\+Detect\+Loops(), and B\+B\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{basic__block_8hpp_a921f317aaf73f086dc9ef152f2f11203}\label{basic__block_8hpp_a921f317aaf73f086dc9ef152f2f11203}} 
+\index{basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}!P\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{P\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{P\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{P\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}}
+\subsubsection{\texorpdfstring{P\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{PD\_SELECTOR}}
+{\footnotesize\ttfamily \#define P\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(1 $<$$<$ 8)}
+
+
+
+post-\/dominator graph edge selector 
+
+
+
+Definition at line 88 of file basic\+\_\+block.\+hpp.
+
+
+
+Referenced by dom\+\_\+post\+\_\+dom\+\_\+computation\+::\+Internal\+Exec(), and B\+B\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{basic__block_8hpp_ae3d6e778caeb5a9723c253c067f36a34}\label{basic__block_8hpp_ae3d6e778caeb5a9723c253c067f36a34}} 
+\index{basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}!P\+P\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{P\+P\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{P\+P\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{P\+P\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}}
+\subsubsection{\texorpdfstring{P\+P\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{PP\_SELECTOR}}
+{\footnotesize\ttfamily \#define P\+P\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(1 $<$$<$ 10)}
+
+
+
+Path Profiling Basic Block edge selector. 
+
+
+
+Definition at line 94 of file basic\+\_\+block.\+hpp.
+
+
+
+Referenced by B\+B\+Edge\+Writer\+::operator()().
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{basic__block_8hpp_adfb5e3720b7f09fc43816c9ef954dbb5}\label{basic__block_8hpp_adfb5e3720b7f09fc43816c9ef954dbb5}} 
+\index{basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}!B\+B\+Edge\+Info\+Const\+Ref@{B\+B\+Edge\+Info\+Const\+Ref}}
+\index{B\+B\+Edge\+Info\+Const\+Ref@{B\+B\+Edge\+Info\+Const\+Ref}!basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}}
+\subsubsection{\texorpdfstring{B\+B\+Edge\+Info\+Const\+Ref}{BBEdgeInfoConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{structBBEdgeInfo}{B\+B\+Edge\+Info}$>$ \hyperlink{basic__block_8hpp_adfb5e3720b7f09fc43816c9ef954dbb5}{B\+B\+Edge\+Info\+Const\+Ref}}
+
+
+
+Definition at line 242 of file basic\+\_\+block.\+hpp.
+
+\mbox{\Hypertarget{basic__block_8hpp_a2d5b9344939ba07dd3288e6c16079ef3}\label{basic__block_8hpp_a2d5b9344939ba07dd3288e6c16079ef3}} 
+\index{basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}!B\+B\+Edge\+Info\+Ref@{B\+B\+Edge\+Info\+Ref}}
+\index{B\+B\+Edge\+Info\+Ref@{B\+B\+Edge\+Info\+Ref}!basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}}
+\subsubsection{\texorpdfstring{B\+B\+Edge\+Info\+Ref}{BBEdgeInfoRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structBBEdgeInfo}{B\+B\+Edge\+Info}$>$ \hyperlink{basic__block_8hpp_a2d5b9344939ba07dd3288e6c16079ef3}{B\+B\+Edge\+Info\+Ref}}
+
+
+
+refcount definition of the class 
+
+
+
+Definition at line 241 of file basic\+\_\+block.\+hpp.
+
+\mbox{\Hypertarget{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}\label{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}} 
+\index{basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}!B\+B\+Graph\+Const\+Ref@{B\+B\+Graph\+Const\+Ref}}
+\index{B\+B\+Graph\+Const\+Ref@{B\+B\+Graph\+Const\+Ref}!basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}}
+\subsubsection{\texorpdfstring{B\+B\+Graph\+Const\+Ref}{BBGraphConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{structBBGraph}{B\+B\+Graph}$>$ \hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref}}
+
+
+
+Definition at line 419 of file basic\+\_\+block.\+hpp.
+
+\mbox{\Hypertarget{basic__block_8hpp_a36fb0dc395f0395a8a09dca03b034e78}\label{basic__block_8hpp_a36fb0dc395f0395a8a09dca03b034e78}} 
+\index{basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}!B\+B\+Graph\+Info\+Const\+Ref@{B\+B\+Graph\+Info\+Const\+Ref}}
+\index{B\+B\+Graph\+Info\+Const\+Ref@{B\+B\+Graph\+Info\+Const\+Ref}!basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}}
+\subsubsection{\texorpdfstring{B\+B\+Graph\+Info\+Const\+Ref}{BBGraphInfoConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{structBBGraphInfo}{B\+B\+Graph\+Info}$>$ \hyperlink{basic__block_8hpp_a36fb0dc395f0395a8a09dca03b034e78}{B\+B\+Graph\+Info\+Const\+Ref}}
+
+
+
+Definition at line 272 of file basic\+\_\+block.\+hpp.
+
+\mbox{\Hypertarget{basic__block_8hpp_a7fedb7a9906aec21ae08b9f603e42b6d}\label{basic__block_8hpp_a7fedb7a9906aec21ae08b9f603e42b6d}} 
+\index{basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}!B\+B\+Graph\+Info\+Ref@{B\+B\+Graph\+Info\+Ref}}
+\index{B\+B\+Graph\+Info\+Ref@{B\+B\+Graph\+Info\+Ref}!basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}}
+\subsubsection{\texorpdfstring{B\+B\+Graph\+Info\+Ref}{BBGraphInfoRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structBBGraphInfo}{B\+B\+Graph\+Info}$>$ \hyperlink{basic__block_8hpp_a7fedb7a9906aec21ae08b9f603e42b6d}{B\+B\+Graph\+Info\+Ref}}
+
+
+
+refcount definition of the class 
+
+
+
+Definition at line 271 of file basic\+\_\+block.\+hpp.
+
+\mbox{\Hypertarget{basic__block_8hpp_a0e7f233d1b83cad0bfd5aa865f0d3532}\label{basic__block_8hpp_a0e7f233d1b83cad0bfd5aa865f0d3532}} 
+\index{basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}!B\+B\+Graph\+Ref@{B\+B\+Graph\+Ref}}
+\index{B\+B\+Graph\+Ref@{B\+B\+Graph\+Ref}!basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}}
+\subsubsection{\texorpdfstring{B\+B\+Graph\+Ref}{BBGraphRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structBBGraph}{B\+B\+Graph}$>$ \hyperlink{basic__block_8hpp_a0e7f233d1b83cad0bfd5aa865f0d3532}{B\+B\+Graph\+Ref}}
+
+
+
+refcount definition of the class 
+
+
+
+Definition at line 418 of file basic\+\_\+block.\+hpp.
+
+\mbox{\Hypertarget{basic__block_8hpp_a73849516bb7eabab8f054a3e98b9fa3e}\label{basic__block_8hpp_a73849516bb7eabab8f054a3e98b9fa3e}} 
+\index{basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}!B\+B\+Graphs\+Collection\+Const\+Ref@{B\+B\+Graphs\+Collection\+Const\+Ref}}
+\index{B\+B\+Graphs\+Collection\+Const\+Ref@{B\+B\+Graphs\+Collection\+Const\+Ref}!basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}}
+\subsubsection{\texorpdfstring{B\+B\+Graphs\+Collection\+Const\+Ref}{BBGraphsCollectionConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{classBBGraphsCollection}{B\+B\+Graphs\+Collection}$>$ \hyperlink{basic__block_8hpp_a73849516bb7eabab8f054a3e98b9fa3e}{B\+B\+Graphs\+Collection\+Const\+Ref}}
+
+
+
+Definition at line 315 of file basic\+\_\+block.\+hpp.
+
+\mbox{\Hypertarget{basic__block_8hpp_ab2c15dfa325570d7a3e0e364c2f5fdfa}\label{basic__block_8hpp_ab2c15dfa325570d7a3e0e364c2f5fdfa}} 
+\index{basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}!B\+B\+Graphs\+Collection\+Ref@{B\+B\+Graphs\+Collection\+Ref}}
+\index{B\+B\+Graphs\+Collection\+Ref@{B\+B\+Graphs\+Collection\+Ref}!basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}}
+\subsubsection{\texorpdfstring{B\+B\+Graphs\+Collection\+Ref}{BBGraphsCollectionRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classBBGraphsCollection}{B\+B\+Graphs\+Collection}$>$ \hyperlink{basic__block_8hpp_ab2c15dfa325570d7a3e0e364c2f5fdfa}{B\+B\+Graphs\+Collection\+Ref}}
+
+
+
+refcount definition of the class 
+
+
+
+Definition at line 314 of file basic\+\_\+block.\+hpp.
+
+\mbox{\Hypertarget{basic__block_8hpp_a72638f01c84faeea976a7a0cc2484a5d}\label{basic__block_8hpp_a72638f01c84faeea976a7a0cc2484a5d}} 
+\index{basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}!B\+B\+Node\+Info\+Const\+Ref@{B\+B\+Node\+Info\+Const\+Ref}}
+\index{B\+B\+Node\+Info\+Const\+Ref@{B\+B\+Node\+Info\+Const\+Ref}!basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}}
+\subsubsection{\texorpdfstring{B\+B\+Node\+Info\+Const\+Ref}{BBNodeInfoConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{structBBNodeInfo}{B\+B\+Node\+Info}$>$ \hyperlink{basic__block_8hpp_a72638f01c84faeea976a7a0cc2484a5d}{B\+B\+Node\+Info\+Const\+Ref}}
+
+
+
+Definition at line 175 of file basic\+\_\+block.\+hpp.
+
+\mbox{\Hypertarget{basic__block_8hpp_a3e08f6abf5bad7d4434f60438049fcf9}\label{basic__block_8hpp_a3e08f6abf5bad7d4434f60438049fcf9}} 
+\index{basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}!B\+B\+Node\+Info\+Ref@{B\+B\+Node\+Info\+Ref}}
+\index{B\+B\+Node\+Info\+Ref@{B\+B\+Node\+Info\+Ref}!basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}}
+\subsubsection{\texorpdfstring{B\+B\+Node\+Info\+Ref}{BBNodeInfoRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structBBNodeInfo}{B\+B\+Node\+Info}$>$ \hyperlink{basic__block_8hpp_a3e08f6abf5bad7d4434f60438049fcf9}{B\+B\+Node\+Info\+Ref}}
+
+
+
+refcount definition of the class 
+
+
+
+Definition at line 174 of file basic\+\_\+block.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{basic__block_8hpp_a1ebc790473397287ace33b9a88e5b9b3}\label{basic__block_8hpp_a1ebc790473397287ace33b9a88e5b9b3}} 
+\index{basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classapplication__manager}{application\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{basic__block_8hpp_ac5c30465e53a2dee97960f0f406b8be7}\label{basic__block_8hpp_ac5c30465e53a2dee97960f0f406b8be7}} 
+\index{basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classParameter}{Parameter}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{basic__block_8hpp_a3534c699031037ce3bebffe714643338}\label{basic__block_8hpp_a3534c699031037ce3bebffe714643338}} 
+\index{basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!basic\+\_\+block.\+hpp@{basic\+\_\+block.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structbloc}{bloc}}]{ }\end{DoxyParamCaption})}
+

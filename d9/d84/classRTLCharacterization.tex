@@ -1,0 +1,935 @@
+\hypertarget{classRTLCharacterization}{}\section{R\+T\+L\+Characterization Class Reference}
+\label{classRTLCharacterization}\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+
+
+{\ttfamily \#include $<$R\+T\+L\+\_\+characterization.\+hpp$>$}
+
+
+
+Inheritance diagram for R\+T\+L\+Characterization\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{dc/d56/classRTLCharacterization__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for R\+T\+L\+Characterization\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/da9/classRTLCharacterization__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRTLCharacterization_af5d91dd2126f3d7352a05c9ff129d452}{R\+T\+L\+Characterization} (const \hyperlink{target__manager_8hpp_aee0b586a84fb6eb4faefa6e41e1735a9}{target\+\_\+manager\+Ref} \hyperlink{classFunctionalUnitStep_a1f90bc8bd6531c4cdf67966734a66cea}{target}, const std\+::string \&\hyperlink{classRTLCharacterization_a81db435891a407a40bdf46b77d6032e3}{component}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classRTLCharacterization_a722fe030d54dd7f095e61b60d66e5d8f}{$\sim$\+R\+T\+L\+Characterization} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classRTLCharacterization_a6550aa6ae4bcf74abe7cb170f82d5905}{Exec} ()
+\begin{DoxyCompactList}\small\item\em Perform R\+TL characterization of the modules with respect to the target device. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classRTLCharacterization_a8bd96bf987458c331aab335f764da995}{Has\+To\+Be\+Executed} () const
+\begin{DoxyCompactList}\small\item\em Check if this step has actually to be executed. \end{DoxyCompactList}\item 
+virtual const std\+::string \hyperlink{classRTLCharacterization_a04f2b9b10118caba1e50a27769445f21}{Get\+Signature} () const
+\begin{DoxyCompactList}\small\item\em Return a unified identifier of this design step. \end{DoxyCompactList}\item 
+virtual const std\+::string \hyperlink{classRTLCharacterization_a0b41ce2d4af25aa22e41dd9af50f1b0b}{Get\+Name} () const
+\begin{DoxyCompactList}\small\item\em Return the name of this design step. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classRTLCharacterization_acb29748095419798f3ff059e7b00099f}{Compute\+Relationships} (\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&relationship, const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Compute the relationships of a step with other steps. \end{DoxyCompactList}\item 
+virtual const Design\+Flow\+Step\+Factory\+Const\+Ref \hyperlink{classRTLCharacterization_a4a947126e0eb8dd4eb164887a252d597}{C\+Get\+Design\+Flow\+Step\+Factory} () const
+\begin{DoxyCompactList}\small\item\em Return the factory to create this type of steps. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classRTLCharacterization_a5763e2ae1d1252dedf0b282a55526fd3}{Initialize} ()
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classRTLCharacterization_a2c6d6535a7801fbb3d01b3cbace87874}{characterize\+\_\+fu} (const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} \hyperlink{structfunctional__unit}{functional\+\_\+unit})
+\begin{DoxyCompactList}\small\item\em Characterize the given functional unit with respect to the target device. \end{DoxyCompactList}\item 
+void \hyperlink{classRTLCharacterization_a4f479d21fdda0208fad8b538edccad9c}{resize\+\_\+port} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&port, unsigned int prec)
+\begin{DoxyCompactList}\small\item\em resize the port w.\+r.\+t a given precision \end{DoxyCompactList}\item 
+void \hyperlink{classRTLCharacterization_a39ae864464f1d90f555f8c6d682e65b2}{specialize\+\_\+fu} (const \hyperlink{classmodule}{module} $\ast$mod, unsigned int prec, unsigned int bus\+\_\+data\+\_\+bitsize, unsigned int bus\+\_\+addr\+\_\+bitsize, unsigned int bus\+\_\+size\+\_\+bitsize, unsigned int bus\+\_\+tag\+\_\+bitsize, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} portsize\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Performing the specialization of the given object. \end{DoxyCompactList}\item 
+void \hyperlink{classRTLCharacterization_a2478484e956bec25a282ede5faaeaa88}{xwrite\+\_\+device\+\_\+file} (const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref} device)
+\begin{DoxyCompactList}\small\item\em Generate the output file. \end{DoxyCompactList}\item 
+void \hyperlink{classRTLCharacterization_a45858c1c48c467edd0a7eb04d27a478b}{xwrite\+\_\+characterization} (const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref} device, \hyperlink{classxml__element}{xml\+\_\+element} $\ast$node\+Root)
+\begin{DoxyCompactList}\small\item\em Add the characterization to the output file. \end{DoxyCompactList}\item 
+void \hyperlink{classRTLCharacterization_aac3182b7f98299ce58876579de647ad3}{fix\+\_\+execution\+\_\+time\+\_\+std} ()
+\begin{DoxyCompactList}\small\item\em Fix the execution time by removing set/hold/pad timings. \end{DoxyCompactList}\item 
+void \hyperlink{classRTLCharacterization_a92793e13528e187fc9c662ebc5ef7abe}{fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std} ()
+\begin{DoxyCompactList}\small\item\em Fix execution/stage period value for proxies and bounded memory controllers. \end{DoxyCompactList}\item 
+void \hyperlink{classRTLCharacterization_a5f3dcbe12f62ab3c698e9802d9caf145}{fix\+\_\+muxes} ()
+\begin{DoxyCompactList}\small\item\em fix the estimation of mux timing \end{DoxyCompactList}\item 
+void \hyperlink{classRTLCharacterization_ad2f002aeb10b1a41ff125d87580bc507}{add\+\_\+input\+\_\+register} (\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} port\+\_\+in, const std\+::string \&register\+\_\+library, const std\+::string \&port\+\_\+prefix, \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} reset\+\_\+port, \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} circuit, \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} clock\+\_\+port, \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} e\+\_\+port, \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} SM)
+\item 
+void \hyperlink{classRTLCharacterization_a8da7aeea42687af7ad61a61574874de1}{add\+\_\+output\+\_\+register} (\hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} SM, \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} e\+\_\+port, \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} circuit, \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} reset\+\_\+port, \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} port\+\_\+out, const std\+::string \&port\+\_\+prefix, \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} clock\+\_\+port, const std\+::string \&register\+\_\+library)
+\item 
+const std\+::string \hyperlink{classRTLCharacterization_ab22c0a668aea8294ea67188cc5e0846d}{Compute\+Component} (const std\+::string \&input) const
+\begin{DoxyCompactList}\small\item\em Extract the component name from list of cells. \end{DoxyCompactList}\item 
+const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ std\+::string $>$ \hyperlink{classRTLCharacterization_a9f3427f34b9800e5bd6e3fa7a121908a}{Compute\+Cells} (const std\+::string \&input) const
+\begin{DoxyCompactList}\small\item\em Extract the cell lists. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classRTLCharacterization_a61ddc1e36acd32ca894f84303206ff47}{Analyze\+Cell} (\hyperlink{structfunctional__unit}{functional\+\_\+unit} $\ast$fu, const unsigned int prec, const std\+::vector$<$ std\+::string $>$ \&portsize\+\_\+parameters, const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} portsize\+\_\+index, const std\+::vector$<$ std\+::string $>$ \&pipe\+\_\+parameters, const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} stage\+\_\+index, const unsigned int const\+Port, const bool is\+\_\+commutative, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} max\+\_\+lut\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Analyze the single cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{library__manager_8hpp_aacc6d633b0aa80ecfeb1180fd480ae68}{library\+\_\+manager\+Ref} \hyperlink{classRTLCharacterization_a19d1e3b24588c8c02cbf3270d9937d1b}{LM}
+\begin{DoxyCompactList}\small\item\em Library manager. \end{DoxyCompactList}\item 
+const std\+::string \hyperlink{classRTLCharacterization_a81db435891a407a40bdf46b77d6032e3}{component}
+\begin{DoxyCompactList}\small\item\em The component to be characterized. \end{DoxyCompactList}\item 
+const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ std\+::string $>$ \hyperlink{classRTLCharacterization_afbefdea47835573280c058eafb3453cb}{cells}
+\begin{DoxyCompactList}\small\item\em The cells to be characterized. \end{DoxyCompactList}\item 
+\hyperlink{area__model_8hpp_aec11e4e9b1b3afd49a437cb37df0abfb}{area\+\_\+model\+Ref} \hyperlink{classRTLCharacterization_a37173cc4c3dcf672588dd119de85e81c}{prev\+\_\+area\+\_\+characterization}
+\begin{DoxyCompactList}\small\item\em The area model of the last characterization. \end{DoxyCompactList}\item 
+\hyperlink{time__model_8hpp_ae203bb7faf1c278333f76fcc6ebe412c}{time\+\_\+model\+Ref} \hyperlink{classRTLCharacterization_a10951c85f4371dfd1133436377772bd3}{prev\+\_\+timing\+\_\+characterization}
+\begin{DoxyCompactList}\small\item\em The time model of the last characterization. \end{DoxyCompactList}\item 
+const bool \hyperlink{classRTLCharacterization_a0490f2369c8d0e8399cda8d44059f143}{dummy\+\_\+synthesis}
+\begin{DoxyCompactList}\small\item\em True if we are performing dummy synthesis. \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \hyperlink{classRTLCharacterization_abf51e514c27628da4ef919dfb0ce00c8}{completed}
+\begin{DoxyCompactList}\small\item\em set of units completed with success \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 73 of file R\+T\+L\+\_\+characterization.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRTLCharacterization_af5d91dd2126f3d7352a05c9ff129d452}\label{classRTLCharacterization_af5d91dd2126f3d7352a05c9ff129d452}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{R\+T\+L\+Characterization()}{RTLCharacterization()}}
+{\footnotesize\ttfamily R\+T\+L\+Characterization\+::\+R\+T\+L\+Characterization (\begin{DoxyParamCaption}\item[{const \hyperlink{target__manager_8hpp_aee0b586a84fb6eb4faefa6e41e1735a9}{target\+\_\+manager\+Ref}}]{target,  }\item[{const std\+::string \&}]{component,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{parameters }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & is the target \\
+\hline
+{\em component} & is the component to be characterized \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+{\em parameters} & is the set of input parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 105 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$\+R\+T\+L\+Characterization().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{d9/d84/classRTLCharacterization_af5d91dd2126f3d7352a05c9ff129d452_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRTLCharacterization_a722fe030d54dd7f095e61b60d66e5d8f}\label{classRTLCharacterization_a722fe030d54dd7f095e61b60d66e5d8f}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!````~R\+T\+L\+Characterization@{$\sim$\+R\+T\+L\+Characterization}}
+\index{````~R\+T\+L\+Characterization@{$\sim$\+R\+T\+L\+Characterization}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{$\sim$\+R\+T\+L\+Characterization()}{~RTLCharacterization()}}
+{\footnotesize\ttfamily R\+T\+L\+Characterization\+::$\sim$\+R\+T\+L\+Characterization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by R\+T\+L\+Characterization().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{d9/d84/classRTLCharacterization_a722fe030d54dd7f095e61b60d66e5d8f_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classRTLCharacterization_ad2f002aeb10b1a41ff125d87580bc507}\label{classRTLCharacterization_ad2f002aeb10b1a41ff125d87580bc507}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!add\+\_\+input\+\_\+register@{add\+\_\+input\+\_\+register}}
+\index{add\+\_\+input\+\_\+register@{add\+\_\+input\+\_\+register}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{add\+\_\+input\+\_\+register()}{add\_input\_register()}}
+{\footnotesize\ttfamily void R\+T\+L\+Characterization\+::add\+\_\+input\+\_\+register (\begin{DoxyParamCaption}\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{port\+\_\+in,  }\item[{const std\+::string \&}]{register\+\_\+library,  }\item[{const std\+::string \&}]{port\+\_\+prefix,  }\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{reset\+\_\+port,  }\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{circuit,  }\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{clock\+\_\+port,  }\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{e\+\_\+port,  }\item[{\hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref}}]{SM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 560 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+
+
+References structural\+\_\+manager\+::add\+\_\+connection(), structural\+\_\+manager\+::add\+\_\+sign(), C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, structural\+\_\+object\+::find\+\_\+member(), G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+I\+ZE, structural\+\_\+object\+::get\+\_\+type\+Ref(), structural\+\_\+type\+\_\+descriptor\+::\+I\+NT, port\+\_\+o\+\_\+K, structural\+\_\+type\+\_\+descriptor\+::\+R\+E\+AL, register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+ME, register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+I\+NT, register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+R\+E\+AL, register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+U\+I\+NT, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, Functional\+Unit\+Step\+::\+TM, structural\+\_\+type\+\_\+descriptor\+::type, and structural\+\_\+type\+\_\+descriptor\+::\+U\+I\+NT.
+
+
+
+Referenced by Analyze\+Cell().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d84/classRTLCharacterization_ad2f002aeb10b1a41ff125d87580bc507_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{d9/d84/classRTLCharacterization_ad2f002aeb10b1a41ff125d87580bc507_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRTLCharacterization_a8da7aeea42687af7ad61a61574874de1}\label{classRTLCharacterization_a8da7aeea42687af7ad61a61574874de1}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!add\+\_\+output\+\_\+register@{add\+\_\+output\+\_\+register}}
+\index{add\+\_\+output\+\_\+register@{add\+\_\+output\+\_\+register}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{add\+\_\+output\+\_\+register()}{add\_output\_register()}}
+{\footnotesize\ttfamily void R\+T\+L\+Characterization\+::add\+\_\+output\+\_\+register (\begin{DoxyParamCaption}\item[{\hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref}}]{SM,  }\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{e\+\_\+port,  }\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{circuit,  }\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{reset\+\_\+port,  }\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{port\+\_\+out,  }\item[{const std\+::string \&}]{port\+\_\+prefix,  }\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{clock\+\_\+port,  }\item[{const std\+::string \&}]{register\+\_\+library }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 592 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+
+
+References structural\+\_\+manager\+::add\+\_\+connection(), structural\+\_\+manager\+::add\+\_\+sign(), C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, structural\+\_\+object\+::find\+\_\+member(), G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+I\+ZE, structural\+\_\+object\+::get\+\_\+type\+Ref(), structural\+\_\+type\+\_\+descriptor\+::\+I\+NT, port\+\_\+o\+\_\+K, structural\+\_\+type\+\_\+descriptor\+::\+R\+E\+AL, register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+ME, register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+I\+NT, register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+R\+E\+AL, register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+M\+E\+\_\+\+U\+I\+NT, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, Functional\+Unit\+Step\+::\+TM, structural\+\_\+type\+\_\+descriptor\+::type, and structural\+\_\+type\+\_\+descriptor\+::\+U\+I\+NT.
+
+
+
+Referenced by Analyze\+Cell().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d84/classRTLCharacterization_a8da7aeea42687af7ad61a61574874de1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{d9/d84/classRTLCharacterization_a8da7aeea42687af7ad61a61574874de1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRTLCharacterization_a61ddc1e36acd32ca894f84303206ff47}\label{classRTLCharacterization_a61ddc1e36acd32ca894f84303206ff47}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!Analyze\+Cell@{Analyze\+Cell}}
+\index{Analyze\+Cell@{Analyze\+Cell}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{Analyze\+Cell()}{AnalyzeCell()}}
+{\footnotesize\ttfamily void R\+T\+L\+Characterization\+::\+Analyze\+Cell (\begin{DoxyParamCaption}\item[{\hyperlink{structfunctional__unit}{functional\+\_\+unit} $\ast$}]{fu,  }\item[{const unsigned int}]{prec,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{portsize\+\_\+parameters,  }\item[{const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{portsize\+\_\+index,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{pipe\+\_\+parameters,  }\item[{const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{stage\+\_\+index,  }\item[{const unsigned int}]{const\+Port,  }\item[{const bool}]{is\+\_\+commutative,  }\item[{\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{max\+\_\+lut\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Analyze the single cell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fu} & is the cell \\
+\hline
+{\em prec} & is the precision \\
+\hline
+{\em portsize\+\_\+parameters} & is the size of parameters \\
+\hline
+{\em portsize\+\_\+index} & \\
+\hline
+{\em pipe\+\_\+parameters} & \\
+\hline
+{\em const\+Port} & is the index of the constant port \\
+\hline
+{\em is\+\_\+commutative} & is true if all the operations are commutative \\
+\hline
+\end{DoxyParams}
+some modules has to be characterized with respect to a different constant value
+
+main circuit type
+
+setting top circuit component
+
+add further specializations for this module
+
+add clock and reset
+
+add register on inputs
+
+add register on outputs
+
+generate the synthesis scripts
+
+the synthesis has been successfully completed setting the used resources
+
+setting the timing values for each operation 
+
+Implements \hyperlink{classFunctionalUnitStep_afe8188cf489c2c980bc537f5ed37a5cc}{Functional\+Unit\+Step}.
+
+
+
+Definition at line 671 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+
+
+References structural\+\_\+manager\+::add\+\_\+connection(), structural\+\_\+manager\+::add\+\_\+constant(), add\+\_\+input\+\_\+register(), add\+\_\+output\+\_\+register(), structural\+\_\+manager\+::add\+\_\+port(), structural\+\_\+manager\+::add\+\_\+port\+\_\+vector(), functional\+\_\+unit\+::area\+\_\+m, cells, functional\+\_\+unit\+::channels\+\_\+type, C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+11, C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+N1, C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+NN, functional\+\_\+unit\+::characterizing\+\_\+constant\+\_\+value, C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, completed, counter, area\+\_\+model\+::create\+\_\+model(), time\+\_\+model\+::create\+\_\+model(), Backend\+Flow\+::\+Create\+Flow(), time\+\_\+model\+::cycles\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT, dummy\+\_\+synthesis, Backend\+Flow\+::\+Execute\+Synthesis(), time\+\_\+model\+::execution\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT, N\+P\+\_\+functionality\+::exist\+\_\+\+N\+P\+\_\+functionality(), structural\+\_\+object\+::\+Exists\+Parameter(), structural\+\_\+object\+::find\+\_\+member(), N\+P\+\_\+functionality\+::\+F\+L\+O\+P\+O\+C\+O\+\_\+\+P\+R\+O\+V\+I\+D\+ED, functional\+\_\+unit\+::fu\+\_\+template\+\_\+name, functional\+\_\+unit\+::fu\+\_\+template\+\_\+parameters, functional\+\_\+unit\+::functional\+\_\+unit\+\_\+name, Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), structural\+\_\+manager\+::get\+\_\+circ(), get\+\_\+id(), structural\+\_\+object\+::get\+\_\+id(), structural\+\_\+object\+::get\+\_\+kind(), technology\+\_\+manager\+::get\+\_\+library(), library\+\_\+manager\+::get\+\_\+library\+\_\+name(), N\+P\+\_\+functionality\+::get\+\_\+library\+\_\+parameters(), functional\+\_\+unit\+::get\+\_\+name(), functional\+\_\+unit\+::get\+\_\+operations(), target\+\_\+device\+::get\+\_\+parameter(), Backend\+Flow\+::get\+\_\+timing\+\_\+results(), target\+\_\+device\+::get\+\_\+type(), structural\+\_\+object\+::get\+\_\+type\+Ref(), Backend\+Flow\+::get\+\_\+used\+\_\+resources(), Functional\+Unit\+Step\+::has\+\_\+first\+\_\+synthesis\+\_\+id, port\+\_\+o\+::\+IN, time\+\_\+model\+::initiation\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT, LM, L\+U\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD, max(), M\+E\+M\+L\+O\+A\+D\+\_\+\+S\+TD, functional\+\_\+unit\+::memory\+\_\+type, M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US, M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+DS, M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+S\+D\+S\+\_\+\+B\+US, M\+E\+M\+O\+R\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+U\+N\+A\+L\+I\+G\+N\+ED, M\+E\+M\+S\+T\+O\+R\+E\+\_\+\+S\+TD, port\+\_\+o\+::\+O\+UT, Design\+Flow\+Step\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, Design\+Flow\+Step\+::parameters, P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER, port\+\_\+o\+\_\+K, P\+O\+R\+T\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+\+N\+\_\+\+P\+O\+R\+TS, port\+\_\+vector\+\_\+o\+\_\+K, prev\+\_\+area\+\_\+characterization, prev\+\_\+timing\+\_\+characterization, P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, register\+\_\+\+A\+R\+\_\+\+N\+O\+R\+E\+T\+I\+ME, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, resize\+\_\+port(), time\+\_\+model\+::set\+\_\+execution\+\_\+time(), time\+\_\+model\+::set\+\_\+stage\+\_\+period(), structural\+\_\+manager\+::set\+\_\+top\+\_\+info(), structural\+\_\+object\+::\+Set\+Parameter(), specialize\+\_\+fu(), time\+\_\+model\+::stage\+\_\+period\+\_\+\+D\+E\+F\+A\+U\+LT, S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, S\+TR, N\+P\+\_\+functionality\+::\+S\+Y\+S\+T\+E\+M\+\_\+\+V\+E\+R\+I\+L\+O\+G\+\_\+\+P\+R\+O\+V\+I\+D\+ED, Functional\+Unit\+Step\+::target, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, Functional\+Unit\+Step\+::\+TM, N\+P\+\_\+functionality\+::\+V\+E\+R\+I\+L\+O\+G\+\_\+\+P\+R\+O\+V\+I\+D\+ED, and N\+P\+\_\+functionality\+::\+V\+H\+D\+L\+\_\+\+P\+R\+O\+V\+I\+D\+ED.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d9/d84/classRTLCharacterization_a61ddc1e36acd32ca894f84303206ff47_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRTLCharacterization_a4a947126e0eb8dd4eb164887a252d597}\label{classRTLCharacterization_a4a947126e0eb8dd4eb164887a252d597}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!C\+Get\+Design\+Flow\+Step\+Factory@{C\+Get\+Design\+Flow\+Step\+Factory}}
+\index{C\+Get\+Design\+Flow\+Step\+Factory@{C\+Get\+Design\+Flow\+Step\+Factory}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{C\+Get\+Design\+Flow\+Step\+Factory()}{CGetDesignFlowStepFactory()}}
+{\footnotesize\ttfamily const Design\+Flow\+Step\+Factory\+Const\+Ref R\+T\+L\+Characterization\+::\+C\+Get\+Design\+Flow\+Step\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Return the factory to create this type of steps. 
+
+
+
+Implements \hyperlink{classDesignFlowStep_a5510a8d296670a07f6b53312c448994c}{Design\+Flow\+Step}.
+
+
+
+Definition at line 665 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+\mbox{\Hypertarget{classRTLCharacterization_a2c6d6535a7801fbb3d01b3cbace87874}\label{classRTLCharacterization_a2c6d6535a7801fbb3d01b3cbace87874}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!characterize\+\_\+fu@{characterize\+\_\+fu}}
+\index{characterize\+\_\+fu@{characterize\+\_\+fu}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{characterize\+\_\+fu()}{characterize\_fu()}}
+{\footnotesize\ttfamily void R\+T\+L\+Characterization\+::characterize\+\_\+fu (\begin{DoxyParamCaption}\item[{const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}}]{functional\+\_\+unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Characterize the given functional unit with respect to the target device. 
+
+\mbox{\Hypertarget{classRTLCharacterization_a9f3427f34b9800e5bd6e3fa7a121908a}\label{classRTLCharacterization_a9f3427f34b9800e5bd6e3fa7a121908a}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!Compute\+Cells@{Compute\+Cells}}
+\index{Compute\+Cells@{Compute\+Cells}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{Compute\+Cells()}{ComputeCells()}}
+{\footnotesize\ttfamily const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ std\+::string $>$ R\+T\+L\+Characterization\+::\+Compute\+Cells (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Extract the cell lists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & is the input string \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1118 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+
+
+References component, Split\+String(), and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{d9/d84/classRTLCharacterization_a9f3427f34b9800e5bd6e3fa7a121908a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRTLCharacterization_ab22c0a668aea8294ea67188cc5e0846d}\label{classRTLCharacterization_ab22c0a668aea8294ea67188cc5e0846d}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!Compute\+Component@{Compute\+Component}}
+\index{Compute\+Component@{Compute\+Component}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{Compute\+Component()}{ComputeComponent()}}
+{\footnotesize\ttfamily const std\+::string R\+T\+L\+Characterization\+::\+Compute\+Component (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Extract the component name from list of cells. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & is the input string \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1109 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+
+
+References Split\+String(), and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{d9/d84/classRTLCharacterization_ab22c0a668aea8294ea67188cc5e0846d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRTLCharacterization_acb29748095419798f3ff059e7b00099f}\label{classRTLCharacterization_acb29748095419798f3ff059e7b00099f}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!Compute\+Relationships@{Compute\+Relationships}}
+\index{Compute\+Relationships@{Compute\+Relationships}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{Compute\+Relationships()}{ComputeRelationships()}}
+{\footnotesize\ttfamily void R\+T\+L\+Characterization\+::\+Compute\+Relationships (\begin{DoxyParamCaption}\item[{\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&}]{relationship,  }\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compute the relationships of a step with other steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dependencies} & is where relationships will be stored \\
+\hline
+{\em relationship\+\_\+type} & is the type of relationship to be computed \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classDesignFlowStep_a65bf7bcb603189a7ddcf930c3a9fd7fe}{Design\+Flow\+Step}.
+
+
+
+Definition at line 638 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+
+
+References Technology\+Flow\+Step\+::\+Compute\+Signature(), Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, L\+O\+A\+D\+\_\+\+T\+E\+C\+H\+N\+O\+L\+O\+GY, Wrefcount$<$ T $>$\+::lock(), Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d9/d84/classRTLCharacterization_acb29748095419798f3ff059e7b00099f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRTLCharacterization_a6550aa6ae4bcf74abe7cb170f82d5905}\label{classRTLCharacterization_a6550aa6ae4bcf74abe7cb170f82d5905}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!Exec@{Exec}}
+\index{Exec@{Exec}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{Exec()}{Exec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} R\+T\+L\+Characterization\+::\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Perform R\+TL characterization of the modules with respect to the target device. 
+
+
+
+Implements \hyperlink{classDesignFlowStep_a77d7e38493016766098711ea24f60b89}{Design\+Flow\+Step}.
+
+
+
+Definition at line 128 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+
+
+References Functional\+Unit\+Step\+::\+Analyze\+Fu(), component, fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std(), library\+\_\+manager\+::get\+\_\+fu(), LM, S\+U\+C\+C\+E\+SS, Functional\+Unit\+Step\+::target, and xwrite\+\_\+device\+\_\+file().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d84/classRTLCharacterization_a6550aa6ae4bcf74abe7cb170f82d5905_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRTLCharacterization_aac3182b7f98299ce58876579de647ad3}\label{classRTLCharacterization_aac3182b7f98299ce58876579de647ad3}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!fix\+\_\+execution\+\_\+time\+\_\+std@{fix\+\_\+execution\+\_\+time\+\_\+std}}
+\index{fix\+\_\+execution\+\_\+time\+\_\+std@{fix\+\_\+execution\+\_\+time\+\_\+std}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{fix\+\_\+execution\+\_\+time\+\_\+std()}{fix\_execution\_time\_std()}}
+{\footnotesize\ttfamily void R\+T\+L\+Characterization\+::fix\+\_\+execution\+\_\+time\+\_\+std (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fix the execution time by removing set/hold/pad timings. 
+
+
+
+Definition at line 189 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+
+
+References A\+S\+S\+I\+GN, A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+\+B\+O\+O\+L\+\_\+\+S\+TD, completed, component, technology\+\_\+manager\+::get\+\_\+fu(), library\+\_\+manager\+::get\+\_\+fu(), library\+\_\+manager\+::get\+\_\+library\+\_\+name(), L\+I\+B\+R\+A\+R\+Y\+\_\+\+PC, L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+TD, L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+T\+D\+\_\+\+FU, LM, Design\+Flow\+Step\+::parameters, and Functional\+Unit\+Step\+::\+TM.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d84/classRTLCharacterization_aac3182b7f98299ce58876579de647ad3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRTLCharacterization_a5f3dcbe12f62ab3c698e9802d9caf145}\label{classRTLCharacterization_a5f3dcbe12f62ab3c698e9802d9caf145}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!fix\+\_\+muxes@{fix\+\_\+muxes}}
+\index{fix\+\_\+muxes@{fix\+\_\+muxes}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{fix\+\_\+muxes()}{fix\_muxes()}}
+{\footnotesize\ttfamily void R\+T\+L\+Characterization\+::fix\+\_\+muxes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+fix the estimation of mux timing 
+
+
+
+Definition at line 141 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+
+
+References A\+S\+S\+I\+GN, A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+\+B\+O\+O\+L\+\_\+\+S\+TD, technology\+\_\+manager\+::get\+\_\+fu(), L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+T\+D\+\_\+\+FU, M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD, M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD, S\+TR, T\+E\+S\+T\+\_\+\+M\+U\+L\+\_\+\+M\+U\+X\+\_\+8, and Functional\+Unit\+Step\+::\+TM.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{d9/d84/classRTLCharacterization_a5f3dcbe12f62ab3c698e9802d9caf145_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRTLCharacterization_a92793e13528e187fc9c662ebc5ef7abe}\label{classRTLCharacterization_a92793e13528e187fc9c662ebc5ef7abe}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std@{fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std}}
+\index{fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std@{fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std()}{fix\_proxies\_execution\_time\_std()}}
+{\footnotesize\ttfamily void R\+T\+L\+Characterization\+::fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fix execution/stage period value for proxies and bounded memory controllers. 
+
+
+
+Definition at line 220 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+
+
+References A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+AM, A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+NN, B\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+TD, B\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+T\+DN, completed, component, technology\+\_\+manager\+::get\+\_\+fu(), library\+\_\+manager\+::get\+\_\+fu(), library\+\_\+manager\+::get\+\_\+library\+\_\+name(), L\+I\+B\+R\+A\+R\+Y\+\_\+\+PC, L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+TD, L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+T\+D\+\_\+\+FU, LM, M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+P\+R\+O\+XY, M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+P\+R\+O\+X\+YN, M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+O\+XY, M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+O\+X\+YN, Design\+Flow\+Step\+::parameters, and Functional\+Unit\+Step\+::\+TM.
+
+
+
+Referenced by Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d84/classRTLCharacterization_a92793e13528e187fc9c662ebc5ef7abe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{d9/d84/classRTLCharacterization_a92793e13528e187fc9c662ebc5ef7abe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRTLCharacterization_a0b41ce2d4af25aa22e41dd9af50f1b0b}\label{classRTLCharacterization_a0b41ce2d4af25aa22e41dd9af50f1b0b}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!Get\+Name@{Get\+Name}}
+\index{Get\+Name@{Get\+Name}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{Get\+Name()}{GetName()}}
+{\footnotesize\ttfamily const std\+::string R\+T\+L\+Characterization\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Return the name of this design step. 
+
+\begin{DoxyReturn}{Returns}
+the name of the pass (for debug purpose) 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classDesignFlowStep_a01e5ebfab88db3b3b7f832f80075fad8}{Design\+Flow\+Step}.
+
+
+
+Definition at line 633 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+\mbox{\Hypertarget{classRTLCharacterization_a04f2b9b10118caba1e50a27769445f21}\label{classRTLCharacterization_a04f2b9b10118caba1e50a27769445f21}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!Get\+Signature@{Get\+Signature}}
+\index{Get\+Signature@{Get\+Signature}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{Get\+Signature()}{GetSignature()}}
+{\footnotesize\ttfamily const std\+::string R\+T\+L\+Characterization\+::\+Get\+Signature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Return a unified identifier of this design step. 
+
+\begin{DoxyReturn}{Returns}
+the signature of the design step 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classDesignFlowStep_ab111e3d4058615c2dedc0505978d4699}{Design\+Flow\+Step}.
+
+
+
+Definition at line 628 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+\mbox{\Hypertarget{classRTLCharacterization_a8bd96bf987458c331aab335f764da995}\label{classRTLCharacterization_a8bd96bf987458c331aab335f764da995}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}}
+\index{Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{Has\+To\+Be\+Executed()}{HasToBeExecuted()}}
+{\footnotesize\ttfamily bool R\+T\+L\+Characterization\+::\+Has\+To\+Be\+Executed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if this step has actually to be executed. 
+
+\begin{DoxyReturn}{Returns}
+true if the step has to be executed 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classDesignFlowStep_a1783abe0c1d162a52da1e413d5d1ef05}{Design\+Flow\+Step}.
+
+
+
+Definition at line 623 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+\mbox{\Hypertarget{classRTLCharacterization_a5763e2ae1d1252dedf0b282a55526fd3}\label{classRTLCharacterization_a5763e2ae1d1252dedf0b282a55526fd3}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void R\+T\+L\+Characterization\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classFunctionalUnitStep_a7957c47789e5d4a97eb9315872dc8d37}{Functional\+Unit\+Step}.
+
+
+
+Definition at line 120 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+
+
+References component, technology\+\_\+manager\+::get\+\_\+library(), technology\+\_\+manager\+::get\+\_\+library\+\_\+manager(), Functional\+Unit\+Step\+::\+Initialize(), LM, prev\+\_\+area\+\_\+characterization, prev\+\_\+timing\+\_\+characterization, and Functional\+Unit\+Step\+::\+TM.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d84/classRTLCharacterization_a5763e2ae1d1252dedf0b282a55526fd3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRTLCharacterization_a4f479d21fdda0208fad8b538edccad9c}\label{classRTLCharacterization_a4f479d21fdda0208fad8b538edccad9c}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!resize\+\_\+port@{resize\+\_\+port}}
+\index{resize\+\_\+port@{resize\+\_\+port}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{resize\+\_\+port()}{resize\_port()}}
+{\footnotesize\ttfamily void R\+T\+L\+Characterization\+::resize\+\_\+port (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{port,  }\item[{unsigned int}]{prec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+resize the port w.\+r.\+t a given precision 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 486 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+
+
+References structural\+\_\+type\+\_\+descriptor\+::\+B\+O\+OL, structural\+\_\+object\+::get\+\_\+type\+Ref(), port\+\_\+o\+::resize\+\_\+std\+\_\+port(), structural\+\_\+type\+\_\+descriptor\+::type, structural\+\_\+type\+\_\+descriptor\+::\+V\+E\+C\+T\+O\+R\+\_\+\+I\+NT, structural\+\_\+type\+\_\+descriptor\+::\+V\+E\+C\+T\+O\+R\+\_\+\+R\+E\+AL, and structural\+\_\+type\+\_\+descriptor\+::\+V\+E\+C\+T\+O\+R\+\_\+\+U\+I\+NT.
+
+
+
+Referenced by Analyze\+Cell(), and specialize\+\_\+fu().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d84/classRTLCharacterization_a4f479d21fdda0208fad8b538edccad9c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d84/classRTLCharacterization_a4f479d21fdda0208fad8b538edccad9c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRTLCharacterization_a39ae864464f1d90f555f8c6d682e65b2}\label{classRTLCharacterization_a39ae864464f1d90f555f8c6d682e65b2}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!specialize\+\_\+fu@{specialize\+\_\+fu}}
+\index{specialize\+\_\+fu@{specialize\+\_\+fu}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{specialize\+\_\+fu()}{specialize\_fu()}}
+{\footnotesize\ttfamily void R\+T\+L\+Characterization\+::specialize\+\_\+fu (\begin{DoxyParamCaption}\item[{const \hyperlink{classmodule}{module} $\ast$}]{mod,  }\item[{unsigned int}]{prec,  }\item[{unsigned int}]{bus\+\_\+data\+\_\+bitsize,  }\item[{unsigned int}]{bus\+\_\+addr\+\_\+bitsize,  }\item[{unsigned int}]{bus\+\_\+size\+\_\+bitsize,  }\item[{unsigned int}]{bus\+\_\+tag\+\_\+bitsize,  }\item[{\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{portsize\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Performing the specialization of the given object. 
+
+
+
+Definition at line 510 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+
+
+References module\+::get\+\_\+in\+\_\+port(), module\+::get\+\_\+in\+\_\+port\+\_\+size(), structural\+\_\+object\+::get\+\_\+kind(), module\+::get\+\_\+out\+\_\+port(), module\+::get\+\_\+out\+\_\+port\+\_\+size(), port\+\_\+vector\+\_\+o\+\_\+K, port\+\_\+o\+::resize\+\_\+busport(), and resize\+\_\+port().
+
+
+
+Referenced by Analyze\+Cell().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d84/classRTLCharacterization_a39ae864464f1d90f555f8c6d682e65b2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{d9/d84/classRTLCharacterization_a39ae864464f1d90f555f8c6d682e65b2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRTLCharacterization_a45858c1c48c467edd0a7eb04d27a478b}\label{classRTLCharacterization_a45858c1c48c467edd0a7eb04d27a478b}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!xwrite\+\_\+characterization@{xwrite\+\_\+characterization}}
+\index{xwrite\+\_\+characterization@{xwrite\+\_\+characterization}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{xwrite\+\_\+characterization()}{xwrite\_characterization()}}
+{\footnotesize\ttfamily void R\+T\+L\+Characterization\+::xwrite\+\_\+characterization (\begin{DoxyParamCaption}\item[{const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref}}]{device,  }\item[{\hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{node\+Root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Add the characterization to the output file. 
+
+set to the default value 
+
+Definition at line 349 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+
+
+References xml\+\_\+child\+::add\+\_\+child\+\_\+element(), xml\+\_\+child\+::add\+\_\+child\+\_\+text(), clb\+\_\+model\+::\+B\+R\+AM, cells, completed, area\+\_\+model\+::create\+\_\+model(), clb\+\_\+model\+::\+D\+SP, G\+E\+T\+\_\+\+C\+L\+A\+S\+S\+\_\+\+N\+A\+ME, library\+\_\+manager\+::get\+\_\+library\+\_\+fu(), library\+\_\+manager\+::get\+\_\+library\+\_\+name(), target\+\_\+device\+::get\+\_\+type(), Time\+Stamp\+::\+Get\+Current\+Time\+Stamp(), LM, clb\+\_\+model\+::\+L\+U\+T\+\_\+\+F\+F\+\_\+\+P\+A\+I\+RS, Design\+Flow\+Step\+::parameters, clb\+\_\+model\+::\+R\+E\+G\+I\+S\+T\+E\+RS, clb\+\_\+model\+::\+S\+L\+I\+CE, clb\+\_\+model\+::\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS, S\+TR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and W\+R\+I\+T\+E\+\_\+\+X\+N\+V\+M2.
+
+
+
+Referenced by xwrite\+\_\+device\+\_\+file().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d84/classRTLCharacterization_a45858c1c48c467edd0a7eb04d27a478b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d84/classRTLCharacterization_a45858c1c48c467edd0a7eb04d27a478b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRTLCharacterization_a2478484e956bec25a282ede5faaeaa88}\label{classRTLCharacterization_a2478484e956bec25a282ede5faaeaa88}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!xwrite\+\_\+device\+\_\+file@{xwrite\+\_\+device\+\_\+file}}
+\index{xwrite\+\_\+device\+\_\+file@{xwrite\+\_\+device\+\_\+file}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{xwrite\+\_\+device\+\_\+file()}{xwrite\_device\_file()}}
+{\footnotesize\ttfamily void R\+T\+L\+Characterization\+::xwrite\+\_\+device\+\_\+file (\begin{DoxyParamCaption}\item[{const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref}}]{device }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Generate the output file. 
+
+
+
+Definition at line 317 of file R\+T\+L\+\_\+characterization.\+cpp.
+
+
+
+References xml\+\_\+document\+::create\+\_\+root\+\_\+node(), T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, xml\+\_\+document\+::write\+\_\+to\+\_\+file\+\_\+formatted(), target\+\_\+device\+::xwrite(), and xwrite\+\_\+characterization().
+
+
+
+Referenced by Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d84/classRTLCharacterization_a2478484e956bec25a282ede5faaeaa88_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{d9/d84/classRTLCharacterization_a2478484e956bec25a282ede5faaeaa88_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classRTLCharacterization_afbefdea47835573280c058eafb3453cb}\label{classRTLCharacterization_afbefdea47835573280c058eafb3453cb}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!cells@{cells}}
+\index{cells@{cells}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{cells}{cells}}
+{\footnotesize\ttfamily const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$std\+::string$>$ R\+T\+L\+Characterization\+::cells\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The cells to be characterized. 
+
+
+
+Definition at line 83 of file R\+T\+L\+\_\+characterization.\+hpp.
+
+
+
+Referenced by Analyze\+Cell(), and xwrite\+\_\+characterization().
+
+\mbox{\Hypertarget{classRTLCharacterization_abf51e514c27628da4ef919dfb0ce00c8}\label{classRTLCharacterization_abf51e514c27628da4ef919dfb0ce00c8}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!completed@{completed}}
+\index{completed@{completed}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{completed}{completed}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$std\+::string$>$ R\+T\+L\+Characterization\+::completed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set of units completed with success 
+
+
+
+Definition at line 122 of file R\+T\+L\+\_\+characterization.\+hpp.
+
+
+
+Referenced by Analyze\+Cell(), fix\+\_\+execution\+\_\+time\+\_\+std(), fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std(), and xwrite\+\_\+characterization().
+
+\mbox{\Hypertarget{classRTLCharacterization_a81db435891a407a40bdf46b77d6032e3}\label{classRTLCharacterization_a81db435891a407a40bdf46b77d6032e3}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!component@{component}}
+\index{component@{component}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{component}{component}}
+{\footnotesize\ttfamily const std\+::string R\+T\+L\+Characterization\+::component\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The component to be characterized. 
+
+
+
+Definition at line 80 of file R\+T\+L\+\_\+characterization.\+hpp.
+
+
+
+Referenced by Compute\+Cells(), Exec(), fix\+\_\+execution\+\_\+time\+\_\+std(), fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std(), and Initialize().
+
+\mbox{\Hypertarget{classRTLCharacterization_a0490f2369c8d0e8399cda8d44059f143}\label{classRTLCharacterization_a0490f2369c8d0e8399cda8d44059f143}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!dummy\+\_\+synthesis@{dummy\+\_\+synthesis}}
+\index{dummy\+\_\+synthesis@{dummy\+\_\+synthesis}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{dummy\+\_\+synthesis}{dummy\_synthesis}}
+{\footnotesize\ttfamily const bool R\+T\+L\+Characterization\+::dummy\+\_\+synthesis\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+True if we are performing dummy synthesis. 
+
+
+
+Definition at line 93 of file R\+T\+L\+\_\+characterization.\+hpp.
+
+
+
+Referenced by Analyze\+Cell().
+
+\mbox{\Hypertarget{classRTLCharacterization_a19d1e3b24588c8c02cbf3270d9937d1b}\label{classRTLCharacterization_a19d1e3b24588c8c02cbf3270d9937d1b}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!LM@{LM}}
+\index{LM@{LM}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{LM}{LM}}
+{\footnotesize\ttfamily \hyperlink{library__manager_8hpp_aacc6d633b0aa80ecfeb1180fd480ae68}{library\+\_\+manager\+Ref} R\+T\+L\+Characterization\+::\+LM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Library manager. 
+
+
+
+Definition at line 77 of file R\+T\+L\+\_\+characterization.\+hpp.
+
+
+
+Referenced by Analyze\+Cell(), Exec(), fix\+\_\+execution\+\_\+time\+\_\+std(), fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std(), Initialize(), and xwrite\+\_\+characterization().
+
+\mbox{\Hypertarget{classRTLCharacterization_a37173cc4c3dcf672588dd119de85e81c}\label{classRTLCharacterization_a37173cc4c3dcf672588dd119de85e81c}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!prev\+\_\+area\+\_\+characterization@{prev\+\_\+area\+\_\+characterization}}
+\index{prev\+\_\+area\+\_\+characterization@{prev\+\_\+area\+\_\+characterization}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{prev\+\_\+area\+\_\+characterization}{prev\_area\_characterization}}
+{\footnotesize\ttfamily \hyperlink{area__model_8hpp_aec11e4e9b1b3afd49a437cb37df0abfb}{area\+\_\+model\+Ref} R\+T\+L\+Characterization\+::prev\+\_\+area\+\_\+characterization\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The area model of the last characterization. 
+
+
+
+Definition at line 86 of file R\+T\+L\+\_\+characterization.\+hpp.
+
+
+
+Referenced by Analyze\+Cell(), and Initialize().
+
+\mbox{\Hypertarget{classRTLCharacterization_a10951c85f4371dfd1133436377772bd3}\label{classRTLCharacterization_a10951c85f4371dfd1133436377772bd3}} 
+\index{R\+T\+L\+Characterization@{R\+T\+L\+Characterization}!prev\+\_\+timing\+\_\+characterization@{prev\+\_\+timing\+\_\+characterization}}
+\index{prev\+\_\+timing\+\_\+characterization@{prev\+\_\+timing\+\_\+characterization}!R\+T\+L\+Characterization@{R\+T\+L\+Characterization}}
+\subsubsection{\texorpdfstring{prev\+\_\+timing\+\_\+characterization}{prev\_timing\_characterization}}
+{\footnotesize\ttfamily \hyperlink{time__model_8hpp_ae203bb7faf1c278333f76fcc6ebe412c}{time\+\_\+model\+Ref} R\+T\+L\+Characterization\+::prev\+\_\+timing\+\_\+characterization\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The time model of the last characterization. 
+
+
+
+Definition at line 89 of file R\+T\+L\+\_\+characterization.\+hpp.
+
+
+
+Referenced by Analyze\+Cell(), and Initialize().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/characterization/\hyperlink{RTL__characterization_8hpp}{R\+T\+L\+\_\+characterization.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/characterization/\hyperlink{RTL__characterization_8cpp}{R\+T\+L\+\_\+characterization.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,491 @@
+\hypertarget{classtarget__technology}{}\section{target\+\_\+technology Class Reference}
+\label{classtarget__technology}\index{target\+\_\+technology@{target\+\_\+technology}}
+
+
+{\ttfamily \#include $<$target\+\_\+technology.\+hpp$>$}
+
+
+
+Inheritance diagram for target\+\_\+technology\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{dd/d43/classtarget__technology__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for target\+\_\+technology\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{db/db1/classtarget__technology__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classtarget__technology_a84257c2d384aa7dce6a060105113459b}{target\+\_\+t} \{ \hyperlink{classtarget__technology_a84257c2d384aa7dce6a060105113459bac267ed94b245c882d8f0effb244f60fb}{F\+P\+GA} = 1
+ \}\begin{DoxyCompactList}\small\item\em target technologies currently implemented \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtarget__technology_a5e939d5581b952ea83d34d496d1d2965}{target\+\_\+technology} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&param)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classtarget__technology_a12b5a2b034e285b90565eb00c6054773}{$\sim$target\+\_\+technology} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classtarget__technology_a1fc1fd2d6ccfa9e748f54a4aeac33b51}{initialize} ()=0
+\begin{DoxyCompactList}\small\item\em Initializes the target technology based on the given parameters. \end{DoxyCompactList}\item 
+\hyperlink{classtarget__technology_a84257c2d384aa7dce6a060105113459b}{target\+\_\+t} \hyperlink{classtarget__technology_a4edc5ba729f24a445c0f5edb37d5f44b}{get\+\_\+type} () const
+\begin{DoxyCompactList}\small\item\em Returns the type of the technology currently implemented. \end{DoxyCompactList}\item 
+virtual std\+::string \hyperlink{classtarget__technology_a53355954503841a8ead7a8dc9889af85}{get\+\_\+string\+\_\+type} () const =0
+\begin{DoxyCompactList}\small\item\em Returns the type of the technology currently implemented in a string format. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename G $>$ }\\G \hyperlink{classtarget__technology_a92e316c35a7954c97093afe27e333e0b}{get\+\_\+parameter} (const std\+::string \&key) const
+\begin{DoxyCompactList}\small\item\em Returns the value of the specified parameter, if any. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename G $>$ }\\void \hyperlink{classtarget__technology_a5ab437ee434569815da739feae3785bc}{set\+\_\+parameter} (const std\+::string \&key, G value)
+\begin{DoxyCompactList}\small\item\em Sets the value of the specified parameter. \end{DoxyCompactList}\item 
+bool \hyperlink{classtarget__technology_a01f34071b310808b080a0bb8db41ea3f}{is\+\_\+parameter} (const std\+::string \&key) const
+\begin{DoxyCompactList}\small\item\em Returns true if there is a value associated with the specified string identifier, false otherwise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{target__technology_8hpp_a16af97aadc4eb998c2c9ec7fba5ccecd}{target\+\_\+technology\+Ref} \hyperlink{classtarget__technology_ad1a3a587984c7728ee7999f58a56c21a}{create\+\_\+technology} (const \hyperlink{classtarget__technology_a84257c2d384aa7dce6a060105113459b}{target\+\_\+t} \hyperlink{classtarget__technology_a0591e52e0dc59d81f3dc96f7ef9f7081}{type}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&param)
+\begin{DoxyCompactList}\small\item\em Factory method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classtarget__technology_aef59dfe918223198c592fa318f56de2b}{xload} (const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$node)
+\begin{DoxyCompactList}\small\item\em Method to read an X\+ML file and identify the section containing technology-\/related parameters. \end{DoxyCompactList}\item 
+void \hyperlink{classtarget__technology_a272517464925f914dae13b88d269e439}{xload\+\_\+technology\+\_\+parameters} (const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$tech\+\_\+xml)
+\begin{DoxyCompactList}\small\item\em Method to read the part of the X\+ML file related to technology parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classtarget__technology_a6d8af451d6dc438c539419db44410329}{Param}
+\begin{DoxyCompactList}\small\item\em Class containing all the parameters. \end{DoxyCompactList}\item 
+\hyperlink{classtarget__technology_a84257c2d384aa7dce6a060105113459b}{target\+\_\+t} \hyperlink{classtarget__technology_a0591e52e0dc59d81f3dc96f7ef9f7081}{type}
+\begin{DoxyCompactList}\small\item\em Technology type. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::string $>$ \hyperlink{classtarget__technology_a5ceb29f981b52a8f1ab4ce1d2ff38de5}{parameters}
+\begin{DoxyCompactList}\small\item\em Map containing all the parameters of the technology. All the values are stored as strings and they have correctly converted through the get\+\_\+parameter template. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 61 of file target\+\_\+technology.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classtarget__technology_a84257c2d384aa7dce6a060105113459b}\label{classtarget__technology_a84257c2d384aa7dce6a060105113459b}} 
+\index{target\+\_\+technology@{target\+\_\+technology}!target\+\_\+t@{target\+\_\+t}}
+\index{target\+\_\+t@{target\+\_\+t}!target\+\_\+technology@{target\+\_\+technology}}
+\subsubsection{\texorpdfstring{target\+\_\+t}{target\_t}}
+{\footnotesize\ttfamily enum \hyperlink{classtarget__technology_a84257c2d384aa7dce6a060105113459b}{target\+\_\+technology\+::target\+\_\+t}}
+
+
+
+target technologies currently implemented 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+P\+GA@{F\+P\+GA}!target\+\_\+technology@{target\+\_\+technology}}\index{target\+\_\+technology@{target\+\_\+technology}!F\+P\+GA@{F\+P\+GA}}}\mbox{\Hypertarget{classtarget__technology_a84257c2d384aa7dce6a060105113459bac267ed94b245c882d8f0effb244f60fb}\label{classtarget__technology_a84257c2d384aa7dce6a060105113459bac267ed94b245c882d8f0effb244f60fb}} 
+F\+P\+GA&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 65 of file target\+\_\+technology.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtarget__technology_a5e939d5581b952ea83d34d496d1d2965}\label{classtarget__technology_a5e939d5581b952ea83d34d496d1d2965}} 
+\index{target\+\_\+technology@{target\+\_\+technology}!target\+\_\+technology@{target\+\_\+technology}}
+\index{target\+\_\+technology@{target\+\_\+technology}!target\+\_\+technology@{target\+\_\+technology}}
+\subsubsection{\texorpdfstring{target\+\_\+technology()}{target\_technology()}}
+{\footnotesize\ttfamily target\+\_\+technology\+::target\+\_\+technology (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+Autoheader include. 
+
+Definition at line 65 of file target\+\_\+technology.\+cpp.
+
+
+
+References F\+P\+GA, and $\sim$target\+\_\+technology().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{d8/d05/classtarget__technology_a5e939d5581b952ea83d34d496d1d2965_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtarget__technology_a12b5a2b034e285b90565eb00c6054773}\label{classtarget__technology_a12b5a2b034e285b90565eb00c6054773}} 
+\index{target\+\_\+technology@{target\+\_\+technology}!````~target\+\_\+technology@{$\sim$target\+\_\+technology}}
+\index{````~target\+\_\+technology@{$\sim$target\+\_\+technology}!target\+\_\+technology@{target\+\_\+technology}}
+\subsubsection{\texorpdfstring{$\sim$target\+\_\+technology()}{~target\_technology()}}
+{\footnotesize\ttfamily target\+\_\+technology\+::$\sim$target\+\_\+technology (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by target\+\_\+technology().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{d8/d05/classtarget__technology_a12b5a2b034e285b90565eb00c6054773_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtarget__technology_ad1a3a587984c7728ee7999f58a56c21a}\label{classtarget__technology_ad1a3a587984c7728ee7999f58a56c21a}} 
+\index{target\+\_\+technology@{target\+\_\+technology}!create\+\_\+technology@{create\+\_\+technology}}
+\index{create\+\_\+technology@{create\+\_\+technology}!target\+\_\+technology@{target\+\_\+technology}}
+\subsubsection{\texorpdfstring{create\+\_\+technology()}{create\_technology()}}
+{\footnotesize\ttfamily \hyperlink{target__technology_8hpp_a16af97aadc4eb998c2c9ec7fba5ccecd}{target\+\_\+technology\+Ref} target\+\_\+technology\+::create\+\_\+technology (\begin{DoxyParamCaption}\item[{const \hyperlink{classtarget__technology_a84257c2d384aa7dce6a060105113459b}{target\+\_\+t}}]{type,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Factory method. 
+
+Creates the datastructure of the given type 
+\begin{DoxyParams}{Parameters}
+{\em type} & is the type of the target technology to be created \\
+\hline
+{\em param} & is the datastructure containing all the parameters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the specialization of the target technology datastructure 
+\end{DoxyReturn}
+this point should never be reached 
+
+Definition at line 71 of file target\+\_\+technology.\+cpp.
+
+
+
+References F\+P\+GA, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by F\+P\+G\+A\+\_\+device\+::\+F\+P\+G\+A\+\_\+device(), and I\+C\+\_\+device\+::load\+\_\+devices().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d05/classtarget__technology_ad1a3a587984c7728ee7999f58a56c21a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtarget__technology_a92e316c35a7954c97093afe27e333e0b}\label{classtarget__technology_a92e316c35a7954c97093afe27e333e0b}} 
+\index{target\+\_\+technology@{target\+\_\+technology}!get\+\_\+parameter@{get\+\_\+parameter}}
+\index{get\+\_\+parameter@{get\+\_\+parameter}!target\+\_\+technology@{target\+\_\+technology}}
+\subsubsection{\texorpdfstring{get\+\_\+parameter()}{get\_parameter()}}
+{\footnotesize\ttfamily template$<$typename G $>$ \\
+G target\+\_\+technology\+::get\+\_\+parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the value of the specified parameter, if any. 
+
+Otherwise, it throws an exception. 
+\begin{DoxyParams}{Parameters}
+{\em key} & it is the string identifier of the parameter to be returned \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 136 of file target\+\_\+technology.\+hpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by I\+C\+\_\+device\+::set\+\_\+dimension().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d8/d05/classtarget__technology_a92e316c35a7954c97093afe27e333e0b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtarget__technology_a53355954503841a8ead7a8dc9889af85}\label{classtarget__technology_a53355954503841a8ead7a8dc9889af85}} 
+\index{target\+\_\+technology@{target\+\_\+technology}!get\+\_\+string\+\_\+type@{get\+\_\+string\+\_\+type}}
+\index{get\+\_\+string\+\_\+type@{get\+\_\+string\+\_\+type}!target\+\_\+technology@{target\+\_\+technology}}
+\subsubsection{\texorpdfstring{get\+\_\+string\+\_\+type()}{get\_string\_type()}}
+{\footnotesize\ttfamily virtual std\+::string target\+\_\+technology\+::get\+\_\+string\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the type of the technology currently implemented in a string format. 
+
+\begin{DoxyReturn}{Returns}
+a string representing the type of the technology 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classCMOS__technology_a068946d67529fe475c1943b0450c4110}{C\+M\+O\+S\+\_\+technology}, and \hyperlink{classFPGA__technology_a991bb1b03178c5db7a77d008bfba2aa3}{F\+P\+G\+A\+\_\+technology}.
+
+
+
+Referenced by H\+L\+S\+\_\+target\+::\+H\+L\+S\+\_\+target().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d05/classtarget__technology_a53355954503841a8ead7a8dc9889af85_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtarget__technology_a4edc5ba729f24a445c0f5edb37d5f44b}\label{classtarget__technology_a4edc5ba729f24a445c0f5edb37d5f44b}} 
+\index{target\+\_\+technology@{target\+\_\+technology}!get\+\_\+type@{get\+\_\+type}}
+\index{get\+\_\+type@{get\+\_\+type}!target\+\_\+technology@{target\+\_\+technology}}
+\subsubsection{\texorpdfstring{get\+\_\+type()}{get\_type()}}
+{\footnotesize\ttfamily \hyperlink{classtarget__technology_a84257c2d384aa7dce6a060105113459b}{target\+\_\+technology\+::target\+\_\+t} target\+\_\+technology\+::get\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the type of the technology currently implemented. 
+
+\begin{DoxyReturn}{Returns}
+the type of the technology 
+\end{DoxyReturn}
+
+
+Definition at line 88 of file target\+\_\+technology.\+cpp.
+
+
+
+References type.
+
+\mbox{\Hypertarget{classtarget__technology_a1fc1fd2d6ccfa9e748f54a4aeac33b51}\label{classtarget__technology_a1fc1fd2d6ccfa9e748f54a4aeac33b51}} 
+\index{target\+\_\+technology@{target\+\_\+technology}!initialize@{initialize}}
+\index{initialize@{initialize}!target\+\_\+technology@{target\+\_\+technology}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily virtual void target\+\_\+technology\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Initializes the target technology based on the given parameters. 
+
+
+
+Implemented in \hyperlink{classFPGA__technology_ae30c5de6f7aeb8b2e43d668a6c9ea774}{F\+P\+G\+A\+\_\+technology}, and \hyperlink{classCMOS__technology_af6aed0f6dc8bf72c8914a14c00b949a7}{C\+M\+O\+S\+\_\+technology}.
+
+\mbox{\Hypertarget{classtarget__technology_a01f34071b310808b080a0bb8db41ea3f}\label{classtarget__technology_a01f34071b310808b080a0bb8db41ea3f}} 
+\index{target\+\_\+technology@{target\+\_\+technology}!is\+\_\+parameter@{is\+\_\+parameter}}
+\index{is\+\_\+parameter@{is\+\_\+parameter}!target\+\_\+technology@{target\+\_\+technology}}
+\subsubsection{\texorpdfstring{is\+\_\+parameter()}{is\_parameter()}}
+{\footnotesize\ttfamily bool target\+\_\+technology\+::is\+\_\+parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if there is a value associated with the specified string identifier, false otherwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & it is the string identifier of the parameter to be searched \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 156 of file target\+\_\+technology.\+hpp.
+
+\mbox{\Hypertarget{classtarget__technology_a5ab437ee434569815da739feae3785bc}\label{classtarget__technology_a5ab437ee434569815da739feae3785bc}} 
+\index{target\+\_\+technology@{target\+\_\+technology}!set\+\_\+parameter@{set\+\_\+parameter}}
+\index{set\+\_\+parameter@{set\+\_\+parameter}!target\+\_\+technology@{target\+\_\+technology}}
+\subsubsection{\texorpdfstring{set\+\_\+parameter()}{set\_parameter()}}
+{\footnotesize\ttfamily template$<$typename G $>$ \\
+void target\+\_\+technology\+::set\+\_\+parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{G}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the value of the specified parameter. 
+
+
+
+Definition at line 147 of file target\+\_\+technology.\+hpp.
+
+
+
+Referenced by C\+M\+O\+S\+\_\+technology\+::initialize().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d05/classtarget__technology_a5ab437ee434569815da739feae3785bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtarget__technology_aef59dfe918223198c592fa318f56de2b}\label{classtarget__technology_aef59dfe918223198c592fa318f56de2b}} 
+\index{target\+\_\+technology@{target\+\_\+technology}!xload@{xload}}
+\index{xload@{xload}!target\+\_\+technology@{target\+\_\+technology}}
+\subsubsection{\texorpdfstring{xload()}{xload()}}
+{\footnotesize\ttfamily void target\+\_\+technology\+::xload (\begin{DoxyParamCaption}\item[{const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Method to read an X\+ML file and identify the section containing technology-\/related parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & is the root node for the analysis \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 93 of file target\+\_\+technology.\+cpp.
+
+
+
+References xml\+\_\+child\+::get\+\_\+children(), and xload\+\_\+technology\+\_\+parameters().
+
+
+
+Referenced by C\+M\+O\+S\+\_\+technology\+::\+C\+M\+O\+S\+\_\+technology().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d05/classtarget__technology_aef59dfe918223198c592fa318f56de2b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d05/classtarget__technology_aef59dfe918223198c592fa318f56de2b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtarget__technology_a272517464925f914dae13b88d269e439}\label{classtarget__technology_a272517464925f914dae13b88d269e439}} 
+\index{target\+\_\+technology@{target\+\_\+technology}!xload\+\_\+technology\+\_\+parameters@{xload\+\_\+technology\+\_\+parameters}}
+\index{xload\+\_\+technology\+\_\+parameters@{xload\+\_\+technology\+\_\+parameters}!target\+\_\+technology@{target\+\_\+technology}}
+\subsubsection{\texorpdfstring{xload\+\_\+technology\+\_\+parameters()}{xload\_technology\_parameters()}}
+{\footnotesize\ttfamily void target\+\_\+technology\+::xload\+\_\+technology\+\_\+parameters (\begin{DoxyParamCaption}\item[{const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{tech\+\_\+xml }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Method to read the part of the X\+ML file related to technology parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tech\+\_\+xml} & is the node where the analysis will be performed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 107 of file target\+\_\+technology.\+cpp.
+
+
+
+References xml\+\_\+child\+::get\+\_\+children(), L\+O\+A\+D\+\_\+\+X\+VM, and parameters.
+
+
+
+Referenced by xload().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d05/classtarget__technology_a272517464925f914dae13b88d269e439_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d05/classtarget__technology_a272517464925f914dae13b88d269e439_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classtarget__technology_a6d8af451d6dc438c539419db44410329}\label{classtarget__technology_a6d8af451d6dc438c539419db44410329}} 
+\index{target\+\_\+technology@{target\+\_\+technology}!Param@{Param}}
+\index{Param@{Param}!target\+\_\+technology@{target\+\_\+technology}}
+\subsubsection{\texorpdfstring{Param}{Param}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} target\+\_\+technology\+::\+Param\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Class containing all the parameters. 
+
+
+
+Definition at line 75 of file target\+\_\+technology.\+hpp.
+
+
+
+Referenced by C\+M\+O\+S\+\_\+technology\+::\+C\+M\+O\+S\+\_\+technology(), and C\+M\+O\+S\+\_\+technology\+::initialize().
+
+\mbox{\Hypertarget{classtarget__technology_a5ceb29f981b52a8f1ab4ce1d2ff38de5}\label{classtarget__technology_a5ceb29f981b52a8f1ab4ce1d2ff38de5}} 
+\index{target\+\_\+technology@{target\+\_\+technology}!parameters@{parameters}}
+\index{parameters@{parameters}!target\+\_\+technology@{target\+\_\+technology}}
+\subsubsection{\texorpdfstring{parameters}{parameters}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::string$>$ target\+\_\+technology\+::parameters\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Map containing all the parameters of the technology. All the values are stored as strings and they have correctly converted through the get\+\_\+parameter template. 
+
+
+
+Definition at line 81 of file target\+\_\+technology.\+hpp.
+
+
+
+Referenced by xload\+\_\+technology\+\_\+parameters().
+
+\mbox{\Hypertarget{classtarget__technology_a0591e52e0dc59d81f3dc96f7ef9f7081}\label{classtarget__technology_a0591e52e0dc59d81f3dc96f7ef9f7081}} 
+\index{target\+\_\+technology@{target\+\_\+technology}!type@{type}}
+\index{type@{type}!target\+\_\+technology@{target\+\_\+technology}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \hyperlink{classtarget__technology_a84257c2d384aa7dce6a060105113459b}{target\+\_\+t} target\+\_\+technology\+::type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Technology type. 
+
+
+
+Definition at line 78 of file target\+\_\+technology.\+hpp.
+
+
+
+Referenced by C\+M\+O\+S\+\_\+technology\+::\+C\+M\+O\+S\+\_\+technology(), F\+P\+G\+A\+\_\+technology\+::\+F\+P\+G\+A\+\_\+technology(), and get\+\_\+type().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/target\+\_\+technology/\hyperlink{target__technology_8hpp}{target\+\_\+technology.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/target\+\_\+technology/\hyperlink{target__technology_8cpp}{target\+\_\+technology.\+cpp}\end{DoxyCompactItemize}

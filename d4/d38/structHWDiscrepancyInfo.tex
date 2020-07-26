@@ -1,0 +1,150 @@
+\hypertarget{structHWDiscrepancyInfo}{}\section{H\+W\+Discrepancy\+Info Struct Reference}
+\label{structHWDiscrepancyInfo}\index{H\+W\+Discrepancy\+Info@{H\+W\+Discrepancy\+Info}}
+
+
+{\ttfamily \#include $<$Discrepancy.\+hpp$>$}
+
+
+
+Collaboration diagram for H\+W\+Discrepancy\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d41/structHWDiscrepancyInfo__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ unsigned int, \hyperlink{custom__set_8hpp_a1f63d303cef2790dc0a0ff7feae38f83}{Unordered\+Set\+Std\+Stable}$<$ unsigned int $>$ $>$ \hyperlink{structHWDiscrepancyInfo_a094b1af848ebfd6303824a42c9a32667}{fu\+\_\+id\+\_\+to\+\_\+states\+\_\+to\+\_\+check}
+\begin{DoxyCompactList}\small\item\em Maps every function ID to a set of states that must always be checked by the hardware discrepancy control flow checker. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ unsigned int, \hyperlink{custom__set_8hpp_a1f63d303cef2790dc0a0ff7feae38f83}{Unordered\+Set\+Std\+Stable}$<$ unsigned int $>$ $>$ \hyperlink{structHWDiscrepancyInfo_a7007e3390d5722c68c99964ea99a845b}{fu\+\_\+id\+\_\+to\+\_\+feedback\+\_\+states\+\_\+to\+\_\+check}
+\begin{DoxyCompactList}\small\item\em Maps every function ID to a set of states that must be checked by the hardware discrepancy control flow checker if the execution flow comes from a feedback\+\_\+edges. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ unsigned int, \hyperlink{custom__set_8hpp_a1f63d303cef2790dc0a0ff7feae38f83}{Unordered\+Set\+Std\+Stable}$<$ \hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor} $>$ $>$ \hyperlink{structHWDiscrepancyInfo_a0e2c562ae790d5f14cf7ce2a9a8bfd88}{fu\+\_\+id\+\_\+to\+\_\+reset\+\_\+edges}
+\begin{DoxyCompactList}\small\item\em Maps every function ID to a set Edge\+Descriptors. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ unsigned int, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} $>$ \hyperlink{structHWDiscrepancyInfo_a0fd896762ccd15ce8051101f9cad3469}{fu\+\_\+id\+\_\+to\+\_\+epp\+\_\+trace\+\_\+bitsize}
+\begin{DoxyCompactList}\small\item\em Maps every function ID to the bitsize of the epp trace that is necessary for checking the control flow of that function. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ unsigned int, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} $>$ \hyperlink{structHWDiscrepancyInfo_a8d563f0d9fde448ec9281c775d734f20}{fu\+\_\+id\+\_\+to\+\_\+max\+\_\+epp\+\_\+path\+\_\+val}
+\item 
+\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ unsigned int $>$ \hyperlink{structHWDiscrepancyInfo_a83cb969d9bec6c873907cf87f4ac5ad7}{fu\+\_\+id\+\_\+control\+\_\+flow\+\_\+skip}
+\begin{DoxyCompactList}\small\item\em This set contains the ids of functions for which the control flow hardware discrepancy analyssi is not necessary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 78 of file Discrepancy.\+hpp.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structHWDiscrepancyInfo_a83cb969d9bec6c873907cf87f4ac5ad7}\label{structHWDiscrepancyInfo_a83cb969d9bec6c873907cf87f4ac5ad7}} 
+\index{H\+W\+Discrepancy\+Info@{H\+W\+Discrepancy\+Info}!fu\+\_\+id\+\_\+control\+\_\+flow\+\_\+skip@{fu\+\_\+id\+\_\+control\+\_\+flow\+\_\+skip}}
+\index{fu\+\_\+id\+\_\+control\+\_\+flow\+\_\+skip@{fu\+\_\+id\+\_\+control\+\_\+flow\+\_\+skip}!H\+W\+Discrepancy\+Info@{H\+W\+Discrepancy\+Info}}
+\subsubsection{\texorpdfstring{fu\+\_\+id\+\_\+control\+\_\+flow\+\_\+skip}{fu\_id\_control\_flow\_skip}}
+{\footnotesize\ttfamily \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$unsigned int$>$ H\+W\+Discrepancy\+Info\+::fu\+\_\+id\+\_\+control\+\_\+flow\+\_\+skip}
+
+
+
+This set contains the ids of functions for which the control flow hardware discrepancy analyssi is not necessary. 
+
+If the F\+SM of a function is linear, i.\+e. it does not contain branches or loops, the control flow cannot diverge during its execution, so it is not necessary to check it with control flow discrepancy analysis. 
+
+Definition at line 119 of file Discrepancy.\+hpp.
+
+
+
+Referenced by B\+B\+\_\+based\+\_\+stg\+::compute\+\_\+\+E\+P\+P\+\_\+edge\+\_\+increments().
+
+\mbox{\Hypertarget{structHWDiscrepancyInfo_a0fd896762ccd15ce8051101f9cad3469}\label{structHWDiscrepancyInfo_a0fd896762ccd15ce8051101f9cad3469}} 
+\index{H\+W\+Discrepancy\+Info@{H\+W\+Discrepancy\+Info}!fu\+\_\+id\+\_\+to\+\_\+epp\+\_\+trace\+\_\+bitsize@{fu\+\_\+id\+\_\+to\+\_\+epp\+\_\+trace\+\_\+bitsize}}
+\index{fu\+\_\+id\+\_\+to\+\_\+epp\+\_\+trace\+\_\+bitsize@{fu\+\_\+id\+\_\+to\+\_\+epp\+\_\+trace\+\_\+bitsize}!H\+W\+Discrepancy\+Info@{H\+W\+Discrepancy\+Info}}
+\subsubsection{\texorpdfstring{fu\+\_\+id\+\_\+to\+\_\+epp\+\_\+trace\+\_\+bitsize}{fu\_id\_to\_epp\_trace\_bitsize}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$unsigned int, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}$>$ H\+W\+Discrepancy\+Info\+::fu\+\_\+id\+\_\+to\+\_\+epp\+\_\+trace\+\_\+bitsize}
+
+
+
+Maps every function ID to the bitsize of the epp trace that is necessary for checking the control flow of that function. 
+
+This bitsize is does not depend on the instance of the function, since the epp edge increments are always the same and this bitsize is the number of bits necessary to represent them 
+
+Definition at line 108 of file Discrepancy.\+hpp.
+
+
+
+Referenced by B\+B\+\_\+based\+\_\+stg\+::compute\+\_\+\+E\+P\+P\+\_\+edge\+\_\+increments().
+
+\mbox{\Hypertarget{structHWDiscrepancyInfo_a7007e3390d5722c68c99964ea99a845b}\label{structHWDiscrepancyInfo_a7007e3390d5722c68c99964ea99a845b}} 
+\index{H\+W\+Discrepancy\+Info@{H\+W\+Discrepancy\+Info}!fu\+\_\+id\+\_\+to\+\_\+feedback\+\_\+states\+\_\+to\+\_\+check@{fu\+\_\+id\+\_\+to\+\_\+feedback\+\_\+states\+\_\+to\+\_\+check}}
+\index{fu\+\_\+id\+\_\+to\+\_\+feedback\+\_\+states\+\_\+to\+\_\+check@{fu\+\_\+id\+\_\+to\+\_\+feedback\+\_\+states\+\_\+to\+\_\+check}!H\+W\+Discrepancy\+Info@{H\+W\+Discrepancy\+Info}}
+\subsubsection{\texorpdfstring{fu\+\_\+id\+\_\+to\+\_\+feedback\+\_\+states\+\_\+to\+\_\+check}{fu\_id\_to\_feedback\_states\_to\_check}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$unsigned int, \hyperlink{custom__set_8hpp_a1f63d303cef2790dc0a0ff7feae38f83}{Unordered\+Set\+Std\+Stable}$<$unsigned int$>$ $>$ H\+W\+Discrepancy\+Info\+::fu\+\_\+id\+\_\+to\+\_\+feedback\+\_\+states\+\_\+to\+\_\+check}
+
+
+
+Maps every function ID to a set of states that must be checked by the hardware discrepancy control flow checker if the execution flow comes from a feedback\+\_\+edges. 
+
+
+
+Definition at line 91 of file Discrepancy.\+hpp.
+
+
+
+Referenced by B\+B\+\_\+based\+\_\+stg\+::compute\+\_\+\+E\+P\+P\+\_\+edge\+\_\+increments().
+
+\mbox{\Hypertarget{structHWDiscrepancyInfo_a8d563f0d9fde448ec9281c775d734f20}\label{structHWDiscrepancyInfo_a8d563f0d9fde448ec9281c775d734f20}} 
+\index{H\+W\+Discrepancy\+Info@{H\+W\+Discrepancy\+Info}!fu\+\_\+id\+\_\+to\+\_\+max\+\_\+epp\+\_\+path\+\_\+val@{fu\+\_\+id\+\_\+to\+\_\+max\+\_\+epp\+\_\+path\+\_\+val}}
+\index{fu\+\_\+id\+\_\+to\+\_\+max\+\_\+epp\+\_\+path\+\_\+val@{fu\+\_\+id\+\_\+to\+\_\+max\+\_\+epp\+\_\+path\+\_\+val}!H\+W\+Discrepancy\+Info@{H\+W\+Discrepancy\+Info}}
+\subsubsection{\texorpdfstring{fu\+\_\+id\+\_\+to\+\_\+max\+\_\+epp\+\_\+path\+\_\+val}{fu\_id\_to\_max\_epp\_path\_val}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$unsigned int, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}$>$ H\+W\+Discrepancy\+Info\+::fu\+\_\+id\+\_\+to\+\_\+max\+\_\+epp\+\_\+path\+\_\+val}
+
+
+
+Definition at line 110 of file Discrepancy.\+hpp.
+
+
+
+Referenced by B\+B\+\_\+based\+\_\+stg\+::compute\+\_\+\+E\+P\+P\+\_\+edge\+\_\+increments().
+
+\mbox{\Hypertarget{structHWDiscrepancyInfo_a0e2c562ae790d5f14cf7ce2a9a8bfd88}\label{structHWDiscrepancyInfo_a0e2c562ae790d5f14cf7ce2a9a8bfd88}} 
+\index{H\+W\+Discrepancy\+Info@{H\+W\+Discrepancy\+Info}!fu\+\_\+id\+\_\+to\+\_\+reset\+\_\+edges@{fu\+\_\+id\+\_\+to\+\_\+reset\+\_\+edges}}
+\index{fu\+\_\+id\+\_\+to\+\_\+reset\+\_\+edges@{fu\+\_\+id\+\_\+to\+\_\+reset\+\_\+edges}!H\+W\+Discrepancy\+Info@{H\+W\+Discrepancy\+Info}}
+\subsubsection{\texorpdfstring{fu\+\_\+id\+\_\+to\+\_\+reset\+\_\+edges}{fu\_id\_to\_reset\_edges}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$unsigned int, \hyperlink{custom__set_8hpp_a1f63d303cef2790dc0a0ff7feae38f83}{Unordered\+Set\+Std\+Stable}$<$\hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor}$>$ $>$ H\+W\+Discrepancy\+Info\+::fu\+\_\+id\+\_\+to\+\_\+reset\+\_\+edges}
+
+
+
+Maps every function ID to a set Edge\+Descriptors. 
+
+Each edge represents an edge along which the epp counter have to be reset. These edges are State\+Transition edges of the \hyperlink{structStateTransitionGraph}{State\+Transition\+Graph} of the associated function. 
+
+Definition at line 99 of file Discrepancy.\+hpp.
+
+
+
+Referenced by B\+B\+\_\+based\+\_\+stg\+::compute\+\_\+\+E\+P\+P\+\_\+edge\+\_\+increments().
+
+\mbox{\Hypertarget{structHWDiscrepancyInfo_a094b1af848ebfd6303824a42c9a32667}\label{structHWDiscrepancyInfo_a094b1af848ebfd6303824a42c9a32667}} 
+\index{H\+W\+Discrepancy\+Info@{H\+W\+Discrepancy\+Info}!fu\+\_\+id\+\_\+to\+\_\+states\+\_\+to\+\_\+check@{fu\+\_\+id\+\_\+to\+\_\+states\+\_\+to\+\_\+check}}
+\index{fu\+\_\+id\+\_\+to\+\_\+states\+\_\+to\+\_\+check@{fu\+\_\+id\+\_\+to\+\_\+states\+\_\+to\+\_\+check}!H\+W\+Discrepancy\+Info@{H\+W\+Discrepancy\+Info}}
+\subsubsection{\texorpdfstring{fu\+\_\+id\+\_\+to\+\_\+states\+\_\+to\+\_\+check}{fu\_id\_to\_states\_to\_check}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$unsigned int, \hyperlink{custom__set_8hpp_a1f63d303cef2790dc0a0ff7feae38f83}{Unordered\+Set\+Std\+Stable}$<$unsigned int$>$ $>$ H\+W\+Discrepancy\+Info\+::fu\+\_\+id\+\_\+to\+\_\+states\+\_\+to\+\_\+check}
+
+
+
+Maps every function ID to a set of states that must always be checked by the hardware discrepancy control flow checker. 
+
+
+
+Definition at line 84 of file Discrepancy.\+hpp.
+
+
+
+Referenced by B\+B\+\_\+based\+\_\+stg\+::compute\+\_\+\+E\+P\+P\+\_\+edge\+\_\+increments().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/vcd/\hyperlink{Discrepancy_8hpp}{Discrepancy.\+hpp}\end{DoxyCompactItemize}

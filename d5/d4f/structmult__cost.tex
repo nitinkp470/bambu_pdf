@@ -1,0 +1,63 @@
+\hypertarget{structmult__cost}{}\section{mult\+\_\+cost Struct Reference}
+\label{structmult__cost}\index{mult\+\_\+cost@{mult\+\_\+cost}}
+
+
+This structure holds the \char`\"{}cost\char`\"{} of a multiply sequence.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+short \hyperlink{structmult__cost_a774bb4fd78b4f531759034a509ff4784}{cost}
+\item 
+short \hyperlink{structmult__cost_af78d661d66339eb8b2e6e189be9ba4c3}{latency}
+\begin{DoxyCompactList}\small\item\em Total cost of the multiplication sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This structure holds the \char`\"{}cost\char`\"{} of a multiply sequence. 
+
+The \char`\"{}cost\char`\"{} field holds the total cost of every operator in the synthetic multiplication sequence, hence cost(a op b) is defined as cost(op) + cost(a) + cost(b), where cost(leaf) is zero. The \char`\"{}latency\char`\"{} field holds the minimum possible latency of the synthetic multiply, on a hypothetical infinitely parallel C\+PU. This is the critical path, or the maximum height, of the expression tree which is the sum of costs on the most expensive path from any leaf to the root. Hence latency(a op b) is defined as zero for leaves and cost(op) + max(latency(a), latency(b)) otherwise. 
+
+Definition at line 182 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structmult__cost_a774bb4fd78b4f531759034a509ff4784}\label{structmult__cost_a774bb4fd78b4f531759034a509ff4784}} 
+\index{mult\+\_\+cost@{mult\+\_\+cost}!cost@{cost}}
+\index{cost@{cost}!mult\+\_\+cost@{mult\+\_\+cost}}
+\subsubsection{\texorpdfstring{cost}{cost}}
+{\footnotesize\ttfamily short mult\+\_\+cost\+::cost}
+
+
+
+Definition at line 184 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+Referenced by choose\+\_\+mult\+\_\+variant(), and synth\+\_\+mult().
+
+\mbox{\Hypertarget{structmult__cost_af78d661d66339eb8b2e6e189be9ba4c3}\label{structmult__cost_af78d661d66339eb8b2e6e189be9ba4c3}} 
+\index{mult\+\_\+cost@{mult\+\_\+cost}!latency@{latency}}
+\index{latency@{latency}!mult\+\_\+cost@{mult\+\_\+cost}}
+\subsubsection{\texorpdfstring{latency}{latency}}
+{\footnotesize\ttfamily short mult\+\_\+cost\+::latency}
+
+
+
+Total cost of the multiplication sequence. 
+
+
+
+Definition at line 185 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+Referenced by choose\+\_\+mult\+\_\+variant(), and synth\+\_\+mult().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{IR__lowering_8cpp}{I\+R\+\_\+lowering.\+cpp}\end{DoxyCompactItemize}

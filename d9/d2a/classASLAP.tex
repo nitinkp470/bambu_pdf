@@ -1,0 +1,1031 @@
+\hypertarget{classASLAP}{}\section{A\+S\+L\+AP Class Reference}
+\label{classASLAP}\index{A\+S\+L\+AP@{A\+S\+L\+AP}}
+
+
+Class managing A\+L\+AP and A\+S\+AP algorithms.  
+
+
+
+
+{\ttfamily \#include $<$A\+S\+L\+A\+P.\+hpp$>$}
+
+
+
+Collaboration diagram for A\+S\+L\+AP\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classASLAP__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211}{A\+L\+A\+P\+\_\+method} \{ \newline
+\hyperlink{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211a2c30e42df216d4d3e1c3a46ffaea6260}{A\+L\+A\+P\+\_\+fast}, 
+\hyperlink{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211af64abc9d0aa98bc47e039dcf73b70eb7}{A\+L\+A\+P\+\_\+worst\+\_\+case}, 
+\hyperlink{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211aa8f8393e062ebaf2839d2ecb0561273b}{A\+L\+A\+P\+\_\+with\+\_\+upper}, 
+\hyperlink{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211a2763470ecdad26d244adf865e6c0ddb1}{A\+L\+A\+P\+\_\+with\+\_\+upper\+\_\+minus\+\_\+one}, 
+\newline
+\hyperlink{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211a5bf0d563c223d2a3b6eb197aface4013}{A\+L\+A\+P\+\_\+with\+\_\+partial\+\_\+scheduling}
+ \}\begin{DoxyCompactList}\small\item\em Possible type of A\+L\+AP method currently implemented. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classASLAP_a08321649fa5caf4d06d4b874cb82bcf6}{A\+S\+L\+AP} (const \hyperlink{hls__manager_8hpp_a1b481383e3beabc89bd7562ae672dd8c}{H\+L\+S\+\_\+manager\+Const\+Ref} hls\+\_\+manager, const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} H\+LS, const bool \hyperlink{classASLAP_a90fd3ac454f4224f8ac7b57da07b59d3}{speculation}, const \hyperlink{classOpVertexSet}{Op\+Vertex\+Set} \&operations, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} parameters, unsigned int \+\_\+ctrl\+\_\+step\+\_\+multiplier)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classASLAP_a5361c6e6c44d526ae2936892203ad734}{$\sim$\+A\+S\+L\+AP} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classASLAP_a19d19a74b5b0d8d0aec0107b4b1cc656}{print} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Function that prints the class \hyperlink{classASLAP}{A\+S\+L\+AP}. \end{DoxyCompactList}\item 
+void \hyperlink{classASLAP_ab4b7512adc6da387e14c20023b70b618}{compute\+\_\+\+A\+S\+AP} (const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref} partial\+\_\+schedule=\hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref}())
+\begin{DoxyCompactList}\small\item\em Function that computes the A\+S\+AP scheduling of the graph. \end{DoxyCompactList}\item 
+const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref} \hyperlink{classASLAP_ad6058569d9ca53989edd325ded607c04}{C\+Get\+A\+S\+AP} () const
+\begin{DoxyCompactList}\small\item\em Returns the A\+S\+AP vector of the vertices. \end{DoxyCompactList}\item 
+\hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} \hyperlink{classASLAP_ac0629687f10668f95901bc157bdd7d49}{Get\+A\+S\+AP} ()
+\item 
+void \hyperlink{classASLAP_a5668d3b6ee0112bd3881444a684c8c2f}{compute\+\_\+\+A\+L\+AP} (\hyperlink{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211}{A\+L\+A\+P\+\_\+method} met, const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref} partial\+\_\+schedule=\hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref}(), bool $\ast$feasible=nullptr, const Control\+Step=Control\+Step(0u))
+\begin{DoxyCompactList}\small\item\em Function that computes the A\+L\+AP scheduling of the graph. \end{DoxyCompactList}\item 
+const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref} \hyperlink{classASLAP_a294d0c4ba3226198f1a4b25881ab7653}{C\+Get\+A\+L\+AP} () const
+\begin{DoxyCompactList}\small\item\em Returns the A\+L\+AP vector of the vertices. \end{DoxyCompactList}\item 
+const \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} \hyperlink{classASLAP_aaaa8fac60ae1b268a8bb7de6f2b83032}{Get\+A\+L\+AP} ()
+\begin{DoxyCompactList}\small\item\em Return the A\+L\+AP (modifiable) \end{DoxyCompactList}\item 
+void \hyperlink{classASLAP_af2b9d79b6200a5a8d53b9480cd87125e}{update\+\_\+\+A\+L\+AP} (const Control\+Step maxc, bool $\ast$feasible=nullptr, const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref} partial\+\_\+schedule=\hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref}())
+\begin{DoxyCompactList}\small\item\em Update the A\+L\+AP by using maxc as upper bound. \end{DoxyCompactList}\item 
+const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} \hyperlink{classASLAP_a382d6ce5ff99ca079e692a3fcfbff5e9}{C\+Get\+Op\+Graph} () const
+\begin{DoxyCompactList}\small\item\em Gets graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classASLAP_a3ab73e853dc4b3286cc1e4d76e6e313d}{add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+AP} ()
+\begin{DoxyCompactList}\small\item\em Modify the A\+L\+AP scheduling taking into account also technology constraints. \end{DoxyCompactList}\item 
+void \hyperlink{classASLAP_a1329f2184152a6e5d403a3d82c2a0ca0}{add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+AP} ()
+\begin{DoxyCompactList}\small\item\em Modify the A\+S\+AP scheduling taking into account also technology constraints. \end{DoxyCompactList}\item 
+void \hyperlink{classASLAP_a6baa077e9e86116db4997b1a65e891fc}{compute\+\_\+\+A\+L\+A\+P\+\_\+fast} (bool $\ast$feasible=nullptr)
+\begin{DoxyCompactList}\small\item\em Compute the standard A\+L\+AP scheduling with uncontrained resource. \end{DoxyCompactList}\item 
+void \hyperlink{classASLAP_a159cf9d0fbd60dcd9c4ba2912ea4405e}{compute\+\_\+\+A\+L\+A\+P\+\_\+\+LB} ()
+\begin{DoxyCompactList}\small\item\em Compute the A\+L\+AP scheduling with uncontrained resources and with the minumum execution time. \end{DoxyCompactList}\item 
+void \hyperlink{classASLAP_af0ad5c5a9402cfcfd511a3c3bb4b4f6f}{compute\+\_\+\+A\+L\+A\+P\+\_\+worst\+\_\+case} ()
+\begin{DoxyCompactList}\small\item\em Compute A\+L\+AP using list based euristic to identify the total number of control steps. \end{DoxyCompactList}\item 
+Control\+Step \hyperlink{classASLAP_a0e18a0fc0dd7ef8148ef22c58ea342db}{get\+\_\+min\+\_\+csteps} () const
+\begin{DoxyCompactList}\small\item\em This method returns the minimum number of control steps to schedule the graph. \end{DoxyCompactList}\item 
+Control\+Step \hyperlink{classASLAP_a24fbab3631c6145c42928625a6cfef01}{get\+\_\+max\+\_\+csteps} () const
+\begin{DoxyCompactList}\small\item\em This method returns the maximum number of control steps induced by the specification and by the technology constraints. \end{DoxyCompactList}\item 
+Control\+Step \hyperlink{classASLAP_a2d74ef008a1dd3b6bb59673afe419fac}{Get\+Cycle\+Latency} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \hyperlink{structoperation}{operation}, \hyperlink{allocation_8hpp_ac615dfccdc03f10d085f4fd1c4c7912b}{Allocation\+\_\+\+Min\+Max} minmax) const
+\begin{DoxyCompactList}\small\item\em Return the number of cycles required to execute an operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} \hyperlink{classASLAP_a990a50136c419bedeb405a1d54b859d3}{A\+S\+AP}
+\begin{DoxyCompactList}\small\item\em Array storing the A\+S\+AP values of the nodes in the graph. \end{DoxyCompactList}\item 
+\hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} \hyperlink{classASLAP_a18130c80504e9610e2e7abab7a9de0c3}{A\+L\+AP}
+\begin{DoxyCompactList}\small\item\em Array storing the A\+L\+AP values of the nodes in the graph. \end{DoxyCompactList}\item 
+Control\+Step \hyperlink{classASLAP_a1659d33460fa862951f6e6e97b88d3c3}{min\+\_\+tot\+\_\+csteps}
+\begin{DoxyCompactList}\small\item\em variable storing the minimum number of control steps required to schedule the graph. \end{DoxyCompactList}\item 
+Control\+Step \hyperlink{classASLAP_adabce842c92f34d9d94d7c7163359bc4}{max\+\_\+tot\+\_\+csteps}
+\begin{DoxyCompactList}\small\item\em variable storing the maximum number of control steps required to schedule the graph. \end{DoxyCompactList}\item 
+\hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} \hyperlink{classASLAP_a1066ae8f856575d11ab7d9a4ec847e9a}{beh\+\_\+graph}
+\begin{DoxyCompactList}\small\item\em the graph to be scheduled \end{DoxyCompactList}\item 
+std\+::deque$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{classASLAP_aab673e7df4048cecb2cf78d33f104f37}{levels}
+\begin{DoxyCompactList}\small\item\em constant variable storing the reference to the array of vertexes sorted by topological order associated with the S\+D\+G(it can be used also for S\+G). \end{DoxyCompactList}\item 
+bool \hyperlink{classASLAP_aef4d41c0497eb290e2d74653cf3f2d5b}{has\+\_\+branching\+\_\+blocks}
+\begin{DoxyCompactList}\small\item\em is true if the beh\+\_\+graph has at least one branching block \end{DoxyCompactList}\item 
+const \hyperlink{allocation__information_8hpp_a54287618a63bf87e31ddb17ba01e7ca7}{Allocation\+Information\+Const\+Ref} \hyperlink{classASLAP_a248a492b911d55531c0ff0dec1d31c0a}{allocation\+\_\+information}
+\begin{DoxyCompactList}\small\item\em The allocation data structure. \end{DoxyCompactList}\item 
+bool \hyperlink{classASLAP_a90fd3ac454f4224f8ac7b57da07b59d3}{speculation}
+\begin{DoxyCompactList}\small\item\em speculation \end{DoxyCompactList}\item 
+const double \hyperlink{classASLAP_af86d05e7a3d89bf59095526832efc59f}{clock\+\_\+period}
+\begin{DoxyCompactList}\small\item\em The clock period. \end{DoxyCompactList}\item 
+int \hyperlink{classASLAP_a733320650c283a3fb57e0053495e62a9}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em debug level \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classASLAP_a05235b4e84d76843372f10005b4be5ea}{ctrl\+\_\+step\+\_\+multiplier}
+\begin{DoxyCompactList}\small\item\em multiplier used to take into account chaining during asap/alap computation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classASLAP_af8ab58211340ecad608499bdac9dd41f}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classASLAP}{A\+S\+L\+AP} \&s)
+\begin{DoxyCompactList}\small\item\em Friend definition of the $<$$<$ operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class managing A\+L\+AP and A\+S\+AP algorithms. 
+
+Definition at line 75 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211}\label{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!A\+L\+A\+P\+\_\+method@{A\+L\+A\+P\+\_\+method}}
+\index{A\+L\+A\+P\+\_\+method@{A\+L\+A\+P\+\_\+method}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{A\+L\+A\+P\+\_\+method}{ALAP\_method}}
+{\footnotesize\ttfamily enum \hyperlink{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211}{A\+S\+L\+A\+P\+::\+A\+L\+A\+P\+\_\+method}}
+
+
+
+Possible type of A\+L\+AP method currently implemented. 
+
+
+\begin{DoxyItemize}
+\item {\bfseries A\+L\+A\+P\+\_\+fast} compute A\+L\+AP with unlimited constraints (O(n)), but max\+\_\+ctotstep is calculated considering the fastest functional units
+\item {\bfseries A\+L\+A\+P\+\_\+worst\+\_\+case} compute A\+L\+AP assuming only one resource for each type (O(n)).
+\item {\bfseries A\+L\+A\+P\+\_\+with\+\_\+upper} compute A\+L\+AP using partial\+\_\+schedule to identify the total number of control steps (O(n)).
+\item {\bfseries A\+L\+A\+P\+\_\+with\+\_\+upper\+\_\+minus\+\_\+one} compute A\+L\+AP using partial\+\_\+schedule to identify the total number of control steps minus one (O(n)).
+\item {\bfseries A\+L\+A\+P\+\_\+with\+\_\+partial\+\_\+scheduling} compute A\+L\+AP using partial\+\_\+schedule when is possible (O(n)). 
+\end{DoxyItemize}\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+A\+P\+\_\+fast@{A\+L\+A\+P\+\_\+fast}!A\+S\+L\+AP@{A\+S\+L\+AP}}\index{A\+S\+L\+AP@{A\+S\+L\+AP}!A\+L\+A\+P\+\_\+fast@{A\+L\+A\+P\+\_\+fast}}}\mbox{\Hypertarget{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211a2c30e42df216d4d3e1c3a46ffaea6260}\label{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211a2c30e42df216d4d3e1c3a46ffaea6260}} 
+A\+L\+A\+P\+\_\+fast&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+A\+P\+\_\+worst\+\_\+case@{A\+L\+A\+P\+\_\+worst\+\_\+case}!A\+S\+L\+AP@{A\+S\+L\+AP}}\index{A\+S\+L\+AP@{A\+S\+L\+AP}!A\+L\+A\+P\+\_\+worst\+\_\+case@{A\+L\+A\+P\+\_\+worst\+\_\+case}}}\mbox{\Hypertarget{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211af64abc9d0aa98bc47e039dcf73b70eb7}\label{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211af64abc9d0aa98bc47e039dcf73b70eb7}} 
+A\+L\+A\+P\+\_\+worst\+\_\+case&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+A\+P\+\_\+with\+\_\+upper@{A\+L\+A\+P\+\_\+with\+\_\+upper}!A\+S\+L\+AP@{A\+S\+L\+AP}}\index{A\+S\+L\+AP@{A\+S\+L\+AP}!A\+L\+A\+P\+\_\+with\+\_\+upper@{A\+L\+A\+P\+\_\+with\+\_\+upper}}}\mbox{\Hypertarget{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211aa8f8393e062ebaf2839d2ecb0561273b}\label{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211aa8f8393e062ebaf2839d2ecb0561273b}} 
+A\+L\+A\+P\+\_\+with\+\_\+upper&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+A\+P\+\_\+with\+\_\+upper\+\_\+minus\+\_\+one@{A\+L\+A\+P\+\_\+with\+\_\+upper\+\_\+minus\+\_\+one}!A\+S\+L\+AP@{A\+S\+L\+AP}}\index{A\+S\+L\+AP@{A\+S\+L\+AP}!A\+L\+A\+P\+\_\+with\+\_\+upper\+\_\+minus\+\_\+one@{A\+L\+A\+P\+\_\+with\+\_\+upper\+\_\+minus\+\_\+one}}}\mbox{\Hypertarget{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211a2763470ecdad26d244adf865e6c0ddb1}\label{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211a2763470ecdad26d244adf865e6c0ddb1}} 
+A\+L\+A\+P\+\_\+with\+\_\+upper\+\_\+minus\+\_\+one&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+A\+P\+\_\+with\+\_\+partial\+\_\+scheduling@{A\+L\+A\+P\+\_\+with\+\_\+partial\+\_\+scheduling}!A\+S\+L\+AP@{A\+S\+L\+AP}}\index{A\+S\+L\+AP@{A\+S\+L\+AP}!A\+L\+A\+P\+\_\+with\+\_\+partial\+\_\+scheduling@{A\+L\+A\+P\+\_\+with\+\_\+partial\+\_\+scheduling}}}\mbox{\Hypertarget{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211a5bf0d563c223d2a3b6eb197aface4013}\label{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211a5bf0d563c223d2a3b6eb197aface4013}} 
+A\+L\+A\+P\+\_\+with\+\_\+partial\+\_\+scheduling&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 204 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classASLAP_a08321649fa5caf4d06d4b874cb82bcf6}\label{classASLAP_a08321649fa5caf4d06d4b874cb82bcf6}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{A\+S\+L\+A\+P()}{ASLAP()}}
+{\footnotesize\ttfamily A\+S\+L\+A\+P\+::\+A\+S\+L\+AP (\begin{DoxyParamCaption}\item[{const \hyperlink{hls__manager_8hpp_a1b481383e3beabc89bd7562ae672dd8c}{H\+L\+S\+\_\+manager\+Const\+Ref}}]{hls\+\_\+manager,  }\item[{const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref}}]{H\+LS,  }\item[{const bool}]{speculation,  }\item[{const \hyperlink{classOpVertexSet}{Op\+Vertex\+Set} \&}]{operations,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{parameters,  }\item[{unsigned int}]{\+\_\+ctrl\+\_\+step\+\_\+multiplier }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hls\+\_\+manager} & is the H\+LS manager \\
+\hline
+{\em H\+LS} & is the whole H\+LS data structure. \\
+\hline
+{\em speculation} & tells if speculation could be performed \\
+\hline
+{\em beh\+\_\+graph} & is the graph on which asap and alap is computed. \\
+\hline
+{\em parameters} & is the set of input parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 84 of file A\+S\+L\+A\+P.\+cpp.
+
+
+
+References beh\+\_\+graph, Function\+Behavior\+::\+F\+L\+S\+A\+O\+DG, hls\+::function\+Id, G\+E\+T\+\_\+\+T\+Y\+PE, has\+\_\+branching\+\_\+blocks, levels, Function\+Behavior\+::\+SG, speculation, T\+Y\+P\+E\+\_\+\+F\+OR, T\+Y\+P\+E\+\_\+\+IF, T\+Y\+P\+E\+\_\+\+S\+W\+I\+T\+CH, and T\+Y\+P\+E\+\_\+\+W\+H\+I\+LE.
+
+
+
+Referenced by get\+\_\+max\+\_\+csteps().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{d9/d2a/classASLAP_a08321649fa5caf4d06d4b874cb82bcf6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classASLAP_a5361c6e6c44d526ae2936892203ad734}\label{classASLAP_a5361c6e6c44d526ae2936892203ad734}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!````~A\+S\+L\+AP@{$\sim$\+A\+S\+L\+AP}}
+\index{````~A\+S\+L\+AP@{$\sim$\+A\+S\+L\+AP}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{$\sim$\+A\+S\+L\+A\+P()}{~ASLAP()}}
+{\footnotesize\ttfamily A\+S\+L\+A\+P\+::$\sim$\+A\+S\+L\+AP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by get\+\_\+max\+\_\+csteps().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d9/d2a/classASLAP_a5361c6e6c44d526ae2936892203ad734_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classASLAP_a3ab73e853dc4b3286cc1e4d76e6e313d}\label{classASLAP_a3ab73e853dc4b3286cc1e4d76e6e313d}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+AP@{add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+AP}}
+\index{add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+AP@{add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+AP}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+A\+P()}{add\_constraints\_to\_ALAP()}}
+{\footnotesize\ttfamily void A\+S\+L\+A\+P\+::add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+AP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Modify the A\+L\+AP scheduling taking into account also technology constraints. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A\+LL} & is the allocation manager. \\
+\hline
+\end{DoxyParams}
+A\+L\+A\+P\+\_\+nip\mbox{[}i\mbox{]} contains the number of non immediate predecessor of node i with the same type of operation.
+
+A\+L\+A\+P\+\_\+p\mbox{[}i\mbox{]} contains the number of predecessor of node i with the same type of operation. 
+
+Definition at line 300 of file A\+S\+L\+A\+P.\+cpp.
+
+
+
+References A\+L\+AP, allocation\+\_\+information, beh\+\_\+graph, Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), ctrl\+\_\+step\+\_\+multiplier, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Schedule\+::get\+\_\+cstep(), G\+E\+T\+\_\+\+N\+A\+ME, Get\+Cycle\+Latency(), graph\+::is\+\_\+in\+\_\+subset(), levels, max(), max\+\_\+tot\+\_\+csteps, M\+IN, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+S\+T\+R\+I\+NG, R, vertex2obj$<$ data\+\_\+obj $>$\+::resize(), Schedule\+::set\+\_\+execution(), and S\+TR.
+
+
+
+Referenced by update\+\_\+\+A\+L\+A\+P().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2a/classASLAP_a3ab73e853dc4b3286cc1e4d76e6e313d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2a/classASLAP_a3ab73e853dc4b3286cc1e4d76e6e313d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classASLAP_a1329f2184152a6e5d403a3d82c2a0ca0}\label{classASLAP_a1329f2184152a6e5d403a3d82c2a0ca0}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+AP@{add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+AP}}
+\index{add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+AP@{add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+AP}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+A\+P()}{add\_constraints\_to\_ASAP()}}
+{\footnotesize\ttfamily void A\+S\+L\+A\+P\+::add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+AP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Modify the A\+S\+AP scheduling taking into account also technology constraints. 
+
+Currently this function does not correcty work when alternative paths are present. 
+\begin{DoxyParams}{Parameters}
+{\em A\+LL} & is the allocation manager. \\
+\hline
+\end{DoxyParams}
+A\+S\+A\+P\+\_\+nip\mbox{[}i\mbox{]} contains the number of non immediate predecessor of node i with the same type of operation.
+
+A\+S\+A\+P\+\_\+p\mbox{[}i\mbox{]} contains the number of predecessor of node i with the same type of operation. 
+
+Definition at line 171 of file A\+S\+L\+A\+P.\+cpp.
+
+
+
+References allocation\+\_\+information, A\+S\+AP, beh\+\_\+graph, Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), ctrl\+\_\+step\+\_\+multiplier, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Schedule\+::get\+\_\+cstep(), G\+E\+T\+\_\+\+N\+A\+ME, Get\+Cycle\+Latency(), graph\+::is\+\_\+in\+\_\+subset(), levels, max(), M\+IN, min\+\_\+tot\+\_\+csteps, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+S\+T\+R\+I\+NG, vertex2obj$<$ data\+\_\+obj $>$\+::resize(), and Schedule\+::set\+\_\+execution().
+
+
+
+Referenced by compute\+\_\+\+A\+S\+A\+P().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2a/classASLAP_a1329f2184152a6e5d403a3d82c2a0ca0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2a/classASLAP_a1329f2184152a6e5d403a3d82c2a0ca0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classASLAP_a294d0c4ba3226198f1a4b25881ab7653}\label{classASLAP_a294d0c4ba3226198f1a4b25881ab7653}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!C\+Get\+A\+L\+AP@{C\+Get\+A\+L\+AP}}
+\index{C\+Get\+A\+L\+AP@{C\+Get\+A\+L\+AP}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{C\+Get\+A\+L\+A\+P()}{CGetALAP()}}
+{\footnotesize\ttfamily const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref} A\+S\+L\+A\+P\+::\+C\+Get\+A\+L\+AP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the A\+L\+AP vector of the vertices. 
+
+\begin{DoxyReturn}{Returns}
+a map containing the A\+L\+AP values for each operation vertex 
+\end{DoxyReturn}
+
+
+Definition at line 263 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+References A\+L\+AP.
+
+\mbox{\Hypertarget{classASLAP_ad6058569d9ca53989edd325ded607c04}\label{classASLAP_ad6058569d9ca53989edd325ded607c04}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!C\+Get\+A\+S\+AP@{C\+Get\+A\+S\+AP}}
+\index{C\+Get\+A\+S\+AP@{C\+Get\+A\+S\+AP}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{C\+Get\+A\+S\+A\+P()}{CGetASAP()}}
+{\footnotesize\ttfamily const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref} A\+S\+L\+A\+P\+::\+C\+Get\+A\+S\+AP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the A\+S\+AP vector of the vertices. 
+
+\begin{DoxyReturn}{Returns}
+a map containing the A\+S\+AP values for each operation vertex 
+\end{DoxyReturn}
+
+
+Definition at line 230 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+References A\+S\+AP.
+
+\mbox{\Hypertarget{classASLAP_a382d6ce5ff99ca079e692a3fcfbff5e9}\label{classASLAP_a382d6ce5ff99ca079e692a3fcfbff5e9}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!C\+Get\+Op\+Graph@{C\+Get\+Op\+Graph}}
+\index{C\+Get\+Op\+Graph@{C\+Get\+Op\+Graph}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{C\+Get\+Op\+Graph()}{CGetOpGraph()}}
+{\footnotesize\ttfamily const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} A\+S\+L\+A\+P\+::\+C\+Get\+Op\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets graph. 
+
+
+
+Definition at line 116 of file A\+S\+L\+A\+P.\+cpp.
+
+
+
+References beh\+\_\+graph.
+
+\mbox{\Hypertarget{classASLAP_a5668d3b6ee0112bd3881444a684c8c2f}\label{classASLAP_a5668d3b6ee0112bd3881444a684c8c2f}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!compute\+\_\+\+A\+L\+AP@{compute\+\_\+\+A\+L\+AP}}
+\index{compute\+\_\+\+A\+L\+AP@{compute\+\_\+\+A\+L\+AP}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{compute\+\_\+\+A\+L\+A\+P()}{compute\_ALAP()}}
+{\footnotesize\ttfamily void A\+S\+L\+A\+P\+::compute\+\_\+\+A\+L\+AP (\begin{DoxyParamCaption}\item[{\hyperlink{classASLAP_a091a7ef2aa403de3cabf4275cd1eb211}{A\+L\+A\+P\+\_\+method}}]{met,  }\item[{const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref}}]{partial\+\_\+schedule = {\ttfamily \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref}()},  }\item[{bool $\ast$}]{feasible = {\ttfamily nullptr},  }\item[{const Control\+Step}]{est\+\_\+upper\+\_\+bound = {\ttfamily ControlStep(0u)} }\end{DoxyParamCaption})}
+
+
+
+Function that computes the A\+L\+AP scheduling of the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em met} & is the method adopted to compute the A\+L\+AP scheduling
+\begin{DoxyItemize}
+\item {\bfseries A\+L\+A\+P\+\_\+fast} compute A\+L\+AP with unlimited constraints (O(n)), but max\+\_\+ctotstep is calculated considering the fastest functional units
+\item {\bfseries A\+L\+A\+P\+\_\+worst\+\_\+case} compute A\+L\+AP assuming only one resource for each type (O(n)).
+\item {\bfseries A\+L\+A\+P\+\_\+with\+\_\+upper} compute A\+L\+AP using partial\+\_\+schedule to identify the total number of control steps (O(n)).
+\item {\bfseries A\+L\+A\+P\+\_\+with\+\_\+upper\+\_\+minus\+\_\+one} compute A\+L\+AP using partial\+\_\+schedule to identify the total number of control steps minus one (O(n)).
+\item {\bfseries A\+L\+A\+P\+\_\+with\+\_\+partial\+\_\+scheduling} compute A\+L\+AP using partial\+\_\+schedule when is possible (O(n)).
+\end{DoxyItemize}\\
+\hline
+{\em partial\+\_\+schedule} & is a partial schedule that has to be considered \\
+\hline
+{\em feasible} & is where feasibility of calculated A\+S\+AP \& A\+L\+AP will be put; if used it must be setted initially to true \\
+\hline
+{\em est\+\_\+upper\+\_\+bound} & is an upper estimation of the control steps (used by ). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 380 of file A\+S\+L\+A\+P.\+cpp.
+
+
+
+References A\+L\+AP, A\+L\+A\+P\+\_\+fast, A\+L\+A\+P\+\_\+with\+\_\+partial\+\_\+scheduling, A\+L\+A\+P\+\_\+with\+\_\+upper, A\+L\+A\+P\+\_\+with\+\_\+upper\+\_\+minus\+\_\+one, A\+L\+A\+P\+\_\+worst\+\_\+case, Schedule\+::clear(), compute\+\_\+\+A\+L\+A\+P\+\_\+worst\+\_\+case(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, max\+\_\+tot\+\_\+csteps, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Schedule\+::set\+\_\+csteps(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and update\+\_\+\+A\+L\+A\+P().
+
+
+
+Referenced by Get\+A\+S\+A\+P().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2a/classASLAP_a5668d3b6ee0112bd3881444a684c8c2f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{d9/d2a/classASLAP_a5668d3b6ee0112bd3881444a684c8c2f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classASLAP_a6baa077e9e86116db4997b1a65e891fc}\label{classASLAP_a6baa077e9e86116db4997b1a65e891fc}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!compute\+\_\+\+A\+L\+A\+P\+\_\+fast@{compute\+\_\+\+A\+L\+A\+P\+\_\+fast}}
+\index{compute\+\_\+\+A\+L\+A\+P\+\_\+fast@{compute\+\_\+\+A\+L\+A\+P\+\_\+fast}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{compute\+\_\+\+A\+L\+A\+P\+\_\+fast()}{compute\_ALAP\_fast()}}
+{\footnotesize\ttfamily void A\+S\+L\+A\+P\+::compute\+\_\+\+A\+L\+A\+P\+\_\+fast (\begin{DoxyParamCaption}\item[{bool $\ast$}]{feasible = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compute the standard A\+L\+AP scheduling with uncontrained resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em feasible} & is where feasibility of calculated A\+S\+AP \& A\+L\+AP will be put; if used it must be setted initially to true \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 458 of file A\+S\+L\+A\+P.\+cpp.
+
+
+
+References A\+L\+AP, A\+S\+AP, beh\+\_\+graph, ctrl\+\_\+step\+\_\+multiplier, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, from\+\_\+strongtype\+\_\+cast(), Schedule\+::get\+\_\+cstep(), G\+E\+T\+\_\+\+N\+A\+ME, Get\+Cycle\+Latency(), graph\+::is\+\_\+in\+\_\+subset(), Schedule\+::is\+\_\+scheduled(), levels, max\+\_\+tot\+\_\+csteps, M\+IN, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, vertex2obj$<$ data\+\_\+obj $>$\+::resize(), Schedule\+::set\+\_\+execution(), and S\+TR.
+
+
+
+Referenced by update\+\_\+\+A\+L\+A\+P().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2a/classASLAP_a6baa077e9e86116db4997b1a65e891fc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2a/classASLAP_a6baa077e9e86116db4997b1a65e891fc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classASLAP_a159cf9d0fbd60dcd9c4ba2912ea4405e}\label{classASLAP_a159cf9d0fbd60dcd9c4ba2912ea4405e}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!compute\+\_\+\+A\+L\+A\+P\+\_\+\+LB@{compute\+\_\+\+A\+L\+A\+P\+\_\+\+LB}}
+\index{compute\+\_\+\+A\+L\+A\+P\+\_\+\+LB@{compute\+\_\+\+A\+L\+A\+P\+\_\+\+LB}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{compute\+\_\+\+A\+L\+A\+P\+\_\+\+L\+B()}{compute\_ALAP\_LB()}}
+{\footnotesize\ttfamily void A\+S\+L\+A\+P\+::compute\+\_\+\+A\+L\+A\+P\+\_\+\+LB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compute the A\+L\+AP scheduling with uncontrained resources and with the minumum execution time. 
+
+Considering the minimum execution time is possible when it is already computed the max\+\_\+tot\+\_\+csteps. The standard A\+L\+AP algorithms should use the maximum execution time since it does not know the total number of control steps thus requiring a worst estimation of the A\+L\+AP time for each operation. 
+\begin{DoxyParams}{Parameters}
+{\em A\+LL} & is the allocation manager. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classASLAP_af0ad5c5a9402cfcfd511a3c3bb4b4f6f}\label{classASLAP_af0ad5c5a9402cfcfd511a3c3bb4b4f6f}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!compute\+\_\+\+A\+L\+A\+P\+\_\+worst\+\_\+case@{compute\+\_\+\+A\+L\+A\+P\+\_\+worst\+\_\+case}}
+\index{compute\+\_\+\+A\+L\+A\+P\+\_\+worst\+\_\+case@{compute\+\_\+\+A\+L\+A\+P\+\_\+worst\+\_\+case}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{compute\+\_\+\+A\+L\+A\+P\+\_\+worst\+\_\+case()}{compute\_ALAP\_worst\_case()}}
+{\footnotesize\ttfamily void A\+S\+L\+A\+P\+::compute\+\_\+\+A\+L\+A\+P\+\_\+worst\+\_\+case (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compute A\+L\+AP using list based euristic to identify the total number of control steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A\+LL} & is the allocation manager. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 503 of file A\+S\+L\+A\+P.\+cpp.
+
+
+
+References A\+L\+AP, allocation\+\_\+information, beh\+\_\+graph, ctrl\+\_\+step\+\_\+multiplier, Schedule\+::get\+\_\+cstep(), Get\+Cycle\+Latency(), Allocation\+Information\+::initiation\+\_\+time, graph\+::is\+\_\+in\+\_\+subset(), test\+\_\+panda\+::level, levels, max(), M\+AX, max\+\_\+tot\+\_\+csteps, and Schedule\+::set\+\_\+execution().
+
+
+
+Referenced by compute\+\_\+\+A\+L\+A\+P().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2a/classASLAP_af0ad5c5a9402cfcfd511a3c3bb4b4f6f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2a/classASLAP_af0ad5c5a9402cfcfd511a3c3bb4b4f6f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classASLAP_ab4b7512adc6da387e14c20023b70b618}\label{classASLAP_ab4b7512adc6da387e14c20023b70b618}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!compute\+\_\+\+A\+S\+AP@{compute\+\_\+\+A\+S\+AP}}
+\index{compute\+\_\+\+A\+S\+AP@{compute\+\_\+\+A\+S\+AP}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{compute\+\_\+\+A\+S\+A\+P()}{compute\_ASAP()}}
+{\footnotesize\ttfamily void A\+S\+L\+A\+P\+::compute\+\_\+\+A\+S\+AP (\begin{DoxyParamCaption}\item[{const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref}}]{partial\+\_\+schedule = {\ttfamily \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref}()} }\end{DoxyParamCaption})}
+
+
+
+Function that computes the A\+S\+AP scheduling of the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A\+LL} & is the allocation manager. \\
+\hline
+{\em partial\+\_\+schedule} & is a partial schedule that has to be taken into account \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 244 of file A\+S\+L\+A\+P.\+cpp.
+
+
+
+References add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+A\+P(), A\+S\+AP, beh\+\_\+graph, Schedule\+::clear(), ctrl\+\_\+step\+\_\+multiplier, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, from\+\_\+strongtype\+\_\+cast(), Schedule\+::get\+\_\+cstep(), G\+E\+T\+\_\+\+N\+A\+ME, Get\+Cycle\+Latency(), has\+\_\+branching\+\_\+blocks, graph\+::is\+\_\+in\+\_\+subset(), Schedule\+::is\+\_\+scheduled(), levels, M\+IN, min\+\_\+tot\+\_\+csteps, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, vertex2obj$<$ data\+\_\+obj $>$\+::resize(), Schedule\+::set\+\_\+csteps(), Schedule\+::set\+\_\+execution(), S\+TR, and W\+I\+T\+H\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2a/classASLAP_ab4b7512adc6da387e14c20023b70b618_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classASLAP_a24fbab3631c6145c42928625a6cfef01}\label{classASLAP_a24fbab3631c6145c42928625a6cfef01}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!get\+\_\+max\+\_\+csteps@{get\+\_\+max\+\_\+csteps}}
+\index{get\+\_\+max\+\_\+csteps@{get\+\_\+max\+\_\+csteps}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{get\+\_\+max\+\_\+csteps()}{get\_max\_csteps()}}
+{\footnotesize\ttfamily Control\+Step A\+S\+L\+A\+P\+::get\+\_\+max\+\_\+csteps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+This method returns the maximum number of control steps induced by the specification and by the technology constraints. 
+
+\begin{DoxyReturn}{Returns}
+a worst-\/case estimation of number of control steps. 
+\end{DoxyReturn}
+
+
+Definition at line 163 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+References A\+S\+L\+A\+P(), Get\+Cycle\+Latency(), max\+\_\+tot\+\_\+csteps, test\+\_\+panda\+::parameters, and $\sim$\+A\+S\+L\+A\+P().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2a/classASLAP_a24fbab3631c6145c42928625a6cfef01_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classASLAP_a0e18a0fc0dd7ef8148ef22c58ea342db}\label{classASLAP_a0e18a0fc0dd7ef8148ef22c58ea342db}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!get\+\_\+min\+\_\+csteps@{get\+\_\+min\+\_\+csteps}}
+\index{get\+\_\+min\+\_\+csteps@{get\+\_\+min\+\_\+csteps}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{get\+\_\+min\+\_\+csteps()}{get\_min\_csteps()}}
+{\footnotesize\ttfamily Control\+Step A\+S\+L\+A\+P\+::get\+\_\+min\+\_\+csteps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+This method returns the minimum number of control steps to schedule the graph. 
+
+\begin{DoxyReturn}{Returns}
+the best-\/case estimation of control steps. 
+\end{DoxyReturn}
+
+
+Definition at line 153 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+References min\+\_\+tot\+\_\+csteps.
+
+\mbox{\Hypertarget{classASLAP_aaaa8fac60ae1b268a8bb7de6f2b83032}\label{classASLAP_aaaa8fac60ae1b268a8bb7de6f2b83032}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!Get\+A\+L\+AP@{Get\+A\+L\+AP}}
+\index{Get\+A\+L\+AP@{Get\+A\+L\+AP}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{Get\+A\+L\+A\+P()}{GetALAP()}}
+{\footnotesize\ttfamily const \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} A\+S\+L\+A\+P\+::\+Get\+A\+L\+AP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the A\+L\+AP (modifiable) 
+
+
+
+Definition at line 271 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+References A\+L\+AP, and update\+\_\+\+A\+L\+A\+P().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2a/classASLAP_aaaa8fac60ae1b268a8bb7de6f2b83032_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classASLAP_ac0629687f10668f95901bc157bdd7d49}\label{classASLAP_ac0629687f10668f95901bc157bdd7d49}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!Get\+A\+S\+AP@{Get\+A\+S\+AP}}
+\index{Get\+A\+S\+AP@{Get\+A\+S\+AP}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{Get\+A\+S\+A\+P()}{GetASAP()}}
+{\footnotesize\ttfamily \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} A\+S\+L\+A\+P\+::\+Get\+A\+S\+AP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 235 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+References A\+S\+AP, and compute\+\_\+\+A\+L\+A\+P().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2a/classASLAP_ac0629687f10668f95901bc157bdd7d49_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classASLAP_a2d74ef008a1dd3b6bb59673afe419fac}\label{classASLAP_a2d74ef008a1dd3b6bb59673afe419fac}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!Get\+Cycle\+Latency@{Get\+Cycle\+Latency}}
+\index{Get\+Cycle\+Latency@{Get\+Cycle\+Latency}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{Get\+Cycle\+Latency()}{GetCycleLatency()}}
+{\footnotesize\ttfamily Control\+Step A\+S\+L\+A\+P\+::\+Get\+Cycle\+Latency (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{operation,  }\item[{\hyperlink{allocation_8hpp_ac615dfccdc03f10d085f4fd1c4c7912b}{Allocation\+\_\+\+Min\+Max}}]{minmax }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Return the number of cycles required to execute an operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em operation} & is the operation \\
+\hline
+{\em minmax} & specifies if the minimum or the maximum execution time must be returned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of cycles 
+\end{DoxyReturn}
+
+
+Definition at line 551 of file A\+S\+L\+A\+P.\+cpp.
+
+
+
+References allocation\+\_\+information, beh\+\_\+graph, clock\+\_\+period, ctrl\+\_\+step\+\_\+multiplier, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Allocation\+Information\+::execution\+\_\+time, G\+E\+T\+\_\+\+N\+A\+ME, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, and S\+TR.
+
+
+
+Referenced by add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+A\+P(), add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+A\+P(), compute\+\_\+\+A\+L\+A\+P\+\_\+fast(), compute\+\_\+\+A\+L\+A\+P\+\_\+worst\+\_\+case(), compute\+\_\+\+A\+S\+A\+P(), and get\+\_\+max\+\_\+csteps().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2a/classASLAP_a2d74ef008a1dd3b6bb59673afe419fac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classASLAP_a19d19a74b5b0d8d0aec0107b4b1cc656}\label{classASLAP_a19d19a74b5b0d8d0aec0107b4b1cc656}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!print@{print}}
+\index{print@{print}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void A\+S\+L\+A\+P\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const}
+
+
+
+Function that prints the class \hyperlink{classASLAP}{A\+S\+L\+AP}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & is the stream where the class has to be printed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 121 of file A\+S\+L\+A\+P.\+cpp.
+
+
+
+References A\+L\+AP, A\+S\+AP, Schedule\+::num\+\_\+scheduled(), and Schedule\+::print().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2a/classASLAP_a19d19a74b5b0d8d0aec0107b4b1cc656_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classASLAP_af2b9d79b6200a5a8d53b9480cd87125e}\label{classASLAP_af2b9d79b6200a5a8d53b9480cd87125e}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!update\+\_\+\+A\+L\+AP@{update\+\_\+\+A\+L\+AP}}
+\index{update\+\_\+\+A\+L\+AP@{update\+\_\+\+A\+L\+AP}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{update\+\_\+\+A\+L\+A\+P()}{update\_ALAP()}}
+{\footnotesize\ttfamily void A\+S\+L\+A\+P\+::update\+\_\+\+A\+L\+AP (\begin{DoxyParamCaption}\item[{const Control\+Step}]{maxc,  }\item[{bool $\ast$}]{feasible = {\ttfamily nullptr},  }\item[{const \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref}}]{partial\+\_\+schedule = {\ttfamily \hyperlink{schedule_8hpp_a85e4dea8a1611026193d8ca13fc5a260}{Schedule\+Const\+Ref}()} }\end{DoxyParamCaption})}
+
+
+
+Update the A\+L\+AP by using maxc as upper bound. 
+
+This method modifies the maximum number of control steps and updates the A\+L\+AP scheduling if it possible. 
+\begin{DoxyParams}{Parameters}
+{\em maxc} & is the maximum value of the control steps. \\
+\hline
+{\em feasible} & is where feasibility of calculated A\+S\+AP \& A\+L\+AP will be put; if used it must be setted initially to true \\
+\hline
+{\em partial\+\_\+schedule} & is a partial schedule that has to be taken into account \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 432 of file A\+S\+L\+A\+P.\+cpp.
+
+
+
+References add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+A\+P(), A\+L\+AP, beh\+\_\+graph, Schedule\+::clear(), compute\+\_\+\+A\+L\+A\+P\+\_\+fast(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, has\+\_\+branching\+\_\+blocks, graph\+::is\+\_\+in\+\_\+subset(), levels, max\+\_\+tot\+\_\+csteps, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Schedule\+::set\+\_\+execution(), and W\+I\+T\+H\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT.
+
+
+
+Referenced by compute\+\_\+\+A\+L\+A\+P(), and Get\+A\+L\+A\+P().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2a/classASLAP_af2b9d79b6200a5a8d53b9480cd87125e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2a/classASLAP_af2b9d79b6200a5a8d53b9480cd87125e_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classASLAP_af8ab58211340ecad608499bdac9dd41f}\label{classASLAP_af8ab58211340ecad608499bdac9dd41f}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classASLAP}{A\+S\+L\+AP} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Friend definition of the $<$$<$ operator. 
+
+
+
+Definition at line 289 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classASLAP_a18130c80504e9610e2e7abab7a9de0c3}\label{classASLAP_a18130c80504e9610e2e7abab7a9de0c3}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!A\+L\+AP@{A\+L\+AP}}
+\index{A\+L\+AP@{A\+L\+AP}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{A\+L\+AP}{ALAP}}
+{\footnotesize\ttfamily \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} A\+S\+L\+A\+P\+::\+A\+L\+AP\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Array storing the A\+L\+AP values of the nodes in the graph. 
+
+
+
+Definition at line 82 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+Referenced by add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+A\+P(), C\+Get\+A\+L\+A\+P(), compute\+\_\+\+A\+L\+A\+P(), compute\+\_\+\+A\+L\+A\+P\+\_\+fast(), compute\+\_\+\+A\+L\+A\+P\+\_\+worst\+\_\+case(), Get\+A\+L\+A\+P(), print(), and update\+\_\+\+A\+L\+A\+P().
+
+\mbox{\Hypertarget{classASLAP_a248a492b911d55531c0ff0dec1d31c0a}\label{classASLAP_a248a492b911d55531c0ff0dec1d31c0a}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!allocation\+\_\+information@{allocation\+\_\+information}}
+\index{allocation\+\_\+information@{allocation\+\_\+information}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{allocation\+\_\+information}{allocation\_information}}
+{\footnotesize\ttfamily const \hyperlink{allocation__information_8hpp_a54287618a63bf87e31ddb17ba01e7ca7}{Allocation\+Information\+Const\+Ref} A\+S\+L\+A\+P\+::allocation\+\_\+information\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The allocation data structure. 
+
+
+
+Definition at line 101 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+Referenced by add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+A\+P(), add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+A\+P(), compute\+\_\+\+A\+L\+A\+P\+\_\+worst\+\_\+case(), and Get\+Cycle\+Latency().
+
+\mbox{\Hypertarget{classASLAP_a990a50136c419bedeb405a1d54b859d3}\label{classASLAP_a990a50136c419bedeb405a1d54b859d3}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!A\+S\+AP@{A\+S\+AP}}
+\index{A\+S\+AP@{A\+S\+AP}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{A\+S\+AP}{ASAP}}
+{\footnotesize\ttfamily \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} A\+S\+L\+A\+P\+::\+A\+S\+AP\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Array storing the A\+S\+AP values of the nodes in the graph. 
+
+
+
+Definition at line 79 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+Referenced by add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+A\+P(), C\+Get\+A\+S\+A\+P(), compute\+\_\+\+A\+L\+A\+P\+\_\+fast(), compute\+\_\+\+A\+S\+A\+P(), Get\+A\+S\+A\+P(), and print().
+
+\mbox{\Hypertarget{classASLAP_a1066ae8f856575d11ab7d9a4ec847e9a}\label{classASLAP_a1066ae8f856575d11ab7d9a4ec847e9a}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!beh\+\_\+graph@{beh\+\_\+graph}}
+\index{beh\+\_\+graph@{beh\+\_\+graph}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{beh\+\_\+graph}{beh\_graph}}
+{\footnotesize\ttfamily \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} A\+S\+L\+A\+P\+::beh\+\_\+graph\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the graph to be scheduled 
+
+
+
+Definition at line 91 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+Referenced by add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+A\+P(), add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+A\+P(), A\+S\+L\+A\+P(), C\+Get\+Op\+Graph(), compute\+\_\+\+A\+L\+A\+P\+\_\+fast(), compute\+\_\+\+A\+L\+A\+P\+\_\+worst\+\_\+case(), compute\+\_\+\+A\+S\+A\+P(), Get\+Cycle\+Latency(), and update\+\_\+\+A\+L\+A\+P().
+
+\mbox{\Hypertarget{classASLAP_af86d05e7a3d89bf59095526832efc59f}\label{classASLAP_af86d05e7a3d89bf59095526832efc59f}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!clock\+\_\+period@{clock\+\_\+period}}
+\index{clock\+\_\+period@{clock\+\_\+period}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{clock\+\_\+period}{clock\_period}}
+{\footnotesize\ttfamily const double A\+S\+L\+A\+P\+::clock\+\_\+period\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The clock period. 
+
+
+
+Definition at line 107 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+Referenced by Get\+Cycle\+Latency().
+
+\mbox{\Hypertarget{classASLAP_a05235b4e84d76843372f10005b4be5ea}\label{classASLAP_a05235b4e84d76843372f10005b4be5ea}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!ctrl\+\_\+step\+\_\+multiplier@{ctrl\+\_\+step\+\_\+multiplier}}
+\index{ctrl\+\_\+step\+\_\+multiplier@{ctrl\+\_\+step\+\_\+multiplier}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{ctrl\+\_\+step\+\_\+multiplier}{ctrl\_step\_multiplier}}
+{\footnotesize\ttfamily unsigned int A\+S\+L\+A\+P\+::ctrl\+\_\+step\+\_\+multiplier\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+multiplier used to take into account chaining during asap/alap computation 
+
+
+
+Definition at line 113 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+Referenced by add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+A\+P(), add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+A\+P(), compute\+\_\+\+A\+L\+A\+P\+\_\+fast(), compute\+\_\+\+A\+L\+A\+P\+\_\+worst\+\_\+case(), compute\+\_\+\+A\+S\+A\+P(), and Get\+Cycle\+Latency().
+
+\mbox{\Hypertarget{classASLAP_a733320650c283a3fb57e0053495e62a9}\label{classASLAP_a733320650c283a3fb57e0053495e62a9}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily int A\+S\+L\+A\+P\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+debug level 
+
+
+
+Definition at line 110 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+Referenced by add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+A\+P(), add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+A\+P(), compute\+\_\+\+A\+L\+A\+P(), compute\+\_\+\+A\+L\+A\+P\+\_\+fast(), compute\+\_\+\+A\+S\+A\+P(), Get\+Cycle\+Latency(), and update\+\_\+\+A\+L\+A\+P().
+
+\mbox{\Hypertarget{classASLAP_aef4d41c0497eb290e2d74653cf3f2d5b}\label{classASLAP_aef4d41c0497eb290e2d74653cf3f2d5b}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!has\+\_\+branching\+\_\+blocks@{has\+\_\+branching\+\_\+blocks}}
+\index{has\+\_\+branching\+\_\+blocks@{has\+\_\+branching\+\_\+blocks}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{has\+\_\+branching\+\_\+blocks}{has\_branching\_blocks}}
+{\footnotesize\ttfamily bool A\+S\+L\+A\+P\+::has\+\_\+branching\+\_\+blocks\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+is true if the beh\+\_\+graph has at least one branching block 
+
+
+
+Definition at line 98 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+Referenced by A\+S\+L\+A\+P(), compute\+\_\+\+A\+S\+A\+P(), and update\+\_\+\+A\+L\+A\+P().
+
+\mbox{\Hypertarget{classASLAP_aab673e7df4048cecb2cf78d33f104f37}\label{classASLAP_aab673e7df4048cecb2cf78d33f104f37}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!levels@{levels}}
+\index{levels@{levels}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{levels}{levels}}
+{\footnotesize\ttfamily std\+::deque$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ A\+S\+L\+A\+P\+::levels\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+constant variable storing the reference to the array of vertexes sorted by topological order associated with the S\+D\+G(it can be used also for S\+G). 
+
+
+
+Definition at line 95 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+Referenced by add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+A\+P(), add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+A\+P(), A\+S\+L\+A\+P(), compute\+\_\+\+A\+L\+A\+P\+\_\+fast(), compute\+\_\+\+A\+L\+A\+P\+\_\+worst\+\_\+case(), compute\+\_\+\+A\+S\+A\+P(), and update\+\_\+\+A\+L\+A\+P().
+
+\mbox{\Hypertarget{classASLAP_adabce842c92f34d9d94d7c7163359bc4}\label{classASLAP_adabce842c92f34d9d94d7c7163359bc4}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!max\+\_\+tot\+\_\+csteps@{max\+\_\+tot\+\_\+csteps}}
+\index{max\+\_\+tot\+\_\+csteps@{max\+\_\+tot\+\_\+csteps}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{max\+\_\+tot\+\_\+csteps}{max\_tot\_csteps}}
+{\footnotesize\ttfamily Control\+Step A\+S\+L\+A\+P\+::max\+\_\+tot\+\_\+csteps\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+variable storing the maximum number of control steps required to schedule the graph. 
+
+
+
+Definition at line 88 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+Referenced by add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+A\+P(), compute\+\_\+\+A\+L\+A\+P(), compute\+\_\+\+A\+L\+A\+P\+\_\+fast(), compute\+\_\+\+A\+L\+A\+P\+\_\+worst\+\_\+case(), get\+\_\+max\+\_\+csteps(), and update\+\_\+\+A\+L\+A\+P().
+
+\mbox{\Hypertarget{classASLAP_a1659d33460fa862951f6e6e97b88d3c3}\label{classASLAP_a1659d33460fa862951f6e6e97b88d3c3}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!min\+\_\+tot\+\_\+csteps@{min\+\_\+tot\+\_\+csteps}}
+\index{min\+\_\+tot\+\_\+csteps@{min\+\_\+tot\+\_\+csteps}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{min\+\_\+tot\+\_\+csteps}{min\_tot\_csteps}}
+{\footnotesize\ttfamily Control\+Step A\+S\+L\+A\+P\+::min\+\_\+tot\+\_\+csteps\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+variable storing the minimum number of control steps required to schedule the graph. 
+
+
+
+Definition at line 85 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+Referenced by add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+A\+P(), compute\+\_\+\+A\+S\+A\+P(), and get\+\_\+min\+\_\+csteps().
+
+\mbox{\Hypertarget{classASLAP_a90fd3ac454f4224f8ac7b57da07b59d3}\label{classASLAP_a90fd3ac454f4224f8ac7b57da07b59d3}} 
+\index{A\+S\+L\+AP@{A\+S\+L\+AP}!speculation@{speculation}}
+\index{speculation@{speculation}!A\+S\+L\+AP@{A\+S\+L\+AP}}
+\subsubsection{\texorpdfstring{speculation}{speculation}}
+{\footnotesize\ttfamily bool A\+S\+L\+A\+P\+::speculation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+speculation 
+
+
+
+Definition at line 104 of file A\+S\+L\+A\+P.\+hpp.
+
+
+
+Referenced by A\+S\+L\+A\+P().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/scheduling/\hyperlink{ASLAP_8hpp}{A\+S\+L\+A\+P.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/scheduling/\hyperlink{ASLAP_8cpp}{A\+S\+L\+A\+P.\+cpp}\end{DoxyCompactItemize}

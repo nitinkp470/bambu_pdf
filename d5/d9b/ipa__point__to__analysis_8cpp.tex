@@ -1,0 +1,70 @@
+\hypertarget{ipa__point__to__analysis_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/ipa\+\_\+point\+\_\+to\+\_\+analysis.cpp File Reference}
+\label{ipa__point__to__analysis_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/ipa\+\_\+point\+\_\+to\+\_\+analysis.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/ipa\+\_\+point\+\_\+to\+\_\+analysis.\+cpp}}
+
+
+Perform an inter-\/procedural flow sensitive point-\/to analysis.  
+
+
+{\ttfamily \#include \char`\"{}ipa\+\_\+point\+\_\+to\+\_\+analysis.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}application\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}call\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}call\+\_\+graph\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}function\+\_\+behavior.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}module\+\_\+interface.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}behavioral\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ext\+\_\+tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}op\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+basic\+\_\+block.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+reindex.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/range/adaptors.\+hpp$>$}\newline
+Include dependency graph for ipa\+\_\+point\+\_\+to\+\_\+analysis.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/dd9/ipa__point__to__analysis_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structfunction__information}{function\+\_\+information}
+\item 
+class \hyperlink{classworklist__queue}{worklist\+\_\+queue}
+\item 
+struct \hyperlink{structworklist__queue_1_1comp__functor}{worklist\+\_\+queue\+::comp\+\_\+functor}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ipa__point__to__analysis_8cpp_a882feec978fbe1d1af7067ac0021e54f}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structfunction__information}{function\+\_\+information})
+\begin{DoxyCompactList}\small\item\em Header include. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Perform an inter-\/procedural flow sensitive point-\/to analysis. 
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ipa__point__to__analysis_8cpp_a882feec978fbe1d1af7067ac0021e54f}\label{ipa__point__to__analysis_8cpp_a882feec978fbe1d1af7067ac0021e54f}} 
+\index{ipa\+\_\+point\+\_\+to\+\_\+analysis.\+cpp@{ipa\+\_\+point\+\_\+to\+\_\+analysis.\+cpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!ipa\+\_\+point\+\_\+to\+\_\+analysis.\+cpp@{ipa\+\_\+point\+\_\+to\+\_\+analysis.\+cpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structfunction__information}{function\+\_\+information}}]{ }\end{DoxyParamCaption})}
+
+
+
+Header include. 
+
+Behavior include \hyperlink{classParameter}{Parameter} include Tree include boost include 

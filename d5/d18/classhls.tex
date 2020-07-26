@@ -1,0 +1,916 @@
+\hypertarget{classhls}{}\section{hls Class Reference}
+\label{classhls}\index{hls@{hls}}
+
+
+Data structure that contains all information about high level synthesis process.  
+
+
+
+
+{\ttfamily \#include $<$hls.\+hpp$>$}
+
+
+
+Collaboration diagram for hls\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/dcb/classhls__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classhls_a570eb6f6ceb989ed92923ccb318df05c}{hls} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classhls_a97e43df586a38ff6051d75c21560ff48}{Param}, unsigned int function\+\_\+id, \hyperlink{classOpVertexSet}{Op\+Vertex\+Set} \hyperlink{classhls_a93d8454c7ca39afe832a6fd7cbabd227}{operations}, const \hyperlink{hls__target_8hpp_a390f1d55d3b31739665ff2776abe2a3f}{H\+L\+S\+\_\+target\+Ref} \hyperlink{classhls_af633e6a35e5a7d4074ca9b525955399b}{H\+L\+S\+\_\+T}, const \hyperlink{hls__constraints_8hpp_ac394d1c5cd991614133724294a79182b}{H\+L\+S\+\_\+constraints\+Ref} \hyperlink{classhls_a3d8e89506a2b39dc89ef71e2782a4c85}{H\+L\+S\+\_\+C})
+\item 
+\hyperlink{classhls_ae4186144f6fabfb957fbea22608d86fa}{$\sim$hls} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classhls_a49ad456bf4fd4865d39a688b90ffbff6}{xload} (const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$rootnode, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} data)
+\begin{DoxyCompactList}\small\item\em Loads previous H\+LS results from X\+ML node. \end{DoxyCompactList}\item 
+void \hyperlink{classhls_a49a13fe020ba1c669604ed1140612378}{xwrite} (\hyperlink{classxml__element}{xml\+\_\+element} $\ast$rootnode, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} data)
+\begin{DoxyCompactList}\small\item\em Writes current H\+LS results to X\+ML node. \end{DoxyCompactList}\item 
+void \hyperlink{classhls_af4794ad983e93e87c6dca1e01ae61aa8}{print} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Prints the hls solution available up to now. \end{DoxyCompactList}\item 
+void \hyperlink{classhls_a2e962663a506e65c616c38044f1fcd66}{Print\+Scheduling} () const
+\begin{DoxyCompactList}\small\item\em Prints on stream the scheduling (if it has been performed). \end{DoxyCompactList}\item 
+void \hyperlink{classhls_af6e8c0fb3d03ffde89044c215a6afc8e}{print\+\_\+register\+\_\+binding} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Prints on stream the register binding (if it has been performed). \end{DoxyCompactList}\item 
+void \hyperlink{classhls_ade13876660ef2da09f930f9c3243d138}{print\+\_\+register\+\_\+grouping} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Prints on stream the register grouping (if it has been performed). \end{DoxyCompactList}\item 
+void \hyperlink{classhls_aaafdd94ce75cb9c8cef85be61101b239}{print\+\_\+connection\+\_\+binding} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Prints on stream the connection binding (if it has been performed). \end{DoxyCompactList}\item 
+void \hyperlink{classhls_ac9ec57688c391652f3788021ce09ced2}{Print\+Resources} () const
+\begin{DoxyCompactList}\small\item\em Prints the summary of allocated resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classhls_a0eaba14187fb5e60a90d3f35d2b138e0}{function\+Id}
+\begin{DoxyCompactList}\small\item\em this is the identifier of the function to be implemented \end{DoxyCompactList}\item 
+\hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type} \hyperlink{classhls_a901e0a985cea95b069602fbdf0cdcc94}{controller\+\_\+type}
+\begin{DoxyCompactList}\small\item\em The type of controller to be instantiated. \end{DoxyCompactList}\item 
+\hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type} \hyperlink{classhls_a28821b6aa53285a11d8753f1eee83f51}{module\+\_\+binding\+\_\+algorithm}
+\begin{DoxyCompactList}\small\item\em The type of module binding to be adopted. \end{DoxyCompactList}\item 
+\hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type} \hyperlink{classhls_aee1a6f122114edf0772f7026143f39f9}{chaining\+\_\+algorithm}
+\begin{DoxyCompactList}\small\item\em The type of chaining algorithm to be adopted. \end{DoxyCompactList}\item 
+\hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type} \hyperlink{classhls_afc2f0f903285b792466d4b0b09e26905}{liveness\+\_\+algorithm}
+\begin{DoxyCompactList}\small\item\em The type of liveness algorithm to be adopted. \end{DoxyCompactList}\item 
+\hyperlink{classOpVertexSet}{Op\+Vertex\+Set} \hyperlink{classhls_a93d8454c7ca39afe832a6fd7cbabd227}{operations}
+\begin{DoxyCompactList}\small\item\em Set representing the subset of operations in the specification to be implemented. \end{DoxyCompactList}\item 
+const \hyperlink{hls__target_8hpp_a390f1d55d3b31739665ff2776abe2a3f}{H\+L\+S\+\_\+target\+Ref} \hyperlink{classhls_af633e6a35e5a7d4074ca9b525955399b}{H\+L\+S\+\_\+T}
+\begin{DoxyCompactList}\small\item\em reference to the information representing the target for the synthesis \end{DoxyCompactList}\item 
+const \hyperlink{hls__constraints_8hpp_ac394d1c5cd991614133724294a79182b}{H\+L\+S\+\_\+constraints\+Ref} \hyperlink{classhls_a3d8e89506a2b39dc89ef71e2782a4c85}{H\+L\+S\+\_\+C}
+\begin{DoxyCompactList}\small\item\em store the H\+LS constraints \end{DoxyCompactList}\item 
+\hyperlink{allocation__information_8hpp_ad90a86da153cba50cbcefc4679036755}{Allocation\+Information\+Ref} \hyperlink{classhls_a277a18e57c5d5a124cfc840174e5a676}{allocation\+\_\+information}
+\begin{DoxyCompactList}\small\item\em Store the technology information. \end{DoxyCompactList}\item 
+\hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} \hyperlink{classhls_ac03911288ca9f62135c2d74f01d49b4b}{Rsch}
+\begin{DoxyCompactList}\small\item\em Store the refcounted scheduling of the operations. \end{DoxyCompactList}\item 
+\hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref} \hyperlink{classhls_a98ce478f5726273b5978a18df5bbe3c3}{Rfu}
+\begin{DoxyCompactList}\small\item\em Store the refcounted functional unit binding of the operations. \end{DoxyCompactList}\item 
+\hyperlink{state__transition__graph__manager_8hpp_af0c5e63a678c09ef63a87b9cbe427978}{State\+Transition\+Graph\+Manager\+Ref} \hyperlink{classhls_a7dfd09bac28f7aa9cfdda5b539e4c0c7}{S\+TG}
+\begin{DoxyCompactList}\small\item\em Store the refcounted state transition graph. \end{DoxyCompactList}\item 
+\hyperlink{liveness_8hpp_ac56034a0c324ba3e860802f126f7793f}{liveness\+Ref} \hyperlink{classhls_a2b30e1faa6160eb82d63a10c8cfe2007}{Rliv}
+\begin{DoxyCompactList}\small\item\em datastructure containing the variable liveness \end{DoxyCompactList}\item 
+\hyperlink{storage__value__information_8hpp_a9a4a3df6cd31ca08bb2a497f8944ca34}{Storage\+Value\+Information\+Ref} \hyperlink{classhls_a513ceea78f0966ebd6080121fc717296}{storage\+\_\+value\+\_\+information}
+\begin{DoxyCompactList}\small\item\em datastructure for storage values \end{DoxyCompactList}\item 
+\hyperlink{reg__binding_8hpp_aa41bd7902f9f054af782503a16789fd2}{reg\+\_\+binding\+Ref} \hyperlink{classhls_acde7b0e5735648a52b1e3c719f1c9d6e}{Rreg}
+\begin{DoxyCompactList}\small\item\em Store the refcounted register binding of the variables. \end{DoxyCompactList}\item 
+\hyperlink{reg__binding_8hpp_aa41bd7902f9f054af782503a16789fd2}{reg\+\_\+binding\+Ref} \hyperlink{classhls_a4b08c33d2bcb4c34a0fcdd77b0d94a49}{Rreg\+Group}
+\begin{DoxyCompactList}\small\item\em Store the refcounted register group binding of the variables. \end{DoxyCompactList}\item 
+\hyperlink{conn__binding_8hpp_a074d084f1d6f4503d815ba91304264a0}{conn\+\_\+binding\+Ref} \hyperlink{classhls_a2ba012fee9c8ddef38580fc8ed944b4c}{Rconn}
+\begin{DoxyCompactList}\small\item\em Store the refcounted interconnection of datapath elements. \end{DoxyCompactList}\item 
+\hyperlink{chaining__information_8hpp_ae1c1aca3d4b334cf7313b4c7fe6a283c}{Chaining\+Information\+Ref} \hyperlink{classhls_a3928ee165cc11cc67e8e88689282dbb9}{chaining\+\_\+information}
+\begin{DoxyCompactList}\small\item\em Store the refcounted chaining info. \end{DoxyCompactList}\item 
+bool \hyperlink{classhls_a971fc57c719e998d35487786bf705edf}{registered\+\_\+inputs}
+\begin{DoxyCompactList}\small\item\em true when the module has registered inputs \end{DoxyCompactList}\item 
+bool \hyperlink{classhls_a729d30e5819cf147e13aa42eda07659f}{registered\+\_\+done\+\_\+port}
+\begin{DoxyCompactList}\small\item\em true when the done port is registered \end{DoxyCompactList}\item 
+\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} \hyperlink{classhls_a6ea7350c251d688a3c6aa291e4f6ed73}{call\+\_\+sites\+\_\+number}
+\begin{DoxyCompactList}\small\item\em The number of call points to this function. \end{DoxyCompactList}\item 
+\hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} \hyperlink{classhls_aa93c9c2ca7dbf225231a593300dd459a}{datapath}
+\begin{DoxyCompactList}\small\item\em Store the datapath description. \end{DoxyCompactList}\item 
+\hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} \hyperlink{classhls_a48cb5a4df024d43eabe08db9a90b1ffd}{controller}
+\begin{DoxyCompactList}\small\item\em Store the controller description. \end{DoxyCompactList}\item 
+\hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} \hyperlink{classhls_aff2527283e4877a38dbf1f071127caff}{control\+\_\+flow\+\_\+checker}
+\begin{DoxyCompactList}\small\item\em Store the description of the control flow checker. \end{DoxyCompactList}\item 
+\hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} \hyperlink{classhls_af714c4c35f2a225f8b5a7b02a67f278f}{top}
+\begin{DoxyCompactList}\small\item\em Store the top description. \end{DoxyCompactList}\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classhls_a97e43df586a38ff6051d75c21560ff48}{Param}
+\begin{DoxyCompactList}\small\item\em class containing all the parameters \end{DoxyCompactList}\item 
+int \hyperlink{classhls_a1d9555199b62e7dea9e1c9b2e69d7181}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em debugging level of the class \end{DoxyCompactList}\item 
+int \hyperlink{classhls_ad0053ca147e2bc74a7dd81a55f35efd5}{output\+\_\+level}
+\begin{DoxyCompactList}\small\item\em verbosity level of the class \end{DoxyCompactList}\item 
+long \hyperlink{classhls_a5a0e69b4bb4c60bd109d21cd985a3a16}{H\+L\+S\+\_\+execution\+\_\+time}
+\begin{DoxyCompactList}\small\item\em H\+LS execution time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classhls_a3b25e051db859b21027f26e73fc19d71}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classhls}{hls} \&s)
+\begin{DoxyCompactList}\small\item\em Friend definition of the $<$$<$ operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Data structure that contains all information about high level synthesis process. 
+
+Definition at line 91 of file hls.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classhls_a570eb6f6ceb989ed92923ccb318df05c}\label{classhls_a570eb6f6ceb989ed92923ccb318df05c}} 
+\index{hls@{hls}!hls@{hls}}
+\index{hls@{hls}!hls@{hls}}
+\subsubsection{\texorpdfstring{hls()}{hls()}}
+{\footnotesize\ttfamily hls\+::hls (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{unsigned int}]{function\+\_\+id,  }\item[{\hyperlink{classOpVertexSet}{Op\+Vertex\+Set}}]{operations,  }\item[{const \hyperlink{hls__target_8hpp_a390f1d55d3b31739665ff2776abe2a3f}{H\+L\+S\+\_\+target\+Ref}}]{H\+L\+S\+\_\+T,  }\item[{const \hyperlink{hls__constraints_8hpp_ac394d1c5cd991614133724294a79182b}{H\+L\+S\+\_\+constraints\+Ref}}]{H\+L\+S\+\_\+C }\end{DoxyParamCaption})}
+
+
+
+Definition at line 99 of file hls.\+cpp.
+
+
+
+References H\+L\+S\+\_\+C, H\+L\+S\+\_\+T, Param, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and $\sim$hls().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{d5/d18/classhls_a570eb6f6ceb989ed92923ccb318df05c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classhls_ae4186144f6fabfb957fbea22608d86fa}\label{classhls_ae4186144f6fabfb957fbea22608d86fa}} 
+\index{hls@{hls}!````~hls@{$\sim$hls}}
+\index{````~hls@{$\sim$hls}!hls@{hls}}
+\subsubsection{\texorpdfstring{$\sim$hls()}{~hls()}}
+{\footnotesize\ttfamily hls\+::$\sim$hls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by hls().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{d5/d18/classhls_ae4186144f6fabfb957fbea22608d86fa_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classhls_af4794ad983e93e87c6dca1e01ae61aa8}\label{classhls_af4794ad983e93e87c6dca1e01ae61aa8}} 
+\index{hls@{hls}!print@{print}}
+\index{print@{print}!hls@{hls}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void hls\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const}
+
+
+
+Prints the hls solution available up to now. 
+
+It prints information about\+:
+\begin{DoxyItemize}
+\item scheduling
+\item functional units binding
+\item total number of control steps
+\item register binding (if register allocation has been performed)
+\item connection binding (if it has been performed) 
+\begin{DoxyParams}{Parameters}
+{\em os} & is the stream where the information have to be printed \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classhls_aaafdd94ce75cb9c8cef85be61101b239}\label{classhls_aaafdd94ce75cb9c8cef85be61101b239}} 
+\index{hls@{hls}!print\+\_\+connection\+\_\+binding@{print\+\_\+connection\+\_\+binding}}
+\index{print\+\_\+connection\+\_\+binding@{print\+\_\+connection\+\_\+binding}!hls@{hls}}
+\subsubsection{\texorpdfstring{print\+\_\+connection\+\_\+binding()}{print\_connection\_binding()}}
+{\footnotesize\ttfamily void hls\+::print\+\_\+connection\+\_\+binding (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const}
+
+
+
+Prints on stream the connection binding (if it has been performed). 
+
+It prints information about
+\begin{DoxyItemize}
+\item Connection source and target
+\item Element used to perform connection
+\item Variables that could cross the connection 
+\begin{DoxyParams}{Parameters}
+{\em os} & is the stream where the information have to be printed \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classhls_af6e8c0fb3d03ffde89044c215a6afc8e}\label{classhls_af6e8c0fb3d03ffde89044c215a6afc8e}} 
+\index{hls@{hls}!print\+\_\+register\+\_\+binding@{print\+\_\+register\+\_\+binding}}
+\index{print\+\_\+register\+\_\+binding@{print\+\_\+register\+\_\+binding}!hls@{hls}}
+\subsubsection{\texorpdfstring{print\+\_\+register\+\_\+binding()}{print\_register\_binding()}}
+{\footnotesize\ttfamily void hls\+::print\+\_\+register\+\_\+binding (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const}
+
+
+
+Prints on stream the register binding (if it has been performed). 
+
+It prints information about
+\begin{DoxyItemize}
+\item Variable name
+\item Operations which variable is live beetween
+\item Register where the variable has been stored 
+\begin{DoxyParams}{Parameters}
+{\em os} & is the stream where the information have to be printed \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classhls_ade13876660ef2da09f930f9c3243d138}\label{classhls_ade13876660ef2da09f930f9c3243d138}} 
+\index{hls@{hls}!print\+\_\+register\+\_\+grouping@{print\+\_\+register\+\_\+grouping}}
+\index{print\+\_\+register\+\_\+grouping@{print\+\_\+register\+\_\+grouping}!hls@{hls}}
+\subsubsection{\texorpdfstring{print\+\_\+register\+\_\+grouping()}{print\_register\_grouping()}}
+{\footnotesize\ttfamily void hls\+::print\+\_\+register\+\_\+grouping (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const}
+
+
+
+Prints on stream the register grouping (if it has been performed). 
+
+It prints information about
+\begin{DoxyItemize}
+\item Variable name
+\item Operations which variable is live beetween
+\item Register where the variable has been stored 
+\begin{DoxyParams}{Parameters}
+{\em os} & is the stream where the information have to be printed \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classhls_ac9ec57688c391652f3788021ce09ced2}\label{classhls_ac9ec57688c391652f3788021ce09ced2}} 
+\index{hls@{hls}!Print\+Resources@{Print\+Resources}}
+\index{Print\+Resources@{Print\+Resources}!hls@{hls}}
+\subsubsection{\texorpdfstring{Print\+Resources()}{PrintResources()}}
+{\footnotesize\ttfamily void hls\+::\+Print\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Prints the summary of allocated resources. 
+
+
+
+Definition at line 253 of file hls.\+cpp.
+
+
+
+References compute\+Resources(), datapath, structural\+\_\+manager\+::get\+\_\+circ(), H\+L\+S\+\_\+T, I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Write\+H\+L\+S\+Summary\+::\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d18/classhls_ac9ec57688c391652f3788021ce09ced2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{d5/d18/classhls_ac9ec57688c391652f3788021ce09ced2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classhls_a2e962663a506e65c616c38044f1fcd66}\label{classhls_a2e962663a506e65c616c38044f1fcd66}} 
+\index{hls@{hls}!Print\+Scheduling@{Print\+Scheduling}}
+\index{Print\+Scheduling@{Print\+Scheduling}!hls@{hls}}
+\subsubsection{\texorpdfstring{Print\+Scheduling()}{PrintScheduling()}}
+{\footnotesize\ttfamily void hls\+::\+Print\+Scheduling (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Prints on stream the scheduling (if it has been performed). 
+
+It prints information about
+\begin{DoxyItemize}
+\item Operation name
+\item Control step where it will start its execution
+\item Functional unit where it has been mapped 
+\end{DoxyItemize}\mbox{\Hypertarget{classhls_a49ad456bf4fd4865d39a688b90ffbff6}\label{classhls_a49ad456bf4fd4865d39a688b90ffbff6}} 
+\index{hls@{hls}!xload@{xload}}
+\index{xload@{xload}!hls@{hls}}
+\subsubsection{\texorpdfstring{xload()}{xload()}}
+{\footnotesize\ttfamily void hls\+::xload (\begin{DoxyParamCaption}\item[{const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{rootnode,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{data }\end{DoxyParamCaption})}
+
+
+
+Loads previous H\+LS results from X\+ML node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rootnode} & is the pointer to the node containing all the intermediate results \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 120 of file hls.\+cpp.
+
+
+
+References allocation\+\_\+information, fu\+\_\+binding\+::bind(), C\+E\+\_\+\+X\+VM, xml\+\_\+child\+::get\+\_\+children(), Allocation\+Information\+::get\+\_\+fu\+\_\+name(), G\+E\+T\+\_\+\+N\+A\+ME, Allocation\+Information\+::get\+\_\+number\+\_\+fu\+\_\+types(), Allocation\+Information\+::is\+\_\+artificial\+\_\+fu(), Allocation\+Information\+::is\+\_\+assign(), L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+TD, L\+O\+A\+D\+\_\+\+X\+VM, operations, Rfu, Rsch, Schedule\+::set\+\_\+csteps(), Schedule\+::set\+\_\+execution(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by fixed\+\_\+scheduling\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d18/classhls_a49ad456bf4fd4865d39a688b90ffbff6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{d5/d18/classhls_a49ad456bf4fd4865d39a688b90ffbff6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classhls_a49a13fe020ba1c669604ed1140612378}\label{classhls_a49a13fe020ba1c669604ed1140612378}} 
+\index{hls@{hls}!xwrite@{xwrite}}
+\index{xwrite@{xwrite}!hls@{hls}}
+\subsubsection{\texorpdfstring{xwrite()}{xwrite()}}
+{\footnotesize\ttfamily void hls\+::xwrite (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{rootnode,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{data }\end{DoxyParamCaption})}
+
+
+
+Writes current H\+LS results to X\+ML node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rootnode} & is the pointer to the node where all the intermediate results have to be stored \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 191 of file hls.\+cpp.
+
+
+
+References xml\+\_\+child\+::add\+\_\+child\+\_\+element(), allocation\+\_\+information, compute\+Resources(), datapath, fu\+\_\+binding\+::get\+\_\+assign(), structural\+\_\+manager\+::get\+\_\+circ(), Schedule\+::get\+\_\+cstep(), Allocation\+Information\+::get\+\_\+fu\+\_\+name(), fu\+\_\+binding\+::get\+\_\+index(), G\+E\+T\+\_\+\+N\+A\+ME, H\+L\+S\+\_\+T, L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+TD, operations, Rfu, Rsch, and W\+R\+I\+T\+E\+\_\+\+X\+VM.
+
+
+
+Referenced by parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), and H\+L\+S\+\_\+manager\+::xwrite().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d18/classhls_a49a13fe020ba1c669604ed1140612378_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{d5/d18/classhls_a49a13fe020ba1c669604ed1140612378_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classhls_a3b25e051db859b21027f26e73fc19d71}\label{classhls_a3b25e051db859b21027f26e73fc19d71}} 
+\index{hls@{hls}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!hls@{hls}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classhls}{hls} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Friend definition of the $<$$<$ operator. 
+
+
+
+Definition at line 268 of file hls.\+hpp.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classhls_a277a18e57c5d5a124cfc840174e5a676}\label{classhls_a277a18e57c5d5a124cfc840174e5a676}} 
+\index{hls@{hls}!allocation\+\_\+information@{allocation\+\_\+information}}
+\index{allocation\+\_\+information@{allocation\+\_\+information}!hls@{hls}}
+\subsubsection{\texorpdfstring{allocation\+\_\+information}{allocation\_information}}
+{\footnotesize\ttfamily \hyperlink{allocation__information_8hpp_ad90a86da153cba50cbcefc4679036755}{Allocation\+Information\+Ref} hls\+::allocation\+\_\+information}
+
+
+
+Store the technology information. 
+
+
+
+Definition at line 123 of file hls.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+command\+\_\+ports(), parametric\+\_\+list\+\_\+based\+::add\+\_\+to\+\_\+priority\+\_\+queues(), S\+D\+C\+Scheduling\+::\+Add\+Delay\+Constraints(), mux\+\_\+connection\+\_\+binding\+::address\+\_\+precision(), Scheduling\+::anticipate\+\_\+operations(), parametric\+\_\+list\+\_\+based\+::\+B\+B\+\_\+update\+\_\+resources\+\_\+use(), cdfc\+\_\+module\+\_\+binding\+::can\+\_\+be\+\_\+clustered(), parametric\+\_\+list\+\_\+based\+::check\+\_\+direct\+\_\+operation\+\_\+chaining(), module\+\_\+binding\+\_\+check$<$ vertex\+\_\+type $>$\+::check\+\_\+edge\+\_\+compatibility(), parametric\+\_\+list\+\_\+based\+::check\+\_\+non\+\_\+direct\+\_\+operation\+\_\+chaining(), parametric\+\_\+list\+\_\+based\+::\+Check\+Schedulability\+Conditions(), B\+B\+\_\+based\+\_\+stg\+::compute\+\_\+\+E\+P\+P\+\_\+edge\+\_\+increments(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+exec\+\_\+stage\+\_\+time(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), module\+\_\+binding\+\_\+check$<$ vertex\+\_\+type $>$\+::cost(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), parametric\+\_\+list\+\_\+based\+::exec(), S\+D\+C\+Scheduling\+::\+Initialize(), allocation\+::\+Initialize(), unique\+\_\+binding\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), easy\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), add\+\_\+library\+::\+Internal\+Exec(), port\+\_\+swapping\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::optimize\+\_\+cycles(), B\+B\+\_\+based\+\_\+stg\+::res\+\_\+const\+\_\+operation(), parametric\+\_\+list\+\_\+based\+::update\+\_\+starting\+\_\+ending\+\_\+time(), parametric\+\_\+list\+\_\+based\+::update\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), xload(), and xwrite().
+
+\mbox{\Hypertarget{classhls_a6ea7350c251d688a3c6aa291e4f6ed73}\label{classhls_a6ea7350c251d688a3c6aa291e4f6ed73}} 
+\index{hls@{hls}!call\+\_\+sites\+\_\+number@{call\+\_\+sites\+\_\+number}}
+\index{call\+\_\+sites\+\_\+number@{call\+\_\+sites\+\_\+number}!hls@{hls}}
+\subsubsection{\texorpdfstring{call\+\_\+sites\+\_\+number}{call\_sites\_number}}
+{\footnotesize\ttfamily \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} hls\+::call\+\_\+sites\+\_\+number}
+
+
+
+The number of call points to this function. 
+
+
+
+Definition at line 160 of file hls.\+hpp.
+
+
+
+Referenced by B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{classhls_aee1a6f122114edf0772f7026143f39f9}\label{classhls_aee1a6f122114edf0772f7026143f39f9}} 
+\index{hls@{hls}!chaining\+\_\+algorithm@{chaining\+\_\+algorithm}}
+\index{chaining\+\_\+algorithm@{chaining\+\_\+algorithm}!hls@{hls}}
+\subsubsection{\texorpdfstring{chaining\+\_\+algorithm}{chaining\_algorithm}}
+{\footnotesize\ttfamily \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type} hls\+::chaining\+\_\+algorithm}
+
+
+
+The type of chaining algorithm to be adopted. 
+
+
+
+Definition at line 104 of file hls.\+hpp.
+
+\mbox{\Hypertarget{classhls_a3928ee165cc11cc67e8e88689282dbb9}\label{classhls_a3928ee165cc11cc67e8e88689282dbb9}} 
+\index{hls@{hls}!chaining\+\_\+information@{chaining\+\_\+information}}
+\index{chaining\+\_\+information@{chaining\+\_\+information}!hls@{hls}}
+\subsubsection{\texorpdfstring{chaining\+\_\+information}{chaining\_information}}
+{\footnotesize\ttfamily \hyperlink{chaining__information_8hpp_ae1c1aca3d4b334cf7313b4c7fe6a283c}{Chaining\+Information\+Ref} hls\+::chaining\+\_\+information}
+
+
+
+Store the refcounted chaining info. 
+
+
+
+Definition at line 150 of file hls.\+hpp.
+
+
+
+Referenced by sched\+\_\+based\+\_\+chaining\+\_\+computation\+::\+Initialize(), chaining\+::\+Initialize(), Chaining\+Information\+::\+Initialize(), sched\+\_\+based\+\_\+chaining\+\_\+computation\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), and cdfc\+\_\+module\+\_\+binding\+::update\+\_\+slack\+\_\+starting\+\_\+time().
+
+\mbox{\Hypertarget{classhls_aff2527283e4877a38dbf1f071127caff}\label{classhls_aff2527283e4877a38dbf1f071127caff}} 
+\index{hls@{hls}!control\+\_\+flow\+\_\+checker@{control\+\_\+flow\+\_\+checker}}
+\index{control\+\_\+flow\+\_\+checker@{control\+\_\+flow\+\_\+checker}!hls@{hls}}
+\subsubsection{\texorpdfstring{control\+\_\+flow\+\_\+checker}{control\_flow\_checker}}
+{\footnotesize\ttfamily \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} hls\+::control\+\_\+flow\+\_\+checker}
+
+
+
+Store the description of the control flow checker. 
+
+
+
+Definition at line 169 of file hls.\+hpp.
+
+
+
+Referenced by Control\+Flow\+Checker\+::add\+\_\+clock\+\_\+reset(), Control\+Flow\+Checker\+::add\+\_\+done\+\_\+port(), Control\+Flow\+Checker\+::add\+\_\+notifiers(), Control\+Flow\+Checker\+::add\+\_\+present\+\_\+state(), Control\+Flow\+Checker\+::add\+\_\+start\+\_\+port(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), Control\+Flow\+Checker\+::\+Internal\+Exec(), and top\+\_\+entity\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{classhls_a48cb5a4df024d43eabe08db9a90b1ffd}\label{classhls_a48cb5a4df024d43eabe08db9a90b1ffd}} 
+\index{hls@{hls}!controller@{controller}}
+\index{controller@{controller}!hls@{hls}}
+\subsubsection{\texorpdfstring{controller}{controller}}
+{\footnotesize\ttfamily \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} hls\+::controller}
+
+
+
+Store the controller description. 
+
+
+
+Definition at line 166 of file hls.\+hpp.
+
+
+
+Referenced by top\+\_\+entity\+::add\+\_\+command\+\_\+signals(), top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port(), top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port\+\_\+kernel(), top\+\_\+entity\+\_\+cs\+::add\+\_\+input\+\_\+register(), Controller\+Creator\+Base\+Step\+::\+Initialize(), and top\+\_\+entity\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{classhls_a901e0a985cea95b069602fbdf0cdcc94}\label{classhls_a901e0a985cea95b069602fbdf0cdcc94}} 
+\index{hls@{hls}!controller\+\_\+type@{controller\+\_\+type}}
+\index{controller\+\_\+type@{controller\+\_\+type}!hls@{hls}}
+\subsubsection{\texorpdfstring{controller\+\_\+type}{controller\_type}}
+{\footnotesize\ttfamily \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type} hls\+::controller\+\_\+type}
+
+
+
+The type of controller to be instantiated. 
+
+
+
+Definition at line 98 of file hls.\+hpp.
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding\+::\+Initialize().
+
+\mbox{\Hypertarget{classhls_aa93c9c2ca7dbf225231a593300dd459a}\label{classhls_aa93c9c2ca7dbf225231a593300dd459a}} 
+\index{hls@{hls}!datapath@{datapath}}
+\index{datapath@{datapath}!hls@{hls}}
+\subsubsection{\texorpdfstring{datapath}{datapath}}
+{\footnotesize\ttfamily \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} hls\+::datapath}
+
+
+
+Store the datapath description. 
+
+
+
+Definition at line 163 of file hls.\+hpp.
+
+
+
+Referenced by classic\+\_\+datapath\+::add\+\_\+clock\+\_\+reset(), top\+\_\+entity\+::add\+\_\+command\+\_\+signals(), top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port(), top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port\+\_\+kernel(), fu\+\_\+binding\+::add\+\_\+gate(), datapath\+\_\+cs\+::add\+\_\+ports(), top\+\_\+entity\+::add\+\_\+ports(), classic\+\_\+datapath\+::add\+\_\+ports(), datapath\+\_\+parallel\+\_\+cs\+::add\+\_\+ports(), Parallel\+Memory\+Fu\+Binding\+::add\+\_\+to\+\_\+\+S\+M(), reg\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), State\+Transition\+Graph\+Manager\+::add\+\_\+to\+\_\+\+S\+M(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), datapath\+\_\+parallel\+\_\+cs\+::connect\+\_\+i\+\_\+module\+\_\+kernel(), datapath\+\_\+parallel\+\_\+cs\+::connect\+\_\+module\+\_\+kernel(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::connect\+\_\+port\+\_\+parallel(), fu\+\_\+binding\+\_\+cs\+::connect\+\_\+selector(), fu\+\_\+binding\+\_\+cs\+::connect\+\_\+selector\+\_\+kernel(), conn\+\_\+binding\+\_\+cs\+::connect\+Out\+Or(), fu\+\_\+binding\+\_\+cs\+::instantiate\+\_\+component\+\_\+kernel(), datapath\+\_\+parallel\+\_\+cs\+::instantiate\+\_\+component\+\_\+parallel(), conn\+\_\+binding\+\_\+cs\+::instantiate\+\_\+suspension\+\_\+component(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), classic\+\_\+datapath\+::\+Internal\+Exec(), top\+\_\+entity\+::\+Internal\+Exec(), datapath\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), Print\+Resources(), fu\+\_\+binding\+\_\+cs\+::set\+\_\+atomic\+\_\+memory\+\_\+parameter(), fu\+\_\+binding\+::specialize\+\_\+memory\+\_\+unit(), and xwrite().
+
+\mbox{\Hypertarget{classhls_a1d9555199b62e7dea9e1c9b2e69d7181}\label{classhls_a1d9555199b62e7dea9e1c9b2e69d7181}} 
+\index{hls@{hls}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!hls@{hls}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily int hls\+::debug\+\_\+level}
+
+
+
+debugging level of the class 
+
+
+
+Definition at line 180 of file hls.\+hpp.
+
+
+
+Referenced by reg\+\_\+binding\+::compute\+\_\+bitsize(), State\+Transition\+Graph\+Manager\+::specialise\+\_\+mu(), and reg\+\_\+binding\+::specialise\+\_\+reg().
+
+\mbox{\Hypertarget{classhls_a0eaba14187fb5e60a90d3f35d2b138e0}\label{classhls_a0eaba14187fb5e60a90d3f35d2b138e0}} 
+\index{hls@{hls}!function\+Id@{function\+Id}}
+\index{function\+Id@{function\+Id}!hls@{hls}}
+\subsubsection{\texorpdfstring{function\+Id}{functionId}}
+{\footnotesize\ttfamily unsigned int hls\+::function\+Id}
+
+
+
+this is the identifier of the function to be implemented 
+
+
+
+Definition at line 95 of file hls.\+hpp.
+
+
+
+Referenced by Controller\+Creator\+Base\+Step\+::add\+\_\+command\+\_\+ports(), conn\+\_\+binding\+::add\+\_\+command\+\_\+ports(), fu\+\_\+binding\+::add\+\_\+gate(), top\+\_\+entity\+::add\+\_\+ports(), classic\+\_\+datapath\+::add\+\_\+ports(), fu\+\_\+binding\+\_\+cs\+::add\+\_\+to\+\_\+\+S\+M(), Parallel\+Memory\+Fu\+Binding\+::add\+\_\+to\+\_\+\+S\+M(), reg\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), mux\+\_\+connection\+\_\+binding\+::address\+\_\+precision(), Top\+Entity\+Memory\+Mapped\+::allocate\+\_\+parameters(), liveness\+::are\+\_\+in\+\_\+conflict(), A\+S\+L\+A\+P\+::\+A\+S\+L\+A\+P(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+bus\+\_\+interface(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+complete\+\_\+logic(), minimal\+\_\+interface\+::build\+\_\+wrapper(), cdfc\+\_\+module\+\_\+binding\+::can\+\_\+be\+\_\+clustered(), reg\+\_\+binding\+::compute\+\_\+bitsize(), conn\+\_\+binding\+\_\+cs\+::connect\+Out\+Or(), conn\+\_\+binding\+::create\+\_\+conn\+\_\+binding(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), reg\+\_\+binding\+::create\+\_\+reg\+\_\+binding(), mux\+\_\+connection\+\_\+binding\+::determine\+\_\+connection(), Top\+Entity\+Memory\+Mapped\+::forward\+Ports(), W\+B4\+\_\+interface\+::get\+\_\+data\+\_\+bus\+\_\+bitsize(), module\+\_\+binding\+\_\+check$<$ vertex\+\_\+type $>$\+::get\+Operation\+Variables\+At\+Port(), Top\+Entity\+Memory\+Mapped\+::insert\+Memory\+Mapped\+Register(), Top\+Entity\+Memory\+Mapped\+::insert\+Status\+Register(), F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Internal\+Exec(), port\+\_\+swapping\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), fu\+\_\+binding\+\_\+cs\+::manage\+\_\+extern\+\_\+global\+\_\+port(), fu\+\_\+binding\+\_\+cs\+::manage\+\_\+memory\+\_\+ports\+\_\+parallel\+\_\+chained(), Parallel\+Memory\+Fu\+Binding\+::manage\+\_\+module\+\_\+ports(), reg\+\_\+binding\+::print\+\_\+el(), fu\+\_\+binding\+::specialise\+\_\+fu(), and fu\+\_\+binding\+::specialize\+\_\+memory\+\_\+unit().
+
+\mbox{\Hypertarget{classhls_a3d8e89506a2b39dc89ef71e2782a4c85}\label{classhls_a3d8e89506a2b39dc89ef71e2782a4c85}} 
+\index{hls@{hls}!H\+L\+S\+\_\+C@{H\+L\+S\+\_\+C}}
+\index{H\+L\+S\+\_\+C@{H\+L\+S\+\_\+C}!hls@{hls}}
+\subsubsection{\texorpdfstring{H\+L\+S\+\_\+C}{HLS\_C}}
+{\footnotesize\ttfamily const \hyperlink{hls__constraints_8hpp_ac394d1c5cd991614133724294a79182b}{H\+L\+S\+\_\+constraints\+Ref} hls\+::\+H\+L\+S\+\_\+C}
+
+
+
+store the H\+LS constraints 
+
+
+
+Definition at line 118 of file hls.\+hpp.
+
+
+
+Referenced by Scheduling\+::anticipate\+\_\+operations(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+slack(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), parametric\+\_\+list\+\_\+based\+::exec(), Schedule\+::\+Get\+B\+B\+Ending\+Time(), hls(), S\+D\+C\+Scheduling\+::\+Initialize(), Allocation\+Information\+::\+Initialize(), allocation\+::\+Integrate\+Technology\+Libraries(), add\+\_\+library\+::\+Internal\+Exec(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), and cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{classhls_a5a0e69b4bb4c60bd109d21cd985a3a16}\label{classhls_a5a0e69b4bb4c60bd109d21cd985a3a16}} 
+\index{hls@{hls}!H\+L\+S\+\_\+execution\+\_\+time@{H\+L\+S\+\_\+execution\+\_\+time}}
+\index{H\+L\+S\+\_\+execution\+\_\+time@{H\+L\+S\+\_\+execution\+\_\+time}!hls@{hls}}
+\subsubsection{\texorpdfstring{H\+L\+S\+\_\+execution\+\_\+time}{HLS\_execution\_time}}
+{\footnotesize\ttfamily long hls\+::\+H\+L\+S\+\_\+execution\+\_\+time}
+
+
+
+H\+LS execution time. 
+
+
+
+Definition at line 186 of file hls.\+hpp.
+
+\mbox{\Hypertarget{classhls_af633e6a35e5a7d4074ca9b525955399b}\label{classhls_af633e6a35e5a7d4074ca9b525955399b}} 
+\index{hls@{hls}!H\+L\+S\+\_\+T@{H\+L\+S\+\_\+T}}
+\index{H\+L\+S\+\_\+T@{H\+L\+S\+\_\+T}!hls@{hls}}
+\subsubsection{\texorpdfstring{H\+L\+S\+\_\+T}{HLS\_T}}
+{\footnotesize\ttfamily const \hyperlink{hls__target_8hpp_a390f1d55d3b31739665ff2776abe2a3f}{H\+L\+S\+\_\+target\+Ref} hls\+::\+H\+L\+S\+\_\+T}
+
+
+
+reference to the information representing the target for the synthesis 
+
+
+
+Definition at line 115 of file hls.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+command\+\_\+ports(), fu\+\_\+binding\+::add\+\_\+gate(), top\+\_\+entity\+\_\+cs\+::add\+\_\+input\+\_\+register(), top\+\_\+entity\+::add\+\_\+input\+\_\+register(), classic\+\_\+datapath\+::add\+\_\+ports(), conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp(), Parallel\+Memory\+Fu\+Binding\+::add\+\_\+to\+\_\+\+S\+M(), reg\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), State\+Transition\+Graph\+Manager\+::add\+\_\+to\+\_\+\+S\+M(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+complete\+\_\+logic(), allocation\+::\+Build\+Proxy\+Wrapper(), hls(), Allocation\+Information\+::\+Initialize(), Top\+Entity\+Memory\+Mapped\+::insert\+Memory\+Mapped\+Register(), Top\+Entity\+Memory\+Mapped\+::insert\+Start\+Done\+Logic(), Top\+Entity\+Memory\+Mapped\+::insert\+Status\+Register(), fu\+\_\+binding\+\_\+cs\+::instantiate\+\_\+component\+\_\+kernel(), datapath\+\_\+parallel\+\_\+cs\+::instantiate\+\_\+component\+\_\+parallel(), cs\+\_\+interface\+::instantiate\+\_\+component\+\_\+parallel(), conn\+\_\+binding\+\_\+cs\+::instantiate\+\_\+suspension\+\_\+component(), Taste\+Interface\+Generation\+::\+Internal\+Exec(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), classic\+\_\+datapath\+::\+Internal\+Exec(), top\+\_\+entity\+::\+Internal\+Exec(), add\+\_\+library\+::\+Internal\+Exec(), datapath\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), fu\+\_\+binding\+::join\+\_\+merge\+\_\+split(), conn\+\_\+binding\+::mux\+\_\+allocation(), conn\+\_\+binding\+::mux\+\_\+connection(), Print\+Resources(), fu\+\_\+binding\+::specialise\+\_\+fu(), and xwrite().
+
+\mbox{\Hypertarget{classhls_afc2f0f903285b792466d4b0b09e26905}\label{classhls_afc2f0f903285b792466d4b0b09e26905}} 
+\index{hls@{hls}!liveness\+\_\+algorithm@{liveness\+\_\+algorithm}}
+\index{liveness\+\_\+algorithm@{liveness\+\_\+algorithm}!hls@{hls}}
+\subsubsection{\texorpdfstring{liveness\+\_\+algorithm}{liveness\_algorithm}}
+{\footnotesize\ttfamily \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type} hls\+::liveness\+\_\+algorithm}
+
+
+
+The type of liveness algorithm to be adopted. 
+
+
+
+Definition at line 107 of file hls.\+hpp.
+
+\mbox{\Hypertarget{classhls_a28821b6aa53285a11d8753f1eee83f51}\label{classhls_a28821b6aa53285a11d8753f1eee83f51}} 
+\index{hls@{hls}!module\+\_\+binding\+\_\+algorithm@{module\+\_\+binding\+\_\+algorithm}}
+\index{module\+\_\+binding\+\_\+algorithm@{module\+\_\+binding\+\_\+algorithm}!hls@{hls}}
+\subsubsection{\texorpdfstring{module\+\_\+binding\+\_\+algorithm}{module\_binding\_algorithm}}
+{\footnotesize\ttfamily \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type} hls\+::module\+\_\+binding\+\_\+algorithm}
+
+
+
+The type of module binding to be adopted. 
+
+
+
+Definition at line 101 of file hls.\+hpp.
+
+\mbox{\Hypertarget{classhls_a93d8454c7ca39afe832a6fd7cbabd227}\label{classhls_a93d8454c7ca39afe832a6fd7cbabd227}} 
+\index{hls@{hls}!operations@{operations}}
+\index{operations@{operations}!hls@{hls}}
+\subsubsection{\texorpdfstring{operations}{operations}}
+{\footnotesize\ttfamily \hyperlink{classOpVertexSet}{Op\+Vertex\+Set} hls\+::operations}
+
+
+
+Set representing the subset of operations in the specification to be implemented. 
+
+
+
+Definition at line 110 of file hls.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+command\+\_\+ports(), S\+D\+C\+Scheduling\+::\+Initialize(), allocation\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), xload(), and xwrite().
+
+\mbox{\Hypertarget{classhls_ad0053ca147e2bc74a7dd81a55f35efd5}\label{classhls_ad0053ca147e2bc74a7dd81a55f35efd5}} 
+\index{hls@{hls}!output\+\_\+level@{output\+\_\+level}}
+\index{output\+\_\+level@{output\+\_\+level}!hls@{hls}}
+\subsubsection{\texorpdfstring{output\+\_\+level}{output\_level}}
+{\footnotesize\ttfamily int hls\+::output\+\_\+level}
+
+
+
+verbosity level of the class 
+
+
+
+Definition at line 183 of file hls.\+hpp.
+
+
+
+Referenced by reg\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), reg\+\_\+binding\+::print\+\_\+el(), and Print\+Resources().
+
+\mbox{\Hypertarget{classhls_a97e43df586a38ff6051d75c21560ff48}\label{classhls_a97e43df586a38ff6051d75c21560ff48}} 
+\index{hls@{hls}!Param@{Param}}
+\index{Param@{Param}!hls@{hls}}
+\subsubsection{\texorpdfstring{Param}{Param}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} hls\+::\+Param}
+
+
+
+class containing all the parameters 
+
+
+
+Definition at line 177 of file hls.\+hpp.
+
+
+
+Referenced by top\+\_\+entity\+\_\+cs\+::add\+\_\+input\+\_\+register(), conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), conn\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), reg\+\_\+binding\+::\+Calculate\+Register\+Name(), parametric\+\_\+list\+\_\+based\+::check\+\_\+non\+\_\+direct\+\_\+operation\+\_\+chaining(), parametric\+\_\+list\+\_\+based\+::\+Check\+Schedulability\+Conditions(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), reg\+\_\+binding\+::create\+\_\+reg\+\_\+binding(), parametric\+\_\+list\+\_\+based\+::exec(), hls(), Controller\+Creator\+Base\+Step\+::\+Initialize(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), Taste\+Interface\+Generation\+::\+Internal\+Exec(), classic\+\_\+datapath\+::\+Internal\+Exec(), Control\+Flow\+Checker\+::\+Internal\+Exec(), datapath\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), Top\+Entity\+Memory\+Mapped\+::resizing\+\_\+\+I\+O(), fu\+\_\+binding\+::specialise\+\_\+fu(), and reg\+\_\+binding\+\_\+cs\+::specialise\+\_\+reg().
+
+\mbox{\Hypertarget{classhls_a2ba012fee9c8ddef38580fc8ed944b4c}\label{classhls_a2ba012fee9c8ddef38580fc8ed944b4c}} 
+\index{hls@{hls}!Rconn@{Rconn}}
+\index{Rconn@{Rconn}!hls@{hls}}
+\subsubsection{\texorpdfstring{Rconn}{Rconn}}
+{\footnotesize\ttfamily \hyperlink{conn__binding_8hpp_a074d084f1d6f4503d815ba91304264a0}{conn\+\_\+binding\+Ref} hls\+::\+Rconn}
+
+
+
+Store the refcounted interconnection of datapath elements. 
+
+
+
+Definition at line 147 of file hls.\+hpp.
+
+
+
+Referenced by Controller\+Creator\+Base\+Step\+::add\+\_\+command\+\_\+ports(), conn\+\_\+binding\+::add\+\_\+command\+\_\+ports(), top\+\_\+entity\+::add\+\_\+command\+\_\+signals(), mux\+\_\+connection\+\_\+binding\+::add\+\_\+conversion(), conn\+\_\+binding\+\_\+creator\+::add\+\_\+parameter\+\_\+ports(), top\+\_\+entity\+::add\+\_\+ports(), classic\+\_\+datapath\+::add\+\_\+ports(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), mux\+\_\+connection\+\_\+binding\+::connect\+\_\+array\+\_\+index(), mux\+\_\+connection\+\_\+binding\+::connect\+\_\+to\+\_\+registers(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+single\+\_\+conn(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), mux\+\_\+connection\+\_\+binding\+::determine\+\_\+connection(), mux\+\_\+connection\+\_\+binding\+::dynamic\+\_\+multidimensional\+\_\+array\+\_\+handler(), Controller\+Creator\+Base\+Step\+::\+Initialize(), mux\+\_\+connection\+\_\+binding\+::\+Initialize(), mux\+\_\+connection\+\_\+binding\+::input\+\_\+logic(), classic\+\_\+datapath\+::\+Internal\+Exec(), mux\+\_\+connection\+\_\+binding\+::\+Internal\+Exec(), and mux\+\_\+connection\+\_\+binding\+::mux\+\_\+interconnection().
+
+\mbox{\Hypertarget{classhls_a729d30e5819cf147e13aa42eda07659f}\label{classhls_a729d30e5819cf147e13aa42eda07659f}} 
+\index{hls@{hls}!registered\+\_\+done\+\_\+port@{registered\+\_\+done\+\_\+port}}
+\index{registered\+\_\+done\+\_\+port@{registered\+\_\+done\+\_\+port}!hls@{hls}}
+\subsubsection{\texorpdfstring{registered\+\_\+done\+\_\+port}{registered\_done\_port}}
+{\footnotesize\ttfamily bool hls\+::registered\+\_\+done\+\_\+port}
+
+
+
+true when the done port is registered 
+
+
+
+Definition at line 157 of file hls.\+hpp.
+
+
+
+Referenced by fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), and top\+\_\+entity\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{classhls_a971fc57c719e998d35487786bf705edf}\label{classhls_a971fc57c719e998d35487786bf705edf}} 
+\index{hls@{hls}!registered\+\_\+inputs@{registered\+\_\+inputs}}
+\index{registered\+\_\+inputs@{registered\+\_\+inputs}!hls@{hls}}
+\subsubsection{\texorpdfstring{registered\+\_\+inputs}{registered\_inputs}}
+{\footnotesize\ttfamily bool hls\+::registered\+\_\+inputs}
+
+
+
+true when the module has registered inputs 
+
+
+
+Definition at line 155 of file hls.\+hpp.
+
+
+
+Referenced by top\+\_\+entity\+::add\+\_\+ports(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), top\+\_\+entity\+\_\+cs\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), and add\+\_\+library\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{classhls_a98ce478f5726273b5978a18df5bbe3c3}\label{classhls_a98ce478f5726273b5978a18df5bbe3c3}} 
+\index{hls@{hls}!Rfu@{Rfu}}
+\index{Rfu@{Rfu}!hls@{hls}}
+\subsubsection{\texorpdfstring{Rfu}{Rfu}}
+{\footnotesize\ttfamily \hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref} hls\+::\+Rfu}
+
+
+
+Store the refcounted functional unit binding of the operations. 
+
+
+
+Definition at line 129 of file hls.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+command\+\_\+ports(), Parallel\+Memory\+Conn\+Binding\+::add\+\_\+to\+\_\+\+S\+M(), Parallel\+Memory\+Fu\+Binding\+::add\+\_\+to\+\_\+\+S\+M(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), mux\+\_\+connection\+\_\+binding\+::address\+\_\+precision(), Scheduling\+::anticipate\+\_\+operations(), B\+B\+\_\+based\+\_\+stg\+::compute\+\_\+\+E\+P\+P\+\_\+edge\+\_\+increments(), mux\+\_\+connection\+\_\+binding\+::connect\+\_\+to\+\_\+registers(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), parametric\+\_\+list\+\_\+based\+::exec(), fu\+\_\+binding\+\_\+creator\+::\+Initialize(), easy\+\_\+module\+\_\+binding\+::\+Initialize(), Storage\+Value\+Information\+::\+Initialize(), S\+D\+C\+Scheduling\+::\+Initialize(), Scheduling\+::\+Initialize(), module\+\_\+binding\+\_\+check$<$ vertex\+\_\+type $>$\+::initialize\+\_\+structures(), Top\+Entity\+Memory\+Mapped\+::insert\+Memory\+Mapped\+Register(), Top\+Entity\+Memory\+Mapped\+::insert\+Start\+Done\+Logic(), Top\+Entity\+Memory\+Mapped\+::insert\+Status\+Register(), unique\+\_\+binding\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), easy\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), classic\+\_\+datapath\+::\+Internal\+Exec(), Top\+Entity\+Memory\+Mapped\+::\+Internal\+Exec(), port\+\_\+swapping\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::optimize\+\_\+cycles(), B\+B\+\_\+based\+\_\+stg\+::res\+\_\+const\+\_\+operation(), mux\+\_\+connection\+\_\+binding\+::swap\+\_\+p(), xload(), and xwrite().
+
+\mbox{\Hypertarget{classhls_a2b30e1faa6160eb82d63a10c8cfe2007}\label{classhls_a2b30e1faa6160eb82d63a10c8cfe2007}} 
+\index{hls@{hls}!Rliv@{Rliv}}
+\index{Rliv@{Rliv}!hls@{hls}}
+\subsubsection{\texorpdfstring{Rliv}{Rliv}}
+{\footnotesize\ttfamily \hyperlink{liveness_8hpp_ac56034a0c324ba3e860802f126f7793f}{liveness\+Ref} hls\+::\+Rliv}
+
+
+
+datastructure containing the variable liveness 
+
+
+
+Definition at line 135 of file hls.\+hpp.
+
+
+
+Referenced by reg\+\_\+binding\+::compute\+\_\+is\+\_\+without\+\_\+enable(), mux\+\_\+connection\+\_\+binding\+::connect\+\_\+to\+\_\+registers(), compatibility\+\_\+based\+\_\+register\+::create\+\_\+compatibility\+\_\+graph(), conflict\+\_\+based\+\_\+register\+::create\+\_\+conflict\+\_\+graph(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+single\+\_\+conn(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Initialize(), module\+\_\+binding\+\_\+check$<$ vertex\+\_\+type $>$\+::initialize\+\_\+structures(), mux\+\_\+connection\+\_\+binding\+::input\+\_\+logic(), vertex\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Internal\+Exec(), unique\+\_\+binding\+\_\+register\+::\+Internal\+Exec(), chordal\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), values\+\_\+scheme\+::\+Internal\+Exec(), weighted\+\_\+clique\+\_\+register\+::\+Internal\+Exec(), port\+\_\+swapping\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), and mux\+\_\+connection\+\_\+binding\+::swap\+\_\+p().
+
+\mbox{\Hypertarget{classhls_acde7b0e5735648a52b1e3c719f1c9d6e}\label{classhls_acde7b0e5735648a52b1e3c719f1c9d6e}} 
+\index{hls@{hls}!Rreg@{Rreg}}
+\index{Rreg@{Rreg}!hls@{hls}}
+\subsubsection{\texorpdfstring{Rreg}{Rreg}}
+{\footnotesize\ttfamily \hyperlink{reg__binding_8hpp_aa41bd7902f9f054af782503a16789fd2}{reg\+\_\+binding\+Ref} hls\+::\+Rreg}
+
+
+
+Store the refcounted register binding of the variables. 
+
+
+
+Definition at line 141 of file hls.\+hpp.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), mux\+\_\+connection\+\_\+binding\+::connect\+\_\+to\+\_\+registers(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), weighted\+\_\+clique\+\_\+register\+::\+Initialize(), Controller\+Creator\+Base\+Step\+::\+Initialize(), vertex\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), unique\+\_\+binding\+\_\+register\+::\+Internal\+Exec(), chordal\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), classic\+\_\+datapath\+::\+Internal\+Exec(), weighted\+\_\+clique\+\_\+register\+::\+Internal\+Exec(), port\+\_\+swapping\+::\+Internal\+Exec(), and mux\+\_\+connection\+\_\+binding\+::swap\+\_\+p().
+
+\mbox{\Hypertarget{classhls_a4b08c33d2bcb4c34a0fcdd77b0d94a49}\label{classhls_a4b08c33d2bcb4c34a0fcdd77b0d94a49}} 
+\index{hls@{hls}!Rreg\+Group@{Rreg\+Group}}
+\index{Rreg\+Group@{Rreg\+Group}!hls@{hls}}
+\subsubsection{\texorpdfstring{Rreg\+Group}{RregGroup}}
+{\footnotesize\ttfamily \hyperlink{reg__binding_8hpp_aa41bd7902f9f054af782503a16789fd2}{reg\+\_\+binding\+Ref} hls\+::\+Rreg\+Group}
+
+
+
+Store the refcounted register group binding of the variables. 
+
+
+
+Definition at line 144 of file hls.\+hpp.
+
+\mbox{\Hypertarget{classhls_ac03911288ca9f62135c2d74f01d49b4b}\label{classhls_ac03911288ca9f62135c2d74f01d49b4b}} 
+\index{hls@{hls}!Rsch@{Rsch}}
+\index{Rsch@{Rsch}!hls@{hls}}
+\subsubsection{\texorpdfstring{Rsch}{Rsch}}
+{\footnotesize\ttfamily \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} hls\+::\+Rsch}
+
+
+
+Store the refcounted scheduling of the operations. 
+
+
+
+Definition at line 126 of file hls.\+hpp.
+
+
+
+Referenced by Scheduling\+::anticipate\+\_\+operations(), Allocation\+Information\+::\+Compute\+Roots(), parametric\+\_\+list\+\_\+based\+::exec(), Controller\+Creator\+Base\+Step\+::\+Initialize(), Scheduling\+::\+Initialize(), unique\+\_\+binding\+::\+Internal\+Exec(), sched\+\_\+based\+\_\+chaining\+\_\+computation\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), xload(), and xwrite().
+
+\mbox{\Hypertarget{classhls_a7dfd09bac28f7aa9cfdda5b539e4c0c7}\label{classhls_a7dfd09bac28f7aa9cfdda5b539e4c0c7}} 
+\index{hls@{hls}!S\+TG@{S\+TG}}
+\index{S\+TG@{S\+TG}!hls@{hls}}
+\subsubsection{\texorpdfstring{S\+TG}{STG}}
+{\footnotesize\ttfamily \hyperlink{state__transition__graph__manager_8hpp_af0c5e63a678c09ef63a87b9cbe427978}{State\+Transition\+Graph\+Manager\+Ref} hls\+::\+S\+TG}
+
+
+
+Store the refcounted state transition graph. 
+
+
+
+Definition at line 132 of file hls.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+command\+\_\+ports(), B\+B\+\_\+based\+\_\+stg\+::compute\+\_\+\+E\+P\+P\+\_\+edge\+\_\+increments(), mux\+\_\+connection\+\_\+binding\+::connect\+\_\+to\+\_\+registers(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+single\+\_\+conn(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), Allocation\+Information\+::\+Estimate\+Controller\+Delay(), B\+B\+\_\+based\+\_\+stg\+::\+Initialize(), F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Internal\+Exec(), fsm\+\_\+controller\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), classic\+\_\+datapath\+::\+Internal\+Exec(), Control\+Flow\+Checker\+::\+Internal\+Exec(), add\+\_\+library\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::move\+\_\+with\+\_\+duplication(), B\+B\+\_\+based\+\_\+stg\+::move\+\_\+without\+\_\+duplication(), B\+B\+\_\+based\+\_\+stg\+::optimize\+\_\+cycles(), and B\+B\+\_\+based\+\_\+stg\+::res\+\_\+const\+\_\+operation().
+
+\mbox{\Hypertarget{classhls_a513ceea78f0966ebd6080121fc717296}\label{classhls_a513ceea78f0966ebd6080121fc717296}} 
+\index{hls@{hls}!storage\+\_\+value\+\_\+information@{storage\+\_\+value\+\_\+information}}
+\index{storage\+\_\+value\+\_\+information@{storage\+\_\+value\+\_\+information}!hls@{hls}}
+\subsubsection{\texorpdfstring{storage\+\_\+value\+\_\+information}{storage\_value\_information}}
+{\footnotesize\ttfamily \hyperlink{storage__value__information_8hpp_a9a4a3df6cd31ca08bb2a497f8944ca34}{Storage\+Value\+Information\+Ref} hls\+::storage\+\_\+value\+\_\+information}
+
+
+
+datastructure for storage values 
+
+
+
+Definition at line 138 of file hls.\+hpp.
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding\+::connect\+\_\+to\+\_\+registers(), compatibility\+\_\+based\+\_\+register\+::create\+\_\+compatibility\+\_\+graph(), conflict\+\_\+based\+\_\+register\+::create\+\_\+conflict\+\_\+graph(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), reg\+\_\+binding\+::get\+\_\+vars(), storage\+\_\+value\+\_\+insertion\+::\+Initialize(), values\+\_\+scheme\+::\+Initialize(), Storage\+Value\+Information\+::\+Initialize(), vertex\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), unique\+\_\+binding\+\_\+register\+::\+Internal\+Exec(), chordal\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), values\+\_\+scheme\+::\+Internal\+Exec(), weighted\+\_\+clique\+\_\+register\+::\+Internal\+Exec(), port\+\_\+swapping\+::\+Internal\+Exec(), reg\+\_\+binding\+::print\+\_\+el(), and mux\+\_\+connection\+\_\+binding\+::swap\+\_\+p().
+
+\mbox{\Hypertarget{classhls_af714c4c35f2a225f8b5a7b02a67f278f}\label{classhls_af714c4c35f2a225f8b5a7b02a67f278f}} 
+\index{hls@{hls}!top@{top}}
+\index{top@{top}!hls@{hls}}
+\subsubsection{\texorpdfstring{top}{top}}
+{\footnotesize\ttfamily \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} hls\+::top}
+
+
+
+Store the top description. 
+
+
+
+Definition at line 172 of file hls.\+hpp.
+
+
+
+Referenced by Top\+Entity\+Memory\+Mapped\+::allocate\+\_\+parameters(), Allocation\+Information\+::estimate\+\_\+call\+\_\+delay(), W\+B4\+Intercon\+\_\+interface\+::exec(), Generate\+Simulation\+Scripts\+::\+Exec(), Generate\+Synthesis\+Scripts\+::\+Exec(), cs\+\_\+interface\+::\+Internal\+Exec(), minimal\+\_\+interface\+::\+Internal\+Exec(), Taste\+Interface\+Generation\+::\+Internal\+Exec(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), Top\+Entity\+Memory\+Mapped\+::\+Internal\+Exec(), top\+\_\+entity\+::\+Internal\+Exec(), W\+B4\+\_\+interface\+::\+Internal\+Exec(), and add\+\_\+library\+::\+Internal\+Exec().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/\hyperlink{hls_8hpp}{hls.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/\hyperlink{hls_8cpp}{hls.\+cpp}\end{DoxyCompactItemize}

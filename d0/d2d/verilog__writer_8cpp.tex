@@ -1,0 +1,75 @@
+\hypertarget{verilog__writer_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+H\+D\+L/writer/verilog\+\_\+writer.cpp File Reference}
+\label{verilog__writer_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+H\+D\+L/writer/verilog\+\_\+writer.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+H\+D\+L/writer/verilog\+\_\+writer.\+cpp}}
+
+
+Write system verilog provided descriptions.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+F\+R\+O\+M\+\_\+\+C\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}verilog\+\_\+writer.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}H\+D\+L\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}time\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}N\+P\+\_\+functionality.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}structural\+\_\+objects.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$boost/algorithm/string.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/lexical\+\_\+cast.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/tokenizer.\+hpp$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$iosfwd$>$}\newline
+{\ttfamily \#include \char`\"{}state\+\_\+transition\+\_\+graph\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}indented\+\_\+output\+\_\+stream.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+Include dependency graph for verilog\+\_\+writer.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d5f/verilog__writer_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{verilog__writer_8cpp_a0135ad4bbbeb3b613fdcba9e7b814799}{V\+E\+R\+I\+L\+O\+G\+\_\+2001\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}
+\begin{DoxyCompactList}\small\item\em Autoheader include. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Write system verilog provided descriptions. 
+
+This class implements the methods to write Verilog descriptions.
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$
+
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+
+Christian Pilato \href{mailto:pilato@elet.polimi.it}{\tt pilato@elet.\+polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{verilog__writer_8cpp_a0135ad4bbbeb3b613fdcba9e7b814799}\label{verilog__writer_8cpp_a0135ad4bbbeb3b613fdcba9e7b814799}} 
+\index{verilog\+\_\+writer.\+cpp@{verilog\+\_\+writer.\+cpp}!V\+E\+R\+I\+L\+O\+G\+\_\+2001\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED@{V\+E\+R\+I\+L\+O\+G\+\_\+2001\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}}
+\index{V\+E\+R\+I\+L\+O\+G\+\_\+2001\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED@{V\+E\+R\+I\+L\+O\+G\+\_\+2001\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}!verilog\+\_\+writer.\+cpp@{verilog\+\_\+writer.\+cpp}}
+\subsubsection{\texorpdfstring{V\+E\+R\+I\+L\+O\+G\+\_\+2001\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}{VERILOG\_2001\_SUPPORTED}}
+{\footnotesize\ttfamily \#define V\+E\+R\+I\+L\+O\+G\+\_\+2001\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}
+
+
+
+Autoheader include. 
+
+. include S\+TD include S\+TL include technology include utility include 
+
+Definition at line 87 of file verilog\+\_\+writer.\+cpp.
+

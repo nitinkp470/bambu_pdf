@@ -1,0 +1,388 @@
+\hypertarget{classFunctionalUnitStep}{}\section{Functional\+Unit\+Step Class Reference}
+\label{classFunctionalUnitStep}\index{Functional\+Unit\+Step@{Functional\+Unit\+Step}}
+
+
+Step which loads device dependent technology information.  
+
+
+
+
+{\ttfamily \#include $<$functional\+\_\+unit\+\_\+step.\+hpp$>$}
+
+
+
+Inheritance diagram for Functional\+Unit\+Step\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{da/d48/classFunctionalUnitStep__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Functional\+Unit\+Step\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d09/classFunctionalUnitStep__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFunctionalUnitStep_a110c80e9c9c11fc261aa949f19f66b43}{Functional\+Unit\+Step} (const \hyperlink{target__manager_8hpp_aee0b586a84fb6eb4faefa6e41e1735a9}{target\+\_\+manager\+Ref} \hyperlink{classFunctionalUnitStep_a1f90bc8bd6531c4cdf67966734a66cea}{target}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classFunctionalUnitStep_ad4fa61a1bc13ff06f21a052763bbb6db}{$\sim$\+Functional\+Unit\+Step} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classFunctionalUnitStep_a7957c47789e5d4a97eb9315872dc8d37}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classFunctionalUnitStep_afe8188cf489c2c980bc537f5ed37a5cc}{Analyze\+Cell} (\hyperlink{structfunctional__unit}{functional\+\_\+unit} $\ast$fu, const unsigned int prec, const std\+::vector$<$ std\+::string $>$ \&portsize\+\_\+parameters, const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} portsize\+\_\+index, const std\+::vector$<$ std\+::string $>$ \&pipe\+\_\+parameters, const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} stage\+\_\+index, const unsigned int const\+Port, const bool is\+\_\+commutative, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} max\+\_\+lut\+\_\+size)=0
+\begin{DoxyCompactList}\small\item\em Analyze the single cell. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classFunctionalUnitStep_a2456178e681c87f30485f3658589615f}{Analyze\+Fu} (const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} fu)
+\begin{DoxyCompactList}\small\item\em Analyze all the cells built starting from a template. \end{DoxyCompactList}\item 
+\hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} \hyperlink{classFunctionalUnitStep_a49ddb30d5388317d1ca7b69455aaeff0}{create\+\_\+template\+\_\+instance} (const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} \&fu\+\_\+template, std\+::string \&name, const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref} \&device, unsigned int prec)
+\begin{DoxyCompactList}\small\item\em Create a template instance to be specialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{technology__manager_8hpp_a4b9ecd440c804109c962654f9227244e}{technology\+\_\+manager\+Ref} \hyperlink{classFunctionalUnitStep_a401c44f077057f9b3bf56141cf8aa6fc}{TM}
+\begin{DoxyCompactList}\small\item\em Technology manager. \end{DoxyCompactList}\item 
+const \hyperlink{target__manager_8hpp_aee0b586a84fb6eb4faefa6e41e1735a9}{target\+\_\+manager\+Ref} \hyperlink{classFunctionalUnitStep_a1f90bc8bd6531c4cdf67966734a66cea}{target}
+\begin{DoxyCompactList}\small\item\em target information \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classFunctionalUnitStep_a50f97ea76cd8c763ae8c42472ea40287}{has\+\_\+first\+\_\+synthesis\+\_\+id}
+\begin{DoxyCompactList}\small\item\em The id of the first analyzed cell of a sequence of cells which differ for the position of the constant. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ unsigned int, unsigned int $>$ \hyperlink{classFunctionalUnitStep_a56a8b3273efc8b8aa42f6bb6b7d86619}{D\+S\+P\+\_\+y\+\_\+to\+\_\+\+D\+S\+P\+\_\+x}
+\begin{DoxyCompactList}\small\item\em The sizes of available D\+S\+Ps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Step which loads device dependent technology information. 
+
+Definition at line 61 of file functional\+\_\+unit\+\_\+step.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFunctionalUnitStep_a110c80e9c9c11fc261aa949f19f66b43}\label{classFunctionalUnitStep_a110c80e9c9c11fc261aa949f19f66b43}} 
+\index{Functional\+Unit\+Step@{Functional\+Unit\+Step}!Functional\+Unit\+Step@{Functional\+Unit\+Step}}
+\index{Functional\+Unit\+Step@{Functional\+Unit\+Step}!Functional\+Unit\+Step@{Functional\+Unit\+Step}}
+\subsubsection{\texorpdfstring{Functional\+Unit\+Step()}{FunctionalUnitStep()}}
+{\footnotesize\ttfamily Functional\+Unit\+Step\+::\+Functional\+Unit\+Step (\begin{DoxyParamCaption}\item[{const \hyperlink{target__manager_8hpp_aee0b586a84fb6eb4faefa6e41e1735a9}{target\+\_\+manager\+Ref}}]{\+\_\+target,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Autoheader include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & is the target \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+{\em parameters} & is the set of input parameters\\
+\hline
+\end{DoxyParams}
+Header class circuit include H\+L\+S/module\+\_\+allocation H\+L\+S/scheduling include S\+TD include S\+TL includes technology include technology/physical\+\_\+library include technology/physical\+\_\+library/models includes technology/target\+\_\+device include utility include 
+
+Definition at line 87 of file functional\+\_\+unit\+\_\+step.\+cpp.
+
+
+
+References $\sim$\+Functional\+Unit\+Step().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{d0/db7/classFunctionalUnitStep_a110c80e9c9c11fc261aa949f19f66b43_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFunctionalUnitStep_ad4fa61a1bc13ff06f21a052763bbb6db}\label{classFunctionalUnitStep_ad4fa61a1bc13ff06f21a052763bbb6db}} 
+\index{Functional\+Unit\+Step@{Functional\+Unit\+Step}!````~Functional\+Unit\+Step@{$\sim$\+Functional\+Unit\+Step}}
+\index{````~Functional\+Unit\+Step@{$\sim$\+Functional\+Unit\+Step}!Functional\+Unit\+Step@{Functional\+Unit\+Step}}
+\subsubsection{\texorpdfstring{$\sim$\+Functional\+Unit\+Step()}{~FunctionalUnitStep()}}
+{\footnotesize\ttfamily Functional\+Unit\+Step\+::$\sim$\+Functional\+Unit\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Functional\+Unit\+Step().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{d0/db7/classFunctionalUnitStep_ad4fa61a1bc13ff06f21a052763bbb6db_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classFunctionalUnitStep_afe8188cf489c2c980bc537f5ed37a5cc}\label{classFunctionalUnitStep_afe8188cf489c2c980bc537f5ed37a5cc}} 
+\index{Functional\+Unit\+Step@{Functional\+Unit\+Step}!Analyze\+Cell@{Analyze\+Cell}}
+\index{Analyze\+Cell@{Analyze\+Cell}!Functional\+Unit\+Step@{Functional\+Unit\+Step}}
+\subsubsection{\texorpdfstring{Analyze\+Cell()}{AnalyzeCell()}}
+{\footnotesize\ttfamily virtual void Functional\+Unit\+Step\+::\+Analyze\+Cell (\begin{DoxyParamCaption}\item[{\hyperlink{structfunctional__unit}{functional\+\_\+unit} $\ast$}]{fu,  }\item[{const unsigned int}]{prec,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{portsize\+\_\+parameters,  }\item[{const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{portsize\+\_\+index,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{pipe\+\_\+parameters,  }\item[{const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{stage\+\_\+index,  }\item[{const unsigned int}]{const\+Port,  }\item[{const bool}]{is\+\_\+commutative,  }\item[{\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{max\+\_\+lut\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Analyze the single cell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fu} & is the cell \\
+\hline
+{\em prec} & is the precision \\
+\hline
+{\em portsize\+\_\+parameters} & is the size of parameters \\
+\hline
+{\em portsize\+\_\+index} & \\
+\hline
+{\em pipe\+\_\+parameters} & \\
+\hline
+{\em stage\+\_\+index} & \\
+\hline
+{\em const\+Port} & is the index of the constant port \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classRTLCharacterization_a61ddc1e36acd32ca894f84303206ff47}{R\+T\+L\+Characterization}, and \hyperlink{classGenerateFuList_a133ca515874d6d494d54dae031046a25}{Generate\+Fu\+List}.
+
+
+
+Referenced by Analyze\+Fu().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/db7/classFunctionalUnitStep_afe8188cf489c2c980bc537f5ed37a5cc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFunctionalUnitStep_a2456178e681c87f30485f3658589615f}\label{classFunctionalUnitStep_a2456178e681c87f30485f3658589615f}} 
+\index{Functional\+Unit\+Step@{Functional\+Unit\+Step}!Analyze\+Fu@{Analyze\+Fu}}
+\index{Analyze\+Fu@{Analyze\+Fu}!Functional\+Unit\+Step@{Functional\+Unit\+Step}}
+\subsubsection{\texorpdfstring{Analyze\+Fu()}{AnalyzeFu()}}
+{\footnotesize\ttfamily void Functional\+Unit\+Step\+::\+Analyze\+Fu (\begin{DoxyParamCaption}\item[{const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}}]{fu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Analyze all the cells built starting from a template. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fu} & is the corresponding functional unit \\
+\hline
+\end{DoxyParams}
+previous characterization is not considered
+
+check for a single port
+
+check if the resource can be pipelined 
+
+Definition at line 94 of file functional\+\_\+unit\+\_\+step.\+cpp.
+
+
+
+References library\+\_\+manager\+::add(), Analyze\+Cell(), A\+N\+D\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD, structural\+\_\+type\+\_\+descriptor\+::\+B\+O\+OL, C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+S\+TD, create\+\_\+template\+\_\+instance(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD, D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, D\+S\+P\+\_\+y\+\_\+to\+\_\+\+D\+S\+P\+\_\+x, N\+P\+\_\+functionality\+::exist\+\_\+\+N\+P\+\_\+functionality(), N\+P\+\_\+functionality\+::\+F\+L\+O\+P\+O\+C\+O\+\_\+\+P\+R\+O\+V\+I\+D\+ED, functional\+\_\+unit\+::fu\+\_\+template\+\_\+parameters, technology\+\_\+manager\+::get\+\_\+fu(), structural\+\_\+object\+::get\+\_\+id(), module\+::get\+\_\+in\+\_\+port(), module\+::get\+\_\+in\+\_\+port\+\_\+size(), technology\+\_\+manager\+::get\+\_\+library(), technology\+\_\+manager\+::get\+\_\+library\+\_\+manager(), technology\+\_\+node\+::get\+\_\+name(), functional\+\_\+unit\+::get\+\_\+name(), module\+::get\+\_\+out\+\_\+port(), module\+::get\+\_\+out\+\_\+port\+\_\+size(), target\+\_\+device\+::get\+\_\+parameter(), structural\+\_\+object\+::get\+\_\+type\+Ref(), has\+\_\+first\+\_\+synthesis\+\_\+id, target\+\_\+device\+::has\+\_\+parameter(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, L\+U\+T\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD, M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD, N\+A\+N\+D\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD, N\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD, O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD, R\+E\+A\+D\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, resize\+\_\+to\+\_\+1\+\_\+8\+\_\+16\+\_\+32\+\_\+64\+\_\+128\+\_\+256\+\_\+512(), Split\+String(), S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, S\+TR, N\+P\+\_\+functionality\+::\+S\+Y\+S\+T\+E\+M\+\_\+\+V\+E\+R\+I\+L\+O\+G\+\_\+\+P\+R\+O\+V\+I\+D\+ED, target, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, TM, structural\+\_\+type\+\_\+descriptor\+::type, structural\+\_\+type\+\_\+descriptor\+::\+V\+E\+C\+T\+O\+R\+\_\+\+I\+NT, structural\+\_\+type\+\_\+descriptor\+::\+V\+E\+C\+T\+O\+R\+\_\+\+R\+E\+AL, structural\+\_\+type\+\_\+descriptor\+::\+V\+E\+C\+T\+O\+R\+\_\+\+U\+I\+NT, N\+P\+\_\+functionality\+::\+V\+E\+R\+I\+L\+O\+G\+\_\+\+P\+R\+O\+V\+I\+D\+ED, N\+P\+\_\+functionality\+::\+V\+H\+D\+L\+\_\+\+P\+R\+O\+V\+I\+D\+ED, X\+N\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD, and X\+O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD.
+
+
+
+Referenced by Generate\+Fu\+List\+::\+Exec(), and R\+T\+L\+Characterization\+::\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/db7/classFunctionalUnitStep_a2456178e681c87f30485f3658589615f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{d0/db7/classFunctionalUnitStep_a2456178e681c87f30485f3658589615f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFunctionalUnitStep_a49ddb30d5388317d1ca7b69455aaeff0}\label{classFunctionalUnitStep_a49ddb30d5388317d1ca7b69455aaeff0}} 
+\index{Functional\+Unit\+Step@{Functional\+Unit\+Step}!create\+\_\+template\+\_\+instance@{create\+\_\+template\+\_\+instance}}
+\index{create\+\_\+template\+\_\+instance@{create\+\_\+template\+\_\+instance}!Functional\+Unit\+Step@{Functional\+Unit\+Step}}
+\subsubsection{\texorpdfstring{create\+\_\+template\+\_\+instance()}{create\_template\_instance()}}
+{\footnotesize\ttfamily \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} Functional\+Unit\+Step\+::create\+\_\+template\+\_\+instance (\begin{DoxyParamCaption}\item[{const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} \&}]{fu\+\_\+template,  }\item[{std\+::string \&}]{name,  }\item[{const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref} \&}]{device,  }\item[{unsigned int}]{prec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Create a template instance to be specialized. 
+
+
+
+Definition at line 473 of file functional\+\_\+unit\+\_\+step.\+cpp.
+
+
+
+References area\+\_\+model\+::create\+\_\+model(), time\+\_\+model\+::create\+\_\+model(), functional\+\_\+unit\+::functional\+\_\+unit\+\_\+name, target\+\_\+device\+::get\+\_\+type(), operation\+::operation\+\_\+name, Design\+Flow\+Step\+::parameters, time\+\_\+model\+::set\+\_\+execution\+\_\+time(), and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Analyze\+Fu().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/db7/classFunctionalUnitStep_a49ddb30d5388317d1ca7b69455aaeff0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/db7/classFunctionalUnitStep_a49ddb30d5388317d1ca7b69455aaeff0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFunctionalUnitStep_a7957c47789e5d4a97eb9315872dc8d37}\label{classFunctionalUnitStep_a7957c47789e5d4a97eb9315872dc8d37}} 
+\index{Functional\+Unit\+Step@{Functional\+Unit\+Step}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Functional\+Unit\+Step@{Functional\+Unit\+Step}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Functional\+Unit\+Step\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Reimplemented in \hyperlink{classRTLCharacterization_a5763e2ae1d1252dedf0b282a55526fd3}{R\+T\+L\+Characterization}.
+
+
+
+Definition at line 454 of file functional\+\_\+unit\+\_\+step.\+cpp.
+
+
+
+References D\+S\+P\+\_\+y\+\_\+to\+\_\+\+D\+S\+P\+\_\+x, target\+\_\+device\+::get\+\_\+parameter(), target\+\_\+device\+::has\+\_\+parameter(), Split\+String(), target, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::\+Initialize().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{d0/db7/classFunctionalUnitStep_a7957c47789e5d4a97eb9315872dc8d37_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{d0/db7/classFunctionalUnitStep_a7957c47789e5d4a97eb9315872dc8d37_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classFunctionalUnitStep_a56a8b3273efc8b8aa42f6bb6b7d86619}\label{classFunctionalUnitStep_a56a8b3273efc8b8aa42f6bb6b7d86619}} 
+\index{Functional\+Unit\+Step@{Functional\+Unit\+Step}!D\+S\+P\+\_\+y\+\_\+to\+\_\+\+D\+S\+P\+\_\+x@{D\+S\+P\+\_\+y\+\_\+to\+\_\+\+D\+S\+P\+\_\+x}}
+\index{D\+S\+P\+\_\+y\+\_\+to\+\_\+\+D\+S\+P\+\_\+x@{D\+S\+P\+\_\+y\+\_\+to\+\_\+\+D\+S\+P\+\_\+x}!Functional\+Unit\+Step@{Functional\+Unit\+Step}}
+\subsubsection{\texorpdfstring{D\+S\+P\+\_\+y\+\_\+to\+\_\+\+D\+S\+P\+\_\+x}{DSP\_y\_to\_DSP\_x}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$unsigned int, unsigned int$>$ Functional\+Unit\+Step\+::\+D\+S\+P\+\_\+y\+\_\+to\+\_\+\+D\+S\+P\+\_\+x\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The sizes of available D\+S\+Ps. 
+
+
+
+Definition at line 74 of file functional\+\_\+unit\+\_\+step.\+hpp.
+
+
+
+Referenced by Analyze\+Fu(), and Initialize().
+
+\mbox{\Hypertarget{classFunctionalUnitStep_a50f97ea76cd8c763ae8c42472ea40287}\label{classFunctionalUnitStep_a50f97ea76cd8c763ae8c42472ea40287}} 
+\index{Functional\+Unit\+Step@{Functional\+Unit\+Step}!has\+\_\+first\+\_\+synthesis\+\_\+id@{has\+\_\+first\+\_\+synthesis\+\_\+id}}
+\index{has\+\_\+first\+\_\+synthesis\+\_\+id@{has\+\_\+first\+\_\+synthesis\+\_\+id}!Functional\+Unit\+Step@{Functional\+Unit\+Step}}
+\subsubsection{\texorpdfstring{has\+\_\+first\+\_\+synthesis\+\_\+id}{has\_first\_synthesis\_id}}
+{\footnotesize\ttfamily unsigned int Functional\+Unit\+Step\+::has\+\_\+first\+\_\+synthesis\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The id of the first analyzed cell of a sequence of cells which differ for the position of the constant. 
+
+
+
+Definition at line 71 of file functional\+\_\+unit\+\_\+step.\+hpp.
+
+
+
+Referenced by Generate\+Fu\+List\+::\+Analyze\+Cell(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), and Analyze\+Fu().
+
+\mbox{\Hypertarget{classFunctionalUnitStep_a1f90bc8bd6531c4cdf67966734a66cea}\label{classFunctionalUnitStep_a1f90bc8bd6531c4cdf67966734a66cea}} 
+\index{Functional\+Unit\+Step@{Functional\+Unit\+Step}!target@{target}}
+\index{target@{target}!Functional\+Unit\+Step@{Functional\+Unit\+Step}}
+\subsubsection{\texorpdfstring{target}{target}}
+{\footnotesize\ttfamily const \hyperlink{target__manager_8hpp_aee0b586a84fb6eb4faefa6e41e1735a9}{target\+\_\+manager\+Ref} Functional\+Unit\+Step\+::target\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+target information 
+
+
+
+Definition at line 68 of file functional\+\_\+unit\+\_\+step.\+hpp.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::\+Analyze\+Cell(), Analyze\+Fu(), R\+T\+L\+Characterization\+::\+Exec(), and Initialize().
+
+\mbox{\Hypertarget{classFunctionalUnitStep_a401c44f077057f9b3bf56141cf8aa6fc}\label{classFunctionalUnitStep_a401c44f077057f9b3bf56141cf8aa6fc}} 
+\index{Functional\+Unit\+Step@{Functional\+Unit\+Step}!TM@{TM}}
+\index{TM@{TM}!Functional\+Unit\+Step@{Functional\+Unit\+Step}}
+\subsubsection{\texorpdfstring{TM}{TM}}
+{\footnotesize\ttfamily const \hyperlink{technology__manager_8hpp_a4b9ecd440c804109c962654f9227244e}{technology\+\_\+manager\+Ref} Functional\+Unit\+Step\+::\+TM\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Technology manager. 
+
+
+
+Definition at line 65 of file functional\+\_\+unit\+\_\+step.\+hpp.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::add\+\_\+input\+\_\+register(), R\+T\+L\+Characterization\+::add\+\_\+output\+\_\+register(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), Analyze\+Fu(), Generate\+Fu\+List\+::\+Exec(), R\+T\+L\+Characterization\+::fix\+\_\+execution\+\_\+time\+\_\+std(), R\+T\+L\+Characterization\+::fix\+\_\+muxes(), R\+T\+L\+Characterization\+::fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std(), and R\+T\+L\+Characterization\+::\+Initialize().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/technology/\hyperlink{functional__unit__step_8hpp}{functional\+\_\+unit\+\_\+step.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/technology/\hyperlink{functional__unit__step_8cpp}{functional\+\_\+unit\+\_\+step.\+cpp}\end{DoxyCompactItemize}

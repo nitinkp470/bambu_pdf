@@ -1,0 +1,809 @@
+\hypertarget{classdom__info}{}\section{dom\+\_\+info$<$ Graph\+Obj $>$ Class Template Reference}
+\label{classdom__info}\index{dom\+\_\+info$<$ Graph\+Obj $>$@{dom\+\_\+info$<$ Graph\+Obj $>$}}
+
+
+Store the intermediate information used to compute dominator or post dominator information.  
+
+
+
+
+{\ttfamily \#include $<$Dominance.\+hpp$>$}
+
+
+
+Collaboration diagram for dom\+\_\+info$<$ Graph\+Obj $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d16/classdom__info__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdom__info_af39638224cc10b17814aecb65453d49c}{dom\+\_\+info} (const Graph\+Obj \&\+\_\+g, const \hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex} \&\+\_\+en\+\_\+block, const \hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex} \&\+\_\+ex\+\_\+block, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} param)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classdom__info_aacc461d94e7bf7cc2e3b3994a42958ae}{calc\+\_\+dfs\+\_\+tree} (bool reverse)
+\begin{DoxyCompactList}\small\item\em The main entry for calculating the D\+FS tree or forest. \end{DoxyCompactList}\item 
+void \hyperlink{classdom__info_a814bd35f207ecedcb14aee48eb548d32}{calc\+\_\+idoms} (bool reverse)
+\begin{DoxyCompactList}\small\item\em This calculates the immediate dominators (or post-\/dominators if R\+E\+V\+E\+R\+SE is true). \end{DoxyCompactList}\item 
+void \hyperlink{classdom__info_af9e42db7ab94585f85b213682e4e95f7}{fill\+\_\+dom\+\_\+map} (\hyperlink{custom__map_8hpp_a7314a7df1cdb3a3acf478ab86e95c226}{Custom\+Unordered\+Map\+Stable}$<$ \hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex}, \hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex} $>$ \&dom\+\_\+map)
+\begin{DoxyCompactList}\small\item\em fill the dominator map after its computation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\+::graph\+\_\+traits$<$ const Graph\+Obj $>$\+::vertex\+\_\+descriptor \hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex}
+\begin{DoxyCompactList}\small\item\em The algorithm uses two different indices for each Vertex\+: a generic index given by boost and the index in the dfs search. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ const Graph\+Obj $>$\+::\hyperlink{classdom__info_a295dcc01454ddf008ede1c584f7c1f26}{in\+\_\+edge\+\_\+iterator} \hyperlink{classdom__info_a295dcc01454ddf008ede1c584f7c1f26}{in\+\_\+edge\+\_\+iterator}
+\begin{DoxyCompactList}\small\item\em edge\+\_\+iterator definition. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ const Graph\+Obj $>$\+::\hyperlink{classdom__info_a579f96dd47b2e5aa21a1f875abae54ec}{out\+\_\+edge\+\_\+iterator} \hyperlink{classdom__info_a579f96dd47b2e5aa21a1f875abae54ec}{out\+\_\+edge\+\_\+iterator}
+\begin{DoxyCompactList}\small\item\em edge\+\_\+iterator definition. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ const Graph\+Obj $>$\+::edge\+\_\+descriptor \hyperlink{classdom__info_a61a309b17126a4b52e28adc4b6d1b45a}{edge}
+\begin{DoxyCompactList}\small\item\em edge definition. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ const Graph\+Obj $>$\+::vertex\+\_\+iterator \hyperlink{classdom__info_aeb973e792e54d415b4c81524f85aee80}{Vertex\+\_\+iterator}
+\begin{DoxyCompactList}\small\item\em Vertex iterator definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classdom__info_a18d67c729387f2e0c4f352a4f754e9a7}{calc\+\_\+dfs\+\_\+tree\+\_\+rec} (\hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex} bb)
+\begin{DoxyCompactList}\small\item\em The recursive variant of creating a D\+FS tree. \end{DoxyCompactList}\item 
+void \hyperlink{classdom__info_ab71b2fc1d5013a6deae14d348e4e74a6}{compress} (\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB} v)
+\begin{DoxyCompactList}\small\item\em Compress the path from V to the root of its set and update path\+\_\+min at the same time. \end{DoxyCompactList}\item 
+\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB} \hyperlink{classdom__info_ab777c47542a377b76521d81f4fe89b7f}{eval} (\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB} v)
+\begin{DoxyCompactList}\small\item\em Compress the path from V to the set root of V if needed (when the root has changed since the last call). \end{DoxyCompactList}\item 
+void \hyperlink{classdom__info_a6cd51fb7e9240c93d7f254b2a5e5b36a}{link\+\_\+roots} (\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB} v, \hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB} w)
+\begin{DoxyCompactList}\small\item\em This essentially merges the two sets of V and W, giving a single set with the new root V. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB} $>$ \hyperlink{classdom__info_ac70e44625882df4c67ae0066e9122679}{dfs\+\_\+parent}
+\begin{DoxyCompactList}\small\item\em The parent of a node in the D\+FS tree. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB} $>$ \hyperlink{classdom__info_ab9a443369069fb66f7eb8c4f7f258614}{key}
+\begin{DoxyCompactList}\small\item\em For a node x key\mbox{[}x\mbox{]} is roughly the node nearest to the root from which exists a way to x only over nodes behind x. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB} $>$ \hyperlink{classdom__info_a5ebfc0d7c9b3a71e3e085cd4f042ea29}{path\+\_\+min}
+\begin{DoxyCompactList}\small\item\em The value in path\+\_\+min\mbox{[}x\mbox{]} is the node y on the path from x to the root of the tree x is in with the smallest key\mbox{[}y\mbox{]}. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB} $>$ \hyperlink{classdom__info_ac12a7da04724cb23285b00eda2751aaf}{bucket}
+\begin{DoxyCompactList}\small\item\em bucket\mbox{[}x\mbox{]} points to the first node of the set of nodes having x as key. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB} $>$ \hyperlink{classdom__info_a20c12ddab8c9f2b2ba0f7427d1afa667}{next\+\_\+bucket}
+\begin{DoxyCompactList}\small\item\em And next\+\_\+bucket\mbox{[}x\mbox{]} points to the next node. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB} $>$ \hyperlink{classdom__info_af1b668d5964ae434687fe63963b82715}{set\+\_\+chain}
+\begin{DoxyCompactList}\small\item\em set\+\_\+chain\mbox{[}x\mbox{]} is the next node on the path from x to the representant of the set containing x. \end{DoxyCompactList}\item 
+std\+::vector$<$ unsigned int $>$ \hyperlink{classdom__info_a50d0342534f943036b870dd2823bb351}{set\+\_\+size}
+\begin{DoxyCompactList}\small\item\em set\+\_\+size\mbox{[}x\mbox{]} is the number of elements in the set named by x. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB} $>$ \hyperlink{classdom__info_afebd5dc533d9c834e5eb3d0de38e3f6b}{set\+\_\+child}
+\begin{DoxyCompactList}\small\item\em set\+\_\+child\mbox{[}x\mbox{]} is used for balancing the tree representing a set. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classdom__info_afc75734433482656d0252c7faca9c67b}{dfsnum}
+\begin{DoxyCompactList}\small\item\em This is the next free D\+FS number when creating the D\+FS tree. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classdom__info_a48d909fc0cc96cb7c2f2f8c4bf766927}{nodes}
+\begin{DoxyCompactList}\small\item\em The number of nodes in the D\+FS tree (==dfsnum-\/1). \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB} $>$ \hyperlink{classdom__info_aa69999b48cf442d6bb20d295795e403c}{fake\+\_\+exit\+\_\+edge}
+\begin{DoxyCompactList}\small\item\em Blocks with bits set here have a fake edge to E\+X\+IT. \end{DoxyCompactList}\item 
+const unsigned long int \hyperlink{classdom__info_a1361f1a9f7e6317234ca035f253eca11}{last\+\_\+basic\+\_\+block}
+\begin{DoxyCompactList}\small\item\em index of the last basic block \end{DoxyCompactList}\item 
+const \hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex} \& \hyperlink{classdom__info_a7f31774036bc8d3385e5f85c087d798f}{en\+\_\+block}
+\begin{DoxyCompactList}\small\item\em Start block (E\+N\+T\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+P\+TR for forward problem, E\+X\+I\+T\+\_\+\+B\+L\+O\+CK for backward problem). \end{DoxyCompactList}\item 
+const \hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex} \& \hyperlink{classdom__info_aa625c50f21a56328df0b820f201a4b51}{ex\+\_\+block}
+\begin{DoxyCompactList}\small\item\em Ending block. \end{DoxyCompactList}\item 
+const Graph\+Obj \& \hyperlink{classdom__info_a6cd48ccbc3af5826247fcea773b4d65b}{g}
+\begin{DoxyCompactList}\small\item\em Flow graph reference. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB} $>$ \hyperlink{classdom__info_a60f3c6b06eac40aa2462bfa7c473772a}{dom}
+\begin{DoxyCompactList}\small\item\em After the algorithm is done, dom\mbox{[}x\mbox{]} contains the immediate dominator of x. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB} $>$ \hyperlink{classdom__info_a50d93a521711056391d2faef621c3e86}{dfs\+\_\+order}
+\begin{DoxyCompactList}\small\item\em If b is the number of a basic block (index\+\_\+map\mbox{[}bb\+\_\+\+Vertex\mbox{]}), dfs\+\_\+order\mbox{[}b\mbox{]} is the number of that node in D\+FS order counted from 1. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex} $>$ \hyperlink{classdom__info_a082a53aee1546ad2eacc3424402a037c}{dfs\+\_\+to\+\_\+bb}
+\begin{DoxyCompactList}\small\item\em If x is the D\+F\+S-\/index of a node which corresponds with a basic block, dfs\+\_\+to\+\_\+bb\mbox{[}x\mbox{]} is that basic block. \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex}, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} $>$ \hyperlink{classdom__info_aedfb2f00293356e11a413f995e1063b8}{index\+\_\+map}
+\begin{DoxyCompactList}\small\item\em index map putting into relation vertices and arbitrary indexes. \end{DoxyCompactList}\item 
+int \hyperlink{classdom__info_a96e7f51bbd82708f40ca4d783bcbb5de}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em debug\+\_\+level \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Graph\+Obj$>$\newline
+class dom\+\_\+info$<$ Graph\+Obj $>$}
+
+Store the intermediate information used to compute dominator or post dominator information. 
+
+It holds various arrays reflecting the (sub)structure of the flowgraph. Most of them are of type T\+BB and are also indexed by T\+BB. 
+
+Definition at line 91 of file Dominance.\+hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classdom__info_a61a309b17126a4b52e28adc4b6d1b45a}\label{classdom__info_a61a309b17126a4b52e28adc4b6d1b45a}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!edge@{edge}}
+\index{edge@{edge}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{edge}{edge}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+typedef boost\+::graph\+\_\+traits$<$const Graph\+Obj$>$\+::edge\+\_\+descriptor \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::\hyperlink{classdom__info_a61a309b17126a4b52e28adc4b6d1b45a}{edge}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+edge definition. 
+
+
+
+Definition at line 102 of file Dominance.\+hpp.
+
+\mbox{\Hypertarget{classdom__info_a295dcc01454ddf008ede1c584f7c1f26}\label{classdom__info_a295dcc01454ddf008ede1c584f7c1f26}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!in\+\_\+edge\+\_\+iterator@{in\+\_\+edge\+\_\+iterator}}
+\index{in\+\_\+edge\+\_\+iterator@{in\+\_\+edge\+\_\+iterator}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{in\+\_\+edge\+\_\+iterator}{in\_edge\_iterator}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+typedef boost\+::graph\+\_\+traits$<$const Graph\+Obj$>$\+::\hyperlink{classdom__info_a295dcc01454ddf008ede1c584f7c1f26}{in\+\_\+edge\+\_\+iterator} \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::\hyperlink{classdom__info_a295dcc01454ddf008ede1c584f7c1f26}{in\+\_\+edge\+\_\+iterator}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+edge\+\_\+iterator definition. 
+
+
+
+Definition at line 98 of file Dominance.\+hpp.
+
+\mbox{\Hypertarget{classdom__info_a579f96dd47b2e5aa21a1f875abae54ec}\label{classdom__info_a579f96dd47b2e5aa21a1f875abae54ec}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!out\+\_\+edge\+\_\+iterator@{out\+\_\+edge\+\_\+iterator}}
+\index{out\+\_\+edge\+\_\+iterator@{out\+\_\+edge\+\_\+iterator}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{out\+\_\+edge\+\_\+iterator}{out\_edge\_iterator}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+typedef boost\+::graph\+\_\+traits$<$const Graph\+Obj$>$\+::\hyperlink{classdom__info_a579f96dd47b2e5aa21a1f875abae54ec}{out\+\_\+edge\+\_\+iterator} \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::\hyperlink{classdom__info_a579f96dd47b2e5aa21a1f875abae54ec}{out\+\_\+edge\+\_\+iterator}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+edge\+\_\+iterator definition. 
+
+
+
+Definition at line 100 of file Dominance.\+hpp.
+
+\mbox{\Hypertarget{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}\label{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{Vertex}{Vertex}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+typedef boost\+::graph\+\_\+traits$<$const Graph\+Obj$>$\+::vertex\+\_\+descriptor \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::\hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The algorithm uses two different indices for each Vertex\+: a generic index given by boost and the index in the dfs search. 
+
+Definition of Vertex 
+
+Definition at line 96 of file Dominance.\+hpp.
+
+\mbox{\Hypertarget{classdom__info_aeb973e792e54d415b4c81524f85aee80}\label{classdom__info_aeb973e792e54d415b4c81524f85aee80}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!Vertex\+\_\+iterator@{Vertex\+\_\+iterator}}
+\index{Vertex\+\_\+iterator@{Vertex\+\_\+iterator}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{Vertex\+\_\+iterator}{Vertex\_iterator}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+typedef boost\+::graph\+\_\+traits$<$const Graph\+Obj$>$\+::vertex\+\_\+iterator \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::\hyperlink{classdom__info_aeb973e792e54d415b4c81524f85aee80}{Vertex\+\_\+iterator}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vertex iterator definition. 
+
+
+
+Definition at line 104 of file Dominance.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdom__info_af39638224cc10b17814aecb65453d49c}\label{classdom__info_af39638224cc10b17814aecb65453d49c}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!dom\+\_\+info@{dom\+\_\+info}}
+\index{dom\+\_\+info@{dom\+\_\+info}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{dom\+\_\+info()}{dom\_info()}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+\hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::\hyperlink{classdom__info}{dom\+\_\+info} (\begin{DoxyParamCaption}\item[{const Graph\+Obj \&}]{\+\_\+g,  }\item[{const \hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex} \&}]{\+\_\+en\+\_\+block,  }\item[{const \hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex} \&}]{\+\_\+ex\+\_\+block,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & is the starting graph \\
+\hline
+{\em en\+\_\+block} & is the entry block \\
+\hline
+{\em ex\+\_\+block} & is the exit\+\_\+block, \\
+\hline
+{\em param} & is the set of input parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 326 of file Dominance.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdom__info_aacc461d94e7bf7cc2e3b3994a42958ae}\label{classdom__info_aacc461d94e7bf7cc2e3b3994a42958ae}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!calc\+\_\+dfs\+\_\+tree@{calc\+\_\+dfs\+\_\+tree}}
+\index{calc\+\_\+dfs\+\_\+tree@{calc\+\_\+dfs\+\_\+tree}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{calc\+\_\+dfs\+\_\+tree()}{calc\_dfs\_tree()}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+void \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::calc\+\_\+dfs\+\_\+tree (\begin{DoxyParamCaption}\item[{bool}]{reverse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The main entry for calculating the D\+FS tree or forest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reverse} & is true, if we are interested in the reverse flow graph. In that case the result is not necessarily a tree but a forest, because there may be nodes from which the E\+X\+I\+T\+\_\+\+B\+L\+O\+CK is unreachable. \\
+\hline
+{\em source} & is the E\+N\+T\+R\+Y\+\_\+\+B\+L\+O\+CK when reverse is false while it is the E\+X\+I\+T\+\_\+\+B\+L\+O\+CK if reverse is true \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 367 of file Dominance.\+hpp.
+
+
+
+References dom\+\_\+info$<$ Graph\+Obj $>$\+::calc\+\_\+dfs\+\_\+tree\+\_\+rec(), counter, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, dom\+\_\+info$<$ Graph\+Obj $>$\+::dfsnum, dom\+\_\+info$<$ Graph\+Obj $>$\+::en\+\_\+block, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, index, dom\+\_\+info$<$ Graph\+Obj $>$\+::last\+\_\+basic\+\_\+block, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by dominance$<$ B\+B\+Graph $>$\+::calculate\+\_\+dominance\+\_\+info().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d3/dea/classdom__info_aacc461d94e7bf7cc2e3b3994a42958ae_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dea/classdom__info_aacc461d94e7bf7cc2e3b3994a42958ae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdom__info_a18d67c729387f2e0c4f352a4f754e9a7}\label{classdom__info_a18d67c729387f2e0c4f352a4f754e9a7}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!calc\+\_\+dfs\+\_\+tree\+\_\+rec@{calc\+\_\+dfs\+\_\+tree\+\_\+rec}}
+\index{calc\+\_\+dfs\+\_\+tree\+\_\+rec@{calc\+\_\+dfs\+\_\+tree\+\_\+rec}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{calc\+\_\+dfs\+\_\+tree\+\_\+rec()}{calc\_dfs\_tree\_rec()}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+void \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::calc\+\_\+dfs\+\_\+tree\+\_\+rec (\begin{DoxyParamCaption}\item[{\hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex}}]{bb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+The recursive variant of creating a D\+FS tree. 
+
+After this is done all nodes reachable from BB were visited, have assigned their dfs number and are linked together to form a tree. 
+\begin{DoxyParams}{Parameters}
+{\em bb} & is the basic block Vertex BB. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 193 of file Dominance.\+hpp.
+
+
+
+References D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, and dom\+\_\+info$<$ Graph\+Obj $>$\+::last\+\_\+basic\+\_\+block.
+
+
+
+Referenced by dom\+\_\+info$<$ Graph\+Obj $>$\+::calc\+\_\+dfs\+\_\+tree().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dea/classdom__info_a18d67c729387f2e0c4f352a4f754e9a7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdom__info_a814bd35f207ecedcb14aee48eb548d32}\label{classdom__info_a814bd35f207ecedcb14aee48eb548d32}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!calc\+\_\+idoms@{calc\+\_\+idoms}}
+\index{calc\+\_\+idoms@{calc\+\_\+idoms}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{calc\+\_\+idoms()}{calc\_idoms()}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+void \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::calc\+\_\+idoms (\begin{DoxyParamCaption}\item[{bool}]{reverse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This calculates the immediate dominators (or post-\/dominators if R\+E\+V\+E\+R\+SE is true). 
+
+On return the immediate dominator to node V is in dom\mbox{[}V\mbox{]}. 
+
+Definition at line 454 of file Dominance.\+hpp.
+
+
+
+References D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, dom\+\_\+info$<$ Graph\+Obj $>$\+::eval(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, dom\+\_\+info$<$ Graph\+Obj $>$\+::last\+\_\+basic\+\_\+block, dom\+\_\+info$<$ Graph\+Obj $>$\+::link\+\_\+roots(), and dom\+\_\+info$<$ Graph\+Obj $>$\+::nodes.
+
+
+
+Referenced by dominance$<$ B\+B\+Graph $>$\+::calculate\+\_\+dominance\+\_\+info().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dea/classdom__info_a814bd35f207ecedcb14aee48eb548d32_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dea/classdom__info_a814bd35f207ecedcb14aee48eb548d32_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdom__info_ab71b2fc1d5013a6deae14d348e4e74a6}\label{classdom__info_ab71b2fc1d5013a6deae14d348e4e74a6}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!compress@{compress}}
+\index{compress@{compress}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{compress()}{compress()}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+void \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::compress (\begin{DoxyParamCaption}\item[{\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Compress the path from V to the root of its set and update path\+\_\+min at the same time. 
+
+After compress(\+V) set\+\_\+chain\mbox{[}V\mbox{]} is the root of the set V is in and path\+\_\+min\mbox{[}V\mbox{]} is the node with the smallest key\mbox{[}\mbox{]} value on the path from V to that root. 
+\begin{DoxyParams}{Parameters}
+{\em v} & is the basic block ID of V. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 234 of file Dominance.\+hpp.
+
+
+
+Referenced by dom\+\_\+info$<$ Graph\+Obj $>$\+::eval().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dea/classdom__info_ab71b2fc1d5013a6deae14d348e4e74a6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdom__info_ab777c47542a377b76521d81f4fe89b7f}\label{classdom__info_ab777c47542a377b76521d81f4fe89b7f}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!eval@{eval}}
+\index{eval@{eval}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB} \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::eval (\begin{DoxyParamCaption}\item[{\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Compress the path from V to the set root of V if needed (when the root has changed since the last call). 
+
+Returns the node with the smallest key\mbox{[}\mbox{]} value on the path from V to the root. 
+\begin{DoxyParams}{Parameters}
+{\em v} & is the basic block ID of V. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 255 of file Dominance.\+hpp.
+
+
+
+References dom\+\_\+info$<$ Graph\+Obj $>$\+::compress().
+
+
+
+Referenced by dom\+\_\+info$<$ Graph\+Obj $>$\+::calc\+\_\+idoms().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{d3/dea/classdom__info_ab777c47542a377b76521d81f4fe89b7f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dea/classdom__info_ab777c47542a377b76521d81f4fe89b7f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdom__info_af9e42db7ab94585f85b213682e4e95f7}\label{classdom__info_af9e42db7ab94585f85b213682e4e95f7}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!fill\+\_\+dom\+\_\+map@{fill\+\_\+dom\+\_\+map}}
+\index{fill\+\_\+dom\+\_\+map@{fill\+\_\+dom\+\_\+map}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{fill\+\_\+dom\+\_\+map()}{fill\_dom\_map()}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+void \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::fill\+\_\+dom\+\_\+map (\begin{DoxyParamCaption}\item[{\hyperlink{custom__map_8hpp_a7314a7df1cdb3a3acf478ab86e95c226}{Custom\+Unordered\+Map\+Stable}$<$ \hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex}, \hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex} $>$ \&}]{dom\+\_\+map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+fill the dominator map after its computation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dom\+\_\+map} & is the dominator map. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 566 of file Dominance.\+hpp.
+
+
+
+References D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, dom\+\_\+info$<$ Graph\+Obj $>$\+::en\+\_\+block, and I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX.
+
+
+
+Referenced by dominance$<$ B\+B\+Graph $>$\+::calculate\+\_\+dominance\+\_\+info().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dea/classdom__info_af9e42db7ab94585f85b213682e4e95f7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdom__info_a6cd51fb7e9240c93d7f254b2a5e5b36a}\label{classdom__info_a6cd51fb7e9240c93d7f254b2a5e5b36a}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!link\+\_\+roots@{link\+\_\+roots}}
+\index{link\+\_\+roots@{link\+\_\+roots}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{link\+\_\+roots()}{link\_roots()}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+void \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::link\+\_\+roots (\begin{DoxyParamCaption}\item[{\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB}}]{v,  }\item[{\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB}}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+This essentially merges the two sets of V and W, giving a single set with the new root V. 
+
+The internal representation of these disjoint sets is a balanced tree. Currently link(\+V,\+W) is only used with V being the parent of W. 
+
+Definition at line 285 of file Dominance.\+hpp.
+
+
+
+Referenced by dom\+\_\+info$<$ Graph\+Obj $>$\+::calc\+\_\+idoms().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dea/classdom__info_a6cd51fb7e9240c93d7f254b2a5e5b36a_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classdom__info_ac12a7da04724cb23285b00eda2751aaf}\label{classdom__info_ac12a7da04724cb23285b00eda2751aaf}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!bucket@{bucket}}
+\index{bucket@{bucket}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{bucket}{bucket}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+std\+::vector$<$\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB}$>$ \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::bucket\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+bucket\mbox{[}x\mbox{]} points to the first node of the set of nodes having x as key. 
+
+
+
+Definition at line 120 of file Dominance.\+hpp.
+
+\mbox{\Hypertarget{classdom__info_a96e7f51bbd82708f40ca4d783bcbb5de}\label{classdom__info_a96e7f51bbd82708f40ca4d783bcbb5de}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+int \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+debug\+\_\+level 
+
+
+
+Definition at line 185 of file Dominance.\+hpp.
+
+\mbox{\Hypertarget{classdom__info_a50d93a521711056391d2faef621c3e86}\label{classdom__info_a50d93a521711056391d2faef621c3e86}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!dfs\+\_\+order@{dfs\+\_\+order}}
+\index{dfs\+\_\+order@{dfs\+\_\+order}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{dfs\+\_\+order}{dfs\_order}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+std\+::vector$<$\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB}$>$ \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::dfs\+\_\+order\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+If b is the number of a basic block (index\+\_\+map\mbox{[}bb\+\_\+\+Vertex\mbox{]}), dfs\+\_\+order\mbox{[}b\mbox{]} is the number of that node in D\+FS order counted from 1. 
+
+This is an index into most of the other arrays in this structure. 
+
+Definition at line 172 of file Dominance.\+hpp.
+
+\mbox{\Hypertarget{classdom__info_ac70e44625882df4c67ae0066e9122679}\label{classdom__info_ac70e44625882df4c67ae0066e9122679}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!dfs\+\_\+parent@{dfs\+\_\+parent}}
+\index{dfs\+\_\+parent@{dfs\+\_\+parent}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{dfs\+\_\+parent}{dfs\_parent}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+std\+::vector$<$\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB}$>$ \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::dfs\+\_\+parent\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The parent of a node in the D\+FS tree. 
+
+
+
+Definition at line 107 of file Dominance.\+hpp.
+
+\mbox{\Hypertarget{classdom__info_a082a53aee1546ad2eacc3424402a037c}\label{classdom__info_a082a53aee1546ad2eacc3424402a037c}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!dfs\+\_\+to\+\_\+bb@{dfs\+\_\+to\+\_\+bb}}
+\index{dfs\+\_\+to\+\_\+bb@{dfs\+\_\+to\+\_\+bb}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{dfs\+\_\+to\+\_\+bb}{dfs\_to\_bb}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+std\+::vector$<$\hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex}$>$ \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::dfs\+\_\+to\+\_\+bb\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+If x is the D\+F\+S-\/index of a node which corresponds with a basic block, dfs\+\_\+to\+\_\+bb\mbox{[}x\mbox{]} is that basic block. 
+
+Note, that in our structure there are more nodes that basic blocks, so only dfs\+\_\+to\+\_\+bb\mbox{[}dfs\+\_\+order\mbox{[}index\+\_\+map\mbox{[}bb\mbox{]}\mbox{]}\mbox{]}==bb is true for every basic block bb, but not the opposite. 
+
+Definition at line 179 of file Dominance.\+hpp.
+
+\mbox{\Hypertarget{classdom__info_afc75734433482656d0252c7faca9c67b}\label{classdom__info_afc75734433482656d0252c7faca9c67b}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!dfsnum@{dfsnum}}
+\index{dfsnum@{dfsnum}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{dfsnum}{dfsnum}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+unsigned int \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::dfsnum\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This is the next free D\+FS number when creating the D\+FS tree. 
+
+
+
+Definition at line 141 of file Dominance.\+hpp.
+
+
+
+Referenced by dom\+\_\+info$<$ Graph\+Obj $>$\+::calc\+\_\+dfs\+\_\+tree().
+
+\mbox{\Hypertarget{classdom__info_a60f3c6b06eac40aa2462bfa7c473772a}\label{classdom__info_a60f3c6b06eac40aa2462bfa7c473772a}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!dom@{dom}}
+\index{dom@{dom}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{dom}{dom}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+std\+::vector$<$\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB}$>$ \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::dom\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+After the algorithm is done, dom\mbox{[}x\mbox{]} contains the immediate dominator of x. 
+
+
+
+Definition at line 165 of file Dominance.\+hpp.
+
+
+
+Referenced by dominance$<$ B\+B\+Graph $>$\+::get\+\_\+dominator\+\_\+map().
+
+\mbox{\Hypertarget{classdom__info_a7f31774036bc8d3385e5f85c087d798f}\label{classdom__info_a7f31774036bc8d3385e5f85c087d798f}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!en\+\_\+block@{en\+\_\+block}}
+\index{en\+\_\+block@{en\+\_\+block}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{en\+\_\+block}{en\_block}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+const \hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex}\& \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::en\+\_\+block\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Start block (E\+N\+T\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+P\+TR for forward problem, E\+X\+I\+T\+\_\+\+B\+L\+O\+CK for backward problem). 
+
+
+
+Definition at line 156 of file Dominance.\+hpp.
+
+
+
+Referenced by dom\+\_\+info$<$ Graph\+Obj $>$\+::calc\+\_\+dfs\+\_\+tree(), and dom\+\_\+info$<$ Graph\+Obj $>$\+::fill\+\_\+dom\+\_\+map().
+
+\mbox{\Hypertarget{classdom__info_aa625c50f21a56328df0b820f201a4b51}\label{classdom__info_aa625c50f21a56328df0b820f201a4b51}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!ex\+\_\+block@{ex\+\_\+block}}
+\index{ex\+\_\+block@{ex\+\_\+block}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{ex\+\_\+block}{ex\_block}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+const \hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex}\& \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::ex\+\_\+block\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ending block. 
+
+
+
+Definition at line 159 of file Dominance.\+hpp.
+
+\mbox{\Hypertarget{classdom__info_aa69999b48cf442d6bb20d295795e403c}\label{classdom__info_aa69999b48cf442d6bb20d295795e403c}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!fake\+\_\+exit\+\_\+edge@{fake\+\_\+exit\+\_\+edge}}
+\index{fake\+\_\+exit\+\_\+edge@{fake\+\_\+exit\+\_\+edge}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{fake\+\_\+exit\+\_\+edge}{fake\_exit\_edge}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB}$>$ \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::fake\+\_\+exit\+\_\+edge\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Blocks with bits set here have a fake edge to E\+X\+IT. 
+
+These are used to turn a D\+FS forest into a proper tree. 
+
+Definition at line 150 of file Dominance.\+hpp.
+
+\mbox{\Hypertarget{classdom__info_a6cd48ccbc3af5826247fcea773b4d65b}\label{classdom__info_a6cd48ccbc3af5826247fcea773b4d65b}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!g@{g}}
+\index{g@{g}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{g}{g}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+const Graph\+Obj\& \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::g\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flow graph reference. 
+
+
+
+Definition at line 162 of file Dominance.\+hpp.
+
+\mbox{\Hypertarget{classdom__info_aedfb2f00293356e11a413f995e1063b8}\label{classdom__info_aedfb2f00293356e11a413f995e1063b8}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!index\+\_\+map@{index\+\_\+map}}
+\index{index\+\_\+map@{index\+\_\+map}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{index\+\_\+map}{index\_map}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+std\+::map$<$\hyperlink{classdom__info_a5e4ca21e2c5281bdbb95d2c8d965c9be}{Vertex}, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}$>$ \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::index\+\_\+map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+index map putting into relation vertices and arbitrary indexes. 
+
+
+
+Definition at line 182 of file Dominance.\+hpp.
+
+\mbox{\Hypertarget{classdom__info_ab9a443369069fb66f7eb8c4f7f258614}\label{classdom__info_ab9a443369069fb66f7eb8c4f7f258614}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!key@{key}}
+\index{key@{key}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+std\+::vector$<$\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB}$>$ \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::key\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+For a node x key\mbox{[}x\mbox{]} is roughly the node nearest to the root from which exists a way to x only over nodes behind x. 
+
+Such a node is also called semidominator. 
+
+Definition at line 114 of file Dominance.\+hpp.
+
+\mbox{\Hypertarget{classdom__info_a1361f1a9f7e6317234ca035f253eca11}\label{classdom__info_a1361f1a9f7e6317234ca035f253eca11}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!last\+\_\+basic\+\_\+block@{last\+\_\+basic\+\_\+block}}
+\index{last\+\_\+basic\+\_\+block@{last\+\_\+basic\+\_\+block}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{last\+\_\+basic\+\_\+block}{last\_basic\_block}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+const unsigned long int \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::last\+\_\+basic\+\_\+block\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+index of the last basic block 
+
+
+
+Definition at line 153 of file Dominance.\+hpp.
+
+
+
+Referenced by dom\+\_\+info$<$ Graph\+Obj $>$\+::calc\+\_\+dfs\+\_\+tree(), dom\+\_\+info$<$ Graph\+Obj $>$\+::calc\+\_\+dfs\+\_\+tree\+\_\+rec(), and dom\+\_\+info$<$ Graph\+Obj $>$\+::calc\+\_\+idoms().
+
+\mbox{\Hypertarget{classdom__info_a20c12ddab8c9f2b2ba0f7427d1afa667}\label{classdom__info_a20c12ddab8c9f2b2ba0f7427d1afa667}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!next\+\_\+bucket@{next\+\_\+bucket}}
+\index{next\+\_\+bucket@{next\+\_\+bucket}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{next\+\_\+bucket}{next\_bucket}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+std\+::vector$<$\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB}$>$ \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::next\+\_\+bucket\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+And next\+\_\+bucket\mbox{[}x\mbox{]} points to the next node. 
+
+
+
+Definition at line 123 of file Dominance.\+hpp.
+
+\mbox{\Hypertarget{classdom__info_a48d909fc0cc96cb7c2f2f8c4bf766927}\label{classdom__info_a48d909fc0cc96cb7c2f2f8c4bf766927}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!nodes@{nodes}}
+\index{nodes@{nodes}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+unsigned int \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::nodes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The number of nodes in the D\+FS tree (==dfsnum-\/1). 
+
+
+
+Definition at line 144 of file Dominance.\+hpp.
+
+
+
+Referenced by dom\+\_\+info$<$ Graph\+Obj $>$\+::calc\+\_\+idoms().
+
+\mbox{\Hypertarget{classdom__info_a5ebfc0d7c9b3a71e3e085cd4f042ea29}\label{classdom__info_a5ebfc0d7c9b3a71e3e085cd4f042ea29}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!path\+\_\+min@{path\+\_\+min}}
+\index{path\+\_\+min@{path\+\_\+min}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{path\+\_\+min}{path\_min}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+std\+::vector$<$\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB}$>$ \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::path\+\_\+min\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The value in path\+\_\+min\mbox{[}x\mbox{]} is the node y on the path from x to the root of the tree x is in with the smallest key\mbox{[}y\mbox{]}. 
+
+
+
+Definition at line 117 of file Dominance.\+hpp.
+
+\mbox{\Hypertarget{classdom__info_af1b668d5964ae434687fe63963b82715}\label{classdom__info_af1b668d5964ae434687fe63963b82715}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!set\+\_\+chain@{set\+\_\+chain}}
+\index{set\+\_\+chain@{set\+\_\+chain}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{set\+\_\+chain}{set\_chain}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+std\+::vector$<$\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB}$>$ \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::set\+\_\+chain\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set\+\_\+chain\mbox{[}x\mbox{]} is the next node on the path from x to the representant of the set containing x. 
+
+If set\+\_\+chain\mbox{[}x\mbox{]}==0 then x is a root. It\textquotesingle{}s similar to a reversed link list 
+
+Definition at line 130 of file Dominance.\+hpp.
+
+\mbox{\Hypertarget{classdom__info_afebd5dc533d9c834e5eb3d0de38e3f6b}\label{classdom__info_afebd5dc533d9c834e5eb3d0de38e3f6b}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!set\+\_\+child@{set\+\_\+child}}
+\index{set\+\_\+child@{set\+\_\+child}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{set\+\_\+child}{set\_child}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+std\+::vector$<$\hyperlink{Dominance_8hpp_ac35ffd4ddeccae8225d6ec6f55d65a97}{T\+BB}$>$ \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::set\+\_\+child\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set\+\_\+child\mbox{[}x\mbox{]} is used for balancing the tree representing a set. 
+
+It can be understood as the next sibling of x. 
+
+Definition at line 138 of file Dominance.\+hpp.
+
+\mbox{\Hypertarget{classdom__info_a50d0342534f943036b870dd2823bb351}\label{classdom__info_a50d0342534f943036b870dd2823bb351}} 
+\index{dom\+\_\+info@{dom\+\_\+info}!set\+\_\+size@{set\+\_\+size}}
+\index{set\+\_\+size@{set\+\_\+size}!dom\+\_\+info@{dom\+\_\+info}}
+\subsubsection{\texorpdfstring{set\+\_\+size}{set\_size}}
+{\footnotesize\ttfamily template$<$typename Graph\+Obj$>$ \\
+std\+::vector$<$unsigned int$>$ \hyperlink{classdom__info}{dom\+\_\+info}$<$ Graph\+Obj $>$\+::set\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set\+\_\+size\mbox{[}x\mbox{]} is the number of elements in the set named by x. 
+
+
+
+Definition at line 133 of file Dominance.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/algorithms/dominance/\hyperlink{Dominance_8hpp}{Dominance.\+hpp}\end{DoxyCompactItemize}

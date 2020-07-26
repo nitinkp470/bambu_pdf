@@ -1,0 +1,815 @@
+\hypertarget{classtime__model}{}\section{time\+\_\+model Class Reference}
+\label{classtime__model}\index{time\+\_\+model@{time\+\_\+model}}
+
+
+{\ttfamily \#include $<$time\+\_\+model.\+hpp$>$}
+
+
+
+Inheritance diagram for time\+\_\+model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{da/d63/classtime__model__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for time\+\_\+model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{d0/d8c/classtime__model__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classtime__model_a1c11a9ae88bb0e54b5d97711e328dd87}{path\+\_\+t} \{ \hyperlink{classtime__model_a1c11a9ae88bb0e54b5d97711e328dd87a002d435f7c5b252d3619b37900a74b95}{P\+O\+S\+T\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+IS} = 1, 
+\hyperlink{classtime__model_a1c11a9ae88bb0e54b5d97711e328dd87a826ad0a96f8e03965a5ac22381ed675b}{P\+O\+S\+T\+\_\+\+L\+A\+Y\+O\+UT} = 2
+ \}\begin{DoxyCompactList}\small\item\em type of the timing path \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtime__model_a1a53663bd0061bd8cc2cc476119f2e31}{time\+\_\+model} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classtime__model_adfd18786156118b7467cef8117933674}{Param})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classtime__model_a4067a65b6c76225fb9c949d471532653}{$\sim$time\+\_\+model} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classtime__model_a6f2a76cabb6407289e757cbdc155260d}{xwrite} (\hyperlink{classxml__element}{xml\+\_\+element} $\ast$pin\+\_\+node, const std\+::string \&output\+\_\+pin)=0
+\item 
+virtual unsigned int \hyperlink{classtime__model_aebf9b09a8d792f8628585d77c26f0f5c}{xload\+\_\+timing\+\_\+path} (\hyperlink{classxml__element}{xml\+\_\+element} $\ast$node)
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{classtime__model_af175296b2d08dfc84c7a16b61be1ebb3}{get\+\_\+critical\+\_\+path} (unsigned int type) const
+\item 
+bool \hyperlink{classtime__model_a952ed32fa9811586da4af0c94471f7ae}{has\+\_\+max\+\_\+delay} (unsigned int type) const
+\item 
+void \hyperlink{classtime__model_acd053b74c6a18db11a5de646875be6ea}{set\+\_\+max\+\_\+delay} (unsigned int type, float value)
+\item 
+float \hyperlink{classtime__model_ad5c3137763e7080054586c28cdfb8627}{get\+\_\+max\+\_\+delay} (unsigned int type) const
+\item 
+void \hyperlink{classtime__model_aae177f12db540a3e8d5b487f99ded5e8}{set\+\_\+initiation\+\_\+time} (const Control\+Step \+\_\+initiation\+\_\+time)
+\item 
+Control\+Step \hyperlink{classtime__model_a25614ecc690c443f3aab565a3db610f3}{get\+\_\+initiation\+\_\+time} () const
+\item 
+unsigned int \hyperlink{classtime__model_af230e6b138686c1a759bdaeae3efeec8}{get\+\_\+cycles} () const
+\item 
+double \hyperlink{classtime__model_a7283fa75e6f6dc3bfa8e4c579d56f656}{get\+\_\+stage\+\_\+period} () const
+\item 
+void \hyperlink{classtime__model_a77760cc70901f92295314797e5a50ba1}{set\+\_\+stage\+\_\+period} (double st\+\_\+per)
+\item 
+void \hyperlink{classtime__model_a7bdad7b4a8221d4e5e00286e38084de1}{set\+\_\+execution\+\_\+time} (double \hyperlink{classtime__model_a7b02cefe3b48c07b9bf06e70e1333afa}{execution\+\_\+time}, unsigned int \hyperlink{classtime__model_a0589dea91b7289451931e24629a4ba66}{cycles})
+\item 
+void \hyperlink{classtime__model_a481cdb29f6fd68bc79d6d25adf916c9a}{set\+\_\+synthesis\+\_\+dependent} (bool value)
+\item 
+bool \hyperlink{classtime__model_a45cff932d6a65cc0fa68ac30b2222c19}{get\+\_\+synthesis\+\_\+dependent} () const
+\item 
+double \hyperlink{classtime__model_ab4f348d14a35c9ff8f35a6f5d65aa04c}{get\+\_\+execution\+\_\+time} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{time__model_8hpp_ae203bb7faf1c278333f76fcc6ebe412c}{time\+\_\+model\+Ref} \hyperlink{classtime__model_a91cd4bf13a96b80a8168281a95a34eca}{create\+\_\+model} (\hyperlink{target__device_8hpp_a476becc690220f0805ce73006449c732}{Target\+Device\+\_\+\+Type} dv\+\_\+type, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classtime__model_adfd18786156118b7467cef8117933674}{Param})
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+boost\+::math\+::normal \hyperlink{classtime__model_a43b9fc3be5b91ce6158883eee3497f50}{statistical\+\_\+delay}
+\begin{DoxyCompactList}\small\item\em statistical delay for this type of operation on a given functional unit. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::map$<$ std\+::string, double $>$ $>$ \hyperlink{classtime__model_a2472845d03d52d99457ec10a95359715}{pin\+\_\+to\+\_\+pin\+\_\+delay}
+\begin{DoxyCompactList}\small\item\em map representing the pin-\/to-\/pin delay \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{Indent}\textbf{ Default values associated with the members of the operation class.}\par
+\begin{DoxyCompactItemize}
+\item 
+static const double \hyperlink{classtime__model_a36ea9e8031fda2f9282c8062a647d5c6}{execution\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT} = 0
+\begin{DoxyCompactList}\small\item\em Autoheader include. \end{DoxyCompactList}\item 
+static const Control\+Step \hyperlink{classtime__model_a2980a7b7ec9e81d952719dde6336ded6}{initiation\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT} = Control\+Step(0u)
+\item 
+static const unsigned int \hyperlink{classtime__model_ae61b7de7c0f11fb728ecd5b2f4766121}{cycles\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT} = 0
+\begin{DoxyCompactList}\small\item\em zero means that the operation is not pipelined \end{DoxyCompactList}\item 
+static const double \hyperlink{classtime__model_a5ec0e13fa38fb22ff03d6cffd8fbd0fd}{stage\+\_\+period\+\_\+\+D\+E\+F\+A\+U\+LT} = 0
+\begin{DoxyCompactList}\small\item\em zero means that the operation last in ceil(execution\+\_\+time/clock\+\_\+period) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classtime__model_adfd18786156118b7467cef8117933674}{Param}
+\begin{DoxyCompactList}\small\item\em class containing all the parameters \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, std\+::vector$<$ std\+::string $>$ $>$ \hyperlink{classtime__model_afdf3b59507831e6cfe76e88cc3195b0f}{critical\+\_\+paths}
+\begin{DoxyCompactList}\small\item\em map containing all the information about critical paths \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, float $>$ \hyperlink{classtime__model_a777fafc4e47a09494a73ce6ac0927a32}{max\+\_\+delay}
+\item 
+Control\+Step \hyperlink{classtime__model_a2bee5d1ff834d4b990970a48971c31a2}{initiation\+\_\+time}
+\begin{DoxyCompactList}\small\item\em initiation time, in terms of cycle\+\_\+units, for this type of operation on a given functional unit. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classtime__model_a0589dea91b7289451931e24629a4ba66}{cycles}
+\begin{DoxyCompactList}\small\item\em number of cycles required to complete the computation \end{DoxyCompactList}\item 
+bool \hyperlink{classtime__model_ac3c675ab429d2fa91774c0f8184d0a8f}{synthesis\+\_\+dependent}
+\begin{DoxyCompactList}\small\item\em flag to check if the number of cycles are dependent on the synthesis or not \end{DoxyCompactList}\item 
+double \hyperlink{classtime__model_ab7abe2f50afbad1e50d48f2763486615}{stage\+\_\+period}
+\begin{DoxyCompactList}\small\item\em critical timing execution path, in term of ns, of a potentially pipelined operation. \end{DoxyCompactList}\item 
+double \hyperlink{classtime__model_a7b02cefe3b48c07b9bf06e70e1333afa}{execution\+\_\+time}
+\begin{DoxyCompactList}\small\item\em execution time, in terms of ns, for this type of operation on a given functional unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 74 of file time\+\_\+model.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classtime__model_a1c11a9ae88bb0e54b5d97711e328dd87}\label{classtime__model_a1c11a9ae88bb0e54b5d97711e328dd87}} 
+\index{time\+\_\+model@{time\+\_\+model}!path\+\_\+t@{path\+\_\+t}}
+\index{path\+\_\+t@{path\+\_\+t}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{path\+\_\+t}{path\_t}}
+{\footnotesize\ttfamily enum \hyperlink{classtime__model_a1c11a9ae88bb0e54b5d97711e328dd87}{time\+\_\+model\+::path\+\_\+t}}
+
+
+
+type of the timing path 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+O\+S\+T\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+IS@{P\+O\+S\+T\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+IS}!time\+\_\+model@{time\+\_\+model}}\index{time\+\_\+model@{time\+\_\+model}!P\+O\+S\+T\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+IS@{P\+O\+S\+T\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+IS}}}\mbox{\Hypertarget{classtime__model_a1c11a9ae88bb0e54b5d97711e328dd87a002d435f7c5b252d3619b37900a74b95}\label{classtime__model_a1c11a9ae88bb0e54b5d97711e328dd87a002d435f7c5b252d3619b37900a74b95}} 
+P\+O\+S\+T\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+IS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+O\+S\+T\+\_\+\+L\+A\+Y\+O\+UT@{P\+O\+S\+T\+\_\+\+L\+A\+Y\+O\+UT}!time\+\_\+model@{time\+\_\+model}}\index{time\+\_\+model@{time\+\_\+model}!P\+O\+S\+T\+\_\+\+L\+A\+Y\+O\+UT@{P\+O\+S\+T\+\_\+\+L\+A\+Y\+O\+UT}}}\mbox{\Hypertarget{classtime__model_a1c11a9ae88bb0e54b5d97711e328dd87a826ad0a96f8e03965a5ac22381ed675b}\label{classtime__model_a1c11a9ae88bb0e54b5d97711e328dd87a826ad0a96f8e03965a5ac22381ed675b}} 
+P\+O\+S\+T\+\_\+\+L\+A\+Y\+O\+UT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 84 of file time\+\_\+model.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtime__model_a1a53663bd0061bd8cc2cc476119f2e31}\label{classtime__model_a1a53663bd0061bd8cc2cc476119f2e31}} 
+\index{time\+\_\+model@{time\+\_\+model}!time\+\_\+model@{time\+\_\+model}}
+\index{time\+\_\+model@{time\+\_\+model}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{time\+\_\+model()}{time\_model()}}
+{\footnotesize\ttfamily time\+\_\+model\+::time\+\_\+model (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+zero means a non-\/pipelined operation 
+
+Definition at line 70 of file time\+\_\+model.\+cpp.
+
+
+
+References $\sim$time\+\_\+model().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d73/classtime__model_a1a53663bd0061bd8cc2cc476119f2e31_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtime__model_a4067a65b6c76225fb9c949d471532653}\label{classtime__model_a4067a65b6c76225fb9c949d471532653}} 
+\index{time\+\_\+model@{time\+\_\+model}!````~time\+\_\+model@{$\sim$time\+\_\+model}}
+\index{````~time\+\_\+model@{$\sim$time\+\_\+model}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{$\sim$time\+\_\+model()}{~time\_model()}}
+{\footnotesize\ttfamily time\+\_\+model\+::$\sim$time\+\_\+model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by time\+\_\+model().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d73/classtime__model_a4067a65b6c76225fb9c949d471532653_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtime__model_a91cd4bf13a96b80a8168281a95a34eca}\label{classtime__model_a91cd4bf13a96b80a8168281a95a34eca}} 
+\index{time\+\_\+model@{time\+\_\+model}!create\+\_\+model@{create\+\_\+model}}
+\index{create\+\_\+model@{create\+\_\+model}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{create\+\_\+model()}{create\_model()}}
+{\footnotesize\ttfamily \hyperlink{time__model_8hpp_ae203bb7faf1c278333f76fcc6ebe412c}{time\+\_\+model\+Ref} time\+\_\+model\+::create\+\_\+model (\begin{DoxyParamCaption}\item[{\hyperlink{target__device_8hpp_a476becc690220f0805ce73006449c732}{Target\+Device\+\_\+\+Type}}]{dv\+\_\+type,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 129 of file time\+\_\+model.\+cpp.
+
+
+
+References F\+P\+GA, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+
+
+Referenced by allocation\+::add\+\_\+proxy\+\_\+function\+\_\+module(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+wrapper(), Omp\+Allocation\+::\+Add\+Panda\+Pthread\+Mutex(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), Altera\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Lattice\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Nano\+Xplore\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Xilinx\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+array(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Read\+\_\+simple(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Write\+\_\+simple(), Functional\+Unit\+Step\+::create\+\_\+template\+\_\+instance(), add\+\_\+library\+::\+Internal\+Exec(), Design\+Compiler\+Wrapper\+::parse\+\_\+time\+\_\+reports(), Xilinx\+Backend\+Flow\+::parse\+\_\+timing(), operation\+::xload(), functional\+\_\+unit\+::xload(), and Xilinx\+Backend\+Flow\+::xparse\+\_\+timing().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d73/classtime__model_a91cd4bf13a96b80a8168281a95a34eca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtime__model_af175296b2d08dfc84c7a16b61be1ebb3}\label{classtime__model_af175296b2d08dfc84c7a16b61be1ebb3}} 
+\index{time\+\_\+model@{time\+\_\+model}!get\+\_\+critical\+\_\+path@{get\+\_\+critical\+\_\+path}}
+\index{get\+\_\+critical\+\_\+path@{get\+\_\+critical\+\_\+path}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{get\+\_\+critical\+\_\+path()}{get\_critical\_path()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ time\+\_\+model\+::get\+\_\+critical\+\_\+path (\begin{DoxyParamCaption}\item[{unsigned int}]{type }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 193 of file time\+\_\+model.\+cpp.
+
+
+
+References critical\+\_\+paths, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+\mbox{\Hypertarget{classtime__model_af230e6b138686c1a759bdaeae3efeec8}\label{classtime__model_af230e6b138686c1a759bdaeae3efeec8}} 
+\index{time\+\_\+model@{time\+\_\+model}!get\+\_\+cycles@{get\+\_\+cycles}}
+\index{get\+\_\+cycles@{get\+\_\+cycles}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{get\+\_\+cycles()}{get\_cycles()}}
+{\footnotesize\ttfamily unsigned int time\+\_\+model\+::get\+\_\+cycles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 114 of file time\+\_\+model.\+cpp.
+
+
+
+References cycles.
+
+
+
+Referenced by allocation\+::check\+\_\+templated\+\_\+units(), Discrepancy\+Analysis\+C\+Writer\+::write\+Post\+Instruction\+Info(), and operation\+::xwrite().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d73/classtime__model_af230e6b138686c1a759bdaeae3efeec8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtime__model_ab4f348d14a35c9ff8f35a6f5d65aa04c}\label{classtime__model_ab4f348d14a35c9ff8f35a6f5d65aa04c}} 
+\index{time\+\_\+model@{time\+\_\+model}!get\+\_\+execution\+\_\+time@{get\+\_\+execution\+\_\+time}}
+\index{get\+\_\+execution\+\_\+time@{get\+\_\+execution\+\_\+time}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{get\+\_\+execution\+\_\+time()}{get\_execution\_time()}}
+{\footnotesize\ttfamily double time\+\_\+model\+::get\+\_\+execution\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 99 of file time\+\_\+model.\+cpp.
+
+
+
+References execution\+\_\+time.
+
+
+
+Referenced by Synthesis\+Evaluation\+::\+Internal\+Exec(), operation\+::print(), Allocation\+Information\+::time\+\_\+m\+\_\+execution\+\_\+time(), and operation\+::xwrite().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d73/classtime__model_ab4f348d14a35c9ff8f35a6f5d65aa04c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtime__model_a25614ecc690c443f3aab565a3db610f3}\label{classtime__model_a25614ecc690c443f3aab565a3db610f3}} 
+\index{time\+\_\+model@{time\+\_\+model}!get\+\_\+initiation\+\_\+time@{get\+\_\+initiation\+\_\+time}}
+\index{get\+\_\+initiation\+\_\+time@{get\+\_\+initiation\+\_\+time}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{get\+\_\+initiation\+\_\+time()}{get\_initiation\_time()}}
+{\footnotesize\ttfamily Control\+Step time\+\_\+model\+::get\+\_\+initiation\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 109 of file time\+\_\+model.\+cpp.
+
+
+
+References initiation\+\_\+time.
+
+
+
+Referenced by Allocation\+Information\+::get\+\_\+correction\+\_\+time(), operation\+::print(), and operation\+::xwrite().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d73/classtime__model_a25614ecc690c443f3aab565a3db610f3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtime__model_ad5c3137763e7080054586c28cdfb8627}\label{classtime__model_ad5c3137763e7080054586c28cdfb8627}} 
+\index{time\+\_\+model@{time\+\_\+model}!get\+\_\+max\+\_\+delay@{get\+\_\+max\+\_\+delay}}
+\index{get\+\_\+max\+\_\+delay@{get\+\_\+max\+\_\+delay}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{get\+\_\+max\+\_\+delay()}{get\_max\_delay()}}
+{\footnotesize\ttfamily float time\+\_\+model\+::get\+\_\+max\+\_\+delay (\begin{DoxyParamCaption}\item[{unsigned int}]{type }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 209 of file time\+\_\+model.\+cpp.
+
+
+
+References has\+\_\+max\+\_\+delay(), max\+\_\+delay, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d3/d73/classtime__model_ad5c3137763e7080054586c28cdfb8627_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtime__model_a7283fa75e6f6dc3bfa8e4c579d56f656}\label{classtime__model_a7283fa75e6f6dc3bfa8e4c579d56f656}} 
+\index{time\+\_\+model@{time\+\_\+model}!get\+\_\+stage\+\_\+period@{get\+\_\+stage\+\_\+period}}
+\index{get\+\_\+stage\+\_\+period@{get\+\_\+stage\+\_\+period}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{get\+\_\+stage\+\_\+period()}{get\_stage\_period()}}
+{\footnotesize\ttfamily double time\+\_\+model\+::get\+\_\+stage\+\_\+period (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 119 of file time\+\_\+model.\+cpp.
+
+
+
+References stage\+\_\+period.
+
+
+
+Referenced by Allocation\+Information\+::time\+\_\+m\+\_\+stage\+\_\+period(), and operation\+::xwrite().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d73/classtime__model_a7283fa75e6f6dc3bfa8e4c579d56f656_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtime__model_a45cff932d6a65cc0fa68ac30b2222c19}\label{classtime__model_a45cff932d6a65cc0fa68ac30b2222c19}} 
+\index{time\+\_\+model@{time\+\_\+model}!get\+\_\+synthesis\+\_\+dependent@{get\+\_\+synthesis\+\_\+dependent}}
+\index{get\+\_\+synthesis\+\_\+dependent@{get\+\_\+synthesis\+\_\+dependent}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{get\+\_\+synthesis\+\_\+dependent()}{get\_synthesis\_dependent()}}
+{\footnotesize\ttfamily bool time\+\_\+model\+::get\+\_\+synthesis\+\_\+dependent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 94 of file time\+\_\+model.\+cpp.
+
+
+
+References synthesis\+\_\+dependent.
+
+
+
+Referenced by operation\+::xwrite().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d3/d73/classtime__model_a45cff932d6a65cc0fa68ac30b2222c19_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtime__model_a952ed32fa9811586da4af0c94471f7ae}\label{classtime__model_a952ed32fa9811586da4af0c94471f7ae}} 
+\index{time\+\_\+model@{time\+\_\+model}!has\+\_\+max\+\_\+delay@{has\+\_\+max\+\_\+delay}}
+\index{has\+\_\+max\+\_\+delay@{has\+\_\+max\+\_\+delay}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{has\+\_\+max\+\_\+delay()}{has\_max\_delay()}}
+{\footnotesize\ttfamily bool time\+\_\+model\+::has\+\_\+max\+\_\+delay (\begin{DoxyParamCaption}\item[{unsigned int}]{type }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 199 of file time\+\_\+model.\+cpp.
+
+
+
+References max\+\_\+delay.
+
+
+
+Referenced by get\+\_\+max\+\_\+delay().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d3/d73/classtime__model_a952ed32fa9811586da4af0c94471f7ae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtime__model_a7bdad7b4a8221d4e5e00286e38084de1}\label{classtime__model_a7bdad7b4a8221d4e5e00286e38084de1}} 
+\index{time\+\_\+model@{time\+\_\+model}!set\+\_\+execution\+\_\+time@{set\+\_\+execution\+\_\+time}}
+\index{set\+\_\+execution\+\_\+time@{set\+\_\+execution\+\_\+time}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{set\+\_\+execution\+\_\+time()}{set\_execution\_time()}}
+{\footnotesize\ttfamily void time\+\_\+model\+::set\+\_\+execution\+\_\+time (\begin{DoxyParamCaption}\item[{double}]{execution\+\_\+time,  }\item[{unsigned int}]{cycles }\end{DoxyParamCaption})}
+
+
+
+Definition at line 83 of file time\+\_\+model.\+cpp.
+
+
+
+References cycles, and execution\+\_\+time.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::\+Analyze\+Cell(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+array(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Read\+\_\+simple(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Write\+\_\+simple(), Functional\+Unit\+Step\+::create\+\_\+template\+\_\+instance(), Design\+Compiler\+Wrapper\+::parse\+\_\+time\+\_\+reports(), and operation\+::xload().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d73/classtime__model_a7bdad7b4a8221d4e5e00286e38084de1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtime__model_aae177f12db540a3e8d5b487f99ded5e8}\label{classtime__model_aae177f12db540a3e8d5b487f99ded5e8}} 
+\index{time\+\_\+model@{time\+\_\+model}!set\+\_\+initiation\+\_\+time@{set\+\_\+initiation\+\_\+time}}
+\index{set\+\_\+initiation\+\_\+time@{set\+\_\+initiation\+\_\+time}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{set\+\_\+initiation\+\_\+time()}{set\_initiation\_time()}}
+{\footnotesize\ttfamily void time\+\_\+model\+::set\+\_\+initiation\+\_\+time (\begin{DoxyParamCaption}\item[{const Control\+Step}]{\+\_\+initiation\+\_\+time }\end{DoxyParamCaption})}
+
+
+
+Definition at line 104 of file time\+\_\+model.\+cpp.
+
+
+
+References initiation\+\_\+time.
+
+
+
+Referenced by operation\+::xload().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d73/classtime__model_aae177f12db540a3e8d5b487f99ded5e8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtime__model_acd053b74c6a18db11a5de646875be6ea}\label{classtime__model_acd053b74c6a18db11a5de646875be6ea}} 
+\index{time\+\_\+model@{time\+\_\+model}!set\+\_\+max\+\_\+delay@{set\+\_\+max\+\_\+delay}}
+\index{set\+\_\+max\+\_\+delay@{set\+\_\+max\+\_\+delay}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{set\+\_\+max\+\_\+delay()}{set\_max\_delay()}}
+{\footnotesize\ttfamily void time\+\_\+model\+::set\+\_\+max\+\_\+delay (\begin{DoxyParamCaption}\item[{unsigned int}]{type,  }\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 204 of file time\+\_\+model.\+cpp.
+
+
+
+References max\+\_\+delay, and test\+\_\+panda\+::type.
+
+\mbox{\Hypertarget{classtime__model_a77760cc70901f92295314797e5a50ba1}\label{classtime__model_a77760cc70901f92295314797e5a50ba1}} 
+\index{time\+\_\+model@{time\+\_\+model}!set\+\_\+stage\+\_\+period@{set\+\_\+stage\+\_\+period}}
+\index{set\+\_\+stage\+\_\+period@{set\+\_\+stage\+\_\+period}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{set\+\_\+stage\+\_\+period()}{set\_stage\_period()}}
+{\footnotesize\ttfamily void time\+\_\+model\+::set\+\_\+stage\+\_\+period (\begin{DoxyParamCaption}\item[{double}]{st\+\_\+per }\end{DoxyParamCaption})}
+
+
+
+Definition at line 124 of file time\+\_\+model.\+cpp.
+
+
+
+References stage\+\_\+period.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::\+Analyze\+Cell(), and operation\+::xload().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d3/d73/classtime__model_a77760cc70901f92295314797e5a50ba1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtime__model_a481cdb29f6fd68bc79d6d25adf916c9a}\label{classtime__model_a481cdb29f6fd68bc79d6d25adf916c9a}} 
+\index{time\+\_\+model@{time\+\_\+model}!set\+\_\+synthesis\+\_\+dependent@{set\+\_\+synthesis\+\_\+dependent}}
+\index{set\+\_\+synthesis\+\_\+dependent@{set\+\_\+synthesis\+\_\+dependent}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{set\+\_\+synthesis\+\_\+dependent()}{set\_synthesis\_dependent()}}
+{\footnotesize\ttfamily void time\+\_\+model\+::set\+\_\+synthesis\+\_\+dependent (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 89 of file time\+\_\+model.\+cpp.
+
+
+
+References synthesis\+\_\+dependent.
+
+
+
+Referenced by operation\+::xload().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d3/d73/classtime__model_a481cdb29f6fd68bc79d6d25adf916c9a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtime__model_aebf9b09a8d792f8628585d77c26f0f5c}\label{classtime__model_aebf9b09a8d792f8628585d77c26f0f5c}} 
+\index{time\+\_\+model@{time\+\_\+model}!xload\+\_\+timing\+\_\+path@{xload\+\_\+timing\+\_\+path}}
+\index{xload\+\_\+timing\+\_\+path@{xload\+\_\+timing\+\_\+path}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{xload\+\_\+timing\+\_\+path()}{xload\_timing\_path()}}
+{\footnotesize\ttfamily unsigned int time\+\_\+model\+::xload\+\_\+timing\+\_\+path (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 145 of file time\+\_\+model.\+cpp.
+
+
+
+References critical\+\_\+paths, xml\+\_\+child\+::get\+\_\+children(), L\+O\+A\+D\+\_\+\+X\+VM, P\+O\+S\+T\+\_\+\+L\+A\+Y\+O\+UT, P\+O\+S\+T\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+IS, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and test\+\_\+panda\+::type.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d73/classtime__model_aebf9b09a8d792f8628585d77c26f0f5c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtime__model_a6f2a76cabb6407289e757cbdc155260d}\label{classtime__model_a6f2a76cabb6407289e757cbdc155260d}} 
+\index{time\+\_\+model@{time\+\_\+model}!xwrite@{xwrite}}
+\index{xwrite@{xwrite}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{xwrite()}{xwrite()}}
+{\footnotesize\ttfamily virtual void time\+\_\+model\+::xwrite (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{pin\+\_\+node,  }\item[{const std\+::string \&}]{output\+\_\+pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classLUT__model_a425bc1c19bd99c0b0817051ce78db81f}{L\+U\+T\+\_\+model}, and \hyperlink{classliberty__model_ac02327c2851bea22b94377da3b0b689a}{liberty\+\_\+model}.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classtime__model_afdf3b59507831e6cfe76e88cc3195b0f}\label{classtime__model_afdf3b59507831e6cfe76e88cc3195b0f}} 
+\index{time\+\_\+model@{time\+\_\+model}!critical\+\_\+paths@{critical\+\_\+paths}}
+\index{critical\+\_\+paths@{critical\+\_\+paths}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{critical\+\_\+paths}{critical\_paths}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, std\+::vector$<$std\+::string$>$ $>$ time\+\_\+model\+::critical\+\_\+paths\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+map containing all the information about critical paths 
+
+
+
+Definition at line 95 of file time\+\_\+model.\+hpp.
+
+
+
+Referenced by get\+\_\+critical\+\_\+path(), and xload\+\_\+timing\+\_\+path().
+
+\mbox{\Hypertarget{classtime__model_a0589dea91b7289451931e24629a4ba66}\label{classtime__model_a0589dea91b7289451931e24629a4ba66}} 
+\index{time\+\_\+model@{time\+\_\+model}!cycles@{cycles}}
+\index{cycles@{cycles}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{cycles}{cycles}}
+{\footnotesize\ttfamily unsigned int time\+\_\+model\+::cycles\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+number of cycles required to complete the computation 
+
+
+
+Definition at line 103 of file time\+\_\+model.\+hpp.
+
+
+
+Referenced by get\+\_\+cycles(), and set\+\_\+execution\+\_\+time().
+
+\mbox{\Hypertarget{classtime__model_ae61b7de7c0f11fb728ecd5b2f4766121}\label{classtime__model_ae61b7de7c0f11fb728ecd5b2f4766121}} 
+\index{time\+\_\+model@{time\+\_\+model}!cycles\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT@{cycles\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT}}
+\index{cycles\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT@{cycles\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{cycles\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT}{cycles\_time\_DEFAULT}}
+{\footnotesize\ttfamily const unsigned int time\+\_\+model\+::cycles\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+zero means that the operation is not pipelined 
+
+
+
+Definition at line 163 of file time\+\_\+model.\+hpp.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::\+Analyze\+Cell(), operation\+::xload(), and operation\+::xwrite().
+
+\mbox{\Hypertarget{classtime__model_a7b02cefe3b48c07b9bf06e70e1333afa}\label{classtime__model_a7b02cefe3b48c07b9bf06e70e1333afa}} 
+\index{time\+\_\+model@{time\+\_\+model}!execution\+\_\+time@{execution\+\_\+time}}
+\index{execution\+\_\+time@{execution\+\_\+time}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{execution\+\_\+time}{execution\_time}}
+{\footnotesize\ttfamily double time\+\_\+model\+::execution\+\_\+time\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+execution time, in terms of ns, for this type of operation on a given functional unit. 
+
+
+
+Definition at line 111 of file time\+\_\+model.\+hpp.
+
+
+
+Referenced by get\+\_\+execution\+\_\+time(), set\+\_\+execution\+\_\+time(), and L\+U\+T\+\_\+model\+::set\+\_\+timing\+\_\+value().
+
+\mbox{\Hypertarget{classtime__model_a36ea9e8031fda2f9282c8062a647d5c6}\label{classtime__model_a36ea9e8031fda2f9282c8062a647d5c6}} 
+\index{time\+\_\+model@{time\+\_\+model}!execution\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT@{execution\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT}}
+\index{execution\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT@{execution\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{execution\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT}{execution\_time\_DEFAULT}}
+{\footnotesize\ttfamily const double time\+\_\+model\+::execution\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Autoheader include. 
+
+H\+L\+S/scheduling include 
+
+Definition at line 161 of file time\+\_\+model.\+hpp.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::\+Analyze\+Cell(), operation\+::xload(), and operation\+::xwrite().
+
+\mbox{\Hypertarget{classtime__model_a2bee5d1ff834d4b990970a48971c31a2}\label{classtime__model_a2bee5d1ff834d4b990970a48971c31a2}} 
+\index{time\+\_\+model@{time\+\_\+model}!initiation\+\_\+time@{initiation\+\_\+time}}
+\index{initiation\+\_\+time@{initiation\+\_\+time}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{initiation\+\_\+time}{initiation\_time}}
+{\footnotesize\ttfamily Control\+Step time\+\_\+model\+::initiation\+\_\+time\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+initiation time, in terms of cycle\+\_\+units, for this type of operation on a given functional unit. 
+
+
+
+Definition at line 100 of file time\+\_\+model.\+hpp.
+
+
+
+Referenced by get\+\_\+initiation\+\_\+time(), and set\+\_\+initiation\+\_\+time().
+
+\mbox{\Hypertarget{classtime__model_a2980a7b7ec9e81d952719dde6336ded6}\label{classtime__model_a2980a7b7ec9e81d952719dde6336ded6}} 
+\index{time\+\_\+model@{time\+\_\+model}!initiation\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT@{initiation\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT}}
+\index{initiation\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT@{initiation\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{initiation\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT}{initiation\_time\_DEFAULT}}
+{\footnotesize\ttfamily const Control\+Step time\+\_\+model\+::initiation\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT = Control\+Step(0u)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 162 of file time\+\_\+model.\+hpp.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::\+Analyze\+Cell(), operation\+::xload(), and operation\+::xwrite().
+
+\mbox{\Hypertarget{classtime__model_a777fafc4e47a09494a73ce6ac0927a32}\label{classtime__model_a777fafc4e47a09494a73ce6ac0927a32}} 
+\index{time\+\_\+model@{time\+\_\+model}!max\+\_\+delay@{max\+\_\+delay}}
+\index{max\+\_\+delay@{max\+\_\+delay}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{max\+\_\+delay}{max\_delay}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, float$>$ time\+\_\+model\+::max\+\_\+delay\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 97 of file time\+\_\+model.\+hpp.
+
+
+
+Referenced by get\+\_\+max\+\_\+delay(), has\+\_\+max\+\_\+delay(), and set\+\_\+max\+\_\+delay().
+
+\mbox{\Hypertarget{classtime__model_adfd18786156118b7467cef8117933674}\label{classtime__model_adfd18786156118b7467cef8117933674}} 
+\index{time\+\_\+model@{time\+\_\+model}!Param@{Param}}
+\index{Param@{Param}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{Param}{Param}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} time\+\_\+model\+::\+Param\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+class containing all the parameters 
+
+
+
+Definition at line 92 of file time\+\_\+model.\+hpp.
+
+\mbox{\Hypertarget{classtime__model_a2472845d03d52d99457ec10a95359715}\label{classtime__model_a2472845d03d52d99457ec10a95359715}} 
+\index{time\+\_\+model@{time\+\_\+model}!pin\+\_\+to\+\_\+pin\+\_\+delay@{pin\+\_\+to\+\_\+pin\+\_\+delay}}
+\index{pin\+\_\+to\+\_\+pin\+\_\+delay@{pin\+\_\+to\+\_\+pin\+\_\+delay}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{pin\+\_\+to\+\_\+pin\+\_\+delay}{pin\_to\_pin\_delay}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::map$<$std\+::string, double$>$ $>$ time\+\_\+model\+::pin\+\_\+to\+\_\+pin\+\_\+delay}
+
+
+
+map representing the pin-\/to-\/pin delay 
+
+
+
+Definition at line 81 of file time\+\_\+model.\+hpp.
+
+
+
+Referenced by operation\+::get\+\_\+pin\+\_\+to\+\_\+pin\+\_\+delay(), and operation\+::xload().
+
+\mbox{\Hypertarget{classtime__model_ab7abe2f50afbad1e50d48f2763486615}\label{classtime__model_ab7abe2f50afbad1e50d48f2763486615}} 
+\index{time\+\_\+model@{time\+\_\+model}!stage\+\_\+period@{stage\+\_\+period}}
+\index{stage\+\_\+period@{stage\+\_\+period}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{stage\+\_\+period}{stage\_period}}
+{\footnotesize\ttfamily double time\+\_\+model\+::stage\+\_\+period\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+critical timing execution path, in term of ns, of a potentially pipelined operation. 
+
+
+
+Definition at line 108 of file time\+\_\+model.\+hpp.
+
+
+
+Referenced by get\+\_\+stage\+\_\+period(), and set\+\_\+stage\+\_\+period().
+
+\mbox{\Hypertarget{classtime__model_a5ec0e13fa38fb22ff03d6cffd8fbd0fd}\label{classtime__model_a5ec0e13fa38fb22ff03d6cffd8fbd0fd}} 
+\index{time\+\_\+model@{time\+\_\+model}!stage\+\_\+period\+\_\+\+D\+E\+F\+A\+U\+LT@{stage\+\_\+period\+\_\+\+D\+E\+F\+A\+U\+LT}}
+\index{stage\+\_\+period\+\_\+\+D\+E\+F\+A\+U\+LT@{stage\+\_\+period\+\_\+\+D\+E\+F\+A\+U\+LT}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{stage\+\_\+period\+\_\+\+D\+E\+F\+A\+U\+LT}{stage\_period\_DEFAULT}}
+{\footnotesize\ttfamily const double time\+\_\+model\+::stage\+\_\+period\+\_\+\+D\+E\+F\+A\+U\+LT = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+zero means that the operation last in ceil(execution\+\_\+time/clock\+\_\+period) 
+
+
+
+Definition at line 164 of file time\+\_\+model.\+hpp.
+
+
+
+Referenced by R\+T\+L\+Characterization\+::\+Analyze\+Cell(), operation\+::xload(), and operation\+::xwrite().
+
+\mbox{\Hypertarget{classtime__model_a43b9fc3be5b91ce6158883eee3497f50}\label{classtime__model_a43b9fc3be5b91ce6158883eee3497f50}} 
+\index{time\+\_\+model@{time\+\_\+model}!statistical\+\_\+delay@{statistical\+\_\+delay}}
+\index{statistical\+\_\+delay@{statistical\+\_\+delay}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{statistical\+\_\+delay}{statistical\_delay}}
+{\footnotesize\ttfamily boost\+::math\+::normal time\+\_\+model\+::statistical\+\_\+delay}
+
+
+
+statistical delay for this type of operation on a given functional unit. 
+
+
+
+Definition at line 78 of file time\+\_\+model.\+hpp.
+
+\mbox{\Hypertarget{classtime__model_ac3c675ab429d2fa91774c0f8184d0a8f}\label{classtime__model_ac3c675ab429d2fa91774c0f8184d0a8f}} 
+\index{time\+\_\+model@{time\+\_\+model}!synthesis\+\_\+dependent@{synthesis\+\_\+dependent}}
+\index{synthesis\+\_\+dependent@{synthesis\+\_\+dependent}!time\+\_\+model@{time\+\_\+model}}
+\subsubsection{\texorpdfstring{synthesis\+\_\+dependent}{synthesis\_dependent}}
+{\footnotesize\ttfamily bool time\+\_\+model\+::synthesis\+\_\+dependent\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+flag to check if the number of cycles are dependent on the synthesis or not 
+
+
+
+Definition at line 105 of file time\+\_\+model.\+hpp.
+
+
+
+Referenced by get\+\_\+synthesis\+\_\+dependent(), and set\+\_\+synthesis\+\_\+dependent().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/physical\+\_\+library/models/\hyperlink{time__model_8hpp}{time\+\_\+model.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/physical\+\_\+library/models/\hyperlink{time__model_8cpp}{time\+\_\+model.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,707 @@
+\hypertarget{classEdgeCWriter}{}\section{Edge\+C\+Writer Class Reference}
+\label{classEdgeCWriter}\index{Edge\+C\+Writer@{Edge\+C\+Writer}}
+
+
+Class use to write the C code with instrumented edges.  
+
+
+
+
+{\ttfamily \#include $<$edge\+\_\+c\+\_\+writer.\+hpp$>$}
+
+
+
+Inheritance diagram for Edge\+C\+Writer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{d2/de6/classEdgeCWriter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Edge\+C\+Writer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d7a/classEdgeCWriter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEdgeCWriter_a52eff5f5bbf3728891529a8164b5aaae}{Edge\+C\+Writer} (const \hyperlink{application__manager_8hpp_abb985163a2a3fb747f6f03b1eaadbb44}{application\+\_\+manager\+Const\+Ref} \+\_\+\+AppM, const \hyperlink{instruction__writer_8hpp_a40ea26c38a2909ba48f88f997144b260}{Instruction\+Writer\+Ref} instruction\+\_\+writer, const \hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref} \hyperlink{classCWriter_ac6d016436e065c31dd5152a7cc30e507}{indented\+\_\+output\+\_\+stream}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classCWriter_a3555d61ac3540440862ed211800b80be}{Param}, bool \hyperlink{classCWriter_a8d5b6fe4a045d7e9ca997a566274cdb5}{verbose}=true)
+\begin{DoxyCompactList}\small\item\em Constructor of the class. \end{DoxyCompactList}\item 
+\hyperlink{classEdgeCWriter_af374509bd9ecd11aa640c9fd71593113}{$\sim$\+Edge\+C\+Writer} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+const std\+::map$<$ unsigned int, std\+::map$<$ unsigned int, unsigned int $>$ $>$ \& \hyperlink{classEdgeCWriter_afcf0813b40974ad65e3e4ba991ab070f}{C\+Get\+Function\+Loop\+To\+Id} () const
+\begin{DoxyCompactList}\small\item\em Returns the map which associates to each loop a unique id. \end{DoxyCompactList}\item 
+void \hyperlink{classEdgeCWriter_a514808888307cd604ce3b453b550c6a3}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize data structure. \end{DoxyCompactList}\item 
+void \hyperlink{classEdgeCWriter_a8b053256b8c65aca7d7539ebd23537c8}{Write\+Header} () override
+\begin{DoxyCompactList}\small\item\em Writes the header of the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classEdgeCWriter_afafb806eb259b1e582c4b4cd9abe201a}{print\+\_\+edge} (\hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor} e, unsigned int \hyperlink{tutorial__pact__2019_2Introduction_2third_2include_2Keccak_8h_a028c9bdc8344cca38ab522a337074797}{index})
+\begin{DoxyCompactList}\small\item\em Dump operation requested for instrument an edges. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classEdgeCWriter_afb0e9ae8b8f6b8d697f555dbda6c90ab}{print\+\_\+end\+\_\+path} (unsigned int \hyperlink{classEdgeCWriter_a24e5a49302d7900304d7c020889aa979}{fun\+\_\+id}, unsigned int loop\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Print operations needed to store into symbol table information about last path. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classEdgeCWriter_a38bd255fe79b665fb52cf5bf566255ce}{print\+\_\+loop\+\_\+switching} (\hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor} e)
+\begin{DoxyCompactList}\small\item\em Print operation requested for record information about a path which exit from a loop and immediately enter in another. \end{DoxyCompactList}\item 
+void \hyperlink{classEdgeCWriter_a8bd9dbf867c6937dd51d309ef4f27073}{write\+Routine\+Instructions\+\_\+rec} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} current\+\_\+vertex, bool bracket)
+\begin{DoxyCompactList}\small\item\em Write recursively instructions belonging to a basic block of task or of a function. \end{DoxyCompactList}\item 
+void \hyperlink{classEdgeCWriter_a26e88f61025b2993b8608ef28951cb9f}{write\+Routine\+Instructions} (const unsigned int function\+\_\+index, const \hyperlink{classOpVertexSet}{Op\+Vertex\+Set} \&instructions, const \hyperlink{var__pp__functor_8hpp_a8a6b51b6519401d911398943510557f0}{var\+\_\+pp\+\_\+functor\+Const\+Ref} variable\+Functor, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} bb\+\_\+start=\hyperlink{graph_8hpp_ac3c33c45c396860b76e8aff4dd2b8158}{N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX}, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ bb\+\_\+end=\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$()) override
+\begin{DoxyCompactList}\small\item\em Writes the instructions of the current routine, being it a task or a function of the original program. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classEdgeCWriter_ada23a555b6c41e47a8d2a247af5076ae}{print\+\_\+loop\+\_\+ending} (\hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor} e)
+\begin{DoxyCompactList}\small\item\em Dump operations requested for record information about a loop path which ends. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classEdgeCWriter_a3a3127159498b986420975895b1603f7}{print\+\_\+loop\+\_\+escaping} (\hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor} e)
+\begin{DoxyCompactList}\small\item\em Dump operations requested for record information about a path which exit from a loop. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classEdgeCWriter_a6be6fd2cc7cd9208b726f9067e7b422d}{print\+\_\+loop\+\_\+starting} (\hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor} e)
+\begin{DoxyCompactList}\small\item\em Dump initializations of variable for recording a loop path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor} $>$ \hyperlink{classEdgeCWriter_a7b417f4e7cc68c365e804828f5ced098}{local\+\_\+inc}
+\begin{DoxyCompactList}\small\item\em Increment which should be added before the label in a basic block. \end{DoxyCompactList}\item 
+std\+::set$<$ \hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor}, \hyperlink{structltedge}{ltedge}$<$ \hyperlink{structBBGraph}{B\+B\+Graph} $>$ $>$ \hyperlink{classEdgeCWriter_a8253f69d8bed3c2e26a00ecc16955c16}{dumped\+\_\+edges}
+\begin{DoxyCompactList}\small\item\em Set of already dumped edges. \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, std\+::map$<$ unsigned int, unsigned int $>$ $>$ \hyperlink{classEdgeCWriter_aae33614ac66605c84a7ccc1552af424f}{fun\+\_\+loop\+\_\+to\+\_\+index}
+\begin{DoxyCompactList}\small\item\em Map a pair function -\/ loop to an unique index. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classEdgeCWriter_a49c0cee264f99741c51a888c52a4e429}{counter}
+\begin{DoxyCompactList}\small\item\em The size of fun\+\_\+loop\+\_\+to\+\_\+index. \end{DoxyCompactList}\item 
+\hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref} \hyperlink{classEdgeCWriter_ab394651b6c31ee7b0dbd7552d506dfd3}{support\+\_\+cfg}
+\begin{DoxyCompactList}\small\item\em Special control flow graphs. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classEdgeCWriter_a24e5a49302d7900304d7c020889aa979}{fun\+\_\+id}
+\begin{DoxyCompactList}\small\item\em Index of the current function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class use to write the C code with instrumented edges. 
+
+Definition at line 73 of file edge\+\_\+c\+\_\+writer.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEdgeCWriter_a52eff5f5bbf3728891529a8164b5aaae}\label{classEdgeCWriter_a52eff5f5bbf3728891529a8164b5aaae}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{Edge\+C\+Writer()}{EdgeCWriter()}}
+{\footnotesize\ttfamily Edge\+C\+Writer\+::\+Edge\+C\+Writer (\begin{DoxyParamCaption}\item[{const \hyperlink{application__manager_8hpp_abb985163a2a3fb747f6f03b1eaadbb44}{application\+\_\+manager\+Const\+Ref}}]{\+\_\+\+AppM,  }\item[{const \hyperlink{instruction__writer_8hpp_a40ea26c38a2909ba48f88f997144b260}{Instruction\+Writer\+Ref}}]{\+\_\+instruction\+\_\+writer,  }\item[{const \hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref}}]{\+\_\+indented\+\_\+output\+\_\+stream,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+\+Param,  }\item[{bool}]{\+\_\+verbose = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Constructor of the class. 
+
+Header include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em AppM} & is the application manager \\
+\hline
+{\em instruction\+\_\+writer} & is the instruction writer to use to print the single instruction \\
+\hline
+{\em indented\+\_\+output\+\_\+stream} & is the output stream \\
+\hline
+{\em Param} & is the set of parameters \\
+\hline
+{\em verbose} & tells if annotations\\
+\hline
+\end{DoxyParams}
+algorithms/dominance include Backend include Behavior include \hyperlink{structGraph}{Graph} include \hyperlink{classParameter}{Parameter} include tree includes S\+TL include utility include 
+
+Definition at line 78 of file edge\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References C\+Writer\+::debug\+\_\+level, G\+E\+T\+\_\+\+C\+L\+A\+SS, C\+Writer\+::\+Param, and $\sim$\+Edge\+C\+Writer().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dee/classEdgeCWriter_a52eff5f5bbf3728891529a8164b5aaae_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEdgeCWriter_af374509bd9ecd11aa640c9fd71593113}\label{classEdgeCWriter_af374509bd9ecd11aa640c9fd71593113}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!````~Edge\+C\+Writer@{$\sim$\+Edge\+C\+Writer}}
+\index{````~Edge\+C\+Writer@{$\sim$\+Edge\+C\+Writer}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{$\sim$\+Edge\+C\+Writer()}{~EdgeCWriter()}}
+{\footnotesize\ttfamily Edge\+C\+Writer\+::$\sim$\+Edge\+C\+Writer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Edge\+C\+Writer().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dee/classEdgeCWriter_af374509bd9ecd11aa640c9fd71593113_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEdgeCWriter_afcf0813b40974ad65e3e4ba991ab070f}\label{classEdgeCWriter_afcf0813b40974ad65e3e4ba991ab070f}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!C\+Get\+Function\+Loop\+To\+Id@{C\+Get\+Function\+Loop\+To\+Id}}
+\index{C\+Get\+Function\+Loop\+To\+Id@{C\+Get\+Function\+Loop\+To\+Id}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{C\+Get\+Function\+Loop\+To\+Id()}{CGetFunctionLoopToId()}}
+{\footnotesize\ttfamily const std\+::map$<$ unsigned int, std\+::map$<$ unsigned int, unsigned int $>$ $>$ \& Edge\+C\+Writer\+::\+C\+Get\+Function\+Loop\+To\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the map which associates to each loop a unique id. 
+
+\begin{DoxyReturn}{Returns}
+the map which associates to each loop a unique id 
+\end{DoxyReturn}
+
+
+Definition at line 1314 of file edge\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References fun\+\_\+loop\+\_\+to\+\_\+index.
+
+\mbox{\Hypertarget{classEdgeCWriter_a514808888307cd604ce3b453b550c6a3}\label{classEdgeCWriter_a514808888307cd604ce3b453b550c6a3}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Edge\+C\+Writer\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize data structure. 
+
+
+
+Reimplemented from \hyperlink{classCWriter_a7b57fdc8a06f368a65c03af147834198}{C\+Writer}.
+
+
+
+Definition at line 86 of file edge\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References C\+Writer\+::\+AppM, Function\+Behavior\+::\+C\+Get\+Loops(), counter, fun\+\_\+loop\+\_\+to\+\_\+index, and C\+Writer\+::\+Initialize().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dee/classEdgeCWriter_a514808888307cd604ce3b453b550c6a3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEdgeCWriter_afafb806eb259b1e582c4b4cd9abe201a}\label{classEdgeCWriter_afafb806eb259b1e582c4b4cd9abe201a}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!print\+\_\+edge@{print\+\_\+edge}}
+\index{print\+\_\+edge@{print\+\_\+edge}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{print\+\_\+edge()}{print\_edge()}}
+{\footnotesize\ttfamily void Edge\+C\+Writer\+::print\+\_\+edge (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor}}]{e,  }\item[{unsigned int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Dump operation requested for instrument an edges. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & is the edge \\
+\hline
+{\em index} & is the index of the variable to be incremented \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classBasicBlocksProfilingCWriter_a2efe4603c6a9adb508091feb50cabf5f}{Basic\+Blocks\+Profiling\+C\+Writer}.
+
+
+
+Definition at line 105 of file edge\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References dumped\+\_\+edges.
+
+
+
+Referenced by write\+Routine\+Instructions\+\_\+rec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dee/classEdgeCWriter_afafb806eb259b1e582c4b4cd9abe201a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEdgeCWriter_afb0e9ae8b8f6b8d697f555dbda6c90ab}\label{classEdgeCWriter_afb0e9ae8b8f6b8d697f555dbda6c90ab}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!print\+\_\+end\+\_\+path@{print\+\_\+end\+\_\+path}}
+\index{print\+\_\+end\+\_\+path@{print\+\_\+end\+\_\+path}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{print\+\_\+end\+\_\+path()}{print\_end\_path()}}
+{\footnotesize\ttfamily void Edge\+C\+Writer\+::print\+\_\+end\+\_\+path (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+\_\+id,  }\item[{unsigned int}]{loop\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Print operations needed to store into symbol table information about last path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fun\+\_\+id} & is the index of the function \\
+\hline
+{\em loop\+\_\+id} & is the index of the loop \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 110 of file edge\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+Referenced by write\+Routine\+Instructions\+\_\+rec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dee/classEdgeCWriter_afb0e9ae8b8f6b8d697f555dbda6c90ab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEdgeCWriter_ada23a555b6c41e47a8d2a247af5076ae}\label{classEdgeCWriter_ada23a555b6c41e47a8d2a247af5076ae}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!print\+\_\+loop\+\_\+ending@{print\+\_\+loop\+\_\+ending}}
+\index{print\+\_\+loop\+\_\+ending@{print\+\_\+loop\+\_\+ending}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{print\+\_\+loop\+\_\+ending()}{print\_loop\_ending()}}
+{\footnotesize\ttfamily void Edge\+C\+Writer\+::print\+\_\+loop\+\_\+ending (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor}}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Dump operations requested for record information about a loop path which ends. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & is the feedback or outgoing edge \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classBasicBlocksProfilingCWriter_aa45c57894aba6cedaff580f45cab879b}{Basic\+Blocks\+Profiling\+C\+Writer}.
+
+
+
+Definition at line 114 of file edge\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+Referenced by write\+Routine\+Instructions\+\_\+rec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dee/classEdgeCWriter_ada23a555b6c41e47a8d2a247af5076ae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEdgeCWriter_a3a3127159498b986420975895b1603f7}\label{classEdgeCWriter_a3a3127159498b986420975895b1603f7}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!print\+\_\+loop\+\_\+escaping@{print\+\_\+loop\+\_\+escaping}}
+\index{print\+\_\+loop\+\_\+escaping@{print\+\_\+loop\+\_\+escaping}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{print\+\_\+loop\+\_\+escaping()}{print\_loop\_escaping()}}
+{\footnotesize\ttfamily void Edge\+C\+Writer\+::print\+\_\+loop\+\_\+escaping (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor}}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Dump operations requested for record information about a path which exit from a loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & is the feedback or outgoing edge \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classBasicBlocksProfilingCWriter_a152e65459d50c885bcf38b0c87aaaa5d}{Basic\+Blocks\+Profiling\+C\+Writer}.
+
+
+
+Definition at line 118 of file edge\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+Referenced by write\+Routine\+Instructions\+\_\+rec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dee/classEdgeCWriter_a3a3127159498b986420975895b1603f7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEdgeCWriter_a6be6fd2cc7cd9208b726f9067e7b422d}\label{classEdgeCWriter_a6be6fd2cc7cd9208b726f9067e7b422d}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!print\+\_\+loop\+\_\+starting@{print\+\_\+loop\+\_\+starting}}
+\index{print\+\_\+loop\+\_\+starting@{print\+\_\+loop\+\_\+starting}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{print\+\_\+loop\+\_\+starting()}{print\_loop\_starting()}}
+{\footnotesize\ttfamily void Edge\+C\+Writer\+::print\+\_\+loop\+\_\+starting (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor}}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Dump initializations of variable for recording a loop path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & is the incoming edged \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classBasicBlocksProfilingCWriter_ae6ce4249d3bbd0d69249445c27d772b9}{Basic\+Blocks\+Profiling\+C\+Writer}.
+
+
+
+Definition at line 122 of file edge\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+Referenced by write\+Routine\+Instructions\+\_\+rec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dee/classEdgeCWriter_a6be6fd2cc7cd9208b726f9067e7b422d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEdgeCWriter_a38bd255fe79b665fb52cf5bf566255ce}\label{classEdgeCWriter_a38bd255fe79b665fb52cf5bf566255ce}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!print\+\_\+loop\+\_\+switching@{print\+\_\+loop\+\_\+switching}}
+\index{print\+\_\+loop\+\_\+switching@{print\+\_\+loop\+\_\+switching}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{print\+\_\+loop\+\_\+switching()}{print\_loop\_switching()}}
+{\footnotesize\ttfamily void Edge\+C\+Writer\+::print\+\_\+loop\+\_\+switching (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor}}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Print operation requested for record information about a path which exit from a loop and immediately enter in another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & is the edge \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classBasicBlocksProfilingCWriter_abf73db4344fbaf917e5133dfa9699d27}{Basic\+Blocks\+Profiling\+C\+Writer}.
+
+
+
+Definition at line 126 of file edge\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+Referenced by write\+Routine\+Instructions\+\_\+rec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dee/classEdgeCWriter_a38bd255fe79b665fb52cf5bf566255ce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEdgeCWriter_a8b053256b8c65aca7d7539ebd23537c8}\label{classEdgeCWriter_a8b053256b8c65aca7d7539ebd23537c8}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!Write\+Header@{Write\+Header}}
+\index{Write\+Header@{Write\+Header}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Header()}{WriteHeader()}}
+{\footnotesize\ttfamily void Edge\+C\+Writer\+::\+Write\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Writes the header of the file. 
+
+
+
+Reimplemented from \hyperlink{classCWriter_a04b8381e64ef2e49ec7cfc308e10e10a}{C\+Writer}.
+
+
+
+Definition at line 1319 of file edge\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), and C\+Writer\+::indented\+\_\+output\+\_\+stream.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dee/classEdgeCWriter_a8b053256b8c65aca7d7539ebd23537c8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEdgeCWriter_a26e88f61025b2993b8608ef28951cb9f}\label{classEdgeCWriter_a26e88f61025b2993b8608ef28951cb9f}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!write\+Routine\+Instructions@{write\+Routine\+Instructions}}
+\index{write\+Routine\+Instructions@{write\+Routine\+Instructions}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{write\+Routine\+Instructions()}{writeRoutineInstructions()}}
+{\footnotesize\ttfamily void Edge\+C\+Writer\+::write\+Routine\+Instructions (\begin{DoxyParamCaption}\item[{const unsigned int}]{function\+\_\+index,  }\item[{const \hyperlink{classOpVertexSet}{Op\+Vertex\+Set} \&}]{instructions,  }\item[{const \hyperlink{var__pp__functor_8hpp_a8a6b51b6519401d911398943510557f0}{var\+\_\+pp\+\_\+functor\+Const\+Ref}}]{variable\+Functor,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{bb\+\_\+start = {\ttfamily \hyperlink{graph_8hpp_ac3c33c45c396860b76e8aff4dd2b8158}{N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX}},  }\item[{\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$}]{bb\+\_\+end = {\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Writes the instructions of the current routine, being it a task or a function of the original program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function\+\_\+index} & is the index of the function \\
+\hline
+{\em instructions} & is the instructions which have to be printed \\
+\hline
+{\em \hyperlink{structvar__pp__functor}{var\+\_\+pp\+\_\+functor}} & is the variable functor \\
+\hline
+{\em bb\+\_\+start} & is the first basic block to be printed \\
+\hline
+{\em bb\+\_\+end} & is the set of first basic block not to be printed \\
+\hline
+\end{DoxyParams}
+Then I compute all the labels associated with a basic block with more than one entering edge.
+
+set of basic block already analyzed
+
+store for which basic block the goto has been used
+
+basic block frontier over which write\+Routine\+Instructions\+\_\+rec cannot go.
+
+some statements can be in entry 
+
+Reimplemented from \hyperlink{classCWriter_a7810dd571d72debb400b889f8366848a}{C\+Writer}.
+
+
+
+Definition at line 1191 of file edge\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), C\+Writer\+::\+AppM, C\+Writer\+::basic\+\_\+blocks\+\_\+labels, C\+Writer\+::bb\+\_\+analyzed, C\+Writer\+::bb\+\_\+frontier, C\+Writer\+::bb\+\_\+label\+\_\+counter, Function\+Behavior\+::\+C\+Get\+B\+B\+Graph(), B\+B\+Graph\+::\+C\+Get\+B\+B\+Graph\+Info(), B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), Function\+Behavior\+::\+C\+Get\+Op\+Graph(), C\+Writer\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, C\+Writer\+::dominators, Function\+Behavior\+::dominators, dumped\+\_\+edges, bloc\+::\+E\+X\+I\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, Function\+Behavior\+::\+F\+BB, Function\+Behavior\+::\+F\+C\+FG, fun\+\_\+id, refcount$<$ T $>$\+::get(), Behavioral\+Helper\+::get\+\_\+function\+\_\+index(), Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), Behavioral\+Helper\+::get\+\_\+label\+\_\+name(), G\+E\+T\+\_\+\+T\+Y\+PE, C\+Writer\+::goto\+\_\+list, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, C\+Writer\+::indented\+\_\+output\+\_\+stream, local\+\_\+inc, C\+Writer\+::local\+\_\+rec\+\_\+function\+\_\+behavior, C\+Writer\+::local\+\_\+rec\+\_\+instructions, C\+Writer\+::local\+\_\+rec\+\_\+variable\+Functor, C\+Writer\+::post\+\_\+dominators, Function\+Behavior\+::post\+\_\+dominators, Function\+Behavior\+::\+P\+PG, P\+R\+O\+F\+I\+L\+I\+N\+G\+\_\+\+EC, Behavioral\+Helper\+::start\+\_\+with\+\_\+a\+\_\+label(), support\+\_\+cfg, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+DE, T\+Y\+P\+E\+\_\+\+E\+N\+T\+RY, C\+Writer\+::\+Write\+File(), and write\+Routine\+Instructions\+\_\+rec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dee/classEdgeCWriter_a26e88f61025b2993b8608ef28951cb9f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEdgeCWriter_a8bd9dbf867c6937dd51d309ef4f27073}\label{classEdgeCWriter_a8bd9dbf867c6937dd51d309ef4f27073}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!write\+Routine\+Instructions\+\_\+rec@{write\+Routine\+Instructions\+\_\+rec}}
+\index{write\+Routine\+Instructions\+\_\+rec@{write\+Routine\+Instructions\+\_\+rec}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{write\+Routine\+Instructions\+\_\+rec()}{writeRoutineInstructions\_rec()}}
+{\footnotesize\ttfamily void Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{current\+\_\+vertex,  }\item[{bool}]{bracket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Write recursively instructions belonging to a basic block of task or of a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function\+\_\+behavior} & is the function to which instructions belong \\
+\hline
+{\em current\+\_\+vertex} & is the basic block which is being printed \\
+\hline
+{\em instructions} & are the instructions which belongs to this task/function \\
+\hline
+{\em bracket} & tells if bracket should be added before and after this basic block \\
+\hline
+\end{DoxyParams}
+the entry vertex
+
+the exit vertex
+
+get immediate post-\/dominator
+
+compute the last statement
+
+check the feasibility
+
+check for basic block label
+
+print each instruction
+
+fill the renamin table in case is needed
+
+We can print results of split of phi nodes if they have not yet been printed and if label has already been printed (or there was not any label to be printed)
+
+If there is not any label to be printed, label\+\_\+has\+\_\+to\+\_\+be\+\_\+printed is already false, otherwise the label will be printed during this loop iteration
+
+in case we have phi nodes we check if some assignments should be printed
+
+Feedback edge on the false path of an if
+
+Target is not a while or a for
+
+now we can analyze the following basic blocks
+
+then adjust post dominator
+
+now we can analyze the following basic blocks
+
+added a fake indent
+
+in case we have phi nodes we check if some assignments should be printed
+
+Last basic block of a while/for loop
+
+added a fake indent
+
+added a fake indent 
+
+Definition at line 130 of file edge\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), C\+Writer\+::\+AppM, C\+Writer\+::basic\+\_\+block\+\_\+prefix, C\+Writer\+::basic\+\_\+block\+\_\+tail, C\+Writer\+::basic\+\_\+blocks\+\_\+labels, C\+Writer\+::bb\+\_\+analyzed, C\+Writer\+::bb\+\_\+frontier, C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, B\+B\+Graph\+::\+C\+Get\+B\+B\+Edge\+Info(), Function\+Behavior\+::\+C\+Get\+B\+B\+Graph(), B\+B\+Graph\+::\+C\+Get\+B\+B\+Graph\+Info(), B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), Function\+Behavior\+::\+C\+Get\+Loops(), Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), Behavioral\+Helper\+::clear\+\_\+renaming\+\_\+table(), C\+Writer\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, default\+\_\+\+C\+O\+ND, D\+O\+A\+L\+L\+\_\+\+L\+O\+OP, C\+Writer\+::dominators, Behavioral\+Helper\+::end\+\_\+with\+\_\+a\+\_\+cond\+\_\+or\+\_\+goto(), F\+B\+\_\+\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, Function\+Behavior\+::\+F\+BB, Function\+Behavior\+::\+F\+C\+FG, fun\+\_\+id, fun\+\_\+loop\+\_\+to\+\_\+index, Behavioral\+Helper\+::get\+\_\+function\+\_\+index(), dominance$<$ Graph\+Obj $>$\+::get\+\_\+immediate\+\_\+dominator(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+A\+ME, G\+E\+T\+\_\+\+T\+Y\+PE, graph\+::\+Get\+Selector(), C\+Writer\+::goto\+\_\+list, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, C\+Writer\+::indented\+\_\+output\+\_\+stream, C\+Writer\+::instr\+Writer, local\+\_\+inc, C\+Writer\+::local\+\_\+rec\+\_\+function\+\_\+behavior, C\+Writer\+::local\+\_\+rec\+\_\+instructions, C\+Writer\+::local\+\_\+rec\+\_\+variable\+Functor, N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX, C\+Writer\+::post\+\_\+dominators, Behavioral\+Helper\+::print\+\_\+constant(), print\+\_\+edge(), print\+\_\+end\+\_\+path(), print\+\_\+loop\+\_\+ending(), print\+\_\+loop\+\_\+escaping(), print\+\_\+loop\+\_\+starting(), print\+\_\+loop\+\_\+switching(), Behavioral\+Helper\+::\+Print\+Variable(), P\+R\+O\+F\+I\+L\+I\+N\+G\+\_\+\+EC, Behavioral\+Helper\+::rename\+\_\+a\+\_\+variable(), C\+Writer\+::renaming\+\_\+table, Behavioral\+Helper\+::start\+\_\+with\+\_\+a\+\_\+label(), S\+TR, support\+\_\+cfg, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+DE, C\+Writer\+::\+TM, T\+Y\+P\+E\+\_\+\+F\+OR, T\+Y\+P\+E\+\_\+\+IF, T\+Y\+P\+E\+\_\+\+I\+N\+IT, T\+Y\+P\+E\+\_\+\+L\+A\+B\+EL, T\+Y\+P\+E\+\_\+\+L\+A\+S\+T\+\_\+\+OP, T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+IF, T\+Y\+P\+E\+\_\+\+R\+ET, T\+Y\+P\+E\+\_\+\+S\+W\+I\+T\+CH, T\+Y\+P\+E\+\_\+\+V\+P\+HI, T\+Y\+P\+E\+\_\+\+W\+H\+I\+LE, and C\+Writer\+::verbose.
+
+
+
+Referenced by write\+Routine\+Instructions().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dee/classEdgeCWriter_a8bd9dbf867c6937dd51d309ef4f27073_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dee/classEdgeCWriter_a8bd9dbf867c6937dd51d309ef4f27073_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classEdgeCWriter_a49c0cee264f99741c51a888c52a4e429}\label{classEdgeCWriter_a49c0cee264f99741c51a888c52a4e429}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!counter@{counter}}
+\index{counter@{counter}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{counter}{counter}}
+{\footnotesize\ttfamily unsigned int Edge\+C\+Writer\+::counter\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The size of fun\+\_\+loop\+\_\+to\+\_\+index. 
+
+
+
+Definition at line 126 of file edge\+\_\+c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Initialize().
+
+\mbox{\Hypertarget{classEdgeCWriter_a8253f69d8bed3c2e26a00ecc16955c16}\label{classEdgeCWriter_a8253f69d8bed3c2e26a00ecc16955c16}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!dumped\+\_\+edges@{dumped\+\_\+edges}}
+\index{dumped\+\_\+edges@{dumped\+\_\+edges}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{dumped\+\_\+edges}{dumped\_edges}}
+{\footnotesize\ttfamily std\+::set$<$\hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor}, \hyperlink{structltedge}{ltedge}$<$\hyperlink{structBBGraph}{B\+B\+Graph}$>$ $>$ Edge\+C\+Writer\+::dumped\+\_\+edges\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set of already dumped edges. 
+
+
+
+Definition at line 120 of file edge\+\_\+c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Basic\+Blocks\+Profiling\+C\+Writer\+::print\+\_\+edge(), print\+\_\+edge(), and write\+Routine\+Instructions().
+
+\mbox{\Hypertarget{classEdgeCWriter_a24e5a49302d7900304d7c020889aa979}\label{classEdgeCWriter_a24e5a49302d7900304d7c020889aa979}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!fun\+\_\+id@{fun\+\_\+id}}
+\index{fun\+\_\+id@{fun\+\_\+id}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{fun\+\_\+id}{fun\_id}}
+{\footnotesize\ttfamily unsigned int Edge\+C\+Writer\+::fun\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Index of the current function. 
+
+
+
+Definition at line 132 of file edge\+\_\+c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Basic\+Blocks\+Profiling\+C\+Writer\+::print\+\_\+edge(), write\+Routine\+Instructions(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classEdgeCWriter_aae33614ac66605c84a7ccc1552af424f}\label{classEdgeCWriter_aae33614ac66605c84a7ccc1552af424f}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!fun\+\_\+loop\+\_\+to\+\_\+index@{fun\+\_\+loop\+\_\+to\+\_\+index}}
+\index{fun\+\_\+loop\+\_\+to\+\_\+index@{fun\+\_\+loop\+\_\+to\+\_\+index}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{fun\+\_\+loop\+\_\+to\+\_\+index}{fun\_loop\_to\_index}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, std\+::map$<$unsigned int, unsigned int$>$ $>$ Edge\+C\+Writer\+::fun\+\_\+loop\+\_\+to\+\_\+index\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Map a pair function -\/ loop to an unique index. 
+
+
+
+Definition at line 123 of file edge\+\_\+c\+\_\+writer.\+hpp.
+
+
+
+Referenced by C\+Get\+Function\+Loop\+To\+Id(), Initialize(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classEdgeCWriter_a7b417f4e7cc68c365e804828f5ced098}\label{classEdgeCWriter_a7b417f4e7cc68c365e804828f5ced098}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!local\+\_\+inc@{local\+\_\+inc}}
+\index{local\+\_\+inc@{local\+\_\+inc}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{local\+\_\+inc}{local\_inc}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor}$>$ Edge\+C\+Writer\+::local\+\_\+inc\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Increment which should be added before the label in a basic block. 
+
+
+
+Definition at line 117 of file edge\+\_\+c\+\_\+writer.\+hpp.
+
+
+
+Referenced by write\+Routine\+Instructions(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classEdgeCWriter_ab394651b6c31ee7b0dbd7552d506dfd3}\label{classEdgeCWriter_ab394651b6c31ee7b0dbd7552d506dfd3}} 
+\index{Edge\+C\+Writer@{Edge\+C\+Writer}!support\+\_\+cfg@{support\+\_\+cfg}}
+\index{support\+\_\+cfg@{support\+\_\+cfg}!Edge\+C\+Writer@{Edge\+C\+Writer}}
+\subsubsection{\texorpdfstring{support\+\_\+cfg}{support\_cfg}}
+{\footnotesize\ttfamily \hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref} Edge\+C\+Writer\+::support\+\_\+cfg\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Special control flow graphs. 
+
+
+
+Definition at line 129 of file edge\+\_\+c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Basic\+Blocks\+Profiling\+C\+Writer\+::print\+\_\+edge(), write\+Routine\+Instructions(), and write\+Routine\+Instructions\+\_\+rec().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+C/source\+\_\+code\+\_\+writers/\hyperlink{edge__c__writer_8hpp}{edge\+\_\+c\+\_\+writer.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+C/source\+\_\+code\+\_\+writers/\hyperlink{edge__c__writer_8cpp}{edge\+\_\+c\+\_\+writer.\+cpp}\end{DoxyCompactItemize}

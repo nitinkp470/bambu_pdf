@@ -1,0 +1,838 @@
+\hypertarget{structvcd__trace__head}{}\section{vcd\+\_\+trace\+\_\+head Struct Reference}
+\label{structvcd__trace__head}\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+
+
+{\ttfamily \#include $<$vcd\+\_\+trace\+\_\+head.\+hpp$>$}
+
+
+
+Collaboration diagram for vcd\+\_\+trace\+\_\+head\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d74/structvcd__trace__head__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207e}{vcd\+\_\+head\+\_\+state} \{ \newline
+\hyperlink{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207ea7c35876c0fc95989b9005d8d8f696afc}{uninitialized}, 
+\hyperlink{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207ea8dea7a0170e7e14a4d680cedb1c6ac95}{init\+\_\+fail}, 
+\hyperlink{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207ea083828820ffec0c8850314820209a876}{initialized}, 
+\hyperlink{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207ead20e078db22bd6a9124862b9dc75c244}{after\+\_\+discrepancy}, 
+\newline
+\hyperlink{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207eaf484335545aa8e9fcd28192629aa598d}{discrepancy\+\_\+found}, 
+\hyperlink{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207ea72f1cc7f45169f2c360f2d8e532438b9}{checked}, 
+\hyperlink{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207eaa953c0f1429991b4f88799cea15830ea}{suspended}, 
+\hyperlink{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207ea75af84a41d125e5982af5797025c6946}{running}
+ \}
+\item 
+enum \hyperlink{structvcd__trace__head_ad0e9ddff3ce422e4273ae6ccbb2a88f8}{vcd\+\_\+head\+\_\+failure} \{ \hyperlink{structvcd__trace__head_ad0e9ddff3ce422e4273ae6ccbb2a88f8a98d07172fabb08d77bd9b80ef4dd4435}{no\+\_\+start\+\_\+state}, 
+\hyperlink{structvcd__trace__head_ad0e9ddff3ce422e4273ae6ccbb2a88f8abe0399b140fe73d68cb4bbae3d33c764}{no\+\_\+end\+\_\+state}, 
+\hyperlink{structvcd__trace__head_ad0e9ddff3ce422e4273ae6ccbb2a88f8aa15e5073342d97da42014429f38816c7}{function\+\_\+does\+\_\+not\+\_\+start}, 
+\hyperlink{structvcd__trace__head_ad0e9ddff3ce422e4273ae6ccbb2a88f8a512cc13d0c62c33e8b97c876d5747aa6}{fail\+\_\+none}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structvcd__trace__head_a809cb4e23fba0c1b8f1ef9080356c6b9}{vcd\+\_\+trace\+\_\+head} (const \hyperlink{classDiscrepancyOpInfo}{Discrepancy\+Op\+Info} \&\hyperlink{structvcd__trace__head_ab9af239642c986de4ac370c4f1aac89d}{op\+\_\+info}, std\+::string signame, const std\+::list$<$ \hyperlink{structsig__variation}{sig\+\_\+variation} $>$ \&fv, const std\+::list$<$ \hyperlink{structsig__variation}{sig\+\_\+variation} $>$ \&ov, const std\+::list$<$ \hyperlink{structsig__variation}{sig\+\_\+variation} $>$ \&sv, unsigned int init\+\_\+state\+\_\+id, unsigned long long \hyperlink{structvcd__trace__head_aa2628fa99bf78726ad2bc68d2e26b8cc}{clock\+\_\+period}, const \hyperlink{hls__manager_8hpp_a1b481383e3beabc89bd7562ae672dd8c}{H\+L\+S\+\_\+manager\+Const\+Ref} \+\_\+\+H\+L\+S\+Mgr, const \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref} \+\_\+\+TM, const bool \hyperlink{structvcd__trace__head_abf2f32f88367884a7424738693ec5fd8}{one\+\_\+hot\+\_\+fsm\+\_\+encoding})
+\item 
+\hyperlink{structvcd__trace__head_af56db488ec24f5abbc725385b4e8fe31}{$\sim$vcd\+\_\+trace\+\_\+head} ()=default
+\item 
+void \hyperlink{structvcd__trace__head_a20ce69cc689b656626dd0400b8606e95}{advance} ()
+\item 
+bool \hyperlink{structvcd__trace__head_a71368425927cf032fcbfa62d280f8a6e}{starts\+\_\+after} (unsigned long long t) const
+\item 
+bool \hyperlink{structvcd__trace__head_a08e6fa00d6e2d694a3297cd536558cb1}{ends\+\_\+after} (unsigned long long t) const
+\item 
+bool \hyperlink{structvcd__trace__head_afaca372a204f448329b859a6f1e19b6c}{more\+\_\+executions\+\_\+in\+\_\+this\+\_\+hw\+\_\+state} () const
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207e}{vcd\+\_\+head\+\_\+state} \hyperlink{structvcd__trace__head_ad41fd0e7ee5a8f06fc7ef1fa8714ab24}{state}
+\item 
+enum \hyperlink{structvcd__trace__head_ad0e9ddff3ce422e4273ae6ccbb2a88f8}{vcd\+\_\+head\+\_\+failure} \hyperlink{structvcd__trace__head_a6395cfe9499ffeca14aba741fdd68253}{failed}
+\item 
+const \hyperlink{classDiscrepancyOpInfo}{Discrepancy\+Op\+Info} \& \hyperlink{structvcd__trace__head_ab9af239642c986de4ac370c4f1aac89d}{op\+\_\+info}
+\item 
+const bool \hyperlink{structvcd__trace__head_ae5b17f8c640f51863fa42f020ae94e66}{is\+\_\+phi}
+\item 
+const bool \hyperlink{structvcd__trace__head_abd309d5c7d233cb75ca3b117e54c8ccc}{is\+\_\+in\+\_\+reg}
+\item 
+const \hyperlink{hls__manager_8hpp_a1b481383e3beabc89bd7562ae672dd8c}{H\+L\+S\+\_\+manager\+Const\+Ref} \hyperlink{structvcd__trace__head_a0b276042c7a370e1fbba5b855a57d7f3}{H\+L\+S\+Mgr}
+\item 
+const \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref} \hyperlink{structvcd__trace__head_a8db2070e7bd8fa8d995f034143c860ad}{TM}
+\item 
+const unsigned int \hyperlink{structvcd__trace__head_aabe62f6ae8b5b24732857daaa9df4b30}{initial\+\_\+state\+\_\+id}
+\item 
+const std\+::list$<$ \hyperlink{structsig__variation}{sig\+\_\+variation} $>$ \& \hyperlink{structvcd__trace__head_a78c41220597abaf2c6f11b2174929666}{fsm\+\_\+vars}
+\item 
+std\+::list$<$ \hyperlink{structsig__variation}{sig\+\_\+variation} $>$\+::const\+\_\+iterator \hyperlink{structvcd__trace__head_aa00e910431b3a8a5fca7bf6961739091}{fsm\+\_\+ss\+\_\+it}
+\item 
+std\+::list$<$ \hyperlink{structsig__variation}{sig\+\_\+variation} $>$\+::const\+\_\+iterator \hyperlink{structvcd__trace__head_a696d35a8e999fbf0f18e78d5312fd8bf}{fsm\+\_\+end}
+\item 
+const std\+::list$<$ \hyperlink{structsig__variation}{sig\+\_\+variation} $>$ \& \hyperlink{structvcd__trace__head_a4c40b23aa1c08f07ce05160a7d4e8a48}{out\+\_\+vars}
+\item 
+std\+::list$<$ \hyperlink{structsig__variation}{sig\+\_\+variation} $>$\+::const\+\_\+iterator \hyperlink{structvcd__trace__head_a8d81fbe60f9ec091baeeb08d810556a8}{out\+\_\+var\+\_\+it}
+\item 
+std\+::list$<$ \hyperlink{structsig__variation}{sig\+\_\+variation} $>$\+::const\+\_\+iterator \hyperlink{structvcd__trace__head_a9f295da972306c34afa09c14338cab9b}{out\+\_\+var\+\_\+end}
+\item 
+const std\+::list$<$ \hyperlink{structsig__variation}{sig\+\_\+variation} $>$ \& \hyperlink{structvcd__trace__head_a500dbaecd7bec2e4601e2d878d075ae5}{start\+\_\+vars}
+\item 
+std\+::list$<$ \hyperlink{structsig__variation}{sig\+\_\+variation} $>$\+::const\+\_\+iterator \hyperlink{structvcd__trace__head_ac4fbf68c61ede724a8b3bf1e31d4b476}{sp\+\_\+var\+\_\+it}
+\item 
+std\+::list$<$ \hyperlink{structsig__variation}{sig\+\_\+variation} $>$\+::const\+\_\+iterator \hyperlink{structvcd__trace__head_a243e3e9502ce1ae7139cdbff5a827062}{sp\+\_\+var\+\_\+end}
+\item 
+const std\+::string \hyperlink{structvcd__trace__head_a8f424c51043c8252abcf4ff39c77c04e}{fullsigname}
+\item 
+unsigned long long \hyperlink{structvcd__trace__head_af546fb3d7dd888de25ba81ac51eeef48}{op\+\_\+start\+\_\+time}
+\item 
+unsigned long long \hyperlink{structvcd__trace__head_a3e830d6baf387e53ab806f01b62ad287}{op\+\_\+end\+\_\+time}
+\item 
+const unsigned long long \hyperlink{structvcd__trace__head_aa2628fa99bf78726ad2bc68d2e26b8cc}{clock\+\_\+period}
+\item 
+unsigned long long \hyperlink{structvcd__trace__head_a664e943fb2c8b9d90d301d5bd429d96b}{exec\+\_\+times\+\_\+in\+\_\+current\+\_\+state}
+\item 
+unsigned long long \hyperlink{structvcd__trace__head_aaf2ebcdc364e155ea3fc576fde1239a4}{consecutive\+\_\+state\+\_\+executions}
+\item 
+bool \hyperlink{structvcd__trace__head_adb1635d0b8337b81a4a47f14eda31ab3}{has\+\_\+been\+\_\+initialized}
+\item 
+bool \hyperlink{structvcd__trace__head_acc03a8b5a503e805abc218101be1a320}{fsm\+\_\+has\+\_\+a\+\_\+single\+\_\+state}
+\item 
+bool \hyperlink{structvcd__trace__head_a3e61d1aa9602b8820de30b1f1da92298}{start\+\_\+state\+\_\+is\+\_\+initial}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{structvcd__trace__head_acdcc6eecd8b483590b6974d51cc9a8fc}{set\+\_\+consecutive\+\_\+state\+\_\+executions} ()
+\item 
+void \hyperlink{structvcd__trace__head_aefd02e39314983a9e8b2ce299d8482f1}{unbounded\+\_\+find\+\_\+end\+\_\+time} ()
+\item 
+void \hyperlink{structvcd__trace__head_afebefebabc382bd2bd3d408f852668a8}{update} ()
+\item 
+void \hyperlink{structvcd__trace__head_ab2ccd52157df2b0a82e47dec7a3942c4}{detect\+\_\+new\+\_\+start\+\_\+end\+\_\+times} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const bool \hyperlink{structvcd__trace__head_abf2f32f88367884a7424738693ec5fd8}{one\+\_\+hot\+\_\+fsm\+\_\+encoding}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 51 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{structvcd__trace__head_ad0e9ddff3ce422e4273ae6ccbb2a88f8}\label{structvcd__trace__head_ad0e9ddff3ce422e4273ae6ccbb2a88f8}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!vcd\+\_\+head\+\_\+failure@{vcd\+\_\+head\+\_\+failure}}
+\index{vcd\+\_\+head\+\_\+failure@{vcd\+\_\+head\+\_\+failure}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{vcd\+\_\+head\+\_\+failure}{vcd\_head\_failure}}
+{\footnotesize\ttfamily enum \hyperlink{structvcd__trace__head_ad0e9ddff3ce422e4273ae6ccbb2a88f8}{vcd\+\_\+trace\+\_\+head\+::vcd\+\_\+head\+\_\+failure}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{no\+\_\+start\+\_\+state@{no\+\_\+start\+\_\+state}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!no\+\_\+start\+\_\+state@{no\+\_\+start\+\_\+state}}}\mbox{\Hypertarget{structvcd__trace__head_ad0e9ddff3ce422e4273ae6ccbb2a88f8a98d07172fabb08d77bd9b80ef4dd4435}\label{structvcd__trace__head_ad0e9ddff3ce422e4273ae6ccbb2a88f8a98d07172fabb08d77bd9b80ef4dd4435}} 
+no\+\_\+start\+\_\+state&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{no\+\_\+end\+\_\+state@{no\+\_\+end\+\_\+state}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!no\+\_\+end\+\_\+state@{no\+\_\+end\+\_\+state}}}\mbox{\Hypertarget{structvcd__trace__head_ad0e9ddff3ce422e4273ae6ccbb2a88f8abe0399b140fe73d68cb4bbae3d33c764}\label{structvcd__trace__head_ad0e9ddff3ce422e4273ae6ccbb2a88f8abe0399b140fe73d68cb4bbae3d33c764}} 
+no\+\_\+end\+\_\+state&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{function\+\_\+does\+\_\+not\+\_\+start@{function\+\_\+does\+\_\+not\+\_\+start}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!function\+\_\+does\+\_\+not\+\_\+start@{function\+\_\+does\+\_\+not\+\_\+start}}}\mbox{\Hypertarget{structvcd__trace__head_ad0e9ddff3ce422e4273ae6ccbb2a88f8aa15e5073342d97da42014429f38816c7}\label{structvcd__trace__head_ad0e9ddff3ce422e4273ae6ccbb2a88f8aa15e5073342d97da42014429f38816c7}} 
+function\+\_\+does\+\_\+not\+\_\+start&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{fail\+\_\+none@{fail\+\_\+none}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!fail\+\_\+none@{fail\+\_\+none}}}\mbox{\Hypertarget{structvcd__trace__head_ad0e9ddff3ce422e4273ae6ccbb2a88f8a512cc13d0c62c33e8b97c876d5747aa6}\label{structvcd__trace__head_ad0e9ddff3ce422e4273ae6ccbb2a88f8a512cc13d0c62c33e8b97c876d5747aa6}} 
+fail\+\_\+none&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 89 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+\mbox{\Hypertarget{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207e}\label{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207e}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!vcd\+\_\+head\+\_\+state@{vcd\+\_\+head\+\_\+state}}
+\index{vcd\+\_\+head\+\_\+state@{vcd\+\_\+head\+\_\+state}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{vcd\+\_\+head\+\_\+state}{vcd\_head\_state}}
+{\footnotesize\ttfamily enum \hyperlink{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207e}{vcd\+\_\+trace\+\_\+head\+::vcd\+\_\+head\+\_\+state}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{uninitialized@{uninitialized}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!uninitialized@{uninitialized}}}\mbox{\Hypertarget{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207ea7c35876c0fc95989b9005d8d8f696afc}\label{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207ea7c35876c0fc95989b9005d8d8f696afc}} 
+uninitialized&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{init\+\_\+fail@{init\+\_\+fail}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!init\+\_\+fail@{init\+\_\+fail}}}\mbox{\Hypertarget{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207ea8dea7a0170e7e14a4d680cedb1c6ac95}\label{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207ea8dea7a0170e7e14a4d680cedb1c6ac95}} 
+init\+\_\+fail&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{initialized@{initialized}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!initialized@{initialized}}}\mbox{\Hypertarget{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207ea083828820ffec0c8850314820209a876}\label{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207ea083828820ffec0c8850314820209a876}} 
+initialized&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{after\+\_\+discrepancy@{after\+\_\+discrepancy}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!after\+\_\+discrepancy@{after\+\_\+discrepancy}}}\mbox{\Hypertarget{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207ead20e078db22bd6a9124862b9dc75c244}\label{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207ead20e078db22bd6a9124862b9dc75c244}} 
+after\+\_\+discrepancy&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{discrepancy\+\_\+found@{discrepancy\+\_\+found}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!discrepancy\+\_\+found@{discrepancy\+\_\+found}}}\mbox{\Hypertarget{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207eaf484335545aa8e9fcd28192629aa598d}\label{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207eaf484335545aa8e9fcd28192629aa598d}} 
+discrepancy\+\_\+found&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{checked@{checked}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!checked@{checked}}}\mbox{\Hypertarget{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207ea72f1cc7f45169f2c360f2d8e532438b9}\label{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207ea72f1cc7f45169f2c360f2d8e532438b9}} 
+checked&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{suspended@{suspended}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!suspended@{suspended}}}\mbox{\Hypertarget{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207eaa953c0f1429991b4f88799cea15830ea}\label{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207eaa953c0f1429991b4f88799cea15830ea}} 
+suspended&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{running@{running}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!running@{running}}}\mbox{\Hypertarget{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207ea75af84a41d125e5982af5797025c6946}\label{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207ea75af84a41d125e5982af5797025c6946}} 
+running&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 76 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structvcd__trace__head_a809cb4e23fba0c1b8f1ef9080356c6b9}\label{structvcd__trace__head_a809cb4e23fba0c1b8f1ef9080356c6b9}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{vcd\+\_\+trace\+\_\+head()}{vcd\_trace\_head()}}
+{\footnotesize\ttfamily vcd\+\_\+trace\+\_\+head\+::vcd\+\_\+trace\+\_\+head (\begin{DoxyParamCaption}\item[{const \hyperlink{classDiscrepancyOpInfo}{Discrepancy\+Op\+Info} \&}]{op\+\_\+info,  }\item[{std\+::string}]{signame,  }\item[{const std\+::list$<$ \hyperlink{structsig__variation}{sig\+\_\+variation} $>$ \&}]{fv,  }\item[{const std\+::list$<$ \hyperlink{structsig__variation}{sig\+\_\+variation} $>$ \&}]{ov,  }\item[{const std\+::list$<$ \hyperlink{structsig__variation}{sig\+\_\+variation} $>$ \&}]{sv,  }\item[{unsigned int}]{init\+\_\+state\+\_\+id,  }\item[{unsigned long long}]{clock\+\_\+period,  }\item[{const \hyperlink{hls__manager_8hpp_a1b481383e3beabc89bd7562ae672dd8c}{H\+L\+S\+\_\+manager\+Const\+Ref}}]{\+\_\+\+H\+L\+S\+Mgr,  }\item[{const \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref}}]{\+\_\+\+TM,  }\item[{const bool}]{one\+\_\+hot\+\_\+fsm\+\_\+encoding }\end{DoxyParamCaption})}
+
+
+
+Definition at line 155 of file vcd\+\_\+trace\+\_\+head.\+cpp.
+
+\mbox{\Hypertarget{structvcd__trace__head_af56db488ec24f5abbc725385b4e8fe31}\label{structvcd__trace__head_af56db488ec24f5abbc725385b4e8fe31}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!````~vcd\+\_\+trace\+\_\+head@{$\sim$vcd\+\_\+trace\+\_\+head}}
+\index{````~vcd\+\_\+trace\+\_\+head@{$\sim$vcd\+\_\+trace\+\_\+head}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{$\sim$vcd\+\_\+trace\+\_\+head()}{~vcd\_trace\_head()}}
+{\footnotesize\ttfamily vcd\+\_\+trace\+\_\+head\+::$\sim$vcd\+\_\+trace\+\_\+head (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structvcd__trace__head_a20ce69cc689b656626dd0400b8606e95}\label{structvcd__trace__head_a20ce69cc689b656626dd0400b8606e95}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!advance@{advance}}
+\index{advance@{advance}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{advance()}{advance()}}
+{\footnotesize\ttfamily void vcd\+\_\+trace\+\_\+head\+::advance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 381 of file vcd\+\_\+trace\+\_\+head.\+cpp.
+
+
+
+References after\+\_\+discrepancy, checked, detect\+\_\+new\+\_\+start\+\_\+end\+\_\+times(), discrepancy\+\_\+found, has\+\_\+been\+\_\+initialized, init\+\_\+fail, initialized, op\+\_\+end\+\_\+time, Discrepancy\+Op\+Info\+::op\+\_\+id, op\+\_\+info, out\+\_\+var\+\_\+end, out\+\_\+var\+\_\+it, running, state, S\+TR, suspended, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, uninitialized, update(), and var\+\_\+is\+\_\+later\+\_\+or\+\_\+equal().
+
+
+
+Referenced by vcd\+\_\+utility\+::\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d30/structvcd__trace__head_a20ce69cc689b656626dd0400b8606e95_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{df/d30/structvcd__trace__head_a20ce69cc689b656626dd0400b8606e95_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structvcd__trace__head_ab2ccd52157df2b0a82e47dec7a3942c4}\label{structvcd__trace__head_ab2ccd52157df2b0a82e47dec7a3942c4}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!detect\+\_\+new\+\_\+start\+\_\+end\+\_\+times@{detect\+\_\+new\+\_\+start\+\_\+end\+\_\+times}}
+\index{detect\+\_\+new\+\_\+start\+\_\+end\+\_\+times@{detect\+\_\+new\+\_\+start\+\_\+end\+\_\+times}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{detect\+\_\+new\+\_\+start\+\_\+end\+\_\+times()}{detect\_new\_start\_end\_times()}}
+{\footnotesize\ttfamily void vcd\+\_\+trace\+\_\+head\+::detect\+\_\+new\+\_\+start\+\_\+end\+\_\+times (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 368 of file vcd\+\_\+trace\+\_\+head.\+cpp.
+
+
+
+References clock\+\_\+period, Discrepancy\+Op\+Info\+::is\+\_\+bounded\+\_\+op, op\+\_\+end\+\_\+time, op\+\_\+info, op\+\_\+start\+\_\+time, and unbounded\+\_\+find\+\_\+end\+\_\+time().
+
+
+
+Referenced by advance().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d30/structvcd__trace__head_ab2ccd52157df2b0a82e47dec7a3942c4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d30/structvcd__trace__head_ab2ccd52157df2b0a82e47dec7a3942c4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structvcd__trace__head_a08e6fa00d6e2d694a3297cd536558cb1}\label{structvcd__trace__head_a08e6fa00d6e2d694a3297cd536558cb1}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!ends\+\_\+after@{ends\+\_\+after}}
+\index{ends\+\_\+after@{ends\+\_\+after}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{ends\+\_\+after()}{ends\_after()}}
+{\footnotesize\ttfamily bool vcd\+\_\+trace\+\_\+head\+::ends\+\_\+after (\begin{DoxyParamCaption}\item[{unsigned long long}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 66 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+References op\+\_\+end\+\_\+time.
+
+
+
+Referenced by vcd\+\_\+utility\+::\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{df/d30/structvcd__trace__head_a08e6fa00d6e2d694a3297cd536558cb1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structvcd__trace__head_afaca372a204f448329b859a6f1e19b6c}\label{structvcd__trace__head_afaca372a204f448329b859a6f1e19b6c}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!more\+\_\+executions\+\_\+in\+\_\+this\+\_\+hw\+\_\+state@{more\+\_\+executions\+\_\+in\+\_\+this\+\_\+hw\+\_\+state}}
+\index{more\+\_\+executions\+\_\+in\+\_\+this\+\_\+hw\+\_\+state@{more\+\_\+executions\+\_\+in\+\_\+this\+\_\+hw\+\_\+state}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{more\+\_\+executions\+\_\+in\+\_\+this\+\_\+hw\+\_\+state()}{more\_executions\_in\_this\_hw\_state()}}
+{\footnotesize\ttfamily bool vcd\+\_\+trace\+\_\+head\+::more\+\_\+executions\+\_\+in\+\_\+this\+\_\+hw\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 71 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+References consecutive\+\_\+state\+\_\+executions, and exec\+\_\+times\+\_\+in\+\_\+current\+\_\+state.
+
+
+
+Referenced by vcd\+\_\+utility\+::\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d30/structvcd__trace__head_afaca372a204f448329b859a6f1e19b6c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structvcd__trace__head_acdcc6eecd8b483590b6974d51cc9a8fc}\label{structvcd__trace__head_acdcc6eecd8b483590b6974d51cc9a8fc}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!set\+\_\+consecutive\+\_\+state\+\_\+executions@{set\+\_\+consecutive\+\_\+state\+\_\+executions}}
+\index{set\+\_\+consecutive\+\_\+state\+\_\+executions@{set\+\_\+consecutive\+\_\+state\+\_\+executions}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{set\+\_\+consecutive\+\_\+state\+\_\+executions()}{set\_consecutive\_state\_executions()}}
+{\footnotesize\ttfamily void vcd\+\_\+trace\+\_\+head\+::set\+\_\+consecutive\+\_\+state\+\_\+executions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 187 of file vcd\+\_\+trace\+\_\+head.\+cpp.
+
+
+
+References clock\+\_\+period, consecutive\+\_\+state\+\_\+executions, exec\+\_\+times\+\_\+in\+\_\+current\+\_\+state, fsm\+\_\+has\+\_\+a\+\_\+single\+\_\+state, fsm\+\_\+ss\+\_\+it, max(), op\+\_\+start\+\_\+time, running, sp\+\_\+var\+\_\+end, sp\+\_\+var\+\_\+it, start\+\_\+state\+\_\+is\+\_\+initial, state, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and uninitialized.
+
+
+
+Referenced by update().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{df/d30/structvcd__trace__head_acdcc6eecd8b483590b6974d51cc9a8fc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d30/structvcd__trace__head_acdcc6eecd8b483590b6974d51cc9a8fc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structvcd__trace__head_a71368425927cf032fcbfa62d280f8a6e}\label{structvcd__trace__head_a71368425927cf032fcbfa62d280f8a6e}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!starts\+\_\+after@{starts\+\_\+after}}
+\index{starts\+\_\+after@{starts\+\_\+after}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{starts\+\_\+after()}{starts\_after()}}
+{\footnotesize\ttfamily bool vcd\+\_\+trace\+\_\+head\+::starts\+\_\+after (\begin{DoxyParamCaption}\item[{unsigned long long}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 61 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+References op\+\_\+start\+\_\+time.
+
+\mbox{\Hypertarget{structvcd__trace__head_aefd02e39314983a9e8b2ce299d8482f1}\label{structvcd__trace__head_aefd02e39314983a9e8b2ce299d8482f1}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!unbounded\+\_\+find\+\_\+end\+\_\+time@{unbounded\+\_\+find\+\_\+end\+\_\+time}}
+\index{unbounded\+\_\+find\+\_\+end\+\_\+time@{unbounded\+\_\+find\+\_\+end\+\_\+time}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{unbounded\+\_\+find\+\_\+end\+\_\+time()}{unbounded\_find\_end\_time()}}
+{\footnotesize\ttfamily void vcd\+\_\+trace\+\_\+head\+::unbounded\+\_\+find\+\_\+end\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 221 of file vcd\+\_\+trace\+\_\+head.\+cpp.
+
+
+
+References clock\+\_\+period, consecutive\+\_\+state\+\_\+executions, exec\+\_\+times\+\_\+in\+\_\+current\+\_\+state, failed, fsm\+\_\+end, fsm\+\_\+ss\+\_\+it, init\+\_\+fail, is\+\_\+exec(), is\+\_\+phi, is\+\_\+start(), no\+\_\+end\+\_\+state, one\+\_\+hot\+\_\+fsm\+\_\+encoding, op\+\_\+end\+\_\+time, Discrepancy\+Op\+Info\+::op\+\_\+id, op\+\_\+info, op\+\_\+start\+\_\+time, state, Discrepancy\+Op\+Info\+::stg\+\_\+fun\+\_\+id, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by detect\+\_\+new\+\_\+start\+\_\+end\+\_\+times(), and update().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d30/structvcd__trace__head_aefd02e39314983a9e8b2ce299d8482f1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d30/structvcd__trace__head_aefd02e39314983a9e8b2ce299d8482f1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structvcd__trace__head_afebefebabc382bd2bd3d408f852668a8}\label{structvcd__trace__head_afebefebabc382bd2bd3d408f852668a8}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!update@{update}}
+\index{update@{update}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void vcd\+\_\+trace\+\_\+head\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 263 of file vcd\+\_\+trace\+\_\+head.\+cpp.
+
+
+
+References clock\+\_\+period, compute\+\_\+state\+\_\+id(), failed, fsm\+\_\+end, fsm\+\_\+has\+\_\+a\+\_\+single\+\_\+state, fsm\+\_\+ss\+\_\+it, function\+\_\+does\+\_\+not\+\_\+start, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), has\+\_\+been\+\_\+initialized, H\+L\+S\+Mgr, init\+\_\+fail, initial\+\_\+state\+\_\+id, is\+\_\+binary\+\_\+string\+\_\+repr(), Discrepancy\+Op\+Info\+::is\+\_\+bounded\+\_\+op, is\+\_\+in\+\_\+reg, is\+\_\+phi, is\+\_\+start(), Discrepancy\+Op\+Info\+::n\+\_\+cycles, no\+\_\+start\+\_\+state, one\+\_\+hot\+\_\+fsm\+\_\+encoding, op\+\_\+end\+\_\+time, Discrepancy\+Op\+Info\+::op\+\_\+id, op\+\_\+info, op\+\_\+start\+\_\+time, set\+\_\+consecutive\+\_\+state\+\_\+executions(), sp\+\_\+var\+\_\+end, sp\+\_\+var\+\_\+it, Discrepancy\+Op\+Info\+::ssa\+\_\+name\+\_\+node\+\_\+id, start\+\_\+state\+\_\+is\+\_\+initial, state, Discrepancy\+Op\+Info\+::stg\+\_\+fun\+\_\+id, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, TM, unbounded\+\_\+find\+\_\+end\+\_\+time(), and var\+\_\+has\+\_\+value\+\_\+ones().
+
+
+
+Referenced by advance().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d30/structvcd__trace__head_afebefebabc382bd2bd3d408f852668a8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d30/structvcd__trace__head_afebefebabc382bd2bd3d408f852668a8_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structvcd__trace__head_aa2628fa99bf78726ad2bc68d2e26b8cc}\label{structvcd__trace__head_aa2628fa99bf78726ad2bc68d2e26b8cc}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!clock\+\_\+period@{clock\+\_\+period}}
+\index{clock\+\_\+period@{clock\+\_\+period}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{clock\+\_\+period}{clock\_period}}
+{\footnotesize\ttfamily const unsigned long long vcd\+\_\+trace\+\_\+head\+::clock\+\_\+period}
+
+
+
+Definition at line 128 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by detect\+\_\+new\+\_\+start\+\_\+end\+\_\+times(), set\+\_\+consecutive\+\_\+state\+\_\+executions(), unbounded\+\_\+find\+\_\+end\+\_\+time(), and update().
+
+\mbox{\Hypertarget{structvcd__trace__head_aaf2ebcdc364e155ea3fc576fde1239a4}\label{structvcd__trace__head_aaf2ebcdc364e155ea3fc576fde1239a4}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!consecutive\+\_\+state\+\_\+executions@{consecutive\+\_\+state\+\_\+executions}}
+\index{consecutive\+\_\+state\+\_\+executions@{consecutive\+\_\+state\+\_\+executions}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{consecutive\+\_\+state\+\_\+executions}{consecutive\_state\_executions}}
+{\footnotesize\ttfamily unsigned long long vcd\+\_\+trace\+\_\+head\+::consecutive\+\_\+state\+\_\+executions}
+
+
+
+Definition at line 130 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by more\+\_\+executions\+\_\+in\+\_\+this\+\_\+hw\+\_\+state(), set\+\_\+consecutive\+\_\+state\+\_\+executions(), and unbounded\+\_\+find\+\_\+end\+\_\+time().
+
+\mbox{\Hypertarget{structvcd__trace__head_a664e943fb2c8b9d90d301d5bd429d96b}\label{structvcd__trace__head_a664e943fb2c8b9d90d301d5bd429d96b}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!exec\+\_\+times\+\_\+in\+\_\+current\+\_\+state@{exec\+\_\+times\+\_\+in\+\_\+current\+\_\+state}}
+\index{exec\+\_\+times\+\_\+in\+\_\+current\+\_\+state@{exec\+\_\+times\+\_\+in\+\_\+current\+\_\+state}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{exec\+\_\+times\+\_\+in\+\_\+current\+\_\+state}{exec\_times\_in\_current\_state}}
+{\footnotesize\ttfamily unsigned long long vcd\+\_\+trace\+\_\+head\+::exec\+\_\+times\+\_\+in\+\_\+current\+\_\+state}
+
+
+
+Definition at line 129 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by vcd\+\_\+utility\+::\+Exec(), more\+\_\+executions\+\_\+in\+\_\+this\+\_\+hw\+\_\+state(), set\+\_\+consecutive\+\_\+state\+\_\+executions(), and unbounded\+\_\+find\+\_\+end\+\_\+time().
+
+\mbox{\Hypertarget{structvcd__trace__head_a6395cfe9499ffeca14aba741fdd68253}\label{structvcd__trace__head_a6395cfe9499ffeca14aba741fdd68253}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!failed@{failed}}
+\index{failed@{failed}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{failed}{failed}}
+{\footnotesize\ttfamily enum \hyperlink{structvcd__trace__head_ad0e9ddff3ce422e4273ae6ccbb2a88f8}{vcd\+\_\+head\+\_\+failure} vcd\+\_\+trace\+\_\+head\+::failed}
+
+
+
+Definition at line 96 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by vcd\+\_\+utility\+::print\+\_\+failed\+\_\+vcd\+\_\+head(), unbounded\+\_\+find\+\_\+end\+\_\+time(), and update().
+
+\mbox{\Hypertarget{structvcd__trace__head_a696d35a8e999fbf0f18e78d5312fd8bf}\label{structvcd__trace__head_a696d35a8e999fbf0f18e78d5312fd8bf}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!fsm\+\_\+end@{fsm\+\_\+end}}
+\index{fsm\+\_\+end@{fsm\+\_\+end}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{fsm\+\_\+end}{fsm\_end}}
+{\footnotesize\ttfamily std\+::list$<$\hyperlink{structsig__variation}{sig\+\_\+variation}$>$\+::const\+\_\+iterator vcd\+\_\+trace\+\_\+head\+::fsm\+\_\+end}
+
+
+
+Definition at line 118 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by unbounded\+\_\+find\+\_\+end\+\_\+time(), and update().
+
+\mbox{\Hypertarget{structvcd__trace__head_acc03a8b5a503e805abc218101be1a320}\label{structvcd__trace__head_acc03a8b5a503e805abc218101be1a320}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!fsm\+\_\+has\+\_\+a\+\_\+single\+\_\+state@{fsm\+\_\+has\+\_\+a\+\_\+single\+\_\+state}}
+\index{fsm\+\_\+has\+\_\+a\+\_\+single\+\_\+state@{fsm\+\_\+has\+\_\+a\+\_\+single\+\_\+state}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{fsm\+\_\+has\+\_\+a\+\_\+single\+\_\+state}{fsm\_has\_a\_single\_state}}
+{\footnotesize\ttfamily bool vcd\+\_\+trace\+\_\+head\+::fsm\+\_\+has\+\_\+a\+\_\+single\+\_\+state}
+
+
+
+Definition at line 132 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by set\+\_\+consecutive\+\_\+state\+\_\+executions(), and update().
+
+\mbox{\Hypertarget{structvcd__trace__head_aa00e910431b3a8a5fca7bf6961739091}\label{structvcd__trace__head_aa00e910431b3a8a5fca7bf6961739091}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!fsm\+\_\+ss\+\_\+it@{fsm\+\_\+ss\+\_\+it}}
+\index{fsm\+\_\+ss\+\_\+it@{fsm\+\_\+ss\+\_\+it}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{fsm\+\_\+ss\+\_\+it}{fsm\_ss\_it}}
+{\footnotesize\ttfamily std\+::list$<$\hyperlink{structsig__variation}{sig\+\_\+variation}$>$\+::const\+\_\+iterator vcd\+\_\+trace\+\_\+head\+::fsm\+\_\+ss\+\_\+it}
+
+
+
+Definition at line 117 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by vcd\+\_\+utility\+::print\+\_\+failed\+\_\+vcd\+\_\+head(), set\+\_\+consecutive\+\_\+state\+\_\+executions(), unbounded\+\_\+find\+\_\+end\+\_\+time(), and update().
+
+\mbox{\Hypertarget{structvcd__trace__head_a78c41220597abaf2c6f11b2174929666}\label{structvcd__trace__head_a78c41220597abaf2c6f11b2174929666}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!fsm\+\_\+vars@{fsm\+\_\+vars}}
+\index{fsm\+\_\+vars@{fsm\+\_\+vars}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{fsm\+\_\+vars}{fsm\_vars}}
+{\footnotesize\ttfamily const std\+::list$<$\hyperlink{structsig__variation}{sig\+\_\+variation}$>$\& vcd\+\_\+trace\+\_\+head\+::fsm\+\_\+vars}
+
+
+
+Definition at line 116 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+\mbox{\Hypertarget{structvcd__trace__head_a8f424c51043c8252abcf4ff39c77c04e}\label{structvcd__trace__head_a8f424c51043c8252abcf4ff39c77c04e}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!fullsigname@{fullsigname}}
+\index{fullsigname@{fullsigname}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{fullsigname}{fullsigname}}
+{\footnotesize\ttfamily const std\+::string vcd\+\_\+trace\+\_\+head\+::fullsigname}
+
+
+
+Definition at line 125 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by vcd\+\_\+utility\+::detect\+\_\+mismatch(), vcd\+\_\+utility\+::detect\+\_\+mismatch\+\_\+element(), vcd\+\_\+utility\+::detect\+\_\+regular\+\_\+mismatch(), and vcd\+\_\+utility\+::print\+\_\+failed\+\_\+vcd\+\_\+head().
+
+\mbox{\Hypertarget{structvcd__trace__head_adb1635d0b8337b81a4a47f14eda31ab3}\label{structvcd__trace__head_adb1635d0b8337b81a4a47f14eda31ab3}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!has\+\_\+been\+\_\+initialized@{has\+\_\+been\+\_\+initialized}}
+\index{has\+\_\+been\+\_\+initialized@{has\+\_\+been\+\_\+initialized}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{has\+\_\+been\+\_\+initialized}{has\_been\_initialized}}
+{\footnotesize\ttfamily bool vcd\+\_\+trace\+\_\+head\+::has\+\_\+been\+\_\+initialized}
+
+
+
+Definition at line 131 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by advance(), and update().
+
+\mbox{\Hypertarget{structvcd__trace__head_a0b276042c7a370e1fbba5b855a57d7f3}\label{structvcd__trace__head_a0b276042c7a370e1fbba5b855a57d7f3}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!H\+L\+S\+Mgr@{H\+L\+S\+Mgr}}
+\index{H\+L\+S\+Mgr@{H\+L\+S\+Mgr}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{H\+L\+S\+Mgr}{HLSMgr}}
+{\footnotesize\ttfamily const \hyperlink{hls__manager_8hpp_a1b481383e3beabc89bd7562ae672dd8c}{H\+L\+S\+\_\+manager\+Const\+Ref} vcd\+\_\+trace\+\_\+head\+::\+H\+L\+S\+Mgr}
+
+
+
+Definition at line 113 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by update().
+
+\mbox{\Hypertarget{structvcd__trace__head_aabe62f6ae8b5b24732857daaa9df4b30}\label{structvcd__trace__head_aabe62f6ae8b5b24732857daaa9df4b30}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!initial\+\_\+state\+\_\+id@{initial\+\_\+state\+\_\+id}}
+\index{initial\+\_\+state\+\_\+id@{initial\+\_\+state\+\_\+id}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{initial\+\_\+state\+\_\+id}{initial\_state\_id}}
+{\footnotesize\ttfamily const unsigned int vcd\+\_\+trace\+\_\+head\+::initial\+\_\+state\+\_\+id}
+
+
+
+Definition at line 115 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by update().
+
+\mbox{\Hypertarget{structvcd__trace__head_abd309d5c7d233cb75ca3b117e54c8ccc}\label{structvcd__trace__head_abd309d5c7d233cb75ca3b117e54c8ccc}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!is\+\_\+in\+\_\+reg@{is\+\_\+in\+\_\+reg}}
+\index{is\+\_\+in\+\_\+reg@{is\+\_\+in\+\_\+reg}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{is\+\_\+in\+\_\+reg}{is\_in\_reg}}
+{\footnotesize\ttfamily const bool vcd\+\_\+trace\+\_\+head\+::is\+\_\+in\+\_\+reg}
+
+
+
+Definition at line 112 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by update().
+
+\mbox{\Hypertarget{structvcd__trace__head_ae5b17f8c640f51863fa42f020ae94e66}\label{structvcd__trace__head_ae5b17f8c640f51863fa42f020ae94e66}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!is\+\_\+phi@{is\+\_\+phi}}
+\index{is\+\_\+phi@{is\+\_\+phi}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{is\+\_\+phi}{is\_phi}}
+{\footnotesize\ttfamily const bool vcd\+\_\+trace\+\_\+head\+::is\+\_\+phi}
+
+
+
+Definition at line 111 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by unbounded\+\_\+find\+\_\+end\+\_\+time(), and update().
+
+\mbox{\Hypertarget{structvcd__trace__head_abf2f32f88367884a7424738693ec5fd8}\label{structvcd__trace__head_abf2f32f88367884a7424738693ec5fd8}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!one\+\_\+hot\+\_\+fsm\+\_\+encoding@{one\+\_\+hot\+\_\+fsm\+\_\+encoding}}
+\index{one\+\_\+hot\+\_\+fsm\+\_\+encoding@{one\+\_\+hot\+\_\+fsm\+\_\+encoding}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{one\+\_\+hot\+\_\+fsm\+\_\+encoding}{one\_hot\_fsm\_encoding}}
+{\footnotesize\ttfamily const bool vcd\+\_\+trace\+\_\+head\+::one\+\_\+hot\+\_\+fsm\+\_\+encoding\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 107 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by unbounded\+\_\+find\+\_\+end\+\_\+time(), and update().
+
+\mbox{\Hypertarget{structvcd__trace__head_a3e830d6baf387e53ab806f01b62ad287}\label{structvcd__trace__head_a3e830d6baf387e53ab806f01b62ad287}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!op\+\_\+end\+\_\+time@{op\+\_\+end\+\_\+time}}
+\index{op\+\_\+end\+\_\+time@{op\+\_\+end\+\_\+time}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{op\+\_\+end\+\_\+time}{op\_end\_time}}
+{\footnotesize\ttfamily unsigned long long vcd\+\_\+trace\+\_\+head\+::op\+\_\+end\+\_\+time}
+
+
+
+Definition at line 127 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by advance(), detect\+\_\+new\+\_\+start\+\_\+end\+\_\+times(), ends\+\_\+after(), vcd\+\_\+utility\+::print\+\_\+failed\+\_\+vcd\+\_\+head(), unbounded\+\_\+find\+\_\+end\+\_\+time(), update(), and vcd\+\_\+utility\+::update\+\_\+discr\+\_\+list().
+
+\mbox{\Hypertarget{structvcd__trace__head_ab9af239642c986de4ac370c4f1aac89d}\label{structvcd__trace__head_ab9af239642c986de4ac370c4f1aac89d}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!op\+\_\+info@{op\+\_\+info}}
+\index{op\+\_\+info@{op\+\_\+info}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{op\+\_\+info}{op\_info}}
+{\footnotesize\ttfamily const \hyperlink{classDiscrepancyOpInfo}{Discrepancy\+Op\+Info}\& vcd\+\_\+trace\+\_\+head\+::op\+\_\+info}
+
+
+
+Definition at line 110 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by advance(), vcd\+\_\+utility\+::detect\+\_\+mismatch(), vcd\+\_\+utility\+::detect\+\_\+mismatch\+\_\+element(), vcd\+\_\+utility\+::detect\+\_\+mismatch\+\_\+simple(), detect\+\_\+new\+\_\+start\+\_\+end\+\_\+times(), vcd\+\_\+utility\+::detect\+\_\+regular\+\_\+mismatch(), vcd\+\_\+utility\+::print\+\_\+failed\+\_\+vcd\+\_\+head(), unbounded\+\_\+find\+\_\+end\+\_\+time(), update(), and vcd\+\_\+utility\+::update\+\_\+discr\+\_\+list().
+
+\mbox{\Hypertarget{structvcd__trace__head_af546fb3d7dd888de25ba81ac51eeef48}\label{structvcd__trace__head_af546fb3d7dd888de25ba81ac51eeef48}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!op\+\_\+start\+\_\+time@{op\+\_\+start\+\_\+time}}
+\index{op\+\_\+start\+\_\+time@{op\+\_\+start\+\_\+time}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{op\+\_\+start\+\_\+time}{op\_start\_time}}
+{\footnotesize\ttfamily unsigned long long vcd\+\_\+trace\+\_\+head\+::op\+\_\+start\+\_\+time}
+
+
+
+Definition at line 126 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by detect\+\_\+new\+\_\+start\+\_\+end\+\_\+times(), vcd\+\_\+utility\+::print\+\_\+failed\+\_\+vcd\+\_\+head(), set\+\_\+consecutive\+\_\+state\+\_\+executions(), starts\+\_\+after(), unbounded\+\_\+find\+\_\+end\+\_\+time(), and update().
+
+\mbox{\Hypertarget{structvcd__trace__head_a9f295da972306c34afa09c14338cab9b}\label{structvcd__trace__head_a9f295da972306c34afa09c14338cab9b}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!out\+\_\+var\+\_\+end@{out\+\_\+var\+\_\+end}}
+\index{out\+\_\+var\+\_\+end@{out\+\_\+var\+\_\+end}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{out\+\_\+var\+\_\+end}{out\_var\_end}}
+{\footnotesize\ttfamily std\+::list$<$\hyperlink{structsig__variation}{sig\+\_\+variation}$>$\+::const\+\_\+iterator vcd\+\_\+trace\+\_\+head\+::out\+\_\+var\+\_\+end}
+
+
+
+Definition at line 121 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by advance().
+
+\mbox{\Hypertarget{structvcd__trace__head_a8d81fbe60f9ec091baeeb08d810556a8}\label{structvcd__trace__head_a8d81fbe60f9ec091baeeb08d810556a8}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!out\+\_\+var\+\_\+it@{out\+\_\+var\+\_\+it}}
+\index{out\+\_\+var\+\_\+it@{out\+\_\+var\+\_\+it}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{out\+\_\+var\+\_\+it}{out\_var\_it}}
+{\footnotesize\ttfamily std\+::list$<$\hyperlink{structsig__variation}{sig\+\_\+variation}$>$\+::const\+\_\+iterator vcd\+\_\+trace\+\_\+head\+::out\+\_\+var\+\_\+it}
+
+
+
+Definition at line 120 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by advance(), vcd\+\_\+utility\+::detect\+\_\+mismatch(), vcd\+\_\+utility\+::detect\+\_\+mismatch\+\_\+element(), and vcd\+\_\+utility\+::detect\+\_\+mismatch\+\_\+simple().
+
+\mbox{\Hypertarget{structvcd__trace__head_a4c40b23aa1c08f07ce05160a7d4e8a48}\label{structvcd__trace__head_a4c40b23aa1c08f07ce05160a7d4e8a48}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!out\+\_\+vars@{out\+\_\+vars}}
+\index{out\+\_\+vars@{out\+\_\+vars}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{out\+\_\+vars}{out\_vars}}
+{\footnotesize\ttfamily const std\+::list$<$\hyperlink{structsig__variation}{sig\+\_\+variation}$>$\& vcd\+\_\+trace\+\_\+head\+::out\+\_\+vars}
+
+
+
+Definition at line 119 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+\mbox{\Hypertarget{structvcd__trace__head_a243e3e9502ce1ae7139cdbff5a827062}\label{structvcd__trace__head_a243e3e9502ce1ae7139cdbff5a827062}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!sp\+\_\+var\+\_\+end@{sp\+\_\+var\+\_\+end}}
+\index{sp\+\_\+var\+\_\+end@{sp\+\_\+var\+\_\+end}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{sp\+\_\+var\+\_\+end}{sp\_var\_end}}
+{\footnotesize\ttfamily std\+::list$<$\hyperlink{structsig__variation}{sig\+\_\+variation}$>$\+::const\+\_\+iterator vcd\+\_\+trace\+\_\+head\+::sp\+\_\+var\+\_\+end}
+
+
+
+Definition at line 124 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by set\+\_\+consecutive\+\_\+state\+\_\+executions(), and update().
+
+\mbox{\Hypertarget{structvcd__trace__head_ac4fbf68c61ede724a8b3bf1e31d4b476}\label{structvcd__trace__head_ac4fbf68c61ede724a8b3bf1e31d4b476}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!sp\+\_\+var\+\_\+it@{sp\+\_\+var\+\_\+it}}
+\index{sp\+\_\+var\+\_\+it@{sp\+\_\+var\+\_\+it}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{sp\+\_\+var\+\_\+it}{sp\_var\_it}}
+{\footnotesize\ttfamily std\+::list$<$\hyperlink{structsig__variation}{sig\+\_\+variation}$>$\+::const\+\_\+iterator vcd\+\_\+trace\+\_\+head\+::sp\+\_\+var\+\_\+it}
+
+
+
+Definition at line 123 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by set\+\_\+consecutive\+\_\+state\+\_\+executions(), and update().
+
+\mbox{\Hypertarget{structvcd__trace__head_a3e61d1aa9602b8820de30b1f1da92298}\label{structvcd__trace__head_a3e61d1aa9602b8820de30b1f1da92298}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!start\+\_\+state\+\_\+is\+\_\+initial@{start\+\_\+state\+\_\+is\+\_\+initial}}
+\index{start\+\_\+state\+\_\+is\+\_\+initial@{start\+\_\+state\+\_\+is\+\_\+initial}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{start\+\_\+state\+\_\+is\+\_\+initial}{start\_state\_is\_initial}}
+{\footnotesize\ttfamily bool vcd\+\_\+trace\+\_\+head\+::start\+\_\+state\+\_\+is\+\_\+initial}
+
+
+
+Definition at line 133 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by set\+\_\+consecutive\+\_\+state\+\_\+executions(), and update().
+
+\mbox{\Hypertarget{structvcd__trace__head_a500dbaecd7bec2e4601e2d878d075ae5}\label{structvcd__trace__head_a500dbaecd7bec2e4601e2d878d075ae5}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!start\+\_\+vars@{start\+\_\+vars}}
+\index{start\+\_\+vars@{start\+\_\+vars}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{start\+\_\+vars}{start\_vars}}
+{\footnotesize\ttfamily const std\+::list$<$\hyperlink{structsig__variation}{sig\+\_\+variation}$>$\& vcd\+\_\+trace\+\_\+head\+::start\+\_\+vars}
+
+
+
+Definition at line 122 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+\mbox{\Hypertarget{structvcd__trace__head_ad41fd0e7ee5a8f06fc7ef1fa8714ab24}\label{structvcd__trace__head_ad41fd0e7ee5a8f06fc7ef1fa8714ab24}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!state@{state}}
+\index{state@{state}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily enum \hyperlink{structvcd__trace__head_ae433a47ff04aedfa841835d29f75207e}{vcd\+\_\+head\+\_\+state} vcd\+\_\+trace\+\_\+head\+::state}
+
+
+
+Definition at line 87 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by advance(), vcd\+\_\+utility\+::\+Exec(), set\+\_\+consecutive\+\_\+state\+\_\+executions(), unbounded\+\_\+find\+\_\+end\+\_\+time(), and update().
+
+\mbox{\Hypertarget{structvcd__trace__head_a8db2070e7bd8fa8d995f034143c860ad}\label{structvcd__trace__head_a8db2070e7bd8fa8d995f034143c860ad}} 
+\index{vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}!TM@{TM}}
+\index{TM@{TM}!vcd\+\_\+trace\+\_\+head@{vcd\+\_\+trace\+\_\+head}}
+\subsubsection{\texorpdfstring{TM}{TM}}
+{\footnotesize\ttfamily const \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref} vcd\+\_\+trace\+\_\+head\+::\+TM}
+
+
+
+Definition at line 114 of file vcd\+\_\+trace\+\_\+head.\+hpp.
+
+
+
+Referenced by update().
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/vcd/\hyperlink{vcd__trace__head_8hpp}{vcd\+\_\+trace\+\_\+head.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/vcd/\hyperlink{vcd__trace__head_8cpp}{vcd\+\_\+trace\+\_\+head.\+cpp}\end{DoxyCompactItemize}

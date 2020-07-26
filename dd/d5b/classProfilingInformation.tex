@@ -1,0 +1,696 @@
+\hypertarget{classProfilingInformation}{}\section{Profiling\+Information Class Reference}
+\label{classProfilingInformation}\index{Profiling\+Information@{Profiling\+Information}}
+
+
+Definition of the profiling information class.  
+
+
+
+
+{\ttfamily \#include $<$profiling\+\_\+information.\+hpp$>$}
+
+
+
+Collaboration diagram for Profiling\+Information\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d51/classProfilingInformation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classProfilingInformation_a4513d68814d5f75c6461a86ced46019c}{Profiling\+Information} (const \hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref} bb\+\_\+graph)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classProfilingInformation_aa1a69b2ac74f607c5cd739b1d23fcc97}{$\sim$\+Profiling\+Information} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+const \hyperlink{classPathProfilingInformation}{Path\+Profiling\+Information} \& \hyperlink{classProfilingInformation_a0842ba563f306987e4c42fc0e5ad252e}{Get\+Path\+Profiling} () const
+\begin{DoxyCompactList}\small\item\em Return the path profiling information. \end{DoxyCompactList}\item 
+unsigned long long int \hyperlink{classProfilingInformation_a2781e0a52b9f9d531365a5520b4af3fe}{Get\+B\+B\+Executions} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} basic\+\_\+block) const
+\begin{DoxyCompactList}\small\item\em Return the absolute number of executions of a basic block. \end{DoxyCompactList}\item 
+unsigned long long int \hyperlink{classProfilingInformation_a4ca13cb8f2a184c1c72959737a0375fa}{Get\+Edge\+Executions} (const \hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor} edge) const
+\begin{DoxyCompactList}\small\item\em Return the absolute number of the executions of an edge. \end{DoxyCompactList}\item 
+long double \hyperlink{classProfilingInformation_a6c467f30b1822b93d25212619d868377}{Get\+Loop\+Avg\+Iterations} (const unsigned int loop\+\_\+id) const
+\begin{DoxyCompactList}\small\item\em Return number of average iterations of a loop. \end{DoxyCompactList}\item 
+unsigned long long int \hyperlink{classProfilingInformation_a840efae2165a4271c99184e088bc38e4}{Get\+Loop\+Max\+Iterations} (const unsigned int loop\+\_\+id) const
+\begin{DoxyCompactList}\small\item\em Return the maximum number of iterations of a loop. \end{DoxyCompactList}\item 
+unsigned long long \hyperlink{classProfilingInformation_a64aabe42419cc5a5f0d92530638ae09a}{Get\+Loop\+Abs\+Iterations} (const unsigned int loop\+\_\+id) const
+\begin{DoxyCompactList}\small\item\em Return the number of absolute iterations of a loop. \end{DoxyCompactList}\item 
+long double \hyperlink{classProfilingInformation_a29fb3019434a6b893e554dfd8438076f}{Get\+Loop\+Avg\+Iterations} (const Loop\+Const\+Ref loop) const
+\begin{DoxyCompactList}\small\item\em Return number of average iterations of a loop. \end{DoxyCompactList}\item 
+unsigned long long int \hyperlink{classProfilingInformation_a32103f572280605cf93ff372a1d1421f}{Get\+Loop\+Max\+Iterations} (const Loop\+Const\+Ref loop) const
+\begin{DoxyCompactList}\small\item\em Return the maximum number of iterations of a loop. \end{DoxyCompactList}\item 
+unsigned long long \hyperlink{classProfilingInformation_af6b4f658ff4e27fc346f68167dba069a}{Get\+Loop\+Abs\+Iterations} (const Loop\+Const\+Ref loop) const
+\begin{DoxyCompactList}\small\item\em Return the number of absolute iterations of a loop. \end{DoxyCompactList}\item 
+void \hyperlink{classProfilingInformation_a375a5ce9e10012e523afa9514fb95e89}{Write\+To\+Xml} (\hyperlink{classxml__element}{xml\+\_\+element} $\ast$root, const \hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref} fcfg) const
+\begin{DoxyCompactList}\small\item\em Write to xml. \end{DoxyCompactList}\item 
+void \hyperlink{classProfilingInformation_ad3818cd6989e87b00623689163f55c85}{Clear} ()
+\begin{DoxyCompactList}\small\item\em Clear. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPathProfilingInformation}{Path\+Profiling\+Information} \hyperlink{classProfilingInformation_abd736acb393bcda5cf8afa13b1a08bb3}{path\+\_\+profiling}
+\begin{DoxyCompactList}\small\item\em map that represents, for each execution path of each loop (represented by the set of the executed control equivalent regions), the execution frequency \end{DoxyCompactList}\item 
+\hyperlink{classBBExecutions}{B\+B\+Executions} \hyperlink{classProfilingInformation_ab7533fd1f99a3614f64fa4689f8cb6b0}{bb\+\_\+executions}
+\begin{DoxyCompactList}\small\item\em Absolute number of execution of each basic block. \end{DoxyCompactList}\item 
+\hyperlink{classBBEdgeExecutions}{B\+B\+Edge\+Executions} \hyperlink{classProfilingInformation_a2603735372ee4e804d0585a0a309289e}{edge\+\_\+executions}
+\begin{DoxyCompactList}\small\item\em Absolute number of running of edges. \end{DoxyCompactList}\item 
+\hyperlink{classAvgIterations}{Avg\+Iterations} \hyperlink{classProfilingInformation_a17172675a0452f39d0df2617044c61a0}{avg\+\_\+iterations}
+\begin{DoxyCompactList}\small\item\em number of average iterations for one loop execution \end{DoxyCompactList}\item 
+\hyperlink{classIterations}{Iterations} \hyperlink{classProfilingInformation_a2a82038a4cff894193ec76e25fc50633}{abs\+\_\+iterations}
+\begin{DoxyCompactList}\small\item\em number of absolute execution (different from number of execution of the header); correspond to how many times a feedback edge of a loop is executed \end{DoxyCompactList}\item 
+\hyperlink{classIterations}{Iterations} \hyperlink{classProfilingInformation_adebc384d89658038b8df65b1558b09e5}{max\+\_\+iterations}
+\begin{DoxyCompactList}\small\item\em Maximum number of iterations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classProfilingInformation_a87b11674e05d76b8663d6e3ac122cd8f}{Basic\+Blocks\+Profiling}
+\begin{DoxyCompactList}\small\item\em Friend defintion of profiling classes. \end{DoxyCompactList}\item 
+class \hyperlink{classProfilingInformation_a6a6bc099881e3be4e8f9841667053c6f}{hpp\+\_\+profiling}
+\item 
+class \hyperlink{classProfilingInformation_aa6518cdd209493b978849dc43dbb17a2}{Loops\+Analysis\+Zebu}
+\item 
+class \hyperlink{classProfilingInformation_aa0b8ea11ea1cf633a99d0bc8c7e03cbf}{Loops\+Profiling}
+\item 
+class \hyperlink{classProfilingInformation_a36ba7cf3661cd9e03d109c40b4873394}{probability\+\_\+path}
+\item 
+class \hyperlink{classProfilingInformation_aeae4f76935b7ccae2766532d8c77d884}{Host\+Profiling}
+\item 
+class \hyperlink{classProfilingInformation_af65e69c76a0365b3c9c52d28ec2a8661}{read\+\_\+profiling\+\_\+data}
+\item 
+class \hyperlink{classProfilingInformation_abd013dc605abd765cac41400b089c8b5}{tp\+\_\+profiling}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definition of the profiling information class. 
+
+Definition at line 157 of file profiling\+\_\+information.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classProfilingInformation_a4513d68814d5f75c6461a86ced46019c}\label{classProfilingInformation_a4513d68814d5f75c6461a86ced46019c}} 
+\index{Profiling\+Information@{Profiling\+Information}!Profiling\+Information@{Profiling\+Information}}
+\index{Profiling\+Information@{Profiling\+Information}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{Profiling\+Information()}{ProfilingInformation()}}
+{\footnotesize\ttfamily Profiling\+Information\+::\+Profiling\+Information (\begin{DoxyParamCaption}\item[{const \hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref}}]{bb\+\_\+graph }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bb\+\_\+graph} & is the basic block graph \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 78 of file profiling\+\_\+information.\+cpp.
+
+
+
+References $\sim$\+Profiling\+Information().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{dd/d5b/classProfilingInformation_a4513d68814d5f75c6461a86ced46019c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classProfilingInformation_aa1a69b2ac74f607c5cd739b1d23fcc97}\label{classProfilingInformation_aa1a69b2ac74f607c5cd739b1d23fcc97}} 
+\index{Profiling\+Information@{Profiling\+Information}!````~Profiling\+Information@{$\sim$\+Profiling\+Information}}
+\index{````~Profiling\+Information@{$\sim$\+Profiling\+Information}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{$\sim$\+Profiling\+Information()}{~ProfilingInformation()}}
+{\footnotesize\ttfamily Profiling\+Information\+::$\sim$\+Profiling\+Information (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Profiling\+Information().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{dd/d5b/classProfilingInformation_aa1a69b2ac74f607c5cd739b1d23fcc97_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classProfilingInformation_ad3818cd6989e87b00623689163f55c85}\label{classProfilingInformation_ad3818cd6989e87b00623689163f55c85}} 
+\index{Profiling\+Information@{Profiling\+Information}!Clear@{Clear}}
+\index{Clear@{Clear}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Profiling\+Information\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clear. 
+
+
+
+Definition at line 230 of file profiling\+\_\+information.\+cpp.
+
+
+
+References abs\+\_\+iterations, avg\+\_\+iterations, bb\+\_\+executions, edge\+\_\+executions, max\+\_\+iterations, and path\+\_\+profiling.
+
+\mbox{\Hypertarget{classProfilingInformation_a2781e0a52b9f9d531365a5520b4af3fe}\label{classProfilingInformation_a2781e0a52b9f9d531365a5520b4af3fe}} 
+\index{Profiling\+Information@{Profiling\+Information}!Get\+B\+B\+Executions@{Get\+B\+B\+Executions}}
+\index{Get\+B\+B\+Executions@{Get\+B\+B\+Executions}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{Get\+B\+B\+Executions()}{GetBBExecutions()}}
+{\footnotesize\ttfamily unsigned long long int Profiling\+Information\+::\+Get\+B\+B\+Executions (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{basic\+\_\+block }\end{DoxyParamCaption}) const}
+
+
+
+Return the absolute number of executions of a basic block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em basic\+\_\+block} & is the basic block \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the absolute number of executions of a basic block 
+\end{DoxyReturn}
+
+
+Definition at line 89 of file profiling\+\_\+information.\+cpp.
+
+
+
+References bb\+\_\+executions.
+
+\mbox{\Hypertarget{classProfilingInformation_a4ca13cb8f2a184c1c72959737a0375fa}\label{classProfilingInformation_a4ca13cb8f2a184c1c72959737a0375fa}} 
+\index{Profiling\+Information@{Profiling\+Information}!Get\+Edge\+Executions@{Get\+Edge\+Executions}}
+\index{Get\+Edge\+Executions@{Get\+Edge\+Executions}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{Get\+Edge\+Executions()}{GetEdgeExecutions()}}
+{\footnotesize\ttfamily unsigned long long int Profiling\+Information\+::\+Get\+Edge\+Executions (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor}}]{edge }\end{DoxyParamCaption}) const}
+
+
+
+Return the absolute number of the executions of an edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & is the edge \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the absolute number of executions of the edge 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file profiling\+\_\+information.\+cpp.
+
+
+
+References edge\+\_\+executions.
+
+\mbox{\Hypertarget{classProfilingInformation_a64aabe42419cc5a5f0d92530638ae09a}\label{classProfilingInformation_a64aabe42419cc5a5f0d92530638ae09a}} 
+\index{Profiling\+Information@{Profiling\+Information}!Get\+Loop\+Abs\+Iterations@{Get\+Loop\+Abs\+Iterations}}
+\index{Get\+Loop\+Abs\+Iterations@{Get\+Loop\+Abs\+Iterations}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{Get\+Loop\+Abs\+Iterations()}{GetLoopAbsIterations()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned long long int Profiling\+Information\+::\+Get\+Loop\+Abs\+Iterations (\begin{DoxyParamCaption}\item[{const unsigned int}]{loop\+\_\+id }\end{DoxyParamCaption}) const}
+
+
+
+Return the number of absolute iterations of a loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loop\+\_\+id} & is the id of the loop \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of average iterations of the loop 
+\end{DoxyReturn}
+
+
+Definition at line 117 of file profiling\+\_\+information.\+cpp.
+
+
+
+References abs\+\_\+iterations.
+
+
+
+Referenced by Get\+Loop\+Abs\+Iterations().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d5b/classProfilingInformation_a64aabe42419cc5a5f0d92530638ae09a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classProfilingInformation_af6b4f658ff4e27fc346f68167dba069a}\label{classProfilingInformation_af6b4f658ff4e27fc346f68167dba069a}} 
+\index{Profiling\+Information@{Profiling\+Information}!Get\+Loop\+Abs\+Iterations@{Get\+Loop\+Abs\+Iterations}}
+\index{Get\+Loop\+Abs\+Iterations@{Get\+Loop\+Abs\+Iterations}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{Get\+Loop\+Abs\+Iterations()}{GetLoopAbsIterations()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned long long Profiling\+Information\+::\+Get\+Loop\+Abs\+Iterations (\begin{DoxyParamCaption}\item[{const Loop\+Const\+Ref}]{loop }\end{DoxyParamCaption}) const}
+
+
+
+Return the number of absolute iterations of a loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loop} & is the loop \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of average iterations of the loop 
+\end{DoxyReturn}
+
+
+Definition at line 134 of file profiling\+\_\+information.\+cpp.
+
+
+
+References Get\+Loop\+Abs\+Iterations().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d5b/classProfilingInformation_af6b4f658ff4e27fc346f68167dba069a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classProfilingInformation_a6c467f30b1822b93d25212619d868377}\label{classProfilingInformation_a6c467f30b1822b93d25212619d868377}} 
+\index{Profiling\+Information@{Profiling\+Information}!Get\+Loop\+Avg\+Iterations@{Get\+Loop\+Avg\+Iterations}}
+\index{Get\+Loop\+Avg\+Iterations@{Get\+Loop\+Avg\+Iterations}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{Get\+Loop\+Avg\+Iterations()}{GetLoopAvgIterations()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily long double Profiling\+Information\+::\+Get\+Loop\+Avg\+Iterations (\begin{DoxyParamCaption}\item[{const unsigned int}]{loop\+\_\+id }\end{DoxyParamCaption}) const}
+
+
+
+Return number of average iterations of a loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loop\+\_\+id} & is the id of the loop \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of average iterations of the loop 
+\end{DoxyReturn}
+
+
+Definition at line 110 of file profiling\+\_\+information.\+cpp.
+
+
+
+References avg\+\_\+iterations.
+
+
+
+Referenced by Get\+Loop\+Avg\+Iterations().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d5b/classProfilingInformation_a6c467f30b1822b93d25212619d868377_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classProfilingInformation_a29fb3019434a6b893e554dfd8438076f}\label{classProfilingInformation_a29fb3019434a6b893e554dfd8438076f}} 
+\index{Profiling\+Information@{Profiling\+Information}!Get\+Loop\+Avg\+Iterations@{Get\+Loop\+Avg\+Iterations}}
+\index{Get\+Loop\+Avg\+Iterations@{Get\+Loop\+Avg\+Iterations}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{Get\+Loop\+Avg\+Iterations()}{GetLoopAvgIterations()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily long double Profiling\+Information\+::\+Get\+Loop\+Avg\+Iterations (\begin{DoxyParamCaption}\item[{const Loop\+Const\+Ref}]{loop }\end{DoxyParamCaption}) const}
+
+
+
+Return number of average iterations of a loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loop} & is the loop \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of average iterations of the loop 
+\end{DoxyReturn}
+
+
+Definition at line 124 of file profiling\+\_\+information.\+cpp.
+
+
+
+References Get\+Loop\+Avg\+Iterations().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d5b/classProfilingInformation_a29fb3019434a6b893e554dfd8438076f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classProfilingInformation_a840efae2165a4271c99184e088bc38e4}\label{classProfilingInformation_a840efae2165a4271c99184e088bc38e4}} 
+\index{Profiling\+Information@{Profiling\+Information}!Get\+Loop\+Max\+Iterations@{Get\+Loop\+Max\+Iterations}}
+\index{Get\+Loop\+Max\+Iterations@{Get\+Loop\+Max\+Iterations}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{Get\+Loop\+Max\+Iterations()}{GetLoopMaxIterations()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned long long int Profiling\+Information\+::\+Get\+Loop\+Max\+Iterations (\begin{DoxyParamCaption}\item[{const unsigned int}]{loop\+\_\+id }\end{DoxyParamCaption}) const}
+
+
+
+Return the maximum number of iterations of a loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loop\+\_\+id} & is the of the loop \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of maximum iterations of the loop 
+\end{DoxyReturn}
+
+
+Definition at line 103 of file profiling\+\_\+information.\+cpp.
+
+
+
+References max\+\_\+iterations.
+
+
+
+Referenced by Get\+Loop\+Max\+Iterations().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d5b/classProfilingInformation_a840efae2165a4271c99184e088bc38e4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classProfilingInformation_a32103f572280605cf93ff372a1d1421f}\label{classProfilingInformation_a32103f572280605cf93ff372a1d1421f}} 
+\index{Profiling\+Information@{Profiling\+Information}!Get\+Loop\+Max\+Iterations@{Get\+Loop\+Max\+Iterations}}
+\index{Get\+Loop\+Max\+Iterations@{Get\+Loop\+Max\+Iterations}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{Get\+Loop\+Max\+Iterations()}{GetLoopMaxIterations()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned long long int Profiling\+Information\+::\+Get\+Loop\+Max\+Iterations (\begin{DoxyParamCaption}\item[{const Loop\+Const\+Ref}]{loop }\end{DoxyParamCaption}) const}
+
+
+
+Return the maximum number of iterations of a loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loop} & is the loop \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of maximum iterations of the loop 
+\end{DoxyReturn}
+
+
+Definition at line 129 of file profiling\+\_\+information.\+cpp.
+
+
+
+References Get\+Loop\+Max\+Iterations().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d5b/classProfilingInformation_a32103f572280605cf93ff372a1d1421f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classProfilingInformation_a0842ba563f306987e4c42fc0e5ad252e}\label{classProfilingInformation_a0842ba563f306987e4c42fc0e5ad252e}} 
+\index{Profiling\+Information@{Profiling\+Information}!Get\+Path\+Profiling@{Get\+Path\+Profiling}}
+\index{Get\+Path\+Profiling@{Get\+Path\+Profiling}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{Get\+Path\+Profiling()}{GetPathProfiling()}}
+{\footnotesize\ttfamily const \hyperlink{classPathProfilingInformation}{Path\+Profiling\+Information} \& Profiling\+Information\+::\+Get\+Path\+Profiling (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the path profiling information. 
+
+\begin{DoxyReturn}{Returns}
+the path profiling information 
+\end{DoxyReturn}
+
+
+Definition at line 84 of file profiling\+\_\+information.\+cpp.
+
+
+
+References path\+\_\+profiling.
+
+\mbox{\Hypertarget{classProfilingInformation_a375a5ce9e10012e523afa9514fb95e89}\label{classProfilingInformation_a375a5ce9e10012e523afa9514fb95e89}} 
+\index{Profiling\+Information@{Profiling\+Information}!Write\+To\+Xml@{Write\+To\+Xml}}
+\index{Write\+To\+Xml@{Write\+To\+Xml}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{Write\+To\+Xml()}{WriteToXml()}}
+{\footnotesize\ttfamily void Profiling\+Information\+::\+Write\+To\+Xml (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{root,  }\item[{const \hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref}}]{fcfg }\end{DoxyParamCaption}) const}
+
+
+
+Write to xml. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & is the root xml node to which append the information contained in this profiling information \\
+\hline
+{\em fcfg} & is the basic block graph of the function \\
+\hline
+\end{DoxyParams}
+Map used to print profiling information in deterministic order
+
+Map used to print profiling information in deterministic order 
+
+Definition at line 139 of file profiling\+\_\+information.\+cpp.
+
+
+
+References abs\+\_\+iterations, xml\+\_\+child\+::add\+\_\+child\+\_\+element(), avg\+\_\+iterations, bb\+\_\+executions, B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), edge\+\_\+executions, max\+\_\+iterations, path\+\_\+profiling, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+abs\+\_\+iteration, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+abs\+\_\+iterations, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+avg\+\_\+iteration, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+avg\+\_\+iterations, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+bb\+\_\+execution, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+bb\+\_\+executions, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+cers, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+edge\+\_\+execution, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+edge\+\_\+executions, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+executions, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+frequency, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+id, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+iterations, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+max\+\_\+iteration, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+max\+\_\+iterations, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+path, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+paths, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+paths\+\_\+loop, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+source\+\_\+id, S\+T\+R\+\_\+\+X\+M\+L\+\_\+host\+\_\+profiling\+\_\+target\+\_\+id, and W\+R\+I\+T\+E\+\_\+\+X\+N\+V\+M2.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d5b/classProfilingInformation_a375a5ce9e10012e523afa9514fb95e89_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classProfilingInformation_a87b11674e05d76b8663d6e3ac122cd8f}\label{classProfilingInformation_a87b11674e05d76b8663d6e3ac122cd8f}} 
+\index{Profiling\+Information@{Profiling\+Information}!Basic\+Blocks\+Profiling@{Basic\+Blocks\+Profiling}}
+\index{Basic\+Blocks\+Profiling@{Basic\+Blocks\+Profiling}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{Basic\+Blocks\+Profiling}{BasicBlocksProfiling}}
+{\footnotesize\ttfamily friend class \hyperlink{classBasicBlocksProfiling}{Basic\+Blocks\+Profiling}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Friend defintion of profiling classes. 
+
+
+
+Definition at line 161 of file profiling\+\_\+information.\+hpp.
+
+\mbox{\Hypertarget{classProfilingInformation_aeae4f76935b7ccae2766532d8c77d884}\label{classProfilingInformation_aeae4f76935b7ccae2766532d8c77d884}} 
+\index{Profiling\+Information@{Profiling\+Information}!Host\+Profiling@{Host\+Profiling}}
+\index{Host\+Profiling@{Host\+Profiling}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{Host\+Profiling}{HostProfiling}}
+{\footnotesize\ttfamily friend class \hyperlink{classHostProfiling}{Host\+Profiling}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 166 of file profiling\+\_\+information.\+hpp.
+
+\mbox{\Hypertarget{classProfilingInformation_a6a6bc099881e3be4e8f9841667053c6f}\label{classProfilingInformation_a6a6bc099881e3be4e8f9841667053c6f}} 
+\index{Profiling\+Information@{Profiling\+Information}!hpp\+\_\+profiling@{hpp\+\_\+profiling}}
+\index{hpp\+\_\+profiling@{hpp\+\_\+profiling}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{hpp\+\_\+profiling}{hpp\_profiling}}
+{\footnotesize\ttfamily friend class hpp\+\_\+profiling\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 162 of file profiling\+\_\+information.\+hpp.
+
+\mbox{\Hypertarget{classProfilingInformation_aa6518cdd209493b978849dc43dbb17a2}\label{classProfilingInformation_aa6518cdd209493b978849dc43dbb17a2}} 
+\index{Profiling\+Information@{Profiling\+Information}!Loops\+Analysis\+Zebu@{Loops\+Analysis\+Zebu}}
+\index{Loops\+Analysis\+Zebu@{Loops\+Analysis\+Zebu}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{Loops\+Analysis\+Zebu}{LoopsAnalysisZebu}}
+{\footnotesize\ttfamily friend class Loops\+Analysis\+Zebu\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 163 of file profiling\+\_\+information.\+hpp.
+
+\mbox{\Hypertarget{classProfilingInformation_aa0b8ea11ea1cf633a99d0bc8c7e03cbf}\label{classProfilingInformation_aa0b8ea11ea1cf633a99d0bc8c7e03cbf}} 
+\index{Profiling\+Information@{Profiling\+Information}!Loops\+Profiling@{Loops\+Profiling}}
+\index{Loops\+Profiling@{Loops\+Profiling}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{Loops\+Profiling}{LoopsProfiling}}
+{\footnotesize\ttfamily friend class Loops\+Profiling\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 164 of file profiling\+\_\+information.\+hpp.
+
+\mbox{\Hypertarget{classProfilingInformation_a36ba7cf3661cd9e03d109c40b4873394}\label{classProfilingInformation_a36ba7cf3661cd9e03d109c40b4873394}} 
+\index{Profiling\+Information@{Profiling\+Information}!probability\+\_\+path@{probability\+\_\+path}}
+\index{probability\+\_\+path@{probability\+\_\+path}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{probability\+\_\+path}{probability\_path}}
+{\footnotesize\ttfamily friend class probability\+\_\+path\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 165 of file profiling\+\_\+information.\+hpp.
+
+\mbox{\Hypertarget{classProfilingInformation_af65e69c76a0365b3c9c52d28ec2a8661}\label{classProfilingInformation_af65e69c76a0365b3c9c52d28ec2a8661}} 
+\index{Profiling\+Information@{Profiling\+Information}!read\+\_\+profiling\+\_\+data@{read\+\_\+profiling\+\_\+data}}
+\index{read\+\_\+profiling\+\_\+data@{read\+\_\+profiling\+\_\+data}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{read\+\_\+profiling\+\_\+data}{read\_profiling\_data}}
+{\footnotesize\ttfamily friend class read\+\_\+profiling\+\_\+data\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 167 of file profiling\+\_\+information.\+hpp.
+
+\mbox{\Hypertarget{classProfilingInformation_abd013dc605abd765cac41400b089c8b5}\label{classProfilingInformation_abd013dc605abd765cac41400b089c8b5}} 
+\index{Profiling\+Information@{Profiling\+Information}!tp\+\_\+profiling@{tp\+\_\+profiling}}
+\index{tp\+\_\+profiling@{tp\+\_\+profiling}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{tp\+\_\+profiling}{tp\_profiling}}
+{\footnotesize\ttfamily friend class tp\+\_\+profiling\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 168 of file profiling\+\_\+information.\+hpp.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classProfilingInformation_a2a82038a4cff894193ec76e25fc50633}\label{classProfilingInformation_a2a82038a4cff894193ec76e25fc50633}} 
+\index{Profiling\+Information@{Profiling\+Information}!abs\+\_\+iterations@{abs\+\_\+iterations}}
+\index{abs\+\_\+iterations@{abs\+\_\+iterations}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{abs\+\_\+iterations}{abs\_iterations}}
+{\footnotesize\ttfamily \hyperlink{classIterations}{Iterations} Profiling\+Information\+::abs\+\_\+iterations\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+number of absolute execution (different from number of execution of the header); correspond to how many times a feedback edge of a loop is executed 
+
+
+
+Definition at line 183 of file profiling\+\_\+information.\+hpp.
+
+
+
+Referenced by Clear(), Get\+Loop\+Abs\+Iterations(), and Write\+To\+Xml().
+
+\mbox{\Hypertarget{classProfilingInformation_a17172675a0452f39d0df2617044c61a0}\label{classProfilingInformation_a17172675a0452f39d0df2617044c61a0}} 
+\index{Profiling\+Information@{Profiling\+Information}!avg\+\_\+iterations@{avg\+\_\+iterations}}
+\index{avg\+\_\+iterations@{avg\+\_\+iterations}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{avg\+\_\+iterations}{avg\_iterations}}
+{\footnotesize\ttfamily \hyperlink{classAvgIterations}{Avg\+Iterations} Profiling\+Information\+::avg\+\_\+iterations\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+number of average iterations for one loop execution 
+
+
+
+Definition at line 180 of file profiling\+\_\+information.\+hpp.
+
+
+
+Referenced by Clear(), Get\+Loop\+Avg\+Iterations(), and Write\+To\+Xml().
+
+\mbox{\Hypertarget{classProfilingInformation_ab7533fd1f99a3614f64fa4689f8cb6b0}\label{classProfilingInformation_ab7533fd1f99a3614f64fa4689f8cb6b0}} 
+\index{Profiling\+Information@{Profiling\+Information}!bb\+\_\+executions@{bb\+\_\+executions}}
+\index{bb\+\_\+executions@{bb\+\_\+executions}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{bb\+\_\+executions}{bb\_executions}}
+{\footnotesize\ttfamily \hyperlink{classBBExecutions}{B\+B\+Executions} Profiling\+Information\+::bb\+\_\+executions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Absolute number of execution of each basic block. 
+
+
+
+Definition at line 174 of file profiling\+\_\+information.\+hpp.
+
+
+
+Referenced by Clear(), Get\+B\+B\+Executions(), and Write\+To\+Xml().
+
+\mbox{\Hypertarget{classProfilingInformation_a2603735372ee4e804d0585a0a309289e}\label{classProfilingInformation_a2603735372ee4e804d0585a0a309289e}} 
+\index{Profiling\+Information@{Profiling\+Information}!edge\+\_\+executions@{edge\+\_\+executions}}
+\index{edge\+\_\+executions@{edge\+\_\+executions}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{edge\+\_\+executions}{edge\_executions}}
+{\footnotesize\ttfamily \hyperlink{classBBEdgeExecutions}{B\+B\+Edge\+Executions} Profiling\+Information\+::edge\+\_\+executions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Absolute number of running of edges. 
+
+
+
+Definition at line 177 of file profiling\+\_\+information.\+hpp.
+
+
+
+Referenced by Clear(), Get\+Edge\+Executions(), and Write\+To\+Xml().
+
+\mbox{\Hypertarget{classProfilingInformation_adebc384d89658038b8df65b1558b09e5}\label{classProfilingInformation_adebc384d89658038b8df65b1558b09e5}} 
+\index{Profiling\+Information@{Profiling\+Information}!max\+\_\+iterations@{max\+\_\+iterations}}
+\index{max\+\_\+iterations@{max\+\_\+iterations}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{max\+\_\+iterations}{max\_iterations}}
+{\footnotesize\ttfamily \hyperlink{classIterations}{Iterations} Profiling\+Information\+::max\+\_\+iterations\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Maximum number of iterations. 
+
+
+
+Definition at line 186 of file profiling\+\_\+information.\+hpp.
+
+
+
+Referenced by Clear(), Get\+Loop\+Max\+Iterations(), and Write\+To\+Xml().
+
+\mbox{\Hypertarget{classProfilingInformation_abd736acb393bcda5cf8afa13b1a08bb3}\label{classProfilingInformation_abd736acb393bcda5cf8afa13b1a08bb3}} 
+\index{Profiling\+Information@{Profiling\+Information}!path\+\_\+profiling@{path\+\_\+profiling}}
+\index{path\+\_\+profiling@{path\+\_\+profiling}!Profiling\+Information@{Profiling\+Information}}
+\subsubsection{\texorpdfstring{path\+\_\+profiling}{path\_profiling}}
+{\footnotesize\ttfamily \hyperlink{classPathProfilingInformation}{Path\+Profiling\+Information} Profiling\+Information\+::path\+\_\+profiling\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+map that represents, for each execution path of each loop (represented by the set of the executed control equivalent regions), the execution frequency 
+
+
+
+Definition at line 171 of file profiling\+\_\+information.\+hpp.
+
+
+
+Referenced by Clear(), Get\+Path\+Profiling(), and Write\+To\+Xml().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/\hyperlink{profiling__information_8hpp}{profiling\+\_\+information.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/\hyperlink{profiling__information_8cpp}{profiling\+\_\+information.\+cpp}\end{DoxyCompactItemize}

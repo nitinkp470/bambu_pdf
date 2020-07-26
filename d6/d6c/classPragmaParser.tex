@@ -1,0 +1,625 @@
+\hypertarget{classPragmaParser}{}\section{Pragma\+Parser Class Reference}
+\label{classPragmaParser}\index{Pragma\+Parser@{Pragma\+Parser}}
+
+
+Main class for parsing\+: contains the context associated with a parsing action and the methods to retrieve all the information.  
+
+
+
+
+{\ttfamily \#include $<$Pragma\+Parser.\+hpp$>$}
+
+
+
+Collaboration diagram for Pragma\+Parser\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/df3/classPragmaParser__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPragmaParser_a34a232bfaef4e229d656ab163a9e4666}{Pragma\+Parser} (const \hyperlink{pragma__manager_8hpp_a6eb2deb9c5e77014dd1702c2971b1921}{pragma\+\_\+manager\+Ref} \hyperlink{classPragmaParser_a6972c78ee4e9f7bef88a70df69118660}{PM}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classPragmaParser_a29c814a59a2860e1cd13ec5c5847ad0e}{Param})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classPragmaParser_ae039c214e80153245ca2a03f824f7abf}{$\sim$\+Pragma\+Parser} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classPragmaParser_a349706150aebec2e28658e6a880da5e0}{substitute\+Pragmas} (const std\+::string \&Old\+File)
+\begin{DoxyCompactList}\small\item\em Substitute the pragmas with proper functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classPragmaParser_ab8df876c3d71e8de2ff0b60a00d68c3b}{analyze\+\_\+pragma} (std\+::string \&Line)
+\begin{DoxyCompactList}\small\item\em Retrieve information about a pragma directive when the token \char`\"{}\#pragma\char`\"{} has been found. \end{DoxyCompactList}\item 
+bool \hyperlink{classPragmaParser_abfa77814950337fb487e7e10fa12e696}{recognize\+\_\+omp\+\_\+pragma} (std\+::string \&Line)
+\begin{DoxyCompactList}\small\item\em Retrieve information about a pragma directive when a Open\+MP (parallelism) pragma has been found. \end{DoxyCompactList}\item 
+bool \hyperlink{classPragmaParser_a56dfb19826945b520fbfb880bf3c1442}{recognize\+\_\+mapping\+\_\+pragma} (std\+::string \&Line)
+\begin{DoxyCompactList}\small\item\em Retrieve information about a pragma directive when a mapping pragma has been found. \end{DoxyCompactList}\item 
+bool \hyperlink{classPragmaParser_a74e5f7f8d176b4b1b1d86a06a629d360}{recognize\+\_\+call\+\_\+point\+\_\+hw\+\_\+pragma} (std\+::string \&line) const
+\begin{DoxyCompactList}\small\item\em Retrieve information about a pragma directive of type pragma map call\+\_\+point\+\_\+hw. \end{DoxyCompactList}\item 
+bool \hyperlink{classPragmaParser_a21060de0d17913f42fd0b4b7472b243c}{recognize\+\_\+issue\+\_\+pragma} (std\+::string \&Line)
+\begin{DoxyCompactList}\small\item\em Retrieve information about a pragma directive when an issue pragma has been found. \end{DoxyCompactList}\item 
+bool \hyperlink{classPragmaParser_aef9121fb371f00bf01e8e2be3f2c6b55}{recognize\+\_\+profiling\+\_\+pragma} (std\+::string \&Line)
+\begin{DoxyCompactList}\small\item\em Retrieve information about a pragma directive when a profiling pragma has been found. \end{DoxyCompactList}\item 
+bool \hyperlink{classPragmaParser_ac119f35e2a4b60c2f332305025b64ad5}{recognize\+\_\+generic\+\_\+pragma} (std\+::string \&Line)
+\begin{DoxyCompactList}\small\item\em Retrieve information about a generic pragma directive (i.\+e., none of the known ones has been detected) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{pragma__manager_8hpp_a6eb2deb9c5e77014dd1702c2971b1921}{pragma\+\_\+manager\+Ref} \hyperlink{classPragmaParser_a6972c78ee4e9f7bef88a70df69118660}{PM}
+\begin{DoxyCompactList}\small\item\em pointer to the pragma manager datastructure \end{DoxyCompactList}\item 
+const int \hyperlink{classPragmaParser_a9f08edfb28626e742354f50b6d1b9109}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em current debugging level \end{DoxyCompactList}\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classPragmaParser_a29c814a59a2860e1cd13ec5c5847ad0e}{Param}
+\begin{DoxyCompactList}\small\item\em reference to the parameter datastructure \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classPragmaParser_afd2c745d8eb46b37724f5741721bf891}{level}
+\begin{DoxyCompactList}\small\item\em counter for nesting level \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::string $>$ \hyperlink{classPragmaParser_aba0369bb6f32165f81bdea66717484fc}{Floating\+Pragmas}
+\item 
+\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::string $>$ \hyperlink{classPragmaParser_aec5893ea5d5f9ed2bab54bdbb5373f60}{Function\+Pragmas}
+\item 
+std\+::map$<$ unsigned int, std\+::list$<$ std\+::string $>$ $>$ \hyperlink{classPragmaParser_a9fab2866a8697ebec477bda192a1ce85}{Open\+Pragmas}
+\item 
+bool \hyperlink{classPragmaParser_a6cb7cee0dfb439e15f01bef38706dd3c}{search\+\_\+function}
+\item 
+std\+::string \hyperlink{classPragmaParser_a3f6eb9715243421172eef37a8db6cc0f}{name\+\_\+function}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \hyperlink{classPragmaParser_a9a81b9f19ab3820b1b19adc4e73b2919}{number} = 0
+\begin{DoxyCompactList}\small\item\em counter of generic pragma \end{DoxyCompactList}\item 
+static unsigned int \hyperlink{classPragmaParser_a9c1104c9516060f9831ba5a3ab724fae}{file\+\_\+counter} = 0
+\begin{DoxyCompactList}\small\item\em Counter of examined files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main class for parsing\+: contains the context associated with a parsing action and the methods to retrieve all the information. 
+
+Definition at line 68 of file Pragma\+Parser.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPragmaParser_a34a232bfaef4e229d656ab163a9e4666}\label{classPragmaParser_a34a232bfaef4e229d656ab163a9e4666}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!Pragma\+Parser@{Pragma\+Parser}}
+\index{Pragma\+Parser@{Pragma\+Parser}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{Pragma\+Parser()}{PragmaParser()}}
+{\footnotesize\ttfamily Pragma\+Parser\+::\+Pragma\+Parser (\begin{DoxyParamCaption}\item[{const \hyperlink{pragma__manager_8hpp_a6eb2deb9c5e77014dd1702c2971b1921}{pragma\+\_\+manager\+Ref}}]{PM,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em PM} & is the pragma manager \\
+\hline
+{\em Param} & is the set of input parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 78 of file Pragma\+Parser.\+cpp.
+
+
+
+References PM, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and $\sim$\+Pragma\+Parser().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6c/classPragmaParser_a34a232bfaef4e229d656ab163a9e4666_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPragmaParser_ae039c214e80153245ca2a03f824f7abf}\label{classPragmaParser_ae039c214e80153245ca2a03f824f7abf}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!````~Pragma\+Parser@{$\sim$\+Pragma\+Parser}}
+\index{````~Pragma\+Parser@{$\sim$\+Pragma\+Parser}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{$\sim$\+Pragma\+Parser()}{~PragmaParser()}}
+{\footnotesize\ttfamily Pragma\+Parser\+::$\sim$\+Pragma\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Pragma\+Parser().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6c/classPragmaParser_ae039c214e80153245ca2a03f824f7abf_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPragmaParser_ab8df876c3d71e8de2ff0b60a00d68c3b}\label{classPragmaParser_ab8df876c3d71e8de2ff0b60a00d68c3b}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!analyze\+\_\+pragma@{analyze\+\_\+pragma}}
+\index{analyze\+\_\+pragma@{analyze\+\_\+pragma}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{analyze\+\_\+pragma()}{analyze\_pragma()}}
+{\footnotesize\ttfamily bool Pragma\+Parser\+::analyze\+\_\+pragma (\begin{DoxyParamCaption}\item[{std\+::string \&}]{Line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Retrieve information about a pragma directive when the token \char`\"{}\#pragma\char`\"{} has been found. 
+
+parallelism pragmas
+
+mapping pragmas
+
+call\+\_\+point\+\_\+hw pragmas
+
+issue pragmas
+
+profiling pragmas
+
+generate\+\_\+hw pragmas
+
+generic pragmas 
+
+Definition at line 193 of file Pragma\+Parser.\+cpp.
+
+
+
+References Param, recognize\+\_\+call\+\_\+point\+\_\+hw\+\_\+pragma(), recognize\+\_\+generic\+\_\+pragma(), recognize\+\_\+issue\+\_\+pragma(), recognize\+\_\+mapping\+\_\+pragma(), recognize\+\_\+omp\+\_\+pragma(), recognize\+\_\+profiling\+\_\+pragma(), and S\+T\+R\+\_\+\+C\+S\+T\+\_\+pragma\+\_\+keyword\+\_\+omp.
+
+
+
+Referenced by substitute\+Pragmas().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6c/classPragmaParser_ab8df876c3d71e8de2ff0b60a00d68c3b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6c/classPragmaParser_ab8df876c3d71e8de2ff0b60a00d68c3b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPragmaParser_a74e5f7f8d176b4b1b1d86a06a629d360}\label{classPragmaParser_a74e5f7f8d176b4b1b1d86a06a629d360}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!recognize\+\_\+call\+\_\+point\+\_\+hw\+\_\+pragma@{recognize\+\_\+call\+\_\+point\+\_\+hw\+\_\+pragma}}
+\index{recognize\+\_\+call\+\_\+point\+\_\+hw\+\_\+pragma@{recognize\+\_\+call\+\_\+point\+\_\+hw\+\_\+pragma}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{recognize\+\_\+call\+\_\+point\+\_\+hw\+\_\+pragma()}{recognize\_call\_point\_hw\_pragma()}}
+{\footnotesize\ttfamily bool Pragma\+Parser\+::recognize\+\_\+call\+\_\+point\+\_\+hw\+\_\+pragma (\begin{DoxyParamCaption}\item[{std\+::string \&}]{line }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Retrieve information about a pragma directive of type pragma map call\+\_\+point\+\_\+hw. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & is the line containing the pragma; it will be replaced con a function call \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 310 of file Pragma\+Parser.\+cpp.
+
+
+
+References Split\+String(), S\+T\+R\+\_\+\+C\+S\+T\+\_\+pragma\+\_\+function\+\_\+single\+\_\+line\+\_\+two\+\_\+arguments, S\+T\+R\+\_\+\+C\+S\+T\+\_\+pragma\+\_\+keyword\+\_\+call\+\_\+point\+\_\+hw, S\+T\+R\+\_\+\+C\+S\+T\+\_\+pragma\+\_\+keyword\+\_\+map, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by analyze\+\_\+pragma().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{d6/d6c/classPragmaParser_a74e5f7f8d176b4b1b1d86a06a629d360_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6c/classPragmaParser_a74e5f7f8d176b4b1b1d86a06a629d360_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPragmaParser_ac119f35e2a4b60c2f332305025b64ad5}\label{classPragmaParser_ac119f35e2a4b60c2f332305025b64ad5}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!recognize\+\_\+generic\+\_\+pragma@{recognize\+\_\+generic\+\_\+pragma}}
+\index{recognize\+\_\+generic\+\_\+pragma@{recognize\+\_\+generic\+\_\+pragma}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{recognize\+\_\+generic\+\_\+pragma()}{recognize\_generic\_pragma()}}
+{\footnotesize\ttfamily bool Pragma\+Parser\+::recognize\+\_\+generic\+\_\+pragma (\begin{DoxyParamCaption}\item[{std\+::string \&}]{Line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Retrieve information about a generic pragma directive (i.\+e., none of the known ones has been detected) 
+
+
+
+Definition at line 358 of file Pragma\+Parser.\+cpp.
+
+
+
+References Function\+Pragmas, level, number, PM, and search\+\_\+function.
+
+
+
+Referenced by analyze\+\_\+pragma().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6c/classPragmaParser_ac119f35e2a4b60c2f332305025b64ad5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPragmaParser_a21060de0d17913f42fd0b4b7472b243c}\label{classPragmaParser_a21060de0d17913f42fd0b4b7472b243c}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!recognize\+\_\+issue\+\_\+pragma@{recognize\+\_\+issue\+\_\+pragma}}
+\index{recognize\+\_\+issue\+\_\+pragma@{recognize\+\_\+issue\+\_\+pragma}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{recognize\+\_\+issue\+\_\+pragma()}{recognize\_issue\_pragma()}}
+{\footnotesize\ttfamily bool Pragma\+Parser\+::recognize\+\_\+issue\+\_\+pragma (\begin{DoxyParamCaption}\item[{std\+::string \&}]{Line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Retrieve information about a pragma directive when an issue pragma has been found. 
+
+
+
+Definition at line 344 of file Pragma\+Parser.\+cpp.
+
+
+
+References Function\+Pragmas, and search\+\_\+function.
+
+
+
+Referenced by analyze\+\_\+pragma().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6c/classPragmaParser_a21060de0d17913f42fd0b4b7472b243c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPragmaParser_a56dfb19826945b520fbfb880bf3c1442}\label{classPragmaParser_a56dfb19826945b520fbfb880bf3c1442}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!recognize\+\_\+mapping\+\_\+pragma@{recognize\+\_\+mapping\+\_\+pragma}}
+\index{recognize\+\_\+mapping\+\_\+pragma@{recognize\+\_\+mapping\+\_\+pragma}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{recognize\+\_\+mapping\+\_\+pragma()}{recognize\_mapping\_pragma()}}
+{\footnotesize\ttfamily bool Pragma\+Parser\+::recognize\+\_\+mapping\+\_\+pragma (\begin{DoxyParamCaption}\item[{std\+::string \&}]{Line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Retrieve information about a pragma directive when a mapping pragma has been found. 
+
+
+
+Definition at line 327 of file Pragma\+Parser.\+cpp.
+
+
+
+References Function\+Pragmas, level, number, PM, and search\+\_\+function.
+
+
+
+Referenced by analyze\+\_\+pragma().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6c/classPragmaParser_a56dfb19826945b520fbfb880bf3c1442_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPragmaParser_abfa77814950337fb487e7e10fa12e696}\label{classPragmaParser_abfa77814950337fb487e7e10fa12e696}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!recognize\+\_\+omp\+\_\+pragma@{recognize\+\_\+omp\+\_\+pragma}}
+\index{recognize\+\_\+omp\+\_\+pragma@{recognize\+\_\+omp\+\_\+pragma}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{recognize\+\_\+omp\+\_\+pragma()}{recognize\_omp\_pragma()}}
+{\footnotesize\ttfamily bool Pragma\+Parser\+::recognize\+\_\+omp\+\_\+pragma (\begin{DoxyParamCaption}\item[{std\+::string \&}]{Line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Retrieve information about a pragma directive when a Open\+MP (parallelism) pragma has been found. 
+
+
+
+Definition at line 244 of file Pragma\+Parser.\+cpp.
+
+
+
+References debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Floating\+Pragmas, Function\+Pragmas, pragma\+\_\+manager\+::\+Get\+Omp\+Pragma\+Type(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+A\+T\+O\+M\+IC, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+B\+A\+R\+R\+I\+ER, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+C\+R\+I\+T\+I\+C\+AL, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+S\+I\+MD, pragma\+\_\+manager\+::omp\+\_\+directive\+\_\+keywords, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+F\+OR, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+P\+A\+R\+A\+L\+L\+EL, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+P\+A\+R\+A\+L\+L\+E\+L\+\_\+\+F\+OR, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+P\+A\+R\+A\+L\+L\+E\+L\+\_\+\+S\+E\+C\+T\+I\+O\+NS, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+S\+E\+C\+T\+I\+ON, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+S\+E\+C\+T\+I\+O\+NS, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+S\+I\+MD, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+T\+A\+R\+G\+ET, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+T\+A\+SK, pragma\+\_\+manager\+::\+O\+M\+P\+\_\+\+U\+N\+K\+N\+O\+WN, search\+\_\+function, S\+T\+R\+\_\+\+C\+S\+T\+\_\+pragma\+\_\+function\+\_\+single\+\_\+line\+\_\+one\+\_\+argument, S\+T\+R\+\_\+\+C\+S\+T\+\_\+pragma\+\_\+function\+\_\+start, S\+T\+R\+\_\+\+C\+S\+T\+\_\+pragma\+\_\+keyword\+\_\+omp, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+
+
+Referenced by analyze\+\_\+pragma().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6c/classPragmaParser_abfa77814950337fb487e7e10fa12e696_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6c/classPragmaParser_abfa77814950337fb487e7e10fa12e696_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPragmaParser_aef9121fb371f00bf01e8e2be3f2c6b55}\label{classPragmaParser_aef9121fb371f00bf01e8e2be3f2c6b55}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!recognize\+\_\+profiling\+\_\+pragma@{recognize\+\_\+profiling\+\_\+pragma}}
+\index{recognize\+\_\+profiling\+\_\+pragma@{recognize\+\_\+profiling\+\_\+pragma}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{recognize\+\_\+profiling\+\_\+pragma()}{recognize\_profiling\_pragma()}}
+{\footnotesize\ttfamily bool Pragma\+Parser\+::recognize\+\_\+profiling\+\_\+pragma (\begin{DoxyParamCaption}\item[{std\+::string \&}]{Line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Retrieve information about a pragma directive when a profiling pragma has been found. 
+
+
+
+Definition at line 351 of file Pragma\+Parser.\+cpp.
+
+
+
+References Function\+Pragmas, and search\+\_\+function.
+
+
+
+Referenced by analyze\+\_\+pragma().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6c/classPragmaParser_aef9121fb371f00bf01e8e2be3f2c6b55_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPragmaParser_a349706150aebec2e28658e6a880da5e0}\label{classPragmaParser_a349706150aebec2e28658e6a880da5e0}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!substitute\+Pragmas@{substitute\+Pragmas}}
+\index{substitute\+Pragmas@{substitute\+Pragmas}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{substitute\+Pragmas()}{substitutePragmas()}}
+{\footnotesize\ttfamily std\+::string Pragma\+Parser\+::substitute\+Pragmas (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{Old\+File }\end{DoxyParamCaption})}
+
+
+
+Substitute the pragmas with proper functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Old\+File} & is the name of the file to be analyzed and substituted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the name of the new file coming from the substitution 
+\end{DoxyReturn}
+search for function name
+
+Pragma associated with called are added by pragma\+\_\+analysis
+
+print out the new pragma line
+
+manage nesting levels
+
+increment line number 
+
+Definition at line 86 of file Pragma\+Parser.\+cpp.
+
+
+
+References analyze\+\_\+pragma(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, file\+\_\+counter, Floating\+Pragmas, Function\+Pragmas, Get\+Leaf\+File\+Name(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, level, name\+\_\+function, Open\+Pragmas, Param, PM, search\+\_\+function, S\+T\+R\+\_\+\+C\+S\+T\+\_\+pragma\+\_\+function\+\_\+end, S\+T\+R\+\_\+\+C\+S\+T\+\_\+pragma\+\_\+prefix, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6c/classPragmaParser_a349706150aebec2e28658e6a880da5e0_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classPragmaParser_a9f08edfb28626e742354f50b6d1b9109}\label{classPragmaParser_a9f08edfb28626e742354f50b6d1b9109}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily const int Pragma\+Parser\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+current debugging level 
+
+
+
+Definition at line 78 of file Pragma\+Parser.\+hpp.
+
+
+
+Referenced by recognize\+\_\+omp\+\_\+pragma(), and substitute\+Pragmas().
+
+\mbox{\Hypertarget{classPragmaParser_a9c1104c9516060f9831ba5a3ab724fae}\label{classPragmaParser_a9c1104c9516060f9831ba5a3ab724fae}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!file\+\_\+counter@{file\+\_\+counter}}
+\index{file\+\_\+counter@{file\+\_\+counter}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{file\+\_\+counter}{file\_counter}}
+{\footnotesize\ttfamily unsigned int Pragma\+Parser\+::file\+\_\+counter = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Counter of examined files. 
+
+
+
+Definition at line 133 of file Pragma\+Parser.\+hpp.
+
+
+
+Referenced by substitute\+Pragmas().
+
+\mbox{\Hypertarget{classPragmaParser_aba0369bb6f32165f81bdea66717484fc}\label{classPragmaParser_aba0369bb6f32165f81bdea66717484fc}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!Floating\+Pragmas@{Floating\+Pragmas}}
+\index{Floating\+Pragmas@{Floating\+Pragmas}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{Floating\+Pragmas}{FloatingPragmas}}
+{\footnotesize\ttfamily std\+::list$<$std\+::string$>$ Pragma\+Parser\+::\+Floating\+Pragmas\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 122 of file Pragma\+Parser.\+hpp.
+
+
+
+Referenced by recognize\+\_\+omp\+\_\+pragma(), and substitute\+Pragmas().
+
+\mbox{\Hypertarget{classPragmaParser_aec5893ea5d5f9ed2bab54bdbb5373f60}\label{classPragmaParser_aec5893ea5d5f9ed2bab54bdbb5373f60}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!Function\+Pragmas@{Function\+Pragmas}}
+\index{Function\+Pragmas@{Function\+Pragmas}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{Function\+Pragmas}{FunctionPragmas}}
+{\footnotesize\ttfamily \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$std\+::string$>$ Pragma\+Parser\+::\+Function\+Pragmas\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 124 of file Pragma\+Parser.\+hpp.
+
+
+
+Referenced by recognize\+\_\+generic\+\_\+pragma(), recognize\+\_\+issue\+\_\+pragma(), recognize\+\_\+mapping\+\_\+pragma(), recognize\+\_\+omp\+\_\+pragma(), recognize\+\_\+profiling\+\_\+pragma(), and substitute\+Pragmas().
+
+\mbox{\Hypertarget{classPragmaParser_afd2c745d8eb46b37724f5741721bf891}\label{classPragmaParser_afd2c745d8eb46b37724f5741721bf891}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!level@{level}}
+\index{level@{level}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily unsigned int Pragma\+Parser\+::level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+counter for nesting level 
+
+
+
+Definition at line 120 of file Pragma\+Parser.\+hpp.
+
+
+
+Referenced by recognize\+\_\+generic\+\_\+pragma(), recognize\+\_\+mapping\+\_\+pragma(), and substitute\+Pragmas().
+
+\mbox{\Hypertarget{classPragmaParser_a3f6eb9715243421172eef37a8db6cc0f}\label{classPragmaParser_a3f6eb9715243421172eef37a8db6cc0f}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!name\+\_\+function@{name\+\_\+function}}
+\index{name\+\_\+function@{name\+\_\+function}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{name\+\_\+function}{name\_function}}
+{\footnotesize\ttfamily std\+::string Pragma\+Parser\+::name\+\_\+function\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 130 of file Pragma\+Parser.\+hpp.
+
+
+
+Referenced by substitute\+Pragmas().
+
+\mbox{\Hypertarget{classPragmaParser_a9a81b9f19ab3820b1b19adc4e73b2919}\label{classPragmaParser_a9a81b9f19ab3820b1b19adc4e73b2919}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!number@{number}}
+\index{number@{number}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{number}{number}}
+{\footnotesize\ttfamily unsigned int Pragma\+Parser\+::number = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+counter of generic pragma 
+
+Autoheader include.
+
+Header include Constants include \hyperlink{classParameter}{Parameter} include Pragma include Utility include 
+
+Definition at line 72 of file Pragma\+Parser.\+hpp.
+
+
+
+Referenced by recognize\+\_\+generic\+\_\+pragma(), and recognize\+\_\+mapping\+\_\+pragma().
+
+\mbox{\Hypertarget{classPragmaParser_a9fab2866a8697ebec477bda192a1ce85}\label{classPragmaParser_a9fab2866a8697ebec477bda192a1ce85}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!Open\+Pragmas@{Open\+Pragmas}}
+\index{Open\+Pragmas@{Open\+Pragmas}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{Open\+Pragmas}{OpenPragmas}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, std\+::list$<$std\+::string$>$ $>$ Pragma\+Parser\+::\+Open\+Pragmas\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 126 of file Pragma\+Parser.\+hpp.
+
+
+
+Referenced by substitute\+Pragmas().
+
+\mbox{\Hypertarget{classPragmaParser_a29c814a59a2860e1cd13ec5c5847ad0e}\label{classPragmaParser_a29c814a59a2860e1cd13ec5c5847ad0e}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!Param@{Param}}
+\index{Param@{Param}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{Param}{Param}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Pragma\+Parser\+::\+Param\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+reference to the parameter datastructure 
+
+
+
+Definition at line 81 of file Pragma\+Parser.\+hpp.
+
+
+
+Referenced by analyze\+\_\+pragma(), and substitute\+Pragmas().
+
+\mbox{\Hypertarget{classPragmaParser_a6972c78ee4e9f7bef88a70df69118660}\label{classPragmaParser_a6972c78ee4e9f7bef88a70df69118660}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!PM@{PM}}
+\index{PM@{PM}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{PM}{PM}}
+{\footnotesize\ttfamily const \hyperlink{pragma__manager_8hpp_a6eb2deb9c5e77014dd1702c2971b1921}{pragma\+\_\+manager\+Ref} Pragma\+Parser\+::\+PM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+pointer to the pragma manager datastructure 
+
+
+
+Definition at line 75 of file Pragma\+Parser.\+hpp.
+
+
+
+Referenced by Pragma\+Parser(), recognize\+\_\+generic\+\_\+pragma(), recognize\+\_\+mapping\+\_\+pragma(), and substitute\+Pragmas().
+
+\mbox{\Hypertarget{classPragmaParser_a6cb7cee0dfb439e15f01bef38706dd3c}\label{classPragmaParser_a6cb7cee0dfb439e15f01bef38706dd3c}} 
+\index{Pragma\+Parser@{Pragma\+Parser}!search\+\_\+function@{search\+\_\+function}}
+\index{search\+\_\+function@{search\+\_\+function}!Pragma\+Parser@{Pragma\+Parser}}
+\subsubsection{\texorpdfstring{search\+\_\+function}{search\_function}}
+{\footnotesize\ttfamily bool Pragma\+Parser\+::search\+\_\+function\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 128 of file Pragma\+Parser.\+hpp.
+
+
+
+Referenced by recognize\+\_\+generic\+\_\+pragma(), recognize\+\_\+issue\+\_\+pragma(), recognize\+\_\+mapping\+\_\+pragma(), recognize\+\_\+omp\+\_\+pragma(), recognize\+\_\+profiling\+\_\+pragma(), and substitute\+Pragmas().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/parser/pragma/\hyperlink{PragmaParser_8hpp}{Pragma\+Parser.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/parser/pragma/\hyperlink{PragmaParser_8cpp}{Pragma\+Parser.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,478 @@
+\hypertarget{classSimulationTool}{}\section{Simulation\+Tool Class Reference}
+\label{classSimulationTool}\index{Simulation\+Tool@{Simulation\+Tool}}
+
+
+S\+TD include.  
+
+
+
+
+{\ttfamily \#include $<$Simulation\+Tool.\+hpp$>$}
+
+
+
+Inheritance diagram for Simulation\+Tool\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d87/classSimulationTool__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Simulation\+Tool\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{dd/db2/classSimulationTool__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0c}{type\+\_\+t} \{ \newline
+\hyperlink{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0cac1cba912dcb2a91c32cee75049def6cc}{U\+N\+K\+N\+O\+WN} = 0, 
+\hyperlink{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0cadf59d544b5c7d7ee624878e4491da2f1}{M\+O\+D\+E\+L\+S\+IM}, 
+\hyperlink{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0ca83011b682e06c1fd8dae495401417a4e}{I\+S\+IM}, 
+\hyperlink{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0ca7e65f98e613bf8008d68c591f5383d29}{X\+S\+IM}, 
+\newline
+\hyperlink{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0caa1a358c038890fa1e2fc515928f9cf79}{I\+C\+A\+R\+US}, 
+\hyperlink{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0ca2bd24b5521f81400d26c5c972401542d}{V\+E\+R\+I\+L\+A\+T\+OR}
+ \}\begin{DoxyCompactList}\small\item\em supported synthesis tools \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSimulationTool_ab33ce104c4f79adddbc2b57e3201a799}{Simulation\+Tool} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&\hyperlink{classSimulationTool_adc409fd8f18901e2d0ea4a6ab6690138}{Param})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classSimulationTool_a51b21f23f26db8bfcbe9dc18d992a3ea}{$\sim$\+Simulation\+Tool} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classSimulationTool_a24b4cde0b09c7496918d20f3896989b6}{Check\+Execution} ()
+\begin{DoxyCompactList}\small\item\em Checks if the current specification can be executed or not. \end{DoxyCompactList}\item 
+virtual std\+::string \hyperlink{classSimulationTool_a7fde58cff0f6cf25ae672c148e708c06}{Generate\+Simulation\+Script} (const std\+::string \&top\+\_\+filename, const std\+::list$<$ std\+::string $>$ \&file\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Generates the proper simulation script. \end{DoxyCompactList}\item 
+virtual unsigned long long int \hyperlink{classSimulationTool_a1686af5b980c7e8dfa848ff616384627}{Simulate} (unsigned long long \&accum\+\_\+cycles, unsigned int \&n\+\_\+testcases)
+\begin{DoxyCompactList}\small\item\em Performs the simulation and returns the number of cycles. \end{DoxyCompactList}\item 
+unsigned long long int \hyperlink{classSimulationTool_a8e8df618d62095f1f87bc4b61282c563}{Determine\+Cycles} (unsigned long long int \&accum\+\_\+cycles, unsigned int \&n\+\_\+testcases)
+\begin{DoxyCompactList}\small\item\em Determines the average number of cycles for the simulation(s) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classSimulationTool_a200fbae071dc751132117e922cf8ffc3}{Clean} () const
+\begin{DoxyCompactList}\small\item\em Remove files created during simulation F\+I\+X\+ME\+: this should become pure virtual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{SimulationTool_8hpp_ac6ee25f5bd64bf5c2795c731e142d3c6}{Simulation\+Tool\+Ref} \hyperlink{classSimulationTool_ac6008e072848fe260c350492afc86076}{Create\+Simulation\+Tool} (\hyperlink{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0c}{type\+\_\+t} type, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&\hyperlink{classSimulationTool_adc409fd8f18901e2d0ea4a6ab6690138}{Param}, const std\+::string \&suffix)
+\begin{DoxyCompactList}\small\item\em Factory method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classSimulationTool_afd99529bb7adb46081071097ceae7643}{Generate\+Script} (std\+::ostringstream \&script, const std\+::string \&top\+\_\+filename, const std\+::list$<$ std\+::string $>$ \&file\+\_\+list)=0
+\begin{DoxyCompactList}\small\item\em Performs the actual writing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classSimulationTool_adc409fd8f18901e2d0ea4a6ab6690138}{Param}
+\begin{DoxyCompactList}\small\item\em class containing all the parameters \end{DoxyCompactList}\item 
+int \hyperlink{classSimulationTool_a8fcf300968d03e86e9180626e7f6ec22}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em debug level of the class \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classSimulationTool_a0fe2cf8bf40f059b60f6d1b84ad391ac}{output\+\_\+level}
+\begin{DoxyCompactList}\small\item\em verbosity level of the class \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classSimulationTool_a8ddd42da76722ed7095fbcbb11f46af7}{generated\+\_\+script}
+\begin{DoxyCompactList}\small\item\em generated script \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classSimulationTool_aa927c5fdab04311517034cbec7a9a5c2}{log\+\_\+file}
+\begin{DoxyCompactList}\small\item\em log file \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+S\+TD include. 
+
+S\+TL include 
+
+Definition at line 55 of file Simulation\+Tool.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0c}\label{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0c}} 
+\index{Simulation\+Tool@{Simulation\+Tool}!type\+\_\+t@{type\+\_\+t}}
+\index{type\+\_\+t@{type\+\_\+t}!Simulation\+Tool@{Simulation\+Tool}}
+\subsubsection{\texorpdfstring{type\+\_\+t}{type\_t}}
+{\footnotesize\ttfamily enum \hyperlink{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0c}{Simulation\+Tool\+::type\+\_\+t}}
+
+
+
+supported synthesis tools 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+K\+N\+O\+WN@{U\+N\+K\+N\+O\+WN}!Simulation\+Tool@{Simulation\+Tool}}\index{Simulation\+Tool@{Simulation\+Tool}!U\+N\+K\+N\+O\+WN@{U\+N\+K\+N\+O\+WN}}}\mbox{\Hypertarget{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0cac1cba912dcb2a91c32cee75049def6cc}\label{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0cac1cba912dcb2a91c32cee75049def6cc}} 
+U\+N\+K\+N\+O\+WN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+O\+D\+E\+L\+S\+IM@{M\+O\+D\+E\+L\+S\+IM}!Simulation\+Tool@{Simulation\+Tool}}\index{Simulation\+Tool@{Simulation\+Tool}!M\+O\+D\+E\+L\+S\+IM@{M\+O\+D\+E\+L\+S\+IM}}}\mbox{\Hypertarget{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0cadf59d544b5c7d7ee624878e4491da2f1}\label{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0cadf59d544b5c7d7ee624878e4491da2f1}} 
+M\+O\+D\+E\+L\+S\+IM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+S\+IM@{I\+S\+IM}!Simulation\+Tool@{Simulation\+Tool}}\index{Simulation\+Tool@{Simulation\+Tool}!I\+S\+IM@{I\+S\+IM}}}\mbox{\Hypertarget{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0ca83011b682e06c1fd8dae495401417a4e}\label{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0ca83011b682e06c1fd8dae495401417a4e}} 
+I\+S\+IM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{X\+S\+IM@{X\+S\+IM}!Simulation\+Tool@{Simulation\+Tool}}\index{Simulation\+Tool@{Simulation\+Tool}!X\+S\+IM@{X\+S\+IM}}}\mbox{\Hypertarget{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0ca7e65f98e613bf8008d68c591f5383d29}\label{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0ca7e65f98e613bf8008d68c591f5383d29}} 
+X\+S\+IM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+C\+A\+R\+US@{I\+C\+A\+R\+US}!Simulation\+Tool@{Simulation\+Tool}}\index{Simulation\+Tool@{Simulation\+Tool}!I\+C\+A\+R\+US@{I\+C\+A\+R\+US}}}\mbox{\Hypertarget{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0caa1a358c038890fa1e2fc515928f9cf79}\label{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0caa1a358c038890fa1e2fc515928f9cf79}} 
+I\+C\+A\+R\+US&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{V\+E\+R\+I\+L\+A\+T\+OR@{V\+E\+R\+I\+L\+A\+T\+OR}!Simulation\+Tool@{Simulation\+Tool}}\index{Simulation\+Tool@{Simulation\+Tool}!V\+E\+R\+I\+L\+A\+T\+OR@{V\+E\+R\+I\+L\+A\+T\+OR}}}\mbox{\Hypertarget{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0ca2bd24b5521f81400d26c5c972401542d}\label{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0ca2bd24b5521f81400d26c5c972401542d}} 
+V\+E\+R\+I\+L\+A\+T\+OR&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 59 of file Simulation\+Tool.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSimulationTool_ab33ce104c4f79adddbc2b57e3201a799}\label{classSimulationTool_ab33ce104c4f79adddbc2b57e3201a799}} 
+\index{Simulation\+Tool@{Simulation\+Tool}!Simulation\+Tool@{Simulation\+Tool}}
+\index{Simulation\+Tool@{Simulation\+Tool}!Simulation\+Tool@{Simulation\+Tool}}
+\subsubsection{\texorpdfstring{Simulation\+Tool()}{SimulationTool()}}
+{\footnotesize\ttfamily Simulation\+Tool\+::\+Simulation\+Tool (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&}]{Param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+S\+TL include. 
+
+Definition at line 59 of file Simulation\+Tool.\+cpp.
+
+
+
+References $\sim$\+Simulation\+Tool().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dfc/classSimulationTool_ab33ce104c4f79adddbc2b57e3201a799_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSimulationTool_a51b21f23f26db8bfcbe9dc18d992a3ea}\label{classSimulationTool_a51b21f23f26db8bfcbe9dc18d992a3ea}} 
+\index{Simulation\+Tool@{Simulation\+Tool}!````~Simulation\+Tool@{$\sim$\+Simulation\+Tool}}
+\index{````~Simulation\+Tool@{$\sim$\+Simulation\+Tool}!Simulation\+Tool@{Simulation\+Tool}}
+\subsubsection{\texorpdfstring{$\sim$\+Simulation\+Tool()}{~SimulationTool()}}
+{\footnotesize\ttfamily Simulation\+Tool\+::$\sim$\+Simulation\+Tool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Simulation\+Tool().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dfc/classSimulationTool_a51b21f23f26db8bfcbe9dc18d992a3ea_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSimulationTool_a24b4cde0b09c7496918d20f3896989b6}\label{classSimulationTool_a24b4cde0b09c7496918d20f3896989b6}} 
+\index{Simulation\+Tool@{Simulation\+Tool}!Check\+Execution@{Check\+Execution}}
+\index{Check\+Execution@{Check\+Execution}!Simulation\+Tool@{Simulation\+Tool}}
+\subsubsection{\texorpdfstring{Check\+Execution()}{CheckExecution()}}
+{\footnotesize\ttfamily void Simulation\+Tool\+::\+Check\+Execution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the current specification can be executed or not. 
+
+for default, nothing to do 
+
+Reimplemented in \hyperlink{classISE__isim__wrapper_ab7b4139eab5055486945c1547569276f}{I\+S\+E\+\_\+isim\+\_\+wrapper}, \hyperlink{classVIVADO__xsim__wrapper_a92bc3d2006fc9eea8741aae4856e0d75}{V\+I\+V\+A\+D\+O\+\_\+xsim\+\_\+wrapper}, \hyperlink{classmodelsimWrapper_a79d1a35dffbeaa4787958acb7d2632ed}{modelsim\+Wrapper}, \hyperlink{classIcarusWrapper_a9ea8b4abaa701ca7faca32f40ff6c232}{Icarus\+Wrapper}, and \hyperlink{classVerilatorWrapper_ade8f594c94962542008b87f5b0beff70}{Verilator\+Wrapper}.
+
+
+
+Definition at line 94 of file Simulation\+Tool.\+cpp.
+
+\mbox{\Hypertarget{classSimulationTool_a200fbae071dc751132117e922cf8ffc3}\label{classSimulationTool_a200fbae071dc751132117e922cf8ffc3}} 
+\index{Simulation\+Tool@{Simulation\+Tool}!Clean@{Clean}}
+\index{Clean@{Clean}!Simulation\+Tool@{Simulation\+Tool}}
+\subsubsection{\texorpdfstring{Clean()}{Clean()}}
+{\footnotesize\ttfamily void Simulation\+Tool\+::\+Clean (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Remove files created during simulation F\+I\+X\+ME\+: this should become pure virtual. 
+
+
+
+Reimplemented in \hyperlink{classVIVADO__xsim__wrapper_ad24840f9dda8644309661c912f37c150}{V\+I\+V\+A\+D\+O\+\_\+xsim\+\_\+wrapper}, \hyperlink{classmodelsimWrapper_a835022e305a7b22a8b62486558cf7542}{modelsim\+Wrapper}, and \hyperlink{classVerilatorWrapper_adfffb92b6facd27a89a6e6999b671ea6}{Verilator\+Wrapper}.
+
+
+
+Definition at line 384 of file Simulation\+Tool.\+cpp.
+
+\mbox{\Hypertarget{classSimulationTool_ac6008e072848fe260c350492afc86076}\label{classSimulationTool_ac6008e072848fe260c350492afc86076}} 
+\index{Simulation\+Tool@{Simulation\+Tool}!Create\+Simulation\+Tool@{Create\+Simulation\+Tool}}
+\index{Create\+Simulation\+Tool@{Create\+Simulation\+Tool}!Simulation\+Tool@{Simulation\+Tool}}
+\subsubsection{\texorpdfstring{Create\+Simulation\+Tool()}{CreateSimulationTool()}}
+{\footnotesize\ttfamily \hyperlink{SimulationTool_8hpp_ac6ee25f5bd64bf5c2795c731e142d3c6}{Simulation\+Tool\+Ref} Simulation\+Tool\+::\+Create\+Simulation\+Tool (\begin{DoxyParamCaption}\item[{\hyperlink{classSimulationTool_a6f5b094bef3306e5611c0a3a9ade0a0c}{type\+\_\+t}}]{type,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&}]{Param,  }\item[{const std\+::string \&}]{suffix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Factory method. 
+
+this point should never be reached 
+
+Definition at line 65 of file Simulation\+Tool.\+cpp.
+
+
+
+References I\+C\+A\+R\+US, I\+S\+IM, M\+O\+D\+E\+L\+S\+IM, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, U\+N\+K\+N\+O\+WN, V\+E\+R\+I\+L\+A\+T\+OR, and X\+S\+IM.
+
+
+
+Referenced by Generate\+Simulation\+Scripts\+::\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dfc/classSimulationTool_ac6008e072848fe260c350492afc86076_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSimulationTool_a8e8df618d62095f1f87bc4b61282c563}\label{classSimulationTool_a8e8df618d62095f1f87bc4b61282c563}} 
+\index{Simulation\+Tool@{Simulation\+Tool}!Determine\+Cycles@{Determine\+Cycles}}
+\index{Determine\+Cycles@{Determine\+Cycles}!Simulation\+Tool@{Simulation\+Tool}}
+\subsubsection{\texorpdfstring{Determine\+Cycles()}{DetermineCycles()}}
+{\footnotesize\ttfamily unsigned long long int Simulation\+Tool\+::\+Determine\+Cycles (\begin{DoxyParamCaption}\item[{unsigned long long int \&}]{accum\+\_\+cycles,  }\item[{unsigned int \&}]{n\+\_\+testcases }\end{DoxyParamCaption})}
+
+
+
+Determines the average number of cycles for the simulation(s) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em accum\+\_\+cycles} & is the total number of accumulated cycles \\
+\hline
+{\em n\+\_\+testcases} & is the number of testcases simulated \\
+\hline
+\end{DoxyParams}
+check for Not correct termination 
+
+Definition at line 130 of file Simulation\+Tool.\+cpp.
+
+
+
+References Copy\+Stdout(), log\+\_\+file, output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, Param, P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, Split\+String(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG, and Trim\+Spaces().
+
+
+
+Referenced by Simulate().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dfc/classSimulationTool_a8e8df618d62095f1f87bc4b61282c563_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dfc/classSimulationTool_a8e8df618d62095f1f87bc4b61282c563_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSimulationTool_afd99529bb7adb46081071097ceae7643}\label{classSimulationTool_afd99529bb7adb46081071097ceae7643}} 
+\index{Simulation\+Tool@{Simulation\+Tool}!Generate\+Script@{Generate\+Script}}
+\index{Generate\+Script@{Generate\+Script}!Simulation\+Tool@{Simulation\+Tool}}
+\subsubsection{\texorpdfstring{Generate\+Script()}{GenerateScript()}}
+{\footnotesize\ttfamily virtual void Simulation\+Tool\+::\+Generate\+Script (\begin{DoxyParamCaption}\item[{std\+::ostringstream \&}]{script,  }\item[{const std\+::string \&}]{top\+\_\+filename,  }\item[{const std\+::list$<$ std\+::string $>$ \&}]{file\+\_\+list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Performs the actual writing. 
+
+
+
+Implemented in \hyperlink{classISE__isim__wrapper_a7f67c0aa82f1959d7327f05cb4504477}{I\+S\+E\+\_\+isim\+\_\+wrapper}, \hyperlink{classVIVADO__xsim__wrapper_adc04b335afab76135cd6b33997db4203}{V\+I\+V\+A\+D\+O\+\_\+xsim\+\_\+wrapper}, \hyperlink{classmodelsimWrapper_a5eaa08f8c0b15b12a72046e04f290b86}{modelsim\+Wrapper}, \hyperlink{classIcarusWrapper_adf6d3591e5e20f081e89122563c04176}{Icarus\+Wrapper}, and \hyperlink{classVerilatorWrapper_a4f67b56da53843f72ba663dfee9a2b5a}{Verilator\+Wrapper}.
+
+
+
+Referenced by Generate\+Simulation\+Script().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dfc/classSimulationTool_afd99529bb7adb46081071097ceae7643_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSimulationTool_a7fde58cff0f6cf25ae672c148e708c06}\label{classSimulationTool_a7fde58cff0f6cf25ae672c148e708c06}} 
+\index{Simulation\+Tool@{Simulation\+Tool}!Generate\+Simulation\+Script@{Generate\+Simulation\+Script}}
+\index{Generate\+Simulation\+Script@{Generate\+Simulation\+Script}!Simulation\+Tool@{Simulation\+Tool}}
+\subsubsection{\texorpdfstring{Generate\+Simulation\+Script()}{GenerateSimulationScript()}}
+{\footnotesize\ttfamily std\+::string Simulation\+Tool\+::\+Generate\+Simulation\+Script (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{top\+\_\+filename,  }\item[{const std\+::list$<$ std\+::string $>$ \&}]{file\+\_\+list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Generates the proper simulation script. 
+
+
+
+Definition at line 351 of file Simulation\+Tool.\+cpp.
+
+
+
+References Tool\+Manager\+::configure(), Tool\+Manager\+::execute(), generated\+\_\+script, Generate\+Script(), log\+\_\+file, output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, Param, and test\+\_\+panda\+::parameters.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dfc/classSimulationTool_a7fde58cff0f6cf25ae672c148e708c06_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSimulationTool_a1686af5b980c7e8dfa848ff616384627}\label{classSimulationTool_a1686af5b980c7e8dfa848ff616384627}} 
+\index{Simulation\+Tool@{Simulation\+Tool}!Simulate@{Simulate}}
+\index{Simulate@{Simulate}!Simulation\+Tool@{Simulation\+Tool}}
+\subsubsection{\texorpdfstring{Simulate()}{Simulate()}}
+{\footnotesize\ttfamily unsigned long long int Simulation\+Tool\+::\+Simulate (\begin{DoxyParamCaption}\item[{unsigned long long \&}]{accum\+\_\+cycles,  }\item[{unsigned int \&}]{n\+\_\+testcases }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Performs the simulation and returns the number of cycles. 
+
+remove previous simulation results 
+
+Definition at line 99 of file Simulation\+Tool.\+cpp.
+
+
+
+References Tool\+Manager\+::configure(), Copy\+Stdout(), Determine\+Cycles(), Tool\+Manager\+::execute(), generated\+\_\+script, log\+\_\+file, output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, Param, test\+\_\+panda\+::parameters, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dfc/classSimulationTool_a1686af5b980c7e8dfa848ff616384627_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classSimulationTool_a8fcf300968d03e86e9180626e7f6ec22}\label{classSimulationTool_a8fcf300968d03e86e9180626e7f6ec22}} 
+\index{Simulation\+Tool@{Simulation\+Tool}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!Simulation\+Tool@{Simulation\+Tool}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily int Simulation\+Tool\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+debug level of the class 
+
+
+
+Definition at line 74 of file Simulation\+Tool.\+hpp.
+
+
+
+Referenced by Icarus\+Wrapper\+::\+Generate\+Script(), modelsim\+Wrapper\+::\+Generate\+Script(), I\+S\+E\+\_\+isim\+\_\+wrapper\+::\+Generate\+Script(), Icarus\+Wrapper\+::\+Icarus\+Wrapper(), I\+S\+E\+\_\+isim\+\_\+wrapper\+::\+I\+S\+E\+\_\+isim\+\_\+wrapper(), modelsim\+Wrapper\+::modelsim\+Wrapper(), Verilator\+Wrapper\+::\+Verilator\+Wrapper(), and V\+I\+V\+A\+D\+O\+\_\+xsim\+\_\+wrapper\+::\+V\+I\+V\+A\+D\+O\+\_\+xsim\+\_\+wrapper().
+
+\mbox{\Hypertarget{classSimulationTool_a8ddd42da76722ed7095fbcbb11f46af7}\label{classSimulationTool_a8ddd42da76722ed7095fbcbb11f46af7}} 
+\index{Simulation\+Tool@{Simulation\+Tool}!generated\+\_\+script@{generated\+\_\+script}}
+\index{generated\+\_\+script@{generated\+\_\+script}!Simulation\+Tool@{Simulation\+Tool}}
+\subsubsection{\texorpdfstring{generated\+\_\+script}{generated\_script}}
+{\footnotesize\ttfamily std\+::string Simulation\+Tool\+::generated\+\_\+script\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+generated script 
+
+
+
+Definition at line 80 of file Simulation\+Tool.\+hpp.
+
+
+
+Referenced by Generate\+Simulation\+Script(), and Simulate().
+
+\mbox{\Hypertarget{classSimulationTool_aa927c5fdab04311517034cbec7a9a5c2}\label{classSimulationTool_aa927c5fdab04311517034cbec7a9a5c2}} 
+\index{Simulation\+Tool@{Simulation\+Tool}!log\+\_\+file@{log\+\_\+file}}
+\index{log\+\_\+file@{log\+\_\+file}!Simulation\+Tool@{Simulation\+Tool}}
+\subsubsection{\texorpdfstring{log\+\_\+file}{log\_file}}
+{\footnotesize\ttfamily std\+::string Simulation\+Tool\+::log\+\_\+file\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+log file 
+
+
+
+Definition at line 83 of file Simulation\+Tool.\+hpp.
+
+
+
+Referenced by Determine\+Cycles(), Verilator\+Wrapper\+::\+Generate\+Script(), Icarus\+Wrapper\+::\+Generate\+Script(), modelsim\+Wrapper\+::\+Generate\+Script(), V\+I\+V\+A\+D\+O\+\_\+xsim\+\_\+wrapper\+::\+Generate\+Script(), I\+S\+E\+\_\+isim\+\_\+wrapper\+::\+Generate\+Script(), Generate\+Simulation\+Script(), and Simulate().
+
+\mbox{\Hypertarget{classSimulationTool_a0fe2cf8bf40f059b60f6d1b84ad391ac}\label{classSimulationTool_a0fe2cf8bf40f059b60f6d1b84ad391ac}} 
+\index{Simulation\+Tool@{Simulation\+Tool}!output\+\_\+level@{output\+\_\+level}}
+\index{output\+\_\+level@{output\+\_\+level}!Simulation\+Tool@{Simulation\+Tool}}
+\subsubsection{\texorpdfstring{output\+\_\+level}{output\_level}}
+{\footnotesize\ttfamily unsigned int Simulation\+Tool\+::output\+\_\+level\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+verbosity level of the class 
+
+
+
+Definition at line 77 of file Simulation\+Tool.\+hpp.
+
+
+
+Referenced by Determine\+Cycles(), Icarus\+Wrapper\+::\+Generate\+Script(), modelsim\+Wrapper\+::\+Generate\+Script(), V\+I\+V\+A\+D\+O\+\_\+xsim\+\_\+wrapper\+::\+Generate\+Script(), I\+S\+E\+\_\+isim\+\_\+wrapper\+::\+Generate\+Script(), Generate\+Simulation\+Script(), and Simulate().
+
+\mbox{\Hypertarget{classSimulationTool_adc409fd8f18901e2d0ea4a6ab6690138}\label{classSimulationTool_adc409fd8f18901e2d0ea4a6ab6690138}} 
+\index{Simulation\+Tool@{Simulation\+Tool}!Param@{Param}}
+\index{Param@{Param}!Simulation\+Tool@{Simulation\+Tool}}
+\subsubsection{\texorpdfstring{Param}{Param}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Simulation\+Tool\+::\+Param\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+class containing all the parameters 
+
+
+
+Definition at line 71 of file Simulation\+Tool.\+hpp.
+
+
+
+Referenced by Determine\+Cycles(), Verilator\+Wrapper\+::\+Generate\+Script(), Icarus\+Wrapper\+::\+Generate\+Script(), modelsim\+Wrapper\+::\+Generate\+Script(), V\+I\+V\+A\+D\+O\+\_\+xsim\+\_\+wrapper\+::\+Generate\+Script(), I\+S\+E\+\_\+isim\+\_\+wrapper\+::\+Generate\+Script(), Generate\+Simulation\+Script(), and Simulate().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/simulation/\hyperlink{SimulationTool_8hpp}{Simulation\+Tool.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/simulation/\hyperlink{SimulationTool_8cpp}{Simulation\+Tool.\+cpp}\end{DoxyCompactItemize}

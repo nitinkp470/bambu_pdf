@@ -1,0 +1,276 @@
+\hypertarget{classstring__cst__fix}{}\section{string\+\_\+cst\+\_\+fix Class Reference}
+\label{classstring__cst__fix}\index{string\+\_\+cst\+\_\+fix@{string\+\_\+cst\+\_\+fix}}
+
+
+Pre-\/analysis step.  
+
+
+
+
+{\ttfamily \#include $<$string\+\_\+cst\+\_\+fix.\+hpp$>$}
+
+
+
+Inheritance diagram for string\+\_\+cst\+\_\+fix\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{d1/d67/classstring__cst__fix__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for string\+\_\+cst\+\_\+fix\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/de4/classstring__cst__fix__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classstring__cst__fix_a361651f7fd62a70ec7f9add6cb687a4c}{string\+\_\+cst\+\_\+fix} (const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classstring__cst__fix_ae2a9b955dae6cb7478c80f2326a638f2}{$\sim$string\+\_\+cst\+\_\+fix} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classstring__cst__fix_a366deb5000664520f5b7979a5ecb48bc}{Exec} () override
+\begin{DoxyCompactList}\small\item\em Fixes the \hyperlink{structvar__decl}{var\+\_\+decl} duplication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classstring__cst__fix_a2f68c8aa5c58dc2db4ba9f25a02d3160}{recursive\+\_\+analysis} (\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&tn, const std\+::string \&\hyperlink{structsrcp}{srcp})
+\begin{DoxyCompactList}\small\item\em Recursive tree node analysis. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classstring__cst__fix_a5b196cc1483a0239528d31c371d9834e}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ unsigned int $>$ \hyperlink{classstring__cst__fix_a7ff7f8e1afa38b3b092676ced537f35c}{already\+\_\+visited\+\_\+ae}
+\begin{DoxyCompactList}\small\item\em Already visited address expression (used to avoid infinite recursion) \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ unsigned int, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \hyperlink{classstring__cst__fix_a4c1ab9ed1cb2b96a5bc6f0821b42ef08}{string\+\_\+cst\+\_\+map}
+\begin{DoxyCompactList}\small\item\em relation between constant string and read-\/only variable initialized with the \hyperlink{structstring__cst}{string\+\_\+cst}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Pre-\/analysis step. 
+
+It transforms the raw intermediate representation by removing direct references to \hyperlink{structstring__cst}{string\+\_\+cst}. 
+
+Definition at line 68 of file string\+\_\+cst\+\_\+fix.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstring__cst__fix_a361651f7fd62a70ec7f9add6cb687a4c}\label{classstring__cst__fix_a361651f7fd62a70ec7f9add6cb687a4c}} 
+\index{string\+\_\+cst\+\_\+fix@{string\+\_\+cst\+\_\+fix}!string\+\_\+cst\+\_\+fix@{string\+\_\+cst\+\_\+fix}}
+\index{string\+\_\+cst\+\_\+fix@{string\+\_\+cst\+\_\+fix}!string\+\_\+cst\+\_\+fix@{string\+\_\+cst\+\_\+fix}}
+\subsubsection{\texorpdfstring{string\+\_\+cst\+\_\+fix()}{string\_cst\_fix()}}
+{\footnotesize\ttfamily string\+\_\+cst\+\_\+fix\+::string\+\_\+cst\+\_\+fix (\begin{DoxyParamCaption}\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Header include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em AppM} & is the application manager \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+{\em parameters} & is the set of input parameters\\
+\hline
+\end{DoxyParams}
+Behavior include \hyperlink{structGraph}{Graph} include \hyperlink{classParameter}{Parameter} include S\+TD include S\+TL include Tree include Utility include 
+
+Definition at line 78 of file string\+\_\+cst\+\_\+fix.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$string\+\_\+cst\+\_\+fix().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d0/daa/classstring__cst__fix_a361651f7fd62a70ec7f9add6cb687a4c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classstring__cst__fix_ae2a9b955dae6cb7478c80f2326a638f2}\label{classstring__cst__fix_ae2a9b955dae6cb7478c80f2326a638f2}} 
+\index{string\+\_\+cst\+\_\+fix@{string\+\_\+cst\+\_\+fix}!````~string\+\_\+cst\+\_\+fix@{$\sim$string\+\_\+cst\+\_\+fix}}
+\index{````~string\+\_\+cst\+\_\+fix@{$\sim$string\+\_\+cst\+\_\+fix}!string\+\_\+cst\+\_\+fix@{string\+\_\+cst\+\_\+fix}}
+\subsubsection{\texorpdfstring{$\sim$string\+\_\+cst\+\_\+fix()}{~string\_cst\_fix()}}
+{\footnotesize\ttfamily string\+\_\+cst\+\_\+fix\+::$\sim$string\+\_\+cst\+\_\+fix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by string\+\_\+cst\+\_\+fix().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d0/daa/classstring__cst__fix_ae2a9b955dae6cb7478c80f2326a638f2_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classstring__cst__fix_a5b196cc1483a0239528d31c371d9834e}\label{classstring__cst__fix_a5b196cc1483a0239528d31c371d9834e}} 
+\index{string\+\_\+cst\+\_\+fix@{string\+\_\+cst\+\_\+fix}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!string\+\_\+cst\+\_\+fix@{string\+\_\+cst\+\_\+fix}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ string\+\_\+cst\+\_\+fix\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classApplicationFrontendFlowStep_ab308200c0096ccff3a1ff50e864ed61f}{Application\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 85 of file string\+\_\+cst\+\_\+fix.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+A\+N\+A\+L\+Y\+S\+IS, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and Frontend\+Flow\+Step\+::\+W\+H\+O\+L\+E\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON.
+
+\mbox{\Hypertarget{classstring__cst__fix_a366deb5000664520f5b7979a5ecb48bc}\label{classstring__cst__fix_a366deb5000664520f5b7979a5ecb48bc}} 
+\index{string\+\_\+cst\+\_\+fix@{string\+\_\+cst\+\_\+fix}!Exec@{Exec}}
+\index{Exec@{Exec}!string\+\_\+cst\+\_\+fix@{string\+\_\+cst\+\_\+fix}}
+\subsubsection{\texorpdfstring{Exec()}{Exec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} string\+\_\+cst\+\_\+fix\+::\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Fixes the \hyperlink{structvar__decl}{var\+\_\+decl} duplication. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classApplicationFrontendFlowStep_a2bf060a5ebc1735635dc5c7773387a25}{Application\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 111 of file string\+\_\+cst\+\_\+fix.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, test\+\_\+panda\+::arg, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::\+Get\+Tree\+Node(), phi, recursive\+\_\+analysis(), sl, S\+TR, and S\+U\+C\+C\+E\+SS.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/daa/classstring__cst__fix_a366deb5000664520f5b7979a5ecb48bc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classstring__cst__fix_a2f68c8aa5c58dc2db4ba9f25a02d3160}\label{classstring__cst__fix_a2f68c8aa5c58dc2db4ba9f25a02d3160}} 
+\index{string\+\_\+cst\+\_\+fix@{string\+\_\+cst\+\_\+fix}!recursive\+\_\+analysis@{recursive\+\_\+analysis}}
+\index{recursive\+\_\+analysis@{recursive\+\_\+analysis}!string\+\_\+cst\+\_\+fix@{string\+\_\+cst\+\_\+fix}}
+\subsubsection{\texorpdfstring{recursive\+\_\+analysis()}{recursive\_analysis()}}
+{\footnotesize\ttfamily void string\+\_\+cst\+\_\+fix\+::recursive\+\_\+analysis (\begin{DoxyParamCaption}\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{tn,  }\item[{const std\+::string \&}]{srcp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Recursive tree node analysis. 
+
+Removing statements create more problems than what it may solve.
+
+So the solution for bambu is to not synthesize them.
+
+makes the \hyperlink{structvar__decl}{var\+\_\+decl} visible 
+
+Definition at line 146 of file string\+\_\+cst\+\_\+fix.\+cpp.
+
+
+
+References already\+\_\+visited\+\_\+ae, Frontend\+Flow\+Step\+::\+AppM, test\+\_\+panda\+::arg, C\+A\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+node\+::get\+\_\+kind\+\_\+text(), G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, N\+O\+D\+E\+\_\+\+N\+O\+T\+\_\+\+Y\+E\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+EC, Design\+Flow\+Step\+::parameters, S\+TR, string\+\_\+cst\+\_\+map, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+DE, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and tree\+\_\+node\+::\+To\+String().
+
+
+
+Referenced by Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/daa/classstring__cst__fix_a2f68c8aa5c58dc2db4ba9f25a02d3160_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{d0/daa/classstring__cst__fix_a2f68c8aa5c58dc2db4ba9f25a02d3160_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classstring__cst__fix_a7ff7f8e1afa38b3b092676ced537f35c}\label{classstring__cst__fix_a7ff7f8e1afa38b3b092676ced537f35c}} 
+\index{string\+\_\+cst\+\_\+fix@{string\+\_\+cst\+\_\+fix}!already\+\_\+visited\+\_\+ae@{already\+\_\+visited\+\_\+ae}}
+\index{already\+\_\+visited\+\_\+ae@{already\+\_\+visited\+\_\+ae}!string\+\_\+cst\+\_\+fix@{string\+\_\+cst\+\_\+fix}}
+\subsubsection{\texorpdfstring{already\+\_\+visited\+\_\+ae}{already\_visited\_ae}}
+{\footnotesize\ttfamily \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$unsigned int$>$ string\+\_\+cst\+\_\+fix\+::already\+\_\+visited\+\_\+ae\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Already visited address expression (used to avoid infinite recursion) 
+
+
+
+Definition at line 72 of file string\+\_\+cst\+\_\+fix.\+hpp.
+
+
+
+Referenced by recursive\+\_\+analysis().
+
+\mbox{\Hypertarget{classstring__cst__fix_a4c1ab9ed1cb2b96a5bc6f0821b42ef08}\label{classstring__cst__fix_a4c1ab9ed1cb2b96a5bc6f0821b42ef08}} 
+\index{string\+\_\+cst\+\_\+fix@{string\+\_\+cst\+\_\+fix}!string\+\_\+cst\+\_\+map@{string\+\_\+cst\+\_\+map}}
+\index{string\+\_\+cst\+\_\+map@{string\+\_\+cst\+\_\+map}!string\+\_\+cst\+\_\+fix@{string\+\_\+cst\+\_\+fix}}
+\subsubsection{\texorpdfstring{string\+\_\+cst\+\_\+map}{string\_cst\_map}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$unsigned int, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}$>$ string\+\_\+cst\+\_\+fix\+::string\+\_\+cst\+\_\+map\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+relation between constant string and read-\/only variable initialized with the \hyperlink{structstring__cst}{string\+\_\+cst}. 
+
+
+
+Definition at line 75 of file string\+\_\+cst\+\_\+fix.\+hpp.
+
+
+
+Referenced by recursive\+\_\+analysis().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{string__cst__fix_8hpp}{string\+\_\+cst\+\_\+fix.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{string__cst__fix_8cpp}{string\+\_\+cst\+\_\+fix.\+cpp}\end{DoxyCompactItemize}

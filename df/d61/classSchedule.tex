@@ -1,0 +1,1671 @@
+\hypertarget{classSchedule}{}\section{Schedule Class Reference}
+\label{classSchedule}\index{Schedule@{Schedule}}
+
+
+Class managing the schedule of the operations.  
+
+
+
+
+{\ttfamily \#include $<$schedule.\+hpp$>$}
+
+
+
+Collaboration diagram for Schedule\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dfb/classSchedule__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSchedule_a245be13feb696aef57541ec19dcb5c5a}{Schedule} (const \hyperlink{hls__manager_8hpp_a1b481383e3beabc89bd7562ae672dd8c}{H\+L\+S\+\_\+manager\+Const\+Ref} \hyperlink{classSchedule_ac9335f00e46ddb07553a680243fab2b4}{hls\+\_\+manager}, const unsigned int \hyperlink{classSchedule_a51c826c36437ed5ec523725815cc25d0}{function\+\_\+index}, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} \hyperlink{classSchedule_a3b416a5141bab0d0cca415dcc4e5c12d}{op\+\_\+graph}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classSchedule_aceedbf18bb7e3a43b66df301ce21325f}{parameters})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classSchedule_a4806b985197d35c00b9e707c0ed87998}{$\sim$\+Schedule} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classSchedule_ae081e822e8e894d32cb3a0e991c31889}{Initialize} ()
+\begin{DoxyCompactList}\small\item\em Initialize the data structure. \end{DoxyCompactList}\item 
+Control\+Step \hyperlink{classSchedule_a698a0718e0f7097c70a85d90d1f56e97}{get\+\_\+csteps} () const
+\begin{DoxyCompactList}\small\item\em This method returns the number of control steps. \end{DoxyCompactList}\item 
+void \hyperlink{classSchedule_ac54cd77d3f23af1c4ced5daed0aeef78}{set\+\_\+csteps} (Control\+Step cs)
+\begin{DoxyCompactList}\small\item\em This method sets the number of control steps. \end{DoxyCompactList}\item 
+void \hyperlink{classSchedule_ad25e768e9aeea647c95939f49b46ce7a}{print} (\hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref} Rfu=\hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref}()) const
+\begin{DoxyCompactList}\small\item\em Function that prints the class schedule. \end{DoxyCompactList}\item 
+void \hyperlink{classSchedule_af0fedbcf697272b4f295bf0e7ef3a358}{Write\+Dot} (const std\+::string \&file\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Function that writes the dot file of the scheduling by using the AT\&T direct graph representation. \end{DoxyCompactList}\item 
+void \hyperlink{classSchedule_ab6c18b64a2d8e511b1aac306c439978a}{set\+\_\+spec} (const \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, bool $>$ \&spec\+\_\+map)
+\begin{DoxyCompactList}\small\item\em Sets the speculation map. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, bool $>$ \hyperlink{classSchedule_a289a13765e99b83118877fdec668fff1}{get\+\_\+spec} () const
+\begin{DoxyCompactList}\small\item\em Returns the speculation map. \end{DoxyCompactList}\item 
+void \hyperlink{classSchedule_a1bf4292733805b6e305ec28395cd04d0}{set\+\_\+execution} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&op, Control\+Step c\+\_\+step)
+\begin{DoxyCompactList}\small\item\em Sets the starting clock cycle for the given operation. \end{DoxyCompactList}\item 
+void \hyperlink{classSchedule_a1c75a65910f1d1b9cf3e9f27e91a756e}{set\+\_\+execution\+\_\+end} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&op, Control\+Step c\+\_\+step\+\_\+end)
+\begin{DoxyCompactList}\small\item\em Sets the ending clock cycle for the given operation. \end{DoxyCompactList}\item 
+bool \hyperlink{classSchedule_adeef437f5a2674165df77031551f4f48}{is\+\_\+scheduled} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&op) const
+\begin{DoxyCompactList}\small\item\em Returns true if the given operation has been already scheduled, false otherwise. \end{DoxyCompactList}\item 
+bool \hyperlink{classSchedule_a67b5a4dd9ac6f111299d0bcb014f20a0}{is\+\_\+scheduled} (const unsigned int statement\+\_\+index) const
+\begin{DoxyCompactList}\small\item\em Returns true if the given operation has been already scheduled, false otherwise. \end{DoxyCompactList}\item 
+\hyperlink{structAbsControlStep}{Abs\+Control\+Step} \hyperlink{classSchedule_a7b6c9b65b093277adc5fa53e8b10f551}{get\+\_\+cstep} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&op) const
+\begin{DoxyCompactList}\small\item\em Returns the clock cycle where the given operation has been scheduled. \end{DoxyCompactList}\item 
+\hyperlink{structAbsControlStep}{Abs\+Control\+Step} \hyperlink{classSchedule_a9899b55e9cb1322b52e3c93bc4d27a70}{get\+\_\+cstep} (const unsigned int \hyperlink{tutorial__pact__2019_2Introduction_2third_2include_2Keccak_8h_a028c9bdc8344cca38ab522a337074797}{index}) const
+\begin{DoxyCompactList}\small\item\em Returns the clock cycle where the given operation has been scheduled. \end{DoxyCompactList}\item 
+\hyperlink{structAbsControlStep}{Abs\+Control\+Step} \hyperlink{classSchedule_ae37f5691291fd1656e4704c59ded9249}{get\+\_\+cstep\+\_\+end} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&op) const
+\begin{DoxyCompactList}\small\item\em Return the last clock cycle in which the operation execute. \end{DoxyCompactList}\item 
+\hyperlink{structAbsControlStep}{Abs\+Control\+Step} \hyperlink{classSchedule_aadafc63bf5654bb1fe471923c7f7f763}{get\+\_\+cstep\+\_\+end} (const unsigned int op) const
+\begin{DoxyCompactList}\small\item\em Return the last clock cycle in which the operation execute. \end{DoxyCompactList}\item 
+double \hyperlink{classSchedule_a964e824c93e67dae2f72137c8a6f2a05}{Get\+Ending\+Time} (const unsigned int \hyperlink{structoperation}{operation}) const
+\begin{DoxyCompactList}\small\item\em Return the starting time of the operation. \end{DoxyCompactList}\item 
+double \hyperlink{classSchedule_ac2e233f2734b8d91805a4a51e3bd3246}{Get\+Starting\+Time} (const unsigned int \hyperlink{structoperation}{operation}) const
+\begin{DoxyCompactList}\small\item\em Return the starting time of the operation. \end{DoxyCompactList}\item 
+double \hyperlink{classSchedule_a3c418e4bcd41ae0e8b88c117d377f227}{get\+\_\+fo\+\_\+correction} (unsigned int first\+\_\+operation, unsigned int second\+\_\+operation) const
+\begin{DoxyCompactList}\small\item\em return the fan-\/out correction for a given edge \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classSchedule_a93bef5f10d60f02ab62a87bf65a5ae70}{num\+\_\+scheduled} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of scheduled operations. \end{DoxyCompactList}\item 
+void \hyperlink{classSchedule_aa94b33ccedaa82177f6a78b3fe646446}{clear} ()
+\begin{DoxyCompactList}\small\item\em Erases the current results. \end{DoxyCompactList}\item 
+void \hyperlink{classSchedule_af9a710c306cf7d06428bc10da109d4ee}{set\+\_\+slack} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} op, double v\+\_\+slack)
+\begin{DoxyCompactList}\small\item\em set the slack associated with the vertex with respect to the clock period \end{DoxyCompactList}\item 
+double \hyperlink{classSchedule_a010703d799e98d8c5c3bb7e59ac635c3}{get\+\_\+slack} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} op) const
+\item 
+void \hyperlink{classSchedule_a9eb19889586ce5d16aa8ed1ea356c2ab}{Update\+Time} (const unsigned int operation\+\_\+index, bool update\+\_\+cs=true)
+\begin{DoxyCompactList}\small\item\em Compute the starting and the ending time of a statement. \end{DoxyCompactList}\item 
+Function\+Frontend\+Flow\+Step\+\_\+\+Movable \hyperlink{classSchedule_aa45880695985aff9d1433a96c23cc960}{Can\+Be\+Moved} (const unsigned int statement\+\_\+index, const unsigned int basic\+\_\+block) const
+\begin{DoxyCompactList}\small\item\em Check if a statement can be moved at the end of a basic block. \end{DoxyCompactList}\item 
+bool \hyperlink{classSchedule_a65ecdc45dd59e27c5226bc34c16617dd}{Evaluate\+Conds\+Merging} (const unsigned statement\+\_\+index, const unsigned int first\+\_\+condition, const unsigned second\+\_\+condition) const
+\begin{DoxyCompactList}\small\item\em Check if a further condition can be added to gimple multi way if without increasing basic block latency. \end{DoxyCompactList}\item 
+bool \hyperlink{classSchedule_a735a5c3680d2fac0b2de19e734bc8a96}{Evaluate\+Multi\+Way\+Ifs\+Merging} (const unsigned int first\+\_\+statement\+\_\+index, const unsigned int second\+\_\+statement\+\_\+index) const
+\begin{DoxyCompactList}\small\item\em Evaluate if two conditional statements can be merged to create a \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if}. \end{DoxyCompactList}\item 
+const std\+::string \hyperlink{classSchedule_a6c882a9f405b563a05ad75371a982aab}{Print\+Timing\+Information} (const unsigned int statement\+\_\+index) const
+\begin{DoxyCompactList}\small\item\em Print the timing information about an operation. \end{DoxyCompactList}\item 
+\hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ \hyperlink{classSchedule_a7ab094843958d44cf31dc83a3e0b1ec7}{Compute\+Critical\+Path} (const \hyperlink{state__transition__graph_8hpp_a50240fded93adab729e333c2b8090a8b}{State\+Info\+Const\+Ref} state\+\_\+info) const
+\begin{DoxyCompactList}\small\item\em Compute the critical path inside a state. \end{DoxyCompactList}\item 
+void \hyperlink{classSchedule_aae7b5c12a1beb8b9d2c8986b06a705c2}{Add\+Connection\+Times} (unsigned int first\+\_\+operation, unsigned int second\+\_\+operation, const double value)
+\begin{DoxyCompactList}\small\item\em Add fan out correction time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classSchedule_a8d72a4f687d2af4a664f711c7c192c0e}{Get\+Ready\+Time} (const unsigned int tree\+\_\+node\+\_\+index, const unsigned int basic\+\_\+block\+\_\+index) const
+\begin{DoxyCompactList}\small\item\em Get when in a basic block an ssa is ready. \end{DoxyCompactList}\item 
+double \hyperlink{classSchedule_a22d0a54d38e05ab87f86b5c898908816}{Get\+B\+B\+Ending\+Time} (const unsigned int basic\+\_\+block\+\_\+index) const
+\begin{DoxyCompactList}\small\item\em Return the ending time of a basic block (i.\+e., the ending time of the last ending operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classWrefcount}{Wrefcount}$<$ const \hyperlink{classHLS__manager}{H\+L\+S\+\_\+manager} $>$ \hyperlink{classSchedule_ac9335f00e46ddb07553a680243fab2b4}{hls\+\_\+manager}
+\begin{DoxyCompactList}\small\item\em The H\+LS manager. \end{DoxyCompactList}\item 
+\hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \hyperlink{classSchedule_aee5739d5062edd0854fda0745f270e8a}{TM}
+\begin{DoxyCompactList}\small\item\em The tree manager. \end{DoxyCompactList}\item 
+\hyperlink{tree__manipulation_8hpp_af8a30f3f306569d7681c1b5af9ddd9d0}{tree\+\_\+manipulation\+Const\+Ref} \hyperlink{classSchedule_a626c40e8391df80cbf334381ae6d1ed9}{tree\+\_\+man}
+\begin{DoxyCompactList}\small\item\em The tree manipulation. \end{DoxyCompactList}\item 
+\hyperlink{allocation__information_8hpp_a54287618a63bf87e31ddb17ba01e7ca7}{Allocation\+Information\+Const\+Ref} \hyperlink{classSchedule_a864b9407b1dcf3d37b69366be6838e1d}{allocation\+\_\+information}
+\begin{DoxyCompactList}\small\item\em The allocation information. \end{DoxyCompactList}\item 
+const unsigned int \hyperlink{classSchedule_a51c826c36437ed5ec523725815cc25d0}{function\+\_\+index}
+\begin{DoxyCompactList}\small\item\em The index of the function. \end{DoxyCompactList}\item 
+Control\+Step \hyperlink{classSchedule_a1d65d93a4de64bed41f252422162f990}{tot\+\_\+csteps}
+\begin{DoxyCompactList}\small\item\em total number of control steps \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$ unsigned int, Control\+Step $>$ \hyperlink{classSchedule_ad9a0a7a8305f6db7d2dcd3a7d613179f}{op\+\_\+starting\+\_\+cycle}
+\begin{DoxyCompactList}\small\item\em map between the operation index and the clock cycle on which the operation starts its execution N\+O\+TE\+: it must be a map to know which is the last step \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ Control\+Step, \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ $>$ \hyperlink{classSchedule_a65835449ae73c073c23aeaa59cdf799b}{starting\+\_\+cycles\+\_\+to\+\_\+ops}
+\begin{DoxyCompactList}\small\item\em The reverse of op\+\_\+starting\+\_\+cycle. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$ unsigned int, Control\+Step $>$ \hyperlink{classSchedule_a3264650e2087ccdfeaf2b2e822dce958}{op\+\_\+ending\+\_\+cycle}
+\begin{DoxyCompactList}\small\item\em map between the operation index and the clock cycle on which the operations ends its execution \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ unsigned int, double $>$ \hyperlink{classSchedule_a5204aafc8e7b40a16118dba7e66ba104}{starting\+\_\+times}
+\begin{DoxyCompactList}\small\item\em The absolute starting time of each operation as computed by the scheduling Key is the index of the gimple operation. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ unsigned int, double $>$ \hyperlink{classSchedule_a572efad73e7017e5217bf0178084746a}{ending\+\_\+times}
+\begin{DoxyCompactList}\small\item\em The absolute ending time of each operation as computed by the scheduling Key is the index of the gimple operation. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ std\+::pair$<$ unsigned int, unsigned int $>$, double $>$ \hyperlink{classSchedule_a9c313308e88d070672b9466ebae89d32}{connection\+\_\+times}
+\begin{DoxyCompactList}\small\item\em Connection times The key is an operation graph edge. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, bool $>$ \hyperlink{classSchedule_adbcbb1238dd11219d751c7fd28c8b44f}{spec}
+\begin{DoxyCompactList}\small\item\em Map for speculation property of each operation vertex. \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, double $>$ \hyperlink{classSchedule_a9bd31f768fd00bc8d3a3eb1b3bd4c332}{op\+\_\+slack}
+\begin{DoxyCompactList}\small\item\em slack map \end{DoxyCompactList}\item 
+\hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} \hyperlink{classSchedule_a3b416a5141bab0d0cca415dcc4e5c12d}{op\+\_\+graph}
+\begin{DoxyCompactList}\small\item\em The operation graph (for scheduling purpose) (cannot be const because of = operator) \end{DoxyCompactList}\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classSchedule_aceedbf18bb7e3a43b66df301ce21325f}{parameters}
+\begin{DoxyCompactList}\small\item\em The set of input parameters. \end{DoxyCompactList}\item 
+const int \hyperlink{classSchedule_a730ba60c8d53bd88d6a38c7bd005abd5}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em The debug level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classSchedule_a44083050f827fe080f60a4b79b97bc93}{parametric\+\_\+list\+\_\+based}
+\item 
+class \hyperlink{classSchedule_a995b99fd9889f07eef755c6b9fe70c3f}{Allocation\+Information}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class managing the schedule of the operations. 
+
+Definition at line 117 of file schedule.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSchedule_a245be13feb696aef57541ec19dcb5c5a}\label{classSchedule_a245be13feb696aef57541ec19dcb5c5a}} 
+\index{Schedule@{Schedule}!Schedule@{Schedule}}
+\index{Schedule@{Schedule}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{Schedule()}{Schedule()}}
+{\footnotesize\ttfamily Schedule\+::\+Schedule (\begin{DoxyParamCaption}\item[{const \hyperlink{hls__manager_8hpp_a1b481383e3beabc89bd7562ae672dd8c}{H\+L\+S\+\_\+manager\+Const\+Ref}}]{hls\+\_\+manager,  }\item[{const unsigned int}]{function\+\_\+index,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{op\+\_\+graph,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{parameters }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 107 of file schedule.\+cpp.
+
+
+
+References $\sim$\+Schedule().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{df/d61/classSchedule_a245be13feb696aef57541ec19dcb5c5a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_a4806b985197d35c00b9e707c0ed87998}\label{classSchedule_a4806b985197d35c00b9e707c0ed87998}} 
+\index{Schedule@{Schedule}!````~Schedule@{$\sim$\+Schedule}}
+\index{````~Schedule@{$\sim$\+Schedule}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{$\sim$\+Schedule()}{~Schedule()}}
+{\footnotesize\ttfamily Schedule\+::$\sim$\+Schedule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Schedule().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{df/d61/classSchedule_a4806b985197d35c00b9e707c0ed87998_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSchedule_aae7b5c12a1beb8b9d2c8986b06a705c2}\label{classSchedule_aae7b5c12a1beb8b9d2c8986b06a705c2}} 
+\index{Schedule@{Schedule}!Add\+Connection\+Times@{Add\+Connection\+Times}}
+\index{Add\+Connection\+Times@{Add\+Connection\+Times}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{Add\+Connection\+Times()}{AddConnectionTimes()}}
+{\footnotesize\ttfamily void Schedule\+::\+Add\+Connection\+Times (\begin{DoxyParamCaption}\item[{unsigned int}]{first\+\_\+operation,  }\item[{unsigned int}]{second\+\_\+operation,  }\item[{const double}]{value }\end{DoxyParamCaption})}
+
+
+
+Add fan out correction time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & is the edge to which correction time is associated \\
+\hline
+{\em value} & is the value of the correction \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1138 of file schedule.\+cpp.
+
+
+
+References connection\+\_\+times.
+
+\mbox{\Hypertarget{classSchedule_aa45880695985aff9d1433a96c23cc960}\label{classSchedule_aa45880695985aff9d1433a96c23cc960}} 
+\index{Schedule@{Schedule}!Can\+Be\+Moved@{Can\+Be\+Moved}}
+\index{Can\+Be\+Moved@{Can\+Be\+Moved}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{Can\+Be\+Moved()}{CanBeMoved()}}
+{\footnotesize\ttfamily Function\+Frontend\+Flow\+Step\+\_\+\+Movable Schedule\+::\+Can\+Be\+Moved (\begin{DoxyParamCaption}\item[{const unsigned int}]{statement\+\_\+index,  }\item[{const unsigned int}]{basic\+\_\+block }\end{DoxyParamCaption}) const}
+
+
+
+Check if a statement can be moved at the end of a basic block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em statement\+\_\+index} & is the index of the statement \\
+\hline
+{\em basic\+\_\+block} & is the index of the basic block \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it can be moved 
+\end{DoxyReturn}
+Moved in a basic block after the definition -\/ there cannot be problem of chaining
+
+Compute the remaining time
+
+Operation is scheduled at the beginning of the next control step
+
+Check if this operation ends not in the last control step 
+
+Definition at line 491 of file schedule.\+cpp.
+
+
+
+References allocation\+\_\+information, Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), tree\+\_\+manager\+::\+C\+Get\+Tree\+Node(), tree\+\_\+helper\+::compute\+\_\+ssa\+\_\+uses\+\_\+rec\+\_\+ptr(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, ending\+\_\+times, E\+N\+T\+R\+Y\+\_\+\+ID, E\+X\+I\+T\+\_\+\+ID, function\+\_\+index, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), Get\+B\+B\+Ending\+Time(), Allocation\+Information\+::\+Get\+Clock\+Period\+Margin(), Allocation\+Information\+::\+Get\+Connection\+Time(), Allocation\+Information\+::\+Get\+Cycle\+Latency(), Allocation\+Information\+::\+Get\+Fu\+Type(), Allocation\+Information\+::\+Get\+Time\+Latency(), hls\+\_\+manager, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Allocation\+Information\+::is\+\_\+one\+\_\+cycle\+\_\+direct\+\_\+access\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+operation\+\_\+bounded(), Wrefcount$<$ T $>$\+::lock(), op\+\_\+graph, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, TM, tree\+\_\+node\+::\+To\+String(), and fu\+\_\+binding\+::\+U\+N\+K\+N\+O\+WN.
+
+
+
+Referenced by simple\+\_\+code\+\_\+motion\+::\+Check\+Movable(), and Phi\+Opt\+::\+Identify\+Pattern().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_aa45880695985aff9d1433a96c23cc960_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_aa45880695985aff9d1433a96c23cc960_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_aa94b33ccedaa82177f6a78b3fe646446}\label{classSchedule_aa94b33ccedaa82177f6a78b3fe646446}} 
+\index{Schedule@{Schedule}!clear@{clear}}
+\index{clear@{clear}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Schedule\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Erases the current results. 
+
+
+
+Definition at line 275 of file schedule.\+cpp.
+
+
+
+References op\+\_\+starting\+\_\+cycle, spec, starting\+\_\+cycles\+\_\+to\+\_\+ops, and tot\+\_\+csteps.
+
+
+
+Referenced by A\+S\+L\+A\+P\+::compute\+\_\+\+A\+L\+A\+P(), A\+S\+L\+A\+P\+::compute\+\_\+\+A\+S\+A\+P(), and A\+S\+L\+A\+P\+::update\+\_\+\+A\+L\+A\+P().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_aa94b33ccedaa82177f6a78b3fe646446_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_a7ab094843958d44cf31dc83a3e0b1ec7}\label{classSchedule_a7ab094843958d44cf31dc83a3e0b1ec7}} 
+\index{Schedule@{Schedule}!Compute\+Critical\+Path@{Compute\+Critical\+Path}}
+\index{Compute\+Critical\+Path@{Compute\+Critical\+Path}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{Compute\+Critical\+Path()}{ComputeCriticalPath()}}
+{\footnotesize\ttfamily \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ Schedule\+::\+Compute\+Critical\+Path (\begin{DoxyParamCaption}\item[{const \hyperlink{state__transition__graph_8hpp_a50240fded93adab729e333c2b8090a8b}{State\+Info\+Const\+Ref}}]{state\+\_\+info }\end{DoxyParamCaption}) const}
+
+
+
+Compute the critical path inside a state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\+\_\+info} & is the state \\
+\hline
+\end{DoxyParams}
+The set of operations which are in the critical path of the current basic block
+
+Computing ending time of state
+
+Compute the remaining time 
+
+Definition at line 979 of file schedule.\+cpp.
+
+
+
+References allocation\+\_\+information, Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), tree\+\_\+helper\+::compute\+\_\+ssa\+\_\+uses\+\_\+rec\+\_\+ptr(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, ending\+\_\+times, E\+N\+T\+R\+Y\+\_\+\+ID, E\+X\+I\+T\+\_\+\+ID, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), Allocation\+Information\+::\+Get\+Connection\+Time(), Allocation\+Information\+::\+Get\+Time\+Latency(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Allocation\+Information\+::is\+\_\+operation\+\_\+\+P\+I\+\_\+registered(), op\+\_\+graph, op\+\_\+starting\+\_\+cycle, starting\+\_\+times, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, TM, and fu\+\_\+binding\+::\+U\+N\+K\+N\+O\+WN.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a7ab094843958d44cf31dc83a3e0b1ec7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_a65ecdc45dd59e27c5226bc34c16617dd}\label{classSchedule_a65ecdc45dd59e27c5226bc34c16617dd}} 
+\index{Schedule@{Schedule}!Evaluate\+Conds\+Merging@{Evaluate\+Conds\+Merging}}
+\index{Evaluate\+Conds\+Merging@{Evaluate\+Conds\+Merging}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{Evaluate\+Conds\+Merging()}{EvaluateCondsMerging()}}
+{\footnotesize\ttfamily bool Schedule\+::\+Evaluate\+Conds\+Merging (\begin{DoxyParamCaption}\item[{const unsigned}]{statement\+\_\+index,  }\item[{const unsigned int}]{first\+\_\+condition,  }\item[{const unsigned}]{second\+\_\+condition }\end{DoxyParamCaption}) const}
+
+
+
+Check if a further condition can be added to gimple multi way if without increasing basic block latency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em statement\+\_\+index} & is the index of the \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} \\
+\hline
+{\em first\+\_\+condition} & is the first condition \\
+\hline
+{\em second\+\_\+condition} & is the second condition \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 654 of file schedule.\+cpp.
+
+
+
+References allocation\+\_\+information, tree\+\_\+manager\+::\+C\+Get\+Tree\+Node(), tree\+\_\+manipulation\+::\+Create\+Or\+Expr(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), Get\+B\+B\+Ending\+Time(), Get\+Ready\+Time(), Allocation\+Information\+::\+Get\+Time\+Latency(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, index, max(), S\+TR, TM, tree\+\_\+man, and fu\+\_\+binding\+::\+U\+N\+K\+N\+O\+WN.
+
+
+
+Referenced by Phi\+Opt\+::\+Identify\+Pattern().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a65ecdc45dd59e27c5226bc34c16617dd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a65ecdc45dd59e27c5226bc34c16617dd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_a735a5c3680d2fac0b2de19e734bc8a96}\label{classSchedule_a735a5c3680d2fac0b2de19e734bc8a96}} 
+\index{Schedule@{Schedule}!Evaluate\+Multi\+Way\+Ifs\+Merging@{Evaluate\+Multi\+Way\+Ifs\+Merging}}
+\index{Evaluate\+Multi\+Way\+Ifs\+Merging@{Evaluate\+Multi\+Way\+Ifs\+Merging}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{Evaluate\+Multi\+Way\+Ifs\+Merging()}{EvaluateMultiWayIfsMerging()}}
+{\footnotesize\ttfamily bool Schedule\+::\+Evaluate\+Multi\+Way\+Ifs\+Merging (\begin{DoxyParamCaption}\item[{const unsigned int}]{first\+\_\+statement\+\_\+index,  }\item[{const unsigned int}]{second\+\_\+statement\+\_\+index }\end{DoxyParamCaption}) const}
+
+
+
+Evaluate if two conditional statements can be merged to create a \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+\_\+statement\+\_\+index} & is the index of the first statement to be merged \\
+\hline
+{\em second\+\_\+statement\+\_\+index} & is the index of the second statement to be merged \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the latency of the basic block does not change 
+\end{DoxyReturn}
+Note that we compute ending times only for the longest newly created condition; existing condition can be worse
+
+The basic block on the default cond edge 
+
+Definition at line 668 of file schedule.\+cpp.
+
+
+
+References allocation\+\_\+information, tree\+\_\+manipulation\+::\+Create\+And\+Expr(), tree\+\_\+manipulation\+::\+Create\+Not\+Expr(), Function\+Behavior\+::\+F\+BB, function\+\_\+index, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), Get\+B\+B\+Ending\+Time(), Get\+Ready\+Time(), Allocation\+Information\+::\+Get\+Time\+Latency(), hls\+\_\+manager, Wrefcount$<$ T $>$\+::lock(), max(), S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, TM, tree\+\_\+man, and fu\+\_\+binding\+::\+U\+N\+K\+N\+O\+WN.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a735a5c3680d2fac0b2de19e734bc8a96_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_a7b6c9b65b093277adc5fa53e8b10f551}\label{classSchedule_a7b6c9b65b093277adc5fa53e8b10f551}} 
+\index{Schedule@{Schedule}!get\+\_\+cstep@{get\+\_\+cstep}}
+\index{get\+\_\+cstep@{get\+\_\+cstep}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{get\+\_\+cstep()}{get\_cstep()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structAbsControlStep}{Abs\+Control\+Step} Schedule\+::get\+\_\+cstep (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&}]{op }\end{DoxyParamCaption}) const}
+
+
+
+Returns the clock cycle where the given operation has been scheduled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & is the vertex of the operation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an integer representing the clock cycle where it starts the execution 
+\end{DoxyReturn}
+
+
+Definition at line 232 of file schedule.\+cpp.
+
+
+
+References B\+B\+\_\+\+E\+N\+T\+RY, B\+B\+\_\+\+E\+X\+IT, Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), tree\+\_\+manager\+::\+C\+Get\+Tree\+Node(), E\+N\+T\+R\+Y\+\_\+\+ID, E\+X\+I\+T\+\_\+\+ID, G\+E\+T\+\_\+\+N\+A\+ME, is\+\_\+scheduled(), op\+\_\+graph, op\+\_\+starting\+\_\+cycle, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and TM.
+
+
+
+Referenced by A\+S\+L\+A\+P\+::add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+A\+P(), A\+S\+L\+A\+P\+::add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+A\+P(), Scheduling\+::anticipate\+\_\+operations(), A\+S\+L\+A\+P\+::compute\+\_\+\+A\+L\+A\+P\+\_\+fast(), A\+S\+L\+A\+P\+::compute\+\_\+\+A\+L\+A\+P\+\_\+worst\+\_\+case(), A\+S\+L\+A\+P\+::compute\+\_\+\+A\+S\+A\+P(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), sched\+\_\+based\+\_\+chaining\+\_\+computation\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), Cond\+Expr\+Restructuring\+::\+Internal\+Exec(), commutative\+\_\+expr\+\_\+restructuring\+::\+Internal\+Exec(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), commutative\+\_\+expr\+\_\+restructuring\+::\+Is\+Comm\+Expr\+Chain(), Cond\+Expr\+Restructuring\+::\+Is\+Cond\+Expr\+Chain(), print(), parametric\+\_\+list\+\_\+based\+::update\+\_\+vertices\+\_\+slack(), and hls\+::xwrite().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a7b6c9b65b093277adc5fa53e8b10f551_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a7b6c9b65b093277adc5fa53e8b10f551_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_a9899b55e9cb1322b52e3c93bc4d27a70}\label{classSchedule_a9899b55e9cb1322b52e3c93bc4d27a70}} 
+\index{Schedule@{Schedule}!get\+\_\+cstep@{get\+\_\+cstep}}
+\index{get\+\_\+cstep@{get\+\_\+cstep}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{get\+\_\+cstep()}{get\_cstep()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{structAbsControlStep}{Abs\+Control\+Step} Schedule\+::get\+\_\+cstep (\begin{DoxyParamCaption}\item[{const unsigned int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Returns the clock cycle where the given operation has been scheduled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & is the index of the operation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an integer representing the clock cycle where it starts the execution 
+\end{DoxyReturn}
+
+
+Definition at line 243 of file schedule.\+cpp.
+
+
+
+References B\+B\+\_\+\+E\+N\+T\+RY, B\+B\+\_\+\+E\+X\+IT, tree\+\_\+manager\+::\+C\+Get\+Tree\+Node(), E\+N\+T\+R\+Y\+\_\+\+ID, E\+X\+I\+T\+\_\+\+ID, op\+\_\+starting\+\_\+cycle, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and TM.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a9899b55e9cb1322b52e3c93bc4d27a70_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_ae37f5691291fd1656e4704c59ded9249}\label{classSchedule_ae37f5691291fd1656e4704c59ded9249}} 
+\index{Schedule@{Schedule}!get\+\_\+cstep\+\_\+end@{get\+\_\+cstep\+\_\+end}}
+\index{get\+\_\+cstep\+\_\+end@{get\+\_\+cstep\+\_\+end}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{get\+\_\+cstep\+\_\+end()}{get\_cstep\_end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structAbsControlStep}{Abs\+Control\+Step} Schedule\+::get\+\_\+cstep\+\_\+end (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&}]{op }\end{DoxyParamCaption}) const}
+
+
+
+Return the last clock cycle in which the operation execute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & is the operation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the last clock cycle 
+\end{DoxyReturn}
+
+
+Definition at line 253 of file schedule.\+cpp.
+
+
+
+References Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), and op\+\_\+graph.
+
+
+
+Referenced by sched\+\_\+based\+\_\+chaining\+\_\+computation\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), commutative\+\_\+expr\+\_\+restructuring\+::\+Is\+Comm\+Expr\+Chain(), Cond\+Expr\+Restructuring\+::\+Is\+Cond\+Expr\+Chain(), print(), and Update\+Time().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_ae37f5691291fd1656e4704c59ded9249_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_ae37f5691291fd1656e4704c59ded9249_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_aadafc63bf5654bb1fe471923c7f7f763}\label{classSchedule_aadafc63bf5654bb1fe471923c7f7f763}} 
+\index{Schedule@{Schedule}!get\+\_\+cstep\+\_\+end@{get\+\_\+cstep\+\_\+end}}
+\index{get\+\_\+cstep\+\_\+end@{get\+\_\+cstep\+\_\+end}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{get\+\_\+cstep\+\_\+end()}{get\_cstep\_end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{structAbsControlStep}{Abs\+Control\+Step} Schedule\+::get\+\_\+cstep\+\_\+end (\begin{DoxyParamCaption}\item[{const unsigned int}]{op }\end{DoxyParamCaption}) const}
+
+
+
+Return the last clock cycle in which the operation execute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & is the operation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the last clock cycle 
+\end{DoxyReturn}
+
+
+Definition at line 259 of file schedule.\+cpp.
+
+
+
+References B\+B\+\_\+\+E\+N\+T\+RY, B\+B\+\_\+\+E\+X\+IT, tree\+\_\+manager\+::\+C\+Get\+Tree\+Node(), E\+N\+T\+R\+Y\+\_\+\+ID, E\+X\+I\+T\+\_\+\+ID, is\+\_\+scheduled(), op\+\_\+ending\+\_\+cycle, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and TM.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_aadafc63bf5654bb1fe471923c7f7f763_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_a698a0718e0f7097c70a85d90d1f56e97}\label{classSchedule_a698a0718e0f7097c70a85d90d1f56e97}} 
+\index{Schedule@{Schedule}!get\+\_\+csteps@{get\+\_\+csteps}}
+\index{get\+\_\+csteps@{get\+\_\+csteps}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{get\+\_\+csteps()}{get\_csteps()}}
+{\footnotesize\ttfamily Control\+Step Schedule\+::get\+\_\+csteps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method returns the number of control steps. 
+
+\begin{DoxyReturn}{Returns}
+the number of control steps of the stored scheduling. 
+\end{DoxyReturn}
+
+
+Definition at line 214 of file schedule.\+hpp.
+
+
+
+Referenced by parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{df/d61/classSchedule_a698a0718e0f7097c70a85d90d1f56e97_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_a3c418e4bcd41ae0e8b88c117d377f227}\label{classSchedule_a3c418e4bcd41ae0e8b88c117d377f227}} 
+\index{Schedule@{Schedule}!get\+\_\+fo\+\_\+correction@{get\+\_\+fo\+\_\+correction}}
+\index{get\+\_\+fo\+\_\+correction@{get\+\_\+fo\+\_\+correction}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{get\+\_\+fo\+\_\+correction()}{get\_fo\_correction()}}
+{\footnotesize\ttfamily double Schedule\+::get\+\_\+fo\+\_\+correction (\begin{DoxyParamCaption}\item[{unsigned int}]{first\+\_\+operation,  }\item[{unsigned int}]{second\+\_\+operation }\end{DoxyParamCaption}) const}
+
+
+
+return the fan-\/out correction for a given edge 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & is the edge \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return the fan-\/out correction for e 
+\end{DoxyReturn}
+
+
+Definition at line 931 of file schedule.\+cpp.
+
+
+
+References connection\+\_\+times.
+
+
+
+Referenced by cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a3c418e4bcd41ae0e8b88c117d377f227_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_a010703d799e98d8c5c3bb7e59ac635c3}\label{classSchedule_a010703d799e98d8c5c3bb7e59ac635c3}} 
+\index{Schedule@{Schedule}!get\+\_\+slack@{get\+\_\+slack}}
+\index{get\+\_\+slack@{get\+\_\+slack}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{get\+\_\+slack()}{get\_slack()}}
+{\footnotesize\ttfamily double Schedule\+::get\+\_\+slack (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 342 of file schedule.\+hpp.
+
+
+
+Referenced by parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a010703d799e98d8c5c3bb7e59ac635c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_a289a13765e99b83118877fdec668fff1}\label{classSchedule_a289a13765e99b83118877fdec668fff1}} 
+\index{Schedule@{Schedule}!get\+\_\+spec@{get\+\_\+spec}}
+\index{get\+\_\+spec@{get\+\_\+spec}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{get\+\_\+spec()}{get\_spec()}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, bool$>$ Schedule\+::get\+\_\+spec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the speculation map. 
+
+
+
+Definition at line 250 of file schedule.\+hpp.
+
+
+
+References index.
+
+\mbox{\Hypertarget{classSchedule_a22d0a54d38e05ab87f86b5c898908816}\label{classSchedule_a22d0a54d38e05ab87f86b5c898908816}} 
+\index{Schedule@{Schedule}!Get\+B\+B\+Ending\+Time@{Get\+B\+B\+Ending\+Time}}
+\index{Get\+B\+B\+Ending\+Time@{Get\+B\+B\+Ending\+Time}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{Get\+B\+B\+Ending\+Time()}{GetBBEndingTime()}}
+{\footnotesize\ttfamily double Schedule\+::\+Get\+B\+B\+Ending\+Time (\begin{DoxyParamCaption}\item[{const unsigned int}]{basic\+\_\+block\+\_\+index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Return the ending time of a basic block (i.\+e., the ending time of the last ending operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em basic\+\_\+block\+\_\+index} & is the index of the basic block \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the ending time of the last operation 
+\end{DoxyReturn}
+
+
+Definition at line 896 of file schedule.\+cpp.
+
+
+
+References allocation\+\_\+information, ending\+\_\+times, function\+\_\+index, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), Allocation\+Information\+::\+Get\+Clock\+Period\+Margin(), hls\+::\+H\+L\+S\+\_\+C, hls\+\_\+manager, tree\+\_\+node\+::index, Wrefcount$<$ T $>$\+::lock(), S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and TM.
+
+
+
+Referenced by Can\+Be\+Moved(), Evaluate\+Conds\+Merging(), and Evaluate\+Multi\+Way\+Ifs\+Merging().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a22d0a54d38e05ab87f86b5c898908816_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a22d0a54d38e05ab87f86b5c898908816_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_a964e824c93e67dae2f72137c8a6f2a05}\label{classSchedule_a964e824c93e67dae2f72137c8a6f2a05}} 
+\index{Schedule@{Schedule}!Get\+Ending\+Time@{Get\+Ending\+Time}}
+\index{Get\+Ending\+Time@{Get\+Ending\+Time}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{Get\+Ending\+Time()}{GetEndingTime()}}
+{\footnotesize\ttfamily double Schedule\+::\+Get\+Ending\+Time (\begin{DoxyParamCaption}\item[{const unsigned int}]{operation }\end{DoxyParamCaption}) const}
+
+
+
+Return the starting time of the operation. 
+
+
+
+Definition at line 915 of file schedule.\+cpp.
+
+
+
+References tree\+\_\+manager\+::\+C\+Get\+Tree\+Node(), ending\+\_\+times, E\+N\+T\+R\+Y\+\_\+\+ID, E\+X\+I\+T\+\_\+\+ID, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and TM.
+
+
+
+Referenced by commutative\+\_\+expr\+\_\+restructuring\+::\+Internal\+Exec(), Cond\+Expr\+Restructuring\+::\+Internal\+Exec(), Remove\+Ending\+If\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), commutative\+\_\+expr\+\_\+restructuring\+::\+Is\+Comm\+Expr\+Chain(), Cond\+Expr\+Restructuring\+::\+Is\+Cond\+Expr\+Chain(), and Print\+Timing\+Information().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a964e824c93e67dae2f72137c8a6f2a05_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a964e824c93e67dae2f72137c8a6f2a05_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_a8d72a4f687d2af4a664f711c7c192c0e}\label{classSchedule_a8d72a4f687d2af4a664f711c7c192c0e}} 
+\index{Schedule@{Schedule}!Get\+Ready\+Time@{Get\+Ready\+Time}}
+\index{Get\+Ready\+Time@{Get\+Ready\+Time}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{Get\+Ready\+Time()}{GetReadyTime()}}
+{\footnotesize\ttfamily double Schedule\+::\+Get\+Ready\+Time (\begin{DoxyParamCaption}\item[{const unsigned int}]{tree\+\_\+node\+\_\+index,  }\item[{const unsigned int}]{basic\+\_\+block\+\_\+index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get when in a basic block an ssa is ready. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree\+\_\+node\+\_\+index} & is the index of the tree node \\
+\hline
+{\em basic\+\_\+block\+\_\+index} & is the index of the basic block to be considered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the ending time of the definition gimple 
+\end{DoxyReturn}
+
+
+Definition at line 871 of file schedule.\+cpp.
+
+
+
+References debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, ending\+\_\+times, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and TM.
+
+
+
+Referenced by Evaluate\+Conds\+Merging(), and Evaluate\+Multi\+Way\+Ifs\+Merging().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a8d72a4f687d2af4a664f711c7c192c0e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a8d72a4f687d2af4a664f711c7c192c0e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_ac2e233f2734b8d91805a4a51e3bd3246}\label{classSchedule_ac2e233f2734b8d91805a4a51e3bd3246}} 
+\index{Schedule@{Schedule}!Get\+Starting\+Time@{Get\+Starting\+Time}}
+\index{Get\+Starting\+Time@{Get\+Starting\+Time}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{Get\+Starting\+Time()}{GetStartingTime()}}
+{\footnotesize\ttfamily double Schedule\+::\+Get\+Starting\+Time (\begin{DoxyParamCaption}\item[{const unsigned int}]{operation }\end{DoxyParamCaption}) const}
+
+
+
+Return the starting time of the operation. 
+
+
+
+Definition at line 923 of file schedule.\+cpp.
+
+
+
+References E\+N\+T\+R\+Y\+\_\+\+ID, E\+X\+I\+T\+\_\+\+ID, starting\+\_\+times, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Remove\+Ending\+If\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), commutative\+\_\+expr\+\_\+restructuring\+::\+Is\+Comm\+Expr\+Chain(), Cond\+Expr\+Restructuring\+::\+Is\+Cond\+Expr\+Chain(), and Print\+Timing\+Information().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_ac2e233f2734b8d91805a4a51e3bd3246_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_ae081e822e8e894d32cb3a0e991c31889}\label{classSchedule_ae081e822e8e894d32cb3a0e991c31889}} 
+\index{Schedule@{Schedule}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Schedule\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the data structure. 
+
+
+
+Definition at line 1123 of file schedule.\+cpp.
+
+
+
+References allocation\+\_\+information, Function\+Behavior\+::\+C\+Get\+Op\+Graph(), ending\+\_\+times, Function\+Behavior\+::\+F\+L\+S\+A\+O\+DG, function\+\_\+index, hls\+\_\+manager, Wrefcount$<$ T $>$\+::lock(), op\+\_\+ending\+\_\+cycle, op\+\_\+graph, op\+\_\+slack, op\+\_\+starting\+\_\+cycle, spec, starting\+\_\+times, TM, and tot\+\_\+csteps.
+
+
+
+Referenced by Scheduling\+::\+Initialize().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{df/d61/classSchedule_ae081e822e8e894d32cb3a0e991c31889_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_ae081e822e8e894d32cb3a0e991c31889_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_adeef437f5a2674165df77031551f4f48}\label{classSchedule_adeef437f5a2674165df77031551f4f48}} 
+\index{Schedule@{Schedule}!is\+\_\+scheduled@{is\+\_\+scheduled}}
+\index{is\+\_\+scheduled@{is\+\_\+scheduled}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{is\+\_\+scheduled()}{is\_scheduled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Schedule\+::is\+\_\+scheduled (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&}]{op }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if the given operation has been already scheduled, false otherwise. 
+
+
+
+Definition at line 221 of file schedule.\+cpp.
+
+
+
+References Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), and op\+\_\+graph.
+
+
+
+Referenced by A\+S\+L\+A\+P\+::compute\+\_\+\+A\+L\+A\+P\+\_\+fast(), A\+S\+L\+A\+P\+::compute\+\_\+\+A\+S\+A\+P(), get\+\_\+cstep(), get\+\_\+cstep\+\_\+end(), and Update\+Time().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_adeef437f5a2674165df77031551f4f48_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_adeef437f5a2674165df77031551f4f48_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_a67b5a4dd9ac6f111299d0bcb014f20a0}\label{classSchedule_a67b5a4dd9ac6f111299d0bcb014f20a0}} 
+\index{Schedule@{Schedule}!is\+\_\+scheduled@{is\+\_\+scheduled}}
+\index{is\+\_\+scheduled@{is\+\_\+scheduled}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{is\+\_\+scheduled()}{is\_scheduled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Schedule\+::is\+\_\+scheduled (\begin{DoxyParamCaption}\item[{const unsigned int}]{statement\+\_\+index }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if the given operation has been already scheduled, false otherwise. 
+
+
+
+Definition at line 227 of file schedule.\+cpp.
+
+
+
+References op\+\_\+starting\+\_\+cycle.
+
+\mbox{\Hypertarget{classSchedule_a93bef5f10d60f02ab62a87bf65a5ae70}\label{classSchedule_a93bef5f10d60f02ab62a87bf65a5ae70}} 
+\index{Schedule@{Schedule}!num\+\_\+scheduled@{num\+\_\+scheduled}}
+\index{num\+\_\+scheduled@{num\+\_\+scheduled}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{num\+\_\+scheduled()}{num\_scheduled()}}
+{\footnotesize\ttfamily unsigned int Schedule\+::num\+\_\+scheduled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of scheduled operations. 
+
+
+
+Definition at line 270 of file schedule.\+cpp.
+
+
+
+References op\+\_\+starting\+\_\+cycle.
+
+
+
+Referenced by parametric\+\_\+list\+\_\+based\+::exec(), and A\+S\+L\+A\+P\+::print().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a93bef5f10d60f02ab62a87bf65a5ae70_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_ad25e768e9aeea647c95939f49b46ce7a}\label{classSchedule_ad25e768e9aeea647c95939f49b46ce7a}} 
+\index{Schedule@{Schedule}!print@{print}}
+\index{print@{print}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Schedule\+::print (\begin{DoxyParamCaption}\item[{\hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref}}]{Rfu = {\ttfamily \hyperlink{fu__binding_8hpp_a619181df8ab98d7b7e17de58ac44b065}{fu\+\_\+binding\+Ref}()} }\end{DoxyParamCaption}) const}
+
+
+
+Function that prints the class schedule. 
+
+
+
+Definition at line 122 of file schedule.\+cpp.
+
+
+
+References Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), get\+\_\+cstep(), get\+\_\+cstep\+\_\+end(), fu\+\_\+binding\+::get\+\_\+fu\+\_\+name(), G\+E\+T\+\_\+\+N\+A\+ME, I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, op\+\_\+graph, and S\+TR.
+
+
+
+Referenced by unique\+\_\+binding\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), and A\+S\+L\+A\+P\+::print().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_ad25e768e9aeea647c95939f49b46ce7a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{df/d61/classSchedule_ad25e768e9aeea647c95939f49b46ce7a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_a6c882a9f405b563a05ad75371a982aab}\label{classSchedule_a6c882a9f405b563a05ad75371a982aab}} 
+\index{Schedule@{Schedule}!Print\+Timing\+Information@{Print\+Timing\+Information}}
+\index{Print\+Timing\+Information@{Print\+Timing\+Information}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{Print\+Timing\+Information()}{PrintTimingInformation()}}
+{\footnotesize\ttfamily const std\+::string Schedule\+::\+Print\+Timing\+Information (\begin{DoxyParamCaption}\item[{const unsigned int}]{statement\+\_\+index }\end{DoxyParamCaption}) const}
+
+
+
+Print the timing information about an operation. 
+
+
+
+Definition at line 940 of file schedule.\+cpp.
+
+
+
+References Get\+Ending\+Time(), Get\+Starting\+Time(), and Number\+To\+String().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a6c882a9f405b563a05ad75371a982aab_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_ac54cd77d3f23af1c4ced5daed0aeef78}\label{classSchedule_ac54cd77d3f23af1c4ced5daed0aeef78}} 
+\index{Schedule@{Schedule}!set\+\_\+csteps@{set\+\_\+csteps}}
+\index{set\+\_\+csteps@{set\+\_\+csteps}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{set\+\_\+csteps()}{set\_csteps()}}
+{\footnotesize\ttfamily void Schedule\+::set\+\_\+csteps (\begin{DoxyParamCaption}\item[{Control\+Step}]{cs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method sets the number of control steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cs} & is the number of control steps. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 223 of file schedule.\+hpp.
+
+
+
+References Allocation\+Information\+::print().
+
+
+
+Referenced by A\+S\+L\+A\+P\+::compute\+\_\+\+A\+L\+A\+P(), A\+S\+L\+A\+P\+::compute\+\_\+\+A\+S\+A\+P(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), and hls\+::xload().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{df/d61/classSchedule_ac54cd77d3f23af1c4ced5daed0aeef78_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_ac54cd77d3f23af1c4ced5daed0aeef78_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_a1bf4292733805b6e305ec28395cd04d0}\label{classSchedule_a1bf4292733805b6e305ec28395cd04d0}} 
+\index{Schedule@{Schedule}!set\+\_\+execution@{set\+\_\+execution}}
+\index{set\+\_\+execution@{set\+\_\+execution}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{set\+\_\+execution()}{set\_execution()}}
+{\footnotesize\ttfamily void Schedule\+::set\+\_\+execution (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&}]{op,  }\item[{Control\+Step}]{c\+\_\+step }\end{DoxyParamCaption})}
+
+
+
+Sets the starting clock cycle for the given operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & the the operation vertex \\
+\hline
+{\em c\+\_\+step} & is an integer representing the clock cycle where the operation starts the computation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 202 of file schedule.\+cpp.
+
+
+
+References Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), op\+\_\+graph, op\+\_\+starting\+\_\+cycle, and starting\+\_\+cycles\+\_\+to\+\_\+ops.
+
+
+
+Referenced by A\+S\+L\+A\+P\+::add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+A\+P(), A\+S\+L\+A\+P\+::add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+A\+P(), Scheduling\+::anticipate\+\_\+operations(), A\+S\+L\+A\+P\+::compute\+\_\+\+A\+L\+A\+P\+\_\+fast(), A\+S\+L\+A\+P\+::compute\+\_\+\+A\+L\+A\+P\+\_\+worst\+\_\+case(), A\+S\+L\+A\+P\+::compute\+\_\+\+A\+S\+A\+P(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), A\+S\+L\+A\+P\+::update\+\_\+\+A\+L\+A\+P(), and hls\+::xload().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a1bf4292733805b6e305ec28395cd04d0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a1bf4292733805b6e305ec28395cd04d0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_a1c75a65910f1d1b9cf3e9f27e91a756e}\label{classSchedule_a1c75a65910f1d1b9cf3e9f27e91a756e}} 
+\index{Schedule@{Schedule}!set\+\_\+execution\+\_\+end@{set\+\_\+execution\+\_\+end}}
+\index{set\+\_\+execution\+\_\+end@{set\+\_\+execution\+\_\+end}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{set\+\_\+execution\+\_\+end()}{set\_execution\_end()}}
+{\footnotesize\ttfamily void Schedule\+::set\+\_\+execution\+\_\+end (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&}]{op,  }\item[{Control\+Step}]{c\+\_\+step\+\_\+end }\end{DoxyParamCaption})}
+
+
+
+Sets the ending clock cycle for the given operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & the the operation vertex \\
+\hline
+{\em c\+\_\+step\+\_\+end} & is an integer representing the clock cycle where the operation ends the computation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 212 of file schedule.\+cpp.
+
+
+
+References Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), op\+\_\+ending\+\_\+cycle, and op\+\_\+graph.
+
+
+
+Referenced by parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), and S\+D\+C\+Scheduling\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a1c75a65910f1d1b9cf3e9f27e91a756e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a1c75a65910f1d1b9cf3e9f27e91a756e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_af9a710c306cf7d06428bc10da109d4ee}\label{classSchedule_af9a710c306cf7d06428bc10da109d4ee}} 
+\index{Schedule@{Schedule}!set\+\_\+slack@{set\+\_\+slack}}
+\index{set\+\_\+slack@{set\+\_\+slack}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{set\+\_\+slack()}{set\_slack()}}
+{\footnotesize\ttfamily void Schedule\+::set\+\_\+slack (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{op,  }\item[{double}]{v\+\_\+slack }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set the slack associated with the vertex with respect to the clock period 
+
+
+
+Definition at line 337 of file schedule.\+hpp.
+
+
+
+Referenced by parametric\+\_\+list\+\_\+based\+::update\+\_\+vertices\+\_\+slack().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_af9a710c306cf7d06428bc10da109d4ee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_ab6c18b64a2d8e511b1aac306c439978a}\label{classSchedule_ab6c18b64a2d8e511b1aac306c439978a}} 
+\index{Schedule@{Schedule}!set\+\_\+spec@{set\+\_\+spec}}
+\index{set\+\_\+spec@{set\+\_\+spec}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{set\+\_\+spec()}{set\_spec()}}
+{\footnotesize\ttfamily void Schedule\+::set\+\_\+spec (\begin{DoxyParamCaption}\item[{const \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, bool $>$ \&}]{spec\+\_\+map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the speculation map. 
+
+
+
+Definition at line 242 of file schedule.\+hpp.
+
+
+
+Referenced by parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{df/d61/classSchedule_ab6c18b64a2d8e511b1aac306c439978a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_a9eb19889586ce5d16aa8ed1ea356c2ab}\label{classSchedule_a9eb19889586ce5d16aa8ed1ea356c2ab}} 
+\index{Schedule@{Schedule}!Update\+Time@{Update\+Time}}
+\index{Update\+Time@{Update\+Time}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{Update\+Time()}{UpdateTime()}}
+{\footnotesize\ttfamily void Schedule\+::\+Update\+Time (\begin{DoxyParamCaption}\item[{const unsigned int}]{operation\+\_\+index,  }\item[{bool}]{update\+\_\+cs = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Compute the starting and the ending time of a statement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em operation\+\_\+index} & is the index of the created statement \\
+\hline
+{\em update\+\_\+cs} & tells if control step information has to be updated \\
+\hline
+\end{DoxyParams}
+The starting control step
+
+Compute the control step
+
+Compute the remaining time
+
+Check if the first stage is across states; if so move a the beginning of the next state
+
+Checking if we are crossing a state
+
+True if the execution time of this operation has been updated
+
+Remove the old scheduling
+
+Reschedule operation according the order of control flow graph; in this way we are sure that topological order is followed; Skip operations prevoius to this control step since they have not to be rescheduled
+
+Performed in this point to avoid check in the previous cycle 
+
+Definition at line 283 of file schedule.\+cpp.
+
+
+
+References allocation\+\_\+information, tree\+\_\+manager\+::\+C\+Get\+Tree\+Node(), tree\+\_\+helper\+::compute\+\_\+ssa\+\_\+uses\+\_\+rec\+\_\+ptr(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, ending\+\_\+times, E\+N\+T\+R\+Y\+\_\+\+ID, E\+X\+I\+T\+\_\+\+ID, from\+\_\+strongtype\+\_\+cast(), function\+\_\+index, get\+\_\+cstep\+\_\+end(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), Allocation\+Information\+::\+Get\+Clock\+Period\+Margin(), Allocation\+Information\+::\+Get\+Connection\+Time(), Allocation\+Information\+::\+Get\+Cycle\+Latency(), Allocation\+Information\+::\+Get\+Time\+Latency(), hls\+\_\+manager, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Allocation\+Information\+::is\+\_\+operation\+\_\+bounded(), Allocation\+Information\+::is\+\_\+operation\+\_\+\+P\+I\+\_\+registered(), is\+\_\+scheduled(), Allocation\+Information\+::\+Is\+Variable\+Execution\+Time(), Wrefcount$<$ T $>$\+::lock(), op\+\_\+ending\+\_\+cycle, op\+\_\+starting\+\_\+cycle, sl, starting\+\_\+cycles\+\_\+to\+\_\+ops, starting\+\_\+times, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, TM, Abs\+Control\+Step\+::\+U\+N\+K\+N\+O\+WN, and fu\+\_\+binding\+::\+U\+N\+K\+N\+O\+WN.
+
+
+
+Referenced by Update\+Schedule\+::\+Internal\+Exec(), fanout\+\_\+opt\+::\+Internal\+Exec(), Cond\+Expr\+Restructuring\+::\+Internal\+Exec(), commutative\+\_\+expr\+\_\+restructuring\+::\+Internal\+Exec(), C\+S\+E\+::\+Internal\+Exec(), and S\+D\+C\+Scheduling\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a9eb19889586ce5d16aa8ed1ea356c2ab_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_a9eb19889586ce5d16aa8ed1ea356c2ab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSchedule_af0fedbcf697272b4f295bf0e7ef3a358}\label{classSchedule_af0fedbcf697272b4f295bf0e7ef3a358}} 
+\index{Schedule@{Schedule}!Write\+Dot@{Write\+Dot}}
+\index{Write\+Dot@{Write\+Dot}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{Write\+Dot()}{WriteDot()}}
+{\footnotesize\ttfamily void Schedule\+::\+Write\+Dot (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name }\end{DoxyParamCaption}) const}
+
+
+
+Function that writes the dot file of the scheduling by using the AT\&T direct graph representation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & is the file name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 190 of file schedule.\+cpp.
+
+
+
+References Op\+Graph\+::\+C\+Get\+Op\+Graph\+Info(), refcount$<$ T $>$\+::get(), Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), graph\+::\+Internal\+Write\+Dot(), op\+\_\+graph, and parameters.
+
+
+
+Referenced by parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d61/classSchedule_af0fedbcf697272b4f295bf0e7ef3a358_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{df/d61/classSchedule_af0fedbcf697272b4f295bf0e7ef3a358_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classSchedule_a995b99fd9889f07eef755c6b9fe70c3f}\label{classSchedule_a995b99fd9889f07eef755c6b9fe70c3f}} 
+\index{Schedule@{Schedule}!Allocation\+Information@{Allocation\+Information}}
+\index{Allocation\+Information@{Allocation\+Information}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{Allocation\+Information}{AllocationInformation}}
+{\footnotesize\ttfamily friend class \hyperlink{classAllocationInformation}{Allocation\+Information}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 121 of file schedule.\+hpp.
+
+\mbox{\Hypertarget{classSchedule_a44083050f827fe080f60a4b79b97bc93}\label{classSchedule_a44083050f827fe080f60a4b79b97bc93}} 
+\index{Schedule@{Schedule}!parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}}
+\index{parametric\+\_\+list\+\_\+based@{parametric\+\_\+list\+\_\+based}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{parametric\+\_\+list\+\_\+based}{parametric\_list\_based}}
+{\footnotesize\ttfamily friend class \hyperlink{classparametric__list__based}{parametric\+\_\+list\+\_\+based}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 120 of file schedule.\+hpp.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classSchedule_a864b9407b1dcf3d37b69366be6838e1d}\label{classSchedule_a864b9407b1dcf3d37b69366be6838e1d}} 
+\index{Schedule@{Schedule}!allocation\+\_\+information@{allocation\+\_\+information}}
+\index{allocation\+\_\+information@{allocation\+\_\+information}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{allocation\+\_\+information}{allocation\_information}}
+{\footnotesize\ttfamily \hyperlink{allocation__information_8hpp_a54287618a63bf87e31ddb17ba01e7ca7}{Allocation\+Information\+Const\+Ref} Schedule\+::allocation\+\_\+information\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The allocation information. 
+
+
+
+Definition at line 133 of file schedule.\+hpp.
+
+
+
+Referenced by Can\+Be\+Moved(), Compute\+Critical\+Path(), Evaluate\+Conds\+Merging(), Evaluate\+Multi\+Way\+Ifs\+Merging(), Get\+B\+B\+Ending\+Time(), Initialize(), and Update\+Time().
+
+\mbox{\Hypertarget{classSchedule_a9c313308e88d070672b9466ebae89d32}\label{classSchedule_a9c313308e88d070672b9466ebae89d32}} 
+\index{Schedule@{Schedule}!connection\+\_\+times@{connection\+\_\+times}}
+\index{connection\+\_\+times@{connection\+\_\+times}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{connection\+\_\+times}{connection\_times}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$std\+::pair$<$unsigned int, unsigned int$>$, double$>$ Schedule\+::connection\+\_\+times\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Connection times The key is an operation graph edge. 
+
+
+
+Definition at line 161 of file schedule.\+hpp.
+
+
+
+Referenced by Add\+Connection\+Times(), and get\+\_\+fo\+\_\+correction().
+
+\mbox{\Hypertarget{classSchedule_a730ba60c8d53bd88d6a38c7bd005abd5}\label{classSchedule_a730ba60c8d53bd88d6a38c7bd005abd5}} 
+\index{Schedule@{Schedule}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily const int Schedule\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The debug level. 
+
+
+
+Definition at line 177 of file schedule.\+hpp.
+
+
+
+Referenced by Can\+Be\+Moved(), Compute\+Critical\+Path(), Evaluate\+Conds\+Merging(), Get\+Ready\+Time(), and Update\+Time().
+
+\mbox{\Hypertarget{classSchedule_a572efad73e7017e5217bf0178084746a}\label{classSchedule_a572efad73e7017e5217bf0178084746a}} 
+\index{Schedule@{Schedule}!ending\+\_\+times@{ending\+\_\+times}}
+\index{ending\+\_\+times@{ending\+\_\+times}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{ending\+\_\+times}{ending\_times}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$unsigned int, double$>$ Schedule\+::ending\+\_\+times\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The absolute ending time of each operation as computed by the scheduling Key is the index of the gimple operation. 
+
+
+
+Definition at line 157 of file schedule.\+hpp.
+
+
+
+Referenced by Can\+Be\+Moved(), Compute\+Critical\+Path(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), Get\+B\+B\+Ending\+Time(), Get\+Ending\+Time(), Get\+Ready\+Time(), Initialize(), and Update\+Time().
+
+\mbox{\Hypertarget{classSchedule_a51c826c36437ed5ec523725815cc25d0}\label{classSchedule_a51c826c36437ed5ec523725815cc25d0}} 
+\index{Schedule@{Schedule}!function\+\_\+index@{function\+\_\+index}}
+\index{function\+\_\+index@{function\+\_\+index}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{function\+\_\+index}{function\_index}}
+{\footnotesize\ttfamily const unsigned int Schedule\+::function\+\_\+index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The index of the function. 
+
+
+
+Definition at line 136 of file schedule.\+hpp.
+
+
+
+Referenced by Can\+Be\+Moved(), Evaluate\+Multi\+Way\+Ifs\+Merging(), Get\+B\+B\+Ending\+Time(), Initialize(), and Update\+Time().
+
+\mbox{\Hypertarget{classSchedule_ac9335f00e46ddb07553a680243fab2b4}\label{classSchedule_ac9335f00e46ddb07553a680243fab2b4}} 
+\index{Schedule@{Schedule}!hls\+\_\+manager@{hls\+\_\+manager}}
+\index{hls\+\_\+manager@{hls\+\_\+manager}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{hls\+\_\+manager}{hls\_manager}}
+{\footnotesize\ttfamily const \hyperlink{classWrefcount}{Wrefcount}$<$const \hyperlink{classHLS__manager}{H\+L\+S\+\_\+manager}$>$ Schedule\+::hls\+\_\+manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The H\+LS manager. 
+
+
+
+Definition at line 124 of file schedule.\+hpp.
+
+
+
+Referenced by Can\+Be\+Moved(), Evaluate\+Multi\+Way\+Ifs\+Merging(), Get\+B\+B\+Ending\+Time(), Initialize(), and Update\+Time().
+
+\mbox{\Hypertarget{classSchedule_a3264650e2087ccdfeaf2b2e822dce958}\label{classSchedule_a3264650e2087ccdfeaf2b2e822dce958}} 
+\index{Schedule@{Schedule}!op\+\_\+ending\+\_\+cycle@{op\+\_\+ending\+\_\+cycle}}
+\index{op\+\_\+ending\+\_\+cycle@{op\+\_\+ending\+\_\+cycle}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{op\+\_\+ending\+\_\+cycle}{op\_ending\_cycle}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$unsigned int, Control\+Step$>$ Schedule\+::op\+\_\+ending\+\_\+cycle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+map between the operation index and the clock cycle on which the operations ends its execution 
+
+
+
+Definition at line 149 of file schedule.\+hpp.
+
+
+
+Referenced by get\+\_\+cstep\+\_\+end(), Initialize(), set\+\_\+execution\+\_\+end(), and Update\+Time().
+
+\mbox{\Hypertarget{classSchedule_a3b416a5141bab0d0cca415dcc4e5c12d}\label{classSchedule_a3b416a5141bab0d0cca415dcc4e5c12d}} 
+\index{Schedule@{Schedule}!op\+\_\+graph@{op\+\_\+graph}}
+\index{op\+\_\+graph@{op\+\_\+graph}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{op\+\_\+graph}{op\_graph}}
+{\footnotesize\ttfamily \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} Schedule\+::op\+\_\+graph\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The operation graph (for scheduling purpose) (cannot be const because of = operator) 
+
+
+
+Definition at line 171 of file schedule.\+hpp.
+
+
+
+Referenced by Can\+Be\+Moved(), Compute\+Critical\+Path(), get\+\_\+cstep(), get\+\_\+cstep\+\_\+end(), Initialize(), is\+\_\+scheduled(), print(), set\+\_\+execution(), set\+\_\+execution\+\_\+end(), and Write\+Dot().
+
+\mbox{\Hypertarget{classSchedule_a9bd31f768fd00bc8d3a3eb1b3bd4c332}\label{classSchedule_a9bd31f768fd00bc8d3a3eb1b3bd4c332}} 
+\index{Schedule@{Schedule}!op\+\_\+slack@{op\+\_\+slack}}
+\index{op\+\_\+slack@{op\+\_\+slack}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{op\+\_\+slack}{op\_slack}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, double$>$ Schedule\+::op\+\_\+slack\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+slack map 
+
+
+
+Definition at line 168 of file schedule.\+hpp.
+
+
+
+Referenced by Initialize().
+
+\mbox{\Hypertarget{classSchedule_ad9a0a7a8305f6db7d2dcd3a7d613179f}\label{classSchedule_ad9a0a7a8305f6db7d2dcd3a7d613179f}} 
+\index{Schedule@{Schedule}!op\+\_\+starting\+\_\+cycle@{op\+\_\+starting\+\_\+cycle}}
+\index{op\+\_\+starting\+\_\+cycle@{op\+\_\+starting\+\_\+cycle}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{op\+\_\+starting\+\_\+cycle}{op\_starting\_cycle}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$unsigned int, Control\+Step$>$ Schedule\+::op\+\_\+starting\+\_\+cycle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+map between the operation index and the clock cycle on which the operation starts its execution N\+O\+TE\+: it must be a map to know which is the last step 
+
+
+
+Definition at line 143 of file schedule.\+hpp.
+
+
+
+Referenced by clear(), Compute\+Critical\+Path(), get\+\_\+cstep(), Initialize(), is\+\_\+scheduled(), num\+\_\+scheduled(), set\+\_\+execution(), and Update\+Time().
+
+\mbox{\Hypertarget{classSchedule_aceedbf18bb7e3a43b66df301ce21325f}\label{classSchedule_aceedbf18bb7e3a43b66df301ce21325f}} 
+\index{Schedule@{Schedule}!parameters@{parameters}}
+\index{parameters@{parameters}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{parameters}{parameters}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Schedule\+::parameters\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The set of input parameters. 
+
+
+
+Definition at line 174 of file schedule.\+hpp.
+
+
+
+Referenced by Write\+Dot().
+
+\mbox{\Hypertarget{classSchedule_adbcbb1238dd11219d751c7fd28c8b44f}\label{classSchedule_adbcbb1238dd11219d751c7fd28c8b44f}} 
+\index{Schedule@{Schedule}!spec@{spec}}
+\index{spec@{spec}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{spec}{spec}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, bool$>$ Schedule\+::spec\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map for speculation property of each operation vertex. 
+
+If true, it means that vertex is speculative executed, false otherwise 
+
+Definition at line 165 of file schedule.\+hpp.
+
+
+
+Referenced by clear(), and Initialize().
+
+\mbox{\Hypertarget{classSchedule_a65835449ae73c073c23aeaa59cdf799b}\label{classSchedule_a65835449ae73c073c23aeaa59cdf799b}} 
+\index{Schedule@{Schedule}!starting\+\_\+cycles\+\_\+to\+\_\+ops@{starting\+\_\+cycles\+\_\+to\+\_\+ops}}
+\index{starting\+\_\+cycles\+\_\+to\+\_\+ops@{starting\+\_\+cycles\+\_\+to\+\_\+ops}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{starting\+\_\+cycles\+\_\+to\+\_\+ops}{starting\_cycles\_to\_ops}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$Control\+Step, \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$unsigned int$>$ $>$ Schedule\+::starting\+\_\+cycles\+\_\+to\+\_\+ops\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The reverse of op\+\_\+starting\+\_\+cycle. 
+
+
+
+Definition at line 146 of file schedule.\+hpp.
+
+
+
+Referenced by clear(), set\+\_\+execution(), and Update\+Time().
+
+\mbox{\Hypertarget{classSchedule_a5204aafc8e7b40a16118dba7e66ba104}\label{classSchedule_a5204aafc8e7b40a16118dba7e66ba104}} 
+\index{Schedule@{Schedule}!starting\+\_\+times@{starting\+\_\+times}}
+\index{starting\+\_\+times@{starting\+\_\+times}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{starting\+\_\+times}{starting\_times}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$unsigned int, double$>$ Schedule\+::starting\+\_\+times\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The absolute starting time of each operation as computed by the scheduling Key is the index of the gimple operation. 
+
+
+
+Definition at line 153 of file schedule.\+hpp.
+
+
+
+Referenced by Compute\+Critical\+Path(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), Get\+Starting\+Time(), Initialize(), and Update\+Time().
+
+\mbox{\Hypertarget{classSchedule_aee5739d5062edd0854fda0745f270e8a}\label{classSchedule_aee5739d5062edd0854fda0745f270e8a}} 
+\index{Schedule@{Schedule}!TM@{TM}}
+\index{TM@{TM}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{TM}{TM}}
+{\footnotesize\ttfamily \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} Schedule\+::\+TM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The tree manager. 
+
+
+
+Definition at line 127 of file schedule.\+hpp.
+
+
+
+Referenced by Can\+Be\+Moved(), Compute\+Critical\+Path(), Evaluate\+Conds\+Merging(), Evaluate\+Multi\+Way\+Ifs\+Merging(), get\+\_\+cstep(), get\+\_\+cstep\+\_\+end(), Get\+B\+B\+Ending\+Time(), Get\+Ending\+Time(), Get\+Ready\+Time(), Initialize(), and Update\+Time().
+
+\mbox{\Hypertarget{classSchedule_a1d65d93a4de64bed41f252422162f990}\label{classSchedule_a1d65d93a4de64bed41f252422162f990}} 
+\index{Schedule@{Schedule}!tot\+\_\+csteps@{tot\+\_\+csteps}}
+\index{tot\+\_\+csteps@{tot\+\_\+csteps}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{tot\+\_\+csteps}{tot\_csteps}}
+{\footnotesize\ttfamily Control\+Step Schedule\+::tot\+\_\+csteps\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+total number of control steps 
+
+
+
+Definition at line 139 of file schedule.\+hpp.
+
+
+
+Referenced by clear(), and Initialize().
+
+\mbox{\Hypertarget{classSchedule_a626c40e8391df80cbf334381ae6d1ed9}\label{classSchedule_a626c40e8391df80cbf334381ae6d1ed9}} 
+\index{Schedule@{Schedule}!tree\+\_\+man@{tree\+\_\+man}}
+\index{tree\+\_\+man@{tree\+\_\+man}!Schedule@{Schedule}}
+\subsubsection{\texorpdfstring{tree\+\_\+man}{tree\_man}}
+{\footnotesize\ttfamily \hyperlink{tree__manipulation_8hpp_af8a30f3f306569d7681c1b5af9ddd9d0}{tree\+\_\+manipulation\+Const\+Ref} Schedule\+::tree\+\_\+man\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The tree manipulation. 
+
+
+
+Definition at line 130 of file schedule.\+hpp.
+
+
+
+Referenced by Evaluate\+Conds\+Merging(), and Evaluate\+Multi\+Way\+Ifs\+Merging().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/scheduling/\hyperlink{schedule_8hpp}{schedule.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/scheduling/\hyperlink{schedule_8cpp}{schedule.\+cpp}\end{DoxyCompactItemize}

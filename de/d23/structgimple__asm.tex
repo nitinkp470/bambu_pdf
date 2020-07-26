@@ -1,0 +1,252 @@
+\hypertarget{structgimple__asm}{}\section{gimple\+\_\+asm Struct Reference}
+\label{structgimple__asm}\index{gimple\+\_\+asm@{gimple\+\_\+asm}}
+
+
+This struct specifies the \hyperlink{structgimple__asm}{gimple\+\_\+asm} node.  
+
+
+
+
+{\ttfamily \#include $<$tree\+\_\+node.\+hpp$>$}
+
+
+
+Inheritance diagram for gimple\+\_\+asm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{dd/d44/structgimple__asm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for gimple\+\_\+asm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d22/structgimple__asm__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{structgimple__asm_a244c4ddd4d7b2a2c7873a70ed2c3fabeac1e47fe48400a742841c627a5f366957}{G\+E\+T\+ID} =(gimple\+\_\+node) = 0, 
+\hyperlink{structgimple__asm_a244c4ddd4d7b2a2c7873a70ed2c3fabeac1e47fe48400a742841c627a5f366957}{G\+E\+T\+ID} =(gimple\+\_\+node) = 0, 
+\hyperlink{structgimple__asm_a244c4ddd4d7b2a2c7873a70ed2c3fabeac1e47fe48400a742841c627a5f366957}{G\+E\+T\+ID} =(gimple\+\_\+node) = 0
+ \}\begin{DoxyCompactList}\small\item\em visitor enum \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structgimple__asm_a78182926d19aac60e20c49dfa311e1ab}{gimple\+\_\+asm} (unsigned int i)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+void \hyperlink{structgimple__asm_ac2ba4ccbf1f1085bcf1e0c9d6c06d706}{visit} (\hyperlink{classtree__node__visitor}{tree\+\_\+node\+\_\+visitor} $\ast$const v) const override
+\begin{DoxyCompactList}\small\item\em Redefinition of get\+\_\+kind\+\_\+text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{structgimple__asm_a0ae87790fe89d89a037353543d4ea531}{volatile\+\_\+flag}
+\begin{DoxyCompactList}\small\item\em volatile\+\_\+flag is true if the node is public\+: it means that the name is accessible from outside. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{structgimple__asm_a701f4a2b5bb448ea6dd172aaa75fad27}{str}
+\begin{DoxyCompactList}\small\item\em str is the operand 0\+: A\+S\+M\+\_\+\+S\+T\+R\+I\+NG. A\+S\+M\+\_\+\+S\+T\+R\+I\+NG returns a S\+T\+R\+I\+N\+G\+\_\+\+C\+ST for the instruction (e.\+g., \char`\"{}mov x, y\char`\"{}). \end{DoxyCompactList}\item 
+\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \hyperlink{structgimple__asm_ada466d4ec1f1f8779851948cc7761d0d}{out}
+\begin{DoxyCompactList}\small\item\em out is the operand 1\+: A\+S\+M\+\_\+\+O\+U\+T\+P\+U\+TS, this represents the outputs for the statement. \end{DoxyCompactList}\item 
+\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \hyperlink{structgimple__asm_a78a8fb3c379a345757761c890a18bfb8}{in}
+\begin{DoxyCompactList}\small\item\em in is the operand 2\+: A\+S\+M\+\_\+\+I\+N\+P\+U\+TS, this represents the inputs for the statement. \end{DoxyCompactList}\item 
+\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \hyperlink{structgimple__asm_af8b683346be8e133805b0398db9de8b7}{clob}
+\begin{DoxyCompactList}\small\item\em clob is the operand 3\+: A\+S\+M\+\_\+\+C\+L\+O\+B\+B\+E\+RS, this represents the clobbers for the statement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This struct specifies the \hyperlink{structgimple__asm}{gimple\+\_\+asm} node. 
+
+Used to represent an inline assembly statement. A\+S\+M\+\_\+\+S\+T\+R\+I\+NG returns a S\+T\+R\+I\+N\+G\+\_\+\+C\+ST for the instruction (e.\+g., \char`\"{}mov x, y\char`\"{}). A\+S\+M\+\_\+\+O\+U\+T\+P\+U\+TS, A\+S\+M\+\_\+\+I\+N\+P\+U\+TS, and A\+S\+M\+\_\+\+C\+L\+O\+B\+B\+E\+RS represent the outputs, inputs, and clobbers for the statement. The tree walker structure of this node is\+: \#(T\+O\+K\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+A\+SM type (T\+O\+K\+\_\+\+V\+O\+L\+A\+T\+I\+LE)? str (out)? in (clob)?) 
+
+Definition at line 1581 of file tree\+\_\+node.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{structgimple__asm_a244c4ddd4d7b2a2c7873a70ed2c3fabe}\label{structgimple__asm_a244c4ddd4d7b2a2c7873a70ed2c3fabe}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+
+
+visitor enum 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+E\+T\+ID@{G\+E\+T\+ID}!gimple\+\_\+asm@{gimple\+\_\+asm}}\index{gimple\+\_\+asm@{gimple\+\_\+asm}!G\+E\+T\+ID@{G\+E\+T\+ID}}}\mbox{\Hypertarget{structgimple__asm_a244c4ddd4d7b2a2c7873a70ed2c3fabeac1e47fe48400a742841c627a5f366957}\label{structgimple__asm_a244c4ddd4d7b2a2c7873a70ed2c3fabeac1e47fe48400a742841c627a5f366957}} 
+G\+E\+T\+ID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+E\+T\+ID@{G\+E\+T\+ID}!gimple\+\_\+asm@{gimple\+\_\+asm}}\index{gimple\+\_\+asm@{gimple\+\_\+asm}!G\+E\+T\+ID@{G\+E\+T\+ID}}}\mbox{\Hypertarget{structgimple__asm_a244c4ddd4d7b2a2c7873a70ed2c3fabeac1e47fe48400a742841c627a5f366957}\label{structgimple__asm_a244c4ddd4d7b2a2c7873a70ed2c3fabeac1e47fe48400a742841c627a5f366957}} 
+G\+E\+T\+ID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+E\+T\+ID@{G\+E\+T\+ID}!gimple\+\_\+asm@{gimple\+\_\+asm}}\index{gimple\+\_\+asm@{gimple\+\_\+asm}!G\+E\+T\+ID@{G\+E\+T\+ID}}}\mbox{\Hypertarget{structgimple__asm_a244c4ddd4d7b2a2c7873a70ed2c3fabeac1e47fe48400a742841c627a5f366957}\label{structgimple__asm_a244c4ddd4d7b2a2c7873a70ed2c3fabeac1e47fe48400a742841c627a5f366957}} 
+G\+E\+T\+ID&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 1616 of file tree\+\_\+node.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structgimple__asm_a78182926d19aac60e20c49dfa311e1ab}\label{structgimple__asm_a78182926d19aac60e20c49dfa311e1ab}} 
+\index{gimple\+\_\+asm@{gimple\+\_\+asm}!gimple\+\_\+asm@{gimple\+\_\+asm}}
+\index{gimple\+\_\+asm@{gimple\+\_\+asm}!gimple\+\_\+asm@{gimple\+\_\+asm}}
+\subsubsection{\texorpdfstring{gimple\+\_\+asm()}{gimple\_asm()}}
+{\footnotesize\ttfamily gimple\+\_\+asm\+::gimple\+\_\+asm (\begin{DoxyParamCaption}\item[{unsigned int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+constructor 
+
+
+
+Definition at line 1584 of file tree\+\_\+node.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structgimple__asm_ac2ba4ccbf1f1085bcf1e0c9d6c06d706}\label{structgimple__asm_ac2ba4ccbf1f1085bcf1e0c9d6c06d706}} 
+\index{gimple\+\_\+asm@{gimple\+\_\+asm}!visit@{visit}}
+\index{visit@{visit}!gimple\+\_\+asm@{gimple\+\_\+asm}}
+\subsubsection{\texorpdfstring{visit()}{visit()}}
+{\footnotesize\ttfamily void gimple\+\_\+asm\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__node__visitor}{tree\+\_\+node\+\_\+visitor} $\ast$const}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Redefinition of get\+\_\+kind\+\_\+text. 
+
+Redefinition of get\+\_\+kind. virtual function used to traverse the \hyperlink{classtree__node}{tree\+\_\+node} data structure. 
+\begin{DoxyParams}{Parameters}
+{\em v} & is a reference to the \hyperlink{classtree__node}{tree\+\_\+node} visitor class \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{structgimple__node_a337b029a3aca9c1b96311b6e6668f7f3}{gimple\+\_\+node}.
+
+
+
+Definition at line 417 of file tree\+\_\+node.\+cpp.
+
+
+
+References A\+L\+L\+\_\+\+V\+I\+S\+IT, type\+\_\+node\+::visit(), V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+ER, and V\+I\+S\+I\+T\+\_\+\+SC.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{de/d23/structgimple__asm_ac2ba4ccbf1f1085bcf1e0c9d6c06d706_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structgimple__asm_af8b683346be8e133805b0398db9de8b7}\label{structgimple__asm_af8b683346be8e133805b0398db9de8b7}} 
+\index{gimple\+\_\+asm@{gimple\+\_\+asm}!clob@{clob}}
+\index{clob@{clob}!gimple\+\_\+asm@{gimple\+\_\+asm}}
+\subsubsection{\texorpdfstring{clob}{clob}}
+{\footnotesize\ttfamily \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} gimple\+\_\+asm\+::clob}
+
+
+
+clob is the operand 3\+: A\+S\+M\+\_\+\+C\+L\+O\+B\+B\+E\+RS, this represents the clobbers for the statement. 
+
+
+
+Definition at line 1601 of file tree\+\_\+node.\+hpp.
+
+
+
+Referenced by raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+
+\mbox{\Hypertarget{structgimple__asm_a78a8fb3c379a345757761c890a18bfb8}\label{structgimple__asm_a78a8fb3c379a345757761c890a18bfb8}} 
+\index{gimple\+\_\+asm@{gimple\+\_\+asm}!in@{in}}
+\index{in@{in}!gimple\+\_\+asm@{gimple\+\_\+asm}}
+\subsubsection{\texorpdfstring{in}{in}}
+{\footnotesize\ttfamily \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} gimple\+\_\+asm\+::in}
+
+
+
+in is the operand 2\+: A\+S\+M\+\_\+\+I\+N\+P\+U\+TS, this represents the inputs for the statement. 
+
+
+
+Definition at line 1598 of file tree\+\_\+node.\+hpp.
+
+
+
+Referenced by raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+
+\mbox{\Hypertarget{structgimple__asm_ada466d4ec1f1f8779851948cc7761d0d}\label{structgimple__asm_ada466d4ec1f1f8779851948cc7761d0d}} 
+\index{gimple\+\_\+asm@{gimple\+\_\+asm}!out@{out}}
+\index{out@{out}!gimple\+\_\+asm@{gimple\+\_\+asm}}
+\subsubsection{\texorpdfstring{out}{out}}
+{\footnotesize\ttfamily \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} gimple\+\_\+asm\+::out}
+
+
+
+out is the operand 1\+: A\+S\+M\+\_\+\+O\+U\+T\+P\+U\+TS, this represents the outputs for the statement. 
+
+
+
+Definition at line 1595 of file tree\+\_\+node.\+hpp.
+
+
+
+Referenced by raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+
+\mbox{\Hypertarget{structgimple__asm_a701f4a2b5bb448ea6dd172aaa75fad27}\label{structgimple__asm_a701f4a2b5bb448ea6dd172aaa75fad27}} 
+\index{gimple\+\_\+asm@{gimple\+\_\+asm}!str@{str}}
+\index{str@{str}!gimple\+\_\+asm@{gimple\+\_\+asm}}
+\subsubsection{\texorpdfstring{str}{str}}
+{\footnotesize\ttfamily std\+::string gimple\+\_\+asm\+::str}
+
+
+
+str is the operand 0\+: A\+S\+M\+\_\+\+S\+T\+R\+I\+NG. A\+S\+M\+\_\+\+S\+T\+R\+I\+NG returns a S\+T\+R\+I\+N\+G\+\_\+\+C\+ST for the instruction (e.\+g., \char`\"{}mov x, y\char`\"{}). 
+
+
+
+Definition at line 1592 of file tree\+\_\+node.\+hpp.
+
+
+
+Referenced by raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+
+\mbox{\Hypertarget{structgimple__asm_a0ae87790fe89d89a037353543d4ea531}\label{structgimple__asm_a0ae87790fe89d89a037353543d4ea531}} 
+\index{gimple\+\_\+asm@{gimple\+\_\+asm}!volatile\+\_\+flag@{volatile\+\_\+flag}}
+\index{volatile\+\_\+flag@{volatile\+\_\+flag}!gimple\+\_\+asm@{gimple\+\_\+asm}}
+\subsubsection{\texorpdfstring{volatile\+\_\+flag}{volatile\_flag}}
+{\footnotesize\ttfamily bool gimple\+\_\+asm\+::volatile\+\_\+flag}
+
+
+
+volatile\+\_\+flag is true if the node is public\+: it means that the name is accessible from outside. 
+
+
+
+Definition at line 1589 of file tree\+\_\+node.\+hpp.
+
+
+
+Referenced by raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/\hyperlink{tree__node_8hpp}{tree\+\_\+node.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/\hyperlink{tree__node_8cpp}{tree\+\_\+node.\+cpp}\end{DoxyCompactItemize}

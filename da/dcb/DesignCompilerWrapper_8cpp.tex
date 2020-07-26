@@ -1,0 +1,350 @@
+\hypertarget{DesignCompilerWrapper_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/synopsys/design\+\_\+compiler/\+Design\+Compiler\+Wrapper.cpp File Reference}
+\label{DesignCompilerWrapper_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/synopsys/design\+\_\+compiler/\+Design\+Compiler\+Wrapper.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/synopsys/design\+\_\+compiler/\+Design\+Compiler\+Wrapper.\+cpp}}
+
+
+Implementation of the wrapper to Design Compiler.  
+
+
+{\ttfamily \#include \char`\"{}Design\+Compiler\+Wrapper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Design\+Parameters.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Tool\+Manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+L\+O\+G\+I\+C\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+I\+S\+\_\+\+F\+L\+O\+W\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+script\+\_\+command.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constant\+\_\+strings.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}area\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cell\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}library\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}structural\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}target\+\_\+device.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}time\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}H\+D\+L\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}language\+\_\+writer.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}polixml.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+dom\+\_\+parser.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}file\+I\+O.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utility.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/algorithm/string.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/filesystem.\+hpp$>$}\newline
+{\ttfamily \#include $<$cpu\+\_\+time.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+Include dependency graph for Design\+Compiler\+Wrapper.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d9f/DesignCompilerWrapper_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{DesignCompilerWrapper_8cpp_a3a768b3a5fa9e50f93a0715932217bac}{dc\+\_\+compile\+\_\+effort\+\_\+high}~\char`\"{}dc\+\_\+compile\+\_\+effort\+\_\+high\char`\"{}
+\begin{DoxyCompactList}\small\item\em Includes the class definition. \end{DoxyCompactList}\item 
+\#define \hyperlink{DesignCompilerWrapper_8cpp_a5a43b4d9645ac0c2587ac7c7cde3123d}{dc\+\_\+compile\+\_\+effort\+\_\+medium}~\char`\"{}dc\+\_\+compile\+\_\+effort\+\_\+medium\char`\"{}
+\item 
+\#define \hyperlink{DesignCompilerWrapper_8cpp_a07cc5f0780ef3b8fe6051f01c236748f}{dc\+\_\+compile\+\_\+effort\+\_\+ultra}~\char`\"{}dc\+\_\+compile\+\_\+effort\+\_\+ultra\char`\"{}
+\item 
+\#define \hyperlink{DesignCompilerWrapper_8cpp_a271de69a9072017264fa83c5f4d74737}{dc\+\_\+constraint\+\_\+file}~\char`\"{}dc\+\_\+constraint\+\_\+file\char`\"{}
+\item 
+\#define \hyperlink{DesignCompilerWrapper_8cpp_a3e1fd3af1c8c2717a12d35a8f581eb1e}{dc\+\_\+dont\+\_\+use}~\char`\"{}dc\+\_\+dont\+\_\+use\char`\"{}
+\item 
+\#define \hyperlink{DesignCompilerWrapper_8cpp_a0dc33c8214fd066bfdbbfeb5ef9ef97c}{dc\+\_\+\+H\+D\+L\+\_\+file}~\char`\"{}dc\+\_\+\+H\+D\+L\+\_\+file\char`\"{}
+\item 
+\#define \hyperlink{DesignCompilerWrapper_8cpp_a54958bb22b998c603eb9f34557f88b7f}{dc\+\_\+link\+\_\+library}~\char`\"{}dc\+\_\+link\+\_\+library\char`\"{}
+\item 
+\#define \hyperlink{DesignCompilerWrapper_8cpp_a15a66cc13db2b575c48033543244ad14}{dc\+\_\+max\+\_\+area}~\char`\"{}dc\+\_\+max\+\_\+area\char`\"{}
+\item 
+\#define \hyperlink{DesignCompilerWrapper_8cpp_a03a4bb7a8f94801d49316052e335b384}{dc\+\_\+max\+\_\+delay}~\char`\"{}dc\+\_\+max\+\_\+delay\char`\"{}
+\item 
+\#define \hyperlink{DesignCompilerWrapper_8cpp_ab52c5cbae5850bfaed22c18368aa4053}{dc\+\_\+report\+\_\+power}~\char`\"{}dc\+\_\+report\+\_\+power\char`\"{}
+\item 
+\#define \hyperlink{DesignCompilerWrapper_8cpp_ac1b20cb4ffefc22a28e40c8a38b6759e}{dc\+\_\+search\+\_\+path}~\char`\"{}dc\+\_\+search\+\_\+path\char`\"{}
+\item 
+\#define \hyperlink{DesignCompilerWrapper_8cpp_a9fffce4f0afc7f1ada61a0550a57aac7}{dc\+\_\+synthesize}~\char`\"{}dc\+\_\+synthesize\char`\"{}
+\item 
+\#define \hyperlink{DesignCompilerWrapper_8cpp_a64e9b7e39ceea944af03af4ed14ba0cf}{dc\+\_\+target}~\char`\"{}dc\+\_\+target\char`\"{}
+\item 
+\#define \hyperlink{DesignCompilerWrapper_8cpp_aca861565b12c5dc5eb2b993776a4ad6c}{dc\+\_\+target\+\_\+library}~\char`\"{}dc\+\_\+target\+\_\+library\char`\"{}
+\item 
+\#define \hyperlink{DesignCompilerWrapper_8cpp_acf0493521ece5e7a4453c6e5aa39edb0}{dc\+\_\+top}~\char`\"{}dc\+\_\+top\char`\"{}
+\item 
+\#define \hyperlink{DesignCompilerWrapper_8cpp_ae8d9c8955f1dd703dc5269ce78013272}{dc\+\_\+top\+\_\+filetype}~\char`\"{}dc\+\_\+top\+\_\+filetype\char`\"{}
+\item 
+\#define \hyperlink{DesignCompilerWrapper_8cpp_ac27bad9e8f9902a75e18b2a6844630f9}{dc\+\_\+zero\+\_\+interconnect\+\_\+delay}~\char`\"{}dc\+\_\+zero\+\_\+interconnect\+\_\+delay\char`\"{}
+\item 
+\#define \hyperlink{DesignCompilerWrapper_8cpp_a495a4380cf55700700f14a8ea54c2db1}{dc\+\_\+output\+\_\+dir}~\char`\"{}dc\+\_\+output\+\_\+dir\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of the wrapper to Design Compiler. 
+
+Implementation of the methods to wrap Design Compiler by Synopsys
+
+\begin{DoxyAuthor}{Author}
+Christian Pilato \href{mailto:pilato@elet.polimi.it}{\tt pilato@elet.\+polimi.\+it} \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{DesignCompilerWrapper_8cpp_a3a768b3a5fa9e50f93a0715932217bac}\label{DesignCompilerWrapper_8cpp_a3a768b3a5fa9e50f93a0715932217bac}} 
+\index{Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}!dc\+\_\+compile\+\_\+effort\+\_\+high@{dc\+\_\+compile\+\_\+effort\+\_\+high}}
+\index{dc\+\_\+compile\+\_\+effort\+\_\+high@{dc\+\_\+compile\+\_\+effort\+\_\+high}!Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{dc\+\_\+compile\+\_\+effort\+\_\+high}{dc\_compile\_effort\_high}}
+{\footnotesize\ttfamily \#define dc\+\_\+compile\+\_\+effort\+\_\+high~\char`\"{}dc\+\_\+compile\+\_\+effort\+\_\+high\char`\"{}}
+
+
+
+Includes the class definition. 
+
+Constants include 
+
+Definition at line 91 of file Design\+Compiler\+Wrapper.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::init\+\_\+reserved\+\_\+vars(), and Design\+Compiler\+Wrapper\+::perform\+\_\+optimization().
+
+\mbox{\Hypertarget{DesignCompilerWrapper_8cpp_a5a43b4d9645ac0c2587ac7c7cde3123d}\label{DesignCompilerWrapper_8cpp_a5a43b4d9645ac0c2587ac7c7cde3123d}} 
+\index{Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}!dc\+\_\+compile\+\_\+effort\+\_\+medium@{dc\+\_\+compile\+\_\+effort\+\_\+medium}}
+\index{dc\+\_\+compile\+\_\+effort\+\_\+medium@{dc\+\_\+compile\+\_\+effort\+\_\+medium}!Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{dc\+\_\+compile\+\_\+effort\+\_\+medium}{dc\_compile\_effort\_medium}}
+{\footnotesize\ttfamily \#define dc\+\_\+compile\+\_\+effort\+\_\+medium~\char`\"{}dc\+\_\+compile\+\_\+effort\+\_\+medium\char`\"{}}
+
+
+
+Definition at line 92 of file Design\+Compiler\+Wrapper.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::init\+\_\+reserved\+\_\+vars(), and Design\+Compiler\+Wrapper\+::perform\+\_\+optimization().
+
+\mbox{\Hypertarget{DesignCompilerWrapper_8cpp_a07cc5f0780ef3b8fe6051f01c236748f}\label{DesignCompilerWrapper_8cpp_a07cc5f0780ef3b8fe6051f01c236748f}} 
+\index{Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}!dc\+\_\+compile\+\_\+effort\+\_\+ultra@{dc\+\_\+compile\+\_\+effort\+\_\+ultra}}
+\index{dc\+\_\+compile\+\_\+effort\+\_\+ultra@{dc\+\_\+compile\+\_\+effort\+\_\+ultra}!Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{dc\+\_\+compile\+\_\+effort\+\_\+ultra}{dc\_compile\_effort\_ultra}}
+{\footnotesize\ttfamily \#define dc\+\_\+compile\+\_\+effort\+\_\+ultra~\char`\"{}dc\+\_\+compile\+\_\+effort\+\_\+ultra\char`\"{}}
+
+
+
+Definition at line 93 of file Design\+Compiler\+Wrapper.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::init\+\_\+reserved\+\_\+vars(), and Design\+Compiler\+Wrapper\+::perform\+\_\+optimization().
+
+\mbox{\Hypertarget{DesignCompilerWrapper_8cpp_a271de69a9072017264fa83c5f4d74737}\label{DesignCompilerWrapper_8cpp_a271de69a9072017264fa83c5f4d74737}} 
+\index{Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}!dc\+\_\+constraint\+\_\+file@{dc\+\_\+constraint\+\_\+file}}
+\index{dc\+\_\+constraint\+\_\+file@{dc\+\_\+constraint\+\_\+file}!Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{dc\+\_\+constraint\+\_\+file}{dc\_constraint\_file}}
+{\footnotesize\ttfamily \#define dc\+\_\+constraint\+\_\+file~\char`\"{}dc\+\_\+constraint\+\_\+file\char`\"{}}
+
+
+
+Definition at line 94 of file Design\+Compiler\+Wrapper.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::\+Evaluate\+Variables(), Design\+Compiler\+Wrapper\+::init\+\_\+reserved\+\_\+vars(), and Design\+Compiler\+Wrapper\+::set\+\_\+constraints().
+
+\mbox{\Hypertarget{DesignCompilerWrapper_8cpp_a3e1fd3af1c8c2717a12d35a8f581eb1e}\label{DesignCompilerWrapper_8cpp_a3e1fd3af1c8c2717a12d35a8f581eb1e}} 
+\index{Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}!dc\+\_\+dont\+\_\+use@{dc\+\_\+dont\+\_\+use}}
+\index{dc\+\_\+dont\+\_\+use@{dc\+\_\+dont\+\_\+use}!Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{dc\+\_\+dont\+\_\+use}{dc\_dont\_use}}
+{\footnotesize\ttfamily \#define dc\+\_\+dont\+\_\+use~\char`\"{}dc\+\_\+dont\+\_\+use\char`\"{}}
+
+
+
+Definition at line 95 of file Design\+Compiler\+Wrapper.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::init\+\_\+reserved\+\_\+vars(), and Design\+Compiler\+Wrapper\+::set\+\_\+constraints().
+
+\mbox{\Hypertarget{DesignCompilerWrapper_8cpp_a0dc33c8214fd066bfdbbfeb5ef9ef97c}\label{DesignCompilerWrapper_8cpp_a0dc33c8214fd066bfdbbfeb5ef9ef97c}} 
+\index{Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}!dc\+\_\+\+H\+D\+L\+\_\+file@{dc\+\_\+\+H\+D\+L\+\_\+file}}
+\index{dc\+\_\+\+H\+D\+L\+\_\+file@{dc\+\_\+\+H\+D\+L\+\_\+file}!Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{dc\+\_\+\+H\+D\+L\+\_\+file}{dc\_HDL\_file}}
+{\footnotesize\ttfamily \#define dc\+\_\+\+H\+D\+L\+\_\+file~\char`\"{}dc\+\_\+\+H\+D\+L\+\_\+file\char`\"{}}
+
+
+
+Definition at line 96 of file Design\+Compiler\+Wrapper.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::import\+\_\+input\+\_\+design(), and Design\+Compiler\+Wrapper\+::init\+\_\+reserved\+\_\+vars().
+
+\mbox{\Hypertarget{DesignCompilerWrapper_8cpp_a54958bb22b998c603eb9f34557f88b7f}\label{DesignCompilerWrapper_8cpp_a54958bb22b998c603eb9f34557f88b7f}} 
+\index{Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}!dc\+\_\+link\+\_\+library@{dc\+\_\+link\+\_\+library}}
+\index{dc\+\_\+link\+\_\+library@{dc\+\_\+link\+\_\+library}!Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{dc\+\_\+link\+\_\+library}{dc\_link\_library}}
+{\footnotesize\ttfamily \#define dc\+\_\+link\+\_\+library~\char`\"{}dc\+\_\+link\+\_\+library\char`\"{}}
+
+
+
+Definition at line 97 of file Design\+Compiler\+Wrapper.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::init\+\_\+reserved\+\_\+vars(), and Design\+Compiler\+Wrapper\+::set\+\_\+link\+\_\+libraries().
+
+\mbox{\Hypertarget{DesignCompilerWrapper_8cpp_a15a66cc13db2b575c48033543244ad14}\label{DesignCompilerWrapper_8cpp_a15a66cc13db2b575c48033543244ad14}} 
+\index{Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}!dc\+\_\+max\+\_\+area@{dc\+\_\+max\+\_\+area}}
+\index{dc\+\_\+max\+\_\+area@{dc\+\_\+max\+\_\+area}!Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{dc\+\_\+max\+\_\+area}{dc\_max\_area}}
+{\footnotesize\ttfamily \#define dc\+\_\+max\+\_\+area~\char`\"{}dc\+\_\+max\+\_\+area\char`\"{}}
+
+
+
+Definition at line 98 of file Design\+Compiler\+Wrapper.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::init\+\_\+reserved\+\_\+vars(), and Design\+Compiler\+Wrapper\+::set\+\_\+constraints().
+
+\mbox{\Hypertarget{DesignCompilerWrapper_8cpp_a03a4bb7a8f94801d49316052e335b384}\label{DesignCompilerWrapper_8cpp_a03a4bb7a8f94801d49316052e335b384}} 
+\index{Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}!dc\+\_\+max\+\_\+delay@{dc\+\_\+max\+\_\+delay}}
+\index{dc\+\_\+max\+\_\+delay@{dc\+\_\+max\+\_\+delay}!Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{dc\+\_\+max\+\_\+delay}{dc\_max\_delay}}
+{\footnotesize\ttfamily \#define dc\+\_\+max\+\_\+delay~\char`\"{}dc\+\_\+max\+\_\+delay\char`\"{}}
+
+
+
+Definition at line 99 of file Design\+Compiler\+Wrapper.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::init\+\_\+reserved\+\_\+vars(), and Design\+Compiler\+Wrapper\+::set\+\_\+constraints().
+
+\mbox{\Hypertarget{DesignCompilerWrapper_8cpp_a495a4380cf55700700f14a8ea54c2db1}\label{DesignCompilerWrapper_8cpp_a495a4380cf55700700f14a8ea54c2db1}} 
+\index{Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}!dc\+\_\+output\+\_\+dir@{dc\+\_\+output\+\_\+dir}}
+\index{dc\+\_\+output\+\_\+dir@{dc\+\_\+output\+\_\+dir}!Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{dc\+\_\+output\+\_\+dir}{dc\_output\_dir}}
+{\footnotesize\ttfamily \#define dc\+\_\+output\+\_\+dir~\char`\"{}dc\+\_\+output\+\_\+dir\char`\"{}}
+
+
+
+Definition at line 108 of file Design\+Compiler\+Wrapper.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::save\+\_\+design().
+
+\mbox{\Hypertarget{DesignCompilerWrapper_8cpp_ab52c5cbae5850bfaed22c18368aa4053}\label{DesignCompilerWrapper_8cpp_ab52c5cbae5850bfaed22c18368aa4053}} 
+\index{Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}!dc\+\_\+report\+\_\+power@{dc\+\_\+report\+\_\+power}}
+\index{dc\+\_\+report\+\_\+power@{dc\+\_\+report\+\_\+power}!Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{dc\+\_\+report\+\_\+power}{dc\_report\_power}}
+{\footnotesize\ttfamily \#define dc\+\_\+report\+\_\+power~\char`\"{}dc\+\_\+report\+\_\+power\char`\"{}}
+
+
+
+Definition at line 100 of file Design\+Compiler\+Wrapper.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::init\+\_\+reserved\+\_\+vars().
+
+\mbox{\Hypertarget{DesignCompilerWrapper_8cpp_ac1b20cb4ffefc22a28e40c8a38b6759e}\label{DesignCompilerWrapper_8cpp_ac1b20cb4ffefc22a28e40c8a38b6759e}} 
+\index{Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}!dc\+\_\+search\+\_\+path@{dc\+\_\+search\+\_\+path}}
+\index{dc\+\_\+search\+\_\+path@{dc\+\_\+search\+\_\+path}!Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{dc\+\_\+search\+\_\+path}{dc\_search\_path}}
+{\footnotesize\ttfamily \#define dc\+\_\+search\+\_\+path~\char`\"{}dc\+\_\+search\+\_\+path\char`\"{}}
+
+
+
+Definition at line 101 of file Design\+Compiler\+Wrapper.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::init\+\_\+reserved\+\_\+vars(), and Design\+Compiler\+Wrapper\+::set\+\_\+search\+\_\+path().
+
+\mbox{\Hypertarget{DesignCompilerWrapper_8cpp_a9fffce4f0afc7f1ada61a0550a57aac7}\label{DesignCompilerWrapper_8cpp_a9fffce4f0afc7f1ada61a0550a57aac7}} 
+\index{Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}!dc\+\_\+synthesize@{dc\+\_\+synthesize}}
+\index{dc\+\_\+synthesize@{dc\+\_\+synthesize}!Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{dc\+\_\+synthesize}{dc\_synthesize}}
+{\footnotesize\ttfamily \#define dc\+\_\+synthesize~\char`\"{}dc\+\_\+synthesize\char`\"{}}
+
+
+
+Definition at line 102 of file Design\+Compiler\+Wrapper.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::init\+\_\+reserved\+\_\+vars(), and Design\+Compiler\+Wrapper\+::perform\+\_\+optimization().
+
+\mbox{\Hypertarget{DesignCompilerWrapper_8cpp_a64e9b7e39ceea944af03af4ed14ba0cf}\label{DesignCompilerWrapper_8cpp_a64e9b7e39ceea944af03af4ed14ba0cf}} 
+\index{Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}!dc\+\_\+target@{dc\+\_\+target}}
+\index{dc\+\_\+target@{dc\+\_\+target}!Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{dc\+\_\+target}{dc\_target}}
+{\footnotesize\ttfamily \#define dc\+\_\+target~\char`\"{}dc\+\_\+target\char`\"{}}
+
+
+
+Definition at line 103 of file Design\+Compiler\+Wrapper.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::init\+\_\+reserved\+\_\+vars(), and Design\+Compiler\+Wrapper\+::save\+\_\+design().
+
+\mbox{\Hypertarget{DesignCompilerWrapper_8cpp_aca861565b12c5dc5eb2b993776a4ad6c}\label{DesignCompilerWrapper_8cpp_aca861565b12c5dc5eb2b993776a4ad6c}} 
+\index{Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}!dc\+\_\+target\+\_\+library@{dc\+\_\+target\+\_\+library}}
+\index{dc\+\_\+target\+\_\+library@{dc\+\_\+target\+\_\+library}!Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{dc\+\_\+target\+\_\+library}{dc\_target\_library}}
+{\footnotesize\ttfamily \#define dc\+\_\+target\+\_\+library~\char`\"{}dc\+\_\+target\+\_\+library\char`\"{}}
+
+
+
+Definition at line 104 of file Design\+Compiler\+Wrapper.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::init\+\_\+reserved\+\_\+vars(), and Design\+Compiler\+Wrapper\+::set\+\_\+target\+\_\+libraries().
+
+\mbox{\Hypertarget{DesignCompilerWrapper_8cpp_acf0493521ece5e7a4453c6e5aa39edb0}\label{DesignCompilerWrapper_8cpp_acf0493521ece5e7a4453c6e5aa39edb0}} 
+\index{Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}!dc\+\_\+top@{dc\+\_\+top}}
+\index{dc\+\_\+top@{dc\+\_\+top}!Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{dc\+\_\+top}{dc\_top}}
+{\footnotesize\ttfamily \#define dc\+\_\+top~\char`\"{}dc\+\_\+top\char`\"{}}
+
+
+
+Definition at line 105 of file Design\+Compiler\+Wrapper.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::\+Evaluate\+Variables(), and Design\+Compiler\+Wrapper\+::init\+\_\+reserved\+\_\+vars().
+
+\mbox{\Hypertarget{DesignCompilerWrapper_8cpp_ae8d9c8955f1dd703dc5269ce78013272}\label{DesignCompilerWrapper_8cpp_ae8d9c8955f1dd703dc5269ce78013272}} 
+\index{Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}!dc\+\_\+top\+\_\+filetype@{dc\+\_\+top\+\_\+filetype}}
+\index{dc\+\_\+top\+\_\+filetype@{dc\+\_\+top\+\_\+filetype}!Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{dc\+\_\+top\+\_\+filetype}{dc\_top\_filetype}}
+{\footnotesize\ttfamily \#define dc\+\_\+top\+\_\+filetype~\char`\"{}dc\+\_\+top\+\_\+filetype\char`\"{}}
+
+
+
+Definition at line 106 of file Design\+Compiler\+Wrapper.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::import\+\_\+input\+\_\+design(), and Design\+Compiler\+Wrapper\+::init\+\_\+reserved\+\_\+vars().
+
+\mbox{\Hypertarget{DesignCompilerWrapper_8cpp_ac27bad9e8f9902a75e18b2a6844630f9}\label{DesignCompilerWrapper_8cpp_ac27bad9e8f9902a75e18b2a6844630f9}} 
+\index{Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}!dc\+\_\+zero\+\_\+interconnect\+\_\+delay@{dc\+\_\+zero\+\_\+interconnect\+\_\+delay}}
+\index{dc\+\_\+zero\+\_\+interconnect\+\_\+delay@{dc\+\_\+zero\+\_\+interconnect\+\_\+delay}!Design\+Compiler\+Wrapper.\+cpp@{Design\+Compiler\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{dc\+\_\+zero\+\_\+interconnect\+\_\+delay}{dc\_zero\_interconnect\_delay}}
+{\footnotesize\ttfamily \#define dc\+\_\+zero\+\_\+interconnect\+\_\+delay~\char`\"{}dc\+\_\+zero\+\_\+interconnect\+\_\+delay\char`\"{}}
+
+
+
+Definition at line 107 of file Design\+Compiler\+Wrapper.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::init\+\_\+reserved\+\_\+vars(), and Design\+Compiler\+Wrapper\+::set\+\_\+constraints().
+

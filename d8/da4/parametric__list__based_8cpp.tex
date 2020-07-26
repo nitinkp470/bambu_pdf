@@ -1,0 +1,136 @@
+\hypertarget{parametric__list__based_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/scheduling/parametric\+\_\+list\+\_\+based.cpp File Reference}
+\label{parametric__list__based_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/scheduling/parametric\+\_\+list\+\_\+based.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/scheduling/parametric\+\_\+list\+\_\+based.\+cpp}}
+
+
+Class implementation of the \hyperlink{classparametric__list__based}{parametric\+\_\+list\+\_\+based} structure.  
+
+
+{\ttfamily \#include \char`\"{}parametric\+\_\+list\+\_\+based.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}function\+\_\+behavior.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utility.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+S\+L\+A\+P.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}allocation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fu\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+constraints.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}schedule.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}basic\+\_\+block.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+basic\+\_\+block.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Bambu\+Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cpu\+\_\+time.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}memory.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}structural\+\_\+objects.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}design\+\_\+flow\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}design\+\_\+flow\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}frontend\+\_\+flow\+\_\+step\+\_\+factory.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}function\+\_\+frontend\+\_\+flow\+\_\+step.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}allocation\+\_\+information.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+document.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}behavioral\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}call\+\_\+graph\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+Include dependency graph for parametric\+\_\+list\+\_\+based.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/de1/parametric__list__based_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcs__ordering__functor}{cs\+\_\+ordering\+\_\+functor}
+\begin{DoxyCompactList}\small\item\em Functor used to compare two vertices with respect to an order based on the control steps associated with the vertices. \end{DoxyCompactList}\item 
+struct \hyperlink{structresource__ordering__functor}{resource\+\_\+ordering\+\_\+functor}
+\begin{DoxyCompactList}\small\item\em Functor used to compare which of two resources has to be considered first in the scheduling. \end{DoxyCompactList}\item 
+class \hyperlink{classcompare__vertex__by__name}{compare\+\_\+vertex\+\_\+by\+\_\+name}
+\begin{DoxyCompactList}\small\item\em Functor to sort vertex by node name. \end{DoxyCompactList}\item 
+class \hyperlink{classedge__integer__order__by__map}{edge\+\_\+integer\+\_\+order\+\_\+by\+\_\+map}
+\begin{DoxyCompactList}\small\item\em The key comparison function for edge-\/integer set based on levels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{parametric__list__based_8cpp_aba59031851eae06641153e5a903339d8}{C\+T\+R\+L\+\_\+\+S\+T\+E\+P\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+ER}~1000
+\item 
+\#define \hyperlink{parametric__list__based_8cpp_a0d93bb5922bfba3c9870d3253e0180bb}{R\+E\+M\+O\+V\+E\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+O\+\_\+\+I\+N\+D\+I\+R\+E\+CT}~1
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{parametric__list__based_8cpp_aec6036b00dd3ce08a94fb12d6ac5d52c}{check\+\_\+if\+\_\+is\+\_\+live\+\_\+in\+\_\+next\+\_\+cycle} (const std\+::set$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{structcs__ordering__functor}{cs\+\_\+ordering\+\_\+functor} $>$ \&live\+\_\+vertices, const Control\+Step current\+\_\+cycle, const \hyperlink{classOpVertexMap}{Op\+Vertex\+Map}$<$ double $>$ \&ending\+\_\+time, double clock\+\_\+cycle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class implementation of the \hyperlink{classparametric__list__based}{parametric\+\_\+list\+\_\+based} structure. 
+
+This file implements some of the \hyperlink{classparametric__list__based}{parametric\+\_\+list\+\_\+based} member functions.
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+
+Marco Lattuada \href{mailto:lattuada@elet.polimi.it}{\tt lattuada@elet.\+polimi.\+it} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{parametric__list__based_8cpp_aba59031851eae06641153e5a903339d8}\label{parametric__list__based_8cpp_aba59031851eae06641153e5a903339d8}} 
+\index{parametric\+\_\+list\+\_\+based.\+cpp@{parametric\+\_\+list\+\_\+based.\+cpp}!C\+T\+R\+L\+\_\+\+S\+T\+E\+P\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+ER@{C\+T\+R\+L\+\_\+\+S\+T\+E\+P\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+ER}}
+\index{C\+T\+R\+L\+\_\+\+S\+T\+E\+P\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+ER@{C\+T\+R\+L\+\_\+\+S\+T\+E\+P\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+ER}!parametric\+\_\+list\+\_\+based.\+cpp@{parametric\+\_\+list\+\_\+based.\+cpp}}
+\subsubsection{\texorpdfstring{C\+T\+R\+L\+\_\+\+S\+T\+E\+P\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+ER}{CTRL\_STEP\_MULTIPLIER}}
+{\footnotesize\ttfamily \#define C\+T\+R\+L\+\_\+\+S\+T\+E\+P\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+ER~1000}
+
+
+
+Definition at line 379 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+Referenced by parametric\+\_\+list\+\_\+based\+::exec().
+
+\mbox{\Hypertarget{parametric__list__based_8cpp_a0d93bb5922bfba3c9870d3253e0180bb}\label{parametric__list__based_8cpp_a0d93bb5922bfba3c9870d3253e0180bb}} 
+\index{parametric\+\_\+list\+\_\+based.\+cpp@{parametric\+\_\+list\+\_\+based.\+cpp}!R\+E\+M\+O\+V\+E\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+O\+\_\+\+I\+N\+D\+I\+R\+E\+CT@{R\+E\+M\+O\+V\+E\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+O\+\_\+\+I\+N\+D\+I\+R\+E\+CT}}
+\index{R\+E\+M\+O\+V\+E\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+O\+\_\+\+I\+N\+D\+I\+R\+E\+CT@{R\+E\+M\+O\+V\+E\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+O\+\_\+\+I\+N\+D\+I\+R\+E\+CT}!parametric\+\_\+list\+\_\+based.\+cpp@{parametric\+\_\+list\+\_\+based.\+cpp}}
+\subsubsection{\texorpdfstring{R\+E\+M\+O\+V\+E\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+O\+\_\+\+I\+N\+D\+I\+R\+E\+CT}{REMOVE\_DIRECT\_TO\_INDIRECT}}
+{\footnotesize\ttfamily \#define R\+E\+M\+O\+V\+E\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+O\+\_\+\+I\+N\+D\+I\+R\+E\+CT~1}
+
+
+
+Definition at line 2341 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+Referenced by parametric\+\_\+list\+\_\+based\+::check\+\_\+non\+\_\+direct\+\_\+operation\+\_\+chaining().
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{parametric__list__based_8cpp_aec6036b00dd3ce08a94fb12d6ac5d52c}\label{parametric__list__based_8cpp_aec6036b00dd3ce08a94fb12d6ac5d52c}} 
+\index{parametric\+\_\+list\+\_\+based.\+cpp@{parametric\+\_\+list\+\_\+based.\+cpp}!check\+\_\+if\+\_\+is\+\_\+live\+\_\+in\+\_\+next\+\_\+cycle@{check\+\_\+if\+\_\+is\+\_\+live\+\_\+in\+\_\+next\+\_\+cycle}}
+\index{check\+\_\+if\+\_\+is\+\_\+live\+\_\+in\+\_\+next\+\_\+cycle@{check\+\_\+if\+\_\+is\+\_\+live\+\_\+in\+\_\+next\+\_\+cycle}!parametric\+\_\+list\+\_\+based.\+cpp@{parametric\+\_\+list\+\_\+based.\+cpp}}
+\subsubsection{\texorpdfstring{check\+\_\+if\+\_\+is\+\_\+live\+\_\+in\+\_\+next\+\_\+cycle()}{check\_if\_is\_live\_in\_next\_cycle()}}
+{\footnotesize\ttfamily static bool check\+\_\+if\+\_\+is\+\_\+live\+\_\+in\+\_\+next\+\_\+cycle (\begin{DoxyParamCaption}\item[{const std\+::set$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{structcs__ordering__functor}{cs\+\_\+ordering\+\_\+functor} $>$ \&}]{live\+\_\+vertices,  }\item[{const Control\+Step}]{current\+\_\+cycle,  }\item[{const \hyperlink{classOpVertexMap}{Op\+Vertex\+Map}$<$ double $>$ \&}]{ending\+\_\+time,  }\item[{double}]{clock\+\_\+cycle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 259 of file parametric\+\_\+list\+\_\+based.\+cpp.
+
+
+
+Referenced by parametric\+\_\+list\+\_\+based\+::exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/da4/parametric__list__based_8cpp_aec6036b00dd3ce08a94fb12d6ac5d52c_icgraph}
+\end{center}
+\end{figure}

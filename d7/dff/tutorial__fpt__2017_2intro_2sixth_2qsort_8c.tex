@@ -1,0 +1,163 @@
+\hypertarget{tutorial__fpt__2017_2intro_2sixth_2qsort_8c}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/documentation/tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.c File Reference}
+\label{tutorial__fpt__2017_2intro_2sixth_2qsort_8c}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/documentation/tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c@{/home/osboxes/bambu/\+Pand\+A-\/bambu/documentation/tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c}}
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for qsort.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{d1/de1/tutorial__fpt__2017_2intro_2sixth_2qsort_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structstack__node}{stack\+\_\+node}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_a29bc801ab28db7ec3f9cda2e85811c11}{S\+W\+AP}(a,  b,  size)
+\item 
+\#define \hyperlink{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_a4c76d6ac54df967f4f2d09030fdaa610}{M\+A\+X\+\_\+\+T\+H\+R\+E\+SH}~4
+\item 
+\#define \hyperlink{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_a6423a880df59733d2d9b509c7718d3a9}{S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE}~(C\+H\+A\+R\+\_\+\+B\+IT $\ast$ sizeof(\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}))
+\item 
+\#define \hyperlink{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_a69ef59788a88729c75837e2e31173b40}{P\+U\+SH}(low,  high)~((void) ((\hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a363ff33001bb9810eee7a6a61179583b}{top}-\/$>$lo = (low)), (\hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a363ff33001bb9810eee7a6a61179583b}{top}-\/$>$hi = (high)), ++\hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a363ff33001bb9810eee7a6a61179583b}{top}))
+\item 
+\#define \hyperlink{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_a758f1b86ee730e07c2f60f1aafaf33b3}{P\+OP}(low,  high)~((void) (-\/-\/\hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a363ff33001bb9810eee7a6a61179583b}{top}, (low = \hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a363ff33001bb9810eee7a6a61179583b}{top}-\/$>$lo), (high = \hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a363ff33001bb9810eee7a6a61179583b}{top}-\/$>$hi)))
+\item 
+\#define \hyperlink{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_afaf5dcd5667fd1b91657bfe7aa4d0788}{S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+M\+P\+TY}~(\hyperlink{structstack}{stack} $<$ \hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a363ff33001bb9810eee7a6a61179583b}{top})
+\item 
+\#define \hyperlink{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_abb702d8b501669a23aa0ab3b281b9384}{min}(x,  y)~((x) $<$ (y) ? (x) \+: (y))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_a12375c1107d50823af4422381f821039}{\+\_\+quicksort} (void $\ast$const pbase, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} total\+\_\+elems, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} size, int($\ast$cmp)(const void $\ast$, const void $\ast$, void $\ast$), void $\ast$arg)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_a4c76d6ac54df967f4f2d09030fdaa610}\label{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_a4c76d6ac54df967f4f2d09030fdaa610}} 
+\index{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c@{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c}!M\+A\+X\+\_\+\+T\+H\+R\+E\+SH@{M\+A\+X\+\_\+\+T\+H\+R\+E\+SH}}
+\index{M\+A\+X\+\_\+\+T\+H\+R\+E\+SH@{M\+A\+X\+\_\+\+T\+H\+R\+E\+SH}!tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c@{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+T\+H\+R\+E\+SH}{MAX\_THRESH}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+T\+H\+R\+E\+SH~4}
+
+
+
+Definition at line 42 of file qsort.\+c.
+
+
+
+Referenced by \+\_\+quicksort().
+
+\mbox{\Hypertarget{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_abb702d8b501669a23aa0ab3b281b9384}\label{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_abb702d8b501669a23aa0ab3b281b9384}} 
+\index{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c@{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c}!min@{min}}
+\index{min@{min}!tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c@{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c}}
+\subsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily \#define min(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})~((x) $<$ (y) ? (x) \+: (y))}
+
+
+
+Referenced by \+\_\+quicksort(), tree\+\_\+helper\+::accessed\+\_\+minimum\+\_\+bitsize(), module\+\_\+binding\+\_\+check$<$ vertex\+\_\+type $>$\+::check\+\_\+edge\+\_\+compatibility(), simple\+\_\+code\+\_\+motion\+::\+Check\+Movable(), State\+Transition\+Graph\+Manager\+::compute\+\_\+min\+\_\+max(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap(), tree\+\_\+manipulation\+::\+Create\+Nop\+Expr(), tree\+\_\+manipulation\+::\+Create\+Unsigned(), mux\+\_\+connection\+\_\+binding\+::determine\+\_\+connection(), I\+R\+\_\+lowering\+::division\+\_\+by\+\_\+a\+\_\+constant(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), H\+W\+Discrepancy\+Analysis\+::\+Exec(), R\+T\+S\+\_\+based\+\_\+clique\+\_\+covering$<$ vertex\+\_\+type $>$\+::exec(), Bit\+\_\+\+Value\+::forward\+\_\+transfer(), Allocation\+Information\+::get\+\_\+attribute\+\_\+of\+\_\+fu\+\_\+per\+\_\+op(), memory\+::get\+\_\+first\+\_\+address(), T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique$<$ Graph $>$\+::get\+\_\+weighted\+\_\+maximal\+\_\+cliques(), T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique\+\_\+fast$<$ Graph $>$\+::get\+\_\+weighted\+\_\+maximal\+\_\+cliques(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), Remove\+Ending\+If\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), tree\+\_\+helper\+::is\+\_\+natural(), Bit\+\_\+\+Value\+\_\+opt\+::optimize(), H\+L\+S\+\_\+constraints\+::set\+\_\+max\+\_\+registers(), tree\+\_\+helper\+::\+Size(), fu\+\_\+binding\+::specialise\+\_\+fu(), bipartite\+\_\+matching\+\_\+clique\+\_\+covering$<$ vertex\+\_\+type $>$\+::suggest\+\_\+min\+\_\+resources(), Bit\+Lattice\+Manipulator\+::sup(), synth\+\_\+mult(), module\+\_\+binding\+\_\+check$<$ vertex\+\_\+type $>$\+::update\+\_\+after\+\_\+join(), bipartite\+\_\+matching$<$ Cost\+Functor $>$\+::update\+\_\+labels(), parametric\+\_\+list\+\_\+based\+::update\+\_\+starting\+\_\+ending\+\_\+time(), parametric\+\_\+list\+\_\+based\+::update\+\_\+vertices\+\_\+slack(), vcd\+\_\+parser\+::vcd\+\_\+add\+\_\+signal(), enumeral\+\_\+type\+::visit(), integer\+\_\+type\+::visit(), fu\+\_\+binding\+::write\+\_\+init(), port\+\_\+o\+::xload(), and signal\+\_\+o\+::xload().
+
+\mbox{\Hypertarget{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_a758f1b86ee730e07c2f60f1aafaf33b3}\label{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_a758f1b86ee730e07c2f60f1aafaf33b3}} 
+\index{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c@{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c}!P\+OP@{P\+OP}}
+\index{P\+OP@{P\+OP}!tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c@{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c}}
+\subsubsection{\texorpdfstring{P\+OP}{POP}}
+{\footnotesize\ttfamily \#define P\+OP(\begin{DoxyParamCaption}\item[{}]{low,  }\item[{}]{high }\end{DoxyParamCaption})~((void) (-\/-\/\hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a363ff33001bb9810eee7a6a61179583b}{top}, (low = \hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a363ff33001bb9810eee7a6a61179583b}{top}-\/$>$lo), (high = \hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a363ff33001bb9810eee7a6a61179583b}{top}-\/$>$hi)))}
+
+
+
+Definition at line 58 of file qsort.\+c.
+
+
+
+Referenced by \+\_\+quicksort().
+
+\mbox{\Hypertarget{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_a69ef59788a88729c75837e2e31173b40}\label{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_a69ef59788a88729c75837e2e31173b40}} 
+\index{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c@{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c}!P\+U\+SH@{P\+U\+SH}}
+\index{P\+U\+SH@{P\+U\+SH}!tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c@{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c}}
+\subsubsection{\texorpdfstring{P\+U\+SH}{PUSH}}
+{\footnotesize\ttfamily \#define P\+U\+SH(\begin{DoxyParamCaption}\item[{}]{low,  }\item[{}]{high }\end{DoxyParamCaption})~((void) ((\hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a363ff33001bb9810eee7a6a61179583b}{top}-\/$>$lo = (low)), (\hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a363ff33001bb9810eee7a6a61179583b}{top}-\/$>$hi = (high)), ++\hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a363ff33001bb9810eee7a6a61179583b}{top}))}
+
+
+
+Definition at line 57 of file qsort.\+c.
+
+
+
+Referenced by \+\_\+quicksort().
+
+\mbox{\Hypertarget{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_afaf5dcd5667fd1b91657bfe7aa4d0788}\label{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_afaf5dcd5667fd1b91657bfe7aa4d0788}} 
+\index{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c@{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c}!S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+M\+P\+TY@{S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+M\+P\+TY}}
+\index{S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+M\+P\+TY@{S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+M\+P\+TY}!tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c@{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c}}
+\subsubsection{\texorpdfstring{S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+M\+P\+TY}{STACK\_NOT\_EMPTY}}
+{\footnotesize\ttfamily \#define S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+M\+P\+TY~(\hyperlink{structstack}{stack} $<$ \hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a363ff33001bb9810eee7a6a61179583b}{top})}
+
+
+
+Definition at line 59 of file qsort.\+c.
+
+
+
+Referenced by \+\_\+quicksort().
+
+\mbox{\Hypertarget{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_a6423a880df59733d2d9b509c7718d3a9}\label{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_a6423a880df59733d2d9b509c7718d3a9}} 
+\index{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c@{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c}!S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE@{S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE}}
+\index{S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE@{S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE}!tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c@{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c}}
+\subsubsection{\texorpdfstring{S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE}{STACK\_SIZE}}
+{\footnotesize\ttfamily \#define S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE~(C\+H\+A\+R\+\_\+\+B\+IT $\ast$ sizeof(\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}))}
+
+
+
+Definition at line 56 of file qsort.\+c.
+
+
+
+Referenced by \+\_\+quicksort().
+
+\mbox{\Hypertarget{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_a29bc801ab28db7ec3f9cda2e85811c11}\label{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_a29bc801ab28db7ec3f9cda2e85811c11}} 
+\index{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c@{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c}!S\+W\+AP@{S\+W\+AP}}
+\index{S\+W\+AP@{S\+W\+AP}!tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c@{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c}}
+\subsubsection{\texorpdfstring{S\+W\+AP}{SWAP}}
+{\footnotesize\ttfamily \#define S\+W\+AP(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{size }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}                                                                            \(\backslash\)
+    \{                                                                         \(\backslash\)
+      size\_t \_\_size = (size);                                                 \(\backslash\)
+      char *\_\_a = (a), *\_\_b = (b);                                            \(\backslash\)
+      do                                                                      \(\backslash\)
+        \{                                                                     \(\backslash\)
+          char \_\_tmp = *\_\_a;                                                  \(\backslash\)
+          *\_\_a++ = *\_\_b;                                                      \(\backslash\)
+          *\_\_b++ = \_\_tmp;                                                     \(\backslash\)
+        \} \textcolor{keywordflow}{while} (--\_\_size > 0);                                               \(\backslash\)
+    \} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+
+
+Definition at line 27 of file qsort.\+c.
+
+
+
+Referenced by \+\_\+quicksort().
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_a12375c1107d50823af4422381f821039}\label{tutorial__fpt__2017_2intro_2sixth_2qsort_8c_a12375c1107d50823af4422381f821039}} 
+\index{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c@{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c}!\+\_\+quicksort@{\+\_\+quicksort}}
+\index{\+\_\+quicksort@{\+\_\+quicksort}!tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c@{tutorial\+\_\+fpt\+\_\+2017/intro/sixth/qsort.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+quicksort()}{\_quicksort()}}
+{\footnotesize\ttfamily void \+\_\+quicksort (\begin{DoxyParamCaption}\item[{void $\ast$const}]{pbase,  }\item[{\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{total\+\_\+elems,  }\item[{\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{size,  }\item[{int($\ast$)(const void $\ast$, const void $\ast$, void $\ast$)}]{cmp,  }\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 87 of file qsort.\+c.
+

@@ -1,0 +1,364 @@
+\hypertarget{IR__lowering_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\+I\+R\+\_\+lowering.cpp File Reference}
+\label{IR__lowering_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\+I\+R\+\_\+lowering.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\+I\+R\+\_\+lowering.\+cpp}}
+
+
+Decompose some complex gimple statements into a set of simpler operations.  
+
+
+{\ttfamily \#include \char`\"{}I\+R\+\_\+lowering.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+A\+S\+S\+E\+R\+T\+S.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+B\+A\+M\+B\+U\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}application\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}design\+\_\+flow\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}design\+\_\+flow\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}design\+\_\+flow\+\_\+step\+\_\+factory.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hash\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+target.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}math\+\_\+function.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+flow\+\_\+step.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+flow\+\_\+step\+\_\+factory.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}time\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+basic\+\_\+block.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+common.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+reindex.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for I\+R\+\_\+lowering.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd2/IR__lowering_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmult__cost}{mult\+\_\+cost}
+\begin{DoxyCompactList}\small\item\em This structure holds the \char`\"{}cost\char`\"{} of a multiply sequence. \end{DoxyCompactList}\item 
+struct \hyperlink{structalgorithm}{algorithm}
+\begin{DoxyCompactList}\small\item\em This structure records a sequence of operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{IR__lowering_8cpp_a1277459fa902b4592499dc850983b43d}{M\+U\+L\+T\+\_\+\+C\+O\+S\+T\+\_\+\+L\+E\+SS}(X,  Y)~((X).cost $<$ (Y) $\vert$$\vert$ ((X).cost == (Y) \&\& (X).latency $<$ (Y)))
+\begin{DoxyCompactList}\small\item\em This macro is used to compare a pointer to a \hyperlink{structmult__cost}{mult\+\_\+cost} against an single integer \char`\"{}cost\char`\"{} value. \end{DoxyCompactList}\item 
+\#define \hyperlink{IR__lowering_8cpp_ab211dd7877abc91837f9ac186b4f61fa}{C\+H\+E\+A\+P\+E\+R\+\_\+\+M\+U\+L\+T\+\_\+\+C\+O\+ST}(X,  Y)~((X).cost $<$ (Y).cost $\vert$$\vert$ ((X).cost == (Y).cost \&\& (X).latency $<$ (Y).latency))
+\begin{DoxyCompactList}\small\item\em This macro is used to compare two mult\+\_\+costs against each other. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4}{alg\+\_\+code} \{ \newline
+\hyperlink{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a2aacdd7b7b837e0ab4ed9ea5ce079a46}{alg\+\_\+unknown}, 
+\hyperlink{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a0c01bda18e9720789a57b9733fc1533c}{alg\+\_\+zero}, 
+\hyperlink{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4ad480374ec7406509754776a51308a163}{alg\+\_\+m}, 
+\hyperlink{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a9834e084c2a0a242ad72184624b8f513}{alg\+\_\+shift}, 
+\newline
+\hyperlink{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a01b5bb308c249c200ca97058c502616f}{alg\+\_\+add\+\_\+t\+\_\+m2}, 
+\hyperlink{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a356f3ca0baf151a8a21e71ed3d67eafc}{alg\+\_\+sub\+\_\+t\+\_\+m2}, 
+\hyperlink{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a9dd8cd3da25c474d17ad62c09e549b12}{alg\+\_\+add\+\_\+factor}, 
+\hyperlink{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a07a10625bc6ab5b0b5003c883f8823da}{alg\+\_\+sub\+\_\+factor}, 
+\newline
+\hyperlink{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4aee69958acb7470edb11cfd4aa008ca4e}{alg\+\_\+add\+\_\+t2\+\_\+m}, 
+\hyperlink{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4aeca92cbe5d08f07dff42631dd5c35819}{alg\+\_\+sub\+\_\+t2\+\_\+m}, 
+\hyperlink{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a2ed364a0baeb611a91ad9f0a7bb55584}{alg\+\_\+impossible}
+ \}\begin{DoxyCompactList}\small\item\em the code for lowering of div, mult and rem comes from G\+CC sources (expmed.\+c) \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{IR__lowering_8cpp_ac7f7d77130e3bfe1c6f8f665499ee530}{synth\+\_\+mult} (struct \hyperlink{structalgorithm}{algorithm} \&alg\+\_\+out, unsigned long long t, const struct \hyperlink{structmult__cost}{mult\+\_\+cost} \&cost\+\_\+limit, unsigned data\+\_\+bitsize, \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \&TM)
+\begin{DoxyCompactList}\small\item\em Compute and return the best algorithm for multiplying by T. \end{DoxyCompactList}\item 
+static bool \hyperlink{IR__lowering_8cpp_a594b1be809e1b42e8afbced4fed8fd88}{choose\+\_\+mult\+\_\+variant} (unsigned int data\+\_\+bitsize, long long int val, struct \hyperlink{structalgorithm}{algorithm} \&alg, enum \hyperlink{IR__lowering_8hpp_a77bda416aea7fadb7ca07415dc736441}{mult\+\_\+variant} \&variant, short int Mult\+\_\+cost, \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \&TM)
+\begin{DoxyCompactList}\small\item\em Find the cheapest way of multiplying a value of mode M\+O\+DE by V\+AL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ std\+::pair$<$ unsigned int, unsigned long long $>$, std\+::pair$<$ enum \hyperlink{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4}{alg\+\_\+code}, struct \hyperlink{structmult__cost}{mult\+\_\+cost} $>$ $>$ \hyperlink{IR__lowering_8cpp_a21b16267f0d26bf7332c116d5507c428}{alg\+\_\+hash}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Decompose some complex gimple statements into a set of simpler operations. 
+
+Matteo M. Fusi and Matteo Locatelli modifies the division by an integer constant integrating the work done in this paper\+: Florent de Dinechin, “\+Multiplication by Rational Constants” -\/ I\+E\+EE Transactions on Circuit Systems-\/\+II\+: Express Briefs, Vol. 59, NO 2, february 2012
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{IR__lowering_8cpp_ab211dd7877abc91837f9ac186b4f61fa}\label{IR__lowering_8cpp_ab211dd7877abc91837f9ac186b4f61fa}} 
+\index{I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}!C\+H\+E\+A\+P\+E\+R\+\_\+\+M\+U\+L\+T\+\_\+\+C\+O\+ST@{C\+H\+E\+A\+P\+E\+R\+\_\+\+M\+U\+L\+T\+\_\+\+C\+O\+ST}}
+\index{C\+H\+E\+A\+P\+E\+R\+\_\+\+M\+U\+L\+T\+\_\+\+C\+O\+ST@{C\+H\+E\+A\+P\+E\+R\+\_\+\+M\+U\+L\+T\+\_\+\+C\+O\+ST}!I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}}
+\subsubsection{\texorpdfstring{C\+H\+E\+A\+P\+E\+R\+\_\+\+M\+U\+L\+T\+\_\+\+C\+O\+ST}{CHEAPER\_MULT\_COST}}
+{\footnotesize\ttfamily \#define C\+H\+E\+A\+P\+E\+R\+\_\+\+M\+U\+L\+T\+\_\+\+C\+O\+ST(\begin{DoxyParamCaption}\item[{}]{X,  }\item[{}]{Y }\end{DoxyParamCaption})~((X).cost $<$ (Y).cost $\vert$$\vert$ ((X).cost == (Y).cost \&\& (X).latency $<$ (Y).latency))}
+
+
+
+This macro is used to compare two mult\+\_\+costs against each other. 
+
+The macro returns true if X is cheaper than Y. Currently, the cheaper of two mult\+\_\+costs is the one with the lower \char`\"{}cost\char`\"{}. If \char`\"{}cost\char`\"{}s are tied, the lower latency is cheaper. 
+
+Definition at line 228 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+Referenced by choose\+\_\+mult\+\_\+variant(), and synth\+\_\+mult().
+
+\mbox{\Hypertarget{IR__lowering_8cpp_a1277459fa902b4592499dc850983b43d}\label{IR__lowering_8cpp_a1277459fa902b4592499dc850983b43d}} 
+\index{I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}!M\+U\+L\+T\+\_\+\+C\+O\+S\+T\+\_\+\+L\+E\+SS@{M\+U\+L\+T\+\_\+\+C\+O\+S\+T\+\_\+\+L\+E\+SS}}
+\index{M\+U\+L\+T\+\_\+\+C\+O\+S\+T\+\_\+\+L\+E\+SS@{M\+U\+L\+T\+\_\+\+C\+O\+S\+T\+\_\+\+L\+E\+SS}!I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}}
+\subsubsection{\texorpdfstring{M\+U\+L\+T\+\_\+\+C\+O\+S\+T\+\_\+\+L\+E\+SS}{MULT\_COST\_LESS}}
+{\footnotesize\ttfamily \#define M\+U\+L\+T\+\_\+\+C\+O\+S\+T\+\_\+\+L\+E\+SS(\begin{DoxyParamCaption}\item[{}]{X,  }\item[{}]{Y }\end{DoxyParamCaption})~((X).cost $<$ (Y) $\vert$$\vert$ ((X).cost == (Y) \&\& (X).latency $<$ (Y)))}
+
+
+
+This macro is used to compare a pointer to a \hyperlink{structmult__cost}{mult\+\_\+cost} against an single integer \char`\"{}cost\char`\"{} value. 
+
+This is equivalent to the macro \hyperlink{IR__lowering_8cpp_ab211dd7877abc91837f9ac186b4f61fa}{C\+H\+E\+A\+P\+E\+R\+\_\+\+M\+U\+L\+T\+\_\+\+C\+O\+S\+T(\+X,\+Z)} where Z = \{Y,Y\}. 
+
+Definition at line 222 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+Referenced by choose\+\_\+mult\+\_\+variant().
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4}\label{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4}} 
+\index{I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}!alg\+\_\+code@{alg\+\_\+code}}
+\index{alg\+\_\+code@{alg\+\_\+code}!I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}}
+\subsubsection{\texorpdfstring{alg\+\_\+code}{alg\_code}}
+{\footnotesize\ttfamily enum \hyperlink{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4}{alg\+\_\+code}}
+
+
+
+the code for lowering of div, mult and rem comes from G\+CC sources (expmed.\+c) 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{alg\+\_\+unknown@{alg\+\_\+unknown}!I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}}\index{I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}!alg\+\_\+unknown@{alg\+\_\+unknown}}}\mbox{\Hypertarget{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a2aacdd7b7b837e0ab4ed9ea5ce079a46}\label{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a2aacdd7b7b837e0ab4ed9ea5ce079a46}} 
+alg\+\_\+unknown&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{alg\+\_\+zero@{alg\+\_\+zero}!I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}}\index{I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}!alg\+\_\+zero@{alg\+\_\+zero}}}\mbox{\Hypertarget{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a0c01bda18e9720789a57b9733fc1533c}\label{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a0c01bda18e9720789a57b9733fc1533c}} 
+alg\+\_\+zero&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{alg\+\_\+m@{alg\+\_\+m}!I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}}\index{I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}!alg\+\_\+m@{alg\+\_\+m}}}\mbox{\Hypertarget{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4ad480374ec7406509754776a51308a163}\label{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4ad480374ec7406509754776a51308a163}} 
+alg\+\_\+m&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{alg\+\_\+shift@{alg\+\_\+shift}!I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}}\index{I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}!alg\+\_\+shift@{alg\+\_\+shift}}}\mbox{\Hypertarget{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a9834e084c2a0a242ad72184624b8f513}\label{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a9834e084c2a0a242ad72184624b8f513}} 
+alg\+\_\+shift&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{alg\+\_\+add\+\_\+t\+\_\+m2@{alg\+\_\+add\+\_\+t\+\_\+m2}!I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}}\index{I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}!alg\+\_\+add\+\_\+t\+\_\+m2@{alg\+\_\+add\+\_\+t\+\_\+m2}}}\mbox{\Hypertarget{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a01b5bb308c249c200ca97058c502616f}\label{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a01b5bb308c249c200ca97058c502616f}} 
+alg\+\_\+add\+\_\+t\+\_\+m2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{alg\+\_\+sub\+\_\+t\+\_\+m2@{alg\+\_\+sub\+\_\+t\+\_\+m2}!I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}}\index{I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}!alg\+\_\+sub\+\_\+t\+\_\+m2@{alg\+\_\+sub\+\_\+t\+\_\+m2}}}\mbox{\Hypertarget{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a356f3ca0baf151a8a21e71ed3d67eafc}\label{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a356f3ca0baf151a8a21e71ed3d67eafc}} 
+alg\+\_\+sub\+\_\+t\+\_\+m2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{alg\+\_\+add\+\_\+factor@{alg\+\_\+add\+\_\+factor}!I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}}\index{I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}!alg\+\_\+add\+\_\+factor@{alg\+\_\+add\+\_\+factor}}}\mbox{\Hypertarget{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a9dd8cd3da25c474d17ad62c09e549b12}\label{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a9dd8cd3da25c474d17ad62c09e549b12}} 
+alg\+\_\+add\+\_\+factor&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{alg\+\_\+sub\+\_\+factor@{alg\+\_\+sub\+\_\+factor}!I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}}\index{I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}!alg\+\_\+sub\+\_\+factor@{alg\+\_\+sub\+\_\+factor}}}\mbox{\Hypertarget{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a07a10625bc6ab5b0b5003c883f8823da}\label{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a07a10625bc6ab5b0b5003c883f8823da}} 
+alg\+\_\+sub\+\_\+factor&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{alg\+\_\+add\+\_\+t2\+\_\+m@{alg\+\_\+add\+\_\+t2\+\_\+m}!I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}}\index{I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}!alg\+\_\+add\+\_\+t2\+\_\+m@{alg\+\_\+add\+\_\+t2\+\_\+m}}}\mbox{\Hypertarget{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4aee69958acb7470edb11cfd4aa008ca4e}\label{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4aee69958acb7470edb11cfd4aa008ca4e}} 
+alg\+\_\+add\+\_\+t2\+\_\+m&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{alg\+\_\+sub\+\_\+t2\+\_\+m@{alg\+\_\+sub\+\_\+t2\+\_\+m}!I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}}\index{I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}!alg\+\_\+sub\+\_\+t2\+\_\+m@{alg\+\_\+sub\+\_\+t2\+\_\+m}}}\mbox{\Hypertarget{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4aeca92cbe5d08f07dff42631dd5c35819}\label{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4aeca92cbe5d08f07dff42631dd5c35819}} 
+alg\+\_\+sub\+\_\+t2\+\_\+m&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{alg\+\_\+impossible@{alg\+\_\+impossible}!I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}}\index{I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}!alg\+\_\+impossible@{alg\+\_\+impossible}}}\mbox{\Hypertarget{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a2ed364a0baeb611a91ad9f0a7bb55584}\label{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4a2ed364a0baeb611a91ad9f0a7bb55584}} 
+alg\+\_\+impossible&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 157 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{IR__lowering_8cpp_a594b1be809e1b42e8afbced4fed8fd88}\label{IR__lowering_8cpp_a594b1be809e1b42e8afbced4fed8fd88}} 
+\index{I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}!choose\+\_\+mult\+\_\+variant@{choose\+\_\+mult\+\_\+variant}}
+\index{choose\+\_\+mult\+\_\+variant@{choose\+\_\+mult\+\_\+variant}!I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}}
+\subsubsection{\texorpdfstring{choose\+\_\+mult\+\_\+variant()}{choose\_mult\_variant()}}
+{\footnotesize\ttfamily static bool choose\+\_\+mult\+\_\+variant (\begin{DoxyParamCaption}\item[{unsigned int}]{data\+\_\+bitsize,  }\item[{long long int}]{val,  }\item[{struct \hyperlink{structalgorithm}{algorithm} \&}]{alg,  }\item[{enum \hyperlink{IR__lowering_8hpp_a77bda416aea7fadb7ca07415dc736441}{mult\+\_\+variant} \&}]{variant,  }\item[{short int}]{Mult\+\_\+cost,  }\item[{\hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \&}]{TM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Find the cheapest way of multiplying a value of mode M\+O\+DE by V\+AL. 
+
+Try three variations\+:
+\begin{DoxyItemize}
+\item a shift/add sequence based on V\+AL itself
+\item a shift/add sequence based on -\/\+V\+AL, followed by a negation
+\item a shift/add sequence based on V\+AL -\/ 1, followed by an addition.
+\end{DoxyItemize}
+
+Return true if the cheapest of these cost less than M\+U\+L\+T\+\_\+\+C\+O\+ST, describing the algorithm in $\ast$\+A\+LG and final fixup in $\ast$\+V\+A\+R\+I\+A\+NT. Fail quickly for impossible bounds.
+
+Ensure that Mult\+\_\+cost provides a reasonable upper bound. Any constant multiplication can be performed with less than 2 $\ast$ bits additions. 
+
+Definition at line 668 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+References add\+\_\+variant, basic\+\_\+variant, C\+H\+E\+A\+P\+E\+R\+\_\+\+M\+U\+L\+T\+\_\+\+C\+O\+ST, mult\+\_\+cost\+::cost, algorithm\+::cost, mult\+\_\+cost\+::latency, M\+U\+L\+T\+\_\+\+C\+O\+S\+T\+\_\+\+L\+E\+SS, negate\+\_\+variant, and synth\+\_\+mult().
+
+
+
+Referenced by I\+R\+\_\+lowering\+::expand\+\_\+\+M\+C().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/IR__lowering_8cpp_a594b1be809e1b42e8afbced4fed8fd88_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/IR__lowering_8cpp_a594b1be809e1b42e8afbced4fed8fd88_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{IR__lowering_8cpp_ac7f7d77130e3bfe1c6f8f665499ee530}\label{IR__lowering_8cpp_ac7f7d77130e3bfe1c6f8f665499ee530}} 
+\index{I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}!synth\+\_\+mult@{synth\+\_\+mult}}
+\index{synth\+\_\+mult@{synth\+\_\+mult}!I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}}
+\subsubsection{\texorpdfstring{synth\+\_\+mult()}{synth\_mult()}}
+{\footnotesize\ttfamily static void synth\+\_\+mult (\begin{DoxyParamCaption}\item[{struct \hyperlink{structalgorithm}{algorithm} \&}]{alg\+\_\+out,  }\item[{unsigned long long}]{t,  }\item[{const struct \hyperlink{structmult__cost}{mult\+\_\+cost} \&}]{cost\+\_\+limit,  }\item[{unsigned}]{data\+\_\+bitsize,  }\item[{\hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \&}]{TM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compute and return the best algorithm for multiplying by T. 
+
+The algorithm must cost less than cost\+\_\+limit If retval.\+cost $>$= C\+O\+S\+T\+\_\+\+L\+I\+M\+IT, no algorithm was found and all other field of the returned struct are undefined. M\+O\+DE is the machine mode of the multiplication. Indicate that no algorithm is yet found. If no algorithm is found, this value will be returned and indicate failure.
+
+t == 1 can be done in zero cost.
+
+t == 0 sometimes has a cost. If it does and it exceeds our limit, fail now.
+
+The cache tells us that it\textquotesingle{}s impossible to synthesize multiplication by T within alg\+\_\+hash\mbox{[}hash\+\_\+index\mbox{]}.cost.
+
+C\+O\+S\+T\+\_\+\+L\+I\+M\+IT is at least as restrictive as the one recorded in the hash table, in which case we have no hope of synthesizing a multiplication. Just return.
+
+If we get here, C\+O\+S\+T\+\_\+\+L\+I\+M\+IT is less restrictive than the one recorded in the hash table, so we may be able to synthesize a multiplication. Proceed as if we didn\textquotesingle{}t have the cache entry.
+
+The cached algorithm shows that this multiplication requires more cost than C\+O\+S\+T\+\_\+\+L\+I\+M\+IT. Just return. This way, we don\textquotesingle{}t clobber this cache entry with alg\+\_\+impossible but retain useful information.
+
+If we have a group of zero bits at the low-\/order part of T, try multiplying by the remaining bits and then doing a shift.
+
+See if treating O\+R\+I\+G\+\_\+T as a signed number yields a better sequence. Try this sequence only for a negative O\+R\+I\+G\+\_\+T as it would be useless for a non-\/negative O\+R\+I\+G\+\_\+T. \begin{DoxyVerb}  Shift ORIG_T as follows because a right shift of a
+\end{DoxyVerb}
+ negative-\/valued signed type is implementation defined. \begin{DoxyVerb}  The function expand_shift will choose between a shift
+\end{DoxyVerb}
+ and a sequence of additions, so the observed cost is given as M\+IN (m $\ast$ add\+\_\+cost\mbox{[}speed\mbox{]}\mbox{[}mode\mbox{]}, shift\+\_\+cost\mbox{[}speed\mbox{]}\mbox{[}mode\mbox{]}\mbox{[}m\mbox{]}).
+
+If we have an odd number, add or subtract one. \begin{DoxyVerb}If T was -1, then W will be zero after the loop.  This is another
+\end{DoxyVerb}
+ case where T ends with ...111. Handling this with (T + 1) and subtract 1 produces slightly better code and results in algorithm selection much faster than treating it like the ...0111 case below.
+
+Reject the case where t is 3. Thus we prefer addition in that case.
+
+T ends with ...111. Multiply by (T + 1) and subtract 1.
+
+T ends with ...01 or ...011. Multiply by (T -\/ 1) and add 1. \begin{DoxyVerb}We may be able to calculate a * -7, a * -15, a * -31, etc
+\end{DoxyVerb}
+ quickly with a -\/ a $\ast$ n for some appropriate constant n.
+
+Look for factors of t of the form t = q(2$\ast$$\ast$m +-\/ 1), 2 $<$= m $<$= floor(log2(t -\/ 1)). If we find such a factor, we can multiply by t using an algorithm that multiplies by q, shift the result by m and add/subtract it to itself.
+
+We search for large factors first and loop down, even if large factors are less probable than small; if we find a large factor we will find a good sequence quickly, and therefore be able to prune (by decreasing C\+O\+S\+T\+\_\+\+L\+I\+M\+IT) the search.
+
+If the target has a cheap shift-\/and-\/add instruction use that in preference to a shift insn followed by an add insn. Assume that the shift-\/and-\/add is \char`\"{}atomic\char`\"{} with a latency equal to its cost, otherwise assume that on superscalar hardware the shift may be executed concurrently with the earlier steps in the algorithm.
+
+Other factors will have been taken care of in the recursion.
+
+If the target has a cheap shift-\/and-\/subtract insn use that in preference to a shift insn followed by a sub insn. Assume that the shift-\/and-\/sub is \char`\"{}atomic\char`\"{} with a latency equal to it\textquotesingle{}s cost, otherwise assume that on superscalar hardware the shift may be executed concurrently with the earlier steps in the algorithm.
+
+Try shift-\/and-\/add (load effective address) instructions, i.\+e. do a$\ast$3, a$\ast$5, a$\ast$9.
+
+If best\+\_\+cost has not decreased, we have not found any algorithm. \begin{DoxyVerb}We failed to find an algorithm.  Record alg_impossible for
+\end{DoxyVerb}
+ this case (that is, $<$T, M\+O\+DE, C\+O\+S\+T\+\_\+\+L\+I\+M\+IT$>$) so that next time we are asked to find an algorithm for T within the same or lower C\+O\+S\+T\+\_\+\+L\+I\+M\+IT, we can immediately return to the caller.
+
+Cache the result.
+
+If we are getting a too long sequence for `struct algorithm\textquotesingle{} to record, make this search fail.
+
+Copy the algorithm from temporary space to the space at alg\+\_\+out. We avoid using structure assignment because the majority of best\+\_\+alg is normally undefined, and this is a critical function. 
+
+Definition at line 237 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+References alg\+\_\+add\+\_\+factor, alg\+\_\+add\+\_\+t2\+\_\+m, alg\+\_\+add\+\_\+t\+\_\+m2, alg\+\_\+hash, alg\+\_\+impossible, alg\+\_\+m, alg\+\_\+shift, alg\+\_\+sub\+\_\+factor, alg\+\_\+sub\+\_\+t2\+\_\+m, alg\+\_\+sub\+\_\+t\+\_\+m2, alg\+\_\+unknown, alg\+\_\+zero, C\+H\+E\+A\+P\+E\+R\+\_\+\+M\+U\+L\+T\+\_\+\+C\+O\+ST, mult\+\_\+cost\+::cost, algorithm\+::cost, exact\+\_\+log2(), floor\+\_\+log2(), mult\+\_\+cost\+::latency, algorithm\+::log, max(), min, algorithm\+::op, algorithm\+::ops, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by choose\+\_\+mult\+\_\+variant().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{d2/d25/IR__lowering_8cpp_ac7f7d77130e3bfe1c6f8f665499ee530_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d25/IR__lowering_8cpp_ac7f7d77130e3bfe1c6f8f665499ee530_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{IR__lowering_8cpp_a21b16267f0d26bf7332c116d5507c428}\label{IR__lowering_8cpp_a21b16267f0d26bf7332c116d5507c428}} 
+\index{I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}!alg\+\_\+hash@{alg\+\_\+hash}}
+\index{alg\+\_\+hash@{alg\+\_\+hash}!I\+R\+\_\+lowering.\+cpp@{I\+R\+\_\+lowering.\+cpp}}
+\subsubsection{\texorpdfstring{alg\+\_\+hash}{alg\_hash}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$std\+::pair$<$unsigned int, unsigned long long$>$, std\+::pair$<$enum \hyperlink{IR__lowering_8cpp_aaf531dce3659d448e57b2c73d1c415c4}{alg\+\_\+code}, struct \hyperlink{structmult__cost}{mult\+\_\+cost}$>$ $>$ alg\+\_\+hash\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 230 of file I\+R\+\_\+lowering.\+cpp.
+
+
+
+Referenced by synth\+\_\+mult().
+

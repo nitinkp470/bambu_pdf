@@ -1,0 +1,306 @@
+\hypertarget{classfanout__opt}{}\section{fanout\+\_\+opt Class Reference}
+\label{classfanout__opt}\index{fanout\+\_\+opt@{fanout\+\_\+opt}}
+
+
+\hyperlink{classfanout__opt}{fanout\+\_\+opt} analysis  
+
+
+
+
+{\ttfamily \#include $<$fanout\+\_\+opt.\+hpp$>$}
+
+
+
+Inheritance diagram for fanout\+\_\+opt\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{d1/dd9/classfanout__opt__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for fanout\+\_\+opt\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/deb/classfanout__opt__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfanout__opt_ad5937311d51dbb807722c91383f97fba}{fanout\+\_\+opt} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \+\_\+\+AppM, unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classfanout__opt_a312077661dabb5414397a0129bde2a2a}{$\sim$fanout\+\_\+opt} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classfanout__opt_aca7aa64720a8242be9722e2216f57344}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em perform \hyperlink{classfanout__opt}{fanout\+\_\+opt} analysis \end{DoxyCompactList}\item 
+void \hyperlink{classfanout__opt_a64ba51ab333ce9c993abcd30bca77119}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classfanout__opt_aa781d3ef037625b718dbc83764bc940f}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\item 
+bool \hyperlink{classfanout__opt_a37b7c68c5c7bd86b3e27508da2544643}{is\+\_\+dest\+\_\+relevant} (\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} t, bool is\+\_\+phi)
+\begin{DoxyCompactList}\small\item\em return true in case the use is relevant for the fanout optimization \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} \hyperlink{classfanout__opt_a33865012bc3aa6c23d83e553bc153cac}{schedule}
+\begin{DoxyCompactList}\small\item\em The scheduling solution. \end{DoxyCompactList}\item 
+const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \hyperlink{classfanout__opt_a264ac8a1b00265c3bdae24a20fd319ba}{TM}
+\begin{DoxyCompactList}\small\item\em tree manager \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classfanout__opt}{fanout\+\_\+opt} analysis 
+
+Definition at line 62 of file fanout\+\_\+opt.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfanout__opt_ad5937311d51dbb807722c91383f97fba}\label{classfanout__opt_ad5937311d51dbb807722c91383f97fba}} 
+\index{fanout\+\_\+opt@{fanout\+\_\+opt}!fanout\+\_\+opt@{fanout\+\_\+opt}}
+\index{fanout\+\_\+opt@{fanout\+\_\+opt}!fanout\+\_\+opt@{fanout\+\_\+opt}}
+\subsubsection{\texorpdfstring{fanout\+\_\+opt()}{fanout\_opt()}}
+{\footnotesize\ttfamily fanout\+\_\+opt\+::fanout\+\_\+opt (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters,  }\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{unsigned int}]{\+\_\+function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Header include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+Param} & is the set of the parameters \\
+\hline
+{\em \+\_\+\+AppM} & is the application manager \\
+\hline
+{\em function\+\_\+id} & is the identifier of the function \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager\\
+\hline
+\end{DoxyParams}
+. include boost include behavior includes H\+LS include S\+TD include 
+
+Definition at line 82 of file fanout\+\_\+opt.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$fanout\+\_\+opt().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/df3/classfanout__opt_ad5937311d51dbb807722c91383f97fba_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfanout__opt_a312077661dabb5414397a0129bde2a2a}\label{classfanout__opt_a312077661dabb5414397a0129bde2a2a}} 
+\index{fanout\+\_\+opt@{fanout\+\_\+opt}!````~fanout\+\_\+opt@{$\sim$fanout\+\_\+opt}}
+\index{````~fanout\+\_\+opt@{$\sim$fanout\+\_\+opt}!fanout\+\_\+opt@{fanout\+\_\+opt}}
+\subsubsection{\texorpdfstring{$\sim$fanout\+\_\+opt()}{~fanout\_opt()}}
+{\footnotesize\ttfamily fanout\+\_\+opt\+::$\sim$fanout\+\_\+opt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by fanout\+\_\+opt().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/df3/classfanout__opt_a312077661dabb5414397a0129bde2a2a_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classfanout__opt_aa781d3ef037625b718dbc83764bc940f}\label{classfanout__opt_aa781d3ef037625b718dbc83764bc940f}} 
+\index{fanout\+\_\+opt@{fanout\+\_\+opt}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!fanout\+\_\+opt@{fanout\+\_\+opt}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ fanout\+\_\+opt\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 90 of file fanout\+\_\+opt.\+cpp.
+
+
+
+References A\+B\+O\+R\+T\+ED, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, E\+M\+P\+TY, Design\+Flow\+Step\+::\+Get\+Status(), Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, N\+O\+N\+E\+X\+I\+S\+T\+E\+NT, Design\+Flow\+Step\+::parameters, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, S\+K\+I\+P\+P\+ED, S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, U\+N\+C\+H\+A\+N\+G\+ED, U\+N\+E\+X\+E\+C\+U\+T\+ED, and U\+N\+N\+E\+C\+E\+S\+S\+A\+RY.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/df3/classfanout__opt_aa781d3ef037625b718dbc83764bc940f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfanout__opt_a64ba51ab333ce9c993abcd30bca77119}\label{classfanout__opt_a64ba51ab333ce9c993abcd30bca77119}} 
+\index{fanout\+\_\+opt@{fanout\+\_\+opt}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!fanout\+\_\+opt@{fanout\+\_\+opt}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void fanout\+\_\+opt\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec) 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 270 of file fanout\+\_\+opt.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, and schedule.
+
+\mbox{\Hypertarget{classfanout__opt_aca7aa64720a8242be9722e2216f57344}\label{classfanout__opt_aca7aa64720a8242be9722e2216f57344}} 
+\index{fanout\+\_\+opt@{fanout\+\_\+opt}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!fanout\+\_\+opt@{fanout\+\_\+opt}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} fanout\+\_\+opt\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+perform \hyperlink{classfanout__opt}{fanout\+\_\+opt} analysis 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+fanout duplication may prevent openmp simd detection
+
+Copy the list of def edges 
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 149 of file fanout\+\_\+opt.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+helper\+::get\+\_\+type\+\_\+node(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, is\+\_\+dest\+\_\+relevant(), Design\+Flow\+Step\+::parameters, phi, tree\+\_\+manager\+::\+Replace\+Tree\+Node(), schedule, S\+K\+I\+P\+P\+ED, sl, S\+TR, S\+U\+C\+C\+E\+SS, TM, To\+String(), tree\+\_\+node\+::\+To\+String(), U\+N\+C\+H\+A\+N\+G\+ED, and Schedule\+::\+Update\+Time().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/df3/classfanout__opt_aca7aa64720a8242be9722e2216f57344_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfanout__opt_a37b7c68c5c7bd86b3e27508da2544643}\label{classfanout__opt_a37b7c68c5c7bd86b3e27508da2544643}} 
+\index{fanout\+\_\+opt@{fanout\+\_\+opt}!is\+\_\+dest\+\_\+relevant@{is\+\_\+dest\+\_\+relevant}}
+\index{is\+\_\+dest\+\_\+relevant@{is\+\_\+dest\+\_\+relevant}!fanout\+\_\+opt@{fanout\+\_\+opt}}
+\subsubsection{\texorpdfstring{is\+\_\+dest\+\_\+relevant()}{is\_dest\_relevant()}}
+{\footnotesize\ttfamily bool fanout\+\_\+opt\+::is\+\_\+dest\+\_\+relevant (\begin{DoxyParamCaption}\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{t,  }\item[{bool}]{is\+\_\+phi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+return true in case the use is relevant for the fanout optimization 
+
+
+
+Definition at line 136 of file fanout\+\_\+opt.\+cpp.
+
+
+
+References tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+O\+DE, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{dc/df3/classfanout__opt_a37b7c68c5c7bd86b3e27508da2544643_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{dc/df3/classfanout__opt_a37b7c68c5c7bd86b3e27508da2544643_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classfanout__opt_a33865012bc3aa6c23d83e553bc153cac}\label{classfanout__opt_a33865012bc3aa6c23d83e553bc153cac}} 
+\index{fanout\+\_\+opt@{fanout\+\_\+opt}!schedule@{schedule}}
+\index{schedule@{schedule}!fanout\+\_\+opt@{fanout\+\_\+opt}}
+\subsubsection{\texorpdfstring{schedule}{schedule}}
+{\footnotesize\ttfamily \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} fanout\+\_\+opt\+::schedule\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The scheduling solution. 
+
+
+
+Definition at line 66 of file fanout\+\_\+opt.\+hpp.
+
+
+
+Referenced by Initialize(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classfanout__opt_a264ac8a1b00265c3bdae24a20fd319ba}\label{classfanout__opt_a264ac8a1b00265c3bdae24a20fd319ba}} 
+\index{fanout\+\_\+opt@{fanout\+\_\+opt}!TM@{TM}}
+\index{TM@{TM}!fanout\+\_\+opt@{fanout\+\_\+opt}}
+\subsubsection{\texorpdfstring{TM}{TM}}
+{\footnotesize\ttfamily const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} fanout\+\_\+opt\+::\+TM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+tree manager 
+
+
+
+Definition at line 69 of file fanout\+\_\+opt.\+hpp.
+
+
+
+Referenced by Internal\+Exec().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{fanout__opt_8hpp}{fanout\+\_\+opt.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{fanout__opt_8cpp}{fanout\+\_\+opt.\+cpp}\end{DoxyCompactItemize}

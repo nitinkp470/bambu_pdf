@@ -1,0 +1,384 @@
+\hypertarget{classTTT__maximal__weighted__clique}{}\section{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique$<$ Graph $>$ Class Template Reference}
+\label{classTTT__maximal__weighted__clique}\index{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique$<$ Graph $>$@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique$<$ Graph $>$}}
+
+
+Class computing the maximal weighted clique from a generic graph.  
+
+
+
+
+{\ttfamily \#include $<$clique\+\_\+covering.\+hpp$>$}
+
+
+
+Collaboration diagram for T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique$<$ Graph $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dfd/classTTT__maximal__weighted__clique__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} $>$ \hyperlink{classTTT__maximal__weighted__clique_a4c64ff7e98d014725a49619e95dff252}{get\+\_\+weighted\+\_\+maximal\+\_\+cliques} (const \hyperlink{structGraph}{Graph} \&g, int upper\+\_\+bound)
+\begin{DoxyCompactList}\small\item\em return the weighted maximal clique of a graph g \end{DoxyCompactList}\item 
+int \hyperlink{classTTT__maximal__weighted__clique_a3ac9a4a7d8f4fd5adfe0708ec06a68c3}{get\+\_\+last\+\_\+\+W\+\_\+\+Q\+\_\+max} ()
+\begin{DoxyCompactList}\small\item\em return the last weight of the maximum clique \end{DoxyCompactList}\item 
+\hyperlink{classTTT__maximal__weighted__clique_ab941eeae406ba82975e33ff856924698}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique} (std\+::map$<$ \hyperlink{clique__covering__graph_8hpp_a9cb45047ea8c5ed95a8cfa90494345aa}{C\+\_\+vertex}, std\+::string $>$ \&\+\_\+names)
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::\hyperlink{classTTT__maximal__weighted__clique_ae7392a350cc8858253fe7908320daccd}{vertex\+\_\+iterator} \hyperlink{classTTT__maximal__weighted__clique_ae7392a350cc8858253fe7908320daccd}{vertex\+\_\+iterator}
+\begin{DoxyCompactList}\small\item\em vertex iterator \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::vertex\+\_\+descriptor \hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex}
+\begin{DoxyCompactList}\small\item\em vertex object \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::\hyperlink{classTTT__maximal__weighted__clique_ac24b6579a2e4fbd1d1531b782c0bff89}{adjacency\+\_\+iterator} \hyperlink{classTTT__maximal__weighted__clique_ac24b6579a2e4fbd1d1531b782c0bff89}{adjacency\+\_\+iterator}
+\begin{DoxyCompactList}\small\item\em adjacency iterator \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::out\+\_\+edge\+\_\+iterator \hyperlink{classTTT__maximal__weighted__clique_ae1baef433523ffa0a91eecbee2b2edfc}{edge\+\_\+iterator}
+\begin{DoxyCompactList}\small\item\em out edge iterator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} \hyperlink{classTTT__maximal__weighted__clique_a16578cc181d38985609a864fd37a155f}{get\+\_\+max\+\_\+weighted\+\_\+adiacent\+\_\+intersection} (const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ \hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} $>$ \&subg, const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ \hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} $>$ \&cand, const \hyperlink{structGraph}{Graph} \&g)
+\begin{DoxyCompactList}\small\item\em return the vertex of subg with the maximum intersection with cand \end{DoxyCompactList}\item 
+\hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} \hyperlink{classTTT__maximal__weighted__clique_adadf04df62faabaa24645aaf3516c31a}{get\+\_\+max\+\_\+weight\+\_\+vertex} (\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ \hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} $>$ \&ext, const \hyperlink{structGraph}{Graph} \&g)
+\begin{DoxyCompactList}\small\item\em return the vertex of ext having the maximum edge weight with respect to the graph g \end{DoxyCompactList}\item 
+int \hyperlink{classTTT__maximal__weighted__clique_a60a5925a276d2ff69e125c0754fb3127}{compute\+\_\+delta\+\_\+weight} (\hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} q\+\_\+vertex, \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ \hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} $>$ Q\+\_\+set, const \hyperlink{structGraph}{Graph} \&g)
+\begin{DoxyCompactList}\small\item\em compute the delta of the weight by adding q\+\_\+vertex to the clique \end{DoxyCompactList}\item 
+void \hyperlink{classTTT__maximal__weighted__clique_a2fbe56bc02d8801552df3a0e161154be}{expand} (\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ \hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} $>$ \&subg, \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ \hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} $>$ \&cand, const \hyperlink{structGraph}{Graph} \&g, int upper\+\_\+bound)
+\begin{DoxyCompactList}\small\item\em recursive procedure expand defined in first cited paper \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ \hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} $>$ \hyperlink{classTTT__maximal__weighted__clique_a0aa8da5eb10ff394b9b3d712cedbc09e}{Q}
+\begin{DoxyCompactList}\small\item\em set of vertices of the current clique \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} $>$ \hyperlink{classTTT__maximal__weighted__clique_a0c6de9332be4c12cd4c669dbfe3e2011}{Q\+\_\+max}
+\begin{DoxyCompactList}\small\item\em set of vertices of the maximum clique found so far \end{DoxyCompactList}\item 
+int \hyperlink{classTTT__maximal__weighted__clique_aff8ee11dcab917ea5c3b219f1fd4bc03}{W\+\_\+Q}
+\begin{DoxyCompactList}\small\item\em weight of Q \end{DoxyCompactList}\item 
+int \hyperlink{classTTT__maximal__weighted__clique_a200b7ecc6f47b87e5ad2b838d4b2f1f7}{W\+\_\+\+Q\+\_\+max}
+\begin{DoxyCompactList}\small\item\em weight of Q\+\_\+max \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{clique__covering__graph_8hpp_a9cb45047ea8c5ed95a8cfa90494345aa}{C\+\_\+vertex}, std\+::string $>$ \& \hyperlink{classTTT__maximal__weighted__clique_ac45f3ecc0934fd36c67c8bccafeff3d0}{names}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Graph$>$\newline
+class T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique$<$ Graph $>$}
+
+Class computing the maximal weighted clique from a generic graph. 
+
+Definition at line 323 of file clique\+\_\+covering.\+hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classTTT__maximal__weighted__clique_ac24b6579a2e4fbd1d1531b782c0bff89}\label{classTTT__maximal__weighted__clique_ac24b6579a2e4fbd1d1531b782c0bff89}} 
+\index{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}!adjacency\+\_\+iterator@{adjacency\+\_\+iterator}}
+\index{adjacency\+\_\+iterator@{adjacency\+\_\+iterator}!T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}}
+\subsubsection{\texorpdfstring{adjacency\+\_\+iterator}{adjacency\_iterator}}
+{\footnotesize\ttfamily template$<$typename Graph$>$ \\
+typedef boost\+::graph\+\_\+traits$<$\hyperlink{structGraph}{Graph}$>$\+::\hyperlink{classTTT__maximal__weighted__clique_ac24b6579a2e4fbd1d1531b782c0bff89}{adjacency\+\_\+iterator} \hyperlink{classTTT__maximal__weighted__clique}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}$<$ \hyperlink{structGraph}{Graph} $>$\+::\hyperlink{classTTT__maximal__weighted__clique_ac24b6579a2e4fbd1d1531b782c0bff89}{adjacency\+\_\+iterator}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+adjacency iterator 
+
+
+
+Definition at line 330 of file clique\+\_\+covering.\+hpp.
+
+\mbox{\Hypertarget{classTTT__maximal__weighted__clique_ae1baef433523ffa0a91eecbee2b2edfc}\label{classTTT__maximal__weighted__clique_ae1baef433523ffa0a91eecbee2b2edfc}} 
+\index{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}!edge\+\_\+iterator@{edge\+\_\+iterator}}
+\index{edge\+\_\+iterator@{edge\+\_\+iterator}!T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}}
+\subsubsection{\texorpdfstring{edge\+\_\+iterator}{edge\_iterator}}
+{\footnotesize\ttfamily template$<$typename Graph$>$ \\
+typedef boost\+::graph\+\_\+traits$<$\hyperlink{structGraph}{Graph}$>$\+::out\+\_\+edge\+\_\+iterator \hyperlink{classTTT__maximal__weighted__clique}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}$<$ \hyperlink{structGraph}{Graph} $>$\+::\hyperlink{classTTT__maximal__weighted__clique_ae1baef433523ffa0a91eecbee2b2edfc}{edge\+\_\+iterator}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+out edge iterator 
+
+
+
+Definition at line 332 of file clique\+\_\+covering.\+hpp.
+
+\mbox{\Hypertarget{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}\label{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}} 
+\index{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}!vertex@{vertex}}
+\index{vertex@{vertex}!T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}}
+\subsubsection{\texorpdfstring{vertex}{vertex}}
+{\footnotesize\ttfamily template$<$typename Graph$>$ \\
+typedef boost\+::graph\+\_\+traits$<$\hyperlink{structGraph}{Graph}$>$\+::vertex\+\_\+descriptor \hyperlink{classTTT__maximal__weighted__clique}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}$<$ \hyperlink{structGraph}{Graph} $>$\+::\hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+vertex object 
+
+
+
+Definition at line 328 of file clique\+\_\+covering.\+hpp.
+
+\mbox{\Hypertarget{classTTT__maximal__weighted__clique_ae7392a350cc8858253fe7908320daccd}\label{classTTT__maximal__weighted__clique_ae7392a350cc8858253fe7908320daccd}} 
+\index{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}!vertex\+\_\+iterator@{vertex\+\_\+iterator}}
+\index{vertex\+\_\+iterator@{vertex\+\_\+iterator}!T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}}
+\subsubsection{\texorpdfstring{vertex\+\_\+iterator}{vertex\_iterator}}
+{\footnotesize\ttfamily template$<$typename Graph$>$ \\
+typedef boost\+::graph\+\_\+traits$<$\hyperlink{structGraph}{Graph}$>$\+::\hyperlink{classTTT__maximal__weighted__clique_ae7392a350cc8858253fe7908320daccd}{vertex\+\_\+iterator} \hyperlink{classTTT__maximal__weighted__clique}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}$<$ \hyperlink{structGraph}{Graph} $>$\+::\hyperlink{classTTT__maximal__weighted__clique_ae7392a350cc8858253fe7908320daccd}{vertex\+\_\+iterator}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+vertex iterator 
+
+
+
+Definition at line 326 of file clique\+\_\+covering.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTTT__maximal__weighted__clique_ab941eeae406ba82975e33ff856924698}\label{classTTT__maximal__weighted__clique_ab941eeae406ba82975e33ff856924698}} 
+\index{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}!T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}}
+\index{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}!T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}}
+\subsubsection{\texorpdfstring{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique()}{TTT\_maximal\_weighted\_clique()}}
+{\footnotesize\ttfamily template$<$typename Graph$>$ \\
+\hyperlink{classTTT__maximal__weighted__clique}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}$<$ \hyperlink{structGraph}{Graph} $>$\+::\hyperlink{classTTT__maximal__weighted__clique}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique} (\begin{DoxyParamCaption}\item[{std\+::map$<$ \hyperlink{clique__covering__graph_8hpp_a9cb45047ea8c5ed95a8cfa90494345aa}{C\+\_\+vertex}, std\+::string $>$ \&}]{\+\_\+names }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Definition at line 490 of file clique\+\_\+covering.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTTT__maximal__weighted__clique_a60a5925a276d2ff69e125c0754fb3127}\label{classTTT__maximal__weighted__clique_a60a5925a276d2ff69e125c0754fb3127}} 
+\index{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}!compute\+\_\+delta\+\_\+weight@{compute\+\_\+delta\+\_\+weight}}
+\index{compute\+\_\+delta\+\_\+weight@{compute\+\_\+delta\+\_\+weight}!T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}}
+\subsubsection{\texorpdfstring{compute\+\_\+delta\+\_\+weight()}{compute\_delta\_weight()}}
+{\footnotesize\ttfamily template$<$typename Graph$>$ \\
+int \hyperlink{classTTT__maximal__weighted__clique}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}$<$ \hyperlink{structGraph}{Graph} $>$\+::compute\+\_\+delta\+\_\+weight (\begin{DoxyParamCaption}\item[{\hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex}}]{q\+\_\+vertex,  }\item[{\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ \hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} $>$}]{Q\+\_\+set,  }\item[{const \hyperlink{structGraph}{Graph} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+compute the delta of the weight by adding q\+\_\+vertex to the clique 
+
+
+
+Definition at line 399 of file clique\+\_\+covering.\+hpp.
+
+
+
+References result.
+
+\mbox{\Hypertarget{classTTT__maximal__weighted__clique_a2fbe56bc02d8801552df3a0e161154be}\label{classTTT__maximal__weighted__clique_a2fbe56bc02d8801552df3a0e161154be}} 
+\index{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}!expand@{expand}}
+\index{expand@{expand}!T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}}
+\subsubsection{\texorpdfstring{expand()}{expand()}}
+{\footnotesize\ttfamily template$<$typename Graph$>$ \\
+void \hyperlink{classTTT__maximal__weighted__clique}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}$<$ \hyperlink{structGraph}{Graph} $>$\+::expand (\begin{DoxyParamCaption}\item[{\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ \hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} $>$ \&}]{subg,  }\item[{\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ \hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} $>$ \&}]{cand,  }\item[{const \hyperlink{structGraph}{Graph} \&}]{g,  }\item[{int}]{upper\+\_\+bound }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+recursive procedure expand defined in first cited paper 
+
+get the vertex in subg with the maximum of adjacent vertices in cand
+
+get adjacent vertices of u
+
+set of vertices adjacent to u
+
+compute E\+X\+T\+\_\+u = C\+A\+ND -\/ gamma\+\_\+u
+
+compute delta\+\_\+weight 
+
+Definition at line 411 of file clique\+\_\+covering.\+hpp.
+
+
+
+References unordered\+\_\+set\+\_\+difference(), and unordered\+\_\+set\+\_\+intersection().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d1e/classTTT__maximal__weighted__clique_a2fbe56bc02d8801552df3a0e161154be_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTTT__maximal__weighted__clique_a3ac9a4a7d8f4fd5adfe0708ec06a68c3}\label{classTTT__maximal__weighted__clique_a3ac9a4a7d8f4fd5adfe0708ec06a68c3}} 
+\index{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}!get\+\_\+last\+\_\+\+W\+\_\+\+Q\+\_\+max@{get\+\_\+last\+\_\+\+W\+\_\+\+Q\+\_\+max}}
+\index{get\+\_\+last\+\_\+\+W\+\_\+\+Q\+\_\+max@{get\+\_\+last\+\_\+\+W\+\_\+\+Q\+\_\+max}!T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}}
+\subsubsection{\texorpdfstring{get\+\_\+last\+\_\+\+W\+\_\+\+Q\+\_\+max()}{get\_last\_W\_Q\_max()}}
+{\footnotesize\ttfamily template$<$typename Graph$>$ \\
+int \hyperlink{classTTT__maximal__weighted__clique}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}$<$ \hyperlink{structGraph}{Graph} $>$\+::get\+\_\+last\+\_\+\+W\+\_\+\+Q\+\_\+max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the last weight of the maximum clique 
+
+
+
+Definition at line 486 of file clique\+\_\+covering.\+hpp.
+
+
+
+Referenced by T\+T\+T\+\_\+based\+\_\+clique\+\_\+covering$<$ vertex\+\_\+type $>$\+::do\+\_\+clique\+\_\+covering().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d1e/classTTT__maximal__weighted__clique_a3ac9a4a7d8f4fd5adfe0708ec06a68c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTTT__maximal__weighted__clique_adadf04df62faabaa24645aaf3516c31a}\label{classTTT__maximal__weighted__clique_adadf04df62faabaa24645aaf3516c31a}} 
+\index{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}!get\+\_\+max\+\_\+weight\+\_\+vertex@{get\+\_\+max\+\_\+weight\+\_\+vertex}}
+\index{get\+\_\+max\+\_\+weight\+\_\+vertex@{get\+\_\+max\+\_\+weight\+\_\+vertex}!T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}}
+\subsubsection{\texorpdfstring{get\+\_\+max\+\_\+weight\+\_\+vertex()}{get\_max\_weight\_vertex()}}
+{\footnotesize\ttfamily template$<$typename Graph$>$ \\
+\hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} \hyperlink{classTTT__maximal__weighted__clique}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}$<$ \hyperlink{structGraph}{Graph} $>$\+::get\+\_\+max\+\_\+weight\+\_\+vertex (\begin{DoxyParamCaption}\item[{\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ \hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} $>$ \&}]{ext,  }\item[{const \hyperlink{structGraph}{Graph} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+return the vertex of ext having the maximum edge weight with respect to the graph g 
+
+
+
+Definition at line 373 of file clique\+\_\+covering.\+hpp.
+
+
+
+References result, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+\mbox{\Hypertarget{classTTT__maximal__weighted__clique_a16578cc181d38985609a864fd37a155f}\label{classTTT__maximal__weighted__clique_a16578cc181d38985609a864fd37a155f}} 
+\index{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}!get\+\_\+max\+\_\+weighted\+\_\+adiacent\+\_\+intersection@{get\+\_\+max\+\_\+weighted\+\_\+adiacent\+\_\+intersection}}
+\index{get\+\_\+max\+\_\+weighted\+\_\+adiacent\+\_\+intersection@{get\+\_\+max\+\_\+weighted\+\_\+adiacent\+\_\+intersection}!T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}}
+\subsubsection{\texorpdfstring{get\+\_\+max\+\_\+weighted\+\_\+adiacent\+\_\+intersection()}{get\_max\_weighted\_adiacent\_intersection()}}
+{\footnotesize\ttfamily template$<$typename Graph$>$ \\
+\hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} \hyperlink{classTTT__maximal__weighted__clique}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}$<$ \hyperlink{structGraph}{Graph} $>$\+::get\+\_\+max\+\_\+weighted\+\_\+adiacent\+\_\+intersection (\begin{DoxyParamCaption}\item[{const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ \hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} $>$ \&}]{subg,  }\item[{const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ \hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex} $>$ \&}]{cand,  }\item[{const \hyperlink{structGraph}{Graph} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+return the vertex of subg with the maximum intersection with cand 
+
+
+
+Definition at line 346 of file clique\+\_\+covering.\+hpp.
+
+
+
+References result, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+\mbox{\Hypertarget{classTTT__maximal__weighted__clique_a4c64ff7e98d014725a49619e95dff252}\label{classTTT__maximal__weighted__clique_a4c64ff7e98d014725a49619e95dff252}} 
+\index{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}!get\+\_\+weighted\+\_\+maximal\+\_\+cliques@{get\+\_\+weighted\+\_\+maximal\+\_\+cliques}}
+\index{get\+\_\+weighted\+\_\+maximal\+\_\+cliques@{get\+\_\+weighted\+\_\+maximal\+\_\+cliques}!T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}}
+\subsubsection{\texorpdfstring{get\+\_\+weighted\+\_\+maximal\+\_\+cliques()}{get\_weighted\_maximal\_cliques()}}
+{\footnotesize\ttfamily template$<$typename Graph$>$ \\
+const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex}$>$ \hyperlink{classTTT__maximal__weighted__clique}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}$<$ \hyperlink{structGraph}{Graph} $>$\+::get\+\_\+weighted\+\_\+maximal\+\_\+cliques (\begin{DoxyParamCaption}\item[{const \hyperlink{structGraph}{Graph} \&}]{g,  }\item[{int}]{upper\+\_\+bound }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the weighted maximal clique of a graph g 
+
+
+
+Definition at line 469 of file clique\+\_\+covering.\+hpp.
+
+
+
+References min.
+
+
+
+Referenced by T\+T\+T\+\_\+based\+\_\+clique\+\_\+covering$<$ vertex\+\_\+type $>$\+::do\+\_\+clique\+\_\+covering().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d1e/classTTT__maximal__weighted__clique_a4c64ff7e98d014725a49619e95dff252_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classTTT__maximal__weighted__clique_ac45f3ecc0934fd36c67c8bccafeff3d0}\label{classTTT__maximal__weighted__clique_ac45f3ecc0934fd36c67c8bccafeff3d0}} 
+\index{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}!names@{names}}
+\index{names@{names}!T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}}
+\subsubsection{\texorpdfstring{names}{names}}
+{\footnotesize\ttfamily template$<$typename Graph$>$ \\
+std\+::map$<$\hyperlink{clique__covering__graph_8hpp_a9cb45047ea8c5ed95a8cfa90494345aa}{C\+\_\+vertex}, std\+::string$>$\& \hyperlink{classTTT__maximal__weighted__clique}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}$<$ \hyperlink{structGraph}{Graph} $>$\+::names\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 343 of file clique\+\_\+covering.\+hpp.
+
+\mbox{\Hypertarget{classTTT__maximal__weighted__clique_a0aa8da5eb10ff394b9b3d712cedbc09e}\label{classTTT__maximal__weighted__clique_a0aa8da5eb10ff394b9b3d712cedbc09e}} 
+\index{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}!Q@{Q}}
+\index{Q@{Q}!T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}}
+\subsubsection{\texorpdfstring{Q}{Q}}
+{\footnotesize\ttfamily template$<$typename Graph$>$ \\
+\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$\hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex}$>$ \hyperlink{classTTT__maximal__weighted__clique}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}$<$ \hyperlink{structGraph}{Graph} $>$\+::Q\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set of vertices of the current clique 
+
+
+
+Definition at line 335 of file clique\+\_\+covering.\+hpp.
+
+\mbox{\Hypertarget{classTTT__maximal__weighted__clique_a0c6de9332be4c12cd4c669dbfe3e2011}\label{classTTT__maximal__weighted__clique_a0c6de9332be4c12cd4c669dbfe3e2011}} 
+\index{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}!Q\+\_\+max@{Q\+\_\+max}}
+\index{Q\+\_\+max@{Q\+\_\+max}!T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}}
+\subsubsection{\texorpdfstring{Q\+\_\+max}{Q\_max}}
+{\footnotesize\ttfamily template$<$typename Graph$>$ \\
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{classTTT__maximal__weighted__clique_ac6a30ba8fb726c9c83eafe9dc451a799}{vertex}$>$ \hyperlink{classTTT__maximal__weighted__clique}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}$<$ \hyperlink{structGraph}{Graph} $>$\+::Q\+\_\+max\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set of vertices of the maximum clique found so far 
+
+
+
+Definition at line 337 of file clique\+\_\+covering.\+hpp.
+
+\mbox{\Hypertarget{classTTT__maximal__weighted__clique_aff8ee11dcab917ea5c3b219f1fd4bc03}\label{classTTT__maximal__weighted__clique_aff8ee11dcab917ea5c3b219f1fd4bc03}} 
+\index{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}!W\+\_\+Q@{W\+\_\+Q}}
+\index{W\+\_\+Q@{W\+\_\+Q}!T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}}
+\subsubsection{\texorpdfstring{W\+\_\+Q}{W\_Q}}
+{\footnotesize\ttfamily template$<$typename Graph$>$ \\
+int \hyperlink{classTTT__maximal__weighted__clique}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}$<$ \hyperlink{structGraph}{Graph} $>$\+::W\+\_\+Q\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+weight of Q 
+
+
+
+Definition at line 339 of file clique\+\_\+covering.\+hpp.
+
+\mbox{\Hypertarget{classTTT__maximal__weighted__clique_a200b7ecc6f47b87e5ad2b838d4b2f1f7}\label{classTTT__maximal__weighted__clique_a200b7ecc6f47b87e5ad2b838d4b2f1f7}} 
+\index{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}!W\+\_\+\+Q\+\_\+max@{W\+\_\+\+Q\+\_\+max}}
+\index{W\+\_\+\+Q\+\_\+max@{W\+\_\+\+Q\+\_\+max}!T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique@{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}}
+\subsubsection{\texorpdfstring{W\+\_\+\+Q\+\_\+max}{W\_Q\_max}}
+{\footnotesize\ttfamily template$<$typename Graph$>$ \\
+int \hyperlink{classTTT__maximal__weighted__clique}{T\+T\+T\+\_\+maximal\+\_\+weighted\+\_\+clique}$<$ \hyperlink{structGraph}{Graph} $>$\+::W\+\_\+\+Q\+\_\+max\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+weight of Q\+\_\+max 
+
+
+
+Definition at line 341 of file clique\+\_\+covering.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/algorithms/clique\+\_\+covering/\hyperlink{clique__covering_8hpp}{clique\+\_\+covering.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,2002 @@
+\hypertarget{BambuParameter_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+Bambu\+Parameter.cpp File Reference}
+\label{BambuParameter_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+Bambu\+Parameter.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+Bambu\+Parameter.\+cpp}}
+
+
+This file contains the implementation of some methods for parameter parsing in Bambu tool.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+A\+L\+T\+E\+R\+A.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+B\+E\+A\+G\+L\+E.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+C\+O\+I\+N\+\_\+\+O\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+C\+U\+D\+D.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+F\+L\+O\+P\+O\+C\+O.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+G\+L\+P\+K.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+H\+O\+S\+T\+\_\+\+P\+R\+O\+F\+I\+L\+I\+N\+G\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G4\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G4\+\_\+\+M32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G4\+\_\+\+M64.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G4\+\_\+\+M\+X32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G5\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G5\+\_\+\+M32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G5\+\_\+\+M64.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G5\+\_\+\+M\+X32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G6\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G6\+\_\+\+M32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G6\+\_\+\+M64.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G6\+\_\+\+M\+X32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G7\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G7\+\_\+\+M32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G7\+\_\+\+M64.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G7\+\_\+\+M\+X32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C45\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C46\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C47\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C47\+\_\+\+M32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C47\+\_\+\+M64.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C47\+\_\+\+M\+X32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C48\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C48\+\_\+\+M32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C48\+\_\+\+M64.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C48\+\_\+\+M\+X32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C49\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C49\+\_\+\+M32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C49\+\_\+\+M64.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C49\+\_\+\+M\+X32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C5\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C5\+\_\+\+M32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C5\+\_\+\+M64.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C5\+\_\+\+M\+X32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C6\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C6\+\_\+\+M32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C6\+\_\+\+M64.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C6\+\_\+\+M\+X32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C7\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C7\+\_\+\+M32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C7\+\_\+\+M64.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C7\+\_\+\+M\+X32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C8\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C8\+\_\+\+M32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C8\+\_\+\+M64.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C8\+\_\+\+M\+X32.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I\+C\+A\+R\+U\+S.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I\+L\+P\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+L\+A\+T\+T\+I\+C\+E.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+R\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+L\+P\+\_\+\+S\+O\+L\+V\+E.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+M\+E\+N\+T\+O\+R\+\_\+\+V\+I\+S\+U\+A\+L\+I\+Z\+E\+R\+\_\+\+E\+X\+E.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+M\+O\+D\+E\+L\+S\+I\+M.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+V\+C\+D\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+V\+E\+R\+I\+L\+A\+T\+O\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+X\+I\+L\+I\+N\+X.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+V\+I\+V\+A\+D\+O.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+P\+A\+N\+D\+A\+\_\+\+D\+A\+T\+A\+\_\+\+I\+N\+S\+T\+A\+L\+L\+D\+I\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+P\+A\+N\+D\+A\+\_\+\+L\+I\+B\+\_\+\+I\+N\+S\+T\+A\+L\+L\+D\+I\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+S\+K\+I\+P\+\_\+\+W\+A\+R\+N\+I\+N\+G\+\_\+\+S\+E\+C\+T\+I\+O\+N\+S.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}clique\+\_\+covering.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}allocation\+\_\+constants.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constants.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cdfc\+\_\+module\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}evaluation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}memory\+\_\+allocation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}parametric\+\_\+list\+\_\+based.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Bambu\+Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}chaining.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}datapath\+\_\+creator.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constant\+\_\+strings.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$iosfwd$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}language\+\_\+writer.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}parse\+\_\+technology.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}target\+\_\+device.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cpu\+\_\+time.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}file\+I\+O.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}treegcc\+\_\+constants.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utility.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/filesystem.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/lexical\+\_\+cast.\+hpp$>$}\newline
+{\ttfamily \#include $<$getopt.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}gcc\+\_\+wrapper.\+hpp\char`\"{}}\newline
+Include dependency graph for Bambu\+Parameter.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/ddf/BambuParameter_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a864e8151a88c65f974160b30b38f4fa9}{O\+P\+T\+\_\+\+A\+C\+C\+E\+P\+T\+\_\+\+N\+O\+N\+Z\+E\+R\+O\+\_\+\+R\+E\+T\+U\+RN}~256
+\begin{DoxyCompactList}\small\item\em Autoheader. \end{DoxyCompactList}\item 
+\#define \hyperlink{BambuParameter_8cpp_af1b13c3bf23271ff7b25972e6001b263}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+\_\+\+N\+O\+\_\+\+P\+A\+R\+SE}~(1 + \hyperlink{BambuParameter_8cpp_a864e8151a88c65f974160b30b38f4fa9}{O\+P\+T\+\_\+\+A\+C\+C\+E\+P\+T\+\_\+\+N\+O\+N\+Z\+E\+R\+O\+\_\+\+R\+E\+T\+U\+RN})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_ad713960ea990ea230809739e2d48ae9b}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+\_\+\+P\+Y\+T\+H\+O\+N\+\_\+\+N\+O\+\_\+\+P\+A\+R\+SE}~(1 + \hyperlink{BambuParameter_8cpp_af1b13c3bf23271ff7b25972e6001b263}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+\_\+\+N\+O\+\_\+\+P\+A\+R\+SE})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_aada9a108735ff69249519fbe26e9a4d1}{O\+P\+T\+\_\+\+A\+C\+O\+\_\+\+F\+L\+OW}~(1 + \hyperlink{BambuParameter_8cpp_ad713960ea990ea230809739e2d48ae9b}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+\_\+\+P\+Y\+T\+H\+O\+N\+\_\+\+N\+O\+\_\+\+P\+A\+R\+SE})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_ad7be1e1ad5d9f02cc3ca0cb220fdbad2}{O\+P\+T\+\_\+\+A\+C\+O\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+O\+NS}~(1 + \hyperlink{BambuParameter_8cpp_aada9a108735ff69249519fbe26e9a4d1}{O\+P\+T\+\_\+\+A\+C\+O\+\_\+\+F\+L\+OW})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a36b65b50e91d1f3c291dd7850dff9294}{O\+P\+T\+\_\+\+A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+T\+OP}~(1 + \hyperlink{BambuParameter_8cpp_ad7be1e1ad5d9f02cc3ca0cb220fdbad2}{O\+P\+T\+\_\+\+A\+C\+O\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+O\+NS})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a51a73c81a591210aef24687c83a3e4e0}{O\+P\+T\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}~(1 + \hyperlink{BambuParameter_8cpp_a36b65b50e91d1f3c291dd7850dff9294}{O\+P\+T\+\_\+\+A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+T\+OP})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a98a2e0c43d783e24d26851d3e6a96409}{O\+P\+T\+\_\+\+A\+R\+E\+A\+\_\+\+W\+E\+I\+G\+HT}~(1 + \hyperlink{BambuParameter_8cpp_a51a73c81a591210aef24687c83a3e4e0}{O\+P\+T\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a09aa5c0342412b47f139db415e97ab44}{O\+P\+T\+\_\+\+B\+A\+C\+K\+E\+N\+D\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}~(1 + \hyperlink{BambuParameter_8cpp_a98a2e0c43d783e24d26851d3e6a96409}{O\+P\+T\+\_\+\+A\+R\+E\+A\+\_\+\+W\+E\+I\+G\+HT})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a6d41378b19a106b40a1f9a64ca96e1b9}{O\+P\+T\+\_\+\+B\+A\+C\+K\+E\+N\+D\+\_\+\+S\+D\+C\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}~(1 + \hyperlink{BambuParameter_8cpp_a09aa5c0342412b47f139db415e97ab44}{O\+P\+T\+\_\+\+B\+A\+C\+K\+E\+N\+D\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a0106571b67c56176efb4f07f5bb5fa7f}{O\+P\+T\+\_\+\+I\+N\+P\+U\+T\+\_\+\+C\+O\+N\+T\+E\+X\+T\+\_\+\+S\+W\+I\+T\+CH}~(1 + \hyperlink{BambuParameter_8cpp_a6d41378b19a106b40a1f9a64ca96e1b9}{O\+P\+T\+\_\+\+B\+A\+C\+K\+E\+N\+D\+\_\+\+S\+D\+C\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_afb3b4673ba8b3115c67639b411b7b546}{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+B\+I\+T\+V\+A\+L\+U\+E\+\_\+\+I\+PA}~(1 + \hyperlink{BambuParameter_8cpp_a0106571b67c56176efb4f07f5bb5fa7f}{O\+P\+T\+\_\+\+I\+N\+P\+U\+T\+\_\+\+C\+O\+N\+T\+E\+X\+T\+\_\+\+S\+W\+I\+T\+CH})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_aae1af43c8616b5bc982d64a5526e054d}{O\+P\+T\+\_\+\+B\+R\+A\+M\+\_\+\+H\+I\+G\+H\+\_\+\+L\+A\+T\+E\+N\+CY}~(1 + \hyperlink{BambuParameter_8cpp_afb3b4673ba8b3115c67639b411b7b546}{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+B\+I\+T\+V\+A\+L\+U\+E\+\_\+\+I\+PA})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a78cd84e9414ea97620f98e7568ccd409}{O\+P\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+N\+U\+M\+B\+ER}~(1 + \hyperlink{BambuParameter_8cpp_aae1af43c8616b5bc982d64a5526e054d}{O\+P\+T\+\_\+\+B\+R\+A\+M\+\_\+\+H\+I\+G\+H\+\_\+\+L\+A\+T\+E\+N\+CY})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a454c8728b1192b9daa6547c24f5b45cd}{O\+P\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+PE}~(1 + \hyperlink{BambuParameter_8cpp_a78cd84e9414ea97620f98e7568ccd409}{O\+P\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+N\+U\+M\+B\+ER})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a24fff0960f26363a9eb5b97b55f90f63}{O\+P\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+F\+R\+A\+C\+T\+I\+ON}~(1 + \hyperlink{BambuParameter_8cpp_a454c8728b1192b9daa6547c24f5b45cd}{O\+P\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+PE})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_aae876f2770a3f6dbf43d57d742e98c80}{O\+P\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+N\+A\+ME}~(1 + \hyperlink{BambuParameter_8cpp_a24fff0960f26363a9eb5b97b55f90f63}{O\+P\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+F\+R\+A\+C\+T\+I\+ON})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a5147c256bd137605bbd712f8221b480d}{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+B\+O\+U\+N\+D\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON}~(1 + \hyperlink{BambuParameter_8cpp_aae876f2770a3f6dbf43d57d742e98c80}{O\+P\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+N\+A\+ME})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a5ec56ac8cdd3d453014c46b66296678e}{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+XY}~(1 + \hyperlink{BambuParameter_8cpp_a5147c256bd137605bbd712f8221b480d}{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+B\+O\+U\+N\+D\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_ac107d865f18fb9e8c3154e8b14379933}{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+I\+OB}~(1 + \hyperlink{BambuParameter_8cpp_a5ec56ac8cdd3d453014c46b66296678e}{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+XY})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a3190bba9c3556eb2ffc8d54b16d98d60}{O\+P\+T\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}~(1 + \hyperlink{BambuParameter_8cpp_ac107d865f18fb9e8c3154e8b14379933}{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+I\+OB})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a51a9556e81654aa36061a48d8dca0cd6}{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+C\+H\+A\+I\+N\+\_\+\+M\+E\+M\+O\+R\+I\+ES}~(1 + \hyperlink{BambuParameter_8cpp_a3190bba9c3556eb2ffc8d54b16d98d60}{O\+P\+T\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_aef3ef499bd8d47e362f720a026a92ba8}{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+E\+X\+P\+O\+S\+E\+\_\+\+G\+L\+O\+B\+A\+LS}~(1 + \hyperlink{BambuParameter_8cpp_a51a9556e81654aa36061a48d8dca0cd6}{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+C\+H\+A\+I\+N\+\_\+\+M\+E\+M\+O\+R\+I\+ES})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a17f2e1302327e062b38df9d00753775e}{O\+P\+T\+\_\+\+R\+O\+M\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+I\+ON}~(1 + \hyperlink{BambuParameter_8cpp_aef3ef499bd8d47e362f720a026a92ba8}{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+E\+X\+P\+O\+S\+E\+\_\+\+G\+L\+O\+B\+A\+LS})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a41aedbacecaadceab3870ba78ae98478}{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+U\+S\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+M\+E\+M\+O\+R\+I\+ES}~(1 + \hyperlink{BambuParameter_8cpp_a17f2e1302327e062b38df9d00753775e}{O\+P\+T\+\_\+\+R\+O\+M\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+I\+ON})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a8a2e2686229fdd7a878ee40a3f728d3d}{O\+P\+T\+\_\+\+D\+SE}~(1 + \hyperlink{BambuParameter_8cpp_a41aedbacecaadceab3870ba78ae98478}{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+U\+S\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+M\+E\+M\+O\+R\+I\+ES})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a0259ecf11cefb44569c76da9de390101}{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+C\+O\+E\+F\+F\+I\+C\+I\+E\+NT}~(1 + \hyperlink{BambuParameter_8cpp_a8a2e2686229fdd7a878ee40a3f728d3d}{O\+P\+T\+\_\+\+D\+SE})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a0020bac3ae9c0774d30bc3d1c5145060}{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+M\+A\+R\+G\+I\+N\+\_\+\+C\+O\+M\+B\+I\+N\+A\+T\+I\+O\+N\+AL}~(1 + \hyperlink{BambuParameter_8cpp_a0259ecf11cefb44569c76da9de390101}{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+C\+O\+E\+F\+F\+I\+C\+I\+E\+NT})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_af2f30301100fafddfd3076df39e22100}{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+M\+A\+R\+G\+I\+N\+\_\+\+P\+I\+P\+E\+L\+I\+N\+ED}~(1 + \hyperlink{BambuParameter_8cpp_a0020bac3ae9c0774d30bc3d1c5145060}{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+M\+A\+R\+G\+I\+N\+\_\+\+C\+O\+M\+B\+I\+N\+A\+T\+I\+O\+N\+AL})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a8a6d718973d0312d2fea8760ceb8dade}{O\+P\+T\+\_\+\+D\+U\+M\+P\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+TS}~(1 + \hyperlink{BambuParameter_8cpp_af2f30301100fafddfd3076df39e22100}{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+M\+A\+R\+G\+I\+N\+\_\+\+P\+I\+P\+E\+L\+I\+N\+ED})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a5a7abc4f3f2eff05b926bd50f9cb754f}{O\+P\+T\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+G\+E\+N\+E\+R\+A\+T\+O\+R\+S\+\_\+\+D\+IR}~(1 + \hyperlink{BambuParameter_8cpp_a8a6d718973d0312d2fea8760ceb8dade}{O\+P\+T\+\_\+\+D\+U\+M\+P\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+TS})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a919f7e7933d24b053d5e7f2c38953838}{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+CY}~(1 + \hyperlink{BambuParameter_8cpp_a5a7abc4f3f2eff05b926bd50f9cb754f}{O\+P\+T\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+G\+E\+N\+E\+R\+A\+T\+O\+R\+S\+\_\+\+D\+IR})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a0605e793f58d82792e71b28d7a94d4e9}{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+F\+O\+R\+CE}~(1 + \hyperlink{BambuParameter_8cpp_a919f7e7933d24b053d5e7f2c38953838}{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+CY})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a9372ccb87851dd798364bb92d79fbb2d}{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+HW}~(1 + \hyperlink{BambuParameter_8cpp_a0605e793f58d82792e71b28d7a94d4e9}{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+F\+O\+R\+CE})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a5b70f77af29c5ceeac5520c371419064}{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+N\+O\+\_\+\+L\+O\+A\+D\+\_\+\+P\+O\+I\+N\+T\+E\+RS}~(1 + \hyperlink{BambuParameter_8cpp_a9372ccb87851dd798364bb92d79fbb2d}{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+HW})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_aaaac784e5b35b3c6547d5e60767895eb}{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+O\+N\+LY}~(1 + \hyperlink{BambuParameter_8cpp_a5b70f77af29c5ceeac5520c371419064}{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+N\+O\+\_\+\+L\+O\+A\+D\+\_\+\+P\+O\+I\+N\+T\+E\+RS})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a6ac0d3544dfb5742cf68a7a301243d84}{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+V\+E\+\_\+\+P\+T\+RS}~(1 + \hyperlink{BambuParameter_8cpp_aaaac784e5b35b3c6547d5e60767895eb}{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+O\+N\+LY})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a3d2bf337d92fb77e2ddba74b489c018c}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+D\+R\+Y\+\_\+\+R\+U\+N\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+ON}~(1 + \hyperlink{BambuParameter_8cpp_a6ac0d3544dfb5742cf68a7a301243d84}{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+V\+E\+\_\+\+P\+T\+RS})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a717701eb16cb358eb76e92279a9a7536}{O\+P\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+OB}~(1 + \hyperlink{BambuParameter_8cpp_a3d2bf337d92fb77e2ddba74b489c018c}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+D\+R\+Y\+\_\+\+R\+U\+N\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+ON})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_abc3fa9117288a00ff0c34c7d7c8dc0e8}{O\+P\+T\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+ON}~(1 + \hyperlink{BambuParameter_8cpp_a717701eb16cb358eb76e92279a9a7536}{O\+P\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+OB})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_aba56cd705297686a6a2ca8d548dbdfdb}{O\+P\+T\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+O\+N\+\_\+\+M\+O\+DE}~(1 + \hyperlink{BambuParameter_8cpp_abc3fa9117288a00ff0c34c7d7c8dc0e8}{O\+P\+T\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+ON})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a23b4857459e8fdb2069bb951cf89d5d4}{O\+P\+T\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L\+\_\+\+S\+E\+T\+UP}~(1 + \hyperlink{BambuParameter_8cpp_aba56cd705297686a6a2ca8d548dbdfdb}{O\+P\+T\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+O\+N\+\_\+\+M\+O\+DE})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a22a770e86adef023b29acc30723a574d}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+F\+I\+N\+D\+\_\+\+M\+A\+X\+\_\+\+C\+F\+G\+\_\+\+T\+R\+A\+N\+S\+F\+O\+R\+M\+A\+T\+I\+O\+NS}~(1 + \hyperlink{BambuParameter_8cpp_a23b4857459e8fdb2069bb951cf89d5d4}{O\+P\+T\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L\+\_\+\+S\+E\+T\+UP})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_afb377f937f18f6155583a37cccfcbe7c}{O\+P\+T\+\_\+\+F\+I\+X\+E\+D\+\_\+\+S\+C\+H\+ED}~(1 + \hyperlink{BambuParameter_8cpp_a22a770e86adef023b29acc30723a574d}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+F\+I\+N\+D\+\_\+\+M\+A\+X\+\_\+\+C\+F\+G\+\_\+\+T\+R\+A\+N\+S\+F\+O\+R\+M\+A\+T\+I\+O\+NS})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a934892e2eb5b939289367eea0ce5a7f8}{O\+P\+T\+\_\+\+F\+L\+O\+P\+O\+CO}~(1 + \hyperlink{BambuParameter_8cpp_afb377f937f18f6155583a37cccfcbe7c}{O\+P\+T\+\_\+\+F\+I\+X\+E\+D\+\_\+\+S\+C\+H\+ED})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a1fac55b79c389ae27daf851bfbd28f76}{O\+P\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+V\+CD}~(1 + \hyperlink{BambuParameter_8cpp_a934892e2eb5b939289367eea0ce5a7f8}{O\+P\+T\+\_\+\+F\+L\+O\+P\+O\+CO})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_acddce6cec360e8953d55ec4b6f901d1e}{O\+P\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+ON}~(1 + \hyperlink{BambuParameter_8cpp_a1fac55b79c389ae27daf851bfbd28f76}{O\+P\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+V\+CD})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a7e24f02b7c76840511bce481e8d9ae27}{O\+P\+T\+\_\+\+H\+L\+S\+\_\+\+D\+IV}~(1 + \hyperlink{BambuParameter_8cpp_acddce6cec360e8953d55ec4b6f901d1e}{O\+P\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+ON})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_aac3e5af69c8c7430d0b9bf6c56bb995d}{O\+P\+T\+\_\+\+H\+L\+S\+\_\+\+F\+P\+D\+IV}~(1 + \hyperlink{BambuParameter_8cpp_a7e24f02b7c76840511bce481e8d9ae27}{O\+P\+T\+\_\+\+H\+L\+S\+\_\+\+D\+IV})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a9bf1908de5fea213b7fd2a0208b3886b}{O\+P\+T\+\_\+\+H\+O\+S\+T\+\_\+\+P\+R\+O\+F\+I\+L\+I\+NG}~(1 + \hyperlink{BambuParameter_8cpp_aac3e5af69c8c7430d0b9bf6c56bb995d}{O\+P\+T\+\_\+\+H\+L\+S\+\_\+\+F\+P\+D\+IV})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a7c8d646091cb8a6743dc6892fd8b085f}{O\+P\+T\+\_\+\+I\+LP}~(1 + \hyperlink{BambuParameter_8cpp_a9bf1908de5fea213b7fd2a0208b3886b}{O\+P\+T\+\_\+\+H\+O\+S\+T\+\_\+\+P\+R\+O\+F\+I\+L\+I\+NG})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a42f29f21ed341e077f2723c7a8f5bd60}{O\+P\+T\+\_\+\+I\+L\+P\+\_\+\+N\+E\+W\+F\+O\+RM}~(1 + \hyperlink{BambuParameter_8cpp_a7c8d646091cb8a6743dc6892fd8b085f}{O\+P\+T\+\_\+\+I\+LP})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a8eff6359c3252aec9ff647c3c792155c}{O\+P\+T\+\_\+\+I\+L\+P\+\_\+\+S\+O\+L\+V\+ER}~(1 + \hyperlink{BambuParameter_8cpp_a42f29f21ed341e077f2723c7a8f5bd60}{O\+P\+T\+\_\+\+I\+L\+P\+\_\+\+N\+E\+W\+F\+O\+RM})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a4b5cb5f64818eabf5f82678735f8806a}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+F\+I\+L\+E\+\_\+\+I\+N\+P\+U\+T\+\_\+\+D\+A\+TA}~(1 + \hyperlink{BambuParameter_8cpp_a8eff6359c3252aec9ff647c3c792155c}{O\+P\+T\+\_\+\+I\+L\+P\+\_\+\+S\+O\+L\+V\+ER})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a71f705d87105f0a6b81869c23aba9443}{O\+P\+T\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+P\+R\+O\+F\+I\+LE}~(1 + \hyperlink{BambuParameter_8cpp_a4b5cb5f64818eabf5f82678735f8806a}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+F\+I\+L\+E\+\_\+\+I\+N\+P\+U\+T\+\_\+\+D\+A\+TA})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a62b38a49204e89bfeb9f61932aea586d}{O\+P\+T\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+V\+E\+R\+I\+F\+I\+C\+A\+T\+I\+O\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+ON}~(1 + \hyperlink{BambuParameter_8cpp_a71f705d87105f0a6b81869c23aba9443}{O\+P\+T\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+P\+R\+O\+F\+I\+LE})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a975f20d1775d921f71101cca1075bc0c}{O\+P\+T\+\_\+\+L\+I\+B\+M\+\_\+\+S\+T\+D\+\_\+\+R\+O\+U\+N\+D\+I\+NG}~(1 + \hyperlink{BambuParameter_8cpp_a62b38a49204e89bfeb9f61932aea586d}{O\+P\+T\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+V\+E\+R\+I\+F\+I\+C\+A\+T\+I\+O\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+ON})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_aa2fed2398a358e325f1cba9f5cb2e1df}{O\+P\+T\+\_\+\+L\+I\+S\+T\+\_\+\+B\+A\+S\+ED}~(1 + \hyperlink{BambuParameter_8cpp_a975f20d1775d921f71101cca1075bc0c}{O\+P\+T\+\_\+\+L\+I\+B\+M\+\_\+\+S\+T\+D\+\_\+\+R\+O\+U\+N\+D\+I\+NG})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_aad0a7688cdc6e27f89313e96f1d46262}{O\+P\+T\+\_\+\+L\+O\+G\+I\+C\+A\+L\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+A\+T\+I\+ON}~(1 + \hyperlink{BambuParameter_8cpp_aa2fed2398a358e325f1cba9f5cb2e1df}{O\+P\+T\+\_\+\+L\+I\+S\+T\+\_\+\+B\+A\+S\+ED})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_ac3ec77ea10a334aa9a77a8627853779c}{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+O\+NS}~(1 + \hyperlink{BambuParameter_8cpp_aad0a7688cdc6e27f89313e96f1d46262}{O\+P\+T\+\_\+\+L\+O\+G\+I\+C\+A\+L\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+A\+T\+I\+ON})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a104e64b58aea6a9bdfd36b9a47dce484}{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+I\+N\+H\+E\+R\+I\+T\+A\+N\+CE}~(1 + \hyperlink{BambuParameter_8cpp_ac3ec77ea10a334aa9a77a8627853779c}{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+O\+NS})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_aa4991262012cbe7a761d12f7685130e6}{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+S\+I\+M\+\_\+\+C\+Y\+C\+L\+ES}~(1 + \hyperlink{BambuParameter_8cpp_a104e64b58aea6a9bdfd36b9a47dce484}{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+I\+N\+H\+E\+R\+I\+T\+A\+N\+CE})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_ae5ac9812c7dc6bfd8ce90ffc7bdf7dbd}{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+U\+LP}~(1 + \hyperlink{BambuParameter_8cpp_aa4991262012cbe7a761d12f7685130e6}{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+S\+I\+M\+\_\+\+C\+Y\+C\+L\+ES})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a8d11e972dd6c6d66fc5a4cbf1ec4d92c}{O\+P\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+T\+OP}~(1 + \hyperlink{BambuParameter_8cpp_ae5ac9812c7dc6bfd8ce90ffc7bdf7dbd}{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+U\+LP})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_aadbbacb58a7aadc3cf5ea1d13fe316fa}{O\+P\+T\+\_\+\+M\+E\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+R\+E\+AD}~(1 + \hyperlink{BambuParameter_8cpp_a8d11e972dd6c6d66fc5a4cbf1ec4d92c}{O\+P\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+T\+OP})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a053eb1511a211ed0bc40aa04d05c0edd}{O\+P\+T\+\_\+\+M\+E\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+W\+R\+I\+TE}~(1 + \hyperlink{BambuParameter_8cpp_aadbbacb58a7aadc3cf5ea1d13fe316fa}{O\+P\+T\+\_\+\+M\+E\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+R\+E\+AD})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a8b317f4f7da0a7379add4b7de94d3c6c}{O\+P\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+B\+A\+N\+K\+S\+\_\+\+N\+U\+M\+B\+ER}~(1 + \hyperlink{BambuParameter_8cpp_a053eb1511a211ed0bc40aa04d05c0edd}{O\+P\+T\+\_\+\+M\+E\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+W\+R\+I\+TE})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a674ef9d96931d8e980c3cd493638a0b3}{O\+P\+T\+\_\+\+M\+I\+N\+\_\+\+I\+N\+H\+E\+R\+I\+T\+A\+N\+CE}~(1 + \hyperlink{BambuParameter_8cpp_a8b317f4f7da0a7379add4b7de94d3c6c}{O\+P\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+B\+A\+N\+K\+S\+\_\+\+N\+U\+M\+B\+ER})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a0cdd63d1e9f7b02ef19a7086a3335a20}{O\+P\+T\+\_\+\+M\+O\+S\+A\+\_\+\+F\+L\+OW}~(1 + \hyperlink{BambuParameter_8cpp_a674ef9d96931d8e980c3cd493638a0b3}{O\+P\+T\+\_\+\+M\+I\+N\+\_\+\+I\+N\+H\+E\+R\+I\+T\+A\+N\+CE})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_ae8d93f6ab1115f9e12f35b3b9fd99f1b}{O\+P\+T\+\_\+\+N\+O\+\_\+\+M\+I\+X\+E\+D\+\_\+\+D\+E\+S\+I\+GN}~(1 + \hyperlink{BambuParameter_8cpp_a0cdd63d1e9f7b02ef19a7086a3335a20}{O\+P\+T\+\_\+\+M\+O\+S\+A\+\_\+\+F\+L\+OW})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a1dba8302457e8ba1cb65d8ed7532121b}{O\+P\+T\+\_\+\+N\+U\+M\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+O\+RS}~(1 + \hyperlink{BambuParameter_8cpp_ae8d93f6ab1115f9e12f35b3b9fd99f1b}{O\+P\+T\+\_\+\+N\+O\+\_\+\+M\+I\+X\+E\+D\+\_\+\+D\+E\+S\+I\+GN})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a23b7b94ad91c84b7987e0469b590dab0}{O\+P\+T\+\_\+\+P\+A\+R\+A\+L\+L\+E\+L\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER}~(1 + \hyperlink{BambuParameter_8cpp_a1dba8302457e8ba1cb65d8ed7532121b}{O\+P\+T\+\_\+\+N\+U\+M\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+O\+RS})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a4003420c5dccaa5d1740a5e70ac4dd57}{O\+P\+T\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+C\+L\+O\+CK}~(1 + \hyperlink{BambuParameter_8cpp_a23b7b94ad91c84b7987e0469b590dab0}{O\+P\+T\+\_\+\+P\+A\+R\+A\+L\+L\+E\+L\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_af684ae3e3ba8fa93b29974835b2d95a4}{O\+P\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+N\+A\+ME}~(1 + \hyperlink{BambuParameter_8cpp_a4003420c5dccaa5d1740a5e70ac4dd57}{O\+P\+T\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+C\+L\+O\+CK})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a5fce2cfde3b91d374751f0fc87338588}{O\+P\+T\+\_\+\+R\+E\+S\+E\+T\+\_\+\+N\+A\+ME}~(1 + \hyperlink{BambuParameter_8cpp_af684ae3e3ba8fa93b29974835b2d95a4}{O\+P\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+N\+A\+ME})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a4c811a8a9a8c5c84ab441f62f3dc19d7}{O\+P\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+N\+A\+ME}~(1 + \hyperlink{BambuParameter_8cpp_a5fce2cfde3b91d374751f0fc87338588}{O\+P\+T\+\_\+\+R\+E\+S\+E\+T\+\_\+\+N\+A\+ME})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a1e1269ada9f4cadccf6f4cd8d06b2158}{O\+P\+T\+\_\+\+D\+O\+N\+E\+\_\+\+N\+A\+ME}~(1 + \hyperlink{BambuParameter_8cpp_a4c811a8a9a8c5c84ab441f62f3dc19d7}{O\+P\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+N\+A\+ME})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_ad32b04b9112661ba7acd556abffc3491}{O\+P\+T\+\_\+\+P\+O\+W\+E\+R\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+A\+T\+I\+ON}~(1 + \hyperlink{BambuParameter_8cpp_a1e1269ada9f4cadccf6f4cd8d06b2158}{O\+P\+T\+\_\+\+D\+O\+N\+E\+\_\+\+N\+A\+ME})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_afe0f7f41931f8dd590d3dcc1259c54f0}{O\+P\+T\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+P\+A\+R\+SE}~(1 + \hyperlink{BambuParameter_8cpp_ad32b04b9112661ba7acd556abffc3491}{O\+P\+T\+\_\+\+P\+O\+W\+E\+R\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+A\+T\+I\+ON})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a9e732fd9a78bbbedf6e3f8e52932f87b}{O\+P\+T\+\_\+\+P\+R\+E\+T\+T\+Y\+\_\+\+P\+R\+I\+NT}~(1 + \hyperlink{BambuParameter_8cpp_afe0f7f41931f8dd590d3dcc1259c54f0}{O\+P\+T\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+P\+A\+R\+SE})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a046f8e148fe759f42e99186ae74529eb}{O\+P\+T\+\_\+\+P\+O\+S\+T\+\_\+\+R\+E\+S\+C\+H\+E\+D\+U\+L\+I\+NG}~(1 + \hyperlink{BambuParameter_8cpp_a9e732fd9a78bbbedf6e3f8e52932f87b}{O\+P\+T\+\_\+\+P\+R\+E\+T\+T\+Y\+\_\+\+P\+R\+I\+NT})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_ad8a45e8addd6ac58c330657a91575f98}{O\+P\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+ON}~(1 + \hyperlink{BambuParameter_8cpp_a046f8e148fe759f42e99186ae74529eb}{O\+P\+T\+\_\+\+P\+O\+S\+T\+\_\+\+R\+E\+S\+C\+H\+E\+D\+U\+L\+I\+NG})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a2e6f928d10c5f7ff8389e9555bed8b40}{O\+P\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+I\+N\+P\+U\+TS}~(1 + \hyperlink{BambuParameter_8cpp_ad8a45e8addd6ac58c330657a91575f98}{O\+P\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+ON})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a7b23289b1ff536ce28e03a875f4c6410}{O\+P\+T\+\_\+\+F\+S\+M\+\_\+\+E\+N\+C\+O\+D\+I\+NG}~(1 + \hyperlink{BambuParameter_8cpp_a2e6f928d10c5f7ff8389e9555bed8b40}{O\+P\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+I\+N\+P\+U\+TS})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_aaad48c35df863facba4c434ee3b22f07}{O\+P\+T\+\_\+\+R\+E\+S\+ET}~(1 + \hyperlink{BambuParameter_8cpp_a7b23289b1ff536ce28e03a875f4c6410}{O\+P\+T\+\_\+\+F\+S\+M\+\_\+\+E\+N\+C\+O\+D\+I\+NG})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a23a851bbc9170d3c72b620798573ecbc}{O\+P\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+R\+E\+S\+ET}~(1 + \hyperlink{BambuParameter_8cpp_aaad48c35df863facba4c434ee3b22f07}{O\+P\+T\+\_\+\+R\+E\+S\+ET})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_af49e496a1a820b66160b0b155df1dd02}{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+R\+E\+G\+\_\+\+I\+N\+I\+T\+\_\+\+V\+A\+L\+UE}~(1 + \hyperlink{BambuParameter_8cpp_a23a851bbc9170d3c72b620798573ecbc}{O\+P\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+R\+E\+S\+ET})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a8ece3d023a87029348742a488ace030f}{O\+P\+T\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+I\+NS}~(1 + \hyperlink{BambuParameter_8cpp_af49e496a1a820b66160b0b155df1dd02}{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+R\+E\+G\+\_\+\+I\+N\+I\+T\+\_\+\+V\+A\+L\+UE})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_ae20bb59f8f45a54cdba4f8556c1fe07a}{O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+A\+L\+US}~(1 + \hyperlink{BambuParameter_8cpp_a8ece3d023a87029348742a488ace030f}{O\+P\+T\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+I\+NS})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a66d10adcdddc81724fd3c55335e8fc1d}{O\+P\+T\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+A\+C\+C\+E\+S\+S\+ES}~(1 + \hyperlink{BambuParameter_8cpp_ae20bb59f8f45a54cdba4f8556c1fe07a}{O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+A\+L\+US})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a698c88ad5069a48a51a862c0d2a1c84f}{O\+P\+T\+\_\+\+S\+I\+LP}~(1 + \hyperlink{BambuParameter_8cpp_a66d10adcdddc81724fd3c55335e8fc1d}{O\+P\+T\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+A\+C\+C\+E\+S\+S\+ES})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a699c237682b1a5136a3cc3043019710d}{O\+P\+T\+\_\+\+S\+I\+M\+U\+L\+A\+TE}~(1 + \hyperlink{BambuParameter_8cpp_a698c88ad5069a48a51a862c0d2a1c84f}{O\+P\+T\+\_\+\+S\+I\+LP})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_ab56b6e557fd0392819abbc1a7c5a2440}{O\+P\+T\+\_\+\+S\+K\+I\+P\+\_\+\+P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}~(1 + \hyperlink{BambuParameter_8cpp_a699c237682b1a5136a3cc3043019710d}{O\+P\+T\+\_\+\+S\+I\+M\+U\+L\+A\+TE})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a0552c895008ecce14384881d224ae2f1}{O\+P\+T\+\_\+\+S\+O\+F\+T\+\_\+\+F\+L\+O\+AT}~(1 + \hyperlink{BambuParameter_8cpp_ab56b6e557fd0392819abbc1a7c5a2440}{O\+P\+T\+\_\+\+S\+K\+I\+P\+\_\+\+P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_ace0a8a9f1327ca6bcd75b97b3041d48a}{O\+P\+T\+\_\+\+S\+O\+F\+T\+F\+L\+O\+A\+T\+\_\+\+S\+U\+B\+N\+O\+R\+M\+AL}~(1 + \hyperlink{BambuParameter_8cpp_a0552c895008ecce14384881d224ae2f1}{O\+P\+T\+\_\+\+S\+O\+F\+T\+\_\+\+F\+L\+O\+AT})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a1c812b6f9525b788d0ae088a359427d0}{O\+P\+T\+\_\+\+S\+O\+F\+T\+\_\+\+FP}~(1 + \hyperlink{BambuParameter_8cpp_ace0a8a9f1327ca6bcd75b97b3041d48a}{O\+P\+T\+\_\+\+S\+O\+F\+T\+F\+L\+O\+A\+T\+\_\+\+S\+U\+B\+N\+O\+R\+M\+AL})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a1f1125097e731ad217d54c86a0b97740}{O\+P\+T\+\_\+\+S\+TG}~(1 + \hyperlink{BambuParameter_8cpp_a1c812b6f9525b788d0ae088a359427d0}{O\+P\+T\+\_\+\+S\+O\+F\+T\+\_\+\+FP})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a96728b91eb1f0ed6d1f6b3c578afea80}{O\+P\+T\+\_\+\+S\+P\+E\+C\+U\+L\+A\+T\+I\+VE}~(1 + \hyperlink{BambuParameter_8cpp_a1f1125097e731ad217d54c86a0b97740}{O\+P\+T\+\_\+\+S\+TG})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_ad297ec992e8a42877407e4cfac261674}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+N\+O\+N\+\_\+\+D\+E\+T\+E\+R\+M\+I\+N\+I\+S\+T\+I\+C\+\_\+\+F\+L\+O\+WS}~(1 + \hyperlink{BambuParameter_8cpp_a96728b91eb1f0ed6d1f6b3c578afea80}{O\+P\+T\+\_\+\+S\+P\+E\+C\+U\+L\+A\+T\+I\+VE})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a4d056fc4c2e4d519d18589b74ed4543f}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+N\+G\+L\+E\+\_\+\+N\+O\+N\+\_\+\+D\+E\+T\+E\+R\+M\+I\+N\+I\+S\+T\+I\+C\+\_\+\+F\+L\+OW}~(1 + \hyperlink{BambuParameter_8cpp_ad297ec992e8a42877407e4cfac261674}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+N\+O\+N\+\_\+\+D\+E\+T\+E\+R\+M\+I\+N\+I\+S\+T\+I\+C\+\_\+\+F\+L\+O\+WS})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_afdd82e83e61a325fd9e956c42e492378}{O\+P\+T\+\_\+\+T\+E\+S\+T\+B\+E\+N\+CH}~(1 + \hyperlink{BambuParameter_8cpp_a4d056fc4c2e4d519d18589b74ed4543f}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+N\+G\+L\+E\+\_\+\+N\+O\+N\+\_\+\+D\+E\+T\+E\+R\+M\+I\+N\+I\+S\+T\+I\+C\+\_\+\+F\+L\+OW})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a7171d3f64d8fe2f5e4059d6a31776635}{O\+P\+T\+\_\+\+T\+E\+S\+T\+B\+E\+N\+C\+H\+\_\+\+E\+X\+T\+R\+A\+\_\+\+G\+C\+C\+\_\+\+F\+L\+A\+GS}~(1 + \hyperlink{BambuParameter_8cpp_afdd82e83e61a325fd9e956c42e492378}{O\+P\+T\+\_\+\+T\+E\+S\+T\+B\+E\+N\+CH})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a1e327f404b507d55f46ca7c9d8b93f74}{O\+P\+T\+\_\+\+T\+I\+M\+E\+\_\+\+W\+E\+I\+G\+HT}~(1 + \hyperlink{BambuParameter_8cpp_a7171d3f64d8fe2f5e4059d6a31776635}{O\+P\+T\+\_\+\+T\+E\+S\+T\+B\+E\+N\+C\+H\+\_\+\+E\+X\+T\+R\+A\+\_\+\+G\+C\+C\+\_\+\+F\+L\+A\+GS})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a9f70f1753e81777920fea5aec1e9e5ac}{O\+P\+T\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+M\+O\+D\+EL}~(1 + \hyperlink{BambuParameter_8cpp_a1e327f404b507d55f46ca7c9d8b93f74}{O\+P\+T\+\_\+\+T\+I\+M\+E\+\_\+\+W\+E\+I\+G\+HT})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a9df7a5dca43f814ecdd6daa08ce20ceb}{O\+P\+T\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+V\+I\+O\+L\+A\+T\+I\+ON}~(1 + \hyperlink{BambuParameter_8cpp_a9f70f1753e81777920fea5aec1e9e5ac}{O\+P\+T\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+M\+O\+D\+EL})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a85cff528cb3325b405793345c6a2364c}{O\+P\+T\+\_\+\+T\+O\+P\+\_\+\+F\+N\+A\+ME}~(1 + \hyperlink{BambuParameter_8cpp_a9df7a5dca43f814ecdd6daa08ce20ceb}{O\+P\+T\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+V\+I\+O\+L\+A\+T\+I\+ON})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a18e51e1da7d936e88c2256f9b517f381}{O\+P\+T\+\_\+\+T\+O\+P\+\_\+\+R\+T\+L\+D\+E\+S\+I\+G\+N\+\_\+\+N\+A\+ME}~(1 + \hyperlink{BambuParameter_8cpp_a85cff528cb3325b405793345c6a2364c}{O\+P\+T\+\_\+\+T\+O\+P\+\_\+\+F\+N\+A\+ME})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a3ff413e809b62e486f65c6151721ef77}{O\+P\+T\+\_\+\+U\+N\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}~(1 + \hyperlink{BambuParameter_8cpp_a18e51e1da7d936e88c2256f9b517f381}{O\+P\+T\+\_\+\+T\+O\+P\+\_\+\+R\+T\+L\+D\+E\+S\+I\+G\+N\+\_\+\+N\+A\+ME})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a7767a5f45ec14a27f505f30a4a2aa4fc}{O\+P\+T\+\_\+\+V\+H\+D\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}~(1 + \hyperlink{BambuParameter_8cpp_a3ff413e809b62e486f65c6151721ef77}{O\+P\+T\+\_\+\+U\+N\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_a161fa962ee37c1f12d440d84dd7fc824}{O\+P\+T\+\_\+\+V\+I\+S\+U\+A\+L\+I\+Z\+ER}~(1 + \hyperlink{BambuParameter_8cpp_a7767a5f45ec14a27f505f30a4a2aa4fc}{O\+P\+T\+\_\+\+V\+H\+D\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_ad7305620dead201fd343e368c24a20b1}{O\+P\+T\+\_\+\+X\+M\+L\+\_\+\+C\+O\+N\+F\+IG}~(1 + \hyperlink{BambuParameter_8cpp_a161fa962ee37c1f12d440d84dd7fc824}{O\+P\+T\+\_\+\+V\+I\+S\+U\+A\+L\+I\+Z\+ER})
+\item 
+\#define \hyperlink{BambuParameter_8cpp_aff11f42c24a456a96dfd2ac665cba2e1}{P\+A\+R\+\_\+\+L\+I\+S\+T\+\_\+\+B\+A\+S\+E\+D\+\_\+\+O\+PT}~\char`\"{}parametric-\/list-\/based\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant correspond to the \char`\"{}parametric list based option\char`\"{} \end{DoxyCompactList}\item 
+\#define \hyperlink{BambuParameter_8cpp_a89c642404c83f869f1ad61e77dd65c7a}{F\+I\+X\+E\+D\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G\+\_\+\+O\+PT}~\char`\"{}fixed-\/scheduling\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant correspond to the fixed scheduling option \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{BambuParameter_8cpp_a5fb958a328d2a6e7545dbb5d5b9063f9}{is\+\_\+evaluation\+\_\+objective\+\_\+string} (const std\+::vector$<$ std\+::string $>$ \&obj\+\_\+vec, const std\+::string \&s)
+\item 
+static void \hyperlink{BambuParameter_8cpp_ad32d6c21b7e1dcb570186362164a99aa}{add\+\_\+evaluation\+\_\+objective\+\_\+string} (std\+::string \&obj\+\_\+string, const std\+::string \&obj\+\_\+to\+\_\+add)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the implementation of some methods for parameter parsing in Bambu tool. 
+
+\begin{DoxyAuthor}{Author}
+Christian Pilato \href{mailto:pilato@elet.polimi.it}{\tt pilato@elet.\+polimi.\+it} 
+
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{BambuParameter_8cpp_a89c642404c83f869f1ad61e77dd65c7a}\label{BambuParameter_8cpp_a89c642404c83f869f1ad61e77dd65c7a}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!F\+I\+X\+E\+D\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G\+\_\+\+O\+PT@{F\+I\+X\+E\+D\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G\+\_\+\+O\+PT}}
+\index{F\+I\+X\+E\+D\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G\+\_\+\+O\+PT@{F\+I\+X\+E\+D\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G\+\_\+\+O\+PT}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{F\+I\+X\+E\+D\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G\+\_\+\+O\+PT}{FIXED\_SCHEDULING\_OPT}}
+{\footnotesize\ttfamily \#define F\+I\+X\+E\+D\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G\+\_\+\+O\+PT~\char`\"{}fixed-\/scheduling\char`\"{}}
+
+
+
+constant correspond to the fixed scheduling option 
+
+
+
+Definition at line 324 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_af1b13c3bf23271ff7b25972e6001b263}\label{BambuParameter_8cpp_af1b13c3bf23271ff7b25972e6001b263}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+\_\+\+N\+O\+\_\+\+P\+A\+R\+SE@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+\_\+\+N\+O\+\_\+\+P\+A\+R\+SE}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+\_\+\+N\+O\+\_\+\+P\+A\+R\+SE@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+\_\+\+N\+O\+\_\+\+P\+A\+R\+SE}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+\_\+\+N\+O\+\_\+\+P\+A\+R\+SE}{INPUT\_OPT\_C\_NO\_PARSE}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+\_\+\+N\+O\+\_\+\+P\+A\+R\+SE~(1 + \hyperlink{BambuParameter_8cpp_a864e8151a88c65f974160b30b38f4fa9}{O\+P\+T\+\_\+\+A\+C\+C\+E\+P\+T\+\_\+\+N\+O\+N\+Z\+E\+R\+O\+\_\+\+R\+E\+T\+U\+RN})}
+
+
+
+Definition at line 210 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_ad713960ea990ea230809739e2d48ae9b}\label{BambuParameter_8cpp_ad713960ea990ea230809739e2d48ae9b}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+\_\+\+P\+Y\+T\+H\+O\+N\+\_\+\+N\+O\+\_\+\+P\+A\+R\+SE@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+\_\+\+P\+Y\+T\+H\+O\+N\+\_\+\+N\+O\+\_\+\+P\+A\+R\+SE}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+\_\+\+P\+Y\+T\+H\+O\+N\+\_\+\+N\+O\+\_\+\+P\+A\+R\+SE@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+\_\+\+P\+Y\+T\+H\+O\+N\+\_\+\+N\+O\+\_\+\+P\+A\+R\+SE}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+\_\+\+P\+Y\+T\+H\+O\+N\+\_\+\+N\+O\+\_\+\+P\+A\+R\+SE}{INPUT\_OPT\_C\_PYTHON\_NO\_PARSE}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+\_\+\+P\+Y\+T\+H\+O\+N\+\_\+\+N\+O\+\_\+\+P\+A\+R\+SE~(1 + \hyperlink{BambuParameter_8cpp_af1b13c3bf23271ff7b25972e6001b263}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+\_\+\+N\+O\+\_\+\+P\+A\+R\+SE})}
+
+
+
+Definition at line 211 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a3d2bf337d92fb77e2ddba74b489c018c}\label{BambuParameter_8cpp_a3d2bf337d92fb77e2ddba74b489c018c}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+D\+R\+Y\+\_\+\+R\+U\+N\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+ON@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+D\+R\+Y\+\_\+\+R\+U\+N\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+ON}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+D\+R\+Y\+\_\+\+R\+U\+N\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+ON@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+D\+R\+Y\+\_\+\+R\+U\+N\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+ON}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+D\+R\+Y\+\_\+\+R\+U\+N\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+ON}{INPUT\_OPT\_DRY\_RUN\_EVALUATION}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+D\+R\+Y\+\_\+\+R\+U\+N\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+ON~(1 + \hyperlink{BambuParameter_8cpp_a6ac0d3544dfb5742cf68a7a301243d84}{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+V\+E\+\_\+\+P\+T\+RS})}
+
+
+
+Definition at line 246 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a4b5cb5f64818eabf5f82678735f8806a}\label{BambuParameter_8cpp_a4b5cb5f64818eabf5f82678735f8806a}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+F\+I\+L\+E\+\_\+\+I\+N\+P\+U\+T\+\_\+\+D\+A\+TA@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+F\+I\+L\+E\+\_\+\+I\+N\+P\+U\+T\+\_\+\+D\+A\+TA}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+F\+I\+L\+E\+\_\+\+I\+N\+P\+U\+T\+\_\+\+D\+A\+TA@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+F\+I\+L\+E\+\_\+\+I\+N\+P\+U\+T\+\_\+\+D\+A\+TA}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+F\+I\+L\+E\+\_\+\+I\+N\+P\+U\+T\+\_\+\+D\+A\+TA}{INPUT\_OPT\_FILE\_INPUT\_DATA}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+F\+I\+L\+E\+\_\+\+I\+N\+P\+U\+T\+\_\+\+D\+A\+TA~(1 + \hyperlink{BambuParameter_8cpp_a8eff6359c3252aec9ff647c3c792155c}{O\+P\+T\+\_\+\+I\+L\+P\+\_\+\+S\+O\+L\+V\+ER})}
+
+
+
+Definition at line 262 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a22a770e86adef023b29acc30723a574d}\label{BambuParameter_8cpp_a22a770e86adef023b29acc30723a574d}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+F\+I\+N\+D\+\_\+\+M\+A\+X\+\_\+\+C\+F\+G\+\_\+\+T\+R\+A\+N\+S\+F\+O\+R\+M\+A\+T\+I\+O\+NS@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+F\+I\+N\+D\+\_\+\+M\+A\+X\+\_\+\+C\+F\+G\+\_\+\+T\+R\+A\+N\+S\+F\+O\+R\+M\+A\+T\+I\+O\+NS}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+F\+I\+N\+D\+\_\+\+M\+A\+X\+\_\+\+C\+F\+G\+\_\+\+T\+R\+A\+N\+S\+F\+O\+R\+M\+A\+T\+I\+O\+NS@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+F\+I\+N\+D\+\_\+\+M\+A\+X\+\_\+\+C\+F\+G\+\_\+\+T\+R\+A\+N\+S\+F\+O\+R\+M\+A\+T\+I\+O\+NS}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+F\+I\+N\+D\+\_\+\+M\+A\+X\+\_\+\+C\+F\+G\+\_\+\+T\+R\+A\+N\+S\+F\+O\+R\+M\+A\+T\+I\+O\+NS}{INPUT\_OPT\_FIND\_MAX\_CFG\_TRANSFORMATIONS}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+F\+I\+N\+D\+\_\+\+M\+A\+X\+\_\+\+C\+F\+G\+\_\+\+T\+R\+A\+N\+S\+F\+O\+R\+M\+A\+T\+I\+O\+NS~(1 + \hyperlink{BambuParameter_8cpp_a23b4857459e8fdb2069bb951cf89d5d4}{O\+P\+T\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L\+\_\+\+S\+E\+T\+UP})}
+
+
+
+Definition at line 251 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_ad297ec992e8a42877407e4cfac261674}\label{BambuParameter_8cpp_ad297ec992e8a42877407e4cfac261674}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+N\+O\+N\+\_\+\+D\+E\+T\+E\+R\+M\+I\+N\+I\+S\+T\+I\+C\+\_\+\+F\+L\+O\+WS@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+N\+O\+N\+\_\+\+D\+E\+T\+E\+R\+M\+I\+N\+I\+S\+T\+I\+C\+\_\+\+F\+L\+O\+WS}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+N\+O\+N\+\_\+\+D\+E\+T\+E\+R\+M\+I\+N\+I\+S\+T\+I\+C\+\_\+\+F\+L\+O\+WS@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+N\+O\+N\+\_\+\+D\+E\+T\+E\+R\+M\+I\+N\+I\+S\+T\+I\+C\+\_\+\+F\+L\+O\+WS}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+N\+O\+N\+\_\+\+D\+E\+T\+E\+R\+M\+I\+N\+I\+S\+T\+I\+C\+\_\+\+F\+L\+O\+WS}{INPUT\_OPT\_TEST\_MULTIPLE\_NON\_DETERMINISTIC\_FLOWS}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+N\+O\+N\+\_\+\+D\+E\+T\+E\+R\+M\+I\+N\+I\+S\+T\+I\+C\+\_\+\+F\+L\+O\+WS~(1 + \hyperlink{BambuParameter_8cpp_a96728b91eb1f0ed6d1f6b3c578afea80}{O\+P\+T\+\_\+\+S\+P\+E\+C\+U\+L\+A\+T\+I\+VE})}
+
+
+
+Definition at line 307 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a4d056fc4c2e4d519d18589b74ed4543f}\label{BambuParameter_8cpp_a4d056fc4c2e4d519d18589b74ed4543f}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+N\+G\+L\+E\+\_\+\+N\+O\+N\+\_\+\+D\+E\+T\+E\+R\+M\+I\+N\+I\+S\+T\+I\+C\+\_\+\+F\+L\+OW@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+N\+G\+L\+E\+\_\+\+N\+O\+N\+\_\+\+D\+E\+T\+E\+R\+M\+I\+N\+I\+S\+T\+I\+C\+\_\+\+F\+L\+OW}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+N\+G\+L\+E\+\_\+\+N\+O\+N\+\_\+\+D\+E\+T\+E\+R\+M\+I\+N\+I\+S\+T\+I\+C\+\_\+\+F\+L\+OW@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+N\+G\+L\+E\+\_\+\+N\+O\+N\+\_\+\+D\+E\+T\+E\+R\+M\+I\+N\+I\+S\+T\+I\+C\+\_\+\+F\+L\+OW}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+N\+G\+L\+E\+\_\+\+N\+O\+N\+\_\+\+D\+E\+T\+E\+R\+M\+I\+N\+I\+S\+T\+I\+C\+\_\+\+F\+L\+OW}{INPUT\_OPT\_TEST\_SINGLE\_NON\_DETERMINISTIC\_FLOW}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+N\+G\+L\+E\+\_\+\+N\+O\+N\+\_\+\+D\+E\+T\+E\+R\+M\+I\+N\+I\+S\+T\+I\+C\+\_\+\+F\+L\+OW~(1 + \hyperlink{BambuParameter_8cpp_ad297ec992e8a42877407e4cfac261674}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+N\+O\+N\+\_\+\+D\+E\+T\+E\+R\+M\+I\+N\+I\+S\+T\+I\+C\+\_\+\+F\+L\+O\+WS})}
+
+
+
+Definition at line 308 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a864e8151a88c65f974160b30b38f4fa9}\label{BambuParameter_8cpp_a864e8151a88c65f974160b30b38f4fa9}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+A\+C\+C\+E\+P\+T\+\_\+\+N\+O\+N\+Z\+E\+R\+O\+\_\+\+R\+E\+T\+U\+RN@{O\+P\+T\+\_\+\+A\+C\+C\+E\+P\+T\+\_\+\+N\+O\+N\+Z\+E\+R\+O\+\_\+\+R\+E\+T\+U\+RN}}
+\index{O\+P\+T\+\_\+\+A\+C\+C\+E\+P\+T\+\_\+\+N\+O\+N\+Z\+E\+R\+O\+\_\+\+R\+E\+T\+U\+RN@{O\+P\+T\+\_\+\+A\+C\+C\+E\+P\+T\+\_\+\+N\+O\+N\+Z\+E\+R\+O\+\_\+\+R\+E\+T\+U\+RN}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+A\+C\+C\+E\+P\+T\+\_\+\+N\+O\+N\+Z\+E\+R\+O\+\_\+\+R\+E\+T\+U\+RN}{OPT\_ACCEPT\_NONZERO\_RETURN}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+A\+C\+C\+E\+P\+T\+\_\+\+N\+O\+N\+Z\+E\+R\+O\+\_\+\+R\+E\+T\+U\+RN~256}
+
+
+
+Autoheader. 
+
+algorithms/clique\+\_\+covering constants include H\+L\+S/binding/module H\+L\+S/evaluation include H\+L\+S/memory include H\+L\+S/scheduling include tree include Header include creation of the target architecture Constant option include S\+TD include S\+TL includes Technology include technology/physical\+\_\+library Utility include Wrapper include Design Space Exploration 
+
+Definition at line 209 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_aada9a108735ff69249519fbe26e9a4d1}\label{BambuParameter_8cpp_aada9a108735ff69249519fbe26e9a4d1}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+A\+C\+O\+\_\+\+F\+L\+OW@{O\+P\+T\+\_\+\+A\+C\+O\+\_\+\+F\+L\+OW}}
+\index{O\+P\+T\+\_\+\+A\+C\+O\+\_\+\+F\+L\+OW@{O\+P\+T\+\_\+\+A\+C\+O\+\_\+\+F\+L\+OW}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+A\+C\+O\+\_\+\+F\+L\+OW}{OPT\_ACO\_FLOW}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+A\+C\+O\+\_\+\+F\+L\+OW~(1 + \hyperlink{BambuParameter_8cpp_ad713960ea990ea230809739e2d48ae9b}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+\_\+\+P\+Y\+T\+H\+O\+N\+\_\+\+N\+O\+\_\+\+P\+A\+R\+SE})}
+
+
+
+Definition at line 212 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_ad7be1e1ad5d9f02cc3ca0cb220fdbad2}\label{BambuParameter_8cpp_ad7be1e1ad5d9f02cc3ca0cb220fdbad2}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+A\+C\+O\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+O\+NS@{O\+P\+T\+\_\+\+A\+C\+O\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+O\+NS}}
+\index{O\+P\+T\+\_\+\+A\+C\+O\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+O\+NS@{O\+P\+T\+\_\+\+A\+C\+O\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+O\+NS}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+A\+C\+O\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+O\+NS}{OPT\_ACO\_GENERATIONS}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+A\+C\+O\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+O\+NS~(1 + \hyperlink{BambuParameter_8cpp_aada9a108735ff69249519fbe26e9a4d1}{O\+P\+T\+\_\+\+A\+C\+O\+\_\+\+F\+L\+OW})}
+
+
+
+Definition at line 213 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a36b65b50e91d1f3c291dd7850dff9294}\label{BambuParameter_8cpp_a36b65b50e91d1f3c291dd7850dff9294}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+T\+OP@{O\+P\+T\+\_\+\+A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+T\+OP}}
+\index{O\+P\+T\+\_\+\+A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+T\+OP@{O\+P\+T\+\_\+\+A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+T\+OP}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+T\+OP}{OPT\_ADDITIONAL\_TOP}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+T\+OP~(1 + \hyperlink{BambuParameter_8cpp_ad7be1e1ad5d9f02cc3ca0cb220fdbad2}{O\+P\+T\+\_\+\+A\+C\+O\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+O\+NS})}
+
+
+
+Definition at line 214 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a51a73c81a591210aef24687c83a3e4e0}\label{BambuParameter_8cpp_a51a73c81a591210aef24687c83a3e4e0}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{O\+P\+T\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}}
+\index{O\+P\+T\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{O\+P\+T\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}{OPT\_ALIGNED\_ACCESS\_PARAMETER}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER~(1 + \hyperlink{BambuParameter_8cpp_a36b65b50e91d1f3c291dd7850dff9294}{O\+P\+T\+\_\+\+A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+T\+OP})}
+
+
+
+Definition at line 215 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a98a2e0c43d783e24d26851d3e6a96409}\label{BambuParameter_8cpp_a98a2e0c43d783e24d26851d3e6a96409}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+A\+R\+E\+A\+\_\+\+W\+E\+I\+G\+HT@{O\+P\+T\+\_\+\+A\+R\+E\+A\+\_\+\+W\+E\+I\+G\+HT}}
+\index{O\+P\+T\+\_\+\+A\+R\+E\+A\+\_\+\+W\+E\+I\+G\+HT@{O\+P\+T\+\_\+\+A\+R\+E\+A\+\_\+\+W\+E\+I\+G\+HT}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+A\+R\+E\+A\+\_\+\+W\+E\+I\+G\+HT}{OPT\_AREA\_WEIGHT}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+A\+R\+E\+A\+\_\+\+W\+E\+I\+G\+HT~(1 + \hyperlink{BambuParameter_8cpp_a51a73c81a591210aef24687c83a3e4e0}{O\+P\+T\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER})}
+
+
+
+Definition at line 216 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a09aa5c0342412b47f139db415e97ab44}\label{BambuParameter_8cpp_a09aa5c0342412b47f139db415e97ab44}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+B\+A\+C\+K\+E\+N\+D\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{O\+P\+T\+\_\+\+B\+A\+C\+K\+E\+N\+D\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}}
+\index{O\+P\+T\+\_\+\+B\+A\+C\+K\+E\+N\+D\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{O\+P\+T\+\_\+\+B\+A\+C\+K\+E\+N\+D\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+B\+A\+C\+K\+E\+N\+D\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}{OPT\_BACKEND\_SCRIPT\_EXTENSIONS\_PARAMETER}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+B\+A\+C\+K\+E\+N\+D\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER~(1 + \hyperlink{BambuParameter_8cpp_a98a2e0c43d783e24d26851d3e6a96409}{O\+P\+T\+\_\+\+A\+R\+E\+A\+\_\+\+W\+E\+I\+G\+HT})}
+
+
+
+Definition at line 217 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a6d41378b19a106b40a1f9a64ca96e1b9}\label{BambuParameter_8cpp_a6d41378b19a106b40a1f9a64ca96e1b9}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+B\+A\+C\+K\+E\+N\+D\+\_\+\+S\+D\+C\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{O\+P\+T\+\_\+\+B\+A\+C\+K\+E\+N\+D\+\_\+\+S\+D\+C\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}}
+\index{O\+P\+T\+\_\+\+B\+A\+C\+K\+E\+N\+D\+\_\+\+S\+D\+C\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{O\+P\+T\+\_\+\+B\+A\+C\+K\+E\+N\+D\+\_\+\+S\+D\+C\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+B\+A\+C\+K\+E\+N\+D\+\_\+\+S\+D\+C\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}{OPT\_BACKEND\_SDC\_EXTENSIONS\_PARAMETER}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+B\+A\+C\+K\+E\+N\+D\+\_\+\+S\+D\+C\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER~(1 + \hyperlink{BambuParameter_8cpp_a09aa5c0342412b47f139db415e97ab44}{O\+P\+T\+\_\+\+B\+A\+C\+K\+E\+N\+D\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER})}
+
+
+
+Definition at line 218 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_aae1af43c8616b5bc982d64a5526e054d}\label{BambuParameter_8cpp_aae1af43c8616b5bc982d64a5526e054d}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+B\+R\+A\+M\+\_\+\+H\+I\+G\+H\+\_\+\+L\+A\+T\+E\+N\+CY@{O\+P\+T\+\_\+\+B\+R\+A\+M\+\_\+\+H\+I\+G\+H\+\_\+\+L\+A\+T\+E\+N\+CY}}
+\index{O\+P\+T\+\_\+\+B\+R\+A\+M\+\_\+\+H\+I\+G\+H\+\_\+\+L\+A\+T\+E\+N\+CY@{O\+P\+T\+\_\+\+B\+R\+A\+M\+\_\+\+H\+I\+G\+H\+\_\+\+L\+A\+T\+E\+N\+CY}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+B\+R\+A\+M\+\_\+\+H\+I\+G\+H\+\_\+\+L\+A\+T\+E\+N\+CY}{OPT\_BRAM\_HIGH\_LATENCY}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+B\+R\+A\+M\+\_\+\+H\+I\+G\+H\+\_\+\+L\+A\+T\+E\+N\+CY~(1 + \hyperlink{BambuParameter_8cpp_afb3b4673ba8b3115c67639b411b7b546}{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+B\+I\+T\+V\+A\+L\+U\+E\+\_\+\+I\+PA})}
+
+
+
+Definition at line 221 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a78cd84e9414ea97620f98e7568ccd409}\label{BambuParameter_8cpp_a78cd84e9414ea97620f98e7568ccd409}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+N\+U\+M\+B\+ER@{O\+P\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+N\+U\+M\+B\+ER}}
+\index{O\+P\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+N\+U\+M\+B\+ER@{O\+P\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+N\+U\+M\+B\+ER}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+N\+U\+M\+B\+ER}{OPT\_CHANNELS\_NUMBER}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+N\+U\+M\+B\+ER~(1 + \hyperlink{BambuParameter_8cpp_aae1af43c8616b5bc982d64a5526e054d}{O\+P\+T\+\_\+\+B\+R\+A\+M\+\_\+\+H\+I\+G\+H\+\_\+\+L\+A\+T\+E\+N\+CY})}
+
+
+
+Definition at line 222 of file Bambu\+Parameter.\+cpp.
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a454c8728b1192b9daa6547c24f5b45cd}\label{BambuParameter_8cpp_a454c8728b1192b9daa6547c24f5b45cd}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+PE@{O\+P\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+PE}}
+\index{O\+P\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+PE@{O\+P\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+PE}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+PE}{OPT\_CHANNELS\_TYPE}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+PE~(1 + \hyperlink{BambuParameter_8cpp_a78cd84e9414ea97620f98e7568ccd409}{O\+P\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+N\+U\+M\+B\+ER})}
+
+
+
+Definition at line 223 of file Bambu\+Parameter.\+cpp.
+
+\mbox{\Hypertarget{BambuParameter_8cpp_af684ae3e3ba8fa93b29974835b2d95a4}\label{BambuParameter_8cpp_af684ae3e3ba8fa93b29974835b2d95a4}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+N\+A\+ME@{O\+P\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+N\+A\+ME}}
+\index{O\+P\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+N\+A\+ME@{O\+P\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+N\+A\+ME}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+N\+A\+ME}{OPT\_CLOCK\_NAME}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+N\+A\+ME~(1 + \hyperlink{BambuParameter_8cpp_a4003420c5dccaa5d1740a5e70ac4dd57}{O\+P\+T\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+C\+L\+O\+CK})}
+
+
+
+Definition at line 282 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a24fff0960f26363a9eb5b97b55f90f63}\label{BambuParameter_8cpp_a24fff0960f26363a9eb5b97b55f90f63}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+F\+R\+A\+C\+T\+I\+ON@{O\+P\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+F\+R\+A\+C\+T\+I\+ON}}
+\index{O\+P\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+F\+R\+A\+C\+T\+I\+ON@{O\+P\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+F\+R\+A\+C\+T\+I\+ON}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+F\+R\+A\+C\+T\+I\+ON}{OPT\_CLOCK\_PERIOD\_RESOURCE\_FRACTION}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+F\+R\+A\+C\+T\+I\+ON~(1 + \hyperlink{BambuParameter_8cpp_a454c8728b1192b9daa6547c24f5b45cd}{O\+P\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+PE})}
+
+
+
+Definition at line 224 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_aae876f2770a3f6dbf43d57d742e98c80}\label{BambuParameter_8cpp_aae876f2770a3f6dbf43d57d742e98c80}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+N\+A\+ME@{O\+P\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+N\+A\+ME}}
+\index{O\+P\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+N\+A\+ME@{O\+P\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+N\+A\+ME}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+N\+A\+ME}{OPT\_DEVICE\_NAME}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+N\+A\+ME~(1 + \hyperlink{BambuParameter_8cpp_a24fff0960f26363a9eb5b97b55f90f63}{O\+P\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+F\+R\+A\+C\+T\+I\+ON})}
+
+
+
+Definition at line 225 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_afb3b4673ba8b3115c67639b411b7b546}\label{BambuParameter_8cpp_afb3b4673ba8b3115c67639b411b7b546}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+B\+I\+T\+V\+A\+L\+U\+E\+\_\+\+I\+PA@{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+B\+I\+T\+V\+A\+L\+U\+E\+\_\+\+I\+PA}}
+\index{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+B\+I\+T\+V\+A\+L\+U\+E\+\_\+\+I\+PA@{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+B\+I\+T\+V\+A\+L\+U\+E\+\_\+\+I\+PA}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+B\+I\+T\+V\+A\+L\+U\+E\+\_\+\+I\+PA}{OPT\_DISABLE\_BITVALUE\_IPA}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+B\+I\+T\+V\+A\+L\+U\+E\+\_\+\+I\+PA~(1 + \hyperlink{BambuParameter_8cpp_a0106571b67c56176efb4f07f5bb5fa7f}{O\+P\+T\+\_\+\+I\+N\+P\+U\+T\+\_\+\+C\+O\+N\+T\+E\+X\+T\+\_\+\+S\+W\+I\+T\+CH})}
+
+
+
+Definition at line 220 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a5147c256bd137605bbd712f8221b480d}\label{BambuParameter_8cpp_a5147c256bd137605bbd712f8221b480d}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+B\+O\+U\+N\+D\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON@{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+B\+O\+U\+N\+D\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON}}
+\index{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+B\+O\+U\+N\+D\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON@{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+B\+O\+U\+N\+D\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+B\+O\+U\+N\+D\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON}{OPT\_DISABLE\_BOUNDED\_FUNCTION}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+B\+O\+U\+N\+D\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON~(1 + \hyperlink{BambuParameter_8cpp_aae876f2770a3f6dbf43d57d742e98c80}{O\+P\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+N\+A\+ME})}
+
+
+
+Definition at line 226 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a5ec56ac8cdd3d453014c46b66296678e}\label{BambuParameter_8cpp_a5ec56ac8cdd3d453014c46b66296678e}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+XY@{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+XY}}
+\index{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+XY@{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+XY}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+XY}{OPT\_DISABLE\_FUNCTION\_PROXY}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+XY~(1 + \hyperlink{BambuParameter_8cpp_a5147c256bd137605bbd712f8221b480d}{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+B\+O\+U\+N\+D\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON})}
+
+
+
+Definition at line 227 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_ac107d865f18fb9e8c3154e8b14379933}\label{BambuParameter_8cpp_ac107d865f18fb9e8c3154e8b14379933}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+I\+OB@{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+I\+OB}}
+\index{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+I\+OB@{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+I\+OB}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+I\+OB}{OPT\_DISABLE\_IOB}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+I\+OB~(1 + \hyperlink{BambuParameter_8cpp_a5ec56ac8cdd3d453014c46b66296678e}{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+XY})}
+
+
+
+Definition at line 228 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_af49e496a1a820b66160b0b155df1dd02}\label{BambuParameter_8cpp_af49e496a1a820b66160b0b155df1dd02}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+R\+E\+G\+\_\+\+I\+N\+I\+T\+\_\+\+V\+A\+L\+UE@{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+R\+E\+G\+\_\+\+I\+N\+I\+T\+\_\+\+V\+A\+L\+UE}}
+\index{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+R\+E\+G\+\_\+\+I\+N\+I\+T\+\_\+\+V\+A\+L\+UE@{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+R\+E\+G\+\_\+\+I\+N\+I\+T\+\_\+\+V\+A\+L\+UE}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+R\+E\+G\+\_\+\+I\+N\+I\+T\+\_\+\+V\+A\+L\+UE}{OPT\_DISABLE\_REG\_INIT\_VALUE}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+R\+E\+G\+\_\+\+I\+N\+I\+T\+\_\+\+V\+A\+L\+UE~(1 + \hyperlink{BambuParameter_8cpp_a23a851bbc9170d3c72b620798573ecbc}{O\+P\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+R\+E\+S\+ET})}
+
+
+
+Definition at line 295 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a919f7e7933d24b053d5e7f2c38953838}\label{BambuParameter_8cpp_a919f7e7933d24b053d5e7f2c38953838}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+CY@{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+CY}}
+\index{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+CY@{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+CY}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+CY}{OPT\_DISCREPANCY}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+CY~(1 + \hyperlink{BambuParameter_8cpp_a5a7abc4f3f2eff05b926bd50f9cb754f}{O\+P\+T\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+G\+E\+N\+E\+R\+A\+T\+O\+R\+S\+\_\+\+D\+IR})}
+
+
+
+Definition at line 240 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a0605e793f58d82792e71b28d7a94d4e9}\label{BambuParameter_8cpp_a0605e793f58d82792e71b28d7a94d4e9}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+F\+O\+R\+CE@{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+F\+O\+R\+CE}}
+\index{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+F\+O\+R\+CE@{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+F\+O\+R\+CE}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+F\+O\+R\+CE}{OPT\_DISCREPANCY\_FORCE}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+F\+O\+R\+CE~(1 + \hyperlink{BambuParameter_8cpp_a919f7e7933d24b053d5e7f2c38953838}{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+CY})}
+
+
+
+Definition at line 241 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a9372ccb87851dd798364bb92d79fbb2d}\label{BambuParameter_8cpp_a9372ccb87851dd798364bb92d79fbb2d}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+HW@{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+HW}}
+\index{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+HW@{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+HW}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+HW}{OPT\_DISCREPANCY\_HW}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+HW~(1 + \hyperlink{BambuParameter_8cpp_a0605e793f58d82792e71b28d7a94d4e9}{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+F\+O\+R\+CE})}
+
+
+
+Definition at line 242 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a5b70f77af29c5ceeac5520c371419064}\label{BambuParameter_8cpp_a5b70f77af29c5ceeac5520c371419064}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+N\+O\+\_\+\+L\+O\+A\+D\+\_\+\+P\+O\+I\+N\+T\+E\+RS@{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+N\+O\+\_\+\+L\+O\+A\+D\+\_\+\+P\+O\+I\+N\+T\+E\+RS}}
+\index{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+N\+O\+\_\+\+L\+O\+A\+D\+\_\+\+P\+O\+I\+N\+T\+E\+RS@{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+N\+O\+\_\+\+L\+O\+A\+D\+\_\+\+P\+O\+I\+N\+T\+E\+RS}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+N\+O\+\_\+\+L\+O\+A\+D\+\_\+\+P\+O\+I\+N\+T\+E\+RS}{OPT\_DISCREPANCY\_NO\_LOAD\_POINTERS}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+N\+O\+\_\+\+L\+O\+A\+D\+\_\+\+P\+O\+I\+N\+T\+E\+RS~(1 + \hyperlink{BambuParameter_8cpp_a9372ccb87851dd798364bb92d79fbb2d}{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+HW})}
+
+
+
+Definition at line 243 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_aaaac784e5b35b3c6547d5e60767895eb}\label{BambuParameter_8cpp_aaaac784e5b35b3c6547d5e60767895eb}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+O\+N\+LY@{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+O\+N\+LY}}
+\index{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+O\+N\+LY@{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+O\+N\+LY}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+O\+N\+LY}{OPT\_DISCREPANCY\_ONLY}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+O\+N\+LY~(1 + \hyperlink{BambuParameter_8cpp_a5b70f77af29c5ceeac5520c371419064}{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+N\+O\+\_\+\+L\+O\+A\+D\+\_\+\+P\+O\+I\+N\+T\+E\+RS})}
+
+
+
+Definition at line 244 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a6ac0d3544dfb5742cf68a7a301243d84}\label{BambuParameter_8cpp_a6ac0d3544dfb5742cf68a7a301243d84}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+V\+E\+\_\+\+P\+T\+RS@{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+V\+E\+\_\+\+P\+T\+RS}}
+\index{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+V\+E\+\_\+\+P\+T\+RS@{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+V\+E\+\_\+\+P\+T\+RS}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+V\+E\+\_\+\+P\+T\+RS}{OPT\_DISCREPANCY\_PERMISSIVE\_PTRS}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+V\+E\+\_\+\+P\+T\+RS~(1 + \hyperlink{BambuParameter_8cpp_aaaac784e5b35b3c6547d5e60767895eb}{O\+P\+T\+\_\+\+D\+I\+S\+C\+R\+E\+P\+A\+N\+C\+Y\+\_\+\+O\+N\+LY})}
+
+
+
+Definition at line 245 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a3190bba9c3556eb2ffc8d54b16d98d60}\label{BambuParameter_8cpp_a3190bba9c3556eb2ffc8d54b16d98d60}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD@{O\+P\+T\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}}
+\index{O\+P\+T\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD@{O\+P\+T\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}{OPT\_DISTRAM\_THRESHOLD}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD~(1 + \hyperlink{BambuParameter_8cpp_ac107d865f18fb9e8c3154e8b14379933}{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+I\+OB})}
+
+
+
+Definition at line 229 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a51a9556e81654aa36061a48d8dca0cd6}\label{BambuParameter_8cpp_a51a9556e81654aa36061a48d8dca0cd6}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+C\+H\+A\+I\+N\+\_\+\+M\+E\+M\+O\+R\+I\+ES@{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+C\+H\+A\+I\+N\+\_\+\+M\+E\+M\+O\+R\+I\+ES}}
+\index{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+C\+H\+A\+I\+N\+\_\+\+M\+E\+M\+O\+R\+I\+ES@{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+C\+H\+A\+I\+N\+\_\+\+M\+E\+M\+O\+R\+I\+ES}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+C\+H\+A\+I\+N\+\_\+\+M\+E\+M\+O\+R\+I\+ES}{OPT\_DO\_NOT\_CHAIN\_MEMORIES}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+C\+H\+A\+I\+N\+\_\+\+M\+E\+M\+O\+R\+I\+ES~(1 + \hyperlink{BambuParameter_8cpp_a3190bba9c3556eb2ffc8d54b16d98d60}{O\+P\+T\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD})}
+
+
+
+Definition at line 230 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_aef3ef499bd8d47e362f720a026a92ba8}\label{BambuParameter_8cpp_aef3ef499bd8d47e362f720a026a92ba8}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+E\+X\+P\+O\+S\+E\+\_\+\+G\+L\+O\+B\+A\+LS@{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+E\+X\+P\+O\+S\+E\+\_\+\+G\+L\+O\+B\+A\+LS}}
+\index{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+E\+X\+P\+O\+S\+E\+\_\+\+G\+L\+O\+B\+A\+LS@{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+E\+X\+P\+O\+S\+E\+\_\+\+G\+L\+O\+B\+A\+LS}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+E\+X\+P\+O\+S\+E\+\_\+\+G\+L\+O\+B\+A\+LS}{OPT\_DO\_NOT\_EXPOSE\_GLOBALS}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+E\+X\+P\+O\+S\+E\+\_\+\+G\+L\+O\+B\+A\+LS~(1 + \hyperlink{BambuParameter_8cpp_a51a9556e81654aa36061a48d8dca0cd6}{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+C\+H\+A\+I\+N\+\_\+\+M\+E\+M\+O\+R\+I\+ES})}
+
+
+
+Definition at line 231 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a41aedbacecaadceab3870ba78ae98478}\label{BambuParameter_8cpp_a41aedbacecaadceab3870ba78ae98478}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+U\+S\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+M\+E\+M\+O\+R\+I\+ES@{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+U\+S\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+M\+E\+M\+O\+R\+I\+ES}}
+\index{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+U\+S\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+M\+E\+M\+O\+R\+I\+ES@{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+U\+S\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+M\+E\+M\+O\+R\+I\+ES}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+U\+S\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+M\+E\+M\+O\+R\+I\+ES}{OPT\_DO\_NOT\_USE\_ASYNCHRONOUS\_MEMORIES}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+U\+S\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+M\+E\+M\+O\+R\+I\+ES~(1 + \hyperlink{BambuParameter_8cpp_a17f2e1302327e062b38df9d00753775e}{O\+P\+T\+\_\+\+R\+O\+M\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+I\+ON})}
+
+
+
+Definition at line 233 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a1e1269ada9f4cadccf6f4cd8d06b2158}\label{BambuParameter_8cpp_a1e1269ada9f4cadccf6f4cd8d06b2158}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+O\+N\+E\+\_\+\+N\+A\+ME@{O\+P\+T\+\_\+\+D\+O\+N\+E\+\_\+\+N\+A\+ME}}
+\index{O\+P\+T\+\_\+\+D\+O\+N\+E\+\_\+\+N\+A\+ME@{O\+P\+T\+\_\+\+D\+O\+N\+E\+\_\+\+N\+A\+ME}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+O\+N\+E\+\_\+\+N\+A\+ME}{OPT\_DONE\_NAME}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+O\+N\+E\+\_\+\+N\+A\+ME~(1 + \hyperlink{BambuParameter_8cpp_a4c811a8a9a8c5c84ab441f62f3dc19d7}{O\+P\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+N\+A\+ME})}
+
+
+
+Definition at line 285 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a8a2e2686229fdd7a878ee40a3f728d3d}\label{BambuParameter_8cpp_a8a2e2686229fdd7a878ee40a3f728d3d}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+SE@{O\+P\+T\+\_\+\+D\+SE}}
+\index{O\+P\+T\+\_\+\+D\+SE@{O\+P\+T\+\_\+\+D\+SE}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+SE}{OPT\_DSE}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+SE~(1 + \hyperlink{BambuParameter_8cpp_a41aedbacecaadceab3870ba78ae98478}{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+U\+S\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+U\+S\+\_\+\+M\+E\+M\+O\+R\+I\+ES})}
+
+
+
+Definition at line 234 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a0259ecf11cefb44569c76da9de390101}\label{BambuParameter_8cpp_a0259ecf11cefb44569c76da9de390101}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+C\+O\+E\+F\+F\+I\+C\+I\+E\+NT@{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+C\+O\+E\+F\+F\+I\+C\+I\+E\+NT}}
+\index{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+C\+O\+E\+F\+F\+I\+C\+I\+E\+NT@{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+C\+O\+E\+F\+F\+I\+C\+I\+E\+NT}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+C\+O\+E\+F\+F\+I\+C\+I\+E\+NT}{OPT\_DSP\_ALLOCATION\_COEFFICIENT}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+C\+O\+E\+F\+F\+I\+C\+I\+E\+NT~(1 + \hyperlink{BambuParameter_8cpp_a8a2e2686229fdd7a878ee40a3f728d3d}{O\+P\+T\+\_\+\+D\+SE})}
+
+
+
+Definition at line 235 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a0020bac3ae9c0774d30bc3d1c5145060}\label{BambuParameter_8cpp_a0020bac3ae9c0774d30bc3d1c5145060}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+M\+A\+R\+G\+I\+N\+\_\+\+C\+O\+M\+B\+I\+N\+A\+T\+I\+O\+N\+AL@{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+M\+A\+R\+G\+I\+N\+\_\+\+C\+O\+M\+B\+I\+N\+A\+T\+I\+O\+N\+AL}}
+\index{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+M\+A\+R\+G\+I\+N\+\_\+\+C\+O\+M\+B\+I\+N\+A\+T\+I\+O\+N\+AL@{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+M\+A\+R\+G\+I\+N\+\_\+\+C\+O\+M\+B\+I\+N\+A\+T\+I\+O\+N\+AL}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+M\+A\+R\+G\+I\+N\+\_\+\+C\+O\+M\+B\+I\+N\+A\+T\+I\+O\+N\+AL}{OPT\_DSP\_MARGIN\_COMBINATIONAL}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+M\+A\+R\+G\+I\+N\+\_\+\+C\+O\+M\+B\+I\+N\+A\+T\+I\+O\+N\+AL~(1 + \hyperlink{BambuParameter_8cpp_a0259ecf11cefb44569c76da9de390101}{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+C\+O\+E\+F\+F\+I\+C\+I\+E\+NT})}
+
+
+
+Definition at line 236 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_af2f30301100fafddfd3076df39e22100}\label{BambuParameter_8cpp_af2f30301100fafddfd3076df39e22100}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+M\+A\+R\+G\+I\+N\+\_\+\+P\+I\+P\+E\+L\+I\+N\+ED@{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+M\+A\+R\+G\+I\+N\+\_\+\+P\+I\+P\+E\+L\+I\+N\+ED}}
+\index{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+M\+A\+R\+G\+I\+N\+\_\+\+P\+I\+P\+E\+L\+I\+N\+ED@{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+M\+A\+R\+G\+I\+N\+\_\+\+P\+I\+P\+E\+L\+I\+N\+ED}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+M\+A\+R\+G\+I\+N\+\_\+\+P\+I\+P\+E\+L\+I\+N\+ED}{OPT\_DSP\_MARGIN\_PIPELINED}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+M\+A\+R\+G\+I\+N\+\_\+\+P\+I\+P\+E\+L\+I\+N\+ED~(1 + \hyperlink{BambuParameter_8cpp_a0020bac3ae9c0774d30bc3d1c5145060}{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+M\+A\+R\+G\+I\+N\+\_\+\+C\+O\+M\+B\+I\+N\+A\+T\+I\+O\+N\+AL})}
+
+
+
+Definition at line 237 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a8a6d718973d0312d2fea8760ceb8dade}\label{BambuParameter_8cpp_a8a6d718973d0312d2fea8760ceb8dade}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+U\+M\+P\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+TS@{O\+P\+T\+\_\+\+D\+U\+M\+P\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+TS}}
+\index{O\+P\+T\+\_\+\+D\+U\+M\+P\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+TS@{O\+P\+T\+\_\+\+D\+U\+M\+P\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+TS}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+U\+M\+P\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+TS}{OPT\_DUMP\_CONSTRAINTS}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+U\+M\+P\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+TS~(1 + \hyperlink{BambuParameter_8cpp_af2f30301100fafddfd3076df39e22100}{O\+P\+T\+\_\+\+D\+S\+P\+\_\+\+M\+A\+R\+G\+I\+N\+\_\+\+P\+I\+P\+E\+L\+I\+N\+ED})}
+
+
+
+Definition at line 238 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a5a7abc4f3f2eff05b926bd50f9cb754f}\label{BambuParameter_8cpp_a5a7abc4f3f2eff05b926bd50f9cb754f}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+G\+E\+N\+E\+R\+A\+T\+O\+R\+S\+\_\+\+D\+IR@{O\+P\+T\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+G\+E\+N\+E\+R\+A\+T\+O\+R\+S\+\_\+\+D\+IR}}
+\index{O\+P\+T\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+G\+E\+N\+E\+R\+A\+T\+O\+R\+S\+\_\+\+D\+IR@{O\+P\+T\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+G\+E\+N\+E\+R\+A\+T\+O\+R\+S\+\_\+\+D\+IR}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+G\+E\+N\+E\+R\+A\+T\+O\+R\+S\+\_\+\+D\+IR}{OPT\_DYNAMIC\_GENERATORS\_DIR}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+G\+E\+N\+E\+R\+A\+T\+O\+R\+S\+\_\+\+D\+IR~(1 + \hyperlink{BambuParameter_8cpp_a8a6d718973d0312d2fea8760ceb8dade}{O\+P\+T\+\_\+\+D\+U\+M\+P\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+TS})}
+
+
+
+Definition at line 239 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a717701eb16cb358eb76e92279a9a7536}\label{BambuParameter_8cpp_a717701eb16cb358eb76e92279a9a7536}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+OB@{O\+P\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+OB}}
+\index{O\+P\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+OB@{O\+P\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+OB}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+OB}{OPT\_ENABLE\_IOB}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+OB~(1 + \hyperlink{BambuParameter_8cpp_a3d2bf337d92fb77e2ddba74b489c018c}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+D\+R\+Y\+\_\+\+R\+U\+N\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+ON})}
+
+
+
+Definition at line 247 of file Bambu\+Parameter.\+cpp.
+
+\mbox{\Hypertarget{BambuParameter_8cpp_abc3fa9117288a00ff0c34c7d7c8dc0e8}\label{BambuParameter_8cpp_abc3fa9117288a00ff0c34c7d7c8dc0e8}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+ON@{O\+P\+T\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+ON}}
+\index{O\+P\+T\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+ON@{O\+P\+T\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+ON}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+ON}{OPT\_EVALUATION}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+ON~(1 + \hyperlink{BambuParameter_8cpp_a717701eb16cb358eb76e92279a9a7536}{O\+P\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+OB})}
+
+
+
+Definition at line 248 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_aba56cd705297686a6a2ca8d548dbdfdb}\label{BambuParameter_8cpp_aba56cd705297686a6a2ca8d548dbdfdb}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+O\+N\+\_\+\+M\+O\+DE@{O\+P\+T\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+O\+N\+\_\+\+M\+O\+DE}}
+\index{O\+P\+T\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+O\+N\+\_\+\+M\+O\+DE@{O\+P\+T\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+O\+N\+\_\+\+M\+O\+DE}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+O\+N\+\_\+\+M\+O\+DE}{OPT\_EVALUATION\_MODE}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+O\+N\+\_\+\+M\+O\+DE~(1 + \hyperlink{BambuParameter_8cpp_abc3fa9117288a00ff0c34c7d7c8dc0e8}{O\+P\+T\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+ON})}
+
+
+
+Definition at line 249 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a23b4857459e8fdb2069bb951cf89d5d4}\label{BambuParameter_8cpp_a23b4857459e8fdb2069bb951cf89d5d4}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L\+\_\+\+S\+E\+T\+UP@{O\+P\+T\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L\+\_\+\+S\+E\+T\+UP}}
+\index{O\+P\+T\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L\+\_\+\+S\+E\+T\+UP@{O\+P\+T\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L\+\_\+\+S\+E\+T\+UP}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L\+\_\+\+S\+E\+T\+UP}{OPT\_EXPERIMENTAL\_SETUP}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L\+\_\+\+S\+E\+T\+UP~(1 + \hyperlink{BambuParameter_8cpp_aba56cd705297686a6a2ca8d548dbdfdb}{O\+P\+T\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+O\+N\+\_\+\+M\+O\+DE})}
+
+
+
+Definition at line 250 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_afb377f937f18f6155583a37cccfcbe7c}\label{BambuParameter_8cpp_afb377f937f18f6155583a37cccfcbe7c}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+F\+I\+X\+E\+D\+\_\+\+S\+C\+H\+ED@{O\+P\+T\+\_\+\+F\+I\+X\+E\+D\+\_\+\+S\+C\+H\+ED}}
+\index{O\+P\+T\+\_\+\+F\+I\+X\+E\+D\+\_\+\+S\+C\+H\+ED@{O\+P\+T\+\_\+\+F\+I\+X\+E\+D\+\_\+\+S\+C\+H\+ED}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+F\+I\+X\+E\+D\+\_\+\+S\+C\+H\+ED}{OPT\_FIXED\_SCHED}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+F\+I\+X\+E\+D\+\_\+\+S\+C\+H\+ED~(1 + \hyperlink{BambuParameter_8cpp_a22a770e86adef023b29acc30723a574d}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+F\+I\+N\+D\+\_\+\+M\+A\+X\+\_\+\+C\+F\+G\+\_\+\+T\+R\+A\+N\+S\+F\+O\+R\+M\+A\+T\+I\+O\+NS})}
+
+
+
+Definition at line 252 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a934892e2eb5b939289367eea0ce5a7f8}\label{BambuParameter_8cpp_a934892e2eb5b939289367eea0ce5a7f8}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+F\+L\+O\+P\+O\+CO@{O\+P\+T\+\_\+\+F\+L\+O\+P\+O\+CO}}
+\index{O\+P\+T\+\_\+\+F\+L\+O\+P\+O\+CO@{O\+P\+T\+\_\+\+F\+L\+O\+P\+O\+CO}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+F\+L\+O\+P\+O\+CO}{OPT\_FLOPOCO}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+F\+L\+O\+P\+O\+CO~(1 + \hyperlink{BambuParameter_8cpp_afb377f937f18f6155583a37cccfcbe7c}{O\+P\+T\+\_\+\+F\+I\+X\+E\+D\+\_\+\+S\+C\+H\+ED})}
+
+
+
+Definition at line 253 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a7b23289b1ff536ce28e03a875f4c6410}\label{BambuParameter_8cpp_a7b23289b1ff536ce28e03a875f4c6410}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+F\+S\+M\+\_\+\+E\+N\+C\+O\+D\+I\+NG@{O\+P\+T\+\_\+\+F\+S\+M\+\_\+\+E\+N\+C\+O\+D\+I\+NG}}
+\index{O\+P\+T\+\_\+\+F\+S\+M\+\_\+\+E\+N\+C\+O\+D\+I\+NG@{O\+P\+T\+\_\+\+F\+S\+M\+\_\+\+E\+N\+C\+O\+D\+I\+NG}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+F\+S\+M\+\_\+\+E\+N\+C\+O\+D\+I\+NG}{OPT\_FSM\_ENCODING}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+F\+S\+M\+\_\+\+E\+N\+C\+O\+D\+I\+NG~(1 + \hyperlink{BambuParameter_8cpp_a2e6f928d10c5f7ff8389e9555bed8b40}{O\+P\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+I\+N\+P\+U\+TS})}
+
+
+
+Definition at line 292 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a1fac55b79c389ae27daf851bfbd28f76}\label{BambuParameter_8cpp_a1fac55b79c389ae27daf851bfbd28f76}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+V\+CD@{O\+P\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+V\+CD}}
+\index{O\+P\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+V\+CD@{O\+P\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+V\+CD}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+V\+CD}{OPT\_GENERATE\_VCD}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+V\+CD~(1 + \hyperlink{BambuParameter_8cpp_a934892e2eb5b939289367eea0ce5a7f8}{O\+P\+T\+\_\+\+F\+L\+O\+P\+O\+CO})}
+
+
+
+Definition at line 254 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_acddce6cec360e8953d55ec4b6f901d1e}\label{BambuParameter_8cpp_acddce6cec360e8953d55ec4b6f901d1e}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+ON@{O\+P\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+ON}}
+\index{O\+P\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+ON@{O\+P\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+ON}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+ON}{OPT\_GENERATION}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+ON~(1 + \hyperlink{BambuParameter_8cpp_a1fac55b79c389ae27daf851bfbd28f76}{O\+P\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+V\+CD})}
+
+
+
+Definition at line 255 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a7e24f02b7c76840511bce481e8d9ae27}\label{BambuParameter_8cpp_a7e24f02b7c76840511bce481e8d9ae27}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+H\+L\+S\+\_\+\+D\+IV@{O\+P\+T\+\_\+\+H\+L\+S\+\_\+\+D\+IV}}
+\index{O\+P\+T\+\_\+\+H\+L\+S\+\_\+\+D\+IV@{O\+P\+T\+\_\+\+H\+L\+S\+\_\+\+D\+IV}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+H\+L\+S\+\_\+\+D\+IV}{OPT\_HLS\_DIV}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+H\+L\+S\+\_\+\+D\+IV~(1 + \hyperlink{BambuParameter_8cpp_acddce6cec360e8953d55ec4b6f901d1e}{O\+P\+T\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+ON})}
+
+
+
+Definition at line 256 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_aac3e5af69c8c7430d0b9bf6c56bb995d}\label{BambuParameter_8cpp_aac3e5af69c8c7430d0b9bf6c56bb995d}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+H\+L\+S\+\_\+\+F\+P\+D\+IV@{O\+P\+T\+\_\+\+H\+L\+S\+\_\+\+F\+P\+D\+IV}}
+\index{O\+P\+T\+\_\+\+H\+L\+S\+\_\+\+F\+P\+D\+IV@{O\+P\+T\+\_\+\+H\+L\+S\+\_\+\+F\+P\+D\+IV}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+H\+L\+S\+\_\+\+F\+P\+D\+IV}{OPT\_HLS\_FPDIV}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+H\+L\+S\+\_\+\+F\+P\+D\+IV~(1 + \hyperlink{BambuParameter_8cpp_a7e24f02b7c76840511bce481e8d9ae27}{O\+P\+T\+\_\+\+H\+L\+S\+\_\+\+D\+IV})}
+
+
+
+Definition at line 257 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a9bf1908de5fea213b7fd2a0208b3886b}\label{BambuParameter_8cpp_a9bf1908de5fea213b7fd2a0208b3886b}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+H\+O\+S\+T\+\_\+\+P\+R\+O\+F\+I\+L\+I\+NG@{O\+P\+T\+\_\+\+H\+O\+S\+T\+\_\+\+P\+R\+O\+F\+I\+L\+I\+NG}}
+\index{O\+P\+T\+\_\+\+H\+O\+S\+T\+\_\+\+P\+R\+O\+F\+I\+L\+I\+NG@{O\+P\+T\+\_\+\+H\+O\+S\+T\+\_\+\+P\+R\+O\+F\+I\+L\+I\+NG}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+H\+O\+S\+T\+\_\+\+P\+R\+O\+F\+I\+L\+I\+NG}{OPT\_HOST\_PROFILING}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+H\+O\+S\+T\+\_\+\+P\+R\+O\+F\+I\+L\+I\+NG~(1 + \hyperlink{BambuParameter_8cpp_aac3e5af69c8c7430d0b9bf6c56bb995d}{O\+P\+T\+\_\+\+H\+L\+S\+\_\+\+F\+P\+D\+IV})}
+
+
+
+Definition at line 258 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a7c8d646091cb8a6743dc6892fd8b085f}\label{BambuParameter_8cpp_a7c8d646091cb8a6743dc6892fd8b085f}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+I\+LP@{O\+P\+T\+\_\+\+I\+LP}}
+\index{O\+P\+T\+\_\+\+I\+LP@{O\+P\+T\+\_\+\+I\+LP}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+I\+LP}{OPT\_ILP}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+I\+LP~(1 + \hyperlink{BambuParameter_8cpp_a9bf1908de5fea213b7fd2a0208b3886b}{O\+P\+T\+\_\+\+H\+O\+S\+T\+\_\+\+P\+R\+O\+F\+I\+L\+I\+NG})}
+
+
+
+Definition at line 259 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a42f29f21ed341e077f2723c7a8f5bd60}\label{BambuParameter_8cpp_a42f29f21ed341e077f2723c7a8f5bd60}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+I\+L\+P\+\_\+\+N\+E\+W\+F\+O\+RM@{O\+P\+T\+\_\+\+I\+L\+P\+\_\+\+N\+E\+W\+F\+O\+RM}}
+\index{O\+P\+T\+\_\+\+I\+L\+P\+\_\+\+N\+E\+W\+F\+O\+RM@{O\+P\+T\+\_\+\+I\+L\+P\+\_\+\+N\+E\+W\+F\+O\+RM}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+I\+L\+P\+\_\+\+N\+E\+W\+F\+O\+RM}{OPT\_ILP\_NEWFORM}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+I\+L\+P\+\_\+\+N\+E\+W\+F\+O\+RM~(1 + \hyperlink{BambuParameter_8cpp_a7c8d646091cb8a6743dc6892fd8b085f}{O\+P\+T\+\_\+\+I\+LP})}
+
+
+
+Definition at line 260 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a8eff6359c3252aec9ff647c3c792155c}\label{BambuParameter_8cpp_a8eff6359c3252aec9ff647c3c792155c}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+I\+L\+P\+\_\+\+S\+O\+L\+V\+ER@{O\+P\+T\+\_\+\+I\+L\+P\+\_\+\+S\+O\+L\+V\+ER}}
+\index{O\+P\+T\+\_\+\+I\+L\+P\+\_\+\+S\+O\+L\+V\+ER@{O\+P\+T\+\_\+\+I\+L\+P\+\_\+\+S\+O\+L\+V\+ER}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+I\+L\+P\+\_\+\+S\+O\+L\+V\+ER}{OPT\_ILP\_SOLVER}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+I\+L\+P\+\_\+\+S\+O\+L\+V\+ER~(1 + \hyperlink{BambuParameter_8cpp_a42f29f21ed341e077f2723c7a8f5bd60}{O\+P\+T\+\_\+\+I\+L\+P\+\_\+\+N\+E\+W\+F\+O\+RM})}
+
+
+
+Definition at line 261 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a0106571b67c56176efb4f07f5bb5fa7f}\label{BambuParameter_8cpp_a0106571b67c56176efb4f07f5bb5fa7f}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+I\+N\+P\+U\+T\+\_\+\+C\+O\+N\+T\+E\+X\+T\+\_\+\+S\+W\+I\+T\+CH@{O\+P\+T\+\_\+\+I\+N\+P\+U\+T\+\_\+\+C\+O\+N\+T\+E\+X\+T\+\_\+\+S\+W\+I\+T\+CH}}
+\index{O\+P\+T\+\_\+\+I\+N\+P\+U\+T\+\_\+\+C\+O\+N\+T\+E\+X\+T\+\_\+\+S\+W\+I\+T\+CH@{O\+P\+T\+\_\+\+I\+N\+P\+U\+T\+\_\+\+C\+O\+N\+T\+E\+X\+T\+\_\+\+S\+W\+I\+T\+CH}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+I\+N\+P\+U\+T\+\_\+\+C\+O\+N\+T\+E\+X\+T\+\_\+\+S\+W\+I\+T\+CH}{OPT\_INPUT\_CONTEXT\_SWITCH}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+I\+N\+P\+U\+T\+\_\+\+C\+O\+N\+T\+E\+X\+T\+\_\+\+S\+W\+I\+T\+CH~(1 + \hyperlink{BambuParameter_8cpp_a6d41378b19a106b40a1f9a64ca96e1b9}{O\+P\+T\+\_\+\+B\+A\+C\+K\+E\+N\+D\+\_\+\+S\+D\+C\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER})}
+
+
+
+Definition at line 219 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a71f705d87105f0a6b81869c23aba9443}\label{BambuParameter_8cpp_a71f705d87105f0a6b81869c23aba9443}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+P\+R\+O\+F\+I\+LE@{O\+P\+T\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+P\+R\+O\+F\+I\+LE}}
+\index{O\+P\+T\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+P\+R\+O\+F\+I\+LE@{O\+P\+T\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+P\+R\+O\+F\+I\+LE}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+P\+R\+O\+F\+I\+LE}{OPT\_INSERT\_MEMORY\_PROFILE}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+P\+R\+O\+F\+I\+LE~(1 + \hyperlink{BambuParameter_8cpp_a4b5cb5f64818eabf5f82678735f8806a}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+F\+I\+L\+E\+\_\+\+I\+N\+P\+U\+T\+\_\+\+D\+A\+TA})}
+
+
+
+Definition at line 263 of file Bambu\+Parameter.\+cpp.
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a62b38a49204e89bfeb9f61932aea586d}\label{BambuParameter_8cpp_a62b38a49204e89bfeb9f61932aea586d}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+V\+E\+R\+I\+F\+I\+C\+A\+T\+I\+O\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+ON@{O\+P\+T\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+V\+E\+R\+I\+F\+I\+C\+A\+T\+I\+O\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+ON}}
+\index{O\+P\+T\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+V\+E\+R\+I\+F\+I\+C\+A\+T\+I\+O\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+ON@{O\+P\+T\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+V\+E\+R\+I\+F\+I\+C\+A\+T\+I\+O\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+ON}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+V\+E\+R\+I\+F\+I\+C\+A\+T\+I\+O\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+ON}{OPT\_INSERT\_VERIFICATION\_OPERATION}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+V\+E\+R\+I\+F\+I\+C\+A\+T\+I\+O\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+ON~(1 + \hyperlink{BambuParameter_8cpp_a71f705d87105f0a6b81869c23aba9443}{O\+P\+T\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+P\+R\+O\+F\+I\+LE})}
+
+
+
+Definition at line 264 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a23a851bbc9170d3c72b620798573ecbc}\label{BambuParameter_8cpp_a23a851bbc9170d3c72b620798573ecbc}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+R\+E\+S\+ET@{O\+P\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+R\+E\+S\+ET}}
+\index{O\+P\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+R\+E\+S\+ET@{O\+P\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+R\+E\+S\+ET}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+R\+E\+S\+ET}{OPT\_LEVEL\_RESET}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+R\+E\+S\+ET~(1 + \hyperlink{BambuParameter_8cpp_aaad48c35df863facba4c434ee3b22f07}{O\+P\+T\+\_\+\+R\+E\+S\+ET})}
+
+
+
+Definition at line 294 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a975f20d1775d921f71101cca1075bc0c}\label{BambuParameter_8cpp_a975f20d1775d921f71101cca1075bc0c}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+L\+I\+B\+M\+\_\+\+S\+T\+D\+\_\+\+R\+O\+U\+N\+D\+I\+NG@{O\+P\+T\+\_\+\+L\+I\+B\+M\+\_\+\+S\+T\+D\+\_\+\+R\+O\+U\+N\+D\+I\+NG}}
+\index{O\+P\+T\+\_\+\+L\+I\+B\+M\+\_\+\+S\+T\+D\+\_\+\+R\+O\+U\+N\+D\+I\+NG@{O\+P\+T\+\_\+\+L\+I\+B\+M\+\_\+\+S\+T\+D\+\_\+\+R\+O\+U\+N\+D\+I\+NG}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+L\+I\+B\+M\+\_\+\+S\+T\+D\+\_\+\+R\+O\+U\+N\+D\+I\+NG}{OPT\_LIBM\_STD\_ROUNDING}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+L\+I\+B\+M\+\_\+\+S\+T\+D\+\_\+\+R\+O\+U\+N\+D\+I\+NG~(1 + \hyperlink{BambuParameter_8cpp_a62b38a49204e89bfeb9f61932aea586d}{O\+P\+T\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+V\+E\+R\+I\+F\+I\+C\+A\+T\+I\+O\+N\+\_\+\+O\+P\+E\+R\+A\+T\+I\+ON})}
+
+
+
+Definition at line 265 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_aa2fed2398a358e325f1cba9f5cb2e1df}\label{BambuParameter_8cpp_aa2fed2398a358e325f1cba9f5cb2e1df}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+L\+I\+S\+T\+\_\+\+B\+A\+S\+ED@{O\+P\+T\+\_\+\+L\+I\+S\+T\+\_\+\+B\+A\+S\+ED}}
+\index{O\+P\+T\+\_\+\+L\+I\+S\+T\+\_\+\+B\+A\+S\+ED@{O\+P\+T\+\_\+\+L\+I\+S\+T\+\_\+\+B\+A\+S\+ED}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+L\+I\+S\+T\+\_\+\+B\+A\+S\+ED}{OPT\_LIST\_BASED}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+L\+I\+S\+T\+\_\+\+B\+A\+S\+ED~(1 + \hyperlink{BambuParameter_8cpp_a975f20d1775d921f71101cca1075bc0c}{O\+P\+T\+\_\+\+L\+I\+B\+M\+\_\+\+S\+T\+D\+\_\+\+R\+O\+U\+N\+D\+I\+NG})}
+
+
+
+Definition at line 266 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_aad0a7688cdc6e27f89313e96f1d46262}\label{BambuParameter_8cpp_aad0a7688cdc6e27f89313e96f1d46262}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+L\+O\+G\+I\+C\+A\+L\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+A\+T\+I\+ON@{O\+P\+T\+\_\+\+L\+O\+G\+I\+C\+A\+L\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+A\+T\+I\+ON}}
+\index{O\+P\+T\+\_\+\+L\+O\+G\+I\+C\+A\+L\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+A\+T\+I\+ON@{O\+P\+T\+\_\+\+L\+O\+G\+I\+C\+A\+L\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+A\+T\+I\+ON}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+L\+O\+G\+I\+C\+A\+L\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+A\+T\+I\+ON}{OPT\_LOGICAL\_OPTIMIZATION}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+L\+O\+G\+I\+C\+A\+L\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+A\+T\+I\+ON~(1 + \hyperlink{BambuParameter_8cpp_aa2fed2398a358e325f1cba9f5cb2e1df}{O\+P\+T\+\_\+\+L\+I\+S\+T\+\_\+\+B\+A\+S\+ED})}
+
+
+
+Definition at line 267 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_ac3ec77ea10a334aa9a77a8627853779c}\label{BambuParameter_8cpp_ac3ec77ea10a334aa9a77a8627853779c}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+O\+NS@{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+O\+NS}}
+\index{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+O\+NS@{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+O\+NS}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+O\+NS}{OPT\_MAX\_EVALUATIONS}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+O\+NS~(1 + \hyperlink{BambuParameter_8cpp_aad0a7688cdc6e27f89313e96f1d46262}{O\+P\+T\+\_\+\+L\+O\+G\+I\+C\+A\+L\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+A\+T\+I\+ON})}
+
+
+
+Definition at line 268 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a104e64b58aea6a9bdfd36b9a47dce484}\label{BambuParameter_8cpp_a104e64b58aea6a9bdfd36b9a47dce484}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+I\+N\+H\+E\+R\+I\+T\+A\+N\+CE@{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+I\+N\+H\+E\+R\+I\+T\+A\+N\+CE}}
+\index{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+I\+N\+H\+E\+R\+I\+T\+A\+N\+CE@{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+I\+N\+H\+E\+R\+I\+T\+A\+N\+CE}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+I\+N\+H\+E\+R\+I\+T\+A\+N\+CE}{OPT\_MAX\_INHERITANCE}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+I\+N\+H\+E\+R\+I\+T\+A\+N\+CE~(1 + \hyperlink{BambuParameter_8cpp_ac3ec77ea10a334aa9a77a8627853779c}{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+E\+V\+A\+L\+U\+A\+T\+I\+O\+NS})}
+
+
+
+Definition at line 269 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_aa4991262012cbe7a761d12f7685130e6}\label{BambuParameter_8cpp_aa4991262012cbe7a761d12f7685130e6}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+S\+I\+M\+\_\+\+C\+Y\+C\+L\+ES@{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+S\+I\+M\+\_\+\+C\+Y\+C\+L\+ES}}
+\index{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+S\+I\+M\+\_\+\+C\+Y\+C\+L\+ES@{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+S\+I\+M\+\_\+\+C\+Y\+C\+L\+ES}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+S\+I\+M\+\_\+\+C\+Y\+C\+L\+ES}{OPT\_MAX\_SIM\_CYCLES}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+S\+I\+M\+\_\+\+C\+Y\+C\+L\+ES~(1 + \hyperlink{BambuParameter_8cpp_a104e64b58aea6a9bdfd36b9a47dce484}{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+I\+N\+H\+E\+R\+I\+T\+A\+N\+CE})}
+
+
+
+Definition at line 270 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_ae5ac9812c7dc6bfd8ce90ffc7bdf7dbd}\label{BambuParameter_8cpp_ae5ac9812c7dc6bfd8ce90ffc7bdf7dbd}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+U\+LP@{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+U\+LP}}
+\index{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+U\+LP@{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+U\+LP}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+U\+LP}{OPT\_MAX\_ULP}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+U\+LP~(1 + \hyperlink{BambuParameter_8cpp_aa4991262012cbe7a761d12f7685130e6}{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+S\+I\+M\+\_\+\+C\+Y\+C\+L\+ES})}
+
+
+
+Definition at line 271 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_aadbbacb58a7aadc3cf5ea1d13fe316fa}\label{BambuParameter_8cpp_aadbbacb58a7aadc3cf5ea1d13fe316fa}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+M\+E\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+R\+E\+AD@{O\+P\+T\+\_\+\+M\+E\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+R\+E\+AD}}
+\index{O\+P\+T\+\_\+\+M\+E\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+R\+E\+AD@{O\+P\+T\+\_\+\+M\+E\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+R\+E\+AD}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+M\+E\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+R\+E\+AD}{OPT\_MEM\_DELAY\_READ}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+M\+E\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+R\+E\+AD~(1 + \hyperlink{BambuParameter_8cpp_a8d11e972dd6c6d66fc5a4cbf1ec4d92c}{O\+P\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+T\+OP})}
+
+
+
+Definition at line 273 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a053eb1511a211ed0bc40aa04d05c0edd}\label{BambuParameter_8cpp_a053eb1511a211ed0bc40aa04d05c0edd}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+M\+E\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+W\+R\+I\+TE@{O\+P\+T\+\_\+\+M\+E\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+W\+R\+I\+TE}}
+\index{O\+P\+T\+\_\+\+M\+E\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+W\+R\+I\+TE@{O\+P\+T\+\_\+\+M\+E\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+W\+R\+I\+TE}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+M\+E\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+W\+R\+I\+TE}{OPT\_MEM\_DELAY\_WRITE}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+M\+E\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+W\+R\+I\+TE~(1 + \hyperlink{BambuParameter_8cpp_aadbbacb58a7aadc3cf5ea1d13fe316fa}{O\+P\+T\+\_\+\+M\+E\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+R\+E\+AD})}
+
+
+
+Definition at line 274 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a8b317f4f7da0a7379add4b7de94d3c6c}\label{BambuParameter_8cpp_a8b317f4f7da0a7379add4b7de94d3c6c}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+B\+A\+N\+K\+S\+\_\+\+N\+U\+M\+B\+ER@{O\+P\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+B\+A\+N\+K\+S\+\_\+\+N\+U\+M\+B\+ER}}
+\index{O\+P\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+B\+A\+N\+K\+S\+\_\+\+N\+U\+M\+B\+ER@{O\+P\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+B\+A\+N\+K\+S\+\_\+\+N\+U\+M\+B\+ER}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+B\+A\+N\+K\+S\+\_\+\+N\+U\+M\+B\+ER}{OPT\_MEMORY\_BANKS\_NUMBER}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+B\+A\+N\+K\+S\+\_\+\+N\+U\+M\+B\+ER~(1 + \hyperlink{BambuParameter_8cpp_a053eb1511a211ed0bc40aa04d05c0edd}{O\+P\+T\+\_\+\+M\+E\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+W\+R\+I\+TE})}
+
+
+
+Definition at line 275 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a8d11e972dd6c6d66fc5a4cbf1ec4d92c}\label{BambuParameter_8cpp_a8d11e972dd6c6d66fc5a4cbf1ec4d92c}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+T\+OP@{O\+P\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+T\+OP}}
+\index{O\+P\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+T\+OP@{O\+P\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+T\+OP}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+T\+OP}{OPT\_MEMORY\_MAPPED\_TOP}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+T\+OP~(1 + \hyperlink{BambuParameter_8cpp_ae5ac9812c7dc6bfd8ce90ffc7bdf7dbd}{O\+P\+T\+\_\+\+M\+A\+X\+\_\+\+U\+LP})}
+
+
+
+Definition at line 272 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a674ef9d96931d8e980c3cd493638a0b3}\label{BambuParameter_8cpp_a674ef9d96931d8e980c3cd493638a0b3}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+M\+I\+N\+\_\+\+I\+N\+H\+E\+R\+I\+T\+A\+N\+CE@{O\+P\+T\+\_\+\+M\+I\+N\+\_\+\+I\+N\+H\+E\+R\+I\+T\+A\+N\+CE}}
+\index{O\+P\+T\+\_\+\+M\+I\+N\+\_\+\+I\+N\+H\+E\+R\+I\+T\+A\+N\+CE@{O\+P\+T\+\_\+\+M\+I\+N\+\_\+\+I\+N\+H\+E\+R\+I\+T\+A\+N\+CE}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+M\+I\+N\+\_\+\+I\+N\+H\+E\+R\+I\+T\+A\+N\+CE}{OPT\_MIN\_INHERITANCE}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+M\+I\+N\+\_\+\+I\+N\+H\+E\+R\+I\+T\+A\+N\+CE~(1 + \hyperlink{BambuParameter_8cpp_a8b317f4f7da0a7379add4b7de94d3c6c}{O\+P\+T\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+B\+A\+N\+K\+S\+\_\+\+N\+U\+M\+B\+ER})}
+
+
+
+Definition at line 276 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a0cdd63d1e9f7b02ef19a7086a3335a20}\label{BambuParameter_8cpp_a0cdd63d1e9f7b02ef19a7086a3335a20}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+M\+O\+S\+A\+\_\+\+F\+L\+OW@{O\+P\+T\+\_\+\+M\+O\+S\+A\+\_\+\+F\+L\+OW}}
+\index{O\+P\+T\+\_\+\+M\+O\+S\+A\+\_\+\+F\+L\+OW@{O\+P\+T\+\_\+\+M\+O\+S\+A\+\_\+\+F\+L\+OW}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+M\+O\+S\+A\+\_\+\+F\+L\+OW}{OPT\_MOSA\_FLOW}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+M\+O\+S\+A\+\_\+\+F\+L\+OW~(1 + \hyperlink{BambuParameter_8cpp_a674ef9d96931d8e980c3cd493638a0b3}{O\+P\+T\+\_\+\+M\+I\+N\+\_\+\+I\+N\+H\+E\+R\+I\+T\+A\+N\+CE})}
+
+
+
+Definition at line 277 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_ae8d93f6ab1115f9e12f35b3b9fd99f1b}\label{BambuParameter_8cpp_ae8d93f6ab1115f9e12f35b3b9fd99f1b}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+N\+O\+\_\+\+M\+I\+X\+E\+D\+\_\+\+D\+E\+S\+I\+GN@{O\+P\+T\+\_\+\+N\+O\+\_\+\+M\+I\+X\+E\+D\+\_\+\+D\+E\+S\+I\+GN}}
+\index{O\+P\+T\+\_\+\+N\+O\+\_\+\+M\+I\+X\+E\+D\+\_\+\+D\+E\+S\+I\+GN@{O\+P\+T\+\_\+\+N\+O\+\_\+\+M\+I\+X\+E\+D\+\_\+\+D\+E\+S\+I\+GN}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+N\+O\+\_\+\+M\+I\+X\+E\+D\+\_\+\+D\+E\+S\+I\+GN}{OPT\_NO\_MIXED\_DESIGN}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+N\+O\+\_\+\+M\+I\+X\+E\+D\+\_\+\+D\+E\+S\+I\+GN~(1 + \hyperlink{BambuParameter_8cpp_a0cdd63d1e9f7b02ef19a7086a3335a20}{O\+P\+T\+\_\+\+M\+O\+S\+A\+\_\+\+F\+L\+OW})}
+
+
+
+Definition at line 278 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a1dba8302457e8ba1cb65d8ed7532121b}\label{BambuParameter_8cpp_a1dba8302457e8ba1cb65d8ed7532121b}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+N\+U\+M\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+O\+RS@{O\+P\+T\+\_\+\+N\+U\+M\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+O\+RS}}
+\index{O\+P\+T\+\_\+\+N\+U\+M\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+O\+RS@{O\+P\+T\+\_\+\+N\+U\+M\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+O\+RS}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+N\+U\+M\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+O\+RS}{OPT\_NUM\_ACCELERATORS}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+N\+U\+M\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+O\+RS~(1 + \hyperlink{BambuParameter_8cpp_ae8d93f6ab1115f9e12f35b3b9fd99f1b}{O\+P\+T\+\_\+\+N\+O\+\_\+\+M\+I\+X\+E\+D\+\_\+\+D\+E\+S\+I\+GN})}
+
+
+
+Definition at line 279 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a23b7b94ad91c84b7987e0469b590dab0}\label{BambuParameter_8cpp_a23b7b94ad91c84b7987e0469b590dab0}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+P\+A\+R\+A\+L\+L\+E\+L\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER@{O\+P\+T\+\_\+\+P\+A\+R\+A\+L\+L\+E\+L\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER}}
+\index{O\+P\+T\+\_\+\+P\+A\+R\+A\+L\+L\+E\+L\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER@{O\+P\+T\+\_\+\+P\+A\+R\+A\+L\+L\+E\+L\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+P\+A\+R\+A\+L\+L\+E\+L\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER}{OPT\_PARALLEL\_CONTROLLER}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+P\+A\+R\+A\+L\+L\+E\+L\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER~(1 + \hyperlink{BambuParameter_8cpp_a1dba8302457e8ba1cb65d8ed7532121b}{O\+P\+T\+\_\+\+N\+U\+M\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+O\+RS})}
+
+
+
+Definition at line 280 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a4003420c5dccaa5d1740a5e70ac4dd57}\label{BambuParameter_8cpp_a4003420c5dccaa5d1740a5e70ac4dd57}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+C\+L\+O\+CK@{O\+P\+T\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+C\+L\+O\+CK}}
+\index{O\+P\+T\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+C\+L\+O\+CK@{O\+P\+T\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+C\+L\+O\+CK}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+C\+L\+O\+CK}{OPT\_PERIOD\_CLOCK}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+C\+L\+O\+CK~(1 + \hyperlink{BambuParameter_8cpp_a23b7b94ad91c84b7987e0469b590dab0}{O\+P\+T\+\_\+\+P\+A\+R\+A\+L\+L\+E\+L\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER})}
+
+
+
+Definition at line 281 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a046f8e148fe759f42e99186ae74529eb}\label{BambuParameter_8cpp_a046f8e148fe759f42e99186ae74529eb}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+P\+O\+S\+T\+\_\+\+R\+E\+S\+C\+H\+E\+D\+U\+L\+I\+NG@{O\+P\+T\+\_\+\+P\+O\+S\+T\+\_\+\+R\+E\+S\+C\+H\+E\+D\+U\+L\+I\+NG}}
+\index{O\+P\+T\+\_\+\+P\+O\+S\+T\+\_\+\+R\+E\+S\+C\+H\+E\+D\+U\+L\+I\+NG@{O\+P\+T\+\_\+\+P\+O\+S\+T\+\_\+\+R\+E\+S\+C\+H\+E\+D\+U\+L\+I\+NG}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+P\+O\+S\+T\+\_\+\+R\+E\+S\+C\+H\+E\+D\+U\+L\+I\+NG}{OPT\_POST\_RESCHEDULING}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+P\+O\+S\+T\+\_\+\+R\+E\+S\+C\+H\+E\+D\+U\+L\+I\+NG~(1 + \hyperlink{BambuParameter_8cpp_a9e732fd9a78bbbedf6e3f8e52932f87b}{O\+P\+T\+\_\+\+P\+R\+E\+T\+T\+Y\+\_\+\+P\+R\+I\+NT})}
+
+
+
+Definition at line 289 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_ad32b04b9112661ba7acd556abffc3491}\label{BambuParameter_8cpp_ad32b04b9112661ba7acd556abffc3491}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+P\+O\+W\+E\+R\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+A\+T\+I\+ON@{O\+P\+T\+\_\+\+P\+O\+W\+E\+R\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+A\+T\+I\+ON}}
+\index{O\+P\+T\+\_\+\+P\+O\+W\+E\+R\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+A\+T\+I\+ON@{O\+P\+T\+\_\+\+P\+O\+W\+E\+R\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+A\+T\+I\+ON}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+P\+O\+W\+E\+R\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+A\+T\+I\+ON}{OPT\_POWER\_OPTIMIZATION}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+P\+O\+W\+E\+R\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+A\+T\+I\+ON~(1 + \hyperlink{BambuParameter_8cpp_a1e1269ada9f4cadccf6f4cd8d06b2158}{O\+P\+T\+\_\+\+D\+O\+N\+E\+\_\+\+N\+A\+ME})}
+
+
+
+Definition at line 286 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_afe0f7f41931f8dd590d3dcc1259c54f0}\label{BambuParameter_8cpp_afe0f7f41931f8dd590d3dcc1259c54f0}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+P\+A\+R\+SE@{O\+P\+T\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+P\+A\+R\+SE}}
+\index{O\+P\+T\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+P\+A\+R\+SE@{O\+P\+T\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+P\+A\+R\+SE}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+P\+A\+R\+SE}{OPT\_PRAGMA\_PARSE}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+P\+A\+R\+SE~(1 + \hyperlink{BambuParameter_8cpp_ad32b04b9112661ba7acd556abffc3491}{O\+P\+T\+\_\+\+P\+O\+W\+E\+R\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+A\+T\+I\+ON})}
+
+
+
+Definition at line 287 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a9e732fd9a78bbbedf6e3f8e52932f87b}\label{BambuParameter_8cpp_a9e732fd9a78bbbedf6e3f8e52932f87b}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+P\+R\+E\+T\+T\+Y\+\_\+\+P\+R\+I\+NT@{O\+P\+T\+\_\+\+P\+R\+E\+T\+T\+Y\+\_\+\+P\+R\+I\+NT}}
+\index{O\+P\+T\+\_\+\+P\+R\+E\+T\+T\+Y\+\_\+\+P\+R\+I\+NT@{O\+P\+T\+\_\+\+P\+R\+E\+T\+T\+Y\+\_\+\+P\+R\+I\+NT}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+P\+R\+E\+T\+T\+Y\+\_\+\+P\+R\+I\+NT}{OPT\_PRETTY\_PRINT}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+P\+R\+E\+T\+T\+Y\+\_\+\+P\+R\+I\+NT~(1 + \hyperlink{BambuParameter_8cpp_afe0f7f41931f8dd590d3dcc1259c54f0}{O\+P\+T\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+P\+A\+R\+SE})}
+
+
+
+Definition at line 288 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_ad8a45e8addd6ac58c330657a91575f98}\label{BambuParameter_8cpp_ad8a45e8addd6ac58c330657a91575f98}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+ON@{O\+P\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+ON}}
+\index{O\+P\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+ON@{O\+P\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+ON}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+ON}{OPT\_REGISTER\_ALLOCATION}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+ON~(1 + \hyperlink{BambuParameter_8cpp_a046f8e148fe759f42e99186ae74529eb}{O\+P\+T\+\_\+\+P\+O\+S\+T\+\_\+\+R\+E\+S\+C\+H\+E\+D\+U\+L\+I\+NG})}
+
+
+
+Definition at line 290 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a2e6f928d10c5f7ff8389e9555bed8b40}\label{BambuParameter_8cpp_a2e6f928d10c5f7ff8389e9555bed8b40}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+I\+N\+P\+U\+TS@{O\+P\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+I\+N\+P\+U\+TS}}
+\index{O\+P\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+I\+N\+P\+U\+TS@{O\+P\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+I\+N\+P\+U\+TS}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+I\+N\+P\+U\+TS}{OPT\_REGISTERED\_INPUTS}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+I\+N\+P\+U\+TS~(1 + \hyperlink{BambuParameter_8cpp_ad8a45e8addd6ac58c330657a91575f98}{O\+P\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+ON})}
+
+
+
+Definition at line 291 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_aaad48c35df863facba4c434ee3b22f07}\label{BambuParameter_8cpp_aaad48c35df863facba4c434ee3b22f07}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+R\+E\+S\+ET@{O\+P\+T\+\_\+\+R\+E\+S\+ET}}
+\index{O\+P\+T\+\_\+\+R\+E\+S\+ET@{O\+P\+T\+\_\+\+R\+E\+S\+ET}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+R\+E\+S\+ET}{OPT\_RESET}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+R\+E\+S\+ET~(1 + \hyperlink{BambuParameter_8cpp_a7b23289b1ff536ce28e03a875f4c6410}{O\+P\+T\+\_\+\+F\+S\+M\+\_\+\+E\+N\+C\+O\+D\+I\+NG})}
+
+
+
+Definition at line 293 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a5fce2cfde3b91d374751f0fc87338588}\label{BambuParameter_8cpp_a5fce2cfde3b91d374751f0fc87338588}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+R\+E\+S\+E\+T\+\_\+\+N\+A\+ME@{O\+P\+T\+\_\+\+R\+E\+S\+E\+T\+\_\+\+N\+A\+ME}}
+\index{O\+P\+T\+\_\+\+R\+E\+S\+E\+T\+\_\+\+N\+A\+ME@{O\+P\+T\+\_\+\+R\+E\+S\+E\+T\+\_\+\+N\+A\+ME}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+R\+E\+S\+E\+T\+\_\+\+N\+A\+ME}{OPT\_RESET\_NAME}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+R\+E\+S\+E\+T\+\_\+\+N\+A\+ME~(1 + \hyperlink{BambuParameter_8cpp_af684ae3e3ba8fa93b29974835b2d95a4}{O\+P\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+N\+A\+ME})}
+
+
+
+Definition at line 283 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a17f2e1302327e062b38df9d00753775e}\label{BambuParameter_8cpp_a17f2e1302327e062b38df9d00753775e}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+R\+O\+M\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+I\+ON@{O\+P\+T\+\_\+\+R\+O\+M\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+I\+ON}}
+\index{O\+P\+T\+\_\+\+R\+O\+M\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+I\+ON@{O\+P\+T\+\_\+\+R\+O\+M\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+I\+ON}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+R\+O\+M\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+I\+ON}{OPT\_ROM\_DUPLICATION}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+R\+O\+M\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+I\+ON~(1 + \hyperlink{BambuParameter_8cpp_aef3ef499bd8d47e362f720a026a92ba8}{O\+P\+T\+\_\+\+D\+O\+\_\+\+N\+O\+T\+\_\+\+E\+X\+P\+O\+S\+E\+\_\+\+G\+L\+O\+B\+A\+LS})}
+
+
+
+Definition at line 232 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a8ece3d023a87029348742a488ace030f}\label{BambuParameter_8cpp_a8ece3d023a87029348742a488ace030f}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+I\+NS@{O\+P\+T\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+I\+NS}}
+\index{O\+P\+T\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+I\+NS@{O\+P\+T\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+I\+NS}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+I\+NS}{OPT\_SCHEDULING\_MUX\_MARGINS}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+I\+NS~(1 + \hyperlink{BambuParameter_8cpp_af49e496a1a820b66160b0b155df1dd02}{O\+P\+T\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+R\+E\+G\+\_\+\+I\+N\+I\+T\+\_\+\+V\+A\+L\+UE})}
+
+
+
+Definition at line 296 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a66d10adcdddc81724fd3c55335e8fc1d}\label{BambuParameter_8cpp_a66d10adcdddc81724fd3c55335e8fc1d}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+A\+C\+C\+E\+S\+S\+ES@{O\+P\+T\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+A\+C\+C\+E\+S\+S\+ES}}
+\index{O\+P\+T\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+A\+C\+C\+E\+S\+S\+ES@{O\+P\+T\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+A\+C\+C\+E\+S\+S\+ES}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+A\+C\+C\+E\+S\+S\+ES}{OPT\_SERIALIZE\_MEMORY\_ACCESSES}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+A\+C\+C\+E\+S\+S\+ES~(1 + \hyperlink{BambuParameter_8cpp_ae20bb59f8f45a54cdba4f8556c1fe07a}{O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+A\+L\+US})}
+
+
+
+Definition at line 298 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a698c88ad5069a48a51a862c0d2a1c84f}\label{BambuParameter_8cpp_a698c88ad5069a48a51a862c0d2a1c84f}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+S\+I\+LP@{O\+P\+T\+\_\+\+S\+I\+LP}}
+\index{O\+P\+T\+\_\+\+S\+I\+LP@{O\+P\+T\+\_\+\+S\+I\+LP}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+S\+I\+LP}{OPT\_SILP}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+S\+I\+LP~(1 + \hyperlink{BambuParameter_8cpp_a66d10adcdddc81724fd3c55335e8fc1d}{O\+P\+T\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+A\+C\+C\+E\+S\+S\+ES})}
+
+
+
+Definition at line 299 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a699c237682b1a5136a3cc3043019710d}\label{BambuParameter_8cpp_a699c237682b1a5136a3cc3043019710d}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+S\+I\+M\+U\+L\+A\+TE@{O\+P\+T\+\_\+\+S\+I\+M\+U\+L\+A\+TE}}
+\index{O\+P\+T\+\_\+\+S\+I\+M\+U\+L\+A\+TE@{O\+P\+T\+\_\+\+S\+I\+M\+U\+L\+A\+TE}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+S\+I\+M\+U\+L\+A\+TE}{OPT\_SIMULATE}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+S\+I\+M\+U\+L\+A\+TE~(1 + \hyperlink{BambuParameter_8cpp_a698c88ad5069a48a51a862c0d2a1c84f}{O\+P\+T\+\_\+\+S\+I\+LP})}
+
+
+
+Definition at line 300 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_ab56b6e557fd0392819abbc1a7c5a2440}\label{BambuParameter_8cpp_ab56b6e557fd0392819abbc1a7c5a2440}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+S\+K\+I\+P\+\_\+\+P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{O\+P\+T\+\_\+\+S\+K\+I\+P\+\_\+\+P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}}
+\index{O\+P\+T\+\_\+\+S\+K\+I\+P\+\_\+\+P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{O\+P\+T\+\_\+\+S\+K\+I\+P\+\_\+\+P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+S\+K\+I\+P\+\_\+\+P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}{OPT\_SKIP\_PIPE\_PARAMETER}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+S\+K\+I\+P\+\_\+\+P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER~(1 + \hyperlink{BambuParameter_8cpp_a699c237682b1a5136a3cc3043019710d}{O\+P\+T\+\_\+\+S\+I\+M\+U\+L\+A\+TE})}
+
+
+
+Definition at line 301 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a0552c895008ecce14384881d224ae2f1}\label{BambuParameter_8cpp_a0552c895008ecce14384881d224ae2f1}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+S\+O\+F\+T\+\_\+\+F\+L\+O\+AT@{O\+P\+T\+\_\+\+S\+O\+F\+T\+\_\+\+F\+L\+O\+AT}}
+\index{O\+P\+T\+\_\+\+S\+O\+F\+T\+\_\+\+F\+L\+O\+AT@{O\+P\+T\+\_\+\+S\+O\+F\+T\+\_\+\+F\+L\+O\+AT}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+S\+O\+F\+T\+\_\+\+F\+L\+O\+AT}{OPT\_SOFT\_FLOAT}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+S\+O\+F\+T\+\_\+\+F\+L\+O\+AT~(1 + \hyperlink{BambuParameter_8cpp_ab56b6e557fd0392819abbc1a7c5a2440}{O\+P\+T\+\_\+\+S\+K\+I\+P\+\_\+\+P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER})}
+
+
+
+Definition at line 302 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a1c812b6f9525b788d0ae088a359427d0}\label{BambuParameter_8cpp_a1c812b6f9525b788d0ae088a359427d0}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+S\+O\+F\+T\+\_\+\+FP@{O\+P\+T\+\_\+\+S\+O\+F\+T\+\_\+\+FP}}
+\index{O\+P\+T\+\_\+\+S\+O\+F\+T\+\_\+\+FP@{O\+P\+T\+\_\+\+S\+O\+F\+T\+\_\+\+FP}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+S\+O\+F\+T\+\_\+\+FP}{OPT\_SOFT\_FP}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+S\+O\+F\+T\+\_\+\+FP~(1 + \hyperlink{BambuParameter_8cpp_ace0a8a9f1327ca6bcd75b97b3041d48a}{O\+P\+T\+\_\+\+S\+O\+F\+T\+F\+L\+O\+A\+T\+\_\+\+S\+U\+B\+N\+O\+R\+M\+AL})}
+
+
+
+Definition at line 304 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_ace0a8a9f1327ca6bcd75b97b3041d48a}\label{BambuParameter_8cpp_ace0a8a9f1327ca6bcd75b97b3041d48a}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+S\+O\+F\+T\+F\+L\+O\+A\+T\+\_\+\+S\+U\+B\+N\+O\+R\+M\+AL@{O\+P\+T\+\_\+\+S\+O\+F\+T\+F\+L\+O\+A\+T\+\_\+\+S\+U\+B\+N\+O\+R\+M\+AL}}
+\index{O\+P\+T\+\_\+\+S\+O\+F\+T\+F\+L\+O\+A\+T\+\_\+\+S\+U\+B\+N\+O\+R\+M\+AL@{O\+P\+T\+\_\+\+S\+O\+F\+T\+F\+L\+O\+A\+T\+\_\+\+S\+U\+B\+N\+O\+R\+M\+AL}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+S\+O\+F\+T\+F\+L\+O\+A\+T\+\_\+\+S\+U\+B\+N\+O\+R\+M\+AL}{OPT\_SOFTFLOAT\_SUBNORMAL}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+S\+O\+F\+T\+F\+L\+O\+A\+T\+\_\+\+S\+U\+B\+N\+O\+R\+M\+AL~(1 + \hyperlink{BambuParameter_8cpp_a0552c895008ecce14384881d224ae2f1}{O\+P\+T\+\_\+\+S\+O\+F\+T\+\_\+\+F\+L\+O\+AT})}
+
+
+
+Definition at line 303 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a96728b91eb1f0ed6d1f6b3c578afea80}\label{BambuParameter_8cpp_a96728b91eb1f0ed6d1f6b3c578afea80}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+S\+P\+E\+C\+U\+L\+A\+T\+I\+VE@{O\+P\+T\+\_\+\+S\+P\+E\+C\+U\+L\+A\+T\+I\+VE}}
+\index{O\+P\+T\+\_\+\+S\+P\+E\+C\+U\+L\+A\+T\+I\+VE@{O\+P\+T\+\_\+\+S\+P\+E\+C\+U\+L\+A\+T\+I\+VE}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+S\+P\+E\+C\+U\+L\+A\+T\+I\+VE}{OPT\_SPECULATIVE}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+S\+P\+E\+C\+U\+L\+A\+T\+I\+VE~(1 + \hyperlink{BambuParameter_8cpp_a1f1125097e731ad217d54c86a0b97740}{O\+P\+T\+\_\+\+S\+TG})}
+
+
+
+Definition at line 306 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a4c811a8a9a8c5c84ab441f62f3dc19d7}\label{BambuParameter_8cpp_a4c811a8a9a8c5c84ab441f62f3dc19d7}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+N\+A\+ME@{O\+P\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+N\+A\+ME}}
+\index{O\+P\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+N\+A\+ME@{O\+P\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+N\+A\+ME}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+N\+A\+ME}{OPT\_START\_NAME}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+N\+A\+ME~(1 + \hyperlink{BambuParameter_8cpp_a5fce2cfde3b91d374751f0fc87338588}{O\+P\+T\+\_\+\+R\+E\+S\+E\+T\+\_\+\+N\+A\+ME})}
+
+
+
+Definition at line 284 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a1f1125097e731ad217d54c86a0b97740}\label{BambuParameter_8cpp_a1f1125097e731ad217d54c86a0b97740}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+S\+TG@{O\+P\+T\+\_\+\+S\+TG}}
+\index{O\+P\+T\+\_\+\+S\+TG@{O\+P\+T\+\_\+\+S\+TG}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+S\+TG}{OPT\_STG}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+S\+TG~(1 + \hyperlink{BambuParameter_8cpp_a1c812b6f9525b788d0ae088a359427d0}{O\+P\+T\+\_\+\+S\+O\+F\+T\+\_\+\+FP})}
+
+
+
+Definition at line 305 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_afdd82e83e61a325fd9e956c42e492378}\label{BambuParameter_8cpp_afdd82e83e61a325fd9e956c42e492378}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+T\+E\+S\+T\+B\+E\+N\+CH@{O\+P\+T\+\_\+\+T\+E\+S\+T\+B\+E\+N\+CH}}
+\index{O\+P\+T\+\_\+\+T\+E\+S\+T\+B\+E\+N\+CH@{O\+P\+T\+\_\+\+T\+E\+S\+T\+B\+E\+N\+CH}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+T\+E\+S\+T\+B\+E\+N\+CH}{OPT\_TESTBENCH}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+T\+E\+S\+T\+B\+E\+N\+CH~(1 + \hyperlink{BambuParameter_8cpp_a4d056fc4c2e4d519d18589b74ed4543f}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+N\+G\+L\+E\+\_\+\+N\+O\+N\+\_\+\+D\+E\+T\+E\+R\+M\+I\+N\+I\+S\+T\+I\+C\+\_\+\+F\+L\+OW})}
+
+
+
+Definition at line 309 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a7171d3f64d8fe2f5e4059d6a31776635}\label{BambuParameter_8cpp_a7171d3f64d8fe2f5e4059d6a31776635}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+T\+E\+S\+T\+B\+E\+N\+C\+H\+\_\+\+E\+X\+T\+R\+A\+\_\+\+G\+C\+C\+\_\+\+F\+L\+A\+GS@{O\+P\+T\+\_\+\+T\+E\+S\+T\+B\+E\+N\+C\+H\+\_\+\+E\+X\+T\+R\+A\+\_\+\+G\+C\+C\+\_\+\+F\+L\+A\+GS}}
+\index{O\+P\+T\+\_\+\+T\+E\+S\+T\+B\+E\+N\+C\+H\+\_\+\+E\+X\+T\+R\+A\+\_\+\+G\+C\+C\+\_\+\+F\+L\+A\+GS@{O\+P\+T\+\_\+\+T\+E\+S\+T\+B\+E\+N\+C\+H\+\_\+\+E\+X\+T\+R\+A\+\_\+\+G\+C\+C\+\_\+\+F\+L\+A\+GS}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+T\+E\+S\+T\+B\+E\+N\+C\+H\+\_\+\+E\+X\+T\+R\+A\+\_\+\+G\+C\+C\+\_\+\+F\+L\+A\+GS}{OPT\_TESTBENCH\_EXTRA\_GCC\_FLAGS}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+T\+E\+S\+T\+B\+E\+N\+C\+H\+\_\+\+E\+X\+T\+R\+A\+\_\+\+G\+C\+C\+\_\+\+F\+L\+A\+GS~(1 + \hyperlink{BambuParameter_8cpp_afdd82e83e61a325fd9e956c42e492378}{O\+P\+T\+\_\+\+T\+E\+S\+T\+B\+E\+N\+CH})}
+
+
+
+Definition at line 310 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a1e327f404b507d55f46ca7c9d8b93f74}\label{BambuParameter_8cpp_a1e327f404b507d55f46ca7c9d8b93f74}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+T\+I\+M\+E\+\_\+\+W\+E\+I\+G\+HT@{O\+P\+T\+\_\+\+T\+I\+M\+E\+\_\+\+W\+E\+I\+G\+HT}}
+\index{O\+P\+T\+\_\+\+T\+I\+M\+E\+\_\+\+W\+E\+I\+G\+HT@{O\+P\+T\+\_\+\+T\+I\+M\+E\+\_\+\+W\+E\+I\+G\+HT}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+T\+I\+M\+E\+\_\+\+W\+E\+I\+G\+HT}{OPT\_TIME\_WEIGHT}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+T\+I\+M\+E\+\_\+\+W\+E\+I\+G\+HT~(1 + \hyperlink{BambuParameter_8cpp_a7171d3f64d8fe2f5e4059d6a31776635}{O\+P\+T\+\_\+\+T\+E\+S\+T\+B\+E\+N\+C\+H\+\_\+\+E\+X\+T\+R\+A\+\_\+\+G\+C\+C\+\_\+\+F\+L\+A\+GS})}
+
+
+
+Definition at line 311 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a9f70f1753e81777920fea5aec1e9e5ac}\label{BambuParameter_8cpp_a9f70f1753e81777920fea5aec1e9e5ac}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+M\+O\+D\+EL@{O\+P\+T\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+M\+O\+D\+EL}}
+\index{O\+P\+T\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+M\+O\+D\+EL@{O\+P\+T\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+M\+O\+D\+EL}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+M\+O\+D\+EL}{OPT\_TIMING\_MODEL}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+M\+O\+D\+EL~(1 + \hyperlink{BambuParameter_8cpp_a1e327f404b507d55f46ca7c9d8b93f74}{O\+P\+T\+\_\+\+T\+I\+M\+E\+\_\+\+W\+E\+I\+G\+HT})}
+
+
+
+Definition at line 312 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a9df7a5dca43f814ecdd6daa08ce20ceb}\label{BambuParameter_8cpp_a9df7a5dca43f814ecdd6daa08ce20ceb}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+V\+I\+O\+L\+A\+T\+I\+ON@{O\+P\+T\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+V\+I\+O\+L\+A\+T\+I\+ON}}
+\index{O\+P\+T\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+V\+I\+O\+L\+A\+T\+I\+ON@{O\+P\+T\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+V\+I\+O\+L\+A\+T\+I\+ON}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+V\+I\+O\+L\+A\+T\+I\+ON}{OPT\_TIMING\_VIOLATION}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+V\+I\+O\+L\+A\+T\+I\+ON~(1 + \hyperlink{BambuParameter_8cpp_a9f70f1753e81777920fea5aec1e9e5ac}{O\+P\+T\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+M\+O\+D\+EL})}
+
+
+
+Definition at line 313 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a85cff528cb3325b405793345c6a2364c}\label{BambuParameter_8cpp_a85cff528cb3325b405793345c6a2364c}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+T\+O\+P\+\_\+\+F\+N\+A\+ME@{O\+P\+T\+\_\+\+T\+O\+P\+\_\+\+F\+N\+A\+ME}}
+\index{O\+P\+T\+\_\+\+T\+O\+P\+\_\+\+F\+N\+A\+ME@{O\+P\+T\+\_\+\+T\+O\+P\+\_\+\+F\+N\+A\+ME}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+T\+O\+P\+\_\+\+F\+N\+A\+ME}{OPT\_TOP\_FNAME}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+T\+O\+P\+\_\+\+F\+N\+A\+ME~(1 + \hyperlink{BambuParameter_8cpp_a9df7a5dca43f814ecdd6daa08ce20ceb}{O\+P\+T\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+V\+I\+O\+L\+A\+T\+I\+ON})}
+
+
+
+Definition at line 314 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a18e51e1da7d936e88c2256f9b517f381}\label{BambuParameter_8cpp_a18e51e1da7d936e88c2256f9b517f381}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+T\+O\+P\+\_\+\+R\+T\+L\+D\+E\+S\+I\+G\+N\+\_\+\+N\+A\+ME@{O\+P\+T\+\_\+\+T\+O\+P\+\_\+\+R\+T\+L\+D\+E\+S\+I\+G\+N\+\_\+\+N\+A\+ME}}
+\index{O\+P\+T\+\_\+\+T\+O\+P\+\_\+\+R\+T\+L\+D\+E\+S\+I\+G\+N\+\_\+\+N\+A\+ME@{O\+P\+T\+\_\+\+T\+O\+P\+\_\+\+R\+T\+L\+D\+E\+S\+I\+G\+N\+\_\+\+N\+A\+ME}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+T\+O\+P\+\_\+\+R\+T\+L\+D\+E\+S\+I\+G\+N\+\_\+\+N\+A\+ME}{OPT\_TOP\_RTLDESIGN\_NAME}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+T\+O\+P\+\_\+\+R\+T\+L\+D\+E\+S\+I\+G\+N\+\_\+\+N\+A\+ME~(1 + \hyperlink{BambuParameter_8cpp_a85cff528cb3325b405793345c6a2364c}{O\+P\+T\+\_\+\+T\+O\+P\+\_\+\+F\+N\+A\+ME})}
+
+
+
+Definition at line 315 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a3ff413e809b62e486f65c6151721ef77}\label{BambuParameter_8cpp_a3ff413e809b62e486f65c6151721ef77}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+U\+N\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{O\+P\+T\+\_\+\+U\+N\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}}
+\index{O\+P\+T\+\_\+\+U\+N\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{O\+P\+T\+\_\+\+U\+N\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+U\+N\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}{OPT\_UNALIGNED\_ACCESS\_PARAMETER}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+U\+N\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER~(1 + \hyperlink{BambuParameter_8cpp_a18e51e1da7d936e88c2256f9b517f381}{O\+P\+T\+\_\+\+T\+O\+P\+\_\+\+R\+T\+L\+D\+E\+S\+I\+G\+N\+\_\+\+N\+A\+ME})}
+
+
+
+Definition at line 316 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_ae20bb59f8f45a54cdba4f8556c1fe07a}\label{BambuParameter_8cpp_ae20bb59f8f45a54cdba4f8556c1fe07a}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+A\+L\+US@{O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+A\+L\+US}}
+\index{O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+A\+L\+US@{O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+A\+L\+US}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+A\+L\+US}{OPT\_USE\_ALUS}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+U\+S\+E\+\_\+\+A\+L\+US~(1 + \hyperlink{BambuParameter_8cpp_a8ece3d023a87029348742a488ace030f}{O\+P\+T\+\_\+\+S\+C\+H\+E\+D\+U\+L\+I\+N\+G\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+I\+NS})}
+
+
+
+Definition at line 297 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a7767a5f45ec14a27f505f30a4a2aa4fc}\label{BambuParameter_8cpp_a7767a5f45ec14a27f505f30a4a2aa4fc}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+V\+H\+D\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{O\+P\+T\+\_\+\+V\+H\+D\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}}
+\index{O\+P\+T\+\_\+\+V\+H\+D\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{O\+P\+T\+\_\+\+V\+H\+D\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+V\+H\+D\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}{OPT\_VHDL\_LIBRARY\_PARAMETER}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+V\+H\+D\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER~(1 + \hyperlink{BambuParameter_8cpp_a3ff413e809b62e486f65c6151721ef77}{O\+P\+T\+\_\+\+U\+N\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER})}
+
+
+
+Definition at line 317 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_a161fa962ee37c1f12d440d84dd7fc824}\label{BambuParameter_8cpp_a161fa962ee37c1f12d440d84dd7fc824}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+V\+I\+S\+U\+A\+L\+I\+Z\+ER@{O\+P\+T\+\_\+\+V\+I\+S\+U\+A\+L\+I\+Z\+ER}}
+\index{O\+P\+T\+\_\+\+V\+I\+S\+U\+A\+L\+I\+Z\+ER@{O\+P\+T\+\_\+\+V\+I\+S\+U\+A\+L\+I\+Z\+ER}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+V\+I\+S\+U\+A\+L\+I\+Z\+ER}{OPT\_VISUALIZER}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+V\+I\+S\+U\+A\+L\+I\+Z\+ER~(1 + \hyperlink{BambuParameter_8cpp_a7767a5f45ec14a27f505f30a4a2aa4fc}{O\+P\+T\+\_\+\+V\+H\+D\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER})}
+
+
+
+Definition at line 318 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_ad7305620dead201fd343e368c24a20b1}\label{BambuParameter_8cpp_ad7305620dead201fd343e368c24a20b1}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!O\+P\+T\+\_\+\+X\+M\+L\+\_\+\+C\+O\+N\+F\+IG@{O\+P\+T\+\_\+\+X\+M\+L\+\_\+\+C\+O\+N\+F\+IG}}
+\index{O\+P\+T\+\_\+\+X\+M\+L\+\_\+\+C\+O\+N\+F\+IG@{O\+P\+T\+\_\+\+X\+M\+L\+\_\+\+C\+O\+N\+F\+IG}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+\_\+\+X\+M\+L\+\_\+\+C\+O\+N\+F\+IG}{OPT\_XML\_CONFIG}}
+{\footnotesize\ttfamily \#define O\+P\+T\+\_\+\+X\+M\+L\+\_\+\+C\+O\+N\+F\+IG~(1 + \hyperlink{BambuParameter_8cpp_a161fa962ee37c1f12d440d84dd7fc824}{O\+P\+T\+\_\+\+V\+I\+S\+U\+A\+L\+I\+Z\+ER})}
+
+
+
+Definition at line 319 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{BambuParameter_8cpp_aff11f42c24a456a96dfd2ac665cba2e1}\label{BambuParameter_8cpp_aff11f42c24a456a96dfd2ac665cba2e1}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!P\+A\+R\+\_\+\+L\+I\+S\+T\+\_\+\+B\+A\+S\+E\+D\+\_\+\+O\+PT@{P\+A\+R\+\_\+\+L\+I\+S\+T\+\_\+\+B\+A\+S\+E\+D\+\_\+\+O\+PT}}
+\index{P\+A\+R\+\_\+\+L\+I\+S\+T\+\_\+\+B\+A\+S\+E\+D\+\_\+\+O\+PT@{P\+A\+R\+\_\+\+L\+I\+S\+T\+\_\+\+B\+A\+S\+E\+D\+\_\+\+O\+PT}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{P\+A\+R\+\_\+\+L\+I\+S\+T\+\_\+\+B\+A\+S\+E\+D\+\_\+\+O\+PT}{PAR\_LIST\_BASED\_OPT}}
+{\footnotesize\ttfamily \#define P\+A\+R\+\_\+\+L\+I\+S\+T\+\_\+\+B\+A\+S\+E\+D\+\_\+\+O\+PT~\char`\"{}parametric-\/list-\/based\char`\"{}}
+
+
+
+constant correspond to the \char`\"{}parametric list based option\char`\"{} 
+
+
+
+Definition at line 322 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by Bambu\+Parameter\+::\+Exec().
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{BambuParameter_8cpp_ad32d6c21b7e1dcb570186362164a99aa}\label{BambuParameter_8cpp_ad32d6c21b7e1dcb570186362164a99aa}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!add\+\_\+evaluation\+\_\+objective\+\_\+string@{add\+\_\+evaluation\+\_\+objective\+\_\+string}}
+\index{add\+\_\+evaluation\+\_\+objective\+\_\+string@{add\+\_\+evaluation\+\_\+objective\+\_\+string}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{add\+\_\+evaluation\+\_\+objective\+\_\+string()}{add\_evaluation\_objective\_string()}}
+{\footnotesize\ttfamily static void add\+\_\+evaluation\+\_\+objective\+\_\+string (\begin{DoxyParamCaption}\item[{std\+::string \&}]{obj\+\_\+string,  }\item[{const std\+::string \&}]{obj\+\_\+to\+\_\+add }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 331 of file Bambu\+Parameter.\+cpp.
+
+
+
+References is\+\_\+evaluation\+\_\+objective\+\_\+string().
+
+
+
+Referenced by Bambu\+Parameter\+::\+Check\+Parameters(), and Bambu\+Parameter\+::\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d33/BambuParameter_8cpp_ad32d6c21b7e1dcb570186362164a99aa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d33/BambuParameter_8cpp_ad32d6c21b7e1dcb570186362164a99aa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{BambuParameter_8cpp_a5fb958a328d2a6e7545dbb5d5b9063f9}\label{BambuParameter_8cpp_a5fb958a328d2a6e7545dbb5d5b9063f9}} 
+\index{Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}!is\+\_\+evaluation\+\_\+objective\+\_\+string@{is\+\_\+evaluation\+\_\+objective\+\_\+string}}
+\index{is\+\_\+evaluation\+\_\+objective\+\_\+string@{is\+\_\+evaluation\+\_\+objective\+\_\+string}!Bambu\+Parameter.\+cpp@{Bambu\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{is\+\_\+evaluation\+\_\+objective\+\_\+string()}{is\_evaluation\_objective\_string()}}
+{\footnotesize\ttfamily static bool is\+\_\+evaluation\+\_\+objective\+\_\+string (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{obj\+\_\+vec,  }\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 326 of file Bambu\+Parameter.\+cpp.
+
+
+
+Referenced by add\+\_\+evaluation\+\_\+objective\+\_\+string(), and Bambu\+Parameter\+::\+Check\+Parameters().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d33/BambuParameter_8cpp_a5fb958a328d2a6e7545dbb5d5b9063f9_icgraph}
+\end{center}
+\end{figure}

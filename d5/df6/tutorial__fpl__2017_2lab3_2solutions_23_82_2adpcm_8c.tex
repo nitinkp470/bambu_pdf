@@ -1,0 +1,1609 @@
+\hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/documentation/tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.2/adpcm.c File Reference}
+\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/documentation/tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{/home/osboxes/bambu/\+Pand\+A-\/bambu/documentation/tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for adpcm.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{d6/daa/tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a70ed59adcb4159ac551058053e649640}{S\+I\+ZE}~100
+\item 
+\#define \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a02b5e9c8571b76948b36ea3f90c0edb4}{I\+N\+\_\+\+E\+ND}~100
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_af2adc4ba59a9843ae611be33aa95c1e7}{encode} (int, int)
+\item 
+void \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aa71513be73fec2623272b69534f7e8d6}{decode} (int)
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a9693eec30513ccfe98200fed1cdb92b0}{filtez} (int $\ast$bpl, int $\ast$\hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a67284ba359347afcd68cef085f1a8d5a}{dlt})
+\item 
+void \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a480ad03d206fd7a823ee79fa7331602b}{upzero} (int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a67284ba359347afcd68cef085f1a8d5a}{dlt}, int $\ast$dlti, int $\ast$bli)
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a408fcd706f53ebdfc2bdbf903924c6b4}{filtep} (int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a9ce9788366c9b7556d3b34748dc78738}{rlt1}, int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_ae85be0be5b0194a36a6a0493f15346cd}{al1}, int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a042d2cbd5d6027aabf5e73798a8c408d}{rlt2}, int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_adf157bdafb20bf6cca87ee28cff0f82c}{al2})
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aecdc0ff1f212b2338bb92f2ae11175b7}{quantl} (int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a7f3560d6472f5c36bc6290395fc960f0}{el}, int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_ad1d7ec8e92e9589a94f8b0fa99ae90c6}{detl})
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a54d7640cdd057e87ca03bc1124453d2c}{logscl} (int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a793c322fdc50347b4b63617c72317bd7}{il}, int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_acf98b2c5c1a51e021aad6633fd2c41c6}{nbl})
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_af57e425c3b49ea23131eba2ec84a54a2}{scalel} (int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_acf98b2c5c1a51e021aad6633fd2c41c6}{nbl}, int shift\+\_\+constant)
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ad09ffb3f90218bc8a085934bb9395dff}{uppol2} (int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_ae85be0be5b0194a36a6a0493f15346cd}{al1}, int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_adf157bdafb20bf6cca87ee28cff0f82c}{al2}, int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a4896060afde85e22c6f9f04fb9bd1291}{plt}, int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a41536d4525d5fe2a53d435e0dd110f6e}{plt1}, int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_aa530fde08a5360c1184daf2ea125b303}{plt2})
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a74e13630fdd33c2898a07490be301547}{uppol1} (int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_ae85be0be5b0194a36a6a0493f15346cd}{al1}, int apl2, int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a4896060afde85e22c6f9f04fb9bd1291}{plt}, int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a41536d4525d5fe2a53d435e0dd110f6e}{plt1})
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4ac01d10f606d574ff45dc1868c5cef2}{logsch} (int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a7673796812aa746d41807e16e302cbba}{ih}, int \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_aed4ae45706e61c03c86e03c7800f4fcb}{nbh})
+\item 
+void \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ad20897c5c8bd47f5d4005989bead0e55}{reset} ()
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_afd4f329c8efb45c0dfff44525047a0fa}{abs} (int n)
+\item 
+void \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ab2a3bb211a41345bc53ec79487686a72}{adpcm\+\_\+main} ()
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_abe5ad10853937cfebb1e406398d143cb}{tqmf} \mbox{[}24\mbox{]}
+\item 
+const int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a92176f6dd4e42d20d86405ffe94a46aa}{h} \mbox{[}24\mbox{]}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ab2133ed9ddb9e1f30bf55c49e2ee638d}{xl}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a766bffa844d54d58ba3e19e5e636e4ee}{xh}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a043561ebce67a7a804cba5150d1f878f}{accumc} \mbox{[}11\mbox{]}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a686c364bb92ebec869a529dc18bab907}{accumd} \mbox{[}11\mbox{]}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a730bed077b4616ac9d9d8285cc565f4c}{xout1}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ab9bcd25a340af94d9bb8744005a16b37}{xout2}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a845bd51a19de5064e1ac64c37e397bfa}{xs}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4c016482c29efcbd9a9b4557b6f944bd}{xd}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a793c322fdc50347b4b63617c72317bd7}{il}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a2a3b1c5b4272f838ab2e68a7977c3e38}{szl}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a6985b55df3ad2424bebd0e7d2be4a19d}{spl}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ace9c0991f7fffe6ab436175d7fff821e}{sl}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a7f3560d6472f5c36bc6290395fc960f0}{el}
+\item 
+const int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_acfcd9b3607d90bf18c762ac0f69fd006}{qq4\+\_\+code4\+\_\+table} \mbox{[}16\mbox{]}
+\item 
+const int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a07dd5abd17fb2d5446764881bb490007}{qq6\+\_\+code6\+\_\+table} \mbox{[}64\mbox{]}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ae0393524158b21d66d18abaf862cdb42}{delay\+\_\+bpl} \mbox{[}6\mbox{]}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a2f456ab0ed20ce2916594673d099bd02}{delay\+\_\+dltx} \mbox{[}6\mbox{]}
+\item 
+const int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4294fc7a967144b3572dff64215a6c04}{wl\+\_\+code\+\_\+table} \mbox{[}16\mbox{]}
+\item 
+const int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aaf9986c8c3aa7afd0490a6e577c1b1be}{ilb\+\_\+table} \mbox{[}32\mbox{]}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_acf98b2c5c1a51e021aad6633fd2c41c6}{nbl}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ae85be0be5b0194a36a6a0493f15346cd}{al1}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_adf157bdafb20bf6cca87ee28cff0f82c}{al2}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4896060afde85e22c6f9f04fb9bd1291}{plt}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a41536d4525d5fe2a53d435e0dd110f6e}{plt1}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aa530fde08a5360c1184daf2ea125b303}{plt2}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a67284ba359347afcd68cef085f1a8d5a}{dlt}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a8d4c9671443bfafa5528649f5eaa2c2f}{rlt}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a9ce9788366c9b7556d3b34748dc78738}{rlt1}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a042d2cbd5d6027aabf5e73798a8c408d}{rlt2}
+\item 
+const int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a7e225d2948b58e23c8ae20db4aa2de0a}{decis\+\_\+levl} \mbox{[}30\mbox{]}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ad1d7ec8e92e9589a94f8b0fa99ae90c6}{detl}
+\item 
+const int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ad9f07797214c1e848889ab43f82f2d6c}{quant26bt\+\_\+pos} \mbox{[}31\mbox{]}
+\item 
+const int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a0c142e4271f0c3e2d8ec28e46ba3c9f9}{quant26bt\+\_\+neg} \mbox{[}31\mbox{]}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_adbc4b130b81818bd0df191a2ed025bf9}{deth}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a10664c4ae862dbb6116dc28da6718f5a}{sh}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a8299acd4f63fc08ad07e3cb2d8dc0876}{eh}
+\item 
+const int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a357dec93db40a3fa31ce402ccfc3983d}{qq2\+\_\+code2\+\_\+table} \mbox{[}4\mbox{]}
+\item 
+const int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4d0b88cd38eeacd10bd199ed9fa8e8b8}{wh\+\_\+code\+\_\+table} \mbox{[}4\mbox{]}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a2bff2f671ee62114a65413226c431ded}{dh}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a7673796812aa746d41807e16e302cbba}{ih}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aed4ae45706e61c03c86e03c7800f4fcb}{nbh}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ad246495c16972e9252219b61bbf0ef8f}{szh}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a6acdaa035c7d3a1c24ea1a1741851657}{sph}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_adce2757fdc16c92198dce58c74145b46}{ph}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a063b41cb650f3ea15a058cc09eedbe0f}{yh}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aeffcd9ea78db6d57ac9ec44c531310c4}{rh}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aaf8654be574fa8973f120642c60c99c6}{delay\+\_\+dhx} \mbox{[}6\mbox{]}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aca2b39e6041889159b3a20d9e779c6a7}{delay\+\_\+bph} \mbox{[}6\mbox{]}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aa305c75bc953be475d9019f4a51a286c}{ah1}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a9c5ca9d478d62b30ccdcfe5da92690d4}{ah2}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a265b04ad4dce22c615099b33c40f7afb}{ph1}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ae75118a31a2a9d035f84be2efe92fb10}{ph2}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a8927b6731e6b07d88b60d89220a6f1f5}{rh1}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a21019520ef0fed944114c16ca78e33a6}{rh2}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a90483d643c60b1b3974be7dd3f2ff71a}{ilr}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a78d7bbcfa8aaf77544ea867b7648868f}{rl}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_afe5efddbd5f4ebe9e1d20ce44ec9389c}{dec\+\_\+deth}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a78234dbd088a4374c8f6a601fee45eb9}{dec\+\_\+detl}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a2e0570cac9e24faa2e0e8483b11145ee}{dec\+\_\+dlt}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a97cef2b41dd860c5fe857498aedc5862}{dec\+\_\+del\+\_\+bpl} \mbox{[}6\mbox{]}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a2e1892d1ea7d11918622f0239284a8b3}{dec\+\_\+del\+\_\+dltx} \mbox{[}6\mbox{]}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ab8f4637642addb8ffb7a6f7c8493ded4}{dec\+\_\+plt}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a33d7d87e1ec53b63bcb45d929cd21158}{dec\+\_\+plt1}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a210cb5bb02c2f9a5ca2a249bf93f8d6a}{dec\+\_\+plt2}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ae8f4aff0857992189811acfbae6006a1}{dec\+\_\+szl}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aa4c99adbe3b4bd55f07f18ea039455e5}{dec\+\_\+spl}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_af29683820abc347b4b9c52a776d1375b}{dec\+\_\+sl}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a0090abf0166cccbe205d6caa7df985dd}{dec\+\_\+rlt1}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a5d020476805283ae85e660860ab2bde3}{dec\+\_\+rlt2}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a73f3497e64795b0ab562ad3bd8c6dc5a}{dec\+\_\+rlt}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4bc2657813e497e1241f3073fdf577c0}{dec\+\_\+al1}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a8f64d4a67197eff48530e3e6a6605c41}{dec\+\_\+al2}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aab77a57dba7492bf74218d76ab63db45}{dl}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a8191f6057fd1375e5fe3378bcaa5fc76}{dec\+\_\+nbl}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a21532187162c85aead66d643ddd9210a}{dec\+\_\+dh}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aaeebabf879f419bccd9887f3f997624e}{dec\+\_\+nbh}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a3756ad492c31c1a1744604bcb1e2fdb0}{dec\+\_\+del\+\_\+bph} \mbox{[}6\mbox{]}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a8bf4f3c8f82d15be4e816424913d1ca1}{dec\+\_\+del\+\_\+dhx} \mbox{[}6\mbox{]}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a20d49e5a70834ed963c67a23a2a6f480}{dec\+\_\+szh}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4895cf155bc7161c18a2858529342f42}{dec\+\_\+rh1}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a74128625f6d4aa05c622575a52cfef75}{dec\+\_\+rh2}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a82b65aaec586ffaed4a77022918e3561}{dec\+\_\+ah1}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a17562c7335f789b0a86f80954721836b}{dec\+\_\+ah2}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4d91a1a33a137cc87e09acd985e8b84a}{dec\+\_\+ph}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a763c84f7b50863bc1d2162f0e7fb6ce7}{dec\+\_\+sph}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aedca2d4413cb3aac98dcf2d453d9a5e7}{dec\+\_\+sh}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a17156acffd1ca27aa05815ebd8761376}{dec\+\_\+ph1}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_affa95c1d9abb7097beffbf100484ded9}{dec\+\_\+ph2}
+\item 
+const int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ac4a158d75ab25bce607a33381085aa6f}{test\+\_\+data} \mbox{[}\hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a70ed59adcb4159ac551058053e649640}{S\+I\+ZE}\mbox{]}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a80f008e3596d4b7e36fcfe5c8f08a147}{compressed} \mbox{[}\hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a70ed59adcb4159ac551058053e649640}{S\+I\+ZE}\mbox{]}
+\item 
+int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a94c9e596a4bd69287e35733185c25ff9}{result} \mbox{[}\hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a70ed59adcb4159ac551058053e649640}{S\+I\+ZE}\mbox{]}
+\item 
+const int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aef495ddc0f46d7b63a4083e72cd76628}{test\+\_\+compressed} \mbox{[}\hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a70ed59adcb4159ac551058053e649640}{S\+I\+ZE}\mbox{]}
+\item 
+const int \hyperlink{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a9f3bf96964012d3cdf2c332be64e477d}{test\+\_\+result} \mbox{[}\hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a70ed59adcb4159ac551058053e649640}{S\+I\+ZE}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a02b5e9c8571b76948b36ea3f90c0edb4}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a02b5e9c8571b76948b36ea3f90c0edb4}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!I\+N\+\_\+\+E\+ND@{I\+N\+\_\+\+E\+ND}}
+\index{I\+N\+\_\+\+E\+ND@{I\+N\+\_\+\+E\+ND}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{I\+N\+\_\+\+E\+ND}{IN\_END}}
+{\footnotesize\ttfamily \#define I\+N\+\_\+\+E\+ND~100}
+
+
+
+Definition at line 776 of file adpcm.\+c.
+
+
+
+Referenced by adpcm\+\_\+main(), and main().
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a70ed59adcb4159ac551058053e649640}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a70ed59adcb4159ac551058053e649640}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!S\+I\+ZE@{S\+I\+ZE}}
+\index{S\+I\+ZE@{S\+I\+ZE}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{S\+I\+ZE}{SIZE}}
+{\footnotesize\ttfamily \#define S\+I\+ZE~100}
+
+
+
+Definition at line 775 of file adpcm.\+c.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_afd4f329c8efb45c0dfff44525047a0fa}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_afd4f329c8efb45c0dfff44525047a0fa}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!abs@{abs}}
+\index{abs@{abs}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{abs()}{abs()}}
+{\footnotesize\ttfamily int abs (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line 236 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ab2a3bb211a41345bc53ec79487686a72}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ab2a3bb211a41345bc53ec79487686a72}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!adpcm\+\_\+main@{adpcm\+\_\+main}}
+\index{adpcm\+\_\+main@{adpcm\+\_\+main}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{adpcm\+\_\+main()}{adpcm\_main()}}
+{\footnotesize\ttfamily void adpcm\+\_\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 837 of file adpcm.\+c.
+
+
+
+References compressed, decode(), encode(), I\+N\+\_\+\+E\+ND, reset(), result, test\+\_\+data, xout1, and xout2.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/df6/tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ab2a3bb211a41345bc53ec79487686a72_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aa71513be73fec2623272b69534f7e8d6}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aa71513be73fec2623272b69534f7e8d6}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!decode@{decode}}
+\index{decode@{decode}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily void decode (\begin{DoxyParamCaption}\item[{int}]{input }\end{DoxyParamCaption})}
+
+
+
+Definition at line 401 of file adpcm.\+c.
+
+
+
+References accumc, accumd, dec\+\_\+ah1, dec\+\_\+ah2, dec\+\_\+al1, dec\+\_\+al2, dec\+\_\+del\+\_\+bph, dec\+\_\+del\+\_\+bpl, dec\+\_\+del\+\_\+dhx, dec\+\_\+del\+\_\+dltx, dec\+\_\+deth, dec\+\_\+detl, dec\+\_\+dh, dec\+\_\+dlt, dec\+\_\+nbh, dec\+\_\+nbl, dec\+\_\+ph, dec\+\_\+ph1, dec\+\_\+ph2, dec\+\_\+plt, dec\+\_\+plt1, dec\+\_\+plt2, dec\+\_\+rh1, dec\+\_\+rh2, dec\+\_\+rlt, dec\+\_\+rlt1, dec\+\_\+rlt2, dec\+\_\+sh, dec\+\_\+sl, dec\+\_\+sph, dec\+\_\+spl, dec\+\_\+szh, dec\+\_\+szl, dl, filtep(), filtez(), h, ih, il, ilr, logsch(), logscl(), qq2\+\_\+code2\+\_\+table, qq4\+\_\+code4\+\_\+table, qq6\+\_\+code6\+\_\+table, rh, rl, scalel(), uppol1(), uppol2(), upzero(), xd, xout1, xout2, and xs.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{d5/df6/tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aa71513be73fec2623272b69534f7e8d6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_af2adc4ba59a9843ae611be33aa95c1e7}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_af2adc4ba59a9843ae611be33aa95c1e7}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!encode@{encode}}
+\index{encode@{encode}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{encode()}{encode()}}
+{\footnotesize\ttfamily int encode (\begin{DoxyParamCaption}\item[{int}]{xin1,  }\item[{int}]{xin2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 248 of file adpcm.\+c.
+
+
+
+References abs(), ah1, ah2, al1, al2, delay\+\_\+bph, delay\+\_\+bpl, delay\+\_\+dhx, delay\+\_\+dltx, deth, detl, dh, dlt, eh, el, filtep(), filtez(), h, ih, il, logsch(), logscl(), nbh, nbl, ph, ph1, ph2, plt, plt1, plt2, qq2\+\_\+code2\+\_\+table, qq4\+\_\+code4\+\_\+table, quantl(), rh1, rh2, rlt, rlt1, rlt2, scalel(), sh, sl, sph, spl, szh, szl, tqmf, uppol1(), uppol2(), upzero(), xh, xl, and yh.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{d5/df6/tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_af2adc4ba59a9843ae611be33aa95c1e7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a408fcd706f53ebdfc2bdbf903924c6b4}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a408fcd706f53ebdfc2bdbf903924c6b4}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!filtep@{filtep}}
+\index{filtep@{filtep}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{filtep()}{filtep()}}
+{\footnotesize\ttfamily int filtep (\begin{DoxyParamCaption}\item[{int}]{rlt1,  }\item[{int}]{al1,  }\item[{int}]{rlt2,  }\item[{int}]{al2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 596 of file adpcm.\+c.
+
+
+
+References rlt1, and rlt2.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a9693eec30513ccfe98200fed1cdb92b0}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a9693eec30513ccfe98200fed1cdb92b0}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!filtez@{filtez}}
+\index{filtez@{filtez}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{filtez()}{filtez()}}
+{\footnotesize\ttfamily int filtez (\begin{DoxyParamCaption}\item[{int $\ast$}]{bpl,  }\item[{int $\ast$}]{dlt }\end{DoxyParamCaption})}
+
+
+
+Definition at line 581 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4ac01d10f606d574ff45dc1868c5cef2}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4ac01d10f606d574ff45dc1868c5cef2}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!logsch@{logsch}}
+\index{logsch@{logsch}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{logsch()}{logsch()}}
+{\footnotesize\ttfamily int logsch (\begin{DoxyParamCaption}\item[{int}]{ih,  }\item[{int}]{nbh }\end{DoxyParamCaption})}
+
+
+
+Definition at line 754 of file adpcm.\+c.
+
+
+
+References ih, and wh\+\_\+code\+\_\+table.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a54d7640cdd057e87ca03bc1124453d2c}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a54d7640cdd057e87ca03bc1124453d2c}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!logscl@{logscl}}
+\index{logscl@{logscl}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{logscl()}{logscl()}}
+{\footnotesize\ttfamily int logscl (\begin{DoxyParamCaption}\item[{int}]{il,  }\item[{int}]{nbl }\end{DoxyParamCaption})}
+
+
+
+Definition at line 634 of file adpcm.\+c.
+
+
+
+References wl\+\_\+code\+\_\+table.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!main@{main}}
+\index{main@{main}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 859 of file adpcm.\+c.
+
+
+
+References adpcm\+\_\+main(), compressed, I\+N\+\_\+\+E\+ND, main\+\_\+result, result, test\+\_\+compressed, and test\+\_\+result.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/df6/tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aecdc0ff1f212b2338bb92f2ae11175b7}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aecdc0ff1f212b2338bb92f2ae11175b7}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!quantl@{quantl}}
+\index{quantl@{quantl}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{quantl()}{quantl()}}
+{\footnotesize\ttfamily int quantl (\begin{DoxyParamCaption}\item[{int}]{el,  }\item[{int}]{detl }\end{DoxyParamCaption})}
+
+
+
+Definition at line 608 of file adpcm.\+c.
+
+
+
+References abs(), decis\+\_\+levl, quant26bt\+\_\+neg, and quant26bt\+\_\+pos.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{d5/df6/tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aecdc0ff1f212b2338bb92f2ae11175b7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ad20897c5c8bd47f5d4005989bead0e55}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ad20897c5c8bd47f5d4005989bead0e55}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!reset@{reset}}
+\index{reset@{reset}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 540 of file adpcm.\+c.
+
+
+
+References accumc, accumd, ah1, ah2, al1, al2, dec\+\_\+ah1, dec\+\_\+ah2, dec\+\_\+al1, dec\+\_\+al2, dec\+\_\+del\+\_\+bph, dec\+\_\+del\+\_\+bpl, dec\+\_\+del\+\_\+dhx, dec\+\_\+del\+\_\+dltx, dec\+\_\+deth, dec\+\_\+detl, dec\+\_\+nbh, dec\+\_\+nbl, dec\+\_\+ph1, dec\+\_\+ph2, dec\+\_\+plt1, dec\+\_\+plt2, dec\+\_\+rh1, dec\+\_\+rh2, dec\+\_\+rlt1, dec\+\_\+rlt2, delay\+\_\+bph, delay\+\_\+bpl, delay\+\_\+dhx, delay\+\_\+dltx, deth, detl, nbh, nbl, ph1, ph2, plt1, plt2, rh1, rh2, rlt1, rlt2, and tqmf.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_af57e425c3b49ea23131eba2ec84a54a2}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_af57e425c3b49ea23131eba2ec84a54a2}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!scalel@{scalel}}
+\index{scalel@{scalel}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{scalel()}{scalel()}}
+{\footnotesize\ttfamily int scalel (\begin{DoxyParamCaption}\item[{int}]{nbl,  }\item[{int}]{shift\+\_\+constant }\end{DoxyParamCaption})}
+
+
+
+Definition at line 649 of file adpcm.\+c.
+
+
+
+References ilb\+\_\+table.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a74e13630fdd33c2898a07490be301547}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a74e13630fdd33c2898a07490be301547}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!uppol1@{uppol1}}
+\index{uppol1@{uppol1}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{uppol1()}{uppol1()}}
+{\footnotesize\ttfamily int uppol1 (\begin{DoxyParamCaption}\item[{int}]{al1,  }\item[{int}]{apl2,  }\item[{int}]{plt,  }\item[{int}]{plt1 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 728 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ad09ffb3f90218bc8a085934bb9395dff}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ad09ffb3f90218bc8a085934bb9395dff}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!uppol2@{uppol2}}
+\index{uppol2@{uppol2}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{uppol2()}{uppol2()}}
+{\footnotesize\ttfamily int uppol2 (\begin{DoxyParamCaption}\item[{int}]{al1,  }\item[{int}]{al2,  }\item[{int}]{plt,  }\item[{int}]{plt1,  }\item[{int}]{plt2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 698 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a480ad03d206fd7a823ee79fa7331602b}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a480ad03d206fd7a823ee79fa7331602b}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!upzero@{upzero}}
+\index{upzero@{upzero}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{upzero()}{upzero()}}
+{\footnotesize\ttfamily void upzero (\begin{DoxyParamCaption}\item[{int}]{dlt,  }\item[{int $\ast$}]{dlti,  }\item[{int $\ast$}]{bli }\end{DoxyParamCaption})}
+
+
+
+Definition at line 662 of file adpcm.\+c.
+
+
+
+References dlt.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a043561ebce67a7a804cba5150d1f878f}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a043561ebce67a7a804cba5150d1f878f}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!accumc@{accumc}}
+\index{accumc@{accumc}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{accumc}{accumc}}
+{\footnotesize\ttfamily int accumc\mbox{[}11\mbox{]}}
+
+
+
+Definition at line 96 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a686c364bb92ebec869a529dc18bab907}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a686c364bb92ebec869a529dc18bab907}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!accumd@{accumd}}
+\index{accumd@{accumd}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{accumd}{accumd}}
+{\footnotesize\ttfamily int accumd\mbox{[}11\mbox{]}}
+
+
+
+Definition at line 96 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aa305c75bc953be475d9019f4a51a286c}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aa305c75bc953be475d9019f4a51a286c}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!ah1@{ah1}}
+\index{ah1@{ah1}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{ah1}{ah1}}
+{\footnotesize\ttfamily int ah1}
+
+
+
+Definition at line 196 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a9c5ca9d478d62b30ccdcfe5da92690d4}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a9c5ca9d478d62b30ccdcfe5da92690d4}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!ah2@{ah2}}
+\index{ah2@{ah2}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{ah2}{ah2}}
+{\footnotesize\ttfamily int ah2}
+
+
+
+Definition at line 196 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ae85be0be5b0194a36a6a0493f15346cd}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ae85be0be5b0194a36a6a0493f15346cd}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!al1@{al1}}
+\index{al1@{al1}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{al1}{al1}}
+{\footnotesize\ttfamily int al1}
+
+
+
+Definition at line 141 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_adf157bdafb20bf6cca87ee28cff0f82c}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_adf157bdafb20bf6cca87ee28cff0f82c}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!al2@{al2}}
+\index{al2@{al2}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{al2}{al2}}
+{\footnotesize\ttfamily int al2}
+
+
+
+Definition at line 141 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a80f008e3596d4b7e36fcfe5c8f08a147}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a80f008e3596d4b7e36fcfe5c8f08a147}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!compressed@{compressed}}
+\index{compressed@{compressed}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{compressed}{compressed}}
+{\footnotesize\ttfamily int compressed\mbox{[}\hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a70ed59adcb4159ac551058053e649640}{S\+I\+ZE}\mbox{]}}
+
+
+
+Definition at line 800 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a82b65aaec586ffaed4a77022918e3561}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a82b65aaec586ffaed4a77022918e3561}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+ah1@{dec\+\_\+ah1}}
+\index{dec\+\_\+ah1@{dec\+\_\+ah1}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+ah1}{dec\_ah1}}
+{\footnotesize\ttfamily int dec\+\_\+ah1}
+
+
+
+Definition at line 223 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a17562c7335f789b0a86f80954721836b}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a17562c7335f789b0a86f80954721836b}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+ah2@{dec\+\_\+ah2}}
+\index{dec\+\_\+ah2@{dec\+\_\+ah2}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+ah2}{dec\_ah2}}
+{\footnotesize\ttfamily int dec\+\_\+ah2}
+
+
+
+Definition at line 223 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4bc2657813e497e1241f3073fdf577c0}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4bc2657813e497e1241f3073fdf577c0}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+al1@{dec\+\_\+al1}}
+\index{dec\+\_\+al1@{dec\+\_\+al1}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+al1}{dec\_al1}}
+{\footnotesize\ttfamily int dec\+\_\+al1}
+
+
+
+Definition at line 211 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a8f64d4a67197eff48530e3e6a6605c41}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a8f64d4a67197eff48530e3e6a6605c41}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+al2@{dec\+\_\+al2}}
+\index{dec\+\_\+al2@{dec\+\_\+al2}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+al2}{dec\_al2}}
+{\footnotesize\ttfamily int dec\+\_\+al2}
+
+
+
+Definition at line 211 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a3756ad492c31c1a1744604bcb1e2fdb0}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a3756ad492c31c1a1744604bcb1e2fdb0}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+del\+\_\+bph@{dec\+\_\+del\+\_\+bph}}
+\index{dec\+\_\+del\+\_\+bph@{dec\+\_\+del\+\_\+bph}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+del\+\_\+bph}{dec\_del\_bph}}
+{\footnotesize\ttfamily int dec\+\_\+del\+\_\+bph\mbox{[}6\mbox{]}}
+
+
+
+Definition at line 216 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a97cef2b41dd860c5fe857498aedc5862}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a97cef2b41dd860c5fe857498aedc5862}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+del\+\_\+bpl@{dec\+\_\+del\+\_\+bpl}}
+\index{dec\+\_\+del\+\_\+bpl@{dec\+\_\+del\+\_\+bpl}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+del\+\_\+bpl}{dec\_del\_bpl}}
+{\footnotesize\ttfamily int dec\+\_\+del\+\_\+bpl\mbox{[}6\mbox{]}}
+
+
+
+Definition at line 204 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a8bf4f3c8f82d15be4e816424913d1ca1}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a8bf4f3c8f82d15be4e816424913d1ca1}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+del\+\_\+dhx@{dec\+\_\+del\+\_\+dhx}}
+\index{dec\+\_\+del\+\_\+dhx@{dec\+\_\+del\+\_\+dhx}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+del\+\_\+dhx}{dec\_del\_dhx}}
+{\footnotesize\ttfamily int dec\+\_\+del\+\_\+dhx\mbox{[}6\mbox{]}}
+
+
+
+Definition at line 218 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a2e1892d1ea7d11918622f0239284a8b3}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a2e1892d1ea7d11918622f0239284a8b3}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+del\+\_\+dltx@{dec\+\_\+del\+\_\+dltx}}
+\index{dec\+\_\+del\+\_\+dltx@{dec\+\_\+del\+\_\+dltx}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+del\+\_\+dltx}{dec\_del\_dltx}}
+{\footnotesize\ttfamily int dec\+\_\+del\+\_\+dltx\mbox{[}6\mbox{]}}
+
+
+
+Definition at line 206 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_afe5efddbd5f4ebe9e1d20ce44ec9389c}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_afe5efddbd5f4ebe9e1d20ce44ec9389c}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+deth@{dec\+\_\+deth}}
+\index{dec\+\_\+deth@{dec\+\_\+deth}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+deth}{dec\_deth}}
+{\footnotesize\ttfamily int dec\+\_\+deth}
+
+
+
+Definition at line 202 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a78234dbd088a4374c8f6a601fee45eb9}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a78234dbd088a4374c8f6a601fee45eb9}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+detl@{dec\+\_\+detl}}
+\index{dec\+\_\+detl@{dec\+\_\+detl}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+detl}{dec\_detl}}
+{\footnotesize\ttfamily int dec\+\_\+detl}
+
+
+
+Definition at line 202 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a21532187162c85aead66d643ddd9210a}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a21532187162c85aead66d643ddd9210a}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+dh@{dec\+\_\+dh}}
+\index{dec\+\_\+dh@{dec\+\_\+dh}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+dh}{dec\_dh}}
+{\footnotesize\ttfamily int dec\+\_\+dh}
+
+
+
+Definition at line 213 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a2e0570cac9e24faa2e0e8483b11145ee}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a2e0570cac9e24faa2e0e8483b11145ee}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+dlt@{dec\+\_\+dlt}}
+\index{dec\+\_\+dlt@{dec\+\_\+dlt}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+dlt}{dec\_dlt}}
+{\footnotesize\ttfamily int dec\+\_\+dlt}
+
+
+
+Definition at line 202 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aaeebabf879f419bccd9887f3f997624e}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aaeebabf879f419bccd9887f3f997624e}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+nbh@{dec\+\_\+nbh}}
+\index{dec\+\_\+nbh@{dec\+\_\+nbh}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+nbh}{dec\_nbh}}
+{\footnotesize\ttfamily int dec\+\_\+nbh}
+
+
+
+Definition at line 213 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a8191f6057fd1375e5fe3378bcaa5fc76}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a8191f6057fd1375e5fe3378bcaa5fc76}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+nbl@{dec\+\_\+nbl}}
+\index{dec\+\_\+nbl@{dec\+\_\+nbl}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+nbl}{dec\_nbl}}
+{\footnotesize\ttfamily int dec\+\_\+nbl}
+
+
+
+Definition at line 213 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4d91a1a33a137cc87e09acd985e8b84a}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4d91a1a33a137cc87e09acd985e8b84a}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+ph@{dec\+\_\+ph}}
+\index{dec\+\_\+ph@{dec\+\_\+ph}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+ph}{dec\_ph}}
+{\footnotesize\ttfamily int dec\+\_\+ph}
+
+
+
+Definition at line 224 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a17156acffd1ca27aa05815ebd8761376}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a17156acffd1ca27aa05815ebd8761376}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+ph1@{dec\+\_\+ph1}}
+\index{dec\+\_\+ph1@{dec\+\_\+ph1}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+ph1}{dec\_ph1}}
+{\footnotesize\ttfamily int dec\+\_\+ph1}
+
+
+
+Definition at line 228 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_affa95c1d9abb7097beffbf100484ded9}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_affa95c1d9abb7097beffbf100484ded9}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+ph2@{dec\+\_\+ph2}}
+\index{dec\+\_\+ph2@{dec\+\_\+ph2}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+ph2}{dec\_ph2}}
+{\footnotesize\ttfamily int dec\+\_\+ph2}
+
+
+
+Definition at line 228 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ab8f4637642addb8ffb7a6f7c8493ded4}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ab8f4637642addb8ffb7a6f7c8493ded4}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+plt@{dec\+\_\+plt}}
+\index{dec\+\_\+plt@{dec\+\_\+plt}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+plt}{dec\_plt}}
+{\footnotesize\ttfamily int dec\+\_\+plt}
+
+
+
+Definition at line 208 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a33d7d87e1ec53b63bcb45d929cd21158}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a33d7d87e1ec53b63bcb45d929cd21158}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+plt1@{dec\+\_\+plt1}}
+\index{dec\+\_\+plt1@{dec\+\_\+plt1}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+plt1}{dec\_plt1}}
+{\footnotesize\ttfamily int dec\+\_\+plt1}
+
+
+
+Definition at line 208 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a210cb5bb02c2f9a5ca2a249bf93f8d6a}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a210cb5bb02c2f9a5ca2a249bf93f8d6a}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+plt2@{dec\+\_\+plt2}}
+\index{dec\+\_\+plt2@{dec\+\_\+plt2}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+plt2}{dec\_plt2}}
+{\footnotesize\ttfamily int dec\+\_\+plt2}
+
+
+
+Definition at line 208 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4895cf155bc7161c18a2858529342f42}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4895cf155bc7161c18a2858529342f42}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+rh1@{dec\+\_\+rh1}}
+\index{dec\+\_\+rh1@{dec\+\_\+rh1}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+rh1}{dec\_rh1}}
+{\footnotesize\ttfamily int dec\+\_\+rh1}
+
+
+
+Definition at line 222 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a74128625f6d4aa05c622575a52cfef75}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a74128625f6d4aa05c622575a52cfef75}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+rh2@{dec\+\_\+rh2}}
+\index{dec\+\_\+rh2@{dec\+\_\+rh2}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+rh2}{dec\_rh2}}
+{\footnotesize\ttfamily int dec\+\_\+rh2}
+
+
+
+Definition at line 222 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a73f3497e64795b0ab562ad3bd8c6dc5a}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a73f3497e64795b0ab562ad3bd8c6dc5a}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+rlt@{dec\+\_\+rlt}}
+\index{dec\+\_\+rlt@{dec\+\_\+rlt}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+rlt}{dec\_rlt}}
+{\footnotesize\ttfamily int dec\+\_\+rlt}
+
+
+
+Definition at line 210 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a0090abf0166cccbe205d6caa7df985dd}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a0090abf0166cccbe205d6caa7df985dd}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+rlt1@{dec\+\_\+rlt1}}
+\index{dec\+\_\+rlt1@{dec\+\_\+rlt1}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+rlt1}{dec\_rlt1}}
+{\footnotesize\ttfamily int dec\+\_\+rlt1}
+
+
+
+Definition at line 210 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a5d020476805283ae85e660860ab2bde3}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a5d020476805283ae85e660860ab2bde3}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+rlt2@{dec\+\_\+rlt2}}
+\index{dec\+\_\+rlt2@{dec\+\_\+rlt2}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+rlt2}{dec\_rlt2}}
+{\footnotesize\ttfamily int dec\+\_\+rlt2}
+
+
+
+Definition at line 210 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aedca2d4413cb3aac98dcf2d453d9a5e7}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aedca2d4413cb3aac98dcf2d453d9a5e7}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+sh@{dec\+\_\+sh}}
+\index{dec\+\_\+sh@{dec\+\_\+sh}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+sh}{dec\_sh}}
+{\footnotesize\ttfamily int dec\+\_\+sh}
+
+
+
+Definition at line 226 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_af29683820abc347b4b9c52a776d1375b}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_af29683820abc347b4b9c52a776d1375b}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+sl@{dec\+\_\+sl}}
+\index{dec\+\_\+sl@{dec\+\_\+sl}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+sl}{dec\_sl}}
+{\footnotesize\ttfamily int dec\+\_\+sl}
+
+
+
+Definition at line 209 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a763c84f7b50863bc1d2162f0e7fb6ce7}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a763c84f7b50863bc1d2162f0e7fb6ce7}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+sph@{dec\+\_\+sph}}
+\index{dec\+\_\+sph@{dec\+\_\+sph}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+sph}{dec\_sph}}
+{\footnotesize\ttfamily int dec\+\_\+sph}
+
+
+
+Definition at line 224 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aa4c99adbe3b4bd55f07f18ea039455e5}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aa4c99adbe3b4bd55f07f18ea039455e5}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+spl@{dec\+\_\+spl}}
+\index{dec\+\_\+spl@{dec\+\_\+spl}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+spl}{dec\_spl}}
+{\footnotesize\ttfamily int dec\+\_\+spl}
+
+
+
+Definition at line 209 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a20d49e5a70834ed963c67a23a2a6f480}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a20d49e5a70834ed963c67a23a2a6f480}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+szh@{dec\+\_\+szh}}
+\index{dec\+\_\+szh@{dec\+\_\+szh}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+szh}{dec\_szh}}
+{\footnotesize\ttfamily int dec\+\_\+szh}
+
+
+
+Definition at line 220 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ae8f4aff0857992189811acfbae6006a1}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ae8f4aff0857992189811acfbae6006a1}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dec\+\_\+szl@{dec\+\_\+szl}}
+\index{dec\+\_\+szl@{dec\+\_\+szl}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dec\+\_\+szl}{dec\_szl}}
+{\footnotesize\ttfamily int dec\+\_\+szl}
+
+
+
+Definition at line 209 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a7e225d2948b58e23c8ae20db4aa2de0a}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a7e225d2948b58e23c8ae20db4aa2de0a}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!decis\+\_\+levl@{decis\+\_\+levl}}
+\index{decis\+\_\+levl@{decis\+\_\+levl}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{decis\+\_\+levl}{decis\_levl}}
+{\footnotesize\ttfamily const int decis\+\_\+levl\mbox{[}30\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  280, 576, 880, 1200, 1520, 1864, 2208, 2584,
+  2960, 3376, 3784, 4240, 4696, 5200, 5712, 6288,
+  6864, 7520, 8184, 8968, 9752, 10712, 11664, 12896,
+  14120, 15840, 17560, 20456, 23352, 32767
+\}
+\end{DoxyCode}
+
+
+Definition at line 147 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aca2b39e6041889159b3a20d9e779c6a7}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aca2b39e6041889159b3a20d9e779c6a7}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!delay\+\_\+bph@{delay\+\_\+bph}}
+\index{delay\+\_\+bph@{delay\+\_\+bph}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{delay\+\_\+bph}{delay\_bph}}
+{\footnotesize\ttfamily int delay\+\_\+bph\mbox{[}6\mbox{]}}
+
+
+
+Definition at line 194 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ae0393524158b21d66d18abaf862cdb42}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ae0393524158b21d66d18abaf862cdb42}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!delay\+\_\+bpl@{delay\+\_\+bpl}}
+\index{delay\+\_\+bpl@{delay\+\_\+bpl}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{delay\+\_\+bpl}{delay\_bpl}}
+{\footnotesize\ttfamily int delay\+\_\+bpl\mbox{[}6\mbox{]}}
+
+
+
+Definition at line 124 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aaf8654be574fa8973f120642c60c99c6}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aaf8654be574fa8973f120642c60c99c6}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!delay\+\_\+dhx@{delay\+\_\+dhx}}
+\index{delay\+\_\+dhx@{delay\+\_\+dhx}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{delay\+\_\+dhx}{delay\_dhx}}
+{\footnotesize\ttfamily int delay\+\_\+dhx\mbox{[}6\mbox{]}}
+
+
+
+Definition at line 192 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a2f456ab0ed20ce2916594673d099bd02}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a2f456ab0ed20ce2916594673d099bd02}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!delay\+\_\+dltx@{delay\+\_\+dltx}}
+\index{delay\+\_\+dltx@{delay\+\_\+dltx}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{delay\+\_\+dltx}{delay\_dltx}}
+{\footnotesize\ttfamily int delay\+\_\+dltx\mbox{[}6\mbox{]}}
+
+
+
+Definition at line 126 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_adbc4b130b81818bd0df191a2ed025bf9}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_adbc4b130b81818bd0df191a2ed025bf9}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!deth@{deth}}
+\index{deth@{deth}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{deth}{deth}}
+{\footnotesize\ttfamily int deth}
+
+
+
+Definition at line 175 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ad1d7ec8e92e9589a94f8b0fa99ae90c6}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ad1d7ec8e92e9589a94f8b0fa99ae90c6}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!detl@{detl}}
+\index{detl@{detl}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{detl}{detl}}
+{\footnotesize\ttfamily int detl}
+
+
+
+Definition at line 154 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a2bff2f671ee62114a65413226c431ded}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a2bff2f671ee62114a65413226c431ded}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dh@{dh}}
+\index{dh@{dh}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dh}{dh}}
+{\footnotesize\ttfamily int dh}
+
+
+
+Definition at line 188 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aab77a57dba7492bf74218d76ab63db45}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aab77a57dba7492bf74218d76ab63db45}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dl@{dl}}
+\index{dl@{dl}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dl}{dl}}
+{\footnotesize\ttfamily int dl}
+
+
+
+Definition at line 212 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a67284ba359347afcd68cef085f1a8d5a}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a67284ba359347afcd68cef085f1a8d5a}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!dlt@{dlt}}
+\index{dlt@{dlt}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{dlt}{dlt}}
+{\footnotesize\ttfamily int dlt}
+
+
+
+Definition at line 143 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a8299acd4f63fc08ad07e3cb2d8dc0876}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a8299acd4f63fc08ad07e3cb2d8dc0876}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!eh@{eh}}
+\index{eh@{eh}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{eh}{eh}}
+{\footnotesize\ttfamily int eh}
+
+
+
+Definition at line 177 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a7f3560d6472f5c36bc6290395fc960f0}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a7f3560d6472f5c36bc6290395fc960f0}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!el@{el}}
+\index{el@{el}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{el}{el}}
+{\footnotesize\ttfamily int el}
+
+
+
+Definition at line 105 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a92176f6dd4e42d20d86405ffe94a46aa}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a92176f6dd4e42d20d86405ffe94a46aa}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!h@{h}}
+\index{h@{h}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{h}{h}}
+{\footnotesize\ttfamily const int h\mbox{[}24\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  12, -44, -44, 212, 48, -624, 128, 1448,
+  -840, -3220, 3804, 15504, 15504, 3804, -3220, -840,
+  1448, 128, -624, 48, 212, -44, -44, 12
+\}
+\end{DoxyCode}
+
+
+Definition at line 87 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a7673796812aa746d41807e16e302cbba}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a7673796812aa746d41807e16e302cbba}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!ih@{ih}}
+\index{ih@{ih}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{ih}{ih}}
+{\footnotesize\ttfamily int ih}
+
+
+
+Definition at line 188 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a793c322fdc50347b4b63617c72317bd7}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a793c322fdc50347b4b63617c72317bd7}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!il@{il}}
+\index{il@{il}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{il}{il}}
+{\footnotesize\ttfamily int il}
+
+
+
+Definition at line 105 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aaf9986c8c3aa7afd0490a6e577c1b1be}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aaf9986c8c3aa7afd0490a6e577c1b1be}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!ilb\+\_\+table@{ilb\+\_\+table}}
+\index{ilb\+\_\+table@{ilb\+\_\+table}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{ilb\+\_\+table}{ilb\_table}}
+{\footnotesize\ttfamily const int ilb\+\_\+table\mbox{[}32\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  2048, 2093, 2139, 2186, 2233, 2282, 2332, 2383,
+  2435, 2489, 2543, 2599, 2656, 2714, 2774, 2834,
+  2896, 2960, 3025, 3091, 3158, 3228, 3298, 3371,
+  3444, 3520, 3597, 3676, 3756, 3838, 3922, 4008
+\}
+\end{DoxyCode}
+
+
+Definition at line 133 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a90483d643c60b1b3974be7dd3f2ff71a}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a90483d643c60b1b3974be7dd3f2ff71a}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!ilr@{ilr}}
+\index{ilr@{ilr}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{ilr}{ilr}}
+{\footnotesize\ttfamily int ilr}
+
+
+
+Definition at line 201 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aed4ae45706e61c03c86e03c7800f4fcb}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aed4ae45706e61c03c86e03c7800f4fcb}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!nbh@{nbh}}
+\index{nbh@{nbh}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{nbh}{nbh}}
+{\footnotesize\ttfamily int nbh}
+
+
+
+Definition at line 189 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_acf98b2c5c1a51e021aad6633fd2c41c6}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_acf98b2c5c1a51e021aad6633fd2c41c6}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!nbl@{nbl}}
+\index{nbl@{nbl}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{nbl}{nbl}}
+{\footnotesize\ttfamily int nbl}
+
+
+
+Definition at line 140 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_adce2757fdc16c92198dce58c74145b46}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_adce2757fdc16c92198dce58c74145b46}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!ph@{ph}}
+\index{ph@{ph}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{ph}{ph}}
+{\footnotesize\ttfamily int ph}
+
+
+
+Definition at line 190 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a265b04ad4dce22c615099b33c40f7afb}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a265b04ad4dce22c615099b33c40f7afb}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!ph1@{ph1}}
+\index{ph1@{ph1}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{ph1}{ph1}}
+{\footnotesize\ttfamily int ph1}
+
+
+
+Definition at line 197 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ae75118a31a2a9d035f84be2efe92fb10}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ae75118a31a2a9d035f84be2efe92fb10}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!ph2@{ph2}}
+\index{ph2@{ph2}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{ph2}{ph2}}
+{\footnotesize\ttfamily int ph2}
+
+
+
+Definition at line 197 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4896060afde85e22c6f9f04fb9bd1291}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4896060afde85e22c6f9f04fb9bd1291}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!plt@{plt}}
+\index{plt@{plt}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{plt}{plt}}
+{\footnotesize\ttfamily int plt}
+
+
+
+Definition at line 142 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a41536d4525d5fe2a53d435e0dd110f6e}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a41536d4525d5fe2a53d435e0dd110f6e}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!plt1@{plt1}}
+\index{plt1@{plt1}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{plt1}{plt1}}
+{\footnotesize\ttfamily int plt1}
+
+
+
+Definition at line 142 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aa530fde08a5360c1184daf2ea125b303}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aa530fde08a5360c1184daf2ea125b303}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!plt2@{plt2}}
+\index{plt2@{plt2}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{plt2}{plt2}}
+{\footnotesize\ttfamily int plt2}
+
+
+
+Definition at line 142 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a357dec93db40a3fa31ce402ccfc3983d}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a357dec93db40a3fa31ce402ccfc3983d}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!qq2\+\_\+code2\+\_\+table@{qq2\+\_\+code2\+\_\+table}}
+\index{qq2\+\_\+code2\+\_\+table@{qq2\+\_\+code2\+\_\+table}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{qq2\+\_\+code2\+\_\+table}{qq2\_code2\_table}}
+{\footnotesize\ttfamily const int qq2\+\_\+code2\+\_\+table\mbox{[}4\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  -7408, -1616, 7408, 1616
+\}
+\end{DoxyCode}
+
+
+Definition at line 179 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_acfcd9b3607d90bf18c762ac0f69fd006}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_acfcd9b3607d90bf18c762ac0f69fd006}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!qq4\+\_\+code4\+\_\+table@{qq4\+\_\+code4\+\_\+table}}
+\index{qq4\+\_\+code4\+\_\+table@{qq4\+\_\+code4\+\_\+table}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{qq4\+\_\+code4\+\_\+table}{qq4\_code4\_table}}
+{\footnotesize\ttfamily const int qq4\+\_\+code4\+\_\+table\mbox{[}16\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  0, -20456, -12896, -8968, -6288, -4240, -2584, -1200,
+  20456, 12896, 8968, 6288, 4240, 2584, 1200, 0
+\}
+\end{DoxyCode}
+
+
+Definition at line 107 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a07dd5abd17fb2d5446764881bb490007}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a07dd5abd17fb2d5446764881bb490007}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!qq6\+\_\+code6\+\_\+table@{qq6\+\_\+code6\+\_\+table}}
+\index{qq6\+\_\+code6\+\_\+table@{qq6\+\_\+code6\+\_\+table}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{qq6\+\_\+code6\+\_\+table}{qq6\_code6\_table}}
+{\footnotesize\ttfamily const int qq6\+\_\+code6\+\_\+table\mbox{[}64\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  -136, -136, -136, -136, -24808, -21904, -19008, -16704,
+  -14984, -13512, -12280, -11192, -10232, -9360, -8576, -7856,
+  -7192, -6576, -6000, -5456, -4944, -4464, -4008, -3576,
+  -3168, -2776, -2400, -2032, -1688, -1360, -1040, -728,
+  24808, 21904, 19008, 16704, 14984, 13512, 12280, 11192,
+  10232, 9360, 8576, 7856, 7192, 6576, 6000, 5456,
+  4944, 4464, 4008, 3576, 3168, 2776, 2400, 2032,
+  1688, 1360, 1040, 728, 432, 136, -432, -136
+\}
+\end{DoxyCode}
+
+
+Definition at line 113 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a0c142e4271f0c3e2d8ec28e46ba3c9f9}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a0c142e4271f0c3e2d8ec28e46ba3c9f9}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!quant26bt\+\_\+neg@{quant26bt\+\_\+neg}}
+\index{quant26bt\+\_\+neg@{quant26bt\+\_\+neg}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{quant26bt\+\_\+neg}{quant26bt\_neg}}
+{\footnotesize\ttfamily const int quant26bt\+\_\+neg\mbox{[}31\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  63, 62, 31, 30, 29, 28, 27, 26,
+  25, 24, 23, 22, 21, 20, 19, 18,
+  17, 16, 15, 14, 13, 12, 11, 10,
+  9, 8, 7, 6, 5, 4, 4
+\}
+\end{DoxyCode}
+
+
+Definition at line 167 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ad9f07797214c1e848889ab43f82f2d6c}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ad9f07797214c1e848889ab43f82f2d6c}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!quant26bt\+\_\+pos@{quant26bt\+\_\+pos}}
+\index{quant26bt\+\_\+pos@{quant26bt\+\_\+pos}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{quant26bt\+\_\+pos}{quant26bt\_pos}}
+{\footnotesize\ttfamily const int quant26bt\+\_\+pos\mbox{[}31\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  61, 60, 59, 58, 57, 56, 55, 54,
+  53, 52, 51, 50, 49, 48, 47, 46,
+  45, 44, 43, 42, 41, 40, 39, 38,
+  37, 36, 35, 34, 33, 32, 32
+\}
+\end{DoxyCode}
+
+
+Definition at line 158 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a94c9e596a4bd69287e35733185c25ff9}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a94c9e596a4bd69287e35733185c25ff9}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!result@{result}}
+\index{result@{result}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{result}{result}}
+{\footnotesize\ttfamily int result\mbox{[}\hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a70ed59adcb4159ac551058053e649640}{S\+I\+ZE}\mbox{]}}
+
+
+
+Definition at line 800 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aeffcd9ea78db6d57ac9ec44c531310c4}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aeffcd9ea78db6d57ac9ec44c531310c4}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!rh@{rh}}
+\index{rh@{rh}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{rh}{rh}}
+{\footnotesize\ttfamily int rh}
+
+
+
+Definition at line 190 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a8927b6731e6b07d88b60d89220a6f1f5}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a8927b6731e6b07d88b60d89220a6f1f5}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!rh1@{rh1}}
+\index{rh1@{rh1}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{rh1}{rh1}}
+{\footnotesize\ttfamily int rh1}
+
+
+
+Definition at line 198 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a21019520ef0fed944114c16ca78e33a6}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a21019520ef0fed944114c16ca78e33a6}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!rh2@{rh2}}
+\index{rh2@{rh2}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{rh2}{rh2}}
+{\footnotesize\ttfamily int rh2}
+
+
+
+Definition at line 198 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a78d7bbcfa8aaf77544ea867b7648868f}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a78d7bbcfa8aaf77544ea867b7648868f}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!rl@{rl}}
+\index{rl@{rl}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{rl}{rl}}
+{\footnotesize\ttfamily int rl}
+
+
+
+Definition at line 201 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a8d4c9671443bfafa5528649f5eaa2c2f}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a8d4c9671443bfafa5528649f5eaa2c2f}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!rlt@{rlt}}
+\index{rlt@{rlt}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{rlt}{rlt}}
+{\footnotesize\ttfamily int rlt}
+
+
+
+Definition at line 144 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a9ce9788366c9b7556d3b34748dc78738}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a9ce9788366c9b7556d3b34748dc78738}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!rlt1@{rlt1}}
+\index{rlt1@{rlt1}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{rlt1}{rlt1}}
+{\footnotesize\ttfamily int rlt1}
+
+
+
+Definition at line 144 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a042d2cbd5d6027aabf5e73798a8c408d}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a042d2cbd5d6027aabf5e73798a8c408d}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!rlt2@{rlt2}}
+\index{rlt2@{rlt2}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{rlt2}{rlt2}}
+{\footnotesize\ttfamily int rlt2}
+
+
+
+Definition at line 144 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a10664c4ae862dbb6116dc28da6718f5a}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a10664c4ae862dbb6116dc28da6718f5a}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!sh@{sh}}
+\index{sh@{sh}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{sh}{sh}}
+{\footnotesize\ttfamily int sh}
+
+
+
+Definition at line 176 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ace9c0991f7fffe6ab436175d7fff821e}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ace9c0991f7fffe6ab436175d7fff821e}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!sl@{sl}}
+\index{sl@{sl}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{sl}{sl}}
+{\footnotesize\ttfamily int sl}
+
+
+
+Definition at line 105 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a6acdaa035c7d3a1c24ea1a1741851657}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a6acdaa035c7d3a1c24ea1a1741851657}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!sph@{sph}}
+\index{sph@{sph}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{sph}{sph}}
+{\footnotesize\ttfamily int sph}
+
+
+
+Definition at line 190 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a6985b55df3ad2424bebd0e7d2be4a19d}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a6985b55df3ad2424bebd0e7d2be4a19d}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!spl@{spl}}
+\index{spl@{spl}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{spl}{spl}}
+{\footnotesize\ttfamily int spl}
+
+
+
+Definition at line 105 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ad246495c16972e9252219b61bbf0ef8f}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ad246495c16972e9252219b61bbf0ef8f}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!szh@{szh}}
+\index{szh@{szh}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{szh}{szh}}
+{\footnotesize\ttfamily int szh}
+
+
+
+Definition at line 189 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a2a3b1c5b4272f838ab2e68a7977c3e38}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a2a3b1c5b4272f838ab2e68a7977c3e38}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!szl@{szl}}
+\index{szl@{szl}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{szl}{szl}}
+{\footnotesize\ttfamily int szl}
+
+
+
+Definition at line 105 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aef495ddc0f46d7b63a4083e72cd76628}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_aef495ddc0f46d7b63a4083e72cd76628}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!test\+\_\+compressed@{test\+\_\+compressed}}
+\index{test\+\_\+compressed@{test\+\_\+compressed}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{test\+\_\+compressed}{test\_compressed}}
+{\footnotesize\ttfamily const int test\+\_\+compressed\mbox{[}\hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a70ed59adcb4159ac551058053e649640}{S\+I\+ZE}\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  0xfd, 0xde, 0x77, 0xba, 0xf2, 
+  0x90, 0x20, 0xa0, 0xec, 0xed, 
+  0xef, 0xf1, 0xf3, 0xf4, 0xf5, 
+  0xf5, 0xf5, 0xf5, 0xf6, 0xf6, 
+  0xf6, 0xf7, 0xf8, 0xf7, 0xf8, 
+  0xf7, 0xf9, 0xf8, 0xf7, 0xf9, 
+  0xf8, 0xf8, 0xf6, 0xf8, 0xf8, 
+  0xf7, 0xf9, 0xf9, 0xf9, 0xf8, 
+  0xf7, 0xfa, 0xf8, 0xf8, 0xf7, 
+  0xfb, 0xfa, 0xf9, 0xf8, 0xf8
+\}
+\end{DoxyCode}
+
+
+Definition at line 801 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ac4a158d75ab25bce607a33381085aa6f}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ac4a158d75ab25bce607a33381085aa6f}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!test\+\_\+data@{test\+\_\+data}}
+\index{test\+\_\+data@{test\+\_\+data}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{test\+\_\+data}{test\_data}}
+{\footnotesize\ttfamily const int test\+\_\+data\mbox{[}\hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a70ed59adcb4159ac551058053e649640}{S\+I\+ZE}\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  0x44, 0x44, 0x44, 0x44, 0x44,
+  0x44, 0x44, 0x44, 0x44, 0x44,
+  0x44, 0x44, 0x44, 0x44, 0x44,
+  0x44, 0x44, 0x43, 0x43, 0x43,
+  0x43, 0x43, 0x43, 0x43, 0x42,
+  0x42, 0x42, 0x42, 0x42, 0x42,
+  0x41, 0x41, 0x41, 0x41, 0x41,
+  0x40, 0x40, 0x40, 0x40, 0x40,
+  0x40, 0x40, 0x40, 0x3f, 0x3f,
+  0x3f, 0x3f, 0x3f, 0x3e, 0x3e,
+  0x3e, 0x3e, 0x3e, 0x3e, 0x3d,
+  0x3d, 0x3d, 0x3d, 0x3d, 0x3d,
+  0x3c, 0x3c, 0x3c, 0x3c, 0x3c,
+  0x3c, 0x3c, 0x3c, 0x3c, 0x3b,
+  0x3b, 0x3b, 0x3b, 0x3b, 0x3b,
+  0x3b, 0x3b, 0x3b, 0x3b, 0x3b,
+  0x3b, 0x3b, 0x3b, 0x3b, 0x3b,
+  0x3b, 0x3b, 0x3b, 0x3b, 0x3b,
+  0x3b, 0x3b, 0x3c, 0x3c, 0x3c,
+  0x3c, 0x3c, 0x3c, 0x3c, 0x3c
+\}
+\end{DoxyCode}
+
+
+Definition at line 778 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a9f3bf96964012d3cdf2c332be64e477d}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a9f3bf96964012d3cdf2c332be64e477d}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!test\+\_\+result@{test\+\_\+result}}
+\index{test\+\_\+result@{test\+\_\+result}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{test\+\_\+result}{test\_result}}
+{\footnotesize\ttfamily const int test\+\_\+result\mbox{[}\hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a70ed59adcb4159ac551058053e649640}{S\+I\+ZE}\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  0, 0xffffffff, 0xffffffff, 0, 0, 
+  0xffffffff, 0, 0, 0xffffffff, 0xffffffff, 
+  0, 0, 0x1, 0x1, 0, 
+  0xfffffffe, 0xffffffff, 0xfffffffe, 0, 0xfffffffc, 
+  0x1, 0x1, 0x1, 0xfffffffb, 0x2, 
+  0x2, 0x3, 0xb, 0x14, 0x14, 
+  0x16, 0x18, 0x20, 0x21, 0x26, 
+  0x27, 0x2e, 0x2f, 0x33, 0x32, 
+  0x35, 0x33, 0x36, 0x34, 0x37, 
+  0x34, 0x37, 0x35, 0x38, 0x36, 
+  0x39, 0x38, 0x3b, 0x3a, 0x3f, 
+  0x3f, 0x40, 0x3a, 0x3d, 0x3e, 
+  0x41, 0x3c, 0x3e, 0x3f, 0x42, 
+  0x3e, 0x3b, 0x37, 0x3b, 0x3e, 
+  0x41, 0x3b, 0x3b, 0x3a, 0x3b, 
+  0x36, 0x39, 0x3b, 0x3f, 0x3c, 
+  0x3b, 0x37, 0x3b, 0x3d, 0x41, 
+  0x3d, 0x3e, 0x3c, 0x3e, 0x3b, 
+  0x3a, 0x37, 0x3b, 0x3e, 0x41, 
+  0x3c, 0x3b, 0x39, 0x3a, 0x36
+\}
+\end{DoxyCode}
+
+
+Definition at line 813 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_abe5ad10853937cfebb1e406398d143cb}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_abe5ad10853937cfebb1e406398d143cb}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!tqmf@{tqmf}}
+\index{tqmf@{tqmf}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{tqmf}{tqmf}}
+{\footnotesize\ttfamily int tqmf\mbox{[}24\mbox{]}}
+
+
+
+Definition at line 83 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4d0b88cd38eeacd10bd199ed9fa8e8b8}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4d0b88cd38eeacd10bd199ed9fa8e8b8}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!wh\+\_\+code\+\_\+table@{wh\+\_\+code\+\_\+table}}
+\index{wh\+\_\+code\+\_\+table@{wh\+\_\+code\+\_\+table}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{wh\+\_\+code\+\_\+table}{wh\_code\_table}}
+{\footnotesize\ttfamily const int wh\+\_\+code\+\_\+table\mbox{[}4\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  798, -214, 798, -214
+\}
+\end{DoxyCode}
+
+
+Definition at line 183 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4294fc7a967144b3572dff64215a6c04}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4294fc7a967144b3572dff64215a6c04}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!wl\+\_\+code\+\_\+table@{wl\+\_\+code\+\_\+table}}
+\index{wl\+\_\+code\+\_\+table@{wl\+\_\+code\+\_\+table}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{wl\+\_\+code\+\_\+table}{wl\_code\_table}}
+{\footnotesize\ttfamily const int wl\+\_\+code\+\_\+table\mbox{[}16\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  -60, 3042, 1198, 538, 334, 172, 58, -30,
+  3042, 1198, 538, 334, 172, 58, -30, -60
+\}
+\end{DoxyCode}
+
+
+Definition at line 128 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4c016482c29efcbd9a9b4557b6f944bd}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a4c016482c29efcbd9a9b4557b6f944bd}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!xd@{xd}}
+\index{xd@{xd}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{xd}{xd}}
+{\footnotesize\ttfamily int xd}
+
+
+
+Definition at line 101 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a766bffa844d54d58ba3e19e5e636e4ee}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a766bffa844d54d58ba3e19e5e636e4ee}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!xh@{xh}}
+\index{xh@{xh}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{xh}{xh}}
+{\footnotesize\ttfamily int xh}
+
+
+
+Definition at line 93 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ab2133ed9ddb9e1f30bf55c49e2ee638d}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ab2133ed9ddb9e1f30bf55c49e2ee638d}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!xl@{xl}}
+\index{xl@{xl}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{xl}{xl}}
+{\footnotesize\ttfamily int xl}
+
+
+
+Definition at line 93 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a730bed077b4616ac9d9d8285cc565f4c}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a730bed077b4616ac9d9d8285cc565f4c}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!xout1@{xout1}}
+\index{xout1@{xout1}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{xout1}{xout1}}
+{\footnotesize\ttfamily int xout1}
+
+
+
+Definition at line 99 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ab9bcd25a340af94d9bb8744005a16b37}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_ab9bcd25a340af94d9bb8744005a16b37}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!xout2@{xout2}}
+\index{xout2@{xout2}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{xout2}{xout2}}
+{\footnotesize\ttfamily int xout2}
+
+
+
+Definition at line 99 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a845bd51a19de5064e1ac64c37e397bfa}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a845bd51a19de5064e1ac64c37e397bfa}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!xs@{xs}}
+\index{xs@{xs}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{xs}{xs}}
+{\footnotesize\ttfamily int xs}
+
+
+
+Definition at line 101 of file adpcm.\+c.
+
+\mbox{\Hypertarget{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a063b41cb650f3ea15a058cc09eedbe0f}\label{tutorial__fpl__2017_2lab3_2solutions_23_82_2adpcm_8c_a063b41cb650f3ea15a058cc09eedbe0f}} 
+\index{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}!yh@{yh}}
+\index{yh@{yh}!tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c@{tutorial\+\_\+fpl\+\_\+2017/lab3/solutions/3.\+2/adpcm.\+c}}
+\subsubsection{\texorpdfstring{yh}{yh}}
+{\footnotesize\ttfamily int yh}
+
+
+
+Definition at line 190 of file adpcm.\+c.
+

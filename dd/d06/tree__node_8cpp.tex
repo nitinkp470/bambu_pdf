@@ -1,0 +1,301 @@
+\hypertarget{tree__node_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/tree\+\_\+node.cpp File Reference}
+\label{tree__node_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/tree\+\_\+node.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/tree\+\_\+node.\+cpp}}
+
+
+Class implementation of the \hyperlink{classtree__node}{tree\+\_\+node} structures.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+C\+O\+D\+E\+\_\+\+E\+S\+T\+I\+M\+A\+T\+I\+O\+N\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+T\+R\+E\+E\+\_\+\+M\+A\+N\+I\+P\+U\+L\+A\+T\+I\+O\+N\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+T\+R\+E\+E\+\_\+\+P\+A\+R\+S\+E\+R\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}token\+\_\+interface.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gimple\+\_\+writer.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+basic\+\_\+block.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+reindex.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/preprocessor/facilities/empty.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/preprocessor/seq/for\+\_\+each.\+hpp$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+Include dependency graph for tree\+\_\+node.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d6d/tree__node_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{tree__node_8cpp_a41c0a1d69e009b79491c30924c51fcee}{V\+I\+S\+I\+T\+\_\+\+T\+R\+E\+E\+\_\+\+N\+O\+D\+E\+\_\+\+M\+A\+C\+RO}(r,  data,  elem)
+\begin{DoxyCompactList}\small\item\em Autoheader include. \end{DoxyCompactList}\item 
+\#define \hyperlink{tree__node_8cpp_a79b74303999212886ba1bccb5490b2bd}{N\+A\+M\+E\+\_\+\+K\+I\+ND}(r,  data,  elem)
+\item 
+\#define \hyperlink{tree__node_8cpp_a4f1533266d7b7f7092a648b8b72acf81}{K\+I\+N\+D\+\_\+\+N\+A\+ME}(r,  data,  elem)~kind\+\_\+to\+\_\+string\mbox{[}B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+C\+AT(elem, \+\_\+K)\mbox{]} = \#elem;
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tree__node_8cpp_a7b5f75a9a784333af164759c9f6a1fa0}{B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+S\+E\+Q\+\_\+\+F\+O\+R\+\_\+\+E\+A\+CH} (\hyperlink{tree__node_8cpp_a41c0a1d69e009b79491c30924c51fcee}{V\+I\+S\+I\+T\+\_\+\+T\+R\+E\+E\+\_\+\+N\+O\+D\+E\+\_\+\+M\+A\+C\+RO}, \hyperlink{classtree__node}{tree\+\_\+node},(ctor\+\_\+initializer)(trait\+\_\+expr)) B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+S\+E\+Q\+\_\+\+F\+O\+R\+\_\+\+E\+A\+CH(\hyperlink{tree__node_8cpp_a41c0a1d69e009b79491c30924c51fcee}{V\+I\+S\+I\+T\+\_\+\+T\+R\+E\+E\+\_\+\+N\+O\+D\+E\+\_\+\+M\+A\+C\+RO}
+\item 
+() label\+\_\+decl() \hyperlink{tree__node_8cpp_aa98971385f3d80aebe17503626b829f1}{using\+\_\+decl} (translation\+\_\+unit\+\_\+decl)) \hyperlink{tree__node_8cpp_a7b5f75a9a784333af164759c9f6a1fa0}{B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+S\+E\+Q\+\_\+\+F\+O\+R\+\_\+\+E\+A\+CH}(\hyperlink{tree__node_8cpp_a41c0a1d69e009b79491c30924c51fcee}{V\+I\+S\+I\+T\+\_\+\+T\+R\+E\+E\+\_\+\+N\+O\+D\+E\+\_\+\+M\+A\+C\+RO}
+\item 
+() label\+\_\+decl()() modop\+\_\+expr() new\+\_\+expr() placeholder\+\_\+expr() \hyperlink{tree__node_8cpp_aa158c2314d69fcb5ec914bbb313990e9}{template\+\_\+id\+\_\+expr} (vec\+\_\+new\+\_\+expr)) \hyperlink{tree__node_8cpp_a7b5f75a9a784333af164759c9f6a1fa0}{B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+S\+E\+Q\+\_\+\+F\+O\+R\+\_\+\+E\+A\+CH}(\hyperlink{tree__node_8cpp_a41c0a1d69e009b79491c30924c51fcee}{V\+I\+S\+I\+T\+\_\+\+T\+R\+E\+E\+\_\+\+N\+O\+D\+E\+\_\+\+M\+A\+C\+RO}
+\item 
+() label\+\_\+decl()() modop\+\_\+expr() new\+\_\+expr() placeholder\+\_\+expr()() boolean\+\_\+type() Char\+Type() nullptr\+\_\+type() lang\+\_\+type() offset\+\_\+type() qual\+\_\+union\+\_\+type() set\+\_\+type() template\+\_\+type\+\_\+parm() \hyperlink{tree__node_8cpp_ac85ce3682c22ba7e20932b56b01b4eeb}{typename\+\_\+type} (void\+\_\+type)) void \hyperlink{classtree__node}{tree\+\_\+node}
+\item 
+std\+::ostream \& \hyperlink{tree__node_8cpp_a04c3200a2247133cf590eff539d97021}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&tn)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tree__node_8cpp_ac5367dd7dca353df9a56d552f63ea27d}{decl\+\_\+node}
+\item 
+() label\+\_\+decl() \hyperlink{tree__node_8cpp_a85d8aa048b2bb634a153290cbddfacae}{expr\+\_\+node}
+\item 
+() label\+\_\+decl()() modop\+\_\+expr() new\+\_\+expr() placeholder\+\_\+expr() \hyperlink{tree__node_8cpp_a557981c5931be94a382d60ecb0f61572}{type\+\_\+node}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class implementation of the \hyperlink{classtree__node}{tree\+\_\+node} structures. 
+
+This file implements some of the \hyperlink{classtree__node}{tree\+\_\+node} member functions and define a global variable.
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+
+Marco Lattuada \href{mailto:lattuada@elet.polimi.it}{\tt lattuada@elet.\+polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{tree__node_8cpp_a4f1533266d7b7f7092a648b8b72acf81}\label{tree__node_8cpp_a4f1533266d7b7f7092a648b8b72acf81}} 
+\index{tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}!K\+I\+N\+D\+\_\+\+N\+A\+ME@{K\+I\+N\+D\+\_\+\+N\+A\+ME}}
+\index{K\+I\+N\+D\+\_\+\+N\+A\+ME@{K\+I\+N\+D\+\_\+\+N\+A\+ME}!tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}}
+\subsubsection{\texorpdfstring{K\+I\+N\+D\+\_\+\+N\+A\+ME}{KIND\_NAME}}
+{\footnotesize\ttfamily \#define K\+I\+N\+D\+\_\+\+N\+A\+ME(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{data,  }\item[{}]{elem }\end{DoxyParamCaption})~kind\+\_\+to\+\_\+string\mbox{[}B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+C\+AT(elem, \+\_\+K)\mbox{]} = \#elem;}
+
+
+
+Definition at line 93 of file tree\+\_\+node.\+cpp.
+
+
+
+Referenced by tree\+\_\+node\+::\+Get\+String().
+
+\mbox{\Hypertarget{tree__node_8cpp_a79b74303999212886ba1bccb5490b2bd}\label{tree__node_8cpp_a79b74303999212886ba1bccb5490b2bd}} 
+\index{tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}!N\+A\+M\+E\+\_\+\+K\+I\+ND@{N\+A\+M\+E\+\_\+\+K\+I\+ND}}
+\index{N\+A\+M\+E\+\_\+\+K\+I\+ND@{N\+A\+M\+E\+\_\+\+K\+I\+ND}!tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}}
+\subsubsection{\texorpdfstring{N\+A\+M\+E\+\_\+\+K\+I\+ND}{NAME\_KIND}}
+{\footnotesize\ttfamily \#define N\+A\+M\+E\+\_\+\+K\+I\+ND(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{data,  }\item[{}]{elem }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+name = #elem;                          \(\backslash\)
+   name = name.substr(19);                \(\backslash\)
+   name = name.substr(0, name.find(\textcolor{charliteral}{')'})); \(\backslash\)
+   string\_to\_kind[name] = BOOST\_PP\_CAT(elem, \_K);
+\end{DoxyCode}
+
+
+Definition at line 87 of file tree\+\_\+node.\+cpp.
+
+
+
+Referenced by tree\+\_\+node\+::get\+\_\+kind().
+
+\mbox{\Hypertarget{tree__node_8cpp_a41c0a1d69e009b79491c30924c51fcee}\label{tree__node_8cpp_a41c0a1d69e009b79491c30924c51fcee}} 
+\index{tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}!V\+I\+S\+I\+T\+\_\+\+T\+R\+E\+E\+\_\+\+N\+O\+D\+E\+\_\+\+M\+A\+C\+RO@{V\+I\+S\+I\+T\+\_\+\+T\+R\+E\+E\+\_\+\+N\+O\+D\+E\+\_\+\+M\+A\+C\+RO}}
+\index{V\+I\+S\+I\+T\+\_\+\+T\+R\+E\+E\+\_\+\+N\+O\+D\+E\+\_\+\+M\+A\+C\+RO@{V\+I\+S\+I\+T\+\_\+\+T\+R\+E\+E\+\_\+\+N\+O\+D\+E\+\_\+\+M\+A\+C\+RO}!tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}}
+\subsubsection{\texorpdfstring{V\+I\+S\+I\+T\+\_\+\+T\+R\+E\+E\+\_\+\+N\+O\+D\+E\+\_\+\+M\+A\+C\+RO}{VISIT\_TREE\_NODE\_MACRO}}
+{\footnotesize\ttfamily \#define V\+I\+S\+I\+T\+\_\+\+T\+R\+E\+E\+\_\+\+N\+O\+D\+E\+\_\+\+M\+A\+C\+RO(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{data,  }\item[{}]{elem }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} elem::visit(\hyperlink{classtree__node__visitor}{tree\_node\_visitor}* \textcolor{keyword}{const} v) \textcolor{keyword}{const} \(\backslash\)
+   \{                                                  \(\backslash\)
+      unsigned \textcolor{keywordtype}{int} mask = \hyperlink{visitor_8hpp_aed5f8b935ad480239d2c4b7c958d34c1}{ALL\_VISIT};                  \(\backslash\)
+      (*v)(\textcolor{keyword}{this}, mask);                               \(\backslash\)
+      VISIT\_SC(mask, data, visit(v));                 \(\backslash\)
+   \}
+\end{DoxyCode}
+
+
+Autoheader include. 
+
+parser/treegcc include R\+TL include Tree include Utility include forward declaration macro 
+
+Definition at line 79 of file tree\+\_\+node.\+cpp.
+
+
+
+Referenced by tree\+\_\+node\+::\+Get\+String().
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{tree__node_8cpp_a7b5f75a9a784333af164759c9f6a1fa0}\label{tree__node_8cpp_a7b5f75a9a784333af164759c9f6a1fa0}} 
+\index{tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}!B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+S\+E\+Q\+\_\+\+F\+O\+R\+\_\+\+E\+A\+CH@{B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+S\+E\+Q\+\_\+\+F\+O\+R\+\_\+\+E\+A\+CH}}
+\index{B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+S\+E\+Q\+\_\+\+F\+O\+R\+\_\+\+E\+A\+CH@{B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+S\+E\+Q\+\_\+\+F\+O\+R\+\_\+\+E\+A\+CH}!tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}}
+\subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+S\+E\+Q\+\_\+\+F\+O\+R\+\_\+\+E\+A\+C\+H()}{BOOST\_PP\_SEQ\_FOR\_EACH()}}
+{\footnotesize\ttfamily B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+S\+E\+Q\+\_\+\+F\+O\+R\+\_\+\+E\+A\+CH (\begin{DoxyParamCaption}\item[{\hyperlink{tree__node_8cpp_a41c0a1d69e009b79491c30924c51fcee}{V\+I\+S\+I\+T\+\_\+\+T\+R\+E\+E\+\_\+\+N\+O\+D\+E\+\_\+\+M\+A\+C\+RO}}]{,  }\item[{\hyperlink{classtree__node}{tree\+\_\+node}}]{,  }\item[{(ctor\+\_\+initializer)(trait\+\_\+expr)}]{ }\end{DoxyParamCaption})}
+
+
+
+Referenced by tree\+\_\+node\+::get\+\_\+kind(), and tree\+\_\+node\+::\+Get\+String().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d06/tree__node_8cpp_a7b5f75a9a784333af164759c9f6a1fa0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tree__node_8cpp_a04c3200a2247133cf590eff539d97021}\label{tree__node_8cpp_a04c3200a2247133cf590eff539d97021}} 
+\index{tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{tn }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & is the output stream \\
+\hline
+{\em tn} & is the \hyperlink{classtree__node}{tree\+\_\+node} to be printed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 158 of file tree\+\_\+node.\+cpp.
+
+
+
+References refcount$<$ T $>$\+::get().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{dd/d06/tree__node_8cpp_a04c3200a2247133cf590eff539d97021_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tree__node_8cpp_aa158c2314d69fcb5ec914bbb313990e9}\label{tree__node_8cpp_aa158c2314d69fcb5ec914bbb313990e9}} 
+\index{tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}!template\+\_\+id\+\_\+expr@{template\+\_\+id\+\_\+expr}}
+\index{template\+\_\+id\+\_\+expr@{template\+\_\+id\+\_\+expr}!tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}}
+\subsubsection{\texorpdfstring{template\+\_\+id\+\_\+expr()}{template\_id\_expr()}}
+{\footnotesize\ttfamily () label\+\_\+decl()() modop\+\_\+expr() new\+\_\+expr() placeholder\+\_\+expr() template\+\_\+id\+\_\+expr (\begin{DoxyParamCaption}\item[{vec\+\_\+new\+\_\+expr}]{ }\end{DoxyParamCaption})}
+
+
+
+Referenced by tree\+\_\+node\+\_\+dup\+::create\+\_\+tree\+\_\+node(), tree\+\_\+node\+\_\+factory\+::create\+\_\+tree\+\_\+node(), and tree\+\_\+node\+\_\+index\+\_\+factory\+::create\+\_\+tree\+\_\+node().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dd/d06/tree__node_8cpp_aa158c2314d69fcb5ec914bbb313990e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tree__node_8cpp_ac85ce3682c22ba7e20932b56b01b4eeb}\label{tree__node_8cpp_ac85ce3682c22ba7e20932b56b01b4eeb}} 
+\index{tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}!typename\+\_\+type@{typename\+\_\+type}}
+\index{typename\+\_\+type@{typename\+\_\+type}!tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}}
+\subsubsection{\texorpdfstring{typename\+\_\+type()}{typename\_type()}}
+{\footnotesize\ttfamily () label\+\_\+decl()() modop\+\_\+expr() new\+\_\+expr() placeholder\+\_\+expr()() boolean\+\_\+type() Char\+Type() nullptr\+\_\+type() lang\+\_\+type() offset\+\_\+type() qual\+\_\+union\+\_\+type() set\+\_\+type() template\+\_\+type\+\_\+parm() typename\+\_\+type (\begin{DoxyParamCaption}\item[{void\+\_\+type}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 134 of file tree\+\_\+node.\+cpp.
+
+
+
+References A\+L\+L\+\_\+\+V\+I\+S\+IT, tree\+\_\+node\+::index, tree\+\_\+node\+::operator$<$$<$, tree\+\_\+node\+::\+To\+String(), and tree\+\_\+node\+::visit().
+
+
+
+Referenced by tree\+\_\+node\+\_\+dup\+::create\+\_\+tree\+\_\+node(), tree\+\_\+node\+\_\+factory\+::create\+\_\+tree\+\_\+node(), tree\+\_\+node\+\_\+index\+\_\+factory\+::create\+\_\+tree\+\_\+node(), and Check\+System\+Type\+::recursive\+\_\+examinate().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{dd/d06/tree__node_8cpp_ac85ce3682c22ba7e20932b56b01b4eeb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dd/d06/tree__node_8cpp_ac85ce3682c22ba7e20932b56b01b4eeb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tree__node_8cpp_aa98971385f3d80aebe17503626b829f1}\label{tree__node_8cpp_aa98971385f3d80aebe17503626b829f1}} 
+\index{tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}!using\+\_\+decl@{using\+\_\+decl}}
+\index{using\+\_\+decl@{using\+\_\+decl}!tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}}
+\subsubsection{\texorpdfstring{using\+\_\+decl()}{using\_decl()}}
+{\footnotesize\ttfamily () label\+\_\+decl() using\+\_\+decl (\begin{DoxyParamCaption}\item[{translation\+\_\+unit\+\_\+decl}]{ }\end{DoxyParamCaption})}
+
+
+
+Referenced by tree\+\_\+node\+\_\+dup\+::create\+\_\+tree\+\_\+node(), tree\+\_\+node\+\_\+factory\+::create\+\_\+tree\+\_\+node(), and tree\+\_\+node\+\_\+index\+\_\+factory\+::create\+\_\+tree\+\_\+node().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dd/d06/tree__node_8cpp_aa98971385f3d80aebe17503626b829f1_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{tree__node_8cpp_ac5367dd7dca353df9a56d552f63ea27d}\label{tree__node_8cpp_ac5367dd7dca353df9a56d552f63ea27d}} 
+\index{tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}!decl\+\_\+node@{decl\+\_\+node}}
+\index{decl\+\_\+node@{decl\+\_\+node}!tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}}
+\subsubsection{\texorpdfstring{decl\+\_\+node}{decl\_node}}
+{\footnotesize\ttfamily \hyperlink{structdecl__node}{decl\+\_\+node}}
+
+
+
+Definition at line 132 of file tree\+\_\+node.\+cpp.
+
+
+
+Referenced by tree\+\_\+manager\+::get\+\_\+implementation\+\_\+node().
+
+\mbox{\Hypertarget{tree__node_8cpp_a85d8aa048b2bb634a153290cbddfacae}\label{tree__node_8cpp_a85d8aa048b2bb634a153290cbddfacae}} 
+\index{tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}!expr\+\_\+node@{expr\+\_\+node}}
+\index{expr\+\_\+node@{expr\+\_\+node}!tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}}
+\subsubsection{\texorpdfstring{expr\+\_\+node}{expr\_node}}
+{\footnotesize\ttfamily () label\+\_\+decl() \hyperlink{structexpr__node}{expr\+\_\+node}}
+
+
+
+Definition at line 133 of file tree\+\_\+node.\+cpp.
+
+\mbox{\Hypertarget{tree__node_8cpp_a557981c5931be94a382d60ecb0f61572}\label{tree__node_8cpp_a557981c5931be94a382d60ecb0f61572}} 
+\index{tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}!type\+\_\+node@{type\+\_\+node}}
+\index{type\+\_\+node@{type\+\_\+node}!tree\+\_\+node.\+cpp@{tree\+\_\+node.\+cpp}}
+\subsubsection{\texorpdfstring{type\+\_\+node}{type\_node}}
+{\footnotesize\ttfamily () label\+\_\+decl()() modop\+\_\+expr() new\+\_\+expr() placeholder\+\_\+expr() \hyperlink{structtype__node}{type\+\_\+node}}
+
+
+
+Definition at line 134 of file tree\+\_\+node.\+cpp.
+
+
+
+Referenced by tree\+\_\+helper\+::accessed\+\_\+greatest\+\_\+bitsize(), and tree\+\_\+helper\+::accessed\+\_\+minimum\+\_\+bitsize().
+

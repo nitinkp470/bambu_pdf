@@ -1,0 +1,415 @@
+\hypertarget{classMemoryInitializationWriterBase}{}\section{Memory\+Initialization\+Writer\+Base Class Reference}
+\label{classMemoryInitializationWriterBase}\index{Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}}
+
+
+Functor used to write initialization of the memory writer.  
+
+
+
+
+{\ttfamily \#include $<$memory\+\_\+initialization\+\_\+writer\+\_\+base.\+hpp$>$}
+
+
+
+Inheritance diagram for Memory\+Initialization\+Writer\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d84/classMemoryInitializationWriterBase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Memory\+Initialization\+Writer\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{de/da2/classMemoryInitializationWriterBase__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMemoryInitializationWriterBase_aecfe363b2187038fe689abceacb2343a}{Memory\+Initialization\+Writer\+Base} (const \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref} \hyperlink{classMemoryInitializationWriterBase_ad7639a9140b8d5c42c2c0c4255ad4cbf}{TM}, const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} \hyperlink{classMemoryInitializationWriterBase_ae5f60dc91641447c00b023836743b6b3}{behavioral\+\_\+helper}, const unsigned long int \hyperlink{classMemoryInitializationWriterBase_ac424618ba0c88d441a905b6cbf891b65}{reserved\+\_\+mem\+\_\+bytes}, const \hyperlink{tree__node_8hpp_a3cf5d02292c940f3892425a5b5fdec3c}{tree\+\_\+node\+Const\+Ref} \hyperlink{classMemoryInitializationWriterBase_a2bdd8c25a0b756f6290cb48a6b9d0303}{function\+\_\+parameter}, const \hyperlink{testbench__generation_8hpp_ad84688161fffbe7da2fc2b9a39b93198}{Testbench\+Generation\+\_\+\+Memory\+Type} \hyperlink{classMemoryInitializationWriterBase_ac4f718dfd59eddbc0adf75e98b227ccb}{testbench\+\_\+generation\+\_\+memory\+\_\+type}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} parameters)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classMemoryInitializationWriterBase_a33b7ee7cf9c476b02a3f6fb1e6e22a25}{Check\+End} () override
+\begin{DoxyCompactList}\small\item\em Check that all the necessary information was present in the initialization string. \end{DoxyCompactList}\item 
+void \hyperlink{classMemoryInitializationWriterBase_a3ad046983ce9cfe765bcccb7ea16f47f}{Go\+Down} () override
+\begin{DoxyCompactList}\small\item\em Start the initialization of a new aggregated data structure. \end{DoxyCompactList}\item 
+void \hyperlink{classMemoryInitializationWriterBase_a6b67daf4f3e0a2ff88bc824c80f11ea6}{Go\+Next} () override
+\begin{DoxyCompactList}\small\item\em Consume an element of an aggregated data structure. \end{DoxyCompactList}\item 
+void \hyperlink{classMemoryInitializationWriterBase_a0ff1c989969769e131c36172cc3f8ce3}{Go\+Up} () override
+\begin{DoxyCompactList}\small\item\em Ends the initialization of the current aggregated data structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \hyperlink{classMemoryInitializationWriterBase_aff08e4a2fa61dbb92047774c680db0b7}{Print\+Status} () const
+\begin{DoxyCompactList}\small\item\em Print the current status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref} \hyperlink{classMemoryInitializationWriterBase_ad7639a9140b8d5c42c2c0c4255ad4cbf}{TM}
+\begin{DoxyCompactList}\small\item\em The tree manager. \end{DoxyCompactList}\item 
+const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} \hyperlink{classMemoryInitializationWriterBase_ae5f60dc91641447c00b023836743b6b3}{behavioral\+\_\+helper}
+\begin{DoxyCompactList}\small\item\em The behavioral helper. \end{DoxyCompactList}\item 
+const unsigned long int \hyperlink{classMemoryInitializationWriterBase_ac424618ba0c88d441a905b6cbf891b65}{reserved\+\_\+mem\+\_\+bytes}
+\begin{DoxyCompactList}\small\item\em The number of bytes to be written. \end{DoxyCompactList}\item 
+unsigned long int \hyperlink{classMemoryInitializationWriterBase_ad9086045443d3ea69d54c5ec9d10fd0b}{written\+\_\+bytes}
+\begin{DoxyCompactList}\small\item\em The number of bytes currently written. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ const \hyperlink{tree__node_8hpp_a3cf5d02292c940f3892425a5b5fdec3c}{tree\+\_\+node\+Const\+Ref}, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} $>$ $>$ \hyperlink{classMemoryInitializationWriterBase_a4cc071f08a35090c72bedcf1e847c9ce}{status}
+\begin{DoxyCompactList}\small\item\em The stack representing the current status of the parser; the content is the last dumped element. \end{DoxyCompactList}\item 
+const \hyperlink{tree__node_8hpp_a3cf5d02292c940f3892425a5b5fdec3c}{tree\+\_\+node\+Const\+Ref} \hyperlink{classMemoryInitializationWriterBase_a2bdd8c25a0b756f6290cb48a6b9d0303}{function\+\_\+parameter}
+\begin{DoxyCompactList}\small\item\em The variable/parameter being printed. \end{DoxyCompactList}\item 
+const \hyperlink{testbench__generation_8hpp_ad84688161fffbe7da2fc2b9a39b93198}{Testbench\+Generation\+\_\+\+Memory\+Type} \hyperlink{classMemoryInitializationWriterBase_ac4f718dfd59eddbc0adf75e98b227ccb}{testbench\+\_\+generation\+\_\+memory\+\_\+type}
+\begin{DoxyCompactList}\small\item\em The type of initialization being written. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functor used to write initialization of the memory writer. 
+
+Definition at line 65 of file memory\+\_\+initialization\+\_\+writer\+\_\+base.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMemoryInitializationWriterBase_aecfe363b2187038fe689abceacb2343a}\label{classMemoryInitializationWriterBase_aecfe363b2187038fe689abceacb2343a}} 
+\index{Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}!Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}}
+\index{Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}!Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}}
+\subsubsection{\texorpdfstring{Memory\+Initialization\+Writer\+Base()}{MemoryInitializationWriterBase()}}
+{\footnotesize\ttfamily Memory\+Initialization\+Writer\+Base\+::\+Memory\+Initialization\+Writer\+Base (\begin{DoxyParamCaption}\item[{const \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref}}]{\+\_\+\+TM,  }\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{\+\_\+behavioral\+\_\+helper,  }\item[{const unsigned long int}]{\+\_\+reserved\+\_\+mem\+\_\+bytes,  }\item[{const \hyperlink{tree__node_8hpp_a3cf5d02292c940f3892425a5b5fdec3c}{tree\+\_\+node\+Const\+Ref}}]{\+\_\+function\+\_\+parameter,  }\item[{const \hyperlink{testbench__generation_8hpp_ad84688161fffbe7da2fc2b9a39b93198}{Testbench\+Generation\+\_\+\+Memory\+Type}}]{\+\_\+testbench\+\_\+generation\+\_\+memory\+\_\+type,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{parameters }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Header include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em TM} & is the tree manager \\
+\hline
+{\em behavioral\+\_\+helper} & is the behavioral helper \\
+\hline
+{\em reserved\+\_\+mem\+\_\+bytes} & is the number of bytes to be written \\
+\hline
+{\em function\+\_\+parameter} & is the function parameter whose initialization is being printed \\
+\hline
+{\em testbench\+\_\+generation\+\_\+memory\+\_\+type} & is the type of initialization being printed \\
+\hline
+{\em parameters} & is the set of input parameters\\
+\hline
+\end{DoxyParams}
+. include H\+L\+S/simulation include S\+TD include S\+TL include tree includes utility include 
+
+Definition at line 67 of file memory\+\_\+initialization\+\_\+writer\+\_\+base.\+cpp.
+
+
+
+References function\+\_\+parameter, tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), status, and TM.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d26/classMemoryInitializationWriterBase_aecfe363b2187038fe689abceacb2343a_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMemoryInitializationWriterBase_a33b7ee7cf9c476b02a3f6fb1e6e22a25}\label{classMemoryInitializationWriterBase_a33b7ee7cf9c476b02a3f6fb1e6e22a25}} 
+\index{Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}!Check\+End@{Check\+End}}
+\index{Check\+End@{Check\+End}!Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}}
+\subsubsection{\texorpdfstring{Check\+End()}{CheckEnd()}}
+{\footnotesize\ttfamily void Memory\+Initialization\+Writer\+Base\+::\+Check\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check that all the necessary information was present in the initialization string. 
+
+First of all we have to check that there is just one element in the stack 
+
+Implements \hyperlink{classCInitializationParserFunctor_aa639277133d141fd3aeed2add158c920}{C\+Initialization\+Parser\+Functor}.
+
+
+
+Definition at line 74 of file memory\+\_\+initialization\+\_\+writer\+\_\+base.\+cpp.
+
+
+
+References Print\+Status(), reserved\+\_\+mem\+\_\+bytes, status, S\+TR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and written\+\_\+bytes.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d26/classMemoryInitializationWriterBase_a33b7ee7cf9c476b02a3f6fb1e6e22a25_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMemoryInitializationWriterBase_a3ad046983ce9cfe765bcccb7ea16f47f}\label{classMemoryInitializationWriterBase_a3ad046983ce9cfe765bcccb7ea16f47f}} 
+\index{Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}!Go\+Down@{Go\+Down}}
+\index{Go\+Down@{Go\+Down}!Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}}
+\subsubsection{\texorpdfstring{Go\+Down()}{GoDown()}}
+{\footnotesize\ttfamily void Memory\+Initialization\+Writer\+Base\+::\+Go\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Start the initialization of a new aggregated data structure. 
+
+
+
+Implements \hyperlink{classCInitializationParserFunctor_acd23f951887db083c2c02d4e0865e260}{C\+Initialization\+Parser\+Functor}.
+
+
+
+Definition at line 169 of file memory\+\_\+initialization\+\_\+writer\+\_\+base.\+cpp.
+
+
+
+References tree\+\_\+helper\+::\+C\+Get\+Elements(), tree\+\_\+helper\+::\+C\+Get\+Field\+Types(), tree\+\_\+helper\+::\+C\+Get\+Pointed\+Type(), C\+Initialization\+Parser\+Functor\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Print\+Status(), status, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d26/classMemoryInitializationWriterBase_a3ad046983ce9cfe765bcccb7ea16f47f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMemoryInitializationWriterBase_a6b67daf4f3e0a2ff88bc824c80f11ea6}\label{classMemoryInitializationWriterBase_a6b67daf4f3e0a2ff88bc824c80f11ea6}} 
+\index{Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}!Go\+Next@{Go\+Next}}
+\index{Go\+Next@{Go\+Next}!Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}}
+\subsubsection{\texorpdfstring{Go\+Next()}{GoNext()}}
+{\footnotesize\ttfamily void Memory\+Initialization\+Writer\+Base\+::\+Go\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Consume an element of an aggregated data structure. 
+
+We have read a field of record, move to the next field, if any
+
+Check if there is at least another field 
+
+Implements \hyperlink{classCInitializationParserFunctor_a4f9a305b8ecfba8a372583123b2878ed}{C\+Initialization\+Parser\+Functor}.
+
+
+
+Definition at line 195 of file memory\+\_\+initialization\+\_\+writer\+\_\+base.\+cpp.
+
+
+
+References tree\+\_\+helper\+::\+C\+Get\+Field\+Types(), C\+Initialization\+Parser\+Functor\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Print\+Status(), status, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d26/classMemoryInitializationWriterBase_a6b67daf4f3e0a2ff88bc824c80f11ea6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMemoryInitializationWriterBase_a0ff1c989969769e131c36172cc3f8ce3}\label{classMemoryInitializationWriterBase_a0ff1c989969769e131c36172cc3f8ce3}} 
+\index{Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}!Go\+Up@{Go\+Up}}
+\index{Go\+Up@{Go\+Up}!Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}}
+\subsubsection{\texorpdfstring{Go\+Up()}{GoUp()}}
+{\footnotesize\ttfamily void Memory\+Initialization\+Writer\+Base\+::\+Go\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Ends the initialization of the current aggregated data structure. 
+
+Second, according to the type let\textquotesingle{}s how many elements have to have been processed
+
+parameters cannot have this type, but global variables can
+
+Actually the expected size is unknown
+
+Actual size depends on the pointed type 
+
+Implements \hyperlink{classCInitializationParserFunctor_ac502a0c076635becd22e65f2281c5c46}{C\+Initialization\+Parser\+Functor}.
+
+
+
+Definition at line 85 of file memory\+\_\+initialization\+\_\+writer\+\_\+base.\+cpp.
+
+
+
+References C\+A\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+C\+S\+T\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+D\+E\+C\+L\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+F\+A\+K\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, tree\+\_\+helper\+::\+C\+Get\+Field\+Types(), C\+Initialization\+Parser\+Functor\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, tree\+\_\+helper\+::get\+\_\+array\+\_\+dimensions(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, N\+O\+D\+E\+\_\+\+N\+O\+T\+\_\+\+Y\+E\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+EC, Print\+Status(), status, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+DE, and TM.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d26/classMemoryInitializationWriterBase_a0ff1c989969769e131c36172cc3f8ce3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMemoryInitializationWriterBase_aff08e4a2fa61dbb92047774c680db0b7}\label{classMemoryInitializationWriterBase_aff08e4a2fa61dbb92047774c680db0b7}} 
+\index{Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}!Print\+Status@{Print\+Status}}
+\index{Print\+Status@{Print\+Status}!Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}}
+\subsubsection{\texorpdfstring{Print\+Status()}{PrintStatus()}}
+{\footnotesize\ttfamily const std\+::string Memory\+Initialization\+Writer\+Base\+::\+Print\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Print the current status. 
+
+
+
+Definition at line 225 of file memory\+\_\+initialization\+\_\+writer\+\_\+base.\+cpp.
+
+
+
+References test\+\_\+panda\+::level, status, and S\+TR.
+
+
+
+Referenced by Check\+End(), Go\+Down(), Go\+Next(), and Go\+Up().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d26/classMemoryInitializationWriterBase_aff08e4a2fa61dbb92047774c680db0b7_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classMemoryInitializationWriterBase_ae5f60dc91641447c00b023836743b6b3}\label{classMemoryInitializationWriterBase_ae5f60dc91641447c00b023836743b6b3}} 
+\index{Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}!behavioral\+\_\+helper@{behavioral\+\_\+helper}}
+\index{behavioral\+\_\+helper@{behavioral\+\_\+helper}!Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}}
+\subsubsection{\texorpdfstring{behavioral\+\_\+helper}{behavioral\_helper}}
+{\footnotesize\ttfamily const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} Memory\+Initialization\+Writer\+Base\+::behavioral\+\_\+helper\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The behavioral helper. 
+
+
+
+Definition at line 72 of file memory\+\_\+initialization\+\_\+writer\+\_\+base.\+hpp.
+
+
+
+Referenced by Memory\+Initialization\+C\+Writer\+::\+Process(), and Memory\+Initialization\+Writer\+::\+Process().
+
+\mbox{\Hypertarget{classMemoryInitializationWriterBase_a2bdd8c25a0b756f6290cb48a6b9d0303}\label{classMemoryInitializationWriterBase_a2bdd8c25a0b756f6290cb48a6b9d0303}} 
+\index{Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}!function\+\_\+parameter@{function\+\_\+parameter}}
+\index{function\+\_\+parameter@{function\+\_\+parameter}!Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}}
+\subsubsection{\texorpdfstring{function\+\_\+parameter}{function\_parameter}}
+{\footnotesize\ttfamily const \hyperlink{tree__node_8hpp_a3cf5d02292c940f3892425a5b5fdec3c}{tree\+\_\+node\+Const\+Ref} Memory\+Initialization\+Writer\+Base\+::function\+\_\+parameter\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The variable/parameter being printed. 
+
+
+
+Definition at line 87 of file memory\+\_\+initialization\+\_\+writer\+\_\+base.\+hpp.
+
+
+
+Referenced by Memory\+Initialization\+Writer\+Base(), Memory\+Initialization\+C\+Writer\+::\+Process(), and Memory\+Initialization\+Writer\+::\+Process().
+
+\mbox{\Hypertarget{classMemoryInitializationWriterBase_ac424618ba0c88d441a905b6cbf891b65}\label{classMemoryInitializationWriterBase_ac424618ba0c88d441a905b6cbf891b65}} 
+\index{Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}!reserved\+\_\+mem\+\_\+bytes@{reserved\+\_\+mem\+\_\+bytes}}
+\index{reserved\+\_\+mem\+\_\+bytes@{reserved\+\_\+mem\+\_\+bytes}!Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}}
+\subsubsection{\texorpdfstring{reserved\+\_\+mem\+\_\+bytes}{reserved\_mem\_bytes}}
+{\footnotesize\ttfamily const unsigned long int Memory\+Initialization\+Writer\+Base\+::reserved\+\_\+mem\+\_\+bytes\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The number of bytes to be written. 
+
+
+
+Definition at line 75 of file memory\+\_\+initialization\+\_\+writer\+\_\+base.\+hpp.
+
+
+
+Referenced by Check\+End().
+
+\mbox{\Hypertarget{classMemoryInitializationWriterBase_a4cc071f08a35090c72bedcf1e847c9ce}\label{classMemoryInitializationWriterBase_a4cc071f08a35090c72bedcf1e847c9ce}} 
+\index{Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}!status@{status}}
+\index{status@{status}!Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}}
+\subsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::pair$<$const \hyperlink{tree__node_8hpp_a3cf5d02292c940f3892425a5b5fdec3c}{tree\+\_\+node\+Const\+Ref}, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}$>$ $>$ Memory\+Initialization\+Writer\+Base\+::status\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The stack representing the current status of the parser; the content is the last dumped element. 
+
+First element of the pair is the tree node describing the type, the second element of the pair is the number of the field (for struct/union) or of the element (for array) Second element is the number of seen elements (index of the last element + 1) Note that storing last element dumped is equivalent to store next element to be dumped, but this approach make easier check of closes parenthesis 
+
+Definition at line 84 of file memory\+\_\+initialization\+\_\+writer\+\_\+base.\+hpp.
+
+
+
+Referenced by Check\+End(), Go\+Down(), Go\+Next(), Go\+Up(), Memory\+Initialization\+Writer\+Base(), Print\+Status(), Memory\+Initialization\+C\+Writer\+::\+Process(), and Memory\+Initialization\+Writer\+::\+Process().
+
+\mbox{\Hypertarget{classMemoryInitializationWriterBase_ac4f718dfd59eddbc0adf75e98b227ccb}\label{classMemoryInitializationWriterBase_ac4f718dfd59eddbc0adf75e98b227ccb}} 
+\index{Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}!testbench\+\_\+generation\+\_\+memory\+\_\+type@{testbench\+\_\+generation\+\_\+memory\+\_\+type}}
+\index{testbench\+\_\+generation\+\_\+memory\+\_\+type@{testbench\+\_\+generation\+\_\+memory\+\_\+type}!Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}}
+\subsubsection{\texorpdfstring{testbench\+\_\+generation\+\_\+memory\+\_\+type}{testbench\_generation\_memory\_type}}
+{\footnotesize\ttfamily const \hyperlink{testbench__generation_8hpp_ad84688161fffbe7da2fc2b9a39b93198}{Testbench\+Generation\+\_\+\+Memory\+Type} Memory\+Initialization\+Writer\+Base\+::testbench\+\_\+generation\+\_\+memory\+\_\+type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The type of initialization being written. 
+
+
+
+Definition at line 90 of file memory\+\_\+initialization\+\_\+writer\+\_\+base.\+hpp.
+
+
+
+Referenced by Memory\+Initialization\+C\+Writer\+::\+Process(), and Memory\+Initialization\+Writer\+::\+Process().
+
+\mbox{\Hypertarget{classMemoryInitializationWriterBase_ad7639a9140b8d5c42c2c0c4255ad4cbf}\label{classMemoryInitializationWriterBase_ad7639a9140b8d5c42c2c0c4255ad4cbf}} 
+\index{Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}!TM@{TM}}
+\index{TM@{TM}!Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}}
+\subsubsection{\texorpdfstring{TM}{TM}}
+{\footnotesize\ttfamily const \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref} Memory\+Initialization\+Writer\+Base\+::\+TM\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The tree manager. 
+
+
+
+Definition at line 69 of file memory\+\_\+initialization\+\_\+writer\+\_\+base.\+hpp.
+
+
+
+Referenced by Go\+Up(), Memory\+Initialization\+Writer\+Base(), Memory\+Initialization\+C\+Writer\+::\+Process(), and Memory\+Initialization\+Writer\+::\+Process().
+
+\mbox{\Hypertarget{classMemoryInitializationWriterBase_ad9086045443d3ea69d54c5ec9d10fd0b}\label{classMemoryInitializationWriterBase_ad9086045443d3ea69d54c5ec9d10fd0b}} 
+\index{Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}!written\+\_\+bytes@{written\+\_\+bytes}}
+\index{written\+\_\+bytes@{written\+\_\+bytes}!Memory\+Initialization\+Writer\+Base@{Memory\+Initialization\+Writer\+Base}}
+\subsubsection{\texorpdfstring{written\+\_\+bytes}{written\_bytes}}
+{\footnotesize\ttfamily unsigned long int Memory\+Initialization\+Writer\+Base\+::written\+\_\+bytes\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The number of bytes currently written. 
+
+
+
+Definition at line 78 of file memory\+\_\+initialization\+\_\+writer\+\_\+base.\+hpp.
+
+
+
+Referenced by Check\+End(), Memory\+Initialization\+C\+Writer\+::\+Process(), and Memory\+Initialization\+Writer\+::\+Process().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/simulation/\hyperlink{memory__initialization__writer__base_8hpp}{memory\+\_\+initialization\+\_\+writer\+\_\+base.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/simulation/\hyperlink{memory__initialization__writer__base_8cpp}{memory\+\_\+initialization\+\_\+writer\+\_\+base.\+cpp}\end{DoxyCompactItemize}

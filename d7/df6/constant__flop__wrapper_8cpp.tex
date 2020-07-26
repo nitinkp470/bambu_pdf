@@ -1,0 +1,82 @@
+\hypertarget{constant__flop__wrapper_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/constant\+\_\+flop\+\_\+wrapper.cpp File Reference}
+\label{constant__flop__wrapper_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/constant\+\_\+flop\+\_\+wrapper.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/constant\+\_\+flop\+\_\+wrapper.\+cpp}}
+
+
+Step that recognizes when there\textquotesingle{}s a floating point operation with a constant and optimize it.  
+
+
+{\ttfamily \#include \char`\"{}constant\+\_\+flop\+\_\+wrapper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}design\+\_\+flow\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}design\+\_\+flow\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}design\+\_\+flow\+\_\+step.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}symbolic\+\_\+application\+\_\+frontend\+\_\+flow\+\_\+step.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}application\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}behavioral\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}call\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}call\+\_\+graph\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}function\+\_\+behavior.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}basic\+\_\+block.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}basic\+\_\+blocks\+\_\+graph\+\_\+constructor.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/filesystem/fstream.\+hpp$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}ext\+\_\+tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gcc\+\_\+wrapper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+basic\+\_\+block.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+reindex.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+P\+A\+N\+D\+A\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+I\+N\+S\+T\+A\+L\+L\+D\+I\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+Include dependency graph for constant\+\_\+flop\+\_\+wrapper.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d56/constant__flop__wrapper_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::set$<$ std\+::string $>$ \hyperlink{constant__flop__wrapper_8cpp_a22c7184bb7ef042deef8d5e87a868bad}{functions} = \{\char`\"{}\+\_\+\+\_\+float32\+\_\+addif\char`\"{}, \char`\"{}\+\_\+\+\_\+float32\+\_\+subif\char`\"{}, \char`\"{}\+\_\+\+\_\+float32\+\_\+mulif\char`\"{}, \char`\"{}\+\_\+\+\_\+float32\+\_\+divif\char`\"{}, \char`\"{}\+\_\+\+\_\+float64\+\_\+addif\char`\"{}, \char`\"{}\+\_\+\+\_\+float64\+\_\+subif\char`\"{}, \char`\"{}\+\_\+\+\_\+float64\+\_\+mulif\char`\"{}, \char`\"{}\+\_\+\+\_\+float64\+\_\+divif\char`\"{}\}
+\begin{DoxyCompactList}\small\item\em header include \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Step that recognizes when there\textquotesingle{}s a floating point operation with a constant and optimize it. 
+
+\begin{DoxyAuthor}{Author}
+Nicolas Tagliabue 
+
+Lorenzo Porro 
+\end{DoxyAuthor}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{constant__flop__wrapper_8cpp_a22c7184bb7ef042deef8d5e87a868bad}\label{constant__flop__wrapper_8cpp_a22c7184bb7ef042deef8d5e87a868bad}} 
+\index{constant\+\_\+flop\+\_\+wrapper.\+cpp@{constant\+\_\+flop\+\_\+wrapper.\+cpp}!functions@{functions}}
+\index{functions@{functions}!constant\+\_\+flop\+\_\+wrapper.\+cpp@{constant\+\_\+flop\+\_\+wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{functions}{functions}}
+{\footnotesize\ttfamily std\+::set$<$std\+::string$>$ \hyperlink{classfunctions}{functions} = \{\char`\"{}\+\_\+\+\_\+float32\+\_\+addif\char`\"{}, \char`\"{}\+\_\+\+\_\+float32\+\_\+subif\char`\"{}, \char`\"{}\+\_\+\+\_\+float32\+\_\+mulif\char`\"{}, \char`\"{}\+\_\+\+\_\+float32\+\_\+divif\char`\"{}, \char`\"{}\+\_\+\+\_\+float64\+\_\+addif\char`\"{}, \char`\"{}\+\_\+\+\_\+float64\+\_\+subif\char`\"{}, \char`\"{}\+\_\+\+\_\+float64\+\_\+mulif\char`\"{}, \char`\"{}\+\_\+\+\_\+float64\+\_\+divif\char`\"{}\}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+header include 
+
+design\+\_\+flows include frontend\+\_\+analysis Behavior include \hyperlink{structGraph}{Graph} include \hyperlink{classParameter}{Parameter} include S\+TD include S\+TL include Tree include Utility include Soft\+Float functions include 
+
+Definition at line 95 of file constant\+\_\+flop\+\_\+wrapper.\+cpp.
+
+
+
+Referenced by ipa\+\_\+point\+\_\+to\+\_\+analysis\+::\+Exec(), tree\+\_\+manager\+::\+Get\+All\+Functions(), H\+L\+S\+\_\+manager\+::\+H\+L\+S\+\_\+manager(), and function\+\_\+allocation\+::\+Initialize().
+

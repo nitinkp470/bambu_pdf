@@ -1,0 +1,475 @@
+\hypertarget{classsimple__code__motion}{}\section{simple\+\_\+code\+\_\+motion Class Reference}
+\label{classsimple__code__motion}\index{simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}}
+
+
+Restructure the tree control flow graph.  
+
+
+
+
+{\ttfamily \#include $<$simple\+\_\+code\+\_\+motion.\+hpp$>$}
+
+
+
+Inheritance diagram for simple\+\_\+code\+\_\+motion\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{d3/d64/classsimple__code__motion__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for simple\+\_\+code\+\_\+motion\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/db2/classsimple__code__motion__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsimple__code__motion_ad187a9fcaf94b18b0fa72c8725386d4b}{simple\+\_\+code\+\_\+motion} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters}, const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsimple__code__motion_abb99083863cc83ac6bc24881a325b4a0}{$\sim$simple\+\_\+code\+\_\+motion} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classsimple__code__motion_ada1641b8154a93dd9ea23bb778b8e059}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Updates the tree to have a more compliant C\+FG. \end{DoxyCompactList}\item 
+void \hyperlink{classsimple__code__motion_a786374b9d68aa7b714254c22a1220e6c}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\item 
+bool \hyperlink{classsimple__code__motion_a2b0b3e0ac4c9ad745ef690e183358c5f}{Has\+To\+Be\+Executed} () const override
+\begin{DoxyCompactList}\small\item\em Check if this step has actually to be executed. \end{DoxyCompactList}\item 
+bool \hyperlink{classsimple__code__motion_a4bc8cf1a2064701a32e036c9495477f7}{Is\+Schedule\+Based} () const
+\begin{DoxyCompactList}\small\item\em Return true if the last run of this step was based on scheduling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classsimple__code__motion_a2d0ecf0878e4d4c20f186b0096faf490}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\item 
+Function\+Frontend\+Flow\+Step\+\_\+\+Movable \hyperlink{classsimple__code__motion_a69d1855a3f8ec2bcb43e9d63bc923961}{Check\+Movable} (const unsigned int dest\+\_\+bb\+\_\+index, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} tn, bool \&zero\+\_\+delay, const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} TM)
+\begin{DoxyCompactList}\small\item\em Check if a statement can be moved in a basic block. \end{DoxyCompactList}\item 
+void \hyperlink{classsimple__code__motion_a639c97e219cb7d49b9cb451b5085d3bb}{loop\+\_\+pipelined} (\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} curr\+\_\+stmt, const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} TM, unsigned int curr\+\_\+bb, unsigned int curr\+\_\+loop\+\_\+id, std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&to\+\_\+be\+\_\+removed, std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&to\+\_\+be\+\_\+added\+\_\+back, std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&to\+\_\+be\+\_\+added\+\_\+front, std\+::map$<$ unsigned int, bloc\+Ref $>$ \&list\+\_\+of\+\_\+bloc, std\+::map$<$ std\+::pair$<$ unsigned int, bloc\+Ref $>$, std\+::pair$<$ unsigned int, bloc\+Ref $>$$>$ \&dom\+\_\+diff, unsigned int curr\+\_\+bb\+\_\+dom)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} \hyperlink{classsimple__code__motion_aa7519142b3b0fe26b2da83a0b5a4bdae}{schedule}
+\begin{DoxyCompactList}\small\item\em The scheduling solution. \end{DoxyCompactList}\item 
+bool \hyperlink{classsimple__code__motion_a0bf7b69fea8137b06ee659620aaad238}{conservative}
+\begin{DoxyCompactList}\small\item\em True if only zero delay statement can be moved. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classsimple__code__motion_a592659ec32a51bfc395647f04ae2b027}{tree\+\_\+dumped}
+\begin{DoxyCompactList}\small\item\em flag to check if initial tree has been dumped \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Restructure the tree control flow graph. 
+
+Definition at line 68 of file simple\+\_\+code\+\_\+motion.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsimple__code__motion_ad187a9fcaf94b18b0fa72c8725386d4b}\label{classsimple__code__motion_ad187a9fcaf94b18b0fa72c8725386d4b}} 
+\index{simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}!simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}}
+\index{simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}!simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}}
+\subsubsection{\texorpdfstring{simple\+\_\+code\+\_\+motion()}{simple\_code\_motion()}}
+{\footnotesize\ttfamily simple\+\_\+code\+\_\+motion\+::simple\+\_\+code\+\_\+motion (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters,  }\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{unsigned int}]{\+\_\+function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Skipping warnings due to operator() redefinition.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & is the set of input parameters \\
+\hline
+{\em AppM} & is the application manager \\
+\hline
+{\em function\+\_\+id} & is the identifier of the function \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager\\
+\hline
+\end{DoxyParams}
+header include . include algorithm/dominance include behavior includes design\+\_\+flows include parser/treegcc include S\+TD include tree includes utility include 
+
+Definition at line 99 of file simple\+\_\+code\+\_\+motion.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, and $\sim$simple\+\_\+code\+\_\+motion().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d5/d58/classsimple__code__motion_ad187a9fcaf94b18b0fa72c8725386d4b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsimple__code__motion_abb99083863cc83ac6bc24881a325b4a0}\label{classsimple__code__motion_abb99083863cc83ac6bc24881a325b4a0}} 
+\index{simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}!````~simple\+\_\+code\+\_\+motion@{$\sim$simple\+\_\+code\+\_\+motion}}
+\index{````~simple\+\_\+code\+\_\+motion@{$\sim$simple\+\_\+code\+\_\+motion}!simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}}
+\subsubsection{\texorpdfstring{$\sim$simple\+\_\+code\+\_\+motion()}{~simple\_code\_motion()}}
+{\footnotesize\ttfamily simple\+\_\+code\+\_\+motion\+::$\sim$simple\+\_\+code\+\_\+motion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by simple\+\_\+code\+\_\+motion().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d5/d58/classsimple__code__motion_abb99083863cc83ac6bc24881a325b4a0_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsimple__code__motion_a69d1855a3f8ec2bcb43e9d63bc923961}\label{classsimple__code__motion_a69d1855a3f8ec2bcb43e9d63bc923961}} 
+\index{simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}!Check\+Movable@{Check\+Movable}}
+\index{Check\+Movable@{Check\+Movable}!simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}}
+\subsubsection{\texorpdfstring{Check\+Movable()}{CheckMovable()}}
+{\footnotesize\ttfamily Function\+Frontend\+Flow\+Step\+\_\+\+Movable simple\+\_\+code\+\_\+motion\+::\+Check\+Movable (\begin{DoxyParamCaption}\item[{const unsigned int}]{dest\+\_\+bb\+\_\+index,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{tn,  }\item[{bool \&}]{zero\+\_\+delay,  }\item[{const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref}}]{TM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Check if a statement can be moved in a basic block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bb\+\_\+index} & is the index of the basic block \\
+\hline
+{\em gn} & is the statement to be moved \\
+\hline
+{\em zero\+\_\+delay} & returns if statement has zero delay \\
+\hline
+{\em TM} & is the tree manager \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the statement can be moved 
+\end{DoxyReturn}
+F\+I\+X\+ME\+: already added in master?
+
+If we have the ending time information use it
+
+binary expressions 
+
+Definition at line 203 of file simple\+\_\+code\+\_\+motion.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, Schedule\+::\+Can\+Be\+Moved(), C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+C\+S\+T\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+D\+E\+C\+L\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+F\+A\+K\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+D\+ES, tree\+\_\+helper\+::compute\+\_\+ssa\+\_\+uses\+\_\+rec\+\_\+ptr(), conservative, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+node\+::get\+\_\+kind\+\_\+text(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+type\+\_\+node(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+node\+::index, tree\+\_\+helper\+::is\+\_\+constant(), tree\+\_\+helper\+::is\+\_\+real(), max(), min, gimple\+\_\+assign\+::op0, gimple\+\_\+assign\+::op1, schedule, tree\+\_\+helper\+::\+Size(), S\+TR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and tree\+\_\+node\+::\+To\+String().
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d58/classsimple__code__motion_a69d1855a3f8ec2bcb43e9d63bc923961_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{d5/d58/classsimple__code__motion_a69d1855a3f8ec2bcb43e9d63bc923961_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsimple__code__motion_a2d0ecf0878e4d4c20f186b0096faf490}\label{classsimple__code__motion_a2d0ecf0878e4d4c20f186b0096faf490}} 
+\index{simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ simple\+\_\+code\+\_\+motion\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 138 of file simple\+\_\+code\+\_\+motion.\+cpp.
+
+
+
+References A\+B\+O\+R\+T\+ED, B\+L\+O\+C\+K\+\_\+\+F\+IX, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, E\+M\+P\+TY, Design\+Flow\+Step\+::\+Get\+Status(), Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, N\+O\+N\+E\+X\+I\+S\+T\+E\+NT, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, S\+K\+I\+P\+P\+ED, S\+U\+C\+C\+E\+SS, S\+W\+I\+T\+C\+H\+\_\+\+F\+IX, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, U\+N\+C\+H\+A\+N\+G\+ED, U\+N\+E\+X\+E\+C\+U\+T\+ED, U\+N\+N\+E\+C\+E\+S\+S\+A\+RY, and U\+S\+E\+\_\+\+C\+O\+U\+N\+T\+I\+NG.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d58/classsimple__code__motion_a2d0ecf0878e4d4c20f186b0096faf490_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsimple__code__motion_a2b0b3e0ac4c9ad745ef690e183358c5f}\label{classsimple__code__motion_a2b0b3e0ac4c9ad745ef690e183358c5f}} 
+\index{simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}!Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}}
+\index{Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}!simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}}
+\subsubsection{\texorpdfstring{Has\+To\+Be\+Executed()}{HasToBeExecuted()}}
+{\footnotesize\ttfamily bool simple\+\_\+code\+\_\+motion\+::\+Has\+To\+Be\+Executed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if this step has actually to be executed. 
+
+\begin{DoxyReturn}{Returns}
+true if the step has to be executed 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFunctionFrontendFlowStep_a12e786363530aa9533e4bd9380130d75}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 1238 of file simple\+\_\+code\+\_\+motion.\+cpp.
+
+
+
+References Function\+Frontend\+Flow\+Step\+::\+C\+Get\+B\+B\+Version(), Function\+Frontend\+Flow\+Step\+::\+Compute\+Signature(), Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, Function\+Frontend\+Flow\+Step\+::\+Has\+To\+Be\+Executed(), Wrefcount$<$ T $>$\+::lock(), and Design\+Flow\+Step\+::parameters.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d58/classsimple__code__motion_a2b0b3e0ac4c9ad745ef690e183358c5f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsimple__code__motion_a786374b9d68aa7b714254c22a1220e6c}\label{classsimple__code__motion_a786374b9d68aa7b714254c22a1220e6c}} 
+\index{simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void simple\+\_\+code\+\_\+motion\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 115 of file simple\+\_\+code\+\_\+motion.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, function\+\_\+decl\+::body, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+N\+O\+DE, Design\+Flow\+Step\+::parameters, schedule, and sl.
+
+\mbox{\Hypertarget{classsimple__code__motion_ada1641b8154a93dd9ea23bb778b8e059}\label{classsimple__code__motion_ada1641b8154a93dd9ea23bb778b8e059}} 
+\index{simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} simple\+\_\+code\+\_\+motion\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the tree to have a more compliant C\+FG. 
+
+store the G\+CC BB graph ala boost\+::graph
+
+add vertices
+
+add edges
+
+add a connection between entry and exit thus avoiding problems with non terminating code
+
+sort basic block vertices from the entry till the exit
+
+If we are performing simd transformation, look for simd pragma
+
+We must use pointer since we are erasing elements in the list
+
+skip gimple statements defining or using virtual operands
+
+load can be loop pipelined/predicated
+
+only \hyperlink{structgimple__assign}{gimple\+\_\+assign} are considered for code motion
+
+compute the S\+SA variables used by stmt
+
+compute BB where the S\+SA variables are defined
+
+check for anti-\/dependencies
+
+allow to move first statements later overwritten in the same BB
+
+skip the statement in case it uses ssa variables defined in the current BB
+
+check if list of pred has a loop\+\_\+id greater than the loop\+\_\+id of curr\+\_\+bb
+
+check if current statement can be loop pipelined
+
+load cannot be code moved
+
+find in which BB can be moved
+
+check the result of the dominator tree analysis
+
+check if the controlling condition of curr\+\_\+bb is constant
+
+finally we found something of meaningful
+
+check if the current uses in dest\+\_\+bb\+\_\+index are due only to phis
+
+check if the statement can be really moved
+
+add predication in case is required
+
+it may happen\+: two consecutive B\+Bs without conditional jump
+
+create a negated condition
+
+compute default condition
+
+it may happen\+: two consecutive B\+Bs without conditional jump
+
+Going one step step forward to avoid invalidation of the pointer
+
+Moving statement
+
+Going one step back since pointer is already increment in for loop 
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 618 of file simple\+\_\+code\+\_\+motion.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, B\+U\+I\+L\+D\+\_\+\+V\+I\+R\+T\+U\+A\+L\+\_\+\+P\+HI, C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, Function\+Frontend\+Flow\+Step\+::\+C\+Get\+B\+B\+Version(), ssa\+\_\+name\+::\+C\+Get\+Def\+Stmts(), Check\+Movable(), tree\+\_\+helper\+::compute\+\_\+ssa\+\_\+uses\+\_\+rec\+\_\+ptr(), Function\+Frontend\+Flow\+Step\+::\+Compute\+Signature(), counter, cyclic\+\_\+topological\+\_\+sort(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, bloc\+::\+E\+N\+T\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, bloc\+::\+E\+X\+I\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), Function\+Frontend\+Flow\+Step\+::\+Get\+Name(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Wrefcount$<$ T $>$\+::lock(), loop\+\_\+pipelined(), Design\+Flow\+Step\+::parameters, tree\+\_\+manager\+::\+Replace\+Tree\+Node(), sl, S\+TR, S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, tree\+\_\+node\+::\+To\+String(), U\+N\+C\+H\+A\+N\+G\+ED, ssa\+\_\+name\+::virtual\+\_\+flag, and B\+B\+Graph\+::\+Write\+Dot().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d58/classsimple__code__motion_ada1641b8154a93dd9ea23bb778b8e059_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsimple__code__motion_a4bc8cf1a2064701a32e036c9495477f7}\label{classsimple__code__motion_a4bc8cf1a2064701a32e036c9495477f7}} 
+\index{simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}!Is\+Schedule\+Based@{Is\+Schedule\+Based}}
+\index{Is\+Schedule\+Based@{Is\+Schedule\+Based}!simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}}
+\subsubsection{\texorpdfstring{Is\+Schedule\+Based()}{IsScheduleBased()}}
+{\footnotesize\ttfamily bool simple\+\_\+code\+\_\+motion\+::\+Is\+Schedule\+Based (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return true if the last run of this step was based on scheduling. 
+
+
+
+Definition at line 1261 of file simple\+\_\+code\+\_\+motion.\+cpp.
+
+
+
+References schedule.
+
+\mbox{\Hypertarget{classsimple__code__motion_a639c97e219cb7d49b9cb451b5085d3bb}\label{classsimple__code__motion_a639c97e219cb7d49b9cb451b5085d3bb}} 
+\index{simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}!loop\+\_\+pipelined@{loop\+\_\+pipelined}}
+\index{loop\+\_\+pipelined@{loop\+\_\+pipelined}!simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}}
+\subsubsection{\texorpdfstring{loop\+\_\+pipelined()}{loop\_pipelined()}}
+{\footnotesize\ttfamily void simple\+\_\+code\+\_\+motion\+::loop\+\_\+pipelined (\begin{DoxyParamCaption}\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{curr\+\_\+stmt,  }\item[{const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref}}]{TM,  }\item[{unsigned int}]{curr\+\_\+bb,  }\item[{unsigned int}]{curr\+\_\+loop\+\_\+id,  }\item[{std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&}]{to\+\_\+be\+\_\+removed,  }\item[{std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&}]{to\+\_\+be\+\_\+added\+\_\+back,  }\item[{std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&}]{to\+\_\+be\+\_\+added\+\_\+front,  }\item[{std\+::map$<$ unsigned int, bloc\+Ref $>$ \&}]{list\+\_\+of\+\_\+bloc,  }\item[{std\+::map$<$ std\+::pair$<$ unsigned int, bloc\+Ref $>$, std\+::pair$<$ unsigned int, bloc\+Ref $>$$>$ \&}]{dom\+\_\+diff,  }\item[{unsigned int}]{curr\+\_\+bb\+\_\+dom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{d5/d58/classsimple__code__motion_a639c97e219cb7d49b9cb451b5085d3bb_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classsimple__code__motion_a0bf7b69fea8137b06ee659620aaad238}\label{classsimple__code__motion_a0bf7b69fea8137b06ee659620aaad238}} 
+\index{simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}!conservative@{conservative}}
+\index{conservative@{conservative}!simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}}
+\subsubsection{\texorpdfstring{conservative}{conservative}}
+{\footnotesize\ttfamily bool simple\+\_\+code\+\_\+motion\+::conservative\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+True if only zero delay statement can be moved. 
+
+
+
+Definition at line 78 of file simple\+\_\+code\+\_\+motion.\+hpp.
+
+
+
+Referenced by Check\+Movable().
+
+\mbox{\Hypertarget{classsimple__code__motion_aa7519142b3b0fe26b2da83a0b5a4bdae}\label{classsimple__code__motion_aa7519142b3b0fe26b2da83a0b5a4bdae}} 
+\index{simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}!schedule@{schedule}}
+\index{schedule@{schedule}!simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}}
+\subsubsection{\texorpdfstring{schedule}{schedule}}
+{\footnotesize\ttfamily \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} simple\+\_\+code\+\_\+motion\+::schedule\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The scheduling solution. 
+
+
+
+Definition at line 72 of file simple\+\_\+code\+\_\+motion.\+hpp.
+
+
+
+Referenced by Check\+Movable(), Initialize(), and Is\+Schedule\+Based().
+
+\mbox{\Hypertarget{classsimple__code__motion_a592659ec32a51bfc395647f04ae2b027}\label{classsimple__code__motion_a592659ec32a51bfc395647f04ae2b027}} 
+\index{simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}!tree\+\_\+dumped@{tree\+\_\+dumped}}
+\index{tree\+\_\+dumped@{tree\+\_\+dumped}!simple\+\_\+code\+\_\+motion@{simple\+\_\+code\+\_\+motion}}
+\subsubsection{\texorpdfstring{tree\+\_\+dumped}{tree\_dumped}}
+{\footnotesize\ttfamily bool simple\+\_\+code\+\_\+motion\+::tree\+\_\+dumped\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+flag to check if initial tree has been dumped 
+
+
+
+Definition at line 75 of file simple\+\_\+code\+\_\+motion.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{simple__code__motion_8hpp}{simple\+\_\+code\+\_\+motion.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{simple__code__motion_8cpp}{simple\+\_\+code\+\_\+motion.\+cpp}\end{DoxyCompactItemize}

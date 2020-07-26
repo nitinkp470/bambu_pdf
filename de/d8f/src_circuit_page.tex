@@ -1,0 +1,486 @@
+This page is an introduction to the class \hyperlink{classstructural__manager}{structural\+\_\+manager} that is used to create or explore an abstract representation of a structural circuit. The page is organized as follow\+:
+\begin{DoxyItemize}
+\item \hyperlink{src_circuit_page_circuit_overview}{An overview about structural representation of a generic circuit}
+\item \hyperlink{src_circuit_page_circuit_parameters}{Technology library and parameter specialization}
+\item \hyperlink{src_circuit_page_circuit_creation_how_to}{Brief tutorial on the creation of a new generic structural representation}
+\item \hyperlink{src_circuit_page_circuit_exploration_how_to}{Brief tutorial on the exploration of a generic structural representation}
+\end{DoxyItemize}\hypertarget{src_circuit_page_circuit_overview}{}\section{An overview about structural representation of a generic circuit}\label{src_circuit_page_circuit_overview}
+The \hyperlink{classstructural__manager}{structural\+\_\+manager} class allows to create or explore a generic and hierarcally circuit representation. This kind of circuit is composed by structural objects (see \hyperlink{src_circuit_page_structural_object_description}{Structural object}) that can be used to represent the functionality. Objects can represent items at different level of abstraction\+: logic, R\+TL and T\+LM, it is used to mask different kinds of objects and it can contains more structural objects itself. For example, if you want to create a \hyperlink{classstructural__object}{structural\+\_\+object} that perform operation A + ( B $\ast$ C), you can create a \hyperlink{classstructural__object}{structural\+\_\+object} that will contains \hyperlink{classstructural__object}{structural\+\_\+object} that perform mult between B $\ast$ C and then the \hyperlink{classstructural__object}{structural\+\_\+object} that that will perform the addition between A and the result of mult and then connect them together. A \hyperlink{classstructural__object}{structural\+\_\+object} can be also used to mask the implementation of a functionality. You can create a module to perform communication with inputs and outputs defined and connected outside and, only after, this object is specialized, for instance with a technology builtin component. Now we shortly describe this \hyperlink{classstructural__object}{structural\+\_\+object} component and then we could see how \hyperlink{classstructural__manager}{structural\+\_\+manager} class can use these objects. Before doing this, an important component has to be introduced\+: the \hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor} (see structural\+\_\+type\+\_\+description). It is used to identify a particular kind of component and all components with the same type descriptor will be considered in the same way. For example if you declare two modules A and B with the same type descriptor, it simply means that are two different instances of the same object, so when you specialize object, both modules will be affected by this modification. If instead you declare them with different type descriptors, they can be specialized in different ways. So there will be a documentation about\+:
+\begin{DoxyItemize}
+\item \hyperlink{src_circuit_page_structural_type_description_doc}{Structural type descriptor}
+\item \hyperlink{src_circuit_page_structural_object_description}{Structural object}
+\end{DoxyItemize}\hypertarget{src_circuit_page_structural_type_description_doc}{}\subsection{Structural type descriptor}\label{src_circuit_page_structural_type_description_doc}
+This structure represents the most relevant information about the type of a structural object. In case the structural object is a signal or a port all member has a real meaning (type of the carried data), while when the structural object is a channel, component, event, data or an action the only relevant information stored into the descriptor is the id\+\_\+type and treenode when available. You can create the \hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor} associated to a variable, and it returns the type descriptor associated to it (so into field {\itshape size} you can retrive information about real variable size); to create it you have to declare it as\+: 
+\begin{DoxyCode}
+\hyperlink{structrefcount}{structural\_type\_descriptorRef} data\_type;
+data\_type = \hyperlink{structural__objects_8hpp_a219296792577e3292783725961506c83}{structural\_type\_descriptorRef}(\textcolor{keyword}{new} 
+      \hyperlink{structstructural__type__descriptor}{structural\_type\_descriptor}(\textcolor{keywordtype}{id},TM);
+\end{DoxyCode}
+ where {\bfseries id} is the identifier (unsigned int) associated to the variable and TM is the reference to tree manager. After that {\bfseries data\+\_\+type} will contain the type descriptor associated to the variable. So, for example with 
+\begin{DoxyCode}
+\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} dim = data\_type->\hyperlink{structstructural__type__descriptor_ac6575b2a1c6a9ee440a58eca5dca2c96}{size};
+\end{DoxyCode}
+ you can store into variable {\bfseries dim} the size of the variable identified by {\bfseries id}. For a standard type you simple declare it as\+: 
+\begin{DoxyCode}
+\hyperlink{structrefcount}{structural\_type\_descriptorRef} data\_type;
+data\_type = \hyperlink{structural__objects_8hpp_a219296792577e3292783725961506c83}{structural\_type\_descriptorRef}(\textcolor{keyword}{new} 
+      \hyperlink{structstructural__type__descriptor}{structural\_type\_descriptor}(\textcolor{stringliteral}{"int"},0);
+\end{DoxyCode}
+ for and 32-\/bit integer variable (\char`\"{}bool\char`\"{} type for instance is widely used) and {\itshape 0} number represents the vector size. In case vector\+\_\+size is zero the descriptor type represents a scalar object, otherwise an array. If you want to declare a module, you have to declare it as\+: 
+\begin{DoxyCode}
+\hyperlink{structrefcount}{structural\_type\_descriptorRef} module\_type;
+module\_type = \hyperlink{structural__objects_8hpp_a219296792577e3292783725961506c83}{structural\_type\_descriptorRef}(\textcolor{keyword}{new} 
+      \hyperlink{structstructural__type__descriptor}{structural\_type\_descriptor}(\textcolor{stringliteral}{"adder"}));
+\end{DoxyCode}
+ where {\itshape adder} is a name chosen for this specific kind of object. Once you declared all needed type descriptor you are able to create any kind of structural object. To have more details, see \hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor} class documentation.\hypertarget{src_circuit_page_structural_object_description}{}\subsection{Structural object}\label{src_circuit_page_structural_object_description}
+A \hyperlink{classstructural__object}{structural\+\_\+object} class is a base object for all objects. It provides a common interface for each structural object present in a design. So it contains informations about name, type descriptor associated with the object and the owner of the object (informations common to all kind of objects). A \hyperlink{classstructural__object}{structural\+\_\+object} can be specialized into different kind of object that are\+:
+\begin{DoxyItemize}
+\item \hyperlink{src_circuit_page_s_o_module}{Module}
+\item \hyperlink{src_circuit_page_s_o_component}{Component}
+\item \hyperlink{src_circuit_page_s_o_channel}{Channel}
+\item \hyperlink{src_circuit_page_s_o_port}{Port}
+\item \hyperlink{src_circuit_page_s_o_portvector}{Port Vector}
+\item \hyperlink{src_circuit_page_s_o_bus_connection}{Bus connection}
+\item \hyperlink{src_circuit_page_s_o_event}{Event}
+\item \hyperlink{src_circuit_page_s_o_data}{Data}
+\item \hyperlink{src_circuit_page_s_o_action}{Action}
+\item \hyperlink{src_circuit_page_s_o_signal}{Signal}
+\end{DoxyItemize}\hypertarget{src_circuit_page_s_o_module}{}\subsubsection{Module}\label{src_circuit_page_s_o_module}
+This class describes a generic module. A module can be futher specialized in a channel or in a component. This class should be not instantiated. Only channels and components can be instantiated. To obtain reference to this kind of object, having the structural object associated, just\+: 
+\begin{DoxyCode}
+\hyperlink{classmodule}{module} *desidered\_module;
+desidered\_module = get\_pointer<module>(object);
+\end{DoxyCode}
+ By this way, you try to cast structural\+\_\+object\+Ref {\bfseries object} to module type. If {\bfseries object} is really a module object, into {\bfseries desidered\+\_\+module} will be pointer to it. So you can access to specific method implemented for module objects, such as\+:
+\begin{DoxyItemize}
+\item {\bfseries add\+\_\+in\+\_\+port(s)} where {\itshape s} is the \hyperlink{structport__o}{port\+\_\+o} object to be added as input port to module.
+\item {\bfseries get\+\_\+in\+\_\+port\+\_\+size()} that returns number of input ports.
+\item {\bfseries get\+\_\+in\+\_\+port(n)} that returns the {\itshape n-\/th} input port into the module.
+\item {\bfseries remove\+\_\+port(id)} where {\itshape id} is the name of the port to be removed.
+\item {\bfseries get\+\_\+internal\+\_\+object(n)} is one of the most important function to provide hierarchy. It returns the {\itshape n-\/th} object internal to this one. So you can go down and navigate through levels.
+\item {\bfseries set\+\_\+\+N\+P\+\_\+functionality} that sets the alternative module behavior descriptions (Non SystemC based) and {\itshape f} is the reference to alternative functionalities.
+\item {\bfseries find\+\_\+member(id,type,owner)} that returns the reference to \hyperlink{classstructural__object}{structural\+\_\+object} having {\itshape id} name, the {\itshape type} is which given as parameter and {\itshape owner} is the owner of {\itshape id} object.
+\end{DoxyItemize}
+
+To obtain more details or descriptions of other methods, see module class documentation.\hypertarget{src_circuit_page_s_o_component}{}\subsubsection{Component}\label{src_circuit_page_s_o_component}
+This class describes a generic component and it is a specialization of module object. To obtain reference to this kind of object, having the structural object associated, just\+: 
+\begin{DoxyCode}
+\hyperlink{classcomponent__o}{component\_o} *desidered\_component;
+desidered\_component = get\_pointer<component\_o>(object);
+\end{DoxyCode}
+ By this way, you try to cast structural\+\_\+object\+Ref {\bfseries object} to component type. If {\bfseries object} is really a component object, into {\bfseries desidered\+\_\+component} will be pointer to it. So you can access to specific method implemented for component objects. To get informations about them, see \hyperlink{src_circuit_page_s_o_module}{Module} documentation or see \hyperlink{classcomponent__o}{component\+\_\+o} class documentation.\hypertarget{src_circuit_page_s_o_channel}{}\subsubsection{Channel}\label{src_circuit_page_s_o_channel}
+This class describes a generic channel and it is a specialization of module object. To obtain reference to this kind of object, having the structural object associated, just\+: 
+\begin{DoxyCode}
+\hyperlink{classchannel__o}{channel\_o} *desidered\_channel;
+desidered\_channel = get\_pointer<channel\_o>(object);
+\end{DoxyCode}
+ By this way, you try to cast structural\+\_\+object\+Ref {\bfseries object} to channel type. If {\bfseries object} is really a channel object, into {\bfseries desidered\+\_\+channel} will be pointer to it. So you can access to specific method implemented for channel objects. To get informations about them, see \hyperlink{src_circuit_page_s_o_module}{Module} documentation or see \hyperlink{classchannel__o}{channel\+\_\+o} class documentation.\hypertarget{src_circuit_page_s_o_port}{}\subsubsection{Port}\label{src_circuit_page_s_o_port}
+This kind of object is called {\bfseries \hyperlink{structport__o}{port\+\_\+o}} and it describes a port associated with a component or a channel. A port can be in relation with\+:
+\begin{DoxyItemize}
+\item another standard port (e.\+g., primary input/output connections);
+\item a signal (e.\+g., standard internal connections)\+:
+\item a port of a channel (e.\+g, when a channel is used as a connection).
+\end{DoxyItemize}
+
+A fundamental information associated with port is direction. It can be IN (input port), O\+UT (output port), IO (input/output port), G\+EN () and U\+N\+K\+N\+O\+WN (not specified). To obtain reference to this kind of object, having the structural object associated, just\+: 
+\begin{DoxyCode}
+\hyperlink{structport__o}{port\_o} *desidered\_port;
+desidered\_port = get\_pointer<port\_o>(object);
+\end{DoxyCode}
+ By this way, you try to cast structural\+\_\+object\+Ref {\bfseries object} to \hyperlink{structport__o}{port\+\_\+o} type. If {\bfseries object} is really a \hyperlink{structport__o}{port\+\_\+o} object, into {\bfseries desidered\+\_\+port} will be pointer to it. So you can access to specific method implemented for port objects, such as\+:
+\begin{DoxyItemize}
+\item {\bfseries add\+\_\+connection(s)} where {\itshape s} is the object to be connected with this port.
+\item {\bfseries get\+\_\+connection(n)} return the {\itshape n-\/th} connected object.
+\item {\bfseries get\+\_\+connection\+\_\+size()} returns number of connected component.
+\item {\bfseries get\+\_\+owner()} returns reference to the owner of the port.
+\end{DoxyItemize}
+
+To obtain more details or descriptions of other methods, see \hyperlink{structport__o}{port\+\_\+o} class documentation.\hypertarget{src_circuit_page_s_o_portvector}{}\subsubsection{Port Vector}\label{src_circuit_page_s_o_portvector}
+This class describes a vector of ports associated with a component or a channel. A port\+\_\+vector can be in relation with\+:
+\begin{DoxyItemize}
+\item another standard port (e.\+g., primary input/output connections);
+\item a signal (e.\+g., standard internal connections)\+:
+\item a port of a channel (e.\+g, when a channel is used as a connection).
+\end{DoxyItemize}
+
+The port vector is simply a vector of \hyperlink{structport__o}{port\+\_\+o} object. There are only additional method to deal with multiple objects. So, to obtain reference to this kind of object, having the structural object associated, just\+: 
+\begin{DoxyCode}
+port\_vector\_o *desidered\_port\_vectors;
+desidered\_port\_vector = get\_pointer<port\_vector\_o>(object);
+\end{DoxyCode}
+
+
+By this way, you try to cast structural\+\_\+object\+Ref {\bfseries object} to port\+\_\+vector\+\_\+o type. If {\bfseries object} is really a port\+\_\+vector\+\_\+o object, into {\bfseries desidered\+\_\+port\+\_\+vector} will be pointer to it. So you can access to specific method implemented for port vector objects, such as\+:
+\begin{DoxyItemize}
+\item {\bfseries add\+\_\+n\+\_\+ports(n)} creates {\itshape n} ports and resize the vector to contain these.
+\item {\bfseries get\+\_\+port\+\_\+size()} returns the number of ports that the vector is made with.
+\item {\bfseries get\+\_\+port(n)} returns the {\itshape n-\/th} port into the vector.
+\end{DoxyItemize}
+
+To obtain more details or descriptions of other methods, see port\+\_\+vector\+\_\+o class documentation.\hypertarget{src_circuit_page_s_o_bus_connection}{}\subsubsection{Bus connection}\label{src_circuit_page_s_o_bus_connection}
+This class describes a generic bus connection. A \hyperlink{classbus__connection__o}{bus\+\_\+connection\+\_\+o} is a a vector of signals or channels \mbox{[}1..n\mbox{]}. To obtain reference to this kind of object, having the structural object associated, just\+: 
+\begin{DoxyCode}
+\hyperlink{classbus__connection__o}{bus\_connection\_o} *desidered\_bus;
+desidered\_bus = get\_pointer<bus\_connection\_o>(object);
+\end{DoxyCode}
+ By this way, you try to cast structural\+\_\+object\+Ref {\bfseries object} to bus connection type. If {\bfseries object} is really a bus connection object, into {\bfseries desidered\+\_\+bus} will be pointer to it. So you can access to specific method implemented for bus connection objects. To get informations about them, see \hyperlink{classbus__connection__o}{bus\+\_\+connection\+\_\+o} class documentation.\hypertarget{src_circuit_page_s_o_event}{}\subsubsection{Event}\label{src_circuit_page_s_o_event}
+This class describes a generic event. To obtain reference to this kind of object, having the structural object associated, just\+: 
+\begin{DoxyCode}
+\hyperlink{classevent__o}{event\_o} *desidered\_event;
+desidered\_event = get\_pointer<event\_o>(object);
+\end{DoxyCode}
+ By this way, you try to cast structural\+\_\+object\+Ref {\bfseries object} to event type. If {\bfseries object} is really a event object, into {\bfseries desidered\+\_\+event} will be pointer to it. So you can access to specific method implemented for event objects. To get informations about them, see \hyperlink{classevent__o}{event\+\_\+o} class documentation.\hypertarget{src_circuit_page_s_o_data}{}\subsubsection{Data}\label{src_circuit_page_s_o_data}
+This class describes a generic data declaration object. To obtain reference to this kind of object, having the structural object associated, just\+: 
+\begin{DoxyCode}
+\hyperlink{classdata__o}{data\_o} *desidered\_data;
+desidered\_data = get\_pointer<data\_o>(object);
+\end{DoxyCode}
+ By this way, you try to cast structural\+\_\+object\+Ref {\bfseries object} to data type. If {\bfseries object} is really a data object, into {\bfseries desidered\+\_\+data} will be pointer to it. So you can access to specific method implemented for data objects. To get informations about them, see \hyperlink{classdata__o}{data\+\_\+o} class documentation.\hypertarget{src_circuit_page_s_o_action}{}\subsubsection{Action}\label{src_circuit_page_s_o_action}
+This class describes a generic systemC action. An action can be a SystemC process or a standard service (aka a member function of a class) You can associate the graph\+\_\+manager reference associated to this action (e.\+g. the graph\+\_\+manager representing the function associated to action). To obtain reference to this kind of object, having the structural object associated, just\+: 
+\begin{DoxyCode}
+\hyperlink{classaction__o}{action\_o} *desidered\_action;
+desidered\_action = get\_pointer<action\_o>(object);
+\end{DoxyCode}
+ By this way, you try to cast structural\+\_\+object\+Ref {\bfseries object} to action type. If {\bfseries object} is really a action object, into {\bfseries desidered\+\_\+action} will be pointer to it. So you can access to specific method implemented for action objects. To get informations about them, see \hyperlink{classaction__o}{action\+\_\+o} class documentation.\hypertarget{src_circuit_page_s_o_signal}{}\subsubsection{Signal}\label{src_circuit_page_s_o_signal}
+This class describes a generic data declaration object. This class describes a simple logic/\+R\+TL signal. A signal can be an array of bit but it cannot be sliced or partially accessed. In case of partial access or slicing the \hyperlink{classbus__connection__o}{bus\+\_\+connection\+\_\+o} object should be used. To obtain reference to this kind of object, having the structural object associated, just\+: 
+\begin{DoxyCode}
+\hyperlink{classsignal__o}{signal\_o} *desidered\_signal;
+desidered\_signal = get\_pointer<signal\_o>(object);
+\end{DoxyCode}
+ By this way, you try to cast structural\+\_\+object\+Ref {\bfseries object} to signal type. If {\bfseries object} is really a signal object, into {\bfseries desidered\+\_\+signal} will be pointer to it. So you can access to specific method implemented for signal objects. Using these methods you can get informations about ports bounded to this signal object. To get informations about them, see \hyperlink{classsignal__o}{signal\+\_\+o} class documentation.\hypertarget{src_circuit_page_circuit_parameters}{}\section{Technology library and parameter specialization}\label{src_circuit_page_circuit_parameters}
+Some components can be defined as parameters. This is useful when you could have the same module that can be declared in a different way, for instance, with a different number of inputs. This situation can happen quite often\+: think at a A\+ND gate that can have a different number of input. Cannot be declared all possible different implementation, so the component can be declared with some parameters. Into technology\+\_\+builtin.\+hpp file are declared all builtin functional unit. For example, there is the line\+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#define AND\_GATE\_STD       "AND\_GATE"}
+\end{DoxyCode}
+ it means that you try to add a component from technology library that match {\itshape A\+N\+D\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD} (so \char`\"{}\+A\+N\+D\+\_\+\+G\+A\+T\+E\char`\"{} string), there will be added a component defined so (into technology\+\_\+builtin.\+cpp)\+: 
+\begin{DoxyCode}
+    \textcolor{comment}{//AND}
+ 1: CM = \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\_managerRef}(\textcolor{keyword}{new} \hyperlink{classstructural__manager}{structural\_manager});
+ 2: fu\_name = \hyperlink{technology__node_8hpp_a92082a6ad93e10690c4c96dac3496de8}{AND\_GATE\_STD};
+ 3: module\_type = \hyperlink{structural__objects_8hpp_a219296792577e3292783725961506c83}{structural\_type\_descriptorRef}(\textcolor{keyword}{new} 
+      \hyperlink{structstructural__type__descriptor}{structural\_type\_descriptor}(fu\_name));
+ 4: CM->set\_top\_info(fu\_name, module\_type);
+ 5: top = CM->get\_circ();
+ 6: CM->add\_port\_vector(\textcolor{stringliteral}{"in"},\hyperlink{structport__o_adb254df5665ff28b0769491cc3899fd5aa135fbd4d182c73be50d31f88e981284}{port\_o::IN},port\_vector\_o::PARAMETRIC\_PORT,top,b\_type);
+ 7: CM->add\_port(\textcolor{stringliteral}{"out1"},\hyperlink{structport__o_adb254df5665ff28b0769491cc3899fd5ab3bfd4c2f6c68477c8c78a747e879f18}{port\_o::OUT},top,b\_type);
+ 8: NP\_parameters = fu\_name + \textcolor{stringliteral}{" in"};
+ 9: CM->add\_NP\_functionality(top, \hyperlink{classNP__functionality_a318d6f254060bfdf145ebeb41efe772ea3b9722f936843fecd500060388fc65e6}{NP\_functionality::LIBRARY}, NP\_parameters);
+10: TM->fill\_resource(fu\_name, fu\_name, CM, \hyperlink{technology__manager_8hpp_a0033bdd1d1c034f88d486516cd90f614}{LIBRARY\_STD}, 0, 0, 0.1,  0.1);
+11: builtin\_verilog\_gates::add\_builtin(\hyperlink{technology__node_8hpp_a92082a6ad93e10690c4c96dac3496de8}{AND\_GATE\_STD}, \textcolor{stringliteral}{"and"});
+\end{DoxyCode}
+ Let analyse each row in order to understand a own parametric component.
+\begin{DoxyEnumerate}
+\item A \hyperlink{classstructural__manager}{structural\+\_\+manager} CM is created to be associated to component
+\item the name of the unit is that defined above into header file.
+\item a \hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor} is created to be associated to this functional unit.
+\item the top info of the circuit in creation with unit name and type descriptor
+\item get the top of the circuit in order to add or retrive components
+\item add a port vector as input to module. Note the parameter port\+\_\+vector\+\_\+o\+::\+P\+A\+R\+A\+M\+E\+T\+R\+I\+C\+\_\+\+P\+O\+RT that explain to \hyperlink{classstructural__manager}{structural\+\_\+manager} that parameters will have to be specified.
+\item add a usual output port.
+\item define the string {\bfseries \hyperlink{classNP__functionality}{N\+P\+\_\+functionality}} composed by name of the unit and then name of parameters. The parameters are identified by {\itshape id} of the components are associated with. So in this case, the parameter is the name of the incoming port. If there are not any parameter, the \hyperlink{classNP__functionality}{N\+P\+\_\+functionality} string will contain only the unit name.
+\item the \hyperlink{classNP__functionality}{N\+P\+\_\+functionality} is added to the component.
+\item unit is added to a specific technology library (into L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+TD library in this case). A set of values are then specified; there are, in order, execution\+\_\+time, initialization time, power consumption and area.
+\item add gate also to builtin verilog gates
+\end{DoxyEnumerate}
+
+When you will need to create an instance of these variable, you will have to specialize parameters listed into line (8); in this case, for instance, when you add module, you will have to do something similar to this\+: 
+\begin{DoxyCode}
+\hyperlink{structrefcount}{structural\_objectRef} obj;
+\textcolor{comment}{// where TM is the technology\_manager where have be stored information about modules listed above}
+obj = structManager->add\_module\_from\_technology(\textcolor{stringliteral}{"AND\_GATE\_1"},\hyperlink{technology__node_8hpp_a92082a6ad93e10690c4c96dac3496de8}{AND\_GATE\_STD},
+      \hyperlink{technology__manager_8hpp_a0033bdd1d1c034f88d486516cd90f614}{LIBRARY\_STD},owner,TM);
+\hyperlink{structrefcount}{structural\_objectRef} port\_obj = obj->\hyperlink{classstructural__object_a3a8b2d38c2b5666700053a72868bb6b2}{find\_member}(\textcolor{stringliteral}{"in"},
+      \hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439acdcc7e8708a89b5424ed8b41c47f19b0}{port\_o\_K},obj);
+\hyperlink{structport__o}{port\_o} *in\_port = get\_pointer<port\_o>(port\_obj);
+\textcolor{comment}{// where num is number of ports that you need}
+in\_port->\hyperlink{structport__o_adf5180258c79071f73582bf9427a8f06}{add\_n\_ports}(num,port\_obj);
+\end{DoxyCode}
+ So parameters has been specialized (it can specialized only once for each instance, e.\+g. in this case you cannot specialize obj anymore). Now let consider a systemC implementation of this component in order to understand what we have done. It will be something similar to\+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#define AND\_GATE\_DECL(size\_in\_)\(\backslash\)}
+\textcolor{preprocessor}{class AND\_GATE\_##size\_in\_ : public sc\_module \(\backslash\)}
+\textcolor{preprocessor}{\{\(\backslash\)}
+\textcolor{preprocessor}{public:\(\backslash\)}
+\textcolor{preprocessor}{  sc\_in< bool > in[size\_in\_];\(\backslash\)}
+\textcolor{preprocessor}{  sc\_out< bool > out1;\(\backslash\)}
+\textcolor{preprocessor}{\(\backslash\)}
+\textcolor{preprocessor}{  SC\_CTOR(AND\_GATE\_##size\_in\_)    //constructor is parametric to size, e.g. parameter just set\(\backslash\)}
+\textcolor{preprocessor}{  \{\(\backslash\)}
+\textcolor{preprocessor}{    SC\_METHOD(action);\(\backslash\)}
+\textcolor{preprocessor}{    for(int i = 0; i< size\_in\_; i++)\(\backslash\)}
+\textcolor{preprocessor}{      sensitive << in[i];            //sensitive to each bit change\(\backslash\)}
+\textcolor{preprocessor}{  \}\(\backslash\)}
+\textcolor{preprocessor}{  void action()\(\backslash\)}
+\textcolor{preprocessor}{  \{\(\backslash\)}
+\textcolor{preprocessor}{    bool value = true;\(\backslash\)}
+\textcolor{preprocessor}{    for (int i = 0; i < size\_in\_; i++)\(\backslash\)}
+\textcolor{preprocessor}{        value = value & in[i].read();\(\backslash\)}
+\textcolor{preprocessor}{    out1.write(value);\(\backslash\)}
+\textcolor{preprocessor}{  \}\(\backslash\)}
+\textcolor{preprocessor}{\}}
+
+\textcolor{preprocessor}{#ifdef SCC\_SYNTHESIS\_DEBUG}
+AND\_GATE\_DECL(1);                     \textcolor{comment}{//it's default value}
+\textcolor{preprocessor}{#endif}
+\end{DoxyCode}
+ So when backend will create a component where parameters will be set to {\bfseries num = 3}, the macro 
+\begin{DoxyCode}
+AND\_GATE\_DECL(3);
+\end{DoxyCode}
+ will be expand by preprocessor into something similar to this\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{class }AND\_GATE\_3 : \textcolor{keyword}{public} sc\_module
+\{
+\textcolor{keyword}{public}:
+  sc\_in< bool > in[3];
+  sc\_out< bool > out1;
+  SC\_CTOR(AND\_GATE\_3)                \textcolor{comment}{//constructor is customized to size 3}
+  \{
+    SC\_METHOD(\hyperlink{namespacetest__panda_a164944f1df8c7c37365132a9aef1facf}{action});
+    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 3; i++)
+      sensitive << in[i];                   \textcolor{comment}{//sensitive to each bit change}
+  \}
+  \textcolor{keywordtype}{void} \hyperlink{namespacetest__panda_a164944f1df8c7c37365132a9aef1facf}{action}()
+  \{
+    \textcolor{keywordtype}{bool} value = \textcolor{keyword}{true};
+    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++)
+        value = value & in[i].read();
+    out1.write(value);
+  \}
+\}
+\end{DoxyCode}
+ that is the implementation of a 3-\/input A\+N\+D\+\_\+\+G\+A\+TE. So we have seen how to implement a parametric port vector and how to use it. It can be done something similar also for port size. You have to declare the port in the usual way, but the name has to be listed into \hyperlink{classNP__functionality}{N\+P\+\_\+functionality} string\+: 
+\begin{DoxyCode}
+\textcolor{comment}{// think this unit called TRY\_GATE}
+CM->add\_port(\textcolor{stringliteral}{"in"},\hyperlink{structport__o_adb254df5665ff28b0769491cc3899fd5aa135fbd4d182c73be50d31f88e981284}{port\_o::IN},top,int\_type);
+CM->add\_port(\textcolor{stringliteral}{"out1"},\hyperlink{structport__o_adb254df5665ff28b0769491cc3899fd5ab3bfd4c2f6c68477c8c78a747e879f18}{port\_o::OUT},top,int\_type);
+NP\_parameters = fu\_name + \textcolor{stringliteral}{" in"};
+\end{DoxyCode}
+ In this case only input port {\itshape in} is listed as a parameters. So size can be changed on fly during computation. Once you declared port, you can define a size different from 32-\/bit usual integer one. 
+\begin{DoxyCode}
+\hyperlink{structrefcount}{structural\_objectRef} obj;
+\textcolor{comment}{// where TM is the technology\_manager where have be stored information about modules listed above}
+obj = structManager->add\_module\_from\_technology(\textcolor{stringliteral}{"GATE"},TRY\_GATE,\hyperlink{technology__manager_8hpp_a0033bdd1d1c034f88d486516cd90f614}{LIBRARY\_STD},owner,TM);
+\hyperlink{structrefcount}{structural\_objectRef} port\_obj = obj->\hyperlink{classstructural__object_a3a8b2d38c2b5666700053a72868bb6b2}{find\_member}(\textcolor{stringliteral}{"in"},
+      \hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439acdcc7e8708a89b5424ed8b41c47f19b0}{port\_o\_K},obj);
+\hyperlink{structport__o}{port\_o} *in\_port = get\_pointer<port\_o>(obj);
+\textcolor{comment}{// where num is number of ports that you need}
+in\_port->\hyperlink{structport__o_a4f8462c05383622e041c2af643ddedf7}{set\_port\_size}(num);
+\end{DoxyCode}
+ where {\itshape num} is the new port size (in bit). The systemC module will be something similar to which seen for A\+N\+D\+\_\+\+G\+A\+TE, with a define like these\+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#define TRY\_GATE(size\_in\_) \(\backslash\)}
+\textcolor{preprocessor}{class TRY\_GATE\_##size\_in\_ : public sc\_module \(\backslash\)}
+\textcolor{preprocessor}{....}
+sc\_in< sc\_int<#size\_in\_> > in;
+...
+\end{DoxyCode}
+
+
+So you are now able to create you own functional unit and relative modules. Then you are able to specify them and create relative code to be used by you favourite backend writer.\hypertarget{src_circuit_page_circuit_creation_how_to}{}\section{Brief tutorial on the creation of a new generic structural representation}\label{src_circuit_page_circuit_creation_how_to}
+Now that all basic components have been described, they can be used to create the generic representation of the circuit. In this section I plan to present a brief tutorial on how to build a new circuit using the A\+PI of the \hyperlink{classstructural__manager}{structural\+\_\+manager} class.
+
+A circuit is internally represented by a graph (which can be accessed with the C\+Get\+Op\+Graph method of the structural manager class), but it can be built using the methods of the \hyperlink{classstructural__manager}{structural\+\_\+manager} class. The rest of this section will be devoted to the description of the behavior of this class using also some pratical examples.
+
+
+\begin{DoxyItemize}
+\item When creating a new circuit first of all we must assign it a name and a type descriptor using the \hyperlink{classstructural__manager_a848a594d01b214d2b17deefdc127ca71}{structural\+\_\+manager\+::set\+\_\+top\+\_\+info} {\bfseries (id, type)} method\+: the \hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor} associated (create as a generic one, so only with an {\itshape id} string) will be the module name.
+\item Once you top informations, you can get the \hyperlink{classstructural__object}{structural\+\_\+object} associated to this new {\itshape top} component with method \hyperlink{classstructural__manager_a56ff3164d2a57d12312fa3c7bfceb244}{structural\+\_\+manager\+::get\+\_\+circ} {\bfseries ()}. It will be the main owner for all objects that will be created
+\item Afterwards we can start building the circuit\+: first of all we should insert primary input and output ports\+: this can be achieved with the \hyperlink{classstructural__manager_a64e0c143cffd76072a1d5b885304a85a}{structural\+\_\+manager\+::add\+\_\+port} method\+: there are different variation of this function, but all of them have a similar aim\+: adding an input or output port to a circuit member. In this step we use the \hyperlink{classstructural__manager}{structural\+\_\+manager}\+:\+: {\bfseries (id, port\+Type, owner, signal\+Type)} method\+: the {\itshape id} parameter represents the name of the port (note\+: if we are adding the port to a library component this function has not to be used, use structural\+\_\+manager\+::find\+\_\+member (id,port\+Type,owner) insted. This is because the port has been already created); the {\itshape port\+Type} is used to specify whether this port will be used for I\+N\+P\+UT, O\+U\+T\+P\+UT or I\+N\+P\+U\+T-\/\+O\+U\+T\+P\+UT. The {\itshape owner} parameter is very important\+: it specifies the circuit element we have to add this port to; finally the {\itshape signal\+Type} parameter defines the \hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor} of the signal this port will carry; this parameter has to be compatible with other \hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor} of objects the port will be bounded with.
+\item Once we\textquotesingle{}ve added the primary input and outputs we can start filling the circuit with components\+: they can either be custom components (and I will later show how it is possible to create them) or library ones; The \hyperlink{classstructural__manager_a06768a4a0fd1f26e78cbd1186c433261}{structural\+\_\+manager\+::create} {\bfseries (id,ctype,owner,obj\+\_\+type,treenode)} method is used for this purpose and it allows the insertion of a new element in the circuit\+: if we want to create a new component (which is why this method is used more often) the {\itshape category} parameter must be set to \char`\"{}component\+\_\+o\+\_\+\+K\char`\"{} and set to \char`\"{}port\+\_\+o\+\_\+\+K\char`\"{} if you create a port; the {\itshape name} parameter specifies the name which will be given to the particular component instance, {\itshape owner} is a reference to the circuit which will contain the element. The parameter {\itshape obj\+\_\+type}, as I\textquotesingle{}ve already said, it is very important and it determines if the object if similar to other object into circuit or it\textquotesingle{}s a new one to be specialized in a custom way. You can also insert module directly from technology library. To do this, use structural\+\_\+manager\+::add\+\_\+module\+\_\+from\+\_\+technology function. So use structural\+\_\+manager\+::add\+\_\+module\+\_\+from\+\_\+technology {\bfseries (id,fu\+\_\+name,library\+\_\+name,owner,TM)}\+: {\itshape id} is the name of this functional unit instance; {\itshape fu\+\_\+name} has to match the name of the library module that has to be added, {\itshape library\+\_\+name} is the name of the library where to retrieve information about modules; {\itshape owner} is the component where the object has to be inserted in and {\itshape TM} is the reference to \hyperlink{classtechnology__manager}{technology\+\_\+manager} where all informations about libraries are stored. I will now insert a short example which shows how it is possible to insert both a custom and a library component in a circuit; I will also present the resulting SystemC code. 
+\begin{DoxyCode}
+\textcolor{comment}{//... at this point of the code consider to have TM reference to technology\_manager class.}
+\textcolor{comment}{//I get a reference to an instance of the structural\_manager class}
+\hyperlink{structrefcount}{structural\_managerRef} structManager(\textcolor{keyword}{new} \hyperlink{classstructural__manager}{structural\_manager}(TM));
+\textcolor{comment}{//I set all the propeties of the main circuit}
+\hyperlink{structrefcount}{structural\_type\_descriptorRef} circuit\_type;
+circuit\_type = \hyperlink{structural__objects_8hpp_a219296792577e3292783725961506c83}{structural\_type\_descriptorRef}(\textcolor{keyword}{new} 
+      \hyperlink{structstructural__type__descriptor}{structural\_type\_descriptor}(\textcolor{stringliteral}{"MainCircType"}));
+structManager->set\_top\_info(\textcolor{stringliteral}{"MainCircuit"},circuit\_type);
+\textcolor{comment}{//Now I read the reference to the object which represents the main circuit}
+\hyperlink{structrefcount}{structural\_objectRef} circuit = structManager->get\_circ(); 
+\textcolor{comment}{//I create a custom component }
+\hyperlink{structrefcount}{structural\_type\_descriptorRef} customGate1;
+customGate1 = \hyperlink{structural__objects_8hpp_a219296792577e3292783725961506c83}{structural\_type\_descriptorRef}(\textcolor{keyword}{new} 
+      \hyperlink{structstructural__type__descriptor}{structural\_type\_descriptor}(\textcolor{stringliteral}{"CustomGate1"}));
+\hyperlink{structrefcount}{structural\_objectRef} customComp = structManager->create(\textcolor{stringliteral}{"Internal1"}, component\_c\_K, 
+      circuit, customGate1);
+\textcolor{comment}{//And one whose type is present in the technology library}
+\hyperlink{structrefcount}{structural\_objectRef} libraryComp;
+libraryComp = structManager->add\_module\_from\_technology(\textcolor{stringliteral}{"Internal2"},\textcolor{stringliteral}{"OR\_GATE"},
+      \hyperlink{technology__manager_8hpp_a0033bdd1d1c034f88d486516cd90f614}{LIBRARY\_STD},TM);
+\end{DoxyCode}
+ The corresponding SystemC code is\+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "OR\_GATE.hpp"}
+
+\textcolor{comment}{//This class represent the custom component}
+SC\_MODULE( CustomGate1 )\{
+  \textcolor{keyword}{public}:
+    SC\_CTOR( CustomGate1 )\{\}
+\}
+
+\textcolor{comment}{//This finally represents the main circuit}
+SC\_MODULE( MainCircType )\{
+  \textcolor{keyword}{public}:
+    OR\_GATE* Internal2;
+    CustomGate1* Internal1;
+
+    SC\_CTOR( MainCircType )\{
+      Internal2 = \textcolor{keyword}{new} OR\_GATE(Internal2);
+      Internal1 = \textcolor{keyword}{new} CustomGate1(Internal1);
+    \}
+\}
+\end{DoxyCode}
+ As it possible to see two classes are created\+: {\itshape Main\+Circ\+Type}, which represents the whole circuit and {\itshape Custom\+Gate1}, which contains the implementation of our custom component; no class is created for the O\+R\+\_\+\+G\+A\+TE component since its description is already contained in the library file O\+R\+\_\+\+G\+A\+T\+E.\+hpp.
+\item Ok, we\textquotesingle{}ve almost created out first complete circuit\+: we just have to connect together the components; so we need to insert some signals\+: this can be accomplished by the use of the \hyperlink{classstructural__manager_a4a530daa9384ecd10119e11500bc3cd8}{structural\+\_\+manager\+::add\+\_\+sign} {\bfseries (name, owner, data\+\_\+type)} method. It is very simple to use it\+: it adds to the {\itshape owner} circuit a signal called {\itshape name}, with {\itshape data\+\_\+type} descriptor;
+\item Finally we have to make the connection either attaching signals with ports or directly connecting the ports together\+: with the \hyperlink{classstructural__manager_a7e4096354c807a693c242cf296ec2d6d}{structural\+\_\+manager\+::add\+\_\+connection} {\bfseries (port, signal)} we connect together ports and signals. Note that, unfortunaltely, it is not possible to connect signals to the primary inputs/outputs of the circuit containing the signal itself; I will try to explain it better\+: suppose that we have component A with ports port\+A1 and port\+A2 which contains 2 other component, B and C respectively with ports port\+B1 and port\+C1; suppose also that A contains a signal, sigA\+: it is possible to use sigA to connect port\+B1 and port\+C1, but not, for example, port\+A1 with port\+B1, since A1 is a port of the component owning the signal.
+\item The only thing we can explain in order to connect port is to use the same method explained above\+: \hyperlink{classstructural__manager_a7e4096354c807a693c242cf296ec2d6d}{structural\+\_\+manager\+::add\+\_\+connection} {\bfseries (src\+Port, dest\+Port)}; of course in connection the first port will be {\itshape src\+Port} and the second one will be {\itshape dest\+Port}. It\textquotesingle{}s simple, isn\textquotesingle{}t it?
+\end{DoxyItemize}
+
+As you can see, creating a circuit with the A\+PI of the \hyperlink{classstructural__manager}{structural\+\_\+manager} class is a pretty easy operation; I will anyway present now a conclusive example which shows how to create a circuit with 2 components\+: an OR gate (taken from the component library) and custom gate which in turn is formed by an A\+ND gate and a N\+OR one (again taken from the component library); the overall functionality of the circuit (given that A, B, C are its primary inputs and D the output) is D = !(AB) + C
+
+
+\begin{DoxyCode}
+\textcolor{comment}{//... at this point of the code consider to have TM reference to technology\_manager class.}
+\textcolor{comment}{//I get a reference to an instance of the structural\_manager class}
+\hyperlink{structrefcount}{structural\_managerRef} structManager(\textcolor{keyword}{new} \hyperlink{classstructural__manager}{structural\_manager}(TM));
+\textcolor{comment}{//I set all the propeties of the main circuit}
+\hyperlink{structrefcount}{structural\_type\_descriptorRef} circuit\_type;
+circuit\_type = \hyperlink{structural__objects_8hpp_a219296792577e3292783725961506c83}{structural\_type\_descriptorRef}(\textcolor{keyword}{new} 
+      \hyperlink{structstructural__type__descriptor}{structural\_type\_descriptor}(\textcolor{stringliteral}{"MainCircType"}));
+structManager->set\_top\_info(\textcolor{stringliteral}{"MainCircuit"},circuit\_type);
+\textcolor{comment}{//Now I read the reference to the object which represents the main circuit}
+\hyperlink{structrefcount}{structural\_objectRef} circuit = structManager->get\_circ(); 
+
+
+\textcolor{comment}{//I add the primary inputs/outputs to the top level component}
+\hyperlink{structrefcount}{structural\_type\_descriptorRef} bool\_type;
+customGate1 = \hyperlink{structural__objects_8hpp_a219296792577e3292783725961506c83}{structural\_type\_descriptorRef}(\textcolor{keyword}{new} 
+      \hyperlink{structstructural__type__descriptor}{structural\_type\_descriptor}(\textcolor{stringliteral}{"bool"},0));
+\hyperlink{structrefcount}{structural\_objectRef} portA = structManager->add\_port(\textcolor{stringliteral}{"portA"}, 
+      \hyperlink{structport__o_adb254df5665ff28b0769491cc3899fd5aa135fbd4d182c73be50d31f88e981284}{port\_o::IN}, circuit, bool\_type);
+\hyperlink{structrefcount}{structural\_objectRef} portB = structManager->add\_port(\textcolor{stringliteral}{"portB"}, 
+      \hyperlink{structport__o_adb254df5665ff28b0769491cc3899fd5aa135fbd4d182c73be50d31f88e981284}{port\_o::IN}, circuit, bool\_type);
+\hyperlink{structrefcount}{structural\_objectRef} portC = structManager->add\_port(\textcolor{stringliteral}{"portC"}, 
+      \hyperlink{structport__o_adb254df5665ff28b0769491cc3899fd5aa135fbd4d182c73be50d31f88e981284}{port\_o::IN}, circuit, bool\_type);
+\hyperlink{structrefcount}{structural\_objectRef} portD = structManager->add\_port(\textcolor{stringliteral}{"portD"}, 
+      \hyperlink{structport__o_adb254df5665ff28b0769491cc3899fd5aa135fbd4d182c73be50d31f88e981284}{port\_o::IN}, circuit, bool\_type);
+
+\textcolor{comment}{//I create the NAND custom component and its primary inputs/outputs; note that now}
+\textcolor{comment}{//the owner of the ports is not the top component anymore, but the NANDComp one.}
+\hyperlink{structrefcount}{structural\_type\_descriptorRef} NAND\_type;
+NAND\_type = \hyperlink{structural__objects_8hpp_a219296792577e3292783725961506c83}{structural\_type\_descriptorRef}(\textcolor{keyword}{new} 
+      \hyperlink{structstructural__type__descriptor}{structural\_type\_descriptor}(\textcolor{stringliteral}{"NAND\_type"}));
+\hyperlink{structrefcount}{structural\_objectRef} customComp = structManager->create(\textcolor{stringliteral}{"Internal1"}, 
+      \hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439a245c4ad59cb98085da034d85a4049427}{component\_o\_K}, circuit, NAND\_type);
+\hyperlink{structrefcount}{structural\_objectRef} portInNAND1 = structManager->add\_port(\textcolor{stringliteral}{"in1"}, IN\_PORT, NANDComp, 
+      bool\_type);
+\hyperlink{structrefcount}{structural\_objectRef} portInNAND2 = structManager->add\_port(\textcolor{stringliteral}{"in2"}, IN\_PORT, NANDComp, 
+      bool\_type);
+\hyperlink{structrefcount}{structural\_objectRef} portOutNAND = structManager->add\_port(\textcolor{stringliteral}{"out"}, OUT\_PORT, NANDComp, 
+      bool\_type);
+structManager->add\_connection(portA,portInNAND1);
+structManager->add\_connection(portB,portInNAND2);
+
+\textcolor{comment}{//the OR is present in the technology library}
+\hyperlink{structrefcount}{structural\_objectRef} ORComp;
+ORComp = structManager->add\_module\_from\_technology\_library(\textcolor{stringliteral}{"ORInstance"},
+      \hyperlink{technology__node_8hpp_a87cd9ed4dfee4f2e1b5038b2481a0389}{OR\_GATE\_STD},\hyperlink{technology__manager_8hpp_a0033bdd1d1c034f88d486516cd90f614}{LIBRARY\_STD},circuit,TM);
+\hyperlink{structrefcount}{structural\_objectRef} portIn1OR = ORComp->\hyperlink{classstructural__object_a3a8b2d38c2b5666700053a72868bb6b2}{find\_member}(\textcolor{stringliteral}{"in1"},
+      \hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439acdcc7e8708a89b5424ed8b41c47f19b0}{port\_o\_K},ORComp);
+\hyperlink{structrefcount}{structural\_objectRef} portIn2OR = ORComp->\hyperlink{classstructural__object_a3a8b2d38c2b5666700053a72868bb6b2}{find\_member}(\textcolor{stringliteral}{"in2"},
+      \hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439acdcc7e8708a89b5424ed8b41c47f19b0}{port\_o\_K},ORComp);
+\hyperlink{structrefcount}{structural\_objectRef} portOutOR = ORComp->\hyperlink{classstructural__object_a3a8b2d38c2b5666700053a72868bb6b2}{find\_member}(\textcolor{stringliteral}{"out1"},
+      \hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439acdcc7e8708a89b5424ed8b41c47f19b0}{port\_o\_K},ORComp);
+
+\textcolor{comment}{//Finally we have to define the behavior of the custom NAND component: note that,}
+\textcolor{comment}{//of course, the owner of the component we will add now is NANDComp}
+\hyperlink{structrefcount}{structural\_objectRef} ANDComp;
+ANDComp = structManager->add\_module\_from\_technology\_library(\textcolor{stringliteral}{"ANDinstance"},
+      \hyperlink{technology__node_8hpp_a92082a6ad93e10690c4c96dac3496de8}{AND\_GATE\_STD},\hyperlink{technology__manager_8hpp_a0033bdd1d1c034f88d486516cd90f614}{LIBRARY\_STD},customComp,TM);
+\hyperlink{structrefcount}{structural\_objectRef} portIn1AND = ANDComp->\hyperlink{classstructural__object_a3a8b2d38c2b5666700053a72868bb6b2}{find\_member}(\textcolor{stringliteral}{"in1"},
+      \hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439acdcc7e8708a89b5424ed8b41c47f19b0}{port\_o\_K},ANDComp);
+\hyperlink{structrefcount}{structural\_objectRef} portIn2AND = ANDComp->\hyperlink{classstructural__object_a3a8b2d38c2b5666700053a72868bb6b2}{find\_member}(\textcolor{stringliteral}{"in2"},
+      \hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439acdcc7e8708a89b5424ed8b41c47f19b0}{port\_o\_K},ANDComp);
+\hyperlink{structrefcount}{structural\_objectRef} portOutAND = ANDComp->\hyperlink{classstructural__object_a3a8b2d38c2b5666700053a72868bb6b2}{find\_member}(\textcolor{stringliteral}{"out1"},
+      \hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439acdcc7e8708a89b5424ed8b41c47f19b0}{port\_o\_K},ANDComp);
+structManager->add\_connection(portInNAND1,portIn1AND);
+structManager->add\_connection(portInNAND2,portIn2AND);
+
+\hyperlink{structrefcount}{structural\_objectRef} NOTComp;
+NOTComp = structManager->add\_module\_from\_technology\_library(\textcolor{stringliteral}{"NOTinstance"},
+      \hyperlink{technology__node_8hpp_a8544e5c1fc3fc2bd6b1acf5a5d64a55d}{NOT\_GATE\_STD},\hyperlink{technology__manager_8hpp_a0033bdd1d1c034f88d486516cd90f614}{LIBRARY\_STD},customComp,TM);
+\hyperlink{structrefcount}{structural\_objectRef} portIn1NOT = NOTComp->\hyperlink{classstructural__object_a3a8b2d38c2b5666700053a72868bb6b2}{find\_member}(\textcolor{stringliteral}{"in1"},
+      \hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439acdcc7e8708a89b5424ed8b41c47f19b0}{port\_o\_K},NOTComp);
+\hyperlink{structrefcount}{structural\_objectRef} portOutNOT = NOTComp->\hyperlink{classstructural__object_a3a8b2d38c2b5666700053a72868bb6b2}{find\_member}(\textcolor{stringliteral}{"ou1t"},
+      \hyperlink{structural__objects_8hpp_acf52399aecacb7952e414c5746ce6439acdcc7e8708a89b5424ed8b41c47f19b0}{port\_o\_K},NOTComp);
+
+structManager->add\_connection(portOutAND,portIn1NOT);
+
+\textcolor{comment}{// and finally connect out of NOT gate to out of NAND component}
+structManager->add\_connection(portOutNOT,portOutNAND);
+\textcolor{comment}{//so NAND component is complete and can be connected to OR gate}
+structManager->add\_connection(portOutNAND,portIn1OR);
+\textcolor{comment}{// portC is other input to OR gate}
+structManager->add\_connection(portC,portIn2OR);
+
+\textcolor{comment}{//Up to now can connect OR gate to output}
+structManager->add\_connection(portOutOR,portD);
+\end{DoxyCode}
+
+
+If you then need to print the SystemC description of the just created, you have only to call the backend and give the dedicated writer as parameter (see \hyperlink{src_backend_ToHDL_page}{SystemC, V\+H\+DL, Verilog backends} to more details)
+
+\begin{DoxyNote}{Note}
+this description is not complete and considers only the most important features and functionalities. To obtaint more informations, please refer directly to classes documentation.
+\end{DoxyNote}
+\hypertarget{src_circuit_page_circuit_exploration_how_to}{}\section{Brief tutorial on the exploration of a generic structural representation}\label{src_circuit_page_circuit_exploration_how_to}
+Now that you know how to create a structural representation, you could be interested into explore it or to retrieve information about one that has already been created (e.\+g.\+: with tree\+\_\+to\+\_\+structural\+\_\+manager class). As explained above, structural objects allow a hierarcally organization. Description of methods can be retrived into \hyperlink{classstructural__manager}{structural\+\_\+manager} class documentation, so the better way to understand how to explore the circuit is to give an example. Now we want to explore and print component name of the circuit just created. So we have the \hyperlink{classstructural__manager}{structural\+\_\+manager} struct\+Manager resulting from adding and connecting components. First of all we have to get the \hyperlink{classstructural__object}{structural\+\_\+object} associated to main circuit\+: 
+\begin{DoxyCode}
+\hyperlink{structrefcount}{structural\_objectRef} explorer = structManager->get\_circ();
+\hyperlink{classmodule}{module} *top = get\_pointer<module>(explorer);
+\end{DoxyCode}
+ We have to recast them to module class in order to use specific methods implemented for this kind of object. Then we have to get the number of all internal components\+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} num\_component = top->\hyperlink{classmodule_a4ddb109ccb130b31471a7648dbcf5352}{get\_internal\_objects\_size}();
+\end{DoxyCode}
+ Take into account that internal object are only channel, module, component, bus\+\_\+connection or signal. Ports are not considered internal object and so they are managed into a different way\+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} num\_in\_port = top->\hyperlink{classmodule_aea3a2e04dfd2a7bd0c9e978d9d1b2454}{get\_in\_port\_size}();
+\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} num\_out\_port = top->\hyperlink{classmodule_af2b9fb284dad89d2d0a6d43d257ebd9e}{get\_out\_port\_size}();
+\end{DoxyCode}
+ In this way we can retrieve informations about number of all internal components. So we can simple iterate all over them\+: 
+\begin{DoxyCode}
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n = 0; n < num\_in\_port; n++)
+\{
+   \textcolor{comment}{// so we have a reference to structural object associated with port}
+   \hyperlink{structrefcount}{structural\_objectRef} obj = top->\hyperlink{classmodule_a0e39b683ccf93e8a47bb227430ed3233}{get\_in\_port}(n);
+   \textcolor{comment}{// and then we cast it to specific type}
+   \hyperlink{structport__o}{port\_o} *port\_ref = get\_pointer<port\_o>(obj);
+   \textcolor{comment}{// so we can print informations about name and number of connected objects for example}
+   \textcolor{comment}{// name can be retrieved from port\_o object or structural\_object both because is a general method}
+   std::cout << \textcolor{stringliteral}{"Name: "} << port\_ref->\hyperlink{classstructural__object_a53e1999ebc946f37a981507d4ef72650}{get\_id}() << \textcolor{stringliteral}{" that is the same of "} << obj->
+      \hyperlink{classstructural__object_a53e1999ebc946f37a981507d4ef72650}{get\_id}() << std::endl;
+   std::cout << \textcolor{stringliteral}{"Number of connected objects: "} << port->get\_connections\_size() << std::endl;
+\}
+\end{DoxyCode}
+ For outcoming ports is the same. It\textquotesingle{}s quite different about internal objects, because they can also contains internal objects themselves. You have to choose the depth you want to go on. The better way to analyse all internal objects of a component is to call a recursive function on all internal objects and it returns only when get\+\_\+internal\+\_\+objecs\+\_\+size of the component return 0 (there is no internal component). Now I give a simple example about a recursive function, you can use and customize it in order to obtain what you are interested in\+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} analyse\_component(\hyperlink{structrefcount}{structural\_objectRef} &obj)
+\{
+   \hyperlink{classmodule}{module} *module\_obj = get\_pointer<module>(obj);
+   \textcolor{comment}{// check if it's really return a valid pointer to an module object}
+   \textcolor{keywordflow}{if} (module\_obj)
+   \{
+     \textcolor{comment}{// print name of this module}
+     std::cout << module\_obj->\hyperlink{classstructural__object_a53e1999ebc946f37a981507d4ef72650}{get\_id}() << std::endl;
+     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} num\_int\_components;
+     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n = 0; n < num\_int\_components; n++)
+     \{
+        analyse\_component(module\_obj->\hyperlink{classmodule_af59435e147c07a183bf7c8ab525eb3fd}{get\_internal\_object}(n));
+     \}
+   \}
+\}
+\end{DoxyCode}
+ Where now it prints name of the module, you can do anything you need on this module before going into each internal component. Note the check {\bfseries if (module\+\_\+obj)}\+: it\textquotesingle{}s used to be safe that object is really a module, otherwise specific methods (e.\+g. {\bfseries get\+\_\+internal\+\_\+object} one) cannot be used. 

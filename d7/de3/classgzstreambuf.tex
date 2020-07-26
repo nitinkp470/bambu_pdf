@@ -1,0 +1,420 @@
+\hypertarget{classgzstreambuf}{}\section{gzstreambuf Class Reference}
+\label{classgzstreambuf}\index{gzstreambuf@{gzstreambuf}}
+
+
+The big change with respect to the original code is a refactoring for a header based library.  
+
+
+
+
+{\ttfamily \#include $<$gzstream.\+hpp$>$}
+
+
+
+Inheritance diagram for gzstreambuf\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{d1/d44/classgzstreambuf__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for gzstreambuf\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{d8/d2c/classgzstreambuf__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgzstreambuf_afa212e5c8f1ec6a63caec17e77d6b432}{gzstreambuf} ()
+\item 
+int \hyperlink{classgzstreambuf_a89e97aaae92b72d41c20223ed7e71308}{is\+\_\+open} ()
+\item 
+\hyperlink{classgzstreambuf}{gzstreambuf} $\ast$ \hyperlink{classgzstreambuf_af720bcd3058c97c90d11a3bcc57fda98}{open} (const char $\ast$name, int open\+\_\+mode)
+\item 
+\hyperlink{classgzstreambuf}{gzstreambuf} $\ast$ \hyperlink{classgzstreambuf_ac47e68029383ac04ded54dedae5c930d}{close} ()
+\item 
+\hyperlink{classgzstreambuf_a91aade68db7be79b082ebf291e5802e3}{$\sim$gzstreambuf} () override
+\item 
+int \hyperlink{classgzstreambuf_a3152b230147cdb768bf87cf4009963ff}{overflow} (int c=E\+OF) override
+\item 
+int \hyperlink{classgzstreambuf_a83b34ca4fc77dcebfb5152bbbb6b5652}{underflow} () override
+\item 
+int \hyperlink{classgzstreambuf_afec93b74f334978be8a0e9bd0ec6eee6}{sync} () override
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classgzstreambuf_a1f5ae8e8283961711376c1dbbaa1ee75}{flush\+\_\+buffer} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+gz\+File \hyperlink{classgzstreambuf_a9518df5885cfa63af6ba3496f7946d5f}{file}
+\item 
+char \hyperlink{classgzstreambuf_afea1535417524acb188dc4390d918269}{buffer} \mbox{[}\hyperlink{classgzstreambuf_a46652e438b6c4e9174ca79c171b1a140}{buffer\+Size}\mbox{]}
+\item 
+char \hyperlink{classgzstreambuf_a233a824915fa1a54df05ecf33b8b78d2}{opened}
+\item 
+int \hyperlink{classgzstreambuf_adddc98d7ed861e936f47fdd9d4a137f7}{mode}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classgzstreambuf_a46652e438b6c4e9174ca79c171b1a140}{buffer\+Size} = 47 + 256
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The big change with respect to the original code is a refactoring for a header based library. 
+
+
+
+ \subsubsection*{Internal classes to implement gzstream. See below for user classes. }
+
+Definition at line 77 of file gzstream.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgzstreambuf_afa212e5c8f1ec6a63caec17e77d6b432}\label{classgzstreambuf_afa212e5c8f1ec6a63caec17e77d6b432}} 
+\index{gzstreambuf@{gzstreambuf}!gzstreambuf@{gzstreambuf}}
+\index{gzstreambuf@{gzstreambuf}!gzstreambuf@{gzstreambuf}}
+\subsubsection{\texorpdfstring{gzstreambuf()}{gzstreambuf()}}
+{\footnotesize\ttfamily gzstreambuf\+::gzstreambuf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 91 of file gzstream.\+hpp.
+
+\mbox{\Hypertarget{classgzstreambuf_a91aade68db7be79b082ebf291e5802e3}\label{classgzstreambuf_a91aade68db7be79b082ebf291e5802e3}} 
+\index{gzstreambuf@{gzstreambuf}!````~gzstreambuf@{$\sim$gzstreambuf}}
+\index{````~gzstreambuf@{$\sim$gzstreambuf}!gzstreambuf@{gzstreambuf}}
+\subsubsection{\texorpdfstring{$\sim$gzstreambuf()}{~gzstreambuf()}}
+{\footnotesize\ttfamily gzstreambuf\+::$\sim$gzstreambuf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Definition at line 105 of file gzstream.\+hpp.
+
+
+
+References close(), overflow(), sync(), and underflow().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/de3/classgzstreambuf_a91aade68db7be79b082ebf291e5802e3_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classgzstreambuf_ac47e68029383ac04ded54dedae5c930d}\label{classgzstreambuf_ac47e68029383ac04ded54dedae5c930d}} 
+\index{gzstreambuf@{gzstreambuf}!close@{close}}
+\index{close@{close}!gzstreambuf@{gzstreambuf}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \hyperlink{classgzstreambuf}{gzstreambuf} $\ast$ gzstreambuf\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 203 of file gzstream.\+hpp.
+
+
+
+References file, is\+\_\+open(), opened, and sync().
+
+
+
+Referenced by gzstreambase\+::gzstreambase(), is\+\_\+open(), and $\sim$gzstreambuf().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/de3/classgzstreambuf_ac47e68029383ac04ded54dedae5c930d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/de3/classgzstreambuf_ac47e68029383ac04ded54dedae5c930d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgzstreambuf_a1f5ae8e8283961711376c1dbbaa1ee75}\label{classgzstreambuf_a1f5ae8e8283961711376c1dbbaa1ee75}} 
+\index{gzstreambuf@{gzstreambuf}!flush\+\_\+buffer@{flush\+\_\+buffer}}
+\index{flush\+\_\+buffer@{flush\+\_\+buffer}!gzstreambuf@{gzstreambuf}}
+\subsubsection{\texorpdfstring{flush\+\_\+buffer()}{flush\_buffer()}}
+{\footnotesize\ttfamily int gzstreambuf\+::flush\+\_\+buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 241 of file gzstream.\+hpp.
+
+
+
+References file.
+
+
+
+Referenced by overflow(), and sync().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/de3/classgzstreambuf_a1f5ae8e8283961711376c1dbbaa1ee75_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgzstreambuf_a89e97aaae92b72d41c20223ed7e71308}\label{classgzstreambuf_a89e97aaae92b72d41c20223ed7e71308}} 
+\index{gzstreambuf@{gzstreambuf}!is\+\_\+open@{is\+\_\+open}}
+\index{is\+\_\+open@{is\+\_\+open}!gzstreambuf@{gzstreambuf}}
+\subsubsection{\texorpdfstring{is\+\_\+open()}{is\_open()}}
+{\footnotesize\ttfamily int gzstreambuf\+::is\+\_\+open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 99 of file gzstream.\+hpp.
+
+
+
+References close(), open(), and opened.
+
+
+
+Referenced by close(), and open().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/de3/classgzstreambuf_a89e97aaae92b72d41c20223ed7e71308_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/de3/classgzstreambuf_a89e97aaae92b72d41c20223ed7e71308_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgzstreambuf_af720bcd3058c97c90d11a3bcc57fda98}\label{classgzstreambuf_af720bcd3058c97c90d11a3bcc57fda98}} 
+\index{gzstreambuf@{gzstreambuf}!open@{open}}
+\index{open@{open}!gzstreambuf@{gzstreambuf}}
+\subsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily \hyperlink{classgzstreambuf}{gzstreambuf} $\ast$ gzstreambuf\+::open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{int}]{open\+\_\+mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 180 of file gzstream.\+hpp.
+
+
+
+References file, is\+\_\+open(), mode, and opened.
+
+
+
+Referenced by gzstreambase\+::gzstreambase(), and is\+\_\+open().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/de3/classgzstreambuf_af720bcd3058c97c90d11a3bcc57fda98_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/de3/classgzstreambuf_af720bcd3058c97c90d11a3bcc57fda98_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgzstreambuf_a3152b230147cdb768bf87cf4009963ff}\label{classgzstreambuf_a3152b230147cdb768bf87cf4009963ff}} 
+\index{gzstreambuf@{gzstreambuf}!overflow@{overflow}}
+\index{overflow@{overflow}!gzstreambuf@{gzstreambuf}}
+\subsubsection{\texorpdfstring{overflow()}{overflow()}}
+{\footnotesize\ttfamily int gzstreambuf\+::overflow (\begin{DoxyParamCaption}\item[{int}]{c = {\ttfamily EOF} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Definition at line 252 of file gzstream.\+hpp.
+
+
+
+References flush\+\_\+buffer(), mode, and opened.
+
+
+
+Referenced by $\sim$gzstreambuf().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{d7/de3/classgzstreambuf_a3152b230147cdb768bf87cf4009963ff_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/de3/classgzstreambuf_a3152b230147cdb768bf87cf4009963ff_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgzstreambuf_afec93b74f334978be8a0e9bd0ec6eee6}\label{classgzstreambuf_afec93b74f334978be8a0e9bd0ec6eee6}} 
+\index{gzstreambuf@{gzstreambuf}!sync@{sync}}
+\index{sync@{sync}!gzstreambuf@{gzstreambuf}}
+\subsubsection{\texorpdfstring{sync()}{sync()}}
+{\footnotesize\ttfamily int gzstreambuf\+::sync (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Definition at line 266 of file gzstream.\+hpp.
+
+
+
+References flush\+\_\+buffer().
+
+
+
+Referenced by close(), and $\sim$gzstreambuf().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{d7/de3/classgzstreambuf_afec93b74f334978be8a0e9bd0ec6eee6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/de3/classgzstreambuf_afec93b74f334978be8a0e9bd0ec6eee6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgzstreambuf_a83b34ca4fc77dcebfb5152bbbb6b5652}\label{classgzstreambuf_a83b34ca4fc77dcebfb5152bbbb6b5652}} 
+\index{gzstreambuf@{gzstreambuf}!underflow@{underflow}}
+\index{underflow@{underflow}!gzstreambuf@{gzstreambuf}}
+\subsubsection{\texorpdfstring{underflow()}{underflow()}}
+{\footnotesize\ttfamily int gzstreambuf\+::underflow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Definition at line 215 of file gzstream.\+hpp.
+
+
+
+References buffer, buffer\+Size, file, mode, and opened.
+
+
+
+Referenced by $\sim$gzstreambuf().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/de3/classgzstreambuf_a83b34ca4fc77dcebfb5152bbbb6b5652_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classgzstreambuf_afea1535417524acb188dc4390d918269}\label{classgzstreambuf_afea1535417524acb188dc4390d918269}} 
+\index{gzstreambuf@{gzstreambuf}!buffer@{buffer}}
+\index{buffer@{buffer}!gzstreambuf@{gzstreambuf}}
+\subsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily char gzstreambuf\+::buffer\mbox{[}\hyperlink{classgzstreambuf_a46652e438b6c4e9174ca79c171b1a140}{buffer\+Size}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 84 of file gzstream.\+hpp.
+
+
+
+Referenced by underflow().
+
+\mbox{\Hypertarget{classgzstreambuf_a46652e438b6c4e9174ca79c171b1a140}\label{classgzstreambuf_a46652e438b6c4e9174ca79c171b1a140}} 
+\index{gzstreambuf@{gzstreambuf}!buffer\+Size@{buffer\+Size}}
+\index{buffer\+Size@{buffer\+Size}!gzstreambuf@{gzstreambuf}}
+\subsubsection{\texorpdfstring{buffer\+Size}{bufferSize}}
+{\footnotesize\ttfamily const int gzstreambuf\+::buffer\+Size = 47 + 256\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 80 of file gzstream.\+hpp.
+
+
+
+Referenced by underflow().
+
+\mbox{\Hypertarget{classgzstreambuf_a9518df5885cfa63af6ba3496f7946d5f}\label{classgzstreambuf_a9518df5885cfa63af6ba3496f7946d5f}} 
+\index{gzstreambuf@{gzstreambuf}!file@{file}}
+\index{file@{file}!gzstreambuf@{gzstreambuf}}
+\subsubsection{\texorpdfstring{file}{file}}
+{\footnotesize\ttfamily gz\+File gzstreambuf\+::file\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 83 of file gzstream.\+hpp.
+
+
+
+Referenced by close(), flush\+\_\+buffer(), open(), and underflow().
+
+\mbox{\Hypertarget{classgzstreambuf_adddc98d7ed861e936f47fdd9d4a137f7}\label{classgzstreambuf_adddc98d7ed861e936f47fdd9d4a137f7}} 
+\index{gzstreambuf@{gzstreambuf}!mode@{mode}}
+\index{mode@{mode}!gzstreambuf@{gzstreambuf}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily int gzstreambuf\+::mode\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 86 of file gzstream.\+hpp.
+
+
+
+Referenced by open(), overflow(), and underflow().
+
+\mbox{\Hypertarget{classgzstreambuf_a233a824915fa1a54df05ecf33b8b78d2}\label{classgzstreambuf_a233a824915fa1a54df05ecf33b8b78d2}} 
+\index{gzstreambuf@{gzstreambuf}!opened@{opened}}
+\index{opened@{opened}!gzstreambuf@{gzstreambuf}}
+\subsubsection{\texorpdfstring{opened}{opened}}
+{\footnotesize\ttfamily char gzstreambuf\+::opened\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 85 of file gzstream.\+hpp.
+
+
+
+Referenced by close(), is\+\_\+open(), open(), overflow(), and underflow().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/\hyperlink{gzstream_8hpp}{gzstream.\+hpp}\end{DoxyCompactItemize}

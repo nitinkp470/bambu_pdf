@@ -1,0 +1,206 @@
+\hypertarget{AlteraBackendFlow_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/altera/\+Altera\+Backend\+Flow.cpp File Reference}
+\label{AlteraBackendFlow_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/altera/\+Altera\+Backend\+Flow.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/altera/\+Altera\+Backend\+Flow.\+cpp}}
+
+
+Implementation of the wrapper to Altera tools.  
+
+
+{\ttfamily \#include \char`\"{}Altera\+Backend\+Flow.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+A\+L\+T\+E\+R\+A.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+Q\+U\+A\+R\+T\+U\+S\+\_\+13\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+Q\+U\+A\+R\+T\+U\+S\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}synthesis\+\_\+constants.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Altera\+Wrapper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}L\+U\+T\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}area\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}clb\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}target\+\_\+device.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}target\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}time\+\_\+model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}file\+I\+O.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+dom\+\_\+parser.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+script\+\_\+command.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}structural\+\_\+objects.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Cyclone\+I\+I.\+data\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Cyclone\+I\+I-\/\+R.\+data\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Cyclone\+V.\+data\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Stratix\+V.\+data\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Stratix\+I\+V.\+data\char`\"{}}\newline
+Include dependency graph for Altera\+Backend\+Flow.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/da3/AlteraBackendFlow_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{AlteraBackendFlow_8cpp_accd69a7783ba77a36312d85c639081c5}{A\+L\+T\+E\+R\+A\+\_\+\+LE}~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+LE\char`\"{}
+\begin{DoxyCompactList}\small\item\em Header include. \end{DoxyCompactList}\item 
+\#define \hyperlink{AlteraBackendFlow_8cpp_a67445859512ef750e6c7d4afec9232ba}{A\+L\+T\+E\+R\+A\+\_\+\+L\+AB}~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+L\+AB\char`\"{}
+\item 
+\#define \hyperlink{AlteraBackendFlow_8cpp_ad5779cabdd5e5151b91c57e7c379bce0}{A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+AX}~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+AX\char`\"{}
+\item 
+\#define \hyperlink{AlteraBackendFlow_8cpp_a8e085caebb1406ccb995f46aeb8a9178}{A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+A\+X\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T\+ED}~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+A\+X\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T\+ED\char`\"{}
+\item 
+\#define \hyperlink{AlteraBackendFlow_8cpp_af9478d4902bf2f616656a55b33eee55b}{A\+L\+T\+E\+R\+A\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS\char`\"{}
+\item 
+\#define \hyperlink{AlteraBackendFlow_8cpp_a337861525dcfb453be228fe15c860c93}{A\+L\+T\+E\+R\+A\+\_\+\+I\+O\+P\+IN}~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+I\+O\+P\+IN\char`\"{}
+\item 
+\#define \hyperlink{AlteraBackendFlow_8cpp_a1fb8b9ef5b364868a466b001583597c6}{A\+L\+T\+E\+R\+A\+\_\+\+A\+L\+UT}~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+A\+L\+UT\char`\"{}
+\item 
+\#define \hyperlink{AlteraBackendFlow_8cpp_a0807d07f04bc44a5fa343645e25265b9}{A\+L\+T\+E\+R\+A\+\_\+\+A\+LM}~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+A\+LM\char`\"{}
+\item 
+\#define \hyperlink{AlteraBackendFlow_8cpp_ad37db069fb4bf1639238772f6148d488}{A\+L\+T\+E\+R\+A\+\_\+\+D\+SP}~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+D\+SP\char`\"{}
+\item 
+\#define \hyperlink{AlteraBackendFlow_8cpp_af06c58a8e932ef784f35594a46843fe3}{A\+L\+T\+E\+R\+A\+\_\+\+M\+EM}~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+M\+EM\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of the wrapper to Altera tools. 
+
+Implementation of the methods to wrap synthesis tools by Altera
+
+\begin{DoxyAuthor}{Author}
+Christian Pilato \href{mailto:pilato@elet.polimi.it}{\tt pilato@elet.\+polimi.\+it} 
+
+Silvia Lovergine \href{mailto:lovergine@elet.polimi.it}{\tt lovergine@elet.\+polimi.\+it} 
+
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{AlteraBackendFlow_8cpp_a0807d07f04bc44a5fa343645e25265b9}\label{AlteraBackendFlow_8cpp_a0807d07f04bc44a5fa343645e25265b9}} 
+\index{Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}!A\+L\+T\+E\+R\+A\+\_\+\+A\+LM@{A\+L\+T\+E\+R\+A\+\_\+\+A\+LM}}
+\index{A\+L\+T\+E\+R\+A\+\_\+\+A\+LM@{A\+L\+T\+E\+R\+A\+\_\+\+A\+LM}!Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{A\+L\+T\+E\+R\+A\+\_\+\+A\+LM}{ALTERA\_ALM}}
+{\footnotesize\ttfamily \#define A\+L\+T\+E\+R\+A\+\_\+\+A\+LM~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+A\+LM\char`\"{}}
+
+
+
+Definition at line 82 of file Altera\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Altera\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{AlteraBackendFlow_8cpp_a1fb8b9ef5b364868a466b001583597c6}\label{AlteraBackendFlow_8cpp_a1fb8b9ef5b364868a466b001583597c6}} 
+\index{Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}!A\+L\+T\+E\+R\+A\+\_\+\+A\+L\+UT@{A\+L\+T\+E\+R\+A\+\_\+\+A\+L\+UT}}
+\index{A\+L\+T\+E\+R\+A\+\_\+\+A\+L\+UT@{A\+L\+T\+E\+R\+A\+\_\+\+A\+L\+UT}!Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{A\+L\+T\+E\+R\+A\+\_\+\+A\+L\+UT}{ALTERA\_ALUT}}
+{\footnotesize\ttfamily \#define A\+L\+T\+E\+R\+A\+\_\+\+A\+L\+UT~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+A\+L\+UT\char`\"{}}
+
+
+
+Definition at line 81 of file Altera\+Backend\+Flow.\+cpp.
+
+\mbox{\Hypertarget{AlteraBackendFlow_8cpp_ad37db069fb4bf1639238772f6148d488}\label{AlteraBackendFlow_8cpp_ad37db069fb4bf1639238772f6148d488}} 
+\index{Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}!A\+L\+T\+E\+R\+A\+\_\+\+D\+SP@{A\+L\+T\+E\+R\+A\+\_\+\+D\+SP}}
+\index{A\+L\+T\+E\+R\+A\+\_\+\+D\+SP@{A\+L\+T\+E\+R\+A\+\_\+\+D\+SP}!Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{A\+L\+T\+E\+R\+A\+\_\+\+D\+SP}{ALTERA\_DSP}}
+{\footnotesize\ttfamily \#define A\+L\+T\+E\+R\+A\+\_\+\+D\+SP~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+D\+SP\char`\"{}}
+
+
+
+Definition at line 83 of file Altera\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Altera\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{AlteraBackendFlow_8cpp_ad5779cabdd5e5151b91c57e7c379bce0}\label{AlteraBackendFlow_8cpp_ad5779cabdd5e5151b91c57e7c379bce0}} 
+\index{Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}!A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+AX@{A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+AX}}
+\index{A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+AX@{A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+AX}!Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+AX}{ALTERA\_FMAX}}
+{\footnotesize\ttfamily \#define A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+AX~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+AX\char`\"{}}
+
+
+
+Definition at line 77 of file Altera\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Altera\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{AlteraBackendFlow_8cpp_a8e085caebb1406ccb995f46aeb8a9178}\label{AlteraBackendFlow_8cpp_a8e085caebb1406ccb995f46aeb8a9178}} 
+\index{Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}!A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+A\+X\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T\+ED@{A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+A\+X\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T\+ED}}
+\index{A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+A\+X\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T\+ED@{A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+A\+X\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T\+ED}!Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+A\+X\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T\+ED}{ALTERA\_FMAX\_RESTRICTED}}
+{\footnotesize\ttfamily \#define A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+A\+X\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T\+ED~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+F\+M\+A\+X\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T\+ED\char`\"{}}
+
+
+
+Definition at line 78 of file Altera\+Backend\+Flow.\+cpp.
+
+\mbox{\Hypertarget{AlteraBackendFlow_8cpp_a337861525dcfb453be228fe15c860c93}\label{AlteraBackendFlow_8cpp_a337861525dcfb453be228fe15c860c93}} 
+\index{Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}!A\+L\+T\+E\+R\+A\+\_\+\+I\+O\+P\+IN@{A\+L\+T\+E\+R\+A\+\_\+\+I\+O\+P\+IN}}
+\index{A\+L\+T\+E\+R\+A\+\_\+\+I\+O\+P\+IN@{A\+L\+T\+E\+R\+A\+\_\+\+I\+O\+P\+IN}!Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{A\+L\+T\+E\+R\+A\+\_\+\+I\+O\+P\+IN}{ALTERA\_IOPIN}}
+{\footnotesize\ttfamily \#define A\+L\+T\+E\+R\+A\+\_\+\+I\+O\+P\+IN~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+I\+O\+P\+IN\char`\"{}}
+
+
+
+Definition at line 80 of file Altera\+Backend\+Flow.\+cpp.
+
+\mbox{\Hypertarget{AlteraBackendFlow_8cpp_a67445859512ef750e6c7d4afec9232ba}\label{AlteraBackendFlow_8cpp_a67445859512ef750e6c7d4afec9232ba}} 
+\index{Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}!A\+L\+T\+E\+R\+A\+\_\+\+L\+AB@{A\+L\+T\+E\+R\+A\+\_\+\+L\+AB}}
+\index{A\+L\+T\+E\+R\+A\+\_\+\+L\+AB@{A\+L\+T\+E\+R\+A\+\_\+\+L\+AB}!Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{A\+L\+T\+E\+R\+A\+\_\+\+L\+AB}{ALTERA\_LAB}}
+{\footnotesize\ttfamily \#define A\+L\+T\+E\+R\+A\+\_\+\+L\+AB~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+L\+AB\char`\"{}}
+
+
+
+Definition at line 76 of file Altera\+Backend\+Flow.\+cpp.
+
+\mbox{\Hypertarget{AlteraBackendFlow_8cpp_accd69a7783ba77a36312d85c639081c5}\label{AlteraBackendFlow_8cpp_accd69a7783ba77a36312d85c639081c5}} 
+\index{Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}!A\+L\+T\+E\+R\+A\+\_\+\+LE@{A\+L\+T\+E\+R\+A\+\_\+\+LE}}
+\index{A\+L\+T\+E\+R\+A\+\_\+\+LE@{A\+L\+T\+E\+R\+A\+\_\+\+LE}!Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{A\+L\+T\+E\+R\+A\+\_\+\+LE}{ALTERA\_LE}}
+{\footnotesize\ttfamily \#define A\+L\+T\+E\+R\+A\+\_\+\+LE~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+LE\char`\"{}}
+
+
+
+Header include. 
+
+Autoheader includes constants include circuit include 
+
+Definition at line 75 of file Altera\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Altera\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{AlteraBackendFlow_8cpp_af06c58a8e932ef784f35594a46843fe3}\label{AlteraBackendFlow_8cpp_af06c58a8e932ef784f35594a46843fe3}} 
+\index{Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}!A\+L\+T\+E\+R\+A\+\_\+\+M\+EM@{A\+L\+T\+E\+R\+A\+\_\+\+M\+EM}}
+\index{A\+L\+T\+E\+R\+A\+\_\+\+M\+EM@{A\+L\+T\+E\+R\+A\+\_\+\+M\+EM}!Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{A\+L\+T\+E\+R\+A\+\_\+\+M\+EM}{ALTERA\_MEM}}
+{\footnotesize\ttfamily \#define A\+L\+T\+E\+R\+A\+\_\+\+M\+EM~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+M\+EM\char`\"{}}
+
+
+
+Definition at line 84 of file Altera\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Altera\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+
+\mbox{\Hypertarget{AlteraBackendFlow_8cpp_af9478d4902bf2f616656a55b33eee55b}\label{AlteraBackendFlow_8cpp_af9478d4902bf2f616656a55b33eee55b}} 
+\index{Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}!A\+L\+T\+E\+R\+A\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS@{A\+L\+T\+E\+R\+A\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}}
+\index{A\+L\+T\+E\+R\+A\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS@{A\+L\+T\+E\+R\+A\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}!Altera\+Backend\+Flow.\+cpp@{Altera\+Backend\+Flow.\+cpp}}
+\subsubsection{\texorpdfstring{A\+L\+T\+E\+R\+A\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}{ALTERA\_REGISTERS}}
+{\footnotesize\ttfamily \#define A\+L\+T\+E\+R\+A\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS~\char`\"{}A\+L\+T\+E\+R\+A\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS\char`\"{}}
+
+
+
+Definition at line 79 of file Altera\+Backend\+Flow.\+cpp.
+
+
+
+Referenced by Altera\+Backend\+Flow\+::\+Check\+Synthesis\+Results().
+

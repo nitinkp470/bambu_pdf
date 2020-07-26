@@ -1,0 +1,1003 @@
+\hypertarget{graph_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/graph/graph.hpp File Reference}
+\label{graph_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/graph/graph.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/graph/graph.\+hpp}}
+
+
+Class specification of the graph structures.  
+
+
+{\ttfamily \#include \char`\"{}edge\+\_\+info.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graph\+\_\+info.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}node\+\_\+info.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/config.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/adjacency\+\_\+list.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/breadth\+\_\+first\+\_\+search.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/filtered\+\_\+graph.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/graph\+\_\+utility.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/graphviz.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/strong\+\_\+components.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/topological\+\_\+sort.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/version.\+hpp$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+Include dependency graph for graph.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d7c/graph_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d3d/graph_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structRawGraph}{Raw\+Graph}
+\item 
+struct \hyperlink{structEdgeProperty}{Edge\+Property}
+\begin{DoxyCompactList}\small\item\em The property associated with edge. \end{DoxyCompactList}\item 
+struct \hyperlink{structgraph__info__t}{graph\+\_\+info\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Custom graph property\+: \hyperlink{structGraphInfo}{Graph\+Info}. \end{DoxyCompactList}\item 
+struct \hyperlink{structgraphs__collection}{graphs\+\_\+collection}
+\begin{DoxyCompactList}\small\item\em bulk graph. \end{DoxyCompactList}\item 
+struct \hyperlink{structundirected__graphs__collection}{undirected\+\_\+graphs\+\_\+collection}
+\begin{DoxyCompactList}\small\item\em bulk graph. \end{DoxyCompactList}\item 
+struct \hyperlink{structSelectVertex}{Select\+Vertex$<$ Graph $>$}
+\begin{DoxyCompactList}\small\item\em Predicate functor object used to select the proper set of vertexes. \end{DoxyCompactList}\item 
+struct \hyperlink{structSelectEdge}{Select\+Edge$<$ Graph $>$}
+\begin{DoxyCompactList}\small\item\em Predicate functor object used to select the proper set of edges. \end{DoxyCompactList}\item 
+struct \hyperlink{structgraph}{graph}
+\begin{DoxyCompactList}\small\item\em General class used to describe a graph in PandA. \end{DoxyCompactList}\item 
+struct \hyperlink{structugraph}{ugraph}
+\begin{DoxyCompactList}\small\item\em General class used to describe a graph in PandA. \end{DoxyCompactList}\item 
+struct \hyperlink{structltedge}{ltedge$<$ Graph $>$}
+\begin{DoxyCompactList}\small\item\em Functor used to sort edges. \end{DoxyCompactList}\item 
+struct \hyperlink{structstd_1_1hash_3_01EdgeDescriptor_01_4}{std\+::hash$<$ Edge\+Descriptor $>$}
+\item 
+class \hyperlink{classVertexWriter}{Vertex\+Writer}
+\begin{DoxyCompactList}\small\item\em Functor used to write the content of a vertex to dotty file. \end{DoxyCompactList}\item 
+class \hyperlink{classEdgeWriter}{Edge\+Writer}
+\begin{DoxyCompactList}\small\item\em Functor used to write the content of the edges to a dotty file. \end{DoxyCompactList}\item 
+class \hyperlink{classGraphWriter}{Graph\+Writer}
+\begin{DoxyCompactList}\small\item\em Functor used to write the content of the property of a graph to a dotty file. \end{DoxyCompactList}\item 
+class \hyperlink{classUVertexWriter}{U\+Vertex\+Writer}
+\begin{DoxyCompactList}\small\item\em Functor used to write the content of a vertex to dotty file. \end{DoxyCompactList}\item 
+class \hyperlink{classUEdgeWriter}{U\+Edge\+Writer}
+\begin{DoxyCompactList}\small\item\em Functor used to write the content of the edges to a dotty file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacestd}{std}
+\begin{DoxyCompactList}\small\item\em Definition of hash function for Edge\+Descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{graph_8hpp_ac112b66fa6a1e6cc64741542d8d7e827}{G\+E\+T\+\_\+\+R\+A\+W\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO}(data,  edge\+\_\+info,  edge\+\_\+index)~\hyperlink{graph_8hpp_a6f62027ffd273c758af9090b09796af4}{get\+\_\+edge\+\_\+info}$<$edge\+\_\+info$>$(edge\+\_\+index, $\ast$(data))
+\item 
+\#define \hyperlink{graph_8hpp_a7ee4f5e7882f8cb2787a65f8948f0072}{C\+G\+E\+T\+\_\+\+R\+A\+W\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO}(data,  edge\+\_\+info,  edge\+\_\+index)~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$edge\+\_\+info$>$(edge\+\_\+index, $\ast$(data))
+\item 
+\#define \hyperlink{graph_8hpp_a16503e8c755658e86362a8fecadbe656}{boost\+\_\+\+C\+Get\+Op\+Graph\+\_\+property}(graph\+\_\+arg)~boost\+::get\+\_\+property(graph\+\_\+arg, \hyperlink{structgraph__info__t}{graph\+\_\+info\+\_\+t}())
+\item 
+\#define \hyperlink{graph_8hpp_a43ca3962451187be58c44671c1b34867}{S\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+EF}(data,  \hyperlink{structNodeInfo}{Node\+Info},  obj,  vertex\+\_\+index)~\hyperlink{graph_8hpp_a8176805163d8e74c902ad13c8844906e}{set\+\_\+node\+\_\+info}$<$\hyperlink{structNodeInfo}{Node\+Info}$>$(vertex\+\_\+index, obj, $\ast$(data))
+\item 
+\#define \hyperlink{graph_8hpp_a58fb4b0125b62f5df56ab9396e2ef8c7}{G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+EF}(data,  \hyperlink{structNodeInfo}{Node\+Info},  vertex\+\_\+index)~\hyperlink{graph_8hpp_acbfb633da70311126188df877a828c4b}{Cget\+\_\+node\+\_\+info\+Ref}$<$\hyperlink{structNodeInfo}{Node\+Info}$>$(vertex\+\_\+index, $\ast$(data))
+\item 
+\#define \hyperlink{graph_8hpp_acb3a2e043de8b2ec3c88f145a7e7a19f}{G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+FO}(data,  \hyperlink{structNodeInfo}{Node\+Info},  vertex\+\_\+index)~\hyperlink{graph_8hpp_a074da225c9e8554a7433f82720e0b8d9}{get\+\_\+node\+\_\+info}$<$\hyperlink{structNodeInfo}{Node\+Info}$>$(vertex\+\_\+index, $\ast$(data))
+\item 
+\#define \hyperlink{graph_8hpp_ae1b1c6461685ad9da51125a3d08f85c2}{C\+G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+FO}(data,  \hyperlink{structNodeInfo}{Node\+Info},  vertex\+\_\+index)~\hyperlink{graph_8hpp_ad3607daf827c59148c71b9b124a4063c}{Cget\+\_\+node\+\_\+info}$<$\hyperlink{structNodeInfo}{Node\+Info}$>$(vertex\+\_\+index, $\ast$(data))
+\item 
+\#define \hyperlink{graph_8hpp_a87d7b18385bfbbea7874df8adef978b1}{G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO}(data,  edge\+\_\+info,  edge\+\_\+index)~\hyperlink{graph_8hpp_a6f62027ffd273c758af9090b09796af4}{get\+\_\+edge\+\_\+info}$<$edge\+\_\+info$>$(edge\+\_\+index, $\ast$(data))
+\item 
+\#define \hyperlink{graph_8hpp_a4014c81329e7c1d63b746c07e898cfc2}{C\+G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO}(data,  edge\+\_\+info,  edge\+\_\+index)~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$edge\+\_\+info$>$(edge\+\_\+index, $\ast$(data))
+\item 
+\#define \hyperlink{graph_8hpp_ac3c33c45c396860b76e8aff4dd2b8158}{N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX}~boost\+::graph\+\_\+traits$<$\hyperlink{structgraph}{graph}$>$\+::null\+\_\+vertex()
+\begin{DoxyCompactList}\small\item\em null vertex definition \end{DoxyCompactList}\item 
+\#define \hyperlink{graph_8hpp_aa4d5c5fe719af9d8008de24c979c245c}{N\+U\+L\+L\+\_\+\+U\+V\+E\+R\+T\+EX}~boost\+::graph\+\_\+traits$<$\hyperlink{structugraph}{ugraph}$>$\+::null\+\_\+vertex()
+\begin{DoxyCompactList}\small\item\em null vertex definition \end{DoxyCompactList}\item 
+\#define \hyperlink{graph_8hpp_ad560f6d5bb93820208b787fd9ca09fe9}{N\+U\+L\+L\+\_\+\+U\+G\+C\+V\+E\+R\+T\+EX}~boost\+::graph\+\_\+traits$<$\hyperlink{structundirected__graphs__collection}{undirected\+\_\+graphs\+\_\+collection}$>$\+::null\+\_\+vertex()
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\+::adjacency\+\_\+list$<$ boost\+::listS, boost\+::listS, boost\+::bidirectionalS, boost\+::property$<$ boost\+::vertex\+\_\+index\+\_\+t, \hyperlink{tutorial__pact__2019_2Introduction_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{std\+::size\+\_\+t}, \hyperlink{node__info_8hpp_a345f052eed4efe04f7848fd0ebd015b2}{Node\+Info\+Ref} $>$, \hyperlink{edge__info_8hpp_a65ddc964b1738667fc720f0de33aeef9}{Edge\+Info\+Ref}, \hyperlink{graph__info_8hpp_a4a5c364c379e5139b7dc97e7e69c7da3}{Graph\+Info\+Ref} $>$ \hyperlink{graph_8hpp_afdae34b3d2ab29778d96da05f66add5c}{boost\+\_\+raw\+\_\+graph}
+\item 
+typedef boost\+::property$<$ \hyperlink{structgraph__info__t}{graph\+\_\+info\+\_\+t}, \hyperlink{graph__info_8hpp_a4a5c364c379e5139b7dc97e7e69c7da3}{Graph\+Info\+Ref} $>$ \hyperlink{graph_8hpp_ab59cf55f18e3a610096a43f666e16402}{Graph\+Property}
+\item 
+typedef boost\+::adjacency\+\_\+list$<$ boost\+::listS, boost\+::listS, boost\+::bidirectionalS, boost\+::property$<$ boost\+::vertex\+\_\+index\+\_\+t, \hyperlink{tutorial__pact__2019_2Introduction_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{std\+::size\+\_\+t}, boost\+::property$<$ boost\+::vertex\+\_\+color\+\_\+t, boost\+::default\+\_\+color\+\_\+type, \hyperlink{node__info_8hpp_a345f052eed4efe04f7848fd0ebd015b2}{Node\+Info\+Ref} $>$ $>$, \hyperlink{structEdgeProperty}{Edge\+Property}, \hyperlink{graph_8hpp_ab59cf55f18e3a610096a43f666e16402}{Graph\+Property} $>$ \hyperlink{graph_8hpp_a315f0e4c95fedf30b91945ed29d42332}{boost\+\_\+graphs\+\_\+collection}
+\item 
+typedef boost\+::adjacency\+\_\+list$<$ boost\+::listS, boost\+::listS, boost\+::undirectedS, boost\+::property$<$ boost\+::vertex\+\_\+index\+\_\+t, \hyperlink{tutorial__pact__2019_2Introduction_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{std\+::size\+\_\+t}, boost\+::property$<$ boost\+::vertex\+\_\+color\+\_\+t, boost\+::default\+\_\+color\+\_\+type, \hyperlink{node__info_8hpp_a345f052eed4efe04f7848fd0ebd015b2}{Node\+Info\+Ref} $>$ $>$, \hyperlink{structEdgeProperty}{Edge\+Property}, \hyperlink{graph_8hpp_ab59cf55f18e3a610096a43f666e16402}{Graph\+Property} $>$ \hyperlink{graph_8hpp_ab216188797d8e0a41236453b1a520b16}{undirected\+\_\+boost\+\_\+graphs\+\_\+collection}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structgraphs__collection}{graphs\+\_\+collection} $>$ \hyperlink{graph_8hpp_a6d155e916bddcdb0fec13d3a368c662d}{graphs\+\_\+collection\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structundirected__graphs__collection}{undirected\+\_\+graphs\+\_\+collection} $>$ \hyperlink{graph_8hpp_a61834f53e83b607f7960c48ce3821c1b}{undirected\+\_\+graphs\+\_\+collection\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structgraph}{graph} $>$ \hyperlink{graph_8hpp_af58fda2826a8f83d2ef177d06a6bfb63}{graph\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{structgraph}{graph} $>$ \hyperlink{graph_8hpp_a4a4e3d3bd72d73f59ee807e6895b268f}{graph\+Const\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structugraph}{ugraph} $>$ \hyperlink{graph_8hpp_a990b18fc6b68fac2facd71498de4348f}{ugraph\+Ref}
+\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{structgraph}{graph} $>$\+::vertex\+\_\+descriptor \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}
+\begin{DoxyCompactList}\small\item\em vertex definition. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{structgraph}{graph} $>$\+::vertex\+\_\+iterator \hyperlink{graph_8hpp_a80e30b305ae26da1989a155d199d7e2c}{Vertex\+Iterator}
+\begin{DoxyCompactList}\small\item\em vertex\+\_\+iterator definition. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{structgraph}{graph} $>$\+::in\+\_\+edge\+\_\+iterator \hyperlink{graph_8hpp_a84120d81f88f9cc8e980a8c4951b7403}{In\+Edge\+Iterator}
+\begin{DoxyCompactList}\small\item\em in\+\_\+edge\+\_\+iterator definition. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{structgraph}{graph} $>$\+::out\+\_\+edge\+\_\+iterator \hyperlink{graph_8hpp_a17e1d8e1772007fcfa7f3eb1f6b00c99}{Out\+Edge\+Iterator}
+\begin{DoxyCompactList}\small\item\em out\+\_\+edge\+\_\+iterator definition. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{structgraph}{graph} $>$\+::edge\+\_\+iterator \hyperlink{graph_8hpp_af41201212b1596f277b436080e8a1f16}{Edge\+Iterator}
+\begin{DoxyCompactList}\small\item\em edge\+\_\+iterator definition. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{structgraph}{graph} $>$\+::edge\+\_\+descriptor \hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor}
+\begin{DoxyCompactList}\small\item\em edge definition. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{structugraph}{ugraph} $>$\+::vertex\+\_\+descriptor \hyperlink{graph_8hpp_a56f73e449b2c08195207c387d6c422cd}{uvertex}
+\begin{DoxyCompactList}\small\item\em vertex definition. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{structundirected__graphs__collection}{undirected\+\_\+graphs\+\_\+collection} $>$\+::vertex\+\_\+descriptor \hyperlink{graph_8hpp_ac15fe8fd44d4337daa5e1e48e6b1ef6c}{U\+G\+Cvertex}
+\begin{DoxyCompactList}\small\item\em vertex definition for \hyperlink{structundirected__graphs__collection}{undirected\+\_\+graphs\+\_\+collection}. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{structugraph}{ugraph} $>$\+::vertex\+\_\+iterator \hyperlink{graph_8hpp_ae0c5ab69bf877a5ea37c10fcbfc18e34}{U\+Vertex\+Iterator}
+\begin{DoxyCompactList}\small\item\em vertex\+\_\+iterator definition. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{structugraph}{ugraph} $>$\+::in\+\_\+edge\+\_\+iterator \hyperlink{graph_8hpp_ad69904062f6b9ed6d4a7bb55cb030b89}{U\+In\+Edge\+Iterator}
+\begin{DoxyCompactList}\small\item\em in\+\_\+edge\+\_\+iterator definition. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{structugraph}{ugraph} $>$\+::out\+\_\+edge\+\_\+iterator \hyperlink{graph_8hpp_a0c91e9840708bf660486e13b9e1d8392}{U\+Out\+Edge\+Iterator}
+\begin{DoxyCompactList}\small\item\em out\+\_\+edge\+\_\+iterator definition. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{structugraph}{ugraph} $>$\+::edge\+\_\+iterator \hyperlink{graph_8hpp_a8fe3ed1f061cb5c7dd71db9caf69d623}{U\+Edge\+Iterator}
+\begin{DoxyCompactList}\small\item\em edge\+\_\+iterator definition. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{structugraph}{ugraph} $>$\+::edge\+\_\+descriptor \hyperlink{graph_8hpp_a2b4fd9c6560ff0335716f4bdbd932aba}{U\+Edge\+Descriptor}
+\begin{DoxyCompactList}\small\item\em edge definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class info\+\_\+object , class Graph $>$ }\\info\+\_\+object $\ast$ \hyperlink{graph_8hpp_a196ff103d91621db410c9801a12f3f5a}{get\+\_\+raw\+\_\+edge\+\_\+info} (typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::edge\+\_\+descriptor e, \hyperlink{structGraph}{Graph} \&g)
+\begin{DoxyCompactList}\small\item\em Function returning the edge information associated with the specified edge. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class info\+\_\+object , class Graph $>$ }\\const info\+\_\+object $\ast$ \hyperlink{graph_8hpp_acc17ffbc53cd9fd0f41b01dd39a8edf2}{Cget\+\_\+raw\+\_\+edge\+\_\+info} (typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::edge\+\_\+descriptor e, const \hyperlink{structGraph}{Graph} \&g)
+\begin{DoxyCompactList}\small\item\em Function returning the edge information associated with the specified edge. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class info\+\_\+object , class Graph $>$ }\\\hyperlink{node__info_8hpp_a345f052eed4efe04f7848fd0ebd015b2}{Node\+Info\+Ref} \& \hyperlink{graph_8hpp_acbfb633da70311126188df877a828c4b}{Cget\+\_\+node\+\_\+info\+Ref} (typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::vertex\+\_\+descriptor v, \hyperlink{structGraph}{Graph} \&g)
+\begin{DoxyCompactList}\small\item\em Function returning the reference to the edge information associated with the specified edge. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class info\+\_\+object , class Graph $>$ }\\void \hyperlink{graph_8hpp_a8176805163d8e74c902ad13c8844906e}{set\+\_\+node\+\_\+info} (typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::vertex\+\_\+descriptor v, const \hyperlink{structrefcount}{refcount}$<$ info\+\_\+object $>$ \&obj, \hyperlink{structGraph}{Graph} \&g)
+\begin{DoxyCompactList}\small\item\em Function returning the node information associated with the specified node. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class info\+\_\+object , class Graph $>$ }\\info\+\_\+object $\ast$ \hyperlink{graph_8hpp_a074da225c9e8554a7433f82720e0b8d9}{get\+\_\+node\+\_\+info} (typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::vertex\+\_\+descriptor v, \hyperlink{structGraph}{Graph} \&g)
+\begin{DoxyCompactList}\small\item\em Function returning the node information associated with the specified node. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class info\+\_\+object , class Graph $>$ }\\const info\+\_\+object $\ast$ \hyperlink{graph_8hpp_ad3607daf827c59148c71b9b124a4063c}{Cget\+\_\+node\+\_\+info} (typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::vertex\+\_\+descriptor v, const \hyperlink{structGraph}{Graph} \&g)
+\begin{DoxyCompactList}\small\item\em Function returning the node information associated with the specified node. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class info\+\_\+object , class Graph $>$ }\\info\+\_\+object $\ast$ \hyperlink{graph_8hpp_a6f62027ffd273c758af9090b09796af4}{get\+\_\+edge\+\_\+info} (typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::edge\+\_\+descriptor e, \hyperlink{structGraph}{Graph} \&g)
+\begin{DoxyCompactList}\small\item\em Function returning the edge information associated with the specified edge. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class info\+\_\+object , class Graph $>$ }\\const info\+\_\+object $\ast$ \hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info} (typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::edge\+\_\+descriptor e, const \hyperlink{structGraph}{Graph} \&g)
+\begin{DoxyCompactList}\small\item\em Function returning the edge information associated with the specified edge. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename H $>$ }\\H \hyperlink{graph_8hpp_a36c319fed11513af4336dd7e8a67f318}{Absl\+Hash\+Value} (H \hyperlink{tutorial__pnnl__2019_2optimizations_2second_2solution_2adpcm_8c_a92176f6dd4e42d20d86405ffe94a46aa}{h}, const \hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor} \&m)
+\item 
+boost\+::graph\+\_\+traits$<$ \hyperlink{structgraph}{graph} $>$\+::vertex\+\_\+descriptor \hyperlink{graph_8hpp_a50115bbf0a2a61e50daf28d16ffb6103}{V\+E\+R\+T\+EX} (const boost\+::graph\+\_\+traits$<$ \hyperlink{structgraph}{graph} $>$\+::vertices\+\_\+size\+\_\+type i, const \hyperlink{structgraph}{graph} \&g)
+\begin{DoxyCompactList}\small\item\em Given a filtered graph and an index returns the vertex exploiting the boost\+::vertex applied on the original graph. \end{DoxyCompactList}\item 
+boost\+::graph\+\_\+traits$<$ \hyperlink{structugraph}{ugraph} $>$\+::vertex\+\_\+descriptor \hyperlink{graph_8hpp_a384850f34c907713dc9bfe9ea6aad77b}{V\+E\+R\+T\+EX} (const boost\+::graph\+\_\+traits$<$ \hyperlink{structugraph}{ugraph} $>$\+::vertices\+\_\+size\+\_\+type i, const \hyperlink{structugraph}{ugraph} \&g)
+\begin{DoxyCompactList}\small\item\em Given a filtered ugraph and an index returns the vertex exploiting the boost\+::vertex applied on the original graph. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Graph $>$ }\\void \hyperlink{graph_8hpp_ae1dafe3b2e844e2f23f6d5673a3fd358}{A\+D\+D\+\_\+\+U\+E\+D\+GE} (typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::vertex\+\_\+descriptor \hyperlink{tutorial__pnnl__2019_2memory_2third_2solution_2mips_8c_a5bbae38a6853eac231d3bb734d82fe8f}{A}, typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::vertex\+\_\+descriptor B, int selector, \hyperlink{structGraph}{Graph} \&g)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ forward declarations}\par
+{\em \hyperlink{structGraph}{Graph} include
+
+S\+TD include S\+TL include Utility include }\begin{DoxyCompactItemize}
+\item 
+\hyperlink{graph_8hpp_afb362ef72bf4e486d1a7bb9416a1bdbb}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structEdgeInfo}{Edge\+Info})
+\item 
+\hyperlink{graph_8hpp_aa4bdbe982f614029cb6dd5c4dd39e93f}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classEdgeWriter}{Edge\+Writer})
+\item 
+\hyperlink{graph_8hpp_ab2c397141f857a41a604a2f5a8776aeb}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classGraphWriter}{Graph\+Writer})
+\item 
+\hyperlink{graph_8hpp_a257857589c74e3d67d1b13b69869dbfc}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structNodeInfo}{Node\+Info})
+\item 
+\hyperlink{graph_8hpp_a3ee3141f6643b15f4e2aa72e8bcf0c75}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structNodeInfo}{Node\+Info})
+\item 
+\hyperlink{graph_8hpp_ac5c30465e53a2dee97960f0f406b8be7}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classParameter}{Parameter})
+\item 
+\hyperlink{graph_8hpp_af12b87ee79ca415af5ae60f17fa7fd94}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classUEdgeWriter}{U\+Edge\+Writer})
+\item 
+\hyperlink{graph_8hpp_a980c2c1e74ed40ed5fa551bfedc52bad}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classUVertexWriter}{U\+Vertex\+Writer})
+\item 
+\hyperlink{graph_8hpp_a4630d82ced5e28be408ac00d537fff3d}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classVertexWriter}{Vertex\+Writer})
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Class specification of the graph structures. 
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+
+Marco Lattuada \href{mailto:lattuada@elet.polimi.it}{\tt lattuada@elet.\+polimi.\+it} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{graph_8hpp_a16503e8c755658e86362a8fecadbe656}\label{graph_8hpp_a16503e8c755658e86362a8fecadbe656}} 
+\index{graph.\+hpp@{graph.\+hpp}!boost\+\_\+\+C\+Get\+Op\+Graph\+\_\+property@{boost\+\_\+\+C\+Get\+Op\+Graph\+\_\+property}}
+\index{boost\+\_\+\+C\+Get\+Op\+Graph\+\_\+property@{boost\+\_\+\+C\+Get\+Op\+Graph\+\_\+property}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{boost\+\_\+\+C\+Get\+Op\+Graph\+\_\+property}{boost\_CGetOpGraph\_property}}
+{\footnotesize\ttfamily \#define boost\+\_\+\+C\+Get\+Op\+Graph\+\_\+property(\begin{DoxyParamCaption}\item[{}]{graph\+\_\+arg }\end{DoxyParamCaption})~boost\+::get\+\_\+property(graph\+\_\+arg, \hyperlink{structgraph__info__t}{graph\+\_\+info\+\_\+t}())}
+
+
+
+Definition at line 254 of file graph.\+hpp.
+
+
+
+Referenced by graph\+::\+C\+Get\+Graph\+Info(), graph\+::\+Get\+Graph\+Info(), and graphs\+\_\+collection\+::graphs\+\_\+collection().
+
+\mbox{\Hypertarget{graph_8hpp_a4014c81329e7c1d63b746c07e898cfc2}\label{graph_8hpp_a4014c81329e7c1d63b746c07e898cfc2}} 
+\index{graph.\+hpp@{graph.\+hpp}!C\+G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO@{C\+G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO}}
+\index{C\+G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO@{C\+G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO}{CGET\_EDGE\_INFO}}
+{\footnotesize\ttfamily \#define C\+G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{edge\+\_\+info,  }\item[{}]{edge\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$edge\+\_\+info$>$(edge\+\_\+index, $\ast$(data))}
+
+
+
+Definition at line 596 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_ae1b1c6461685ad9da51125a3d08f85c2}\label{graph_8hpp_ae1b1c6461685ad9da51125a3d08f85c2}} 
+\index{graph.\+hpp@{graph.\+hpp}!C\+G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+FO@{C\+G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+FO}}
+\index{C\+G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+FO@{C\+G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+FO}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+FO}{CGET\_NODE\_INFO}}
+{\footnotesize\ttfamily \#define C\+G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+FO(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{\hyperlink{structNodeInfo}{Node\+Info},  }\item[{}]{vertex\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_ad3607daf827c59148c71b9b124a4063c}{Cget\+\_\+node\+\_\+info}$<$\hyperlink{structNodeInfo}{Node\+Info}$>$(vertex\+\_\+index, $\ast$(data))}
+
+
+
+Definition at line 560 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_a7ee4f5e7882f8cb2787a65f8948f0072}\label{graph_8hpp_a7ee4f5e7882f8cb2787a65f8948f0072}} 
+\index{graph.\+hpp@{graph.\+hpp}!C\+G\+E\+T\+\_\+\+R\+A\+W\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO@{C\+G\+E\+T\+\_\+\+R\+A\+W\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO}}
+\index{C\+G\+E\+T\+\_\+\+R\+A\+W\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO@{C\+G\+E\+T\+\_\+\+R\+A\+W\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+G\+E\+T\+\_\+\+R\+A\+W\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO}{CGET\_RAW\_EDGE\_INFO}}
+{\footnotesize\ttfamily \#define C\+G\+E\+T\+\_\+\+R\+A\+W\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{edge\+\_\+info,  }\item[{}]{edge\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_aad7297384cb3280346c059f3079e756f}{Cget\+\_\+edge\+\_\+info}$<$edge\+\_\+info$>$(edge\+\_\+index, $\ast$(data))}
+
+
+
+Definition at line 188 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_a87d7b18385bfbbea7874df8adef978b1}\label{graph_8hpp_a87d7b18385bfbbea7874df8adef978b1}} 
+\index{graph.\+hpp@{graph.\+hpp}!G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO@{G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO}}
+\index{G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO@{G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO}{GET\_EDGE\_INFO}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{edge\+\_\+info,  }\item[{}]{edge\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_a6f62027ffd273c758af9090b09796af4}{get\+\_\+edge\+\_\+info}$<$edge\+\_\+info$>$(edge\+\_\+index, $\ast$(data))}
+
+
+
+Definition at line 594 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_acb3a2e043de8b2ec3c88f145a7e7a19f}\label{graph_8hpp_acb3a2e043de8b2ec3c88f145a7e7a19f}} 
+\index{graph.\+hpp@{graph.\+hpp}!G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+FO@{G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+FO}}
+\index{G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+FO@{G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+FO}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+FO}{GET\_NODE\_INFO}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+FO(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{\hyperlink{structNodeInfo}{Node\+Info},  }\item[{}]{vertex\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_a074da225c9e8554a7433f82720e0b8d9}{get\+\_\+node\+\_\+info}$<$\hyperlink{structNodeInfo}{Node\+Info}$>$(vertex\+\_\+index, $\ast$(data))}
+
+
+
+Definition at line 558 of file graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+graph\+\_\+constructor\+::add\+\_\+type(), Call\+Graph\+Manager\+::\+Add\+Function(), operations\+\_\+graph\+\_\+constructor\+::\+Add\+Operation(), and structural\+\_\+manager\+::build\+\_\+graph().
+
+\mbox{\Hypertarget{graph_8hpp_a58fb4b0125b62f5df56ab9396e2ef8c7}\label{graph_8hpp_a58fb4b0125b62f5df56ab9396e2ef8c7}} 
+\index{graph.\+hpp@{graph.\+hpp}!G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+EF@{G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+EF}}
+\index{G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+EF@{G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+EF}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+EF}{GET\_NODE\_INFO\_REF}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+EF(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{\hyperlink{structNodeInfo}{Node\+Info},  }\item[{}]{vertex\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_acbfb633da70311126188df877a828c4b}{Cget\+\_\+node\+\_\+info\+Ref}$<$\hyperlink{structNodeInfo}{Node\+Info}$>$(vertex\+\_\+index, $\ast$(data))}
+
+
+
+Definition at line 524 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_ac112b66fa6a1e6cc64741542d8d7e827}\label{graph_8hpp_ac112b66fa6a1e6cc64741542d8d7e827}} 
+\index{graph.\+hpp@{graph.\+hpp}!G\+E\+T\+\_\+\+R\+A\+W\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO@{G\+E\+T\+\_\+\+R\+A\+W\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO}}
+\index{G\+E\+T\+\_\+\+R\+A\+W\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO@{G\+E\+T\+\_\+\+R\+A\+W\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+R\+A\+W\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO}{GET\_RAW\_EDGE\_INFO}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+R\+A\+W\+\_\+\+E\+D\+G\+E\+\_\+\+I\+N\+FO(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{edge\+\_\+info,  }\item[{}]{edge\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_a6f62027ffd273c758af9090b09796af4}{get\+\_\+edge\+\_\+info}$<$edge\+\_\+info$>$(edge\+\_\+index, $\ast$(data))}
+
+
+
+Definition at line 186 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_ad560f6d5bb93820208b787fd9ca09fe9}\label{graph_8hpp_ad560f6d5bb93820208b787fd9ca09fe9}} 
+\index{graph.\+hpp@{graph.\+hpp}!N\+U\+L\+L\+\_\+\+U\+G\+C\+V\+E\+R\+T\+EX@{N\+U\+L\+L\+\_\+\+U\+G\+C\+V\+E\+R\+T\+EX}}
+\index{N\+U\+L\+L\+\_\+\+U\+G\+C\+V\+E\+R\+T\+EX@{N\+U\+L\+L\+\_\+\+U\+G\+C\+V\+E\+R\+T\+EX}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{N\+U\+L\+L\+\_\+\+U\+G\+C\+V\+E\+R\+T\+EX}{NULL\_UGCVERTEX}}
+{\footnotesize\ttfamily \#define N\+U\+L\+L\+\_\+\+U\+G\+C\+V\+E\+R\+T\+EX~boost\+::graph\+\_\+traits$<$\hyperlink{structundirected__graphs__collection}{undirected\+\_\+graphs\+\_\+collection}$>$\+::null\+\_\+vertex()}
+
+
+
+Definition at line 1241 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_aa4d5c5fe719af9d8008de24c979c245c}\label{graph_8hpp_aa4d5c5fe719af9d8008de24c979c245c}} 
+\index{graph.\+hpp@{graph.\+hpp}!N\+U\+L\+L\+\_\+\+U\+V\+E\+R\+T\+EX@{N\+U\+L\+L\+\_\+\+U\+V\+E\+R\+T\+EX}}
+\index{N\+U\+L\+L\+\_\+\+U\+V\+E\+R\+T\+EX@{N\+U\+L\+L\+\_\+\+U\+V\+E\+R\+T\+EX}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{N\+U\+L\+L\+\_\+\+U\+V\+E\+R\+T\+EX}{NULL\_UVERTEX}}
+{\footnotesize\ttfamily \#define N\+U\+L\+L\+\_\+\+U\+V\+E\+R\+T\+EX~boost\+::graph\+\_\+traits$<$\hyperlink{structugraph}{ugraph}$>$\+::null\+\_\+vertex()}
+
+
+
+null vertex definition 
+
+
+
+Definition at line 1237 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_ac3c33c45c396860b76e8aff4dd2b8158}\label{graph_8hpp_ac3c33c45c396860b76e8aff4dd2b8158}} 
+\index{graph.\+hpp@{graph.\+hpp}!N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX@{N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX}}
+\index{N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX@{N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX}{NULL\_VERTEX}}
+{\footnotesize\ttfamily \#define N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX~boost\+::graph\+\_\+traits$<$\hyperlink{structgraph}{graph}$>$\+::null\+\_\+vertex()}
+
+
+
+null vertex definition 
+
+
+
+Definition at line 1198 of file graph.\+hpp.
+
+
+
+Referenced by H\+L\+S\+Bit\+Value\+::\+Compute\+Relationships(), Bit\+Value\+I\+P\+A\+::\+Compute\+Relationships(), create\+\_\+tree\+\_\+manager\+::\+Compute\+Relationships(), Taste\+Interface\+Generation\+::\+Compute\+Relationships(), Basic\+Blocks\+Profiling\+::\+Compute\+Relationships(), Build\+Virtual\+Phi\+::\+Compute\+Relationships(), S\+D\+C\+Scheduling\+::\+Compute\+Relationships(), parametric\+\_\+list\+\_\+based\+::\+Compute\+Relationships(), mux\+\_\+connection\+\_\+binding\+::connect\+\_\+to\+\_\+registers(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+single\+\_\+conn(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), H\+W\+Discrepancy\+Analysis\+::\+Exec(), fun\+\_\+dominator\+\_\+allocation\+::\+Exec(), liveness\+::get\+\_\+name(), Transition\+Info\+::get\+\_\+ref\+\_\+state(), Design\+Flow\+Graphs\+Collection\+::\+Get\+Design\+Flow\+Step(), Design\+Flow\+Manager\+::\+Get\+Status(), multi\+\_\+way\+\_\+if\+::\+Has\+To\+Be\+Executed(), cdfc\+\_\+module\+\_\+binding\+::initialize\+\_\+connection\+\_\+relation(), F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Internal\+Exec(), Serialize\+Mutual\+Exclusions\+::\+Internal\+Exec(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), Op\+Order\+Computation\+::\+Internal\+Exec(), B\+B\+Order\+Computation\+::\+Internal\+Exec(), Loops\+Analysis\+Bambu\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), Loop\+::\+Is\+Reducible(), Loop\+::primary\+\_\+landing\+\_\+pad(), Behavioral\+Helper\+::print\+\_\+init(), cdfc\+\_\+module\+\_\+binding\+::update\+\_\+slack\+\_\+starting\+\_\+time(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and C\+Writer\+::write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{graph_8hpp_a43ca3962451187be58c44671c1b34867}\label{graph_8hpp_a43ca3962451187be58c44671c1b34867}} 
+\index{graph.\+hpp@{graph.\+hpp}!S\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+EF@{S\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+EF}}
+\index{S\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+EF@{S\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+EF}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{S\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+EF}{SET\_NODE\_INFO\_REF}}
+{\footnotesize\ttfamily \#define S\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+EF(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{\hyperlink{structNodeInfo}{Node\+Info},  }\item[{}]{obj,  }\item[{}]{vertex\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_a8176805163d8e74c902ad13c8844906e}{set\+\_\+node\+\_\+info}$<$\hyperlink{structNodeInfo}{Node\+Info}$>$(vertex\+\_\+index, obj, $\ast$(data))}
+
+
+
+Definition at line 522 of file graph.\+hpp.
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{graph_8hpp_a315f0e4c95fedf30b91945ed29d42332}\label{graph_8hpp_a315f0e4c95fedf30b91945ed29d42332}} 
+\index{graph.\+hpp@{graph.\+hpp}!boost\+\_\+graphs\+\_\+collection@{boost\+\_\+graphs\+\_\+collection}}
+\index{boost\+\_\+graphs\+\_\+collection@{boost\+\_\+graphs\+\_\+collection}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{boost\+\_\+graphs\+\_\+collection}{boost\_graphs\_collection}}
+{\footnotesize\ttfamily typedef boost\+::adjacency\+\_\+list$<$boost\+::listS, boost\+::listS, boost\+::bidirectionalS, boost\+::property$<$boost\+::vertex\+\_\+index\+\_\+t, \hyperlink{tutorial__pact__2019_2Introduction_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{std\+::size\+\_\+t}, boost\+::property$<$boost\+::vertex\+\_\+color\+\_\+t, boost\+::default\+\_\+color\+\_\+type, \hyperlink{node__info_8hpp_a345f052eed4efe04f7848fd0ebd015b2}{Node\+Info\+Ref}$>$ $>$, \hyperlink{structEdgeProperty}{Edge\+Property}, \hyperlink{graph_8hpp_ab59cf55f18e3a610096a43f666e16402}{Graph\+Property}$>$ \hyperlink{graph_8hpp_a315f0e4c95fedf30b91945ed29d42332}{boost\+\_\+graphs\+\_\+collection}}
+
+
+
+Definition at line 249 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_afdae34b3d2ab29778d96da05f66add5c}\label{graph_8hpp_afdae34b3d2ab29778d96da05f66add5c}} 
+\index{graph.\+hpp@{graph.\+hpp}!boost\+\_\+raw\+\_\+graph@{boost\+\_\+raw\+\_\+graph}}
+\index{boost\+\_\+raw\+\_\+graph@{boost\+\_\+raw\+\_\+graph}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{boost\+\_\+raw\+\_\+graph}{boost\_raw\_graph}}
+{\footnotesize\ttfamily typedef boost\+::adjacency\+\_\+list$<$boost\+::listS, boost\+::listS, boost\+::bidirectionalS, boost\+::property$<$boost\+::vertex\+\_\+index\+\_\+t, \hyperlink{tutorial__pact__2019_2Introduction_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{std\+::size\+\_\+t}, \hyperlink{node__info_8hpp_a345f052eed4efe04f7848fd0ebd015b2}{Node\+Info\+Ref}$>$, \hyperlink{edge__info_8hpp_a65ddc964b1738667fc720f0de33aeef9}{Edge\+Info\+Ref}, \hyperlink{graph__info_8hpp_a4a5c364c379e5139b7dc97e7e69c7da3}{Graph\+Info\+Ref}$>$ \hyperlink{graph_8hpp_afdae34b3d2ab29778d96da05f66add5c}{boost\+\_\+raw\+\_\+graph}}
+
+
+
+Definition at line 87 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}\label{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}} 
+\index{graph.\+hpp@{graph.\+hpp}!Edge\+Descriptor@{Edge\+Descriptor}}
+\index{Edge\+Descriptor@{Edge\+Descriptor}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{Edge\+Descriptor}{EdgeDescriptor}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{structgraph}{graph}$>$\+::edge\+\_\+descriptor \hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor}}
+
+
+
+edge definition. 
+
+
+
+Definition at line 1209 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_af41201212b1596f277b436080e8a1f16}\label{graph_8hpp_af41201212b1596f277b436080e8a1f16}} 
+\index{graph.\+hpp@{graph.\+hpp}!Edge\+Iterator@{Edge\+Iterator}}
+\index{Edge\+Iterator@{Edge\+Iterator}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{Edge\+Iterator}{EdgeIterator}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{structgraph}{graph}$>$\+::edge\+\_\+iterator \hyperlink{graph_8hpp_af41201212b1596f277b436080e8a1f16}{Edge\+Iterator}}
+
+
+
+edge\+\_\+iterator definition. 
+
+
+
+Definition at line 1207 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_a4a4e3d3bd72d73f59ee807e6895b268f}\label{graph_8hpp_a4a4e3d3bd72d73f59ee807e6895b268f}} 
+\index{graph.\+hpp@{graph.\+hpp}!graph\+Const\+Ref@{graph\+Const\+Ref}}
+\index{graph\+Const\+Ref@{graph\+Const\+Ref}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{graph\+Const\+Ref}{graphConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{structgraph}{graph}$>$ \hyperlink{graph_8hpp_a4a4e3d3bd72d73f59ee807e6895b268f}{graph\+Const\+Ref}}
+
+
+
+Definition at line 1032 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_ab59cf55f18e3a610096a43f666e16402}\label{graph_8hpp_ab59cf55f18e3a610096a43f666e16402}} 
+\index{graph.\+hpp@{graph.\+hpp}!Graph\+Property@{Graph\+Property}}
+\index{Graph\+Property@{Graph\+Property}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{Graph\+Property}{GraphProperty}}
+{\footnotesize\ttfamily typedef boost\+::property$<$\hyperlink{structgraph__info__t}{graph\+\_\+info\+\_\+t}, \hyperlink{graph__info_8hpp_a4a5c364c379e5139b7dc97e7e69c7da3}{Graph\+Info\+Ref}$>$ \hyperlink{graph_8hpp_ab59cf55f18e3a610096a43f666e16402}{Graph\+Property}}
+
+
+
+Definition at line 246 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_af58fda2826a8f83d2ef177d06a6bfb63}\label{graph_8hpp_af58fda2826a8f83d2ef177d06a6bfb63}} 
+\index{graph.\+hpp@{graph.\+hpp}!graph\+Ref@{graph\+Ref}}
+\index{graph\+Ref@{graph\+Ref}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{graph\+Ref}{graphRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structgraph}{graph}$>$ \hyperlink{graph_8hpp_af58fda2826a8f83d2ef177d06a6bfb63}{graph\+Ref}}
+
+
+
+Definition at line 1031 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_a6d155e916bddcdb0fec13d3a368c662d}\label{graph_8hpp_a6d155e916bddcdb0fec13d3a368c662d}} 
+\index{graph.\+hpp@{graph.\+hpp}!graphs\+\_\+collection\+Ref@{graphs\+\_\+collection\+Ref}}
+\index{graphs\+\_\+collection\+Ref@{graphs\+\_\+collection\+Ref}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{graphs\+\_\+collection\+Ref}{graphs\_collectionRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structgraphs__collection}{graphs\+\_\+collection}$>$ \hyperlink{graph_8hpp_a6d155e916bddcdb0fec13d3a368c662d}{graphs\+\_\+collection\+Ref}}
+
+
+
+Definition at line 427 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_a84120d81f88f9cc8e980a8c4951b7403}\label{graph_8hpp_a84120d81f88f9cc8e980a8c4951b7403}} 
+\index{graph.\+hpp@{graph.\+hpp}!In\+Edge\+Iterator@{In\+Edge\+Iterator}}
+\index{In\+Edge\+Iterator@{In\+Edge\+Iterator}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{In\+Edge\+Iterator}{InEdgeIterator}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{structgraph}{graph}$>$\+::in\+\_\+edge\+\_\+iterator \hyperlink{graph_8hpp_a84120d81f88f9cc8e980a8c4951b7403}{In\+Edge\+Iterator}}
+
+
+
+in\+\_\+edge\+\_\+iterator definition. 
+
+
+
+Definition at line 1203 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_a17e1d8e1772007fcfa7f3eb1f6b00c99}\label{graph_8hpp_a17e1d8e1772007fcfa7f3eb1f6b00c99}} 
+\index{graph.\+hpp@{graph.\+hpp}!Out\+Edge\+Iterator@{Out\+Edge\+Iterator}}
+\index{Out\+Edge\+Iterator@{Out\+Edge\+Iterator}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{Out\+Edge\+Iterator}{OutEdgeIterator}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{structgraph}{graph}$>$\+::out\+\_\+edge\+\_\+iterator \hyperlink{graph_8hpp_a17e1d8e1772007fcfa7f3eb1f6b00c99}{Out\+Edge\+Iterator}}
+
+
+
+out\+\_\+edge\+\_\+iterator definition. 
+
+
+
+Definition at line 1205 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_a2b4fd9c6560ff0335716f4bdbd932aba}\label{graph_8hpp_a2b4fd9c6560ff0335716f4bdbd932aba}} 
+\index{graph.\+hpp@{graph.\+hpp}!U\+Edge\+Descriptor@{U\+Edge\+Descriptor}}
+\index{U\+Edge\+Descriptor@{U\+Edge\+Descriptor}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{U\+Edge\+Descriptor}{UEdgeDescriptor}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{structugraph}{ugraph}$>$\+::edge\+\_\+descriptor \hyperlink{graph_8hpp_a2b4fd9c6560ff0335716f4bdbd932aba}{U\+Edge\+Descriptor}}
+
+
+
+edge definition. 
+
+
+
+Definition at line 1253 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_a8fe3ed1f061cb5c7dd71db9caf69d623}\label{graph_8hpp_a8fe3ed1f061cb5c7dd71db9caf69d623}} 
+\index{graph.\+hpp@{graph.\+hpp}!U\+Edge\+Iterator@{U\+Edge\+Iterator}}
+\index{U\+Edge\+Iterator@{U\+Edge\+Iterator}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{U\+Edge\+Iterator}{UEdgeIterator}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{structugraph}{ugraph}$>$\+::edge\+\_\+iterator \hyperlink{graph_8hpp_a8fe3ed1f061cb5c7dd71db9caf69d623}{U\+Edge\+Iterator}}
+
+
+
+edge\+\_\+iterator definition. 
+
+
+
+Definition at line 1251 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_ac15fe8fd44d4337daa5e1e48e6b1ef6c}\label{graph_8hpp_ac15fe8fd44d4337daa5e1e48e6b1ef6c}} 
+\index{graph.\+hpp@{graph.\+hpp}!U\+G\+Cvertex@{U\+G\+Cvertex}}
+\index{U\+G\+Cvertex@{U\+G\+Cvertex}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{U\+G\+Cvertex}{UGCvertex}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{structundirected__graphs__collection}{undirected\+\_\+graphs\+\_\+collection}$>$\+::vertex\+\_\+descriptor \hyperlink{graph_8hpp_ac15fe8fd44d4337daa5e1e48e6b1ef6c}{U\+G\+Cvertex}}
+
+
+
+vertex definition for \hyperlink{structundirected__graphs__collection}{undirected\+\_\+graphs\+\_\+collection}. 
+
+
+
+Definition at line 1240 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_a990b18fc6b68fac2facd71498de4348f}\label{graph_8hpp_a990b18fc6b68fac2facd71498de4348f}} 
+\index{graph.\+hpp@{graph.\+hpp}!ugraph\+Ref@{ugraph\+Ref}}
+\index{ugraph\+Ref@{ugraph\+Ref}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{ugraph\+Ref}{ugraphRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structugraph}{ugraph}$>$ \hyperlink{graph_8hpp_a990b18fc6b68fac2facd71498de4348f}{ugraph\+Ref}}
+
+
+
+Definition at line 1162 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_ad69904062f6b9ed6d4a7bb55cb030b89}\label{graph_8hpp_ad69904062f6b9ed6d4a7bb55cb030b89}} 
+\index{graph.\+hpp@{graph.\+hpp}!U\+In\+Edge\+Iterator@{U\+In\+Edge\+Iterator}}
+\index{U\+In\+Edge\+Iterator@{U\+In\+Edge\+Iterator}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{U\+In\+Edge\+Iterator}{UInEdgeIterator}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{structugraph}{ugraph}$>$\+::in\+\_\+edge\+\_\+iterator \hyperlink{graph_8hpp_ad69904062f6b9ed6d4a7bb55cb030b89}{U\+In\+Edge\+Iterator}}
+
+
+
+in\+\_\+edge\+\_\+iterator definition. 
+
+
+
+Definition at line 1247 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_ab216188797d8e0a41236453b1a520b16}\label{graph_8hpp_ab216188797d8e0a41236453b1a520b16}} 
+\index{graph.\+hpp@{graph.\+hpp}!undirected\+\_\+boost\+\_\+graphs\+\_\+collection@{undirected\+\_\+boost\+\_\+graphs\+\_\+collection}}
+\index{undirected\+\_\+boost\+\_\+graphs\+\_\+collection@{undirected\+\_\+boost\+\_\+graphs\+\_\+collection}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{undirected\+\_\+boost\+\_\+graphs\+\_\+collection}{undirected\_boost\_graphs\_collection}}
+{\footnotesize\ttfamily typedef boost\+::adjacency\+\_\+list$<$boost\+::listS, boost\+::listS, boost\+::undirectedS, boost\+::property$<$boost\+::vertex\+\_\+index\+\_\+t, \hyperlink{tutorial__pact__2019_2Introduction_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{std\+::size\+\_\+t}, boost\+::property$<$boost\+::vertex\+\_\+color\+\_\+t, boost\+::default\+\_\+color\+\_\+type, \hyperlink{node__info_8hpp_a345f052eed4efe04f7848fd0ebd015b2}{Node\+Info\+Ref}$>$ $>$, \hyperlink{structEdgeProperty}{Edge\+Property}, \hyperlink{graph_8hpp_ab59cf55f18e3a610096a43f666e16402}{Graph\+Property}$>$ \hyperlink{graph_8hpp_ab216188797d8e0a41236453b1a520b16}{undirected\+\_\+boost\+\_\+graphs\+\_\+collection}}
+
+
+
+Definition at line 252 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_a61834f53e83b607f7960c48ce3821c1b}\label{graph_8hpp_a61834f53e83b607f7960c48ce3821c1b}} 
+\index{graph.\+hpp@{graph.\+hpp}!undirected\+\_\+graphs\+\_\+collection\+Ref@{undirected\+\_\+graphs\+\_\+collection\+Ref}}
+\index{undirected\+\_\+graphs\+\_\+collection\+Ref@{undirected\+\_\+graphs\+\_\+collection\+Ref}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{undirected\+\_\+graphs\+\_\+collection\+Ref}{undirected\_graphs\_collectionRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structundirected__graphs__collection}{undirected\+\_\+graphs\+\_\+collection}$>$ \hyperlink{graph_8hpp_a61834f53e83b607f7960c48ce3821c1b}{undirected\+\_\+graphs\+\_\+collection\+Ref}}
+
+
+
+Definition at line 490 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_a0c91e9840708bf660486e13b9e1d8392}\label{graph_8hpp_a0c91e9840708bf660486e13b9e1d8392}} 
+\index{graph.\+hpp@{graph.\+hpp}!U\+Out\+Edge\+Iterator@{U\+Out\+Edge\+Iterator}}
+\index{U\+Out\+Edge\+Iterator@{U\+Out\+Edge\+Iterator}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{U\+Out\+Edge\+Iterator}{UOutEdgeIterator}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{structugraph}{ugraph}$>$\+::out\+\_\+edge\+\_\+iterator \hyperlink{graph_8hpp_a0c91e9840708bf660486e13b9e1d8392}{U\+Out\+Edge\+Iterator}}
+
+
+
+out\+\_\+edge\+\_\+iterator definition. 
+
+
+
+Definition at line 1249 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_a56f73e449b2c08195207c387d6c422cd}\label{graph_8hpp_a56f73e449b2c08195207c387d6c422cd}} 
+\index{graph.\+hpp@{graph.\+hpp}!uvertex@{uvertex}}
+\index{uvertex@{uvertex}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{uvertex}{uvertex}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{structugraph}{ugraph}$>$\+::vertex\+\_\+descriptor \hyperlink{graph_8hpp_a56f73e449b2c08195207c387d6c422cd}{uvertex}}
+
+
+
+vertex definition. 
+
+
+
+Definition at line 1235 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_ae0c5ab69bf877a5ea37c10fcbfc18e34}\label{graph_8hpp_ae0c5ab69bf877a5ea37c10fcbfc18e34}} 
+\index{graph.\+hpp@{graph.\+hpp}!U\+Vertex\+Iterator@{U\+Vertex\+Iterator}}
+\index{U\+Vertex\+Iterator@{U\+Vertex\+Iterator}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{U\+Vertex\+Iterator}{UVertexIterator}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{structugraph}{ugraph}$>$\+::vertex\+\_\+iterator \hyperlink{graph_8hpp_ae0c5ab69bf877a5ea37c10fcbfc18e34}{U\+Vertex\+Iterator}}
+
+
+
+vertex\+\_\+iterator definition. 
+
+
+
+Definition at line 1244 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_abefdcf0544e601805af44eca032cca14}\label{graph_8hpp_abefdcf0544e601805af44eca032cca14}} 
+\index{graph.\+hpp@{graph.\+hpp}!vertex@{vertex}}
+\index{vertex@{vertex}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{vertex}{vertex}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{structgraph}{graph}$>$\+::vertex\+\_\+descriptor \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}
+
+
+
+vertex definition. 
+
+
+
+Definition at line 1196 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_a80e30b305ae26da1989a155d199d7e2c}\label{graph_8hpp_a80e30b305ae26da1989a155d199d7e2c}} 
+\index{graph.\+hpp@{graph.\+hpp}!Vertex\+Iterator@{Vertex\+Iterator}}
+\index{Vertex\+Iterator@{Vertex\+Iterator}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{Vertex\+Iterator}{VertexIterator}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{structgraph}{graph}$>$\+::vertex\+\_\+iterator \hyperlink{graph_8hpp_a80e30b305ae26da1989a155d199d7e2c}{Vertex\+Iterator}}
+
+
+
+vertex\+\_\+iterator definition. 
+
+
+
+Definition at line 1200 of file graph.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{graph_8hpp_a36c319fed11513af4336dd7e8a67f318}\label{graph_8hpp_a36c319fed11513af4336dd7e8a67f318}} 
+\index{graph.\+hpp@{graph.\+hpp}!Absl\+Hash\+Value@{Absl\+Hash\+Value}}
+\index{Absl\+Hash\+Value@{Absl\+Hash\+Value}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{Absl\+Hash\+Value()}{AbslHashValue()}}
+{\footnotesize\ttfamily template$<$typename H $>$ \\
+H Absl\+Hash\+Value (\begin{DoxyParamCaption}\item[{H}]{h,  }\item[{const \hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor} \&}]{m }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1230 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_ae1dafe3b2e844e2f23f6d5673a3fd358}\label{graph_8hpp_ae1dafe3b2e844e2f23f6d5673a3fd358}} 
+\index{graph.\+hpp@{graph.\+hpp}!A\+D\+D\+\_\+\+U\+E\+D\+GE@{A\+D\+D\+\_\+\+U\+E\+D\+GE}}
+\index{A\+D\+D\+\_\+\+U\+E\+D\+GE@{A\+D\+D\+\_\+\+U\+E\+D\+GE}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{A\+D\+D\+\_\+\+U\+E\+D\+G\+E()}{ADD\_UEDGE()}}
+{\footnotesize\ttfamily template$<$class Graph $>$ \\
+void A\+D\+D\+\_\+\+U\+E\+D\+GE (\begin{DoxyParamCaption}\item[{typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::vertex\+\_\+descriptor}]{A,  }\item[{typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::vertex\+\_\+descriptor}]{B,  }\item[{int}]{selector,  }\item[{\hyperlink{structGraph}{Graph} \&}]{g }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1278 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_aad7297384cb3280346c059f3079e756f}\label{graph_8hpp_aad7297384cb3280346c059f3079e756f}} 
+\index{graph.\+hpp@{graph.\+hpp}!Cget\+\_\+edge\+\_\+info@{Cget\+\_\+edge\+\_\+info}}
+\index{Cget\+\_\+edge\+\_\+info@{Cget\+\_\+edge\+\_\+info}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{Cget\+\_\+edge\+\_\+info()}{Cget\_edge\_info()}}
+{\footnotesize\ttfamily template$<$class info\+\_\+object , class Graph $>$ \\
+const info\+\_\+object$\ast$ Cget\+\_\+edge\+\_\+info (\begin{DoxyParamCaption}\item[{typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::edge\+\_\+descriptor}]{e,  }\item[{const \hyperlink{structGraph}{Graph} \&}]{g }\end{DoxyParamCaption})}
+
+
+
+Function returning the edge information associated with the specified edge. 
+
+This function does not modify the graph. 
+\begin{DoxyParams}{Parameters}
+{\em v} & is the considered node. \\
+\hline
+{\em g} & is the graph. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the edge\+\_\+info object associated with v. 
+\end{DoxyReturn}
+
+
+Definition at line 587 of file graph.\+hpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+\mbox{\Hypertarget{graph_8hpp_ad3607daf827c59148c71b9b124a4063c}\label{graph_8hpp_ad3607daf827c59148c71b9b124a4063c}} 
+\index{graph.\+hpp@{graph.\+hpp}!Cget\+\_\+node\+\_\+info@{Cget\+\_\+node\+\_\+info}}
+\index{Cget\+\_\+node\+\_\+info@{Cget\+\_\+node\+\_\+info}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{Cget\+\_\+node\+\_\+info()}{Cget\_node\_info()}}
+{\footnotesize\ttfamily template$<$class info\+\_\+object , class Graph $>$ \\
+const info\+\_\+object$\ast$ Cget\+\_\+node\+\_\+info (\begin{DoxyParamCaption}\item[{typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::vertex\+\_\+descriptor}]{v,  }\item[{const \hyperlink{structGraph}{Graph} \&}]{g }\end{DoxyParamCaption})}
+
+
+
+Function returning the node information associated with the specified node. 
+
+This function does not modify the graph. 
+\begin{DoxyParams}{Parameters}
+{\em v} & is the considered node. \\
+\hline
+{\em g} & is the graph. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the node\+\_\+info object associated with v. 
+\end{DoxyReturn}
+
+
+Definition at line 551 of file graph.\+hpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+\mbox{\Hypertarget{graph_8hpp_acbfb633da70311126188df877a828c4b}\label{graph_8hpp_acbfb633da70311126188df877a828c4b}} 
+\index{graph.\+hpp@{graph.\+hpp}!Cget\+\_\+node\+\_\+info\+Ref@{Cget\+\_\+node\+\_\+info\+Ref}}
+\index{Cget\+\_\+node\+\_\+info\+Ref@{Cget\+\_\+node\+\_\+info\+Ref}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{Cget\+\_\+node\+\_\+info\+Ref()}{Cget\_node\_infoRef()}}
+{\footnotesize\ttfamily template$<$class info\+\_\+object , class Graph $>$ \\
+\hyperlink{node__info_8hpp_a345f052eed4efe04f7848fd0ebd015b2}{Node\+Info\+Ref}\& Cget\+\_\+node\+\_\+info\+Ref (\begin{DoxyParamCaption}\item[{typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::vertex\+\_\+descriptor}]{v,  }\item[{\hyperlink{structGraph}{Graph} \&}]{g }\end{DoxyParamCaption})}
+
+
+
+Function returning the reference to the edge information associated with the specified edge. 
+
+This function modifies the graph if \hyperlink{structEdgeInfo}{Edge\+Info} is not yet associated with the edge. 
+\begin{DoxyParams}{Parameters}
+{\em e} & is the considered edge. \\
+\hline
+{\em g} & is the graph. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the reference to the \hyperlink{structEdgeInfo}{Edge\+Info} object associated with e. 
+\end{DoxyReturn}
+
+
+Definition at line 500 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_acc17ffbc53cd9fd0f41b01dd39a8edf2}\label{graph_8hpp_acc17ffbc53cd9fd0f41b01dd39a8edf2}} 
+\index{graph.\+hpp@{graph.\+hpp}!Cget\+\_\+raw\+\_\+edge\+\_\+info@{Cget\+\_\+raw\+\_\+edge\+\_\+info}}
+\index{Cget\+\_\+raw\+\_\+edge\+\_\+info@{Cget\+\_\+raw\+\_\+edge\+\_\+info}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{Cget\+\_\+raw\+\_\+edge\+\_\+info()}{Cget\_raw\_edge\_info()}}
+{\footnotesize\ttfamily template$<$class info\+\_\+object , class Graph $>$ \\
+const info\+\_\+object$\ast$ Cget\+\_\+raw\+\_\+edge\+\_\+info (\begin{DoxyParamCaption}\item[{typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::edge\+\_\+descriptor}]{e,  }\item[{const \hyperlink{structGraph}{Graph} \&}]{g }\end{DoxyParamCaption})}
+
+
+
+Function returning the edge information associated with the specified edge. 
+
+This function does not modify the graph. 
+\begin{DoxyParams}{Parameters}
+{\em e} & is the considered edge. \\
+\hline
+{\em g} & is the graph. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the edge\+\_\+info object associated with e. 
+\end{DoxyReturn}
+
+
+Definition at line 179 of file graph.\+hpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+\mbox{\Hypertarget{graph_8hpp_afb362ef72bf4e486d1a7bb9416a1bdbb}\label{graph_8hpp_afb362ef72bf4e486d1a7bb9416a1bdbb}} 
+\index{graph.\+hpp@{graph.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structEdgeInfo}{Edge\+Info}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{graph_8hpp_aa4bdbe982f614029cb6dd5c4dd39e93f}\label{graph_8hpp_aa4bdbe982f614029cb6dd5c4dd39e93f}} 
+\index{graph.\+hpp@{graph.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classEdgeWriter}{Edge\+Writer}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{graph_8hpp_ab2c397141f857a41a604a2f5a8776aeb}\label{graph_8hpp_ab2c397141f857a41a604a2f5a8776aeb}} 
+\index{graph.\+hpp@{graph.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classGraphWriter}{Graph\+Writer}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{graph_8hpp_a257857589c74e3d67d1b13b69869dbfc}\label{graph_8hpp_a257857589c74e3d67d1b13b69869dbfc}} 
+\index{graph.\+hpp@{graph.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structNodeInfo}{Node\+Info}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{graph_8hpp_ac5c30465e53a2dee97960f0f406b8be7}\label{graph_8hpp_ac5c30465e53a2dee97960f0f406b8be7}} 
+\index{graph.\+hpp@{graph.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classParameter}{Parameter}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{graph_8hpp_af12b87ee79ca415af5ae60f17fa7fd94}\label{graph_8hpp_af12b87ee79ca415af5ae60f17fa7fd94}} 
+\index{graph.\+hpp@{graph.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classUEdgeWriter}{U\+Edge\+Writer}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{graph_8hpp_a980c2c1e74ed40ed5fa551bfedc52bad}\label{graph_8hpp_a980c2c1e74ed40ed5fa551bfedc52bad}} 
+\index{graph.\+hpp@{graph.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classUVertexWriter}{U\+Vertex\+Writer}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{graph_8hpp_a4630d82ced5e28be408ac00d537fff3d}\label{graph_8hpp_a4630d82ced5e28be408ac00d537fff3d}} 
+\index{graph.\+hpp@{graph.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classVertexWriter}{Vertex\+Writer}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{graph_8hpp_a6f62027ffd273c758af9090b09796af4}\label{graph_8hpp_a6f62027ffd273c758af9090b09796af4}} 
+\index{graph.\+hpp@{graph.\+hpp}!get\+\_\+edge\+\_\+info@{get\+\_\+edge\+\_\+info}}
+\index{get\+\_\+edge\+\_\+info@{get\+\_\+edge\+\_\+info}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{get\+\_\+edge\+\_\+info()}{get\_edge\_info()}}
+{\footnotesize\ttfamily template$<$class info\+\_\+object , class Graph $>$ \\
+info\+\_\+object$\ast$ get\+\_\+edge\+\_\+info (\begin{DoxyParamCaption}\item[{typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::edge\+\_\+descriptor}]{e,  }\item[{\hyperlink{structGraph}{Graph} \&}]{g }\end{DoxyParamCaption})}
+
+
+
+Function returning the edge information associated with the specified edge. 
+
+This function modifies the graph if \hyperlink{structEdgeInfo}{Edge\+Info} is not yet associated with the edge. 
+\begin{DoxyParams}{Parameters}
+{\em e} & is the considered edge. \\
+\hline
+{\em g} & is the graph. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{structEdgeInfo}{Edge\+Info} object associated with e. 
+\end{DoxyReturn}
+Note\+: reference has to be used since we want to modify the info associated with the edge 
+
+Definition at line 570 of file graph.\+hpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+\mbox{\Hypertarget{graph_8hpp_a074da225c9e8554a7433f82720e0b8d9}\label{graph_8hpp_a074da225c9e8554a7433f82720e0b8d9}} 
+\index{graph.\+hpp@{graph.\+hpp}!get\+\_\+node\+\_\+info@{get\+\_\+node\+\_\+info}}
+\index{get\+\_\+node\+\_\+info@{get\+\_\+node\+\_\+info}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{get\+\_\+node\+\_\+info()}{get\_node\_info()}}
+{\footnotesize\ttfamily template$<$class info\+\_\+object , class Graph $>$ \\
+info\+\_\+object$\ast$ get\+\_\+node\+\_\+info (\begin{DoxyParamCaption}\item[{typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::vertex\+\_\+descriptor}]{v,  }\item[{\hyperlink{structGraph}{Graph} \&}]{g }\end{DoxyParamCaption})}
+
+
+
+Function returning the node information associated with the specified node. 
+
+This function modifies the graph if \hyperlink{structNodeInfo}{Node\+Info} is not yet associated with the node. 
+\begin{DoxyParams}{Parameters}
+{\em v} & is the considered node. \\
+\hline
+{\em g} & is the graph. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{structNodeInfo}{Node\+Info} object associated with v. 
+\end{DoxyReturn}
+
+
+Definition at line 534 of file graph.\+hpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+\mbox{\Hypertarget{graph_8hpp_a196ff103d91621db410c9801a12f3f5a}\label{graph_8hpp_a196ff103d91621db410c9801a12f3f5a}} 
+\index{graph.\+hpp@{graph.\+hpp}!get\+\_\+raw\+\_\+edge\+\_\+info@{get\+\_\+raw\+\_\+edge\+\_\+info}}
+\index{get\+\_\+raw\+\_\+edge\+\_\+info@{get\+\_\+raw\+\_\+edge\+\_\+info}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{get\+\_\+raw\+\_\+edge\+\_\+info()}{get\_raw\_edge\_info()}}
+{\footnotesize\ttfamily template$<$class info\+\_\+object , class Graph $>$ \\
+info\+\_\+object$\ast$ get\+\_\+raw\+\_\+edge\+\_\+info (\begin{DoxyParamCaption}\item[{typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::edge\+\_\+descriptor}]{e,  }\item[{\hyperlink{structGraph}{Graph} \&}]{g }\end{DoxyParamCaption})}
+
+
+
+Function returning the edge information associated with the specified edge. 
+
+This function modifies the graph if \hyperlink{structEdgeInfo}{Edge\+Info} is not yet associated with the edge. 
+\begin{DoxyParams}{Parameters}
+{\em e} & is the considered edge. \\
+\hline
+{\em g} & is the graph. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{structEdgeInfo}{Edge\+Info} object associated with e. 
+\end{DoxyReturn}
+Note\+: reference has to be used since we want to modify the info associated with the edge 
+
+Definition at line 162 of file graph.\+hpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+\mbox{\Hypertarget{graph_8hpp_a3ee3141f6643b15f4e2aa72e8bcf0c75}\label{graph_8hpp_a3ee3141f6643b15f4e2aa72e8bcf0c75}} 
+\index{graph.\+hpp@{graph.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structNodeInfo}{Node\+Info}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{graph_8hpp_a8176805163d8e74c902ad13c8844906e}\label{graph_8hpp_a8176805163d8e74c902ad13c8844906e}} 
+\index{graph.\+hpp@{graph.\+hpp}!set\+\_\+node\+\_\+info@{set\+\_\+node\+\_\+info}}
+\index{set\+\_\+node\+\_\+info@{set\+\_\+node\+\_\+info}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{set\+\_\+node\+\_\+info()}{set\_node\_info()}}
+{\footnotesize\ttfamily template$<$class info\+\_\+object , class Graph $>$ \\
+void set\+\_\+node\+\_\+info (\begin{DoxyParamCaption}\item[{typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::vertex\+\_\+descriptor}]{v,  }\item[{const \hyperlink{structrefcount}{refcount}$<$ info\+\_\+object $>$ \&}]{obj,  }\item[{\hyperlink{structGraph}{Graph} \&}]{g }\end{DoxyParamCaption})}
+
+
+
+Function returning the node information associated with the specified node. 
+
+This function modifies the graph if \hyperlink{structNodeInfo}{Node\+Info} is not yet associated with the node. 
+\begin{DoxyParams}{Parameters}
+{\em v} & is the considered node. \\
+\hline
+{\em g} & is the graph. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{structNodeInfo}{Node\+Info} object associated with v. 
+\end{DoxyReturn}
+
+
+Definition at line 516 of file graph.\+hpp.
+
+\mbox{\Hypertarget{graph_8hpp_a50115bbf0a2a61e50daf28d16ffb6103}\label{graph_8hpp_a50115bbf0a2a61e50daf28d16ffb6103}} 
+\index{graph.\+hpp@{graph.\+hpp}!V\+E\+R\+T\+EX@{V\+E\+R\+T\+EX}}
+\index{V\+E\+R\+T\+EX@{V\+E\+R\+T\+EX}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{V\+E\+R\+T\+E\+X()}{VERTEX()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily boost\+::graph\+\_\+traits$<$\hyperlink{structgraph}{graph}$>$\+::vertex\+\_\+descriptor V\+E\+R\+T\+EX (\begin{DoxyParamCaption}\item[{const boost\+::graph\+\_\+traits$<$ \hyperlink{structgraph}{graph} $>$\+::vertices\+\_\+size\+\_\+type}]{i,  }\item[{const \hyperlink{structgraph}{graph} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Given a filtered graph and an index returns the vertex exploiting the boost\+::vertex applied on the original graph. 
+
+this function can access the bulk graph
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is the index of the vertex. \\
+\hline
+{\em g} & is the graph for which the vertex is asked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the vertex with the index i of the graph g. 
+\end{DoxyReturn}
+
+
+Definition at line 1261 of file graph.\+hpp.
+
+
+
+Referenced by graph\+::graph(), and ugraph\+::ugraph().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{d9/de9/graph_8hpp_a50115bbf0a2a61e50daf28d16ffb6103_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{graph_8hpp_a384850f34c907713dc9bfe9ea6aad77b}\label{graph_8hpp_a384850f34c907713dc9bfe9ea6aad77b}} 
+\index{graph.\+hpp@{graph.\+hpp}!V\+E\+R\+T\+EX@{V\+E\+R\+T\+EX}}
+\index{V\+E\+R\+T\+EX@{V\+E\+R\+T\+EX}!graph.\+hpp@{graph.\+hpp}}
+\subsubsection{\texorpdfstring{V\+E\+R\+T\+E\+X()}{VERTEX()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily boost\+::graph\+\_\+traits$<$\hyperlink{structugraph}{ugraph}$>$\+::vertex\+\_\+descriptor V\+E\+R\+T\+EX (\begin{DoxyParamCaption}\item[{const boost\+::graph\+\_\+traits$<$ \hyperlink{structugraph}{ugraph} $>$\+::vertices\+\_\+size\+\_\+type}]{i,  }\item[{const \hyperlink{structugraph}{ugraph} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Given a filtered ugraph and an index returns the vertex exploiting the boost\+::vertex applied on the original graph. 
+
+this function can access the bulk graph
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is the index of the vertex. \\
+\hline
+{\em g} & is the ugraph for which the vertex is asked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the vertex with the index i of the graph g. 
+\end{DoxyReturn}
+
+
+Definition at line 1272 of file graph.\+hpp.
+

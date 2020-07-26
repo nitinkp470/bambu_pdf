@@ -1,0 +1,3871 @@
+\hypertarget{classmemory}{}\section{memory Class Reference}
+\label{classmemory}\index{memory@{memory}}
+
+
+{\ttfamily \#include $<$memory.\+hpp$>$}
+
+
+
+Inheritance diagram for memory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{de/d09/classmemory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for memory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/df5/classmemory__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmemory_a4944f160b2ac6d7b7c212beeb606bd7f}{memory} (const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \hyperlink{classmemory_a6806f41edbd2ce52a84c3ba452d011f3}{TreeM}, unsigned int \hyperlink{classmemory_ac97a5cf7a49915e6ca63883c30c0e599}{off\+\_\+base\+\_\+address}, unsigned int max\+\_\+bram, bool \hyperlink{classmemory_af76a7dbf11a240c8f8664444295701aa}{null\+\_\+pointer\+\_\+check}, bool initial\+\_\+internal\+\_\+address\+\_\+p, unsigned int initial\+\_\+internal\+\_\+address, const unsigned \&\+\_\+bus\+\_\+addr\+\_\+bitsize)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classmemory_ae5893b724ce22f38b776558384f21680}{$\sim$memory} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} $>$ \hyperlink{classmemory_a59407bf67cc11931fc505d7fc9e86898}{get\+\_\+ext\+\_\+memory\+\_\+variables} () const
+\begin{DoxyCompactList}\small\item\em Return variables allocated out of the top module. \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a794e01c8ff2ed36104240903aaa4acd4}{add\+\_\+external\+\_\+variable} (unsigned int var)
+\begin{DoxyCompactList}\small\item\em Allocates a variable to the set of variables allocated outside to outermost function. \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_afc9ff45301d4dbbb7f5a840155f74402}{add\+\_\+external\+\_\+symbol} (unsigned int var, const \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} m\+\_\+sym)
+\begin{DoxyCompactList}\small\item\em Allocates a variable to the set of variables allocated outside to outermost function. \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a492d9004bff7ff81122a6bb4c2cc6b2d}{add\+\_\+internal\+\_\+variable} (unsigned int fun\+I\+D\+\_\+scope, unsigned int var)
+\begin{DoxyCompactList}\small\item\em Allocates a variable to the set of variables allocated internally to the given function. \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_af1e653b61323d7728656dadf8249a369}{add\+\_\+internal\+\_\+variable\+\_\+proxy} (unsigned int fun\+I\+D\+\_\+scope, unsigned int var)
+\begin{DoxyCompactList}\small\item\em allocate a proxy for the variable for the specified function \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_aaa68bc383457b382d8fdac9d29d74def}{compute\+\_\+next\+\_\+base\+\_\+address} (unsigned int \&address, unsigned int var, unsigned int alignment)
+\begin{DoxyCompactList}\small\item\em Compute the new base address based on the size of the given variable and align the memory as needed. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \& \hyperlink{classmemory_afa287c1bff2634613e59d7ece4d74d60}{get\+\_\+proxied\+\_\+internal\+\_\+variables} (unsigned int fun\+I\+D\+\_\+scope) const
+\begin{DoxyCompactList}\small\item\em return the proxied internal variables associated with the function \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a792d6586b289c275ef9728053681bc08}{has\+\_\+proxied\+\_\+internal\+\_\+variables} (unsigned int fun\+I\+D\+\_\+scope) const
+\begin{DoxyCompactList}\small\item\em check if the function has proxied variables \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_ad42c0543068efe731b71267f869fefcf}{is\+\_\+a\+\_\+proxied\+\_\+variable} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em return true if the variable is a proxied variable \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a626219c7688337cb254b4586af7aaeac}{add\+\_\+read\+\_\+only\+\_\+variable} (unsigned var)
+\begin{DoxyCompactList}\small\item\em add a read only variable \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a95592389e09c170738164d64ef46aacb}{is\+\_\+read\+\_\+only\+\_\+variable} (unsigned var) const
+\begin{DoxyCompactList}\small\item\em return true when the variable is only read \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_ae4d01a6e84a8701b3b04432f3c173212}{add\+\_\+internal\+\_\+symbol} (unsigned int fun\+I\+D\+\_\+scope, unsigned int var, const \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} m\+\_\+sym)
+\begin{DoxyCompactList}\small\item\em Allocates a variable to the set of variables allocated internally to the given function. \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a15d9eb23dfbab98d05a5075f1230c3e0}{add\+\_\+private\+\_\+memory} (unsigned int var)
+\begin{DoxyCompactList}\small\item\em add a var that safely cannot be attached to the bus \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a097988cba137c2de02ce55b9a62bf8f7}{set\+\_\+sds\+\_\+var} (unsigned int var, bool value)
+\begin{DoxyCompactList}\small\item\em set if a variable is always accessed with the same data size or not \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a3a39a28a6df6b3815a2fa061bb943ceb}{add\+\_\+source\+\_\+value} (unsigned int var, unsigned int value)
+\begin{DoxyCompactList}\small\item\em add a value to the set of values written in a given memory variable \end{DoxyCompactList}\item 
+const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \& \hyperlink{classmemory_a8a53cddf47d035cb68621156d6ce45c4}{get\+\_\+source\+\_\+values} (unsigned int var)
+\begin{DoxyCompactList}\small\item\em return the set of values used to write a given memory variable \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a6857ec6eab958a0a108f12c6e28d994b}{add\+\_\+parameter} (unsigned int fun\+I\+D\+\_\+scope, unsigned int var, bool is\+\_\+last)
+\begin{DoxyCompactList}\small\item\em Allocates a parameter to the set of the interface registers. \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_ae85e2b58d571e54800c0effee384a2b2}{add\+\_\+parameter\+\_\+symbol} (unsigned int fun\+I\+D\+\_\+scope, unsigned int var, const \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} m\+\_\+sym)
+\begin{DoxyCompactList}\small\item\em Allocates a parameter to the set of the interface registers. \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_af55ea4821a53abef7a412425aa50467c}{is\+\_\+internal\+\_\+variable} (unsigned int fun\+I\+D\+\_\+scope, unsigned int var) const
+\begin{DoxyCompactList}\small\item\em Test if a variable is allocated into the specified function. \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a01bcc5c735b622564c5a2498d3547300}{is\+\_\+external\+\_\+variable} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em Test if a variable is into the set of variables out of the top function. \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a3f36ef4c278bf2a45a2834523c484c7f}{is\+\_\+private\+\_\+memory} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em Return true in case the variable is private. \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_aa55b7b58d5ccf69ab5f8a79207750079}{is\+\_\+sds\+\_\+var} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em check if the variable is always accessed with the same data size \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a9d3f4a7583446c2617160ac93f7ccb27}{has\+\_\+sds\+\_\+var} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em return true if the var has been classified in term of same data size relation \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_ab5e7b68f10177f4a17cfab6d711dab49}{is\+\_\+parameter} (unsigned int fun\+I\+D\+\_\+scope, unsigned int var) const
+\begin{DoxyCompactList}\small\item\em Test if a variable is into the set of interface registers. \end{DoxyCompactList}\item 
+const std\+::map$<$ unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} $>$ \hyperlink{classmemory_adcab40db7617504ad89b0d11d53c8965}{get\+\_\+call\+Sites} () const
+\begin{DoxyCompactList}\small\item\em Get call sites map. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a3848f46ecf3925ab804f51e26661ae19}{get\+\_\+call\+Site\+\_\+base\+\_\+address} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em Get the current base address of the given call site. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a9a124e4167f009e2f3c1b4343c42c2d0}{get\+\_\+internal\+\_\+base\+\_\+address} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em Get the current base address of the given variable. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a32fccfbb1ec87572fffb59d3a8a93548}{get\+\_\+external\+\_\+base\+\_\+address} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em Get the current base address of the given variable. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a6488e1ee13bcf993f0406c377b4f42e4}{get\+\_\+parameter\+\_\+base\+\_\+address} (unsigned int fun\+Id, unsigned int var) const
+\begin{DoxyCompactList}\small\item\em Get the current base address of the given variable. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a1ea5eb40b241fab9c4512b828223ea92}{get\+\_\+base\+\_\+address} (unsigned int var, unsigned int fun\+Id) const
+\begin{DoxyCompactList}\small\item\em Get the current base address of the given variable. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a8288dc9efc8050b3d34cb06b74a1d3db}{get\+\_\+first\+\_\+address} (unsigned int fun\+Id) const
+\begin{DoxyCompactList}\small\item\em Get the first address of the function address space. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a7fa2c69835e5b2deefc2b380f710b470}{get\+\_\+last\+\_\+address} (unsigned int fun\+Id, const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} AppM) const
+\begin{DoxyCompactList}\small\item\em Get the last address of the function address space. \end{DoxyCompactList}\item 
+\hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} \hyperlink{classmemory_a380db560791ad488411a1d16c0526e43}{get\+\_\+symbol} (unsigned int var, unsigned int fun\+Id) const
+\begin{DoxyCompactList}\small\item\em Return the symbol associated with the given variable. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_accb255d35a6b3e1d93b5f38b9459b52b}{get\+\_\+rangesize} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em return the address space rangesize associated with the given var \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a4ded4a834b5c7c70d1f7c83117d4c774}{has\+\_\+call\+Site\+\_\+base\+\_\+address} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em Check if there is a base address for the given call site. \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a7008ca7ac0edcff1f6bece9751e46eac}{has\+\_\+internal\+\_\+base\+\_\+address} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em Check if there is a base address for the given variable. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a94c1ee081f754ed454af2fc6729072d0}{get\+\_\+n\+\_\+mem\+\_\+operations} (unsigned int var) const
+\item 
+void \hyperlink{classmemory_a7115d45a81bee175e0e55a71ea92d3d9}{increment\+\_\+n\+\_\+mem\+\_\+operations} (unsigned int var)
+\item 
+bool \hyperlink{classmemory_a25b6c76946f47b674ad6d63efc48fd4d}{has\+\_\+external\+\_\+base\+\_\+address} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em Check if there is a base address for the given variable. \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_af2a8ffe8b46caad910fa15fd4b682fed}{has\+\_\+parameter\+\_\+base\+\_\+address} (unsigned int var, unsigned int fun\+Id) const
+\begin{DoxyCompactList}\small\item\em Check if there is a base address for the given parameter. \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a96f4c37de951e186df09a2ddc249d77b}{has\+\_\+base\+\_\+address} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em Check if there is a base address for the given variable. \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_ae761b88fcafd4a0c6c7ae4426fe6ceb6}{is\+\_\+parm\+\_\+decl\+\_\+copied} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em return true in case the \hyperlink{structparm__decl}{parm\+\_\+decl} parameter has to be copied from the caller \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_aa397acb159d30fa221af9cd66c442d7f}{add\+\_\+parm\+\_\+decl\+\_\+copied} (unsigned int var)
+\begin{DoxyCompactList}\small\item\em add a \hyperlink{structparm__decl}{parm\+\_\+decl} to the set of \hyperlink{structparm__decl}{parm\+\_\+decl} written \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_aea74338373012206d2b769a4f1e144c4}{is\+\_\+parm\+\_\+decl\+\_\+stored} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em return true in case the \hyperlink{structparm__decl}{parm\+\_\+decl} parameter has to be initialized from the formal value \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a480a93ec1ca630ee87d15b1ad127f3f2}{add\+\_\+parm\+\_\+decl\+\_\+stored} (unsigned int var)
+\begin{DoxyCompactList}\small\item\em add a \hyperlink{structparm__decl}{parm\+\_\+decl} to the set of \hyperlink{structparm__decl}{parm\+\_\+decl} that has to be initialized \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_af12efe6e45e237f9db7bdb650121e3b9}{is\+\_\+actual\+\_\+parm\+\_\+loaded} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em return true in case the actual parameter has to be initialized from a stored value \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a3df806662ba923a3bf6d8608acae5048}{add\+\_\+actual\+\_\+parm\+\_\+loaded} (unsigned int var)
+\begin{DoxyCompactList}\small\item\em add an actual parameter to the set of parameter that has to be initialized from a stored value \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} $>$ \hyperlink{classmemory_a6ce2b973f83c743754cfa1bbe1b2a150}{get\+\_\+function\+\_\+vars} (unsigned int fun\+I\+D\+\_\+scope) const
+\begin{DoxyCompactList}\small\item\em Return the variables allocated within the space of a given function. \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} $>$ \hyperlink{classmemory_a5d64e7ff7e95efad54bbfa07f58e18c1}{get\+\_\+function\+\_\+parameters} (unsigned int fun\+I\+D\+\_\+scope) const
+\begin{DoxyCompactList}\small\item\em Return parameters allocated in register of the interface. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a510234387e466e099cffb7a6a01ed92f}{get\+\_\+memory\+\_\+address} () const
+\begin{DoxyCompactList}\small\item\em Return the first memory address not yet allocated. \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_ae5cb10cded037f2d6b8171acb8cba6c9}{reserve\+\_\+space} (unsigned int space)
+\begin{DoxyCompactList}\small\item\em Explicitly allocate a certain space in the external memory. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_aca163291c5d49ad384e5af2f5eb8d20a}{get\+\_\+allocated\+\_\+space} () const
+\begin{DoxyCompactList}\small\item\em Returns the amount of memory allocated internally to the module. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a580103df3eb36abe6d53f31b7fba7fed}{get\+\_\+allocated\+\_\+parameters\+\_\+memory} () const
+\begin{DoxyCompactList}\small\item\em Return the total amount of memory allocated for the memory mapped parameters. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a779906886ca81a3ed86aaa2b3c69d4f0}{get\+\_\+allocated\+\_\+intern\+\_\+memory} () const
+\begin{DoxyCompactList}\small\item\em Returns the amount of memory allocated internally but not private. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_ae371f1c8d9b33b71254ecb705d7ff51d}{get\+\_\+max\+\_\+address} () const
+\begin{DoxyCompactList}\small\item\em return the maximum address allocated \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a2bfe7650482db62c431267c6cb01ccac}{set\+\_\+bus\+\_\+data\+\_\+bitsize} (unsigned int bitsize)
+\begin{DoxyCompactList}\small\item\em set the bus data bitsize \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a1db8e919be66e06ccc86dfce8fd40cec}{get\+\_\+bus\+\_\+data\+\_\+bitsize} () const
+\begin{DoxyCompactList}\small\item\em return the bitsize of the data bus \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a306423532042ca8f0effb744fc8f9931}{set\+\_\+bus\+\_\+size\+\_\+bitsize} (unsigned int bitsize)
+\begin{DoxyCompactList}\small\item\em set the bus size bitsize \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_ac4ef6ce89bf9d654aba58fdc92c9a098}{get\+\_\+bus\+\_\+size\+\_\+bitsize} () const
+\begin{DoxyCompactList}\small\item\em return the bitsize of the size bus \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a7d924bbfab481c80b2770c59f2824b35}{set\+\_\+bram\+\_\+bitsize} (unsigned int bitsize)
+\begin{DoxyCompactList}\small\item\em set the B\+R\+AM bitsize \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_ac82303660a64f1638acd37265f20a48a}{get\+\_\+bram\+\_\+bitsize} () const
+\begin{DoxyCompactList}\small\item\em return the B\+R\+AM bitsize \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a47b943a6e371ccdd0d4465be99b6c240}{set\+\_\+maxbram\+\_\+bitsize} (unsigned int bitsize)
+\begin{DoxyCompactList}\small\item\em set the maximum B\+R\+AM bitsize \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a2c60a1b44b29221ddd9ac291afffd4d6}{get\+\_\+maxbram\+\_\+bitsize} () const
+\begin{DoxyCompactList}\small\item\em return the B\+R\+AM bitsize \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a2a4b7aa0153f24a50385b370c260cec0}{set\+\_\+intern\+\_\+shared\+\_\+data} (bool has\+\_\+accesses)
+\begin{DoxyCompactList}\small\item\em define if the Spec has data that can be externally accessed \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a815f393ee72721eb6ccdf002441b1b0f}{has\+\_\+intern\+\_\+shared\+\_\+data} () const
+\begin{DoxyCompactList}\small\item\em return true in case the specification has data that can be externally accessed \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_aae0ad53726eef6b63a98acb7096c3418}{set\+\_\+maximum\+\_\+references} (unsigned int var, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} n\+\_\+refs)
+\begin{DoxyCompactList}\small\item\em define the maximum number of references for a given variable \end{DoxyCompactList}\item 
+\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} \hyperlink{classmemory_a89891d351f4311540282f85f395160d4}{get\+\_\+maximum\+\_\+references} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em return the maximum number of references for a given variable \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a093f5c9909afd59a4ce3e480934fbfb4}{set\+\_\+maximum\+\_\+loads} (unsigned int var, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} n\+\_\+refs)
+\begin{DoxyCompactList}\small\item\em define the maximum number of loads for a given variable \end{DoxyCompactList}\item 
+\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} \hyperlink{classmemory_af59fd8089c95addbd19c330aa1af978a}{get\+\_\+maximum\+\_\+loads} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em return the maximum number of loads for a given variable \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_ab229af9483c5f4defbce43877652c365}{add\+\_\+need\+\_\+bus} (unsigned int var)
+\begin{DoxyCompactList}\small\item\em the variable is read or written through the bus \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a6b6f8242a9b610f0a7942ee442e7a123}{does\+\_\+need\+\_\+addr} (unsigned int var) const
+\begin{DoxyCompactList}\small\item\em check if a load or a store of the variable is done trough the bus \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a0f7fcd0b927b352cb590638a3fb20bce}{set\+\_\+use\+\_\+unknown\+\_\+addresses} (bool accesses)
+\begin{DoxyCompactList}\small\item\em define if there exist an object used by the Spec with an address not known at compile time \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a90adcbcfd3399dad6ff8ef90c6ad9a35}{has\+\_\+unknown\+\_\+addresses} () const
+\begin{DoxyCompactList}\small\item\em return true in case the specification use addresses not known at compile time \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_ac3c4105219a8035042d60ba076502ea4}{set\+\_\+pointer\+\_\+conversion} (bool accesses)
+\begin{DoxyCompactList}\small\item\em set if a pointer conversion happen \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a433d1c32eaf44fd28694cb612a1330f0}{has\+\_\+pointer\+\_\+conversion} () const
+\begin{DoxyCompactList}\small\item\em return true in case at least one pointer conversion happen \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a7900eedc2a6002a1519927f648064dd8}{set\+\_\+unaligned\+\_\+accesses} (bool accesses)
+\begin{DoxyCompactList}\small\item\em set if L\+O\+A\+Ds or S\+T\+O\+R\+Es perform unaligned accesses \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a4cfc9a502338a2d4ba7c831c63e41edf}{has\+\_\+unaligned\+\_\+accesses} () const
+\begin{DoxyCompactList}\small\item\em return true in case of unaligned accesses \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_ab351898868e78407d9fc2ec1e4969c0c}{set\+\_\+all\+\_\+pointers\+\_\+resolved} (bool resolved)
+\begin{DoxyCompactList}\small\item\em define if all pointers have statically resolved \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_abf339e7c5e5b888f1dfd5927f8750497}{has\+\_\+all\+\_\+pointers\+\_\+resolved} () const
+\begin{DoxyCompactList}\small\item\em return true in case all pointers have been statically resolved \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_ad8729b135f5676bc9cb69047d4bf4120}{set\+\_\+packed\+\_\+vars} (bool packed)
+\begin{DoxyCompactList}\small\item\em update the the packed variables status \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a454bcd8827a81dcc3ecc07cee955bdb6}{has\+\_\+packed\+\_\+vars} () const
+\item 
+void \hyperlink{classmemory_a685cd474a5a626474a519e9047866f78}{set\+\_\+implicit\+\_\+memcpy} (bool cond)
+\begin{DoxyCompactList}\small\item\em define if there exist an implicit call of memcpy \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_ac71f7ac117e1a1d85c9de59084a7cc41}{has\+\_\+implicit\+\_\+memcpy} () const
+\begin{DoxyCompactList}\small\item\em return true in case the specification has an implicit call of memcpy \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a0e9c0cfa49050ae635406d185b94809a}{get\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment} () const
+\begin{DoxyCompactList}\small\item\em return the internal base address alignment. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a0b03a8a5198dc85c9c6b1f26bc5464ec}{get\+\_\+parameter\+\_\+alignment} () const
+\begin{DoxyCompactList}\small\item\em return the parameter alignment \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a104f9ba5a915851cfefe36fd606dc178}{set\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment} (unsigned int \+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment)
+\begin{DoxyCompactList}\small\item\em set the internal base address alignment \end{DoxyCompactList}\item 
+void \hyperlink{classmemory_a078583e5743344036f0620cd532d5e89}{xwrite} (\hyperlink{classxml__element}{xml\+\_\+element} $\ast$node)
+\begin{DoxyCompactList}\small\item\em Writes the current memory allocation into an X\+ML description. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a65a07e87ed6884cc67998454ed50fb72}{count\+\_\+non\+\_\+private\+\_\+internal\+\_\+symbols} () const
+\item 
+bool \hyperlink{classmemory_a08892c0a65916344ca6b744256d764d7}{not\+EQ} (\hyperlink{structrefcount}{refcount}$<$ \hyperlink{classmemory}{memory} $>$ ref) const
+\begin{DoxyCompactList}\small\item\em return true in case the current memory object and the passed one are different \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{memory_8hpp_aec1333ec6cd561731fb3ed3e55b9caf5}{memory\+Ref} \hyperlink{classmemory_a169a0772cd5c322a06f7f433cb9c27af}{create\+\_\+memory} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \+\_\+parameters, const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \+\_\+\+TreeM, unsigned int \+\_\+off\+\_\+base\+\_\+address, unsigned int max\+\_\+bram, bool \+\_\+null\+\_\+pointer\+\_\+check, bool initial\+\_\+internal\+\_\+address\+\_\+p, unsigned int initial\+\_\+internal\+\_\+address, const unsigned int \&\+\_\+address\+\_\+bitsize)
+\item 
+static void \hyperlink{classmemory_ad407ba2bf162ece359a8254a3d23db32}{propagate\+\_\+memory\+\_\+parameters} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} src, const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} tgt)
+\begin{DoxyCompactList}\small\item\em Propagates the memory parameters from the source (innermost) module to the target (outermost) one. \end{DoxyCompactList}\item 
+static void \hyperlink{classmemory_a8ed6105d60330239af187ab2d414d019}{add\+\_\+memory\+\_\+parameter} (const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} SM, const std\+::string \&name, const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em Adds the given memory parameter to the corresponding object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classmemory_a30018e73a41b777c95319b62cfc79b81}{align} (unsigned int \&address, unsigned int alignment)
+\begin{DoxyCompactList}\small\item\em Alignment utility function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \hyperlink{classmemory_a6806f41edbd2ce52a84c3ba452d011f3}{TreeM}
+\begin{DoxyCompactList}\small\item\em datastructure containing tree information \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} $>$ \hyperlink{classmemory_ae45a5824c5d97979940f500436f1e1a7}{external}
+\begin{DoxyCompactList}\small\item\em set of variables allocated outside the top module \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, std\+::map$<$ unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} $>$ $>$ \hyperlink{classmemory_af2efbd3f5b71e458681d8c971e2dfbee}{internal}
+\begin{DoxyCompactList}\small\item\em set of variables allocated internally to the cores, classified by function id \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ $>$ \hyperlink{classmemory_a45fb0aa269feeca220af83356be42e11}{internal\+\_\+variable\+\_\+proxy}
+\begin{DoxyCompactList}\small\item\em set of variable proxies accessed by a function \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classmemory_adec2a898a9a834d8b15d565c418689ed}{proxied\+\_\+variables}
+\begin{DoxyCompactList}\small\item\em is the set of proxied variables \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classmemory_a65ec8ddee58a43fd84b238d5a79daf7d}{read\+\_\+only\+\_\+vars}
+\item 
+std\+::map$<$ unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} $>$ \hyperlink{classmemory_a7425f19fdc73130bccf232d8deef4006}{in\+\_\+vars}
+\begin{DoxyCompactList}\small\item\em set of all the internal variables \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, unsigned int $>$ \hyperlink{classmemory_a3c2f2a293a39a86fca2072848f852585}{rangesize}
+\begin{DoxyCompactList}\small\item\em for each var store the address space rangesize associated with it \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, std\+::map$<$ unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} $>$ $>$ \hyperlink{classmemory_a8e55632ecceb2c57fc3a337997528bc1}{parameter}
+\begin{DoxyCompactList}\small\item\em set of variables allocated in registers of the interface \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} $>$ \hyperlink{classmemory_a8845366310c0ac284b91c2cd561f1ad1}{params}
+\begin{DoxyCompactList}\small\item\em set of all the internal parameters \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} $>$ \hyperlink{classmemory_ae8e4d74f0178f58f58d3a2e4432c1cd7}{call\+Sites}
+\begin{DoxyCompactList}\small\item\em set of call sites for \+\_\+\+\_\+builtin\+\_\+wait\+\_\+call \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classmemory_a51a28f3d0b125a57a16febef16d93326}{private\+\_\+memories}
+\begin{DoxyCompactList}\small\item\em store the objects that does not need to be attached to the bus \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, unsigned int $>$ \hyperlink{classmemory_a8bce4956a8b768487cced20ae90120fc}{same\+\_\+data\+\_\+size\+\_\+accesses}
+\begin{DoxyCompactList}\small\item\em store if a given variable is accessed always with the same data\+\_\+size or not \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ $>$ \hyperlink{classmemory_af2c50f29b1e11b8a03c8e58491fc3fb9}{source\+\_\+values}
+\begin{DoxyCompactList}\small\item\em ssa\+\_\+names assigned to a given memory variable \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classmemory_a7f54cdccc221acb58e2c87898f4e7005}{parm\+\_\+decl\+\_\+copied}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structparm__decl}{parm\+\_\+decl} that has to be copied from the caller \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classmemory_a9dc8f2a404f5d05c44e43d5b0d05d3e8}{parm\+\_\+decl\+\_\+stored}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structparm__decl}{parm\+\_\+decl} storage has to be initialized from the formal parameter \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classmemory_ade20269d0dbb7efbf708fd694bb82d82}{actual\+\_\+parm\+\_\+loaded}
+\begin{DoxyCompactList}\small\item\em actual parameter that has to be loaded from a stored value \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a74f7fc9e278fc5f1047c06887bfbf628}{next\+\_\+base\+\_\+address}
+\begin{DoxyCompactList}\small\item\em it represents the next address that is available for internal allocation \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_ac55060cc8c48960f050d7c1a08b31d52}{internal\+\_\+base\+\_\+address\+\_\+start}
+\begin{DoxyCompactList}\small\item\em is the start internal address \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a15e811711b1637eee51ca9f590adaec8}{maximum\+\_\+private\+\_\+memory\+\_\+size}
+\begin{DoxyCompactList}\small\item\em is the maximum amount of private memory allocated \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a3103b469a197d1ec13ece20de36c994d}{total\+\_\+amount\+\_\+of\+\_\+private\+\_\+memory}
+\begin{DoxyCompactList}\small\item\em total amount of internal memory allocated \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a7622b3919a88ad790782facf9d490f95}{total\+\_\+amount\+\_\+of\+\_\+parameter\+\_\+memory}
+\begin{DoxyCompactList}\small\item\em total amount of parameter memory \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_ac97a5cf7a49915e6ca63883c30c0e599}{off\+\_\+base\+\_\+address}
+\begin{DoxyCompactList}\small\item\em it represents the base address of the external memory \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a276dd744b44a4862ff5d6c294d638965}{next\+\_\+off\+\_\+base\+\_\+address}
+\begin{DoxyCompactList}\small\item\em it represents the next address that is available to allocate a variable out of the top module \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a0bbe4c23f492172e842d5de6334f48b7}{bus\+\_\+data\+\_\+bitsize}
+\begin{DoxyCompactList}\small\item\em bus data bitsize \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_adb91a01d972a23757d764578d6b36f7e}{bus\+\_\+size\+\_\+bitsize}
+\begin{DoxyCompactList}\small\item\em bus size bitsize \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a8ce0f5cb063649425c36d630446cbdab}{bram\+\_\+bitsize}
+\begin{DoxyCompactList}\small\item\em bram bitsize \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a06a2006636c058647483276947faaede}{maxbram\+\_\+bitsize}
+\begin{DoxyCompactList}\small\item\em maximum bram bitsize \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a85abaa2319b6f0941e1448bb53c57958}{intern\+\_\+shared\+\_\+data}
+\begin{DoxyCompactList}\small\item\em define if the Spec has data that can be externally accessed \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a0b0d3f30b23b5bbb388097f3c117d29e}{use\+\_\+unknown\+\_\+addresses}
+\begin{DoxyCompactList}\small\item\em Spec accesses data having an address unknown at compile time. \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_ac4763c40921f38e1e1e7eda3acb4e0af}{pointer\+\_\+conversion}
+\begin{DoxyCompactList}\small\item\em true when at least one pointer conversion happen \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a501c57d0c361729baebefcf365fc3241}{unaligned\+\_\+accesses}
+\begin{DoxyCompactList}\small\item\em true when L\+O\+A\+Ds or S\+T\+O\+R\+Es perform unaligned accesses \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a5baad078a5d727ffd398b13f38bea29d}{all\+\_\+pointers\+\_\+resolved}
+\begin{DoxyCompactList}\small\item\em is true when all pointers are resolved statically \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_a86949b9eb85aded9563911074a16f691}{implicit\+\_\+memcpy}
+\begin{DoxyCompactList}\small\item\em when true an implicit memcpy is called \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_aae0423a2b0d67d6144694b6b41025141}{internal\+\_\+base\+\_\+address\+\_\+alignment}
+\begin{DoxyCompactList}\small\item\em internal address alignment \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmemory_a6e43571c74b6e7627406a0f0b14e7756}{external\+\_\+base\+\_\+address\+\_\+alignment}
+\begin{DoxyCompactList}\small\item\em external address alignment \end{DoxyCompactList}\item 
+const unsigned int \hyperlink{classmemory_ac5e94e5f126f12d204d58d96384124f6}{parameter\+\_\+alignment}
+\begin{DoxyCompactList}\small\item\em parameter alignment \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, unsigned int $>$ \hyperlink{classmemory_ace0b7da6929aa5fb0a72f099e72eb0da}{n\+\_\+mem\+\_\+operations\+\_\+per\+\_\+var}
+\begin{DoxyCompactList}\small\item\em number of L\+O\+A\+D/\+S\+T\+O\+RE per var \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_af76a7dbf11a240c8f8664444295701aa}{null\+\_\+pointer\+\_\+check}
+\begin{DoxyCompactList}\small\item\em when false object could be allocated starting from address 0 \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} $>$ \hyperlink{classmemory_a268547b20b11daccd5d48b340c435915}{maximum\+\_\+references}
+\begin{DoxyCompactList}\small\item\em define for each variable the number of references whenever it is possible \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} $>$ \hyperlink{classmemory_a7723dbe3d9d2f93d48e565757d3a6822}{maximum\+\_\+loads}
+\begin{DoxyCompactList}\small\item\em define for each variable the number of loads whenever it is possible \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classmemory_aa5d90978b5d5147fa086c0e2f507f415}{need\+\_\+bus}
+\begin{DoxyCompactList}\small\item\em define for each variable the number of loads whenever it is possible \end{DoxyCompactList}\item 
+bool \hyperlink{classmemory_afe6c94e7d3da0b12ac0bf2bbbf11d934}{packed\+\_\+vars}
+\begin{DoxyCompactList}\small\item\em true when packed vars are used \end{DoxyCompactList}\item 
+const unsigned \& \hyperlink{classmemory_acb8126266d6dbffc611a67b26feb8d97}{bus\+\_\+addr\+\_\+bitsize}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 67 of file memory.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmemory_a4944f160b2ac6d7b7c212beeb606bd7f}\label{classmemory_a4944f160b2ac6d7b7c212beeb606bd7f}} 
+\index{memory@{memory}!memory@{memory}}
+\index{memory@{memory}!memory@{memory}}
+\subsubsection{\texorpdfstring{memory()}{memory()}}
+{\footnotesize\ttfamily memory\+::memory (\begin{DoxyParamCaption}\item[{const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref}}]{\+\_\+\+TreeM,  }\item[{unsigned int}]{\+\_\+off\+\_\+base\+\_\+address,  }\item[{unsigned int}]{max\+\_\+bram,  }\item[{bool}]{\+\_\+null\+\_\+pointer\+\_\+check,  }\item[{bool}]{initial\+\_\+internal\+\_\+address\+\_\+p,  }\item[{unsigned int}]{initial\+\_\+internal\+\_\+address,  }\item[{const unsigned \&}]{\+\_\+bus\+\_\+addr\+\_\+bitsize }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+S\+TL includes.
+
+tree include we start to allocate from internal\+\_\+base\+\_\+address\+\_\+alignment byte to align address to internal\+\_\+base\+\_\+address\+\_\+alignment bits we can use address 0 in some cases but it is not safe in general. 
+
+Definition at line 79 of file memory.\+cpp.
+
+
+
+References align(), external\+\_\+base\+\_\+address\+\_\+alignment, internal\+\_\+base\+\_\+address\+\_\+alignment, internal\+\_\+base\+\_\+address\+\_\+start, next\+\_\+base\+\_\+address, null\+\_\+pointer\+\_\+check, and $\sim$memory().
+
+
+
+Referenced by align(), and create\+\_\+memory().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a4944f160b2ac6d7b7c212beeb606bd7f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a4944f160b2ac6d7b7c212beeb606bd7f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_ae5893b724ce22f38b776558384f21680}\label{classmemory_ae5893b724ce22f38b776558384f21680}} 
+\index{memory@{memory}!````~memory@{$\sim$memory}}
+\index{````~memory@{$\sim$memory}!memory@{memory}}
+\subsubsection{\texorpdfstring{$\sim$memory()}{~memory()}}
+{\footnotesize\ttfamily memory\+::$\sim$memory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by align(), and memory().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_ae5893b724ce22f38b776558384f21680_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmemory_a3df806662ba923a3bf6d8608acae5048}\label{classmemory_a3df806662ba923a3bf6d8608acae5048}} 
+\index{memory@{memory}!add\+\_\+actual\+\_\+parm\+\_\+loaded@{add\+\_\+actual\+\_\+parm\+\_\+loaded}}
+\index{add\+\_\+actual\+\_\+parm\+\_\+loaded@{add\+\_\+actual\+\_\+parm\+\_\+loaded}!memory@{memory}}
+\subsubsection{\texorpdfstring{add\+\_\+actual\+\_\+parm\+\_\+loaded()}{add\_actual\_parm\_loaded()}}
+{\footnotesize\ttfamily void memory\+::add\+\_\+actual\+\_\+parm\+\_\+loaded (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption})}
+
+
+
+add an actual parameter to the set of parameter that has to be initialized from a stored value 
+
+
+
+Definition at line 556 of file memory.\+cpp.
+
+
+
+References actual\+\_\+parm\+\_\+loaded.
+
+
+
+Referenced by increment\+\_\+n\+\_\+mem\+\_\+operations().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d8/d99/classmemory_a3df806662ba923a3bf6d8608acae5048_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_afc9ff45301d4dbbb7f5a840155f74402}\label{classmemory_afc9ff45301d4dbbb7f5a840155f74402}} 
+\index{memory@{memory}!add\+\_\+external\+\_\+symbol@{add\+\_\+external\+\_\+symbol}}
+\index{add\+\_\+external\+\_\+symbol@{add\+\_\+external\+\_\+symbol}!memory@{memory}}
+\subsubsection{\texorpdfstring{add\+\_\+external\+\_\+symbol()}{add\_external\_symbol()}}
+{\footnotesize\ttfamily void memory\+::add\+\_\+external\+\_\+symbol (\begin{DoxyParamCaption}\item[{unsigned int}]{var,  }\item[{const \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref}}]{m\+\_\+sym }\end{DoxyParamCaption})}
+
+
+
+Allocates a variable to the set of variables allocated outside to outermost function. 
+
+The corresponding symbol is already provided 
+
+Definition at line 258 of file memory.\+cpp.
+
+
+
+References compute\+\_\+next\+\_\+base\+\_\+address(), external, external\+\_\+base\+\_\+address\+\_\+alignment, in\+\_\+vars, max(), next\+\_\+off\+\_\+base\+\_\+address, parameter, S\+TR, and T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG.
+
+
+
+Referenced by add\+\_\+external\+\_\+variable(), and align().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_afc9ff45301d4dbbb7f5a840155f74402_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_afc9ff45301d4dbbb7f5a840155f74402_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a794e01c8ff2ed36104240903aaa4acd4}\label{classmemory_a794e01c8ff2ed36104240903aaa4acd4}} 
+\index{memory@{memory}!add\+\_\+external\+\_\+variable@{add\+\_\+external\+\_\+variable}}
+\index{add\+\_\+external\+\_\+variable@{add\+\_\+external\+\_\+variable}!memory@{memory}}
+\subsubsection{\texorpdfstring{add\+\_\+external\+\_\+variable()}{add\_external\_variable()}}
+{\footnotesize\ttfamily void memory\+::add\+\_\+external\+\_\+variable (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption})}
+
+
+
+Allocates a variable to the set of variables allocated outside to outermost function. 
+
+
+
+Definition at line 251 of file memory.\+cpp.
+
+
+
+References add\+\_\+external\+\_\+symbol(), align(), tree\+\_\+helper\+::get\+\_\+var\+\_\+alignment(), next\+\_\+off\+\_\+base\+\_\+address, and TreeM.
+
+
+
+Referenced by align().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a794e01c8ff2ed36104240903aaa4acd4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a794e01c8ff2ed36104240903aaa4acd4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_ae4d01a6e84a8701b3b04432f3c173212}\label{classmemory_ae4d01a6e84a8701b3b04432f3c173212}} 
+\index{memory@{memory}!add\+\_\+internal\+\_\+symbol@{add\+\_\+internal\+\_\+symbol}}
+\index{add\+\_\+internal\+\_\+symbol@{add\+\_\+internal\+\_\+symbol}!memory@{memory}}
+\subsubsection{\texorpdfstring{add\+\_\+internal\+\_\+symbol()}{add\_internal\_symbol()}}
+{\footnotesize\ttfamily void memory\+::add\+\_\+internal\+\_\+symbol (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope,  }\item[{unsigned int}]{var,  }\item[{const \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref}}]{m\+\_\+sym }\end{DoxyParamCaption})}
+
+
+
+Allocates a variable to the set of variables allocated internally to the given function. 
+
+The corresponding symbol is already provided 
+
+Definition at line 210 of file memory.\+cpp.
+
+
+
+References align(), call\+Sites, compute\+\_\+n\+\_\+bytes(), compute\+\_\+next\+\_\+base\+\_\+address(), external, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), in\+\_\+vars, internal\+\_\+base\+\_\+address\+\_\+alignment, is\+\_\+private\+\_\+memory(), max(), maximum\+\_\+private\+\_\+memory\+\_\+size, next\+\_\+base\+\_\+address, parameter, rangesize, tree\+\_\+helper\+::size(), S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG, total\+\_\+amount\+\_\+of\+\_\+private\+\_\+memory, and TreeM.
+
+
+
+Referenced by add\+\_\+internal\+\_\+variable(), and align().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_ae4d01a6e84a8701b3b04432f3c173212_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_ae4d01a6e84a8701b3b04432f3c173212_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a492d9004bff7ff81122a6bb4c2cc6b2d}\label{classmemory_a492d9004bff7ff81122a6bb4c2cc6b2d}} 
+\index{memory@{memory}!add\+\_\+internal\+\_\+variable@{add\+\_\+internal\+\_\+variable}}
+\index{add\+\_\+internal\+\_\+variable@{add\+\_\+internal\+\_\+variable}!memory@{memory}}
+\subsubsection{\texorpdfstring{add\+\_\+internal\+\_\+variable()}{add\_internal\_variable()}}
+{\footnotesize\ttfamily void memory\+::add\+\_\+internal\+\_\+variable (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope,  }\item[{unsigned int}]{var }\end{DoxyParamCaption})}
+
+
+
+Allocates a variable to the set of variables allocated internally to the given function. 
+
+
+
+Definition at line 151 of file memory.\+cpp.
+
+
+
+References add\+\_\+internal\+\_\+symbol(), align(), tree\+\_\+helper\+::get\+\_\+var\+\_\+alignment(), in\+\_\+vars, internal\+\_\+base\+\_\+address\+\_\+start, is\+\_\+private\+\_\+memory(), next\+\_\+base\+\_\+address, null\+\_\+pointer\+\_\+check, and TreeM.
+
+
+
+Referenced by align().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a492d9004bff7ff81122a6bb4c2cc6b2d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a492d9004bff7ff81122a6bb4c2cc6b2d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_af1e653b61323d7728656dadf8249a369}\label{classmemory_af1e653b61323d7728656dadf8249a369}} 
+\index{memory@{memory}!add\+\_\+internal\+\_\+variable\+\_\+proxy@{add\+\_\+internal\+\_\+variable\+\_\+proxy}}
+\index{add\+\_\+internal\+\_\+variable\+\_\+proxy@{add\+\_\+internal\+\_\+variable\+\_\+proxy}!memory@{memory}}
+\subsubsection{\texorpdfstring{add\+\_\+internal\+\_\+variable\+\_\+proxy()}{add\_internal\_variable\_proxy()}}
+{\footnotesize\ttfamily void memory\+::add\+\_\+internal\+\_\+variable\+\_\+proxy (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope,  }\item[{unsigned int}]{var }\end{DoxyParamCaption})}
+
+
+
+allocate a proxy for the variable for the specified function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fun\+I\+D\+\_\+scope} & is the function id \\
+\hline
+{\em var} & is the variable \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 178 of file memory.\+cpp.
+
+
+
+References internal\+\_\+variable\+\_\+proxy, and proxied\+\_\+variables.
+
+
+
+Referenced by align().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_af1e653b61323d7728656dadf8249a369_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a8ed6105d60330239af187ab2d414d019}\label{classmemory_a8ed6105d60330239af187ab2d414d019}} 
+\index{memory@{memory}!add\+\_\+memory\+\_\+parameter@{add\+\_\+memory\+\_\+parameter}}
+\index{add\+\_\+memory\+\_\+parameter@{add\+\_\+memory\+\_\+parameter}!memory@{memory}}
+\subsubsection{\texorpdfstring{add\+\_\+memory\+\_\+parameter()}{add\_memory\_parameter()}}
+{\footnotesize\ttfamily void memory\+::add\+\_\+memory\+\_\+parameter (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref}}]{SM,  }\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds the given memory parameter to the corresponding object. 
+
+
+
+Definition at line 628 of file memory.\+cpp.
+
+
+
+References structural\+\_\+object\+::\+Add\+Parameter(), structural\+\_\+object\+::\+Exists\+Parameter(), structural\+\_\+manager\+::get\+\_\+circ(), structural\+\_\+object\+::\+Get\+Parameter(), M\+E\+M\+O\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER, structural\+\_\+object\+::\+Set\+Parameter(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by classic\+\_\+datapath\+::add\+\_\+ports(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), Top\+Entity\+Memory\+Mapped\+::allocate\+\_\+parameters(), build\+\_\+bus\+\_\+interface(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+bus\+\_\+interface(), get\+\_\+parameter\+\_\+alignment(), and fu\+\_\+binding\+::specialize\+\_\+memory\+\_\+unit().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a8ed6105d60330239af187ab2d414d019_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a8ed6105d60330239af187ab2d414d019_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_ab229af9483c5f4defbce43877652c365}\label{classmemory_ab229af9483c5f4defbce43877652c365}} 
+\index{memory@{memory}!add\+\_\+need\+\_\+bus@{add\+\_\+need\+\_\+bus}}
+\index{add\+\_\+need\+\_\+bus@{add\+\_\+need\+\_\+bus}!memory@{memory}}
+\subsubsection{\texorpdfstring{add\+\_\+need\+\_\+bus()}{add\_need\_bus()}}
+{\footnotesize\ttfamily void memory\+::add\+\_\+need\+\_\+bus (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+the variable is read or written through the bus 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the variable \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 662 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_a6857ec6eab958a0a108f12c6e28d994b}\label{classmemory_a6857ec6eab958a0a108f12c6e28d994b}} 
+\index{memory@{memory}!add\+\_\+parameter@{add\+\_\+parameter}}
+\index{add\+\_\+parameter@{add\+\_\+parameter}!memory@{memory}}
+\subsubsection{\texorpdfstring{add\+\_\+parameter()}{add\_parameter()}}
+{\footnotesize\ttfamily void memory\+::add\+\_\+parameter (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope,  }\item[{unsigned int}]{var,  }\item[{bool}]{is\+\_\+last }\end{DoxyParamCaption})}
+
+
+
+Allocates a parameter to the set of the interface registers. 
+
+align in case is not aligned 
+
+Definition at line 285 of file memory.\+cpp.
+
+
+
+References add\+\_\+parameter\+\_\+symbol(), align(), internal\+\_\+base\+\_\+address\+\_\+alignment, next\+\_\+base\+\_\+address, and total\+\_\+amount\+\_\+of\+\_\+parameter\+\_\+memory.
+
+
+
+Referenced by get\+\_\+source\+\_\+values().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a6857ec6eab958a0a108f12c6e28d994b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d8/d99/classmemory_a6857ec6eab958a0a108f12c6e28d994b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_ae85e2b58d571e54800c0effee384a2b2}\label{classmemory_ae85e2b58d571e54800c0effee384a2b2}} 
+\index{memory@{memory}!add\+\_\+parameter\+\_\+symbol@{add\+\_\+parameter\+\_\+symbol}}
+\index{add\+\_\+parameter\+\_\+symbol@{add\+\_\+parameter\+\_\+symbol}!memory@{memory}}
+\subsubsection{\texorpdfstring{add\+\_\+parameter\+\_\+symbol()}{add\_parameter\_symbol()}}
+{\footnotesize\ttfamily void memory\+::add\+\_\+parameter\+\_\+symbol (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope,  }\item[{unsigned int}]{var,  }\item[{const \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref}}]{m\+\_\+sym }\end{DoxyParamCaption})}
+
+
+
+Allocates a parameter to the set of the interface registers. 
+
+allocation of the parameters 
+
+Definition at line 298 of file memory.\+cpp.
+
+
+
+References compute\+\_\+next\+\_\+base\+\_\+address(), external, in\+\_\+vars, max(), next\+\_\+base\+\_\+address, parameter, parameter\+\_\+alignment, params, S\+TR, T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG, and total\+\_\+amount\+\_\+of\+\_\+parameter\+\_\+memory.
+
+
+
+Referenced by add\+\_\+parameter(), and get\+\_\+source\+\_\+values().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_ae85e2b58d571e54800c0effee384a2b2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_ae85e2b58d571e54800c0effee384a2b2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_aa397acb159d30fa221af9cd66c442d7f}\label{classmemory_aa397acb159d30fa221af9cd66c442d7f}} 
+\index{memory@{memory}!add\+\_\+parm\+\_\+decl\+\_\+copied@{add\+\_\+parm\+\_\+decl\+\_\+copied}}
+\index{add\+\_\+parm\+\_\+decl\+\_\+copied@{add\+\_\+parm\+\_\+decl\+\_\+copied}!memory@{memory}}
+\subsubsection{\texorpdfstring{add\+\_\+parm\+\_\+decl\+\_\+copied()}{add\_parm\_decl\_copied()}}
+{\footnotesize\ttfamily void memory\+::add\+\_\+parm\+\_\+decl\+\_\+copied (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption})}
+
+
+
+add a \hyperlink{structparm__decl}{parm\+\_\+decl} to the set of \hyperlink{structparm__decl}{parm\+\_\+decl} written 
+
+
+
+Definition at line 536 of file memory.\+cpp.
+
+
+
+References parm\+\_\+decl\+\_\+copied.
+
+
+
+Referenced by increment\+\_\+n\+\_\+mem\+\_\+operations().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_aa397acb159d30fa221af9cd66c442d7f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a480a93ec1ca630ee87d15b1ad127f3f2}\label{classmemory_a480a93ec1ca630ee87d15b1ad127f3f2}} 
+\index{memory@{memory}!add\+\_\+parm\+\_\+decl\+\_\+stored@{add\+\_\+parm\+\_\+decl\+\_\+stored}}
+\index{add\+\_\+parm\+\_\+decl\+\_\+stored@{add\+\_\+parm\+\_\+decl\+\_\+stored}!memory@{memory}}
+\subsubsection{\texorpdfstring{add\+\_\+parm\+\_\+decl\+\_\+stored()}{add\_parm\_decl\_stored()}}
+{\footnotesize\ttfamily void memory\+::add\+\_\+parm\+\_\+decl\+\_\+stored (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption})}
+
+
+
+add a \hyperlink{structparm__decl}{parm\+\_\+decl} to the set of \hyperlink{structparm__decl}{parm\+\_\+decl} that has to be initialized 
+
+
+
+Definition at line 546 of file memory.\+cpp.
+
+
+
+References parm\+\_\+decl\+\_\+stored.
+
+
+
+Referenced by increment\+\_\+n\+\_\+mem\+\_\+operations().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a480a93ec1ca630ee87d15b1ad127f3f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a15d9eb23dfbab98d05a5075f1230c3e0}\label{classmemory_a15d9eb23dfbab98d05a5075f1230c3e0}} 
+\index{memory@{memory}!add\+\_\+private\+\_\+memory@{add\+\_\+private\+\_\+memory}}
+\index{add\+\_\+private\+\_\+memory@{add\+\_\+private\+\_\+memory}!memory@{memory}}
+\subsubsection{\texorpdfstring{add\+\_\+private\+\_\+memory()}{add\_private\_memory()}}
+{\footnotesize\ttfamily void memory\+::add\+\_\+private\+\_\+memory (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption})}
+
+
+
+add a var that safely cannot be attached to the bus 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is var index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 270 of file memory.\+cpp.
+
+
+
+References private\+\_\+memories.
+
+
+
+Referenced by align().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a15d9eb23dfbab98d05a5075f1230c3e0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a626219c7688337cb254b4586af7aaeac}\label{classmemory_a626219c7688337cb254b4586af7aaeac}} 
+\index{memory@{memory}!add\+\_\+read\+\_\+only\+\_\+variable@{add\+\_\+read\+\_\+only\+\_\+variable}}
+\index{add\+\_\+read\+\_\+only\+\_\+variable@{add\+\_\+read\+\_\+only\+\_\+variable}!memory@{memory}}
+\subsubsection{\texorpdfstring{add\+\_\+read\+\_\+only\+\_\+variable()}{add\_read\_only\_variable()}}
+{\footnotesize\ttfamily void memory\+::add\+\_\+read\+\_\+only\+\_\+variable (\begin{DoxyParamCaption}\item[{unsigned}]{var }\end{DoxyParamCaption})}
+
+
+
+add a read only variable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the variable id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 200 of file memory.\+cpp.
+
+
+
+References read\+\_\+only\+\_\+vars.
+
+
+
+Referenced by align().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a626219c7688337cb254b4586af7aaeac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a3a39a28a6df6b3815a2fa061bb943ceb}\label{classmemory_a3a39a28a6df6b3815a2fa061bb943ceb}} 
+\index{memory@{memory}!add\+\_\+source\+\_\+value@{add\+\_\+source\+\_\+value}}
+\index{add\+\_\+source\+\_\+value@{add\+\_\+source\+\_\+value}!memory@{memory}}
+\subsubsection{\texorpdfstring{add\+\_\+source\+\_\+value()}{add\_source\_value()}}
+{\footnotesize\ttfamily void memory\+::add\+\_\+source\+\_\+value (\begin{DoxyParamCaption}\item[{unsigned int}]{var,  }\item[{unsigned int}]{value }\end{DoxyParamCaption})}
+
+
+
+add a value to the set of values written in a given memory variable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the memory variable \\
+\hline
+{\em value} & is the source value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 280 of file memory.\+cpp.
+
+
+
+References source\+\_\+values.
+
+
+
+Referenced by align().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a3a39a28a6df6b3815a2fa061bb943ceb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a30018e73a41b777c95319b62cfc79b81}\label{classmemory_a30018e73a41b777c95319b62cfc79b81}} 
+\index{memory@{memory}!align@{align}}
+\index{align@{align}!memory@{memory}}
+\subsubsection{\texorpdfstring{align()}{align()}}
+{\footnotesize\ttfamily void memory\+::align (\begin{DoxyParamCaption}\item[{unsigned int \&}]{address,  }\item[{unsigned int}]{alignment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Alignment utility function. 
+
+
+
+Definition at line 200 of file memory.\+hpp.
+
+
+
+References add\+\_\+external\+\_\+symbol(), add\+\_\+external\+\_\+variable(), add\+\_\+internal\+\_\+symbol(), add\+\_\+internal\+\_\+variable(), add\+\_\+internal\+\_\+variable\+\_\+proxy(), add\+\_\+private\+\_\+memory(), add\+\_\+read\+\_\+only\+\_\+variable(), add\+\_\+source\+\_\+value(), compute\+\_\+next\+\_\+base\+\_\+address(), create\+\_\+memory(), get\+\_\+ext\+\_\+memory\+\_\+variables(), get\+\_\+proxied\+\_\+internal\+\_\+variables(), has\+\_\+proxied\+\_\+internal\+\_\+variables(), is\+\_\+a\+\_\+proxied\+\_\+variable(), is\+\_\+read\+\_\+only\+\_\+variable(), memory(), set\+\_\+sds\+\_\+var(), and $\sim$memory().
+
+
+
+Referenced by add\+\_\+external\+\_\+variable(), add\+\_\+internal\+\_\+symbol(), add\+\_\+internal\+\_\+variable(), add\+\_\+parameter(), compute\+\_\+next\+\_\+base\+\_\+address(), memory(), reserve\+\_\+space(), and set\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a30018e73a41b777c95319b62cfc79b81_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a30018e73a41b777c95319b62cfc79b81_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_aaa68bc383457b382d8fdac9d29d74def}\label{classmemory_aaa68bc383457b382d8fdac9d29d74def}} 
+\index{memory@{memory}!compute\+\_\+next\+\_\+base\+\_\+address@{compute\+\_\+next\+\_\+base\+\_\+address}}
+\index{compute\+\_\+next\+\_\+base\+\_\+address@{compute\+\_\+next\+\_\+base\+\_\+address}!memory@{memory}}
+\subsubsection{\texorpdfstring{compute\+\_\+next\+\_\+base\+\_\+address()}{compute\_next\_base\_address()}}
+{\footnotesize\ttfamily void memory\+::compute\+\_\+next\+\_\+base\+\_\+address (\begin{DoxyParamCaption}\item[{unsigned int \&}]{address,  }\item[{unsigned int}]{var,  }\item[{unsigned int}]{alignment }\end{DoxyParamCaption})}
+
+
+
+Compute the new base address based on the size of the given variable and align the memory as needed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & is the address to be evaluated \\
+\hline
+{\em var} & is the variable that has to be reserved \\
+\hline
+{\em alignment} & is the address alignment \\
+\hline
+\end{DoxyParams}
+compute the next base address
+
+align the memory address 
+
+Definition at line 130 of file memory.\+cpp.
+
+
+
+References align(), bus\+\_\+addr\+\_\+bitsize, compute\+\_\+n\+\_\+bytes(), tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), tree\+\_\+helper\+::size(), and TreeM.
+
+
+
+Referenced by add\+\_\+external\+\_\+symbol(), add\+\_\+internal\+\_\+symbol(), add\+\_\+parameter\+\_\+symbol(), and align().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_aaa68bc383457b382d8fdac9d29d74def_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_aaa68bc383457b382d8fdac9d29d74def_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a65a07e87ed6884cc67998454ed50fb72}\label{classmemory_a65a07e87ed6884cc67998454ed50fb72}} 
+\index{memory@{memory}!count\+\_\+non\+\_\+private\+\_\+internal\+\_\+symbols@{count\+\_\+non\+\_\+private\+\_\+internal\+\_\+symbols}}
+\index{count\+\_\+non\+\_\+private\+\_\+internal\+\_\+symbols@{count\+\_\+non\+\_\+private\+\_\+internal\+\_\+symbols}!memory@{memory}}
+\subsubsection{\texorpdfstring{count\+\_\+non\+\_\+private\+\_\+internal\+\_\+symbols()}{count\_non\_private\_internal\_symbols()}}
+{\footnotesize\ttfamily unsigned int memory\+::count\+\_\+non\+\_\+private\+\_\+internal\+\_\+symbols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+return the number of internal symbols non private 
+\end{DoxyReturn}
+
+
+Definition at line 242 of file memory.\+cpp.
+
+
+
+References in\+\_\+vars, and is\+\_\+private\+\_\+memory().
+
+
+
+Referenced by get\+\_\+parameter\+\_\+alignment().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a65a07e87ed6884cc67998454ed50fb72_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a65a07e87ed6884cc67998454ed50fb72_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a169a0772cd5c322a06f7f433cb9c27af}\label{classmemory_a169a0772cd5c322a06f7f433cb9c27af}} 
+\index{memory@{memory}!create\+\_\+memory@{create\+\_\+memory}}
+\index{create\+\_\+memory@{create\+\_\+memory}!memory@{memory}}
+\subsubsection{\texorpdfstring{create\+\_\+memory()}{create\_memory()}}
+{\footnotesize\ttfamily \hyperlink{memory_8hpp_aec1333ec6cd561731fb3ed3e55b9caf5}{memory\+Ref} memory\+::create\+\_\+memory (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters,  }\item[{const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref}}]{\+\_\+\+TreeM,  }\item[{unsigned int}]{\+\_\+off\+\_\+base\+\_\+address,  }\item[{unsigned int}]{max\+\_\+bram,  }\item[{bool}]{\+\_\+null\+\_\+pointer\+\_\+check,  }\item[{bool}]{initial\+\_\+internal\+\_\+address\+\_\+p,  }\item[{unsigned int}]{initial\+\_\+internal\+\_\+address,  }\item[{const unsigned int \&}]{\+\_\+address\+\_\+bitsize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 116 of file memory.\+cpp.
+
+
+
+References memory().
+
+
+
+Referenced by align(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), and mem\+\_\+xml\+\_\+allocation\+::parse\+\_\+xml\+\_\+allocation().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a169a0772cd5c322a06f7f433cb9c27af_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a169a0772cd5c322a06f7f433cb9c27af_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a6b6f8242a9b610f0a7942ee442e7a123}\label{classmemory_a6b6f8242a9b610f0a7942ee442e7a123}} 
+\index{memory@{memory}!does\+\_\+need\+\_\+addr@{does\+\_\+need\+\_\+addr}}
+\index{does\+\_\+need\+\_\+addr@{does\+\_\+need\+\_\+addr}!memory@{memory}}
+\subsubsection{\texorpdfstring{does\+\_\+need\+\_\+addr()}{does\_need\_addr()}}
+{\footnotesize\ttfamily bool memory\+::does\+\_\+need\+\_\+addr (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+check if a load or a store of the variable is done trough the bus 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true in case var is loaded or stored through the bus 
+\end{DoxyReturn}
+
+
+Definition at line 672 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_a779906886ca81a3ed86aaa2b3c69d4f0}\label{classmemory_a779906886ca81a3ed86aaa2b3c69d4f0}} 
+\index{memory@{memory}!get\+\_\+allocated\+\_\+intern\+\_\+memory@{get\+\_\+allocated\+\_\+intern\+\_\+memory}}
+\index{get\+\_\+allocated\+\_\+intern\+\_\+memory@{get\+\_\+allocated\+\_\+intern\+\_\+memory}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+allocated\+\_\+intern\+\_\+memory()}{get\_allocated\_intern\_memory()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+allocated\+\_\+intern\+\_\+memory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the amount of memory allocated internally but not private. 
+
+
+
+Definition at line 528 of file memory.\+hpp.
+
+
+
+References get\+\_\+max\+\_\+address(), and internal\+\_\+base\+\_\+address\+\_\+start.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a779906886ca81a3ed86aaa2b3c69d4f0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a580103df3eb36abe6d53f31b7fba7fed}\label{classmemory_a580103df3eb36abe6d53f31b7fba7fed}} 
+\index{memory@{memory}!get\+\_\+allocated\+\_\+parameters\+\_\+memory@{get\+\_\+allocated\+\_\+parameters\+\_\+memory}}
+\index{get\+\_\+allocated\+\_\+parameters\+\_\+memory@{get\+\_\+allocated\+\_\+parameters\+\_\+memory}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+allocated\+\_\+parameters\+\_\+memory()}{get\_allocated\_parameters\_memory()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+allocated\+\_\+parameters\+\_\+memory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the total amount of memory allocated for the memory mapped parameters. 
+
+
+
+Definition at line 521 of file memory.\+cpp.
+
+
+
+References total\+\_\+amount\+\_\+of\+\_\+parameter\+\_\+memory.
+
+
+
+Referenced by increment\+\_\+n\+\_\+mem\+\_\+operations().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{d8/d99/classmemory_a580103df3eb36abe6d53f31b7fba7fed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_aca163291c5d49ad384e5af2f5eb8d20a}\label{classmemory_aca163291c5d49ad384e5af2f5eb8d20a}} 
+\index{memory@{memory}!get\+\_\+allocated\+\_\+space@{get\+\_\+allocated\+\_\+space}}
+\index{get\+\_\+allocated\+\_\+space@{get\+\_\+allocated\+\_\+space}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+allocated\+\_\+space()}{get\_allocated\_space()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+allocated\+\_\+space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the amount of memory allocated internally to the module. 
+
+
+
+Definition at line 516 of file memory.\+cpp.
+
+
+
+References internal\+\_\+base\+\_\+address\+\_\+start, next\+\_\+base\+\_\+address, and total\+\_\+amount\+\_\+of\+\_\+private\+\_\+memory.
+
+
+
+Referenced by increment\+\_\+n\+\_\+mem\+\_\+operations().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{d8/d99/classmemory_aca163291c5d49ad384e5af2f5eb8d20a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a1ea5eb40b241fab9c4512b828223ea92}\label{classmemory_a1ea5eb40b241fab9c4512b828223ea92}} 
+\index{memory@{memory}!get\+\_\+base\+\_\+address@{get\+\_\+base\+\_\+address}}
+\index{get\+\_\+base\+\_\+address@{get\+\_\+base\+\_\+address}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+base\+\_\+address()}{get\_base\_address()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+base\+\_\+address (\begin{DoxyParamCaption}\item[{unsigned int}]{var,  }\item[{unsigned int}]{fun\+Id }\end{DoxyParamCaption}) const}
+
+
+
+Get the current base address of the given variable. 
+
+
+
+Definition at line 415 of file memory.\+cpp.
+
+
+
+References get\+\_\+call\+Site\+\_\+base\+\_\+address(), get\+\_\+external\+\_\+base\+\_\+address(), get\+\_\+internal\+\_\+base\+\_\+address(), get\+\_\+parameter\+\_\+base\+\_\+address(), has\+\_\+base\+\_\+address(), has\+\_\+call\+Site\+\_\+base\+\_\+address(), has\+\_\+internal\+\_\+base\+\_\+address(), has\+\_\+parameter\+\_\+base\+\_\+address(), S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by get\+\_\+call\+Sites(), and fu\+\_\+binding\+::write\+\_\+init().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a1ea5eb40b241fab9c4512b828223ea92_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a1ea5eb40b241fab9c4512b828223ea92_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_ac82303660a64f1638acd37265f20a48a}\label{classmemory_ac82303660a64f1638acd37265f20a48a}} 
+\index{memory@{memory}!get\+\_\+bram\+\_\+bitsize@{get\+\_\+bram\+\_\+bitsize}}
+\index{get\+\_\+bram\+\_\+bitsize@{get\+\_\+bram\+\_\+bitsize}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+bram\+\_\+bitsize()}{get\_bram\_bitsize()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+bram\+\_\+bitsize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the B\+R\+AM bitsize 
+
+
+
+Definition at line 581 of file memory.\+hpp.
+
+
+
+References bram\+\_\+bitsize.
+
+
+
+Referenced by fu\+\_\+binding\+::fill\+\_\+array\+\_\+ref\+\_\+memory().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_ac82303660a64f1638acd37265f20a48a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a1db8e919be66e06ccc86dfce8fd40cec}\label{classmemory_a1db8e919be66e06ccc86dfce8fd40cec}} 
+\index{memory@{memory}!get\+\_\+bus\+\_\+data\+\_\+bitsize@{get\+\_\+bus\+\_\+data\+\_\+bitsize}}
+\index{get\+\_\+bus\+\_\+data\+\_\+bitsize@{get\+\_\+bus\+\_\+data\+\_\+bitsize}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+bus\+\_\+data\+\_\+bitsize()}{get\_bus\_data\_bitsize()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+bus\+\_\+data\+\_\+bitsize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the bitsize of the data bus 
+
+
+
+Definition at line 549 of file memory.\+hpp.
+
+
+
+References bus\+\_\+data\+\_\+bitsize.
+
+
+
+Referenced by fu\+\_\+binding\+::fill\+\_\+array\+\_\+ref\+\_\+memory().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a1db8e919be66e06ccc86dfce8fd40cec_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_ac4ef6ce89bf9d654aba58fdc92c9a098}\label{classmemory_ac4ef6ce89bf9d654aba58fdc92c9a098}} 
+\index{memory@{memory}!get\+\_\+bus\+\_\+size\+\_\+bitsize@{get\+\_\+bus\+\_\+size\+\_\+bitsize}}
+\index{get\+\_\+bus\+\_\+size\+\_\+bitsize@{get\+\_\+bus\+\_\+size\+\_\+bitsize}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+bus\+\_\+size\+\_\+bitsize()}{get\_bus\_size\_bitsize()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+bus\+\_\+size\+\_\+bitsize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the bitsize of the size bus 
+
+
+
+Definition at line 565 of file memory.\+hpp.
+
+
+
+References bus\+\_\+size\+\_\+bitsize.
+
+\mbox{\Hypertarget{classmemory_a3848f46ecf3925ab804f51e26661ae19}\label{classmemory_a3848f46ecf3925ab804f51e26661ae19}} 
+\index{memory@{memory}!get\+\_\+call\+Site\+\_\+base\+\_\+address@{get\+\_\+call\+Site\+\_\+base\+\_\+address}}
+\index{get\+\_\+call\+Site\+\_\+base\+\_\+address@{get\+\_\+call\+Site\+\_\+base\+\_\+address}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+call\+Site\+\_\+base\+\_\+address()}{get\_callSite\_base\_address()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+call\+Site\+\_\+base\+\_\+address (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+Get the current base address of the given call site. 
+
+
+
+Definition at line 348 of file memory.\+cpp.
+
+
+
+References call\+Sites, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by get\+\_\+base\+\_\+address(), and get\+\_\+call\+Sites().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a3848f46ecf3925ab804f51e26661ae19_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_adcab40db7617504ad89b0d11d53c8965}\label{classmemory_adcab40db7617504ad89b0d11d53c8965}} 
+\index{memory@{memory}!get\+\_\+call\+Sites@{get\+\_\+call\+Sites}}
+\index{get\+\_\+call\+Sites@{get\+\_\+call\+Sites}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+call\+Sites()}{get\_callSites()}}
+{\footnotesize\ttfamily const std\+::map$<$unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref}$>$ memory\+::get\+\_\+call\+Sites (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get call sites map. 
+
+
+
+Definition at line 373 of file memory.\+hpp.
+
+
+
+References call\+Sites, get\+\_\+base\+\_\+address(), get\+\_\+call\+Site\+\_\+base\+\_\+address(), get\+\_\+external\+\_\+base\+\_\+address(), get\+\_\+first\+\_\+address(), get\+\_\+internal\+\_\+base\+\_\+address(), get\+\_\+last\+\_\+address(), get\+\_\+parameter\+\_\+base\+\_\+address(), get\+\_\+rangesize(), get\+\_\+symbol(), has\+\_\+call\+Site\+\_\+base\+\_\+address(), and has\+\_\+internal\+\_\+base\+\_\+address().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_adcab40db7617504ad89b0d11d53c8965_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a59407bf67cc11931fc505d7fc9e86898}\label{classmemory_a59407bf67cc11931fc505d7fc9e86898}} 
+\index{memory@{memory}!get\+\_\+ext\+\_\+memory\+\_\+variables@{get\+\_\+ext\+\_\+memory\+\_\+variables}}
+\index{get\+\_\+ext\+\_\+memory\+\_\+variables@{get\+\_\+ext\+\_\+memory\+\_\+variables}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+ext\+\_\+memory\+\_\+variables()}{get\_ext\_memory\_variables()}}
+{\footnotesize\ttfamily std\+::map$<$ unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} $>$ memory\+::get\+\_\+ext\+\_\+memory\+\_\+variables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return variables allocated out of the top module. 
+
+
+
+Definition at line 125 of file memory.\+cpp.
+
+
+
+References external.
+
+
+
+Referenced by align().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a59407bf67cc11931fc505d7fc9e86898_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a32fccfbb1ec87572fffb59d3a8a93548}\label{classmemory_a32fccfbb1ec87572fffb59d3a8a93548}} 
+\index{memory@{memory}!get\+\_\+external\+\_\+base\+\_\+address@{get\+\_\+external\+\_\+base\+\_\+address}}
+\index{get\+\_\+external\+\_\+base\+\_\+address@{get\+\_\+external\+\_\+base\+\_\+address}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+external\+\_\+base\+\_\+address()}{get\_external\_base\_address()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+external\+\_\+base\+\_\+address (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+Get the current base address of the given variable. 
+
+
+
+Definition at line 360 of file memory.\+cpp.
+
+
+
+References external, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by get\+\_\+base\+\_\+address(), and get\+\_\+call\+Sites().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a32fccfbb1ec87572fffb59d3a8a93548_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a8288dc9efc8050b3d34cb06b74a1d3db}\label{classmemory_a8288dc9efc8050b3d34cb06b74a1d3db}} 
+\index{memory@{memory}!get\+\_\+first\+\_\+address@{get\+\_\+first\+\_\+address}}
+\index{get\+\_\+first\+\_\+address@{get\+\_\+first\+\_\+address}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+first\+\_\+address()}{get\_first\_address()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+first\+\_\+address (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+Id }\end{DoxyParamCaption}) const}
+
+
+
+Get the first address of the function address space. 
+
+
+
+Definition at line 433 of file memory.\+cpp.
+
+
+
+References has\+\_\+parameter\+\_\+base\+\_\+address(), is\+\_\+private\+\_\+memory(), min, and parameter.
+
+
+
+Referenced by get\+\_\+call\+Sites().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a8288dc9efc8050b3d34cb06b74a1d3db_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a8288dc9efc8050b3d34cb06b74a1d3db_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a5d64e7ff7e95efad54bbfa07f58e18c1}\label{classmemory_a5d64e7ff7e95efad54bbfa07f58e18c1}} 
+\index{memory@{memory}!get\+\_\+function\+\_\+parameters@{get\+\_\+function\+\_\+parameters}}
+\index{get\+\_\+function\+\_\+parameters@{get\+\_\+function\+\_\+parameters}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+function\+\_\+parameters()}{get\_function\_parameters()}}
+{\footnotesize\ttfamily std\+::map$<$ unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} $>$ memory\+::get\+\_\+function\+\_\+parameters (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope }\end{DoxyParamCaption}) const}
+
+
+
+Return parameters allocated in register of the interface. 
+
+
+
+Definition at line 380 of file memory.\+cpp.
+
+
+
+References parameter.
+
+
+
+Referenced by get\+\_\+last\+\_\+address(), increment\+\_\+n\+\_\+mem\+\_\+operations(), Wishbone\+Interface\+Testbench\+::write\+\_\+call(), Wishbone\+Interface\+Testbench\+::write\+\_\+file\+\_\+reading\+\_\+operations(), Testbench\+Generation\+Base\+Step\+::write\+\_\+output\+\_\+checks(), and Wishbone\+Interface\+Testbench\+::write\+\_\+signals().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a5d64e7ff7e95efad54bbfa07f58e18c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a6ce2b973f83c743754cfa1bbe1b2a150}\label{classmemory_a6ce2b973f83c743754cfa1bbe1b2a150}} 
+\index{memory@{memory}!get\+\_\+function\+\_\+vars@{get\+\_\+function\+\_\+vars}}
+\index{get\+\_\+function\+\_\+vars@{get\+\_\+function\+\_\+vars}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+function\+\_\+vars()}{get\_function\_vars()}}
+{\footnotesize\ttfamily std\+::map$<$ unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} $>$ memory\+::get\+\_\+function\+\_\+vars (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope }\end{DoxyParamCaption}) const}
+
+
+
+Return the variables allocated within the space of a given function. 
+
+
+
+Definition at line 373 of file memory.\+cpp.
+
+
+
+Referenced by increment\+\_\+n\+\_\+mem\+\_\+operations().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a6ce2b973f83c743754cfa1bbe1b2a150_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a9a124e4167f009e2f3c1b4343c42c2d0}\label{classmemory_a9a124e4167f009e2f3c1b4343c42c2d0}} 
+\index{memory@{memory}!get\+\_\+internal\+\_\+base\+\_\+address@{get\+\_\+internal\+\_\+base\+\_\+address}}
+\index{get\+\_\+internal\+\_\+base\+\_\+address@{get\+\_\+internal\+\_\+base\+\_\+address}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+internal\+\_\+base\+\_\+address()}{get\_internal\_base\_address()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+internal\+\_\+base\+\_\+address (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+Get the current base address of the given variable. 
+
+
+
+Definition at line 354 of file memory.\+cpp.
+
+
+
+References in\+\_\+vars, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by get\+\_\+base\+\_\+address(), and get\+\_\+call\+Sites().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a9a124e4167f009e2f3c1b4343c42c2d0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a0e9c0cfa49050ae635406d185b94809a}\label{classmemory_a0e9c0cfa49050ae635406d185b94809a}} 
+\index{memory@{memory}!get\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment@{get\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment}}
+\index{get\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment@{get\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment()}{get\_internal\_base\_address\_alignment()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the internal base address alignment. 
+
+
+
+Definition at line 776 of file memory.\+hpp.
+
+
+
+References internal\+\_\+base\+\_\+address\+\_\+alignment.
+
+\mbox{\Hypertarget{classmemory_a7fa2c69835e5b2deefc2b380f710b470}\label{classmemory_a7fa2c69835e5b2deefc2b380f710b470}} 
+\index{memory@{memory}!get\+\_\+last\+\_\+address@{get\+\_\+last\+\_\+address}}
+\index{get\+\_\+last\+\_\+address@{get\+\_\+last\+\_\+address}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+last\+\_\+address()}{get\_last\_address()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+last\+\_\+address (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+Id,  }\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{AppM }\end{DoxyParamCaption}) const}
+
+
+
+Get the last address of the function address space. 
+
+
+
+Definition at line 456 of file memory.\+cpp.
+
+
+
+References get\+\_\+function\+\_\+parameters(), has\+\_\+base\+\_\+address(), has\+\_\+parameter\+\_\+base\+\_\+address(), is\+\_\+private\+\_\+memory(), max(), tree\+\_\+helper\+::size(), and TreeM.
+
+
+
+Referenced by get\+\_\+call\+Sites().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a7fa2c69835e5b2deefc2b380f710b470_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a7fa2c69835e5b2deefc2b380f710b470_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_ae371f1c8d9b33b71254ecb705d7ff51d}\label{classmemory_ae371f1c8d9b33b71254ecb705d7ff51d}} 
+\index{memory@{memory}!get\+\_\+max\+\_\+address@{get\+\_\+max\+\_\+address}}
+\index{get\+\_\+max\+\_\+address@{get\+\_\+max\+\_\+address}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+max\+\_\+address()}{get\_max\_address()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+max\+\_\+address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+return the maximum address allocated 
+
+
+
+Definition at line 526 of file memory.\+cpp.
+
+
+
+References internal\+\_\+base\+\_\+address\+\_\+start, max(), maximum\+\_\+private\+\_\+memory\+\_\+size, and next\+\_\+base\+\_\+address.
+
+
+
+Referenced by get\+\_\+allocated\+\_\+intern\+\_\+memory().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{d8/d99/classmemory_ae371f1c8d9b33b71254ecb705d7ff51d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_ae371f1c8d9b33b71254ecb705d7ff51d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a2c60a1b44b29221ddd9ac291afffd4d6}\label{classmemory_a2c60a1b44b29221ddd9ac291afffd4d6}} 
+\index{memory@{memory}!get\+\_\+maxbram\+\_\+bitsize@{get\+\_\+maxbram\+\_\+bitsize}}
+\index{get\+\_\+maxbram\+\_\+bitsize@{get\+\_\+maxbram\+\_\+bitsize}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+maxbram\+\_\+bitsize()}{get\_maxbram\_bitsize()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+maxbram\+\_\+bitsize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the B\+R\+AM bitsize 
+
+
+
+Definition at line 597 of file memory.\+hpp.
+
+
+
+References maxbram\+\_\+bitsize.
+
+\mbox{\Hypertarget{classmemory_af59fd8089c95addbd19c330aa1af978a}\label{classmemory_af59fd8089c95addbd19c330aa1af978a}} 
+\index{memory@{memory}!get\+\_\+maximum\+\_\+loads@{get\+\_\+maximum\+\_\+loads}}
+\index{get\+\_\+maximum\+\_\+loads@{get\+\_\+maximum\+\_\+loads}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+maximum\+\_\+loads()}{get\_maximum\_loads()}}
+{\footnotesize\ttfamily \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} memory\+::get\+\_\+maximum\+\_\+loads (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the maximum number of loads for a given variable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the maximum number of loads for var 
+\end{DoxyReturn}
+
+
+Definition at line 653 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_a89891d351f4311540282f85f395160d4}\label{classmemory_a89891d351f4311540282f85f395160d4}} 
+\index{memory@{memory}!get\+\_\+maximum\+\_\+references@{get\+\_\+maximum\+\_\+references}}
+\index{get\+\_\+maximum\+\_\+references@{get\+\_\+maximum\+\_\+references}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+maximum\+\_\+references()}{get\_maximum\_references()}}
+{\footnotesize\ttfamily \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} memory\+::get\+\_\+maximum\+\_\+references (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the maximum number of references for a given variable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the maximum number of references for var 
+\end{DoxyReturn}
+
+
+Definition at line 633 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_a510234387e466e099cffb7a6a01ed92f}\label{classmemory_a510234387e466e099cffb7a6a01ed92f}} 
+\index{memory@{memory}!get\+\_\+memory\+\_\+address@{get\+\_\+memory\+\_\+address}}
+\index{get\+\_\+memory\+\_\+address@{get\+\_\+memory\+\_\+address}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+memory\+\_\+address()}{get\_memory\_address()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+memory\+\_\+address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the first memory address not yet allocated. 
+
+
+
+Definition at line 312 of file memory.\+cpp.
+
+
+
+References next\+\_\+off\+\_\+base\+\_\+address.
+
+
+
+Referenced by increment\+\_\+n\+\_\+mem\+\_\+operations().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d8/d99/classmemory_a510234387e466e099cffb7a6a01ed92f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a94c1ee081f754ed454af2fc6729072d0}\label{classmemory_a94c1ee081f754ed454af2fc6729072d0}} 
+\index{memory@{memory}!get\+\_\+n\+\_\+mem\+\_\+operations@{get\+\_\+n\+\_\+mem\+\_\+operations}}
+\index{get\+\_\+n\+\_\+mem\+\_\+operations@{get\+\_\+n\+\_\+mem\+\_\+operations}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+n\+\_\+mem\+\_\+operations()}{get\_n\_mem\_operations()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+n\+\_\+mem\+\_\+operations (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the numnber of L\+O\+A\+D/\+S\+T\+O\+RE operations per var 
+\end{DoxyReturn}
+
+
+Definition at line 437 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_a0b03a8a5198dc85c9c6b1f26bc5464ec}\label{classmemory_a0b03a8a5198dc85c9c6b1f26bc5464ec}} 
+\index{memory@{memory}!get\+\_\+parameter\+\_\+alignment@{get\+\_\+parameter\+\_\+alignment}}
+\index{get\+\_\+parameter\+\_\+alignment@{get\+\_\+parameter\+\_\+alignment}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+parameter\+\_\+alignment()}{get\_parameter\_alignment()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+parameter\+\_\+alignment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the parameter alignment 
+
+
+
+Definition at line 784 of file memory.\+hpp.
+
+
+
+References add\+\_\+memory\+\_\+parameter(), count\+\_\+non\+\_\+private\+\_\+internal\+\_\+symbols(), not\+E\+Q(), parameter\+\_\+alignment, propagate\+\_\+memory\+\_\+parameters(), set\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment(), and xwrite().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a0b03a8a5198dc85c9c6b1f26bc5464ec_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a6488e1ee13bcf993f0406c377b4f42e4}\label{classmemory_a6488e1ee13bcf993f0406c377b4f42e4}} 
+\index{memory@{memory}!get\+\_\+parameter\+\_\+base\+\_\+address@{get\+\_\+parameter\+\_\+base\+\_\+address}}
+\index{get\+\_\+parameter\+\_\+base\+\_\+address@{get\+\_\+parameter\+\_\+base\+\_\+address}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+parameter\+\_\+base\+\_\+address()}{get\_parameter\_base\_address()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+parameter\+\_\+base\+\_\+address (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+Id,  }\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+Get the current base address of the given variable. 
+
+
+
+Definition at line 366 of file memory.\+cpp.
+
+
+
+References parameter, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by get\+\_\+base\+\_\+address(), get\+\_\+call\+Sites(), and Wishbone\+Interface\+Testbench\+::write\+\_\+signals().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a6488e1ee13bcf993f0406c377b4f42e4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_afa287c1bff2634613e59d7ece4d74d60}\label{classmemory_afa287c1bff2634613e59d7ece4d74d60}} 
+\index{memory@{memory}!get\+\_\+proxied\+\_\+internal\+\_\+variables@{get\+\_\+proxied\+\_\+internal\+\_\+variables}}
+\index{get\+\_\+proxied\+\_\+internal\+\_\+variables@{get\+\_\+proxied\+\_\+internal\+\_\+variables}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+proxied\+\_\+internal\+\_\+variables()}{get\_proxied\_internal\_variables()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \& memory\+::get\+\_\+proxied\+\_\+internal\+\_\+variables (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope }\end{DoxyParamCaption}) const}
+
+
+
+return the proxied internal variables associated with the function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fun\+I\+D\+\_\+scope} & is the function id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the set of variables proxied in fun\+I\+D\+\_\+scope 
+\end{DoxyReturn}
+
+
+Definition at line 184 of file memory.\+cpp.
+
+
+
+References has\+\_\+proxied\+\_\+internal\+\_\+variables(), internal\+\_\+variable\+\_\+proxy, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by align().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{d8/d99/classmemory_afa287c1bff2634613e59d7ece4d74d60_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_afa287c1bff2634613e59d7ece4d74d60_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_accb255d35a6b3e1d93b5f38b9459b52b}\label{classmemory_accb255d35a6b3e1d93b5f38b9459b52b}} 
+\index{memory@{memory}!get\+\_\+rangesize@{get\+\_\+rangesize}}
+\index{get\+\_\+rangesize@{get\+\_\+rangesize}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+rangesize()}{get\_rangesize()}}
+{\footnotesize\ttfamily unsigned int memory\+::get\+\_\+rangesize (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+return the address space rangesize associated with the given var 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the variable considered \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 504 of file memory.\+cpp.
+
+
+
+References has\+\_\+base\+\_\+address(), rangesize, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by get\+\_\+call\+Sites().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_accb255d35a6b3e1d93b5f38b9459b52b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{d8/d99/classmemory_accb255d35a6b3e1d93b5f38b9459b52b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a8a53cddf47d035cb68621156d6ce45c4}\label{classmemory_a8a53cddf47d035cb68621156d6ce45c4}} 
+\index{memory@{memory}!get\+\_\+source\+\_\+values@{get\+\_\+source\+\_\+values}}
+\index{get\+\_\+source\+\_\+values@{get\+\_\+source\+\_\+values}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+source\+\_\+values()}{get\_source\_values()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$\& memory\+::get\+\_\+source\+\_\+values (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the set of values used to write a given memory variable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the memory variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the set of values associated with var 
+\end{DoxyReturn}
+
+
+Definition at line 319 of file memory.\+hpp.
+
+
+
+References add\+\_\+parameter(), add\+\_\+parameter\+\_\+symbol(), has\+\_\+sds\+\_\+var(), is\+\_\+external\+\_\+variable(), is\+\_\+internal\+\_\+variable(), is\+\_\+parameter(), is\+\_\+private\+\_\+memory(), and is\+\_\+sds\+\_\+var().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a8a53cddf47d035cb68621156d6ce45c4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a380db560791ad488411a1d16c0526e43}\label{classmemory_a380db560791ad488411a1d16c0526e43}} 
+\index{memory@{memory}!get\+\_\+symbol@{get\+\_\+symbol}}
+\index{get\+\_\+symbol@{get\+\_\+symbol}!memory@{memory}}
+\subsubsection{\texorpdfstring{get\+\_\+symbol()}{get\_symbol()}}
+{\footnotesize\ttfamily \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref} memory\+::get\+\_\+symbol (\begin{DoxyParamCaption}\item[{unsigned int}]{var,  }\item[{unsigned int}]{fun\+Id }\end{DoxyParamCaption}) const}
+
+
+
+Return the symbol associated with the given variable. 
+
+
+
+Definition at line 489 of file memory.\+cpp.
+
+
+
+References call\+Sites, external, has\+\_\+base\+\_\+address(), has\+\_\+call\+Site\+\_\+base\+\_\+address(), has\+\_\+internal\+\_\+base\+\_\+address(), has\+\_\+parameter\+\_\+base\+\_\+address(), in\+\_\+vars, parameter, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by get\+\_\+call\+Sites().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a380db560791ad488411a1d16c0526e43_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{d8/d99/classmemory_a380db560791ad488411a1d16c0526e43_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_abf339e7c5e5b888f1dfd5927f8750497}\label{classmemory_abf339e7c5e5b888f1dfd5927f8750497}} 
+\index{memory@{memory}!has\+\_\+all\+\_\+pointers\+\_\+resolved@{has\+\_\+all\+\_\+pointers\+\_\+resolved}}
+\index{has\+\_\+all\+\_\+pointers\+\_\+resolved@{has\+\_\+all\+\_\+pointers\+\_\+resolved}!memory@{memory}}
+\subsubsection{\texorpdfstring{has\+\_\+all\+\_\+pointers\+\_\+resolved()}{has\_all\_pointers\_resolved()}}
+{\footnotesize\ttfamily bool memory\+::has\+\_\+all\+\_\+pointers\+\_\+resolved (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return true in case all pointers have been statically resolved 
+
+
+
+Definition at line 735 of file memory.\+hpp.
+
+
+
+References all\+\_\+pointers\+\_\+resolved.
+
+\mbox{\Hypertarget{classmemory_a96f4c37de951e186df09a2ddc249d77b}\label{classmemory_a96f4c37de951e186df09a2ddc249d77b}} 
+\index{memory@{memory}!has\+\_\+base\+\_\+address@{has\+\_\+base\+\_\+address}}
+\index{has\+\_\+base\+\_\+address@{has\+\_\+base\+\_\+address}!memory@{memory}}
+\subsubsection{\texorpdfstring{has\+\_\+base\+\_\+address()}{has\_base\_address()}}
+{\footnotesize\ttfamily bool memory\+::has\+\_\+base\+\_\+address (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+Check if there is a base address for the given variable. 
+
+
+
+Definition at line 410 of file memory.\+cpp.
+
+
+
+References call\+Sites, external, in\+\_\+vars, and params.
+
+
+
+Referenced by get\+\_\+base\+\_\+address(), get\+\_\+last\+\_\+address(), get\+\_\+rangesize(), get\+\_\+symbol(), increment\+\_\+n\+\_\+mem\+\_\+operations(), H\+L\+S\+\_\+manager\+::is\+\_\+register\+\_\+compatible(), and fu\+\_\+binding\+::write\+\_\+init().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a96f4c37de951e186df09a2ddc249d77b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a4ded4a834b5c7c70d1f7c83117d4c774}\label{classmemory_a4ded4a834b5c7c70d1f7c83117d4c774}} 
+\index{memory@{memory}!has\+\_\+call\+Site\+\_\+base\+\_\+address@{has\+\_\+call\+Site\+\_\+base\+\_\+address}}
+\index{has\+\_\+call\+Site\+\_\+base\+\_\+address@{has\+\_\+call\+Site\+\_\+base\+\_\+address}!memory@{memory}}
+\subsubsection{\texorpdfstring{has\+\_\+call\+Site\+\_\+base\+\_\+address()}{has\_callSite\_base\_address()}}
+{\footnotesize\ttfamily bool memory\+::has\+\_\+call\+Site\+\_\+base\+\_\+address (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+Check if there is a base address for the given call site. 
+
+
+
+Definition at line 387 of file memory.\+cpp.
+
+
+
+References call\+Sites.
+
+
+
+Referenced by get\+\_\+base\+\_\+address(), get\+\_\+call\+Sites(), and get\+\_\+symbol().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a4ded4a834b5c7c70d1f7c83117d4c774_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a25b6c76946f47b674ad6d63efc48fd4d}\label{classmemory_a25b6c76946f47b674ad6d63efc48fd4d}} 
+\index{memory@{memory}!has\+\_\+external\+\_\+base\+\_\+address@{has\+\_\+external\+\_\+base\+\_\+address}}
+\index{has\+\_\+external\+\_\+base\+\_\+address@{has\+\_\+external\+\_\+base\+\_\+address}!memory@{memory}}
+\subsubsection{\texorpdfstring{has\+\_\+external\+\_\+base\+\_\+address()}{has\_external\_base\_address()}}
+{\footnotesize\ttfamily bool memory\+::has\+\_\+external\+\_\+base\+\_\+address (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+Check if there is a base address for the given variable. 
+
+
+
+Definition at line 397 of file memory.\+cpp.
+
+
+
+References external.
+
+
+
+Referenced by increment\+\_\+n\+\_\+mem\+\_\+operations().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{d8/d99/classmemory_a25b6c76946f47b674ad6d63efc48fd4d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_ac71f7ac117e1a1d85c9de59084a7cc41}\label{classmemory_ac71f7ac117e1a1d85c9de59084a7cc41}} 
+\index{memory@{memory}!has\+\_\+implicit\+\_\+memcpy@{has\+\_\+implicit\+\_\+memcpy}}
+\index{has\+\_\+implicit\+\_\+memcpy@{has\+\_\+implicit\+\_\+memcpy}!memory@{memory}}
+\subsubsection{\texorpdfstring{has\+\_\+implicit\+\_\+memcpy()}{has\_implicit\_memcpy()}}
+{\footnotesize\ttfamily bool memory\+::has\+\_\+implicit\+\_\+memcpy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return true in case the specification has an implicit call of memcpy 
+
+
+
+Definition at line 768 of file memory.\+hpp.
+
+
+
+References implicit\+\_\+memcpy.
+
+\mbox{\Hypertarget{classmemory_a815f393ee72721eb6ccdf002441b1b0f}\label{classmemory_a815f393ee72721eb6ccdf002441b1b0f}} 
+\index{memory@{memory}!has\+\_\+intern\+\_\+shared\+\_\+data@{has\+\_\+intern\+\_\+shared\+\_\+data}}
+\index{has\+\_\+intern\+\_\+shared\+\_\+data@{has\+\_\+intern\+\_\+shared\+\_\+data}!memory@{memory}}
+\subsubsection{\texorpdfstring{has\+\_\+intern\+\_\+shared\+\_\+data()}{has\_intern\_shared\_data()}}
+{\footnotesize\ttfamily bool memory\+::has\+\_\+intern\+\_\+shared\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return true in case the specification has data that can be externally accessed 
+
+
+
+Definition at line 613 of file memory.\+hpp.
+
+
+
+References intern\+\_\+shared\+\_\+data.
+
+\mbox{\Hypertarget{classmemory_a7008ca7ac0edcff1f6bece9751e46eac}\label{classmemory_a7008ca7ac0edcff1f6bece9751e46eac}} 
+\index{memory@{memory}!has\+\_\+internal\+\_\+base\+\_\+address@{has\+\_\+internal\+\_\+base\+\_\+address}}
+\index{has\+\_\+internal\+\_\+base\+\_\+address@{has\+\_\+internal\+\_\+base\+\_\+address}!memory@{memory}}
+\subsubsection{\texorpdfstring{has\+\_\+internal\+\_\+base\+\_\+address()}{has\_internal\_base\_address()}}
+{\footnotesize\ttfamily bool memory\+::has\+\_\+internal\+\_\+base\+\_\+address (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+Check if there is a base address for the given variable. 
+
+
+
+Definition at line 392 of file memory.\+cpp.
+
+
+
+References in\+\_\+vars.
+
+
+
+Referenced by get\+\_\+base\+\_\+address(), get\+\_\+call\+Sites(), and get\+\_\+symbol().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a7008ca7ac0edcff1f6bece9751e46eac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a454bcd8827a81dcc3ecc07cee955bdb6}\label{classmemory_a454bcd8827a81dcc3ecc07cee955bdb6}} 
+\index{memory@{memory}!has\+\_\+packed\+\_\+vars@{has\+\_\+packed\+\_\+vars}}
+\index{has\+\_\+packed\+\_\+vars@{has\+\_\+packed\+\_\+vars}!memory@{memory}}
+\subsubsection{\texorpdfstring{has\+\_\+packed\+\_\+vars()}{has\_packed\_vars()}}
+{\footnotesize\ttfamily bool memory\+::has\+\_\+packed\+\_\+vars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true in case packed vars are used 
+\end{DoxyReturn}
+
+
+Definition at line 752 of file memory.\+hpp.
+
+
+
+References packed\+\_\+vars.
+
+\mbox{\Hypertarget{classmemory_af2a8ffe8b46caad910fa15fd4b682fed}\label{classmemory_af2a8ffe8b46caad910fa15fd4b682fed}} 
+\index{memory@{memory}!has\+\_\+parameter\+\_\+base\+\_\+address@{has\+\_\+parameter\+\_\+base\+\_\+address}}
+\index{has\+\_\+parameter\+\_\+base\+\_\+address@{has\+\_\+parameter\+\_\+base\+\_\+address}!memory@{memory}}
+\subsubsection{\texorpdfstring{has\+\_\+parameter\+\_\+base\+\_\+address()}{has\_parameter\_base\_address()}}
+{\footnotesize\ttfamily bool memory\+::has\+\_\+parameter\+\_\+base\+\_\+address (\begin{DoxyParamCaption}\item[{unsigned int}]{var,  }\item[{unsigned int}]{fun\+Id }\end{DoxyParamCaption}) const}
+
+
+
+Check if there is a base address for the given parameter. 
+
+
+
+Definition at line 402 of file memory.\+cpp.
+
+
+
+References parameter.
+
+
+
+Referenced by get\+\_\+base\+\_\+address(), get\+\_\+first\+\_\+address(), get\+\_\+last\+\_\+address(), get\+\_\+symbol(), and increment\+\_\+n\+\_\+mem\+\_\+operations().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_af2a8ffe8b46caad910fa15fd4b682fed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a433d1c32eaf44fd28694cb612a1330f0}\label{classmemory_a433d1c32eaf44fd28694cb612a1330f0}} 
+\index{memory@{memory}!has\+\_\+pointer\+\_\+conversion@{has\+\_\+pointer\+\_\+conversion}}
+\index{has\+\_\+pointer\+\_\+conversion@{has\+\_\+pointer\+\_\+conversion}!memory@{memory}}
+\subsubsection{\texorpdfstring{has\+\_\+pointer\+\_\+conversion()}{has\_pointer\_conversion()}}
+{\footnotesize\ttfamily bool memory\+::has\+\_\+pointer\+\_\+conversion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return true in case at least one pointer conversion happen 
+
+
+
+Definition at line 703 of file memory.\+hpp.
+
+
+
+References pointer\+\_\+conversion.
+
+\mbox{\Hypertarget{classmemory_a792d6586b289c275ef9728053681bc08}\label{classmemory_a792d6586b289c275ef9728053681bc08}} 
+\index{memory@{memory}!has\+\_\+proxied\+\_\+internal\+\_\+variables@{has\+\_\+proxied\+\_\+internal\+\_\+variables}}
+\index{has\+\_\+proxied\+\_\+internal\+\_\+variables@{has\+\_\+proxied\+\_\+internal\+\_\+variables}!memory@{memory}}
+\subsubsection{\texorpdfstring{has\+\_\+proxied\+\_\+internal\+\_\+variables()}{has\_proxied\_internal\_variables()}}
+{\footnotesize\ttfamily bool memory\+::has\+\_\+proxied\+\_\+internal\+\_\+variables (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope }\end{DoxyParamCaption}) const}
+
+
+
+check if the function has proxied variables 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fun\+I\+D\+\_\+scope} & is the function id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when there are proxied variables, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 190 of file memory.\+cpp.
+
+
+
+References internal\+\_\+variable\+\_\+proxy.
+
+
+
+Referenced by align(), and get\+\_\+proxied\+\_\+internal\+\_\+variables().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a792d6586b289c275ef9728053681bc08_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a9d3f4a7583446c2617160ac93f7ccb27}\label{classmemory_a9d3f4a7583446c2617160ac93f7ccb27}} 
+\index{memory@{memory}!has\+\_\+sds\+\_\+var@{has\+\_\+sds\+\_\+var}}
+\index{has\+\_\+sds\+\_\+var@{has\+\_\+sds\+\_\+var}!memory@{memory}}
+\subsubsection{\texorpdfstring{has\+\_\+sds\+\_\+var()}{has\_sds\_var()}}
+{\footnotesize\ttfamily bool memory\+::has\+\_\+sds\+\_\+var (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+return true if the var has been classified in term of same data size relation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the variable id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when var is in the sds relation, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 338 of file memory.\+cpp.
+
+
+
+References same\+\_\+data\+\_\+size\+\_\+accesses.
+
+
+
+Referenced by get\+\_\+source\+\_\+values(), and is\+\_\+sds\+\_\+var().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a9d3f4a7583446c2617160ac93f7ccb27_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a4cfc9a502338a2d4ba7c831c63e41edf}\label{classmemory_a4cfc9a502338a2d4ba7c831c63e41edf}} 
+\index{memory@{memory}!has\+\_\+unaligned\+\_\+accesses@{has\+\_\+unaligned\+\_\+accesses}}
+\index{has\+\_\+unaligned\+\_\+accesses@{has\+\_\+unaligned\+\_\+accesses}!memory@{memory}}
+\subsubsection{\texorpdfstring{has\+\_\+unaligned\+\_\+accesses()}{has\_unaligned\_accesses()}}
+{\footnotesize\ttfamily bool memory\+::has\+\_\+unaligned\+\_\+accesses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return true in case of unaligned accesses 
+
+
+
+Definition at line 719 of file memory.\+hpp.
+
+
+
+References unaligned\+\_\+accesses.
+
+\mbox{\Hypertarget{classmemory_a90adcbcfd3399dad6ff8ef90c6ad9a35}\label{classmemory_a90adcbcfd3399dad6ff8ef90c6ad9a35}} 
+\index{memory@{memory}!has\+\_\+unknown\+\_\+addresses@{has\+\_\+unknown\+\_\+addresses}}
+\index{has\+\_\+unknown\+\_\+addresses@{has\+\_\+unknown\+\_\+addresses}!memory@{memory}}
+\subsubsection{\texorpdfstring{has\+\_\+unknown\+\_\+addresses()}{has\_unknown\_addresses()}}
+{\footnotesize\ttfamily bool memory\+::has\+\_\+unknown\+\_\+addresses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return true in case the specification use addresses not known at compile time 
+
+
+
+Definition at line 687 of file memory.\+hpp.
+
+
+
+References use\+\_\+unknown\+\_\+addresses.
+
+\mbox{\Hypertarget{classmemory_a7115d45a81bee175e0e55a71ea92d3d9}\label{classmemory_a7115d45a81bee175e0e55a71ea92d3d9}} 
+\index{memory@{memory}!increment\+\_\+n\+\_\+mem\+\_\+operations@{increment\+\_\+n\+\_\+mem\+\_\+operations}}
+\index{increment\+\_\+n\+\_\+mem\+\_\+operations@{increment\+\_\+n\+\_\+mem\+\_\+operations}!memory@{memory}}
+\subsubsection{\texorpdfstring{increment\+\_\+n\+\_\+mem\+\_\+operations()}{increment\_n\_mem\_operations()}}
+{\footnotesize\ttfamily void memory\+::increment\+\_\+n\+\_\+mem\+\_\+operations (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 442 of file memory.\+hpp.
+
+
+
+References add\+\_\+actual\+\_\+parm\+\_\+loaded(), add\+\_\+parm\+\_\+decl\+\_\+copied(), add\+\_\+parm\+\_\+decl\+\_\+stored(), get\+\_\+allocated\+\_\+parameters\+\_\+memory(), get\+\_\+allocated\+\_\+space(), get\+\_\+function\+\_\+parameters(), get\+\_\+function\+\_\+vars(), get\+\_\+memory\+\_\+address(), has\+\_\+base\+\_\+address(), has\+\_\+external\+\_\+base\+\_\+address(), has\+\_\+parameter\+\_\+base\+\_\+address(), is\+\_\+actual\+\_\+parm\+\_\+loaded(), is\+\_\+parm\+\_\+decl\+\_\+copied(), is\+\_\+parm\+\_\+decl\+\_\+stored(), and reserve\+\_\+space().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a7115d45a81bee175e0e55a71ea92d3d9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_ad42c0543068efe731b71267f869fefcf}\label{classmemory_ad42c0543068efe731b71267f869fefcf}} 
+\index{memory@{memory}!is\+\_\+a\+\_\+proxied\+\_\+variable@{is\+\_\+a\+\_\+proxied\+\_\+variable}}
+\index{is\+\_\+a\+\_\+proxied\+\_\+variable@{is\+\_\+a\+\_\+proxied\+\_\+variable}!memory@{memory}}
+\subsubsection{\texorpdfstring{is\+\_\+a\+\_\+proxied\+\_\+variable()}{is\_a\_proxied\_variable()}}
+{\footnotesize\ttfamily bool memory\+::is\+\_\+a\+\_\+proxied\+\_\+variable (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+return true if the variable is a proxied variable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the id of the variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when var is a proxied variable 
+\end{DoxyReturn}
+
+
+Definition at line 195 of file memory.\+cpp.
+
+
+
+References proxied\+\_\+variables.
+
+
+
+Referenced by align().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_ad42c0543068efe731b71267f869fefcf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_af12efe6e45e237f9db7bdb650121e3b9}\label{classmemory_af12efe6e45e237f9db7bdb650121e3b9}} 
+\index{memory@{memory}!is\+\_\+actual\+\_\+parm\+\_\+loaded@{is\+\_\+actual\+\_\+parm\+\_\+loaded}}
+\index{is\+\_\+actual\+\_\+parm\+\_\+loaded@{is\+\_\+actual\+\_\+parm\+\_\+loaded}!memory@{memory}}
+\subsubsection{\texorpdfstring{is\+\_\+actual\+\_\+parm\+\_\+loaded()}{is\_actual\_parm\_loaded()}}
+{\footnotesize\ttfamily bool memory\+::is\+\_\+actual\+\_\+parm\+\_\+loaded (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+return true in case the actual parameter has to be initialized from a stored value 
+
+
+
+Definition at line 551 of file memory.\+cpp.
+
+
+
+References actual\+\_\+parm\+\_\+loaded.
+
+
+
+Referenced by increment\+\_\+n\+\_\+mem\+\_\+operations().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_af12efe6e45e237f9db7bdb650121e3b9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a01bcc5c735b622564c5a2498d3547300}\label{classmemory_a01bcc5c735b622564c5a2498d3547300}} 
+\index{memory@{memory}!is\+\_\+external\+\_\+variable@{is\+\_\+external\+\_\+variable}}
+\index{is\+\_\+external\+\_\+variable@{is\+\_\+external\+\_\+variable}!memory@{memory}}
+\subsubsection{\texorpdfstring{is\+\_\+external\+\_\+variable()}{is\_external\_variable()}}
+{\footnotesize\ttfamily bool memory\+::is\+\_\+external\+\_\+variable (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+Test if a variable is into the set of variables out of the top function. 
+
+
+
+Definition at line 322 of file memory.\+cpp.
+
+
+
+References external.
+
+
+
+Referenced by get\+\_\+source\+\_\+values().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{d8/d99/classmemory_a01bcc5c735b622564c5a2498d3547300_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_af55ea4821a53abef7a412425aa50467c}\label{classmemory_af55ea4821a53abef7a412425aa50467c}} 
+\index{memory@{memory}!is\+\_\+internal\+\_\+variable@{is\+\_\+internal\+\_\+variable}}
+\index{is\+\_\+internal\+\_\+variable@{is\+\_\+internal\+\_\+variable}!memory@{memory}}
+\subsubsection{\texorpdfstring{is\+\_\+internal\+\_\+variable()}{is\_internal\_variable()}}
+{\footnotesize\ttfamily bool memory\+::is\+\_\+internal\+\_\+variable (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope,  }\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+Test if a variable is allocated into the specified function. 
+
+
+
+Definition at line 317 of file memory.\+cpp.
+
+
+
+Referenced by get\+\_\+source\+\_\+values().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{d8/d99/classmemory_af55ea4821a53abef7a412425aa50467c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_ab5e7b68f10177f4a17cfab6d711dab49}\label{classmemory_ab5e7b68f10177f4a17cfab6d711dab49}} 
+\index{memory@{memory}!is\+\_\+parameter@{is\+\_\+parameter}}
+\index{is\+\_\+parameter@{is\+\_\+parameter}!memory@{memory}}
+\subsubsection{\texorpdfstring{is\+\_\+parameter()}{is\_parameter()}}
+{\footnotesize\ttfamily bool memory\+::is\+\_\+parameter (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope,  }\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+Test if a variable is into the set of interface registers. 
+
+
+
+Definition at line 343 of file memory.\+cpp.
+
+
+
+References parameter.
+
+
+
+Referenced by get\+\_\+source\+\_\+values().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d8/d99/classmemory_ab5e7b68f10177f4a17cfab6d711dab49_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_ae761b88fcafd4a0c6c7ae4426fe6ceb6}\label{classmemory_ae761b88fcafd4a0c6c7ae4426fe6ceb6}} 
+\index{memory@{memory}!is\+\_\+parm\+\_\+decl\+\_\+copied@{is\+\_\+parm\+\_\+decl\+\_\+copied}}
+\index{is\+\_\+parm\+\_\+decl\+\_\+copied@{is\+\_\+parm\+\_\+decl\+\_\+copied}!memory@{memory}}
+\subsubsection{\texorpdfstring{is\+\_\+parm\+\_\+decl\+\_\+copied()}{is\_parm\_decl\_copied()}}
+{\footnotesize\ttfamily bool memory\+::is\+\_\+parm\+\_\+decl\+\_\+copied (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+return true in case the \hyperlink{structparm__decl}{parm\+\_\+decl} parameter has to be copied from the caller 
+
+
+
+Definition at line 531 of file memory.\+cpp.
+
+
+
+References parm\+\_\+decl\+\_\+copied.
+
+
+
+Referenced by increment\+\_\+n\+\_\+mem\+\_\+operations().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{d8/d99/classmemory_ae761b88fcafd4a0c6c7ae4426fe6ceb6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_aea74338373012206d2b769a4f1e144c4}\label{classmemory_aea74338373012206d2b769a4f1e144c4}} 
+\index{memory@{memory}!is\+\_\+parm\+\_\+decl\+\_\+stored@{is\+\_\+parm\+\_\+decl\+\_\+stored}}
+\index{is\+\_\+parm\+\_\+decl\+\_\+stored@{is\+\_\+parm\+\_\+decl\+\_\+stored}!memory@{memory}}
+\subsubsection{\texorpdfstring{is\+\_\+parm\+\_\+decl\+\_\+stored()}{is\_parm\_decl\_stored()}}
+{\footnotesize\ttfamily bool memory\+::is\+\_\+parm\+\_\+decl\+\_\+stored (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+return true in case the \hyperlink{structparm__decl}{parm\+\_\+decl} parameter has to be initialized from the formal value 
+
+
+
+Definition at line 541 of file memory.\+cpp.
+
+
+
+References parm\+\_\+decl\+\_\+stored.
+
+
+
+Referenced by increment\+\_\+n\+\_\+mem\+\_\+operations().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{d8/d99/classmemory_aea74338373012206d2b769a4f1e144c4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a3f36ef4c278bf2a45a2834523c484c7f}\label{classmemory_a3f36ef4c278bf2a45a2834523c484c7f}} 
+\index{memory@{memory}!is\+\_\+private\+\_\+memory@{is\+\_\+private\+\_\+memory}}
+\index{is\+\_\+private\+\_\+memory@{is\+\_\+private\+\_\+memory}!memory@{memory}}
+\subsubsection{\texorpdfstring{is\+\_\+private\+\_\+memory()}{is\_private\_memory()}}
+{\footnotesize\ttfamily bool memory\+::is\+\_\+private\+\_\+memory (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+Return true in case the variable is private. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the index of the variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true in case the variable is private 
+\end{DoxyReturn}
+
+
+Definition at line 327 of file memory.\+cpp.
+
+
+
+References private\+\_\+memories.
+
+
+
+Referenced by add\+\_\+internal\+\_\+symbol(), add\+\_\+internal\+\_\+variable(), count\+\_\+non\+\_\+private\+\_\+internal\+\_\+symbols(), fu\+\_\+binding\+::fill\+\_\+array\+\_\+ref\+\_\+memory(), get\+\_\+first\+\_\+address(), get\+\_\+last\+\_\+address(), and get\+\_\+source\+\_\+values().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a3f36ef4c278bf2a45a2834523c484c7f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a95592389e09c170738164d64ef46aacb}\label{classmemory_a95592389e09c170738164d64ef46aacb}} 
+\index{memory@{memory}!is\+\_\+read\+\_\+only\+\_\+variable@{is\+\_\+read\+\_\+only\+\_\+variable}}
+\index{is\+\_\+read\+\_\+only\+\_\+variable@{is\+\_\+read\+\_\+only\+\_\+variable}!memory@{memory}}
+\subsubsection{\texorpdfstring{is\+\_\+read\+\_\+only\+\_\+variable()}{is\_read\_only\_variable()}}
+{\footnotesize\ttfamily bool memory\+::is\+\_\+read\+\_\+only\+\_\+variable (\begin{DoxyParamCaption}\item[{unsigned}]{var }\end{DoxyParamCaption}) const}
+
+
+
+return true when the variable is only read 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the variable id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when variable is only read, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 205 of file memory.\+cpp.
+
+
+
+References read\+\_\+only\+\_\+vars.
+
+
+
+Referenced by align().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a95592389e09c170738164d64ef46aacb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_aa55b7b58d5ccf69ab5f8a79207750079}\label{classmemory_aa55b7b58d5ccf69ab5f8a79207750079}} 
+\index{memory@{memory}!is\+\_\+sds\+\_\+var@{is\+\_\+sds\+\_\+var}}
+\index{is\+\_\+sds\+\_\+var@{is\+\_\+sds\+\_\+var}!memory@{memory}}
+\subsubsection{\texorpdfstring{is\+\_\+sds\+\_\+var()}{is\_sds\_var()}}
+{\footnotesize\ttfamily bool memory\+::is\+\_\+sds\+\_\+var (\begin{DoxyParamCaption}\item[{unsigned int}]{var }\end{DoxyParamCaption}) const}
+
+
+
+check if the variable is always accessed with the same data size 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the variable id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when the variable is always accessed with the same data size, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 332 of file memory.\+cpp.
+
+
+
+References has\+\_\+sds\+\_\+var(), same\+\_\+data\+\_\+size\+\_\+accesses, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by get\+\_\+source\+\_\+values().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{d8/d99/classmemory_aa55b7b58d5ccf69ab5f8a79207750079_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{d8/d99/classmemory_aa55b7b58d5ccf69ab5f8a79207750079_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a08892c0a65916344ca6b744256d764d7}\label{classmemory_a08892c0a65916344ca6b744256d764d7}} 
+\index{memory@{memory}!not\+EQ@{not\+EQ}}
+\index{not\+EQ@{not\+EQ}!memory@{memory}}
+\subsubsection{\texorpdfstring{not\+E\+Q()}{notEQ()}}
+{\footnotesize\ttfamily bool memory\+::not\+EQ (\begin{DoxyParamCaption}\item[{\hyperlink{structrefcount}{refcount}$<$ \hyperlink{classmemory}{memory} $>$}]{ref }\end{DoxyParamCaption}) const}
+
+
+
+return true in case the current memory object and the passed one are different 
+
+
+
+Definition at line 732 of file memory.\+cpp.
+
+
+
+References actual\+\_\+parm\+\_\+loaded, all\+\_\+pointers\+\_\+resolved, bram\+\_\+bitsize, bus\+\_\+addr\+\_\+bitsize, bus\+\_\+data\+\_\+bitsize, bus\+\_\+size\+\_\+bitsize, call\+Sites, external, external\+\_\+base\+\_\+address\+\_\+alignment, implicit\+\_\+memcpy, in\+\_\+vars, intern\+\_\+shared\+\_\+data, internal, internal\+\_\+base\+\_\+address\+\_\+alignment, internal\+\_\+base\+\_\+address\+\_\+start, internal\+\_\+variable\+\_\+proxy, maxbram\+\_\+bitsize, maximum\+\_\+loads, maximum\+\_\+private\+\_\+memory\+\_\+size, maximum\+\_\+references, need\+\_\+bus, next\+\_\+base\+\_\+address, next\+\_\+off\+\_\+base\+\_\+address, null\+\_\+pointer\+\_\+check, off\+\_\+base\+\_\+address, packed\+\_\+vars, parameter, parameter\+\_\+alignment, params, parm\+\_\+decl\+\_\+copied, parm\+\_\+decl\+\_\+stored, pointer\+\_\+conversion, private\+\_\+memories, proxied\+\_\+variables, rangesize, read\+\_\+only\+\_\+vars, same\+\_\+data\+\_\+size\+\_\+accesses, total\+\_\+amount\+\_\+of\+\_\+parameter\+\_\+memory, total\+\_\+amount\+\_\+of\+\_\+private\+\_\+memory, unaligned\+\_\+accesses, and use\+\_\+unknown\+\_\+addresses.
+
+
+
+Referenced by get\+\_\+parameter\+\_\+alignment().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{d8/d99/classmemory_a08892c0a65916344ca6b744256d764d7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_ad407ba2bf162ece359a8254a3d23db32}\label{classmemory_ad407ba2bf162ece359a8254a3d23db32}} 
+\index{memory@{memory}!propagate\+\_\+memory\+\_\+parameters@{propagate\+\_\+memory\+\_\+parameters}}
+\index{propagate\+\_\+memory\+\_\+parameters@{propagate\+\_\+memory\+\_\+parameters}!memory@{memory}}
+\subsubsection{\texorpdfstring{propagate\+\_\+memory\+\_\+parameters()}{propagate\_memory\_parameters()}}
+{\footnotesize\ttfamily void memory\+::propagate\+\_\+memory\+\_\+parameters (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{src,  }\item[{const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref}}]{tgt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Propagates the memory parameters from the source (innermost) module to the target (outermost) one. 
+
+
+
+Definition at line 569 of file memory.\+cpp.
+
+
+
+References structural\+\_\+object\+::\+Add\+Parameter(), structural\+\_\+object\+::\+Exists\+Parameter(), structural\+\_\+manager\+::get\+\_\+circ(), structural\+\_\+object\+::\+Get\+Parameter(), M\+E\+M\+O\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER, structural\+\_\+object\+::\+Set\+Parameter(), and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), allocation\+::\+Build\+Proxy\+Wrapper(), W\+B4\+Intercon\+\_\+interface\+::exec(), get\+\_\+parameter\+\_\+alignment(), cs\+\_\+interface\+::\+Internal\+Exec(), minimal\+\_\+interface\+::\+Internal\+Exec(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), Top\+Entity\+Memory\+Mapped\+::\+Internal\+Exec(), top\+\_\+entity\+::\+Internal\+Exec(), W\+B4\+\_\+interface\+::\+Internal\+Exec(), and datapath\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_ad407ba2bf162ece359a8254a3d23db32_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_ad407ba2bf162ece359a8254a3d23db32_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_ae5cb10cded037f2d6b8171acb8cba6c9}\label{classmemory_ae5cb10cded037f2d6b8171acb8cba6c9}} 
+\index{memory@{memory}!reserve\+\_\+space@{reserve\+\_\+space}}
+\index{reserve\+\_\+space@{reserve\+\_\+space}!memory@{memory}}
+\subsubsection{\texorpdfstring{reserve\+\_\+space()}{reserve\_space()}}
+{\footnotesize\ttfamily void memory\+::reserve\+\_\+space (\begin{DoxyParamCaption}\item[{unsigned int}]{space }\end{DoxyParamCaption})}
+
+
+
+Explicitly allocate a certain space in the external memory. 
+
+
+
+Definition at line 510 of file memory.\+cpp.
+
+
+
+References align(), internal\+\_\+base\+\_\+address\+\_\+alignment, and next\+\_\+off\+\_\+base\+\_\+address.
+
+
+
+Referenced by increment\+\_\+n\+\_\+mem\+\_\+operations().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_ae5cb10cded037f2d6b8171acb8cba6c9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{d8/d99/classmemory_ae5cb10cded037f2d6b8171acb8cba6c9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_ab351898868e78407d9fc2ec1e4969c0c}\label{classmemory_ab351898868e78407d9fc2ec1e4969c0c}} 
+\index{memory@{memory}!set\+\_\+all\+\_\+pointers\+\_\+resolved@{set\+\_\+all\+\_\+pointers\+\_\+resolved}}
+\index{set\+\_\+all\+\_\+pointers\+\_\+resolved@{set\+\_\+all\+\_\+pointers\+\_\+resolved}!memory@{memory}}
+\subsubsection{\texorpdfstring{set\+\_\+all\+\_\+pointers\+\_\+resolved()}{set\_all\_pointers\_resolved()}}
+{\footnotesize\ttfamily void memory\+::set\+\_\+all\+\_\+pointers\+\_\+resolved (\begin{DoxyParamCaption}\item[{bool}]{resolved }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+define if all pointers have statically resolved 
+
+
+
+Definition at line 727 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_a7d924bbfab481c80b2770c59f2824b35}\label{classmemory_a7d924bbfab481c80b2770c59f2824b35}} 
+\index{memory@{memory}!set\+\_\+bram\+\_\+bitsize@{set\+\_\+bram\+\_\+bitsize}}
+\index{set\+\_\+bram\+\_\+bitsize@{set\+\_\+bram\+\_\+bitsize}!memory@{memory}}
+\subsubsection{\texorpdfstring{set\+\_\+bram\+\_\+bitsize()}{set\_bram\_bitsize()}}
+{\footnotesize\ttfamily void memory\+::set\+\_\+bram\+\_\+bitsize (\begin{DoxyParamCaption}\item[{unsigned int}]{bitsize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set the B\+R\+AM bitsize 
+
+
+
+Definition at line 573 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_a2bfe7650482db62c431267c6cb01ccac}\label{classmemory_a2bfe7650482db62c431267c6cb01ccac}} 
+\index{memory@{memory}!set\+\_\+bus\+\_\+data\+\_\+bitsize@{set\+\_\+bus\+\_\+data\+\_\+bitsize}}
+\index{set\+\_\+bus\+\_\+data\+\_\+bitsize@{set\+\_\+bus\+\_\+data\+\_\+bitsize}!memory@{memory}}
+\subsubsection{\texorpdfstring{set\+\_\+bus\+\_\+data\+\_\+bitsize()}{set\_bus\_data\_bitsize()}}
+{\footnotesize\ttfamily void memory\+::set\+\_\+bus\+\_\+data\+\_\+bitsize (\begin{DoxyParamCaption}\item[{unsigned int}]{bitsize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set the bus data bitsize 
+
+
+
+Definition at line 541 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_a306423532042ca8f0effb744fc8f9931}\label{classmemory_a306423532042ca8f0effb744fc8f9931}} 
+\index{memory@{memory}!set\+\_\+bus\+\_\+size\+\_\+bitsize@{set\+\_\+bus\+\_\+size\+\_\+bitsize}}
+\index{set\+\_\+bus\+\_\+size\+\_\+bitsize@{set\+\_\+bus\+\_\+size\+\_\+bitsize}!memory@{memory}}
+\subsubsection{\texorpdfstring{set\+\_\+bus\+\_\+size\+\_\+bitsize()}{set\_bus\_size\_bitsize()}}
+{\footnotesize\ttfamily void memory\+::set\+\_\+bus\+\_\+size\+\_\+bitsize (\begin{DoxyParamCaption}\item[{unsigned int}]{bitsize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set the bus size bitsize 
+
+
+
+Definition at line 557 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_a685cd474a5a626474a519e9047866f78}\label{classmemory_a685cd474a5a626474a519e9047866f78}} 
+\index{memory@{memory}!set\+\_\+implicit\+\_\+memcpy@{set\+\_\+implicit\+\_\+memcpy}}
+\index{set\+\_\+implicit\+\_\+memcpy@{set\+\_\+implicit\+\_\+memcpy}!memory@{memory}}
+\subsubsection{\texorpdfstring{set\+\_\+implicit\+\_\+memcpy()}{set\_implicit\_memcpy()}}
+{\footnotesize\ttfamily void memory\+::set\+\_\+implicit\+\_\+memcpy (\begin{DoxyParamCaption}\item[{bool}]{cond }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+define if there exist an implicit call of memcpy 
+
+
+
+Definition at line 760 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_a2a4b7aa0153f24a50385b370c260cec0}\label{classmemory_a2a4b7aa0153f24a50385b370c260cec0}} 
+\index{memory@{memory}!set\+\_\+intern\+\_\+shared\+\_\+data@{set\+\_\+intern\+\_\+shared\+\_\+data}}
+\index{set\+\_\+intern\+\_\+shared\+\_\+data@{set\+\_\+intern\+\_\+shared\+\_\+data}!memory@{memory}}
+\subsubsection{\texorpdfstring{set\+\_\+intern\+\_\+shared\+\_\+data()}{set\_intern\_shared\_data()}}
+{\footnotesize\ttfamily void memory\+::set\+\_\+intern\+\_\+shared\+\_\+data (\begin{DoxyParamCaption}\item[{bool}]{has\+\_\+accesses }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+define if the Spec has data that can be externally accessed 
+
+
+
+Definition at line 605 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_a104f9ba5a915851cfefe36fd606dc178}\label{classmemory_a104f9ba5a915851cfefe36fd606dc178}} 
+\index{memory@{memory}!set\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment@{set\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment}}
+\index{set\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment@{set\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment}!memory@{memory}}
+\subsubsection{\texorpdfstring{set\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment()}{set\_internal\_base\_address\_alignment()}}
+{\footnotesize\ttfamily void memory\+::set\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment }\end{DoxyParamCaption})}
+
+
+
+set the internal base address alignment 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment} & is the new alignment \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 561 of file memory.\+cpp.
+
+
+
+References align(), internal\+\_\+base\+\_\+address\+\_\+alignment, internal\+\_\+base\+\_\+address\+\_\+start, next\+\_\+base\+\_\+address, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by get\+\_\+parameter\+\_\+alignment().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a104f9ba5a915851cfefe36fd606dc178_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a104f9ba5a915851cfefe36fd606dc178_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a47b943a6e371ccdd0d4465be99b6c240}\label{classmemory_a47b943a6e371ccdd0d4465be99b6c240}} 
+\index{memory@{memory}!set\+\_\+maxbram\+\_\+bitsize@{set\+\_\+maxbram\+\_\+bitsize}}
+\index{set\+\_\+maxbram\+\_\+bitsize@{set\+\_\+maxbram\+\_\+bitsize}!memory@{memory}}
+\subsubsection{\texorpdfstring{set\+\_\+maxbram\+\_\+bitsize()}{set\_maxbram\_bitsize()}}
+{\footnotesize\ttfamily void memory\+::set\+\_\+maxbram\+\_\+bitsize (\begin{DoxyParamCaption}\item[{unsigned int}]{bitsize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set the maximum B\+R\+AM bitsize 
+
+
+
+Definition at line 589 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_a093f5c9909afd59a4ce3e480934fbfb4}\label{classmemory_a093f5c9909afd59a4ce3e480934fbfb4}} 
+\index{memory@{memory}!set\+\_\+maximum\+\_\+loads@{set\+\_\+maximum\+\_\+loads}}
+\index{set\+\_\+maximum\+\_\+loads@{set\+\_\+maximum\+\_\+loads}!memory@{memory}}
+\subsubsection{\texorpdfstring{set\+\_\+maximum\+\_\+loads()}{set\_maximum\_loads()}}
+{\footnotesize\ttfamily void memory\+::set\+\_\+maximum\+\_\+loads (\begin{DoxyParamCaption}\item[{unsigned int}]{var,  }\item[{\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{n\+\_\+refs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+define the maximum number of loads for a given variable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is variable \\
+\hline
+{\em n\+\_\+refs} & is the number of loads \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 643 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_aae0ad53726eef6b63a98acb7096c3418}\label{classmemory_aae0ad53726eef6b63a98acb7096c3418}} 
+\index{memory@{memory}!set\+\_\+maximum\+\_\+references@{set\+\_\+maximum\+\_\+references}}
+\index{set\+\_\+maximum\+\_\+references@{set\+\_\+maximum\+\_\+references}!memory@{memory}}
+\subsubsection{\texorpdfstring{set\+\_\+maximum\+\_\+references()}{set\_maximum\_references()}}
+{\footnotesize\ttfamily void memory\+::set\+\_\+maximum\+\_\+references (\begin{DoxyParamCaption}\item[{unsigned int}]{var,  }\item[{\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{n\+\_\+refs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+define the maximum number of references for a given variable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is variable \\
+\hline
+{\em n\+\_\+refs} & is the number of references \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 623 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_ad8729b135f5676bc9cb69047d4bf4120}\label{classmemory_ad8729b135f5676bc9cb69047d4bf4120}} 
+\index{memory@{memory}!set\+\_\+packed\+\_\+vars@{set\+\_\+packed\+\_\+vars}}
+\index{set\+\_\+packed\+\_\+vars@{set\+\_\+packed\+\_\+vars}!memory@{memory}}
+\subsubsection{\texorpdfstring{set\+\_\+packed\+\_\+vars()}{set\_packed\_vars()}}
+{\footnotesize\ttfamily void memory\+::set\+\_\+packed\+\_\+vars (\begin{DoxyParamCaption}\item[{bool}]{packed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+update the the packed variables status 
+
+
+\begin{DoxyParams}{Parameters}
+{\em packed} & is true when there is at least one packed variables \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 744 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_ac3c4105219a8035042d60ba076502ea4}\label{classmemory_ac3c4105219a8035042d60ba076502ea4}} 
+\index{memory@{memory}!set\+\_\+pointer\+\_\+conversion@{set\+\_\+pointer\+\_\+conversion}}
+\index{set\+\_\+pointer\+\_\+conversion@{set\+\_\+pointer\+\_\+conversion}!memory@{memory}}
+\subsubsection{\texorpdfstring{set\+\_\+pointer\+\_\+conversion()}{set\_pointer\_conversion()}}
+{\footnotesize\ttfamily void memory\+::set\+\_\+pointer\+\_\+conversion (\begin{DoxyParamCaption}\item[{bool}]{accesses }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set if a pointer conversion happen 
+
+
+
+Definition at line 695 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_a097988cba137c2de02ce55b9a62bf8f7}\label{classmemory_a097988cba137c2de02ce55b9a62bf8f7}} 
+\index{memory@{memory}!set\+\_\+sds\+\_\+var@{set\+\_\+sds\+\_\+var}}
+\index{set\+\_\+sds\+\_\+var@{set\+\_\+sds\+\_\+var}!memory@{memory}}
+\subsubsection{\texorpdfstring{set\+\_\+sds\+\_\+var()}{set\_sds\_var()}}
+{\footnotesize\ttfamily void memory\+::set\+\_\+sds\+\_\+var (\begin{DoxyParamCaption}\item[{unsigned int}]{var,  }\item[{bool}]{value }\end{DoxyParamCaption})}
+
+
+
+set if a variable is always accessed with the same data size or not 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the variable id \\
+\hline
+{\em value} & is true when the variable is always accessed with the same data size or false otherwise \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 275 of file memory.\+cpp.
+
+
+
+References same\+\_\+data\+\_\+size\+\_\+accesses.
+
+
+
+Referenced by align().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a097988cba137c2de02ce55b9a62bf8f7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmemory_a7900eedc2a6002a1519927f648064dd8}\label{classmemory_a7900eedc2a6002a1519927f648064dd8}} 
+\index{memory@{memory}!set\+\_\+unaligned\+\_\+accesses@{set\+\_\+unaligned\+\_\+accesses}}
+\index{set\+\_\+unaligned\+\_\+accesses@{set\+\_\+unaligned\+\_\+accesses}!memory@{memory}}
+\subsubsection{\texorpdfstring{set\+\_\+unaligned\+\_\+accesses()}{set\_unaligned\_accesses()}}
+{\footnotesize\ttfamily void memory\+::set\+\_\+unaligned\+\_\+accesses (\begin{DoxyParamCaption}\item[{bool}]{accesses }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set if L\+O\+A\+Ds or S\+T\+O\+R\+Es perform unaligned accesses 
+
+
+
+Definition at line 711 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_a0f7fcd0b927b352cb590638a3fb20bce}\label{classmemory_a0f7fcd0b927b352cb590638a3fb20bce}} 
+\index{memory@{memory}!set\+\_\+use\+\_\+unknown\+\_\+addresses@{set\+\_\+use\+\_\+unknown\+\_\+addresses}}
+\index{set\+\_\+use\+\_\+unknown\+\_\+addresses@{set\+\_\+use\+\_\+unknown\+\_\+addresses}!memory@{memory}}
+\subsubsection{\texorpdfstring{set\+\_\+use\+\_\+unknown\+\_\+addresses()}{set\_use\_unknown\_addresses()}}
+{\footnotesize\ttfamily void memory\+::set\+\_\+use\+\_\+unknown\+\_\+addresses (\begin{DoxyParamCaption}\item[{bool}]{accesses }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+define if there exist an object used by the Spec with an address not known at compile time 
+
+
+
+Definition at line 679 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_a078583e5743344036f0620cd532d5e89}\label{classmemory_a078583e5743344036f0620cd532d5e89}} 
+\index{memory@{memory}!xwrite@{xwrite}}
+\index{xwrite@{xwrite}!memory@{memory}}
+\subsubsection{\texorpdfstring{xwrite()}{xwrite()}}
+{\footnotesize\ttfamily void memory\+::xwrite (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Writes the current memory allocation into an X\+ML description. 
+
+
+
+Definition at line 651 of file memory.\+cpp.
+
+
+
+References xml\+\_\+child\+::add\+\_\+child\+\_\+element(), external, tree\+\_\+helper\+::name\+\_\+function(), off\+\_\+base\+\_\+address, parameter, S\+TR, TreeM, W\+R\+I\+T\+E\+\_\+\+X\+N\+VM, and W\+R\+I\+T\+E\+\_\+\+X\+VM.
+
+
+
+Referenced by get\+\_\+parameter\+\_\+alignment(), and H\+L\+S\+\_\+manager\+::xwrite().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d99/classmemory_a078583e5743344036f0620cd532d5e89_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d8/d99/classmemory_a078583e5743344036f0620cd532d5e89_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classmemory_ade20269d0dbb7efbf708fd694bb82d82}\label{classmemory_ade20269d0dbb7efbf708fd694bb82d82}} 
+\index{memory@{memory}!actual\+\_\+parm\+\_\+loaded@{actual\+\_\+parm\+\_\+loaded}}
+\index{actual\+\_\+parm\+\_\+loaded@{actual\+\_\+parm\+\_\+loaded}!memory@{memory}}
+\subsubsection{\texorpdfstring{actual\+\_\+parm\+\_\+loaded}{actual\_parm\_loaded}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ memory\+::actual\+\_\+parm\+\_\+loaded\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+actual parameter that has to be loaded from a stored value 
+
+
+
+Definition at line 115 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+actual\+\_\+parm\+\_\+loaded(), is\+\_\+actual\+\_\+parm\+\_\+loaded(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a5baad078a5d727ffd398b13f38bea29d}\label{classmemory_a5baad078a5d727ffd398b13f38bea29d}} 
+\index{memory@{memory}!all\+\_\+pointers\+\_\+resolved@{all\+\_\+pointers\+\_\+resolved}}
+\index{all\+\_\+pointers\+\_\+resolved@{all\+\_\+pointers\+\_\+resolved}!memory@{memory}}
+\subsubsection{\texorpdfstring{all\+\_\+pointers\+\_\+resolved}{all\_pointers\_resolved}}
+{\footnotesize\ttfamily bool memory\+::all\+\_\+pointers\+\_\+resolved\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+is true when all pointers are resolved statically 
+
+
+
+Definition at line 163 of file memory.\+hpp.
+
+
+
+Referenced by has\+\_\+all\+\_\+pointers\+\_\+resolved(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a8ce0f5cb063649425c36d630446cbdab}\label{classmemory_a8ce0f5cb063649425c36d630446cbdab}} 
+\index{memory@{memory}!bram\+\_\+bitsize@{bram\+\_\+bitsize}}
+\index{bram\+\_\+bitsize@{bram\+\_\+bitsize}!memory@{memory}}
+\subsubsection{\texorpdfstring{bram\+\_\+bitsize}{bram\_bitsize}}
+{\footnotesize\ttfamily unsigned int memory\+::bram\+\_\+bitsize\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+bram bitsize 
+
+
+
+Definition at line 145 of file memory.\+hpp.
+
+
+
+Referenced by get\+\_\+bram\+\_\+bitsize(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_acb8126266d6dbffc611a67b26feb8d97}\label{classmemory_acb8126266d6dbffc611a67b26feb8d97}} 
+\index{memory@{memory}!bus\+\_\+addr\+\_\+bitsize@{bus\+\_\+addr\+\_\+bitsize}}
+\index{bus\+\_\+addr\+\_\+bitsize@{bus\+\_\+addr\+\_\+bitsize}!memory@{memory}}
+\subsubsection{\texorpdfstring{bus\+\_\+addr\+\_\+bitsize}{bus\_addr\_bitsize}}
+{\footnotesize\ttfamily const unsigned\& memory\+::bus\+\_\+addr\+\_\+bitsize\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 195 of file memory.\+hpp.
+
+
+
+Referenced by compute\+\_\+next\+\_\+base\+\_\+address(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a0bbe4c23f492172e842d5de6334f48b7}\label{classmemory_a0bbe4c23f492172e842d5de6334f48b7}} 
+\index{memory@{memory}!bus\+\_\+data\+\_\+bitsize@{bus\+\_\+data\+\_\+bitsize}}
+\index{bus\+\_\+data\+\_\+bitsize@{bus\+\_\+data\+\_\+bitsize}!memory@{memory}}
+\subsubsection{\texorpdfstring{bus\+\_\+data\+\_\+bitsize}{bus\_data\_bitsize}}
+{\footnotesize\ttfamily unsigned int memory\+::bus\+\_\+data\+\_\+bitsize\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+bus data bitsize 
+
+
+
+Definition at line 139 of file memory.\+hpp.
+
+
+
+Referenced by get\+\_\+bus\+\_\+data\+\_\+bitsize(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_adb91a01d972a23757d764578d6b36f7e}\label{classmemory_adb91a01d972a23757d764578d6b36f7e}} 
+\index{memory@{memory}!bus\+\_\+size\+\_\+bitsize@{bus\+\_\+size\+\_\+bitsize}}
+\index{bus\+\_\+size\+\_\+bitsize@{bus\+\_\+size\+\_\+bitsize}!memory@{memory}}
+\subsubsection{\texorpdfstring{bus\+\_\+size\+\_\+bitsize}{bus\_size\_bitsize}}
+{\footnotesize\ttfamily unsigned int memory\+::bus\+\_\+size\+\_\+bitsize\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+bus size bitsize 
+
+
+
+Definition at line 142 of file memory.\+hpp.
+
+
+
+Referenced by get\+\_\+bus\+\_\+size\+\_\+bitsize(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_ae8e4d74f0178f58f58d3a2e4432c1cd7}\label{classmemory_ae8e4d74f0178f58f58d3a2e4432c1cd7}} 
+\index{memory@{memory}!call\+Sites@{call\+Sites}}
+\index{call\+Sites@{call\+Sites}!memory@{memory}}
+\subsubsection{\texorpdfstring{call\+Sites}{callSites}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref}$>$ memory\+::call\+Sites\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set of call sites for \+\_\+\+\_\+builtin\+\_\+wait\+\_\+call 
+
+
+
+Definition at line 97 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+internal\+\_\+symbol(), get\+\_\+call\+Site\+\_\+base\+\_\+address(), get\+\_\+call\+Sites(), get\+\_\+symbol(), has\+\_\+base\+\_\+address(), has\+\_\+call\+Site\+\_\+base\+\_\+address(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_ae45a5824c5d97979940f500436f1e1a7}\label{classmemory_ae45a5824c5d97979940f500436f1e1a7}} 
+\index{memory@{memory}!external@{external}}
+\index{external@{external}!memory@{memory}}
+\subsubsection{\texorpdfstring{external}{external}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref}$>$ memory\+::external\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set of variables allocated outside the top module 
+
+
+
+Definition at line 73 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+external\+\_\+symbol(), add\+\_\+internal\+\_\+symbol(), add\+\_\+parameter\+\_\+symbol(), get\+\_\+ext\+\_\+memory\+\_\+variables(), get\+\_\+external\+\_\+base\+\_\+address(), get\+\_\+symbol(), has\+\_\+base\+\_\+address(), has\+\_\+external\+\_\+base\+\_\+address(), is\+\_\+external\+\_\+variable(), not\+E\+Q(), and xwrite().
+
+\mbox{\Hypertarget{classmemory_a6e43571c74b6e7627406a0f0b14e7756}\label{classmemory_a6e43571c74b6e7627406a0f0b14e7756}} 
+\index{memory@{memory}!external\+\_\+base\+\_\+address\+\_\+alignment@{external\+\_\+base\+\_\+address\+\_\+alignment}}
+\index{external\+\_\+base\+\_\+address\+\_\+alignment@{external\+\_\+base\+\_\+address\+\_\+alignment}!memory@{memory}}
+\subsubsection{\texorpdfstring{external\+\_\+base\+\_\+address\+\_\+alignment}{external\_base\_address\_alignment}}
+{\footnotesize\ttfamily unsigned int memory\+::external\+\_\+base\+\_\+address\+\_\+alignment\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+external address alignment 
+
+
+
+Definition at line 172 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+external\+\_\+symbol(), memory(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a86949b9eb85aded9563911074a16f691}\label{classmemory_a86949b9eb85aded9563911074a16f691}} 
+\index{memory@{memory}!implicit\+\_\+memcpy@{implicit\+\_\+memcpy}}
+\index{implicit\+\_\+memcpy@{implicit\+\_\+memcpy}!memory@{memory}}
+\subsubsection{\texorpdfstring{implicit\+\_\+memcpy}{implicit\_memcpy}}
+{\footnotesize\ttfamily bool memory\+::implicit\+\_\+memcpy\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+when true an implicit memcpy is called 
+
+
+
+Definition at line 166 of file memory.\+hpp.
+
+
+
+Referenced by has\+\_\+implicit\+\_\+memcpy(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a7425f19fdc73130bccf232d8deef4006}\label{classmemory_a7425f19fdc73130bccf232d8deef4006}} 
+\index{memory@{memory}!in\+\_\+vars@{in\+\_\+vars}}
+\index{in\+\_\+vars@{in\+\_\+vars}!memory@{memory}}
+\subsubsection{\texorpdfstring{in\+\_\+vars}{in\_vars}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref}$>$ memory\+::in\+\_\+vars\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set of all the internal variables 
+
+
+
+Definition at line 87 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+external\+\_\+symbol(), add\+\_\+internal\+\_\+symbol(), add\+\_\+internal\+\_\+variable(), add\+\_\+parameter\+\_\+symbol(), count\+\_\+non\+\_\+private\+\_\+internal\+\_\+symbols(), get\+\_\+internal\+\_\+base\+\_\+address(), get\+\_\+symbol(), has\+\_\+base\+\_\+address(), has\+\_\+internal\+\_\+base\+\_\+address(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a85abaa2319b6f0941e1448bb53c57958}\label{classmemory_a85abaa2319b6f0941e1448bb53c57958}} 
+\index{memory@{memory}!intern\+\_\+shared\+\_\+data@{intern\+\_\+shared\+\_\+data}}
+\index{intern\+\_\+shared\+\_\+data@{intern\+\_\+shared\+\_\+data}!memory@{memory}}
+\subsubsection{\texorpdfstring{intern\+\_\+shared\+\_\+data}{intern\_shared\_data}}
+{\footnotesize\ttfamily bool memory\+::intern\+\_\+shared\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+define if the Spec has data that can be externally accessed 
+
+
+
+Definition at line 151 of file memory.\+hpp.
+
+
+
+Referenced by has\+\_\+intern\+\_\+shared\+\_\+data(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_af2efbd3f5b71e458681d8c971e2dfbee}\label{classmemory_af2efbd3f5b71e458681d8c971e2dfbee}} 
+\index{memory@{memory}!internal@{internal}}
+\index{internal@{internal}!memory@{memory}}
+\subsubsection{\texorpdfstring{internal}{internal}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, std\+::map$<$unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref}$>$ $>$ memory\+::internal\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set of variables allocated internally to the cores, classified by function id 
+
+
+
+Definition at line 76 of file memory.\+hpp.
+
+
+
+Referenced by not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_aae0423a2b0d67d6144694b6b41025141}\label{classmemory_aae0423a2b0d67d6144694b6b41025141}} 
+\index{memory@{memory}!internal\+\_\+base\+\_\+address\+\_\+alignment@{internal\+\_\+base\+\_\+address\+\_\+alignment}}
+\index{internal\+\_\+base\+\_\+address\+\_\+alignment@{internal\+\_\+base\+\_\+address\+\_\+alignment}!memory@{memory}}
+\subsubsection{\texorpdfstring{internal\+\_\+base\+\_\+address\+\_\+alignment}{internal\_base\_address\_alignment}}
+{\footnotesize\ttfamily unsigned int memory\+::internal\+\_\+base\+\_\+address\+\_\+alignment\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+internal address alignment 
+
+
+
+Definition at line 169 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+internal\+\_\+symbol(), add\+\_\+parameter(), get\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment(), memory(), not\+E\+Q(), reserve\+\_\+space(), and set\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment().
+
+\mbox{\Hypertarget{classmemory_ac55060cc8c48960f050d7c1a08b31d52}\label{classmemory_ac55060cc8c48960f050d7c1a08b31d52}} 
+\index{memory@{memory}!internal\+\_\+base\+\_\+address\+\_\+start@{internal\+\_\+base\+\_\+address\+\_\+start}}
+\index{internal\+\_\+base\+\_\+address\+\_\+start@{internal\+\_\+base\+\_\+address\+\_\+start}!memory@{memory}}
+\subsubsection{\texorpdfstring{internal\+\_\+base\+\_\+address\+\_\+start}{internal\_base\_address\_start}}
+{\footnotesize\ttfamily unsigned int memory\+::internal\+\_\+base\+\_\+address\+\_\+start\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+is the start internal address 
+
+
+
+Definition at line 121 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+internal\+\_\+variable(), get\+\_\+allocated\+\_\+intern\+\_\+memory(), get\+\_\+allocated\+\_\+space(), get\+\_\+max\+\_\+address(), memory(), not\+E\+Q(), and set\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment().
+
+\mbox{\Hypertarget{classmemory_a45fb0aa269feeca220af83356be42e11}\label{classmemory_a45fb0aa269feeca220af83356be42e11}} 
+\index{memory@{memory}!internal\+\_\+variable\+\_\+proxy@{internal\+\_\+variable\+\_\+proxy}}
+\index{internal\+\_\+variable\+\_\+proxy@{internal\+\_\+variable\+\_\+proxy}!memory@{memory}}
+\subsubsection{\texorpdfstring{internal\+\_\+variable\+\_\+proxy}{internal\_variable\_proxy}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ $>$ memory\+::internal\+\_\+variable\+\_\+proxy\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set of variable proxies accessed by a function 
+
+
+
+Definition at line 79 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+internal\+\_\+variable\+\_\+proxy(), get\+\_\+proxied\+\_\+internal\+\_\+variables(), has\+\_\+proxied\+\_\+internal\+\_\+variables(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a06a2006636c058647483276947faaede}\label{classmemory_a06a2006636c058647483276947faaede}} 
+\index{memory@{memory}!maxbram\+\_\+bitsize@{maxbram\+\_\+bitsize}}
+\index{maxbram\+\_\+bitsize@{maxbram\+\_\+bitsize}!memory@{memory}}
+\subsubsection{\texorpdfstring{maxbram\+\_\+bitsize}{maxbram\_bitsize}}
+{\footnotesize\ttfamily unsigned int memory\+::maxbram\+\_\+bitsize\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+maximum bram bitsize 
+
+
+
+Definition at line 148 of file memory.\+hpp.
+
+
+
+Referenced by get\+\_\+maxbram\+\_\+bitsize(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a7723dbe3d9d2f93d48e565757d3a6822}\label{classmemory_a7723dbe3d9d2f93d48e565757d3a6822}} 
+\index{memory@{memory}!maximum\+\_\+loads@{maximum\+\_\+loads}}
+\index{maximum\+\_\+loads@{maximum\+\_\+loads}!memory@{memory}}
+\subsubsection{\texorpdfstring{maximum\+\_\+loads}{maximum\_loads}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}$>$ memory\+::maximum\+\_\+loads\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+define for each variable the number of loads whenever it is possible 
+
+
+
+Definition at line 187 of file memory.\+hpp.
+
+
+
+Referenced by not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a15e811711b1637eee51ca9f590adaec8}\label{classmemory_a15e811711b1637eee51ca9f590adaec8}} 
+\index{memory@{memory}!maximum\+\_\+private\+\_\+memory\+\_\+size@{maximum\+\_\+private\+\_\+memory\+\_\+size}}
+\index{maximum\+\_\+private\+\_\+memory\+\_\+size@{maximum\+\_\+private\+\_\+memory\+\_\+size}!memory@{memory}}
+\subsubsection{\texorpdfstring{maximum\+\_\+private\+\_\+memory\+\_\+size}{maximum\_private\_memory\_size}}
+{\footnotesize\ttfamily unsigned int memory\+::maximum\+\_\+private\+\_\+memory\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+is the maximum amount of private memory allocated 
+
+
+
+Definition at line 124 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+internal\+\_\+symbol(), get\+\_\+max\+\_\+address(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a268547b20b11daccd5d48b340c435915}\label{classmemory_a268547b20b11daccd5d48b340c435915}} 
+\index{memory@{memory}!maximum\+\_\+references@{maximum\+\_\+references}}
+\index{maximum\+\_\+references@{maximum\+\_\+references}!memory@{memory}}
+\subsubsection{\texorpdfstring{maximum\+\_\+references}{maximum\_references}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}$>$ memory\+::maximum\+\_\+references\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+define for each variable the number of references whenever it is possible 
+
+
+
+Definition at line 184 of file memory.\+hpp.
+
+
+
+Referenced by not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_ace0b7da6929aa5fb0a72f099e72eb0da}\label{classmemory_ace0b7da6929aa5fb0a72f099e72eb0da}} 
+\index{memory@{memory}!n\+\_\+mem\+\_\+operations\+\_\+per\+\_\+var@{n\+\_\+mem\+\_\+operations\+\_\+per\+\_\+var}}
+\index{n\+\_\+mem\+\_\+operations\+\_\+per\+\_\+var@{n\+\_\+mem\+\_\+operations\+\_\+per\+\_\+var}!memory@{memory}}
+\subsubsection{\texorpdfstring{n\+\_\+mem\+\_\+operations\+\_\+per\+\_\+var}{n\_mem\_operations\_per\_var}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, unsigned int$>$ memory\+::n\+\_\+mem\+\_\+operations\+\_\+per\+\_\+var\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+number of L\+O\+A\+D/\+S\+T\+O\+RE per var 
+
+
+
+Definition at line 178 of file memory.\+hpp.
+
+\mbox{\Hypertarget{classmemory_aa5d90978b5d5147fa086c0e2f507f415}\label{classmemory_aa5d90978b5d5147fa086c0e2f507f415}} 
+\index{memory@{memory}!need\+\_\+bus@{need\+\_\+bus}}
+\index{need\+\_\+bus@{need\+\_\+bus}!memory@{memory}}
+\subsubsection{\texorpdfstring{need\+\_\+bus}{need\_bus}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ memory\+::need\+\_\+bus\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+define for each variable the number of loads whenever it is possible 
+
+
+
+Definition at line 190 of file memory.\+hpp.
+
+
+
+Referenced by not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a74f7fc9e278fc5f1047c06887bfbf628}\label{classmemory_a74f7fc9e278fc5f1047c06887bfbf628}} 
+\index{memory@{memory}!next\+\_\+base\+\_\+address@{next\+\_\+base\+\_\+address}}
+\index{next\+\_\+base\+\_\+address@{next\+\_\+base\+\_\+address}!memory@{memory}}
+\subsubsection{\texorpdfstring{next\+\_\+base\+\_\+address}{next\_base\_address}}
+{\footnotesize\ttfamily unsigned int memory\+::next\+\_\+base\+\_\+address\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+it represents the next address that is available for internal allocation 
+
+
+
+Definition at line 118 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+internal\+\_\+symbol(), add\+\_\+internal\+\_\+variable(), add\+\_\+parameter(), add\+\_\+parameter\+\_\+symbol(), get\+\_\+allocated\+\_\+space(), get\+\_\+max\+\_\+address(), memory(), not\+E\+Q(), and set\+\_\+internal\+\_\+base\+\_\+address\+\_\+alignment().
+
+\mbox{\Hypertarget{classmemory_a276dd744b44a4862ff5d6c294d638965}\label{classmemory_a276dd744b44a4862ff5d6c294d638965}} 
+\index{memory@{memory}!next\+\_\+off\+\_\+base\+\_\+address@{next\+\_\+off\+\_\+base\+\_\+address}}
+\index{next\+\_\+off\+\_\+base\+\_\+address@{next\+\_\+off\+\_\+base\+\_\+address}!memory@{memory}}
+\subsubsection{\texorpdfstring{next\+\_\+off\+\_\+base\+\_\+address}{next\_off\_base\_address}}
+{\footnotesize\ttfamily unsigned int memory\+::next\+\_\+off\+\_\+base\+\_\+address\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+it represents the next address that is available to allocate a variable out of the top module 
+
+
+
+Definition at line 136 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+external\+\_\+symbol(), add\+\_\+external\+\_\+variable(), get\+\_\+memory\+\_\+address(), not\+E\+Q(), and reserve\+\_\+space().
+
+\mbox{\Hypertarget{classmemory_af76a7dbf11a240c8f8664444295701aa}\label{classmemory_af76a7dbf11a240c8f8664444295701aa}} 
+\index{memory@{memory}!null\+\_\+pointer\+\_\+check@{null\+\_\+pointer\+\_\+check}}
+\index{null\+\_\+pointer\+\_\+check@{null\+\_\+pointer\+\_\+check}!memory@{memory}}
+\subsubsection{\texorpdfstring{null\+\_\+pointer\+\_\+check}{null\_pointer\_check}}
+{\footnotesize\ttfamily bool memory\+::null\+\_\+pointer\+\_\+check\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+when false object could be allocated starting from address 0 
+
+
+
+Definition at line 181 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+internal\+\_\+variable(), memory(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_ac97a5cf7a49915e6ca63883c30c0e599}\label{classmemory_ac97a5cf7a49915e6ca63883c30c0e599}} 
+\index{memory@{memory}!off\+\_\+base\+\_\+address@{off\+\_\+base\+\_\+address}}
+\index{off\+\_\+base\+\_\+address@{off\+\_\+base\+\_\+address}!memory@{memory}}
+\subsubsection{\texorpdfstring{off\+\_\+base\+\_\+address}{off\_base\_address}}
+{\footnotesize\ttfamily unsigned int memory\+::off\+\_\+base\+\_\+address\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+it represents the base address of the external memory 
+
+
+
+Definition at line 133 of file memory.\+hpp.
+
+
+
+Referenced by not\+E\+Q(), and xwrite().
+
+\mbox{\Hypertarget{classmemory_afe6c94e7d3da0b12ac0bf2bbbf11d934}\label{classmemory_afe6c94e7d3da0b12ac0bf2bbbf11d934}} 
+\index{memory@{memory}!packed\+\_\+vars@{packed\+\_\+vars}}
+\index{packed\+\_\+vars@{packed\+\_\+vars}!memory@{memory}}
+\subsubsection{\texorpdfstring{packed\+\_\+vars}{packed\_vars}}
+{\footnotesize\ttfamily bool memory\+::packed\+\_\+vars\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+true when packed vars are used 
+
+
+
+Definition at line 193 of file memory.\+hpp.
+
+
+
+Referenced by has\+\_\+packed\+\_\+vars(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a8e55632ecceb2c57fc3a337997528bc1}\label{classmemory_a8e55632ecceb2c57fc3a337997528bc1}} 
+\index{memory@{memory}!parameter@{parameter}}
+\index{parameter@{parameter}!memory@{memory}}
+\subsubsection{\texorpdfstring{parameter}{parameter}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, std\+::map$<$unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref}$>$ $>$ memory\+::parameter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set of variables allocated in registers of the interface 
+
+
+
+Definition at line 93 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+external\+\_\+symbol(), add\+\_\+internal\+\_\+symbol(), add\+\_\+parameter\+\_\+symbol(), get\+\_\+first\+\_\+address(), get\+\_\+function\+\_\+parameters(), get\+\_\+parameter\+\_\+base\+\_\+address(), get\+\_\+symbol(), has\+\_\+parameter\+\_\+base\+\_\+address(), is\+\_\+parameter(), not\+E\+Q(), and xwrite().
+
+\mbox{\Hypertarget{classmemory_ac5e94e5f126f12d204d58d96384124f6}\label{classmemory_ac5e94e5f126f12d204d58d96384124f6}} 
+\index{memory@{memory}!parameter\+\_\+alignment@{parameter\+\_\+alignment}}
+\index{parameter\+\_\+alignment@{parameter\+\_\+alignment}!memory@{memory}}
+\subsubsection{\texorpdfstring{parameter\+\_\+alignment}{parameter\_alignment}}
+{\footnotesize\ttfamily const unsigned int memory\+::parameter\+\_\+alignment\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+parameter alignment 
+
+
+
+Definition at line 175 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+parameter\+\_\+symbol(), get\+\_\+parameter\+\_\+alignment(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a8845366310c0ac284b91c2cd561f1ad1}\label{classmemory_a8845366310c0ac284b91c2cd561f1ad1}} 
+\index{memory@{memory}!params@{params}}
+\index{params@{params}!memory@{memory}}
+\subsubsection{\texorpdfstring{params}{params}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{memory__symbol_8hpp_af3608dbc27177447c2d777fa712cc82a}{memory\+\_\+symbol\+Ref}$>$ memory\+::params\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set of all the internal parameters 
+
+
+
+Definition at line 95 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+parameter\+\_\+symbol(), has\+\_\+base\+\_\+address(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a7f54cdccc221acb58e2c87898f4e7005}\label{classmemory_a7f54cdccc221acb58e2c87898f4e7005}} 
+\index{memory@{memory}!parm\+\_\+decl\+\_\+copied@{parm\+\_\+decl\+\_\+copied}}
+\index{parm\+\_\+decl\+\_\+copied@{parm\+\_\+decl\+\_\+copied}!memory@{memory}}
+\subsubsection{\texorpdfstring{parm\+\_\+decl\+\_\+copied}{parm\_decl\_copied}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ memory\+::parm\+\_\+decl\+\_\+copied\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{structparm__decl}{parm\+\_\+decl} that has to be copied from the caller 
+
+
+
+Definition at line 109 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+parm\+\_\+decl\+\_\+copied(), is\+\_\+parm\+\_\+decl\+\_\+copied(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a9dc8f2a404f5d05c44e43d5b0d05d3e8}\label{classmemory_a9dc8f2a404f5d05c44e43d5b0d05d3e8}} 
+\index{memory@{memory}!parm\+\_\+decl\+\_\+stored@{parm\+\_\+decl\+\_\+stored}}
+\index{parm\+\_\+decl\+\_\+stored@{parm\+\_\+decl\+\_\+stored}!memory@{memory}}
+\subsubsection{\texorpdfstring{parm\+\_\+decl\+\_\+stored}{parm\_decl\_stored}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ memory\+::parm\+\_\+decl\+\_\+stored\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{structparm__decl}{parm\+\_\+decl} storage has to be initialized from the formal parameter 
+
+
+
+Definition at line 112 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+parm\+\_\+decl\+\_\+stored(), is\+\_\+parm\+\_\+decl\+\_\+stored(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_ac4763c40921f38e1e1e7eda3acb4e0af}\label{classmemory_ac4763c40921f38e1e1e7eda3acb4e0af}} 
+\index{memory@{memory}!pointer\+\_\+conversion@{pointer\+\_\+conversion}}
+\index{pointer\+\_\+conversion@{pointer\+\_\+conversion}!memory@{memory}}
+\subsubsection{\texorpdfstring{pointer\+\_\+conversion}{pointer\_conversion}}
+{\footnotesize\ttfamily bool memory\+::pointer\+\_\+conversion\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+true when at least one pointer conversion happen 
+
+
+
+Definition at line 157 of file memory.\+hpp.
+
+
+
+Referenced by has\+\_\+pointer\+\_\+conversion(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a51a28f3d0b125a57a16febef16d93326}\label{classmemory_a51a28f3d0b125a57a16febef16d93326}} 
+\index{memory@{memory}!private\+\_\+memories@{private\+\_\+memories}}
+\index{private\+\_\+memories@{private\+\_\+memories}!memory@{memory}}
+\subsubsection{\texorpdfstring{private\+\_\+memories}{private\_memories}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ memory\+::private\+\_\+memories\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+store the objects that does not need to be attached to the bus 
+
+
+
+Definition at line 100 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+private\+\_\+memory(), is\+\_\+private\+\_\+memory(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_adec2a898a9a834d8b15d565c418689ed}\label{classmemory_adec2a898a9a834d8b15d565c418689ed}} 
+\index{memory@{memory}!proxied\+\_\+variables@{proxied\+\_\+variables}}
+\index{proxied\+\_\+variables@{proxied\+\_\+variables}!memory@{memory}}
+\subsubsection{\texorpdfstring{proxied\+\_\+variables}{proxied\_variables}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ memory\+::proxied\+\_\+variables\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+is the set of proxied variables 
+
+
+
+Definition at line 82 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+internal\+\_\+variable\+\_\+proxy(), is\+\_\+a\+\_\+proxied\+\_\+variable(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a3c2f2a293a39a86fca2072848f852585}\label{classmemory_a3c2f2a293a39a86fca2072848f852585}} 
+\index{memory@{memory}!rangesize@{rangesize}}
+\index{rangesize@{rangesize}!memory@{memory}}
+\subsubsection{\texorpdfstring{rangesize}{rangesize}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, unsigned int$>$ memory\+::rangesize\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+for each var store the address space rangesize associated with it 
+
+
+
+Definition at line 90 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+internal\+\_\+symbol(), get\+\_\+rangesize(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a65ec8ddee58a43fd84b238d5a79daf7d}\label{classmemory_a65ec8ddee58a43fd84b238d5a79daf7d}} 
+\index{memory@{memory}!read\+\_\+only\+\_\+vars@{read\+\_\+only\+\_\+vars}}
+\index{read\+\_\+only\+\_\+vars@{read\+\_\+only\+\_\+vars}!memory@{memory}}
+\subsubsection{\texorpdfstring{read\+\_\+only\+\_\+vars}{read\_only\_vars}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ memory\+::read\+\_\+only\+\_\+vars\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 84 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+read\+\_\+only\+\_\+variable(), is\+\_\+read\+\_\+only\+\_\+variable(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a8bce4956a8b768487cced20ae90120fc}\label{classmemory_a8bce4956a8b768487cced20ae90120fc}} 
+\index{memory@{memory}!same\+\_\+data\+\_\+size\+\_\+accesses@{same\+\_\+data\+\_\+size\+\_\+accesses}}
+\index{same\+\_\+data\+\_\+size\+\_\+accesses@{same\+\_\+data\+\_\+size\+\_\+accesses}!memory@{memory}}
+\subsubsection{\texorpdfstring{same\+\_\+data\+\_\+size\+\_\+accesses}{same\_data\_size\_accesses}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, unsigned int$>$ memory\+::same\+\_\+data\+\_\+size\+\_\+accesses\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+store if a given variable is accessed always with the same data\+\_\+size or not 
+
+
+
+Definition at line 103 of file memory.\+hpp.
+
+
+
+Referenced by has\+\_\+sds\+\_\+var(), is\+\_\+sds\+\_\+var(), not\+E\+Q(), and set\+\_\+sds\+\_\+var().
+
+\mbox{\Hypertarget{classmemory_af2c50f29b1e11b8a03c8e58491fc3fb9}\label{classmemory_af2c50f29b1e11b8a03c8e58491fc3fb9}} 
+\index{memory@{memory}!source\+\_\+values@{source\+\_\+values}}
+\index{source\+\_\+values@{source\+\_\+values}!memory@{memory}}
+\subsubsection{\texorpdfstring{source\+\_\+values}{source\_values}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ $>$ memory\+::source\+\_\+values\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ssa\+\_\+names assigned to a given memory variable 
+
+
+
+Definition at line 106 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+source\+\_\+value().
+
+\mbox{\Hypertarget{classmemory_a7622b3919a88ad790782facf9d490f95}\label{classmemory_a7622b3919a88ad790782facf9d490f95}} 
+\index{memory@{memory}!total\+\_\+amount\+\_\+of\+\_\+parameter\+\_\+memory@{total\+\_\+amount\+\_\+of\+\_\+parameter\+\_\+memory}}
+\index{total\+\_\+amount\+\_\+of\+\_\+parameter\+\_\+memory@{total\+\_\+amount\+\_\+of\+\_\+parameter\+\_\+memory}!memory@{memory}}
+\subsubsection{\texorpdfstring{total\+\_\+amount\+\_\+of\+\_\+parameter\+\_\+memory}{total\_amount\_of\_parameter\_memory}}
+{\footnotesize\ttfamily unsigned int memory\+::total\+\_\+amount\+\_\+of\+\_\+parameter\+\_\+memory\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+total amount of parameter memory 
+
+
+
+Definition at line 130 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+parameter(), add\+\_\+parameter\+\_\+symbol(), get\+\_\+allocated\+\_\+parameters\+\_\+memory(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a3103b469a197d1ec13ece20de36c994d}\label{classmemory_a3103b469a197d1ec13ece20de36c994d}} 
+\index{memory@{memory}!total\+\_\+amount\+\_\+of\+\_\+private\+\_\+memory@{total\+\_\+amount\+\_\+of\+\_\+private\+\_\+memory}}
+\index{total\+\_\+amount\+\_\+of\+\_\+private\+\_\+memory@{total\+\_\+amount\+\_\+of\+\_\+private\+\_\+memory}!memory@{memory}}
+\subsubsection{\texorpdfstring{total\+\_\+amount\+\_\+of\+\_\+private\+\_\+memory}{total\_amount\_of\_private\_memory}}
+{\footnotesize\ttfamily unsigned int memory\+::total\+\_\+amount\+\_\+of\+\_\+private\+\_\+memory\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+total amount of internal memory allocated 
+
+
+
+Definition at line 127 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+internal\+\_\+symbol(), get\+\_\+allocated\+\_\+space(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a6806f41edbd2ce52a84c3ba452d011f3}\label{classmemory_a6806f41edbd2ce52a84c3ba452d011f3}} 
+\index{memory@{memory}!TreeM@{TreeM}}
+\index{TreeM@{TreeM}!memory@{memory}}
+\subsubsection{\texorpdfstring{TreeM}{TreeM}}
+{\footnotesize\ttfamily const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} memory\+::\+TreeM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+datastructure containing tree information 
+
+
+
+Definition at line 70 of file memory.\+hpp.
+
+
+
+Referenced by add\+\_\+external\+\_\+variable(), add\+\_\+internal\+\_\+symbol(), add\+\_\+internal\+\_\+variable(), compute\+\_\+next\+\_\+base\+\_\+address(), get\+\_\+last\+\_\+address(), and xwrite().
+
+\mbox{\Hypertarget{classmemory_a501c57d0c361729baebefcf365fc3241}\label{classmemory_a501c57d0c361729baebefcf365fc3241}} 
+\index{memory@{memory}!unaligned\+\_\+accesses@{unaligned\+\_\+accesses}}
+\index{unaligned\+\_\+accesses@{unaligned\+\_\+accesses}!memory@{memory}}
+\subsubsection{\texorpdfstring{unaligned\+\_\+accesses}{unaligned\_accesses}}
+{\footnotesize\ttfamily bool memory\+::unaligned\+\_\+accesses\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+true when L\+O\+A\+Ds or S\+T\+O\+R\+Es perform unaligned accesses 
+
+
+
+Definition at line 160 of file memory.\+hpp.
+
+
+
+Referenced by has\+\_\+unaligned\+\_\+accesses(), and not\+E\+Q().
+
+\mbox{\Hypertarget{classmemory_a0b0d3f30b23b5bbb388097f3c117d29e}\label{classmemory_a0b0d3f30b23b5bbb388097f3c117d29e}} 
+\index{memory@{memory}!use\+\_\+unknown\+\_\+addresses@{use\+\_\+unknown\+\_\+addresses}}
+\index{use\+\_\+unknown\+\_\+addresses@{use\+\_\+unknown\+\_\+addresses}!memory@{memory}}
+\subsubsection{\texorpdfstring{use\+\_\+unknown\+\_\+addresses}{use\_unknown\_addresses}}
+{\footnotesize\ttfamily bool memory\+::use\+\_\+unknown\+\_\+addresses\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Spec accesses data having an address unknown at compile time. 
+
+
+
+Definition at line 154 of file memory.\+hpp.
+
+
+
+Referenced by has\+\_\+unknown\+\_\+addresses(), and not\+E\+Q().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/memory/\hyperlink{memory_8hpp}{memory.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/memory/\hyperlink{memory_8cpp}{memory.\+cpp}\end{DoxyCompactItemize}

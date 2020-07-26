@@ -1,0 +1,269 @@
+\hypertarget{classboost_1_1dsatur2__coloring__helper}{}\section{boost\+:\+:dsatur2\+\_\+coloring\+\_\+helper$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$ Class Template Reference}
+\label{classboost_1_1dsatur2__coloring__helper}\index{boost\+::dsatur2\+\_\+coloring\+\_\+helper$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$@{boost\+::dsatur2\+\_\+coloring\+\_\+helper$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$}}
+
+
+helper used to color the graph.  
+
+
+
+
+{\ttfamily \#include $<$dsatur2\+\_\+coloring.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classboost_1_1dsatur2__coloring__helper_a8514219fbf794c63ffbde8b3492cc346}{dsatur2\+\_\+coloring\+\_\+helper} (const Vertex\+List\+Graph \&\+\_\+G, Color\+Map \&\+\_\+\+CM, const size\+\_\+type \+\_\+num\+\_\+node)
+\item 
+\hyperlink{classboost_1_1dsatur2__coloring__helper_adc2f1fe76a6dbe5371d3760457145fa3}{$\sim$dsatur2\+\_\+coloring\+\_\+helper} ()
+\item 
+\hyperlink{classboost_1_1dsatur2__coloring__helper_adc4502c8a6a86fc1fd801c35e38f9f57}{dsatur2\+\_\+coloring\+\_\+helper} (const \hyperlink{classboost_1_1dsatur2__coloring__helper}{dsatur2\+\_\+coloring\+\_\+helper} \&inst)=delete
+\item 
+void \hyperlink{classboost_1_1dsatur2__coloring__helper_adb927efbacd307f3279d5a6bdd198700}{Assign\+Color} (size\+\_\+type node, size\+\_\+type color)
+\item 
+size\+\_\+type \hyperlink{classboost_1_1dsatur2__coloring__helper_a0abb8144cff9aa7d05b8bad12b84158c}{Seq\+Color} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef graph\+\_\+traits$<$ Vertex\+List\+Graph $>$ \hyperlink{classboost_1_1dsatur2__coloring__helper_a9a3e34ad1277d60091a43044bb0b76d9}{Graph\+Traits}
+\item 
+typedef Graph\+Traits\+::vertex\+\_\+descriptor \hyperlink{classboost_1_1dsatur2__coloring__helper_a74e7b43aba95a31b3b06b092482429cb}{Vertex}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const size\+\_\+type \hyperlink{classboost_1_1dsatur2__coloring__helper_ae4a14a29af7836813076c4cc1397bfa1}{num\+\_\+node}
+\item 
+std\+::vector$<$ bool $>$ \hyperlink{classboost_1_1dsatur2__coloring__helper_a65bbfc332c48577d488287470e82a78e}{valid}
+\item 
+boost\+::numeric\+::ublas\+::matrix$<$ bool $>$ \hyperlink{classboost_1_1dsatur2__coloring__helper_a191c842010e866aba65b3b025455170f}{Color\+Adj}
+\item 
+std\+::vector$<$ size\+\_\+type $>$ \hyperlink{classboost_1_1dsatur2__coloring__helper_ad40e17e570c52272d09b5da508c6cde9}{Color\+Count}
+\item 
+std\+::vector$<$ size\+\_\+type $>$ \hyperlink{classboost_1_1dsatur2__coloring__helper_a10bf0ba743316d8f2d9750d95080c3f0}{Degree\+Count}
+\item 
+const Vertex\+List\+Graph \& \hyperlink{classboost_1_1dsatur2__coloring__helper_a004746f35584b70c30cb48c2460dcc33}{G}
+\item 
+Color\+Map \& \hyperlink{classboost_1_1dsatur2__coloring__helper_ab4e5cdc45d0e2579f3a43ed1464e6983}{CM}
+\item 
+size\+\_\+type $\ast$ \hyperlink{classboost_1_1dsatur2__coloring__helper_abee38e86ad7697afd89e0f6b6c684d6e}{heap\+\_\+container}
+\item 
+\hyperlink{structboost_1_1dsatur2__heap__compare__functor}{dsatur2\+\_\+heap\+\_\+compare\+\_\+functor}$<$ size\+\_\+type $>$ \hyperlink{classboost_1_1dsatur2__coloring__helper_a1a8dcdf6568541a1d37ebc3f19ac0f0e}{H\+CF}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type$>$\newline
+class boost\+::dsatur2\+\_\+coloring\+\_\+helper$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$}
+
+helper used to color the graph. 
+
+Definition at line 117 of file dsatur2\+\_\+coloring.\+hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classboost_1_1dsatur2__coloring__helper_a9a3e34ad1277d60091a43044bb0b76d9}\label{classboost_1_1dsatur2__coloring__helper_a9a3e34ad1277d60091a43044bb0b76d9}} 
+\index{boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}!Graph\+Traits@{Graph\+Traits}}
+\index{Graph\+Traits@{Graph\+Traits}!boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Graph\+Traits}{GraphTraits}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type$>$ \\
+typedef graph\+\_\+traits$<$Vertex\+List\+Graph$>$ \hyperlink{classboost_1_1dsatur2__coloring__helper}{boost\+::dsatur2\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$\+::\hyperlink{classboost_1_1dsatur2__coloring__helper_a9a3e34ad1277d60091a43044bb0b76d9}{Graph\+Traits}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 120 of file dsatur2\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1dsatur2__coloring__helper_a74e7b43aba95a31b3b06b092482429cb}\label{classboost_1_1dsatur2__coloring__helper_a74e7b43aba95a31b3b06b092482429cb}} 
+\index{boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Vertex}{Vertex}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type$>$ \\
+typedef Graph\+Traits\+::vertex\+\_\+descriptor \hyperlink{classboost_1_1dsatur2__coloring__helper}{boost\+::dsatur2\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$\+::\hyperlink{classboost_1_1dsatur2__coloring__helper_a74e7b43aba95a31b3b06b092482429cb}{Vertex}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 121 of file dsatur2\+\_\+coloring.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classboost_1_1dsatur2__coloring__helper_a8514219fbf794c63ffbde8b3492cc346}\label{classboost_1_1dsatur2__coloring__helper_a8514219fbf794c63ffbde8b3492cc346}} 
+\index{boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}!dsatur2\+\_\+coloring\+\_\+helper@{dsatur2\+\_\+coloring\+\_\+helper}}
+\index{dsatur2\+\_\+coloring\+\_\+helper@{dsatur2\+\_\+coloring\+\_\+helper}!boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{dsatur2\+\_\+coloring\+\_\+helper()}{dsatur2\_coloring\_helper()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type$>$ \\
+\hyperlink{classboost_1_1dsatur2__coloring__helper}{boost\+::dsatur2\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$\+::\hyperlink{classboost_1_1dsatur2__coloring__helper}{dsatur2\+\_\+coloring\+\_\+helper} (\begin{DoxyParamCaption}\item[{const Vertex\+List\+Graph \&}]{\+\_\+G,  }\item[{Color\+Map \&}]{\+\_\+\+CM,  }\item[{const size\+\_\+type}]{\+\_\+num\+\_\+node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 133 of file dsatur2\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1dsatur2__coloring__helper_adc2f1fe76a6dbe5371d3760457145fa3}\label{classboost_1_1dsatur2__coloring__helper_adc2f1fe76a6dbe5371d3760457145fa3}} 
+\index{boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}!````~dsatur2\+\_\+coloring\+\_\+helper@{$\sim$dsatur2\+\_\+coloring\+\_\+helper}}
+\index{````~dsatur2\+\_\+coloring\+\_\+helper@{$\sim$dsatur2\+\_\+coloring\+\_\+helper}!boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{$\sim$dsatur2\+\_\+coloring\+\_\+helper()}{~dsatur2\_coloring\_helper()}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type$>$ \\
+\hyperlink{classboost_1_1dsatur2__coloring__helper}{boost\+::dsatur2\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$\+::$\sim$\hyperlink{classboost_1_1dsatur2__coloring__helper}{dsatur2\+\_\+coloring\+\_\+helper} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 147 of file dsatur2\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1dsatur2__coloring__helper_adc4502c8a6a86fc1fd801c35e38f9f57}\label{classboost_1_1dsatur2__coloring__helper_adc4502c8a6a86fc1fd801c35e38f9f57}} 
+\index{boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}!dsatur2\+\_\+coloring\+\_\+helper@{dsatur2\+\_\+coloring\+\_\+helper}}
+\index{dsatur2\+\_\+coloring\+\_\+helper@{dsatur2\+\_\+coloring\+\_\+helper}!boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{dsatur2\+\_\+coloring\+\_\+helper()}{dsatur2\_coloring\_helper()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type$>$ \\
+\hyperlink{classboost_1_1dsatur2__coloring__helper}{boost\+::dsatur2\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$\+::\hyperlink{classboost_1_1dsatur2__coloring__helper}{dsatur2\+\_\+coloring\+\_\+helper} (\begin{DoxyParamCaption}\item[{const \hyperlink{classboost_1_1dsatur2__coloring__helper}{dsatur2\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$ \&}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classboost_1_1dsatur2__coloring__helper_adb927efbacd307f3279d5a6bdd198700}\label{classboost_1_1dsatur2__coloring__helper_adb927efbacd307f3279d5a6bdd198700}} 
+\index{boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}!Assign\+Color@{Assign\+Color}}
+\index{Assign\+Color@{Assign\+Color}!boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Assign\+Color()}{AssignColor()}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type$>$ \\
+void \hyperlink{classboost_1_1dsatur2__coloring__helper}{boost\+::dsatur2\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$\+::Assign\+Color (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{node,  }\item[{size\+\_\+type}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 154 of file dsatur2\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1dsatur2__coloring__helper_a0abb8144cff9aa7d05b8bad12b84158c}\label{classboost_1_1dsatur2__coloring__helper_a0abb8144cff9aa7d05b8bad12b84158c}} 
+\index{boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}!Seq\+Color@{Seq\+Color}}
+\index{Seq\+Color@{Seq\+Color}!boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Seq\+Color()}{SeqColor()}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type$>$ \\
+size\+\_\+type \hyperlink{classboost_1_1dsatur2__coloring__helper}{boost\+::dsatur2\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$\+::Seq\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+color each vertex
+
+Find node with maximum color\+\_\+adj
+
+look for a color for vertex v
+
+not able to color so we have to increase the maximum color available 
+
+Definition at line 170 of file dsatur2\+\_\+coloring.\+hpp.
+
+
+
+Referenced by boost\+::dsatur2\+\_\+coloring().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dbc/classboost_1_1dsatur2__coloring__helper_a0abb8144cff9aa7d05b8bad12b84158c_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classboost_1_1dsatur2__coloring__helper_ab4e5cdc45d0e2579f3a43ed1464e6983}\label{classboost_1_1dsatur2__coloring__helper_ab4e5cdc45d0e2579f3a43ed1464e6983}} 
+\index{boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}!CM@{CM}}
+\index{CM@{CM}!boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{CM}{CM}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type$>$ \\
+Color\+Map\& \hyperlink{classboost_1_1dsatur2__coloring__helper}{boost\+::dsatur2\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$\+::CM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 128 of file dsatur2\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1dsatur2__coloring__helper_a191c842010e866aba65b3b025455170f}\label{classboost_1_1dsatur2__coloring__helper_a191c842010e866aba65b3b025455170f}} 
+\index{boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}!Color\+Adj@{Color\+Adj}}
+\index{Color\+Adj@{Color\+Adj}!boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Color\+Adj}{ColorAdj}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type$>$ \\
+boost\+::numeric\+::ublas\+::matrix$<$bool$>$ \hyperlink{classboost_1_1dsatur2__coloring__helper}{boost\+::dsatur2\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$\+::Color\+Adj\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 124 of file dsatur2\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1dsatur2__coloring__helper_ad40e17e570c52272d09b5da508c6cde9}\label{classboost_1_1dsatur2__coloring__helper_ad40e17e570c52272d09b5da508c6cde9}} 
+\index{boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}!Color\+Count@{Color\+Count}}
+\index{Color\+Count@{Color\+Count}!boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Color\+Count}{ColorCount}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type$>$ \\
+std\+::vector$<$size\+\_\+type$>$ \hyperlink{classboost_1_1dsatur2__coloring__helper}{boost\+::dsatur2\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$\+::Color\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 125 of file dsatur2\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1dsatur2__coloring__helper_a10bf0ba743316d8f2d9750d95080c3f0}\label{classboost_1_1dsatur2__coloring__helper_a10bf0ba743316d8f2d9750d95080c3f0}} 
+\index{boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}!Degree\+Count@{Degree\+Count}}
+\index{Degree\+Count@{Degree\+Count}!boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Degree\+Count}{DegreeCount}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type$>$ \\
+std\+::vector$<$size\+\_\+type$>$ \hyperlink{classboost_1_1dsatur2__coloring__helper}{boost\+::dsatur2\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$\+::Degree\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 126 of file dsatur2\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1dsatur2__coloring__helper_a004746f35584b70c30cb48c2460dcc33}\label{classboost_1_1dsatur2__coloring__helper_a004746f35584b70c30cb48c2460dcc33}} 
+\index{boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}!G@{G}}
+\index{G@{G}!boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{G}{G}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type$>$ \\
+const Vertex\+List\+Graph\& \hyperlink{classboost_1_1dsatur2__coloring__helper}{boost\+::dsatur2\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$\+::G\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 127 of file dsatur2\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1dsatur2__coloring__helper_a1a8dcdf6568541a1d37ebc3f19ac0f0e}\label{classboost_1_1dsatur2__coloring__helper_a1a8dcdf6568541a1d37ebc3f19ac0f0e}} 
+\index{boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}!H\+CF@{H\+CF}}
+\index{H\+CF@{H\+CF}!boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{H\+CF}{HCF}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type$>$ \\
+\hyperlink{structboost_1_1dsatur2__heap__compare__functor}{dsatur2\+\_\+heap\+\_\+compare\+\_\+functor}$<$size\+\_\+type$>$ \hyperlink{classboost_1_1dsatur2__coloring__helper}{boost\+::dsatur2\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$\+::H\+CF\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 130 of file dsatur2\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1dsatur2__coloring__helper_abee38e86ad7697afd89e0f6b6c684d6e}\label{classboost_1_1dsatur2__coloring__helper_abee38e86ad7697afd89e0f6b6c684d6e}} 
+\index{boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}!heap\+\_\+container@{heap\+\_\+container}}
+\index{heap\+\_\+container@{heap\+\_\+container}!boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{heap\+\_\+container}{heap\_container}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type$>$ \\
+size\+\_\+type$\ast$ \hyperlink{classboost_1_1dsatur2__coloring__helper}{boost\+::dsatur2\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$\+::heap\+\_\+container\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 129 of file dsatur2\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1dsatur2__coloring__helper_ae4a14a29af7836813076c4cc1397bfa1}\label{classboost_1_1dsatur2__coloring__helper_ae4a14a29af7836813076c4cc1397bfa1}} 
+\index{boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}!num\+\_\+node@{num\+\_\+node}}
+\index{num\+\_\+node@{num\+\_\+node}!boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{num\+\_\+node}{num\_node}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type$>$ \\
+const size\+\_\+type \hyperlink{classboost_1_1dsatur2__coloring__helper}{boost\+::dsatur2\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$\+::num\+\_\+node\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 122 of file dsatur2\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1dsatur2__coloring__helper_a65bbfc332c48577d488287470e82a78e}\label{classboost_1_1dsatur2__coloring__helper_a65bbfc332c48577d488287470e82a78e}} 
+\index{boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}!valid@{valid}}
+\index{valid@{valid}!boost\+::dsatur2\+\_\+coloring\+\_\+helper@{boost\+::dsatur2\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{valid}{valid}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type$>$ \\
+std\+::vector$<$bool$>$ \hyperlink{classboost_1_1dsatur2__coloring__helper}{boost\+::dsatur2\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$\+::valid\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 123 of file dsatur2\+\_\+coloring.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/algorithms/clique\+\_\+covering/\hyperlink{dsatur2__coloring_8hpp}{dsatur2\+\_\+coloring.\+hpp}\end{DoxyCompactItemize}

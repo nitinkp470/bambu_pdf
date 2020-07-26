@@ -1,0 +1,638 @@
+\hypertarget{classCheckSystemType}{}\section{Check\+System\+Type Class Reference}
+\label{classCheckSystemType}\index{Check\+System\+Type@{Check\+System\+Type}}
+
+
+Class which system\+\_\+flag to \hyperlink{classtree__node}{tree\+\_\+node} of variables and types when necessary.  
+
+
+
+
+{\ttfamily \#include $<$check\+\_\+system\+\_\+type.\+hpp$>$}
+
+
+
+Inheritance diagram for Check\+System\+Type\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{dc/d8a/classCheckSystemType__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Check\+System\+Type\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d97/classCheckSystemType__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCheckSystemType_a906a6f4b26c4875ed202946089edc1f8}{Check\+System\+Type} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classCheckSystemType_a48875d72d3a25555a93445724530e775}{$\sim$\+Check\+System\+Type} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classCheckSystemType_ae3324caec3c8b0a2bc347b773670458f}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Adds the system\+\_\+flag to the \hyperlink{classtree__node}{tree\+\_\+node}\textquotesingle{}s of variables and types when necessary. \end{DoxyCompactList}\item 
+bool \hyperlink{classCheckSystemType_a0e9660fbad92ffdc163cae8d108df86c}{Has\+To\+Be\+Executed} () const override
+\begin{DoxyCompactList}\small\item\em Check if this step has actually to be executed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCheckSystemType_a63d20b2fc15355131c5860037581b037}{recursive\+\_\+examinate} (const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&tn)
+\begin{DoxyCompactList}\small\item\em Examinate recursively the tree to detect system types and system variables. \end{DoxyCompactList}\item 
+void \hyperlink{classCheckSystemType_abf10add839bdbde290f74ecd7561392a}{recursive\+\_\+examinate} (const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&curr\+\_\+tn, const unsigned int \hyperlink{tutorial__pact__2019_2Introduction_2third_2include_2Keccak_8h_a028c9bdc8344cca38ab522a337074797}{index})
+\begin{DoxyCompactList}\small\item\em Examinate recursively the tree to detect system types and system variables. \end{DoxyCompactList}\item 
+bool \hyperlink{classCheckSystemType_aecaee42bfbe41b7524b51fee2e94f5e8}{is\+\_\+system\+\_\+include} (std\+::string include) const
+\begin{DoxyCompactList}\small\item\em Check if an header is a system header. \end{DoxyCompactList}\item 
+void \hyperlink{classCheckSystemType_aec96886624b0bbe586f38f8bcf7cdca0}{build\+\_\+include\+\_\+structures} ()
+\begin{DoxyCompactList}\small\item\em Build the include map, the function rename map and library system sets. \end{DoxyCompactList}\item 
+void \hyperlink{classCheckSystemType_a8797397119d638dd0002102672096343}{get\+Real\+Incl\+Name} (const std\+::string \&include, std\+::string \&real\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Given the string stored in a srcp of the raw return the correct include name. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classCheckSystemType_a0b50a94579fcc308bbf1177fe2827cc5}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} \hyperlink{classCheckSystemType_a28f0bdd5b247bb4f7b173e18dc44e1da}{behavioral\+\_\+helper}
+\begin{DoxyCompactList}\small\item\em The helper associated with the current function. \end{DoxyCompactList}\item 
+const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \hyperlink{classCheckSystemType_ad55a0baa8f72589feb542a61c64d6a42}{TM}
+\begin{DoxyCompactList}\small\item\em The tree manager. \end{DoxyCompactList}\item 
+\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ unsigned int $>$ \hyperlink{classCheckSystemType_a4d19149dc31efdcd6f339aa958602ef5}{already\+\_\+visited}
+\begin{DoxyCompactList}\small\item\em Already visited tree node (used to avoid infinite recursion) \end{DoxyCompactList}\item 
+bool \hyperlink{classCheckSystemType_afbe5cfb1333e1a3d055503cbb35f8722}{already\+\_\+executed}
+\begin{DoxyCompactList}\small\item\em Already executed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ std\+::string $>$ \hyperlink{classCheckSystemType_a039ba0b9690c9ef162e26fc2eb2f275b}{system\+Inc\+Path}
+\begin{DoxyCompactList}\small\item\em Contains the list of the folders containining the system header files. \end{DoxyCompactList}\item 
+static \hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$ std\+::string, std\+::string $>$ \hyperlink{classCheckSystemType_a8b0d505fbb50dce89783120fa9b77fba}{incl\+Name\+To\+Path}
+\begin{DoxyCompactList}\small\item\em Associates to each system header file its full path. \end{DoxyCompactList}\item 
+static \hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$ std\+::string, std\+::string $>$ \hyperlink{classCheckSystemType_af954e17fc21b9b472a5720ade293c6fb}{rename\+\_\+function}
+\begin{DoxyCompactList}\small\item\em Associates a function to its original name. \end{DoxyCompactList}\item 
+static \hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$ std\+::string, std\+::string $>$ \hyperlink{classCheckSystemType_a73529c87de98015d0373156d3c0cb326}{rename\+\_\+types}
+\begin{DoxyCompactList}\small\item\em Associates a type to its original name. \end{DoxyCompactList}\item 
+static \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::string $>$ \hyperlink{classCheckSystemType_af0b680e809a1f861ed10cb3ba5b0926d}{library\+\_\+system\+\_\+functions}
+\begin{DoxyCompactList}\small\item\em The set of functions which have to be considered library\+\_\+system. \end{DoxyCompactList}\item 
+static \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::string $>$ \hyperlink{classCheckSystemType_a921be1aeea25c77292b88e96d40882a5}{library\+\_\+system\+\_\+includes}
+\begin{DoxyCompactList}\small\item\em The set of headers which contains function which have to be considered library\+\_\+system. \end{DoxyCompactList}\item 
+static \hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$ std\+::string, std\+::string $>$ \hyperlink{classCheckSystemType_aac63e0fa17f7acc5d7fd9215c5d19e87}{undefined\+\_\+library\+\_\+function\+\_\+include}
+\begin{DoxyCompactList}\small\item\em Map undefined library function to corresponding header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class which system\+\_\+flag to \hyperlink{classtree__node}{tree\+\_\+node} of variables and types when necessary. 
+
+Definition at line 68 of file check\+\_\+system\+\_\+type.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCheckSystemType_a906a6f4b26c4875ed202946089edc1f8}\label{classCheckSystemType_a906a6f4b26c4875ed202946089edc1f8}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!Check\+System\+Type@{Check\+System\+Type}}
+\index{Check\+System\+Type@{Check\+System\+Type}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{Check\+System\+Type()}{CheckSystemType()}}
+{\footnotesize\ttfamily Check\+System\+Type\+::\+Check\+System\+Type (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{AppM,  }\item[{unsigned int}]{function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Param} & is the set of the parameters \\
+\hline
+{\em AppM} & is the application manager \\
+\hline
+{\em function\+\_\+id} & is the index of the function \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 98 of file check\+\_\+system\+\_\+type.\+cpp.
+
+
+
+References build\+\_\+include\+\_\+structures(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, incl\+Name\+To\+Path, Design\+Flow\+Step\+::parameters, and $\sim$\+Check\+System\+Type().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df6/classCheckSystemType_a906a6f4b26c4875ed202946089edc1f8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCheckSystemType_a48875d72d3a25555a93445724530e775}\label{classCheckSystemType_a48875d72d3a25555a93445724530e775}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!````~Check\+System\+Type@{$\sim$\+Check\+System\+Type}}
+\index{````~Check\+System\+Type@{$\sim$\+Check\+System\+Type}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{$\sim$\+Check\+System\+Type()}{~CheckSystemType()}}
+{\footnotesize\ttfamily Check\+System\+Type\+::$\sim$\+Check\+System\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Check\+System\+Type().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df6/classCheckSystemType_a48875d72d3a25555a93445724530e775_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCheckSystemType_aec96886624b0bbe586f38f8bcf7cdca0}\label{classCheckSystemType_aec96886624b0bbe586f38f8bcf7cdca0}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!build\+\_\+include\+\_\+structures@{build\+\_\+include\+\_\+structures}}
+\index{build\+\_\+include\+\_\+structures@{build\+\_\+include\+\_\+structures}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{build\+\_\+include\+\_\+structures()}{build\_include\_structures()}}
+{\footnotesize\ttfamily void Check\+System\+Type\+::build\+\_\+include\+\_\+structures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Build the include map, the function rename map and library system sets. 
+
+libbambu/libm
+
+libbambu/soft-\/fp
+
+replace z\+:/mingw at the beginning of the string
+
+Building the rename function map
+
+Building the rename type map
+
+Building library system function 
+
+Definition at line 809 of file check\+\_\+system\+\_\+type.\+cpp.
+
+
+
+References C\+T\+\_\+\+N\+O\+\_\+\+G\+CC, F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+N\+O\+RM, incl\+Name\+To\+Path, library\+\_\+system\+\_\+functions, library\+\_\+system\+\_\+includes, O0, Design\+Flow\+Step\+::parameters, rename\+\_\+function, rename\+\_\+types, system\+Inc\+Path, and undefined\+\_\+library\+\_\+function\+\_\+include.
+
+
+
+Referenced by Check\+System\+Type().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df6/classCheckSystemType_aec96886624b0bbe586f38f8bcf7cdca0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCheckSystemType_a0b50a94579fcc308bbf1177fe2827cc5}\label{classCheckSystemType_a0b50a94579fcc308bbf1177fe2827cc5}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ Check\+System\+Type\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 108 of file check\+\_\+system\+\_\+type.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+\mbox{\Hypertarget{classCheckSystemType_a8797397119d638dd0002102672096343}\label{classCheckSystemType_a8797397119d638dd0002102672096343}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!get\+Real\+Incl\+Name@{get\+Real\+Incl\+Name}}
+\index{get\+Real\+Incl\+Name@{get\+Real\+Incl\+Name}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{get\+Real\+Incl\+Name()}{getRealInclName()}}
+{\footnotesize\ttfamily void Check\+System\+Type\+::get\+Real\+Incl\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{include,  }\item[{std\+::string \&}]{real\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Given the string stored in a srcp of the raw return the correct include name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em include} & is the string of srcp to be checked \\
+\hline
+{\em real\+\_\+name} & is the string fixed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 927 of file check\+\_\+system\+\_\+type.\+cpp.
+
+
+
+References F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+N\+O\+RM, incl\+Name\+To\+Path, and system\+Inc\+Path.
+
+
+
+Referenced by recursive\+\_\+examinate().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df6/classCheckSystemType_a8797397119d638dd0002102672096343_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCheckSystemType_a0e9660fbad92ffdc163cae8d108df86c}\label{classCheckSystemType_a0e9660fbad92ffdc163cae8d108df86c}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}}
+\index{Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{Has\+To\+Be\+Executed()}{HasToBeExecuted()}}
+{\footnotesize\ttfamily bool Check\+System\+Type\+::\+Has\+To\+Be\+Executed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if this step has actually to be executed. 
+
+\begin{DoxyReturn}{Returns}
+true if the step has to be executed 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFunctionFrontendFlowStep_a12e786363530aa9533e4bd9380130d75}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 953 of file check\+\_\+system\+\_\+type.\+cpp.
+
+
+
+References already\+\_\+executed.
+
+\mbox{\Hypertarget{classCheckSystemType_ae3324caec3c8b0a2bc347b773670458f}\label{classCheckSystemType_ae3324caec3c8b0a2bc347b773670458f}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} Check\+System\+Type\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds the system\+\_\+flag to the \hyperlink{classtree__node}{tree\+\_\+node}\textquotesingle{}s of variables and types when necessary. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 134 of file check\+\_\+system\+\_\+type.\+cpp.
+
+
+
+References already\+\_\+executed, Frontend\+Flow\+Step\+::\+AppM, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+manager\+::\+Get\+Tree\+Node(), recursive\+\_\+examinate(), sl, S\+U\+C\+C\+E\+SS, and TM.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df6/classCheckSystemType_ae3324caec3c8b0a2bc347b773670458f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCheckSystemType_aecaee42bfbe41b7524b51fee2e94f5e8}\label{classCheckSystemType_aecaee42bfbe41b7524b51fee2e94f5e8}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!is\+\_\+system\+\_\+include@{is\+\_\+system\+\_\+include}}
+\index{is\+\_\+system\+\_\+include@{is\+\_\+system\+\_\+include}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{is\+\_\+system\+\_\+include()}{is\_system\_include()}}
+{\footnotesize\ttfamily bool Check\+System\+Type\+::is\+\_\+system\+\_\+include (\begin{DoxyParamCaption}\item[{std\+::string}]{include }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Check if an header is a system header. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em include} & is the header file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 792 of file check\+\_\+system\+\_\+type.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+N\+O\+RM, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, and system\+Inc\+Path.
+
+
+
+Referenced by recursive\+\_\+examinate().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df6/classCheckSystemType_aecaee42bfbe41b7524b51fee2e94f5e8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCheckSystemType_a63d20b2fc15355131c5860037581b037}\label{classCheckSystemType_a63d20b2fc15355131c5860037581b037}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!recursive\+\_\+examinate@{recursive\+\_\+examinate}}
+\index{recursive\+\_\+examinate@{recursive\+\_\+examinate}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{recursive\+\_\+examinate()}{recursive\_examinate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Check\+System\+Type\+::recursive\+\_\+examinate (\begin{DoxyParamCaption}\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{tn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Examinate recursively the tree to detect system types and system variables. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tn} & is the root of the subtree to be examinated; it must be a \hyperlink{classtree__reindex}{tree\+\_\+reindex} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 164 of file check\+\_\+system\+\_\+type.\+cpp.
+
+
+
+References G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+O\+DE, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Internal\+Exec(), and recursive\+\_\+examinate().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df6/classCheckSystemType_a63d20b2fc15355131c5860037581b037_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df6/classCheckSystemType_a63d20b2fc15355131c5860037581b037_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCheckSystemType_abf10add839bdbde290f74ecd7561392a}\label{classCheckSystemType_abf10add839bdbde290f74ecd7561392a}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!recursive\+\_\+examinate@{recursive\+\_\+examinate}}
+\index{recursive\+\_\+examinate@{recursive\+\_\+examinate}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{recursive\+\_\+examinate()}{recursive\_examinate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Check\+System\+Type\+::recursive\+\_\+examinate (\begin{DoxyParamCaption}\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{curr\+\_\+tn,  }\item[{const unsigned int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Examinate recursively the tree to detect system types and system variables. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr\+\_\+tn} & is the root of the subtree to be examinated; it must not be a \hyperlink{classtree__reindex}{tree\+\_\+reindex} \\
+\hline
+{\em index} & is the index of the \hyperlink{classtree__node}{tree\+\_\+node} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 170 of file check\+\_\+system\+\_\+type.\+cpp.
+
+
+
+References already\+\_\+visited, test\+\_\+panda\+::arg, test\+\_\+panda\+::args, call\+\_\+expr\+::args, gimple\+\_\+call\+::args, target\+\_\+mem\+\_\+ref\+::base, target\+\_\+mem\+\_\+ref461\+::base, behavioral\+\_\+helper, C\+A\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+C\+S\+T\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+D\+E\+C\+L\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+F\+A\+K\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, method\+\_\+type\+::clas, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, array\+\_\+type\+::elts, vector\+\_\+type\+::elts, call\+\_\+expr\+::fn, gimple\+\_\+call\+::fn, G\+E\+T\+\_\+\+C\+O\+N\+S\+T\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+node\+::get\+\_\+kind\+\_\+text(), G\+E\+T\+\_\+\+N\+O\+DE, get\+Real\+Incl\+Name(), target\+\_\+mem\+\_\+ref\+::idx, target\+\_\+mem\+\_\+ref461\+::idx, target\+\_\+mem\+\_\+ref461\+::idx2, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, is\+\_\+system\+\_\+include(), library\+\_\+system\+\_\+functions, library\+\_\+system\+\_\+includes, constructor\+::list\+\_\+of\+\_\+idx\+\_\+valu, N\+O\+D\+E\+\_\+\+N\+O\+T\+\_\+\+Y\+E\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+EC, unary\+\_\+expr\+::op, cast\+\_\+expr\+::op, gimple\+\_\+goto\+::op, gimple\+\_\+return\+::op, gimple\+\_\+while\+::op0, binary\+\_\+expr\+::op0, ternary\+\_\+expr\+::op0, quaternary\+\_\+expr\+::op0, gimple\+\_\+cond\+::op0, gimple\+\_\+assign\+::op0, gimple\+\_\+switch\+::op0, gimple\+\_\+for\+::op1, binary\+\_\+expr\+::op1, ternary\+\_\+expr\+::op1, quaternary\+\_\+expr\+::op1, gimple\+\_\+assign\+::op1, gimple\+\_\+for\+::op2, ternary\+\_\+expr\+::op2, quaternary\+\_\+expr\+::op2, quaternary\+\_\+expr\+::op3, Design\+Flow\+Step\+::parameters, gimple\+\_\+assign\+::predicate, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+helper\+::print\+\_\+function\+\_\+name(), function\+\_\+type\+::prms, pointer\+\_\+type\+::ptd, recursive\+\_\+examinate(), reference\+\_\+type\+::refd, rename\+\_\+function, rename\+\_\+types, function\+\_\+type\+::retn, S\+TR, target\+\_\+mem\+\_\+ref\+::symbol, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+DE, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, TM, expr\+\_\+node\+::type, constructor\+::type, ssa\+\_\+name\+::type, typename\+\_\+type(), undefined\+\_\+library\+\_\+function\+\_\+include, and ssa\+\_\+name\+::var.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df6/classCheckSystemType_abf10add839bdbde290f74ecd7561392a_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classCheckSystemType_afbe5cfb1333e1a3d055503cbb35f8722}\label{classCheckSystemType_afbe5cfb1333e1a3d055503cbb35f8722}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!already\+\_\+executed@{already\+\_\+executed}}
+\index{already\+\_\+executed@{already\+\_\+executed}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{already\+\_\+executed}{already\_executed}}
+{\footnotesize\ttfamily bool Check\+System\+Type\+::already\+\_\+executed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Already executed. 
+
+
+
+Definition at line 107 of file check\+\_\+system\+\_\+type.\+hpp.
+
+
+
+Referenced by Has\+To\+Be\+Executed(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classCheckSystemType_a4d19149dc31efdcd6f339aa958602ef5}\label{classCheckSystemType_a4d19149dc31efdcd6f339aa958602ef5}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!already\+\_\+visited@{already\+\_\+visited}}
+\index{already\+\_\+visited@{already\+\_\+visited}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{already\+\_\+visited}{already\_visited}}
+{\footnotesize\ttfamily \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$unsigned int$>$ Check\+System\+Type\+::already\+\_\+visited\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Already visited tree node (used to avoid infinite recursion) 
+
+
+
+Definition at line 78 of file check\+\_\+system\+\_\+type.\+hpp.
+
+
+
+Referenced by recursive\+\_\+examinate().
+
+\mbox{\Hypertarget{classCheckSystemType_a28f0bdd5b247bb4f7b173e18dc44e1da}\label{classCheckSystemType_a28f0bdd5b247bb4f7b173e18dc44e1da}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!behavioral\+\_\+helper@{behavioral\+\_\+helper}}
+\index{behavioral\+\_\+helper@{behavioral\+\_\+helper}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{behavioral\+\_\+helper}{behavioral\_helper}}
+{\footnotesize\ttfamily const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} Check\+System\+Type\+::behavioral\+\_\+helper\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The helper associated with the current function. 
+
+
+
+Definition at line 72 of file check\+\_\+system\+\_\+type.\+hpp.
+
+
+
+Referenced by recursive\+\_\+examinate().
+
+\mbox{\Hypertarget{classCheckSystemType_a8b0d505fbb50dce89783120fa9b77fba}\label{classCheckSystemType_a8b0d505fbb50dce89783120fa9b77fba}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!incl\+Name\+To\+Path@{incl\+Name\+To\+Path}}
+\index{incl\+Name\+To\+Path@{incl\+Name\+To\+Path}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{incl\+Name\+To\+Path}{inclNameToPath}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$ std\+::string, std\+::string $>$ Check\+System\+Type\+::incl\+Name\+To\+Path\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Associates to each system header file its full path. 
+
+
+
+Definition at line 84 of file check\+\_\+system\+\_\+type.\+hpp.
+
+
+
+Referenced by build\+\_\+include\+\_\+structures(), Check\+System\+Type(), and get\+Real\+Incl\+Name().
+
+\mbox{\Hypertarget{classCheckSystemType_af0b680e809a1f861ed10cb3ba5b0926d}\label{classCheckSystemType_af0b680e809a1f861ed10cb3ba5b0926d}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!library\+\_\+system\+\_\+functions@{library\+\_\+system\+\_\+functions}}
+\index{library\+\_\+system\+\_\+functions@{library\+\_\+system\+\_\+functions}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{library\+\_\+system\+\_\+functions}{library\_system\_functions}}
+{\footnotesize\ttfamily \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::string $>$ Check\+System\+Type\+::library\+\_\+system\+\_\+functions\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The set of functions which have to be considered library\+\_\+system. 
+
+
+
+Definition at line 93 of file check\+\_\+system\+\_\+type.\+hpp.
+
+
+
+Referenced by build\+\_\+include\+\_\+structures(), and recursive\+\_\+examinate().
+
+\mbox{\Hypertarget{classCheckSystemType_a921be1aeea25c77292b88e96d40882a5}\label{classCheckSystemType_a921be1aeea25c77292b88e96d40882a5}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!library\+\_\+system\+\_\+includes@{library\+\_\+system\+\_\+includes}}
+\index{library\+\_\+system\+\_\+includes@{library\+\_\+system\+\_\+includes}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{library\+\_\+system\+\_\+includes}{library\_system\_includes}}
+{\footnotesize\ttfamily \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::string $>$ Check\+System\+Type\+::library\+\_\+system\+\_\+includes\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The set of headers which contains function which have to be considered library\+\_\+system. 
+
+
+
+Definition at line 96 of file check\+\_\+system\+\_\+type.\+hpp.
+
+
+
+Referenced by build\+\_\+include\+\_\+structures(), and recursive\+\_\+examinate().
+
+\mbox{\Hypertarget{classCheckSystemType_af954e17fc21b9b472a5720ade293c6fb}\label{classCheckSystemType_af954e17fc21b9b472a5720ade293c6fb}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!rename\+\_\+function@{rename\+\_\+function}}
+\index{rename\+\_\+function@{rename\+\_\+function}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{rename\+\_\+function}{rename\_function}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$ std\+::string, std\+::string $>$ Check\+System\+Type\+::rename\+\_\+function\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Associates a function to its original name. 
+
+
+
+Definition at line 87 of file check\+\_\+system\+\_\+type.\+hpp.
+
+
+
+Referenced by build\+\_\+include\+\_\+structures(), and recursive\+\_\+examinate().
+
+\mbox{\Hypertarget{classCheckSystemType_a73529c87de98015d0373156d3c0cb326}\label{classCheckSystemType_a73529c87de98015d0373156d3c0cb326}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!rename\+\_\+types@{rename\+\_\+types}}
+\index{rename\+\_\+types@{rename\+\_\+types}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{rename\+\_\+types}{rename\_types}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$ std\+::string, std\+::string $>$ Check\+System\+Type\+::rename\+\_\+types\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Associates a type to its original name. 
+
+
+
+Definition at line 90 of file check\+\_\+system\+\_\+type.\+hpp.
+
+
+
+Referenced by build\+\_\+include\+\_\+structures(), and recursive\+\_\+examinate().
+
+\mbox{\Hypertarget{classCheckSystemType_a039ba0b9690c9ef162e26fc2eb2f275b}\label{classCheckSystemType_a039ba0b9690c9ef162e26fc2eb2f275b}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!system\+Inc\+Path@{system\+Inc\+Path}}
+\index{system\+Inc\+Path@{system\+Inc\+Path}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{system\+Inc\+Path}{systemIncPath}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Check\+System\+Type\+::system\+Inc\+Path\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Contains the list of the folders containining the system header files. 
+
+
+
+Definition at line 81 of file check\+\_\+system\+\_\+type.\+hpp.
+
+
+
+Referenced by build\+\_\+include\+\_\+structures(), get\+Real\+Incl\+Name(), and is\+\_\+system\+\_\+include().
+
+\mbox{\Hypertarget{classCheckSystemType_ad55a0baa8f72589feb542a61c64d6a42}\label{classCheckSystemType_ad55a0baa8f72589feb542a61c64d6a42}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!TM@{TM}}
+\index{TM@{TM}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{TM}{TM}}
+{\footnotesize\ttfamily const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} Check\+System\+Type\+::\+TM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The tree manager. 
+
+
+
+Definition at line 75 of file check\+\_\+system\+\_\+type.\+hpp.
+
+
+
+Referenced by Internal\+Exec(), and recursive\+\_\+examinate().
+
+\mbox{\Hypertarget{classCheckSystemType_aac63e0fa17f7acc5d7fd9215c5d19e87}\label{classCheckSystemType_aac63e0fa17f7acc5d7fd9215c5d19e87}} 
+\index{Check\+System\+Type@{Check\+System\+Type}!undefined\+\_\+library\+\_\+function\+\_\+include@{undefined\+\_\+library\+\_\+function\+\_\+include}}
+\index{undefined\+\_\+library\+\_\+function\+\_\+include@{undefined\+\_\+library\+\_\+function\+\_\+include}!Check\+System\+Type@{Check\+System\+Type}}
+\subsubsection{\texorpdfstring{undefined\+\_\+library\+\_\+function\+\_\+include}{undefined\_library\_function\_include}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$ std\+::string, std\+::string $>$ Check\+System\+Type\+::undefined\+\_\+library\+\_\+function\+\_\+include\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Map undefined library function to corresponding header. 
+
+
+
+Definition at line 104 of file check\+\_\+system\+\_\+type.\+hpp.
+
+
+
+Referenced by build\+\_\+include\+\_\+structures(), and recursive\+\_\+examinate().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{check__system__type_8hpp}{check\+\_\+system\+\_\+type.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{check__system__type_8cpp}{check\+\_\+system\+\_\+type.\+cpp}\end{DoxyCompactItemize}

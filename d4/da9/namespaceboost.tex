@@ -1,0 +1,265 @@
+\hypertarget{namespaceboost}{}\section{boost Namespace Reference}
+\label{namespaceboost}\index{boost@{boost}}
+
+
+This algorithm is to find coloring of a graph Algorithm\+: Let G = (V,E) be a graph with vertices v\+\_\+1, v\+\_\+2, ..., v\+\_\+n.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structboost_1_1degree__compare__functor}{degree\+\_\+compare\+\_\+functor}
+\begin{DoxyCompactList}\small\item\em degree compare functor \end{DoxyCompactList}\item 
+class \hyperlink{classboost_1_1dsatur2__coloring__helper}{dsatur2\+\_\+coloring\+\_\+helper}
+\begin{DoxyCompactList}\small\item\em helper used to color the graph. \end{DoxyCompactList}\item 
+struct \hyperlink{structboost_1_1dsatur2__heap__compare__functor}{dsatur2\+\_\+heap\+\_\+compare\+\_\+functor}
+\begin{DoxyCompactList}\small\item\em heap compare functor \end{DoxyCompactList}\item 
+class \hyperlink{classboost_1_1dsatur__coloring__helper}{dsatur\+\_\+coloring\+\_\+helper}
+\item 
+struct \hyperlink{structboost_1_1dsatur__d__list}{dsatur\+\_\+d\+\_\+list}
+\item 
+struct \hyperlink{structboost_1_1dsatur__degree__compare__functor}{dsatur\+\_\+degree\+\_\+compare\+\_\+functor}
+\item 
+struct \hyperlink{structboost_1_1dsatur__degree__predicate__functor}{dsatur\+\_\+degree\+\_\+predicate\+\_\+functor}
+\item 
+struct \hyperlink{structboost_1_1heap__compare__functor}{heap\+\_\+compare\+\_\+functor}
+\item 
+class \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}
+\item 
+struct \hyperlink{structboost_1_1select__vertex}{select\+\_\+vertex}
+\begin{DoxyCompactList}\small\item\em Predicate functor object used to select the proper set of vertices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Vertex\+List\+Graph , class Color\+Map $>$ }\\property\+\_\+traits$<$ Color\+Map $>$\+::value\+\_\+type \hyperlink{namespaceboost_a78c0b54ba26e1079abb19d6cca78c8e8}{degree\+\_\+coloring} (const Vertex\+List\+Graph \&G, Color\+Map color)
+\begin{DoxyCompactList}\small\item\em coloring of a graph following the descandant degree of vertices \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Vertex\+List\+Graph , typename Color\+Map $>$ }\\property\+\_\+traits$<$ Color\+Map $>$\+::value\+\_\+type \hyperlink{namespaceboost_a609873070b85df59333adc0769a99f6e}{dsatur2\+\_\+coloring} (const Vertex\+List\+Graph \&G, Color\+Map color)
+\begin{DoxyCompactList}\small\item\em coloring of a graph following the D\+S\+A\+T\+UR heuristic (version2) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Vertex\+List\+Graph , typename Color\+Map $>$ }\\property\+\_\+traits$<$ Color\+Map $>$\+::value\+\_\+type \hyperlink{namespaceboost_af2fc5e009a055618e84aaacf8b9a0842}{dsatur\+\_\+coloring} (const Vertex\+List\+Graph \&G, Color\+Map color)
+\begin{DoxyCompactList}\small\item\em coloring of a graph following the D\+S\+A\+T\+UR heuristic (version1) \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Vertex\+List\+Graph , class Color\+Map $>$ }\\property\+\_\+traits$<$ Color\+Map $>$\+::value\+\_\+type \hyperlink{namespaceboost_aa5d4da27fc701c66bcda76bd3735eb05}{unsorted\+\_\+coloring} (const Vertex\+List\+Graph \&G, Color\+Map color)
+\item 
+{\footnotesize template$<$typename Vertex\+List\+Graph , typename Color\+Map $>$ }\\property\+\_\+traits$<$ Color\+Map $>$\+::value\+\_\+type \hyperlink{namespaceboost_a45bad415b0b5ee0369090a1108f6066d}{maxclique\+\_\+dsatur\+\_\+coloring} (const Vertex\+List\+Graph \&G, Color\+Map color)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This algorithm is to find coloring of a graph Algorithm\+: Let G = (V,E) be a graph with vertices v\+\_\+1, v\+\_\+2, ..., v\+\_\+n. 
+
+It is like the sequential algorithm, except that the order in which vertices are chosen is determined statically following the descendant degree coloring.
+
+The color of the vertex v will be stored in color\mbox{[}v\mbox{]}. i.\+e., vertex v belongs to coloring color\mbox{[}v\mbox{]}
+
+It is like the sequential algorithm, except that the order in which vertices are chosen is determined dynamically based on the number of colors that cannot be used because of conflicts with previously colored vertices. Vertices with the fewest available colors are colored first. The degree of vertices is dynamically modified during the coloring (as in the Michael A. Trick\textquotesingle{}s implementation) while the order of vertices is based on a heap data structure. This implementation corrects an error in the first loop\+: j start has to start from 0 not from 1. Reference\+:
+\begin{DoxyItemize}
+\item \href{http://mat.gsia.cmu.edu/COLOR/color.html}{\tt http\+://mat.\+gsia.\+cmu.\+edu/\+C\+O\+L\+O\+R/color.\+html}
+\item New Methods to Color the Vertices of a \hyperlink{structGraph}{Graph}, Daniel Brelaz, C\+A\+CM 22, 251--256, 1979.
+\end{DoxyItemize}
+
+The color of the vertex v will be stored in color\mbox{[}v\mbox{]}. i.\+e., vertex v belongs to coloring color\mbox{[}v\mbox{]}
+
+It is like the sequential algorithm, except that the order in which vertices are chosen is determined dynamically based on the number of colors that cannot be used because of conflicts with previously colored vertices. Vertices with the fewest available colors are colored first. Instead of a circular lists data structure based on arrays I have preferred a vector of double linked lists. Reference\+:
+\begin{DoxyItemize}
+\item \href{http://web.cs.ualberta.ca/~joe/Coloring/index.html}{\tt http\+://web.\+cs.\+ualberta.\+ca/$\sim$joe/\+Coloring/index.\+html}
+\item New Methods to Color the Vertices of a \hyperlink{structGraph}{Graph}, Daniel Brelaz, C\+A\+CM 22, 251--256, 1979.
+\end{DoxyItemize}
+
+The color of the vertex v will be stored in color\mbox{[}v\mbox{]}. i.\+e., vertex v belongs to coloring color\mbox{[}v\mbox{]}
+
+It is like the sequential algorithm, except that the order in which vertices are chosen is determined dynamically based on the number of colors that cannot be used because of conflicts with previously colored vertices. Vertices with the fewest available colors are colored first. The degree of vertices is dynamically modified during the coloring (as in the Michael A. Trick\textquotesingle{}s implementation) while the order of vertices is based on a heap data structure. This implementation corrects an error in the first loop\+: j start has to start from 0 not from 1. Reference\+:
+\begin{DoxyItemize}
+\item \href{http://mat.gsia.cmu.edu/COLOR/color.html}{\tt http\+://mat.\+gsia.\+cmu.\+edu/\+C\+O\+L\+O\+R/color.\+html}
+\item New Methods to Color the Vertices of a \hyperlink{structGraph}{Graph}, Daniel Brelaz, C\+A\+CM 22, 251--256, 1979.
+\item Olivier Coudert, \char`\"{}\+Exact Coloring of Real-\/\+Life Graphs is Easy\char`\"{}. D\+AC 1997.
+\end{DoxyItemize}
+
+The color of the vertex v will be stored in color\mbox{[}v\mbox{]}. i.\+e., vertex v belongs to coloring color\mbox{[}v\mbox{]} 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceboost_a78c0b54ba26e1079abb19d6cca78c8e8}\label{namespaceboost_a78c0b54ba26e1079abb19d6cca78c8e8}} 
+\index{boost@{boost}!degree\+\_\+coloring@{degree\+\_\+coloring}}
+\index{degree\+\_\+coloring@{degree\+\_\+coloring}!boost@{boost}}
+\subsubsection{\texorpdfstring{degree\+\_\+coloring()}{degree\_coloring()}}
+{\footnotesize\ttfamily template$<$class Vertex\+List\+Graph , class Color\+Map $>$ \\
+property\+\_\+traits$<$Color\+Map$>$\+::value\+\_\+type boost\+::degree\+\_\+coloring (\begin{DoxyParamCaption}\item[{const Vertex\+List\+Graph \&}]{G,  }\item[{Color\+Map}]{color }\end{DoxyParamCaption})}
+
+
+
+coloring of a graph following the descandant degree of vertices 
+
+
+
+Definition at line 101 of file degree\+\_\+coloring.\+hpp.
+
+
+
+References max().
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{d4/da9/namespaceboost_a78c0b54ba26e1079abb19d6cca78c8e8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/da9/namespaceboost_a78c0b54ba26e1079abb19d6cca78c8e8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceboost_a609873070b85df59333adc0769a99f6e}\label{namespaceboost_a609873070b85df59333adc0769a99f6e}} 
+\index{boost@{boost}!dsatur2\+\_\+coloring@{dsatur2\+\_\+coloring}}
+\index{dsatur2\+\_\+coloring@{dsatur2\+\_\+coloring}!boost@{boost}}
+\subsubsection{\texorpdfstring{dsatur2\+\_\+coloring()}{dsatur2\_coloring()}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph , typename Color\+Map $>$ \\
+property\+\_\+traits$<$Color\+Map$>$\+::value\+\_\+type boost\+::dsatur2\+\_\+coloring (\begin{DoxyParamCaption}\item[{const Vertex\+List\+Graph \&}]{G,  }\item[{Color\+Map}]{color }\end{DoxyParamCaption})}
+
+
+
+coloring of a graph following the D\+S\+A\+T\+UR heuristic (version2) 
+
+
+
+Definition at line 205 of file dsatur2\+\_\+coloring.\+hpp.
+
+
+
+References boost\+::dsatur2\+\_\+coloring\+\_\+helper$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$\+::\+Seq\+Color().
+
+
+
+Referenced by bipartite\+\_\+matching\+\_\+clique\+\_\+covering$<$ vertex\+\_\+type $>$\+::color\+\_\+the\+\_\+cc\+\_\+compatibility\+\_\+graph(), coloring\+\_\+based\+\_\+clique\+\_\+covering$<$ vertex\+\_\+type $>$\+::do\+\_\+clique\+\_\+covering(), vertex\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), and main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/da9/namespaceboost_a609873070b85df59333adc0769a99f6e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/da9/namespaceboost_a609873070b85df59333adc0769a99f6e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceboost_af2fc5e009a055618e84aaacf8b9a0842}\label{namespaceboost_af2fc5e009a055618e84aaacf8b9a0842}} 
+\index{boost@{boost}!dsatur\+\_\+coloring@{dsatur\+\_\+coloring}}
+\index{dsatur\+\_\+coloring@{dsatur\+\_\+coloring}!boost@{boost}}
+\subsubsection{\texorpdfstring{dsatur\+\_\+coloring()}{dsatur\_coloring()}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph , typename Color\+Map $>$ \\
+property\+\_\+traits$<$Color\+Map$>$\+::value\+\_\+type boost\+::dsatur\+\_\+coloring (\begin{DoxyParamCaption}\item[{const Vertex\+List\+Graph \&}]{G,  }\item[{Color\+Map}]{color }\end{DoxyParamCaption})}
+
+
+
+coloring of a graph following the D\+S\+A\+T\+UR heuristic (version1) 
+
+
+
+Definition at line 271 of file dsatur\+\_\+coloring.\+hpp.
+
+
+
+References boost\+::dsatur\+\_\+coloring\+\_\+helper$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type $>$\+::\+Seq\+Color().
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{d4/da9/namespaceboost_af2fc5e009a055618e84aaacf8b9a0842_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{d4/da9/namespaceboost_af2fc5e009a055618e84aaacf8b9a0842_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceboost_a45bad415b0b5ee0369090a1108f6066d}\label{namespaceboost_a45bad415b0b5ee0369090a1108f6066d}} 
+\index{boost@{boost}!maxclique\+\_\+dsatur\+\_\+coloring@{maxclique\+\_\+dsatur\+\_\+coloring}}
+\index{maxclique\+\_\+dsatur\+\_\+coloring@{maxclique\+\_\+dsatur\+\_\+coloring}!boost@{boost}}
+\subsubsection{\texorpdfstring{maxclique\+\_\+dsatur\+\_\+coloring()}{maxclique\_dsatur\_coloring()}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph , typename Color\+Map $>$ \\
+property\+\_\+traits$<$Color\+Map$>$\+::value\+\_\+type boost\+::maxclique\+\_\+dsatur\+\_\+coloring (\begin{DoxyParamCaption}\item[{const Vertex\+List\+Graph \&}]{G,  }\item[{Color\+Map}]{color }\end{DoxyParamCaption})}
+
+
+
+Definition at line 479 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+
+
+References boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::\+Max\+Clique\+Greedy(), boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::\+Max\+Clique\+Rec(), and boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::\+Seq\+Color\+Rec().
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/da9/namespaceboost_a45bad415b0b5ee0369090a1108f6066d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{d4/da9/namespaceboost_a45bad415b0b5ee0369090a1108f6066d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceboost_aa5d4da27fc701c66bcda76bd3735eb05}\label{namespaceboost_aa5d4da27fc701c66bcda76bd3735eb05}} 
+\index{boost@{boost}!unsorted\+\_\+coloring@{unsorted\+\_\+coloring}}
+\index{unsorted\+\_\+coloring@{unsorted\+\_\+coloring}!boost@{boost}}
+\subsubsection{\texorpdfstring{unsorted\+\_\+coloring()}{unsorted\_coloring()}}
+{\footnotesize\ttfamily template$<$class Vertex\+List\+Graph , class Color\+Map $>$ \\
+property\+\_\+traits$<$Color\+Map$>$\+::value\+\_\+type boost\+::unsorted\+\_\+coloring (\begin{DoxyParamCaption}\item[{const Vertex\+List\+Graph \&}]{G,  }\item[{Color\+Map}]{color }\end{DoxyParamCaption})}
+
+
+
+Definition at line 113 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+
+
+References max().
+
+
+
+Referenced by boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::\+Max\+Clique\+Rec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{d4/da9/namespaceboost_aa5d4da27fc701c66bcda76bd3735eb05_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/da9/namespaceboost_aa5d4da27fc701c66bcda76bd3735eb05_icgraph}
+\end{center}
+\end{figure}

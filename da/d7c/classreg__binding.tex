@@ -1,0 +1,997 @@
+\hypertarget{classreg__binding}{}\section{reg\+\_\+binding Class Reference}
+\label{classreg__binding}\index{reg\+\_\+binding@{reg\+\_\+binding}}
+
+
+Class managing the register binding.  
+
+
+
+
+{\ttfamily \#include $<$reg\+\_\+binding.\+hpp$>$}
+
+
+
+Inheritance diagram for reg\+\_\+binding\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{d3/de2/classreg__binding__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for reg\+\_\+binding\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d03/classreg__binding__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classreg__binding_a925bc3c7414dec8215c074821438f67d}{type\+\_\+t} \{ \hyperlink{classreg__binding_a925bc3c7414dec8215c074821438f67dadb264c2d0f6020d5e2e39f8ef3e56b4a}{S\+TG} = 0, 
+\hyperlink{classreg__binding_a925bc3c7414dec8215c074821438f67da2fc6dfb888709b3c6611995ac85d26cc}{C\+D\+FG}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classreg__binding_ae694dc53d5c425815130c00a5fdef84e}{reg\+\_\+binding} (const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} \&\hyperlink{classreg__binding_ab715d356b916ed5376a21628b556ef71}{H\+LS}, const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} H\+L\+S\+Mgr\+\_\+)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classreg__binding_a4e041c68851cd271288ca373ab2f7e31}{$\sim$reg\+\_\+binding} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classreg__binding_ac9d0eb07575596333db08cda5257c1b6}{bind} (unsigned int sv, unsigned int \hyperlink{tutorial__pact__2019_2Introduction_2third_2include_2Keccak_8h_a028c9bdc8344cca38ab522a337074797}{index})
+\item 
+virtual std\+::string \hyperlink{classreg__binding_ae3ecd3a0314a97830ad0acd2568547c2}{Calculate\+Register\+Name} (unsigned int i)
+\begin{DoxyCompactList}\small\item\em return the name of register to be used \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classreg__binding_abd5a377a89a2590ab41f32bf54d5f8ae}{get\+\_\+used\+\_\+regs} () const
+\begin{DoxyCompactList}\small\item\em returns number of used register \end{DoxyCompactList}\item 
+void \hyperlink{classreg__binding_a9148072d5c10c39562d8e63e17cf2ccb}{set\+\_\+used\+\_\+regs} (unsigned int regs)
+\begin{DoxyCompactList}\small\item\em sets number of used register \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classreg__binding_a3bcf2f1b1510f1c719a8e38667551f60}{get\+\_\+register} (unsigned int sv) const
+\begin{DoxyCompactList}\small\item\em return the register index where the storage value is stored \end{DoxyCompactList}\item 
+bool \hyperlink{classreg__binding_a5a6584d2dea3c38dce0c7db265bfc2d7}{is\+\_\+all\+\_\+regs\+\_\+without\+\_\+enable} ()
+\begin{DoxyCompactList}\small\item\em return true when all registers are without write enable\+: pipelining comes for free \end{DoxyCompactList}\item 
+void \hyperlink{classreg__binding_abcd4e3cda44712d54c47301cc5fedfb0}{print\+\_\+el} (const\+\_\+iterator \&it) const
+\begin{DoxyCompactList}\small\item\em Function that print the register binding associated with a storage value. \end{DoxyCompactList}\item 
+\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} \hyperlink{classreg__binding_ad041ee9fb9f1951b5f7a14723aa36983}{get} (const unsigned int \&r) const
+\begin{DoxyCompactList}\small\item\em Returns reference to register object associated to a given index. \end{DoxyCompactList}\item 
+const \hyperlink{classregister__obj}{register\+\_\+obj} \& \hyperlink{classreg__binding_a555a7ceaa089184a3d36a176d135378a}{operator\mbox{[}$\,$\mbox{]}} (unsigned int v)
+\begin{DoxyCompactList}\small\item\em redefinition of the \mbox{[}\mbox{]} operator \end{DoxyCompactList}\item 
+virtual void \hyperlink{classreg__binding_aaf06706babf5b4d7ed2bc1c9849fd10a}{add\+\_\+to\+\_\+\+SM} (\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} clock\+\_\+port, \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} reset\+\_\+port)
+\begin{DoxyCompactList}\small\item\em Add the resulting registers to the structural description of the datapath. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classreg__binding_a0cabf46fc41f3e673c810459e728b41c}{get\+\_\+bitsize} (unsigned int r) const
+\begin{DoxyCompactList}\small\item\em return bitsize \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{reg__binding_8hpp_aa41bd7902f9f054af782503a16789fd2}{reg\+\_\+binding\+Ref} \hyperlink{classreg__binding_a80abb6a0e0eec2dbfbb4e4a8b6b0eda7}{create\+\_\+reg\+\_\+binding} (const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} \&\hyperlink{classreg__binding_ab715d356b916ed5376a21628b556ef71}{H\+LS}, const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} H\+L\+S\+Mgr\+\_\+)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classreg__binding_ad6fd4336ceaa2e65955560fed8e0d41b}{compute\+\_\+is\+\_\+without\+\_\+enable} ()
+\begin{DoxyCompactList}\small\item\em compute the is with out enable relation \end{DoxyCompactList}\item 
+virtual void \hyperlink{classreg__binding_a3b84d34513f28b85ddbd578b2d0ce191}{specialise\+\_\+reg} (\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&reg, unsigned int r)
+\begin{DoxyCompactList}\small\item\em Specialise a register according to the type of the variables crossing it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classreg__binding_acd367be4c720d7bfbb8ffc17a3dd8e43}{debug}
+\begin{DoxyCompactList}\small\item\em level of the verbosity during the debugging \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classreg__binding_acce1c14e8ad516225ed5a39b25d89c72}{used\+\_\+regs}
+\begin{DoxyCompactList}\small\item\em number of used register \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} $>$ \hyperlink{classreg__binding_a2fccab59e8e8657e60998633aa791de9}{unique\+\_\+table}
+\begin{DoxyCompactList}\small\item\em map between register index and object \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, unsigned int $>$ \hyperlink{classreg__binding_a4de12bf39febad6cedc31610bf432c0d}{reverse\+\_\+map}
+\begin{DoxyCompactList}\small\item\em bind the storage value with the register instance \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, unsigned int $>$ \hyperlink{classreg__binding_a849f9be37d56e16abe5386ee3f3a74b9}{bitsize\+\_\+map}
+\begin{DoxyCompactList}\small\item\em relation between registers and their bitsize \end{DoxyCompactList}\item 
+\hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} \hyperlink{classreg__binding_ab715d356b916ed5376a21628b556ef71}{H\+LS}
+\begin{DoxyCompactList}\small\item\em H\+LS datastructure. \end{DoxyCompactList}\item 
+const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} \hyperlink{classreg__binding_a44cf9d4cabb4dcb2e0c5654607ebec24}{H\+L\+S\+Mgr}
+\begin{DoxyCompactList}\small\item\em information about all the H\+LS synthesis \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ $>$ \hyperlink{classreg__binding_a297e1876e3d97faee75b5db688dedfa1}{reg2storage\+\_\+values}
+\begin{DoxyCompactList}\small\item\em map between the register and the associated storage value \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classreg__binding_ad7f2d5e7ac076a71847765dd8c7e3b75}{is\+\_\+without\+\_\+enable}
+\begin{DoxyCompactList}\small\item\em store the set of register without enable \end{DoxyCompactList}\item 
+bool \hyperlink{classreg__binding_a1d7d423897ff0a25db54fb26ef9b76c9}{all\+\_\+regs\+\_\+without\+\_\+enable}
+\begin{DoxyCompactList}\small\item\em when true all registers do not require write enable\+: pipelining comes for free \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classreg__binding_a26f68e6f78394ba39512dc5a519a839e}{get\+\_\+vars} (const unsigned int \&r) const
+\begin{DoxyCompactList}\small\item\em Returns the set of variable associated with the register. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classreg__binding_a697ec0dfee640bc2ef57c102a7a8c7a3}{compute\+\_\+bitsize} (unsigned int r)
+\begin{DoxyCompactList}\small\item\em return and set the bitsize associated with given register \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class managing the register binding. 
+
+Store the register binding, that is, the mapping of operations in the behavioral description into the set of selected register elements. 
+
+Definition at line 67 of file reg\+\_\+binding.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classreg__binding_a925bc3c7414dec8215c074821438f67d}\label{classreg__binding_a925bc3c7414dec8215c074821438f67d}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!type\+\_\+t@{type\+\_\+t}}
+\index{type\+\_\+t@{type\+\_\+t}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{type\+\_\+t}{type\_t}}
+{\footnotesize\ttfamily enum \hyperlink{classreg__binding_a925bc3c7414dec8215c074821438f67d}{reg\+\_\+binding\+::type\+\_\+t}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+TG@{S\+TG}!reg\+\_\+binding@{reg\+\_\+binding}}\index{reg\+\_\+binding@{reg\+\_\+binding}!S\+TG@{S\+TG}}}\mbox{\Hypertarget{classreg__binding_a925bc3c7414dec8215c074821438f67dadb264c2d0f6020d5e2e39f8ef3e56b4a}\label{classreg__binding_a925bc3c7414dec8215c074821438f67dadb264c2d0f6020d5e2e39f8ef3e56b4a}} 
+S\+TG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+D\+FG@{C\+D\+FG}!reg\+\_\+binding@{reg\+\_\+binding}}\index{reg\+\_\+binding@{reg\+\_\+binding}!C\+D\+FG@{C\+D\+FG}}}\mbox{\Hypertarget{classreg__binding_a925bc3c7414dec8215c074821438f67da2fc6dfb888709b3c6611995ac85d26cc}\label{classreg__binding_a925bc3c7414dec8215c074821438f67da2fc6dfb888709b3c6611995ac85d26cc}} 
+C\+D\+FG&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 70 of file reg\+\_\+binding.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classreg__binding_ae694dc53d5c425815130c00a5fdef84e}\label{classreg__binding_ae694dc53d5c425815130c00a5fdef84e}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!reg\+\_\+binding@{reg\+\_\+binding}}
+\index{reg\+\_\+binding@{reg\+\_\+binding}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{reg\+\_\+binding()}{reg\_binding()}}
+{\footnotesize\ttfamily reg\+\_\+binding\+::reg\+\_\+binding (\begin{DoxyParamCaption}\item[{const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} \&}]{H\+L\+S\+\_\+,  }\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+H\+L\+S/binding/storage\+\_\+value\+\_\+information.
+
+S\+TL includes technology/physical\+\_\+library include 
+
+Definition at line 76 of file reg\+\_\+binding.\+cpp.
+
+
+
+References $\sim$reg\+\_\+binding().
+
+
+
+Referenced by create\+\_\+reg\+\_\+binding().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_ae694dc53d5c425815130c00a5fdef84e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_ae694dc53d5c425815130c00a5fdef84e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classreg__binding_a4e041c68851cd271288ca373ab2f7e31}\label{classreg__binding_a4e041c68851cd271288ca373ab2f7e31}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!````~reg\+\_\+binding@{$\sim$reg\+\_\+binding}}
+\index{````~reg\+\_\+binding@{$\sim$reg\+\_\+binding}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{$\sim$reg\+\_\+binding()}{~reg\_binding()}}
+{\footnotesize\ttfamily reg\+\_\+binding\+::$\sim$reg\+\_\+binding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by reg\+\_\+binding().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_a4e041c68851cd271288ca373ab2f7e31_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classreg__binding_aaf06706babf5b4d7ed2bc1c9849fd10a}\label{classreg__binding_aaf06706babf5b4d7ed2bc1c9849fd10a}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!add\+\_\+to\+\_\+\+SM@{add\+\_\+to\+\_\+\+SM}}
+\index{add\+\_\+to\+\_\+\+SM@{add\+\_\+to\+\_\+\+SM}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{add\+\_\+to\+\_\+\+S\+M()}{add\_to\_SM()}}
+{\footnotesize\ttfamily void reg\+\_\+binding\+::add\+\_\+to\+\_\+\+SM (\begin{DoxyParamCaption}\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{clock\+\_\+port,  }\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{reset\+\_\+port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add the resulting registers to the structural description of the datapath. 
+
+define boolean type for command signals 
+
+Definition at line 243 of file reg\+\_\+binding.\+cpp.
+
+
+
+References structural\+\_\+manager\+::add\+\_\+connection(), all\+\_\+regs\+\_\+without\+\_\+enable, Calculate\+Register\+Name(), C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, compute\+\_\+is\+\_\+without\+\_\+enable(), hls\+::datapath, debug, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, structural\+\_\+object\+::find\+\_\+member(), hls\+::function\+Id, get\+\_\+bitsize(), structural\+\_\+manager\+::get\+\_\+circ(), get\+\_\+used\+\_\+regs(), H\+LS, hls\+::\+H\+L\+S\+\_\+T, H\+L\+S\+Mgr, I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, is\+\_\+without\+\_\+enable, hls\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM, port\+\_\+o\+\_\+K, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, specialise\+\_\+reg(), and S\+TR.
+
+
+
+Referenced by get(), and classic\+\_\+datapath\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_aaf06706babf5b4d7ed2bc1c9849fd10a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_aaf06706babf5b4d7ed2bc1c9849fd10a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classreg__binding_ac9d0eb07575596333db08cda5257c1b6}\label{classreg__binding_ac9d0eb07575596333db08cda5257c1b6}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!bind@{bind}}
+\index{bind@{bind}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily void reg\+\_\+binding\+::bind (\begin{DoxyParamCaption}\item[{unsigned int}]{sv,  }\item[{unsigned int}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 225 of file reg\+\_\+binding.\+cpp.
+
+
+
+References index, insert(), reg2storage\+\_\+values, reverse\+\_\+map, and unique\+\_\+table.
+
+
+
+Referenced by vertex\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), unique\+\_\+binding\+\_\+register\+::\+Internal\+Exec(), chordal\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), and weighted\+\_\+clique\+\_\+register\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_ac9d0eb07575596333db08cda5257c1b6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{da/d7c/classreg__binding_ac9d0eb07575596333db08cda5257c1b6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classreg__binding_ae3ecd3a0314a97830ad0acd2568547c2}\label{classreg__binding_ae3ecd3a0314a97830ad0acd2568547c2}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!Calculate\+Register\+Name@{Calculate\+Register\+Name}}
+\index{Calculate\+Register\+Name@{Calculate\+Register\+Name}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{Calculate\+Register\+Name()}{CalculateRegisterName()}}
+{\footnotesize\ttfamily std\+::string reg\+\_\+binding\+::\+Calculate\+Register\+Name (\begin{DoxyParamCaption}\item[{unsigned int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+return the name of register to be used 
+
+
+
+Reimplemented in \hyperlink{classreg__binding__cs_a15bf6e04843ef122e38b1dfd8a118801}{reg\+\_\+binding\+\_\+cs}.
+
+
+
+Definition at line 291 of file reg\+\_\+binding.\+cpp.
+
+
+
+References H\+LS, is\+\_\+without\+\_\+enable, hls\+::\+Param, register\+\_\+\+S\+A\+R\+SE, register\+\_\+\+SE, register\+\_\+\+S\+R\+SE, and register\+\_\+\+S\+TD.
+
+
+
+Referenced by add\+\_\+to\+\_\+\+S\+M().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_ae3ecd3a0314a97830ad0acd2568547c2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classreg__binding_a697ec0dfee640bc2ef57c102a7a8c7a3}\label{classreg__binding_a697ec0dfee640bc2ef57c102a7a8c7a3}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!compute\+\_\+bitsize@{compute\+\_\+bitsize}}
+\index{compute\+\_\+bitsize@{compute\+\_\+bitsize}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{compute\+\_\+bitsize()}{compute\_bitsize()}}
+{\footnotesize\ttfamily unsigned int reg\+\_\+binding\+::compute\+\_\+bitsize (\begin{DoxyParamCaption}\item[{unsigned int}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+return and set the bitsize associated with given register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & is the register \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the bitsize of register r 
+\end{DoxyReturn}
+
+
+Definition at line 121 of file reg\+\_\+binding.\+cpp.
+
+
+
+References bitsize\+\_\+map, hls\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, hls\+::function\+Id, structural\+\_\+type\+\_\+descriptor\+::get\+\_\+name(), get\+\_\+vars(), H\+LS, H\+L\+S\+Mgr, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, structural\+\_\+type\+\_\+descriptor\+::size, S\+T\+D\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE, S\+TR, and structural\+\_\+type\+\_\+descriptor\+::vector\+\_\+size.
+
+
+
+Referenced by get(), and specialise\+\_\+reg().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_a697ec0dfee640bc2ef57c102a7a8c7a3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_a697ec0dfee640bc2ef57c102a7a8c7a3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classreg__binding_ad6fd4336ceaa2e65955560fed8e0d41b}\label{classreg__binding_ad6fd4336ceaa2e65955560fed8e0d41b}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!compute\+\_\+is\+\_\+without\+\_\+enable@{compute\+\_\+is\+\_\+without\+\_\+enable}}
+\index{compute\+\_\+is\+\_\+without\+\_\+enable@{compute\+\_\+is\+\_\+without\+\_\+enable}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{compute\+\_\+is\+\_\+without\+\_\+enable()}{compute\_is\_without\_enable()}}
+{\footnotesize\ttfamily void reg\+\_\+binding\+::compute\+\_\+is\+\_\+without\+\_\+enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+compute the is with out enable relation 
+
+
+
+Definition at line 171 of file reg\+\_\+binding.\+cpp.
+
+
+
+References liveness\+::get\+\_\+live\+\_\+in(), liveness\+::get\+\_\+live\+\_\+out(), liveness\+::get\+\_\+support(), get\+\_\+used\+\_\+regs(), get\+\_\+vars(), H\+LS, liveness\+::is\+\_\+a\+\_\+dummy\+\_\+state(), is\+\_\+without\+\_\+enable, and hls\+::\+Rliv.
+
+
+
+Referenced by add\+\_\+to\+\_\+\+S\+M().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_ad6fd4336ceaa2e65955560fed8e0d41b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_ad6fd4336ceaa2e65955560fed8e0d41b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classreg__binding_a80abb6a0e0eec2dbfbb4e4a8b6b0eda7}\label{classreg__binding_a80abb6a0e0eec2dbfbb4e4a8b6b0eda7}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!create\+\_\+reg\+\_\+binding@{create\+\_\+reg\+\_\+binding}}
+\index{create\+\_\+reg\+\_\+binding@{create\+\_\+reg\+\_\+binding}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{create\+\_\+reg\+\_\+binding()}{create\_reg\_binding()}}
+{\footnotesize\ttfamily \hyperlink{reg__binding_8hpp_aa41bd7902f9f054af782503a16789fd2}{reg\+\_\+binding\+Ref} reg\+\_\+binding\+::create\+\_\+reg\+\_\+binding (\begin{DoxyParamCaption}\item[{const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} \&}]{H\+LS,  }\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 82 of file reg\+\_\+binding.\+cpp.
+
+
+
+References hls\+::function\+Id, hls\+::\+Param, and reg\+\_\+binding().
+
+
+
+Referenced by weighted\+\_\+clique\+\_\+register\+::\+Initialize(), and weighted\+\_\+clique\+\_\+register\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_a80abb6a0e0eec2dbfbb4e4a8b6b0eda7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{da/d7c/classreg__binding_a80abb6a0e0eec2dbfbb4e4a8b6b0eda7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classreg__binding_ad041ee9fb9f1951b5f7a14723aa36983}\label{classreg__binding_ad041ee9fb9f1951b5f7a14723aa36983}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!get@{get}}
+\index{get@{get}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} reg\+\_\+binding\+::get (\begin{DoxyParamCaption}\item[{const unsigned int \&}]{r }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns reference to register object associated to a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & is the register index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the associated reference 
+\end{DoxyReturn}
+
+
+Definition at line 186 of file reg\+\_\+binding.\+hpp.
+
+
+
+References add\+\_\+to\+\_\+\+S\+M(), compute\+\_\+bitsize(), get\+\_\+bitsize(), get\+\_\+vars(), and operator\mbox{[}$\,$\mbox{]}().
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding\+::connect\+\_\+to\+\_\+registers(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), and Vcd\+Signal\+Selection\+::\+Select\+Internal\+Signals().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_ad041ee9fb9f1951b5f7a14723aa36983_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_ad041ee9fb9f1951b5f7a14723aa36983_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classreg__binding_a0cabf46fc41f3e673c810459e728b41c}\label{classreg__binding_a0cabf46fc41f3e673c810459e728b41c}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!get\+\_\+bitsize@{get\+\_\+bitsize}}
+\index{get\+\_\+bitsize@{get\+\_\+bitsize}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{get\+\_\+bitsize()}{get\_bitsize()}}
+{\footnotesize\ttfamily unsigned int reg\+\_\+binding\+::get\+\_\+bitsize (\begin{DoxyParamCaption}\item[{unsigned int}]{r }\end{DoxyParamCaption}) const}
+
+
+
+return bitsize 
+
+
+
+Definition at line 136 of file reg\+\_\+binding.\+cpp.
+
+
+
+References bitsize\+\_\+map, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by add\+\_\+to\+\_\+\+S\+M(), and get().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_a0cabf46fc41f3e673c810459e728b41c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classreg__binding_a3bcf2f1b1510f1c719a8e38667551f60}\label{classreg__binding_a3bcf2f1b1510f1c719a8e38667551f60}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!get\+\_\+register@{get\+\_\+register}}
+\index{get\+\_\+register@{get\+\_\+register}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{get\+\_\+register()}{get\_register()}}
+{\footnotesize\ttfamily unsigned int reg\+\_\+binding\+::get\+\_\+register (\begin{DoxyParamCaption}\item[{unsigned int}]{sv }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the register index where the storage value is stored 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sv} & is the storage value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the register assigned to the storage value. 
+\end{DoxyReturn}
+
+
+Definition at line 165 of file reg\+\_\+binding.\+hpp.
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding\+::connect\+\_\+to\+\_\+registers(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), port\+\_\+swapping\+::\+Internal\+Exec(), Vcd\+Signal\+Selection\+::\+Select\+Internal\+Signals(), and mux\+\_\+connection\+\_\+binding\+::swap\+\_\+p().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_a3bcf2f1b1510f1c719a8e38667551f60_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classreg__binding_abd5a377a89a2590ab41f32bf54d5f8ae}\label{classreg__binding_abd5a377a89a2590ab41f32bf54d5f8ae}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!get\+\_\+used\+\_\+regs@{get\+\_\+used\+\_\+regs}}
+\index{get\+\_\+used\+\_\+regs@{get\+\_\+used\+\_\+regs}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{get\+\_\+used\+\_\+regs()}{get\_used\_regs()}}
+{\footnotesize\ttfamily unsigned int reg\+\_\+binding\+::get\+\_\+used\+\_\+regs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns number of used register 
+
+\begin{DoxyReturn}{Returns}
+the number of used register 
+\end{DoxyReturn}
+
+
+Definition at line 146 of file reg\+\_\+binding.\+hpp.
+
+
+
+References used\+\_\+regs.
+
+
+
+Referenced by add\+\_\+to\+\_\+\+S\+M(), compute\+\_\+is\+\_\+without\+\_\+enable(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), and fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_abd5a377a89a2590ab41f32bf54d5f8ae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classreg__binding_a26f68e6f78394ba39512dc5a519a839e}\label{classreg__binding_a26f68e6f78394ba39512dc5a519a839e}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!get\+\_\+vars@{get\+\_\+vars}}
+\index{get\+\_\+vars@{get\+\_\+vars}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{get\+\_\+vars()}{get\_vars()}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ reg\+\_\+binding\+::get\+\_\+vars (\begin{DoxyParamCaption}\item[{const unsigned int \&}]{r }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns the set of variable associated with the register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & is the register \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the set of associated variables 
+\end{DoxyReturn}
+
+
+Definition at line 110 of file reg\+\_\+binding.\+cpp.
+
+
+
+References Storage\+Value\+Information\+::get\+\_\+variable\+\_\+index(), H\+LS, reg2storage\+\_\+values, hls\+::storage\+\_\+value\+\_\+information, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by compute\+\_\+bitsize(), compute\+\_\+is\+\_\+without\+\_\+enable(), and get().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_a26f68e6f78394ba39512dc5a519a839e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_a26f68e6f78394ba39512dc5a519a839e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classreg__binding_a5a6584d2dea3c38dce0c7db265bfc2d7}\label{classreg__binding_a5a6584d2dea3c38dce0c7db265bfc2d7}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!is\+\_\+all\+\_\+regs\+\_\+without\+\_\+enable@{is\+\_\+all\+\_\+regs\+\_\+without\+\_\+enable}}
+\index{is\+\_\+all\+\_\+regs\+\_\+without\+\_\+enable@{is\+\_\+all\+\_\+regs\+\_\+without\+\_\+enable}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{is\+\_\+all\+\_\+regs\+\_\+without\+\_\+enable()}{is\_all\_regs\_without\_enable()}}
+{\footnotesize\ttfamily bool reg\+\_\+binding\+::is\+\_\+all\+\_\+regs\+\_\+without\+\_\+enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return true when all registers are without write enable\+: pipelining comes for free 
+
+
+
+Definition at line 171 of file reg\+\_\+binding.\+hpp.
+
+
+
+References all\+\_\+regs\+\_\+without\+\_\+enable, and print\+\_\+el().
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_a5a6584d2dea3c38dce0c7db265bfc2d7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_a5a6584d2dea3c38dce0c7db265bfc2d7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classreg__binding_a555a7ceaa089184a3d36a176d135378a}\label{classreg__binding_a555a7ceaa089184a3d36a176d135378a}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily const \hyperlink{classregister__obj}{register\+\_\+obj} \& reg\+\_\+binding\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{unsigned int}]{v }\end{DoxyParamCaption})}
+
+
+
+redefinition of the \mbox{[}\mbox{]} operator 
+
+
+
+Definition at line 238 of file reg\+\_\+binding.\+cpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by get().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_a555a7ceaa089184a3d36a176d135378a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classreg__binding_abcd4e3cda44712d54c47301cc5fedfb0}\label{classreg__binding_abcd4e3cda44712d54c47301cc5fedfb0}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!print\+\_\+el@{print\+\_\+el}}
+\index{print\+\_\+el@{print\+\_\+el}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{print\+\_\+el()}{print\_el()}}
+{\footnotesize\ttfamily void reg\+\_\+binding\+::print\+\_\+el (\begin{DoxyParamCaption}\item[{const\+\_\+iterator \&}]{it }\end{DoxyParamCaption}) const}
+
+
+
+Function that print the register binding associated with a storage value. 
+
+
+
+Definition at line 103 of file reg\+\_\+binding.\+cpp.
+
+
+
+References hls\+::function\+Id, Storage\+Value\+Information\+::get\+\_\+variable\+\_\+index(), H\+LS, H\+L\+S\+Mgr, I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, hls\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, hls\+::storage\+\_\+value\+\_\+information, and S\+TR.
+
+
+
+Referenced by is\+\_\+all\+\_\+regs\+\_\+without\+\_\+enable().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{da/d7c/classreg__binding_abcd4e3cda44712d54c47301cc5fedfb0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_abcd4e3cda44712d54c47301cc5fedfb0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classreg__binding_a9148072d5c10c39562d8e63e17cf2ccb}\label{classreg__binding_a9148072d5c10c39562d8e63e17cf2ccb}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!set\+\_\+used\+\_\+regs@{set\+\_\+used\+\_\+regs}}
+\index{set\+\_\+used\+\_\+regs@{set\+\_\+used\+\_\+regs}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{set\+\_\+used\+\_\+regs()}{set\_used\_regs()}}
+{\footnotesize\ttfamily void reg\+\_\+binding\+::set\+\_\+used\+\_\+regs (\begin{DoxyParamCaption}\item[{unsigned int}]{regs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+sets number of used register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em regs} & is new number of used register \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 155 of file reg\+\_\+binding.\+hpp.
+
+
+
+Referenced by vertex\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), unique\+\_\+binding\+\_\+register\+::\+Internal\+Exec(), chordal\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), and weighted\+\_\+clique\+\_\+register\+::\+Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_a9148072d5c10c39562d8e63e17cf2ccb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classreg__binding_a3b84d34513f28b85ddbd578b2d0ce191}\label{classreg__binding_a3b84d34513f28b85ddbd578b2d0ce191}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!specialise\+\_\+reg@{specialise\+\_\+reg}}
+\index{specialise\+\_\+reg@{specialise\+\_\+reg}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{specialise\+\_\+reg()}{specialise\_reg()}}
+{\footnotesize\ttfamily void reg\+\_\+binding\+::specialise\+\_\+reg (\begin{DoxyParamCaption}\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{reg,  }\item[{unsigned int}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Specialise a register according to the type of the variables crossing it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & is the register \\
+\hline
+{\em reg} & is the id of the register \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classreg__binding__cs_acb0a006d620a6320239cc3973cf2198c}{reg\+\_\+binding\+\_\+cs}.
+
+
+
+Definition at line 142 of file reg\+\_\+binding.\+cpp.
+
+
+
+References C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, compute\+\_\+bitsize(), hls\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, get\+\_\+id(), structural\+\_\+type\+\_\+descriptor\+::get\+\_\+name(), structural\+\_\+object\+::get\+\_\+path(), H\+LS, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, structural\+\_\+type\+\_\+descriptor\+::size, S\+T\+D\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE, S\+TR, and structural\+\_\+type\+\_\+descriptor\+::vector\+\_\+size.
+
+
+
+Referenced by add\+\_\+to\+\_\+\+S\+M(), and reg\+\_\+binding\+\_\+cs\+::specialise\+\_\+reg().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_a3b84d34513f28b85ddbd578b2d0ce191_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d7c/classreg__binding_a3b84d34513f28b85ddbd578b2d0ce191_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classreg__binding_a1d7d423897ff0a25db54fb26ef9b76c9}\label{classreg__binding_a1d7d423897ff0a25db54fb26ef9b76c9}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!all\+\_\+regs\+\_\+without\+\_\+enable@{all\+\_\+regs\+\_\+without\+\_\+enable}}
+\index{all\+\_\+regs\+\_\+without\+\_\+enable@{all\+\_\+regs\+\_\+without\+\_\+enable}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{all\+\_\+regs\+\_\+without\+\_\+enable}{all\_regs\_without\_enable}}
+{\footnotesize\ttfamily bool reg\+\_\+binding\+::all\+\_\+regs\+\_\+without\+\_\+enable\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+when true all registers do not require write enable\+: pipelining comes for free 
+
+
+
+Definition at line 105 of file reg\+\_\+binding.\+hpp.
+
+
+
+Referenced by add\+\_\+to\+\_\+\+S\+M(), and is\+\_\+all\+\_\+regs\+\_\+without\+\_\+enable().
+
+\mbox{\Hypertarget{classreg__binding_a849f9be37d56e16abe5386ee3f3a74b9}\label{classreg__binding_a849f9be37d56e16abe5386ee3f3a74b9}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!bitsize\+\_\+map@{bitsize\+\_\+map}}
+\index{bitsize\+\_\+map@{bitsize\+\_\+map}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{bitsize\+\_\+map}{bitsize\_map}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, unsigned int$>$ reg\+\_\+binding\+::bitsize\+\_\+map\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+relation between registers and their bitsize 
+
+
+
+Definition at line 90 of file reg\+\_\+binding.\+hpp.
+
+
+
+Referenced by compute\+\_\+bitsize(), and get\+\_\+bitsize().
+
+\mbox{\Hypertarget{classreg__binding_acd367be4c720d7bfbb8ffc17a3dd8e43}\label{classreg__binding_acd367be4c720d7bfbb8ffc17a3dd8e43}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!debug@{debug}}
+\index{debug@{debug}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{debug}{debug}}
+{\footnotesize\ttfamily int reg\+\_\+binding\+::debug\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+level of the verbosity during the debugging 
+
+
+
+Definition at line 78 of file reg\+\_\+binding.\+hpp.
+
+
+
+Referenced by add\+\_\+to\+\_\+\+S\+M().
+
+\mbox{\Hypertarget{classreg__binding_ab715d356b916ed5376a21628b556ef71}\label{classreg__binding_ab715d356b916ed5376a21628b556ef71}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!H\+LS@{H\+LS}}
+\index{H\+LS@{H\+LS}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{H\+LS}{HLS}}
+{\footnotesize\ttfamily \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} reg\+\_\+binding\+::\+H\+LS\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+H\+LS datastructure. 
+
+
+
+Definition at line 93 of file reg\+\_\+binding.\+hpp.
+
+
+
+Referenced by add\+\_\+to\+\_\+\+S\+M(), Calculate\+Register\+Name(), compute\+\_\+bitsize(), compute\+\_\+is\+\_\+without\+\_\+enable(), get\+\_\+vars(), print\+\_\+el(), reg\+\_\+binding\+\_\+cs\+::specialise\+\_\+reg(), and specialise\+\_\+reg().
+
+\mbox{\Hypertarget{classreg__binding_a44cf9d4cabb4dcb2e0c5654607ebec24}\label{classreg__binding_a44cf9d4cabb4dcb2e0c5654607ebec24}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!H\+L\+S\+Mgr@{H\+L\+S\+Mgr}}
+\index{H\+L\+S\+Mgr@{H\+L\+S\+Mgr}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{H\+L\+S\+Mgr}{HLSMgr}}
+{\footnotesize\ttfamily const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} reg\+\_\+binding\+::\+H\+L\+S\+Mgr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+information about all the H\+LS synthesis 
+
+
+
+Definition at line 96 of file reg\+\_\+binding.\+hpp.
+
+
+
+Referenced by add\+\_\+to\+\_\+\+S\+M(), compute\+\_\+bitsize(), and print\+\_\+el().
+
+\mbox{\Hypertarget{classreg__binding_ad7f2d5e7ac076a71847765dd8c7e3b75}\label{classreg__binding_ad7f2d5e7ac076a71847765dd8c7e3b75}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!is\+\_\+without\+\_\+enable@{is\+\_\+without\+\_\+enable}}
+\index{is\+\_\+without\+\_\+enable@{is\+\_\+without\+\_\+enable}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{is\+\_\+without\+\_\+enable}{is\_without\_enable}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ reg\+\_\+binding\+::is\+\_\+without\+\_\+enable\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+store the set of register without enable 
+
+
+
+Definition at line 102 of file reg\+\_\+binding.\+hpp.
+
+
+
+Referenced by add\+\_\+to\+\_\+\+S\+M(), Calculate\+Register\+Name(), and compute\+\_\+is\+\_\+without\+\_\+enable().
+
+\mbox{\Hypertarget{classreg__binding_a297e1876e3d97faee75b5db688dedfa1}\label{classreg__binding_a297e1876e3d97faee75b5db688dedfa1}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!reg2storage\+\_\+values@{reg2storage\+\_\+values}}
+\index{reg2storage\+\_\+values@{reg2storage\+\_\+values}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{reg2storage\+\_\+values}{reg2storage\_values}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ $>$ reg\+\_\+binding\+::reg2storage\+\_\+values\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+map between the register and the associated storage value 
+
+
+
+Definition at line 99 of file reg\+\_\+binding.\+hpp.
+
+
+
+Referenced by bind(), and get\+\_\+vars().
+
+\mbox{\Hypertarget{classreg__binding_a4de12bf39febad6cedc31610bf432c0d}\label{classreg__binding_a4de12bf39febad6cedc31610bf432c0d}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!reverse\+\_\+map@{reverse\+\_\+map}}
+\index{reverse\+\_\+map@{reverse\+\_\+map}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{reverse\+\_\+map}{reverse\_map}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, unsigned int$>$ reg\+\_\+binding\+::reverse\+\_\+map\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+bind the storage value with the register instance 
+
+
+
+Definition at line 87 of file reg\+\_\+binding.\+hpp.
+
+
+
+Referenced by bind().
+
+\mbox{\Hypertarget{classreg__binding_a2fccab59e8e8657e60998633aa791de9}\label{classreg__binding_a2fccab59e8e8657e60998633aa791de9}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!unique\+\_\+table@{unique\+\_\+table}}
+\index{unique\+\_\+table@{unique\+\_\+table}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{unique\+\_\+table}{unique\_table}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}$>$ reg\+\_\+binding\+::unique\+\_\+table\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+map between register index and object 
+
+
+
+Definition at line 84 of file reg\+\_\+binding.\+hpp.
+
+
+
+Referenced by bind().
+
+\mbox{\Hypertarget{classreg__binding_acce1c14e8ad516225ed5a39b25d89c72}\label{classreg__binding_acce1c14e8ad516225ed5a39b25d89c72}} 
+\index{reg\+\_\+binding@{reg\+\_\+binding}!used\+\_\+regs@{used\+\_\+regs}}
+\index{used\+\_\+regs@{used\+\_\+regs}!reg\+\_\+binding@{reg\+\_\+binding}}
+\subsubsection{\texorpdfstring{used\+\_\+regs}{used\_regs}}
+{\footnotesize\ttfamily unsigned int reg\+\_\+binding\+::used\+\_\+regs\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+number of used register 
+
+
+
+Definition at line 81 of file reg\+\_\+binding.\+hpp.
+
+
+
+Referenced by get\+\_\+used\+\_\+regs().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/register/\hyperlink{reg__binding_8hpp}{reg\+\_\+binding.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/register/\hyperlink{reg__binding_8cpp}{reg\+\_\+binding.\+cpp}\end{DoxyCompactItemize}

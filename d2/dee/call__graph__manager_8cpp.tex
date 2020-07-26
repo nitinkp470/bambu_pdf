@@ -1,0 +1,105 @@
+\hypertarget{call__graph__manager_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/call\+\_\+graph\+\_\+manager.cpp File Reference}
+\label{call__graph__manager_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/call\+\_\+graph\+\_\+manager.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/call\+\_\+graph\+\_\+manager.\+cpp}}
+{\ttfamily \#include \char`\"{}call\+\_\+graph\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+A\+S\+S\+E\+R\+T\+S.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}behavioral\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}call\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}function\+\_\+behavior.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}loops.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}op\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$boost/tuple/tuple.\+hpp$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for call\+\_\+graph\+\_\+manager.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d17/call__graph__manager_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{call__graph__manager_8cpp_a5e9d36e4bf0ad0896f1341e43850f3fc}{A\+D\+D\+\_\+\+C\+A\+L\+L\+\_\+\+P\+O\+I\+NT}(g,  e,  newstmt)~\hyperlink{graph_8hpp_a6f62027ffd273c758af9090b09796af4}{get\+\_\+edge\+\_\+info}$<$function\+\_\+graph\+\_\+edge\+\_\+info$>$(e, $\ast$(g))-\/$>$\hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a6c8ca4722c83f5c72a91ccb8278758a3}{call\+\_\+points.\+insert}(newstmt)
+\begin{DoxyCompactList}\small\item\em Helper macro adding a call point to an edge of the call graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ function graph selector}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{call__graph__manager_8cpp_ae4d91653b2f802156c8e58569dc9b7f4}{S\+T\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 0
+\begin{DoxyCompactList}\small\item\em Data line selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{call__graph__manager_8cpp_a1ab2702e1fa0f19645b97eb19d54af5b}{F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 1
+\begin{DoxyCompactList}\small\item\em Clock line selector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{call__graph__manager_8cpp_a5e9d36e4bf0ad0896f1341e43850f3fc}\label{call__graph__manager_8cpp_a5e9d36e4bf0ad0896f1341e43850f3fc}} 
+\index{call\+\_\+graph\+\_\+manager.\+cpp@{call\+\_\+graph\+\_\+manager.\+cpp}!A\+D\+D\+\_\+\+C\+A\+L\+L\+\_\+\+P\+O\+I\+NT@{A\+D\+D\+\_\+\+C\+A\+L\+L\+\_\+\+P\+O\+I\+NT}}
+\index{A\+D\+D\+\_\+\+C\+A\+L\+L\+\_\+\+P\+O\+I\+NT@{A\+D\+D\+\_\+\+C\+A\+L\+L\+\_\+\+P\+O\+I\+NT}!call\+\_\+graph\+\_\+manager.\+cpp@{call\+\_\+graph\+\_\+manager.\+cpp}}
+\subsubsection{\texorpdfstring{A\+D\+D\+\_\+\+C\+A\+L\+L\+\_\+\+P\+O\+I\+NT}{ADD\_CALL\_POINT}}
+{\footnotesize\ttfamily \#define A\+D\+D\+\_\+\+C\+A\+L\+L\+\_\+\+P\+O\+I\+NT(\begin{DoxyParamCaption}\item[{}]{g,  }\item[{}]{e,  }\item[{}]{newstmt }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_a6f62027ffd273c758af9090b09796af4}{get\+\_\+edge\+\_\+info}$<$function\+\_\+graph\+\_\+edge\+\_\+info$>$(e, $\ast$(g))-\/$>$\hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a6c8ca4722c83f5c72a91ccb8278758a3}{call\+\_\+points.\+insert}(newstmt)}
+
+
+
+Helper macro adding a call point to an edge of the call graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & is the graph \\
+\hline
+{\em e} & is the edge \\
+\hline
+{\em newstmt} & is the call point to be added \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 73 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+\mbox{\Hypertarget{call__graph__manager_8cpp_a1ab2702e1fa0f19645b97eb19d54af5b}\label{call__graph__manager_8cpp_a1ab2702e1fa0f19645b97eb19d54af5b}} 
+\index{call\+\_\+graph\+\_\+manager.\+cpp@{call\+\_\+graph\+\_\+manager.\+cpp}!F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!call\+\_\+graph\+\_\+manager.\+cpp@{call\+\_\+graph\+\_\+manager.\+cpp}}
+\subsubsection{\texorpdfstring{F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FEEDBACK\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 1}
+
+
+
+Clock line selector. 
+
+
+
+Definition at line 82 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+Referenced by Call\+Graph\+Manager\+::\+Add\+Call\+Point(), and Call\+Graph\+Manager\+::\+C\+Get\+Call\+Sub\+Graph().
+
+\mbox{\Hypertarget{call__graph__manager_8cpp_ae4d91653b2f802156c8e58569dc9b7f4}\label{call__graph__manager_8cpp_ae4d91653b2f802156c8e58569dc9b7f4}} 
+\index{call\+\_\+graph\+\_\+manager.\+cpp@{call\+\_\+graph\+\_\+manager.\+cpp}!S\+T\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{S\+T\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{S\+T\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{S\+T\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!call\+\_\+graph\+\_\+manager.\+cpp@{call\+\_\+graph\+\_\+manager.\+cpp}}
+\subsubsection{\texorpdfstring{S\+T\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{STD\_SELECTOR}}
+{\footnotesize\ttfamily \#define S\+T\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 0}
+
+
+
+Data line selector. 
+
+
+
+Definition at line 80 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+Referenced by Call\+Graph\+Manager\+::\+Add\+Call\+Point(), Call\+Graph\+Manager\+::\+C\+Get\+Acyclic\+Call\+Graph(), and Call\+Graph\+Manager\+::\+C\+Get\+Call\+Sub\+Graph().
+

@@ -1,0 +1,137 @@
+\hypertarget{structprettyPrintVertex}{}\section{pretty\+Print\+Vertex Struct Reference}
+\label{structprettyPrintVertex}\index{pretty\+Print\+Vertex@{pretty\+Print\+Vertex}}
+
+
+Class used to print a vertex of a graph.  
+
+
+
+
+{\ttfamily \#include $<$pretty\+Print\+Vertex.\+hpp$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{structprettyPrintVertex_a4cb8e4223c13af526a915070207d5c6b}{print\+\_\+forward\+\_\+declaration} (std\+::ostream \&os, unsigned int type, \hyperlink{classsimple__indent}{simple\+\_\+indent} \&PP, const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} BH)
+\begin{DoxyCompactList}\small\item\em This function prints the forward type declaration of a type. \end{DoxyCompactList}\item 
+static void \hyperlink{structprettyPrintVertex_a0b7c685362aca7a4cd5f0944c5f9e326}{get\+\_\+internal\+\_\+vars} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&v, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} g, \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ unsigned int $>$ \&list\+\_\+of\+\_\+variables, const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} BH)
+\begin{DoxyCompactList}\small\item\em Header include. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \hyperlink{structprettyPrintVertex_aa3c36959163624dbfbf71316a5ac9512}{statement2string} (unsigned int stm, \hyperlink{structvar__pp__functor}{var\+\_\+pp\+\_\+functor} \&vppf, \hyperlink{classsimple__indent}{simple\+\_\+indent} \&PP, const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} BH)
+\begin{DoxyCompactList}\small\item\em return a string for the passed statement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class used to print a vertex of a graph. 
+
+Let us consider the following example\+:
+
+\begin{DoxyVerb}   typedef int MYINT;
+   void simple_add(MYINT a, int b, MYINT * res)
+   {
+     *res = a + b + b + a;
+   }\end{DoxyVerb}
+ The obtained data flow graph for this simple piece of C code is\+: 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_inline_dotgraph_26}}
+\end{DoxyImageNoCaption}
+ The expression is splitted in four vertexes each one performing an addition or a result storage. In particular, the first vertex, simple\+\_\+add\+\_\+1\+\_\+31, compute the first addition a+b but the statements stored in the vertex are actually two\+: the first one compute the addition (stored in the PandA artificial variable with nodeid 31) and the second one store the result in the var written (G\+CC artificial variable with nodeid 30) associated with the vertex. The considered vertex has \begin{DoxyVerb}  VAR_READ(simple_add_1_31) = 4(a) 5(b)
+  VAR_WRITTEN(simple_add_1_31) = 30(Internal_0)
+\end{DoxyVerb}
+ but to correctly dump a C description before write the two statements with the print\+\_\+statement member function we need to declare the two variables used by the vertex. To obtain these two variables the macro V\+A\+R\+\_\+\+R\+E\+AD and V\+A\+R\+\_\+\+W\+R\+I\+T\+T\+EN are not enough since the variable 31(Internal) is missing. To obtain all the referenced variables in the vertex simple\+\_\+add\+\_\+1\+\_\+31 we have to use the get\+\_\+referenced\+\_\+vars member function. Given the list of variables referenced by the vertex of the graph we need to print the possible type declarations for the variables based on user defined types. In the example the parameter a and res are of type M\+Y\+I\+NT, therefore, before print the declarations of the variables we have to print the declaration of the user type M\+Y\+I\+NT. To do that we have first to detect the set of user type declarations and then we can print the declaration with print\+\_\+type\+\_\+declaration. To check if a type is a user defined type we can use behavior\+\_\+helper\+::is\+\_\+built\+\_\+in\+\_\+type while to get the type from a variable we can use behavior\+\_\+helper\+::get\+\_\+type. After the type definition we can print the declarations of the variables with print\+\_\+var\+\_\+declaration. 
+
+Definition at line 118 of file pretty\+Print\+Vertex.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structprettyPrintVertex_a0b7c685362aca7a4cd5f0944c5f9e326}\label{structprettyPrintVertex_a0b7c685362aca7a4cd5f0944c5f9e326}} 
+\index{pretty\+Print\+Vertex@{pretty\+Print\+Vertex}!get\+\_\+internal\+\_\+vars@{get\+\_\+internal\+\_\+vars}}
+\index{get\+\_\+internal\+\_\+vars@{get\+\_\+internal\+\_\+vars}!pretty\+Print\+Vertex@{pretty\+Print\+Vertex}}
+\subsubsection{\texorpdfstring{get\+\_\+internal\+\_\+vars()}{get\_internal\_vars()}}
+{\footnotesize\ttfamily void pretty\+Print\+Vertex\+::get\+\_\+internal\+\_\+vars (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&}]{v,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{g,  }\item[{\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ unsigned int $>$ \&}]{list\+\_\+of\+\_\+variables,  }\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{BH }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Header include. 
+
+Behavior include utility include 
+
+Definition at line 56 of file pretty\+Print\+Vertex.\+cpp.
+
+
+
+References Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), Behavioral\+Helper\+::get\+\_\+array\+\_\+ref\+\_\+array(), Behavioral\+Helper\+::get\+\_\+component\+\_\+ref\+\_\+record(), Behavioral\+Helper\+::get\+\_\+indirect\+\_\+ref\+\_\+var(), Behavioral\+Helper\+::get\+\_\+intermediate\+\_\+var(), Behavioral\+Helper\+::get\+\_\+operand\+\_\+from\+\_\+unary\+\_\+expr(), Behavioral\+Helper\+::is\+\_\+a\+\_\+component\+\_\+ref(), Behavioral\+Helper\+::is\+\_\+a\+\_\+constant(), Behavioral\+Helper\+::is\+\_\+an\+\_\+addr\+\_\+expr(), Behavioral\+Helper\+::is\+\_\+an\+\_\+array\+\_\+ref(), and Behavioral\+Helper\+::is\+\_\+an\+\_\+indirect\+\_\+ref().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d0b/structprettyPrintVertex_a0b7c685362aca7a4cd5f0944c5f9e326_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structprettyPrintVertex_a4cb8e4223c13af526a915070207d5c6b}\label{structprettyPrintVertex_a4cb8e4223c13af526a915070207d5c6b}} 
+\index{pretty\+Print\+Vertex@{pretty\+Print\+Vertex}!print\+\_\+forward\+\_\+declaration@{print\+\_\+forward\+\_\+declaration}}
+\index{print\+\_\+forward\+\_\+declaration@{print\+\_\+forward\+\_\+declaration}!pretty\+Print\+Vertex@{pretty\+Print\+Vertex}}
+\subsubsection{\texorpdfstring{print\+\_\+forward\+\_\+declaration()}{print\_forward\_declaration()}}
+{\footnotesize\ttfamily void pretty\+Print\+Vertex\+::print\+\_\+forward\+\_\+declaration (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{unsigned int}]{type,  }\item[{\hyperlink{classsimple__indent}{simple\+\_\+indent} \&}]{PP,  }\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{BH }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function prints the forward type declaration of a type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & is the output stream. \\
+\hline
+{\em type} & is the nodeid of the type. \\
+\hline
+{\em PP} & is the pretty print functor object used to indent the generated code. \\
+\hline
+{\em BH} & is the behavioral helper. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 94 of file pretty\+Print\+Vertex.\+cpp.
+
+
+
+References Behavioral\+Helper\+::print\+\_\+forward\+\_\+declaration().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d0b/structprettyPrintVertex_a4cb8e4223c13af526a915070207d5c6b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structprettyPrintVertex_aa3c36959163624dbfbf71316a5ac9512}\label{structprettyPrintVertex_aa3c36959163624dbfbf71316a5ac9512}} 
+\index{pretty\+Print\+Vertex@{pretty\+Print\+Vertex}!statement2string@{statement2string}}
+\index{statement2string@{statement2string}!pretty\+Print\+Vertex@{pretty\+Print\+Vertex}}
+\subsubsection{\texorpdfstring{statement2string()}{statement2string()}}
+{\footnotesize\ttfamily static std\+::string pretty\+Print\+Vertex\+::statement2string (\begin{DoxyParamCaption}\item[{unsigned int}]{stm,  }\item[{\hyperlink{structvar__pp__functor}{var\+\_\+pp\+\_\+functor} \&}]{vppf,  }\item[{\hyperlink{classsimple__indent}{simple\+\_\+indent} \&}]{PP,  }\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{BH }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+return a string for the passed statement. 
+
+The referenced variables are printed with the indenter and variable functor. 
+\begin{DoxyParams}{Parameters}
+{\em vppf} & is the functor used to dump the variable var. \\
+\hline
+{\em PP} & is the pretty print functor object used to indent the generated code. \\
+\hline
+{\em BH} & is the behavioral helper. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/\hyperlink{prettyPrintVertex_8hpp}{pretty\+Print\+Vertex.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/\hyperlink{prettyPrintVertex_8cpp}{pretty\+Print\+Vertex.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,86 @@
+\hypertarget{NI__SSA__liveness_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.hpp File Reference}
+\label{NI__SSA__liveness_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp}}
+
+
+Non-\/\+Iterative liveness analysis for S\+SA based gimple descriptions.  
+
+
+{\ttfamily \#include \char`\"{}function\+\_\+frontend\+\_\+flow\+\_\+step.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+Include dependency graph for N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d8e/NI__SSA__liveness_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{d7/dc3/NI__SSA__liveness_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classNI__SSA__liveness}{N\+I\+\_\+\+S\+S\+A\+\_\+liveness}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}\textbf{ forward declarations}\par
+{\em Superclass include }\begin{DoxyCompactItemize}
+\item 
+\hyperlink{NI__SSA__liveness_8hpp_a9c316bb53bfc01a710d47b1ff6b07874}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classNI__SSA__liveness}{N\+I\+\_\+\+S\+S\+A\+\_\+liveness})
+\item 
+\hyperlink{NI__SSA__liveness_8hpp_a939cd739b894d823a208e61b8c4f6fd3}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classapplication__manager}{application\+\_\+manager})
+\item 
+\hyperlink{NI__SSA__liveness_8hpp_ac5c30465e53a2dee97960f0f406b8be7}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classParameter}{Parameter})
+\item 
+\hyperlink{NI__SSA__liveness_8hpp_a3534c699031037ce3bebffe714643338}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structbloc}{bloc})
+\item 
+\hyperlink{NI__SSA__liveness_8hpp_a676de0ccdd1189b2b906e6c884116894}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtree__node}{tree\+\_\+node})
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Non-\/\+Iterative liveness analysis for S\+SA based gimple descriptions. 
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{NI__SSA__liveness_8hpp_ac5c30465e53a2dee97960f0f406b8be7}\label{NI__SSA__liveness_8hpp_ac5c30465e53a2dee97960f0f406b8be7}} 
+\index{N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp@{N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp@{N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classParameter}{Parameter}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NI__SSA__liveness_8hpp_a9c316bb53bfc01a710d47b1ff6b07874}\label{NI__SSA__liveness_8hpp_a9c316bb53bfc01a710d47b1ff6b07874}} 
+\index{N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp@{N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp@{N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classNI__SSA__liveness}{N\+I\+\_\+\+S\+S\+A\+\_\+liveness}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NI__SSA__liveness_8hpp_a939cd739b894d823a208e61b8c4f6fd3}\label{NI__SSA__liveness_8hpp_a939cd739b894d823a208e61b8c4f6fd3}} 
+\index{N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp@{N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp@{N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classapplication__manager}{application\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NI__SSA__liveness_8hpp_a3534c699031037ce3bebffe714643338}\label{NI__SSA__liveness_8hpp_a3534c699031037ce3bebffe714643338}} 
+\index{N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp@{N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp@{N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structbloc}{bloc}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NI__SSA__liveness_8hpp_a676de0ccdd1189b2b906e6c884116894}\label{NI__SSA__liveness_8hpp_a676de0ccdd1189b2b906e6c884116894}} 
+\index{N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp@{N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp@{N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__node}{tree\+\_\+node}}]{ }\end{DoxyParamCaption})}
+

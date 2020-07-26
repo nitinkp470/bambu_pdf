@@ -1,0 +1,319 @@
+\hypertarget{vcd__trace__head_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/vcd/vcd\+\_\+trace\+\_\+head.cpp File Reference}
+\label{vcd__trace__head_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/vcd/vcd\+\_\+trace\+\_\+head.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/vcd/vcd\+\_\+trace\+\_\+head.\+cpp}}
+{\ttfamily \#include \char`\"{}vcd\+\_\+trace\+\_\+head.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}storage\+\_\+value\+\_\+information.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}state\+\_\+transition\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}state\+\_\+transition\+\_\+graph\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+Include dependency graph for vcd\+\_\+trace\+\_\+head.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d52/vcd__trace__head_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{vcd__trace__head_8cpp_afc96fe580101ac7b381bc4e61f9eeff3}{is\+\_\+valid\+\_\+state\+\_\+string} (const std\+::string \&s, bool one\+\_\+hot\+\_\+fsm\+\_\+encoding)
+\item 
+static \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} \hyperlink{vcd__trace__head_8cpp_a85ddc936539bc84b6fb09cb88d90d9db}{compute\+\_\+state\+\_\+id} (const std\+::string \&s, bool one\+\_\+hot\+\_\+fsm\+\_\+encoding)
+\item 
+static bool \hyperlink{vcd__trace__head_8cpp_a01ddc5b506327b137afc25af1c49904c}{is\+\_\+binary\+\_\+string\+\_\+repr} (const std\+::string \&s, unsigned int id, bool one\+\_\+hot\+\_\+fsm\+\_\+encoding)
+\item 
+static bool \hyperlink{vcd__trace__head_8cpp_a1d0489d2379ca9b2d64260d4393e654b}{string\+\_\+represents\+\_\+one\+\_\+of\+\_\+the\+\_\+states} (const std\+::string \&val, const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \&state\+\_\+ids, bool one\+\_\+hot\+\_\+fsm\+\_\+encoding)
+\item 
+static bool \hyperlink{vcd__trace__head_8cpp_ae295c4b5c8ebf58dda6ebdc3b44ba38e}{is\+\_\+exec} (const \hyperlink{structsig__variation}{sig\+\_\+variation} \&state\+\_\+var, const \hyperlink{classDiscrepancyOpInfo}{Discrepancy\+Op\+Info} \&i, bool one\+\_\+hot\+\_\+fsm\+\_\+encoding)
+\item 
+static bool \hyperlink{vcd__trace__head_8cpp_aa651f9983d6ca893423cb3c243d8a61e}{is\+\_\+start} (const \hyperlink{structsig__variation}{sig\+\_\+variation} \&state\+\_\+var, const \hyperlink{classDiscrepancyOpInfo}{Discrepancy\+Op\+Info} \&i, bool one\+\_\+hot\+\_\+fsm\+\_\+encoding)
+\item 
+static bool \hyperlink{vcd__trace__head_8cpp_a0718e67ff94c5b86d5f5df8ec80a07a6}{all\+\_\+ones} (const std\+::string \&s)
+\item 
+static bool \hyperlink{vcd__trace__head_8cpp_a3547f3c9ecb2825425805df630f9e0d9}{var\+\_\+has\+\_\+value\+\_\+ones} (const \hyperlink{structsig__variation}{sig\+\_\+variation} \&v)
+\item 
+static bool \hyperlink{vcd__trace__head_8cpp_a8e085230ef49b8b73740f413bd7e6136}{var\+\_\+is\+\_\+later\+\_\+or\+\_\+equal} (const \hyperlink{structsig__variation}{sig\+\_\+variation} \&v, const unsigned long long time)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{vcd__trace__head_8cpp_a0718e67ff94c5b86d5f5df8ec80a07a6}\label{vcd__trace__head_8cpp_a0718e67ff94c5b86d5f5df8ec80a07a6}} 
+\index{vcd\+\_\+trace\+\_\+head.\+cpp@{vcd\+\_\+trace\+\_\+head.\+cpp}!all\+\_\+ones@{all\+\_\+ones}}
+\index{all\+\_\+ones@{all\+\_\+ones}!vcd\+\_\+trace\+\_\+head.\+cpp@{vcd\+\_\+trace\+\_\+head.\+cpp}}
+\subsubsection{\texorpdfstring{all\+\_\+ones()}{all\_ones()}}
+{\footnotesize\ttfamily static bool all\+\_\+ones (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 140 of file vcd\+\_\+trace\+\_\+head.\+cpp.
+
+
+
+Referenced by var\+\_\+has\+\_\+value\+\_\+ones().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df4/vcd__trace__head_8cpp_a0718e67ff94c5b86d5f5df8ec80a07a6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{vcd__trace__head_8cpp_a85ddc936539bc84b6fb09cb88d90d9db}\label{vcd__trace__head_8cpp_a85ddc936539bc84b6fb09cb88d90d9db}} 
+\index{vcd\+\_\+trace\+\_\+head.\+cpp@{vcd\+\_\+trace\+\_\+head.\+cpp}!compute\+\_\+state\+\_\+id@{compute\+\_\+state\+\_\+id}}
+\index{compute\+\_\+state\+\_\+id@{compute\+\_\+state\+\_\+id}!vcd\+\_\+trace\+\_\+head.\+cpp@{vcd\+\_\+trace\+\_\+head.\+cpp}}
+\subsubsection{\texorpdfstring{compute\+\_\+state\+\_\+id()}{compute\_state\_id()}}
+{\footnotesize\ttfamily static \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} compute\+\_\+state\+\_\+id (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{bool}]{one\+\_\+hot\+\_\+fsm\+\_\+encoding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 88 of file vcd\+\_\+trace\+\_\+head.\+cpp.
+
+
+
+References is\+\_\+valid\+\_\+state\+\_\+string(), and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by is\+\_\+binary\+\_\+string\+\_\+repr(), and vcd\+\_\+trace\+\_\+head\+::update().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{d9/df4/vcd__trace__head_8cpp_a85ddc936539bc84b6fb09cb88d90d9db_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df4/vcd__trace__head_8cpp_a85ddc936539bc84b6fb09cb88d90d9db_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{vcd__trace__head_8cpp_a01ddc5b506327b137afc25af1c49904c}\label{vcd__trace__head_8cpp_a01ddc5b506327b137afc25af1c49904c}} 
+\index{vcd\+\_\+trace\+\_\+head.\+cpp@{vcd\+\_\+trace\+\_\+head.\+cpp}!is\+\_\+binary\+\_\+string\+\_\+repr@{is\+\_\+binary\+\_\+string\+\_\+repr}}
+\index{is\+\_\+binary\+\_\+string\+\_\+repr@{is\+\_\+binary\+\_\+string\+\_\+repr}!vcd\+\_\+trace\+\_\+head.\+cpp@{vcd\+\_\+trace\+\_\+head.\+cpp}}
+\subsubsection{\texorpdfstring{is\+\_\+binary\+\_\+string\+\_\+repr()}{is\_binary\_string\_repr()}}
+{\footnotesize\ttfamily static bool is\+\_\+binary\+\_\+string\+\_\+repr (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{unsigned int}]{id,  }\item[{bool}]{one\+\_\+hot\+\_\+fsm\+\_\+encoding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 104 of file vcd\+\_\+trace\+\_\+head.\+cpp.
+
+
+
+References compute\+\_\+state\+\_\+id(), is\+\_\+valid\+\_\+state\+\_\+string(), and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by string\+\_\+represents\+\_\+one\+\_\+of\+\_\+the\+\_\+states(), and vcd\+\_\+trace\+\_\+head\+::update().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df4/vcd__trace__head_8cpp_a01ddc5b506327b137afc25af1c49904c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df4/vcd__trace__head_8cpp_a01ddc5b506327b137afc25af1c49904c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{vcd__trace__head_8cpp_ae295c4b5c8ebf58dda6ebdc3b44ba38e}\label{vcd__trace__head_8cpp_ae295c4b5c8ebf58dda6ebdc3b44ba38e}} 
+\index{vcd\+\_\+trace\+\_\+head.\+cpp@{vcd\+\_\+trace\+\_\+head.\+cpp}!is\+\_\+exec@{is\+\_\+exec}}
+\index{is\+\_\+exec@{is\+\_\+exec}!vcd\+\_\+trace\+\_\+head.\+cpp@{vcd\+\_\+trace\+\_\+head.\+cpp}}
+\subsubsection{\texorpdfstring{is\+\_\+exec()}{is\_exec()}}
+{\footnotesize\ttfamily static bool is\+\_\+exec (\begin{DoxyParamCaption}\item[{const \hyperlink{structsig__variation}{sig\+\_\+variation} \&}]{state\+\_\+var,  }\item[{const \hyperlink{classDiscrepancyOpInfo}{Discrepancy\+Op\+Info} \&}]{i,  }\item[{bool}]{one\+\_\+hot\+\_\+fsm\+\_\+encoding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 120 of file vcd\+\_\+trace\+\_\+head.\+cpp.
+
+
+
+References Discrepancy\+Op\+Info\+::exec\+\_\+states, Discrepancy\+Op\+Info\+::op\+\_\+id, Discrepancy\+Op\+Info\+::stg\+\_\+fun\+\_\+id, S\+TR, string\+\_\+represents\+\_\+one\+\_\+of\+\_\+the\+\_\+states(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and sig\+\_\+variation\+::value.
+
+
+
+Referenced by vcd\+\_\+trace\+\_\+head\+::unbounded\+\_\+find\+\_\+end\+\_\+time().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df4/vcd__trace__head_8cpp_ae295c4b5c8ebf58dda6ebdc3b44ba38e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df4/vcd__trace__head_8cpp_ae295c4b5c8ebf58dda6ebdc3b44ba38e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{vcd__trace__head_8cpp_aa651f9983d6ca893423cb3c243d8a61e}\label{vcd__trace__head_8cpp_aa651f9983d6ca893423cb3c243d8a61e}} 
+\index{vcd\+\_\+trace\+\_\+head.\+cpp@{vcd\+\_\+trace\+\_\+head.\+cpp}!is\+\_\+start@{is\+\_\+start}}
+\index{is\+\_\+start@{is\+\_\+start}!vcd\+\_\+trace\+\_\+head.\+cpp@{vcd\+\_\+trace\+\_\+head.\+cpp}}
+\subsubsection{\texorpdfstring{is\+\_\+start()}{is\_start()}}
+{\footnotesize\ttfamily static bool is\+\_\+start (\begin{DoxyParamCaption}\item[{const \hyperlink{structsig__variation}{sig\+\_\+variation} \&}]{state\+\_\+var,  }\item[{const \hyperlink{classDiscrepancyOpInfo}{Discrepancy\+Op\+Info} \&}]{i,  }\item[{bool}]{one\+\_\+hot\+\_\+fsm\+\_\+encoding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 126 of file vcd\+\_\+trace\+\_\+head.\+cpp.
+
+
+
+References Discrepancy\+Op\+Info\+::end\+\_\+states, Discrepancy\+Op\+Info\+::op\+\_\+id, Discrepancy\+Op\+Info\+::start\+\_\+states, Discrepancy\+Op\+Info\+::stg\+\_\+fun\+\_\+id, S\+TR, string\+\_\+represents\+\_\+one\+\_\+of\+\_\+the\+\_\+states(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and sig\+\_\+variation\+::value.
+
+
+
+Referenced by vcd\+\_\+trace\+\_\+head\+::unbounded\+\_\+find\+\_\+end\+\_\+time(), and vcd\+\_\+trace\+\_\+head\+::update().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df4/vcd__trace__head_8cpp_aa651f9983d6ca893423cb3c243d8a61e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df4/vcd__trace__head_8cpp_aa651f9983d6ca893423cb3c243d8a61e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{vcd__trace__head_8cpp_afc96fe580101ac7b381bc4e61f9eeff3}\label{vcd__trace__head_8cpp_afc96fe580101ac7b381bc4e61f9eeff3}} 
+\index{vcd\+\_\+trace\+\_\+head.\+cpp@{vcd\+\_\+trace\+\_\+head.\+cpp}!is\+\_\+valid\+\_\+state\+\_\+string@{is\+\_\+valid\+\_\+state\+\_\+string}}
+\index{is\+\_\+valid\+\_\+state\+\_\+string@{is\+\_\+valid\+\_\+state\+\_\+string}!vcd\+\_\+trace\+\_\+head.\+cpp@{vcd\+\_\+trace\+\_\+head.\+cpp}}
+\subsubsection{\texorpdfstring{is\+\_\+valid\+\_\+state\+\_\+string()}{is\_valid\_state\_string()}}
+{\footnotesize\ttfamily static bool is\+\_\+valid\+\_\+state\+\_\+string (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{bool}]{one\+\_\+hot\+\_\+fsm\+\_\+encoding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyAuthor}{Author}
+Pietro Fezzardi \href{mailto:pietrofezzardi@gmail.com}{\tt pietrofezzardi@gmail.\+com} 
+\end{DoxyAuthor}
+
+
+Definition at line 62 of file vcd\+\_\+trace\+\_\+head.\+cpp.
+
+
+
+Referenced by compute\+\_\+state\+\_\+id(), and is\+\_\+binary\+\_\+string\+\_\+repr().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df4/vcd__trace__head_8cpp_afc96fe580101ac7b381bc4e61f9eeff3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{vcd__trace__head_8cpp_a1d0489d2379ca9b2d64260d4393e654b}\label{vcd__trace__head_8cpp_a1d0489d2379ca9b2d64260d4393e654b}} 
+\index{vcd\+\_\+trace\+\_\+head.\+cpp@{vcd\+\_\+trace\+\_\+head.\+cpp}!string\+\_\+represents\+\_\+one\+\_\+of\+\_\+the\+\_\+states@{string\+\_\+represents\+\_\+one\+\_\+of\+\_\+the\+\_\+states}}
+\index{string\+\_\+represents\+\_\+one\+\_\+of\+\_\+the\+\_\+states@{string\+\_\+represents\+\_\+one\+\_\+of\+\_\+the\+\_\+states}!vcd\+\_\+trace\+\_\+head.\+cpp@{vcd\+\_\+trace\+\_\+head.\+cpp}}
+\subsubsection{\texorpdfstring{string\+\_\+represents\+\_\+one\+\_\+of\+\_\+the\+\_\+states()}{string\_represents\_one\_of\_the\_states()}}
+{\footnotesize\ttfamily static bool string\+\_\+represents\+\_\+one\+\_\+of\+\_\+the\+\_\+states (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{val,  }\item[{const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \&}]{state\+\_\+ids,  }\item[{bool}]{one\+\_\+hot\+\_\+fsm\+\_\+encoding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 112 of file vcd\+\_\+trace\+\_\+head.\+cpp.
+
+
+
+References is\+\_\+binary\+\_\+string\+\_\+repr().
+
+
+
+Referenced by is\+\_\+exec(), and is\+\_\+start().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df4/vcd__trace__head_8cpp_a1d0489d2379ca9b2d64260d4393e654b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df4/vcd__trace__head_8cpp_a1d0489d2379ca9b2d64260d4393e654b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{vcd__trace__head_8cpp_a3547f3c9ecb2825425805df630f9e0d9}\label{vcd__trace__head_8cpp_a3547f3c9ecb2825425805df630f9e0d9}} 
+\index{vcd\+\_\+trace\+\_\+head.\+cpp@{vcd\+\_\+trace\+\_\+head.\+cpp}!var\+\_\+has\+\_\+value\+\_\+ones@{var\+\_\+has\+\_\+value\+\_\+ones}}
+\index{var\+\_\+has\+\_\+value\+\_\+ones@{var\+\_\+has\+\_\+value\+\_\+ones}!vcd\+\_\+trace\+\_\+head.\+cpp@{vcd\+\_\+trace\+\_\+head.\+cpp}}
+\subsubsection{\texorpdfstring{var\+\_\+has\+\_\+value\+\_\+ones()}{var\_has\_value\_ones()}}
+{\footnotesize\ttfamily static bool var\+\_\+has\+\_\+value\+\_\+ones (\begin{DoxyParamCaption}\item[{const \hyperlink{structsig__variation}{sig\+\_\+variation} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 145 of file vcd\+\_\+trace\+\_\+head.\+cpp.
+
+
+
+References all\+\_\+ones(), and sig\+\_\+variation\+::value.
+
+
+
+Referenced by vcd\+\_\+trace\+\_\+head\+::update().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{d9/df4/vcd__trace__head_8cpp_a3547f3c9ecb2825425805df630f9e0d9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df4/vcd__trace__head_8cpp_a3547f3c9ecb2825425805df630f9e0d9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{vcd__trace__head_8cpp_a8e085230ef49b8b73740f413bd7e6136}\label{vcd__trace__head_8cpp_a8e085230ef49b8b73740f413bd7e6136}} 
+\index{vcd\+\_\+trace\+\_\+head.\+cpp@{vcd\+\_\+trace\+\_\+head.\+cpp}!var\+\_\+is\+\_\+later\+\_\+or\+\_\+equal@{var\+\_\+is\+\_\+later\+\_\+or\+\_\+equal}}
+\index{var\+\_\+is\+\_\+later\+\_\+or\+\_\+equal@{var\+\_\+is\+\_\+later\+\_\+or\+\_\+equal}!vcd\+\_\+trace\+\_\+head.\+cpp@{vcd\+\_\+trace\+\_\+head.\+cpp}}
+\subsubsection{\texorpdfstring{var\+\_\+is\+\_\+later\+\_\+or\+\_\+equal()}{var\_is\_later\_or\_equal()}}
+{\footnotesize\ttfamily static bool var\+\_\+is\+\_\+later\+\_\+or\+\_\+equal (\begin{DoxyParamCaption}\item[{const \hyperlink{structsig__variation}{sig\+\_\+variation} \&}]{v,  }\item[{const unsigned long long}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 150 of file vcd\+\_\+trace\+\_\+head.\+cpp.
+
+
+
+Referenced by vcd\+\_\+trace\+\_\+head\+::advance().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df4/vcd__trace__head_8cpp_a8e085230ef49b8b73740f413bd7e6136_icgraph}
+\end{center}
+\end{figure}

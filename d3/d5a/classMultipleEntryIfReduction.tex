@@ -1,0 +1,477 @@
+\hypertarget{classMultipleEntryIfReduction}{}\section{Multiple\+Entry\+If\+Reduction Class Reference}
+\label{classMultipleEntryIfReduction}\index{Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}}
+
+
+Class performing some optimizations exploiting the reduction of BB with n inputs and m outputs.  
+
+
+
+
+{\ttfamily \#include $<$multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp$>$}
+
+
+
+Inheritance diagram for Multiple\+Entry\+If\+Reduction\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{d6/ddd/classMultipleEntryIfReduction__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Multiple\+Entry\+If\+Reduction\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d25/classMultipleEntryIfReduction__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMultipleEntryIfReduction_a6e3f904467d49c19ab6b7a77bef40453}{Multiple\+Entry\+If\+Reduction} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \+\_\+\+Param, const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \+\_\+\+AppM, unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classMultipleEntryIfReduction_aef9622ec9e0fce7e942b6746c383ad72}{$\sim$\+Multiple\+Entry\+If\+Reduction} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classMultipleEntryIfReduction_abde81c971e9b10ba0626e3c068249fbe}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Extract patterns from the G\+CC IR. \end{DoxyCompactList}\item 
+void \hyperlink{classMultipleEntryIfReduction_adbaeee425a62fdee6e6723ce59a4cf2a}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\item 
+bool \hyperlink{classMultipleEntryIfReduction_a0aed1493c46ae158341d4dffef7aae62}{Has\+To\+Be\+Executed} () const override
+\begin{DoxyCompactList}\small\item\em Check if this step has actually to be executed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classMultipleEntryIfReduction_ac6f3dc9035b0d68e3130655939dc1d16}{Get\+Area\+Cost} (const std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&list\+\_\+of\+\_\+stmt) const
+\begin{DoxyCompactList}\small\item\em Estimate the area cost of the statements of a basic block. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classMultipleEntryIfReduction_a14ca1aca808b8519a8504ac06cf11cc6}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \hyperlink{classMultipleEntryIfReduction_a485962c1f8aee78773d20954797d48dc}{TM}
+\begin{DoxyCompactList}\small\item\em The tree manager. \end{DoxyCompactList}\item 
+\hyperlink{tree__manipulation_8hpp_a1a9460e3a2f9fc6a96cfd2f24cc9b2a5}{tree\+\_\+manipulation\+Ref} \hyperlink{classMultipleEntryIfReduction_ac438476de6947084100c78d2a93b9d72}{tree\+\_\+man}
+\begin{DoxyCompactList}\small\item\em The tree manipulation. \end{DoxyCompactList}\item 
+\hyperlink{structstatement__list}{statement\+\_\+list} $\ast$ \hyperlink{classMultipleEntryIfReduction_af832434eeeac8bd15d9addb18c3207a0}{sl} \{nullptr\}
+\begin{DoxyCompactList}\small\item\em The statement list. \end{DoxyCompactList}\item 
+bool \hyperlink{classMultipleEntryIfReduction_abdf63137a4075f1ddfb9fd6897330930}{bb\+\_\+modified} \{false\}
+\begin{DoxyCompactList}\small\item\em Modified file. \end{DoxyCompactList}\item 
+\hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} \hyperlink{classMultipleEntryIfReduction_a51863fa75a5407620503b3c0adaf9958}{schedule}
+\begin{DoxyCompactList}\small\item\em The scheduling solution. \end{DoxyCompactList}\item 
+\hyperlink{allocation__information_8hpp_a54287618a63bf87e31ddb17ba01e7ca7}{Allocation\+Information\+Const\+Ref} \hyperlink{classMultipleEntryIfReduction_a2412aea74a8efc60dfe1516f6659bbed}{allocation\+\_\+information}
+\begin{DoxyCompactList}\small\item\em The allocation information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class performing some optimizations exploiting the reduction of BB with n inputs and m outputs. 
+
+The block have to contain only phi or conditional statements (such as if and multi way if) 
+
+Definition at line 101 of file multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMultipleEntryIfReduction_a6e3f904467d49c19ab6b7a77bef40453}\label{classMultipleEntryIfReduction_a6e3f904467d49c19ab6b7a77bef40453}} 
+\index{Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}!Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}}
+\index{Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}!Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}}
+\subsubsection{\texorpdfstring{Multiple\+Entry\+If\+Reduction()}{MultipleEntryIfReduction()}}
+{\footnotesize\ttfamily Multiple\+Entry\+If\+Reduction\+::\+Multiple\+Entry\+If\+Reduction (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+\+Param,  }\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{unsigned int}]{function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+Param} & is the set of the parameters \\
+\hline
+{\em \+\_\+\+AppM} & is the application manager \\
+\hline
+{\em function\+\_\+id} & is the identifier of the function \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 118 of file multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, and Design\+Flow\+Step\+::parameters.
+
+\mbox{\Hypertarget{classMultipleEntryIfReduction_aef9622ec9e0fce7e942b6746c383ad72}\label{classMultipleEntryIfReduction_aef9622ec9e0fce7e942b6746c383ad72}} 
+\index{Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}!````~Multiple\+Entry\+If\+Reduction@{$\sim$\+Multiple\+Entry\+If\+Reduction}}
+\index{````~Multiple\+Entry\+If\+Reduction@{$\sim$\+Multiple\+Entry\+If\+Reduction}!Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}}
+\subsubsection{\texorpdfstring{$\sim$\+Multiple\+Entry\+If\+Reduction()}{~MultipleEntryIfReduction()}}
+{\footnotesize\ttfamily Multiple\+Entry\+If\+Reduction\+::$\sim$\+Multiple\+Entry\+If\+Reduction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Initialize().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d5a/classMultipleEntryIfReduction_aef9622ec9e0fce7e942b6746c383ad72_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMultipleEntryIfReduction_a14ca1aca808b8519a8504ac06cf11cc6}\label{classMultipleEntryIfReduction_a14ca1aca808b8519a8504ac06cf11cc6}} 
+\index{Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ Multiple\+Entry\+If\+Reduction\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 140 of file multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp.
+
+
+
+References A\+B\+O\+R\+T\+ED, B\+B\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+E\+D\+G\+E\+S\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+C\+A\+T\+I\+ON, B\+U\+I\+L\+D\+\_\+\+V\+I\+R\+T\+U\+A\+L\+\_\+\+P\+HI, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, E\+M\+P\+TY, Design\+Flow\+Step\+::\+Get\+Status(), Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, N\+O\+N\+E\+X\+I\+S\+T\+E\+NT, Design\+Flow\+Step\+::parameters, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, S\+K\+I\+P\+P\+ED, S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, U\+N\+C\+H\+A\+N\+G\+ED, U\+N\+E\+X\+E\+C\+U\+T\+ED, and U\+N\+N\+E\+C\+E\+S\+S\+A\+RY.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d5a/classMultipleEntryIfReduction_a14ca1aca808b8519a8504ac06cf11cc6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMultipleEntryIfReduction_ac6f3dc9035b0d68e3130655939dc1d16}\label{classMultipleEntryIfReduction_ac6f3dc9035b0d68e3130655939dc1d16}} 
+\index{Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}!Get\+Area\+Cost@{Get\+Area\+Cost}}
+\index{Get\+Area\+Cost@{Get\+Area\+Cost}!Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}}
+\subsubsection{\texorpdfstring{Get\+Area\+Cost()}{GetAreaCost()}}
+{\footnotesize\ttfamily double Multiple\+Entry\+If\+Reduction\+::\+Get\+Area\+Cost (\begin{DoxyParamCaption}\item[{const std\+::list$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&}]{list\+\_\+of\+\_\+stmt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Estimate the area cost of the statements of a basic block. 
+
+
+
+Definition at line 960 of file multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp.
+
+
+
+References allocation\+\_\+information, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Allocation\+Information\+::\+Get\+Statement\+Area(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, and S\+TR.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d5a/classMultipleEntryIfReduction_ac6f3dc9035b0d68e3130655939dc1d16_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d5a/classMultipleEntryIfReduction_ac6f3dc9035b0d68e3130655939dc1d16_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMultipleEntryIfReduction_a0aed1493c46ae158341d4dffef7aae62}\label{classMultipleEntryIfReduction_a0aed1493c46ae158341d4dffef7aae62}} 
+\index{Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}!Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}}
+\index{Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}!Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}}
+\subsubsection{\texorpdfstring{Has\+To\+Be\+Executed()}{HasToBeExecuted()}}
+{\footnotesize\ttfamily bool Multiple\+Entry\+If\+Reduction\+::\+Has\+To\+Be\+Executed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if this step has actually to be executed. 
+
+\begin{DoxyReturn}{Returns}
+true if the step has to be executed 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFunctionFrontendFlowStep_a12e786363530aa9533e4bd9380130d75}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 972 of file multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp.
+
+
+
+References Function\+Frontend\+Flow\+Step\+::\+Compute\+Signature(), Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, Wrefcount$<$ T $>$\+::lock(), and Design\+Flow\+Step\+::parameters.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d5a/classMultipleEntryIfReduction_a0aed1493c46ae158341d4dffef7aae62_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMultipleEntryIfReduction_adbaeee425a62fdee6e6723ce59a4cf2a}\label{classMultipleEntryIfReduction_adbaeee425a62fdee6e6723ce59a4cf2a}} 
+\index{Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Multiple\+Entry\+If\+Reduction\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 124 of file multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp.
+
+
+
+References allocation\+\_\+information, Frontend\+Flow\+Step\+::\+AppM, bb\+\_\+modified, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), Design\+Flow\+Step\+::parameters, sl, TM, tree\+\_\+man, and $\sim$\+Multiple\+Entry\+If\+Reduction().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d5a/classMultipleEntryIfReduction_adbaeee425a62fdee6e6723ce59a4cf2a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMultipleEntryIfReduction_abde81c971e9b10ba0626e3c068249fbe}\label{classMultipleEntryIfReduction_abde81c971e9b10ba0626e3c068249fbe}} 
+\index{Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} Multiple\+Entry\+If\+Reduction\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Extract patterns from the G\+CC IR. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+if the operation had been done
+
+list to save the block to eliminate after the reduction
+
+The basic block graphs
+
+Analyze if a basic block is a possible candidate
+
+We skip basic block containing \hyperlink{structgimple__call}{gimple\+\_\+call} since it would require modification of the call graph
+
+Skip headers
+
+The index of the loop to be considered (the most internal loops which contains the definition and all the uses
+
+The depth of the loop to be considered
+
+Create the copies
+
+Fixing phi\+: duplicating def\+\_\+edge of ssa name which are not defined in the current bb
+
+Build list of phis + gimple\+\_\+nodes
+
+The ssa defined by the statement (left part of gimple assignment and vdef)
+
+The set of basic block uses
+
+The set of statement uses
+
+The set of reaching definition
+
+Cache of created phi -\/ first key is the used ssa -\/ second key is the basic block where is created
+
+Duplicating statement
+
+Defined in a different basic block
+
+The old ssa
+
+Management of vuses for overwrite
+
+Use is in the considered loop
+
+Use is in a more nested loop
+
+Use is in a less nested loop
+
+Set of basic blocks belonging to the loop
+
+Check if there a use of the ssa in the header; if not basic blocks after uses can be removed
+
+Remove all basic blocks from which no use can be reached
+
+Set of basic blocks to be analyzed
+
+True if different definitions reach this bb from all the bbs
+
+If this is the basic block contains a use
+
+If the basic block is the source of a feedback edge, fix the phi in the header
+
+endfor-\/list\+\_\+of\+\_\+bloc
+
+eliminate the blocks (remove them from the tree) 
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 191 of file multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, Function\+Behavior\+::\+BB, B\+B\+\_\+\+E\+X\+IT, B\+B\+Graph\+::\+C\+Get\+B\+B\+Graph\+Info(), B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), tree\+\_\+manager\+::\+C\+Get\+Tree\+Node(), tree\+\_\+helper\+::\+Compute\+Ssa\+Uses(), tree\+\_\+manipulation\+::create\+\_\+ssa\+\_\+name(), tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, F\+B\+\_\+\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, Function\+Behavior\+::\+F\+BB, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+C\+O\+N\+S\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+next\+\_\+vers(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), Get\+Area\+Cost(), B\+B\+Graph\+::\+Get\+B\+B\+Node\+Info(), Function\+Frontend\+Flow\+Step\+::\+Get\+Name(), graph\+::\+Get\+Selector(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+node\+::index, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, max(), tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), Design\+Flow\+Step\+::parameters, phi, tree\+\_\+manager\+::\+Replace\+Tree\+Node(), sl, S\+TR, S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, TM, T\+OK, T\+O\+K\+\_\+\+R\+ES, T\+O\+K\+\_\+\+S\+R\+CP, T\+O\+K\+\_\+\+T\+Y\+PE, T\+O\+K\+\_\+\+V\+AR, T\+O\+K\+\_\+\+V\+E\+RS, T\+O\+K\+\_\+\+V\+I\+R\+T\+U\+AL, T\+O\+K\+\_\+\+V\+O\+L\+A\+T\+I\+LE, tree\+\_\+man, and U\+N\+C\+H\+A\+N\+G\+ED.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d5a/classMultipleEntryIfReduction_abde81c971e9b10ba0626e3c068249fbe_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classMultipleEntryIfReduction_a2412aea74a8efc60dfe1516f6659bbed}\label{classMultipleEntryIfReduction_a2412aea74a8efc60dfe1516f6659bbed}} 
+\index{Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}!allocation\+\_\+information@{allocation\+\_\+information}}
+\index{allocation\+\_\+information@{allocation\+\_\+information}!Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}}
+\subsubsection{\texorpdfstring{allocation\+\_\+information}{allocation\_information}}
+{\footnotesize\ttfamily \hyperlink{allocation__information_8hpp_a54287618a63bf87e31ddb17ba01e7ca7}{Allocation\+Information\+Const\+Ref} Multiple\+Entry\+If\+Reduction\+::allocation\+\_\+information\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The allocation information. 
+
+
+
+Definition at line 120 of file multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp.
+
+
+
+Referenced by Get\+Area\+Cost(), and Initialize().
+
+\mbox{\Hypertarget{classMultipleEntryIfReduction_abdf63137a4075f1ddfb9fd6897330930}\label{classMultipleEntryIfReduction_abdf63137a4075f1ddfb9fd6897330930}} 
+\index{Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}!bb\+\_\+modified@{bb\+\_\+modified}}
+\index{bb\+\_\+modified@{bb\+\_\+modified}!Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}}
+\subsubsection{\texorpdfstring{bb\+\_\+modified}{bb\_modified}}
+{\footnotesize\ttfamily bool Multiple\+Entry\+If\+Reduction\+::bb\+\_\+modified \{false\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Modified file. 
+
+
+
+Definition at line 114 of file multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp.
+
+
+
+Referenced by Initialize().
+
+\mbox{\Hypertarget{classMultipleEntryIfReduction_a51863fa75a5407620503b3c0adaf9958}\label{classMultipleEntryIfReduction_a51863fa75a5407620503b3c0adaf9958}} 
+\index{Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}!schedule@{schedule}}
+\index{schedule@{schedule}!Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}}
+\subsubsection{\texorpdfstring{schedule}{schedule}}
+{\footnotesize\ttfamily \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} Multiple\+Entry\+If\+Reduction\+::schedule\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The scheduling solution. 
+
+
+
+Definition at line 117 of file multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp.
+
+\mbox{\Hypertarget{classMultipleEntryIfReduction_af832434eeeac8bd15d9addb18c3207a0}\label{classMultipleEntryIfReduction_af832434eeeac8bd15d9addb18c3207a0}} 
+\index{Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}!sl@{sl}}
+\index{sl@{sl}!Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}}
+\subsubsection{\texorpdfstring{sl}{sl}}
+{\footnotesize\ttfamily \hyperlink{structstatement__list}{statement\+\_\+list}$\ast$ Multiple\+Entry\+If\+Reduction\+::sl \{nullptr\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The statement list. 
+
+
+
+Definition at line 111 of file multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp.
+
+
+
+Referenced by Initialize(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classMultipleEntryIfReduction_a485962c1f8aee78773d20954797d48dc}\label{classMultipleEntryIfReduction_a485962c1f8aee78773d20954797d48dc}} 
+\index{Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}!TM@{TM}}
+\index{TM@{TM}!Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}}
+\subsubsection{\texorpdfstring{TM}{TM}}
+{\footnotesize\ttfamily \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} Multiple\+Entry\+If\+Reduction\+::\+TM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The tree manager. 
+
+
+
+Definition at line 105 of file multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp.
+
+
+
+Referenced by Initialize(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classMultipleEntryIfReduction_ac438476de6947084100c78d2a93b9d72}\label{classMultipleEntryIfReduction_ac438476de6947084100c78d2a93b9d72}} 
+\index{Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}!tree\+\_\+man@{tree\+\_\+man}}
+\index{tree\+\_\+man@{tree\+\_\+man}!Multiple\+Entry\+If\+Reduction@{Multiple\+Entry\+If\+Reduction}}
+\subsubsection{\texorpdfstring{tree\+\_\+man}{tree\_man}}
+{\footnotesize\ttfamily \hyperlink{tree__manipulation_8hpp_a1a9460e3a2f9fc6a96cfd2f24cc9b2a5}{tree\+\_\+manipulation\+Ref} Multiple\+Entry\+If\+Reduction\+::tree\+\_\+man\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The tree manipulation. 
+
+
+
+Definition at line 108 of file multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp.
+
+
+
+Referenced by Initialize(), and Internal\+Exec().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{multiple__entry__if__reduction_8hpp}{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{multiple__entry__if__reduction_8cpp}{multiple\+\_\+entry\+\_\+if\+\_\+reduction.\+cpp}\end{DoxyCompactItemize}

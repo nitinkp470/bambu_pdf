@@ -1,0 +1,688 @@
+\hypertarget{classglpk__solver}{}\section{glpk\+\_\+solver Class Reference}
+\label{classglpk__solver}\index{glpk\+\_\+solver@{glpk\+\_\+solver}}
+
+
+Autoheader include.  
+
+
+
+
+{\ttfamily \#include $<$glpk\+\_\+solver.\+hpp$>$}
+
+
+
+Inheritance diagram for glpk\+\_\+solver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{d1/d07/classglpk__solver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for glpk\+\_\+solver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{d1/dd8/classglpk__solver__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classglpk__solver_aed422ea95479d03b421863fea89972f9}{glpk\+\_\+solver} ()
+\item 
+\hyperlink{classglpk__solver_a6fdba13c6b3d436d4b5c66a3246042bc}{$\sim$glpk\+\_\+solver} () override
+\item 
+void \hyperlink{classglpk__solver_a1b0f80ab919e5b0b702f050e52835c9a}{make} (int nvars) override
+\begin{DoxyCompactList}\small\item\em ??? \end{DoxyCompactList}\item 
+int \hyperlink{classglpk__solver_ab9787b0a1b68144bfd68fbf95a61ad51}{solve} () override
+\begin{DoxyCompactList}\small\item\em Solve the linear problem. \end{DoxyCompactList}\item 
+int \hyperlink{classglpk__solver_ad27b82487380811e19a1adc2628f8b07}{solve\+\_\+ilp} () override
+\begin{DoxyCompactList}\small\item\em Solve the integer linear problem. \end{DoxyCompactList}\item 
+void \hyperlink{classglpk__solver_aca58bff8b056f40912822a8063db14d6}{add\+\_\+row} (std\+::map$<$ int, double $>$ \&i\+\_\+coeffs, double i\+\_\+rhs, \hyperlink{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8e}{ilp\+\_\+sign} i\+\_\+sign, const std\+::string \&name) override
+\begin{DoxyCompactList}\small\item\em Add a constraint to the ilp formulation. \end{DoxyCompactList}\item 
+void \hyperlink{classglpk__solver_ac1a448337e6c26eae851c455091d699a}{objective\+\_\+add} (std\+::map$<$ int, double $>$ \&i\+\_\+coeffs, \hyperlink{classmeilp__solver_a2f719db6577d73007d942af7e6fe907c}{ilp\+\_\+dir} dir) override
+\begin{DoxyCompactList}\small\item\em Set the objective function. \end{DoxyCompactList}\item 
+void \hyperlink{classglpk__solver_a036f03d3c3fb34341846be7f077b565d}{set\+\_\+int} (int i) override
+\begin{DoxyCompactList}\small\item\em Set a variable to have only integer values. \end{DoxyCompactList}\item 
+void \hyperlink{classglpk__solver_a7164da0eb8d9fed8b7cefe548b2f6ee3}{get\+\_\+vars\+\_\+solution} (std\+::map$<$ int, double $>$ \&vars) const override
+\begin{DoxyCompactList}\small\item\em Return the solution of the problem. \end{DoxyCompactList}\item 
+int \hyperlink{classglpk__solver_ab92636d941e8052c7a24f8fc7de12eb8}{get\+\_\+number\+\_\+constraints} () const override
+\begin{DoxyCompactList}\small\item\em Return the number of constraints. \end{DoxyCompactList}\item 
+int \hyperlink{classglpk__solver_a331a217a8d51011ad68bfd97c6844778}{get\+\_\+number\+\_\+variables} () const override
+\begin{DoxyCompactList}\small\item\em Return the number of variables. \end{DoxyCompactList}\item 
+void \hyperlink{classglpk__solver_aaed1f108a4909b6697fe7a5483bb259a}{set\+\_\+col\+\_\+name} (int var, const std\+::string \&name) override
+\begin{DoxyCompactList}\small\item\em Set name of a variable (column) \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classglpk__solver_a00812df3ae9f05cbddd617425d8398da}{get\+\_\+col\+\_\+name} (int var) override
+\begin{DoxyCompactList}\small\item\em Get name of a variable (column) \end{DoxyCompactList}\item 
+int \hyperlink{classglpk__solver_a7f8f325055100b3b9a9d115b5bb2a613}{add\+\_\+empty\+\_\+column} () override
+\begin{DoxyCompactList}\small\item\em Add an empty column ??? \end{DoxyCompactList}\item 
+void \hyperlink{classglpk__solver_aaee0e321445ea081d26952772e4e2eef}{print\+\_\+to\+\_\+file} (const std\+::string \&file\+\_\+name) override
+\begin{DoxyCompactList}\small\item\em Print the problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classglpk__solver_a452c9cc528757df64c8afd83274e5ae5}{set\+\_\+all\+\_\+bounds} () override
+\begin{DoxyCompactList}\small\item\em Set the lower and upper of the variables using lower\+\_\+bounds and upper\+\_\+bounds. \end{DoxyCompactList}\item 
+void \hyperlink{classglpk__solver_a20a1d445c2a04318a6161207e2528d17}{set\+\_\+all\+\_\+bounds\+\_\+new} ()
+\begin{DoxyCompactList}\small\item\em Set the lower and upper of the variables using lower\+\_\+bounds and upper\+\_\+bounds. \end{DoxyCompactList}\item 
+void \hyperlink{classglpk__solver_a0a3f1dcdb065e42d04a45a6cd6864b90}{print} (std\+::ostream \&os) override
+\begin{DoxyCompactList}\small\item\em Print the problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glp\+\_\+prob $\ast$ \hyperlink{classglpk__solver_a2e88b7bd295decf6688a99db14cc0190}{lp}
+\item 
+glp\+\_\+smcp $\ast$ \hyperlink{classglpk__solver_a0466076baa150d2e2debe703ff8e38aa}{scp}
+\begin{DoxyCompactList}\small\item\em simplex\+\_\+control\+\_\+params \end{DoxyCompactList}\item 
+glp\+\_\+iocp $\ast$ \hyperlink{classglpk__solver_af5bd398e598ed681c555fabb31b5ca67}{iocp}
+\begin{DoxyCompactList}\small\item\em integer solver control parameter \end{DoxyCompactList}\item 
+glp\+\_\+bfcp $\ast$ \hyperlink{classglpk__solver_ae2ecbdbf0db6bd7ddcf7d7b04444c584}{bfcp}
+\begin{DoxyCompactList}\small\item\em basis factorization control parameters \end{DoxyCompactList}\item 
+bool \hyperlink{classglpk__solver_a060fdd06a6ecad04ab7dccb654e5fefe}{mip\+\_\+solution}
+\begin{DoxyCompactList}\small\item\em it is true when \hyperlink{classglpk__solver_ad27b82487380811e19a1adc2628f8b07}{solve\+\_\+ilp()} has been executed, false otherwise \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Autoheader include. 
+
+Definition at line 63 of file glpk\+\_\+solver.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classglpk__solver_aed422ea95479d03b421863fea89972f9}\label{classglpk__solver_aed422ea95479d03b421863fea89972f9}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{glpk\+\_\+solver()}{glpk\_solver()}}
+{\footnotesize\ttfamily glpk\+\_\+solver\+::glpk\+\_\+solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 71 of file glpk\+\_\+solver.\+cpp.
+
+\mbox{\Hypertarget{classglpk__solver_a6fdba13c6b3d436d4b5c66a3246042bc}\label{classglpk__solver_a6fdba13c6b3d436d4b5c66a3246042bc}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!````~glpk\+\_\+solver@{$\sim$glpk\+\_\+solver}}
+\index{````~glpk\+\_\+solver@{$\sim$glpk\+\_\+solver}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{$\sim$glpk\+\_\+solver()}{~glpk\_solver()}}
+{\footnotesize\ttfamily glpk\+\_\+solver\+::$\sim$glpk\+\_\+solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 75 of file glpk\+\_\+solver.\+cpp.
+
+
+
+References bfcp, iocp, lp, and scp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classglpk__solver_a7f8f325055100b3b9a9d115b5bb2a613}\label{classglpk__solver_a7f8f325055100b3b9a9d115b5bb2a613}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!add\+\_\+empty\+\_\+column@{add\+\_\+empty\+\_\+column}}
+\index{add\+\_\+empty\+\_\+column@{add\+\_\+empty\+\_\+column}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{add\+\_\+empty\+\_\+column()}{add\_empty\_column()}}
+{\footnotesize\ttfamily int glpk\+\_\+solver\+::add\+\_\+empty\+\_\+column (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Add an empty column ??? 
+
+
+
+Implements \hyperlink{classmeilp__solver_aa1fc55c72dd2b8cf1465dbf99e31127c}{meilp\+\_\+solver}.
+
+
+
+Definition at line 723 of file glpk\+\_\+solver.\+cpp.
+
+
+
+References lp.
+
+\mbox{\Hypertarget{classglpk__solver_aca58bff8b056f40912822a8063db14d6}\label{classglpk__solver_aca58bff8b056f40912822a8063db14d6}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!add\+\_\+row@{add\+\_\+row}}
+\index{add\+\_\+row@{add\+\_\+row}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{add\+\_\+row()}{add\_row()}}
+{\footnotesize\ttfamily void glpk\+\_\+solver\+::add\+\_\+row (\begin{DoxyParamCaption}\item[{std\+::map$<$ int, double $>$ \&}]{i\+\_\+coeffs,  }\item[{double}]{i\+\_\+rhs,  }\item[{\hyperlink{classmeilp__solver_a2cb689f3c242a34eb05cff99704a3e8e}{ilp\+\_\+sign}}]{i\+\_\+sign,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Add a constraint to the ilp formulation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+\_\+coeffs} & are the coefficients of the variables in the left part \\
+\hline
+{\em i\+\_\+rhs} & is the constant in the right part \\
+\hline
+{\em i\+\_\+sign} & is the operator in the constraints \\
+\hline
+{\em name} & is the name of the constraint \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classmeilp__solver_a844cb83be66ee0afe42edc2a60fd17cf}{meilp\+\_\+solver}.
+
+
+
+Definition at line 606 of file glpk\+\_\+solver.\+cpp.
+
+
+
+References meilp\+\_\+solver\+::copy(), meilp\+\_\+solver\+::E, meilp\+\_\+solver\+::G, meilp\+\_\+solver\+::int\+\_\+buffer, meilp\+\_\+solver\+::L, lp, meilp\+\_\+solver\+::real\+\_\+buffer, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d0a/classglpk__solver_aca58bff8b056f40912822a8063db14d6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classglpk__solver_a00812df3ae9f05cbddd617425d8398da}\label{classglpk__solver_a00812df3ae9f05cbddd617425d8398da}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!get\+\_\+col\+\_\+name@{get\+\_\+col\+\_\+name}}
+\index{get\+\_\+col\+\_\+name@{get\+\_\+col\+\_\+name}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{get\+\_\+col\+\_\+name()}{get\_col\_name()}}
+{\footnotesize\ttfamily std\+::string glpk\+\_\+solver\+::get\+\_\+col\+\_\+name (\begin{DoxyParamCaption}\item[{int}]{var }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get name of a variable (column) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the index of the variables return the name of the variable \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classmeilp__solver_a8bed22d1f0a2a87868f46089c57a6add}{meilp\+\_\+solver}.
+
+
+
+Definition at line 718 of file glpk\+\_\+solver.\+cpp.
+
+
+
+References lp.
+
+\mbox{\Hypertarget{classglpk__solver_ab92636d941e8052c7a24f8fc7de12eb8}\label{classglpk__solver_ab92636d941e8052c7a24f8fc7de12eb8}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!get\+\_\+number\+\_\+constraints@{get\+\_\+number\+\_\+constraints}}
+\index{get\+\_\+number\+\_\+constraints@{get\+\_\+number\+\_\+constraints}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{get\+\_\+number\+\_\+constraints()}{get\_number\_constraints()}}
+{\footnotesize\ttfamily int glpk\+\_\+solver\+::get\+\_\+number\+\_\+constraints (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return the number of constraints. 
+
+\begin{DoxyReturn}{Returns}
+the number of constraints 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmeilp__solver_a0045d972eeb07fca06d9ac59ef802a86}{meilp\+\_\+solver}.
+
+
+
+Definition at line 636 of file glpk\+\_\+solver.\+cpp.
+
+
+
+References lp.
+
+\mbox{\Hypertarget{classglpk__solver_a331a217a8d51011ad68bfd97c6844778}\label{classglpk__solver_a331a217a8d51011ad68bfd97c6844778}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!get\+\_\+number\+\_\+variables@{get\+\_\+number\+\_\+variables}}
+\index{get\+\_\+number\+\_\+variables@{get\+\_\+number\+\_\+variables}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{get\+\_\+number\+\_\+variables()}{get\_number\_variables()}}
+{\footnotesize\ttfamily int glpk\+\_\+solver\+::get\+\_\+number\+\_\+variables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return the number of variables. 
+
+\begin{DoxyReturn}{Returns}
+the number of variables 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmeilp__solver_abcbe8b799332dd2f29c042488e3655ab}{meilp\+\_\+solver}.
+
+
+
+Definition at line 641 of file glpk\+\_\+solver.\+cpp.
+
+
+
+References lp.
+
+\mbox{\Hypertarget{classglpk__solver_a7164da0eb8d9fed8b7cefe548b2f6ee3}\label{classglpk__solver_a7164da0eb8d9fed8b7cefe548b2f6ee3}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!get\+\_\+vars\+\_\+solution@{get\+\_\+vars\+\_\+solution}}
+\index{get\+\_\+vars\+\_\+solution@{get\+\_\+vars\+\_\+solution}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{get\+\_\+vars\+\_\+solution()}{get\_vars\_solution()}}
+{\footnotesize\ttfamily void glpk\+\_\+solver\+::get\+\_\+vars\+\_\+solution (\begin{DoxyParamCaption}\item[{std\+::map$<$ int, double $>$ \&}]{vars }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return the solution of the problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vars} & is where solution are stored \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classmeilp__solver_a2d89a5dd8ecf6e2e9dc290f7088f05e9}{meilp\+\_\+solver}.
+
+
+
+Definition at line 695 of file glpk\+\_\+solver.\+cpp.
+
+
+
+References lp, and mip\+\_\+solution.
+
+\mbox{\Hypertarget{classglpk__solver_a1b0f80ab919e5b0b702f050e52835c9a}\label{classglpk__solver_a1b0f80ab919e5b0b702f050e52835c9a}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!make@{make}}
+\index{make@{make}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{make()}{make()}}
+{\footnotesize\ttfamily void glpk\+\_\+solver\+::make (\begin{DoxyParamCaption}\item[{int}]{nvars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+??? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nvars} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classmeilp__solver_a8cde2beaa61da22aaec664f3f9a0d253}{meilp\+\_\+solver}.
+
+
+
+Definition at line 96 of file glpk\+\_\+solver.\+cpp.
+
+
+
+References bfcp, meilp\+\_\+solver\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, iocp, lp, meilp\+\_\+solver\+::\+M\+A\+X\+\_\+time, scp, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+\mbox{\Hypertarget{classglpk__solver_ac1a448337e6c26eae851c455091d699a}\label{classglpk__solver_ac1a448337e6c26eae851c455091d699a}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!objective\+\_\+add@{objective\+\_\+add}}
+\index{objective\+\_\+add@{objective\+\_\+add}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{objective\+\_\+add()}{objective\_add()}}
+{\footnotesize\ttfamily void glpk\+\_\+solver\+::objective\+\_\+add (\begin{DoxyParamCaption}\item[{std\+::map$<$ int, double $>$ \&}]{i\+\_\+coeffs,  }\item[{\hyperlink{classmeilp__solver_a2f719db6577d73007d942af7e6fe907c}{ilp\+\_\+dir}}]{dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the objective function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I\+\_\+coeffs} & are the coefficients of the variables in the objective function \\
+\hline
+{\em dir} & is the type of objective function \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classmeilp__solver_a6478c7167ffb9c270104ba07cc102c58}{meilp\+\_\+solver}.
+
+
+
+Definition at line 646 of file glpk\+\_\+solver.\+cpp.
+
+
+
+References lp, meilp\+\_\+solver\+::max, meilp\+\_\+solver\+::min, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+\mbox{\Hypertarget{classglpk__solver_a0a3f1dcdb065e42d04a45a6cd6864b90}\label{classglpk__solver_a0a3f1dcdb065e42d04a45a6cd6864b90}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!print@{print}}
+\index{print@{print}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void glpk\+\_\+solver\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Print the problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & is the stream on which problem has to be printed \\
+\hline
+\end{DoxyParams}
+Setting the bounds 
+
+Implements \hyperlink{classmeilp__solver_ae7889c65c08ee542bba4913b853e0714}{meilp\+\_\+solver}.
+
+
+
+Definition at line 668 of file glpk\+\_\+solver.\+cpp.
+
+
+
+References lp, and set\+\_\+all\+\_\+bounds().
+
+
+
+Referenced by solve(), and solve\+\_\+ilp().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{db/d0a/classglpk__solver_a0a3f1dcdb065e42d04a45a6cd6864b90_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{db/d0a/classglpk__solver_a0a3f1dcdb065e42d04a45a6cd6864b90_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classglpk__solver_aaee0e321445ea081d26952772e4e2eef}\label{classglpk__solver_aaee0e321445ea081d26952772e4e2eef}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!print\+\_\+to\+\_\+file@{print\+\_\+to\+\_\+file}}
+\index{print\+\_\+to\+\_\+file@{print\+\_\+to\+\_\+file}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{print\+\_\+to\+\_\+file()}{print\_to\_file()}}
+{\footnotesize\ttfamily void glpk\+\_\+solver\+::print\+\_\+to\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Print the problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & is the name of the file to be written \\
+\hline
+\end{DoxyParams}
+Setting the bounds 
+
+Implements \hyperlink{classmeilp__solver_af9f40eca7fda0fae7436fe7a24c589b7}{meilp\+\_\+solver}.
+
+
+
+Definition at line 679 of file glpk\+\_\+solver.\+cpp.
+
+
+
+References lp, and set\+\_\+all\+\_\+bounds().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{db/d0a/classglpk__solver_aaee0e321445ea081d26952772e4e2eef_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classglpk__solver_a452c9cc528757df64c8afd83274e5ae5}\label{classglpk__solver_a452c9cc528757df64c8afd83274e5ae5}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!set\+\_\+all\+\_\+bounds@{set\+\_\+all\+\_\+bounds}}
+\index{set\+\_\+all\+\_\+bounds@{set\+\_\+all\+\_\+bounds}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{set\+\_\+all\+\_\+bounds()}{set\_all\_bounds()}}
+{\footnotesize\ttfamily void glpk\+\_\+solver\+::set\+\_\+all\+\_\+bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Set the lower and upper of the variables using lower\+\_\+bounds and upper\+\_\+bounds. 
+
+
+
+Implements \hyperlink{classmeilp__solver_abf7a38326551db34e423396517198895}{meilp\+\_\+solver}.
+
+
+
+Definition at line 728 of file glpk\+\_\+solver.\+cpp.
+
+
+
+References meilp\+\_\+solver\+::lower\+\_\+bounds, lp, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and meilp\+\_\+solver\+::upper\+\_\+bounds.
+
+
+
+Referenced by print(), print\+\_\+to\+\_\+file(), solve(), and solve\+\_\+ilp().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d0a/classglpk__solver_a452c9cc528757df64c8afd83274e5ae5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classglpk__solver_a20a1d445c2a04318a6161207e2528d17}\label{classglpk__solver_a20a1d445c2a04318a6161207e2528d17}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!set\+\_\+all\+\_\+bounds\+\_\+new@{set\+\_\+all\+\_\+bounds\+\_\+new}}
+\index{set\+\_\+all\+\_\+bounds\+\_\+new@{set\+\_\+all\+\_\+bounds\+\_\+new}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{set\+\_\+all\+\_\+bounds\+\_\+new()}{set\_all\_bounds\_new()}}
+{\footnotesize\ttfamily void glpk\+\_\+solver\+::set\+\_\+all\+\_\+bounds\+\_\+new (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set the lower and upper of the variables using lower\+\_\+bounds and upper\+\_\+bounds. 
+
+\mbox{\Hypertarget{classglpk__solver_aaed1f108a4909b6697fe7a5483bb259a}\label{classglpk__solver_aaed1f108a4909b6697fe7a5483bb259a}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!set\+\_\+col\+\_\+name@{set\+\_\+col\+\_\+name}}
+\index{set\+\_\+col\+\_\+name@{set\+\_\+col\+\_\+name}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{set\+\_\+col\+\_\+name()}{set\_col\_name()}}
+{\footnotesize\ttfamily void glpk\+\_\+solver\+::set\+\_\+col\+\_\+name (\begin{DoxyParamCaption}\item[{int}]{var,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set name of a variable (column) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the index of the variables \\
+\hline
+{\em name} & is the name of the variable \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classmeilp__solver_a25c13b43b35a744bb0243fe6f8192244}{meilp\+\_\+solver}.
+
+
+
+Definition at line 712 of file glpk\+\_\+solver.\+cpp.
+
+
+
+References lp.
+
+\mbox{\Hypertarget{classglpk__solver_a036f03d3c3fb34341846be7f077b565d}\label{classglpk__solver_a036f03d3c3fb34341846be7f077b565d}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!set\+\_\+int@{set\+\_\+int}}
+\index{set\+\_\+int@{set\+\_\+int}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{set\+\_\+int()}{set\_int()}}
+{\footnotesize\ttfamily void glpk\+\_\+solver\+::set\+\_\+int (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set a variable to have only integer values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is the variables \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classmeilp__solver_aa9d0154f8daf67a0d815b76c6739546a}{meilp\+\_\+solver}.
+
+
+
+Definition at line 690 of file glpk\+\_\+solver.\+cpp.
+
+
+
+References lp.
+
+\mbox{\Hypertarget{classglpk__solver_ab9787b0a1b68144bfd68fbf95a61ad51}\label{classglpk__solver_ab9787b0a1b68144bfd68fbf95a61ad51}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!solve@{solve}}
+\index{solve@{solve}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily int glpk\+\_\+solver\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Solve the linear problem. 
+
+Setting the bounds
+
+Printing the problem 
+
+Implements \hyperlink{classmeilp__solver_ac042de10d65f792cc6ef6020b8451837}{meilp\+\_\+solver}.
+
+
+
+Definition at line 152 of file glpk\+\_\+solver.\+cpp.
+
+
+
+References meilp\+\_\+solver\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, lp, mip\+\_\+solution, print(), P\+R\+I\+N\+T\+\_\+\+M\+SG, scp, and set\+\_\+all\+\_\+bounds().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d0a/classglpk__solver_ab9787b0a1b68144bfd68fbf95a61ad51_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classglpk__solver_ad27b82487380811e19a1adc2628f8b07}\label{classglpk__solver_ad27b82487380811e19a1adc2628f8b07}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!solve\+\_\+ilp@{solve\+\_\+ilp}}
+\index{solve\+\_\+ilp@{solve\+\_\+ilp}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{solve\+\_\+ilp()}{solve\_ilp()}}
+{\footnotesize\ttfamily int glpk\+\_\+solver\+::solve\+\_\+ilp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Solve the integer linear problem. 
+
+Setting the bounds
+
+Printing the problem 
+
+Implements \hyperlink{classmeilp__solver_aec926409e78f416d3272cb8f3ef1e1c0}{meilp\+\_\+solver}.
+
+
+
+Definition at line 374 of file glpk\+\_\+solver.\+cpp.
+
+
+
+References bfcp, meilp\+\_\+solver\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, iocp, lp, mip\+\_\+solution, print(), P\+R\+I\+N\+T\+\_\+\+M\+SG, scp, and set\+\_\+all\+\_\+bounds().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d0a/classglpk__solver_ad27b82487380811e19a1adc2628f8b07_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classglpk__solver_ae2ecbdbf0db6bd7ddcf7d7b04444c584}\label{classglpk__solver_ae2ecbdbf0db6bd7ddcf7d7b04444c584}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!bfcp@{bfcp}}
+\index{bfcp@{bfcp}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{bfcp}{bfcp}}
+{\footnotesize\ttfamily glp\+\_\+bfcp$\ast$ glpk\+\_\+solver\+::bfcp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+basis factorization control parameters 
+
+
+
+Definition at line 81 of file glpk\+\_\+solver.\+hpp.
+
+
+
+Referenced by make(), solve\+\_\+ilp(), and $\sim$glpk\+\_\+solver().
+
+\mbox{\Hypertarget{classglpk__solver_af5bd398e598ed681c555fabb31b5ca67}\label{classglpk__solver_af5bd398e598ed681c555fabb31b5ca67}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!iocp@{iocp}}
+\index{iocp@{iocp}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{iocp}{iocp}}
+{\footnotesize\ttfamily glp\+\_\+iocp$\ast$ glpk\+\_\+solver\+::iocp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+integer solver control parameter 
+
+
+
+Definition at line 76 of file glpk\+\_\+solver.\+hpp.
+
+
+
+Referenced by make(), solve\+\_\+ilp(), and $\sim$glpk\+\_\+solver().
+
+\mbox{\Hypertarget{classglpk__solver_a2e88b7bd295decf6688a99db14cc0190}\label{classglpk__solver_a2e88b7bd295decf6688a99db14cc0190}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!lp@{lp}}
+\index{lp@{lp}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{lp}{lp}}
+{\footnotesize\ttfamily glp\+\_\+prob$\ast$ glpk\+\_\+solver\+::lp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 66 of file glpk\+\_\+solver.\+hpp.
+
+
+
+Referenced by add\+\_\+empty\+\_\+column(), add\+\_\+row(), get\+\_\+col\+\_\+name(), get\+\_\+number\+\_\+constraints(), get\+\_\+number\+\_\+variables(), get\+\_\+vars\+\_\+solution(), make(), objective\+\_\+add(), print(), print\+\_\+to\+\_\+file(), set\+\_\+all\+\_\+bounds(), set\+\_\+col\+\_\+name(), set\+\_\+int(), solve(), solve\+\_\+ilp(), and $\sim$glpk\+\_\+solver().
+
+\mbox{\Hypertarget{classglpk__solver_a060fdd06a6ecad04ab7dccb654e5fefe}\label{classglpk__solver_a060fdd06a6ecad04ab7dccb654e5fefe}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!mip\+\_\+solution@{mip\+\_\+solution}}
+\index{mip\+\_\+solution@{mip\+\_\+solution}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{mip\+\_\+solution}{mip\_solution}}
+{\footnotesize\ttfamily bool glpk\+\_\+solver\+::mip\+\_\+solution\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+it is true when \hyperlink{classglpk__solver_ad27b82487380811e19a1adc2628f8b07}{solve\+\_\+ilp()} has been executed, false otherwise 
+
+
+
+Definition at line 86 of file glpk\+\_\+solver.\+hpp.
+
+
+
+Referenced by get\+\_\+vars\+\_\+solution(), solve(), and solve\+\_\+ilp().
+
+\mbox{\Hypertarget{classglpk__solver_a0466076baa150d2e2debe703ff8e38aa}\label{classglpk__solver_a0466076baa150d2e2debe703ff8e38aa}} 
+\index{glpk\+\_\+solver@{glpk\+\_\+solver}!scp@{scp}}
+\index{scp@{scp}!glpk\+\_\+solver@{glpk\+\_\+solver}}
+\subsubsection{\texorpdfstring{scp}{scp}}
+{\footnotesize\ttfamily glp\+\_\+smcp$\ast$ glpk\+\_\+solver\+::scp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+simplex\+\_\+control\+\_\+params 
+
+
+
+Definition at line 71 of file glpk\+\_\+solver.\+hpp.
+
+
+
+Referenced by make(), solve(), solve\+\_\+ilp(), and $\sim$glpk\+\_\+solver().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/ilp/\hyperlink{glpk__solver_8hpp}{glpk\+\_\+solver.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/ilp/\hyperlink{glpk__solver_8cpp}{glpk\+\_\+solver.\+cpp}\end{DoxyCompactItemize}

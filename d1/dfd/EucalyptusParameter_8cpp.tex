@@ -1,0 +1,101 @@
+\hypertarget{EucalyptusParameter_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+Eucalyptus\+Parameter.cpp File Reference}
+\label{EucalyptusParameter_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+Eucalyptus\+Parameter.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+Eucalyptus\+Parameter.\+cpp}}
+
+
+This file contains the implementation of some methods for parameter parsing in Eucalyptus tool.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Eucalyptus\+Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}target\+\_\+device.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}language\+\_\+writer.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utility.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$getopt.\+h$>$}\newline
+Include dependency graph for Eucalyptus\+Parameter.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/db2/EucalyptusParameter_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{EucalyptusParameter_8cpp_a2c90df576f4ff9ff6a9f4b40bb3732e8}{T\+O\+O\+L\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE}~256
+\begin{DoxyCompactList}\small\item\em Autoheader include. \end{DoxyCompactList}\item 
+\#define \hyperlink{EucalyptusParameter_8cpp_ae47d1987b8e4be9252b57627263c24ca}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+R\+I\+ZE}~(1 + \hyperlink{SpiderParameter_8cpp_a2c90df576f4ff9ff6a9f4b40bb3732e8}{T\+O\+O\+L\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE})
+\item 
+\#define \hyperlink{EucalyptusParameter_8cpp_ae8e709eb426e7ec39c5160d750004a79}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+D\+A\+T\+A\+F\+I\+LE}~(1 + \hyperlink{EucalyptusParameter_8cpp_ae47d1987b8e4be9252b57627263c24ca}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+R\+I\+ZE})
+\item 
+\#define \hyperlink{EucalyptusParameter_8cpp_a5d2976139004e0d75b940c3c118b7ff2}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+S\+C\+R\+I\+P\+T\+F\+I\+LE}~(1 + \hyperlink{EucalyptusParameter_8cpp_ae8e709eb426e7ec39c5160d750004a79}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+D\+A\+T\+A\+F\+I\+LE})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the implementation of some methods for parameter parsing in Eucalyptus tool. 
+
+\begin{DoxyAuthor}{Author}
+Christian Pilato \href{mailto:pilato@elet.polimi.it}{\tt pilato@elet.\+polimi.\+it} 
+
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{EucalyptusParameter_8cpp_ae47d1987b8e4be9252b57627263c24ca}\label{EucalyptusParameter_8cpp_ae47d1987b8e4be9252b57627263c24ca}} 
+\index{Eucalyptus\+Parameter.\+cpp@{Eucalyptus\+Parameter.\+cpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+R\+I\+ZE@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+R\+I\+ZE}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+R\+I\+ZE@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+R\+I\+ZE}!Eucalyptus\+Parameter.\+cpp@{Eucalyptus\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+R\+I\+ZE}{INPUT\_OPT\_CHARACTERIZE}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+R\+I\+ZE~(1 + \hyperlink{SpiderParameter_8cpp_a2c90df576f4ff9ff6a9f4b40bb3732e8}{T\+O\+O\+L\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE})}
+
+
+
+Definition at line 56 of file Eucalyptus\+Parameter.\+cpp.
+
+
+
+Referenced by Eucalyptus\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{EucalyptusParameter_8cpp_ae8e709eb426e7ec39c5160d750004a79}\label{EucalyptusParameter_8cpp_ae8e709eb426e7ec39c5160d750004a79}} 
+\index{Eucalyptus\+Parameter.\+cpp@{Eucalyptus\+Parameter.\+cpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+D\+A\+T\+A\+F\+I\+LE@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+D\+A\+T\+A\+F\+I\+LE}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+D\+A\+T\+A\+F\+I\+LE@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+D\+A\+T\+A\+F\+I\+LE}!Eucalyptus\+Parameter.\+cpp@{Eucalyptus\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+D\+A\+T\+A\+F\+I\+LE}{INPUT\_OPT\_TARGET\_DATAFILE}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+D\+A\+T\+A\+F\+I\+LE~(1 + \hyperlink{EucalyptusParameter_8cpp_ae47d1987b8e4be9252b57627263c24ca}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+R\+I\+ZE})}
+
+
+
+Definition at line 57 of file Eucalyptus\+Parameter.\+cpp.
+
+
+
+Referenced by Eucalyptus\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{EucalyptusParameter_8cpp_a5d2976139004e0d75b940c3c118b7ff2}\label{EucalyptusParameter_8cpp_a5d2976139004e0d75b940c3c118b7ff2}} 
+\index{Eucalyptus\+Parameter.\+cpp@{Eucalyptus\+Parameter.\+cpp}!I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+S\+C\+R\+I\+P\+T\+F\+I\+LE@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+S\+C\+R\+I\+P\+T\+F\+I\+LE}}
+\index{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+S\+C\+R\+I\+P\+T\+F\+I\+LE@{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+S\+C\+R\+I\+P\+T\+F\+I\+LE}!Eucalyptus\+Parameter.\+cpp@{Eucalyptus\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+S\+C\+R\+I\+P\+T\+F\+I\+LE}{INPUT\_OPT\_TARGET\_SCRIPTFILE}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+S\+C\+R\+I\+P\+T\+F\+I\+LE~(1 + \hyperlink{EucalyptusParameter_8cpp_ae8e709eb426e7ec39c5160d750004a79}{I\+N\+P\+U\+T\+\_\+\+O\+P\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+D\+A\+T\+A\+F\+I\+LE})}
+
+
+
+Definition at line 58 of file Eucalyptus\+Parameter.\+cpp.
+
+
+
+Referenced by Eucalyptus\+Parameter\+::\+Exec().
+
+\mbox{\Hypertarget{EucalyptusParameter_8cpp_a2c90df576f4ff9ff6a9f4b40bb3732e8}\label{EucalyptusParameter_8cpp_a2c90df576f4ff9ff6a9f4b40bb3732e8}} 
+\index{Eucalyptus\+Parameter.\+cpp@{Eucalyptus\+Parameter.\+cpp}!T\+O\+O\+L\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE@{T\+O\+O\+L\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE}}
+\index{T\+O\+O\+L\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE@{T\+O\+O\+L\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE}!Eucalyptus\+Parameter.\+cpp@{Eucalyptus\+Parameter.\+cpp}}
+\subsubsection{\texorpdfstring{T\+O\+O\+L\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE}{TOOL\_OPT\_BASE}}
+{\footnotesize\ttfamily \#define T\+O\+O\+L\+\_\+\+O\+P\+T\+\_\+\+B\+A\+SE~256}
+
+
+
+Autoheader include. 
+
+Header include 
+
+Definition at line 55 of file Eucalyptus\+Parameter.\+cpp.
+

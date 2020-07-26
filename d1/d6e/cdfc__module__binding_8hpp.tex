@@ -1,0 +1,451 @@
+\hypertarget{cdfc__module__binding_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/module/cdfc\+\_\+module\+\_\+binding.hpp File Reference}
+\label{cdfc__module__binding_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/module/cdfc\+\_\+module\+\_\+binding.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/module/cdfc\+\_\+module\+\_\+binding.\+hpp}}
+
+
+Module binding based on the analysis of the control data flow chained graph.  
+
+
+{\ttfamily \#include \char`\"{}fu\+\_\+binding\+\_\+creator.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hash\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+Include dependency graph for cdfc\+\_\+module\+\_\+binding.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d09/cdfc__module__binding_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dea/cdfc__module__binding_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCDFCModuleBindingSpecialization}{C\+D\+F\+C\+Module\+Binding\+Specialization}
+\item 
+struct \hyperlink{structcdfc__graph__vertex__selector}{cdfc\+\_\+graph\+\_\+vertex\+\_\+selector$<$ Graph $>$}
+\begin{DoxyCompactList}\small\item\em Predicate functor object used to select the proper set of vertices. \end{DoxyCompactList}\item 
+struct \hyperlink{structcdfc__graph__edge__selector}{cdfc\+\_\+graph\+\_\+edge\+\_\+selector$<$ Graph $>$}
+\begin{DoxyCompactList}\small\item\em Predicate functor object used to select the proper set of edges. \end{DoxyCompactList}\item 
+struct \hyperlink{structedge__cdfc__selector}{edge\+\_\+cdfc\+\_\+selector}
+\item 
+struct \hyperlink{structCdfcEdgeInfo}{Cdfc\+Edge\+Info}
+\item 
+struct \hyperlink{structCdfcGraphInfo}{Cdfc\+Graph\+Info}
+\begin{DoxyCompactList}\small\item\em The info associated with a cdfc graph. \end{DoxyCompactList}\item 
+class \hyperlink{classCdfcGraphsCollection}{Cdfc\+Graphs\+Collection}
+\begin{DoxyCompactList}\small\item\em Cdfc collection of graphs. \end{DoxyCompactList}\item 
+class \hyperlink{classCdfcGraph}{Cdfc\+Graph}
+\begin{DoxyCompactList}\small\item\em Cdfc graph. \end{DoxyCompactList}\item 
+class \hyperlink{classcdfc__module__binding}{cdfc\+\_\+module\+\_\+binding}
+\begin{DoxyCompactList}\small\item\em Class managing the module allocation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\+::adjacency\+\_\+list$<$ boost\+::vecS, boost\+::vecS, boost\+::bidirectionalS, boost\+::property$<$ boost\+::vertex\+\_\+index\+\_\+t, \hyperlink{tutorial__pact__2019_2Introduction_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{std\+::size\+\_\+t} $>$, \hyperlink{structedge__cdfc__selector}{edge\+\_\+cdfc\+\_\+selector} $>$ \hyperlink{cdfc__module__binding_8hpp_a1ffe4bbb50647ae118e80eebd6733715}{boost\+\_\+cdfc\+\_\+graph}
+\begin{DoxyCompactList}\small\item\em bulk compatibility graph \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{cdfc__module__binding_8hpp_a1ffe4bbb50647ae118e80eebd6733715}{boost\+\_\+cdfc\+\_\+graph} $>$ \hyperlink{cdfc__module__binding_8hpp_a48a6fef943e133abf1395c40f13db2c9}{boost\+\_\+cdfc\+\_\+graph\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{cdfc__module__binding_8hpp_a1ffe4bbb50647ae118e80eebd6733715}{boost\+\_\+cdfc\+\_\+graph} $>$ \hyperlink{cdfc__module__binding_8hpp_af1229ccda25edfb8ae72ec64e43b0b9b}{boost\+\_\+cdfc\+\_\+graph\+Const\+Ref}
+\item 
+typedef boost\+::filtered\+\_\+graph$<$ \hyperlink{cdfc__module__binding_8hpp_a1ffe4bbb50647ae118e80eebd6733715}{boost\+\_\+cdfc\+\_\+graph}, \hyperlink{structcdfc__graph__edge__selector}{cdfc\+\_\+graph\+\_\+edge\+\_\+selector}$<$ \hyperlink{cdfc__module__binding_8hpp_a1ffe4bbb50647ae118e80eebd6733715}{boost\+\_\+cdfc\+\_\+graph} $>$, \hyperlink{structcdfc__graph__vertex__selector}{cdfc\+\_\+graph\+\_\+vertex\+\_\+selector}$<$ \hyperlink{cdfc__module__binding_8hpp_a1ffe4bbb50647ae118e80eebd6733715}{boost\+\_\+cdfc\+\_\+graph} $>$ $>$ \hyperlink{cdfc__module__binding_8hpp_a867096144b4bbf98ffb51903be7f3b9c}{cdfc\+\_\+graph}
+\begin{DoxyCompactList}\small\item\em compatibility graph \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{cdfc__module__binding_8hpp_a867096144b4bbf98ffb51903be7f3b9c}{cdfc\+\_\+graph} $>$ \hyperlink{cdfc__module__binding_8hpp_a4d5a9861526c80517d31e5be78dcf6c7}{cdfc\+\_\+graph\+Ref}
+\begin{DoxyCompactList}\small\item\em refcount version of cdfc\+\_\+graph \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{cdfc__module__binding_8hpp_a867096144b4bbf98ffb51903be7f3b9c}{cdfc\+\_\+graph} $>$ \hyperlink{cdfc__module__binding_8hpp_a3f94e2158e9a11882a35140b0365f1ad}{cdfc\+\_\+graph\+Const\+Ref}
+\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{cdfc__module__binding_8hpp_a867096144b4bbf98ffb51903be7f3b9c}{cdfc\+\_\+graph} $>$\+::vertex\+\_\+descriptor \hyperlink{cdfc__module__binding_8hpp_affa85aa857f7ad00e0ed52c20fcd863b}{cdfc\+\_\+vertex}
+\begin{DoxyCompactList}\small\item\em vertex definition \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{cdfc__module__binding_8hpp_a867096144b4bbf98ffb51903be7f3b9c}{cdfc\+\_\+graph} $>$\+::in\+\_\+edge\+\_\+iterator \hyperlink{cdfc__module__binding_8hpp_adfb4b34909b9242d69c5f2b05b9992f3}{cdfc\+\_\+in\+\_\+edge\+\_\+iterator}
+\begin{DoxyCompactList}\small\item\em in\+\_\+edge\+\_\+iterator definition. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{cdfc__module__binding_8hpp_a867096144b4bbf98ffb51903be7f3b9c}{cdfc\+\_\+graph} $>$\+::out\+\_\+edge\+\_\+iterator \hyperlink{cdfc__module__binding_8hpp_ad8e0776545c41713d3f882bcdfda1ce1}{cdfc\+\_\+out\+\_\+edge\+\_\+iterator}
+\begin{DoxyCompactList}\small\item\em out\+\_\+edge\+\_\+iterator definition. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{cdfc__module__binding_8hpp_a867096144b4bbf98ffb51903be7f3b9c}{cdfc\+\_\+graph} $>$\+::edge\+\_\+iterator \hyperlink{cdfc__module__binding_8hpp_a72d4e204b9e7ef3ad16fc9c02cd0c732}{cdfc\+\_\+edge\+\_\+iterator}
+\begin{DoxyCompactList}\small\item\em edge\+\_\+iterator definition. \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{cdfc__module__binding_8hpp_a867096144b4bbf98ffb51903be7f3b9c}{cdfc\+\_\+graph} $>$\+::edge\+\_\+descriptor \hyperlink{cdfc__module__binding_8hpp_a5ef126c5daeb3e4b387d23088ebce43e}{cdfc\+\_\+edge}
+\begin{DoxyCompactList}\small\item\em edge definition. \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structCdfcEdgeInfo}{Cdfc\+Edge\+Info} $>$ \hyperlink{cdfc__module__binding_8hpp_a74dc59fa16cf528d627eb1a3b34be306}{Cdfc\+Edge\+Info\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{structCdfcEdgeInfo}{Cdfc\+Edge\+Info} $>$ \hyperlink{cdfc__module__binding_8hpp_a0686d0b8dd408eaece6cf487f847ae30}{Cdfc\+Edge\+Info\+Const\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structCdfcGraphInfo}{Cdfc\+Graph\+Info} $>$ \hyperlink{cdfc__module__binding_8hpp_a3a026fb9b4dd23bdaed64df0cf832dd8}{Cdfc\+Graph\+Info\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{structCdfcGraphInfo}{Cdfc\+Graph\+Info} $>$ \hyperlink{cdfc__module__binding_8hpp_a4017bc03f99e3708453053c07c5a1e57}{Cdfc\+Graph\+Info\+Const\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classCdfcGraphsCollection}{Cdfc\+Graphs\+Collection} $>$ \hyperlink{cdfc__module__binding_8hpp_aa8241ce8a2e9cbbcde3671221c69040a}{Cdfc\+Graphs\+Collection\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{classCdfcGraphsCollection}{Cdfc\+Graphs\+Collection} $>$ \hyperlink{cdfc__module__binding_8hpp_a3ba914e7e23cc0a992eaca165be0eff0}{Cdfc\+Graphs\+Collection\+Const\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classCdfcGraph}{Cdfc\+Graph} $>$ \hyperlink{cdfc__module__binding_8hpp_ae09532440b0f870aa2edf819c5d75ea7}{Cdfc\+Graph\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{classCdfcGraph}{Cdfc\+Graph} $>$ \hyperlink{cdfc__module__binding_8hpp_a73883d2ef3f3e1e44ebdeecee59c2631}{Cdfc\+Graph\+Const\+Ref}
+\item 
+typedef \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, std\+::vector$<$ \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::pair$<$ \hyperlink{cdfc__module__binding_8hpp_aeea0bcf1696c7f3fa2891f0a8e106706}{conn\+\_\+code}, std\+::pair$<$ unsigned int, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ $>$ $>$ $>$ $>$ \hyperlink{cdfc__module__binding_8hpp_add937cbd74df34342adc0bb9231809a8}{connection\+\_\+relation}
+\begin{DoxyCompactList}\small\item\em put into relation an operation vertex with its sources op vertex -\/$>$ vector of port index -\/$>$ set of pair $<$ conn code, pair of $<$ tree\+\_\+var/storage\+\_\+value, null/vertex$>$ $>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{cdfc__module__binding_8hpp_aeea0bcf1696c7f3fa2891f0a8e106706}{conn\+\_\+code} \{ \hyperlink{cdfc__module__binding_8hpp_aeea0bcf1696c7f3fa2891f0a8e106706ac9289ea984a9cb9f3ce898039ce5a0ae}{no\+\_\+def}, 
+\hyperlink{cdfc__module__binding_8hpp_aeea0bcf1696c7f3fa2891f0a8e106706af6dcf183a80066d518b957e673a3b165}{no\+\_\+phi\+\_\+chained}, 
+\hyperlink{cdfc__module__binding_8hpp_aeea0bcf1696c7f3fa2891f0a8e106706a27e1cebf4464142bbb22282bb2368ac4}{no\+\_\+phi\+\_\+no\+\_\+chained}, 
+\hyperlink{cdfc__module__binding_8hpp_aeea0bcf1696c7f3fa2891f0a8e106706acc026b1a09b99cfe9d1eefb44256d4ec}{phi}
+ \}\begin{DoxyCompactList}\small\item\em connection code can be no\+\_\+def -\/ source is not defined because is a parameter or a constan value in this case only the tree\+\_\+var of the source is relevant no\+\_\+phi\+\_\+chained -\/ the source vertex has a defining operation (def\+\_\+op) that is chained with op\+\_\+vertex in addition to the tree\+\_\+var here we have to store even the def\+\_\+op vertex no\+\_\+phi\+\_\+no\+\_\+chained -\/ the source vertex has a defining operation that is not chained with op\+\_\+vertex here we have to store the def\+\_\+op vertex and the storage value id phi -\/ the source vertex is a phi here we need the storage value id and the def\+\_\+op vertex \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{cdfc__module__binding_8hpp_ac93788f9eb8bc858debb15f2b4012cac}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classAllocationInformation}{Allocation\+Information})
+\begin{DoxyCompactList}\small\item\em S\+TD include. \end{DoxyCompactList}\item 
+\hyperlink{cdfc__module__binding_8hpp_a482d0b10e074b94281bd7a96321fb9cc}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classfu__binding}{fu\+\_\+binding})
+\item 
+\hyperlink{cdfc__module__binding_8hpp_a25f86af8be89bae58b226a1d9c8d12f4}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classfu__binding}{fu\+\_\+binding})
+\item 
+\hyperlink{cdfc__module__binding_8hpp_ab18fb0c5b464e9927e4877452824e64c}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classCdfcGraph}{Cdfc\+Graph})
+\item 
+\hyperlink{cdfc__module__binding_8hpp_aed6251ce31927fa1d8a5985bbc098105}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structOpGraph}{Op\+Graph})
+\item 
+\hyperlink{cdfc__module__binding_8hpp_ac5c30465e53a2dee97960f0f406b8be7}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classParameter}{Parameter})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Module binding based on the analysis of the control data flow chained graph. 
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+\$\+Revision\$ 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+\$\+Date\$ 
+\end{DoxyDate}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_a1ffe4bbb50647ae118e80eebd6733715}\label{cdfc__module__binding_8hpp_a1ffe4bbb50647ae118e80eebd6733715}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!boost\+\_\+cdfc\+\_\+graph@{boost\+\_\+cdfc\+\_\+graph}}
+\index{boost\+\_\+cdfc\+\_\+graph@{boost\+\_\+cdfc\+\_\+graph}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{boost\+\_\+cdfc\+\_\+graph}{boost\_cdfc\_graph}}
+{\footnotesize\ttfamily typedef boost\+::adjacency\+\_\+list$<$boost\+::vecS, boost\+::vecS, boost\+::bidirectionalS, boost\+::property$<$boost\+::vertex\+\_\+index\+\_\+t, \hyperlink{tutorial__pact__2019_2Introduction_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{std\+::size\+\_\+t}$>$, \hyperlink{structedge__cdfc__selector}{edge\+\_\+cdfc\+\_\+selector}$>$ \hyperlink{cdfc__module__binding_8hpp_a1ffe4bbb50647ae118e80eebd6733715}{boost\+\_\+cdfc\+\_\+graph}}
+
+
+
+bulk compatibility graph 
+
+
+
+Definition at line 195 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_af1229ccda25edfb8ae72ec64e43b0b9b}\label{cdfc__module__binding_8hpp_af1229ccda25edfb8ae72ec64e43b0b9b}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!boost\+\_\+cdfc\+\_\+graph\+Const\+Ref@{boost\+\_\+cdfc\+\_\+graph\+Const\+Ref}}
+\index{boost\+\_\+cdfc\+\_\+graph\+Const\+Ref@{boost\+\_\+cdfc\+\_\+graph\+Const\+Ref}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{boost\+\_\+cdfc\+\_\+graph\+Const\+Ref}{boost\_cdfc\_graphConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{cdfc__module__binding_8hpp_a1ffe4bbb50647ae118e80eebd6733715}{boost\+\_\+cdfc\+\_\+graph}$>$ \hyperlink{cdfc__module__binding_8hpp_af1229ccda25edfb8ae72ec64e43b0b9b}{boost\+\_\+cdfc\+\_\+graph\+Const\+Ref}}
+
+
+
+Definition at line 198 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_a48a6fef943e133abf1395c40f13db2c9}\label{cdfc__module__binding_8hpp_a48a6fef943e133abf1395c40f13db2c9}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!boost\+\_\+cdfc\+\_\+graph\+Ref@{boost\+\_\+cdfc\+\_\+graph\+Ref}}
+\index{boost\+\_\+cdfc\+\_\+graph\+Ref@{boost\+\_\+cdfc\+\_\+graph\+Ref}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{boost\+\_\+cdfc\+\_\+graph\+Ref}{boost\_cdfc\_graphRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{cdfc__module__binding_8hpp_a1ffe4bbb50647ae118e80eebd6733715}{boost\+\_\+cdfc\+\_\+graph}$>$ \hyperlink{cdfc__module__binding_8hpp_a48a6fef943e133abf1395c40f13db2c9}{boost\+\_\+cdfc\+\_\+graph\+Ref}}
+
+
+
+Definition at line 197 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_a5ef126c5daeb3e4b387d23088ebce43e}\label{cdfc__module__binding_8hpp_a5ef126c5daeb3e4b387d23088ebce43e}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!cdfc\+\_\+edge@{cdfc\+\_\+edge}}
+\index{cdfc\+\_\+edge@{cdfc\+\_\+edge}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{cdfc\+\_\+edge}{cdfc\_edge}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{cdfc__module__binding_8hpp_a867096144b4bbf98ffb51903be7f3b9c}{cdfc\+\_\+graph}$>$\+::edge\+\_\+descriptor \hyperlink{cdfc__module__binding_8hpp_a5ef126c5daeb3e4b387d23088ebce43e}{cdfc\+\_\+edge}}
+
+
+
+edge definition. 
+
+
+
+Definition at line 215 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_a72d4e204b9e7ef3ad16fc9c02cd0c732}\label{cdfc__module__binding_8hpp_a72d4e204b9e7ef3ad16fc9c02cd0c732}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!cdfc\+\_\+edge\+\_\+iterator@{cdfc\+\_\+edge\+\_\+iterator}}
+\index{cdfc\+\_\+edge\+\_\+iterator@{cdfc\+\_\+edge\+\_\+iterator}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{cdfc\+\_\+edge\+\_\+iterator}{cdfc\_edge\_iterator}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{cdfc__module__binding_8hpp_a867096144b4bbf98ffb51903be7f3b9c}{cdfc\+\_\+graph}$>$\+::edge\+\_\+iterator \hyperlink{cdfc__module__binding_8hpp_a72d4e204b9e7ef3ad16fc9c02cd0c732}{cdfc\+\_\+edge\+\_\+iterator}}
+
+
+
+edge\+\_\+iterator definition. 
+
+
+
+Definition at line 213 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_a867096144b4bbf98ffb51903be7f3b9c}\label{cdfc__module__binding_8hpp_a867096144b4bbf98ffb51903be7f3b9c}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!cdfc\+\_\+graph@{cdfc\+\_\+graph}}
+\index{cdfc\+\_\+graph@{cdfc\+\_\+graph}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{cdfc\+\_\+graph}{cdfc\_graph}}
+{\footnotesize\ttfamily typedef boost\+::filtered\+\_\+graph$<$\hyperlink{cdfc__module__binding_8hpp_a1ffe4bbb50647ae118e80eebd6733715}{boost\+\_\+cdfc\+\_\+graph}, \hyperlink{structcdfc__graph__edge__selector}{cdfc\+\_\+graph\+\_\+edge\+\_\+selector}$<$\hyperlink{cdfc__module__binding_8hpp_a1ffe4bbb50647ae118e80eebd6733715}{boost\+\_\+cdfc\+\_\+graph}$>$, \hyperlink{structcdfc__graph__vertex__selector}{cdfc\+\_\+graph\+\_\+vertex\+\_\+selector}$<$\hyperlink{cdfc__module__binding_8hpp_a1ffe4bbb50647ae118e80eebd6733715}{boost\+\_\+cdfc\+\_\+graph}$>$ $>$ \hyperlink{cdfc__module__binding_8hpp_a867096144b4bbf98ffb51903be7f3b9c}{cdfc\+\_\+graph}}
+
+
+
+compatibility graph 
+
+
+
+Definition at line 201 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_a3f94e2158e9a11882a35140b0365f1ad}\label{cdfc__module__binding_8hpp_a3f94e2158e9a11882a35140b0365f1ad}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!cdfc\+\_\+graph\+Const\+Ref@{cdfc\+\_\+graph\+Const\+Ref}}
+\index{cdfc\+\_\+graph\+Const\+Ref@{cdfc\+\_\+graph\+Const\+Ref}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{cdfc\+\_\+graph\+Const\+Ref}{cdfc\_graphConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{cdfc__module__binding_8hpp_a867096144b4bbf98ffb51903be7f3b9c}{cdfc\+\_\+graph}$>$ \hyperlink{cdfc__module__binding_8hpp_a3f94e2158e9a11882a35140b0365f1ad}{cdfc\+\_\+graph\+Const\+Ref}}
+
+
+
+Definition at line 205 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_a4d5a9861526c80517d31e5be78dcf6c7}\label{cdfc__module__binding_8hpp_a4d5a9861526c80517d31e5be78dcf6c7}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!cdfc\+\_\+graph\+Ref@{cdfc\+\_\+graph\+Ref}}
+\index{cdfc\+\_\+graph\+Ref@{cdfc\+\_\+graph\+Ref}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{cdfc\+\_\+graph\+Ref}{cdfc\_graphRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{cdfc__module__binding_8hpp_a867096144b4bbf98ffb51903be7f3b9c}{cdfc\+\_\+graph}$>$ \hyperlink{cdfc__module__binding_8hpp_a4d5a9861526c80517d31e5be78dcf6c7}{cdfc\+\_\+graph\+Ref}}
+
+
+
+refcount version of cdfc\+\_\+graph 
+
+
+
+Definition at line 204 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_adfb4b34909b9242d69c5f2b05b9992f3}\label{cdfc__module__binding_8hpp_adfb4b34909b9242d69c5f2b05b9992f3}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!cdfc\+\_\+in\+\_\+edge\+\_\+iterator@{cdfc\+\_\+in\+\_\+edge\+\_\+iterator}}
+\index{cdfc\+\_\+in\+\_\+edge\+\_\+iterator@{cdfc\+\_\+in\+\_\+edge\+\_\+iterator}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{cdfc\+\_\+in\+\_\+edge\+\_\+iterator}{cdfc\_in\_edge\_iterator}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{cdfc__module__binding_8hpp_a867096144b4bbf98ffb51903be7f3b9c}{cdfc\+\_\+graph}$>$\+::in\+\_\+edge\+\_\+iterator \hyperlink{cdfc__module__binding_8hpp_adfb4b34909b9242d69c5f2b05b9992f3}{cdfc\+\_\+in\+\_\+edge\+\_\+iterator}}
+
+
+
+in\+\_\+edge\+\_\+iterator definition. 
+
+
+
+Definition at line 209 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_ad8e0776545c41713d3f882bcdfda1ce1}\label{cdfc__module__binding_8hpp_ad8e0776545c41713d3f882bcdfda1ce1}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!cdfc\+\_\+out\+\_\+edge\+\_\+iterator@{cdfc\+\_\+out\+\_\+edge\+\_\+iterator}}
+\index{cdfc\+\_\+out\+\_\+edge\+\_\+iterator@{cdfc\+\_\+out\+\_\+edge\+\_\+iterator}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{cdfc\+\_\+out\+\_\+edge\+\_\+iterator}{cdfc\_out\_edge\_iterator}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{cdfc__module__binding_8hpp_a867096144b4bbf98ffb51903be7f3b9c}{cdfc\+\_\+graph}$>$\+::out\+\_\+edge\+\_\+iterator \hyperlink{cdfc__module__binding_8hpp_ad8e0776545c41713d3f882bcdfda1ce1}{cdfc\+\_\+out\+\_\+edge\+\_\+iterator}}
+
+
+
+out\+\_\+edge\+\_\+iterator definition. 
+
+
+
+Definition at line 211 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_affa85aa857f7ad00e0ed52c20fcd863b}\label{cdfc__module__binding_8hpp_affa85aa857f7ad00e0ed52c20fcd863b}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!cdfc\+\_\+vertex@{cdfc\+\_\+vertex}}
+\index{cdfc\+\_\+vertex@{cdfc\+\_\+vertex}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{cdfc\+\_\+vertex}{cdfc\_vertex}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{cdfc__module__binding_8hpp_a867096144b4bbf98ffb51903be7f3b9c}{cdfc\+\_\+graph}$>$\+::vertex\+\_\+descriptor \hyperlink{cdfc__module__binding_8hpp_affa85aa857f7ad00e0ed52c20fcd863b}{cdfc\+\_\+vertex}}
+
+
+
+vertex definition 
+
+
+
+Definition at line 207 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_a0686d0b8dd408eaece6cf487f847ae30}\label{cdfc__module__binding_8hpp_a0686d0b8dd408eaece6cf487f847ae30}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!Cdfc\+Edge\+Info\+Const\+Ref@{Cdfc\+Edge\+Info\+Const\+Ref}}
+\index{Cdfc\+Edge\+Info\+Const\+Ref@{Cdfc\+Edge\+Info\+Const\+Ref}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{Cdfc\+Edge\+Info\+Const\+Ref}{CdfcEdgeInfoConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{structCdfcEdgeInfo}{Cdfc\+Edge\+Info}$>$ \hyperlink{cdfc__module__binding_8hpp_a0686d0b8dd408eaece6cf487f847ae30}{Cdfc\+Edge\+Info\+Const\+Ref}}
+
+
+
+Definition at line 228 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_a74dc59fa16cf528d627eb1a3b34be306}\label{cdfc__module__binding_8hpp_a74dc59fa16cf528d627eb1a3b34be306}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!Cdfc\+Edge\+Info\+Ref@{Cdfc\+Edge\+Info\+Ref}}
+\index{Cdfc\+Edge\+Info\+Ref@{Cdfc\+Edge\+Info\+Ref}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{Cdfc\+Edge\+Info\+Ref}{CdfcEdgeInfoRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structCdfcEdgeInfo}{Cdfc\+Edge\+Info}$>$ \hyperlink{cdfc__module__binding_8hpp_a74dc59fa16cf528d627eb1a3b34be306}{Cdfc\+Edge\+Info\+Ref}}
+
+
+
+Definition at line 227 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_a73883d2ef3f3e1e44ebdeecee59c2631}\label{cdfc__module__binding_8hpp_a73883d2ef3f3e1e44ebdeecee59c2631}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!Cdfc\+Graph\+Const\+Ref@{Cdfc\+Graph\+Const\+Ref}}
+\index{Cdfc\+Graph\+Const\+Ref@{Cdfc\+Graph\+Const\+Ref}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{Cdfc\+Graph\+Const\+Ref}{CdfcGraphConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{classCdfcGraph}{Cdfc\+Graph}$>$ \hyperlink{cdfc__module__binding_8hpp_a73883d2ef3f3e1e44ebdeecee59c2631}{Cdfc\+Graph\+Const\+Ref}}
+
+
+
+Definition at line 340 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_a4017bc03f99e3708453053c07c5a1e57}\label{cdfc__module__binding_8hpp_a4017bc03f99e3708453053c07c5a1e57}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!Cdfc\+Graph\+Info\+Const\+Ref@{Cdfc\+Graph\+Info\+Const\+Ref}}
+\index{Cdfc\+Graph\+Info\+Const\+Ref@{Cdfc\+Graph\+Info\+Const\+Ref}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{Cdfc\+Graph\+Info\+Const\+Ref}{CdfcGraphInfoConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{structCdfcGraphInfo}{Cdfc\+Graph\+Info}$>$ \hyperlink{cdfc__module__binding_8hpp_a4017bc03f99e3708453053c07c5a1e57}{Cdfc\+Graph\+Info\+Const\+Ref}}
+
+
+
+Definition at line 246 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_a3a026fb9b4dd23bdaed64df0cf832dd8}\label{cdfc__module__binding_8hpp_a3a026fb9b4dd23bdaed64df0cf832dd8}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!Cdfc\+Graph\+Info\+Ref@{Cdfc\+Graph\+Info\+Ref}}
+\index{Cdfc\+Graph\+Info\+Ref@{Cdfc\+Graph\+Info\+Ref}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{Cdfc\+Graph\+Info\+Ref}{CdfcGraphInfoRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structCdfcGraphInfo}{Cdfc\+Graph\+Info}$>$ \hyperlink{cdfc__module__binding_8hpp_a3a026fb9b4dd23bdaed64df0cf832dd8}{Cdfc\+Graph\+Info\+Ref}}
+
+
+
+Definition at line 245 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_ae09532440b0f870aa2edf819c5d75ea7}\label{cdfc__module__binding_8hpp_ae09532440b0f870aa2edf819c5d75ea7}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!Cdfc\+Graph\+Ref@{Cdfc\+Graph\+Ref}}
+\index{Cdfc\+Graph\+Ref@{Cdfc\+Graph\+Ref}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{Cdfc\+Graph\+Ref}{CdfcGraphRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classCdfcGraph}{Cdfc\+Graph}$>$ \hyperlink{cdfc__module__binding_8hpp_ae09532440b0f870aa2edf819c5d75ea7}{Cdfc\+Graph\+Ref}}
+
+
+
+Definition at line 339 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_a3ba914e7e23cc0a992eaca165be0eff0}\label{cdfc__module__binding_8hpp_a3ba914e7e23cc0a992eaca165be0eff0}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!Cdfc\+Graphs\+Collection\+Const\+Ref@{Cdfc\+Graphs\+Collection\+Const\+Ref}}
+\index{Cdfc\+Graphs\+Collection\+Const\+Ref@{Cdfc\+Graphs\+Collection\+Const\+Ref}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{Cdfc\+Graphs\+Collection\+Const\+Ref}{CdfcGraphsCollectionConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{classCdfcGraphsCollection}{Cdfc\+Graphs\+Collection}$>$ \hyperlink{cdfc__module__binding_8hpp_a3ba914e7e23cc0a992eaca165be0eff0}{Cdfc\+Graphs\+Collection\+Const\+Ref}}
+
+
+
+Definition at line 296 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_aa8241ce8a2e9cbbcde3671221c69040a}\label{cdfc__module__binding_8hpp_aa8241ce8a2e9cbbcde3671221c69040a}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!Cdfc\+Graphs\+Collection\+Ref@{Cdfc\+Graphs\+Collection\+Ref}}
+\index{Cdfc\+Graphs\+Collection\+Ref@{Cdfc\+Graphs\+Collection\+Ref}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{Cdfc\+Graphs\+Collection\+Ref}{CdfcGraphsCollectionRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classCdfcGraphsCollection}{Cdfc\+Graphs\+Collection}$>$ \hyperlink{cdfc__module__binding_8hpp_aa8241ce8a2e9cbbcde3671221c69040a}{Cdfc\+Graphs\+Collection\+Ref}}
+
+
+
+Definition at line 295 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_add937cbd74df34342adc0bb9231809a8}\label{cdfc__module__binding_8hpp_add937cbd74df34342adc0bb9231809a8}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!connection\+\_\+relation@{connection\+\_\+relation}}
+\index{connection\+\_\+relation@{connection\+\_\+relation}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{connection\+\_\+relation}{connection\_relation}}
+{\footnotesize\ttfamily typedef \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, std\+::vector$<$\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$std\+::pair$<$\hyperlink{cdfc__module__binding_8hpp_aeea0bcf1696c7f3fa2891f0a8e106706}{conn\+\_\+code}, std\+::pair$<$unsigned int, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ $>$ $>$ $>$ $>$ \hyperlink{cdfc__module__binding_8hpp_add937cbd74df34342adc0bb9231809a8}{connection\+\_\+relation}}
+
+
+
+put into relation an operation vertex with its sources op vertex -\/$>$ vector of port index -\/$>$ set of pair $<$ conn code, pair of $<$ tree\+\_\+var/storage\+\_\+value, null/vertex$>$ $>$ 
+
+
+
+Definition at line 361 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_aeea0bcf1696c7f3fa2891f0a8e106706}\label{cdfc__module__binding_8hpp_aeea0bcf1696c7f3fa2891f0a8e106706}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!conn\+\_\+code@{conn\+\_\+code}}
+\index{conn\+\_\+code@{conn\+\_\+code}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{conn\+\_\+code}{conn\_code}}
+{\footnotesize\ttfamily enum \hyperlink{cdfc__module__binding_8hpp_aeea0bcf1696c7f3fa2891f0a8e106706}{conn\+\_\+code}}
+
+
+
+connection code can be no\+\_\+def -\/ source is not defined because is a parameter or a constan value in this case only the tree\+\_\+var of the source is relevant no\+\_\+phi\+\_\+chained -\/ the source vertex has a defining operation (def\+\_\+op) that is chained with op\+\_\+vertex in addition to the tree\+\_\+var here we have to store even the def\+\_\+op vertex no\+\_\+phi\+\_\+no\+\_\+chained -\/ the source vertex has a defining operation that is not chained with op\+\_\+vertex here we have to store the def\+\_\+op vertex and the storage value id phi -\/ the source vertex is a phi here we need the storage value id and the def\+\_\+op vertex 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{no\+\_\+def@{no\+\_\+def}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!no\+\_\+def@{no\+\_\+def}}}\mbox{\Hypertarget{cdfc__module__binding_8hpp_aeea0bcf1696c7f3fa2891f0a8e106706ac9289ea984a9cb9f3ce898039ce5a0ae}\label{cdfc__module__binding_8hpp_aeea0bcf1696c7f3fa2891f0a8e106706ac9289ea984a9cb9f3ce898039ce5a0ae}} 
+no\+\_\+def&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{no\+\_\+phi\+\_\+chained@{no\+\_\+phi\+\_\+chained}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!no\+\_\+phi\+\_\+chained@{no\+\_\+phi\+\_\+chained}}}\mbox{\Hypertarget{cdfc__module__binding_8hpp_aeea0bcf1696c7f3fa2891f0a8e106706af6dcf183a80066d518b957e673a3b165}\label{cdfc__module__binding_8hpp_aeea0bcf1696c7f3fa2891f0a8e106706af6dcf183a80066d518b957e673a3b165}} 
+no\+\_\+phi\+\_\+chained&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{no\+\_\+phi\+\_\+no\+\_\+chained@{no\+\_\+phi\+\_\+no\+\_\+chained}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!no\+\_\+phi\+\_\+no\+\_\+chained@{no\+\_\+phi\+\_\+no\+\_\+chained}}}\mbox{\Hypertarget{cdfc__module__binding_8hpp_aeea0bcf1696c7f3fa2891f0a8e106706a27e1cebf4464142bbb22282bb2368ac4}\label{cdfc__module__binding_8hpp_aeea0bcf1696c7f3fa2891f0a8e106706a27e1cebf4464142bbb22282bb2368ac4}} 
+no\+\_\+phi\+\_\+no\+\_\+chained&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{phi@{phi}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!phi@{phi}}}\mbox{\Hypertarget{cdfc__module__binding_8hpp_aeea0bcf1696c7f3fa2891f0a8e106706acc026b1a09b99cfe9d1eefb44256d4ec}\label{cdfc__module__binding_8hpp_aeea0bcf1696c7f3fa2891f0a8e106706acc026b1a09b99cfe9d1eefb44256d4ec}} 
+phi&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 351 of file cdfc\+\_\+module\+\_\+binding.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_ac93788f9eb8bc858debb15f2b4012cac}\label{cdfc__module__binding_8hpp_ac93788f9eb8bc858debb15f2b4012cac}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classAllocationInformation}{Allocation\+Information}}]{ }\end{DoxyParamCaption})}
+
+
+
+S\+TD include. 
+
+S\+TL includes \mbox{\Hypertarget{cdfc__module__binding_8hpp_a482d0b10e074b94281bd7a96321fb9cc}\label{cdfc__module__binding_8hpp_a482d0b10e074b94281bd7a96321fb9cc}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classfu__binding}{fu\+\_\+binding}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_aed6251ce31927fa1d8a5985bbc098105}\label{cdfc__module__binding_8hpp_aed6251ce31927fa1d8a5985bbc098105}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structOpGraph}{Op\+Graph}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_ac5c30465e53a2dee97960f0f406b8be7}\label{cdfc__module__binding_8hpp_ac5c30465e53a2dee97960f0f406b8be7}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classParameter}{Parameter}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_a25f86af8be89bae58b226a1d9c8d12f4}\label{cdfc__module__binding_8hpp_a25f86af8be89bae58b226a1d9c8d12f4}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classfu__binding}{fu\+\_\+binding}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cdfc__module__binding_8hpp_ab18fb0c5b464e9927e4877452824e64c}\label{cdfc__module__binding_8hpp_ab18fb0c5b464e9927e4877452824e64c}} 
+\index{cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!cdfc\+\_\+module\+\_\+binding.\+hpp@{cdfc\+\_\+module\+\_\+binding.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classCdfcGraph}{Cdfc\+Graph}}]{ }\end{DoxyParamCaption})}
+

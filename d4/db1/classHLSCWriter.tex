@@ -1,0 +1,897 @@
+\hypertarget{classHLSCWriter}{}\section{H\+L\+S\+C\+Writer Class Reference}
+\label{classHLSCWriter}\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+
+
+{\ttfamily \#include $<$hls\+\_\+c\+\_\+writer.\+hpp$>$}
+
+
+
+Inheritance diagram for H\+L\+S\+C\+Writer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{dd/de9/classHLSCWriter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for H\+L\+S\+C\+Writer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d16/classHLSCWriter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHLSCWriter_a03b5e7b5c529d4de7a9ffbdf6146a604}{H\+L\+S\+C\+Writer} (const H\+L\+S\+C\+Backend\+Information\+Const\+Ref \hyperlink{classHLSCWriter_a885e26e7963d6efaa29b0ab47864ab8b}{hls\+\_\+c\+\_\+backend\+\_\+information}, const \hyperlink{application__manager_8hpp_abb985163a2a3fb747f6f03b1eaadbb44}{application\+\_\+manager\+Const\+Ref} \+\_\+\+AppM, const \hyperlink{instruction__writer_8hpp_a40ea26c38a2909ba48f88f997144b260}{Instruction\+Writer\+Ref} instruction\+\_\+writer, const \hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref} \hyperlink{classCWriter_ac6d016436e065c31dd5152a7cc30e507}{indented\+\_\+output\+\_\+stream}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classCWriter_a3555d61ac3540440862ed211800b80be}{Param}, bool \hyperlink{classCWriter_a8d5b6fe4a045d7e9ca997a566274cdb5}{verbose}=true)
+\begin{DoxyCompactList}\small\item\em Constructor of the class. \end{DoxyCompactList}\item 
+virtual \hyperlink{classHLSCWriter_aa59a87b90d09bd62acbf064d8378824c}{$\sim$\+H\+L\+S\+C\+Writer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classHLSCWriter_a5956dd91971c6fca646d0f714afd6795}{Write\+File} (const std\+::string \&file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Writes the final C file. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classHLSCWriter_ac7015936ef0ed0f6c31f8d7d4c3bd7fa}{Write\+Header} ()
+\begin{DoxyCompactList}\small\item\em Writes the header of the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classHLSCWriter_aa5a58a39f5515f512fd0ed0bebf3c908}{is\+\_\+all\+\_\+8zeros} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Check if a binary string is a sequence of zeros with length multiple of 8. \end{DoxyCompactList}\item 
+void \hyperlink{classHLSCWriter_a38348640f023a8c42330e4131263ece8}{Write\+Zeroed\+Bytes} (const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} n\+\_\+bytes)
+\begin{DoxyCompactList}\small\item\em Write printf statements to write n\+\_\+bytes bytes initialized to 0 for the memory initialization of the H\+DL simulator. \end{DoxyCompactList}\item 
+\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} \hyperlink{classHLSCWriter_a8fd01f9eda521085a428e6c46e4dc871}{Write\+Binary\+Memory\+Init} (const std\+::string \&binary\+\_\+string, const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} data\+\_\+size, std\+::string \&bits\+\_\+offset)
+\begin{DoxyCompactList}\small\item\em Takes a binary string and writes in the C file a series of statements used to print the equivalent memory initialization data for the H\+DL simulator. \end{DoxyCompactList}\item 
+void \hyperlink{classHLSCWriter_a5fdaae40bf4d22a922ce36aa8439f92b}{Write\+Testbench\+Global\+Vars} ()
+\begin{DoxyCompactList}\small\item\em Write global variables needed by the tesbench. \end{DoxyCompactList}\item 
+void \hyperlink{classHLSCWriter_a6eb118ed175fcbc9d2ab94c8e71ce420}{Write\+Testbench\+Helper\+Functions} ()
+\begin{DoxyCompactList}\small\item\em Write helper functions used by the testbench, like an \+\_\+\+\_\+exit() helper and some binary conversion functions used to print memory initialization information. \end{DoxyCompactList}\item 
+void \hyperlink{classHLSCWriter_a7b7f749a967e9b84acd3488413a31c02}{Write\+Param\+Decl} (const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} behavioral\+\_\+helper)
+\begin{DoxyCompactList}\small\item\em Write declaration of the top function parameters. \end{DoxyCompactList}\item 
+void \hyperlink{classHLSCWriter_ae9413ea7c35fc3eec7417fd0cf2a5b14}{Write\+Param\+Initialization} (const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} behavioral\+\_\+helper, const std\+::map$<$ std\+::string, std\+::string $>$ \&curr\+\_\+test\+\_\+vector, const unsigned int vector\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Initialize the parameters of the function. \end{DoxyCompactList}\item 
+void \hyperlink{classHLSCWriter_a65f826c5a0e6536a762985601e621250}{Write\+Testbench\+Function\+Call} (const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} behavioral\+\_\+helper)
+\begin{DoxyCompactList}\small\item\em Writes a call to the top function to be tested, using its parameters. \end{DoxyCompactList}\item 
+void \hyperlink{classHLSCWriter_acc0cead1cb01ad8d36eb6a6ead0e034a}{Write\+Expected\+Results} (const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} behavioral\+\_\+helper, const std\+::map$<$ std\+::string, std\+::string $>$ \&curr\+\_\+test\+\_\+vector, const unsigned v\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Write some print statements used to dump the results of each call to the tested function. \end{DoxyCompactList}\item 
+void \hyperlink{classHLSCWriter_ae0fce69eece5d49b74c5d615f169f17b}{Write\+Simulator\+Init\+Memory} (const unsigned int function\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Write some print statements used to dump the values used by the H\+DL to initialize the memory before the simulation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classHLSCWriter_a05886037980c7ec5aa2df5880081682c}{Write\+Extra\+Init\+Code} ()
+\begin{DoxyCompactList}\small\item\em Write additional initialization code needed by subclasses. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classHLSCWriter_a3b1718b9bd4cf44bf5c9e73af2b25986}{Write\+Extra\+Code\+Before\+Every\+Main\+Call} ()
+\item 
+void \hyperlink{classHLSCWriter_a169bdc6b181d083f9e4eb033f2da65da}{Write\+Main\+Testbench} ()
+\begin{DoxyCompactList}\small\item\em Writes the \hyperlink{test__degree__coloring_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main()} of the testbench C program. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classHLSCWriter_a6ea23b34e9d1bde20adbef400db94c6f}{Write\+Global\+Declarations} ()
+\begin{DoxyCompactList}\small\item\em Writes the global declarations. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classHLSCWriter_a2379e428afbccc4b235dca4ae28dbaf5}{Write\+Function\+Implementation} (unsigned int function\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Write function implementation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classHLSCWriter_a7261192f62610bd053e5c35361ae1054}{Write\+Builtin\+Wait\+Call} ()
+\begin{DoxyCompactList}\small\item\em Writes implementation of \+\_\+\+\_\+builtin\+\_\+wait\+\_\+call. \end{DoxyCompactList}\item 
+void \hyperlink{classHLSCWriter_a878ff97c2a1428574b641d4ef2704b76}{Write\+Param\+In\+Memory} (const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} behavioral\+\_\+helper, const std\+::string \&param, const unsigned int type, const unsigned int nesting\+\_\+level, bool input)
+\begin{DoxyCompactList}\small\item\em Write the print to fill values.\+txt with values for t parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classHLSCWriter_a7012939ffcb42f0ae795006e4f7fd6aa}{flag\+\_\+cpp}
+\begin{DoxyCompactList}\small\item\em True if the input code is c++. \end{DoxyCompactList}\item 
+const H\+L\+S\+C\+Backend\+Information\+Const\+Ref \hyperlink{classHLSCWriter_a885e26e7963d6efaa29b0ab47864ab8b}{hls\+\_\+c\+\_\+backend\+\_\+information}
+\begin{DoxyCompactList}\small\item\em Backend information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 51 of file hls\+\_\+c\+\_\+writer.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHLSCWriter_a03b5e7b5c529d4de7a9ffbdf6146a604}\label{classHLSCWriter_a03b5e7b5c529d4de7a9ffbdf6146a604}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{H\+L\+S\+C\+Writer()}{HLSCWriter()}}
+{\footnotesize\ttfamily H\+L\+S\+C\+Writer\+::\+H\+L\+S\+C\+Writer (\begin{DoxyParamCaption}\item[{const H\+L\+S\+C\+Backend\+Information\+Const\+Ref}]{hls\+\_\+c\+\_\+backend\+\_\+information,  }\item[{const \hyperlink{application__manager_8hpp_abb985163a2a3fb747f6f03b1eaadbb44}{application\+\_\+manager\+Const\+Ref}}]{\+\_\+\+AppM,  }\item[{const \hyperlink{instruction__writer_8hpp_a40ea26c38a2909ba48f88f997144b260}{Instruction\+Writer\+Ref}}]{instruction\+\_\+writer,  }\item[{const \hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref}}]{indented\+\_\+output\+\_\+stream,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Constructor of the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hls\+\_\+c\+\_\+backend\+\_\+information} & is the information about backend \\
+\hline
+{\em AppM} & is the manager of the application \\
+\hline
+{\em instruction\+\_\+writer} & is the instruction writer to use to print the single instruction \\
+\hline
+{\em indented\+\_\+output\+\_\+stream} & is the stream where code has to be printed \\
+\hline
+{\em Param} & is the set of parameters \\
+\hline
+{\em verbose} & tells if annotations \\
+\hline
+\end{DoxyParams}
+include from cpp 
+
+Definition at line 102 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References C\+Writer\+::debug\+\_\+level, flag\+\_\+cpp, G\+E\+T\+\_\+\+C\+L\+A\+SS, C\+Writer\+::\+Param, C\+Writer\+::\+TM, and $\sim$\+H\+L\+S\+C\+Writer().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a03b5e7b5c529d4de7a9ffbdf6146a604_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLSCWriter_aa59a87b90d09bd62acbf064d8378824c}\label{classHLSCWriter_aa59a87b90d09bd62acbf064d8378824c}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!````~H\+L\+S\+C\+Writer@{$\sim$\+H\+L\+S\+C\+Writer}}
+\index{````~H\+L\+S\+C\+Writer@{$\sim$\+H\+L\+S\+C\+Writer}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{$\sim$\+H\+L\+S\+C\+Writer()}{~HLSCWriter()}}
+{\footnotesize\ttfamily H\+L\+S\+C\+Writer\+::$\sim$\+H\+L\+S\+C\+Writer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by H\+L\+S\+C\+Writer().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_aa59a87b90d09bd62acbf064d8378824c_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classHLSCWriter_aa5a58a39f5515f512fd0ed0bebf3c908}\label{classHLSCWriter_aa5a58a39f5515f512fd0ed0bebf3c908}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!is\+\_\+all\+\_\+8zeros@{is\+\_\+all\+\_\+8zeros}}
+\index{is\+\_\+all\+\_\+8zeros@{is\+\_\+all\+\_\+8zeros}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{is\+\_\+all\+\_\+8zeros()}{is\_all\_8zeros()}}
+{\footnotesize\ttfamily bool H\+L\+S\+C\+Writer\+::is\+\_\+all\+\_\+8zeros (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Check if a binary string is a sequence of zeros with length multiple of 8. 
+
+
+
+Definition at line 1230 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+Referenced by Write\+Binary\+Memory\+Init().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_aa5a58a39f5515f512fd0ed0bebf3c908_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLSCWriter_a8fd01f9eda521085a428e6c46e4dc871}\label{classHLSCWriter_a8fd01f9eda521085a428e6c46e4dc871}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!Write\+Binary\+Memory\+Init@{Write\+Binary\+Memory\+Init}}
+\index{Write\+Binary\+Memory\+Init@{Write\+Binary\+Memory\+Init}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Binary\+Memory\+Init()}{WriteBinaryMemoryInit()}}
+{\footnotesize\ttfamily \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} H\+L\+S\+C\+Writer\+::\+Write\+Binary\+Memory\+Init (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{binary\+\_\+string,  }\item[{const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{data\+\_\+size,  }\item[{std\+::string \&}]{bits\+\_\+offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Takes a binary string and writes in the C file a series of statements used to print the equivalent memory initialization data for the H\+DL simulator. 
+
+
+
+Definition at line 1181 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), C\+Writer\+::indented\+\_\+output\+\_\+stream, is\+\_\+all\+\_\+8zeros(), and Write\+Zeroed\+Bytes().
+
+
+
+Referenced by Write\+Simulator\+Init\+Memory().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a8fd01f9eda521085a428e6c46e4dc871_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a8fd01f9eda521085a428e6c46e4dc871_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLSCWriter_a7261192f62610bd053e5c35361ae1054}\label{classHLSCWriter_a7261192f62610bd053e5c35361ae1054}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!Write\+Builtin\+Wait\+Call@{Write\+Builtin\+Wait\+Call}}
+\index{Write\+Builtin\+Wait\+Call@{Write\+Builtin\+Wait\+Call}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Builtin\+Wait\+Call()}{WriteBuiltinWaitCall()}}
+{\footnotesize\ttfamily void H\+L\+S\+C\+Writer\+::\+Write\+Builtin\+Wait\+Call (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Writes implementation of \+\_\+\+\_\+builtin\+\_\+wait\+\_\+call. 
+
+Do nothing 
+
+Reimplemented from \hyperlink{classCWriter_ad3407e20cd7eb648efe844771d3fe80f}{C\+Writer}.
+
+
+
+Reimplemented in \hyperlink{classDiscrepancyAnalysisCWriter_a614b57f4cd76435c0b7266ac677145d5}{Discrepancy\+Analysis\+C\+Writer}.
+
+
+
+Definition at line 1246 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+\mbox{\Hypertarget{classHLSCWriter_acc0cead1cb01ad8d36eb6a6ead0e034a}\label{classHLSCWriter_acc0cead1cb01ad8d36eb6a6ead0e034a}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!Write\+Expected\+Results@{Write\+Expected\+Results}}
+\index{Write\+Expected\+Results@{Write\+Expected\+Results}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Expected\+Results()}{WriteExpectedResults()}}
+{\footnotesize\ttfamily void H\+L\+S\+C\+Writer\+::\+Write\+Expected\+Results (\begin{DoxyParamCaption}\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{behavioral\+\_\+helper,  }\item[{const std\+::map$<$ std\+::string, std\+::string $>$ \&}]{curr\+\_\+test\+\_\+vector,  }\item[{const unsigned}]{v\+\_\+idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Write some print statements used to dump the results of each call to the tested function. 
+
+The output is in a format that is recognized by the H\+DL testbench generation F\+I\+X\+ME\+: for c++ code the old code is still used
+
+Retrieve the space to be reserved in memory 
+
+Definition at line 586 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References ac\+\_\+type\+\_\+bitwidth(), Indented\+Output\+Stream\+::\+Append(), tree\+\_\+helper\+::\+C\+Get\+Pointed\+Type(), C\+Writer\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, flag\+\_\+cpp, tree\+\_\+helper\+::get\+\_\+array\+\_\+data\+\_\+bitsize(), tree\+\_\+helper\+::get\+\_\+array\+\_\+num\+\_\+elements(), Behavioral\+Helper\+::get\+\_\+function\+\_\+index(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+helper\+::get\+\_\+mangled\+\_\+fname(), Behavioral\+Helper\+::get\+\_\+parameters(), tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), Behavioral\+Helper\+::\+Get\+Elements(), Behavioral\+Helper\+::\+Get\+Function\+Return\+Type(), hls\+\_\+c\+\_\+backend\+\_\+information, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, C\+Writer\+::indented\+\_\+output\+\_\+stream, I\+N\+F\+E\+R\+R\+E\+D\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+ON, Behavioral\+Helper\+::is\+\_\+a\+\_\+pointer(), Behavioral\+Helper\+::is\+\_\+a\+\_\+struct(), Behavioral\+Helper\+::is\+\_\+an\+\_\+array(), Behavioral\+Helper\+::is\+\_\+an\+\_\+union(), Behavioral\+Helper\+::is\+\_\+real(), C\+Writer\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM, C\+Writer\+::\+Param, Behavioral\+Helper\+::print\+\_\+type(), Behavioral\+Helper\+::\+Print\+Variable(), R\+E\+T\+U\+R\+N\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, tree\+\_\+helper\+::size(), tree\+\_\+helper\+::\+Size(), Split\+String(), S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, C\+Writer\+::\+TM, and Write\+Param\+In\+Memory().
+
+
+
+Referenced by Write\+Main\+Testbench().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_acc0cead1cb01ad8d36eb6a6ead0e034a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_acc0cead1cb01ad8d36eb6a6ead0e034a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLSCWriter_a3b1718b9bd4cf44bf5c9e73af2b25986}\label{classHLSCWriter_a3b1718b9bd4cf44bf5c9e73af2b25986}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!Write\+Extra\+Code\+Before\+Every\+Main\+Call@{Write\+Extra\+Code\+Before\+Every\+Main\+Call}}
+\index{Write\+Extra\+Code\+Before\+Every\+Main\+Call@{Write\+Extra\+Code\+Before\+Every\+Main\+Call}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Extra\+Code\+Before\+Every\+Main\+Call()}{WriteExtraCodeBeforeEveryMainCall()}}
+{\footnotesize\ttfamily void H\+L\+S\+C\+Writer\+::\+Write\+Extra\+Code\+Before\+Every\+Main\+Call (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \hyperlink{classDiscrepancyAnalysisCWriter_a174c35dd3c04952215d5a5f9aa0df0c9}{Discrepancy\+Analysis\+C\+Writer}.
+
+
+
+Definition at line 1082 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+Referenced by Write\+Main\+Testbench().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a3b1718b9bd4cf44bf5c9e73af2b25986_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLSCWriter_a05886037980c7ec5aa2df5880081682c}\label{classHLSCWriter_a05886037980c7ec5aa2df5880081682c}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!Write\+Extra\+Init\+Code@{Write\+Extra\+Init\+Code}}
+\index{Write\+Extra\+Init\+Code@{Write\+Extra\+Init\+Code}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Extra\+Init\+Code()}{WriteExtraInitCode()}}
+{\footnotesize\ttfamily void H\+L\+S\+C\+Writer\+::\+Write\+Extra\+Init\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Write additional initialization code needed by subclasses. 
+
+
+
+Reimplemented in \hyperlink{classDiscrepancyAnalysisCWriter_a4372f752e67aea0e47542ee355932da2}{Discrepancy\+Analysis\+C\+Writer}.
+
+
+
+Definition at line 1078 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+Referenced by Write\+Main\+Testbench().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a05886037980c7ec5aa2df5880081682c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLSCWriter_a5956dd91971c6fca646d0f714afd6795}\label{classHLSCWriter_a5956dd91971c6fca646d0f714afd6795}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!Write\+File@{Write\+File}}
+\index{Write\+File@{Write\+File}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+File()}{WriteFile()}}
+{\footnotesize\ttfamily void H\+L\+S\+C\+Writer\+::\+Write\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Writes the final C file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & is the name of the file to be generated \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classCWriter_ad526446c6dd856accaca4a90b3a64f25}{C\+Writer}.
+
+
+
+Definition at line 1158 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References C\+Writer\+::\+AppM, Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, C\+Writer\+::indented\+\_\+output\+\_\+stream, C\+Writer\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, Indented\+Output\+Stream\+::\+Write\+File(), and Write\+Main\+Testbench().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d4/db1/classHLSCWriter_a5956dd91971c6fca646d0f714afd6795_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLSCWriter_a2379e428afbccc4b235dca4ae28dbaf5}\label{classHLSCWriter_a2379e428afbccc4b235dca4ae28dbaf5}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!Write\+Function\+Implementation@{Write\+Function\+Implementation}}
+\index{Write\+Function\+Implementation@{Write\+Function\+Implementation}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Function\+Implementation()}{WriteFunctionImplementation()}}
+{\footnotesize\ttfamily void H\+L\+S\+C\+Writer\+::\+Write\+Function\+Implementation (\begin{DoxyParamCaption}\item[{unsigned int}]{function\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Write function implementation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function\+\_\+id} & is the index of the function to be written \\
+\hline
+\end{DoxyParams}
+Do nothing 
+
+Reimplemented from \hyperlink{classCWriter_a3a050cfd9987eb7a7227865cf40db91d}{C\+Writer}.
+
+
+
+Reimplemented in \hyperlink{classDiscrepancyAnalysisCWriter_a544a8f99622f86cfbcc2eae9a83d4e64}{Discrepancy\+Analysis\+C\+Writer}.
+
+
+
+Definition at line 1241 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+\mbox{\Hypertarget{classHLSCWriter_a6ea23b34e9d1bde20adbef400db94c6f}\label{classHLSCWriter_a6ea23b34e9d1bde20adbef400db94c6f}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!Write\+Global\+Declarations@{Write\+Global\+Declarations}}
+\index{Write\+Global\+Declarations@{Write\+Global\+Declarations}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Global\+Declarations()}{WriteGlobalDeclarations()}}
+{\footnotesize\ttfamily void H\+L\+S\+C\+Writer\+::\+Write\+Global\+Declarations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Writes the global declarations. 
+
+
+
+Reimplemented from \hyperlink{classCWriter_a42b2b558bd1efb2dc637664f5df4df28}{C\+Writer}.
+
+
+
+Reimplemented in \hyperlink{classDiscrepancyAnalysisCWriter_a33b017d849ad5c03561e0bd2a72a37a9}{Discrepancy\+Analysis\+C\+Writer}.
+
+
+
+Definition at line 155 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References C\+Writer\+::instr\+Writer, Write\+Testbench\+Global\+Vars(), and Write\+Testbench\+Helper\+Functions().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a6ea23b34e9d1bde20adbef400db94c6f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLSCWriter_ac7015936ef0ed0f6c31f8d7d4c3bd7fa}\label{classHLSCWriter_ac7015936ef0ed0f6c31f8d7d4c3bd7fa}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!Write\+Header@{Write\+Header}}
+\index{Write\+Header@{Write\+Header}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Header()}{WriteHeader()}}
+{\footnotesize\ttfamily void H\+L\+S\+C\+Writer\+::\+Write\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Writes the header of the file. 
+
+
+
+Reimplemented from \hyperlink{classCWriter_a04b8381e64ef2e49ec7cfc308e10e10a}{C\+Writer}.
+
+
+
+Definition at line 113 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), C\+Writer\+::\+AppM, flag\+\_\+cpp, tree\+\_\+helper\+::get\+\_\+mangled\+\_\+fname(), hls\+\_\+c\+\_\+backend\+\_\+information, C\+Writer\+::indented\+\_\+output\+\_\+stream, C\+Writer\+::\+Param, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and C\+Writer\+::\+TM.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_ac7015936ef0ed0f6c31f8d7d4c3bd7fa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLSCWriter_a169bdc6b181d083f9e4eb033f2da65da}\label{classHLSCWriter_a169bdc6b181d083f9e4eb033f2da65da}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!Write\+Main\+Testbench@{Write\+Main\+Testbench}}
+\index{Write\+Main\+Testbench@{Write\+Main\+Testbench}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Main\+Testbench()}{WriteMainTestbench()}}
+{\footnotesize\ttfamily void H\+L\+S\+C\+Writer\+::\+Write\+Main\+Testbench (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Writes the \hyperlink{test__degree__coloring_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main()} of the testbench C program. 
+
+
+
+Definition at line 1086 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), C\+Writer\+::\+AppM, C\+Writer\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), Behavioral\+Helper\+::\+Get\+Function\+Return\+Type(), hls\+\_\+c\+\_\+backend\+\_\+information, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, C\+Writer\+::indented\+\_\+output\+\_\+stream, tree\+\_\+helper\+::is\+\_\+a\+\_\+vector(), Behavioral\+Helper\+::print\+\_\+type(), R\+E\+T\+U\+R\+N\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, C\+Writer\+::\+TM, Write\+Expected\+Results(), Write\+Extra\+Code\+Before\+Every\+Main\+Call(), Write\+Extra\+Init\+Code(), Write\+Param\+Decl(), Write\+Param\+Initialization(), Write\+Simulator\+Init\+Memory(), and Write\+Testbench\+Function\+Call().
+
+
+
+Referenced by Write\+File().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d4/db1/classHLSCWriter_a169bdc6b181d083f9e4eb033f2da65da_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a169bdc6b181d083f9e4eb033f2da65da_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLSCWriter_a7b7f749a967e9b84acd3488413a31c02}\label{classHLSCWriter_a7b7f749a967e9b84acd3488413a31c02}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!Write\+Param\+Decl@{Write\+Param\+Decl}}
+\index{Write\+Param\+Decl@{Write\+Param\+Decl}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Param\+Decl()}{WriteParamDecl()}}
+{\footnotesize\ttfamily void H\+L\+S\+C\+Writer\+::\+Write\+Param\+Decl (\begin{DoxyParamCaption}\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{behavioral\+\_\+helper }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Write declaration of the top function parameters. 
+
+Declaration and initialization are separate statements. 
+
+Definition at line 295 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), flag\+\_\+cpp, Behavioral\+Helper\+::get\+\_\+function\+\_\+index(), Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+helper\+::get\+\_\+mangled\+\_\+fname(), Behavioral\+Helper\+::get\+\_\+parameters(), Behavioral\+Helper\+::get\+\_\+type(), hls\+\_\+c\+\_\+backend\+\_\+information, C\+Writer\+::indented\+\_\+output\+\_\+stream, Behavioral\+Helper\+::is\+\_\+a\+\_\+pointer(), tree\+\_\+helper\+::is\+\_\+a\+\_\+vector(), Behavioral\+Helper\+::print\+\_\+type(), tree\+\_\+helper\+::print\+\_\+type(), Behavioral\+Helper\+::\+Print\+Variable(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, C\+Writer\+::\+TM, and test\+\_\+panda\+::type.
+
+
+
+Referenced by Write\+Main\+Testbench().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a7b7f749a967e9b84acd3488413a31c02_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a7b7f749a967e9b84acd3488413a31c02_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLSCWriter_ae9413ea7c35fc3eec7417fd0cf2a5b14}\label{classHLSCWriter_ae9413ea7c35fc3eec7417fd0cf2a5b14}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!Write\+Param\+Initialization@{Write\+Param\+Initialization}}
+\index{Write\+Param\+Initialization@{Write\+Param\+Initialization}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Param\+Initialization()}{WriteParamInitialization()}}
+{\footnotesize\ttfamily void H\+L\+S\+C\+Writer\+::\+Write\+Param\+Initialization (\begin{DoxyParamCaption}\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{behavioral\+\_\+helper,  }\item[{const std\+::map$<$ std\+::string, std\+::string $>$ \&}]{curr\+\_\+test\+\_\+vector,  }\item[{const unsigned int}]{vector\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Initialize the parameters of the function. 
+
+Declaration and initialization are separate statements and the declaration code must be printed before the initialization code. 
+\begin{DoxyParams}{Parameters}
+{\em behavioral\+\_\+helper} & is the function to which the parameters are referred \\
+\hline
+{\em curr\+\_\+test\+\_\+vector} & is the test vector used to initialize the parameters \\
+\hline
+{\em vector\+\_\+index} & is the index of the test\+\_\+vector (this should not be needed here, since it\textquotesingle{}s used to get memory information, it will be removed when tesbench memory allocation and c testbench creation will be executed as separate steps) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 385 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), Convert\+In\+Binary(), C\+Writer\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, flag\+\_\+cpp, Behavioral\+Helper\+::get\+\_\+function\+\_\+index(), tree\+\_\+helper\+::get\+\_\+mangled\+\_\+fname(), Behavioral\+Helper\+::get\+\_\+parameters(), tree\+\_\+helper\+::get\+\_\+pointed\+\_\+type(), Behavioral\+Helper\+::get\+\_\+type(), tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), hls\+\_\+c\+\_\+backend\+\_\+information, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, C\+Writer\+::indented\+\_\+output\+\_\+stream, Behavioral\+Helper\+::is\+\_\+a\+\_\+pointer(), Behavioral\+Helper\+::is\+\_\+real(), Behavioral\+Helper\+::is\+\_\+unsigned(), Behavioral\+Helper\+::print\+\_\+type(), tree\+\_\+helper\+::print\+\_\+type(), Behavioral\+Helper\+::\+Print\+Variable(), tree\+\_\+helper\+::size(), S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, C\+Writer\+::\+TM, and test\+\_\+panda\+::type.
+
+
+
+Referenced by Write\+Main\+Testbench().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_ae9413ea7c35fc3eec7417fd0cf2a5b14_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_ae9413ea7c35fc3eec7417fd0cf2a5b14_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLSCWriter_a878ff97c2a1428574b641d4ef2704b76}\label{classHLSCWriter_a878ff97c2a1428574b641d4ef2704b76}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!Write\+Param\+In\+Memory@{Write\+Param\+In\+Memory}}
+\index{Write\+Param\+In\+Memory@{Write\+Param\+In\+Memory}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Param\+In\+Memory()}{WriteParamInMemory()}}
+{\footnotesize\ttfamily void H\+L\+S\+C\+Writer\+::\+Write\+Param\+In\+Memory (\begin{DoxyParamCaption}\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{behavioral\+\_\+helper,  }\item[{const std\+::string \&}]{param,  }\item[{const unsigned int}]{type,  }\item[{const unsigned int}]{nesting\+\_\+level,  }\item[{bool}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Write the print to fill values.\+txt with values for t parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em behavioral\+\_\+helper} & is the helper used to print field names \\
+\hline
+{\em param} & is the string of the parameter currently printed \\
+\hline
+{\em type} & is the type of the currently printed piece of parameter \\
+\hline
+{\em nesting\+\_\+level} & is the level of nesting of the currently printed field/element \\
+\hline
+{\em input} & specifies if the input syntax must be used \\
+\hline
+\end{DoxyParams}
+F\+I\+X\+ME\+: real numbers at the moment have to be considered differently because of computation of ulp 
+
+Definition at line 1251 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), C\+A\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+C\+S\+T\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+D\+E\+C\+L\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+F\+A\+K\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, G\+E\+T\+\_\+\+C\+O\+N\+S\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), C\+Writer\+::indented\+\_\+output\+\_\+stream, N\+O\+D\+E\+\_\+\+N\+O\+T\+\_\+\+Y\+E\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+EC, Behavioral\+Helper\+::\+Print\+Variable(), tree\+\_\+helper\+::\+Size(), S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+DE, C\+Writer\+::\+TM, and test\+\_\+panda\+::type.
+
+
+
+Referenced by Write\+Expected\+Results().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a878ff97c2a1428574b641d4ef2704b76_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a878ff97c2a1428574b641d4ef2704b76_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLSCWriter_ae0fce69eece5d49b74c5d615f169f17b}\label{classHLSCWriter_ae0fce69eece5d49b74c5d615f169f17b}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!Write\+Simulator\+Init\+Memory@{Write\+Simulator\+Init\+Memory}}
+\index{Write\+Simulator\+Init\+Memory@{Write\+Simulator\+Init\+Memory}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Simulator\+Init\+Memory()}{WriteSimulatorInitMemory()}}
+{\footnotesize\ttfamily void H\+L\+S\+C\+Writer\+::\+Write\+Simulator\+Init\+Memory (\begin{DoxyParamCaption}\item[{const unsigned int}]{function\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Write some print statements used to dump the values used by the H\+DL to initialize the memory before the simulation. 
+
+(This function actually also reserves memory out of the top function to be tested, if needed. This should not be done here, but in a separate memory allocation step, and will be moved soon). Remove leading spaces
+
+Remove trailing spaces
+
+Remove first \{
+
+Remove last \}
+
+Retrieve the space to be reserved in memory
+
+F\+I\+X\+ME\+: for c++ code the old code is still used
+
+Call the parser to translate C initialization to values.\+txt initialization 
+
+Definition at line 781 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References tree\+\_\+helper\+::accessed\+\_\+greatest\+\_\+bitsize(), Indented\+Output\+Stream\+::\+Append(), C\+Writer\+::\+AppM, tree\+\_\+helper\+::\+C\+Get\+Field\+Types(), Convert\+In\+Binary(), C\+Writer\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, flag\+\_\+cpp, tree\+\_\+helper\+::get\+\_\+array\+\_\+data\+\_\+bitsize(), tree\+\_\+helper\+::get\+\_\+array\+\_\+num\+\_\+elements(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+node\+::get\+\_\+kind\+\_\+text(), G\+E\+T\+\_\+\+N\+O\+DE, Behavioral\+Helper\+::get\+\_\+parameters(), tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), Behavioral\+Helper\+::\+Get\+Elements(), hls\+\_\+c\+\_\+backend\+\_\+information, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, C\+Writer\+::indented\+\_\+output\+\_\+stream, index, Behavioral\+Helper\+::is\+\_\+a\+\_\+pointer(), tree\+\_\+helper\+::is\+\_\+a\+\_\+pointer(), Behavioral\+Helper\+::is\+\_\+a\+\_\+struct(), Behavioral\+Helper\+::is\+\_\+an\+\_\+array(), Behavioral\+Helper\+::is\+\_\+an\+\_\+union(), Behavioral\+Helper\+::is\+\_\+real(), Behavioral\+Helper\+::is\+\_\+unsigned(), M\+E\+M\+O\+R\+Y\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+A\+T\+I\+ON, C\+Writer\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM, C\+Writer\+::\+Param, test\+\_\+panda\+::parameters, Testbench\+Generation\+Base\+Step\+::print\+\_\+var\+\_\+init(), Behavioral\+Helper\+::\+Print\+Variable(), tree\+\_\+helper\+::size(), tree\+\_\+helper\+::\+Size(), Split\+String(), S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, C\+Writer\+::\+TM, test\+\_\+panda\+::type, Write\+Binary\+Memory\+Init(), and Write\+Zeroed\+Bytes().
+
+
+
+Referenced by Write\+Main\+Testbench().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d4/db1/classHLSCWriter_ae0fce69eece5d49b74c5d615f169f17b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_ae0fce69eece5d49b74c5d615f169f17b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLSCWriter_a65f826c5a0e6536a762985601e621250}\label{classHLSCWriter_a65f826c5a0e6536a762985601e621250}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!Write\+Testbench\+Function\+Call@{Write\+Testbench\+Function\+Call}}
+\index{Write\+Testbench\+Function\+Call@{Write\+Testbench\+Function\+Call}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Testbench\+Function\+Call()}{WriteTestbenchFunctionCall()}}
+{\footnotesize\ttfamily void H\+L\+S\+C\+Writer\+::\+Write\+Testbench\+Function\+Call (\begin{DoxyParamCaption}\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{behavioral\+\_\+helper }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Writes a call to the top function to be tested, using its parameters. 
+
+The code for the declaration and initialization of such parameters must be written before a call to obtain meaningful outcome. 
+\begin{DoxyParams}{Parameters}
+{\em behavioral\+\_\+helper} & refers to the function to be tested \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 479 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), flag\+\_\+cpp, Behavioral\+Helper\+::get\+\_\+definition(), Behavioral\+Helper\+::get\+\_\+function\+\_\+index(), Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+O\+DE, Behavioral\+Helper\+::get\+\_\+parameters(), Behavioral\+Helper\+::get\+\_\+type(), Behavioral\+Helper\+::\+Get\+Function\+Return\+Type(), C\+Writer\+::indented\+\_\+output\+\_\+stream, Behavioral\+Helper\+::is\+\_\+a\+\_\+pointer(), Behavioral\+Helper\+::is\+\_\+real(), C\+Writer\+::\+Param, Behavioral\+Helper\+::print\+\_\+type(), tree\+\_\+helper\+::print\+\_\+type(), Behavioral\+Helper\+::\+Print\+Variable(), R\+E\+T\+U\+R\+N\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, C\+Writer\+::\+TM, and test\+\_\+panda\+::type.
+
+
+
+Referenced by Write\+Main\+Testbench().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a65f826c5a0e6536a762985601e621250_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a65f826c5a0e6536a762985601e621250_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLSCWriter_a5fdaae40bf4d22a922ce36aa8439f92b}\label{classHLSCWriter_a5fdaae40bf4d22a922ce36aa8439f92b}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!Write\+Testbench\+Global\+Vars@{Write\+Testbench\+Global\+Vars}}
+\index{Write\+Testbench\+Global\+Vars@{Write\+Testbench\+Global\+Vars}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Testbench\+Global\+Vars()}{WriteTestbenchGlobalVars()}}
+{\footnotesize\ttfamily void H\+L\+S\+C\+Writer\+::\+Write\+Testbench\+Global\+Vars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Write global variables needed by the tesbench. 
+
+
+
+Definition at line 162 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), and C\+Writer\+::indented\+\_\+output\+\_\+stream.
+
+
+
+Referenced by Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Global\+Declarations(), and Write\+Global\+Declarations().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a5fdaae40bf4d22a922ce36aa8439f92b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a5fdaae40bf4d22a922ce36aa8439f92b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLSCWriter_a6eb118ed175fcbc9d2ab94c8e71ce420}\label{classHLSCWriter_a6eb118ed175fcbc9d2ab94c8e71ce420}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!Write\+Testbench\+Helper\+Functions@{Write\+Testbench\+Helper\+Functions}}
+\index{Write\+Testbench\+Helper\+Functions@{Write\+Testbench\+Helper\+Functions}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Testbench\+Helper\+Functions()}{WriteTestbenchHelperFunctions()}}
+{\footnotesize\ttfamily void H\+L\+S\+C\+Writer\+::\+Write\+Testbench\+Helper\+Functions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Write helper functions used by the testbench, like an \+\_\+\+\_\+exit() helper and some binary conversion functions used to print memory initialization information. 
+
+
+
+Definition at line 169 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), C\+Writer\+::indented\+\_\+output\+\_\+stream, and C\+Writer\+::\+Param.
+
+
+
+Referenced by Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Global\+Declarations(), and Write\+Global\+Declarations().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a6eb118ed175fcbc9d2ab94c8e71ce420_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a6eb118ed175fcbc9d2ab94c8e71ce420_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLSCWriter_a38348640f023a8c42330e4131263ece8}\label{classHLSCWriter_a38348640f023a8c42330e4131263ece8}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!Write\+Zeroed\+Bytes@{Write\+Zeroed\+Bytes}}
+\index{Write\+Zeroed\+Bytes@{Write\+Zeroed\+Bytes}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Zeroed\+Bytes()}{WriteZeroedBytes()}}
+{\footnotesize\ttfamily void H\+L\+S\+C\+Writer\+::\+Write\+Zeroed\+Bytes (\begin{DoxyParamCaption}\item[{const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{n\+\_\+bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Write printf statements to write n\+\_\+bytes bytes initialized to 0 for the memory initialization of the H\+DL simulator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n\+\_\+bytes} & the number of zeroed bytes to be printed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1172 of file hls\+\_\+c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), C\+Writer\+::indented\+\_\+output\+\_\+stream, and S\+TR.
+
+
+
+Referenced by Write\+Binary\+Memory\+Init(), and Write\+Simulator\+Init\+Memory().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a38348640f023a8c42330e4131263ece8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/db1/classHLSCWriter_a38348640f023a8c42330e4131263ece8_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classHLSCWriter_a7012939ffcb42f0ae795006e4f7fd6aa}\label{classHLSCWriter_a7012939ffcb42f0ae795006e4f7fd6aa}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!flag\+\_\+cpp@{flag\+\_\+cpp}}
+\index{flag\+\_\+cpp@{flag\+\_\+cpp}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{flag\+\_\+cpp}{flag\_cpp}}
+{\footnotesize\ttfamily bool H\+L\+S\+C\+Writer\+::flag\+\_\+cpp\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+True if the input code is c++. 
+
+
+
+Definition at line 55 of file hls\+\_\+c\+\_\+writer.\+hpp.
+
+
+
+Referenced by H\+L\+S\+C\+Writer(), Write\+Expected\+Results(), Write\+Header(), Write\+Param\+Decl(), Write\+Param\+Initialization(), Write\+Simulator\+Init\+Memory(), and Write\+Testbench\+Function\+Call().
+
+\mbox{\Hypertarget{classHLSCWriter_a885e26e7963d6efaa29b0ab47864ab8b}\label{classHLSCWriter_a885e26e7963d6efaa29b0ab47864ab8b}} 
+\index{H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}!hls\+\_\+c\+\_\+backend\+\_\+information@{hls\+\_\+c\+\_\+backend\+\_\+information}}
+\index{hls\+\_\+c\+\_\+backend\+\_\+information@{hls\+\_\+c\+\_\+backend\+\_\+information}!H\+L\+S\+C\+Writer@{H\+L\+S\+C\+Writer}}
+\subsubsection{\texorpdfstring{hls\+\_\+c\+\_\+backend\+\_\+information}{hls\_c\_backend\_information}}
+{\footnotesize\ttfamily const H\+L\+S\+C\+Backend\+Information\+Const\+Ref H\+L\+S\+C\+Writer\+::hls\+\_\+c\+\_\+backend\+\_\+information\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Backend information. 
+
+
+
+Definition at line 58 of file hls\+\_\+c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Discrepancy\+Analysis\+C\+Writer\+::\+Declare\+Local\+Variables(), Write\+Expected\+Results(), Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Extra\+Init\+Code(), Write\+Header(), Write\+Main\+Testbench(), Write\+Param\+Decl(), Write\+Param\+Initialization(), Discrepancy\+Analysis\+C\+Writer\+::write\+Post\+Instruction\+Info(), and Write\+Simulator\+Init\+Memory().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+C/source\+\_\+code\+\_\+writers/\hyperlink{hls__c__writer_8hpp}{hls\+\_\+c\+\_\+writer.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+C/source\+\_\+code\+\_\+writers/\hyperlink{hls__c__writer_8cpp}{hls\+\_\+c\+\_\+writer.\+cpp}\end{DoxyCompactItemize}

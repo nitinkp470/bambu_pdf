@@ -1,0 +1,239 @@
+\hypertarget{structconstructor}{}\section{constructor Struct Reference}
+\label{structconstructor}\index{constructor@{constructor}}
+
+
+Constructor\+: return an aggregate value made from specified components.  
+
+
+
+
+{\ttfamily \#include $<$tree\+\_\+node.\+hpp$>$}
+
+
+
+Inheritance diagram for constructor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{d8/def/structconstructor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for constructor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{d0/d3f/structconstructor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{structconstructor_a58bda1b1cc5faa50c706bc298b025b11afca8767786d8cffa6df9916cd78e5cde}{G\+E\+T\+ID} =(tree\+\_\+node) = 0, 
+\hyperlink{structconstructor_a58bda1b1cc5faa50c706bc298b025b11afca8767786d8cffa6df9916cd78e5cde}{G\+E\+T\+ID} =(tree\+\_\+node) = 0
+ \}\begin{DoxyCompactList}\small\item\em visitor enum \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structconstructor_a24bb46e73fa143ab2518ffd5a322991a}{constructor} (unsigned int i)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+void \hyperlink{structconstructor_a8c1ec0444fc120cdd26e22e3425a2d7e}{add\+\_\+idx\+\_\+valu} (const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&idx, const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&valu)
+\begin{DoxyCompactList}\small\item\em Add a pair $<$index value$>$=\char`\"{}\char`\"{}$>$ to the list of idx\+\_\+val. \end{DoxyCompactList}\item 
+void \hyperlink{structconstructor_a61e1defa27b46a8dcd1960e2beaf2ae8}{add\+\_\+valu} (const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&valu)
+\begin{DoxyCompactList}\small\item\em Add a pair $<$null, value$>$ to the list of idx\+\_\+val. \end{DoxyCompactList}\item 
+void \hyperlink{structconstructor_ab925f188b5f5eb45088c8c72ea11055e}{visit} (\hyperlink{classtree__node__visitor}{tree\+\_\+node\+\_\+visitor} $\ast$const v) const override
+\begin{DoxyCompactList}\small\item\em Redefinition of get\+\_\+kind\+\_\+text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \hyperlink{structconstructor_aa8d1c099eb1ac75e7a2bff4e081efb41}{type}
+\begin{DoxyCompactList}\small\item\em type field is the type of the node \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ $>$ \hyperlink{structconstructor_a0da8ab8a69e59238810e8aa8d2e8caff}{list\+\_\+of\+\_\+idx\+\_\+valu}
+\begin{DoxyCompactList}\small\item\em store the list initializers\+: $<$index, value$>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Constructor\+: return an aggregate value made from specified components. 
+
+In C, this is used only for structure and array initializers. The operand is a sequence of component values made out of a V\+EC of struct constructor\+\_\+elt.
+
+For A\+R\+R\+A\+Y\+\_\+\+T\+Y\+PE\+: The field I\+N\+D\+EX of each constructor\+\_\+elt is the corresponding index. If the index is a R\+A\+N\+G\+E\+\_\+\+E\+X\+PR, it is a short-\/hand for many nodes, one for each index in the range. (If the corresponding field V\+A\+L\+UE has side-\/effects, they are evaluated once for each element. Wrap the value in a S\+A\+V\+E\+\_\+\+E\+X\+PR if you want to evaluate side effects only once.)
+
+For R\+E\+C\+O\+R\+D\+\_\+\+T\+Y\+PE, U\+N\+I\+O\+N\+\_\+\+T\+Y\+PE, or Q\+U\+A\+L\+\_\+\+U\+N\+I\+O\+N\+\_\+\+T\+Y\+PE\+: The field I\+N\+D\+EX of each node is a F\+I\+E\+L\+D\+\_\+\+D\+E\+CL. 
+
+Definition at line 2440 of file tree\+\_\+node.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{structconstructor_a58bda1b1cc5faa50c706bc298b025b11}\label{structconstructor_a58bda1b1cc5faa50c706bc298b025b11}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+
+
+visitor enum 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+E\+T\+ID@{G\+E\+T\+ID}!constructor@{constructor}}\index{constructor@{constructor}!G\+E\+T\+ID@{G\+E\+T\+ID}}}\mbox{\Hypertarget{structconstructor_a58bda1b1cc5faa50c706bc298b025b11afca8767786d8cffa6df9916cd78e5cde}\label{structconstructor_a58bda1b1cc5faa50c706bc298b025b11afca8767786d8cffa6df9916cd78e5cde}} 
+G\+E\+T\+ID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+E\+T\+ID@{G\+E\+T\+ID}!constructor@{constructor}}\index{constructor@{constructor}!G\+E\+T\+ID@{G\+E\+T\+ID}}}\mbox{\Hypertarget{structconstructor_a58bda1b1cc5faa50c706bc298b025b11afca8767786d8cffa6df9916cd78e5cde}\label{structconstructor_a58bda1b1cc5faa50c706bc298b025b11afca8767786d8cffa6df9916cd78e5cde}} 
+G\+E\+T\+ID&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 2485 of file tree\+\_\+node.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structconstructor_a24bb46e73fa143ab2518ffd5a322991a}\label{structconstructor_a24bb46e73fa143ab2518ffd5a322991a}} 
+\index{constructor@{constructor}!constructor@{constructor}}
+\index{constructor@{constructor}!constructor@{constructor}}
+\subsubsection{\texorpdfstring{constructor()}{constructor()}}
+{\footnotesize\ttfamily constructor\+::constructor (\begin{DoxyParamCaption}\item[{unsigned int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+constructor 
+
+
+
+Definition at line 2443 of file tree\+\_\+node.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structconstructor_a8c1ec0444fc120cdd26e22e3425a2d7e}\label{structconstructor_a8c1ec0444fc120cdd26e22e3425a2d7e}} 
+\index{constructor@{constructor}!add\+\_\+idx\+\_\+valu@{add\+\_\+idx\+\_\+valu}}
+\index{add\+\_\+idx\+\_\+valu@{add\+\_\+idx\+\_\+valu}!constructor@{constructor}}
+\subsubsection{\texorpdfstring{add\+\_\+idx\+\_\+valu()}{add\_idx\_valu()}}
+{\footnotesize\ttfamily void constructor\+::add\+\_\+idx\+\_\+valu (\begin{DoxyParamCaption}\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{idx,  }\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{valu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a pair $<$index value$>$=\char`\"{}\char`\"{}$>$ to the list of idx\+\_\+val. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & is the index. \\
+\hline
+{\em val} & is the value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2458 of file tree\+\_\+node.\+hpp.
+
+\mbox{\Hypertarget{structconstructor_a61e1defa27b46a8dcd1960e2beaf2ae8}\label{structconstructor_a61e1defa27b46a8dcd1960e2beaf2ae8}} 
+\index{constructor@{constructor}!add\+\_\+valu@{add\+\_\+valu}}
+\index{add\+\_\+valu@{add\+\_\+valu}!constructor@{constructor}}
+\subsubsection{\texorpdfstring{add\+\_\+valu()}{add\_valu()}}
+{\footnotesize\ttfamily void constructor\+::add\+\_\+valu (\begin{DoxyParamCaption}\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{valu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a pair $<$null, value$>$ to the list of idx\+\_\+val. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & is the value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2467 of file tree\+\_\+node.\+hpp.
+
+
+
+References G\+E\+T\+\_\+\+K\+I\+ND, and G\+E\+T\+\_\+\+K\+I\+N\+D\+\_\+\+T\+E\+XT.
+
+\mbox{\Hypertarget{structconstructor_ab925f188b5f5eb45088c8c72ea11055e}\label{structconstructor_ab925f188b5f5eb45088c8c72ea11055e}} 
+\index{constructor@{constructor}!visit@{visit}}
+\index{visit@{visit}!constructor@{constructor}}
+\subsubsection{\texorpdfstring{visit()}{visit()}}
+{\footnotesize\ttfamily void constructor\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__node__visitor}{tree\+\_\+node\+\_\+visitor} $\ast$const}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Redefinition of get\+\_\+kind\+\_\+text. 
+
+Redefinition of get\+\_\+kind. virtual function used to traverse the \hyperlink{classtree__node}{tree\+\_\+node} data structure. 
+\begin{DoxyParams}{Parameters}
+{\em v} & is a reference to the \hyperlink{classtree__node}{tree\+\_\+node} visitor class \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classtree__node_aa9abba3f1b30e0be80b4a56b188c6ecc}{tree\+\_\+node}.
+
+
+
+Definition at line 653 of file tree\+\_\+node.\+cpp.
+
+
+
+References A\+L\+L\+\_\+\+V\+I\+S\+IT, test\+\_\+panda\+::type, gimple\+\_\+call\+::visit(), V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+ER, and V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+E\+R\+\_\+\+N\+A\+M\+ED.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{d4/de6/structconstructor_ab925f188b5f5eb45088c8c72ea11055e_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structconstructor_a0da8ab8a69e59238810e8aa8d2e8caff}\label{structconstructor_a0da8ab8a69e59238810e8aa8d2e8caff}} 
+\index{constructor@{constructor}!list\+\_\+of\+\_\+idx\+\_\+valu@{list\+\_\+of\+\_\+idx\+\_\+valu}}
+\index{list\+\_\+of\+\_\+idx\+\_\+valu@{list\+\_\+of\+\_\+idx\+\_\+valu}!constructor@{constructor}}
+\subsubsection{\texorpdfstring{list\+\_\+of\+\_\+idx\+\_\+valu}{list\_of\_idx\_valu}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::pair$<$\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}$>$ $>$ constructor\+::list\+\_\+of\+\_\+idx\+\_\+valu}
+
+
+
+store the list initializers\+: $<$index, value$>$ 
+
+
+
+Definition at line 2451 of file tree\+\_\+node.\+hpp.
+
+
+
+Referenced by hls\+\_\+div\+\_\+cg\+\_\+ext\+::recursive\+\_\+examinate(), Var\+Decl\+Fix\+::recursive\+\_\+examinate(), Check\+System\+Type\+::recursive\+\_\+examinate(), soft\+\_\+float\+\_\+cg\+\_\+ext\+::\+Recursive\+Examinate(), and raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+
+\mbox{\Hypertarget{structconstructor_aa8d1c099eb1ac75e7a2bff4e081efb41}\label{structconstructor_aa8d1c099eb1ac75e7a2bff4e081efb41}} 
+\index{constructor@{constructor}!type@{type}}
+\index{type@{type}!constructor@{constructor}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} constructor\+::type}
+
+
+
+type field is the type of the node 
+
+
+
+Definition at line 2448 of file tree\+\_\+node.\+hpp.
+
+
+
+Referenced by Check\+System\+Type\+::recursive\+\_\+examinate(), and raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/\hyperlink{tree__node_8hpp}{tree\+\_\+node.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/\hyperlink{tree__node_8cpp}{tree\+\_\+node.\+cpp}\end{DoxyCompactItemize}

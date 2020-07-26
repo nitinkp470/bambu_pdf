@@ -1,0 +1,216 @@
+\hypertarget{classBBOrderComputation}{}\section{B\+B\+Order\+Computation Class Reference}
+\label{classBBOrderComputation}\index{B\+B\+Order\+Computation@{B\+B\+Order\+Computation}}
+
+
+Superclass include.  
+
+
+
+
+{\ttfamily \#include $<$bb\+\_\+order\+\_\+computation.\+hpp$>$}
+
+
+
+Inheritance diagram for B\+B\+Order\+Computation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{dd/d81/classBBOrderComputation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for B\+B\+Order\+Computation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d44/classBBOrderComputation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBBOrderComputation_a9e29d78ff223ee84cf49d7c4c7e59336}{B\+B\+Order\+Computation} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classBBOrderComputation_a5e70c82b7679fe0adc6306821f5c9d8c}{$\sim$\+B\+B\+Order\+Computation} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classBBOrderComputation_aa7ab804417c52182c8e30b5346e210f0}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Computes a topological order of the operations according to the control flow graph. \end{DoxyCompactList}\item 
+void \hyperlink{classBBOrderComputation_a3f9b91887a6fac728cdda5a5cbf92877}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classBBOrderComputation_a1cdada91e19bdbec7dc8da77c52ee446}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Superclass include. 
+
+Compute a topological order of the basic block according to the control flow graph + flow edges 
+
+Definition at line 50 of file bb\+\_\+order\+\_\+computation.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBBOrderComputation_a9e29d78ff223ee84cf49d7c4c7e59336}\label{classBBOrderComputation_a9e29d78ff223ee84cf49d7c4c7e59336}} 
+\index{B\+B\+Order\+Computation@{B\+B\+Order\+Computation}!B\+B\+Order\+Computation@{B\+B\+Order\+Computation}}
+\index{B\+B\+Order\+Computation@{B\+B\+Order\+Computation}!B\+B\+Order\+Computation@{B\+B\+Order\+Computation}}
+\subsubsection{\texorpdfstring{B\+B\+Order\+Computation()}{BBOrderComputation()}}
+{\footnotesize\ttfamily B\+B\+Order\+Computation\+::\+B\+B\+Order\+Computation (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+\+Param,  }\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{unsigned int}]{\+\_\+function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Header include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Param} & is the set of the parameters \\
+\hline
+{\em AppM} & is the application manager \\
+\hline
+{\em function\+\_\+id} & is the identifier of the function \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager\\
+\hline
+\end{DoxyParams}
+. include behavior include tree include 
+
+Definition at line 60 of file bb\+\_\+order\+\_\+computation.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$\+B\+B\+Order\+Computation().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d8e/classBBOrderComputation_a9e29d78ff223ee84cf49d7c4c7e59336_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBBOrderComputation_a5e70c82b7679fe0adc6306821f5c9d8c}\label{classBBOrderComputation_a5e70c82b7679fe0adc6306821f5c9d8c}} 
+\index{B\+B\+Order\+Computation@{B\+B\+Order\+Computation}!````~B\+B\+Order\+Computation@{$\sim$\+B\+B\+Order\+Computation}}
+\index{````~B\+B\+Order\+Computation@{$\sim$\+B\+B\+Order\+Computation}!B\+B\+Order\+Computation@{B\+B\+Order\+Computation}}
+\subsubsection{\texorpdfstring{$\sim$\+B\+B\+Order\+Computation()}{~BBOrderComputation()}}
+{\footnotesize\ttfamily B\+B\+Order\+Computation\+::$\sim$\+B\+B\+Order\+Computation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by B\+B\+Order\+Computation().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d8e/classBBOrderComputation_a5e70c82b7679fe0adc6306821f5c9d8c_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBBOrderComputation_a1cdada91e19bdbec7dc8da77c52ee446}\label{classBBOrderComputation_a1cdada91e19bdbec7dc8da77c52ee446}} 
+\index{B\+B\+Order\+Computation@{B\+B\+Order\+Computation}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!B\+B\+Order\+Computation@{B\+B\+Order\+Computation}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ B\+B\+Order\+Computation\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 68 of file bb\+\_\+order\+\_\+computation.\+cpp.
+
+
+
+References B\+B\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+E\+D\+G\+E\+S\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+C\+A\+T\+I\+ON, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+\mbox{\Hypertarget{classBBOrderComputation_a3f9b91887a6fac728cdda5a5cbf92877}\label{classBBOrderComputation_a3f9b91887a6fac728cdda5a5cbf92877}} 
+\index{B\+B\+Order\+Computation@{B\+B\+Order\+Computation}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!B\+B\+Order\+Computation@{B\+B\+Order\+Computation}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void B\+B\+Order\+Computation\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 91 of file bb\+\_\+order\+\_\+computation.\+cpp.
+
+
+
+References Function\+Frontend\+Flow\+Step\+::bb\+\_\+version, and Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior.
+
+\mbox{\Hypertarget{classBBOrderComputation_aa7ab804417c52182c8e30b5346e210f0}\label{classBBOrderComputation_aa7ab804417c52182c8e30b5346e210f0}} 
+\index{B\+B\+Order\+Computation@{B\+B\+Order\+Computation}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!B\+B\+Order\+Computation@{B\+B\+Order\+Computation}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} B\+B\+Order\+Computation\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes a topological order of the operations according to the control flow graph. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+Mark for visit in different functions.
+
+M\+A\+RK initialization
+
+Vertex list to be visited
+
+Examining successors
+
+Checking if all successor\textquotesingle{}s predecessors have been examinated
+
+Vertex can be added to list
+
+Checking if E\+X\+IT has been added 
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 100 of file bb\+\_\+order\+\_\+computation.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Behavior\+::\+E\+BB, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, index, N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX, and S\+U\+C\+C\+E\+SS.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/behavior\+\_\+analysis/\hyperlink{bb__order__computation_8hpp}{bb\+\_\+order\+\_\+computation.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/behavior\+\_\+analysis/\hyperlink{bb__order__computation_8cpp}{bb\+\_\+order\+\_\+computation.\+cpp}\end{DoxyCompactItemize}

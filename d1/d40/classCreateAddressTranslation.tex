@@ -1,0 +1,468 @@
+\hypertarget{classCreateAddressTranslation}{}\section{Create\+Address\+Translation Class Reference}
+\label{classCreateAddressTranslation}\index{Create\+Address\+Translation@{Create\+Address\+Translation}}
+
+
+Class which creates source code of hdl module to translate addresses from pci address space to bambu address space.  
+
+
+
+
+{\ttfamily \#include $<$create\+\_\+address\+\_\+translation.\+hpp$>$}
+
+
+
+Inheritance diagram for Create\+Address\+Translation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{d9/d4e/classCreateAddressTranslation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Create\+Address\+Translation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d92/classCreateAddressTranslation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCreateAddressTranslation_a15b94b6810b67ea5d972a8bd4a4e2827}{Create\+Address\+Translation} (const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classCreateAddressTranslation_ab1a2d19591190aa85668b851f12f103c}{$\sim$\+Create\+Address\+Translation} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classCreateAddressTranslation_a1213d1228ac3e336e8425ebacdf1ab60}{Exec} () override
+\begin{DoxyCompactList}\small\item\em Execute this step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCreateAddressTranslation_ae9d301ed54d571ed497d2542988d57bc}{Compute\+Address} (const \hyperlink{asn__type_8hpp_a456d7cf50c15d087cc0428ae80834b35}{Asn\+Type\+Ref} asn\+\_\+type, const unsigned int tree\+\_\+parameter\+\_\+type, unsigned int \&bambu\+\_\+address, unsigned int \&taste\+\_\+address, unsigned int \&registers, const bool first\+\_\+level, const bool little\+\_\+endianess)
+\begin{DoxyCompactList}\small\item\em Compute the addresses and add them to the writers. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classCreateAddressTranslation_a3cabbb27cb880dfeb1c20aec7ada4a58}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\item 
+void \hyperlink{classCreateAddressTranslation_a869c3993736729eb7be9b70c1b920255}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\item 
+bool \hyperlink{classCreateAddressTranslation_a3570b8c94b6ff002652bffa0353cb977}{Has\+To\+Be\+Executed} () const override
+\begin{DoxyCompactList}\small\item\em Check if this step has actually to be executed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref} \hyperlink{classCreateAddressTranslation_a891db1631bb7940e6653d2b1b6ecf079}{address\+\_\+translation}
+\begin{DoxyCompactList}\small\item\em The address translation stream. \end{DoxyCompactList}\item 
+\hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref} \hyperlink{classCreateAddressTranslation_a43fc1a6d78daf7adff355bee133ce150}{memory\+\_\+enabling}
+\begin{DoxyCompactList}\small\item\em The memory enabling stream. \end{DoxyCompactList}\item 
+\hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref} \hyperlink{classCreateAddressTranslation_aa0fb7eb48552fe76477b714dfae993f8}{data\+\_\+size}
+\begin{DoxyCompactList}\small\item\em The data size stream. \end{DoxyCompactList}\item 
+\hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref} \hyperlink{classCreateAddressTranslation_a3db34cf61e2a35eb04651f67185f54a6}{endianess\+\_\+check}
+\begin{DoxyCompactList}\small\item\em The endianess check stream. \end{DoxyCompactList}\item 
+\hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref} \hyperlink{classCreateAddressTranslation_a576636dd93b1399610782fbcb3d4b03c}{TreeM}
+\begin{DoxyCompactList}\small\item\em The tree manager. \end{DoxyCompactList}\item 
+const \hyperlink{aadl__information_8hpp_ad2aa3a9df7fbf64760e8fc1a5e7b9b3e}{Aadl\+Information\+Ref} \hyperlink{classCreateAddressTranslation_a0f2fb7ac9be0df4f2d1109d97d1564de}{aadl\+\_\+information}
+\begin{DoxyCompactList}\small\item\em The asn information. \end{DoxyCompactList}\item 
+bool \hyperlink{classCreateAddressTranslation_a0d4b362eb276f1ac3362404c1501e573}{already\+\_\+executed} \{false\}
+\begin{DoxyCompactList}\small\item\em True if it was already executed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class which creates source code of hdl module to translate addresses from pci address space to bambu address space. 
+
+Definition at line 57 of file create\+\_\+address\+\_\+translation.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCreateAddressTranslation_a15b94b6810b67ea5d972a8bd4a4e2827}\label{classCreateAddressTranslation_a15b94b6810b67ea5d972a8bd4a4e2827}} 
+\index{Create\+Address\+Translation@{Create\+Address\+Translation}!Create\+Address\+Translation@{Create\+Address\+Translation}}
+\index{Create\+Address\+Translation@{Create\+Address\+Translation}!Create\+Address\+Translation@{Create\+Address\+Translation}}
+\subsubsection{\texorpdfstring{Create\+Address\+Translation()}{CreateAddressTranslation()}}
+{\footnotesize\ttfamily Create\+Address\+Translation\+::\+Create\+Address\+Translation (\begin{DoxyParamCaption}\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Header include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em AppM} & is the application manager \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+{\em parameters} & is the set of input parameters\\
+\hline
+\end{DoxyParams}
+. include behavior include constants includes design\+\_\+flows include H\+LS include intermediate\+\_\+representation/aadl include tree includes utility include 
+
+Definition at line 75 of file create\+\_\+address\+\_\+translation.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$\+Create\+Address\+Translation().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d40/classCreateAddressTranslation_a15b94b6810b67ea5d972a8bd4a4e2827_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCreateAddressTranslation_ab1a2d19591190aa85668b851f12f103c}\label{classCreateAddressTranslation_ab1a2d19591190aa85668b851f12f103c}} 
+\index{Create\+Address\+Translation@{Create\+Address\+Translation}!````~Create\+Address\+Translation@{$\sim$\+Create\+Address\+Translation}}
+\index{````~Create\+Address\+Translation@{$\sim$\+Create\+Address\+Translation}!Create\+Address\+Translation@{Create\+Address\+Translation}}
+\subsubsection{\texorpdfstring{$\sim$\+Create\+Address\+Translation()}{~CreateAddressTranslation()}}
+{\footnotesize\ttfamily Create\+Address\+Translation\+::$\sim$\+Create\+Address\+Translation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Create\+Address\+Translation().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d40/classCreateAddressTranslation_ab1a2d19591190aa85668b851f12f103c_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCreateAddressTranslation_ae9d301ed54d571ed497d2542988d57bc}\label{classCreateAddressTranslation_ae9d301ed54d571ed497d2542988d57bc}} 
+\index{Create\+Address\+Translation@{Create\+Address\+Translation}!Compute\+Address@{Compute\+Address}}
+\index{Compute\+Address@{Compute\+Address}!Create\+Address\+Translation@{Create\+Address\+Translation}}
+\subsubsection{\texorpdfstring{Compute\+Address()}{ComputeAddress()}}
+{\footnotesize\ttfamily void Create\+Address\+Translation\+::\+Compute\+Address (\begin{DoxyParamCaption}\item[{const \hyperlink{asn__type_8hpp_a456d7cf50c15d087cc0428ae80834b35}{Asn\+Type\+Ref}}]{asn\+\_\+type,  }\item[{const unsigned int}]{tree\+\_\+parameter\+\_\+type,  }\item[{unsigned int \&}]{bambu\+\_\+address,  }\item[{unsigned int \&}]{taste\+\_\+address,  }\item[{unsigned int \&}]{registers,  }\item[{const bool}]{first\+\_\+level,  }\item[{const bool}]{little\+\_\+endianess }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Compute the addresses and add them to the writers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em asn\+\_\+type} & is the type of the asn parameter \\
+\hline
+{\em tree\+\_\+parameter\+\_\+type} & is the index of the type \\
+\hline
+{\em bambu\+\_\+address} & is the current starting address for bambu interface \\
+\hline
+{\em taste\+\_\+address} & is the current starting address for taste interface \\
+\hline
+{\em registers} & is the number of registers to be allocated for this parameter \\
+\hline
+{\em first\+\_\+level} & is true if we are analyzing a parameter and not something inside a parameter \\
+\hline
+{\em little\+\_\+endianess} & tells if the parameter has little endianess \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 111 of file create\+\_\+address\+\_\+translation.\+cpp.
+
+
+
+References aadl\+\_\+information, address\+\_\+translation, Indented\+Output\+Stream\+::\+Append(), B\+O\+O\+L\+E\+AN, tree\+\_\+helper\+::\+C\+Get\+Pointed\+Type(), tree\+\_\+helper\+::\+C\+Get\+Type(), C\+H\+O\+I\+CE, counter, data\+\_\+size, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, endianess\+\_\+check, E\+N\+U\+M\+E\+R\+A\+T\+ED, tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), Asn\+Type\+::\+Get\+Kind(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, index, I\+N\+T\+E\+G\+ER, memory\+\_\+enabling, O\+C\+T\+E\+T\+\_\+\+S\+T\+R\+I\+NG, R\+E\+AL, R\+E\+D\+E\+F\+I\+NE, S\+E\+Q\+U\+E\+N\+CE, S\+E\+Q\+U\+E\+N\+C\+E\+OF, S\+ET, S\+E\+T\+OF, tree\+\_\+helper\+::\+Size(), S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and TreeM.
+
+
+
+Referenced by Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d40/classCreateAddressTranslation_ae9d301ed54d571ed497d2542988d57bc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d40/classCreateAddressTranslation_ae9d301ed54d571ed497d2542988d57bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCreateAddressTranslation_a3cabbb27cb880dfeb1c20aec7ada4a58}\label{classCreateAddressTranslation_a3cabbb27cb880dfeb1c20aec7ada4a58}} 
+\index{Create\+Address\+Translation@{Create\+Address\+Translation}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!Create\+Address\+Translation@{Create\+Address\+Translation}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ Create\+Address\+Translation\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classApplicationFrontendFlowStep_ab308200c0096ccff3a1ff50e864ed61f}{Application\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 83 of file create\+\_\+address\+\_\+translation.\+cpp.
+
+
+
+References C\+R\+E\+A\+T\+E\+\_\+\+T\+R\+E\+E\+\_\+\+M\+A\+N\+A\+G\+ER, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, Application\+Frontend\+Flow\+Step\+::\+Get\+Signature(), Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Wrefcount$<$ T $>$\+::lock(), Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and Frontend\+Flow\+Step\+::\+W\+H\+O\+L\+E\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d40/classCreateAddressTranslation_a3cabbb27cb880dfeb1c20aec7ada4a58_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCreateAddressTranslation_a1213d1228ac3e336e8425ebacdf1ab60}\label{classCreateAddressTranslation_a1213d1228ac3e336e8425ebacdf1ab60}} 
+\index{Create\+Address\+Translation@{Create\+Address\+Translation}!Exec@{Exec}}
+\index{Exec@{Exec}!Create\+Address\+Translation@{Create\+Address\+Translation}}
+\subsubsection{\texorpdfstring{Exec()}{Exec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} Create\+Address\+Translation\+::\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute this step. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+The taste address of return (if any)
+
+Taste address starts from 4, since first 4 bytes are reserved to status register
+
+Build the map between parameter name and index type
+
+Starting address of the parameter
+
+Storing starting coming from outside
+
+We are running if we receive the start and we were not running or if we were running and we didn\textquotesingle{}t receive done
+
+We ended if (we ended in the past or we just ended) and we were not starting
+
+We are starting if we start and we are not running 
+
+Implements \hyperlink{classApplicationFrontendFlowStep_a2bf060a5ebc1735635dc5c7773387a25}{Application\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 382 of file create\+\_\+address\+\_\+translation.\+cpp.
+
+
+
+References aadl\+\_\+information, address\+\_\+translation, already\+\_\+executed, Indented\+Output\+Stream\+::\+Append(), Frontend\+Flow\+Step\+::\+AppM, test\+\_\+panda\+::arg, tree\+\_\+manager\+::\+C\+Get\+Tree\+Node(), tree\+\_\+helper\+::\+C\+Get\+Type(), Compute\+Address(), data\+\_\+size, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, endianess\+\_\+check, tree\+\_\+manager\+::function\+\_\+index(), refcount$<$ T $>$\+::get(), G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+helper\+::is\+\_\+a\+\_\+pointer(), memory\+\_\+enabling, Design\+Flow\+Step\+::parameters, S\+TR, S\+T\+R\+\_\+\+C\+S\+T\+\_\+string\+\_\+separator, S\+T\+R\+\_\+\+C\+S\+T\+\_\+taste\+\_\+address\+\_\+translation, S\+T\+R\+\_\+\+C\+S\+T\+\_\+taste\+\_\+data\+\_\+size, S\+T\+R\+\_\+\+C\+S\+T\+\_\+taste\+\_\+endianess\+\_\+check, S\+T\+R\+\_\+\+C\+S\+T\+\_\+taste\+\_\+endianess\+\_\+inversion, S\+T\+R\+\_\+\+C\+S\+T\+\_\+taste\+\_\+memory\+\_\+enabling, S\+T\+R\+\_\+\+C\+S\+T\+\_\+taste\+\_\+output\+\_\+multiplexer, S\+T\+R\+\_\+\+C\+S\+T\+\_\+taste\+\_\+reg\+\_\+status, S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, TreeM, U\+N\+C\+H\+A\+N\+G\+ED, and Indented\+Output\+Stream\+::\+Write\+File().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d40/classCreateAddressTranslation_a1213d1228ac3e336e8425ebacdf1ab60_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCreateAddressTranslation_a3570b8c94b6ff002652bffa0353cb977}\label{classCreateAddressTranslation_a3570b8c94b6ff002652bffa0353cb977}} 
+\index{Create\+Address\+Translation@{Create\+Address\+Translation}!Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}}
+\index{Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}!Create\+Address\+Translation@{Create\+Address\+Translation}}
+\subsubsection{\texorpdfstring{Has\+To\+Be\+Executed()}{HasToBeExecuted()}}
+{\footnotesize\ttfamily bool Create\+Address\+Translation\+::\+Has\+To\+Be\+Executed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Check if this step has actually to be executed. 
+
+\begin{DoxyReturn}{Returns}
+true if the step has to be executed 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classApplicationFrontendFlowStep_ad99f4dcbab470c65eea79ae0291a4bd5}{Application\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 579 of file create\+\_\+address\+\_\+translation.\+cpp.
+
+
+
+References already\+\_\+executed.
+
+\mbox{\Hypertarget{classCreateAddressTranslation_a869c3993736729eb7be9b70c1b920255}\label{classCreateAddressTranslation_a869c3993736729eb7be9b70c1b920255}} 
+\index{Create\+Address\+Translation@{Create\+Address\+Translation}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Create\+Address\+Translation@{Create\+Address\+Translation}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Create\+Address\+Translation\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 573 of file create\+\_\+address\+\_\+translation.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, Design\+Flow\+Step\+::\+Initialize(), and TreeM.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d40/classCreateAddressTranslation_a869c3993736729eb7be9b70c1b920255_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classCreateAddressTranslation_a0f2fb7ac9be0df4f2d1109d97d1564de}\label{classCreateAddressTranslation_a0f2fb7ac9be0df4f2d1109d97d1564de}} 
+\index{Create\+Address\+Translation@{Create\+Address\+Translation}!aadl\+\_\+information@{aadl\+\_\+information}}
+\index{aadl\+\_\+information@{aadl\+\_\+information}!Create\+Address\+Translation@{Create\+Address\+Translation}}
+\subsubsection{\texorpdfstring{aadl\+\_\+information}{aadl\_information}}
+{\footnotesize\ttfamily const \hyperlink{aadl__information_8hpp_ad2aa3a9df7fbf64760e8fc1a5e7b9b3e}{Aadl\+Information\+Ref} Create\+Address\+Translation\+::aadl\+\_\+information\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The asn information. 
+
+
+
+Definition at line 76 of file create\+\_\+address\+\_\+translation.\+hpp.
+
+
+
+Referenced by Compute\+Address(), and Exec().
+
+\mbox{\Hypertarget{classCreateAddressTranslation_a891db1631bb7940e6653d2b1b6ecf079}\label{classCreateAddressTranslation_a891db1631bb7940e6653d2b1b6ecf079}} 
+\index{Create\+Address\+Translation@{Create\+Address\+Translation}!address\+\_\+translation@{address\+\_\+translation}}
+\index{address\+\_\+translation@{address\+\_\+translation}!Create\+Address\+Translation@{Create\+Address\+Translation}}
+\subsubsection{\texorpdfstring{address\+\_\+translation}{address\_translation}}
+{\footnotesize\ttfamily \hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref} Create\+Address\+Translation\+::address\+\_\+translation\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The address translation stream. 
+
+
+
+Definition at line 61 of file create\+\_\+address\+\_\+translation.\+hpp.
+
+
+
+Referenced by Compute\+Address(), and Exec().
+
+\mbox{\Hypertarget{classCreateAddressTranslation_a0d4b362eb276f1ac3362404c1501e573}\label{classCreateAddressTranslation_a0d4b362eb276f1ac3362404c1501e573}} 
+\index{Create\+Address\+Translation@{Create\+Address\+Translation}!already\+\_\+executed@{already\+\_\+executed}}
+\index{already\+\_\+executed@{already\+\_\+executed}!Create\+Address\+Translation@{Create\+Address\+Translation}}
+\subsubsection{\texorpdfstring{already\+\_\+executed}{already\_executed}}
+{\footnotesize\ttfamily bool Create\+Address\+Translation\+::already\+\_\+executed \{false\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+True if it was already executed. 
+
+
+
+Definition at line 79 of file create\+\_\+address\+\_\+translation.\+hpp.
+
+
+
+Referenced by Exec(), and Has\+To\+Be\+Executed().
+
+\mbox{\Hypertarget{classCreateAddressTranslation_aa0fb7eb48552fe76477b714dfae993f8}\label{classCreateAddressTranslation_aa0fb7eb48552fe76477b714dfae993f8}} 
+\index{Create\+Address\+Translation@{Create\+Address\+Translation}!data\+\_\+size@{data\+\_\+size}}
+\index{data\+\_\+size@{data\+\_\+size}!Create\+Address\+Translation@{Create\+Address\+Translation}}
+\subsubsection{\texorpdfstring{data\+\_\+size}{data\_size}}
+{\footnotesize\ttfamily \hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref} Create\+Address\+Translation\+::data\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The data size stream. 
+
+
+
+Definition at line 67 of file create\+\_\+address\+\_\+translation.\+hpp.
+
+
+
+Referenced by Compute\+Address(), and Exec().
+
+\mbox{\Hypertarget{classCreateAddressTranslation_a3db34cf61e2a35eb04651f67185f54a6}\label{classCreateAddressTranslation_a3db34cf61e2a35eb04651f67185f54a6}} 
+\index{Create\+Address\+Translation@{Create\+Address\+Translation}!endianess\+\_\+check@{endianess\+\_\+check}}
+\index{endianess\+\_\+check@{endianess\+\_\+check}!Create\+Address\+Translation@{Create\+Address\+Translation}}
+\subsubsection{\texorpdfstring{endianess\+\_\+check}{endianess\_check}}
+{\footnotesize\ttfamily \hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref} Create\+Address\+Translation\+::endianess\+\_\+check\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The endianess check stream. 
+
+
+
+Definition at line 70 of file create\+\_\+address\+\_\+translation.\+hpp.
+
+
+
+Referenced by Compute\+Address(), and Exec().
+
+\mbox{\Hypertarget{classCreateAddressTranslation_a43fc1a6d78daf7adff355bee133ce150}\label{classCreateAddressTranslation_a43fc1a6d78daf7adff355bee133ce150}} 
+\index{Create\+Address\+Translation@{Create\+Address\+Translation}!memory\+\_\+enabling@{memory\+\_\+enabling}}
+\index{memory\+\_\+enabling@{memory\+\_\+enabling}!Create\+Address\+Translation@{Create\+Address\+Translation}}
+\subsubsection{\texorpdfstring{memory\+\_\+enabling}{memory\_enabling}}
+{\footnotesize\ttfamily \hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref} Create\+Address\+Translation\+::memory\+\_\+enabling\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The memory enabling stream. 
+
+
+
+Definition at line 64 of file create\+\_\+address\+\_\+translation.\+hpp.
+
+
+
+Referenced by Compute\+Address(), and Exec().
+
+\mbox{\Hypertarget{classCreateAddressTranslation_a576636dd93b1399610782fbcb3d4b03c}\label{classCreateAddressTranslation_a576636dd93b1399610782fbcb3d4b03c}} 
+\index{Create\+Address\+Translation@{Create\+Address\+Translation}!TreeM@{TreeM}}
+\index{TreeM@{TreeM}!Create\+Address\+Translation@{Create\+Address\+Translation}}
+\subsubsection{\texorpdfstring{TreeM}{TreeM}}
+{\footnotesize\ttfamily \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref} Create\+Address\+Translation\+::\+TreeM\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The tree manager. 
+
+
+
+Definition at line 73 of file create\+\_\+address\+\_\+translation.\+hpp.
+
+
+
+Referenced by Compute\+Address(), Exec(), and Initialize().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/source\+\_\+code\+\_\+manipulation/\hyperlink{create__address__translation_8hpp}{create\+\_\+address\+\_\+translation.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/source\+\_\+code\+\_\+manipulation/\hyperlink{create__address__translation_8cpp}{create\+\_\+address\+\_\+translation.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,700 @@
+\hypertarget{structoperation}{}\section{operation Struct Reference}
+\label{structoperation}\index{operation@{operation}}
+
+
+This class specifies the characteristic of a particular operation working on a given functional unit.  
+
+
+
+
+{\ttfamily \#include $<$technology\+\_\+node.\+hpp$>$}
+
+
+
+Inheritance diagram for operation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{d2/d47/structoperation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for operation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{d8/d24/structoperation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structoperation_ad4625adf0914d5c4dd25b1710703b642}{operation} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{structoperation_aa513f0c61b49ef30a3a8b49fc3eb5874}{$\sim$operation} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+const std\+::string \& \hyperlink{structoperation_af507cadd6f2ee17b88e7cb62772fe1f2}{get\+\_\+name} () const override
+\begin{DoxyCompactList}\small\item\em Returns the name of the operation. \end{DoxyCompactList}\item 
+bool \hyperlink{structoperation_a271a2bcd8bf499be5df7ae05edb8b64f}{is\+\_\+type\+\_\+supported} (std\+::string type\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Checks if the specified type name is supported. \end{DoxyCompactList}\item 
+bool \hyperlink{structoperation_a34a78778569a0ff97520b3148ec21521}{is\+\_\+type\+\_\+supported} (std\+::string type\+\_\+name, unsigned int type\+\_\+prec) const
+\begin{DoxyCompactList}\small\item\em Checks if the specified type name is supported If the attribute \char`\"{}supported\+\_\+types\char`\"{} is not defined, it will always return true. \end{DoxyCompactList}\item 
+bool \hyperlink{structoperation_a2fbbfb27340dda2d4b29952781b32150}{is\+\_\+type\+\_\+supported} (const std\+::string \&type\+\_\+name, const std\+::vector$<$ unsigned int $>$ \&type\+\_\+prec, const std\+::vector$<$ unsigned int $>$ \&type\+\_\+n\+\_\+element) const
+\begin{DoxyCompactList}\small\item\em Checks if the specified type name is supported with the max precision in type\+\_\+prec. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{structoperation_a4ee8a603c8de43b79716ab1111b53a52}{get\+\_\+type\+\_\+supported\+\_\+string} () const
+\begin{DoxyCompactList}\small\item\em Returns the supported type as a string. \end{DoxyCompactList}\item 
+void \hyperlink{structoperation_a7a8e56978864cac9d8f6c4f9391aa05a}{xload} (const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$Enode, const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} owner, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref} device) override
+\begin{DoxyCompactList}\small\item\em Load a operation node starting from an xml file. \end{DoxyCompactList}\item 
+void \hyperlink{structoperation_a5edb965df8d7b05e912feabfbfe1306b}{xwrite} (\hyperlink{classxml__element}{xml\+\_\+element} $\ast$rootnode, const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} tn, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{target__device_8hpp_a476becc690220f0805ce73006449c732}{Target\+Device\+\_\+\+Type} type) override
+\begin{DoxyCompactList}\small\item\em Add a operation node to an xml tree. \end{DoxyCompactList}\item 
+void \hyperlink{structoperation_a862e63d21faf48219bfcf1650471da2a}{lib\+\_\+write} (std\+::ofstream \&os, const \hyperlink{simple__indent_8hpp_ad85cff64e49d5dbf5cefe96f411c720e}{simple\+\_\+indent\+Ref} \hyperlink{structtechnology__node_ae6edfff0ccd2700b5de9fb538536977a}{PP}) override
+\begin{DoxyCompactList}\small\item\em Append a \hyperlink{structtechnology__node}{technology\+\_\+node} to a liberty file. \end{DoxyCompactList}\item 
+void \hyperlink{structoperation_aa6451ee75f5e5db619448ae294fc85d3}{lef\+\_\+write} (std\+::ofstream \&os, const \hyperlink{simple__indent_8hpp_ad85cff64e49d5dbf5cefe96f411c720e}{simple\+\_\+indent\+Ref} \hyperlink{structtechnology__node_ae6edfff0ccd2700b5de9fb538536977a}{PP}) override
+\begin{DoxyCompactList}\small\item\em Append a \hyperlink{structtechnology__node}{technology\+\_\+node} to a L\+EF file. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::map$<$ std\+::string, double $>$ $>$ \hyperlink{structoperation_aee6103b8dad5aed3782b5e3c1c885316}{get\+\_\+pin\+\_\+to\+\_\+pin\+\_\+delay} () const
+\begin{DoxyCompactList}\small\item\em Return the datastructure containing the pin-\/to-\/pin delay for this operation. \end{DoxyCompactList}\item 
+bool \hyperlink{structoperation_a28d9e2b1f452d667cdf74afa81d896ea}{is\+\_\+bounded} () const
+\item 
+bool \hyperlink{structoperation_ab72f8bdde321945d4b616b562c4bc472}{is\+\_\+primary\+\_\+inputs\+\_\+registered} () const
+\item 
+void \hyperlink{structoperation_a48582638c55f54db175299d504459f70}{print} (std\+::ostream \&os) const override
+\begin{DoxyCompactList}\small\item\em function that prints the class operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{structoperation_af5a268de2cc56a57805b2e316349dccd}{operation\+\_\+name}
+\begin{DoxyCompactList}\small\item\em name of the operation mappen on a given functional unit. \end{DoxyCompactList}\item 
+\hyperlink{time__model_8hpp_ae203bb7faf1c278333f76fcc6ebe412c}{time\+\_\+model\+Ref} \hyperlink{structoperation_a95c5d7de70dde9a2bc866123b301c154}{time\+\_\+m}
+\begin{DoxyCompactList}\small\item\em class representing the timing information associated with this operation \end{DoxyCompactList}\item 
+bool \hyperlink{structoperation_aa872c8588602ccb6d412b9d164eef46c}{commutative}
+\begin{DoxyCompactList}\small\item\em property of commutativity \end{DoxyCompactList}\item 
+bool \hyperlink{structoperation_a34c154bf0f9db4968c37f6770be3b58f}{bounded}
+\begin{DoxyCompactList}\small\item\em flag to determine if the operation is bounded or not \end{DoxyCompactList}\item 
+bool \hyperlink{structoperation_a9fae9437b8ca1d72d15b692e0d095c8d}{primary\+\_\+inputs\+\_\+registered}
+\begin{DoxyCompactList}\small\item\em true when the primary input of the functional unit are registered \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::vector$<$ unsigned int $>$ $>$ \hyperlink{structoperation_aaf4ee4678115f720880e7788a4b9be26}{supported\+\_\+types}
+\begin{DoxyCompactList}\small\item\em supported types and precision of the operation, in form (name, list\+\_\+of\+\_\+prec). \end{DoxyCompactList}\item 
+std\+::string \hyperlink{structoperation_ab5eaece9cc865e43adaa75df83b5b4f3}{pipe\+\_\+parameters}
+\begin{DoxyCompactList}\small\item\em comma separated string with the parameter for the different implementation of the pipeline. Empty when the operation is not pipelined \end{DoxyCompactList}\item 
+std\+::string \hyperlink{structoperation_a235782b551778467d671ee29d19407ee}{portsize\+\_\+parameters}
+\begin{DoxyCompactList}\small\item\em comma separed string with the parameter for different portsize values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class specifies the characteristic of a particular operation working on a given functional unit. 
+
+Definition at line 367 of file technology\+\_\+node.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structoperation_ad4625adf0914d5c4dd25b1710703b642}\label{structoperation_ad4625adf0914d5c4dd25b1710703b642}} 
+\index{operation@{operation}!operation@{operation}}
+\index{operation@{operation}!operation@{operation}}
+\subsubsection{\texorpdfstring{operation()}{operation()}}
+{\footnotesize\ttfamily operation\+::operation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 98 of file technology\+\_\+node.\+cpp.
+
+
+
+References $\sim$operation().
+
+
+
+Referenced by Allocation\+Information\+::\+Get\+Connection\+Time().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{d9/dc0/structoperation_ad4625adf0914d5c4dd25b1710703b642_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/dc0/structoperation_ad4625adf0914d5c4dd25b1710703b642_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structoperation_aa513f0c61b49ef30a3a8b49fc3eb5874}\label{structoperation_aa513f0c61b49ef30a3a8b49fc3eb5874}} 
+\index{operation@{operation}!````~operation@{$\sim$operation}}
+\index{````~operation@{$\sim$operation}!operation@{operation}}
+\subsubsection{\texorpdfstring{$\sim$operation()}{~operation()}}
+{\footnotesize\ttfamily operation\+::$\sim$operation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by operation().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/dc0/structoperation_aa513f0c61b49ef30a3a8b49fc3eb5874_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structoperation_af507cadd6f2ee17b88e7cb62772fe1f2}\label{structoperation_af507cadd6f2ee17b88e7cb62772fe1f2}} 
+\index{operation@{operation}!get\+\_\+name@{get\+\_\+name}}
+\index{get\+\_\+name@{get\+\_\+name}!operation@{operation}}
+\subsubsection{\texorpdfstring{get\+\_\+name()}{get\_name()}}
+{\footnotesize\ttfamily const std\+::string\& operation\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the name of the operation. 
+
+
+
+Implements \hyperlink{structtechnology__node_ade1d568637cfe8de91fc732fba4d62d5}{technology\+\_\+node}.
+
+
+
+Definition at line 411 of file technology\+\_\+node.\+hpp.
+
+
+
+References technology\+\_\+node\+::lef\+\_\+write(), technology\+\_\+node\+::lib\+\_\+write(), technology\+\_\+node\+::\+PP, test\+\_\+panda\+::type, technology\+\_\+node\+::xload(), and technology\+\_\+node\+::xwrite().
+
+
+
+Referenced by allocation\+::check\+\_\+templated\+\_\+units(), allocation\+::extract\+\_\+bambu\+\_\+provided(), and Discrepancy\+Analysis\+C\+Writer\+::write\+Post\+Instruction\+Info().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{d9/dc0/structoperation_af507cadd6f2ee17b88e7cb62772fe1f2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/dc0/structoperation_af507cadd6f2ee17b88e7cb62772fe1f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structoperation_aee6103b8dad5aed3782b5e3c1c885316}\label{structoperation_aee6103b8dad5aed3782b5e3c1c885316}} 
+\index{operation@{operation}!get\+\_\+pin\+\_\+to\+\_\+pin\+\_\+delay@{get\+\_\+pin\+\_\+to\+\_\+pin\+\_\+delay}}
+\index{get\+\_\+pin\+\_\+to\+\_\+pin\+\_\+delay@{get\+\_\+pin\+\_\+to\+\_\+pin\+\_\+delay}!operation@{operation}}
+\subsubsection{\texorpdfstring{get\+\_\+pin\+\_\+to\+\_\+pin\+\_\+delay()}{get\_pin\_to\_pin\_delay()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, std\+::map$<$ std\+::string, double $>$ $>$ operation\+::get\+\_\+pin\+\_\+to\+\_\+pin\+\_\+delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the datastructure containing the pin-\/to-\/pin delay for this operation. 
+
+
+
+Definition at line 349 of file technology\+\_\+node.\+cpp.
+
+
+
+References operation\+\_\+name, time\+\_\+model\+::pin\+\_\+to\+\_\+pin\+\_\+delay, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and time\+\_\+m.
+
+\mbox{\Hypertarget{structoperation_a4ee8a603c8de43b79716ab1111b53a52}\label{structoperation_a4ee8a603c8de43b79716ab1111b53a52}} 
+\index{operation@{operation}!get\+\_\+type\+\_\+supported\+\_\+string@{get\+\_\+type\+\_\+supported\+\_\+string}}
+\index{get\+\_\+type\+\_\+supported\+\_\+string@{get\+\_\+type\+\_\+supported\+\_\+string}!operation@{operation}}
+\subsubsection{\texorpdfstring{get\+\_\+type\+\_\+supported\+\_\+string()}{get\_type\_supported\_string()}}
+{\footnotesize\ttfamily std\+::string operation\+::get\+\_\+type\+\_\+supported\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the supported type as a string. 
+
+
+
+Definition at line 336 of file technology\+\_\+node.\+cpp.
+
+
+
+References result, and supported\+\_\+types.
+
+\mbox{\Hypertarget{structoperation_a28d9e2b1f452d667cdf74afa81d896ea}\label{structoperation_a28d9e2b1f452d667cdf74afa81d896ea}} 
+\index{operation@{operation}!is\+\_\+bounded@{is\+\_\+bounded}}
+\index{is\+\_\+bounded@{is\+\_\+bounded}!operation@{operation}}
+\subsubsection{\texorpdfstring{is\+\_\+bounded()}{is\_bounded()}}
+{\footnotesize\ttfamily bool operation\+::is\+\_\+bounded (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 473 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Discrepancy\+Analysis\+C\+Writer\+::write\+Post\+Instruction\+Info().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/dc0/structoperation_a28d9e2b1f452d667cdf74afa81d896ea_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structoperation_ab72f8bdde321945d4b616b562c4bc472}\label{structoperation_ab72f8bdde321945d4b616b562c4bc472}} 
+\index{operation@{operation}!is\+\_\+primary\+\_\+inputs\+\_\+registered@{is\+\_\+primary\+\_\+inputs\+\_\+registered}}
+\index{is\+\_\+primary\+\_\+inputs\+\_\+registered@{is\+\_\+primary\+\_\+inputs\+\_\+registered}!operation@{operation}}
+\subsubsection{\texorpdfstring{is\+\_\+primary\+\_\+inputs\+\_\+registered()}{is\_primary\_inputs\_registered()}}
+{\footnotesize\ttfamily bool operation\+::is\+\_\+primary\+\_\+inputs\+\_\+registered (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 478 of file technology\+\_\+node.\+hpp.
+
+
+
+References G\+E\+T\+\_\+\+T\+E\+C\+\_\+\+K\+I\+ND, G\+E\+T\+\_\+\+T\+E\+C\+\_\+\+K\+I\+N\+D\+\_\+\+T\+E\+XT, and technology\+\_\+node\+::print().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{d9/dc0/structoperation_ab72f8bdde321945d4b616b562c4bc472_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structoperation_a271a2bcd8bf499be5df7ae05edb8b64f}\label{structoperation_a271a2bcd8bf499be5df7ae05edb8b64f}} 
+\index{operation@{operation}!is\+\_\+type\+\_\+supported@{is\+\_\+type\+\_\+supported}}
+\index{is\+\_\+type\+\_\+supported@{is\+\_\+type\+\_\+supported}!operation@{operation}}
+\subsubsection{\texorpdfstring{is\+\_\+type\+\_\+supported()}{is\_type\_supported()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool operation\+::is\+\_\+type\+\_\+supported (\begin{DoxyParamCaption}\item[{std\+::string}]{type\+\_\+name }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the specified type name is supported. 
+
+If the attribute \char`\"{}supported\+\_\+types\char`\"{} is not defined, it will always return true. 
+\begin{DoxyParams}{Parameters}
+{\em type\+\_\+name} & is the name of the type \\
+\hline
+\end{DoxyParams}
+if there is at least one supported type, the given type has to be in the list 
+
+Definition at line 304 of file technology\+\_\+node.\+cpp.
+
+
+
+References supported\+\_\+types.
+
+
+
+Referenced by allocation\+::check\+\_\+type\+\_\+and\+\_\+precision(), and is\+\_\+type\+\_\+supported().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/dc0/structoperation_a271a2bcd8bf499be5df7ae05edb8b64f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structoperation_a34a78778569a0ff97520b3148ec21521}\label{structoperation_a34a78778569a0ff97520b3148ec21521}} 
+\index{operation@{operation}!is\+\_\+type\+\_\+supported@{is\+\_\+type\+\_\+supported}}
+\index{is\+\_\+type\+\_\+supported@{is\+\_\+type\+\_\+supported}!operation@{operation}}
+\subsubsection{\texorpdfstring{is\+\_\+type\+\_\+supported()}{is\_type\_supported()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool operation\+::is\+\_\+type\+\_\+supported (\begin{DoxyParamCaption}\item[{std\+::string}]{type\+\_\+name,  }\item[{unsigned int}]{type\+\_\+prec }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the specified type name is supported If the attribute \char`\"{}supported\+\_\+types\char`\"{} is not defined, it will always return true. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type\+\_\+name} & is the name of the type \\
+\hline
+{\em type\+\_\+prec} & is the type precision \\
+\hline
+\end{DoxyParams}
+check also for the precision 
+
+Definition at line 315 of file technology\+\_\+node.\+cpp.
+
+
+
+References is\+\_\+type\+\_\+supported(), and supported\+\_\+types.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{d9/dc0/structoperation_a34a78778569a0ff97520b3148ec21521_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structoperation_a2fbbfb27340dda2d4b29952781b32150}\label{structoperation_a2fbbfb27340dda2d4b29952781b32150}} 
+\index{operation@{operation}!is\+\_\+type\+\_\+supported@{is\+\_\+type\+\_\+supported}}
+\index{is\+\_\+type\+\_\+supported@{is\+\_\+type\+\_\+supported}!operation@{operation}}
+\subsubsection{\texorpdfstring{is\+\_\+type\+\_\+supported()}{is\_type\_supported()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool operation\+::is\+\_\+type\+\_\+supported (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{type\+\_\+name,  }\item[{const std\+::vector$<$ unsigned int $>$ \&}]{type\+\_\+prec,  }\item[{const std\+::vector$<$ unsigned int $>$ \&}]{type\+\_\+n\+\_\+element }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the specified type name is supported with the max precision in type\+\_\+prec. 
+
+If the attribute \char`\"{}supported\+\_\+types\char`\"{} is not defined, it will always return true. 
+\begin{DoxyParams}{Parameters}
+{\em type\+\_\+name} & is the name of the type \\
+\hline
+{\em type\+\_\+prec} & is the vector of type precisions \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 329 of file technology\+\_\+node.\+cpp.
+
+
+
+References is\+\_\+type\+\_\+supported().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{d9/dc0/structoperation_a2fbbfb27340dda2d4b29952781b32150_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structoperation_aa6451ee75f5e5db619448ae294fc85d3}\label{structoperation_aa6451ee75f5e5db619448ae294fc85d3}} 
+\index{operation@{operation}!lef\+\_\+write@{lef\+\_\+write}}
+\index{lef\+\_\+write@{lef\+\_\+write}!operation@{operation}}
+\subsubsection{\texorpdfstring{lef\+\_\+write()}{lef\_write()}}
+{\footnotesize\ttfamily void operation\+::lef\+\_\+write (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{os,  }\item[{const \hyperlink{simple__indent_8hpp_ad85cff64e49d5dbf5cefe96f411c720e}{simple\+\_\+indent\+Ref}}]{PP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Append a \hyperlink{structtechnology__node}{technology\+\_\+node} to a L\+EF file. 
+
+
+
+Implements \hyperlink{structtechnology__node_a2a92a701dec7c32a6bee6f66576f1fc6}{technology\+\_\+node}.
+
+
+
+Definition at line 293 of file technology\+\_\+node.\+cpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+\mbox{\Hypertarget{structoperation_a862e63d21faf48219bfcf1650471da2a}\label{structoperation_a862e63d21faf48219bfcf1650471da2a}} 
+\index{operation@{operation}!lib\+\_\+write@{lib\+\_\+write}}
+\index{lib\+\_\+write@{lib\+\_\+write}!operation@{operation}}
+\subsubsection{\texorpdfstring{lib\+\_\+write()}{lib\_write()}}
+{\footnotesize\ttfamily void operation\+::lib\+\_\+write (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{os,  }\item[{const \hyperlink{simple__indent_8hpp_ad85cff64e49d5dbf5cefe96f411c720e}{simple\+\_\+indent\+Ref}}]{PP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Append a \hyperlink{structtechnology__node}{technology\+\_\+node} to a liberty file. 
+
+
+
+Implements \hyperlink{structtechnology__node_a7e56b3bd8c693bb664fae9e5538b2526}{technology\+\_\+node}.
+
+
+
+Definition at line 288 of file technology\+\_\+node.\+cpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+\mbox{\Hypertarget{structoperation_a48582638c55f54db175299d504459f70}\label{structoperation_a48582638c55f54db175299d504459f70}} 
+\index{operation@{operation}!print@{print}}
+\index{print@{print}!operation@{operation}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void operation\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+function that prints the class operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & is the output stream. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{structtechnology__node_a44f347bae9b9b59726f323b5a6ad9ebf}{technology\+\_\+node}.
+
+
+
+Definition at line 298 of file technology\+\_\+node.\+cpp.
+
+
+
+References commutative, time\+\_\+model\+::get\+\_\+execution\+\_\+time(), time\+\_\+model\+::get\+\_\+initiation\+\_\+time(), operation\+\_\+name, S\+TR, and time\+\_\+m.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/dc0/structoperation_a48582638c55f54db175299d504459f70_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structoperation_a7a8e56978864cac9d8f6c4f9391aa05a}\label{structoperation_a7a8e56978864cac9d8f6c4f9391aa05a}} 
+\index{operation@{operation}!xload@{xload}}
+\index{xload@{xload}!operation@{operation}}
+\subsubsection{\texorpdfstring{xload()}{xload()}}
+{\footnotesize\ttfamily void operation\+::xload (\begin{DoxyParamCaption}\item[{const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{Enode,  }\item[{const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}}]{owner,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref}}]{device }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Load a operation node starting from an xml file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & is a node of the xml tree. \\
+\hline
+{\em owner} & is the refcount version of this. \\
+\hline
+{\em TM} & is the technology manager. \\
+\hline
+\end{DoxyParams}
+name of the operation
+
+commutative property
+
+parsing of supported types
+
+time characterization
+
+timing path 
+
+Implements \hyperlink{structtechnology__node_aab3accd94480958219ca7771dd981a4f}{technology\+\_\+node}.
+
+
+
+Definition at line 104 of file technology\+\_\+node.\+cpp.
+
+
+
+References bounded, C\+E\+\_\+\+X\+VM, commutative, time\+\_\+model\+::create\+\_\+model(), time\+\_\+model\+::cycles\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT, time\+\_\+model\+::execution\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT, from\+\_\+strongtype\+\_\+cast(), xml\+\_\+child\+::get\+\_\+children(), technology\+\_\+node\+::get\+\_\+name(), target\+\_\+device\+::get\+\_\+type(), time\+\_\+model\+::initiation\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT, L\+O\+A\+D\+\_\+\+X\+V\+FM, L\+O\+A\+D\+\_\+\+X\+VM, max(), operation\+\_\+name, time\+\_\+model\+::pin\+\_\+to\+\_\+pin\+\_\+delay, pipe\+\_\+parameters, portsize\+\_\+parameters, primary\+\_\+inputs\+\_\+registered, time\+\_\+model\+::set\+\_\+execution\+\_\+time(), time\+\_\+model\+::set\+\_\+initiation\+\_\+time(), time\+\_\+model\+::set\+\_\+stage\+\_\+period(), time\+\_\+model\+::set\+\_\+synthesis\+\_\+dependent(), Split\+String(), time\+\_\+model\+::stage\+\_\+period\+\_\+\+D\+E\+F\+A\+U\+LT, supported\+\_\+types, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, time\+\_\+m, and test\+\_\+panda\+::type.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/dc0/structoperation_a7a8e56978864cac9d8f6c4f9391aa05a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structoperation_a5edb965df8d7b05e912feabfbfe1306b}\label{structoperation_a5edb965df8d7b05e912feabfbfe1306b}} 
+\index{operation@{operation}!xwrite@{xwrite}}
+\index{xwrite@{xwrite}!operation@{operation}}
+\subsubsection{\texorpdfstring{xwrite()}{xwrite()}}
+{\footnotesize\ttfamily void operation\+::xwrite (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{rootnode,  }\item[{const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}}]{tn,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{const \hyperlink{target__device_8hpp_a476becc690220f0805ce73006449c732}{Target\+Device\+\_\+\+Type}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Add a operation node to an xml tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rootnode} & is the root node at which the xml representation of the operation is attached. \\
+\hline
+\end{DoxyParams}
+name of the operation
+
+commutative property
+
+supported types
+
+timing characterization, if any 
+
+Implements \hyperlink{structtechnology__node_a8ce6644a0b2700f760936e4c02754e2f}{technology\+\_\+node}.
+
+
+
+Definition at line 210 of file technology\+\_\+node.\+cpp.
+
+
+
+References xml\+\_\+child\+::add\+\_\+child\+\_\+element(), bounded, commutative, time\+\_\+model\+::cycles\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT, time\+\_\+model\+::execution\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT, from\+\_\+strongtype\+\_\+cast(), time\+\_\+model\+::get\+\_\+cycles(), time\+\_\+model\+::get\+\_\+execution\+\_\+time(), time\+\_\+model\+::get\+\_\+initiation\+\_\+time(), technology\+\_\+node\+::get\+\_\+kind\+\_\+text(), time\+\_\+model\+::get\+\_\+stage\+\_\+period(), time\+\_\+model\+::get\+\_\+synthesis\+\_\+dependent(), time\+\_\+model\+::initiation\+\_\+time\+\_\+\+D\+E\+F\+A\+U\+LT, operation\+\_\+name, pipe\+\_\+parameters, portsize\+\_\+parameters, primary\+\_\+inputs\+\_\+registered, time\+\_\+model\+::stage\+\_\+period\+\_\+\+D\+E\+F\+A\+U\+LT, S\+TR, supported\+\_\+types, time\+\_\+m, W\+R\+I\+T\+E\+\_\+\+X\+N\+VM, and W\+R\+I\+T\+E\+\_\+\+X\+VM.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/dc0/structoperation_a5edb965df8d7b05e912feabfbfe1306b_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structoperation_a34c154bf0f9db4968c37f6770be3b58f}\label{structoperation_a34c154bf0f9db4968c37f6770be3b58f}} 
+\index{operation@{operation}!bounded@{bounded}}
+\index{bounded@{bounded}!operation@{operation}}
+\subsubsection{\texorpdfstring{bounded}{bounded}}
+{\footnotesize\ttfamily bool operation\+::bounded}
+
+
+
+flag to determine if the operation is bounded or not 
+
+
+
+Definition at line 384 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by library\+\_\+manager\+::update(), xload(), and xwrite().
+
+\mbox{\Hypertarget{structoperation_aa872c8588602ccb6d412b9d164eef46c}\label{structoperation_aa872c8588602ccb6d412b9d164eef46c}} 
+\index{operation@{operation}!commutative@{commutative}}
+\index{commutative@{commutative}!operation@{operation}}
+\subsubsection{\texorpdfstring{commutative}{commutative}}
+{\footnotesize\ttfamily bool operation\+::commutative}
+
+
+
+property of commutativity 
+
+
+
+Definition at line 381 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::extract\+\_\+bambu\+\_\+provided(), print(), xload(), and xwrite().
+
+\mbox{\Hypertarget{structoperation_af5a268de2cc56a57805b2e316349dccd}\label{structoperation_af5a268de2cc56a57805b2e316349dccd}} 
+\index{operation@{operation}!operation\+\_\+name@{operation\+\_\+name}}
+\index{operation\+\_\+name@{operation\+\_\+name}!operation@{operation}}
+\subsubsection{\texorpdfstring{operation\+\_\+name}{operation\_name}}
+{\footnotesize\ttfamily std\+::string operation\+::operation\+\_\+name}
+
+
+
+name of the operation mappen on a given functional unit. 
+
+
+
+Definition at line 370 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by Functional\+Unit\+Step\+::create\+\_\+template\+\_\+instance(), get\+\_\+pin\+\_\+to\+\_\+pin\+\_\+delay(), print(), library\+\_\+manager\+::update(), xload(), and xwrite().
+
+\mbox{\Hypertarget{structoperation_ab5eaece9cc865e43adaa75df83b5b4f3}\label{structoperation_ab5eaece9cc865e43adaa75df83b5b4f3}} 
+\index{operation@{operation}!pipe\+\_\+parameters@{pipe\+\_\+parameters}}
+\index{pipe\+\_\+parameters@{pipe\+\_\+parameters}!operation@{operation}}
+\subsubsection{\texorpdfstring{pipe\+\_\+parameters}{pipe\_parameters}}
+{\footnotesize\ttfamily std\+::string operation\+::pipe\+\_\+parameters}
+
+
+
+comma separated string with the parameter for the different implementation of the pipeline. Empty when the operation is not pipelined 
+
+
+
+Definition at line 393 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::check\+\_\+templated\+\_\+units(), allocation\+::extract\+\_\+bambu\+\_\+provided(), library\+\_\+manager\+::update(), xload(), and xwrite().
+
+\mbox{\Hypertarget{structoperation_a235782b551778467d671ee29d19407ee}\label{structoperation_a235782b551778467d671ee29d19407ee}} 
+\index{operation@{operation}!portsize\+\_\+parameters@{portsize\+\_\+parameters}}
+\index{portsize\+\_\+parameters@{portsize\+\_\+parameters}!operation@{operation}}
+\subsubsection{\texorpdfstring{portsize\+\_\+parameters}{portsize\_parameters}}
+{\footnotesize\ttfamily std\+::string operation\+::portsize\+\_\+parameters}
+
+
+
+comma separed string with the parameter for different portsize values. 
+
+
+
+Definition at line 396 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by library\+\_\+manager\+::update(), xload(), and xwrite().
+
+\mbox{\Hypertarget{structoperation_a9fae9437b8ca1d72d15b692e0d095c8d}\label{structoperation_a9fae9437b8ca1d72d15b692e0d095c8d}} 
+\index{operation@{operation}!primary\+\_\+inputs\+\_\+registered@{primary\+\_\+inputs\+\_\+registered}}
+\index{primary\+\_\+inputs\+\_\+registered@{primary\+\_\+inputs\+\_\+registered}!operation@{operation}}
+\subsubsection{\texorpdfstring{primary\+\_\+inputs\+\_\+registered}{primary\_inputs\_registered}}
+{\footnotesize\ttfamily bool operation\+::primary\+\_\+inputs\+\_\+registered}
+
+
+
+true when the primary input of the functional unit are registered 
+
+
+
+Definition at line 387 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by xload(), and xwrite().
+
+\mbox{\Hypertarget{structoperation_aaf4ee4678115f720880e7788a4b9be26}\label{structoperation_aaf4ee4678115f720880e7788a4b9be26}} 
+\index{operation@{operation}!supported\+\_\+types@{supported\+\_\+types}}
+\index{supported\+\_\+types@{supported\+\_\+types}!operation@{operation}}
+\subsubsection{\texorpdfstring{supported\+\_\+types}{supported\_types}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::vector$<$unsigned int$>$ $>$ operation\+::supported\+\_\+types}
+
+
+
+supported types and precision of the operation, in form (name, list\+\_\+of\+\_\+prec). 
+
+
+
+Definition at line 390 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::extract\+\_\+bambu\+\_\+provided(), get\+\_\+type\+\_\+supported\+\_\+string(), is\+\_\+type\+\_\+supported(), xload(), and xwrite().
+
+\mbox{\Hypertarget{structoperation_a95c5d7de70dde9a2bc866123b301c154}\label{structoperation_a95c5d7de70dde9a2bc866123b301c154}} 
+\index{operation@{operation}!time\+\_\+m@{time\+\_\+m}}
+\index{time\+\_\+m@{time\+\_\+m}!operation@{operation}}
+\subsubsection{\texorpdfstring{time\+\_\+m}{time\_m}}
+{\footnotesize\ttfamily \hyperlink{time__model_8hpp_ae203bb7faf1c278333f76fcc6ebe412c}{time\+\_\+model\+Ref} operation\+::time\+\_\+m}
+
+
+
+class representing the timing information associated with this operation 
+
+
+
+Definition at line 373 of file technology\+\_\+node.\+hpp.
+
+
+
+Referenced by allocation\+::check\+\_\+templated\+\_\+units(), Allocation\+Information\+::get\+\_\+correction\+\_\+time(), get\+\_\+pin\+\_\+to\+\_\+pin\+\_\+delay(), print(), Allocation\+Information\+::time\+\_\+m\+\_\+execution\+\_\+time(), Allocation\+Information\+::time\+\_\+m\+\_\+stage\+\_\+period(), library\+\_\+manager\+::update(), Discrepancy\+Analysis\+C\+Writer\+::write\+Post\+Instruction\+Info(), xload(), and xwrite().
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/physical\+\_\+library/\hyperlink{technology__node_8hpp}{technology\+\_\+node.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/physical\+\_\+library/\hyperlink{technology__node_8cpp}{technology\+\_\+node.\+cpp}\end{DoxyCompactItemize}

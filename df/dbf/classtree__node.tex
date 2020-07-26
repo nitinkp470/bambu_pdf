@@ -1,0 +1,417 @@
+\hypertarget{classtree__node}{}\section{tree\+\_\+node Class Reference}
+\label{classtree__node}\index{tree\+\_\+node@{tree\+\_\+node}}
+
+
+Abstract pure class for the tree structure.  
+
+
+
+
+{\ttfamily \#include $<$tree\+\_\+node.\+hpp$>$}
+
+
+
+Inheritance diagram for tree\+\_\+node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d8/d59/classtree__node__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtree__node_a5e40829fa0df70a89f974c8e6f0242aa}{tree\+\_\+node} (unsigned int i)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classtree__node_a44550db0a707dd886f968eff42bb681c}{$\sim$tree\+\_\+node} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual enum \hyperlink{tree__common_8hpp_a9efbd7c7191fb190b76c2fd05d6e7b45}{kind} \hyperlink{classtree__node_aa020fd7c4ac6d0d748c8b8512809b136}{get\+\_\+kind} () const =0
+\begin{DoxyCompactList}\small\item\em Virtual function returning the type of the actual class. \end{DoxyCompactList}\item 
+virtual std\+::string \hyperlink{classtree__node_a824fb7ac3aca5d1eb55aee0c993e6d0d}{get\+\_\+kind\+\_\+text} () const =0
+\begin{DoxyCompactList}\small\item\em Virtual function returning the name of the actual class. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classtree__node_aa9abba3f1b30e0be80b4a56b188c6ecc}{visit} (\hyperlink{classtree__node__visitor}{tree\+\_\+node\+\_\+visitor} $\ast$const v) const
+\begin{DoxyCompactList}\small\item\em virtual function used to traverse the \hyperlink{classtree__node}{tree\+\_\+node} data structure. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classtree__node_a17760b9b2ecf3ad8bfd015ce90f60234}{To\+String} () const
+\begin{DoxyCompactList}\small\item\em Print this node as string in gimple format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static enum \hyperlink{tree__common_8hpp_a9efbd7c7191fb190b76c2fd05d6e7b45}{kind} \hyperlink{classtree__node_a3f68e5e4337d81e0733d231844d71a52}{get\+\_\+kind} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Given a string, return the corresponding kind. \end{DoxyCompactList}\item 
+static std\+::string \hyperlink{classtree__node_aae10f58d0f97a3e0ac02a188eb4ca1f8}{Get\+String} (const enum \hyperlink{tree__common_8hpp_a9efbd7c7191fb190b76c2fd05d6e7b45}{kind} k)
+\begin{DoxyCompactList}\small\item\em Given a kind, return the corresponding string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned int \hyperlink{classtree__node_ac036ae7a6a4594d3052b9a29045464ca}{index}
+\begin{DoxyCompactList}\small\item\em Represent the index readed from the raw file and the index-\/1 of the vector of \hyperlink{classtree__node}{tree\+\_\+node} associated to the functions vector present in the \hyperlink{classtree__manager}{tree\+\_\+manager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ std\+::string, enum \hyperlink{tree__common_8hpp_a9efbd7c7191fb190b76c2fd05d6e7b45}{kind} $>$ \hyperlink{classtree__node_a7e8912d45db001a06ab7825ea3dc62c6}{string\+\_\+to\+\_\+kind}
+\begin{DoxyCompactList}\small\item\em Map string to corresponding enum. \end{DoxyCompactList}\item 
+static std\+::map$<$ enum \hyperlink{tree__common_8hpp_a9efbd7c7191fb190b76c2fd05d6e7b45}{kind}, std\+::string $>$ \hyperlink{classtree__node_a4acb8eaa2d77287880caa24020d639fe}{kind\+\_\+to\+\_\+string}
+\begin{DoxyCompactList}\small\item\em Map kind to string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classtree__node_a7abb3e56ee52f67b970bbafb18bbddc9}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classtree__node}{tree\+\_\+node} $\ast$tn)
+\begin{DoxyCompactList}\small\item\em Friend definition of the $<$$<$ operator. \end{DoxyCompactList}\item 
+std\+::ostream \& \hyperlink{classtree__node_a04c3200a2247133cf590eff539d97021}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&tn)
+\begin{DoxyCompactList}\small\item\em Friend definition of the $<$$<$ operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract pure class for the tree structure. 
+
+This node and in particular its ref\+Count type will be used to describe all nodes readed from the tree gcc raw structure. 
+
+Definition at line 128 of file tree\+\_\+node.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtree__node_a5e40829fa0df70a89f974c8e6f0242aa}\label{classtree__node_a5e40829fa0df70a89f974c8e6f0242aa}} 
+\index{tree\+\_\+node@{tree\+\_\+node}!tree\+\_\+node@{tree\+\_\+node}}
+\index{tree\+\_\+node@{tree\+\_\+node}!tree\+\_\+node@{tree\+\_\+node}}
+\subsubsection{\texorpdfstring{tree\+\_\+node()}{tree\_node()}}
+{\footnotesize\ttfamily tree\+\_\+node\+::tree\+\_\+node (\begin{DoxyParamCaption}\item[{unsigned int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 147 of file tree\+\_\+node.\+hpp.
+
+
+
+Referenced by handler\+::visit().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{df/dbf/classtree__node_a5e40829fa0df70a89f974c8e6f0242aa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtree__node_a44550db0a707dd886f968eff42bb681c}\label{classtree__node_a44550db0a707dd886f968eff42bb681c}} 
+\index{tree\+\_\+node@{tree\+\_\+node}!````~tree\+\_\+node@{$\sim$tree\+\_\+node}}
+\index{````~tree\+\_\+node@{$\sim$tree\+\_\+node}!tree\+\_\+node@{tree\+\_\+node}}
+\subsubsection{\texorpdfstring{$\sim$tree\+\_\+node()}{~tree\_node()}}
+{\footnotesize\ttfamily virtual tree\+\_\+node\+::$\sim$tree\+\_\+node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 152 of file tree\+\_\+node.\+hpp.
+
+
+
+References operator$<$$<$(), and To\+String().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{df/dbf/classtree__node_a44550db0a707dd886f968eff42bb681c_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtree__node_aa020fd7c4ac6d0d748c8b8512809b136}\label{classtree__node_aa020fd7c4ac6d0d748c8b8512809b136}} 
+\index{tree\+\_\+node@{tree\+\_\+node}!get\+\_\+kind@{get\+\_\+kind}}
+\index{get\+\_\+kind@{get\+\_\+kind}!tree\+\_\+node@{tree\+\_\+node}}
+\subsubsection{\texorpdfstring{get\+\_\+kind()}{get\_kind()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual enum \hyperlink{tree__common_8hpp_a9efbd7c7191fb190b76c2fd05d6e7b45}{kind} tree\+\_\+node\+::get\+\_\+kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Virtual function returning the type of the actual class. 
+
+
+
+Referenced by tree\+\_\+helper\+::accessed\+\_\+greatest\+\_\+bitsize(), tree\+\_\+helper\+::accessed\+\_\+minimum\+\_\+bitsize(), Testbench\+Memory\+Allocation\+::\+Alloc\+Testbench\+Memory(), determine\+\_\+memory\+\_\+accesses\+::analyze\+\_\+node(), use\+\_\+counting\+::analyze\+\_\+node(), Phi\+Opt\+::\+Apply\+If\+Merge(), Phi\+Opt\+::\+Apply\+Multi\+Merge(), I\+R\+\_\+lowering\+::array\+\_\+ref\+\_\+lowering(), Bit\+\_\+\+Value\+::backward(), Bit\+\_\+\+Value\+::backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses(), operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), call\+\_\+graph\+\_\+computation\+::call\+\_\+graph\+\_\+computation\+\_\+recursive(), tree\+\_\+manager\+::check\+\_\+for\+\_\+decl(), tree\+\_\+manager\+::check\+\_\+for\+\_\+type(), Function\+Expander\+::check\+\_\+lib\+\_\+type(), C\+S\+E\+::check\+\_\+loads(), tree\+\_\+manager\+::check\+\_\+ssa\+\_\+uses(), simple\+\_\+code\+\_\+motion\+::\+Check\+Movable(), Vectorize\+::\+Classify\+Tree\+Node(), tree\+\_\+manager\+::collapse\+\_\+into(), tree\+\_\+helper\+::compute\+\_\+ssa\+\_\+uses\+\_\+rec\+\_\+ptr(), tree\+\_\+helper\+::\+Compute\+Ssa\+Uses(), Bit\+Lattice\+Manipulator\+::constructor\+\_\+bitstring(), tree\+\_\+manipulation\+::create\+\_\+binary\+\_\+operation(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), tree\+\_\+manipulation\+::create\+\_\+extract\+\_\+bit\+\_\+expr(), tree\+\_\+manipulation\+::create\+\_\+gimple\+\_\+cond(), tree\+\_\+manipulation\+::create\+\_\+gimple\+\_\+modify\+\_\+stmt(), tree\+\_\+manipulation\+::create\+\_\+gimple\+\_\+return(), tree\+\_\+manipulation\+::create\+\_\+lut\+\_\+expr(), tree\+\_\+manipulation\+::create\+\_\+parm\+\_\+decl(), tree\+\_\+manipulation\+::create\+\_\+phi\+\_\+node(), tree\+\_\+manipulation\+::create\+\_\+quaternary\+\_\+operation(), tree\+\_\+manipulation\+::create\+\_\+result\+\_\+decl(), tree\+\_\+manipulation\+::create\+\_\+ternary\+\_\+operation(), tree\+\_\+node\+\_\+dup\+::create\+\_\+tree\+\_\+node(), tree\+\_\+node\+\_\+index\+\_\+factory\+::create\+\_\+tree\+\_\+node(), tree\+\_\+manipulation\+::create\+\_\+unary\+\_\+operation(), tree\+\_\+manipulation\+::create\+\_\+var\+\_\+decl(), Vcd\+Signal\+Selection\+::\+Cross\+Propagate\+Addr\+Ssa(), H\+L\+S\+Instruction\+Writer\+::declare\+Function(), C\+Writer\+::\+Declare\+Local\+Variables(), mux\+\_\+connection\+\_\+binding\+::determine\+\_\+connection(), tree\+\_\+manager\+::erase\+\_\+usage\+\_\+info(), Bit\+Value\+I\+P\+A\+::\+Exec(), Pragma\+Analysis\+::\+Exec(), tree\+\_\+helper\+::extract\+\_\+array\+\_\+indexes(), rebuild\+\_\+initialization2\+::extract\+\_\+var\+\_\+decl(), extract\+Op1(), memory\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation(), tree\+\_\+helper\+::get\+\_\+array\+\_\+data\+\_\+bitsize(), tree\+\_\+helper\+::get\+\_\+array\+\_\+dim\+\_\+and\+\_\+bitsize(), tree\+\_\+helper\+::get\+\_\+array\+\_\+dimensions(), Behavioral\+Helper\+::get\+\_\+attributes(), tree\+\_\+helper\+::get\+\_\+base\+\_\+index(), operations\+\_\+cfg\+\_\+computation\+::get\+\_\+first\+\_\+node(), tree\+\_\+helper\+::get\+\_\+formal\+\_\+ith(), fsm\+\_\+controller\+::get\+\_\+guard\+\_\+value(), tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), Behavioral\+Helper\+::get\+\_\+intermediate\+\_\+var(), tree\+\_\+manager\+::get\+\_\+next\+\_\+vers(), tree\+\_\+helper\+::get\+\_\+parameter\+\_\+types(), tree\+\_\+helper\+::get\+\_\+pointed\+\_\+type(), application\+\_\+manager\+::get\+\_\+produced\+\_\+value(), tree\+\_\+helper\+::get\+\_\+required\+\_\+values(), tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), tree\+\_\+helper\+::get\+\_\+type\+\_\+node(), tree\+\_\+helper\+::get\+\_\+used\+\_\+variables(), get\+Assign(), tree\+\_\+helper\+::\+Get\+Function\+Return\+Type(), Behavioral\+Helper\+::\+Get\+Init(), Gimple\+Writer\+::\+Gimple\+Writer(), Behavioral\+Helper\+::has\+\_\+bit\+\_\+field(), C\+S\+E\+::hash\+\_\+check(), tree\+\_\+helper\+::\+Has\+To\+Be\+Declared(), Bit\+\_\+\+Value\+::initialize(), tree\+\_\+manager\+::insert\+\_\+usage\+\_\+info(), Fix\+Structs\+Passed\+By\+Value\+::\+Internal\+Exec(), mem\+\_\+cg\+\_\+ext\+::\+Internal\+Exec(), Loops\+Analysis\+Bambu\+::\+Internal\+Exec(), compute\+\_\+implicit\+\_\+calls\+::\+Internal\+Exec(), dead\+\_\+code\+\_\+elimination\+::\+Internal\+Exec(), multi\+\_\+way\+\_\+if\+::\+Internal\+Exec(), I\+R\+\_\+lowering\+::\+Internal\+Exec(), tree\+\_\+helper\+::is\+\_\+a\+\_\+complex(), Behavioral\+Helper\+::is\+\_\+a\+\_\+component\+\_\+ref(), Behavioral\+Helper\+::is\+\_\+a\+\_\+constant(), Behavioral\+Helper\+::is\+\_\+a\+\_\+imagpart\+\_\+expr(), Behavioral\+Helper\+::is\+\_\+a\+\_\+mem\+\_\+ref(), Behavioral\+Helper\+::is\+\_\+a\+\_\+realpart\+\_\+expr(), Behavioral\+Helper\+::is\+\_\+a\+\_\+result\+\_\+decl(), tree\+\_\+helper\+::is\+\_\+a\+\_\+struct(), tree\+\_\+helper\+::is\+\_\+a\+\_\+variable(), tree\+\_\+helper\+::is\+\_\+a\+\_\+vector(), Behavioral\+Helper\+::is\+\_\+an\+\_\+addr\+\_\+expr(), tree\+\_\+helper\+::is\+\_\+an\+\_\+addr\+\_\+expr(), tree\+\_\+helper\+::is\+\_\+an\+\_\+array(), Behavioral\+Helper\+::is\+\_\+an\+\_\+array\+\_\+ref(), tree\+\_\+helper\+::is\+\_\+an\+\_\+enum(), Behavioral\+Helper\+::is\+\_\+an\+\_\+indirect\+\_\+ref(), tree\+\_\+helper\+::is\+\_\+an\+\_\+union(), tree\+\_\+helper\+::is\+\_\+concat\+\_\+bit\+\_\+ior\+\_\+expr(), tree\+\_\+helper\+::is\+\_\+constant(), fanout\+\_\+opt\+::is\+\_\+dest\+\_\+relevant(), tree\+\_\+helper\+::is\+\_\+fully\+\_\+resolved(), is\+\_\+large\+\_\+integer(), Behavioral\+Helper\+::is\+\_\+named\+\_\+pointer(), tree\+\_\+helper\+::is\+\_\+natural(), tree\+\_\+helper\+::is\+\_\+packed(), tree\+\_\+helper\+::is\+\_\+packed\+\_\+access(), tree\+\_\+helper\+::is\+\_\+\+S\+C\+\_\+\+B\+I\+N\+D\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+N\+I\+L(), tree\+\_\+helper\+::is\+\_\+simple\+\_\+pointer\+\_\+plus\+\_\+test(), tree\+\_\+manager\+::is\+\_\+top\+\_\+function(), Behavioral\+Helper\+::is\+\_\+va\+\_\+start\+\_\+call(), Behavioral\+Helper\+::is\+\_\+var\+\_\+args(), Behavioral\+Helper\+::is\+Call\+Expression(), H\+W\+Call\+Injection\+::is\+Hardware\+Call(), dead\+\_\+code\+\_\+elimination\+::kill\+\_\+uses(), rebuild\+\_\+initialization2\+::look\+\_\+for\+\_\+\+R\+O\+Ms(), Call\+Graph\+Builtin\+Call\+::look\+For\+Builtin\+Call(), tree\+\_\+manager\+::merge\+\_\+tree\+\_\+managers(), tree\+\_\+helper\+::name\+\_\+function(), tree\+\_\+helper\+::name\+\_\+tmpl(), tree\+\_\+helper\+::name\+\_\+type(), tree\+\_\+helper\+::op\+\_\+symbol(), type\+\_\+casting\+::operator()(), B\+B\+Writer\+::operator()(), Function\+Expander\+::operator()(), Bit\+\_\+\+Value\+\_\+opt\+::optimize(), Behavioral\+Helper\+::print\+\_\+constant(), Behavioral\+Helper\+::print\+\_\+forward\+\_\+declaration(), tree\+\_\+helper\+::print\+\_\+function\+\_\+name(), Behavioral\+Helper\+::print\+\_\+init(), Behavioral\+Helper\+::print\+\_\+node(), tree\+\_\+helper\+::print\+\_\+type(), Behavioral\+Helper\+::print\+\_\+type\+\_\+declaration(), Behavioral\+Helper\+::print\+\_\+vertex(), Behavioral\+Helper\+::\+Print\+Variable(), I\+R\+\_\+lowering\+::reached\+\_\+max\+\_\+transformation\+\_\+limit(), tree\+\_\+helper\+::record\+\_\+name(), parm2ssa\+::recursive\+\_\+analysis(), string\+\_\+cst\+\_\+fix\+::recursive\+\_\+analysis(), hls\+\_\+div\+\_\+cg\+\_\+ext\+::recursive\+\_\+examinate(), Var\+Decl\+Fix\+::recursive\+\_\+examinate(), Check\+System\+Type\+::recursive\+\_\+examinate(), soft\+\_\+float\+\_\+cg\+\_\+ext\+::\+Recursive\+Examinate(), tree\+\_\+helper\+::\+Recursive\+Get\+Types\+To\+Be\+Declared(), tree\+\_\+manager\+::\+Recursive\+Replace\+Tree\+Node(), Vcd\+Signal\+Selection\+::\+Select\+Initial\+Ssa(), Vcd\+Signal\+Selection\+::\+Select\+Internal\+Signals(), Vcd\+Signal\+Selection\+::\+Single\+Step\+Propagate\+Addr\+Ssa(), tree\+\_\+helper\+::\+Size(), Bit\+Lattice\+Manipulator\+::string\+\_\+cst\+\_\+bitstring(), Vectorize\+::\+Transform(), Bit\+\_\+\+Value\+::update\+\_\+\+I\+R(), var\+Found(), fu\+\_\+binding\+::write\+\_\+init(), H\+L\+S\+C\+Writer\+::\+Write\+Expected\+Results(), H\+L\+S\+C\+Writer\+::\+Write\+Param\+Decl(), Discrepancy\+Analysis\+C\+Writer\+::write\+Post\+Instruction\+Info(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), H\+L\+S\+C\+Writer\+::\+Write\+Simulator\+Init\+Memory(), and H\+L\+S\+C\+Writer\+::\+Write\+Testbench\+Function\+Call().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{df/dbf/classtree__node_aa020fd7c4ac6d0d748c8b8512809b136_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtree__node_a3f68e5e4337d81e0733d231844d71a52}\label{classtree__node_a3f68e5e4337d81e0733d231844d71a52}} 
+\index{tree\+\_\+node@{tree\+\_\+node}!get\+\_\+kind@{get\+\_\+kind}}
+\index{get\+\_\+kind@{get\+\_\+kind}!tree\+\_\+node@{tree\+\_\+node}}
+\subsubsection{\texorpdfstring{get\+\_\+kind()}{get\_kind()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{tree__common_8hpp_a9efbd7c7191fb190b76c2fd05d6e7b45}{kind} tree\+\_\+node\+::get\+\_\+kind (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Given a string, return the corresponding kind. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & is the string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding kind 
+\end{DoxyReturn}
+
+
+Definition at line 99 of file tree\+\_\+node.\+cpp.
+
+
+
+References B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+S\+E\+Q\+\_\+\+F\+O\+R\+\_\+\+E\+A\+C\+H(), N\+A\+M\+E\+\_\+\+K\+I\+ND, string\+\_\+to\+\_\+kind, and T\+R\+E\+E\+\_\+\+N\+O\+D\+E\+\_\+\+L\+I\+ST.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dbf/classtree__node_a3f68e5e4337d81e0733d231844d71a52_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtree__node_a824fb7ac3aca5d1eb55aee0c993e6d0d}\label{classtree__node_a824fb7ac3aca5d1eb55aee0c993e6d0d}} 
+\index{tree\+\_\+node@{tree\+\_\+node}!get\+\_\+kind\+\_\+text@{get\+\_\+kind\+\_\+text}}
+\index{get\+\_\+kind\+\_\+text@{get\+\_\+kind\+\_\+text}!tree\+\_\+node@{tree\+\_\+node}}
+\subsubsection{\texorpdfstring{get\+\_\+kind\+\_\+text()}{get\_kind\_text()}}
+{\footnotesize\ttfamily virtual std\+::string tree\+\_\+node\+::get\+\_\+kind\+\_\+text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Virtual function returning the name of the actual class. 
+
+
+
+Referenced by tree\+\_\+helper\+::accessed\+\_\+greatest\+\_\+bitsize(), tree\+\_\+helper\+::accessed\+\_\+minimum\+\_\+bitsize(), determine\+\_\+memory\+\_\+accesses\+::analyze\+\_\+node(), Bit\+\_\+\+Value\+::backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses(), operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), simple\+\_\+code\+\_\+motion\+::\+Check\+Movable(), tree\+\_\+manager\+::collapse\+\_\+into(), tree\+\_\+helper\+::compute\+\_\+ssa\+\_\+uses\+\_\+rec\+\_\+ptr(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), tree\+\_\+node\+\_\+dup\+::create\+\_\+tree\+\_\+node(), tree\+\_\+node\+\_\+factory\+::create\+\_\+tree\+\_\+node(), tree\+\_\+node\+\_\+index\+\_\+factory\+::create\+\_\+tree\+\_\+node(), mux\+\_\+connection\+\_\+binding\+::determine\+\_\+connection(), Bit\+Value\+I\+P\+A\+::\+Exec(), fu\+\_\+binding\+::fill\+\_\+array\+\_\+ref\+\_\+memory(), Behavioral\+Helper\+::get\+\_\+attributes(), tree\+\_\+helper\+::get\+\_\+base\+\_\+index(), operations\+\_\+cfg\+\_\+computation\+::get\+\_\+first\+\_\+node(), tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), application\+\_\+manager\+::get\+\_\+produced\+\_\+value(), tree\+\_\+helper\+::get\+\_\+required\+\_\+values(), tree\+\_\+helper\+::get\+\_\+type\+\_\+node(), Behavioral\+Helper\+::\+Get\+Init(), Gimple\+Writer\+::\+Gimple\+Writer(), C\+S\+E\+::hash\+\_\+check(), tree\+\_\+helper\+::\+Has\+To\+Be\+Declared(), Loops\+Analysis\+Bambu\+::\+Internal\+Exec(), multi\+\_\+way\+\_\+if\+::\+Internal\+Exec(), tree\+\_\+helper\+::is\+\_\+a\+\_\+variable(), tree\+\_\+helper\+::is\+\_\+fully\+\_\+resolved(), tree\+\_\+helper\+::is\+\_\+packed(), tree\+\_\+helper\+::is\+\_\+packed\+\_\+access(), tree\+\_\+helper\+::\+Is\+Aligned(), Call\+Graph\+Builtin\+Call\+::look\+For\+Builtin\+Call(), tree\+\_\+manager\+::merge\+\_\+tree\+\_\+managers(), tree\+\_\+helper\+::name\+\_\+function(), tree\+\_\+helper\+::name\+\_\+type(), tree\+\_\+helper\+::op\+\_\+symbol(), Behavioral\+Helper\+::print\+\_\+constant(), Behavioral\+Helper\+::print\+\_\+forward\+\_\+declaration(), tree\+\_\+helper\+::print\+\_\+function\+\_\+name(), Behavioral\+Helper\+::print\+\_\+node(), tree\+\_\+helper\+::print\+\_\+type(), Behavioral\+Helper\+::print\+\_\+type\+\_\+declaration(), Behavioral\+Helper\+::\+Print\+Var\+Declaration(), parm2ssa\+::recursive\+\_\+analysis(), string\+\_\+cst\+\_\+fix\+::recursive\+\_\+analysis(), hls\+\_\+div\+\_\+cg\+\_\+ext\+::recursive\+\_\+examinate(), Var\+Decl\+Fix\+::recursive\+\_\+examinate(), Check\+System\+Type\+::recursive\+\_\+examinate(), soft\+\_\+float\+\_\+cg\+\_\+ext\+::\+Recursive\+Examinate(), Vectorize\+::\+Transform(), Bit\+\_\+\+Value\+::update\+\_\+\+I\+R(), fu\+\_\+binding\+::write\+\_\+init(), raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to(), and H\+L\+S\+C\+Writer\+::\+Write\+Simulator\+Init\+Memory().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{df/dbf/classtree__node_a824fb7ac3aca5d1eb55aee0c993e6d0d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtree__node_aae10f58d0f97a3e0ac02a188eb4ca1f8}\label{classtree__node_aae10f58d0f97a3e0ac02a188eb4ca1f8}} 
+\index{tree\+\_\+node@{tree\+\_\+node}!Get\+String@{Get\+String}}
+\index{Get\+String@{Get\+String}!tree\+\_\+node@{tree\+\_\+node}}
+\subsubsection{\texorpdfstring{Get\+String()}{GetString()}}
+{\footnotesize\ttfamily std\+::string tree\+\_\+node\+::\+Get\+String (\begin{DoxyParamCaption}\item[{const enum \hyperlink{tree__common_8hpp_a9efbd7c7191fb190b76c2fd05d6e7b45}{kind}}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Given a kind, return the corresponding string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & is the kind \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the name of the kind 
+\end{DoxyReturn}
+
+
+Definition at line 110 of file tree\+\_\+node.\+cpp.
+
+
+
+References B\+I\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+T\+R\+E\+E\+\_\+\+N\+O\+D\+ES, B\+O\+O\+S\+T\+\_\+\+P\+P\+\_\+\+S\+E\+Q\+\_\+\+F\+O\+R\+\_\+\+E\+A\+C\+H(), K\+I\+N\+D\+\_\+\+N\+A\+ME, kind\+\_\+to\+\_\+string, Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+T\+R\+E\+E\+\_\+\+N\+O\+D\+ES, T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+T\+R\+E\+E\+\_\+\+N\+O\+D\+ES, T\+R\+E\+E\+\_\+\+N\+O\+D\+E\+\_\+\+L\+I\+ST, U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+T\+R\+E\+E\+\_\+\+N\+O\+D\+ES, and V\+I\+S\+I\+T\+\_\+\+T\+R\+E\+E\+\_\+\+N\+O\+D\+E\+\_\+\+M\+A\+C\+RO.
+
+
+
+Referenced by tree\+\_\+manager\+::find(), Vcd\+Signal\+Selection\+::\+Initial\+Phi\+Res\+Is\+Address(), Vcd\+Signal\+Selection\+::\+Initial\+Ssa\+Is\+Address(), dead\+\_\+code\+\_\+elimination\+::\+Internal\+Exec(), Vcd\+Signal\+Selection\+::\+Propagate\+Addr\+Ssa(), Vcd\+Signal\+Selection\+::\+Select\+Initial\+Addr\+Param(), Vcd\+Signal\+Selection\+::\+Single\+Step\+Propagate\+Addr\+Ssa(), and Vcd\+Signal\+Selection\+::\+Single\+Step\+Propagate\+Param\+To\+Ssa().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dbf/classtree__node_aae10f58d0f97a3e0ac02a188eb4ca1f8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dbf/classtree__node_aae10f58d0f97a3e0ac02a188eb4ca1f8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtree__node_a17760b9b2ecf3ad8bfd015ce90f60234}\label{classtree__node_a17760b9b2ecf3ad8bfd015ce90f60234}} 
+\index{tree\+\_\+node@{tree\+\_\+node}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!tree\+\_\+node@{tree\+\_\+node}}
+\subsubsection{\texorpdfstring{To\+String()}{ToString()}}
+{\footnotesize\ttfamily std\+::string tree\+\_\+node\+::\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Print this node as string in gimple format. 
+
+\begin{DoxyReturn}{Returns}
+the string containing the gimple representation of this node 
+\end{DoxyReturn}
+
+
+Referenced by determine\+\_\+memory\+\_\+accesses\+::analyze\+\_\+node(), use\+\_\+counting\+::analyze\+\_\+node(), Phi\+Opt\+::\+Apply\+If\+Merge(), Phi\+Opt\+::\+Apply\+If\+Remove(), Phi\+Opt\+::\+Apply\+Multi\+Remove(), Bit\+\_\+\+Value\+::backward\+\_\+transfer(), H\+W\+Call\+Injection\+::build\+Builtin\+Call(), Allocation\+Information\+::can\+\_\+implement\+\_\+set(), Schedule\+::\+Can\+Be\+Moved(), ssa\+\_\+name\+::\+C\+Get\+Def\+Stmt(), simple\+\_\+code\+\_\+motion\+::\+Check\+Movable(), interface\+\_\+infer\+::classify\+Arg\+Recurse(), Vectorize\+::\+Classify\+Tree\+Node(), tree\+\_\+manager\+::collapse\+\_\+into(), tree\+\_\+helper\+::compute\+\_\+ssa\+\_\+uses\+\_\+rec\+\_\+ptr(), Bit\+Lattice\+Manipulator\+::constructor\+\_\+bitstring(), Pragma\+Analysis\+::create\+\_\+omp\+\_\+pragma(), tree\+\_\+manipulation\+::create\+\_\+ssa\+\_\+name(), Vectorize\+::\+Duplicate\+Increment(), ipa\+\_\+point\+\_\+to\+\_\+analysis\+::\+Exec(), I\+R\+\_\+lowering\+::expand\+\_\+mult\+\_\+const(), tree\+\_\+manipulation\+::\+Extract\+Condition(), extract\+Op1(), memory\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation(), Vectorize\+::\+Fix\+Phis(), liveness\+::get\+\_\+op\+\_\+where\+\_\+defined(), Allocation\+Information\+::\+Get\+Node\+Type\+Prec(), C\+S\+E\+::hash\+\_\+check(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), Loops\+Analysis\+Bambu\+::\+Internal\+Exec(), compute\+\_\+implicit\+\_\+calls\+::\+Internal\+Exec(), fanout\+\_\+opt\+::\+Internal\+Exec(), simple\+\_\+code\+\_\+motion\+::\+Internal\+Exec(), C\+S\+E\+::\+Internal\+Exec(), operations\+\_\+cfg\+\_\+computation\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), rebuild\+\_\+initialization2\+::look\+\_\+for\+\_\+\+R\+O\+Ms(), Bit\+\_\+\+Value\+\_\+opt\+::optimize(), bloc\+::\+Push\+After(), bloc\+::\+Push\+Back(), bloc\+::\+Push\+Before(), bloc\+::\+Push\+Front(), parm2ssa\+::recursive\+\_\+analysis(), string\+\_\+cst\+\_\+fix\+::recursive\+\_\+analysis(), Var\+Decl\+Fix\+::recursive\+\_\+examinate(), tree\+\_\+manager\+::\+Recursive\+Replace\+Tree\+Node(), Phi\+Opt\+::\+Remove\+Cond\+Expr(), gimple\+\_\+phi\+::\+Remove\+Def\+Edge(), bloc\+::\+Remove\+Phi(), bloc\+::\+Remove\+Stmt(), ssa\+\_\+name\+::\+Remove\+Use(), tree\+\_\+manager\+::\+Replace\+Tree\+Node(), Vcd\+Signal\+Selection\+::\+Single\+Step\+Propagate\+Addr\+Ssa(), Vcd\+Signal\+Selection\+::\+Single\+Step\+Propagate\+Param\+To\+Ssa(), Vectorize\+::\+Transform(), typename\+\_\+type(), and fu\+\_\+binding\+::write\+\_\+init().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{df/dbf/classtree__node_a17760b9b2ecf3ad8bfd015ce90f60234_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtree__node_aa9abba3f1b30e0be80b4a56b188c6ecc}\label{classtree__node_aa9abba3f1b30e0be80b4a56b188c6ecc}} 
+\index{tree\+\_\+node@{tree\+\_\+node}!visit@{visit}}
+\index{visit@{visit}!tree\+\_\+node@{tree\+\_\+node}}
+\subsubsection{\texorpdfstring{visit()}{visit()}}
+{\footnotesize\ttfamily virtual void tree\+\_\+node\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__node__visitor}{tree\+\_\+node\+\_\+visitor} $\ast$const}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+virtual function used to traverse the \hyperlink{classtree__node}{tree\+\_\+node} data structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & is a reference to the \hyperlink{classtree__node}{tree\+\_\+node} visitor class \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{structlut__expr_a038fb8662e73256339281dac776155d0}{lut\+\_\+expr}, \hyperlink{structvector__type_a628f2913374a823ed425afdd76197459}{vector\+\_\+type}, \hyperlink{structvector__cst_a6efa88e172cac566dcfb5fd0a04ff947}{vector\+\_\+cst}, \hyperlink{structvar__decl_ad28f066d3483ec9ca4b7839c1af19c6f}{var\+\_\+decl}, \hyperlink{structunion__type_a6a6db754840c90dd94a29478df279e7b}{union\+\_\+type}, \hyperlink{structtype__decl_a6c09e2072a083c2625e79de59006f7e6}{type\+\_\+decl}, \hyperlink{structtry__block_aedc2ad7c024dea066c6d6d18f13dd736}{try\+\_\+block}, \hyperlink{structtree__vec_a6dfe22713c2cb390fe2c35f208d26872}{tree\+\_\+vec}, \hyperlink{structtree__list_aba63a94a601053b16420e7f757237b5d}{tree\+\_\+list}, \hyperlink{structnontype__argument__pack_a254f0396e0ad2b47a793f8cb7f5b233a}{nontype\+\_\+argument\+\_\+pack}, \hyperlink{structtype__argument__pack_a1367b4b509c18a5ba865cccc463d6172}{type\+\_\+argument\+\_\+pack}, \hyperlink{structtemplate__parm__index_a93264afe632fd02f7c454a429036064e}{template\+\_\+parm\+\_\+index}, \hyperlink{structtemplate__decl_a38f7c267485cd3aaefda2f7f49132af1}{template\+\_\+decl}, \hyperlink{structtarget__mem__ref461_af45ee8b7f6831742eb9108a5987d871e}{target\+\_\+mem\+\_\+ref461}, \hyperlink{structtarget__mem__ref_ab40ad4b7dc4e392c397a4cfcacbc46e1}{target\+\_\+mem\+\_\+ref}, \hyperlink{structtarget__expr_a69a7da18ea0d8b008cec659f2a24b63e}{target\+\_\+expr}, \hyperlink{structgimple__switch_a2fc71fef3c7d9d08e116ca7dba93d0e2}{gimple\+\_\+switch}, \hyperlink{structstring__cst_a45a7b808005d8535d6cdf939d6ac2fa5}{string\+\_\+cst}, \hyperlink{structstatement__list_a41991720aa29db82e76b6f28cd03fff3}{statement\+\_\+list}, \hyperlink{structssa__name_a9dd9ab89f7b91f1698c66869146a89dd}{ssa\+\_\+name}, \hyperlink{structscope__ref_ab9bfdbf6812bceab436f39ea51304058}{scope\+\_\+ref}, \hyperlink{structreturn__stmt_aef0ab55c5af1b107e05eddd7f4b4a88e}{return\+\_\+stmt}, \hyperlink{structgimple__return_a96de93cec9dfd2df931c05bfe673f532}{gimple\+\_\+return}, \hyperlink{structgimple__resx_aeaec0bead312592457e09d043bc76fea}{gimple\+\_\+resx}, \hyperlink{structresult__decl_a139725df13e7c33ae94f604d42aa708e}{result\+\_\+decl}, \hyperlink{structreference__type_aa5b63ca7df3884098382105ee8c1e128}{reference\+\_\+type}, \hyperlink{structrecord__type_a4ae646f9bc555d547c8b04a89de4135a}{record\+\_\+type}, \hyperlink{structreal__type_a9f45291aa61c33e2abba3618ce224dc3}{real\+\_\+type}, \hyperlink{structreal__cst_ae6808fef9486f7f044fde5befedf425a}{real\+\_\+cst}, \hyperlink{structpointer__type_aa2f2890548ddc7599a180a59c1635c93}{pointer\+\_\+type}, \hyperlink{structgimple__predict_af7e0810d1e453a5f90ceefaaa4d2c1f3}{gimple\+\_\+predict}, \hyperlink{structgimple__phi_a833830c256d428292a6d38e32cb7eabd}{gimple\+\_\+phi}, \hyperlink{structparm__decl_ac4757bda05ed450b912bfa0b3ed6bc6c}{parm\+\_\+decl}, \hyperlink{structoverload_af5069d7e549fbd84ae60f60b8efaf225}{overload}, \hyperlink{structnamespace__decl_a4870e54b688ed2ab60c49d03c4362ecb}{namespace\+\_\+decl}, \hyperlink{structmethod__type_a5994c05dca057b061c979293c5895c41}{method\+\_\+type}, \hyperlink{structgimple__label_a7948e2a870e18e9a7c7d8a722a6fa26b}{gimple\+\_\+label}, \hyperlink{structinteger__type_af6ef21cdf33588b79656e930c2444987}{integer\+\_\+type}, \hyperlink{structinteger__cst_a9cf8f2538b55564a1064ed928fdd5dc1}{integer\+\_\+cst}, \hyperlink{structidentifier__node_ada49ca74d47b1db6e1dfa69a1a46d597}{identifier\+\_\+node}, \hyperlink{structhandler_a59a457d67ccce8a01c0025929abba5a1}{handler}, \hyperlink{structgimple__goto_a201fad3cf9302bdcd1c462b9d581d298}{gimple\+\_\+goto}, \hyperlink{structgimple__nop_a332a68c582fd619f0fc2807fd90703d8}{gimple\+\_\+nop}, \hyperlink{structgimple__assign_afc25fa9b669662e4f64f09c62284dec2}{gimple\+\_\+assign}, \hyperlink{structfunction__type_a7cfe2e272e5280c9c280b180e3a21c2b}{function\+\_\+type}, \hyperlink{structfunction__decl_a49389fd3c1df13bb78dbc94e7350462e}{function\+\_\+decl}, \hyperlink{structfield__decl_a68ef82bb50b2ebdaa89d1702aa01065e}{field\+\_\+decl}, \hyperlink{structexpr__stmt_a2d0ca76e32e1bdf477e4f033fa6c8f92}{expr\+\_\+stmt}, \hyperlink{structenumeral__type_ab9c53d590b11d386a0791a0b211a5b1f}{enumeral\+\_\+type}, \hyperlink{structconstructor_ab925f188b5f5eb45088c8c72ea11055e}{constructor}, \hyperlink{structconst__decl_a50bf1b7d73f36fdb7c5036eba097f97e}{const\+\_\+decl}, \hyperlink{structgimple__cond_a1985767ad1b09766b8d32897826dbf48}{gimple\+\_\+cond}, \hyperlink{structcomplex__type_a22e4557b10d89aad537a1d213bf5eafd}{complex\+\_\+type}, \hyperlink{structcomplex__cst_aa98d0db16f586dd9ca9b16a468b67d2e}{complex\+\_\+cst}, \hyperlink{structexpr__pack__expansion_aeebf07512e982ce8b1fb21276362c6d4}{expr\+\_\+pack\+\_\+expansion}, \hyperlink{structtype__pack__expansion_a29598e1fd00fefa43588b8b30c8a6675}{type\+\_\+pack\+\_\+expansion}, \hyperlink{structcast__expr_a6f67dad818bc71c65e92f9105faf29f6}{cast\+\_\+expr}, \hyperlink{structcase__label__expr_ae05b2b2dac08585cdcf52aa97190ed4c}{case\+\_\+label\+\_\+expr}, \hyperlink{structgimple__call_ab493870aac4460fe2d52315b61ee5992}{gimple\+\_\+call}, \hyperlink{structaggr__init__expr_af28d5b47d09253a4ab8b59fbf776369d}{aggr\+\_\+init\+\_\+expr}, \hyperlink{structcall__expr_aeb0867ff82c5d47f5f86dd4e149f398f}{call\+\_\+expr}, \hyperlink{structblock_a637ca9811cf1cf93dd10c10cb174b9c4}{block}, \hyperlink{structbinfo_adc2b24cc31b9f03ae787f9f625405883}{binfo}, \hyperlink{structgimple__bind_a63a576886251512f6238e7055819869f}{gimple\+\_\+bind}, \hyperlink{structbaselink_a29dcaf2f07ad2369231426497d482ef0}{baselink}, \hyperlink{structgimple__asm_ac2ba4ccbf1f1085bcf1e0c9d6c06d706}{gimple\+\_\+asm}, \hyperlink{structarray__type_af389e234db3595ab54f93b6656600756}{array\+\_\+type}, \hyperlink{structerror__mark_a13abf9f9413d995a63882a657049d7c5}{error\+\_\+mark}, \hyperlink{structcst__node_a64e2bc20ffda1b13ffe894cacb982f89}{cst\+\_\+node}, \hyperlink{structmemory__tag_a9dec2571221222773939c1629db2267b}{memory\+\_\+tag}, \hyperlink{structtype__node_adc6e447af5f9505e6305320933c46a96}{type\+\_\+node}, \hyperlink{structquaternary__expr_ad01a5f8cb89a8bc218aa66029faf2cde}{quaternary\+\_\+expr}, \hyperlink{structternary__expr_a3bb8b37b29b4cb797c4872c773184f5b}{ternary\+\_\+expr}, \hyperlink{structbinary__expr_a01572c9c6e0d6bee6dadbb1a074cd075}{binary\+\_\+expr}, \hyperlink{structunary__expr_a0373bfbbec394ab8d9e88b5ff6d60890}{unary\+\_\+expr}, \hyperlink{structgimple__node_a337b029a3aca9c1b96311b6e6668f7f3}{gimple\+\_\+node}, \hyperlink{structexpr__node_aac767878f13ca07371dde2c3938ef38a}{expr\+\_\+node}, \hyperlink{structdecl__node_a9e63331f0c35d9af9d1997afafe9152a}{decl\+\_\+node}, \hyperlink{structgimple__multi__way__if_a5f89fbe2e85d7d49eb8684204e309712}{gimple\+\_\+multi\+\_\+way\+\_\+if}, \hyperlink{structWeightedNode_a6f976feccb640a60f96475a668314fde}{Weighted\+Node}, \hyperlink{structgimple__for_a582c8e3f0d70da9d0c1e8365eb56836d}{gimple\+\_\+for}, \hyperlink{structgimple__while_a8fbe7b677d626e16026d600db417ef32}{gimple\+\_\+while}, \hyperlink{structomp__declare__simd__pragma_a3745037752b1b165a418e50058eed19a}{omp\+\_\+declare\+\_\+simd\+\_\+pragma}, \hyperlink{structomp__simd__pragma_aea58522f1cbf5637c63588430acf77f2}{omp\+\_\+simd\+\_\+pragma}, \hyperlink{structomp__for__pragma_aaedfb731b705c0abadbc9fcb4a7bafef}{omp\+\_\+for\+\_\+pragma}, \hyperlink{structomp__atomic__pragma_adf901941aa33c47235e3b20d17410f63}{omp\+\_\+atomic\+\_\+pragma}, \hyperlink{structomp__critical__pragma_afb58812bf6b4658b1085d45711b25847}{omp\+\_\+critical\+\_\+pragma}, \hyperlink{structomp__task__pragma_ad7ce2ba5852e3a4404ef8dad6c6034be}{omp\+\_\+task\+\_\+pragma}, \hyperlink{structomp__target__pragma_a6b68bf02eef68fa2c841b75afabf06b7}{omp\+\_\+target\+\_\+pragma}, \hyperlink{structomp__section__pragma_af4ab9f80608c36b26779495aacc05e43}{omp\+\_\+section\+\_\+pragma}, \hyperlink{structomp__parallel__sections__pragma_a8f7f1c69bd6c94e4fbe53daf45bb33a7}{omp\+\_\+parallel\+\_\+sections\+\_\+pragma}, \hyperlink{structomp__sections__pragma_ae9dcb45b2796afc06a6b4e4233761837}{omp\+\_\+sections\+\_\+pragma}, \hyperlink{structomp__parallel__pragma_ac501a81fc5120b8ce8ec7c75fb617b57}{omp\+\_\+parallel\+\_\+pragma}, \hyperlink{structomp__pragma_a2e2c445528b7e097ae76fa618a9970b5}{omp\+\_\+pragma}, \hyperlink{structblackbox__pragma_a8e85a8856e83d67730225e4a1e3297b9}{blackbox\+\_\+pragma}, \hyperlink{structissue__pragma_afc993f822027243a8112c2b3f07bb17a}{issue\+\_\+pragma}, \hyperlink{structcall__point__hw__pragma_a3c039efe1da66ca0ab6445535aaa6eb2}{call\+\_\+point\+\_\+hw\+\_\+pragma}, \hyperlink{structcall__hw__pragma_a7ad2f9a214388ac8de0806ff6c8db2bc}{call\+\_\+hw\+\_\+pragma}, \hyperlink{structmap__pragma_a418af88fad63d1e91a1d1b12bc19b70c}{map\+\_\+pragma}, \hyperlink{structstatistical__profiling_a5f57274294fc3dc9e32ddeec86c8d3d0}{statistical\+\_\+profiling}, \hyperlink{structprofiling__pragma_aa8bba94f73c0ad5b71140ac6fc79eb57}{profiling\+\_\+pragma}, \hyperlink{structgimple__pragma_ac7dac0c665ea703c9d8f0891016ef972}{gimple\+\_\+pragma}, \hyperlink{classtree__reindex_ac43e08cc9a1eb305e7c38940909493c4}{tree\+\_\+reindex}, and \hyperlink{structnull__node_a2ca249a9a55f750dad7443b376af929c}{null\+\_\+node}.
+
+
+
+Referenced by Behavioral\+Helper\+::get\+\_\+typecast(), Gimple\+Writer\+::\+Gimple\+Writer(), Call\+Graph\+Builtin\+Call\+::\+Internal\+Exec(), tree\+\_\+manager\+::merge\+\_\+tree\+\_\+managers(), and typename\+\_\+type().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{df/dbf/classtree__node_aa9abba3f1b30e0be80b4a56b188c6ecc_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classtree__node_a7abb3e56ee52f67b970bbafb18bbddc9}\label{classtree__node_a7abb3e56ee52f67b970bbafb18bbddc9}} 
+\index{tree\+\_\+node@{tree\+\_\+node}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!tree\+\_\+node@{tree\+\_\+node}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classtree__node}{tree\+\_\+node} $\ast$}]{tn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Friend definition of the $<$$<$ operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & is the output stream \\
+\hline
+{\em tn} & is the \hyperlink{classtree__node}{tree\+\_\+node} to be printed \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by typename\+\_\+type().
+
+\mbox{\Hypertarget{classtree__node_a04c3200a2247133cf590eff539d97021}\label{classtree__node_a04c3200a2247133cf590eff539d97021}} 
+\index{tree\+\_\+node@{tree\+\_\+node}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!tree\+\_\+node@{tree\+\_\+node}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{tn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Friend definition of the $<$$<$ operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & is the output stream \\
+\hline
+{\em tn} & is the \hyperlink{classtree__node}{tree\+\_\+node} to be printed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 158 of file tree\+\_\+node.\+cpp.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classtree__node_ac036ae7a6a4594d3052b9a29045464ca}\label{classtree__node_ac036ae7a6a4594d3052b9a29045464ca}} 
+\index{tree\+\_\+node@{tree\+\_\+node}!index@{index}}
+\index{index@{index}!tree\+\_\+node@{tree\+\_\+node}}
+\subsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily const unsigned int tree\+\_\+node\+::index}
+
+
+
+Represent the index readed from the raw file and the index-\/1 of the vector of \hyperlink{classtree__node}{tree\+\_\+node} associated to the functions vector present in the \hyperlink{classtree__manager}{tree\+\_\+manager}. 
+
+
+
+Definition at line 142 of file tree\+\_\+node.\+hpp.
+
+
+
+Referenced by tree\+\_\+helper\+::accessed\+\_\+greatest\+\_\+bitsize(), gimple\+\_\+phi\+::\+Add\+Def\+Edge(), bloc\+::\+Add\+Phi(), determine\+\_\+memory\+\_\+accesses\+::analyze\+\_\+node(), Phi\+Opt\+::\+Apply\+Multi\+Merge(), Phi\+Opt\+::\+Apply\+Multi\+Remove(), Bit\+\_\+\+Value\+::backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses(), Bit\+\_\+\+Value\+::backward\+\_\+transfer(), operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), simple\+\_\+code\+\_\+motion\+::\+Check\+Movable(), tree\+\_\+manipulation\+::create\+\_\+gimple\+\_\+call(), short\+\_\+circuit\+\_\+taf\+::create\+\_\+gimple\+\_\+cond(), tree\+\_\+manipulation\+::\+Create\+Gimple\+Assign(), Vectorize\+::\+Duplicate\+Increment(), I\+R\+\_\+lowering\+::expand\+\_\+sdiv\+\_\+pow2(), I\+R\+\_\+lowering\+::expand\+\_\+smod\+\_\+pow2(), Call\+Graph\+Builtin\+Call\+::\+Extend\+Call\+Graph(), tree\+\_\+manipulation\+::\+Extract\+Condition(), Bit\+\_\+\+Value\+::forward\+\_\+transfer(), tree\+\_\+helper\+::get\+\_\+base\+\_\+index(), Schedule\+::\+Get\+B\+B\+Ending\+Time(), Behavioral\+Helper\+::\+Get\+Function\+Return\+Type(), Op\+Node\+Info\+::\+Get\+Node\+Id(), Gimple\+Writer\+::\+Gimple\+Writer(), C\+S\+E\+::hash\+\_\+check(), Bit\+\_\+\+Value\+::initialize(), Loops\+Analysis\+Bambu\+::\+Internal\+Exec(), constant\+\_\+flop\+\_\+wrapper\+::\+Internal\+Exec(), hls\+\_\+div\+\_\+cg\+\_\+ext\+::\+Internal\+Exec(), Cond\+Expr\+Restructuring\+::\+Internal\+Exec(), C\+S\+E\+::\+Internal\+Exec(), Multiple\+Entry\+If\+Reduction\+::\+Internal\+Exec(), I\+R\+\_\+lowering\+::\+Internal\+Exec(), Call\+Graph\+Builtin\+Call\+::look\+For\+Builtin\+Call(), tree\+\_\+helper\+::op\+\_\+symbol(), type\+\_\+casting\+::operator()(), Bit\+\_\+\+Value\+\_\+opt\+::optimize(), tree\+\_\+reindex\+::print(), Behavioral\+Helper\+::print\+\_\+node(), Behavioral\+Helper\+::\+Print\+Variable(), bloc\+::\+Push\+After(), bloc\+::\+Push\+Back(), bloc\+::\+Push\+Before(), bloc\+::\+Push\+Front(), hls\+\_\+div\+\_\+cg\+\_\+ext\+::recursive\+\_\+examinate(), soft\+\_\+float\+\_\+cg\+\_\+ext\+::\+Recursive\+Examinate(), tree\+\_\+helper\+::\+Recursive\+Get\+Types\+To\+Be\+Declared(), tree\+\_\+manager\+::\+Recursive\+Replace\+Tree\+Node(), gimple\+\_\+phi\+::\+Remove\+Def\+Edge(), bloc\+::\+Remove\+Phi(), bloc\+::\+Remove\+Stmt(), bloc\+::\+Replace(), gimple\+\_\+phi\+::\+Replace\+Def\+Edge(), Vectorize\+::\+Transform(), typename\+\_\+type(), expr\+\_\+pack\+\_\+expansion\+::visit(), and fu\+\_\+binding\+::write\+\_\+init().
+
+\mbox{\Hypertarget{classtree__node_a4acb8eaa2d77287880caa24020d639fe}\label{classtree__node_a4acb8eaa2d77287880caa24020d639fe}} 
+\index{tree\+\_\+node@{tree\+\_\+node}!kind\+\_\+to\+\_\+string@{kind\+\_\+to\+\_\+string}}
+\index{kind\+\_\+to\+\_\+string@{kind\+\_\+to\+\_\+string}!tree\+\_\+node@{tree\+\_\+node}}
+\subsubsection{\texorpdfstring{kind\+\_\+to\+\_\+string}{kind\_to\_string}}
+{\footnotesize\ttfamily std\+::map$<$ enum \hyperlink{tree__common_8hpp_a9efbd7c7191fb190b76c2fd05d6e7b45}{kind}, std\+::string $>$ tree\+\_\+node\+::kind\+\_\+to\+\_\+string\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Map kind to string. 
+
+
+
+Definition at line 135 of file tree\+\_\+node.\+hpp.
+
+
+
+Referenced by Get\+String().
+
+\mbox{\Hypertarget{classtree__node_a7e8912d45db001a06ab7825ea3dc62c6}\label{classtree__node_a7e8912d45db001a06ab7825ea3dc62c6}} 
+\index{tree\+\_\+node@{tree\+\_\+node}!string\+\_\+to\+\_\+kind@{string\+\_\+to\+\_\+kind}}
+\index{string\+\_\+to\+\_\+kind@{string\+\_\+to\+\_\+kind}!tree\+\_\+node@{tree\+\_\+node}}
+\subsubsection{\texorpdfstring{string\+\_\+to\+\_\+kind}{string\_to\_kind}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, enum \hyperlink{tree__common_8hpp_a9efbd7c7191fb190b76c2fd05d6e7b45}{kind} $>$ tree\+\_\+node\+::string\+\_\+to\+\_\+kind\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Map string to corresponding enum. 
+
+
+
+Definition at line 132 of file tree\+\_\+node.\+hpp.
+
+
+
+Referenced by get\+\_\+kind().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/\hyperlink{tree__node_8hpp}{tree\+\_\+node.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/\hyperlink{tree__node_8cpp}{tree\+\_\+node.\+cpp}\end{DoxyCompactItemize}

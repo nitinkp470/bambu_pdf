@@ -1,0 +1,107 @@
+\hypertarget{FSM__NI__SSA__liveness_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/liveness/\+F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.cpp File Reference}
+\label{FSM__NI__SSA__liveness_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/liveness/\+F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/liveness/\+F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+cpp}}
+
+
+liveness analysis exploiting the S\+SA form of the IR  
+
+
+{\ttfamily \#include \char`\"{}F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}basic\+\_\+block.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}function\+\_\+behavior.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}op\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+constraints.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}liveness.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}memory.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}state\+\_\+transition\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}state\+\_\+transition\+\_\+graph\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}behavioral\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/foreach.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/range/adaptor/reversed.\+hpp$>$}\newline
+Include dependency graph for F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/df1/FSM__NI__SSA__liveness_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \hyperlink{FSM__NI__SSA__liveness_8cpp_a9647a4ddd3415e2e7e5d5c3ce96456fb}{get\+\_\+bb\+\_\+index\+\_\+from\+\_\+state\+\_\+info} (const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} data, \hyperlink{state__transition__graph_8hpp_a50240fded93adab729e333c2b8090a8b}{State\+Info\+Const\+Ref} state\+\_\+info)
+\item 
+static void \hyperlink{FSM__NI__SSA__liveness_8cpp_a1aa131e5356d16222c78108eee450f93}{update\+\_\+liveout\+\_\+with\+\_\+prev} (const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} H\+L\+S\+Mgr, \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} H\+LS, const \hyperlink{state__transition__graph_8hpp_aa722f3ba42caaaafcacdec07925f6b06}{State\+Transition\+Graph\+Const\+Ref} stg, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} data, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} current\+\_\+state, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} prev\+\_\+state)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+liveness analysis exploiting the S\+SA form of the IR 
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+
+Pietro Fezzardi \href{mailto:pietrofezzardi@gmail.com}{\tt pietrofezzardi@gmail.\+com} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{FSM__NI__SSA__liveness_8cpp_a9647a4ddd3415e2e7e5d5c3ce96456fb}\label{FSM__NI__SSA__liveness_8cpp_a9647a4ddd3415e2e7e5d5c3ce96456fb}} 
+\index{F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+cpp@{F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+cpp}!get\+\_\+bb\+\_\+index\+\_\+from\+\_\+state\+\_\+info@{get\+\_\+bb\+\_\+index\+\_\+from\+\_\+state\+\_\+info}}
+\index{get\+\_\+bb\+\_\+index\+\_\+from\+\_\+state\+\_\+info@{get\+\_\+bb\+\_\+index\+\_\+from\+\_\+state\+\_\+info}!F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+cpp@{F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+cpp}}
+\subsubsection{\texorpdfstring{get\+\_\+bb\+\_\+index\+\_\+from\+\_\+state\+\_\+info()}{get\_bb\_index\_from\_state\_info()}}
+{\footnotesize\ttfamily static unsigned int get\+\_\+bb\+\_\+index\+\_\+from\+\_\+state\+\_\+info (\begin{DoxyParamCaption}\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{data,  }\item[{\hyperlink{state__transition__graph_8hpp_a50240fded93adab729e333c2b8090a8b}{State\+Info\+Const\+Ref}}]{state\+\_\+info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 98 of file F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+cpp.
+
+
+
+References G\+E\+T\+\_\+\+B\+B\+\_\+\+I\+N\+D\+EX.
+
+
+
+Referenced by F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dad/FSM__NI__SSA__liveness_8cpp_a9647a4ddd3415e2e7e5d5c3ce96456fb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{FSM__NI__SSA__liveness_8cpp_a1aa131e5356d16222c78108eee450f93}\label{FSM__NI__SSA__liveness_8cpp_a1aa131e5356d16222c78108eee450f93}} 
+\index{F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+cpp@{F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+cpp}!update\+\_\+liveout\+\_\+with\+\_\+prev@{update\+\_\+liveout\+\_\+with\+\_\+prev}}
+\index{update\+\_\+liveout\+\_\+with\+\_\+prev@{update\+\_\+liveout\+\_\+with\+\_\+prev}!F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+cpp@{F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+cpp}}
+\subsubsection{\texorpdfstring{update\+\_\+liveout\+\_\+with\+\_\+prev()}{update\_liveout\_with\_prev()}}
+{\footnotesize\ttfamily static void update\+\_\+liveout\+\_\+with\+\_\+prev (\begin{DoxyParamCaption}\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr,  }\item[{\hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref}}]{H\+LS,  }\item[{const \hyperlink{state__transition__graph_8hpp_aa722f3ba42caaaafcacdec07925f6b06}{State\+Transition\+Graph\+Const\+Ref}}]{stg,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{data,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{current\+\_\+state,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{prev\+\_\+state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 117 of file F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+cpp.
+
+
+
+References D\+E\+F\+I\+N\+I\+T\+I\+ON, S\+C\+A\+L\+AR, and U\+SE.
+
+
+
+Referenced by F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dad/FSM__NI__SSA__liveness_8cpp_a1aa131e5356d16222c78108eee450f93_icgraph}
+\end{center}
+\end{figure}

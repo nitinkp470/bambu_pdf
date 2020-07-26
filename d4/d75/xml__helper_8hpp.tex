@@ -1,0 +1,248 @@
+\hypertarget{xml__helper_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/xml\+\_\+helper.hpp File Reference}
+\label{xml__helper_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/xml\+\_\+helper.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/xml\+\_\+helper.\+hpp}}
+
+
+Some macro used to interface with the X\+ML library.  
+
+
+{\ttfamily \#include $<$boost/lexical\+\_\+cast.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/typeof/typeof.\+hpp$>$}\newline
+Include dependency graph for xml\+\_\+helper.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{db/d73/xml__helper_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8b/xml__helper_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{xml__helper_8hpp_ab6546a8a8dcf7d168f584aa0454a1763}{W\+R\+I\+T\+E\+\_\+\+X\+VM}(variable,  node)~(node)-\/$>$set\+\_\+attribute(\#variable, boost\+::lexical\+\_\+cast$<$std\+::string$>$(variable))
+\begin{DoxyCompactList}\small\item\em W\+R\+I\+TE X\+ML Value Macro. Insert a value in an X\+ML tree. \end{DoxyCompactList}\item 
+\#define \hyperlink{xml__helper_8hpp_a408ab9338c8b780a617d1c33dd5696c9}{W\+R\+I\+T\+E\+\_\+\+X\+N\+VM}(variable,  value,  node)~(node)-\/$>$set\+\_\+attribute(\#variable, value)
+\begin{DoxyCompactList}\small\item\em W\+R\+I\+TE X\+ML Name Value Macro. Insert a value in an X\+ML tree given the name of the attribute. The name is converted in a string. \end{DoxyCompactList}\item 
+\#define \hyperlink{xml__helper_8hpp_aa7c64acf4b2d769ed2d2225bd9d08ff1}{W\+R\+I\+T\+E\+\_\+\+X\+N\+V\+M2}(name,  value,  node)~(node)-\/$>$set\+\_\+attribute(name, value)
+\begin{DoxyCompactList}\small\item\em W\+R\+I\+TE X\+ML Name Value Macro second version. Insert a value in an X\+ML tree given the name of the attribute. \end{DoxyCompactList}\item 
+\#define \hyperlink{xml__helper_8hpp_a12f61f198636c5feb5fa8800641657c7}{W\+R\+I\+T\+E\+\_\+\+V\+A\+L\+UE}(variable,  node)~\hyperlink{xml__helper_8hpp_a408ab9338c8b780a617d1c33dd5696c9}{W\+R\+I\+T\+E\+\_\+\+X\+N\+VM}(value, boost\+::lexical\+\_\+cast$<$std\+::string$>$(variable), (node)-\/$>$add\+\_\+child(\#variable))
+\begin{DoxyCompactList}\small\item\em W\+R\+I\+TE X\+ML Name Value Macro third version. \end{DoxyCompactList}\item 
+\#define \hyperlink{xml__helper_8hpp_a5d3aaa5e469106cf6132d32356be6bc7}{L\+O\+A\+D\+\_\+\+X\+VM}(variable,  node)~variable = boost\+::lexical\+\_\+cast$<$B\+O\+O\+S\+T\+\_\+\+T\+Y\+P\+E\+O\+F\+\_\+\+T\+PL(variable)$>$((node)-\/$>$get\+\_\+attribute(\#variable)-\/$>$get\+\_\+value())
+\begin{DoxyCompactList}\small\item\em L\+O\+AD X\+ML Value Macro. Set a variable starting from an X\+ML value. Conversion is performed if needed. \end{DoxyCompactList}\item 
+\#define \hyperlink{xml__helper_8hpp_ab56189b9d46170e70fe263e2282af5d5}{L\+O\+A\+D\+\_\+\+X\+V\+FM}(variable,  node,  field)~variable = boost\+::lexical\+\_\+cast$<$B\+O\+O\+S\+T\+\_\+\+T\+Y\+P\+E\+O\+F\+\_\+\+T\+PL(variable)$>$((node)-\/$>$get\+\_\+attribute(\#field)-\/$>$get\+\_\+value())
+\begin{DoxyCompactList}\small\item\em L\+O\+AD X\+ML Value for field Macro. Set a variable starting from an X\+ML value. Conversion is performed if needed. \end{DoxyCompactList}\item 
+\#define \hyperlink{xml__helper_8hpp_afa37434eed6c65c261a248bcffcdff55}{L\+O\+A\+D\+\_\+\+X\+V\+M\+\_\+\+LD}(variable,  node)~variable = strtold(((node)-\/$>$get\+\_\+attribute(\#variable)-\/$>$get\+\_\+value()).c\+\_\+str(), nullptr)
+\begin{DoxyCompactList}\small\item\em under windows long double numbers are not correctly managed. This hack solves the problem \end{DoxyCompactList}\item 
+\#define \hyperlink{xml__helper_8hpp_adb34257fba005584cf1f37264fae4bee}{L\+O\+A\+D\+\_\+\+V\+A\+L\+UE}(variable,  node)
+\begin{DoxyCompactList}\small\item\em L\+O\+AD X\+ML Value Macro. \end{DoxyCompactList}\item 
+\#define \hyperlink{xml__helper_8hpp_a6eb27cc2345b6387b8bc3a5b5969c5de}{G\+E\+T\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+V\+A\+L\+UE}(node)~boost\+::lexical\+\_\+cast$<$std\+::string$>$((node)-\/$>$get\+\_\+attribute(\char`\"{}value\char`\"{})-\/$>$get\+\_\+value())
+\begin{DoxyCompactList}\small\item\em L\+O\+AD X\+ML Value Macro. \end{DoxyCompactList}\item 
+\#define \hyperlink{xml__helper_8hpp_ad6fa70b28555a3a10d77e1e4955ba99e}{G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+N\+A\+ME}(node)~((node)-\/$>$get\+\_\+name())
+\item 
+\#define \hyperlink{xml__helper_8hpp_a9a4882913db1a739b41b88fe220b4309}{C\+E\+\_\+\+X\+VM}(variable,  node)~(node)-\/$>$get\+\_\+attribute(\#variable)
+\begin{DoxyCompactList}\small\item\em Check existence X\+ML Value Macro. Check if an X\+ML attribute is present in the X\+ML tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Some macro used to interface with the X\+ML library. 
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{xml__helper_8hpp_a9a4882913db1a739b41b88fe220b4309}\label{xml__helper_8hpp_a9a4882913db1a739b41b88fe220b4309}} 
+\index{xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}!C\+E\+\_\+\+X\+VM@{C\+E\+\_\+\+X\+VM}}
+\index{C\+E\+\_\+\+X\+VM@{C\+E\+\_\+\+X\+VM}!xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}}
+\subsubsection{\texorpdfstring{C\+E\+\_\+\+X\+VM}{CE\_XVM}}
+{\footnotesize\ttfamily \#define C\+E\+\_\+\+X\+VM(\begin{DoxyParamCaption}\item[{}]{variable,  }\item[{}]{node }\end{DoxyParamCaption})~(node)-\/$>$get\+\_\+attribute(\#variable)}
+
+
+
+Check existence X\+ML Value Macro. Check if an X\+ML attribute is present in the X\+ML tree. 
+
+
+
+Definition at line 84 of file xml\+\_\+helper.\+hpp.
+
+
+
+Referenced by H\+L\+S\+\_\+target\+::create\+\_\+target(), H\+L\+S\+\_\+constraints\+::\+H\+L\+S\+\_\+constraints(), Parameter\+::load\+\_\+xml\+\_\+configuration\+\_\+file(), Parameter\+::load\+\_\+xml\+\_\+configuration\+\_\+file\+\_\+rec(), Data\+Xml\+Parser\+::\+Parse(), mem\+\_\+xml\+\_\+allocation\+::parse\+\_\+external\+\_\+allocation(), mem\+\_\+xml\+\_\+allocation\+::parse\+\_\+internal\+\_\+allocation(), Translator\+::read\+\_\+column\+\_\+formats(), Xilinx\+Backend\+Flow\+::vivado\+\_\+xparse\+\_\+utilization(), Backend\+Flow\+::xload(), hls\+::xload(), H\+L\+S\+\_\+constraints\+::xload(), Synthesis\+Tool\+::xload(), structural\+\_\+type\+\_\+descriptor\+::xload(), operation\+::xload(), structural\+\_\+object\+::xload(), functional\+\_\+unit\+::xload(), port\+\_\+o\+::xload(), action\+\_\+o\+::xload(), constant\+\_\+o\+::xload(), module\+::xload(), Lattice\+Backend\+Flow\+::xparse\+\_\+utilization(), Altera\+Backend\+Flow\+::xparse\+\_\+utilization(), Nano\+Xplore\+Backend\+Flow\+::xparse\+\_\+utilization(), and Xilinx\+Backend\+Flow\+::xparse\+\_\+xst\+\_\+utilization().
+
+\mbox{\Hypertarget{xml__helper_8hpp_ad6fa70b28555a3a10d77e1e4955ba99e}\label{xml__helper_8hpp_ad6fa70b28555a3a10d77e1e4955ba99e}} 
+\index{xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}!G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+N\+A\+ME@{G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+N\+A\+ME}}
+\index{G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+N\+A\+ME@{G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+N\+A\+ME}!xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+N\+A\+ME}{GET\_NODE\_NAME}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+N\+A\+ME(\begin{DoxyParamCaption}\item[{}]{node }\end{DoxyParamCaption})~((node)-\/$>$get\+\_\+name())}
+
+
+
+Definition at line 81 of file xml\+\_\+helper.\+hpp.
+
+
+
+Referenced by Parameter\+::load\+\_\+xml\+\_\+configuration\+\_\+file(), and Parameter\+::load\+\_\+xml\+\_\+configuration\+\_\+file\+\_\+rec().
+
+\mbox{\Hypertarget{xml__helper_8hpp_a6eb27cc2345b6387b8bc3a5b5969c5de}\label{xml__helper_8hpp_a6eb27cc2345b6387b8bc3a5b5969c5de}} 
+\index{xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}!G\+E\+T\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+V\+A\+L\+UE@{G\+E\+T\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+V\+A\+L\+UE}}
+\index{G\+E\+T\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+V\+A\+L\+UE@{G\+E\+T\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+V\+A\+L\+UE}!xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+V\+A\+L\+UE}{GET\_STRING\_VALUE}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+V\+A\+L\+UE(\begin{DoxyParamCaption}\item[{}]{node }\end{DoxyParamCaption})~boost\+::lexical\+\_\+cast$<$std\+::string$>$((node)-\/$>$get\+\_\+attribute(\char`\"{}value\char`\"{})-\/$>$get\+\_\+value())}
+
+
+
+L\+O\+AD X\+ML Value Macro. 
+
+Set a variable starting from an X\+ML attribute composed of name and value. Conversion is performed if needed. 
+
+Definition at line 79 of file xml\+\_\+helper.\+hpp.
+
+
+
+Referenced by Parameter\+::load\+\_\+xml\+\_\+configuration\+\_\+file(), and Parameter\+::load\+\_\+xml\+\_\+configuration\+\_\+file\+\_\+rec().
+
+\mbox{\Hypertarget{xml__helper_8hpp_adb34257fba005584cf1f37264fae4bee}\label{xml__helper_8hpp_adb34257fba005584cf1f37264fae4bee}} 
+\index{xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}!L\+O\+A\+D\+\_\+\+V\+A\+L\+UE@{L\+O\+A\+D\+\_\+\+V\+A\+L\+UE}}
+\index{L\+O\+A\+D\+\_\+\+V\+A\+L\+UE@{L\+O\+A\+D\+\_\+\+V\+A\+L\+UE}!xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}}
+\subsubsection{\texorpdfstring{L\+O\+A\+D\+\_\+\+V\+A\+L\+UE}{LOAD\_VALUE}}
+{\footnotesize\ttfamily \#define L\+O\+A\+D\+\_\+\+V\+A\+L\+UE(\begin{DoxyParamCaption}\item[{}]{variable,  }\item[{}]{node }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}((node)->get\_name() == #variable) \(\backslash\)
+   variable = boost::lexical\_cast<BOOST\_TYPEOF\_TPL(variable)>((node)->get\_attribute(\textcolor{stringliteral}{"value"})->get\_value())
+\end{DoxyCode}
+
+
+L\+O\+AD X\+ML Value Macro. 
+
+Set a variable starting from an X\+ML attribute composed of name and value. Conversion is performed if needed. 
+
+Definition at line 73 of file xml\+\_\+helper.\+hpp.
+
+\mbox{\Hypertarget{xml__helper_8hpp_ab56189b9d46170e70fe263e2282af5d5}\label{xml__helper_8hpp_ab56189b9d46170e70fe263e2282af5d5}} 
+\index{xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}!L\+O\+A\+D\+\_\+\+X\+V\+FM@{L\+O\+A\+D\+\_\+\+X\+V\+FM}}
+\index{L\+O\+A\+D\+\_\+\+X\+V\+FM@{L\+O\+A\+D\+\_\+\+X\+V\+FM}!xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}}
+\subsubsection{\texorpdfstring{L\+O\+A\+D\+\_\+\+X\+V\+FM}{LOAD\_XVFM}}
+{\footnotesize\ttfamily \#define L\+O\+A\+D\+\_\+\+X\+V\+FM(\begin{DoxyParamCaption}\item[{}]{variable,  }\item[{}]{node,  }\item[{}]{field }\end{DoxyParamCaption})~variable = boost\+::lexical\+\_\+cast$<$B\+O\+O\+S\+T\+\_\+\+T\+Y\+P\+E\+O\+F\+\_\+\+T\+PL(variable)$>$((node)-\/$>$get\+\_\+attribute(\#field)-\/$>$get\+\_\+value())}
+
+
+
+L\+O\+AD X\+ML Value for field Macro. Set a variable starting from an X\+ML value. Conversion is performed if needed. 
+
+
+
+Definition at line 66 of file xml\+\_\+helper.\+hpp.
+
+
+
+Referenced by mem\+\_\+xml\+\_\+allocation\+::parse\+\_\+external\+\_\+allocation(), mem\+\_\+xml\+\_\+allocation\+::parse\+\_\+internal\+\_\+allocation(), Backend\+Flow\+::xload(), structural\+\_\+type\+\_\+descriptor\+::xload(), operation\+::xload(), port\+\_\+o\+::xload(), action\+\_\+o\+::xload(), constant\+\_\+o\+::xload(), and module\+::xload().
+
+\mbox{\Hypertarget{xml__helper_8hpp_a5d3aaa5e469106cf6132d32356be6bc7}\label{xml__helper_8hpp_a5d3aaa5e469106cf6132d32356be6bc7}} 
+\index{xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}!L\+O\+A\+D\+\_\+\+X\+VM@{L\+O\+A\+D\+\_\+\+X\+VM}}
+\index{L\+O\+A\+D\+\_\+\+X\+VM@{L\+O\+A\+D\+\_\+\+X\+VM}!xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}}
+\subsubsection{\texorpdfstring{L\+O\+A\+D\+\_\+\+X\+VM}{LOAD\_XVM}}
+{\footnotesize\ttfamily \#define L\+O\+A\+D\+\_\+\+X\+VM(\begin{DoxyParamCaption}\item[{}]{variable,  }\item[{}]{node }\end{DoxyParamCaption})~variable = boost\+::lexical\+\_\+cast$<$B\+O\+O\+S\+T\+\_\+\+T\+Y\+P\+E\+O\+F\+\_\+\+T\+PL(variable)$>$((node)-\/$>$get\+\_\+attribute(\#variable)-\/$>$get\+\_\+value())}
+
+
+
+L\+O\+AD X\+ML Value Macro. Set a variable starting from an X\+ML value. Conversion is performed if needed. 
+
+
+
+Definition at line 63 of file xml\+\_\+helper.\+hpp.
+
+
+
+Referenced by H\+L\+S\+\_\+target\+::create\+\_\+target(), Translator\+::get\+\_\+normalization(), H\+L\+S\+\_\+constraints\+::\+H\+L\+S\+\_\+constraints(), mem\+\_\+xml\+\_\+allocation\+::parse\+\_\+external\+\_\+allocation(), Backend\+Flow\+::parse\+\_\+flow(), mem\+\_\+xml\+\_\+allocation\+::parse\+\_\+internal\+\_\+allocation(), mem\+\_\+xml\+\_\+allocation\+::parse\+\_\+xml\+\_\+allocation(), Translator\+::read\+\_\+column\+\_\+formats(), Xilinx\+Backend\+Flow\+::vivado\+\_\+xparse\+\_\+utilization(), Backend\+Flow\+::xload(), hls\+::xload(), H\+L\+S\+\_\+constraints\+::xload(), Synthesis\+Tool\+::xload(), structural\+\_\+type\+\_\+descriptor\+::xload(), operation\+::xload(), structural\+\_\+object\+::xload(), functional\+\_\+unit\+::xload(), port\+\_\+o\+::xload(), action\+\_\+o\+::xload(), constant\+\_\+o\+::xload(), target\+\_\+device\+::xload\+\_\+device\+\_\+parameters(), target\+\_\+technology\+::xload\+\_\+technology\+\_\+parameters(), time\+\_\+model\+::xload\+\_\+timing\+\_\+path(), Altera\+Backend\+Flow\+::xparse\+\_\+utilization(), Lattice\+Backend\+Flow\+::xparse\+\_\+utilization(), Nano\+Xplore\+Backend\+Flow\+::xparse\+\_\+utilization(), and Xilinx\+Backend\+Flow\+::xparse\+\_\+xst\+\_\+utilization().
+
+\mbox{\Hypertarget{xml__helper_8hpp_afa37434eed6c65c261a248bcffcdff55}\label{xml__helper_8hpp_afa37434eed6c65c261a248bcffcdff55}} 
+\index{xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}!L\+O\+A\+D\+\_\+\+X\+V\+M\+\_\+\+LD@{L\+O\+A\+D\+\_\+\+X\+V\+M\+\_\+\+LD}}
+\index{L\+O\+A\+D\+\_\+\+X\+V\+M\+\_\+\+LD@{L\+O\+A\+D\+\_\+\+X\+V\+M\+\_\+\+LD}!xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}}
+\subsubsection{\texorpdfstring{L\+O\+A\+D\+\_\+\+X\+V\+M\+\_\+\+LD}{LOAD\_XVM\_LD}}
+{\footnotesize\ttfamily \#define L\+O\+A\+D\+\_\+\+X\+V\+M\+\_\+\+LD(\begin{DoxyParamCaption}\item[{}]{variable,  }\item[{}]{node }\end{DoxyParamCaption})~variable = strtold(((node)-\/$>$get\+\_\+attribute(\#variable)-\/$>$get\+\_\+value()).c\+\_\+str(), nullptr)}
+
+
+
+under windows long double numbers are not correctly managed. This hack solves the problem 
+
+
+
+Definition at line 69 of file xml\+\_\+helper.\+hpp.
+
+\mbox{\Hypertarget{xml__helper_8hpp_a12f61f198636c5feb5fa8800641657c7}\label{xml__helper_8hpp_a12f61f198636c5feb5fa8800641657c7}} 
+\index{xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}!W\+R\+I\+T\+E\+\_\+\+V\+A\+L\+UE@{W\+R\+I\+T\+E\+\_\+\+V\+A\+L\+UE}}
+\index{W\+R\+I\+T\+E\+\_\+\+V\+A\+L\+UE@{W\+R\+I\+T\+E\+\_\+\+V\+A\+L\+UE}!xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}}
+\subsubsection{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+V\+A\+L\+UE}{WRITE\_VALUE}}
+{\footnotesize\ttfamily \#define W\+R\+I\+T\+E\+\_\+\+V\+A\+L\+UE(\begin{DoxyParamCaption}\item[{}]{variable,  }\item[{}]{node }\end{DoxyParamCaption})~\hyperlink{xml__helper_8hpp_a408ab9338c8b780a617d1c33dd5696c9}{W\+R\+I\+T\+E\+\_\+\+X\+N\+VM}(value, boost\+::lexical\+\_\+cast$<$std\+::string$>$(variable), (node)-\/$>$add\+\_\+child(\#variable))}
+
+
+
+W\+R\+I\+TE X\+ML Name Value Macro third version. 
+
+Insert a value in an X\+ML tree given the name of the attribute; it sets the attribute with \char`\"{}value\char`\"{} field. It adds a child to node with variable name 
+
+Definition at line 60 of file xml\+\_\+helper.\+hpp.
+
+\mbox{\Hypertarget{xml__helper_8hpp_a408ab9338c8b780a617d1c33dd5696c9}\label{xml__helper_8hpp_a408ab9338c8b780a617d1c33dd5696c9}} 
+\index{xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}!W\+R\+I\+T\+E\+\_\+\+X\+N\+VM@{W\+R\+I\+T\+E\+\_\+\+X\+N\+VM}}
+\index{W\+R\+I\+T\+E\+\_\+\+X\+N\+VM@{W\+R\+I\+T\+E\+\_\+\+X\+N\+VM}!xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}}
+\subsubsection{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+X\+N\+VM}{WRITE\_XNVM}}
+{\footnotesize\ttfamily \#define W\+R\+I\+T\+E\+\_\+\+X\+N\+VM(\begin{DoxyParamCaption}\item[{}]{variable,  }\item[{}]{value,  }\item[{}]{node }\end{DoxyParamCaption})~(node)-\/$>$set\+\_\+attribute(\#variable, value)}
+
+
+
+W\+R\+I\+TE X\+ML Name Value Macro. Insert a value in an X\+ML tree given the name of the attribute. The name is converted in a string. 
+
+
+
+Definition at line 53 of file xml\+\_\+helper.\+hpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::write\+\_\+timing\+\_\+paths(), structural\+\_\+type\+\_\+descriptor\+::xwrite(), operation\+::xwrite(), memory\+::xwrite(), port\+\_\+o\+::xwrite(), and action\+\_\+o\+::xwrite().
+
+\mbox{\Hypertarget{xml__helper_8hpp_aa7c64acf4b2d769ed2d2225bd9d08ff1}\label{xml__helper_8hpp_aa7c64acf4b2d769ed2d2225bd9d08ff1}} 
+\index{xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}!W\+R\+I\+T\+E\+\_\+\+X\+N\+V\+M2@{W\+R\+I\+T\+E\+\_\+\+X\+N\+V\+M2}}
+\index{W\+R\+I\+T\+E\+\_\+\+X\+N\+V\+M2@{W\+R\+I\+T\+E\+\_\+\+X\+N\+V\+M2}!xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}}
+\subsubsection{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+X\+N\+V\+M2}{WRITE\_XNVM2}}
+{\footnotesize\ttfamily \#define W\+R\+I\+T\+E\+\_\+\+X\+N\+V\+M2(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{value,  }\item[{}]{node }\end{DoxyParamCaption})~(node)-\/$>$set\+\_\+attribute(name, value)}
+
+
+
+W\+R\+I\+TE X\+ML Name Value Macro second version. Insert a value in an X\+ML tree given the name of the attribute. 
+
+
+
+Definition at line 56 of file xml\+\_\+helper.\+hpp.
+
+
+
+Referenced by Evaluation\+::\+Exec(), Translator\+::\+Translator(), Parameter\+::write\+\_\+xml\+\_\+configuration\+\_\+file(), Profiling\+Information\+::\+Write\+To\+Xml(), F\+P\+G\+A\+\_\+device\+::xwrite(), I\+C\+\_\+device\+::xwrite(), N\+P\+\_\+functionality\+::xwrite(), structural\+\_\+object\+::xwrite(), functional\+\_\+unit\+::xwrite(), port\+\_\+o\+::xwrite(), constant\+\_\+o\+::xwrite(), signal\+\_\+o\+::xwrite(), channel\+\_\+o\+::xwrite(), and R\+T\+L\+Characterization\+::xwrite\+\_\+characterization().
+
+\mbox{\Hypertarget{xml__helper_8hpp_ab6546a8a8dcf7d168f584aa0454a1763}\label{xml__helper_8hpp_ab6546a8a8dcf7d168f584aa0454a1763}} 
+\index{xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}!W\+R\+I\+T\+E\+\_\+\+X\+VM@{W\+R\+I\+T\+E\+\_\+\+X\+VM}}
+\index{W\+R\+I\+T\+E\+\_\+\+X\+VM@{W\+R\+I\+T\+E\+\_\+\+X\+VM}!xml\+\_\+helper.\+hpp@{xml\+\_\+helper.\+hpp}}
+\subsubsection{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+X\+VM}{WRITE\_XVM}}
+{\footnotesize\ttfamily \#define W\+R\+I\+T\+E\+\_\+\+X\+VM(\begin{DoxyParamCaption}\item[{}]{variable,  }\item[{}]{node }\end{DoxyParamCaption})~(node)-\/$>$set\+\_\+attribute(\#variable, boost\+::lexical\+\_\+cast$<$std\+::string$>$(variable))}
+
+
+
+W\+R\+I\+TE X\+ML Value Macro. Insert a value in an X\+ML tree. 
+
+
+
+Definition at line 50 of file xml\+\_\+helper.\+hpp.
+
+
+
+Referenced by hls\+::xwrite(), structural\+\_\+type\+\_\+descriptor\+::xwrite(), operation\+::xwrite(), structural\+\_\+object\+::xwrite(), memory\+::xwrite(), port\+\_\+o\+::xwrite(), action\+\_\+o\+::xwrite(), constant\+\_\+o\+::xwrite(), H\+L\+S\+\_\+constraints\+::xwrite\+Binding\+Constraints(), H\+L\+S\+\_\+constraints\+::xwrite\+F\+U\+Constraints(), H\+L\+S\+\_\+constraints\+::xwrite\+H\+L\+S\+Constraints(), and H\+L\+S\+\_\+constraints\+::xwrite\+Scheduling\+Constraints().
+

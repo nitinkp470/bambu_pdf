@@ -1,0 +1,428 @@
+\hypertarget{allocation__information_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/module\+\_\+allocation/allocation\+\_\+information.hpp File Reference}
+\label{allocation__information_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/module\+\_\+allocation/allocation\+\_\+information.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/module\+\_\+allocation/allocation\+\_\+information.\+hpp}}
+
+
+This package is used by all H\+LS packages to manage resource constraints and characteristics.  
+
+
+{\ttfamily \#include \char`\"{}hls\+\_\+function\+\_\+ir.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hash\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}op\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}schedule.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utility.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$iosfwd$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+Include dependency graph for allocation\+\_\+information.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d38/allocation__information_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d28/allocation__information_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classAllocationInformation}{Allocation\+Information}
+\item 
+struct \hyperlink{structupdatecopy__HLS__constraints__functor}{updatecopy\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+functor}
+\begin{DoxyCompactList}\small\item\em constraint functor used by get\+\_\+attribute\+\_\+of\+\_\+fu\+\_\+per\+\_\+op \end{DoxyCompactList}\item 
+class \hyperlink{structnode__kind__prec__info}{node\+\_\+kind\+\_\+prec\+\_\+info}
+\begin{DoxyCompactList}\small\item\em This structure collect the information of input and output precision of nodes and the node kind. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{allocation__information_8hpp_a1e32d43af952e4e48401b7ceafbabf81}{G\+I\+M\+P\+L\+E\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+S\+TD}~\char`\"{}gimple\+\_\+return\+\_\+\+FU\char`\"{}
+\begin{DoxyCompactList}\small\item\em artificial functional units \end{DoxyCompactList}\item 
+\#define \hyperlink{allocation__information_8hpp_aa71bee4e8e70958af09a1a1e9b596e32}{G\+I\+M\+P\+L\+E\+\_\+\+P\+H\+I\+\_\+\+S\+TD}~\char`\"{}gimple\+\_\+phi\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{allocation__information_8hpp_a1362bcb391913d5b483954cdcf3d39ed}{G\+I\+M\+P\+L\+E\+\_\+\+A\+S\+M\+\_\+\+S\+TD}~\char`\"{}gimple\+\_\+asm\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{allocation__information_8hpp_a06644351b720ab70727dae306c76bcea}{G\+I\+M\+P\+L\+E\+\_\+\+L\+A\+B\+E\+L\+\_\+\+S\+TD}~\char`\"{}gimple\+\_\+label\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{allocation__information_8hpp_af99ccdcf53d687412d5197bff727115f}{G\+I\+M\+P\+L\+E\+\_\+\+G\+O\+T\+O\+\_\+\+S\+TD}~\char`\"{}gimple\+\_\+goto\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{allocation__information_8hpp_a52010531cf49840c26bd2aacb711a32a}{G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+P\+\_\+\+S\+TD}~\char`\"{}gimple\+\_\+nop\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{allocation__information_8hpp_a0d178cc9276a1988f5f9022a2b298047}{G\+I\+M\+P\+L\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+S\+TD}~\char`\"{}gimple\+\_\+pragma\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{allocation__information_8hpp_a52a4567bd4ad1e83f464bc17cab58789}{R\+E\+A\+D\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD}~\char`\"{}read\+\_\+cond\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{allocation__information_8hpp_a6bbdee68ea315a33824c96e1a9863693}{M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD}~\char`\"{}multi\+\_\+read\+\_\+cond\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{allocation__information_8hpp_ad7e407cdaf3dab2cee6d1af313cd2b75}{S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD}~\char`\"{}switch\+\_\+cond\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{allocation__information_8hpp_ab5a0458c0afc0ee86f52a5fb16d1e2e5}{E\+N\+T\+R\+Y\+\_\+\+S\+TD}~\char`\"{}entry\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{allocation__information_8hpp_a30396bfd05ac834fefa0205da9677dae}{E\+X\+I\+T\+\_\+\+S\+TD}~\char`\"{}exit\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{allocation__information_8hpp_ada604780a1e87ca5f20f8b2a26c8b4a6}{N\+O\+P\+\_\+\+S\+TD}~\char`\"{}nop\+\_\+\+FU\char`\"{}
+\item 
+\#define \hyperlink{allocation__information_8hpp_a45ab0606c786e9bca5fa3a4b35e66e5d}{A\+L\+L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+IN}~1.\+0
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classAllocationInformation}{Allocation\+Information} $>$ \hyperlink{allocation__information_8hpp_ad90a86da153cba50cbcefc4679036755}{Allocation\+Information\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{classAllocationInformation}{Allocation\+Information} $>$ \hyperlink{allocation__information_8hpp_a54287618a63bf87e31ddb17ba01e7ca7}{Allocation\+Information\+Const\+Ref}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{allocation__information_8hpp_ac93788f9eb8bc858debb15f2b4012cac}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classAllocationInformation}{Allocation\+Information})
+\begin{DoxyCompactList}\small\item\em Superclass include. \end{DoxyCompactList}\item 
+\hyperlink{allocation__information_8hpp_a942a3103598e9f83b960660212b20cef}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classBehavioralHelper}{Behavioral\+Helper})
+\item 
+\hyperlink{allocation__information_8hpp_ae2c789f95cd3c40ffe7d0818abaf2752}{U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (Control\+Step)
+\item 
+\hyperlink{allocation__information_8hpp_ab0bac35e3fe4eee0588522bd6da78f03}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classHLS__constraints}{H\+L\+S\+\_\+constraints})
+\item 
+\hyperlink{allocation__information_8hpp_ade20e409f42d07d82f78cac85266eeea}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classHLS__manager}{H\+L\+S\+\_\+manager})
+\item 
+\hyperlink{allocation__information_8hpp_a84b746db2e0389358d8edb7542ab8922}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classHLS__target}{H\+L\+S\+\_\+target})
+\item 
+\hyperlink{allocation__information_8hpp_ac5c30465e53a2dee97960f0f406b8be7}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classParameter}{Parameter})
+\item 
+\hyperlink{allocation__information_8hpp_ace34cb688b1349494074909532c898be}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classSchedule}{Schedule})
+\item 
+\hyperlink{allocation__information_8hpp_ade14fd37447397e9814a299d22fdadcb}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classhls}{hls})
+\item 
+\hyperlink{allocation__information_8hpp_a2cf870d0643e877ed507499cf3073820}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classmemory}{memory})
+\item 
+\hyperlink{allocation__information_8hpp_a4493602259d96369d7370b359254adf1}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structnode__kind__prec__info}{node\+\_\+kind\+\_\+prec\+\_\+info})
+\item 
+\hyperlink{allocation__information_8hpp_a72446ed20f53edef97fbaa70462e8a88}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structtechnology__node}{technology\+\_\+node})
+\item 
+\hyperlink{allocation__information_8hpp_ad33d668c241be505d72a0952ca4cfb14}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtree__manager}{tree\+\_\+manager})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This package is used by all H\+LS packages to manage resource constraints and characteristics. 
+
+\begin{DoxyAuthor}{Author}
+Marco Lattuada \href{mailto:marco.lattuada@polimi.it}{\tt marco.\+lattuada@polimi.\+it} 
+
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{allocation__information_8hpp_a45ab0606c786e9bca5fa3a4b35e66e5d}\label{allocation__information_8hpp_a45ab0606c786e9bca5fa3a4b35e66e5d}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!A\+L\+L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+IN@{A\+L\+L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+IN}}
+\index{A\+L\+L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+IN@{A\+L\+L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+IN}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{A\+L\+L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+IN}{ALLOCATION\_MUX\_MARGIN}}
+{\footnotesize\ttfamily \#define A\+L\+L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+M\+U\+X\+\_\+\+M\+A\+R\+G\+IN~1.\+0}
+
+
+
+Definition at line 91 of file allocation\+\_\+information.\+hpp.
+
+\mbox{\Hypertarget{allocation__information_8hpp_ab5a0458c0afc0ee86f52a5fb16d1e2e5}\label{allocation__information_8hpp_ab5a0458c0afc0ee86f52a5fb16d1e2e5}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!E\+N\+T\+R\+Y\+\_\+\+S\+TD@{E\+N\+T\+R\+Y\+\_\+\+S\+TD}}
+\index{E\+N\+T\+R\+Y\+\_\+\+S\+TD@{E\+N\+T\+R\+Y\+\_\+\+S\+TD}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{E\+N\+T\+R\+Y\+\_\+\+S\+TD}{ENTRY\_STD}}
+{\footnotesize\ttfamily \#define E\+N\+T\+R\+Y\+\_\+\+S\+TD~\char`\"{}entry\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 87 of file allocation\+\_\+information.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::has\+\_\+to\+\_\+be\+\_\+synthetized(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{allocation__information_8hpp_a30396bfd05ac834fefa0205da9677dae}\label{allocation__information_8hpp_a30396bfd05ac834fefa0205da9677dae}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!E\+X\+I\+T\+\_\+\+S\+TD@{E\+X\+I\+T\+\_\+\+S\+TD}}
+\index{E\+X\+I\+T\+\_\+\+S\+TD@{E\+X\+I\+T\+\_\+\+S\+TD}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{E\+X\+I\+T\+\_\+\+S\+TD}{EXIT\_STD}}
+{\footnotesize\ttfamily \#define E\+X\+I\+T\+\_\+\+S\+TD~\char`\"{}exit\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 88 of file allocation\+\_\+information.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::has\+\_\+to\+\_\+be\+\_\+synthetized(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{allocation__information_8hpp_a1362bcb391913d5b483954cdcf3d39ed}\label{allocation__information_8hpp_a1362bcb391913d5b483954cdcf3d39ed}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!G\+I\+M\+P\+L\+E\+\_\+\+A\+S\+M\+\_\+\+S\+TD@{G\+I\+M\+P\+L\+E\+\_\+\+A\+S\+M\+\_\+\+S\+TD}}
+\index{G\+I\+M\+P\+L\+E\+\_\+\+A\+S\+M\+\_\+\+S\+TD@{G\+I\+M\+P\+L\+E\+\_\+\+A\+S\+M\+\_\+\+S\+TD}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{G\+I\+M\+P\+L\+E\+\_\+\+A\+S\+M\+\_\+\+S\+TD}{GIMPLE\_ASM\_STD}}
+{\footnotesize\ttfamily \#define G\+I\+M\+P\+L\+E\+\_\+\+A\+S\+M\+\_\+\+S\+TD~\char`\"{}gimple\+\_\+asm\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 79 of file allocation\+\_\+information.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::has\+\_\+to\+\_\+be\+\_\+synthetized().
+
+\mbox{\Hypertarget{allocation__information_8hpp_af99ccdcf53d687412d5197bff727115f}\label{allocation__information_8hpp_af99ccdcf53d687412d5197bff727115f}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!G\+I\+M\+P\+L\+E\+\_\+\+G\+O\+T\+O\+\_\+\+S\+TD@{G\+I\+M\+P\+L\+E\+\_\+\+G\+O\+T\+O\+\_\+\+S\+TD}}
+\index{G\+I\+M\+P\+L\+E\+\_\+\+G\+O\+T\+O\+\_\+\+S\+TD@{G\+I\+M\+P\+L\+E\+\_\+\+G\+O\+T\+O\+\_\+\+S\+TD}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{G\+I\+M\+P\+L\+E\+\_\+\+G\+O\+T\+O\+\_\+\+S\+TD}{GIMPLE\_GOTO\_STD}}
+{\footnotesize\ttfamily \#define G\+I\+M\+P\+L\+E\+\_\+\+G\+O\+T\+O\+\_\+\+S\+TD~\char`\"{}gimple\+\_\+goto\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 81 of file allocation\+\_\+information.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::has\+\_\+to\+\_\+be\+\_\+synthetized(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{allocation__information_8hpp_a06644351b720ab70727dae306c76bcea}\label{allocation__information_8hpp_a06644351b720ab70727dae306c76bcea}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!G\+I\+M\+P\+L\+E\+\_\+\+L\+A\+B\+E\+L\+\_\+\+S\+TD@{G\+I\+M\+P\+L\+E\+\_\+\+L\+A\+B\+E\+L\+\_\+\+S\+TD}}
+\index{G\+I\+M\+P\+L\+E\+\_\+\+L\+A\+B\+E\+L\+\_\+\+S\+TD@{G\+I\+M\+P\+L\+E\+\_\+\+L\+A\+B\+E\+L\+\_\+\+S\+TD}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{G\+I\+M\+P\+L\+E\+\_\+\+L\+A\+B\+E\+L\+\_\+\+S\+TD}{GIMPLE\_LABEL\_STD}}
+{\footnotesize\ttfamily \#define G\+I\+M\+P\+L\+E\+\_\+\+L\+A\+B\+E\+L\+\_\+\+S\+TD~\char`\"{}gimple\+\_\+label\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 80 of file allocation\+\_\+information.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::has\+\_\+to\+\_\+be\+\_\+synthetized(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{allocation__information_8hpp_a52010531cf49840c26bd2aacb711a32a}\label{allocation__information_8hpp_a52010531cf49840c26bd2aacb711a32a}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+P\+\_\+\+S\+TD@{G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+P\+\_\+\+S\+TD}}
+\index{G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+P\+\_\+\+S\+TD@{G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+P\+\_\+\+S\+TD}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+P\+\_\+\+S\+TD}{GIMPLE\_NOP\_STD}}
+{\footnotesize\ttfamily \#define G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+P\+\_\+\+S\+TD~\char`\"{}gimple\+\_\+nop\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 82 of file allocation\+\_\+information.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::has\+\_\+to\+\_\+be\+\_\+synthetized(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{allocation__information_8hpp_aa71bee4e8e70958af09a1a1e9b596e32}\label{allocation__information_8hpp_aa71bee4e8e70958af09a1a1e9b596e32}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!G\+I\+M\+P\+L\+E\+\_\+\+P\+H\+I\+\_\+\+S\+TD@{G\+I\+M\+P\+L\+E\+\_\+\+P\+H\+I\+\_\+\+S\+TD}}
+\index{G\+I\+M\+P\+L\+E\+\_\+\+P\+H\+I\+\_\+\+S\+TD@{G\+I\+M\+P\+L\+E\+\_\+\+P\+H\+I\+\_\+\+S\+TD}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{G\+I\+M\+P\+L\+E\+\_\+\+P\+H\+I\+\_\+\+S\+TD}{GIMPLE\_PHI\_STD}}
+{\footnotesize\ttfamily \#define G\+I\+M\+P\+L\+E\+\_\+\+P\+H\+I\+\_\+\+S\+TD~\char`\"{}gimple\+\_\+phi\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 78 of file allocation\+\_\+information.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::has\+\_\+to\+\_\+be\+\_\+synthetized(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{allocation__information_8hpp_a0d178cc9276a1988f5f9022a2b298047}\label{allocation__information_8hpp_a0d178cc9276a1988f5f9022a2b298047}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!G\+I\+M\+P\+L\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+S\+TD@{G\+I\+M\+P\+L\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+S\+TD}}
+\index{G\+I\+M\+P\+L\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+S\+TD@{G\+I\+M\+P\+L\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+S\+TD}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{G\+I\+M\+P\+L\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+S\+TD}{GIMPLE\_PRAGMA\_STD}}
+{\footnotesize\ttfamily \#define G\+I\+M\+P\+L\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+S\+TD~\char`\"{}gimple\+\_\+pragma\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 83 of file allocation\+\_\+information.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::has\+\_\+to\+\_\+be\+\_\+synthetized(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{allocation__information_8hpp_a1e32d43af952e4e48401b7ceafbabf81}\label{allocation__information_8hpp_a1e32d43af952e4e48401b7ceafbabf81}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!G\+I\+M\+P\+L\+E\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+S\+TD@{G\+I\+M\+P\+L\+E\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+S\+TD}}
+\index{G\+I\+M\+P\+L\+E\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+S\+TD@{G\+I\+M\+P\+L\+E\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+S\+TD}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{G\+I\+M\+P\+L\+E\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+S\+TD}{GIMPLE\_RETURN\_STD}}
+{\footnotesize\ttfamily \#define G\+I\+M\+P\+L\+E\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+S\+TD~\char`\"{}gimple\+\_\+return\+\_\+\+FU\char`\"{}}
+
+
+
+artificial functional units 
+
+
+
+Definition at line 77 of file allocation\+\_\+information.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::has\+\_\+to\+\_\+be\+\_\+synthetized(), allocation\+::\+Internal\+Exec(), and Allocation\+Information\+::is\+\_\+return().
+
+\mbox{\Hypertarget{allocation__information_8hpp_a6bbdee68ea315a33824c96e1a9863693}\label{allocation__information_8hpp_a6bbdee68ea315a33824c96e1a9863693}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD@{M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD}}
+\index{M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD@{M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD}{MULTI\_READ\_COND\_STD}}
+{\footnotesize\ttfamily \#define M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD~\char`\"{}multi\+\_\+read\+\_\+cond\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 85 of file allocation\+\_\+information.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec(), and fu\+\_\+binding\+::specialise\+\_\+fu().
+
+\mbox{\Hypertarget{allocation__information_8hpp_ada604780a1e87ca5f20f8b2a26c8b4a6}\label{allocation__information_8hpp_ada604780a1e87ca5f20f8b2a26c8b4a6}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!N\+O\+P\+\_\+\+S\+TD@{N\+O\+P\+\_\+\+S\+TD}}
+\index{N\+O\+P\+\_\+\+S\+TD@{N\+O\+P\+\_\+\+S\+TD}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{N\+O\+P\+\_\+\+S\+TD}{NOP\_STD}}
+{\footnotesize\ttfamily \#define N\+O\+P\+\_\+\+S\+TD~\char`\"{}nop\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 89 of file allocation\+\_\+information.\+hpp.
+
+
+
+Referenced by Allocation\+Information\+::has\+\_\+to\+\_\+be\+\_\+synthetized(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{allocation__information_8hpp_a52a4567bd4ad1e83f464bc17cab58789}\label{allocation__information_8hpp_a52a4567bd4ad1e83f464bc17cab58789}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!R\+E\+A\+D\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD@{R\+E\+A\+D\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD}}
+\index{R\+E\+A\+D\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD@{R\+E\+A\+D\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+A\+D\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD}{READ\_COND\_STD}}
+{\footnotesize\ttfamily \#define R\+E\+A\+D\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD~\char`\"{}read\+\_\+cond\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 84 of file allocation\+\_\+information.\+hpp.
+
+
+
+Referenced by Functional\+Unit\+Step\+::\+Analyze\+Fu(), allocation\+::\+Internal\+Exec(), and Allocation\+Information\+::is\+\_\+read\+\_\+cond().
+
+\mbox{\Hypertarget{allocation__information_8hpp_ad7e407cdaf3dab2cee6d1af313cd2b75}\label{allocation__information_8hpp_ad7e407cdaf3dab2cee6d1af313cd2b75}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD@{S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD}}
+\index{S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD@{S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD}{SWITCH\_COND\_STD}}
+{\footnotesize\ttfamily \#define S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD~\char`\"{}switch\+\_\+cond\+\_\+\+FU\char`\"{}}
+
+
+
+Definition at line 86 of file allocation\+\_\+information.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{allocation__information_8hpp_a54287618a63bf87e31ddb17ba01e7ca7}\label{allocation__information_8hpp_a54287618a63bf87e31ddb17ba01e7ca7}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!Allocation\+Information\+Const\+Ref@{Allocation\+Information\+Const\+Ref}}
+\index{Allocation\+Information\+Const\+Ref@{Allocation\+Information\+Const\+Ref}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{Allocation\+Information\+Const\+Ref}{AllocationInformationConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{classAllocationInformation}{Allocation\+Information}$>$ \hyperlink{allocation__information_8hpp_a54287618a63bf87e31ddb17ba01e7ca7}{Allocation\+Information\+Const\+Ref}}
+
+
+
+Definition at line 1022 of file allocation\+\_\+information.\+hpp.
+
+\mbox{\Hypertarget{allocation__information_8hpp_ad90a86da153cba50cbcefc4679036755}\label{allocation__information_8hpp_ad90a86da153cba50cbcefc4679036755}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!Allocation\+Information\+Ref@{Allocation\+Information\+Ref}}
+\index{Allocation\+Information\+Ref@{Allocation\+Information\+Ref}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{Allocation\+Information\+Ref}{AllocationInformationRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classAllocationInformation}{Allocation\+Information}$>$ \hyperlink{allocation__information_8hpp_ad90a86da153cba50cbcefc4679036755}{Allocation\+Information\+Ref}}
+
+
+
+Definition at line 1021 of file allocation\+\_\+information.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{allocation__information_8hpp_ac93788f9eb8bc858debb15f2b4012cac}\label{allocation__information_8hpp_ac93788f9eb8bc858debb15f2b4012cac}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classAllocationInformation}{Allocation\+Information}}]{ }\end{DoxyParamCaption})}
+
+
+
+Superclass include. 
+
+\mbox{\Hypertarget{allocation__information_8hpp_a942a3103598e9f83b960660212b20cef}\label{allocation__information_8hpp_a942a3103598e9f83b960660212b20cef}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classBehavioralHelper}{Behavioral\+Helper}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{allocation__information_8hpp_ab0bac35e3fe4eee0588522bd6da78f03}\label{allocation__information_8hpp_ab0bac35e3fe4eee0588522bd6da78f03}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classHLS__constraints}{H\+L\+S\+\_\+constraints}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{allocation__information_8hpp_ade20e409f42d07d82f78cac85266eeea}\label{allocation__information_8hpp_ade20e409f42d07d82f78cac85266eeea}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classHLS__manager}{H\+L\+S\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{allocation__information_8hpp_a84b746db2e0389358d8edb7542ab8922}\label{allocation__information_8hpp_a84b746db2e0389358d8edb7542ab8922}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classHLS__target}{H\+L\+S\+\_\+target}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{allocation__information_8hpp_ac5c30465e53a2dee97960f0f406b8be7}\label{allocation__information_8hpp_ac5c30465e53a2dee97960f0f406b8be7}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classParameter}{Parameter}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{allocation__information_8hpp_ace34cb688b1349494074909532c898be}\label{allocation__information_8hpp_ace34cb688b1349494074909532c898be}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classSchedule}{Schedule}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{allocation__information_8hpp_ade14fd37447397e9814a299d22fdadcb}\label{allocation__information_8hpp_ade14fd37447397e9814a299d22fdadcb}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classhls}{hls}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{allocation__information_8hpp_a2cf870d0643e877ed507499cf3073820}\label{allocation__information_8hpp_a2cf870d0643e877ed507499cf3073820}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classmemory}{memory}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{allocation__information_8hpp_ad33d668c241be505d72a0952ca4cfb14}\label{allocation__information_8hpp_ad33d668c241be505d72a0952ca4cfb14}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__manager}{tree\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{allocation__information_8hpp_a4493602259d96369d7370b359254adf1}\label{allocation__information_8hpp_a4493602259d96369d7370b359254adf1}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structnode__kind__prec__info}{node\+\_\+kind\+\_\+prec\+\_\+info}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{allocation__information_8hpp_a72446ed20f53edef97fbaa70462e8a88}\label{allocation__information_8hpp_a72446ed20f53edef97fbaa70462e8a88}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structtechnology__node}{technology\+\_\+node}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{allocation__information_8hpp_ae2c789f95cd3c40ffe7d0818abaf2752}\label{allocation__information_8hpp_ae2c789f95cd3c40ffe7d0818abaf2752}} 
+\index{allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}!U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!allocation\+\_\+information.\+hpp@{allocation\+\_\+information.\+hpp}}
+\subsubsection{\texorpdfstring{U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{UINT\_STRONG\_TYPEDEF\_FORWARD\_DECL()}}
+{\footnotesize\ttfamily U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{Control\+Step}]{ }\end{DoxyParamCaption})}
+

@@ -1,0 +1,175 @@
+\hypertarget{translator_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+Data\+File/translator.cpp File Reference}
+\label{translator_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+Data\+File/translator.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+Data\+File/translator.\+cpp}}
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+M\+O\+D\+E\+L\+S\+I\+M.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+R\+T\+L\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+X\+I\+L\+I\+N\+X.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}translator.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}experimental\+\_\+setup\+\_\+xml.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}latex\+\_\+table\+\_\+constants.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}latex\+\_\+table\+\_\+xml.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}weights\+\_\+xml.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}evaluation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}file\+I\+O.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utility.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/algorithm/string/replace.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/filesystem/operations.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}polixml.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+dom\+\_\+parser.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}latex\+\_\+format\+\_\+stat.\+data\char`\"{}}\newline
+Include dependency graph for translator.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/db2/translator_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{translator_8cpp_a4e2a26ddeefa9bc2718ae24f29938d15}{S\+K\+I\+P\+P\+E\+D\+\_\+\+C\+O\+L\+U\+MN}~(\char`\"{}Loop\+\_\+number\char`\"{})(\char`\"{}bit\+\_\+expr\char`\"{})(\char`\"{}comp\+\_\+expr\char`\"{})(\char`\"{}const\+\_\+readings\char`\"{})(\char`\"{}div\+\_\+expr\char`\"{})(\char`\"{}mult\+\_\+expr\char`\"{})(\char`\"{}plusminus\+\_\+expr\char`\"{})(\char`\"{}memory\+\_\+writings\char`\"{})(\char`\"{}register\+\_\+accesses\char`\"{})(\char`\"{}memory\+\_\+readings\char`\"{})(\char`\"{}register\+\_\+writing\char`\"{})(\char`\"{}Backward\+\_\+branches\char`\"{})
+\begin{DoxyCompactList}\small\item\em Autoheader include. \end{DoxyCompactList}\item 
+\#define \hyperlink{translator_8cpp_ac2def68ac07e4dc8e7da88169d0dd481}{S\+K\+I\+P\+P\+I\+N\+G\+\_\+\+M\+A\+C\+RO}(r,  data,  elem)~\hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a6c8ca4722c83f5c72a91ccb8278758a3}{skipping.\+insert}(elem);
+\item 
+\#define \hyperlink{translator_8cpp_a8ef68c0ad7f2972e693c3225b421a1a3}{T\+F\+\_\+\+N\+A\+ME}(r,  data,  elem)
+\item 
+\#define \hyperlink{translator_8cpp_a96f83d883992e6add6c837a775e9787d}{C\+O\+\_\+\+N\+A\+ME}(r,  data,  elem)
+\item 
+\#define \hyperlink{translator_8cpp_abd702ccc7dece8fd3cac81bd0ce57629}{T\+O\+F\+\_\+\+N\+A\+ME}(r,  data,  elem)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{translator_8cpp_a8648bbc63f2fb5d0c65bb75373478a54}{default\+\_\+latex\+\_\+format\+\_\+stat}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{translator_8cpp_a96f83d883992e6add6c837a775e9787d}\label{translator_8cpp_a96f83d883992e6add6c837a775e9787d}} 
+\index{translator.\+cpp@{translator.\+cpp}!C\+O\+\_\+\+N\+A\+ME@{C\+O\+\_\+\+N\+A\+ME}}
+\index{C\+O\+\_\+\+N\+A\+ME@{C\+O\+\_\+\+N\+A\+ME}!translator.\+cpp@{translator.\+cpp}}
+\subsubsection{\texorpdfstring{C\+O\+\_\+\+N\+A\+ME}{CO\_NAME}}
+{\footnotesize\ttfamily \#define C\+O\+\_\+\+N\+A\+ME(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{data,  }\item[{}]{elem }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+name = \textcolor{stringliteral}{"CO\_"} #elem;                    \(\backslash\)
+   name = name.substr(22);                \(\backslash\)
+   name = name.substr(0, name.find(\textcolor{charliteral}{')'})); \(\backslash\)
+   string\_to\_CO[name] = BOOST\_PP\_CAT(CO\_, elem);
+\end{DoxyCode}
+
+
+Definition at line 104 of file translator.\+cpp.
+
+
+
+Referenced by Translator\+::\+Latex\+Column\+Format\+::\+Latex\+Column\+Format().
+
+\mbox{\Hypertarget{translator_8cpp_a4e2a26ddeefa9bc2718ae24f29938d15}\label{translator_8cpp_a4e2a26ddeefa9bc2718ae24f29938d15}} 
+\index{translator.\+cpp@{translator.\+cpp}!S\+K\+I\+P\+P\+E\+D\+\_\+\+C\+O\+L\+U\+MN@{S\+K\+I\+P\+P\+E\+D\+\_\+\+C\+O\+L\+U\+MN}}
+\index{S\+K\+I\+P\+P\+E\+D\+\_\+\+C\+O\+L\+U\+MN@{S\+K\+I\+P\+P\+E\+D\+\_\+\+C\+O\+L\+U\+MN}!translator.\+cpp@{translator.\+cpp}}
+\subsubsection{\texorpdfstring{S\+K\+I\+P\+P\+E\+D\+\_\+\+C\+O\+L\+U\+MN}{SKIPPED\_COLUMN}}
+{\footnotesize\ttfamily \#define S\+K\+I\+P\+P\+E\+D\+\_\+\+C\+O\+L\+U\+MN~(\char`\"{}Loop\+\_\+number\char`\"{})(\char`\"{}bit\+\_\+expr\char`\"{})(\char`\"{}comp\+\_\+expr\char`\"{})(\char`\"{}const\+\_\+readings\char`\"{})(\char`\"{}div\+\_\+expr\char`\"{})(\char`\"{}mult\+\_\+expr\char`\"{})(\char`\"{}plusminus\+\_\+expr\char`\"{})(\char`\"{}memory\+\_\+writings\char`\"{})(\char`\"{}register\+\_\+accesses\char`\"{})(\char`\"{}memory\+\_\+readings\char`\"{})(\char`\"{}register\+\_\+writing\char`\"{})(\char`\"{}Backward\+\_\+branches\char`\"{})}
+
+
+
+Autoheader include. 
+
+Header include Constant include H\+L\+S/evaluation include \hyperlink{classParameter}{Parameter} include S\+TD include S\+TL include Utility include X\+ML include 
+
+Definition at line 94 of file translator.\+cpp.
+
+
+
+Referenced by Translator\+::\+Translator().
+
+\mbox{\Hypertarget{translator_8cpp_ac2def68ac07e4dc8e7da88169d0dd481}\label{translator_8cpp_ac2def68ac07e4dc8e7da88169d0dd481}} 
+\index{translator.\+cpp@{translator.\+cpp}!S\+K\+I\+P\+P\+I\+N\+G\+\_\+\+M\+A\+C\+RO@{S\+K\+I\+P\+P\+I\+N\+G\+\_\+\+M\+A\+C\+RO}}
+\index{S\+K\+I\+P\+P\+I\+N\+G\+\_\+\+M\+A\+C\+RO@{S\+K\+I\+P\+P\+I\+N\+G\+\_\+\+M\+A\+C\+RO}!translator.\+cpp@{translator.\+cpp}}
+\subsubsection{\texorpdfstring{S\+K\+I\+P\+P\+I\+N\+G\+\_\+\+M\+A\+C\+RO}{SKIPPING\_MACRO}}
+{\footnotesize\ttfamily \#define S\+K\+I\+P\+P\+I\+N\+G\+\_\+\+M\+A\+C\+RO(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{data,  }\item[{}]{elem }\end{DoxyParamCaption})~\hyperlink{tutorial__pact__2019_2Introduction_2second_2module_8c_a6c8ca4722c83f5c72a91ccb8278758a3}{skipping.\+insert}(elem);}
+
+
+
+Definition at line 96 of file translator.\+cpp.
+
+
+
+Referenced by Translator\+::\+Translator().
+
+\mbox{\Hypertarget{translator_8cpp_a8ef68c0ad7f2972e693c3225b421a1a3}\label{translator_8cpp_a8ef68c0ad7f2972e693c3225b421a1a3}} 
+\index{translator.\+cpp@{translator.\+cpp}!T\+F\+\_\+\+N\+A\+ME@{T\+F\+\_\+\+N\+A\+ME}}
+\index{T\+F\+\_\+\+N\+A\+ME@{T\+F\+\_\+\+N\+A\+ME}!translator.\+cpp@{translator.\+cpp}}
+\subsubsection{\texorpdfstring{T\+F\+\_\+\+N\+A\+ME}{TF\_NAME}}
+{\footnotesize\ttfamily \#define T\+F\+\_\+\+N\+A\+ME(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{data,  }\item[{}]{elem }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+name = \textcolor{stringliteral}{"CA\_"} #elem;                    \(\backslash\)
+   name = name.substr(22);                \(\backslash\)
+   name = name.substr(0, name.find(\textcolor{charliteral}{')'})); \(\backslash\)
+   string\_to\_TF[name] = BOOST\_PP\_CAT(TF\_, elem);
+\end{DoxyCode}
+
+
+Definition at line 98 of file translator.\+cpp.
+
+
+
+Referenced by Translator\+::\+Latex\+Column\+Format\+::\+Latex\+Column\+Format().
+
+\mbox{\Hypertarget{translator_8cpp_abd702ccc7dece8fd3cac81bd0ce57629}\label{translator_8cpp_abd702ccc7dece8fd3cac81bd0ce57629}} 
+\index{translator.\+cpp@{translator.\+cpp}!T\+O\+F\+\_\+\+N\+A\+ME@{T\+O\+F\+\_\+\+N\+A\+ME}}
+\index{T\+O\+F\+\_\+\+N\+A\+ME@{T\+O\+F\+\_\+\+N\+A\+ME}!translator.\+cpp@{translator.\+cpp}}
+\subsubsection{\texorpdfstring{T\+O\+F\+\_\+\+N\+A\+ME}{TOF\_NAME}}
+{\footnotesize\ttfamily \#define T\+O\+F\+\_\+\+N\+A\+ME(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{data,  }\item[{}]{elem }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+name = \textcolor{stringliteral}{"TOF\_"} #elem;                   \(\backslash\)
+   name = name.substr(23);                \(\backslash\)
+   name = name.substr(0, name.find(\textcolor{charliteral}{')'})); \(\backslash\)
+   string\_to\_TOF[name] = BOOST\_PP\_CAT(TOF\_, elem);
+\end{DoxyCode}
+
+
+Definition at line 110 of file translator.\+cpp.
+
+
+
+Referenced by Translator\+::\+Latex\+Column\+Format\+::\+Latex\+Column\+Format().
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{translator_8cpp_a8648bbc63f2fb5d0c65bb75373478a54}\label{translator_8cpp_a8648bbc63f2fb5d0c65bb75373478a54}} 
+\index{translator.\+cpp@{translator.\+cpp}!default\+\_\+latex\+\_\+format\+\_\+stat@{default\+\_\+latex\+\_\+format\+\_\+stat}}
+\index{default\+\_\+latex\+\_\+format\+\_\+stat@{default\+\_\+latex\+\_\+format\+\_\+stat}!translator.\+cpp@{translator.\+cpp}}
+\subsubsection{\texorpdfstring{default\+\_\+latex\+\_\+format\+\_\+stat}{default\_latex\_format\_stat}}
+{\footnotesize\ttfamily const char$\ast$ default\+\_\+latex\+\_\+format\+\_\+stat}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+
+\}
+\end{DoxyCode}
+
+
+Definition at line 116 of file translator.\+cpp.
+
+
+
+Referenced by Translator\+::write\+\_\+to\+\_\+latex().
+

@@ -1,0 +1,327 @@
+\hypertarget{classLatticeBackendFlow}{}\section{Lattice\+Backend\+Flow Class Reference}
+\label{classLatticeBackendFlow}\index{Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}}
+
+
+superclass include  
+
+
+
+
+{\ttfamily \#include $<$Lattice\+Backend\+Flow.\+hpp$>$}
+
+
+
+Inheritance diagram for Lattice\+Backend\+Flow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{d9/d45/classLatticeBackendFlow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Lattice\+Backend\+Flow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/de9/classLatticeBackendFlow__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLatticeBackendFlow_aa76f249f857e30947adab351737266c9}{Lattice\+Backend\+Flow} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classBackendFlow_a7d21e7cf0afc64b13e0009c9e351873d}{Param}, const std\+::string \&\hyperlink{classBackendFlow_acb230ccab7e32cf0a88811097ff8c3f8}{flow\+\_\+name}, const \hyperlink{target__manager_8hpp_aee0b586a84fb6eb4faefa6e41e1735a9}{target\+\_\+manager\+Ref} \hyperlink{classBackendFlow_a693ab6eaf29b1836eb91dcd92eb0189f}{target})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classLatticeBackendFlow_a0d52950634971fbf55dfac701afddaf5}{$\sim$\+Lattice\+Backend\+Flow} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classLatticeBackendFlow_af31a3f147ec929266a696904d911ff6e}{Init\+Design\+Parameters} () override
+\begin{DoxyCompactList}\small\item\em Initializes the parameters. \end{DoxyCompactList}\item 
+void \hyperlink{classLatticeBackendFlow_adc9bf997d1ac830c4511521b1934bffc}{Execute\+Synthesis} () override
+\begin{DoxyCompactList}\small\item\em Checks if the execution can be performed and, in case, performs the synthesis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classLatticeBackendFlow_aa0695e294b18773a1ec27fe86cf16408}{Write\+Flow\+Configuration} (std\+::ostream \&script) override
+\begin{DoxyCompactList}\small\item\em Writes the proper flow configuration in the output script. \end{DoxyCompactList}\item 
+void \hyperlink{classLatticeBackendFlow_af95e74925a7a7c8f6e770fa99f62481b}{xparse\+\_\+utilization} (const std\+::string \&fn)
+\begin{DoxyCompactList}\small\item\em Parses device utilization. \end{DoxyCompactList}\item 
+void \hyperlink{classLatticeBackendFlow_a31267aeb4a44638daab713102fe01306}{Check\+Synthesis\+Results} () override
+\begin{DoxyCompactList}\small\item\em Checks the synthesis results and fills the corresponding datastructures. \end{DoxyCompactList}\item 
+void \hyperlink{classLatticeBackendFlow_a18902a5390c3be6efb6833d35f0f1d23}{create\+\_\+sdc} (const \hyperlink{DesignParameters_8hpp_ae36bb1c4c9150d0eeecfe1f96f42d157}{Design\+Parameters\+Ref} dp)
+\begin{DoxyCompactList}\small\item\em Creates the constraint file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, double $>$ \hyperlink{classLatticeBackendFlow_a2980298887193f63d6b1aa0ab64db340}{design\+\_\+values}
+\begin{DoxyCompactList}\small\item\em design values reported by the tools \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+superclass include 
+
+Definition at line 50 of file Lattice\+Backend\+Flow.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLatticeBackendFlow_aa76f249f857e30947adab351737266c9}\label{classLatticeBackendFlow_aa76f249f857e30947adab351737266c9}} 
+\index{Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}!Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}}
+\index{Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}!Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{Lattice\+Backend\+Flow()}{LatticeBackendFlow()}}
+{\footnotesize\ttfamily Lattice\+Backend\+Flow\+::\+Lattice\+Backend\+Flow (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{const std\+::string \&}]{flow\+\_\+name,  }\item[{const \hyperlink{target__manager_8hpp_aee0b586a84fb6eb4faefa6e41e1735a9}{target\+\_\+manager\+Ref}}]{target }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 75 of file Lattice\+Backend\+Flow.\+cpp.
+
+
+
+References Backend\+Flow\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, Backend\+Flow\+::default\+\_\+data, target\+\_\+device\+::get\+\_\+parameter(), target\+\_\+device\+::has\+\_\+parameter(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Backend\+Flow\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, Backend\+Flow\+::\+Param, Backend\+Flow\+::parse\+\_\+flow(), test\+\_\+panda\+::parser, P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, Backend\+Flow\+::target, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and $\sim$\+Lattice\+Backend\+Flow().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/dd0/classLatticeBackendFlow_aa76f249f857e30947adab351737266c9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLatticeBackendFlow_a0d52950634971fbf55dfac701afddaf5}\label{classLatticeBackendFlow_a0d52950634971fbf55dfac701afddaf5}} 
+\index{Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}!````~Lattice\+Backend\+Flow@{$\sim$\+Lattice\+Backend\+Flow}}
+\index{````~Lattice\+Backend\+Flow@{$\sim$\+Lattice\+Backend\+Flow}!Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{$\sim$\+Lattice\+Backend\+Flow()}{~LatticeBackendFlow()}}
+{\footnotesize\ttfamily Lattice\+Backend\+Flow\+::$\sim$\+Lattice\+Backend\+Flow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Lattice\+Backend\+Flow().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{de/dd0/classLatticeBackendFlow_a0d52950634971fbf55dfac701afddaf5_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classLatticeBackendFlow_a31267aeb4a44638daab713102fe01306}\label{classLatticeBackendFlow_a31267aeb4a44638daab713102fe01306}} 
+\index{Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}!Check\+Synthesis\+Results@{Check\+Synthesis\+Results}}
+\index{Check\+Synthesis\+Results@{Check\+Synthesis\+Results}!Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{Check\+Synthesis\+Results()}{CheckSynthesisResults()}}
+{\footnotesize\ttfamily void Lattice\+Backend\+Flow\+::\+Check\+Synthesis\+Results (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Checks the synthesis results and fills the corresponding datastructures. 
+
+
+
+Implements \hyperlink{classBackendFlow_ad2096d43b7c9c47611d719188215f23f}{Backend\+Flow}.
+
+
+
+Definition at line 189 of file Lattice\+Backend\+Flow.\+cpp.
+
+
+
+References Backend\+Flow\+::actual\+\_\+parameters, Backend\+Flow\+::area\+\_\+m, clb\+\_\+model\+::\+B\+R\+AM, L\+U\+T\+\_\+model\+::\+C\+O\+M\+B\+I\+N\+A\+T\+I\+O\+N\+A\+L\+\_\+\+D\+E\+L\+AY, area\+\_\+model\+::create\+\_\+model(), time\+\_\+model\+::create\+\_\+model(), design\+\_\+values, clb\+\_\+model\+::\+D\+SP, F\+P\+GA, L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+E\+L\+AY, L\+A\+T\+T\+I\+C\+E\+\_\+\+D\+SP, L\+A\+T\+T\+I\+C\+E\+\_\+\+M\+EM, L\+A\+T\+T\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS, L\+A\+T\+T\+I\+C\+E\+\_\+\+S\+L\+I\+CE, clb\+\_\+model\+::\+L\+U\+T\+\_\+\+F\+F\+\_\+\+P\+A\+I\+RS, Backend\+Flow\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM, Backend\+Flow\+::\+Param, P\+A\+R\+A\+M\+\_\+lattice\+\_\+report, Design\+Parameters\+::parameter\+\_\+values, P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, clb\+\_\+model\+::\+R\+E\+G\+I\+S\+T\+E\+RS, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, Backend\+Flow\+::time\+\_\+m, and xparse\+\_\+utilization().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/dd0/classLatticeBackendFlow_a31267aeb4a44638daab713102fe01306_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLatticeBackendFlow_a18902a5390c3be6efb6833d35f0f1d23}\label{classLatticeBackendFlow_a18902a5390c3be6efb6833d35f0f1d23}} 
+\index{Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}!create\+\_\+sdc@{create\+\_\+sdc}}
+\index{create\+\_\+sdc@{create\+\_\+sdc}!Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{create\+\_\+sdc()}{create\_sdc()}}
+{\footnotesize\ttfamily void Lattice\+Backend\+Flow\+::create\+\_\+sdc (\begin{DoxyParamCaption}\item[{const \hyperlink{DesignParameters_8hpp_ae36bb1c4c9150d0eeecfe1f96f42d157}{Design\+Parameters\+Ref}}]{dp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates the constraint file. 
+
+
+
+Definition at line 227 of file Lattice\+Backend\+Flow.\+cpp.
+
+
+
+References Design\+Parameters\+::component\+\_\+name, Backend\+Flow\+::out\+\_\+dir, Backend\+Flow\+::\+Param, P\+A\+R\+A\+M\+\_\+clk\+\_\+name, P\+A\+R\+A\+M\+\_\+clk\+\_\+period, P\+A\+R\+A\+M\+\_\+connect\+\_\+iob, P\+A\+R\+A\+M\+\_\+is\+\_\+combinational, P\+A\+R\+A\+M\+\_\+sdc\+\_\+file, and Design\+Parameters\+::parameter\+\_\+values.
+
+
+
+Referenced by Init\+Design\+Parameters().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{de/dd0/classLatticeBackendFlow_a18902a5390c3be6efb6833d35f0f1d23_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLatticeBackendFlow_adc9bf997d1ac830c4511521b1934bffc}\label{classLatticeBackendFlow_adc9bf997d1ac830c4511521b1934bffc}} 
+\index{Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}!Execute\+Synthesis@{Execute\+Synthesis}}
+\index{Execute\+Synthesis@{Execute\+Synthesis}!Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{Execute\+Synthesis()}{ExecuteSynthesis()}}
+{\footnotesize\ttfamily void Lattice\+Backend\+Flow\+::\+Execute\+Synthesis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the execution can be performed and, in case, performs the synthesis. 
+
+
+
+Reimplemented from \hyperlink{classBackendFlow_af0e8f1973185540298eaa3ac4bee3b2c}{Backend\+Flow}.
+
+
+
+Definition at line 293 of file Lattice\+Backend\+Flow.\+cpp.
+
+
+
+References Backend\+Flow\+::\+Execute\+Synthesis(), and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/dd0/classLatticeBackendFlow_adc9bf997d1ac830c4511521b1934bffc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLatticeBackendFlow_af31a3f147ec929266a696904d911ff6e}\label{classLatticeBackendFlow_af31a3f147ec929266a696904d911ff6e}} 
+\index{Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}!Init\+Design\+Parameters@{Init\+Design\+Parameters}}
+\index{Init\+Design\+Parameters@{Init\+Design\+Parameters}!Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{Init\+Design\+Parameters()}{InitDesignParameters()}}
+{\footnotesize\ttfamily void Lattice\+Backend\+Flow\+::\+Init\+Design\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initializes the parameters. 
+
+
+
+Reimplemented from \hyperlink{classBackendFlow_a367d9917dc257ed6aa0bb5e97f57d2d4}{Backend\+Flow}.
+
+
+
+Definition at line 248 of file Lattice\+Backend\+Flow.\+cpp.
+
+
+
+References Backend\+Flow\+::actual\+\_\+parameters, create\+\_\+sdc(), target\+\_\+device\+::get\+\_\+parameter(), Get\+Extension(), Backend\+Flow\+::\+Param, P\+A\+R\+A\+M\+\_\+\+H\+D\+L\+\_\+files, P\+A\+R\+A\+M\+\_\+sources\+\_\+macro\+\_\+list, P\+A\+R\+A\+M\+\_\+target\+\_\+device, P\+A\+R\+A\+M\+\_\+target\+\_\+family, Design\+Parameters\+::parameter\+\_\+values, Backend\+Flow\+::steps, Backend\+Flow\+::target, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{de/dd0/classLatticeBackendFlow_af31a3f147ec929266a696904d911ff6e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLatticeBackendFlow_aa0695e294b18773a1ec27fe86cf16408}\label{classLatticeBackendFlow_aa0695e294b18773a1ec27fe86cf16408}} 
+\index{Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}!Write\+Flow\+Configuration@{Write\+Flow\+Configuration}}
+\index{Write\+Flow\+Configuration@{Write\+Flow\+Configuration}!Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{Write\+Flow\+Configuration()}{WriteFlowConfiguration()}}
+{\footnotesize\ttfamily void Lattice\+Backend\+Flow\+::\+Write\+Flow\+Configuration (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{script }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Writes the proper flow configuration in the output script. 
+
+
+
+Implements \hyperlink{classBackendFlow_acd93b1846b958eb6b7e10b9894bf5615}{Backend\+Flow}.
+
+
+
+Definition at line 213 of file Lattice\+Backend\+Flow.\+cpp.
+
+
+
+References S\+TR.
+
+\mbox{\Hypertarget{classLatticeBackendFlow_af95e74925a7a7c8f6e770fa99f62481b}\label{classLatticeBackendFlow_af95e74925a7a7c8f6e770fa99f62481b}} 
+\index{Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}!xparse\+\_\+utilization@{xparse\+\_\+utilization}}
+\index{xparse\+\_\+utilization@{xparse\+\_\+utilization}!Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{xparse\+\_\+utilization()}{xparse\_utilization()}}
+{\footnotesize\ttfamily void Lattice\+Backend\+Flow\+::xparse\+\_\+utilization (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parses device utilization. 
+
+
+
+Definition at line 109 of file Lattice\+Backend\+Flow.\+cpp.
+
+
+
+References C\+E\+\_\+\+X\+VM, design\+\_\+values, X\+M\+L\+Dom\+Parser\+::\+Exec(), xml\+\_\+child\+::get\+\_\+children(), X\+M\+L\+Dom\+Parser\+::get\+\_\+document(), xml\+\_\+node\+::get\+\_\+name(), L\+O\+A\+D\+\_\+\+X\+VM, test\+\_\+panda\+::parser, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by Check\+Synthesis\+Results().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/dd0/classLatticeBackendFlow_af95e74925a7a7c8f6e770fa99f62481b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{de/dd0/classLatticeBackendFlow_af95e74925a7a7c8f6e770fa99f62481b_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classLatticeBackendFlow_a2980298887193f63d6b1aa0ab64db340}\label{classLatticeBackendFlow_a2980298887193f63d6b1aa0ab64db340}} 
+\index{Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}!design\+\_\+values@{design\+\_\+values}}
+\index{design\+\_\+values@{design\+\_\+values}!Lattice\+Backend\+Flow@{Lattice\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{design\+\_\+values}{design\_values}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, double$>$ Lattice\+Backend\+Flow\+::design\+\_\+values\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+design values reported by the tools 
+
+
+
+Definition at line 53 of file Lattice\+Backend\+Flow.\+hpp.
+
+
+
+Referenced by Check\+Synthesis\+Results(), and xparse\+\_\+utilization().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/lattice/\hyperlink{LatticeBackendFlow_8hpp}{Lattice\+Backend\+Flow.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/lattice/\hyperlink{LatticeBackendFlow_8cpp}{Lattice\+Backend\+Flow.\+cpp}\end{DoxyCompactItemize}

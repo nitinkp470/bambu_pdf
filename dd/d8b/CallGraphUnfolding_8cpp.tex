@@ -1,0 +1,104 @@
+\hypertarget{CallGraphUnfolding_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/vcd/\+Call\+Graph\+Unfolding.cpp File Reference}
+\label{CallGraphUnfolding_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/vcd/\+Call\+Graph\+Unfolding.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/vcd/\+Call\+Graph\+Unfolding.\+cpp}}
+{\ttfamily \#include \char`\"{}Call\+Graph\+Unfolding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}call\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}call\+\_\+graph\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}op\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Call\+Sites\+Collector\+Visitor.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Discrepancy.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Unfolded\+Call\+Graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Unfolded\+Call\+Info.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Unfolded\+Function\+Info.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+Include dependency graph for Call\+Graph\+Unfolding.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dfc/CallGraphUnfolding_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{CallGraphUnfolding_8cpp_a4c1fa794f09f51d9bc1629daf213209a}{Recursively\+Unfold} (const \hyperlink{UnfoldedCallGraph_8hpp_a6c87395c9d950d587c8e4db39b93e3e2}{Unfolded\+Vertex\+Descriptor} caller\+\_\+v, \hyperlink{classUnfoldedCallGraph}{Unfolded\+Call\+Graph} \&ucg, const \hyperlink{call__graph_8hpp_a6effd75e39674b4777714051b70eddf2}{Call\+Graph\+Const\+Ref} \&cg, const \hyperlink{Discrepancy_8hpp_aa1d62da21f69dae54811e632cadaf6b2}{Call\+Sites\+Info\+Ref} \&call\+\_\+sites\+\_\+info)
+\item 
+static void \hyperlink{CallGraphUnfolding_8cpp_a8693bf7674fd9dd9af8f685166517826}{Unfold} (const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} \&H\+L\+S\+Mgr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{CallGraphUnfolding_8cpp_a4c1fa794f09f51d9bc1629daf213209a}\label{CallGraphUnfolding_8cpp_a4c1fa794f09f51d9bc1629daf213209a}} 
+\index{Call\+Graph\+Unfolding.\+cpp@{Call\+Graph\+Unfolding.\+cpp}!Recursively\+Unfold@{Recursively\+Unfold}}
+\index{Recursively\+Unfold@{Recursively\+Unfold}!Call\+Graph\+Unfolding.\+cpp@{Call\+Graph\+Unfolding.\+cpp}}
+\subsubsection{\texorpdfstring{Recursively\+Unfold()}{RecursivelyUnfold()}}
+{\footnotesize\ttfamily static void Recursively\+Unfold (\begin{DoxyParamCaption}\item[{const \hyperlink{UnfoldedCallGraph_8hpp_a6c87395c9d950d587c8e4db39b93e3e2}{Unfolded\+Vertex\+Descriptor}}]{caller\+\_\+v,  }\item[{\hyperlink{classUnfoldedCallGraph}{Unfolded\+Call\+Graph} \&}]{ucg,  }\item[{const \hyperlink{call__graph_8hpp_a6effd75e39674b4777714051b70eddf2}{Call\+Graph\+Const\+Ref} \&}]{cg,  }\item[{const \hyperlink{Discrepancy_8hpp_aa1d62da21f69dae54811e632cadaf6b2}{Call\+Sites\+Info\+Ref} \&}]{call\+\_\+sites\+\_\+info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyAuthor}{Author}
+Pietro Fezzardi \href{mailto:pietrofezzardi@gmail.com}{\tt pietrofezzardi@gmail.\+com} 
+\end{DoxyAuthor}
+
+
+Definition at line 59 of file Call\+Graph\+Unfolding.\+cpp.
+
+
+
+References Raw\+Graph\+::\+Add\+Edge(), Raw\+Graph\+::\+Add\+Vertex(), Call\+Sites\+Info\+::call\+\_\+id\+\_\+to\+\_\+called\+\_\+id, Call\+Sites\+Info\+::fu\+\_\+id\+\_\+to\+\_\+call\+\_\+ids, Call\+Sites\+Info\+::indirect\+\_\+calls, and Call\+Sites\+Info\+::taken\+\_\+addresses.
+
+
+
+Referenced by Unfold().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{dd/d8b/CallGraphUnfolding_8cpp_a4c1fa794f09f51d9bc1629daf213209a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8b/CallGraphUnfolding_8cpp_a4c1fa794f09f51d9bc1629daf213209a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{CallGraphUnfolding_8cpp_a8693bf7674fd9dd9af8f685166517826}\label{CallGraphUnfolding_8cpp_a8693bf7674fd9dd9af8f685166517826}} 
+\index{Call\+Graph\+Unfolding.\+cpp@{Call\+Graph\+Unfolding.\+cpp}!Unfold@{Unfold}}
+\index{Unfold@{Unfold}!Call\+Graph\+Unfolding.\+cpp@{Call\+Graph\+Unfolding.\+cpp}}
+\subsubsection{\texorpdfstring{Unfold()}{Unfold()}}
+{\footnotesize\ttfamily static void Unfold (\begin{DoxyParamCaption}\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} \&}]{H\+L\+S\+Mgr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 86 of file Call\+Graph\+Unfolding.\+cpp.
+
+
+
+References Function\+Behavior\+::\+F\+C\+FG, Recursively\+Unfold(), S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Call\+Graph\+Unfolding\+::\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8b/CallGraphUnfolding_8cpp_a8693bf7674fd9dd9af8f685166517826_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{dd/d8b/CallGraphUnfolding_8cpp_a8693bf7674fd9dd9af8f685166517826_icgraph}
+\end{center}
+\end{figure}

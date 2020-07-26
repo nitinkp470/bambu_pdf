@@ -1,0 +1,2047 @@
+\hypertarget{classCWriter}{}\section{C\+Writer Class Reference}
+\label{classCWriter}\index{C\+Writer@{C\+Writer}}
+
+
+Class used to write the C code representing a program, this class can\textquotesingle{}t be directly instantiated since the backend is not specified yet.  
+
+
+
+
+{\ttfamily \#include $<$c\+\_\+writer.\+hpp$>$}
+
+
+
+Inheritance diagram for C\+Writer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d07/classCWriter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+Writer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dd9/classCWriter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classCWriter_a4ce9be952a91f3422313a5f9faf60d99}{$\sim$\+C\+Writer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_a7b57fdc8a06f368a65c03af147834198}{Initialize} ()
+\begin{DoxyCompactList}\small\item\em Initialize data structure. \end{DoxyCompactList}\item 
+const \hyperlink{instruction__writer_8hpp_a40ea26c38a2909ba48f88f997144b260}{Instruction\+Writer\+Ref} \hyperlink{classCWriter_a6a794a93c30937aa0ce70de98f5bb8c7}{get\+Instruction\+Writer} () const
+\begin{DoxyCompactList}\small\item\em Returns the instruction writer. \end{DoxyCompactList}\item 
+const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ \hyperlink{classCWriter_aad06f4f569e3a651b401c963b1dcada8}{Get\+Local\+Variables} (const unsigned int function\+\_\+id) const
+\begin{DoxyCompactList}\small\item\em Compute the local variables of a function. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_a3a050cfd9987eb7a7227865cf40db91d}{Write\+Function\+Implementation} (unsigned int function\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Write function implementation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_a10dc0cac6629dd939842250345feb477}{Start\+Function\+Body} (const unsigned int fun\+Id)
+\begin{DoxyCompactList}\small\item\em Writes the body of the function to the specified stream. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_a7fa84e0feec4e832e2f2119e97cd7a3c}{Write\+Function\+Body} (const unsigned int function\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Writes the body of a function. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_aac63c089d71f0541d08bf3790a829645}{End\+Function\+Body} (unsigned int fun\+Id)
+\begin{DoxyCompactList}\small\item\em Writes the code necessary to close a function (this function was a function also present in the original specification) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_a7810dd571d72debb400b889f8366848a}{write\+Routine\+Instructions} (const unsigned int function\+\_\+index, const \hyperlink{classOpVertexSet}{Op\+Vertex\+Set} \&instructions, \hyperlink{var__pp__functor_8hpp_a8a6b51b6519401d911398943510557f0}{var\+\_\+pp\+\_\+functor\+Const\+Ref} variable\+Functor, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} bb\+\_\+start=\hyperlink{graph_8hpp_ac3c33c45c396860b76e8aff4dd2b8158}{N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX}, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ bb\+\_\+end=\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$())
+\begin{DoxyCompactList}\small\item\em Writes the instructions of the current routine, being it a task or a function of the original program. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_ad46d65f0cf64c09ce854032f15ffdd9e}{Write\+Function\+Declaration} (const unsigned int fun\+Id)
+\begin{DoxyCompactList}\small\item\em Writes the declaration of the function whose id in the tree is fun\+Id. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_a04b8381e64ef2e49ec7cfc308e10e10a}{Write\+Header} ()
+\begin{DoxyCompactList}\small\item\em Writes the header of the file. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_a42b2b558bd1efb2dc637664f5df4df28}{Write\+Global\+Declarations} ()
+\begin{DoxyCompactList}\small\item\em Writes the global declarations. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_a736e4e43725523bf3775ed54a9044997}{write\+Include} (const std\+::string \&file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Writes an include directive. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_a34b098dce3408ece8f310af807c52368}{Declare\+Type} (unsigned int var\+Type, const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} BH, \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ std\+::string $>$ \&locally\+\_\+declared\+\_\+type)
+\begin{DoxyCompactList}\small\item\em This method should be called only if the type associated with the variable is a non built\+\_\+in type and, in case the non built\+\_\+in type hasn\textquotesingle{}t been declared yet, it declares it; this method is used to declared new types with scope limited to a routine (be it a function of a task) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_a93167492cece9b71202aa311930b355d}{Declare\+Variable} (unsigned int cur\+Var, \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ \&already\+\_\+declared\+\_\+variables, \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ std\+::string $>$ \&locally\+\_\+declared\+\_\+type, const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} behavioral\+\_\+helper, const \hyperlink{var__pp__functor_8hpp_a8a6b51b6519401d911398943510557f0}{var\+\_\+pp\+\_\+functor\+Const\+Ref} var\+Func)
+\begin{DoxyCompactList}\small\item\em Declares the local variable; in case the variable used in the intialization of cur\+Var hasn\textquotesingle{}t been declared yet it get declared. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_abe7dc69f7739cf009bd2e943a60d1920}{declare\+\_\+cast\+\_\+types} (unsigned int fun\+Id, \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ std\+::string $>$ \&locally\+\_\+declared\+\_\+types)
+\begin{DoxyCompactList}\small\item\em Declare all the types used in conversions. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_ab269f8330141bcdeecda80a23e60c8f5}{Declare\+Local\+Variables} (const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ \&to\+\_\+be\+\_\+declared, \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ \&already\+\_\+declared\+\_\+variables, \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ std\+::string $>$ \&locally\+\_\+declared\+\_\+type, const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} BH, const \hyperlink{var__pp__functor_8hpp_a8a6b51b6519401d911398943510557f0}{var\+\_\+pp\+\_\+functor\+Const\+Ref} var\+Func)
+\begin{DoxyCompactList}\small\item\em Declares the local variable; in case the variable used in the intialization of cur\+Var hasn\textquotesingle{}t been declared yet it get declared. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_a0a14899d7e4f403c1ee6e612566cd9f4}{Declare\+Function\+Types} (const unsigned int)
+\begin{DoxyCompactList}\small\item\em Declares the types of the parameters of a function. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_ad526446c6dd856accaca4a90b3a64f25}{Write\+File} (const std\+::string \&file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Writes the final C file. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_ad3407e20cd7eb648efe844771d3fe80f}{Write\+Builtin\+Wait\+Call} ()
+\begin{DoxyCompactList}\small\item\em Writes implementation of \+\_\+\+\_\+builtin\+\_\+wait\+\_\+call. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{c__writer_8hpp_a4e9c4dfe17e35f981e27b6dd97f9632c}{C\+Writer\+Ref} \hyperlink{classCWriter_ac5dc8feea1af06fe1d58f10fbe91eaf2}{Create\+C\+Writer} (const \hyperlink{classCBackend_abadfd9ef309ba4d12e648fe2e3fff08b}{C\+Backend\+::\+Type} type, const \hyperlink{c__backend__information_8hpp_affe03f2ae5a23aa0efcd9d958c85280d}{C\+Backend\+Information\+Const\+Ref} c\+\_\+backend\+\_\+information, const \hyperlink{application__manager_8hpp_abb985163a2a3fb747f6f03b1eaadbb44}{application\+\_\+manager\+Const\+Ref} app\+\_\+man, const \hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref} \hyperlink{classCWriter_ac6d016436e065c31dd5152a7cc30e507}{indented\+\_\+output\+\_\+stream}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} parameters, const bool \hyperlink{classCWriter_a8d5b6fe4a045d7e9ca997a566274cdb5}{verbose})
+\begin{DoxyCompactList}\small\item\em Factory method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCWriter_a10d0233fea0a92085a3aa160b9e39845}{write\+Routine\+Instructions\+\_\+rec} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} current\+\_\+vertex, bool bracket, const unsigned int function\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Write recursively instructions belonging to a basic block of task or of a function. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_a89fcc230d50a8b5087a08348b67b470a}{write\+Pre\+Instruction\+Info} (const \hyperlink{function__behavior_8hpp_a94872da12ed056b6ecf90456164e0213}{Function\+Behavior\+Const\+Ref}, const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex})
+\begin{DoxyCompactList}\small\item\em Write additional information on the given statement vertex, before the statement itself. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_ad32d1e42246eafd2825029065ccd6280}{write\+Post\+Instruction\+Info} (const \hyperlink{function__behavior_8hpp_a94872da12ed056b6ecf90456164e0213}{Function\+Behavior\+Const\+Ref}, const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex})
+\begin{DoxyCompactList}\small\item\em Write additional information on the given statement vertex, after the statements itself. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_a37dbe13948ff32204ff5030b9400ec84}{Write\+Body\+Loop} (const unsigned int function\+\_\+index, const unsigned int, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} current\+\_\+vertex, bool bracket)
+\begin{DoxyCompactList}\small\item\em Write the instructions belonging to a body loop. \end{DoxyCompactList}\item 
+void \hyperlink{classCWriter_a5d4cb518818feb0e8ef025fa7b93b123}{compute\+\_\+phi\+\_\+nodes} (const \hyperlink{function__behavior_8hpp_a94872da12ed056b6ecf90456164e0213}{Function\+Behavior\+Const\+Ref} function\+\_\+behavior, const \hyperlink{classOpVertexSet}{Op\+Vertex\+Set} \&instructions, \hyperlink{var__pp__functor_8hpp_a8a6b51b6519401d911398943510557f0}{var\+\_\+pp\+\_\+functor\+Const\+Ref} variable\+Functor)
+\begin{DoxyCompactList}\small\item\em Determines the instructions coming out from phi-\/node splitting. \end{DoxyCompactList}\item 
+void \hyperlink{classCWriter_ad9cb6bbf514295637f24b12e35af9939}{insert\+\_\+copies} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} b, const \hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref} bb\+\_\+dom\+Graph, const \hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref} bb\+\_\+fcfg\+Graph, \hyperlink{var__pp__functor_8hpp_a8a6b51b6519401d911398943510557f0}{var\+\_\+pp\+\_\+functor\+Const\+Ref} variable\+Functor, const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ \&phi\+\_\+instructions, std\+::map$<$ unsigned int, unsigned int $>$ \&created\+\_\+variables, std\+::map$<$ unsigned int, std\+::string $>$ \&symbol\+\_\+table, std\+::map$<$ unsigned int, std\+::deque$<$ std\+::string $>$$>$ \&array\+\_\+of\+\_\+stacks)
+\begin{DoxyCompactList}\small\item\em Compute the copy assignments needed by the phi nodes destruction Further details can be found in\+: \end{DoxyCompactList}\item 
+void \hyperlink{classCWriter_acb226fc206697e5e5a8b5e85bbd1b689}{schedule\+\_\+copies} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} b, const \hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref} bb\+\_\+dom\+Graph, const \hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref} bb\+\_\+fcfg\+Graph, \hyperlink{var__pp__functor_8hpp_a8a6b51b6519401d911398943510557f0}{var\+\_\+pp\+\_\+functor\+Const\+Ref} variable\+Functor, const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ \&phi\+\_\+instructions, std\+::map$<$ unsigned int, unsigned int $>$ \&created\+\_\+variables, std\+::map$<$ unsigned int, std\+::string $>$ \&symbol\+\_\+table, std\+::list$<$ unsigned int $>$ \&pushed, std\+::map$<$ unsigned int, std\+::deque$<$ std\+::string $>$$>$ \&array\+\_\+of\+\_\+stacks)
+\begin{DoxyCompactList}\small\item\em insert copies according the algorithm described in Briggs et. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classCWriter_a9eadef932300ac395a17c244453a580f}{create\+\_\+new\+\_\+identifier} (std\+::map$<$ unsigned int, std\+::string $>$ \&symbol\+\_\+table)
+\begin{DoxyCompactList}\small\item\em create an identifier for the temporaries created by phi node destruction \end{DoxyCompactList}\item 
+void \hyperlink{classCWriter_a5c0ed4b874e669318fef1e5976e24b52}{push\+\_\+stack} (std\+::string symbol\+\_\+name, unsigned int dest\+\_\+i, std\+::list$<$ unsigned int $>$ \&pushed, std\+::map$<$ unsigned int, std\+::deque$<$ std\+::string $>$$>$ \&array\+\_\+of\+\_\+stacks)
+\begin{DoxyCompactList}\small\item\em push on the stack of temporary variables that has to replaced \end{DoxyCompactList}\item 
+void \hyperlink{classCWriter_ab9ea6f81d49ce7fed0fa00ffc7e19219}{pop\+\_\+stack} (std\+::list$<$ unsigned int $>$ \&pushed, std\+::map$<$ unsigned int, std\+::deque$<$ std\+::string $>$$>$ \&array\+\_\+of\+\_\+stacks)
+\begin{DoxyCompactList}\small\item\em remove from the stack all the temporaries \end{DoxyCompactList}\item 
+void \hyperlink{classCWriter_a22766bb22fb01e96257b27095bf035ef}{Write\+Hash\+Table\+Implementation} ()
+\begin{DoxyCompactList}\small\item\em Write the implementation of a hash table with long long int as key and long long int as value. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCWriter_a60ced6c07b4f41a09acdae409615e24e}{Write\+B\+B\+Header} (const unsigned int bb\+\_\+number, const unsigned int function\+\_\+index)
+\item 
+\hyperlink{classCWriter_a22480a6c6f4c3b3bbb3efb886b5a724c}{C\+Writer} (const \hyperlink{application__manager_8hpp_abb985163a2a3fb747f6f03b1eaadbb44}{application\+\_\+manager\+Const\+Ref} \+\_\+\+AppM, const \hyperlink{instruction__writer_8hpp_a40ea26c38a2909ba48f88f997144b260}{Instruction\+Writer\+Ref} instruction\+\_\+writer, const \hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref} \hyperlink{classCWriter_ac6d016436e065c31dd5152a7cc30e507}{indented\+\_\+output\+\_\+stream}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classCWriter_a3555d61ac3540440862ed211800b80be}{Param}, bool \hyperlink{classCWriter_a8d5b6fe4a045d7e9ca997a566274cdb5}{verbose}=true)
+\begin{DoxyCompactList}\small\item\em Constructor of the class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{application__manager_8hpp_abb985163a2a3fb747f6f03b1eaadbb44}{application\+\_\+manager\+Const\+Ref} \hyperlink{classCWriter_ac1c04f158e0edaddd59a002dc11213fa}{AppM}
+\begin{DoxyCompactList}\small\item\em the manager of the application \end{DoxyCompactList}\item 
+const \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref} \hyperlink{classCWriter_a3cfb319409e8bbf3ff53cc960afd2da7}{TM}
+\begin{DoxyCompactList}\small\item\em The tree manager. \end{DoxyCompactList}\item 
+const \hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref} \hyperlink{classCWriter_ac6d016436e065c31dd5152a7cc30e507}{indented\+\_\+output\+\_\+stream}
+\begin{DoxyCompactList}\small\item\em Represents the stream we are currently writing to. \end{DoxyCompactList}\item 
+\hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ std\+::string $>$ \hyperlink{classCWriter_a534cbafda0454f4a454c529de5b1ce03}{globally\+\_\+declared\+\_\+types}
+\begin{DoxyCompactList}\small\item\em This set contains the list of the non built\+\_\+in types already declared in the global scope. \end{DoxyCompactList}\item 
+\hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ \hyperlink{classCWriter_a9fd0eb45bad6d32417b1802bcefe608b}{globally\+Decl\+Vars}
+\item 
+const \hyperlink{instruction__writer_8hpp_a40ea26c38a2909ba48f88f997144b260}{Instruction\+Writer\+Ref} \hyperlink{classCWriter_af4be3a067b016eb97f15c89fa98088f3}{instr\+Writer}
+\begin{DoxyCompactList}\small\item\em Contains the class used to write instructions. \end{DoxyCompactList}\item 
+\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} \hyperlink{classCWriter_aed289d777116058d00df6f2d46430fb4}{bb\+\_\+label\+\_\+counter}
+\begin{DoxyCompactList}\small\item\em Counter of the invocations of write\+Routine\+Instructions; this counter allows to print different labels in differnt tasks to avoid problem due to multiple tasks inlineing. \end{DoxyCompactList}\item 
+bool \hyperlink{classCWriter_a8d5b6fe4a045d7e9ca997a566274cdb5}{verbose}
+\begin{DoxyCompactList}\small\item\em Verbosity means that a comment is printed for each line in the output file. \end{DoxyCompactList}\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classCWriter_a3555d61ac3540440862ed211800b80be}{Param}
+\begin{DoxyCompactList}\small\item\em set of parameters \end{DoxyCompactList}\item 
+int \hyperlink{classCWriter_a7f6d9454ff1aff00ebb5b97877f13dfd}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em the debug level \end{DoxyCompactList}\item 
+int \hyperlink{classCWriter_ae6a63f53399597601d3c0e34565d0bd3}{output\+\_\+level}
+\begin{DoxyCompactList}\small\item\em the output level \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classCWriter_aa107c55b07202727edfcb0ef22d2c0ea}{fake\+\_\+max\+\_\+tree\+\_\+node\+\_\+id}
+\item 
+std\+::map$<$ unsigned int, std\+::string $>$ \hyperlink{classCWriter_a5c31c88bdb91ff32a3f0a277134af908}{basic\+\_\+block\+\_\+prefix}
+\begin{DoxyCompactList}\small\item\em string to be printed at the beginning of a given basic block \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, std\+::string $>$ \hyperlink{classCWriter_ab389125a678d1021c5ea50b3e174310b}{basic\+\_\+block\+\_\+tail}
+\begin{DoxyCompactList}\small\item\em string to be printed at the end of a given basic block \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, std\+::map$<$ unsigned int, std\+::string $>$ $>$ \hyperlink{classCWriter_a00f3e4355dfcc26f771a853147cf440d}{renaming\+\_\+table}
+\begin{DoxyCompactList}\small\item\em renaming table used by phi node destruction procedure \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{classCWriter_a3c4baa49dedd4b1a28fbd07e4f4964de}{bb\+\_\+frontier}
+\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{classCWriter_abd6b484e10e87323f731f5754d92164a}{bb\+\_\+analyzed}
+\item 
+std\+::map$<$ unsigned int, std\+::string $>$ \hyperlink{classCWriter_ad7aed67c7d0699eee2a224e68419f0a1}{basic\+\_\+blocks\+\_\+labels}
+\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{classCWriter_a61696d39d3585dafd6a5cc73fa0192b7}{goto\+\_\+list}
+\item 
+\hyperlink{var__pp__functor_8hpp_a8a6b51b6519401d911398943510557f0}{var\+\_\+pp\+\_\+functor\+Const\+Ref} \hyperlink{classCWriter_af80f335f9f823a734687d9b086f4494d}{local\+\_\+rec\+\_\+variable\+Functor}
+\item 
+\hyperlink{function__behavior_8hpp_a94872da12ed056b6ecf90456164e0213}{Function\+Behavior\+Const\+Ref} \hyperlink{classCWriter_aa58231b8be5714edffb9aea9107bfe4f}{local\+\_\+rec\+\_\+function\+\_\+behavior}
+\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{classCWriter_a369957abf1562ef733d60ba5795b1aaf}{local\+\_\+rec\+\_\+instructions}
+\item 
+const \hyperlink{classdominance}{dominance}$<$ \hyperlink{structBBGraph}{B\+B\+Graph} $>$ $\ast$ \hyperlink{classCWriter_a0e081b5f4f221cfda2d094935221cbef}{dominators}
+\item 
+const \hyperlink{classdominance}{dominance}$<$ \hyperlink{structBBGraph}{B\+B\+Graph} $>$ $\ast$ \hyperlink{classCWriter_a40593fe1329f1864c57b777b5fb7e3df}{post\+\_\+dominators}
+\item 
+\hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref} \hyperlink{classCWriter_a7066b65a022f2629ebf99da65b9cbcdb}{local\+\_\+rec\+\_\+bb\+\_\+fcfg\+Graph}
+\item 
+\hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} \hyperlink{classCWriter_abefcc76b6c076a54de2e1a90d7fb54f1}{local\+\_\+rec\+\_\+cfg\+Graph}
+\item 
+\hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} \hyperlink{classCWriter_a5bbe68dac066fd15c07a12e30b3da38a}{local\+\_\+rec\+\_\+behavioral\+\_\+helper}
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{classCWriter_a13c76532724ccd44bc1c86fb9de7317f}{additional\+Includes}
+\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \hyperlink{classCWriter_a91e5847cc31c900423dce81b131992ea}{written\+Includes}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class used to write the C code representing a program, this class can\textquotesingle{}t be directly instantiated since the backend is not specified yet. 
+
+So a subclass must be created which redefines all the abstract methods of this class. 
+
+Definition at line 97 of file c\+\_\+writer.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCWriter_a22480a6c6f4c3b3bbb3efb886b5a724c}\label{classCWriter_a22480a6c6f4c3b3bbb3efb886b5a724c}} 
+\index{C\+Writer@{C\+Writer}!C\+Writer@{C\+Writer}}
+\index{C\+Writer@{C\+Writer}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{C\+Writer()}{CWriter()}}
+{\footnotesize\ttfamily C\+Writer\+::\+C\+Writer (\begin{DoxyParamCaption}\item[{const \hyperlink{application__manager_8hpp_abb985163a2a3fb747f6f03b1eaadbb44}{application\+\_\+manager\+Const\+Ref}}]{\+\_\+\+AppM,  }\item[{const \hyperlink{instruction__writer_8hpp_a40ea26c38a2909ba48f88f997144b260}{Instruction\+Writer\+Ref}}]{instruction\+\_\+writer,  }\item[{const \hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref}}]{indented\+\_\+output\+\_\+stream,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Constructor of the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em AppM} & is the manager of the application \\
+\hline
+{\em instruction\+\_\+writer} & is the instruction writer to use to print the single instruction \\
+\hline
+{\em indented\+\_\+output\+\_\+stream} & is the stream where code has to be printed \\
+\hline
+{\em Param} & is the set of parameters \\
+\hline
+{\em verbose} & tells if annotations \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 210 of file c\+\_\+writer.\+cpp.
+
+
+
+References $\sim$\+C\+Writer().
+
+
+
+Referenced by Create\+C\+Writer().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{d3/d59/classCWriter_a22480a6c6f4c3b3bbb3efb886b5a724c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{d3/d59/classCWriter_a22480a6c6f4c3b3bbb3efb886b5a724c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a4ce9be952a91f3422313a5f9faf60d99}\label{classCWriter_a4ce9be952a91f3422313a5f9faf60d99}} 
+\index{C\+Writer@{C\+Writer}!````~C\+Writer@{$\sim$\+C\+Writer}}
+\index{````~C\+Writer@{$\sim$\+C\+Writer}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{$\sim$\+C\+Writer()}{~CWriter()}}
+{\footnotesize\ttfamily C\+Writer\+::$\sim$\+C\+Writer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by C\+Writer().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a4ce9be952a91f3422313a5f9faf60d99_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCWriter_a5d4cb518818feb0e8ef025fa7b93b123}\label{classCWriter_a5d4cb518818feb0e8ef025fa7b93b123}} 
+\index{C\+Writer@{C\+Writer}!compute\+\_\+phi\+\_\+nodes@{compute\+\_\+phi\+\_\+nodes}}
+\index{compute\+\_\+phi\+\_\+nodes@{compute\+\_\+phi\+\_\+nodes}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{compute\+\_\+phi\+\_\+nodes()}{compute\_phi\_nodes()}}
+{\footnotesize\ttfamily void C\+Writer\+::compute\+\_\+phi\+\_\+nodes (\begin{DoxyParamCaption}\item[{const \hyperlink{function__behavior_8hpp_a94872da12ed056b6ecf90456164e0213}{Function\+Behavior\+Const\+Ref}}]{function\+\_\+behavior,  }\item[{const \hyperlink{classOpVertexSet}{Op\+Vertex\+Set} \&}]{instructions,  }\item[{\hyperlink{var__pp__functor_8hpp_a8a6b51b6519401d911398943510557f0}{var\+\_\+pp\+\_\+functor\+Const\+Ref}}]{variable\+Functor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Determines the instructions coming out from phi-\/node splitting. 
+
+compute the assignment introduced by the phi nodes destruction
+
+in case we declare the variables introduced during the phi nodes destruction 
+
+Definition at line 1098 of file c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), Function\+Behavior\+::\+C\+Get\+B\+B\+Graph(), B\+B\+Graph\+::\+C\+Get\+B\+B\+Graph\+Info(), Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), Function\+Behavior\+::\+D\+O\+M\+\_\+\+T\+R\+EE, Function\+Behavior\+::\+F\+BB, Function\+Behavior\+::\+F\+C\+FG, G\+E\+T\+\_\+\+T\+Y\+PE, tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), indented\+\_\+output\+\_\+stream, insert\+\_\+copies(), tree\+\_\+helper\+::print\+\_\+type(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, TM, and T\+Y\+P\+E\+\_\+\+P\+HI.
+
+
+
+Referenced by Declare\+Local\+Variables().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a5d4cb518818feb0e8ef025fa7b93b123_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a5d4cb518818feb0e8ef025fa7b93b123_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a9eadef932300ac395a17c244453a580f}\label{classCWriter_a9eadef932300ac395a17c244453a580f}} 
+\index{C\+Writer@{C\+Writer}!create\+\_\+new\+\_\+identifier@{create\+\_\+new\+\_\+identifier}}
+\index{create\+\_\+new\+\_\+identifier@{create\+\_\+new\+\_\+identifier}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{create\+\_\+new\+\_\+identifier()}{create\_new\_identifier()}}
+{\footnotesize\ttfamily unsigned int C\+Writer\+::create\+\_\+new\+\_\+identifier (\begin{DoxyParamCaption}\item[{std\+::map$<$ unsigned int, std\+::string $>$ \&}]{symbol\+\_\+table }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+create an identifier for the temporaries created by phi node destruction 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\+\_\+table} & is the symbol table where the new id is inserted return an id for the symbol created \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1568 of file c\+\_\+writer.\+cpp.
+
+
+
+References counter, fake\+\_\+max\+\_\+tree\+\_\+node\+\_\+id, S\+TR, and TM.
+
+
+
+Referenced by schedule\+\_\+copies().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a9eadef932300ac395a17c244453a580f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_ac5dc8feea1af06fe1d58f10fbe91eaf2}\label{classCWriter_ac5dc8feea1af06fe1d58f10fbe91eaf2}} 
+\index{C\+Writer@{C\+Writer}!Create\+C\+Writer@{Create\+C\+Writer}}
+\index{Create\+C\+Writer@{Create\+C\+Writer}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Create\+C\+Writer()}{CreateCWriter()}}
+{\footnotesize\ttfamily \hyperlink{c__writer_8hpp_a4e9c4dfe17e35f981e27b6dd97f9632c}{C\+Writer\+Ref} C\+Writer\+::\+Create\+C\+Writer (\begin{DoxyParamCaption}\item[{const \hyperlink{classCBackend_abadfd9ef309ba4d12e648fe2e3fff08b}{C\+Backend\+::\+Type}}]{type,  }\item[{const \hyperlink{c__backend__information_8hpp_affe03f2ae5a23aa0efcd9d958c85280d}{C\+Backend\+Information\+Const\+Ref}}]{c\+\_\+backend\+\_\+information,  }\item[{const \hyperlink{application__manager_8hpp_abb985163a2a3fb747f6f03b1eaadbb44}{application\+\_\+manager\+Const\+Ref}}]{app\+\_\+man,  }\item[{const \hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref}}]{indented\+\_\+output\+\_\+stream,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{parameters,  }\item[{const bool}]{verbose }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Factory method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & is the type of backend we are creating \\
+\hline
+{\em c\+\_\+backend\+\_\+information} & is the information about the backend we are creating \\
+\hline
+{\em app\+\_\+man} & is the application manager \\
+\hline
+{\em indented\+\_\+output\+\_\+stream} & is the output stream \\
+\hline
+{\em parameters} & is the set of input parameters \\
+\hline
+{\em verbose} & tells if produced source code has to be commented \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 228 of file c\+\_\+writer.\+cpp.
+
+
+
+References B\+A\+\_\+\+N\+O\+NE, C\+Backend\+::\+C\+B\+\_\+\+S\+E\+Q\+U\+E\+N\+T\+I\+AL, Instruction\+Writer\+::\+Create\+Instruction\+Writer(), C\+Writer(), and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_ac5dc8feea1af06fe1d58f10fbe91eaf2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_abe7dc69f7739cf009bd2e943a60d1920}\label{classCWriter_abe7dc69f7739cf009bd2e943a60d1920}} 
+\index{C\+Writer@{C\+Writer}!declare\+\_\+cast\+\_\+types@{declare\+\_\+cast\+\_\+types}}
+\index{declare\+\_\+cast\+\_\+types@{declare\+\_\+cast\+\_\+types}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{declare\+\_\+cast\+\_\+types()}{declare\_cast\_types()}}
+{\footnotesize\ttfamily void C\+Writer\+::declare\+\_\+cast\+\_\+types (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+Id,  }\item[{\hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ std\+::string $>$ \&}]{locally\+\_\+declared\+\_\+types }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Declare all the types used in conversions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function\+\_\+id} & is the function to be condiered \\
+\hline
+{\em locally\+\_\+declared\+\_\+types} & is the set of already declared types \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 322 of file c\+\_\+writer.\+cpp.
+
+
+
+References AppM, Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), Declare\+Type(), Function\+Behavior\+::\+D\+FG, E\+N\+T\+R\+Y\+\_\+\+ID, E\+X\+I\+T\+\_\+\+ID, Behavioral\+Helper\+::get\+\_\+typecast(), and index.
+
+
+
+Referenced by Start\+Function\+Body().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_abe7dc69f7739cf009bd2e943a60d1920_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_abe7dc69f7739cf009bd2e943a60d1920_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a0a14899d7e4f403c1ee6e612566cd9f4}\label{classCWriter_a0a14899d7e4f403c1ee6e612566cd9f4}} 
+\index{C\+Writer@{C\+Writer}!Declare\+Function\+Types@{Declare\+Function\+Types}}
+\index{Declare\+Function\+Types@{Declare\+Function\+Types}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Declare\+Function\+Types()}{DeclareFunctionTypes()}}
+{\footnotesize\ttfamily void C\+Writer\+::\+Declare\+Function\+Types (\begin{DoxyParamCaption}\item[{const unsigned int}]{fun\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Declares the types of the parameters of a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fun\+\_\+id} & is the index of the function \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 433 of file c\+\_\+writer.\+cpp.
+
+
+
+References AppM, Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Declare\+Type(), Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), Behavioral\+Helper\+::\+Get\+Function\+Return\+Type(), Behavioral\+Helper\+::\+Get\+Parameter\+Types(), globally\+\_\+declared\+\_\+types, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, and S\+TR.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a0a14899d7e4f403c1ee6e612566cd9f4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_ab269f8330141bcdeecda80a23e60c8f5}\label{classCWriter_ab269f8330141bcdeecda80a23e60c8f5}} 
+\index{C\+Writer@{C\+Writer}!Declare\+Local\+Variables@{Declare\+Local\+Variables}}
+\index{Declare\+Local\+Variables@{Declare\+Local\+Variables}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Declare\+Local\+Variables()}{DeclareLocalVariables()}}
+{\footnotesize\ttfamily void C\+Writer\+::\+Declare\+Local\+Variables (\begin{DoxyParamCaption}\item[{const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ \&}]{to\+\_\+be\+\_\+declared,  }\item[{\hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ \&}]{already\+\_\+declared\+\_\+variables,  }\item[{\hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ std\+::string $>$ \&}]{locally\+\_\+declared\+\_\+type,  }\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{BH,  }\item[{const \hyperlink{var__pp__functor_8hpp_a8a6b51b6519401d911398943510557f0}{var\+\_\+pp\+\_\+functor\+Const\+Ref}}]{var\+Func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Declares the local variable; in case the variable used in the intialization of cur\+Var hasn\textquotesingle{}t been declared yet it get declared. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+\_\+be\+\_\+declared} & is the set of variables which have to be declared \\
+\hline
+{\em already\+\_\+decl\+\_\+variables} & is the set of already declared variables \\
+\hline
+{\em locally\+\_\+declared\+\_\+type} & is the set of already declared types \\
+\hline
+{\em helper} & is the behavioral helper associated with the function \\
+\hline
+{\em var\+Func} & is the printer functor \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classDiscrepancyAnalysisCWriter_af877ad0ea844b3dd8da2c8e9a2756986}{Discrepancy\+Analysis\+C\+Writer}.
+
+
+
+Definition at line 1354 of file c\+\_\+writer.\+cpp.
+
+
+
+References AppM, Function\+Behavior\+::\+C\+Get\+Op\+Graph(), compute\+\_\+phi\+\_\+nodes(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Declare\+Variable(), Function\+Behavior\+::\+D\+FG, Behavioral\+Helper\+::get\+\_\+function\+\_\+index(), Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+O\+DE, Behavioral\+Helper\+::get\+\_\+parameters(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and TM.
+
+
+
+Referenced by Discrepancy\+Analysis\+C\+Writer\+::\+Declare\+Local\+Variables(), and Start\+Function\+Body().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_ab269f8330141bcdeecda80a23e60c8f5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_ab269f8330141bcdeecda80a23e60c8f5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a34b098dce3408ece8f310af807c52368}\label{classCWriter_a34b098dce3408ece8f310af807c52368}} 
+\index{C\+Writer@{C\+Writer}!Declare\+Type@{Declare\+Type}}
+\index{Declare\+Type@{Declare\+Type}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Declare\+Type()}{DeclareType()}}
+{\footnotesize\ttfamily void C\+Writer\+::\+Declare\+Type (\begin{DoxyParamCaption}\item[{unsigned int}]{var\+Type,  }\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{BH,  }\item[{\hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ std\+::string $>$ \&}]{locally\+\_\+declared\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This method should be called only if the type associated with the variable is a non built\+\_\+in type and, in case the non built\+\_\+in type hasn\textquotesingle{}t been declared yet, it declares it; this method is used to declared new types with scope limited to a routine (be it a function of a task) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var\+Type} & the index of the type to be declared \\
+\hline
+{\em BH} & the behavioral helper associated to the function which declare type \\
+\hline
+{\em locally\+\_\+declared\+\_\+type} & is the set of type already declared in this function \\
+\hline
+{\em routine\+\_\+name} & is the name of the routina (function or thread) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1246 of file c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Behavioral\+Helper\+::get\+\_\+definition(), Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), tree\+\_\+helper\+::\+Get\+Real\+Type(), tree\+\_\+helper\+::\+Get\+Types\+To\+Be\+Declared\+After(), tree\+\_\+helper\+::\+Get\+Types\+To\+Be\+Declared\+Before(), globally\+\_\+declared\+\_\+types, tree\+\_\+helper\+::\+Has\+To\+Be\+Declared(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, indented\+\_\+output\+\_\+stream, tree\+\_\+helper\+::name\+\_\+type(), Param, Behavioral\+Helper\+::print\+\_\+type\+\_\+declaration(), S\+TR, TM, and verbose.
+
+
+
+Referenced by declare\+\_\+cast\+\_\+types(), Declare\+Function\+Types(), and Declare\+Variable().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a34b098dce3408ece8f310af807c52368_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a34b098dce3408ece8f310af807c52368_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a93167492cece9b71202aa311930b355d}\label{classCWriter_a93167492cece9b71202aa311930b355d}} 
+\index{C\+Writer@{C\+Writer}!Declare\+Variable@{Declare\+Variable}}
+\index{Declare\+Variable@{Declare\+Variable}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Declare\+Variable()}{DeclareVariable()}}
+{\footnotesize\ttfamily void C\+Writer\+::\+Declare\+Variable (\begin{DoxyParamCaption}\item[{unsigned int}]{cur\+Var,  }\item[{\hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ \&}]{already\+\_\+declared\+\_\+variables,  }\item[{\hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ std\+::string $>$ \&}]{locally\+\_\+declared\+\_\+type,  }\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{behavioral\+\_\+helper,  }\item[{const \hyperlink{var__pp__functor_8hpp_a8a6b51b6519401d911398943510557f0}{var\+\_\+pp\+\_\+functor\+Const\+Ref}}]{var\+Func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Declares the local variable; in case the variable used in the intialization of cur\+Var hasn\textquotesingle{}t been declared yet it get declared. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cur\+Var} & is the variable to be declared \\
+\hline
+{\em already\+\_\+decl\+\_\+variables} & is the set of already declared variables \\
+\hline
+{\em locally\+\_\+declared\+\_\+type} & is the set of already declared types \\
+\hline
+{\em behavioral\+\_\+helper} & is the behavioral helper \\
+\hline
+{\em var\+Func} & is the printer functor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1296 of file c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Declare\+Type(), Behavioral\+Helper\+::get\+\_\+type(), tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), Behavioral\+Helper\+::\+Get\+Init(), globally\+Decl\+Vars, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, indented\+\_\+output\+\_\+stream, instr\+Writer, tree\+\_\+helper\+::is\+\_\+system(), Behavioral\+Helper\+::\+Print\+Var\+Declaration(), Behavioral\+Helper\+::\+Print\+Variable(), S\+TR, TM, and verbose.
+
+
+
+Referenced by Declare\+Local\+Variables(), and Write\+Global\+Declarations().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a93167492cece9b71202aa311930b355d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a93167492cece9b71202aa311930b355d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_aac63c089d71f0541d08bf3790a829645}\label{classCWriter_aac63c089d71f0541d08bf3790a829645}} 
+\index{C\+Writer@{C\+Writer}!End\+Function\+Body@{End\+Function\+Body}}
+\index{End\+Function\+Body@{End\+Function\+Body}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{End\+Function\+Body()}{EndFunctionBody()}}
+{\footnotesize\ttfamily void C\+Writer\+::\+End\+Function\+Body (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Writes the code necessary to close a function (this function was a function also present in the original specification) 
+
+
+
+Definition at line 529 of file c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), basic\+\_\+block\+\_\+prefix, basic\+\_\+block\+\_\+tail, indented\+\_\+output\+\_\+stream, renaming\+\_\+table, S\+TR, and verbose.
+
+
+
+Referenced by Write\+Function\+Implementation().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_aac63c089d71f0541d08bf3790a829645_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_aac63c089d71f0541d08bf3790a829645_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a6a794a93c30937aa0ce70de98f5bb8c7}\label{classCWriter_a6a794a93c30937aa0ce70de98f5bb8c7}} 
+\index{C\+Writer@{C\+Writer}!get\+Instruction\+Writer@{get\+Instruction\+Writer}}
+\index{get\+Instruction\+Writer@{get\+Instruction\+Writer}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{get\+Instruction\+Writer()}{getInstructionWriter()}}
+{\footnotesize\ttfamily const \hyperlink{instruction__writer_8hpp_a40ea26c38a2909ba48f88f997144b260}{Instruction\+Writer\+Ref} C\+Writer\+::get\+Instruction\+Writer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the instruction writer. 
+
+\begin{DoxyReturn}{Returns}
+the instruction writer 
+\end{DoxyReturn}
+
+
+Definition at line 1341 of file c\+\_\+writer.\+cpp.
+
+
+
+References instr\+Writer.
+
+\mbox{\Hypertarget{classCWriter_aad06f4f569e3a651b401c963b1dcada8}\label{classCWriter_aad06f4f569e3a651b401c963b1dcada8}} 
+\index{C\+Writer@{C\+Writer}!Get\+Local\+Variables@{Get\+Local\+Variables}}
+\index{Get\+Local\+Variables@{Get\+Local\+Variables}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Get\+Local\+Variables()}{GetLocalVariables()}}
+{\footnotesize\ttfamily const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ C\+Writer\+::\+Get\+Local\+Variables (\begin{DoxyParamCaption}\item[{const unsigned int}]{function\+\_\+id }\end{DoxyParamCaption}) const}
+
+
+
+Compute the local variables of a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function\+\_\+id} & is the index of a function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the local variables of a function 
+\end{DoxyReturn}
+
+
+Definition at line 459 of file c\+\_\+writer.\+cpp.
+
+
+
+References AppM, Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), and Function\+Behavior\+::\+D\+FG.
+
+
+
+Referenced by Start\+Function\+Body().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_aad06f4f569e3a651b401c963b1dcada8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_aad06f4f569e3a651b401c963b1dcada8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a7b57fdc8a06f368a65c03af147834198}\label{classCWriter_a7b57fdc8a06f368a65c03af147834198}} 
+\index{C\+Writer@{C\+Writer}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void C\+Writer\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initialize data structure. 
+
+
+
+Reimplemented in \hyperlink{classEdgeCWriter_a514808888307cd604ce3b453b550c6a3}{Edge\+C\+Writer}.
+
+
+
+Definition at line 345 of file c\+\_\+writer.\+cpp.
+
+
+
+References additional\+Includes, fake\+\_\+max\+\_\+tree\+\_\+node\+\_\+id, globally\+\_\+declared\+\_\+types, globally\+Decl\+Vars, instr\+Writer, TM, and written\+Includes.
+
+
+
+Referenced by Edge\+C\+Writer\+::\+Initialize().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{d3/d59/classCWriter_a7b57fdc8a06f368a65c03af147834198_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_ad9cb6bbf514295637f24b12e35af9939}\label{classCWriter_ad9cb6bbf514295637f24b12e35af9939}} 
+\index{C\+Writer@{C\+Writer}!insert\+\_\+copies@{insert\+\_\+copies}}
+\index{insert\+\_\+copies@{insert\+\_\+copies}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{insert\+\_\+copies()}{insert\_copies()}}
+{\footnotesize\ttfamily void C\+Writer\+::insert\+\_\+copies (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{b,  }\item[{const \hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref}}]{bb\+\_\+dom\+Graph,  }\item[{const \hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref}}]{bb\+\_\+fcfg\+Graph,  }\item[{\hyperlink{var__pp__functor_8hpp_a8a6b51b6519401d911398943510557f0}{var\+\_\+pp\+\_\+functor\+Const\+Ref}}]{variable\+Functor,  }\item[{const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ \&}]{phi\+\_\+instructions,  }\item[{std\+::map$<$ unsigned int, unsigned int $>$ \&}]{created\+\_\+variables,  }\item[{std\+::map$<$ unsigned int, std\+::string $>$ \&}]{symbol\+\_\+table,  }\item[{std\+::map$<$ unsigned int, std\+::deque$<$ std\+::string $>$$>$ \&}]{array\+\_\+of\+\_\+stacks }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Compute the copy assignments needed by the phi nodes destruction Further details can be found in\+: 
+
+
+\begin{DoxyItemize}
+\item Preston Briggs, Keith D. Cooper, Timothy J. Harvey and L. Taylor Simpson, \char`\"{}\+Practical Improvements to the Construction and Destruction of Static Single Assignment Form\char`\"{}, Software -- Practice and Experience 1998 
+\end{DoxyItemize}fill the renaming table for basic block b 
+
+Definition at line 1388 of file c\+\_\+writer.\+cpp.
+
+
+
+References pop\+\_\+stack(), renaming\+\_\+table, and schedule\+\_\+copies().
+
+
+
+Referenced by compute\+\_\+phi\+\_\+nodes().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_ad9cb6bbf514295637f24b12e35af9939_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_ad9cb6bbf514295637f24b12e35af9939_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_ab9ea6f81d49ce7fed0fa00ffc7e19219}\label{classCWriter_ab9ea6f81d49ce7fed0fa00ffc7e19219}} 
+\index{C\+Writer@{C\+Writer}!pop\+\_\+stack@{pop\+\_\+stack}}
+\index{pop\+\_\+stack@{pop\+\_\+stack}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{pop\+\_\+stack()}{pop\_stack()}}
+{\footnotesize\ttfamily void C\+Writer\+::pop\+\_\+stack (\begin{DoxyParamCaption}\item[{std\+::list$<$ unsigned int $>$ \&}]{pushed,  }\item[{std\+::map$<$ unsigned int, std\+::deque$<$ std\+::string $>$$>$ \&}]{array\+\_\+of\+\_\+stacks }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+remove from the stack all the temporaries 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pushed} & is the list of variables to be renamed \\
+\hline
+{\em array\+\_\+of\+\_\+stacks} & is the array of stacks used by the phi node destruction procedure \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1592 of file c\+\_\+writer.\+cpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by insert\+\_\+copies().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_ab9ea6f81d49ce7fed0fa00ffc7e19219_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a5c0ed4b874e669318fef1e5976e24b52}\label{classCWriter_a5c0ed4b874e669318fef1e5976e24b52}} 
+\index{C\+Writer@{C\+Writer}!push\+\_\+stack@{push\+\_\+stack}}
+\index{push\+\_\+stack@{push\+\_\+stack}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{push\+\_\+stack()}{push\_stack()}}
+{\footnotesize\ttfamily void C\+Writer\+::push\+\_\+stack (\begin{DoxyParamCaption}\item[{std\+::string}]{symbol\+\_\+name,  }\item[{unsigned int}]{dest\+\_\+i,  }\item[{std\+::list$<$ unsigned int $>$ \&}]{pushed,  }\item[{std\+::map$<$ unsigned int, std\+::deque$<$ std\+::string $>$$>$ \&}]{array\+\_\+of\+\_\+stacks }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+push on the stack of temporary variables that has to replaced 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\+\_\+name} & is the new identifier for dest\+\_\+i \\
+\hline
+{\em dest\+\_\+i} & is the id of the variable to be renamed \\
+\hline
+{\em pushed} & is the list of variables to be renamed \\
+\hline
+{\em array\+\_\+of\+\_\+stacks} & is the array of stacks used by the phi node destruction procedure \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1585 of file c\+\_\+writer.\+cpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by schedule\+\_\+copies().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a5c0ed4b874e669318fef1e5976e24b52_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_acb226fc206697e5e5a8b5e85bbd1b689}\label{classCWriter_acb226fc206697e5e5a8b5e85bbd1b689}} 
+\index{C\+Writer@{C\+Writer}!schedule\+\_\+copies@{schedule\+\_\+copies}}
+\index{schedule\+\_\+copies@{schedule\+\_\+copies}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{schedule\+\_\+copies()}{schedule\_copies()}}
+{\footnotesize\ttfamily void C\+Writer\+::schedule\+\_\+copies (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{b,  }\item[{const \hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref}}]{bb\+\_\+dom\+Graph,  }\item[{const \hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref}}]{bb\+\_\+fcfg\+Graph,  }\item[{\hyperlink{var__pp__functor_8hpp_a8a6b51b6519401d911398943510557f0}{var\+\_\+pp\+\_\+functor\+Const\+Ref}}]{variable\+Functor,  }\item[{const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ \&}]{phi\+\_\+instructions,  }\item[{std\+::map$<$ unsigned int, unsigned int $>$ \&}]{created\+\_\+variables,  }\item[{std\+::map$<$ unsigned int, std\+::string $>$ \&}]{symbol\+\_\+table,  }\item[{std\+::list$<$ unsigned int $>$ \&}]{pushed,  }\item[{std\+::map$<$ unsigned int, std\+::deque$<$ std\+::string $>$$>$ \&}]{array\+\_\+of\+\_\+stacks }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+insert copies according the algorithm described in Briggs et. 
+
+al. Pass One\+: initialize the data structures
+
+Pass two\+: Set up the worklist of initial copies
+
+Pass Three\+: Iterate over the worklist, inserting copies
+
+if dest  live\+\_\+out(b) wrt the original algorithm an optimization has been added\+: in case b does not dominate any other node we can skip the creation of t
+
+insert a copy from dest to a new temp t at phi-\/node defining dest
+
+push(t, Stack\mbox{[}dest\mbox{]})
+
+insert a copy operation from map\mbox{[}src\mbox{]} to dest at the end of b
+
+check if dest\+\_\+i is source of any other pair in copy\+\_\+set this optimization is not described in the original algorithm
+
+create a new symbol
+
+insert a copy from dest to a new temp t at the end of b 
+
+Definition at line 1412 of file c\+\_\+writer.\+cpp.
+
+
+
+References basic\+\_\+block\+\_\+prefix, basic\+\_\+block\+\_\+tail, B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), create\+\_\+new\+\_\+identifier(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, push\+\_\+stack(), and renaming\+\_\+table.
+
+
+
+Referenced by insert\+\_\+copies().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_acb226fc206697e5e5a8b5e85bbd1b689_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_acb226fc206697e5e5a8b5e85bbd1b689_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a10dc0cac6629dd939842250345feb477}\label{classCWriter_a10dc0cac6629dd939842250345feb477}} 
+\index{C\+Writer@{C\+Writer}!Start\+Function\+Body@{Start\+Function\+Body}}
+\index{Start\+Function\+Body@{Start\+Function\+Body}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Start\+Function\+Body()}{StartFunctionBody()}}
+{\footnotesize\ttfamily void C\+Writer\+::\+Start\+Function\+Body (\begin{DoxyParamCaption}\item[{const unsigned int}]{fun\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Writes the body of the function to the specified stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fun\+Id} & is the index of the function \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 500 of file c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), AppM, declare\+\_\+cast\+\_\+types(), Declare\+Local\+Variables(), Behavioral\+Helper\+::get\+\_\+parameters(), Get\+Local\+Variables(), indented\+\_\+output\+\_\+stream, and instr\+Writer.
+
+
+
+Referenced by Write\+Function\+Implementation().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a10dc0cac6629dd939842250345feb477_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a10dc0cac6629dd939842250345feb477_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a60ced6c07b4f41a09acdae409615e24e}\label{classCWriter_a60ced6c07b4f41a09acdae409615e24e}} 
+\index{C\+Writer@{C\+Writer}!Write\+B\+B\+Header@{Write\+B\+B\+Header}}
+\index{Write\+B\+B\+Header@{Write\+B\+B\+Header}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+B\+B\+Header()}{WriteBBHeader()}}
+{\footnotesize\ttfamily void C\+Writer\+::\+Write\+B\+B\+Header (\begin{DoxyParamCaption}\item[{const unsigned int}]{bb\+\_\+number,  }\item[{const unsigned int}]{function\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \hyperlink{classDiscrepancyAnalysisCWriter_aa06e1b8c2dedbdb1278f61c7970ebc62}{Discrepancy\+Analysis\+C\+Writer}.
+
+
+
+Definition at line 1840 of file c\+\_\+writer.\+cpp.
+
+
+
+Referenced by write\+Routine\+Instructions\+\_\+rec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a60ced6c07b4f41a09acdae409615e24e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a37dbe13948ff32204ff5030b9400ec84}\label{classCWriter_a37dbe13948ff32204ff5030b9400ec84}} 
+\index{C\+Writer@{C\+Writer}!Write\+Body\+Loop@{Write\+Body\+Loop}}
+\index{Write\+Body\+Loop@{Write\+Body\+Loop}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Body\+Loop()}{WriteBodyLoop()}}
+{\footnotesize\ttfamily void C\+Writer\+::\+Write\+Body\+Loop (\begin{DoxyParamCaption}\item[{const unsigned int}]{function\+\_\+index,  }\item[{const unsigned}]{int,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{current\+\_\+vertex,  }\item[{bool}]{bracket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Write the instructions belonging to a body loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function\+\_\+index} & is the identifier of the function to which instructions belong \\
+\hline
+{\em loop\+\_\+id} & is the index of the loop to be printed \\
+\hline
+{\em current\+\_\+vertex} & is the first basic block of the loop \\
+\hline
+{\em bracket} & tells if bracket should be added before and after this basic block \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 355 of file c\+\_\+writer.\+cpp.
+
+
+
+References write\+Routine\+Instructions\+\_\+rec().
+
+
+
+Referenced by write\+Routine\+Instructions\+\_\+rec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a37dbe13948ff32204ff5030b9400ec84_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a37dbe13948ff32204ff5030b9400ec84_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_ad3407e20cd7eb648efe844771d3fe80f}\label{classCWriter_ad3407e20cd7eb648efe844771d3fe80f}} 
+\index{C\+Writer@{C\+Writer}!Write\+Builtin\+Wait\+Call@{Write\+Builtin\+Wait\+Call}}
+\index{Write\+Builtin\+Wait\+Call@{Write\+Builtin\+Wait\+Call}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Builtin\+Wait\+Call()}{WriteBuiltinWaitCall()}}
+{\footnotesize\ttfamily void C\+Writer\+::\+Write\+Builtin\+Wait\+Call (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Writes implementation of \+\_\+\+\_\+builtin\+\_\+wait\+\_\+call. 
+
+
+
+Reimplemented in \hyperlink{classHLSCWriter_a7261192f62610bd053e5c35361ae1054}{H\+L\+S\+C\+Writer}, and \hyperlink{classDiscrepancyAnalysisCWriter_a614b57f4cd76435c0b7266ac677145d5}{Discrepancy\+Analysis\+C\+Writer}.
+
+
+
+Definition at line 1844 of file c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), AppM, B\+U\+I\+L\+T\+I\+N\+\_\+\+W\+A\+I\+T\+\_\+\+C\+A\+LL, Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), Behavioral\+Helper\+::get\+\_\+parameters(), Behavioral\+Helper\+::get\+\_\+size(), Behavioral\+Helper\+::get\+\_\+type(), Behavioral\+Helper\+::\+Get\+Function\+Return\+Type(), indented\+\_\+output\+\_\+stream, Behavioral\+Helper\+::is\+\_\+int(), Behavioral\+Helper\+::is\+\_\+real(), Behavioral\+Helper\+::is\+\_\+unsigned(), Behavioral\+Helper\+::print\+\_\+type(), Behavioral\+Helper\+::\+Print\+Variable(), S\+TR, and test\+\_\+panda\+::type.
+
+
+
+Referenced by Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Builtin\+Wait\+Call().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_ad3407e20cd7eb648efe844771d3fe80f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_ad3407e20cd7eb648efe844771d3fe80f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_ad526446c6dd856accaca4a90b3a64f25}\label{classCWriter_ad526446c6dd856accaca4a90b3a64f25}} 
+\index{C\+Writer@{C\+Writer}!Write\+File@{Write\+File}}
+\index{Write\+File@{Write\+File}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+File()}{WriteFile()}}
+{\footnotesize\ttfamily void C\+Writer\+::\+Write\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Writes the final C file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & is the name of the file to be generated \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classHLSCWriter_a5956dd91971c6fca646d0f714afd6795}{H\+L\+S\+C\+Writer}.
+
+
+
+Definition at line 1835 of file c\+\_\+writer.\+cpp.
+
+
+
+References indented\+\_\+output\+\_\+stream, and Indented\+Output\+Stream\+::\+Write\+File().
+
+
+
+Referenced by Edge\+C\+Writer\+::write\+Routine\+Instructions().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{d3/d59/classCWriter_ad526446c6dd856accaca4a90b3a64f25_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{d3/d59/classCWriter_ad526446c6dd856accaca4a90b3a64f25_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a7fa84e0feec4e832e2f2119e97cd7a3c}\label{classCWriter_a7fa84e0feec4e832e2f2119e97cd7a3c}} 
+\index{C\+Writer@{C\+Writer}!Write\+Function\+Body@{Write\+Function\+Body}}
+\index{Write\+Function\+Body@{Write\+Function\+Body}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Function\+Body()}{WriteFunctionBody()}}
+{\footnotesize\ttfamily void C\+Writer\+::\+Write\+Function\+Body (\begin{DoxyParamCaption}\item[{const unsigned int}]{function\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Writes the body of a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function\+\_\+id} & is the function whose body has to be printed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 360 of file c\+\_\+writer.\+cpp.
+
+
+
+References AppM, Function\+Behavior\+::\+C\+FG, Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and write\+Routine\+Instructions().
+
+
+
+Referenced by Write\+Function\+Implementation().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a7fa84e0feec4e832e2f2119e97cd7a3c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a7fa84e0feec4e832e2f2119e97cd7a3c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_ad46d65f0cf64c09ce854032f15ffdd9e}\label{classCWriter_ad46d65f0cf64c09ce854032f15ffdd9e}} 
+\index{C\+Writer@{C\+Writer}!Write\+Function\+Declaration@{Write\+Function\+Declaration}}
+\index{Write\+Function\+Declaration@{Write\+Function\+Declaration}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Function\+Declaration()}{WriteFunctionDeclaration()}}
+{\footnotesize\ttfamily void C\+Writer\+::\+Write\+Function\+Declaration (\begin{DoxyParamCaption}\item[{const unsigned int}]{fun\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Writes the declaration of the function whose id in the tree is fun\+Id. 
+
+
+
+Reimplemented in \hyperlink{classDiscrepancyAnalysisCWriter_a190bda3bc90a238e772d319afd83becc}{Discrepancy\+Analysis\+C\+Writer}.
+
+
+
+Definition at line 476 of file c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), AppM, Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), indented\+\_\+output\+\_\+stream, instr\+Writer, Behavioral\+Helper\+::is\+\_\+var\+\_\+args(), Param, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+DE, and V\+A\+R\+A\+R\+G\+S\+\_\+\+EC.
+
+
+
+Referenced by Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Function\+Declaration().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_ad46d65f0cf64c09ce854032f15ffdd9e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_ad46d65f0cf64c09ce854032f15ffdd9e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a3a050cfd9987eb7a7227865cf40db91d}\label{classCWriter_a3a050cfd9987eb7a7227865cf40db91d}} 
+\index{C\+Writer@{C\+Writer}!Write\+Function\+Implementation@{Write\+Function\+Implementation}}
+\index{Write\+Function\+Implementation@{Write\+Function\+Implementation}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Function\+Implementation()}{WriteFunctionImplementation()}}
+{\footnotesize\ttfamily void C\+Writer\+::\+Write\+Function\+Implementation (\begin{DoxyParamCaption}\item[{unsigned int}]{function\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write function implementation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function\+\_\+id} & is the index of the function to be written \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classHLSCWriter_a2379e428afbccc4b235dca4ae28dbaf5}{H\+L\+S\+C\+Writer}, and \hyperlink{classDiscrepancyAnalysisCWriter_a544a8f99622f86cfbcc2eae9a83d4e64}{Discrepancy\+Analysis\+C\+Writer}.
+
+
+
+Definition at line 375 of file c\+\_\+writer.\+cpp.
+
+
+
+References End\+Function\+Body(), Start\+Function\+Body(), and Write\+Function\+Body().
+
+
+
+Referenced by Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Function\+Implementation().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a3a050cfd9987eb7a7227865cf40db91d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a3a050cfd9987eb7a7227865cf40db91d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a42b2b558bd1efb2dc637664f5df4df28}\label{classCWriter_a42b2b558bd1efb2dc637664f5df4df28}} 
+\index{C\+Writer@{C\+Writer}!Write\+Global\+Declarations@{Write\+Global\+Declarations}}
+\index{Write\+Global\+Declarations@{Write\+Global\+Declarations}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Global\+Declarations()}{WriteGlobalDeclarations()}}
+{\footnotesize\ttfamily void C\+Writer\+::\+Write\+Global\+Declarations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Writes the global declarations. 
+
+Writing auxiliary variables used by instruction writer
+
+Writing declarations of global variables 
+
+Reimplemented in \hyperlink{classHLSCWriter_a6ea23b34e9d1bde20adbef400db94c6f}{H\+L\+S\+C\+Writer}, \hyperlink{classBasicBlocksProfilingCWriter_a96cb6c4a5df56ae5f5b5e65c73e6796d}{Basic\+Blocks\+Profiling\+C\+Writer}, and \hyperlink{classDiscrepancyAnalysisCWriter_a33b017d849ad5c03561e0bd2a72a37a9}{Discrepancy\+Analysis\+C\+Writer}.
+
+
+
+Definition at line 406 of file c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), AppM, B\+U\+I\+L\+T\+I\+N\+\_\+\+W\+A\+I\+T\+\_\+\+C\+A\+LL, Declare\+Variable(), globally\+\_\+declared\+\_\+types, globally\+Decl\+Vars, indented\+\_\+output\+\_\+stream, instr\+Writer, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Global\+Declarations(), and Basic\+Blocks\+Profiling\+C\+Writer\+::\+Write\+Global\+Declarations().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a42b2b558bd1efb2dc637664f5df4df28_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a42b2b558bd1efb2dc637664f5df4df28_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a22766bb22fb01e96257b27095bf035ef}\label{classCWriter_a22766bb22fb01e96257b27095bf035ef}} 
+\index{C\+Writer@{C\+Writer}!Write\+Hash\+Table\+Implementation@{Write\+Hash\+Table\+Implementation}}
+\index{Write\+Hash\+Table\+Implementation@{Write\+Hash\+Table\+Implementation}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Hash\+Table\+Implementation()}{WriteHashTableImplementation()}}
+{\footnotesize\ttfamily void C\+Writer\+::\+Write\+Hash\+Table\+Implementation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Write the implementation of a hash table with long long int as key and long long int as value. 
+
+
+
+Definition at line 1603 of file c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), and indented\+\_\+output\+\_\+stream.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a22766bb22fb01e96257b27095bf035ef_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a04b8381e64ef2e49ec7cfc308e10e10a}\label{classCWriter_a04b8381e64ef2e49ec7cfc308e10e10a}} 
+\index{C\+Writer@{C\+Writer}!Write\+Header@{Write\+Header}}
+\index{Write\+Header@{Write\+Header}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Write\+Header()}{WriteHeader()}}
+{\footnotesize\ttfamily void C\+Writer\+::\+Write\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Writes the header of the file. 
+
+
+
+Reimplemented in \hyperlink{classHLSCWriter_ac7015936ef0ed0f6c31f8d7d4c3bd7fa}{H\+L\+S\+C\+Writer}, and \hyperlink{classEdgeCWriter_a8b053256b8c65aca7d7539ebd23537c8}{Edge\+C\+Writer}.
+
+
+
+Definition at line 382 of file c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), AppM, Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), and indented\+\_\+output\+\_\+stream.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a04b8381e64ef2e49ec7cfc308e10e10a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a736e4e43725523bf3775ed54a9044997}\label{classCWriter_a736e4e43725523bf3775ed54a9044997}} 
+\index{C\+Writer@{C\+Writer}!write\+Include@{write\+Include}}
+\index{write\+Include@{write\+Include}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{write\+Include()}{writeInclude()}}
+{\footnotesize\ttfamily void C\+Writer\+::write\+Include (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Writes an include directive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & the name of the header file to be included \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1346 of file c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), indented\+\_\+output\+\_\+stream, and written\+Includes.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a736e4e43725523bf3775ed54a9044997_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_ad32d1e42246eafd2825029065ccd6280}\label{classCWriter_ad32d1e42246eafd2825029065ccd6280}} 
+\index{C\+Writer@{C\+Writer}!write\+Post\+Instruction\+Info@{write\+Post\+Instruction\+Info}}
+\index{write\+Post\+Instruction\+Info@{write\+Post\+Instruction\+Info}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{write\+Post\+Instruction\+Info()}{writePostInstructionInfo()}}
+{\footnotesize\ttfamily void C\+Writer\+::write\+Post\+Instruction\+Info (\begin{DoxyParamCaption}\item[{const \hyperlink{function__behavior_8hpp_a94872da12ed056b6ecf90456164e0213}{Function\+Behavior\+Const\+Ref}}]{,  }\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Write additional information on the given statement vertex, after the statements itself. 
+
+The default for this function is to do nothing, but every derived class can specify its own additional information to print 
+
+Reimplemented in \hyperlink{classDiscrepancyAnalysisCWriter_aab973340021c0338599762a89589a588}{Discrepancy\+Analysis\+C\+Writer}.
+
+
+
+Definition at line 544 of file c\+\_\+writer.\+cpp.
+
+
+
+Referenced by write\+Routine\+Instructions\+\_\+rec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_ad32d1e42246eafd2825029065ccd6280_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a89fcc230d50a8b5087a08348b67b470a}\label{classCWriter_a89fcc230d50a8b5087a08348b67b470a}} 
+\index{C\+Writer@{C\+Writer}!write\+Pre\+Instruction\+Info@{write\+Pre\+Instruction\+Info}}
+\index{write\+Pre\+Instruction\+Info@{write\+Pre\+Instruction\+Info}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{write\+Pre\+Instruction\+Info()}{writePreInstructionInfo()}}
+{\footnotesize\ttfamily void C\+Writer\+::write\+Pre\+Instruction\+Info (\begin{DoxyParamCaption}\item[{const \hyperlink{function__behavior_8hpp_a94872da12ed056b6ecf90456164e0213}{Function\+Behavior\+Const\+Ref}}]{,  }\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Write additional information on the given statement vertex, before the statement itself. 
+
+The default for this function is to do nothing, but every derived class can specify its own additional information to print 
+
+Reimplemented in \hyperlink{classDiscrepancyAnalysisCWriter_a891686ef683dad2ed3b99d071f3fb69a}{Discrepancy\+Analysis\+C\+Writer}.
+
+
+
+Definition at line 540 of file c\+\_\+writer.\+cpp.
+
+
+
+Referenced by write\+Routine\+Instructions\+\_\+rec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a89fcc230d50a8b5087a08348b67b470a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a7810dd571d72debb400b889f8366848a}\label{classCWriter_a7810dd571d72debb400b889f8366848a}} 
+\index{C\+Writer@{C\+Writer}!write\+Routine\+Instructions@{write\+Routine\+Instructions}}
+\index{write\+Routine\+Instructions@{write\+Routine\+Instructions}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{write\+Routine\+Instructions()}{writeRoutineInstructions()}}
+{\footnotesize\ttfamily void C\+Writer\+::write\+Routine\+Instructions (\begin{DoxyParamCaption}\item[{const unsigned int}]{function\+\_\+index,  }\item[{const \hyperlink{classOpVertexSet}{Op\+Vertex\+Set} \&}]{instructions,  }\item[{\hyperlink{var__pp__functor_8hpp_a8a6b51b6519401d911398943510557f0}{var\+\_\+pp\+\_\+functor\+Const\+Ref}}]{variable\+Functor,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{bb\+\_\+start = {\ttfamily \hyperlink{graph_8hpp_ac3c33c45c396860b76e8aff4dd2b8158}{N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX}},  }\item[{\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$}]{bb\+\_\+end = {\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Writes the instructions of the current routine, being it a task or a function of the original program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function\+\_\+index} & is the index of the function \\
+\hline
+{\em instructions} & is the instructions which have to be printed \\
+\hline
+{\em variable\+Functor} & is the variable functor \\
+\hline
+{\em bb\+\_\+start} & is the first basic block to be printed \\
+\hline
+{\em bb\+\_\+end} & is the set of first basic block not to be printed \\
+\hline
+\end{DoxyParams}
+Then I compute all the labels associated with a basic block with more than one entering edge.
+
+set of basic block already analyzed
+
+store for which basic block the goto has been used
+
+basic block frontier over which write\+Routine\+Instructions\+\_\+rec cannot go.
+
+some statements can be in entry 
+
+Reimplemented in \hyperlink{classEdgeCWriter_a26e88f61025b2993b8608ef28951cb9f}{Edge\+C\+Writer}.
+
+
+
+Definition at line 1134 of file c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), AppM, basic\+\_\+blocks\+\_\+labels, bb\+\_\+analyzed, bb\+\_\+frontier, bb\+\_\+label\+\_\+counter, Function\+Behavior\+::\+C\+Get\+B\+B\+Graph(), B\+B\+Graph\+::\+C\+Get\+B\+B\+Graph\+Info(), B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), Function\+Behavior\+::\+C\+Get\+Op\+Graph(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, dominators, Function\+Behavior\+::dominators, bloc\+::\+E\+X\+I\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, Function\+Behavior\+::\+F\+BB, Function\+Behavior\+::\+F\+C\+FG, Behavioral\+Helper\+::get\+\_\+label\+\_\+name(), G\+E\+T\+\_\+\+T\+Y\+PE, goto\+\_\+list, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, indented\+\_\+output\+\_\+stream, local\+\_\+rec\+\_\+bb\+\_\+fcfg\+Graph, local\+\_\+rec\+\_\+behavioral\+\_\+helper, local\+\_\+rec\+\_\+cfg\+Graph, local\+\_\+rec\+\_\+function\+\_\+behavior, local\+\_\+rec\+\_\+instructions, local\+\_\+rec\+\_\+variable\+Functor, post\+\_\+dominators, Function\+Behavior\+::post\+\_\+dominators, Behavioral\+Helper\+::start\+\_\+with\+\_\+a\+\_\+label(), S\+TR, T\+Y\+P\+E\+\_\+\+E\+N\+T\+RY, and write\+Routine\+Instructions\+\_\+rec().
+
+
+
+Referenced by Write\+Function\+Body().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a7810dd571d72debb400b889f8366848a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a7810dd571d72debb400b889f8366848a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCWriter_a10d0233fea0a92085a3aa160b9e39845}\label{classCWriter_a10d0233fea0a92085a3aa160b9e39845}} 
+\index{C\+Writer@{C\+Writer}!write\+Routine\+Instructions\+\_\+rec@{write\+Routine\+Instructions\+\_\+rec}}
+\index{write\+Routine\+Instructions\+\_\+rec@{write\+Routine\+Instructions\+\_\+rec}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{write\+Routine\+Instructions\+\_\+rec()}{writeRoutineInstructions\_rec()}}
+{\footnotesize\ttfamily void C\+Writer\+::write\+Routine\+Instructions\+\_\+rec (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{current\+\_\+vertex,  }\item[{bool}]{bracket,  }\item[{const unsigned int}]{function\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Write recursively instructions belonging to a basic block of task or of a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+vertex} & is the basic block which is being printed \\
+\hline
+{\em bracket} & tells if bracket should be added before and after this basic block \\
+\hline
+{\em function\+\_\+index} & is the identifier of the function to which instructions belong \\
+\hline
+\end{DoxyParams}
+compute the last statement
+
+check the feasibility
+
+print each instruction
+
+in case we have phi nodes we check if some assignments should be printed
+
+Feedback edge on the false path of an if
+
+Target is not a while or a for
+
+now we can analyze the following basic blocks
+
+then adjust post dominator
+
+now we can analyze the following basic blocks
+
+in case we have phi nodes we check if some assignments should be printed
+
+Last basic block of a while/for loop
+
+added a fake indent 
+
+Definition at line 548 of file c\+\_\+writer.\+cpp.
+
+
+
+References Indented\+Output\+Stream\+::\+Append(), basic\+\_\+block\+\_\+prefix, basic\+\_\+block\+\_\+tail, basic\+\_\+blocks\+\_\+labels, bb\+\_\+analyzed, bb\+\_\+frontier, C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, B\+B\+Graph\+::\+C\+Get\+B\+B\+Edge\+Info(), B\+B\+Graph\+::\+C\+Get\+B\+B\+Graph\+Info(), B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), Function\+Behavior\+::\+C\+Get\+Loops(), Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), Behavioral\+Helper\+::clear\+\_\+renaming\+\_\+table(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, default\+\_\+\+C\+O\+ND, D\+O\+A\+L\+L\+\_\+\+L\+O\+OP, dominators, Behavioral\+Helper\+::end\+\_\+with\+\_\+a\+\_\+cond\+\_\+or\+\_\+goto(), F\+B\+\_\+\+C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, Behavioral\+Helper\+::get\+\_\+function\+\_\+index(), dominance$<$ Graph\+Obj $>$\+::get\+\_\+immediate\+\_\+dominator(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+A\+ME, G\+E\+T\+\_\+\+T\+Y\+PE, graph\+::\+Get\+Selector(), goto\+\_\+list, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, indented\+\_\+output\+\_\+stream, instr\+Writer, local\+\_\+rec\+\_\+bb\+\_\+fcfg\+Graph, local\+\_\+rec\+\_\+behavioral\+\_\+helper, local\+\_\+rec\+\_\+cfg\+Graph, local\+\_\+rec\+\_\+function\+\_\+behavior, local\+\_\+rec\+\_\+instructions, local\+\_\+rec\+\_\+variable\+Functor, N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX, post\+\_\+dominators, Behavioral\+Helper\+::print\+\_\+constant(), Behavioral\+Helper\+::\+Print\+Variable(), Behavioral\+Helper\+::rename\+\_\+a\+\_\+variable(), renaming\+\_\+table, Behavioral\+Helper\+::start\+\_\+with\+\_\+a\+\_\+label(), S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, TM, T\+Y\+P\+E\+\_\+\+F\+OR, T\+Y\+P\+E\+\_\+\+IF, T\+Y\+P\+E\+\_\+\+I\+N\+IT, T\+Y\+P\+E\+\_\+\+L\+A\+B\+EL, T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+IF, T\+Y\+P\+E\+\_\+\+S\+W\+I\+T\+CH, T\+Y\+P\+E\+\_\+\+V\+P\+HI, T\+Y\+P\+E\+\_\+\+W\+H\+I\+LE, verbose, Write\+B\+B\+Header(), Write\+Body\+Loop(), write\+Post\+Instruction\+Info(), and write\+Pre\+Instruction\+Info().
+
+
+
+Referenced by Write\+Body\+Loop(), and write\+Routine\+Instructions().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a10d0233fea0a92085a3aa160b9e39845_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d59/classCWriter_a10d0233fea0a92085a3aa160b9e39845_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classCWriter_a13c76532724ccd44bc1c86fb9de7317f}\label{classCWriter_a13c76532724ccd44bc1c86fb9de7317f}} 
+\index{C\+Writer@{C\+Writer}!additional\+Includes@{additional\+Includes}}
+\index{additional\+Includes@{additional\+Includes}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{additional\+Includes}{additionalIncludes}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ C\+Writer\+::additional\+Includes\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 193 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Initialize().
+
+\mbox{\Hypertarget{classCWriter_ac1c04f158e0edaddd59a002dc11213fa}\label{classCWriter_ac1c04f158e0edaddd59a002dc11213fa}} 
+\index{C\+Writer@{C\+Writer}!AppM@{AppM}}
+\index{AppM@{AppM}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{AppM}{AppM}}
+{\footnotesize\ttfamily const \hyperlink{application__manager_8hpp_abb985163a2a3fb747f6f03b1eaadbb44}{application\+\_\+manager\+Const\+Ref} C\+Writer\+::\+AppM\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+the manager of the application 
+
+
+
+Definition at line 101 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by declare\+\_\+cast\+\_\+types(), Declare\+Function\+Types(), Declare\+Local\+Variables(), Get\+Local\+Variables(), Edge\+C\+Writer\+::\+Initialize(), Basic\+Blocks\+Profiling\+C\+Writer\+::print\+\_\+edge(), Start\+Function\+Body(), Write\+Builtin\+Wait\+Call(), Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Extra\+Init\+Code(), H\+L\+S\+C\+Writer\+::\+Write\+File(), Write\+Function\+Body(), Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Function\+Declaration(), Write\+Function\+Declaration(), Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Function\+Implementation(), Basic\+Blocks\+Profiling\+C\+Writer\+::\+Write\+Global\+Declarations(), Write\+Global\+Declarations(), H\+L\+S\+C\+Writer\+::\+Write\+Header(), Write\+Header(), H\+L\+S\+C\+Writer\+::\+Write\+Main\+Testbench(), Discrepancy\+Analysis\+C\+Writer\+::write\+Post\+Instruction\+Info(), Discrepancy\+Analysis\+C\+Writer\+::write\+Pre\+Instruction\+Info(), Edge\+C\+Writer\+::write\+Routine\+Instructions(), write\+Routine\+Instructions(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and H\+L\+S\+C\+Writer\+::\+Write\+Simulator\+Init\+Memory().
+
+\mbox{\Hypertarget{classCWriter_a5c31c88bdb91ff32a3f0a277134af908}\label{classCWriter_a5c31c88bdb91ff32a3f0a277134af908}} 
+\index{C\+Writer@{C\+Writer}!basic\+\_\+block\+\_\+prefix@{basic\+\_\+block\+\_\+prefix}}
+\index{basic\+\_\+block\+\_\+prefix@{basic\+\_\+block\+\_\+prefix}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{basic\+\_\+block\+\_\+prefix}{basic\_block\_prefix}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, std\+::string$>$ C\+Writer\+::basic\+\_\+block\+\_\+prefix\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+string to be printed at the beginning of a given basic block 
+
+
+
+Definition at line 135 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by End\+Function\+Body(), schedule\+\_\+copies(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classCWriter_ab389125a678d1021c5ea50b3e174310b}\label{classCWriter_ab389125a678d1021c5ea50b3e174310b}} 
+\index{C\+Writer@{C\+Writer}!basic\+\_\+block\+\_\+tail@{basic\+\_\+block\+\_\+tail}}
+\index{basic\+\_\+block\+\_\+tail@{basic\+\_\+block\+\_\+tail}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{basic\+\_\+block\+\_\+tail}{basic\_block\_tail}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, std\+::string$>$ C\+Writer\+::basic\+\_\+block\+\_\+tail\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+string to be printed at the end of a given basic block 
+
+
+
+Definition at line 138 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by End\+Function\+Body(), schedule\+\_\+copies(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classCWriter_ad7aed67c7d0699eee2a224e68419f0a1}\label{classCWriter_ad7aed67c7d0699eee2a224e68419f0a1}} 
+\index{C\+Writer@{C\+Writer}!basic\+\_\+blocks\+\_\+labels@{basic\+\_\+blocks\+\_\+labels}}
+\index{basic\+\_\+blocks\+\_\+labels@{basic\+\_\+blocks\+\_\+labels}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{basic\+\_\+blocks\+\_\+labels}{basic\_blocks\_labels}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, std\+::string$>$ C\+Writer\+::basic\+\_\+blocks\+\_\+labels\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 145 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Edge\+C\+Writer\+::write\+Routine\+Instructions(), write\+Routine\+Instructions(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classCWriter_abd6b484e10e87323f731f5754d92164a}\label{classCWriter_abd6b484e10e87323f731f5754d92164a}} 
+\index{C\+Writer@{C\+Writer}!bb\+\_\+analyzed@{bb\+\_\+analyzed}}
+\index{bb\+\_\+analyzed@{bb\+\_\+analyzed}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{bb\+\_\+analyzed}{bb\_analyzed}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ C\+Writer\+::bb\+\_\+analyzed\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 144 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Edge\+C\+Writer\+::write\+Routine\+Instructions(), write\+Routine\+Instructions(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classCWriter_a3c4baa49dedd4b1a28fbd07e4f4964de}\label{classCWriter_a3c4baa49dedd4b1a28fbd07e4f4964de}} 
+\index{C\+Writer@{C\+Writer}!bb\+\_\+frontier@{bb\+\_\+frontier}}
+\index{bb\+\_\+frontier@{bb\+\_\+frontier}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{bb\+\_\+frontier}{bb\_frontier}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ C\+Writer\+::bb\+\_\+frontier\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 143 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Edge\+C\+Writer\+::write\+Routine\+Instructions(), write\+Routine\+Instructions(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classCWriter_aed289d777116058d00df6f2d46430fb4}\label{classCWriter_aed289d777116058d00df6f2d46430fb4}} 
+\index{C\+Writer@{C\+Writer}!bb\+\_\+label\+\_\+counter@{bb\+\_\+label\+\_\+counter}}
+\index{bb\+\_\+label\+\_\+counter@{bb\+\_\+label\+\_\+counter}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{bb\+\_\+label\+\_\+counter}{bb\_label\_counter}}
+{\footnotesize\ttfamily \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} C\+Writer\+::bb\+\_\+label\+\_\+counter\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Counter of the invocations of write\+Routine\+Instructions; this counter allows to print different labels in differnt tasks to avoid problem due to multiple tasks inlineing. 
+
+
+
+Definition at line 118 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Edge\+C\+Writer\+::write\+Routine\+Instructions(), and write\+Routine\+Instructions().
+
+\mbox{\Hypertarget{classCWriter_a7f6d9454ff1aff00ebb5b97877f13dfd}\label{classCWriter_a7f6d9454ff1aff00ebb5b97877f13dfd}} 
+\index{C\+Writer@{C\+Writer}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily int C\+Writer\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+the debug level 
+
+
+
+Definition at line 127 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Basic\+Blocks\+Profiling\+C\+Writer\+::\+Basic\+Blocks\+Profiling\+C\+Writer(), Declare\+Function\+Types(), Declare\+Local\+Variables(), Declare\+Type(), Declare\+Variable(), Edge\+C\+Writer\+::\+Edge\+C\+Writer(), H\+L\+S\+C\+Writer\+::\+H\+L\+S\+C\+Writer(), H\+L\+S\+C\+Writer\+::\+Write\+Expected\+Results(), H\+L\+S\+C\+Writer\+::\+Write\+Main\+Testbench(), H\+L\+S\+C\+Writer\+::\+Write\+Param\+Initialization(), Edge\+C\+Writer\+::write\+Routine\+Instructions(), write\+Routine\+Instructions(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), write\+Routine\+Instructions\+\_\+rec(), and H\+L\+S\+C\+Writer\+::\+Write\+Simulator\+Init\+Memory().
+
+\mbox{\Hypertarget{classCWriter_a0e081b5f4f221cfda2d094935221cbef}\label{classCWriter_a0e081b5f4f221cfda2d094935221cbef}} 
+\index{C\+Writer@{C\+Writer}!dominators@{dominators}}
+\index{dominators@{dominators}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{dominators}{dominators}}
+{\footnotesize\ttfamily const \hyperlink{classdominance}{dominance}$<$\hyperlink{structBBGraph}{B\+B\+Graph}$>$$\ast$ C\+Writer\+::dominators\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 150 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Edge\+C\+Writer\+::write\+Routine\+Instructions(), write\+Routine\+Instructions(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classCWriter_aa107c55b07202727edfcb0ef22d2c0ea}\label{classCWriter_aa107c55b07202727edfcb0ef22d2c0ea}} 
+\index{C\+Writer@{C\+Writer}!fake\+\_\+max\+\_\+tree\+\_\+node\+\_\+id@{fake\+\_\+max\+\_\+tree\+\_\+node\+\_\+id}}
+\index{fake\+\_\+max\+\_\+tree\+\_\+node\+\_\+id@{fake\+\_\+max\+\_\+tree\+\_\+node\+\_\+id}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{fake\+\_\+max\+\_\+tree\+\_\+node\+\_\+id}{fake\_max\_tree\_node\_id}}
+{\footnotesize\ttfamily unsigned int C\+Writer\+::fake\+\_\+max\+\_\+tree\+\_\+node\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 132 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by create\+\_\+new\+\_\+identifier(), and Initialize().
+
+\mbox{\Hypertarget{classCWriter_a534cbafda0454f4a454c529de5b1ce03}\label{classCWriter_a534cbafda0454f4a454c529de5b1ce03}} 
+\index{C\+Writer@{C\+Writer}!globally\+\_\+declared\+\_\+types@{globally\+\_\+declared\+\_\+types}}
+\index{globally\+\_\+declared\+\_\+types@{globally\+\_\+declared\+\_\+types}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{globally\+\_\+declared\+\_\+types}{globally\_declared\_types}}
+{\footnotesize\ttfamily \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$std\+::string$>$ C\+Writer\+::globally\+\_\+declared\+\_\+types\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+This set contains the list of the non built\+\_\+in types already declared in the global scope. 
+
+
+
+Definition at line 110 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Declare\+Function\+Types(), Declare\+Type(), Initialize(), and Write\+Global\+Declarations().
+
+\mbox{\Hypertarget{classCWriter_a9fd0eb45bad6d32417b1802bcefe608b}\label{classCWriter_a9fd0eb45bad6d32417b1802bcefe608b}} 
+\index{C\+Writer@{C\+Writer}!globally\+Decl\+Vars@{globally\+Decl\+Vars}}
+\index{globally\+Decl\+Vars@{globally\+Decl\+Vars}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{globally\+Decl\+Vars}{globallyDeclVars}}
+{\footnotesize\ttfamily \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$unsigned int$>$ C\+Writer\+::globally\+Decl\+Vars\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 112 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Declare\+Variable(), Initialize(), and Write\+Global\+Declarations().
+
+\mbox{\Hypertarget{classCWriter_a61696d39d3585dafd6a5cc73fa0192b7}\label{classCWriter_a61696d39d3585dafd6a5cc73fa0192b7}} 
+\index{C\+Writer@{C\+Writer}!goto\+\_\+list@{goto\+\_\+list}}
+\index{goto\+\_\+list@{goto\+\_\+list}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{goto\+\_\+list}{goto\_list}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ C\+Writer\+::goto\+\_\+list\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 146 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Edge\+C\+Writer\+::write\+Routine\+Instructions(), write\+Routine\+Instructions(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classCWriter_ac6d016436e065c31dd5152a7cc30e507}\label{classCWriter_ac6d016436e065c31dd5152a7cc30e507}} 
+\index{C\+Writer@{C\+Writer}!indented\+\_\+output\+\_\+stream@{indented\+\_\+output\+\_\+stream}}
+\index{indented\+\_\+output\+\_\+stream@{indented\+\_\+output\+\_\+stream}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{indented\+\_\+output\+\_\+stream}{indented\_output\_stream}}
+{\footnotesize\ttfamily const \hyperlink{indented__output__stream_8hpp_ab32278e11151ef292759c88e99b77feb}{Indented\+Output\+Stream\+Ref} C\+Writer\+::indented\+\_\+output\+\_\+stream\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Represents the stream we are currently writing to. 
+
+
+
+Definition at line 107 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by compute\+\_\+phi\+\_\+nodes(), Discrepancy\+Analysis\+C\+Writer\+::\+Declare\+Local\+Variables(), Declare\+Type(), Declare\+Variable(), End\+Function\+Body(), Basic\+Blocks\+Profiling\+C\+Writer\+::print\+\_\+edge(), Start\+Function\+Body(), Discrepancy\+Analysis\+C\+Writer\+::\+Write\+B\+B\+Header(), H\+L\+S\+C\+Writer\+::\+Write\+Binary\+Memory\+Init(), Write\+Builtin\+Wait\+Call(), H\+L\+S\+C\+Writer\+::\+Write\+Expected\+Results(), Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Extra\+Code\+Before\+Every\+Main\+Call(), Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Extra\+Init\+Code(), H\+L\+S\+C\+Writer\+::\+Write\+File(), Write\+File(), Write\+Function\+Declaration(), Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Global\+Declarations(), Basic\+Blocks\+Profiling\+C\+Writer\+::\+Write\+Global\+Declarations(), Write\+Global\+Declarations(), Write\+Hash\+Table\+Implementation(), Edge\+C\+Writer\+::\+Write\+Header(), H\+L\+S\+C\+Writer\+::\+Write\+Header(), Write\+Header(), write\+Include(), H\+L\+S\+C\+Writer\+::\+Write\+Main\+Testbench(), H\+L\+S\+C\+Writer\+::\+Write\+Param\+Decl(), H\+L\+S\+C\+Writer\+::\+Write\+Param\+Initialization(), H\+L\+S\+C\+Writer\+::\+Write\+Param\+In\+Memory(), Discrepancy\+Analysis\+C\+Writer\+::write\+Post\+Instruction\+Info(), Discrepancy\+Analysis\+C\+Writer\+::write\+Pre\+Instruction\+Info(), Edge\+C\+Writer\+::write\+Routine\+Instructions(), write\+Routine\+Instructions(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), write\+Routine\+Instructions\+\_\+rec(), H\+L\+S\+C\+Writer\+::\+Write\+Simulator\+Init\+Memory(), H\+L\+S\+C\+Writer\+::\+Write\+Testbench\+Function\+Call(), H\+L\+S\+C\+Writer\+::\+Write\+Testbench\+Global\+Vars(), H\+L\+S\+C\+Writer\+::\+Write\+Testbench\+Helper\+Functions(), and H\+L\+S\+C\+Writer\+::\+Write\+Zeroed\+Bytes().
+
+\mbox{\Hypertarget{classCWriter_af4be3a067b016eb97f15c89fa98088f3}\label{classCWriter_af4be3a067b016eb97f15c89fa98088f3}} 
+\index{C\+Writer@{C\+Writer}!instr\+Writer@{instr\+Writer}}
+\index{instr\+Writer@{instr\+Writer}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{instr\+Writer}{instrWriter}}
+{\footnotesize\ttfamily const \hyperlink{instruction__writer_8hpp_a40ea26c38a2909ba48f88f997144b260}{Instruction\+Writer\+Ref} C\+Writer\+::instr\+Writer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Contains the class used to write instructions. 
+
+
+
+Definition at line 115 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Declare\+Variable(), get\+Instruction\+Writer(), Initialize(), Start\+Function\+Body(), Write\+Function\+Declaration(), H\+L\+S\+C\+Writer\+::\+Write\+Global\+Declarations(), Write\+Global\+Declarations(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classCWriter_a7066b65a022f2629ebf99da65b9cbcdb}\label{classCWriter_a7066b65a022f2629ebf99da65b9cbcdb}} 
+\index{C\+Writer@{C\+Writer}!local\+\_\+rec\+\_\+bb\+\_\+fcfg\+Graph@{local\+\_\+rec\+\_\+bb\+\_\+fcfg\+Graph}}
+\index{local\+\_\+rec\+\_\+bb\+\_\+fcfg\+Graph@{local\+\_\+rec\+\_\+bb\+\_\+fcfg\+Graph}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{local\+\_\+rec\+\_\+bb\+\_\+fcfg\+Graph}{local\_rec\_bb\_fcfgGraph}}
+{\footnotesize\ttfamily \hyperlink{basic__block_8hpp_ab66bdbde3a29e41d079d8a320af9c921}{B\+B\+Graph\+Const\+Ref} C\+Writer\+::local\+\_\+rec\+\_\+bb\+\_\+fcfg\+Graph\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 152 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by write\+Routine\+Instructions(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classCWriter_a5bbe68dac066fd15c07a12e30b3da38a}\label{classCWriter_a5bbe68dac066fd15c07a12e30b3da38a}} 
+\index{C\+Writer@{C\+Writer}!local\+\_\+rec\+\_\+behavioral\+\_\+helper@{local\+\_\+rec\+\_\+behavioral\+\_\+helper}}
+\index{local\+\_\+rec\+\_\+behavioral\+\_\+helper@{local\+\_\+rec\+\_\+behavioral\+\_\+helper}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{local\+\_\+rec\+\_\+behavioral\+\_\+helper}{local\_rec\_behavioral\_helper}}
+{\footnotesize\ttfamily \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} C\+Writer\+::local\+\_\+rec\+\_\+behavioral\+\_\+helper\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 154 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by write\+Routine\+Instructions(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classCWriter_abefcc76b6c076a54de2e1a90d7fb54f1}\label{classCWriter_abefcc76b6c076a54de2e1a90d7fb54f1}} 
+\index{C\+Writer@{C\+Writer}!local\+\_\+rec\+\_\+cfg\+Graph@{local\+\_\+rec\+\_\+cfg\+Graph}}
+\index{local\+\_\+rec\+\_\+cfg\+Graph@{local\+\_\+rec\+\_\+cfg\+Graph}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{local\+\_\+rec\+\_\+cfg\+Graph}{local\_rec\_cfgGraph}}
+{\footnotesize\ttfamily \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} C\+Writer\+::local\+\_\+rec\+\_\+cfg\+Graph\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 153 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by write\+Routine\+Instructions(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classCWriter_aa58231b8be5714edffb9aea9107bfe4f}\label{classCWriter_aa58231b8be5714edffb9aea9107bfe4f}} 
+\index{C\+Writer@{C\+Writer}!local\+\_\+rec\+\_\+function\+\_\+behavior@{local\+\_\+rec\+\_\+function\+\_\+behavior}}
+\index{local\+\_\+rec\+\_\+function\+\_\+behavior@{local\+\_\+rec\+\_\+function\+\_\+behavior}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{local\+\_\+rec\+\_\+function\+\_\+behavior}{local\_rec\_function\_behavior}}
+{\footnotesize\ttfamily \hyperlink{function__behavior_8hpp_a94872da12ed056b6ecf90456164e0213}{Function\+Behavior\+Const\+Ref} C\+Writer\+::local\+\_\+rec\+\_\+function\+\_\+behavior\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 148 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Edge\+C\+Writer\+::write\+Routine\+Instructions(), write\+Routine\+Instructions(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classCWriter_a369957abf1562ef733d60ba5795b1aaf}\label{classCWriter_a369957abf1562ef733d60ba5795b1aaf}} 
+\index{C\+Writer@{C\+Writer}!local\+\_\+rec\+\_\+instructions@{local\+\_\+rec\+\_\+instructions}}
+\index{local\+\_\+rec\+\_\+instructions@{local\+\_\+rec\+\_\+instructions}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{local\+\_\+rec\+\_\+instructions}{local\_rec\_instructions}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ C\+Writer\+::local\+\_\+rec\+\_\+instructions\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 149 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Edge\+C\+Writer\+::write\+Routine\+Instructions(), write\+Routine\+Instructions(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classCWriter_af80f335f9f823a734687d9b086f4494d}\label{classCWriter_af80f335f9f823a734687d9b086f4494d}} 
+\index{C\+Writer@{C\+Writer}!local\+\_\+rec\+\_\+variable\+Functor@{local\+\_\+rec\+\_\+variable\+Functor}}
+\index{local\+\_\+rec\+\_\+variable\+Functor@{local\+\_\+rec\+\_\+variable\+Functor}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{local\+\_\+rec\+\_\+variable\+Functor}{local\_rec\_variableFunctor}}
+{\footnotesize\ttfamily \hyperlink{var__pp__functor_8hpp_a8a6b51b6519401d911398943510557f0}{var\+\_\+pp\+\_\+functor\+Const\+Ref} C\+Writer\+::local\+\_\+rec\+\_\+variable\+Functor\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 147 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Edge\+C\+Writer\+::write\+Routine\+Instructions(), write\+Routine\+Instructions(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classCWriter_ae6a63f53399597601d3c0e34565d0bd3}\label{classCWriter_ae6a63f53399597601d3c0e34565d0bd3}} 
+\index{C\+Writer@{C\+Writer}!output\+\_\+level@{output\+\_\+level}}
+\index{output\+\_\+level@{output\+\_\+level}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{output\+\_\+level}{output\_level}}
+{\footnotesize\ttfamily int C\+Writer\+::output\+\_\+level\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+the output level 
+
+
+
+Definition at line 130 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by H\+L\+S\+C\+Writer\+::\+Write\+Expected\+Results(), H\+L\+S\+C\+Writer\+::\+Write\+File(), and H\+L\+S\+C\+Writer\+::\+Write\+Simulator\+Init\+Memory().
+
+\mbox{\Hypertarget{classCWriter_a3555d61ac3540440862ed211800b80be}\label{classCWriter_a3555d61ac3540440862ed211800b80be}} 
+\index{C\+Writer@{C\+Writer}!Param@{Param}}
+\index{Param@{Param}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{Param}{Param}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} C\+Writer\+::\+Param\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+set of parameters 
+
+
+
+Definition at line 124 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Discrepancy\+Analysis\+C\+Writer\+::\+Declare\+Local\+Variables(), Declare\+Type(), Discrepancy\+Analysis\+C\+Writer\+::\+Discrepancy\+Analysis\+C\+Writer(), Edge\+C\+Writer\+::\+Edge\+C\+Writer(), H\+L\+S\+C\+Writer\+::\+H\+L\+S\+C\+Writer(), H\+L\+S\+C\+Writer\+::\+Write\+Expected\+Results(), Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Extra\+Init\+Code(), Write\+Function\+Declaration(), Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Global\+Declarations(), Basic\+Blocks\+Profiling\+C\+Writer\+::\+Write\+Global\+Declarations(), H\+L\+S\+C\+Writer\+::\+Write\+Header(), Discrepancy\+Analysis\+C\+Writer\+::write\+Post\+Instruction\+Info(), H\+L\+S\+C\+Writer\+::\+Write\+Simulator\+Init\+Memory(), H\+L\+S\+C\+Writer\+::\+Write\+Testbench\+Function\+Call(), and H\+L\+S\+C\+Writer\+::\+Write\+Testbench\+Helper\+Functions().
+
+\mbox{\Hypertarget{classCWriter_a40593fe1329f1864c57b777b5fb7e3df}\label{classCWriter_a40593fe1329f1864c57b777b5fb7e3df}} 
+\index{C\+Writer@{C\+Writer}!post\+\_\+dominators@{post\+\_\+dominators}}
+\index{post\+\_\+dominators@{post\+\_\+dominators}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{post\+\_\+dominators}{post\_dominators}}
+{\footnotesize\ttfamily const \hyperlink{classdominance}{dominance}$<$\hyperlink{structBBGraph}{B\+B\+Graph}$>$$\ast$ C\+Writer\+::post\+\_\+dominators\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 151 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Edge\+C\+Writer\+::write\+Routine\+Instructions(), write\+Routine\+Instructions(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classCWriter_a00f3e4355dfcc26f771a853147cf440d}\label{classCWriter_a00f3e4355dfcc26f771a853147cf440d}} 
+\index{C\+Writer@{C\+Writer}!renaming\+\_\+table@{renaming\+\_\+table}}
+\index{renaming\+\_\+table@{renaming\+\_\+table}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{renaming\+\_\+table}{renaming\_table}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, std\+::map$<$unsigned int, std\+::string$>$ $>$ C\+Writer\+::renaming\+\_\+table\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+renaming table used by phi node destruction procedure 
+
+
+
+Definition at line 141 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by End\+Function\+Body(), insert\+\_\+copies(), schedule\+\_\+copies(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classCWriter_a3cfb319409e8bbf3ff53cc960afd2da7}\label{classCWriter_a3cfb319409e8bbf3ff53cc960afd2da7}} 
+\index{C\+Writer@{C\+Writer}!TM@{TM}}
+\index{TM@{TM}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{TM}{TM}}
+{\footnotesize\ttfamily const \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref} C\+Writer\+::\+TM\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The tree manager. 
+
+
+
+Definition at line 104 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by compute\+\_\+phi\+\_\+nodes(), create\+\_\+new\+\_\+identifier(), Discrepancy\+Analysis\+C\+Writer\+::\+Declare\+Local\+Variables(), Declare\+Local\+Variables(), Declare\+Type(), Declare\+Variable(), H\+L\+S\+C\+Writer\+::\+H\+L\+S\+C\+Writer(), Initialize(), H\+L\+S\+C\+Writer\+::\+Write\+Expected\+Results(), Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Extra\+Init\+Code(), Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Function\+Declaration(), Discrepancy\+Analysis\+C\+Writer\+::\+Write\+Function\+Implementation(), Basic\+Blocks\+Profiling\+C\+Writer\+::\+Write\+Global\+Declarations(), H\+L\+S\+C\+Writer\+::\+Write\+Header(), H\+L\+S\+C\+Writer\+::\+Write\+Main\+Testbench(), H\+L\+S\+C\+Writer\+::\+Write\+Param\+Decl(), H\+L\+S\+C\+Writer\+::\+Write\+Param\+Initialization(), H\+L\+S\+C\+Writer\+::\+Write\+Param\+In\+Memory(), Discrepancy\+Analysis\+C\+Writer\+::write\+Post\+Instruction\+Info(), Discrepancy\+Analysis\+C\+Writer\+::write\+Pre\+Instruction\+Info(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), write\+Routine\+Instructions\+\_\+rec(), H\+L\+S\+C\+Writer\+::\+Write\+Simulator\+Init\+Memory(), and H\+L\+S\+C\+Writer\+::\+Write\+Testbench\+Function\+Call().
+
+\mbox{\Hypertarget{classCWriter_a8d5b6fe4a045d7e9ca997a566274cdb5}\label{classCWriter_a8d5b6fe4a045d7e9ca997a566274cdb5}} 
+\index{C\+Writer@{C\+Writer}!verbose@{verbose}}
+\index{verbose@{verbose}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{verbose}{verbose}}
+{\footnotesize\ttfamily bool C\+Writer\+::verbose\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Verbosity means that a comment is printed for each line in the output file. 
+
+
+
+Definition at line 121 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Declare\+Type(), Declare\+Variable(), End\+Function\+Body(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{classCWriter_a91e5847cc31c900423dce81b131992ea}\label{classCWriter_a91e5847cc31c900423dce81b131992ea}} 
+\index{C\+Writer@{C\+Writer}!written\+Includes@{written\+Includes}}
+\index{written\+Includes@{written\+Includes}!C\+Writer@{C\+Writer}}
+\subsubsection{\texorpdfstring{written\+Includes}{writtenIncludes}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$std\+::string$>$ C\+Writer\+::written\+Includes\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 194 of file c\+\_\+writer.\+hpp.
+
+
+
+Referenced by Initialize(), and write\+Include().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+C/source\+\_\+code\+\_\+writers/\hyperlink{c__writer_8hpp}{c\+\_\+writer.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+C/source\+\_\+code\+\_\+writers/\hyperlink{c__writer_8cpp}{c\+\_\+writer.\+cpp}\end{DoxyCompactItemize}

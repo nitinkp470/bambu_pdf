@@ -1,0 +1,289 @@
+\hypertarget{gcc__wrapper_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/treegcc/gcc\+\_\+wrapper.hpp File Reference}
+\label{gcc__wrapper_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/treegcc/gcc\+\_\+wrapper.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/treegcc/gcc\+\_\+wrapper.\+hpp}}
+
+
+Implementation of the wrapper to Gcc for C sources.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+A\+R\+M\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+B\+A\+M\+B\+U\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+F\+R\+O\+M\+\_\+\+R\+T\+L\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G4\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G5\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G6\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+C\+L\+A\+N\+G7\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C45\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C46\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C47\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C48\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C49\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C5\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C6\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C7\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I386\+\_\+\+G\+C\+C8\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+S\+P\+A\+R\+C\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+T\+U\+C\+A\+N\+O\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+Z\+E\+B\+U\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/filesystem/path.\+hpp$>$}\newline
+{\ttfamily \#include $<$iosfwd$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+Include dependency graph for gcc\+\_\+wrapper.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/dc1/gcc__wrapper_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/def/gcc__wrapper_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classGccWrapper}{Gcc\+Wrapper}
+\begin{DoxyCompactList}\small\item\em Main class for wrapping the G\+CC compiler. \end{DoxyCompactList}\item 
+class \hyperlink{classGccWrapper_1_1Compiler}{Gcc\+Wrapper\+::\+Compiler}
+\begin{DoxyCompactList}\small\item\em Class storing information of a compiler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classGccWrapper}{Gcc\+Wrapper} $>$ \hyperlink{gcc__wrapper_8hpp_aba2a317cdd5bc8aa85483a128966782d}{Gcc\+Wrapper\+Ref}
+\begin{DoxyCompactList}\small\item\em Refcount definition for the \hyperlink{classGccWrapper}{Gcc\+Wrapper} class. \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{classGccWrapper}{Gcc\+Wrapper} $>$ \hyperlink{gcc__wrapper_8hpp_ac7db7598e7683fd931ee3a209277a4f3}{Gcc\+Wrapper\+Const\+Ref}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788d}{Gcc\+Wrapper\+\_\+\+Optimization\+Set} \{ \newline
+\hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da7e6bfed55985b52e9dbfc6df8f291186}{Gcc\+Wrapper\+\_\+\+Optimization\+Set\+::\+O0}, 
+\hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da00594a175ce5a58f286d91ca0a6f15a2}{Gcc\+Wrapper\+\_\+\+Optimization\+Set\+::\+O1}, 
+\hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788dabfc60714f62f15e1e72e0b21454cc99e}{Gcc\+Wrapper\+\_\+\+Optimization\+Set\+::\+O2}, 
+\hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da9ee25ee8b4d0a573527fcd2f1e73f8c8}{Gcc\+Wrapper\+\_\+\+Optimization\+Set\+::\+O3}, 
+\newline
+\hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da27148de9dcce4aa2aa6d42ade1f50231}{Gcc\+Wrapper\+\_\+\+Optimization\+Set\+::\+O4}, 
+\hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da831d8cbc6803db17c44f67d5a5de6fa4}{Gcc\+Wrapper\+\_\+\+Optimization\+Set\+::\+O5}, 
+\hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da9ad3285ba2ed40f7b805800f927766fc}{Gcc\+Wrapper\+\_\+\+Optimization\+Set\+::\+Og}, 
+\hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da02c4b2dc4fd2ac7e8bbde8e46adce723}{Gcc\+Wrapper\+\_\+\+Optimization\+Set\+::\+Os}, 
+\newline
+\hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da0adaeee8e8df29fe501cf3e675ebde70}{Gcc\+Wrapper\+\_\+\+Optimization\+Set\+::\+Oz}, 
+\hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da03e64486693c4ecaff1087c3f450f174}{Gcc\+Wrapper\+\_\+\+Optimization\+Set\+::\+Ofast}
+ \}\begin{DoxyCompactList}\small\item\em Possible optimization sets. \end{DoxyCompactList}
+\item 
+enum \hyperlink{gcc__wrapper_8hpp_abb9d9a5cb3a1bf5d402dbc841a6708aa}{Gcc\+Wrapper\+\_\+\+Compiler\+Target} \{ \hyperlink{gcc__wrapper_8hpp_abb9d9a5cb3a1bf5d402dbc841a6708aaa3c632d7834be009d781afc27d69af9ae}{Gcc\+Wrapper\+\_\+\+Compiler\+Target\+::\+C\+T\+\_\+\+N\+O\+\_\+\+G\+CC} = 0
+ \}\begin{DoxyCompactList}\small\item\em target of the compiler \end{DoxyCompactList}
+\item 
+enum \hyperlink{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9}{Gcc\+Wrapper\+\_\+\+Compiler\+Mode} \{ \hyperlink{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9a1cce81afdcb3d459d409b402ef97749f}{Gcc\+Wrapper\+\_\+\+Compiler\+Mode\+::\+C\+M\+\_\+\+S\+TD} = 0, 
+\hyperlink{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9af2f2765c396194e99b883922c54f9fe4}{Gcc\+Wrapper\+\_\+\+Compiler\+Mode\+::\+C\+M\+\_\+\+E\+M\+P\+TY}, 
+\hyperlink{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9afb9091dd165eba102b8da702e9c5960f}{Gcc\+Wrapper\+\_\+\+Compiler\+Mode\+::\+C\+M\+\_\+\+A\+N\+A\+L\+Y\+Z\+ER}, 
+\hyperlink{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9a90a0abc6f0a10046d070ad4c0ce6dd0d}{Gcc\+Wrapper\+\_\+\+Compiler\+Mode\+::\+C\+M\+\_\+\+L\+TO}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{gcc__wrapper_8hpp_a939cd739b894d823a208e61b8c4f6fd3}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classapplication__manager}{application\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Autoheader include. \end{DoxyCompactList}\item 
+\hyperlink{gcc__wrapper_8hpp_ac5c30465e53a2dee97960f0f406b8be7}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classParameter}{Parameter})
+\item 
+\hyperlink{gcc__wrapper_8hpp_a8c8d82f336df8d5bba4c91b553b0fbae}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classParameter}{Parameter})
+\item 
+\hyperlink{gcc__wrapper_8hpp_a52756886a578bcd0db3c2fd210400eb3}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtree__manager}{tree\+\_\+manager})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of the wrapper to Gcc for C sources. 
+
+Wrapper to Gcc for C sources.
+
+Implementation of the methods for the object for invoke the G\+CC compiler from sources and create the dump.
+
+\begin{DoxyAuthor}{Author}
+Christian Pilato \href{mailto:pilato@elet.polimi.it}{\tt pilato@elet.\+polimi.\+it} 
+
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+
+Marco Lattuada \href{mailto:lattuada@elet.polimi.it}{\tt lattuada@elet.\+polimi.\+it} \$\+Date\$ Last modified by \$\+Author\$
+\end{DoxyAuthor}
+A object used to invoke the G\+CC compiler from sources and create the dump.
+
+\begin{DoxyAuthor}{Author}
+Christian Pilato \href{mailto:pilato@elet.polimi.it}{\tt pilato@elet.\+polimi.\+it} 
+
+Marco Lattuada \href{mailto:lattuada@elet.polimi.it}{\tt lattuada@elet.\+polimi.\+it} \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{gcc__wrapper_8hpp_ac7db7598e7683fd931ee3a209277a4f3}\label{gcc__wrapper_8hpp_ac7db7598e7683fd931ee3a209277a4f3}} 
+\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!Gcc\+Wrapper\+Const\+Ref@{Gcc\+Wrapper\+Const\+Ref}}
+\index{Gcc\+Wrapper\+Const\+Ref@{Gcc\+Wrapper\+Const\+Ref}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}
+\subsubsection{\texorpdfstring{Gcc\+Wrapper\+Const\+Ref}{GccWrapperConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{classGccWrapper}{Gcc\+Wrapper}$>$ \hyperlink{gcc__wrapper_8hpp_ac7db7598e7683fd931ee3a209277a4f3}{Gcc\+Wrapper\+Const\+Ref}}
+
+
+
+Definition at line 449 of file gcc\+\_\+wrapper.\+hpp.
+
+\mbox{\Hypertarget{gcc__wrapper_8hpp_aba2a317cdd5bc8aa85483a128966782d}\label{gcc__wrapper_8hpp_aba2a317cdd5bc8aa85483a128966782d}} 
+\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!Gcc\+Wrapper\+Ref@{Gcc\+Wrapper\+Ref}}
+\index{Gcc\+Wrapper\+Ref@{Gcc\+Wrapper\+Ref}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}
+\subsubsection{\texorpdfstring{Gcc\+Wrapper\+Ref}{GccWrapperRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classGccWrapper}{Gcc\+Wrapper}$>$ \hyperlink{gcc__wrapper_8hpp_aba2a317cdd5bc8aa85483a128966782d}{Gcc\+Wrapper\+Ref}}
+
+
+
+Refcount definition for the \hyperlink{classGccWrapper}{Gcc\+Wrapper} class. 
+
+
+
+Definition at line 448 of file gcc\+\_\+wrapper.\+hpp.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9}\label{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9}} 
+\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!Gcc\+Wrapper\+\_\+\+Compiler\+Mode@{Gcc\+Wrapper\+\_\+\+Compiler\+Mode}}
+\index{Gcc\+Wrapper\+\_\+\+Compiler\+Mode@{Gcc\+Wrapper\+\_\+\+Compiler\+Mode}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}
+\subsubsection{\texorpdfstring{Gcc\+Wrapper\+\_\+\+Compiler\+Mode}{GccWrapper\_CompilerMode}}
+{\footnotesize\ttfamily enum \hyperlink{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9}{Gcc\+Wrapper\+\_\+\+Compiler\+Mode}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+M\+\_\+\+S\+TD@{C\+M\+\_\+\+S\+TD}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!C\+M\+\_\+\+S\+TD@{C\+M\+\_\+\+S\+TD}}}\mbox{\Hypertarget{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9a1cce81afdcb3d459d409b402ef97749f}\label{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9a1cce81afdcb3d459d409b402ef97749f}} 
+C\+M\+\_\+\+S\+TD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+M\+\_\+\+E\+M\+P\+TY@{C\+M\+\_\+\+E\+M\+P\+TY}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!C\+M\+\_\+\+E\+M\+P\+TY@{C\+M\+\_\+\+E\+M\+P\+TY}}}\mbox{\Hypertarget{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9af2f2765c396194e99b883922c54f9fe4}\label{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9af2f2765c396194e99b883922c54f9fe4}} 
+C\+M\+\_\+\+E\+M\+P\+TY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+M\+\_\+\+A\+N\+A\+L\+Y\+Z\+ER@{C\+M\+\_\+\+A\+N\+A\+L\+Y\+Z\+ER}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!C\+M\+\_\+\+A\+N\+A\+L\+Y\+Z\+ER@{C\+M\+\_\+\+A\+N\+A\+L\+Y\+Z\+ER}}}\mbox{\Hypertarget{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9afb9091dd165eba102b8da702e9c5960f}\label{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9afb9091dd165eba102b8da702e9c5960f}} 
+C\+M\+\_\+\+A\+N\+A\+L\+Y\+Z\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+M\+\_\+\+L\+TO@{C\+M\+\_\+\+L\+TO}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!C\+M\+\_\+\+L\+TO@{C\+M\+\_\+\+L\+TO}}}\mbox{\Hypertarget{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9a90a0abc6f0a10046d070ad4c0ce6dd0d}\label{gcc__wrapper_8hpp_a6625f9f7120deee0b77a8179ae2a7fe9a90a0abc6f0a10046d070ad4c0ce6dd0d}} 
+C\+M\+\_\+\+L\+TO&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 167 of file gcc\+\_\+wrapper.\+hpp.
+
+\mbox{\Hypertarget{gcc__wrapper_8hpp_abb9d9a5cb3a1bf5d402dbc841a6708aa}\label{gcc__wrapper_8hpp_abb9d9a5cb3a1bf5d402dbc841a6708aa}} 
+\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!Gcc\+Wrapper\+\_\+\+Compiler\+Target@{Gcc\+Wrapper\+\_\+\+Compiler\+Target}}
+\index{Gcc\+Wrapper\+\_\+\+Compiler\+Target@{Gcc\+Wrapper\+\_\+\+Compiler\+Target}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}
+\subsubsection{\texorpdfstring{Gcc\+Wrapper\+\_\+\+Compiler\+Target}{GccWrapper\_CompilerTarget}}
+{\footnotesize\ttfamily enum \hyperlink{gcc__wrapper_8hpp_abb9d9a5cb3a1bf5d402dbc841a6708aa}{Gcc\+Wrapper\+\_\+\+Compiler\+Target}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+target of the compiler 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+\_\+\+N\+O\+\_\+\+G\+CC@{C\+T\+\_\+\+N\+O\+\_\+\+G\+CC}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!C\+T\+\_\+\+N\+O\+\_\+\+G\+CC@{C\+T\+\_\+\+N\+O\+\_\+\+G\+CC}}}\mbox{\Hypertarget{gcc__wrapper_8hpp_abb9d9a5cb3a1bf5d402dbc841a6708aaa3c632d7834be009d781afc27d69af9ae}\label{gcc__wrapper_8hpp_abb9d9a5cb3a1bf5d402dbc841a6708aaa3c632d7834be009d781afc27d69af9ae}} 
+C\+T\+\_\+\+N\+O\+\_\+\+G\+CC&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 116 of file gcc\+\_\+wrapper.\+hpp.
+
+\mbox{\Hypertarget{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788d}\label{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788d}} 
+\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!Gcc\+Wrapper\+\_\+\+Optimization\+Set@{Gcc\+Wrapper\+\_\+\+Optimization\+Set}}
+\index{Gcc\+Wrapper\+\_\+\+Optimization\+Set@{Gcc\+Wrapper\+\_\+\+Optimization\+Set}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}
+\subsubsection{\texorpdfstring{Gcc\+Wrapper\+\_\+\+Optimization\+Set}{GccWrapper\_OptimizationSet}}
+{\footnotesize\ttfamily enum \hyperlink{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788d}{Gcc\+Wrapper\+\_\+\+Optimization\+Set}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Possible optimization sets. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O0@{O0}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!O0@{O0}}}\mbox{\Hypertarget{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da7e6bfed55985b52e9dbfc6df8f291186}\label{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da7e6bfed55985b52e9dbfc6df8f291186}} 
+O0&-\/\+O0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O1@{O1}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!O1@{O1}}}\mbox{\Hypertarget{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da00594a175ce5a58f286d91ca0a6f15a2}\label{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da00594a175ce5a58f286d91ca0a6f15a2}} 
+O1&-\/\+O1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O2@{O2}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!O2@{O2}}}\mbox{\Hypertarget{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788dabfc60714f62f15e1e72e0b21454cc99e}\label{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788dabfc60714f62f15e1e72e0b21454cc99e}} 
+O2&-\/\+O2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O3@{O3}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!O3@{O3}}}\mbox{\Hypertarget{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da9ee25ee8b4d0a573527fcd2f1e73f8c8}\label{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da9ee25ee8b4d0a573527fcd2f1e73f8c8}} 
+O3&-\/\+O3 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O4@{O4}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!O4@{O4}}}\mbox{\Hypertarget{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da27148de9dcce4aa2aa6d42ade1f50231}\label{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da27148de9dcce4aa2aa6d42ade1f50231}} 
+O4&-\/\+O4 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O5@{O5}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!O5@{O5}}}\mbox{\Hypertarget{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da831d8cbc6803db17c44f67d5a5de6fa4}\label{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da831d8cbc6803db17c44f67d5a5de6fa4}} 
+O5&-\/\+O5 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Og@{Og}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!Og@{Og}}}\mbox{\Hypertarget{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da9ad3285ba2ed40f7b805800f927766fc}\label{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da9ad3285ba2ed40f7b805800f927766fc}} 
+Og&-\/\+Og \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Os@{Os}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!Os@{Os}}}\mbox{\Hypertarget{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da02c4b2dc4fd2ac7e8bbde8e46adce723}\label{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da02c4b2dc4fd2ac7e8bbde8e46adce723}} 
+Os&-\/\+Os \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Oz@{Oz}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!Oz@{Oz}}}\mbox{\Hypertarget{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da0adaeee8e8df29fe501cf3e675ebde70}\label{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da0adaeee8e8df29fe501cf3e675ebde70}} 
+Oz&-\/\+Oz \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ofast@{Ofast}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!Ofast@{Ofast}}}\mbox{\Hypertarget{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da03e64486693c4ecaff1087c3f450f174}\label{gcc__wrapper_8hpp_a0f57d29a8e8442ddf6d2cd8577c6788da03e64486693c4ecaff1087c3f450f174}} 
+Ofast&-\/\+Ofast \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 89 of file gcc\+\_\+wrapper.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{gcc__wrapper_8hpp_ac5c30465e53a2dee97960f0f406b8be7}\label{gcc__wrapper_8hpp_ac5c30465e53a2dee97960f0f406b8be7}} 
+\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classParameter}{Parameter}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gcc__wrapper_8hpp_a939cd739b894d823a208e61b8c4f6fd3}\label{gcc__wrapper_8hpp_a939cd739b894d823a208e61b8c4f6fd3}} 
+\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classapplication__manager}{application\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+
+
+
+Autoheader include. 
+
+boost include S\+TD include utility include \mbox{\Hypertarget{gcc__wrapper_8hpp_a8c8d82f336df8d5bba4c91b553b0fbae}\label{gcc__wrapper_8hpp_a8c8d82f336df8d5bba4c91b553b0fbae}} 
+\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classParameter}{Parameter}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gcc__wrapper_8hpp_a52756886a578bcd0db3c2fd210400eb3}\label{gcc__wrapper_8hpp_a52756886a578bcd0db3c2fd210400eb3}} 
+\index{gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!gcc\+\_\+wrapper.\+hpp@{gcc\+\_\+wrapper.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__manager}{tree\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+

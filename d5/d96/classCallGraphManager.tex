@@ -1,0 +1,1159 @@
+\hypertarget{classCallGraphManager}{}\section{Call\+Graph\+Manager Class Reference}
+\label{classCallGraphManager}\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+
+
+This class manages the accesses to the \hyperlink{classCallGraph}{Call\+Graph}.  
+
+
+
+
+{\ttfamily \#include $<$call\+\_\+graph\+\_\+manager.\+hpp$>$}
+
+
+
+Collaboration diagram for Call\+Graph\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d63/classCallGraphManager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCallGraphManager_aeee8a134a4099c553dfed2726156f233}{Call\+Graph\+Manager} (const Function\+Expander\+Const\+Ref \hyperlink{classCallGraphManager_a5ce1c00a1075535b68287a08e3fd6b1b}{function\+\_\+expander}, const bool \hyperlink{classCallGraphManager_a84c91d6640ac211ba1d4286d16dcd5d1}{single\+\_\+root\+\_\+function}, const bool \hyperlink{classCallGraphManager_a04e714703a5d955d0ddb00664e89467d}{allow\+\_\+recursive\+\_\+functions}, const \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref} \hyperlink{classtree__manager}{tree\+\_\+manager}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classCallGraphManager_a56c89c8fc4a0a38536bcd58005a428cb}{Param})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classCallGraphManager_a39f42d18b82be5d809c01a223f01a8c7}{$\sim$\+Call\+Graph\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{call__graph_8hpp_a58f2b421619a32f5c5bc35e64f3346d3}{Call\+Graph\+Ref} \hyperlink{classCallGraphManager_a3803aead51f1c180af7d4e28aca8d3d0}{Get\+Call\+Graph} ()
+\begin{DoxyCompactList}\small\item\em Return the call graph. \end{DoxyCompactList}\item 
+const \hyperlink{call__graph_8hpp_a6effd75e39674b4777714051b70eddf2}{Call\+Graph\+Const\+Ref} \hyperlink{classCallGraphManager_a96c4ad4f6de2cc316df5bb28523e2d29}{C\+Get\+Acyclic\+Call\+Graph} () const
+\begin{DoxyCompactList}\small\item\em Return an acyclic version of the call graph. \end{DoxyCompactList}\item 
+const \hyperlink{call__graph_8hpp_a6effd75e39674b4777714051b70eddf2}{Call\+Graph\+Const\+Ref} \hyperlink{classCallGraphManager_ab9bcffba4526d85c1b3b915905b9356c}{C\+Get\+Call\+Graph} () const
+\begin{DoxyCompactList}\small\item\em Return the call graph. \end{DoxyCompactList}\item 
+const \hyperlink{call__graph_8hpp_a6effd75e39674b4777714051b70eddf2}{Call\+Graph\+Const\+Ref} \hyperlink{classCallGraphManager_a8ebb15b8cc8913f918b549bb9e2ffee1}{C\+Get\+Call\+Sub\+Graph} (const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&vertices) const
+\begin{DoxyCompactList}\small\item\em Return a subset of the call graph. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classCallGraphManager_a1ca66c62247b79f10f792b58b5bd93a0}{get\+\_\+called\+\_\+by} (unsigned int \hyperlink{tutorial__pact__2019_2Introduction_2third_2include_2Keccak_8h_a028c9bdc8344cca38ab522a337074797}{index}) const
+\begin{DoxyCompactList}\small\item\em Returns the set of functions called by a function. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ unsigned int $>$ \hyperlink{classCallGraphManager_af47e8c559960a5351867e97c30b33c66}{get\+\_\+called\+\_\+by} (const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} cfg, const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&caller) const
+\begin{DoxyCompactList}\small\item\em Returns the set of functions called by an operation vertex. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classCallGraphManager_a3416f718a1d4e6232d900bc1bb08ae0e}{get\+\_\+function} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} node) const
+\begin{DoxyCompactList}\small\item\em Given a vertex of the call graph, this returns the index of the corresponding function. \end{DoxyCompactList}\item 
+\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \hyperlink{classCallGraphManager_a68c01aa6e40aff0aebec5ee0f503346b}{Get\+Vertex} (const unsigned int \hyperlink{tutorial__pact__2019_2Introduction_2third_2include_2Keccak_8h_a028c9bdc8344cca38ab522a337074797}{index}) const
+\begin{DoxyCompactList}\small\item\em Return the vertex given the function id. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classCallGraphManager_aa915f9088c122e681f0f477eb15e4905}{Get\+Root\+Functions} () const
+\begin{DoxyCompactList}\small\item\em Returns the root functions (i.\+e., the functions that are not called by any other ones. \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classCallGraphManager_a12c4d7b31674d81c02d0b4bf3150433f}{Get\+Reached\+Body\+Functions} () const
+\begin{DoxyCompactList}\small\item\em Returns the source code functions called by the root functions. \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classCallGraphManager_ada5792c79efd5eb5646ee1f3fe6651f7}{Get\+Reached\+Body\+Functions\+From} (unsigned int from\+\_\+f) const
+\begin{DoxyCompactList}\small\item\em compute the list of reached function starting from a given function \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classCallGraphManager_a111b6fd3a5ff50d0fe9ffbbea17f4ea5}{Get\+Reached\+Library\+Functions} () const
+\begin{DoxyCompactList}\small\item\em Returns the library functions called by the root functions. \end{DoxyCompactList}\item 
+bool \hyperlink{classCallGraphManager_af8ff924d2289789505467f6641620f9e}{Is\+Vertex} (unsigned int function\+ID) const
+\begin{DoxyCompactList}\small\item\em return true in case the vertex has been already created \end{DoxyCompactList}\item 
+bool \hyperlink{classCallGraphManager_a3b5428b1a496b3533bc41d9d419c5688}{Is\+Call\+Point} (unsigned int caller\+\_\+id, unsigned int called\+\_\+id, unsigned int call\+\_\+id, enum \hyperlink{structFunctionEdgeInfo_a39413ce8498ca68ed43c3f171f2607ef}{Function\+Edge\+Info\+::\+Call\+Type} call\+\_\+type) const
+\begin{DoxyCompactList}\small\item\em Returns true if the call point is present. \end{DoxyCompactList}\item 
+void \hyperlink{classCallGraphManager_aa0485c1d4e04aebcb51bcc9a594e1822}{Add\+Function} (unsigned int new\+\_\+function\+\_\+id, const \hyperlink{function__behavior_8hpp_affbc6a46ab86ddfabe31c10986d333dc}{Function\+Behavior\+Ref} fun\+\_\+behavior)
+\item 
+void \hyperlink{classCallGraphManager_ab0a2e36673ed04042f4cd69a18e5ca77}{Add\+Call\+Point} (unsigned int caller\+\_\+id, unsigned int called\+\_\+id, unsigned int call\+\_\+id, enum \hyperlink{structFunctionEdgeInfo_a39413ce8498ca68ed43c3f171f2607ef}{Function\+Edge\+Info\+::\+Call\+Type} call\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Creates a new call point. \end{DoxyCompactList}\item 
+void \hyperlink{classCallGraphManager_ae1a2605dc9eb6b7259205aff1289b224}{Add\+Function\+And\+Call\+Point} (unsigned int caller\+\_\+id, unsigned int called\+\_\+id, unsigned int call\+\_\+id, const \hyperlink{function__behavior_8hpp_affbc6a46ab86ddfabe31c10986d333dc}{Function\+Behavior\+Ref} called\+\_\+function\+\_\+behavior, enum \hyperlink{structFunctionEdgeInfo_a39413ce8498ca68ed43c3f171f2607ef}{Function\+Edge\+Info\+::\+Call\+Type} call\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Creates a new called function and directly adds the call to the call graph. \end{DoxyCompactList}\item 
+void \hyperlink{classCallGraphManager_a3e4d382c876899b61f2033f68d53159c}{Remove\+Call\+Point} (const unsigned int caller\+\_\+id, const unsigned int called\+\_\+id, const unsigned int call\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Remove a function call, like Remove\+Call\+Point with a different A\+PI. \end{DoxyCompactList}\item 
+void \hyperlink{classCallGraphManager_abbcca062dd81ae6a267d3eabe1a326fb}{Remove\+Call\+Point} (\hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor} e, const unsigned int call\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Removes a call point. \end{DoxyCompactList}\item 
+void \hyperlink{classCallGraphManager_a89010b404b275f6edc07b8c1f406d842}{Replace\+Call\+Point} (const \hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor} e, const unsigned int old\+\_\+call\+\_\+id, const unsigned int new\+\_\+call\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Replaces a call point. \end{DoxyCompactList}\item 
+bool \hyperlink{classCallGraphManager_ae5a29d3415ff94c66e96912328b871d7}{Exists\+Addressed\+Function} () const
+\begin{DoxyCompactList}\small\item\em Returns true is there is at least a reachable function that is called through a function pointer or its address is taken. \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classCallGraphManager_af2f8989f8165d380da23840418d37c14}{Get\+Addressed\+Functions} () const
+\begin{DoxyCompactList}\small\item\em Returns a set containing all the reachable addressed\+\_\+functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const Function\+Expander\+Const\+Ref \hyperlink{classCallGraphManager_a5ce1c00a1075535b68287a08e3fd6b1b}{function\+\_\+expander}
+\begin{DoxyCompactList}\small\item\em Functor used to check if the analysis should consider the body of a function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCallGraphManager_abcbe2ee2364242c09a811a07139f10fb}{Compute\+Root\+And\+Reached\+Functions} ()
+\begin{DoxyCompactList}\small\item\em Compute the root and reached functions, maintaining the internal data structures coherent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{call__graph_8hpp_afccdc7a00d60cb4ee70f44b223f858bb}{Call\+Graphs\+Collection\+Ref} \hyperlink{classCallGraphManager_a09ff858c02243ff6cec04659e65d5bb4}{call\+\_\+graphs\+\_\+collection}
+\item 
+const \hyperlink{call__graph_8hpp_a58f2b421619a32f5c5bc35e64f3346d3}{Call\+Graph\+Ref} \hyperlink{classCallGraphManager_a32789cf408b416672af0758e44efa45c}{call\+\_\+graph}
+\begin{DoxyCompactList}\small\item\em The view of call graph with all the edges. \end{DoxyCompactList}\item 
+const \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref} \hyperlink{classCallGraphManager_a9018abdd8aee3716e816c2854860dc1b}{tree\+\_\+manager}
+\begin{DoxyCompactList}\small\item\em The tree manager. \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ $>$ \hyperlink{classCallGraphManager_a61a98173b9b7f8c3058227eb3e371d5c}{called\+\_\+by}
+\begin{DoxyCompactList}\small\item\em put into relation function F\+\_\+i and the list of functions called by F\+\_\+i \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{classCallGraphManager_ad632d9efbc89d01b3073d7a8236aec31}{function\+I\+D\+\_\+vertex\+\_\+map}
+\begin{DoxyCompactList}\small\item\em put into relation function F\+\_\+i and the vertex in the call graph representing it \end{DoxyCompactList}\item 
+const bool \hyperlink{classCallGraphManager_a84c91d6640ac211ba1d4286d16dcd5d1}{single\+\_\+root\+\_\+function}
+\begin{DoxyCompactList}\small\item\em True if only. \end{DoxyCompactList}\item 
+const bool \hyperlink{classCallGraphManager_a04e714703a5d955d0ddb00664e89467d}{allow\+\_\+recursive\+\_\+functions}
+\begin{DoxyCompactList}\small\item\em True if recursive calls are allowed. \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classCallGraphManager_ad55ab572f629a824a3074728e2780640}{root\+\_\+functions}
+\begin{DoxyCompactList}\small\item\em Root functions. \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classCallGraphManager_a0416ed0f6be715340b059302d46b2d63}{reached\+\_\+body\+\_\+functions}
+\begin{DoxyCompactList}\small\item\em source code functions directly or indirectly called by the root functions \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classCallGraphManager_a37bdf97b52e3503e6c8b7f28f54d11ef}{reached\+\_\+library\+\_\+functions}
+\begin{DoxyCompactList}\small\item\em library functions directly or indirectly called by the root functions \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{classCallGraphManager_a88ab0415905abb68305cf2ed36f85329}{addressed\+\_\+functions}
+\begin{DoxyCompactList}\small\item\em set of functions whose address is taken \end{DoxyCompactList}\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classCallGraphManager_a56c89c8fc4a0a38536bcd58005a428cb}{Param}
+\begin{DoxyCompactList}\small\item\em set of input parameters \end{DoxyCompactList}\item 
+const int \hyperlink{classCallGraphManager_a8905c760cbe8ffad17aa77bb57c572a9}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em the debug level \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class manages the accesses to the \hyperlink{classCallGraph}{Call\+Graph}. 
+
+Definition at line 69 of file call\+\_\+graph\+\_\+manager.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCallGraphManager_aeee8a134a4099c553dfed2726156f233}\label{classCallGraphManager_aeee8a134a4099c553dfed2726156f233}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Call\+Graph\+Manager()}{CallGraphManager()}}
+{\footnotesize\ttfamily Call\+Graph\+Manager\+::\+Call\+Graph\+Manager (\begin{DoxyParamCaption}\item[{const Function\+Expander\+Const\+Ref}]{function\+\_\+expander,  }\item[{const bool}]{single\+\_\+root\+\_\+function,  }\item[{const bool}]{allow\+\_\+recursive\+\_\+functions,  }\item[{const \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref}}]{tree\+\_\+manager,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+The data structure is initialized. 
+\begin{DoxyParams}{Parameters}
+{\em function\+\_\+expander} & is the functor used to determine if a function has to be considered during construction of call graph \\
+\hline
+{\em single\+\_\+root\+\_\+function} & specifies if only one root function has to be considered \\
+\hline
+{\em allow\+\_\+recursive\+\_\+functions} & specifies if recursive functions are allowed \\
+\hline
+{\em \hyperlink{classtree__manager}{tree\+\_\+manager}} & is the tree manager \\
+\hline
+{\em Param} & is the set of input parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 85 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References $\sim$\+Call\+Graph\+Manager().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_aeee8a134a4099c553dfed2726156f233_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCallGraphManager_a39f42d18b82be5d809c01a223f01a8c7}\label{classCallGraphManager_a39f42d18b82be5d809c01a223f01a8c7}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!````~Call\+Graph\+Manager@{$\sim$\+Call\+Graph\+Manager}}
+\index{````~Call\+Graph\+Manager@{$\sim$\+Call\+Graph\+Manager}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{$\sim$\+Call\+Graph\+Manager()}{~CallGraphManager()}}
+{\footnotesize\ttfamily Call\+Graph\+Manager\+::$\sim$\+Call\+Graph\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Call\+Graph\+Manager().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_a39f42d18b82be5d809c01a223f01a8c7_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCallGraphManager_ab0a2e36673ed04042f4cd69a18e5ca77}\label{classCallGraphManager_ab0a2e36673ed04042f4cd69a18e5ca77}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Add\+Call\+Point@{Add\+Call\+Point}}
+\index{Add\+Call\+Point@{Add\+Call\+Point}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Add\+Call\+Point()}{AddCallPoint()}}
+{\footnotesize\ttfamily void Call\+Graph\+Manager\+::\+Add\+Call\+Point (\begin{DoxyParamCaption}\item[{unsigned int}]{caller\+\_\+id,  }\item[{unsigned int}]{called\+\_\+id,  }\item[{unsigned int}]{call\+\_\+id,  }\item[{enum \hyperlink{structFunctionEdgeInfo_a39413ce8498ca68ed43c3f171f2607ef}{Function\+Edge\+Info\+::\+Call\+Type}}]{call\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Creates a new call point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em caller\+\_\+id} & is the function id of the caller \\
+\hline
+{\em called\+\_\+id} & is the function id of the called function \\
+\hline
+{\em call\+\_\+id} & is the tree node index of the call statement \\
+\hline
+{\em call\+\_\+type} & is the type of call \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 120 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References addressed\+\_\+functions, Function\+Edge\+Info\+::call\+\_\+any, call\+\_\+graph, call\+\_\+graphs\+\_\+collection, called\+\_\+by, C\+Get\+Call\+Graph(), Compute\+Root\+And\+Reached\+Functions(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Edge\+Info\+::direct\+\_\+call, F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR, Function\+Edge\+Info\+::function\+\_\+address, Get\+Vertex(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Function\+Edge\+Info\+::indirect\+\_\+call, Is\+Call\+Point(), Is\+Vertex(), S\+T\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and graph\+::\+Topological\+Sort().
+
+
+
+Referenced by Add\+Function\+And\+Call\+Point(), and Replace\+Call\+Point().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_ab0a2e36673ed04042f4cd69a18e5ca77_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_ab0a2e36673ed04042f4cd69a18e5ca77_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCallGraphManager_aa0485c1d4e04aebcb51bcc9a594e1822}\label{classCallGraphManager_aa0485c1d4e04aebcb51bcc9a594e1822}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Add\+Function@{Add\+Function}}
+\index{Add\+Function@{Add\+Function}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Add\+Function()}{AddFunction()}}
+{\footnotesize\ttfamily void Call\+Graph\+Manager\+::\+Add\+Function (\begin{DoxyParamCaption}\item[{unsigned int}]{new\+\_\+function\+\_\+id,  }\item[{const \hyperlink{function__behavior_8hpp_affbc6a46ab86ddfabe31c10986d333dc}{Function\+Behavior\+Ref}}]{fun\+\_\+behavior }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+function\+\_\+id} & is the index of the function to add \\
+\hline
+{\em fun\+\_\+behavior} & is the corresponding function behavior \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 99 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References call\+\_\+graph, call\+\_\+graphs\+\_\+collection, called\+\_\+by, Compute\+Root\+And\+Reached\+Functions(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, function\+I\+D\+\_\+vertex\+\_\+map, refcount$<$ T $>$\+::get(), G\+E\+T\+\_\+\+N\+O\+D\+E\+\_\+\+I\+N\+FO, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Is\+Vertex(), S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Add\+Function\+And\+Call\+Point().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_aa0485c1d4e04aebcb51bcc9a594e1822_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_aa0485c1d4e04aebcb51bcc9a594e1822_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCallGraphManager_ae1a2605dc9eb6b7259205aff1289b224}\label{classCallGraphManager_ae1a2605dc9eb6b7259205aff1289b224}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Add\+Function\+And\+Call\+Point@{Add\+Function\+And\+Call\+Point}}
+\index{Add\+Function\+And\+Call\+Point@{Add\+Function\+And\+Call\+Point}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Add\+Function\+And\+Call\+Point()}{AddFunctionAndCallPoint()}}
+{\footnotesize\ttfamily void Call\+Graph\+Manager\+::\+Add\+Function\+And\+Call\+Point (\begin{DoxyParamCaption}\item[{unsigned int}]{caller\+\_\+id,  }\item[{unsigned int}]{called\+\_\+id,  }\item[{unsigned int}]{call\+\_\+id,  }\item[{const \hyperlink{function__behavior_8hpp_affbc6a46ab86ddfabe31c10986d333dc}{Function\+Behavior\+Ref}}]{called\+\_\+function\+\_\+behavior,  }\item[{enum \hyperlink{structFunctionEdgeInfo_a39413ce8498ca68ed43c3f171f2607ef}{Function\+Edge\+Info\+::\+Call\+Type}}]{call\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Creates a new called function and directly adds the call to the call graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em caller\+\_\+id} & is the function id of the caller \\
+\hline
+{\em called\+\_\+id} & is the function id of the called function \\
+\hline
+{\em call\+\_\+id} & is the tree node index of the call statement \\
+\hline
+{\em called\+\_\+function\+\_\+behavior} & is the \hyperlink{classFunctionBehavior}{Function\+Behavior} of the called function \\
+\hline
+{\em call\+\_\+type} & is the type of call \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 232 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References Add\+Call\+Point(), and Add\+Function().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_ae1a2605dc9eb6b7259205aff1289b224_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCallGraphManager_a96c4ad4f6de2cc316df5bb28523e2d29}\label{classCallGraphManager_a96c4ad4f6de2cc316df5bb28523e2d29}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!C\+Get\+Acyclic\+Call\+Graph@{C\+Get\+Acyclic\+Call\+Graph}}
+\index{C\+Get\+Acyclic\+Call\+Graph@{C\+Get\+Acyclic\+Call\+Graph}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{C\+Get\+Acyclic\+Call\+Graph()}{CGetAcyclicCallGraph()}}
+{\footnotesize\ttfamily const \hyperlink{call__graph_8hpp_a6effd75e39674b4777714051b70eddf2}{Call\+Graph\+Const\+Ref} Call\+Graph\+Manager\+::\+C\+Get\+Acyclic\+Call\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return an acyclic version of the call graph. 
+
+
+
+Definition at line 352 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References call\+\_\+graphs\+\_\+collection, and S\+T\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR.
+
+\mbox{\Hypertarget{classCallGraphManager_ab9bcffba4526d85c1b3b915905b9356c}\label{classCallGraphManager_ab9bcffba4526d85c1b3b915905b9356c}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!C\+Get\+Call\+Graph@{C\+Get\+Call\+Graph}}
+\index{C\+Get\+Call\+Graph@{C\+Get\+Call\+Graph}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{C\+Get\+Call\+Graph()}{CGetCallGraph()}}
+{\footnotesize\ttfamily const \hyperlink{call__graph_8hpp_a6effd75e39674b4777714051b70eddf2}{Call\+Graph\+Const\+Ref} Call\+Graph\+Manager\+::\+C\+Get\+Call\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the call graph. 
+
+
+
+Definition at line 357 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References call\+\_\+graph.
+
+
+
+Referenced by Add\+Call\+Point(), Is\+Call\+Point(), and Remove\+Call\+Point().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_ab9bcffba4526d85c1b3b915905b9356c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCallGraphManager_a8ebb15b8cc8913f918b549bb9e2ffee1}\label{classCallGraphManager_a8ebb15b8cc8913f918b549bb9e2ffee1}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!C\+Get\+Call\+Sub\+Graph@{C\+Get\+Call\+Sub\+Graph}}
+\index{C\+Get\+Call\+Sub\+Graph@{C\+Get\+Call\+Sub\+Graph}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{C\+Get\+Call\+Sub\+Graph()}{CGetCallSubGraph()}}
+{\footnotesize\ttfamily const \hyperlink{call__graph_8hpp_a6effd75e39674b4777714051b70eddf2}{Call\+Graph\+Const\+Ref} Call\+Graph\+Manager\+::\+C\+Get\+Call\+Sub\+Graph (\begin{DoxyParamCaption}\item[{const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&}]{vertices }\end{DoxyParamCaption}) const}
+
+
+
+Return a subset of the call graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & is the subset of vertices to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 362 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References call\+\_\+graphs\+\_\+collection, F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR, and S\+T\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR.
+
+\mbox{\Hypertarget{classCallGraphManager_abcbe2ee2364242c09a811a07139f10fb}\label{classCallGraphManager_abcbe2ee2364242c09a811a07139f10fb}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Compute\+Root\+And\+Reached\+Functions@{Compute\+Root\+And\+Reached\+Functions}}
+\index{Compute\+Root\+And\+Reached\+Functions@{Compute\+Root\+And\+Reached\+Functions}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Compute\+Root\+And\+Reached\+Functions()}{ComputeRootAndReachedFunctions()}}
+{\footnotesize\ttfamily void Call\+Graph\+Manager\+::\+Compute\+Root\+And\+Reached\+Functions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compute the root and reached functions, maintaining the internal data structures coherent. 
+
+If top function option has been passed
+
+If not -\/c option has been passed we assume that whole program has been passed, so the main must be present
+
+Main not found
+
+Main not found, but call graph not yet built
+
+If there is the main, we return it
+
+Return all the functions not called by any other function 
+
+Definition at line 400 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References allow\+\_\+recursive\+\_\+functions, call\+\_\+graph, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, tree\+\_\+manager\+::function\+\_\+index(), get\+\_\+function(), tree\+\_\+manager\+::get\+\_\+next\+\_\+available\+\_\+tree\+\_\+node\+\_\+id(), Get\+Vertex(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Is\+Vertex(), Param, reached\+\_\+body\+\_\+functions, reached\+\_\+library\+\_\+functions, root\+\_\+functions, single\+\_\+root\+\_\+function, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by Add\+Call\+Point(), Add\+Function(), and Remove\+Call\+Point().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_abcbe2ee2364242c09a811a07139f10fb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_abcbe2ee2364242c09a811a07139f10fb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCallGraphManager_ae5a29d3415ff94c66e96912328b871d7}\label{classCallGraphManager_ae5a29d3415ff94c66e96912328b871d7}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Exists\+Addressed\+Function@{Exists\+Addressed\+Function}}
+\index{Exists\+Addressed\+Function@{Exists\+Addressed\+Function}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Exists\+Addressed\+Function()}{ExistsAddressedFunction()}}
+{\footnotesize\ttfamily bool Call\+Graph\+Manager\+::\+Exists\+Addressed\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns true is there is at least a reachable function that is called through a function pointer or its address is taken. 
+
+
+
+Definition at line 337 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References addressed\+\_\+functions, and reached\+\_\+body\+\_\+functions.
+
+\mbox{\Hypertarget{classCallGraphManager_a1ca66c62247b79f10f792b58b5bd93a0}\label{classCallGraphManager_a1ca66c62247b79f10f792b58b5bd93a0}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!get\+\_\+called\+\_\+by@{get\+\_\+called\+\_\+by}}
+\index{get\+\_\+called\+\_\+by@{get\+\_\+called\+\_\+by}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{get\+\_\+called\+\_\+by()}{get\_called\_by()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ Call\+Graph\+Manager\+::get\+\_\+called\+\_\+by (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Returns the set of functions called by a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & is the index of the caller function \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 387 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References called\+\_\+by.
+
+\mbox{\Hypertarget{classCallGraphManager_af47e8c559960a5351867e97c30b33c66}\label{classCallGraphManager_af47e8c559960a5351867e97c30b33c66}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!get\+\_\+called\+\_\+by@{get\+\_\+called\+\_\+by}}
+\index{get\+\_\+called\+\_\+by@{get\+\_\+called\+\_\+by}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{get\+\_\+called\+\_\+by()}{get\_called\_by()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ unsigned int $>$ Call\+Graph\+Manager\+::get\+\_\+called\+\_\+by (\begin{DoxyParamCaption}\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{cfg,  }\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&}]{caller }\end{DoxyParamCaption}) const}
+
+
+
+Returns the set of functions called by an operation vertex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cfg} & is the pointer to the graph which the operation belongs to \\
+\hline
+{\em caller} & is the caller vertex \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 395 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References Op\+Graph\+::\+C\+Get\+Op\+Node\+Info().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_af47e8c559960a5351867e97c30b33c66_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCallGraphManager_a3416f718a1d4e6232d900bc1bb08ae0e}\label{classCallGraphManager_a3416f718a1d4e6232d900bc1bb08ae0e}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!get\+\_\+function@{get\+\_\+function}}
+\index{get\+\_\+function@{get\+\_\+function}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{get\+\_\+function()}{get\_function()}}
+{\footnotesize\ttfamily unsigned int Call\+Graph\+Manager\+::get\+\_\+function (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{node }\end{DoxyParamCaption}) const}
+
+
+
+Given a vertex of the call graph, this returns the index of the corresponding function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & is the vertex of the function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the function 
+\end{DoxyReturn}
+
+
+Definition at line 378 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References function\+I\+D\+\_\+vertex\+\_\+map.
+
+
+
+Referenced by Called\+Functions\+Visitor\+::back\+\_\+edge(), and Compute\+Root\+And\+Reached\+Functions().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_a3416f718a1d4e6232d900bc1bb08ae0e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCallGraphManager_af2f8989f8165d380da23840418d37c14}\label{classCallGraphManager_af2f8989f8165d380da23840418d37c14}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Get\+Addressed\+Functions@{Get\+Addressed\+Functions}}
+\index{Get\+Addressed\+Functions@{Get\+Addressed\+Functions}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Addressed\+Functions()}{GetAddressedFunctions()}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ Call\+Graph\+Manager\+::\+Get\+Addressed\+Functions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns a set containing all the reachable addressed\+\_\+functions. 
+
+
+
+Definition at line 345 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References addressed\+\_\+functions, and reached\+\_\+body\+\_\+functions.
+
+\mbox{\Hypertarget{classCallGraphManager_a3803aead51f1c180af7d4e28aca8d3d0}\label{classCallGraphManager_a3803aead51f1c180af7d4e28aca8d3d0}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Get\+Call\+Graph@{Get\+Call\+Graph}}
+\index{Get\+Call\+Graph@{Get\+Call\+Graph}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Call\+Graph()}{GetCallGraph()}}
+{\footnotesize\ttfamily \hyperlink{call__graph_8hpp_a58f2b421619a32f5c5bc35e64f3346d3}{Call\+Graph\+Ref} Call\+Graph\+Manager\+::\+Get\+Call\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return the call graph. 
+
+\mbox{\Hypertarget{classCallGraphManager_a12c4d7b31674d81c02d0b4bf3150433f}\label{classCallGraphManager_a12c4d7b31674d81c02d0b4bf3150433f}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Get\+Reached\+Body\+Functions@{Get\+Reached\+Body\+Functions}}
+\index{Get\+Reached\+Body\+Functions@{Get\+Reached\+Body\+Functions}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Reached\+Body\+Functions()}{GetReachedBodyFunctions()}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ Call\+Graph\+Manager\+::\+Get\+Reached\+Body\+Functions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the source code functions called by the root functions. 
+
+\begin{DoxyReturn}{Returns}
+the set of top function 
+\end{DoxyReturn}
+
+
+Definition at line 514 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References reached\+\_\+body\+\_\+functions.
+
+\mbox{\Hypertarget{classCallGraphManager_ada5792c79efd5eb5646ee1f3fe6651f7}\label{classCallGraphManager_ada5792c79efd5eb5646ee1f3fe6651f7}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Get\+Reached\+Body\+Functions\+From@{Get\+Reached\+Body\+Functions\+From}}
+\index{Get\+Reached\+Body\+Functions\+From@{Get\+Reached\+Body\+Functions\+From}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Reached\+Body\+Functions\+From()}{GetReachedBodyFunctionsFrom()}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ Call\+Graph\+Manager\+::\+Get\+Reached\+Body\+Functions\+From (\begin{DoxyParamCaption}\item[{unsigned int}]{from\+\_\+f }\end{DoxyParamCaption}) const}
+
+
+
+compute the list of reached function starting from a given function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from\+\_\+f} & is the starting function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the set of top function 
+\end{DoxyReturn}
+
+
+Definition at line 519 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References allow\+\_\+recursive\+\_\+functions, call\+\_\+graph, and Get\+Vertex().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_ada5792c79efd5eb5646ee1f3fe6651f7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCallGraphManager_a111b6fd3a5ff50d0fe9ffbbea17f4ea5}\label{classCallGraphManager_a111b6fd3a5ff50d0fe9ffbbea17f4ea5}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Get\+Reached\+Library\+Functions@{Get\+Reached\+Library\+Functions}}
+\index{Get\+Reached\+Library\+Functions@{Get\+Reached\+Library\+Functions}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Reached\+Library\+Functions()}{GetReachedLibraryFunctions()}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ Call\+Graph\+Manager\+::\+Get\+Reached\+Library\+Functions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the library functions called by the root functions. 
+
+\begin{DoxyReturn}{Returns}
+the set of library function (without implementation) 
+\end{DoxyReturn}
+
+
+Definition at line 531 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References reached\+\_\+library\+\_\+functions.
+
+\mbox{\Hypertarget{classCallGraphManager_aa915f9088c122e681f0f477eb15e4905}\label{classCallGraphManager_aa915f9088c122e681f0f477eb15e4905}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Get\+Root\+Functions@{Get\+Root\+Functions}}
+\index{Get\+Root\+Functions@{Get\+Root\+Functions}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Root\+Functions()}{GetRootFunctions()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ Call\+Graph\+Manager\+::\+Get\+Root\+Functions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the root functions (i.\+e., the functions that are not called by any other ones. 
+
+\begin{DoxyReturn}{Returns}
+the set of top function 
+\end{DoxyReturn}
+
+
+Definition at line 508 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References call\+\_\+graph, root\+\_\+functions, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+\mbox{\Hypertarget{classCallGraphManager_a68c01aa6e40aff0aebec5ee0f503346b}\label{classCallGraphManager_a68c01aa6e40aff0aebec5ee0f503346b}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Get\+Vertex@{Get\+Vertex}}
+\index{Get\+Vertex@{Get\+Vertex}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Vertex()}{GetVertex()}}
+{\footnotesize\ttfamily \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} Call\+Graph\+Manager\+::\+Get\+Vertex (\begin{DoxyParamCaption}\item[{const unsigned int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Return the vertex given the function id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & is the function index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding vertex in the call graph 
+\end{DoxyReturn}
+
+
+Definition at line 367 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References function\+I\+D\+\_\+vertex\+\_\+map, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Add\+Call\+Point(), Compute\+Root\+And\+Reached\+Functions(), Get\+Reached\+Body\+Functions\+From(), Is\+Call\+Point(), and Remove\+Call\+Point().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_a68c01aa6e40aff0aebec5ee0f503346b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCallGraphManager_a3b5428b1a496b3533bc41d9d419c5688}\label{classCallGraphManager_a3b5428b1a496b3533bc41d9d419c5688}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Is\+Call\+Point@{Is\+Call\+Point}}
+\index{Is\+Call\+Point@{Is\+Call\+Point}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Is\+Call\+Point()}{IsCallPoint()}}
+{\footnotesize\ttfamily bool Call\+Graph\+Manager\+::\+Is\+Call\+Point (\begin{DoxyParamCaption}\item[{unsigned int}]{caller\+\_\+id,  }\item[{unsigned int}]{called\+\_\+id,  }\item[{unsigned int}]{call\+\_\+id,  }\item[{enum \hyperlink{structFunctionEdgeInfo_a39413ce8498ca68ed43c3f171f2607ef}{Function\+Edge\+Info\+::\+Call\+Type}}]{call\+\_\+type }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if the call point is present. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em caller\+\_\+id} & is the function id of the caller \\
+\hline
+{\em called\+\_\+id} & is the function id of the called function \\
+\hline
+{\em call\+\_\+id} & is the tree node index of the call statement \\
+\hline
+{\em call\+\_\+type} & is the type of call \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 181 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References Function\+Edge\+Info\+::call\+\_\+any, call\+\_\+graph, called\+\_\+by, C\+Get\+Call\+Graph(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Edge\+Info\+::direct\+\_\+call, Function\+Edge\+Info\+::function\+\_\+address, Get\+Vertex(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Function\+Edge\+Info\+::indirect\+\_\+call, Is\+Vertex(), S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+
+
+Referenced by Add\+Call\+Point().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_a3b5428b1a496b3533bc41d9d419c5688_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_a3b5428b1a496b3533bc41d9d419c5688_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCallGraphManager_af8ff924d2289789505467f6641620f9e}\label{classCallGraphManager_af8ff924d2289789505467f6641620f9e}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Is\+Vertex@{Is\+Vertex}}
+\index{Is\+Vertex@{Is\+Vertex}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Is\+Vertex()}{IsVertex()}}
+{\footnotesize\ttfamily bool Call\+Graph\+Manager\+::\+Is\+Vertex (\begin{DoxyParamCaption}\item[{unsigned int}]{function\+ID }\end{DoxyParamCaption}) const}
+
+
+
+return true in case the vertex has been already created 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function\+ID} & is the function identifier \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 373 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References function\+I\+D\+\_\+vertex\+\_\+map.
+
+
+
+Referenced by Add\+Call\+Point(), Add\+Function(), Compute\+Root\+And\+Reached\+Functions(), and Is\+Call\+Point().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_af8ff924d2289789505467f6641620f9e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCallGraphManager_a3e4d382c876899b61f2033f68d53159c}\label{classCallGraphManager_a3e4d382c876899b61f2033f68d53159c}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Remove\+Call\+Point@{Remove\+Call\+Point}}
+\index{Remove\+Call\+Point@{Remove\+Call\+Point}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Remove\+Call\+Point()}{RemoveCallPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Call\+Graph\+Manager\+::\+Remove\+Call\+Point (\begin{DoxyParamCaption}\item[{const unsigned int}]{caller\+\_\+id,  }\item[{const unsigned int}]{called\+\_\+id,  }\item[{const unsigned int}]{call\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Remove a function call, like Remove\+Call\+Point with a different A\+PI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em caller\+\_\+id} & is the index of the calling function \\
+\hline
+{\em called\+\_\+id} & is the index of the called function \\
+\hline
+{\em call\+\_\+id} & is the index of the statement containing the call \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 295 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References C\+Get\+Call\+Graph(), Get\+Vertex(), S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Replace\+Call\+Point().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_a3e4d382c876899b61f2033f68d53159c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_a3e4d382c876899b61f2033f68d53159c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCallGraphManager_abbcca062dd81ae6a267d3eabe1a326fb}\label{classCallGraphManager_abbcca062dd81ae6a267d3eabe1a326fb}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Remove\+Call\+Point@{Remove\+Call\+Point}}
+\index{Remove\+Call\+Point@{Remove\+Call\+Point}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Remove\+Call\+Point()}{RemoveCallPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Call\+Graph\+Manager\+::\+Remove\+Call\+Point (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor}}]{e,  }\item[{const unsigned int}]{call\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Removes a call point. 
+
+
+\begin{DoxyItemize}
+\item The edge is completely removed if necessary 
+\begin{DoxyParams}{Parameters}
+{\em e} & is the edge in the call graph \\
+\hline
+{\em call\+\_\+id} & is the call graph point to remove \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+
+Definition at line 238 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References addressed\+\_\+functions, call\+\_\+graph, call\+\_\+graphs\+\_\+collection, called\+\_\+by, Compute\+Root\+And\+Reached\+Functions(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_abbcca062dd81ae6a267d3eabe1a326fb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCallGraphManager_a89010b404b275f6edc07b8c1f406d842}\label{classCallGraphManager_a89010b404b275f6edc07b8c1f406d842}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Replace\+Call\+Point@{Replace\+Call\+Point}}
+\index{Replace\+Call\+Point@{Replace\+Call\+Point}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Replace\+Call\+Point()}{ReplaceCallPoint()}}
+{\footnotesize\ttfamily void Call\+Graph\+Manager\+::\+Replace\+Call\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor}}]{e,  }\item[{const unsigned int}]{old\+\_\+call\+\_\+id,  }\item[{const unsigned int}]{new\+\_\+call\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Replaces a call point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & is the edge in the call graph \\
+\hline
+{\em old\+\_\+call\+\_\+id} & is the old call tree node id \\
+\hline
+{\em new\+\_\+call\+\_\+id} & is the new call tree node id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 306 of file call\+\_\+graph\+\_\+manager.\+cpp.
+
+
+
+References Add\+Call\+Point(), call\+\_\+graph, Function\+Edge\+Info\+::direct\+\_\+call, Function\+Edge\+Info\+::function\+\_\+address, Function\+Edge\+Info\+::indirect\+\_\+call, Remove\+Call\+Point(), and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d96/classCallGraphManager_a89010b404b275f6edc07b8c1f406d842_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classCallGraphManager_a88ab0415905abb68305cf2ed36f85329}\label{classCallGraphManager_a88ab0415905abb68305cf2ed36f85329}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!addressed\+\_\+functions@{addressed\+\_\+functions}}
+\index{addressed\+\_\+functions@{addressed\+\_\+functions}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{addressed\+\_\+functions}{addressed\_functions}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ Call\+Graph\+Manager\+::addressed\+\_\+functions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set of functions whose address is taken 
+
+
+
+Definition at line 102 of file call\+\_\+graph\+\_\+manager.\+hpp.
+
+
+
+Referenced by Add\+Call\+Point(), Exists\+Addressed\+Function(), Get\+Addressed\+Functions(), and Remove\+Call\+Point().
+
+\mbox{\Hypertarget{classCallGraphManager_a04e714703a5d955d0ddb00664e89467d}\label{classCallGraphManager_a04e714703a5d955d0ddb00664e89467d}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!allow\+\_\+recursive\+\_\+functions@{allow\+\_\+recursive\+\_\+functions}}
+\index{allow\+\_\+recursive\+\_\+functions@{allow\+\_\+recursive\+\_\+functions}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{allow\+\_\+recursive\+\_\+functions}{allow\_recursive\_functions}}
+{\footnotesize\ttfamily const bool Call\+Graph\+Manager\+::allow\+\_\+recursive\+\_\+functions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+True if recursive calls are allowed. 
+
+
+
+Definition at line 90 of file call\+\_\+graph\+\_\+manager.\+hpp.
+
+
+
+Referenced by Compute\+Root\+And\+Reached\+Functions(), and Get\+Reached\+Body\+Functions\+From().
+
+\mbox{\Hypertarget{classCallGraphManager_a32789cf408b416672af0758e44efa45c}\label{classCallGraphManager_a32789cf408b416672af0758e44efa45c}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!call\+\_\+graph@{call\+\_\+graph}}
+\index{call\+\_\+graph@{call\+\_\+graph}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{call\+\_\+graph}{call\_graph}}
+{\footnotesize\ttfamily const \hyperlink{call__graph_8hpp_a58f2b421619a32f5c5bc35e64f3346d3}{Call\+Graph\+Ref} Call\+Graph\+Manager\+::call\+\_\+graph\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The view of call graph with all the edges. 
+
+
+
+Definition at line 75 of file call\+\_\+graph\+\_\+manager.\+hpp.
+
+
+
+Referenced by Add\+Call\+Point(), Add\+Function(), C\+Get\+Call\+Graph(), Compute\+Root\+And\+Reached\+Functions(), Get\+Reached\+Body\+Functions\+From(), Get\+Root\+Functions(), Is\+Call\+Point(), Remove\+Call\+Point(), and Replace\+Call\+Point().
+
+\mbox{\Hypertarget{classCallGraphManager_a09ff858c02243ff6cec04659e65d5bb4}\label{classCallGraphManager_a09ff858c02243ff6cec04659e65d5bb4}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!call\+\_\+graphs\+\_\+collection@{call\+\_\+graphs\+\_\+collection}}
+\index{call\+\_\+graphs\+\_\+collection@{call\+\_\+graphs\+\_\+collection}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{call\+\_\+graphs\+\_\+collection}{call\_graphs\_collection}}
+{\footnotesize\ttfamily const \hyperlink{call__graph_8hpp_afccdc7a00d60cb4ee70f44b223f858bb}{Call\+Graphs\+Collection\+Ref} Call\+Graph\+Manager\+::call\+\_\+graphs\+\_\+collection\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 72 of file call\+\_\+graph\+\_\+manager.\+hpp.
+
+
+
+Referenced by Add\+Call\+Point(), Add\+Function(), C\+Get\+Acyclic\+Call\+Graph(), C\+Get\+Call\+Sub\+Graph(), and Remove\+Call\+Point().
+
+\mbox{\Hypertarget{classCallGraphManager_a61a98173b9b7f8c3058227eb3e371d5c}\label{classCallGraphManager_a61a98173b9b7f8c3058227eb3e371d5c}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!called\+\_\+by@{called\+\_\+by}}
+\index{called\+\_\+by@{called\+\_\+by}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{called\+\_\+by}{called\_by}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ $>$ Call\+Graph\+Manager\+::called\+\_\+by\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+put into relation function F\+\_\+i and the list of functions called by F\+\_\+i 
+
+
+
+Definition at line 81 of file call\+\_\+graph\+\_\+manager.\+hpp.
+
+
+
+Referenced by Add\+Call\+Point(), Add\+Function(), get\+\_\+called\+\_\+by(), Is\+Call\+Point(), and Remove\+Call\+Point().
+
+\mbox{\Hypertarget{classCallGraphManager_a8905c760cbe8ffad17aa77bb57c572a9}\label{classCallGraphManager_a8905c760cbe8ffad17aa77bb57c572a9}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily const int Call\+Graph\+Manager\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the debug level 
+
+
+
+Definition at line 108 of file call\+\_\+graph\+\_\+manager.\+hpp.
+
+
+
+Referenced by Add\+Call\+Point(), Add\+Function(), Compute\+Root\+And\+Reached\+Functions(), Is\+Call\+Point(), and Remove\+Call\+Point().
+
+\mbox{\Hypertarget{classCallGraphManager_a5ce1c00a1075535b68287a08e3fd6b1b}\label{classCallGraphManager_a5ce1c00a1075535b68287a08e3fd6b1b}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!function\+\_\+expander@{function\+\_\+expander}}
+\index{function\+\_\+expander@{function\+\_\+expander}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{function\+\_\+expander}{function\_expander}}
+{\footnotesize\ttfamily const Function\+Expander\+Const\+Ref Call\+Graph\+Manager\+::function\+\_\+expander}
+
+
+
+Functor used to check if the analysis should consider the body of a function. 
+
+
+
+Definition at line 118 of file call\+\_\+graph\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{classCallGraphManager_ad632d9efbc89d01b3073d7a8236aec31}\label{classCallGraphManager_ad632d9efbc89d01b3073d7a8236aec31}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!function\+I\+D\+\_\+vertex\+\_\+map@{function\+I\+D\+\_\+vertex\+\_\+map}}
+\index{function\+I\+D\+\_\+vertex\+\_\+map@{function\+I\+D\+\_\+vertex\+\_\+map}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{function\+I\+D\+\_\+vertex\+\_\+map}{functionID\_vertex\_map}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ Call\+Graph\+Manager\+::function\+I\+D\+\_\+vertex\+\_\+map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+put into relation function F\+\_\+i and the vertex in the call graph representing it 
+
+
+
+Definition at line 84 of file call\+\_\+graph\+\_\+manager.\+hpp.
+
+
+
+Referenced by Add\+Function(), get\+\_\+function(), Get\+Vertex(), and Is\+Vertex().
+
+\mbox{\Hypertarget{classCallGraphManager_a56c89c8fc4a0a38536bcd58005a428cb}\label{classCallGraphManager_a56c89c8fc4a0a38536bcd58005a428cb}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!Param@{Param}}
+\index{Param@{Param}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{Param}{Param}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Call\+Graph\+Manager\+::\+Param\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set of input parameters 
+
+
+
+Definition at line 105 of file call\+\_\+graph\+\_\+manager.\+hpp.
+
+
+
+Referenced by Compute\+Root\+And\+Reached\+Functions().
+
+\mbox{\Hypertarget{classCallGraphManager_a0416ed0f6be715340b059302d46b2d63}\label{classCallGraphManager_a0416ed0f6be715340b059302d46b2d63}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!reached\+\_\+body\+\_\+functions@{reached\+\_\+body\+\_\+functions}}
+\index{reached\+\_\+body\+\_\+functions@{reached\+\_\+body\+\_\+functions}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{reached\+\_\+body\+\_\+functions}{reached\_body\_functions}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ Call\+Graph\+Manager\+::reached\+\_\+body\+\_\+functions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+source code functions directly or indirectly called by the root functions 
+
+
+
+Definition at line 96 of file call\+\_\+graph\+\_\+manager.\+hpp.
+
+
+
+Referenced by Compute\+Root\+And\+Reached\+Functions(), Exists\+Addressed\+Function(), Get\+Addressed\+Functions(), and Get\+Reached\+Body\+Functions().
+
+\mbox{\Hypertarget{classCallGraphManager_a37bdf97b52e3503e6c8b7f28f54d11ef}\label{classCallGraphManager_a37bdf97b52e3503e6c8b7f28f54d11ef}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!reached\+\_\+library\+\_\+functions@{reached\+\_\+library\+\_\+functions}}
+\index{reached\+\_\+library\+\_\+functions@{reached\+\_\+library\+\_\+functions}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{reached\+\_\+library\+\_\+functions}{reached\_library\_functions}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ Call\+Graph\+Manager\+::reached\+\_\+library\+\_\+functions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+library functions directly or indirectly called by the root functions 
+
+
+
+Definition at line 99 of file call\+\_\+graph\+\_\+manager.\+hpp.
+
+
+
+Referenced by Compute\+Root\+And\+Reached\+Functions(), and Get\+Reached\+Library\+Functions().
+
+\mbox{\Hypertarget{classCallGraphManager_ad55ab572f629a824a3074728e2780640}\label{classCallGraphManager_ad55ab572f629a824a3074728e2780640}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!root\+\_\+functions@{root\+\_\+functions}}
+\index{root\+\_\+functions@{root\+\_\+functions}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{root\+\_\+functions}{root\_functions}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ Call\+Graph\+Manager\+::root\+\_\+functions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Root functions. 
+
+
+
+Definition at line 93 of file call\+\_\+graph\+\_\+manager.\+hpp.
+
+
+
+Referenced by Compute\+Root\+And\+Reached\+Functions(), and Get\+Root\+Functions().
+
+\mbox{\Hypertarget{classCallGraphManager_a84c91d6640ac211ba1d4286d16dcd5d1}\label{classCallGraphManager_a84c91d6640ac211ba1d4286d16dcd5d1}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!single\+\_\+root\+\_\+function@{single\+\_\+root\+\_\+function}}
+\index{single\+\_\+root\+\_\+function@{single\+\_\+root\+\_\+function}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{single\+\_\+root\+\_\+function}{single\_root\_function}}
+{\footnotesize\ttfamily const bool Call\+Graph\+Manager\+::single\+\_\+root\+\_\+function\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+True if only. 
+
+
+
+Definition at line 87 of file call\+\_\+graph\+\_\+manager.\+hpp.
+
+
+
+Referenced by Compute\+Root\+And\+Reached\+Functions().
+
+\mbox{\Hypertarget{classCallGraphManager_a9018abdd8aee3716e816c2854860dc1b}\label{classCallGraphManager_a9018abdd8aee3716e816c2854860dc1b}} 
+\index{Call\+Graph\+Manager@{Call\+Graph\+Manager}!tree\+\_\+manager@{tree\+\_\+manager}}
+\index{tree\+\_\+manager@{tree\+\_\+manager}!Call\+Graph\+Manager@{Call\+Graph\+Manager}}
+\subsubsection{\texorpdfstring{tree\+\_\+manager}{tree\_manager}}
+{\footnotesize\ttfamily const \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref} Call\+Graph\+Manager\+::tree\+\_\+manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The tree manager. 
+
+
+
+Definition at line 78 of file call\+\_\+graph\+\_\+manager.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/\hyperlink{call__graph__manager_8hpp}{call\+\_\+graph\+\_\+manager.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/\hyperlink{call__graph__manager_8cpp}{call\+\_\+graph\+\_\+manager.\+cpp}\end{DoxyCompactItemize}

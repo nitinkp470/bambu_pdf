@@ -1,0 +1,252 @@
+\hypertarget{parse__technology_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/parse\+\_\+technology.cpp File Reference}
+\label{parse__technology_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/parse\+\_\+technology.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/parse\+\_\+technology.\+cpp}}
+
+
+Implementation of the technology parsing interface function.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+B\+O\+O\+L\+E\+A\+N\+\_\+\+P\+A\+R\+S\+E\+R\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+F\+R\+O\+M\+\_\+\+L\+I\+B\+E\+R\+T\+Y.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}parse\+\_\+technology.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}library\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}file\+I\+O.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}polixml.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+dom\+\_\+parser.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$iosfwd$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}simple\+\_\+indent.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/algorithm/string/trim.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/filesystem.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cpu\+\_\+time.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utility.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+Include dependency graph for parse\+\_\+technology.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d83/parse__technology_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{parse__technology_8cpp_add6385920d38280b52afd077a32a4a66}{read\+\_\+technology\+\_\+\+File} (const std\+::string \&fn, const \hyperlink{technology__manager_8hpp_a4b9ecd440c804109c962654f9227244e}{technology\+\_\+manager\+Ref} \&TM, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&Param, const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref} \&device)
+\begin{DoxyCompactList}\small\item\em Autoheader include. \end{DoxyCompactList}\item 
+void \hyperlink{parse__technology_8cpp_a6ed8213caa792c279618da6099b66397}{read\+\_\+technology\+\_\+library} (const \hyperlink{technology__manager_8hpp_a4b9ecd440c804109c962654f9227244e}{technology\+\_\+manager\+Ref} \&TM, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&Param, const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref} \&device)
+\begin{DoxyCompactList}\small\item\em Read and update a library or a set of libraries based on the parameter options. \end{DoxyCompactList}\item 
+void \hyperlink{parse__technology_8cpp_a1fd3444f6749670316a9539cf8768904}{write\+\_\+technology\+\_\+\+File} (unsigned int type, const std\+::string \&, const \hyperlink{technology__manager_8hpp_a4b9ecd440c804109c962654f9227244e}{technology\+\_\+manager\+Ref} \&, \hyperlink{target__device_8hpp_a476becc690220f0805ce73006449c732}{Target\+Device\+\_\+\+Type}, const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \&)
+\begin{DoxyCompactList}\small\item\em Write a file describing the technology data structures. \end{DoxyCompactList}\item 
+void \hyperlink{parse__technology_8cpp_a05cca20bf594fd9ea49344d5dc805512}{write\+\_\+technology\+\_\+\+File} (unsigned int type, const std\+::string \&f, \hyperlink{classlibrary__manager}{library\+\_\+manager} $\ast$LM, \hyperlink{target__device_8hpp_a476becc690220f0805ce73006449c732}{Target\+Device\+\_\+\+Type} dv\+\_\+type)
+\item 
+void \hyperlink{parse__technology_8cpp_a73e7b8e45926f4356adf78dffcdd4973}{write\+\_\+xml\+\_\+technology\+\_\+\+File} (const std\+::string \&f, \hyperlink{classlibrary__manager}{library\+\_\+manager} $\ast$LM, \hyperlink{target__device_8hpp_a476becc690220f0805ce73006449c732}{Target\+Device\+\_\+\+Type} dv\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Write an xml file describing a single library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of the technology parsing interface function. 
+
+Implementation of the functions that parse the technology information from files.
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{parse__technology_8cpp_add6385920d38280b52afd077a32a4a66}\label{parse__technology_8cpp_add6385920d38280b52afd077a32a4a66}} 
+\index{parse\+\_\+technology.\+cpp@{parse\+\_\+technology.\+cpp}!read\+\_\+technology\+\_\+\+File@{read\+\_\+technology\+\_\+\+File}}
+\index{read\+\_\+technology\+\_\+\+File@{read\+\_\+technology\+\_\+\+File}!parse\+\_\+technology.\+cpp@{parse\+\_\+technology.\+cpp}}
+\subsubsection{\texorpdfstring{read\+\_\+technology\+\_\+\+File()}{read\_technology\_File()}}
+{\footnotesize\ttfamily void read\+\_\+technology\+\_\+\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn,  }\item[{const \hyperlink{technology__manager_8hpp_a4b9ecd440c804109c962654f9227244e}{technology\+\_\+manager\+Ref} \&}]{TM,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&}]{Param,  }\item[{const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref} \&}]{device }\end{DoxyParamCaption})}
+
+
+
+Autoheader include. 
+
+Read an xml file describing the technology data structures.
+
+S\+TL include utility include F\+I\+X\+ME\+: setting paraemeters 
+
+Definition at line 88 of file parse\+\_\+technology.\+cpp.
+
+
+
+References D\+E\+S\+I\+GN, X\+M\+L\+Dom\+Parser\+::\+Exec(), refcount$<$ T $>$\+::get(), X\+M\+L\+Dom\+Parser\+::get\+\_\+document(), technology\+\_\+manager\+::get\+\_\+library\+\_\+list(), test\+\_\+panda\+::parser, P\+R\+O\+X\+Y\+\_\+\+L\+I\+B\+R\+A\+RY, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, W\+O\+R\+K\+\_\+\+L\+I\+B\+R\+A\+RY, and technology\+\_\+manager\+::xload().
+
+
+
+Referenced by Load\+File\+Technology\+::\+Exec(), and read\+\_\+technology\+\_\+library().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d41/parse__technology_8cpp_add6385920d38280b52afd077a32a4a66_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d41/parse__technology_8cpp_add6385920d38280b52afd077a32a4a66_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{parse__technology_8cpp_a6ed8213caa792c279618da6099b66397}\label{parse__technology_8cpp_a6ed8213caa792c279618da6099b66397}} 
+\index{parse\+\_\+technology.\+cpp@{parse\+\_\+technology.\+cpp}!read\+\_\+technology\+\_\+library@{read\+\_\+technology\+\_\+library}}
+\index{read\+\_\+technology\+\_\+library@{read\+\_\+technology\+\_\+library}!parse\+\_\+technology.\+cpp@{parse\+\_\+technology.\+cpp}}
+\subsubsection{\texorpdfstring{read\+\_\+technology\+\_\+library()}{read\_technology\_library()}}
+{\footnotesize\ttfamily void read\+\_\+technology\+\_\+library (\begin{DoxyParamCaption}\item[{const \hyperlink{technology__manager_8hpp_a4b9ecd440c804109c962654f9227244e}{technology\+\_\+manager\+Ref} \&}]{TM,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&}]{param,  }\item[{const \hyperlink{target__device_8hpp_acedb2b7a617e27e6354a8049fee44eda}{target\+\_\+device\+Ref} \&}]{device }\end{DoxyParamCaption})}
+
+
+
+Read and update a library or a set of libraries based on the parameter options. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TM} & is the technology manager. \\
+\hline
+{\em Param} & is the class containing all the parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 140 of file parse\+\_\+technology.\+cpp.
+
+
+
+References D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, file\+I\+O\+\_\+istream\+\_\+open(), refcount$<$ T $>$\+::get(), technology\+\_\+manager\+::get\+\_\+library\+\_\+manager(), Get\+Leaf\+File\+Name(), technology\+\_\+manager\+::is\+\_\+library\+\_\+manager(), O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM, print\+\_\+cpu\+\_\+time(), P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, read\+\_\+technology\+\_\+\+File(), library\+\_\+manager\+::set\+\_\+info(), Split\+String(), S\+T\+A\+R\+T\+\_\+\+T\+I\+ME, S\+T\+O\+P\+\_\+\+T\+I\+ME, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, write\+\_\+technology\+\_\+\+File(), and technology\+\_\+manager\+::\+X\+ML.
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d41/parse__technology_8cpp_a6ed8213caa792c279618da6099b66397_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{d5/d41/parse__technology_8cpp_a6ed8213caa792c279618da6099b66397_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{parse__technology_8cpp_a1fd3444f6749670316a9539cf8768904}\label{parse__technology_8cpp_a1fd3444f6749670316a9539cf8768904}} 
+\index{parse\+\_\+technology.\+cpp@{parse\+\_\+technology.\+cpp}!write\+\_\+technology\+\_\+\+File@{write\+\_\+technology\+\_\+\+File}}
+\index{write\+\_\+technology\+\_\+\+File@{write\+\_\+technology\+\_\+\+File}!parse\+\_\+technology.\+cpp@{parse\+\_\+technology.\+cpp}}
+\subsubsection{\texorpdfstring{write\+\_\+technology\+\_\+\+File()}{write\_technology\_File()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void write\+\_\+technology\+\_\+\+File (\begin{DoxyParamCaption}\item[{unsigned int}]{type,  }\item[{const std\+::string \&}]{f,  }\item[{const \hyperlink{technology__manager_8hpp_a4b9ecd440c804109c962654f9227244e}{technology\+\_\+manager\+Ref} \&}]{TM,  }\item[{\hyperlink{target__device_8hpp_a476becc690220f0805ce73006449c732}{Target\+Device\+\_\+\+Type}}]{dv\+\_\+type,  }\item[{const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \&}]{libraries = {\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$~std\+:\+:string~$>$()} }\end{DoxyParamCaption})}
+
+
+
+Write a file describing the technology data structures. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & the output file name \\
+\hline
+{\em TM} & is the technology manager. \\
+\hline
+{\em libraries} & names of the libraries to dump. If empty or not given, it dumps all libraries \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 334 of file parse\+\_\+technology.\+cpp.
+
+
+
+References technology\+\_\+manager\+::\+L\+EF, technology\+\_\+manager\+::\+L\+IB, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and technology\+\_\+manager\+::\+X\+ML.
+
+
+
+Referenced by read\+\_\+technology\+\_\+library().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d41/parse__technology_8cpp_a1fd3444f6749670316a9539cf8768904_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{parse__technology_8cpp_a05cca20bf594fd9ea49344d5dc805512}\label{parse__technology_8cpp_a05cca20bf594fd9ea49344d5dc805512}} 
+\index{parse\+\_\+technology.\+cpp@{parse\+\_\+technology.\+cpp}!write\+\_\+technology\+\_\+\+File@{write\+\_\+technology\+\_\+\+File}}
+\index{write\+\_\+technology\+\_\+\+File@{write\+\_\+technology\+\_\+\+File}!parse\+\_\+technology.\+cpp@{parse\+\_\+technology.\+cpp}}
+\subsubsection{\texorpdfstring{write\+\_\+technology\+\_\+\+File()}{write\_technology\_File()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void write\+\_\+technology\+\_\+\+File (\begin{DoxyParamCaption}\item[{unsigned int}]{type,  }\item[{const std\+::string \&}]{f,  }\item[{\hyperlink{classlibrary__manager}{library\+\_\+manager} $\ast$}]{LM,  }\item[{\hyperlink{target__device_8hpp_a476becc690220f0805ce73006449c732}{Target\+Device\+\_\+\+Type}}]{dv\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 377 of file parse\+\_\+technology.\+cpp.
+
+
+
+References technology\+\_\+manager\+::\+L\+EF, technology\+\_\+manager\+::\+L\+IB, write\+\_\+xml\+\_\+technology\+\_\+\+File(), and technology\+\_\+manager\+::\+X\+ML.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d41/parse__technology_8cpp_a05cca20bf594fd9ea49344d5dc805512_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{parse__technology_8cpp_a73e7b8e45926f4356adf78dffcdd4973}\label{parse__technology_8cpp_a73e7b8e45926f4356adf78dffcdd4973}} 
+\index{parse\+\_\+technology.\+cpp@{parse\+\_\+technology.\+cpp}!write\+\_\+xml\+\_\+technology\+\_\+\+File@{write\+\_\+xml\+\_\+technology\+\_\+\+File}}
+\index{write\+\_\+xml\+\_\+technology\+\_\+\+File@{write\+\_\+xml\+\_\+technology\+\_\+\+File}!parse\+\_\+technology.\+cpp@{parse\+\_\+technology.\+cpp}}
+\subsubsection{\texorpdfstring{write\+\_\+xml\+\_\+technology\+\_\+\+File()}{write\_xml\_technology\_File()}}
+{\footnotesize\ttfamily void write\+\_\+xml\+\_\+technology\+\_\+\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{f,  }\item[{\hyperlink{classlibrary__manager}{library\+\_\+manager} $\ast$}]{LM,  }\item[{\hyperlink{target__device_8hpp_a476becc690220f0805ce73006449c732}{Target\+Device\+\_\+\+Type}}]{dv\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Write an xml file describing a single library. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & the output file name \\
+\hline
+{\em LM} & is the pointer to the library to be written \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 397 of file parse\+\_\+technology.\+cpp.
+
+
+
+References xml\+\_\+document\+::create\+\_\+root\+\_\+node(), D\+E\+S\+I\+GN, P\+R\+O\+X\+Y\+\_\+\+L\+I\+B\+R\+A\+RY, library\+\_\+manager\+::set\+\_\+info(), T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG, W\+O\+R\+K\+\_\+\+L\+I\+B\+R\+A\+RY, xml\+\_\+document\+::write\+\_\+to\+\_\+file\+\_\+formatted(), write\+\_\+xml\+\_\+technology\+\_\+\+File(), library\+\_\+manager\+::\+X\+ML, and library\+\_\+manager\+::xwrite().
+
+
+
+Referenced by library\+\_\+manager\+::get\+\_\+info(), write\+\_\+technology\+\_\+\+File(), and write\+\_\+xml\+\_\+technology\+\_\+\+File().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d41/parse__technology_8cpp_a73e7b8e45926f4356adf78dffcdd4973_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d41/parse__technology_8cpp_a73e7b8e45926f4356adf78dffcdd4973_icgraph}
+\end{center}
+\end{figure}

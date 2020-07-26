@@ -1,0 +1,610 @@
+\hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/documentation/tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.c File Reference}
+\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/documentation/tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{/home/osboxes/bambu/\+Pand\+A-\/bambu/documentation/tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}imem.\+h\char`\"{}}\newline
+Include dependency graph for mips.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{dd/de6/tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a5c71a5e59a53413cd6c270266d63b031}{R}~0
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a6eced4f7caed8b9b31bcebd0209a8314}{A\+D\+DU}~33
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a90ec3d1c2c662135c26210b78a472d56}{S\+U\+BU}~35
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ac441f219c1d0f60b3f606e0e6f31abd2}{M\+U\+LT}~24
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a373b30f48f584a543bd869652eb34225}{M\+U\+L\+TU}~25
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ad4061310dc88d6c556cfb91cb278ae05}{M\+F\+HI}~16
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a2c5fb79d0480b74c1fedf37affed197c}{M\+F\+LO}~18
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_acd1b97556dfbbac61063a63031d2f91d}{A\+ND}~36
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a3363ca4d6d3cc0230b2804280591c991}{OR}~37
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a45cd11034d1a7d86c3a88d36f5e7f1ab}{X\+OR}~38
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a189dc429a87af5f7abf3c53b32d7889b}{S\+LL}~0
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a391959af0568008f17f41df83486de19}{S\+RL}~2
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a88c66bd83a52f8af1b3c9d5e092b6052}{S\+L\+LV}~4
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_acca016f684440550f9b9afbbdca9ed5f}{S\+R\+LV}~6
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a0cfd10e565d5dc821bd50e5d7409b31d}{S\+LT}~42
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_afedbd56796babcf8aab4442d0d962c08}{S\+L\+TU}~43
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a2be408601f1de958fd6243bd97efe40f}{JR}~8
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ad59246fadffe0205c1ecfcd147c407f6}{J}~2
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a9f8938c41dd93edd84b1e8319560cea7}{J\+AL}~3
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a1e15de33589a110fadf1bdd5ef0586ed}{A\+D\+D\+IU}~9
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a6629468bc5e11d36efed350908f2dff4}{A\+N\+DI}~12
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ade8154dab9666f65904be28a9e4cadb5}{O\+RI}~13
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a0ea404a13da2acb9a3ef80eda91bd7e6}{X\+O\+RI}~14
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ad4b135b7ba4889a823f26261d8de74b3}{LW}~35
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a4b95e941f44a20ea60512bbe2065f0b6}{SW}~43
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ae253f17e1792a8324699cdaca73cf387}{L\+UI}~15
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a9e21b1bbecbc6c491f4cb7de14e9b72c}{B\+EQ}~4
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a4e557ce20e8f60bde33104f27f2f6f5d}{B\+NE}~5
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ab15c73a182b1e8fb8319afa8c7103001}{B\+G\+EZ}~1
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a447393f86b3ef95b4684a1c8c814ece9}{S\+L\+TI}~10
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ac4c87fcf602a98c6adfb0eb960ba7c40}{S\+L\+T\+IU}~11
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_acdcba14f96624f8e5b44f93248b11421}{I\+A\+D\+DR}(x)~(((x)\&0x000000ff)$>$$>$2)
+\item 
+\#define \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_aed2be17bdbf3982b79871870d98d7a61}{D\+A\+D\+DR}(x)~(((x)\&0x000000ff)$>$$>$2)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a5208787b1234b98156b84b665406b93c}{main\+\_\+result}
+\item 
+const int \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a5bbae38a6853eac231d3bb734d82fe8f}{A} \mbox{[}8\mbox{]} = \{ 22, 5, -\/9, 3, -\/17, 38, 0, 11 \}
+\item 
+const int \hyperlink{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a7da76d8b9f6602d218a84553941622d3}{out\+Data} \mbox{[}8\mbox{]} = \{ -\/17, -\/9, 0, 3, 5, 11, 22, 38 \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a1e15de33589a110fadf1bdd5ef0586ed}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a1e15de33589a110fadf1bdd5ef0586ed}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!A\+D\+D\+IU@{A\+D\+D\+IU}}
+\index{A\+D\+D\+IU@{A\+D\+D\+IU}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{A\+D\+D\+IU}{ADDIU}}
+{\footnotesize\ttfamily \#define A\+D\+D\+IU~9}
+
+
+
+Definition at line 67 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a6eced4f7caed8b9b31bcebd0209a8314}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a6eced4f7caed8b9b31bcebd0209a8314}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!A\+D\+DU@{A\+D\+DU}}
+\index{A\+D\+DU@{A\+D\+DU}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{A\+D\+DU}{ADDU}}
+{\footnotesize\ttfamily \#define A\+D\+DU~33}
+
+
+
+Definition at line 42 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_acd1b97556dfbbac61063a63031d2f91d}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_acd1b97556dfbbac61063a63031d2f91d}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!A\+ND@{A\+ND}}
+\index{A\+ND@{A\+ND}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{A\+ND}{AND}}
+{\footnotesize\ttfamily \#define A\+ND~36}
+
+
+
+Definition at line 51 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a6629468bc5e11d36efed350908f2dff4}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a6629468bc5e11d36efed350908f2dff4}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!A\+N\+DI@{A\+N\+DI}}
+\index{A\+N\+DI@{A\+N\+DI}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{A\+N\+DI}{ANDI}}
+{\footnotesize\ttfamily \#define A\+N\+DI~12}
+
+
+
+Definition at line 68 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a9e21b1bbecbc6c491f4cb7de14e9b72c}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a9e21b1bbecbc6c491f4cb7de14e9b72c}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!B\+EQ@{B\+EQ}}
+\index{B\+EQ@{B\+EQ}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{B\+EQ}{BEQ}}
+{\footnotesize\ttfamily \#define B\+EQ~4}
+
+
+
+Definition at line 76 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ab15c73a182b1e8fb8319afa8c7103001}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ab15c73a182b1e8fb8319afa8c7103001}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!B\+G\+EZ@{B\+G\+EZ}}
+\index{B\+G\+EZ@{B\+G\+EZ}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{B\+G\+EZ}{BGEZ}}
+{\footnotesize\ttfamily \#define B\+G\+EZ~1}
+
+
+
+Definition at line 78 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a4e557ce20e8f60bde33104f27f2f6f5d}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a4e557ce20e8f60bde33104f27f2f6f5d}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!B\+NE@{B\+NE}}
+\index{B\+NE@{B\+NE}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{B\+NE}{BNE}}
+{\footnotesize\ttfamily \#define B\+NE~5}
+
+
+
+Definition at line 77 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_aed2be17bdbf3982b79871870d98d7a61}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_aed2be17bdbf3982b79871870d98d7a61}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!D\+A\+D\+DR@{D\+A\+D\+DR}}
+\index{D\+A\+D\+DR@{D\+A\+D\+DR}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{D\+A\+D\+DR}{DADDR}}
+{\footnotesize\ttfamily \#define D\+A\+D\+DR(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(((x)\&0x000000ff)$>$$>$2)}
+
+
+
+Definition at line 95 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_acdcba14f96624f8e5b44f93248b11421}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_acdcba14f96624f8e5b44f93248b11421}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!I\+A\+D\+DR@{I\+A\+D\+DR}}
+\index{I\+A\+D\+DR@{I\+A\+D\+DR}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{I\+A\+D\+DR}{IADDR}}
+{\footnotesize\ttfamily \#define I\+A\+D\+DR(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(((x)\&0x000000ff)$>$$>$2)}
+
+
+
+Definition at line 94 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ad59246fadffe0205c1ecfcd147c407f6}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ad59246fadffe0205c1ecfcd147c407f6}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!J@{J}}
+\index{J@{J}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{J}{J}}
+{\footnotesize\ttfamily \#define J~2}
+
+
+
+Definition at line 64 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a9f8938c41dd93edd84b1e8319560cea7}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a9f8938c41dd93edd84b1e8319560cea7}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!J\+AL@{J\+AL}}
+\index{J\+AL@{J\+AL}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{J\+AL}{JAL}}
+{\footnotesize\ttfamily \#define J\+AL~3}
+
+
+
+Definition at line 65 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a2be408601f1de958fd6243bd97efe40f}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a2be408601f1de958fd6243bd97efe40f}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!JR@{JR}}
+\index{JR@{JR}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{JR}{JR}}
+{\footnotesize\ttfamily \#define JR~8}
+
+
+
+Definition at line 62 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ae253f17e1792a8324699cdaca73cf387}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ae253f17e1792a8324699cdaca73cf387}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!L\+UI@{L\+UI}}
+\index{L\+UI@{L\+UI}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{L\+UI}{LUI}}
+{\footnotesize\ttfamily \#define L\+UI~15}
+
+
+
+Definition at line 74 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ad4b135b7ba4889a823f26261d8de74b3}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ad4b135b7ba4889a823f26261d8de74b3}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!LW@{LW}}
+\index{LW@{LW}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{LW}{LW}}
+{\footnotesize\ttfamily \#define LW~35}
+
+
+
+Definition at line 72 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ad4061310dc88d6c556cfb91cb278ae05}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ad4061310dc88d6c556cfb91cb278ae05}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!M\+F\+HI@{M\+F\+HI}}
+\index{M\+F\+HI@{M\+F\+HI}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{M\+F\+HI}{MFHI}}
+{\footnotesize\ttfamily \#define M\+F\+HI~16}
+
+
+
+Definition at line 48 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a2c5fb79d0480b74c1fedf37affed197c}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a2c5fb79d0480b74c1fedf37affed197c}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!M\+F\+LO@{M\+F\+LO}}
+\index{M\+F\+LO@{M\+F\+LO}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{M\+F\+LO}{MFLO}}
+{\footnotesize\ttfamily \#define M\+F\+LO~18}
+
+
+
+Definition at line 49 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ac441f219c1d0f60b3f606e0e6f31abd2}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ac441f219c1d0f60b3f606e0e6f31abd2}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!M\+U\+LT@{M\+U\+LT}}
+\index{M\+U\+LT@{M\+U\+LT}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{M\+U\+LT}{MULT}}
+{\footnotesize\ttfamily \#define M\+U\+LT~24}
+
+
+
+Definition at line 45 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a373b30f48f584a543bd869652eb34225}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a373b30f48f584a543bd869652eb34225}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!M\+U\+L\+TU@{M\+U\+L\+TU}}
+\index{M\+U\+L\+TU@{M\+U\+L\+TU}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{M\+U\+L\+TU}{MULTU}}
+{\footnotesize\ttfamily \#define M\+U\+L\+TU~25}
+
+
+
+Definition at line 46 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a3363ca4d6d3cc0230b2804280591c991}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a3363ca4d6d3cc0230b2804280591c991}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!OR@{OR}}
+\index{OR@{OR}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{OR}{OR}}
+{\footnotesize\ttfamily \#define OR~37}
+
+
+
+Definition at line 52 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ade8154dab9666f65904be28a9e4cadb5}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ade8154dab9666f65904be28a9e4cadb5}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!O\+RI@{O\+RI}}
+\index{O\+RI@{O\+RI}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{O\+RI}{ORI}}
+{\footnotesize\ttfamily \#define O\+RI~13}
+
+
+
+Definition at line 69 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a5c71a5e59a53413cd6c270266d63b031}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a5c71a5e59a53413cd6c270266d63b031}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!R@{R}}
+\index{R@{R}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{R}{R}}
+{\footnotesize\ttfamily \#define R~0}
+
+
+
+Definition at line 40 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a189dc429a87af5f7abf3c53b32d7889b}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a189dc429a87af5f7abf3c53b32d7889b}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!S\+LL@{S\+LL}}
+\index{S\+LL@{S\+LL}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{S\+LL}{SLL}}
+{\footnotesize\ttfamily \#define S\+LL~0}
+
+
+
+Definition at line 54 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a88c66bd83a52f8af1b3c9d5e092b6052}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a88c66bd83a52f8af1b3c9d5e092b6052}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!S\+L\+LV@{S\+L\+LV}}
+\index{S\+L\+LV@{S\+L\+LV}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{S\+L\+LV}{SLLV}}
+{\footnotesize\ttfamily \#define S\+L\+LV~4}
+
+
+
+Definition at line 56 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a0cfd10e565d5dc821bd50e5d7409b31d}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a0cfd10e565d5dc821bd50e5d7409b31d}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!S\+LT@{S\+LT}}
+\index{S\+LT@{S\+LT}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{S\+LT}{SLT}}
+{\footnotesize\ttfamily \#define S\+LT~42}
+
+
+
+Definition at line 59 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a447393f86b3ef95b4684a1c8c814ece9}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a447393f86b3ef95b4684a1c8c814ece9}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!S\+L\+TI@{S\+L\+TI}}
+\index{S\+L\+TI@{S\+L\+TI}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{S\+L\+TI}{SLTI}}
+{\footnotesize\ttfamily \#define S\+L\+TI~10}
+
+
+
+Definition at line 80 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ac4c87fcf602a98c6adfb0eb960ba7c40}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ac4c87fcf602a98c6adfb0eb960ba7c40}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!S\+L\+T\+IU@{S\+L\+T\+IU}}
+\index{S\+L\+T\+IU@{S\+L\+T\+IU}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{S\+L\+T\+IU}{SLTIU}}
+{\footnotesize\ttfamily \#define S\+L\+T\+IU~11}
+
+
+
+Definition at line 81 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_afedbd56796babcf8aab4442d0d962c08}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_afedbd56796babcf8aab4442d0d962c08}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!S\+L\+TU@{S\+L\+TU}}
+\index{S\+L\+TU@{S\+L\+TU}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{S\+L\+TU}{SLTU}}
+{\footnotesize\ttfamily \#define S\+L\+TU~43}
+
+
+
+Definition at line 60 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a391959af0568008f17f41df83486de19}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a391959af0568008f17f41df83486de19}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!S\+RL@{S\+RL}}
+\index{S\+RL@{S\+RL}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{S\+RL}{SRL}}
+{\footnotesize\ttfamily \#define S\+RL~2}
+
+
+
+Definition at line 55 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_acca016f684440550f9b9afbbdca9ed5f}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_acca016f684440550f9b9afbbdca9ed5f}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!S\+R\+LV@{S\+R\+LV}}
+\index{S\+R\+LV@{S\+R\+LV}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{S\+R\+LV}{SRLV}}
+{\footnotesize\ttfamily \#define S\+R\+LV~6}
+
+
+
+Definition at line 57 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a90ec3d1c2c662135c26210b78a472d56}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a90ec3d1c2c662135c26210b78a472d56}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!S\+U\+BU@{S\+U\+BU}}
+\index{S\+U\+BU@{S\+U\+BU}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{S\+U\+BU}{SUBU}}
+{\footnotesize\ttfamily \#define S\+U\+BU~35}
+
+
+
+Definition at line 43 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a4b95e941f44a20ea60512bbe2065f0b6}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a4b95e941f44a20ea60512bbe2065f0b6}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!SW@{SW}}
+\index{SW@{SW}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{SW}{SW}}
+{\footnotesize\ttfamily \#define SW~43}
+
+
+
+Definition at line 73 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a45cd11034d1a7d86c3a88d36f5e7f1ab}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a45cd11034d1a7d86c3a88d36f5e7f1ab}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!X\+OR@{X\+OR}}
+\index{X\+OR@{X\+OR}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{X\+OR}{XOR}}
+{\footnotesize\ttfamily \#define X\+OR~38}
+
+
+
+Definition at line 53 of file mips.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a0ea404a13da2acb9a3ef80eda91bd7e6}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a0ea404a13da2acb9a3ef80eda91bd7e6}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!X\+O\+RI@{X\+O\+RI}}
+\index{X\+O\+RI@{X\+O\+RI}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{X\+O\+RI}{XORI}}
+{\footnotesize\ttfamily \#define X\+O\+RI~14}
+
+
+
+Definition at line 70 of file mips.\+c.
+
+
+
+Referenced by main().
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!main@{main}}
+\index{main@{main}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 98 of file mips.\+c.
+
+
+
+References A, A\+D\+D\+IU, A\+D\+DU, A\+ND, A\+N\+DI, B\+EQ, B\+G\+EZ, B\+NE, D\+A\+D\+DR, I\+A\+D\+DR, imem, J, J\+AL, JR, L\+UI, LW, main\+\_\+result, M\+F\+HI, M\+F\+LO, M\+U\+LT, M\+U\+L\+TU, OR, O\+RI, out\+Data, R, S\+LL, S\+L\+LV, S\+LT, S\+L\+TI, S\+L\+T\+IU, S\+L\+TU, S\+RL, S\+R\+LV, S\+U\+BU, SW, X\+OR, and X\+O\+RI.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a5bbae38a6853eac231d3bb734d82fe8f}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a5bbae38a6853eac231d3bb734d82fe8f}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!A@{A}}
+\index{A@{A}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{A}{A}}
+{\footnotesize\ttfamily const int A\mbox{[}8\mbox{]} = \{ 22, 5, -\/9, 3, -\/17, 38, 0, 11 \}}
+
+
+
+Definition at line 91 of file mips.\+c.
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a5208787b1234b98156b84b665406b93c}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a5208787b1234b98156b84b665406b93c}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!main\+\_\+result@{main\+\_\+result}}
+\index{main\+\_\+result@{main\+\_\+result}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{main\+\_\+result}{main\_result}}
+{\footnotesize\ttfamily int main\+\_\+result}
+
+
+
+Definition at line 38 of file mips.\+c.
+
+\mbox{\Hypertarget{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a7da76d8b9f6602d218a84553941622d3}\label{tutorial__pnnl__2019_2memory_2sixth_2solution_2mips_8c_a7da76d8b9f6602d218a84553941622d3}} 
+\index{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}!out\+Data@{out\+Data}}
+\index{out\+Data@{out\+Data}!tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c@{tutorial\+\_\+pnnl\+\_\+2019/memory/sixth/solution/mips.\+c}}
+\subsubsection{\texorpdfstring{out\+Data}{outData}}
+{\footnotesize\ttfamily const int out\+Data\mbox{[}8\mbox{]} = \{ -\/17, -\/9, 0, 3, 5, 11, 22, 38 \}}
+
+
+
+Definition at line 92 of file mips.\+c.
+

@@ -1,0 +1,428 @@
+\hypertarget{structStateInfo}{}\section{State\+Info Struct Reference}
+\label{structStateInfo}\index{State\+Info@{State\+Info}}
+
+
+Structure holding information about a node into graph.  
+
+
+
+
+{\ttfamily \#include $<$state\+\_\+transition\+\_\+graph.\+hpp$>$}
+
+
+
+Inheritance diagram for State\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{d4/da4/structStateInfo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for State\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/de1/structStateInfo__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{structStateInfo_af50fac3fb978c2de96361a42d8087962}{print} (std\+::ostream \&os, const int detail\+\_\+level) const override
+\begin{DoxyCompactList}\small\item\em Implementation of print method for this kind of node. \end{DoxyCompactList}\item 
+\hyperlink{structStateInfo_abacb72861ce64fb720801c42802a5068}{State\+Info} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classWrefcount}{Wrefcount}$<$ const \hyperlink{classHLS__manager}{H\+L\+S\+\_\+manager} $>$ \hyperlink{structStateInfo_ad9d6e719a4e7174e79525787007ff965}{H\+L\+S\+Mgr}
+\begin{DoxyCompactList}\small\item\em Weak Reference to function behavior. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structStateInfo_af1ebd3667e849e900bdafec726887adc}{fun\+Id}
+\begin{DoxyCompactList}\small\item\em function identifier of the function from which the state has been derived \end{DoxyCompactList}\item 
+std\+::string \hyperlink{structStateInfo_acb903ffca2d2e1e690a5de8075c115b7}{name}
+\begin{DoxyCompactList}\small\item\em string used to give a label to the state \end{DoxyCompactList}\item 
+std\+::list$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{structStateInfo_adfebba4a9da0a2f3c77f198a53055076}{executing\+\_\+operations}
+\begin{DoxyCompactList}\small\item\em set of operation vertices which require inputs in this state \end{DoxyCompactList}\item 
+std\+::list$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{structStateInfo_a6bdb118c9adb909da0722d4bc720c2e4}{starting\+\_\+operations}
+\begin{DoxyCompactList}\small\item\em set of operation vertices which starts in this state \end{DoxyCompactList}\item 
+std\+::list$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{structStateInfo_a85b521a26e34394aabb7c38f742a95cf}{ending\+\_\+operations}
+\begin{DoxyCompactList}\small\item\em set of operation vertices completing their execution in this state \end{DoxyCompactList}\item 
+std\+::list$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{structStateInfo_a06b35ad4218b0bc1e3e952357aa14111}{onfly\+\_\+operations}
+\begin{DoxyCompactList}\small\item\em set of operation vertices already in execution at the beginning of this state \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{structStateInfo_ab90956fbe5d140d76c113535b830b41a}{B\+B\+\_\+ids}
+\begin{DoxyCompactList}\small\item\em set of BB ids associated with the state \end{DoxyCompactList}\item 
+bool \hyperlink{structStateInfo_a2e25972bb3ed0e6d42b33f71db4da2bd}{is\+\_\+dummy}
+\begin{DoxyCompactList}\small\item\em flag to check if the state is dummy or not \end{DoxyCompactList}\item 
+bool \hyperlink{structStateInfo_ad1d889cb48ee33781bea376337901fda}{is\+\_\+duplicated}
+\begin{DoxyCompactList}\small\item\em flag to check if the state is duplicated or not \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structStateInfo_a32780bd5c51bed1b2bed02bb4996a90c}{source\+Bb}
+\begin{DoxyCompactList}\small\item\em ID of the bb edge associated with the phi operation. \end{DoxyCompactList}\item 
+bool \hyperlink{structStateInfo_aa28e78be94499966b41c6011dffdefb7}{is\+Original\+State}
+\begin{DoxyCompactList}\small\item\em flag to check if the state is duplicated and the original one \end{DoxyCompactList}\item 
+\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \hyperlink{structStateInfo_a445827ad7c0440518f07baf5c62eb20b}{cloned\+State}
+\begin{DoxyCompactList}\small\item\em pointer to the cloned state \end{DoxyCompactList}\item 
+bool \hyperlink{structStateInfo_ae0b73ddc83acae2d5e1ffb6d01894b57}{all\+\_\+paths}
+\begin{DoxyCompactList}\small\item\em this state is duplicated but manage of path incoming in the phis \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{structStateInfo_a19945c7bebd3e104f6003e24e224856c}{moved\+\_\+op\+\_\+def\+\_\+set}
+\begin{DoxyCompactList}\small\item\em set of ssa vars defined in the state by the moved operations \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \hyperlink{structStateInfo_a8a506af4e9a00aa0d390b384f8ad60b2}{moved\+\_\+op\+\_\+use\+\_\+set}
+\begin{DoxyCompactList}\small\item\em set of ssa vars used in the state by the moved operations \end{DoxyCompactList}\item 
+std\+::list$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{structStateInfo_a41fc3ae3e3b718e7081f254e2b2a9dd0}{moved\+\_\+exec\+\_\+op}
+\begin{DoxyCompactList}\small\item\em set of moved operations in execution \end{DoxyCompactList}\item 
+std\+::list$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{structStateInfo_aa4fe1013312b3b0cd7b9f3e64be4f57e}{moved\+\_\+ending\+\_\+op}
+\begin{DoxyCompactList}\small\item\em set of moved operations ending in this state \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structure holding information about a node into graph. 
+
+A node represent an execution state of the machine. It contains operations to be started when execution will reach this state. 
+
+Definition at line 81 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structStateInfo_abacb72861ce64fb720801c42802a5068}\label{structStateInfo_abacb72861ce64fb720801c42802a5068}} 
+\index{State\+Info@{State\+Info}!State\+Info@{State\+Info}}
+\index{State\+Info@{State\+Info}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{State\+Info()}{StateInfo()}}
+{\footnotesize\ttfamily State\+Info\+::\+State\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 147 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structStateInfo_af50fac3fb978c2de96361a42d8087962}\label{structStateInfo_af50fac3fb978c2de96361a42d8087962}} 
+\index{State\+Info@{State\+Info}!print@{print}}
+\index{print@{print}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void State\+Info\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const int}]{detail\+\_\+level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementation of print method for this kind of node. 
+
+. include
+
+It simply prints the list of operations contained into this state 
+\begin{DoxyParams}{Parameters}
+{\em os} & is the stream reference where you want to print\\
+\hline
+\end{DoxyParams}
+behavior includes hls include hls/scheduling tree include utility include 
+
+Reimplemented from \hyperlink{structNodeInfo_adacfeaff90018a35bde5211edbbd1114}{Node\+Info}.
+
+
+
+Definition at line 75 of file state\+\_\+transition\+\_\+graph.\+cpp.
+
+
+
+References Function\+Behavior\+::\+BB, B\+B\+\_\+ids, Function\+Behavior\+::\+C\+FG, ending\+\_\+operations, executing\+\_\+operations, fun\+Id, G\+E\+T\+\_\+\+N\+A\+ME, G\+E\+T\+\_\+\+T\+Y\+PE, H\+L\+S\+Mgr, Wrefcount$<$ T $>$\+::lock(), name, Number\+To\+String(), Behavioral\+Helper\+::print\+\_\+vertex(), S\+TR, T\+Y\+P\+E\+\_\+\+E\+N\+T\+RY, T\+Y\+P\+E\+\_\+\+E\+X\+IT, and T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dbd/structStateInfo_af50fac3fb978c2de96361a42d8087962_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structStateInfo_ae0b73ddc83acae2d5e1ffb6d01894b57}\label{structStateInfo_ae0b73ddc83acae2d5e1ffb6d01894b57}} 
+\index{State\+Info@{State\+Info}!all\+\_\+paths@{all\+\_\+paths}}
+\index{all\+\_\+paths@{all\+\_\+paths}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{all\+\_\+paths}{all\_paths}}
+{\footnotesize\ttfamily bool State\+Info\+::all\+\_\+paths}
+
+
+
+this state is duplicated but manage of path incoming in the phis 
+
+
+
+Definition at line 123 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{structStateInfo_ab90956fbe5d140d76c113535b830b41a}\label{structStateInfo_ab90956fbe5d140d76c113535b830b41a}} 
+\index{State\+Info@{State\+Info}!B\+B\+\_\+ids@{B\+B\+\_\+ids}}
+\index{B\+B\+\_\+ids@{B\+B\+\_\+ids}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{B\+B\+\_\+ids}{BB\_ids}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ State\+Info\+::\+B\+B\+\_\+ids}
+
+
+
+set of BB ids associated with the state 
+
+
+
+Definition at line 105 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+
+
+Referenced by print().
+
+\mbox{\Hypertarget{structStateInfo_a445827ad7c0440518f07baf5c62eb20b}\label{structStateInfo_a445827ad7c0440518f07baf5c62eb20b}} 
+\index{State\+Info@{State\+Info}!cloned\+State@{cloned\+State}}
+\index{cloned\+State@{cloned\+State}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{cloned\+State}{clonedState}}
+{\footnotesize\ttfamily \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} State\+Info\+::cloned\+State}
+
+
+
+pointer to the cloned state 
+
+
+
+Definition at line 120 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{structStateInfo_a85b521a26e34394aabb7c38f742a95cf}\label{structStateInfo_a85b521a26e34394aabb7c38f742a95cf}} 
+\index{State\+Info@{State\+Info}!ending\+\_\+operations@{ending\+\_\+operations}}
+\index{ending\+\_\+operations@{ending\+\_\+operations}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{ending\+\_\+operations}{ending\_operations}}
+{\footnotesize\ttfamily std\+::list$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ State\+Info\+::ending\+\_\+operations}
+
+
+
+set of operation vertices completing their execution in this state 
+
+
+
+Definition at line 99 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+
+
+Referenced by print().
+
+\mbox{\Hypertarget{structStateInfo_adfebba4a9da0a2f3c77f198a53055076}\label{structStateInfo_adfebba4a9da0a2f3c77f198a53055076}} 
+\index{State\+Info@{State\+Info}!executing\+\_\+operations@{executing\+\_\+operations}}
+\index{executing\+\_\+operations@{executing\+\_\+operations}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{executing\+\_\+operations}{executing\_operations}}
+{\footnotesize\ttfamily std\+::list$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ State\+Info\+::executing\+\_\+operations}
+
+
+
+set of operation vertices which require inputs in this state 
+
+
+
+Definition at line 93 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+
+
+Referenced by print().
+
+\mbox{\Hypertarget{structStateInfo_af1ebd3667e849e900bdafec726887adc}\label{structStateInfo_af1ebd3667e849e900bdafec726887adc}} 
+\index{State\+Info@{State\+Info}!fun\+Id@{fun\+Id}}
+\index{fun\+Id@{fun\+Id}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{fun\+Id}{funId}}
+{\footnotesize\ttfamily unsigned int State\+Info\+::fun\+Id}
+
+
+
+function identifier of the function from which the state has been derived 
+
+
+
+Definition at line 87 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+
+
+Referenced by print().
+
+\mbox{\Hypertarget{structStateInfo_ad9d6e719a4e7174e79525787007ff965}\label{structStateInfo_ad9d6e719a4e7174e79525787007ff965}} 
+\index{State\+Info@{State\+Info}!H\+L\+S\+Mgr@{H\+L\+S\+Mgr}}
+\index{H\+L\+S\+Mgr@{H\+L\+S\+Mgr}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{H\+L\+S\+Mgr}{HLSMgr}}
+{\footnotesize\ttfamily \hyperlink{classWrefcount}{Wrefcount}$<$const \hyperlink{classHLS__manager}{H\+L\+S\+\_\+manager}$>$ State\+Info\+::\+H\+L\+S\+Mgr}
+
+
+
+Weak Reference to function behavior. 
+
+
+
+Definition at line 84 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+
+
+Referenced by print().
+
+\mbox{\Hypertarget{structStateInfo_a2e25972bb3ed0e6d42b33f71db4da2bd}\label{structStateInfo_a2e25972bb3ed0e6d42b33f71db4da2bd}} 
+\index{State\+Info@{State\+Info}!is\+\_\+dummy@{is\+\_\+dummy}}
+\index{is\+\_\+dummy@{is\+\_\+dummy}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{is\+\_\+dummy}{is\_dummy}}
+{\footnotesize\ttfamily bool State\+Info\+::is\+\_\+dummy}
+
+
+
+flag to check if the state is dummy or not 
+
+
+
+Definition at line 108 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{structStateInfo_ad1d889cb48ee33781bea376337901fda}\label{structStateInfo_ad1d889cb48ee33781bea376337901fda}} 
+\index{State\+Info@{State\+Info}!is\+\_\+duplicated@{is\+\_\+duplicated}}
+\index{is\+\_\+duplicated@{is\+\_\+duplicated}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{is\+\_\+duplicated}{is\_duplicated}}
+{\footnotesize\ttfamily bool State\+Info\+::is\+\_\+duplicated}
+
+
+
+flag to check if the state is duplicated or not 
+
+
+
+Definition at line 111 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{structStateInfo_aa28e78be94499966b41c6011dffdefb7}\label{structStateInfo_aa28e78be94499966b41c6011dffdefb7}} 
+\index{State\+Info@{State\+Info}!is\+Original\+State@{is\+Original\+State}}
+\index{is\+Original\+State@{is\+Original\+State}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{is\+Original\+State}{isOriginalState}}
+{\footnotesize\ttfamily bool State\+Info\+::is\+Original\+State}
+
+
+
+flag to check if the state is duplicated and the original one 
+
+
+
+Definition at line 117 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{structStateInfo_aa4fe1013312b3b0cd7b9f3e64be4f57e}\label{structStateInfo_aa4fe1013312b3b0cd7b9f3e64be4f57e}} 
+\index{State\+Info@{State\+Info}!moved\+\_\+ending\+\_\+op@{moved\+\_\+ending\+\_\+op}}
+\index{moved\+\_\+ending\+\_\+op@{moved\+\_\+ending\+\_\+op}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{moved\+\_\+ending\+\_\+op}{moved\_ending\_op}}
+{\footnotesize\ttfamily std\+::list$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ State\+Info\+::moved\+\_\+ending\+\_\+op}
+
+
+
+set of moved operations ending in this state 
+
+
+
+Definition at line 135 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{structStateInfo_a41fc3ae3e3b718e7081f254e2b2a9dd0}\label{structStateInfo_a41fc3ae3e3b718e7081f254e2b2a9dd0}} 
+\index{State\+Info@{State\+Info}!moved\+\_\+exec\+\_\+op@{moved\+\_\+exec\+\_\+op}}
+\index{moved\+\_\+exec\+\_\+op@{moved\+\_\+exec\+\_\+op}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{moved\+\_\+exec\+\_\+op}{moved\_exec\_op}}
+{\footnotesize\ttfamily std\+::list$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ State\+Info\+::moved\+\_\+exec\+\_\+op}
+
+
+
+set of moved operations in execution 
+
+
+
+Definition at line 132 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{structStateInfo_a19945c7bebd3e104f6003e24e224856c}\label{structStateInfo_a19945c7bebd3e104f6003e24e224856c}} 
+\index{State\+Info@{State\+Info}!moved\+\_\+op\+\_\+def\+\_\+set@{moved\+\_\+op\+\_\+def\+\_\+set}}
+\index{moved\+\_\+op\+\_\+def\+\_\+set@{moved\+\_\+op\+\_\+def\+\_\+set}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{moved\+\_\+op\+\_\+def\+\_\+set}{moved\_op\_def\_set}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ State\+Info\+::moved\+\_\+op\+\_\+def\+\_\+set}
+
+
+
+set of ssa vars defined in the state by the moved operations 
+
+
+
+Definition at line 126 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{structStateInfo_a8a506af4e9a00aa0d390b384f8ad60b2}\label{structStateInfo_a8a506af4e9a00aa0d390b384f8ad60b2}} 
+\index{State\+Info@{State\+Info}!moved\+\_\+op\+\_\+use\+\_\+set@{moved\+\_\+op\+\_\+use\+\_\+set}}
+\index{moved\+\_\+op\+\_\+use\+\_\+set@{moved\+\_\+op\+\_\+use\+\_\+set}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{moved\+\_\+op\+\_\+use\+\_\+set}{moved\_op\_use\_set}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ State\+Info\+::moved\+\_\+op\+\_\+use\+\_\+set}
+
+
+
+set of ssa vars used in the state by the moved operations 
+
+
+
+Definition at line 129 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{structStateInfo_acb903ffca2d2e1e690a5de8075c115b7}\label{structStateInfo_acb903ffca2d2e1e690a5de8075c115b7}} 
+\index{State\+Info@{State\+Info}!name@{name}}
+\index{name@{name}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string State\+Info\+::name}
+
+
+
+string used to give a label to the state 
+
+
+
+Definition at line 90 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+
+
+Referenced by print().
+
+\mbox{\Hypertarget{structStateInfo_a06b35ad4218b0bc1e3e952357aa14111}\label{structStateInfo_a06b35ad4218b0bc1e3e952357aa14111}} 
+\index{State\+Info@{State\+Info}!onfly\+\_\+operations@{onfly\+\_\+operations}}
+\index{onfly\+\_\+operations@{onfly\+\_\+operations}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{onfly\+\_\+operations}{onfly\_operations}}
+{\footnotesize\ttfamily std\+::list$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ State\+Info\+::onfly\+\_\+operations}
+
+
+
+set of operation vertices already in execution at the beginning of this state 
+
+
+
+Definition at line 102 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{structStateInfo_a32780bd5c51bed1b2bed02bb4996a90c}\label{structStateInfo_a32780bd5c51bed1b2bed02bb4996a90c}} 
+\index{State\+Info@{State\+Info}!source\+Bb@{source\+Bb}}
+\index{source\+Bb@{source\+Bb}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{source\+Bb}{sourceBb}}
+{\footnotesize\ttfamily unsigned int State\+Info\+::source\+Bb}
+
+
+
+ID of the bb edge associated with the phi operation. 
+
+
+
+Definition at line 114 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{structStateInfo_a6bdb118c9adb909da0722d4bc720c2e4}\label{structStateInfo_a6bdb118c9adb909da0722d4bc720c2e4}} 
+\index{State\+Info@{State\+Info}!starting\+\_\+operations@{starting\+\_\+operations}}
+\index{starting\+\_\+operations@{starting\+\_\+operations}!State\+Info@{State\+Info}}
+\subsubsection{\texorpdfstring{starting\+\_\+operations}{starting\_operations}}
+{\footnotesize\ttfamily std\+::list$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ State\+Info\+::starting\+\_\+operations}
+
+
+
+set of operation vertices which starts in this state 
+
+
+
+Definition at line 96 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/stg/\hyperlink{state__transition__graph_8hpp}{state\+\_\+transition\+\_\+graph.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/stg/\hyperlink{state__transition__graph_8cpp}{state\+\_\+transition\+\_\+graph.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,545 @@
+\hypertarget{classStorageValueInformation}{}\section{Storage\+Value\+Information Class Reference}
+\label{classStorageValueInformation}\index{Storage\+Value\+Information@{Storage\+Value\+Information}}
+
+
+{\ttfamily \#include $<$storage\+\_\+value\+\_\+information.\+hpp$>$}
+
+
+
+Collaboration diagram for Storage\+Value\+Information\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dc4/classStorageValueInformation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStorageValueInformation_a19c290938cd6a5392a07064fe4789d3d}{Storage\+Value\+Information} (const \hyperlink{hls__manager_8hpp_a1b481383e3beabc89bd7562ae672dd8c}{H\+L\+S\+\_\+manager\+Const\+Ref} \hyperlink{classStorageValueInformation_aa60471f4fd3f3c6ca9a2ec472de3de48}{H\+L\+S\+\_\+mgr}, const unsigned int \hyperlink{classStorageValueInformation_ad5a9397ff900616471a7fed787bdce2d}{function\+\_\+id})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classStorageValueInformation_add282b820dac0047dca2d2e7670338b8}{$\sim$\+Storage\+Value\+Information} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classStorageValueInformation_af5c2b65a807420f83b1cf8d7a8516f5b}{Initialize} ()
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor) \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classStorageValueInformation_a5ccb95e3ac0776910f8967099f46a679}{get\+\_\+number\+\_\+of\+\_\+storage\+\_\+values} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of storage values inserted. \end{DoxyCompactList}\item 
+bool \hyperlink{classStorageValueInformation_ad1eb25efaf228bcf4d2b3d62b7b6d102}{is\+\_\+a\+\_\+storage\+\_\+value} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} curr\+\_\+vertex, unsigned int var\+\_\+index) const
+\begin{DoxyCompactList}\small\item\em return true in case a storage value exist for the pair vertex variable \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classStorageValueInformation_a03f6c3fab2ebcf00fd56fda4b32194a2}{get\+\_\+storage\+\_\+value\+\_\+index} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} curr\+\_\+vertex, unsigned int var\+\_\+index) const
+\begin{DoxyCompactList}\small\item\em Returns the index of the storage value associated with the variable in a given vertex. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classStorageValueInformation_aba9fe8ab9e8d87fc8b58d470b7c8f6f5}{get\+\_\+variable\+\_\+index} (unsigned int storage\+\_\+value\+\_\+index) const
+\begin{DoxyCompactList}\small\item\em Returns the index of the variable associated with the storage value in a given vertex. \end{DoxyCompactList}\item 
+int \hyperlink{classStorageValueInformation_a7ed7b636cee9a94fcfeecab58c73f2bc}{get\+\_\+compatibility\+\_\+weight} (unsigned int storage\+\_\+value\+\_\+index1, unsigned int storage\+\_\+value\+\_\+index2) const
+\begin{DoxyCompactList}\small\item\em return a weight that estimate how much two storage values are compatible. \end{DoxyCompactList}\item 
+bool \hyperlink{classStorageValueInformation_a72bff182397c1bb40391d4709a30d1ce}{are\+\_\+value\+\_\+bitsize\+\_\+compatible} (unsigned int storage\+\_\+value\+\_\+index1, unsigned int storage\+\_\+value\+\_\+index2) const
+\begin{DoxyCompactList}\small\item\em return the in case the storage values have compatible size \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classStorageValueInformation_a3bfe09e2d9557c3554108765579b9372}{number\+\_\+of\+\_\+storage\+\_\+values}
+\begin{DoxyCompactList}\small\item\em current number of storage values \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$ unsigned int, unsigned int $>$ \hyperlink{classStorageValueInformation_a68d366c305f831df0a0c98ae27dd83c5}{storage\+\_\+index\+\_\+map}
+\begin{DoxyCompactList}\small\item\em put into relation variables/values with storage values \end{DoxyCompactList}\item 
+std\+::vector$<$ unsigned int $>$ \hyperlink{classStorageValueInformation_aeff413536430335a40fd77b8271396d5}{variable\+\_\+index\+\_\+vect}
+\begin{DoxyCompactList}\small\item\em put into relation storage value index with variables \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ unsigned int, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{classStorageValueInformation_a07563c0af438986143be9c4103f3e6ea}{vw2vertex}
+\begin{DoxyCompactList}\small\item\em relation between var written and operations \end{DoxyCompactList}\item 
+const \hyperlink{hls__manager_8hpp_a1b481383e3beabc89bd7562ae672dd8c}{H\+L\+S\+\_\+manager\+Const\+Ref} \hyperlink{classStorageValueInformation_aa60471f4fd3f3c6ca9a2ec472de3de48}{H\+L\+S\+\_\+mgr}
+\begin{DoxyCompactList}\small\item\em The H\+LS manager. \end{DoxyCompactList}\item 
+const unsigned int \hyperlink{classStorageValueInformation_ad5a9397ff900616471a7fed787bdce2d}{function\+\_\+id}
+\begin{DoxyCompactList}\small\item\em The index of the function. \end{DoxyCompactList}\item 
+\hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} \hyperlink{classStorageValueInformation_ac59da92fcdad5a9021d8d63a7cad92ac}{data}
+\begin{DoxyCompactList}\small\item\em operation graph used to compute the affinity between storage values \end{DoxyCompactList}\item 
+\hyperlink{classWrefcount}{Wrefcount}$<$ const \hyperlink{classfu__binding}{fu\+\_\+binding} $>$ \hyperlink{classStorageValueInformation_a8951bbb3fc2f08b55714349c736f1714}{fu}
+\begin{DoxyCompactList}\small\item\em functional unit assignments \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classStorageValueInformation_ad8261cbbbabaa93fee0cbe16ef21f3ff}{values\+\_\+scheme}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 56 of file storage\+\_\+value\+\_\+information.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStorageValueInformation_a19c290938cd6a5392a07064fe4789d3d}\label{classStorageValueInformation_a19c290938cd6a5392a07064fe4789d3d}} 
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\subsubsection{\texorpdfstring{Storage\+Value\+Information()}{StorageValueInformation()}}
+{\footnotesize\ttfamily Storage\+Value\+Information\+::\+Storage\+Value\+Information (\begin{DoxyParamCaption}\item[{const \hyperlink{hls__manager_8hpp_a1b481383e3beabc89bd7562ae672dd8c}{H\+L\+S\+\_\+manager\+Const\+Ref}}]{\+\_\+\+H\+L\+S\+\_\+mgr,  }\item[{const unsigned int}]{\+\_\+function\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Header include.
+
+Autoheader include behavior include H\+LS include H\+L\+S/binding/module\+\_\+binding includes tree includes 
+
+Definition at line 63 of file storage\+\_\+value\+\_\+information.\+cpp.
+
+
+
+References $\sim$\+Storage\+Value\+Information().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dbe/classStorageValueInformation_a19c290938cd6a5392a07064fe4789d3d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStorageValueInformation_add282b820dac0047dca2d2e7670338b8}\label{classStorageValueInformation_add282b820dac0047dca2d2e7670338b8}} 
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!````~Storage\+Value\+Information@{$\sim$\+Storage\+Value\+Information}}
+\index{````~Storage\+Value\+Information@{$\sim$\+Storage\+Value\+Information}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\subsubsection{\texorpdfstring{$\sim$\+Storage\+Value\+Information()}{~StorageValueInformation()}}
+{\footnotesize\ttfamily Storage\+Value\+Information\+::$\sim$\+Storage\+Value\+Information (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Storage\+Value\+Information().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dbe/classStorageValueInformation_add282b820dac0047dca2d2e7670338b8_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classStorageValueInformation_a72bff182397c1bb40391d4709a30d1ce}\label{classStorageValueInformation_a72bff182397c1bb40391d4709a30d1ce}} 
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!are\+\_\+value\+\_\+bitsize\+\_\+compatible@{are\+\_\+value\+\_\+bitsize\+\_\+compatible}}
+\index{are\+\_\+value\+\_\+bitsize\+\_\+compatible@{are\+\_\+value\+\_\+bitsize\+\_\+compatible}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\subsubsection{\texorpdfstring{are\+\_\+value\+\_\+bitsize\+\_\+compatible()}{are\_value\_bitsize\_compatible()}}
+{\footnotesize\ttfamily bool Storage\+Value\+Information\+::are\+\_\+value\+\_\+bitsize\+\_\+compatible (\begin{DoxyParamCaption}\item[{unsigned int}]{storage\+\_\+value\+\_\+index1,  }\item[{unsigned int}]{storage\+\_\+value\+\_\+index2 }\end{DoxyParamCaption}) const}
+
+
+
+return the in case the storage values have compatible size 
+
+
+\begin{DoxyParams}{Parameters}
+{\em storage\+\_\+value\+\_\+index1} & is the first storage value \\
+\hline
+{\em storage\+\_\+value\+\_\+index2} & is the second storage value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 317 of file storage\+\_\+value\+\_\+information.\+cpp.
+
+
+
+References get\+\_\+variable\+\_\+index(), H\+L\+S\+\_\+mgr, tree\+\_\+helper\+::is\+\_\+int(), resize\+\_\+to\+\_\+1\+\_\+8\+\_\+16\+\_\+32\+\_\+64\+\_\+128\+\_\+256\+\_\+512(), and tree\+\_\+helper\+::size().
+
+
+
+Referenced by compatibility\+\_\+based\+\_\+register\+::create\+\_\+compatibility\+\_\+graph(), and conflict\+\_\+based\+\_\+register\+::create\+\_\+conflict\+\_\+graph().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dbe/classStorageValueInformation_a72bff182397c1bb40391d4709a30d1ce_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dbe/classStorageValueInformation_a72bff182397c1bb40391d4709a30d1ce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStorageValueInformation_a7ed7b636cee9a94fcfeecab58c73f2bc}\label{classStorageValueInformation_a7ed7b636cee9a94fcfeecab58c73f2bc}} 
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!get\+\_\+compatibility\+\_\+weight@{get\+\_\+compatibility\+\_\+weight}}
+\index{get\+\_\+compatibility\+\_\+weight@{get\+\_\+compatibility\+\_\+weight}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\subsubsection{\texorpdfstring{get\+\_\+compatibility\+\_\+weight()}{get\_compatibility\_weight()}}
+{\footnotesize\ttfamily int Storage\+Value\+Information\+::get\+\_\+compatibility\+\_\+weight (\begin{DoxyParamCaption}\item[{unsigned int}]{storage\+\_\+value\+\_\+index1,  }\item[{unsigned int}]{storage\+\_\+value\+\_\+index2 }\end{DoxyParamCaption}) const}
+
+
+
+return a weight that estimate how much two storage values are compatible. 
+
+An high value returned means an high compatibility between the two storage values. 
+
+Definition at line 138 of file storage\+\_\+value\+\_\+information.\+cpp.
+
+
+
+References Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), data, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, fu, G\+E\+T\+\_\+\+N\+A\+ME, G\+E\+T\+\_\+\+T\+Y\+PE, get\+\_\+variable\+\_\+index(), H\+L\+S\+\_\+mgr, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+U\+I\+NT, Wrefcount$<$ T $>$\+::lock(), S\+C\+A\+L\+AR, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+Y\+P\+E\+\_\+\+E\+N\+T\+RY, T\+Y\+P\+E\+\_\+\+P\+HI, U\+SE, and vw2vertex.
+
+
+
+Referenced by compatibility\+\_\+based\+\_\+register\+::create\+\_\+compatibility\+\_\+graph().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dbe/classStorageValueInformation_a7ed7b636cee9a94fcfeecab58c73f2bc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dbe/classStorageValueInformation_a7ed7b636cee9a94fcfeecab58c73f2bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStorageValueInformation_a5ccb95e3ac0776910f8967099f46a679}\label{classStorageValueInformation_a5ccb95e3ac0776910f8967099f46a679}} 
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!get\+\_\+number\+\_\+of\+\_\+storage\+\_\+values@{get\+\_\+number\+\_\+of\+\_\+storage\+\_\+values}}
+\index{get\+\_\+number\+\_\+of\+\_\+storage\+\_\+values@{get\+\_\+number\+\_\+of\+\_\+storage\+\_\+values}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\subsubsection{\texorpdfstring{get\+\_\+number\+\_\+of\+\_\+storage\+\_\+values()}{get\_number\_of\_storage\_values()}}
+{\footnotesize\ttfamily unsigned int Storage\+Value\+Information\+::get\+\_\+number\+\_\+of\+\_\+storage\+\_\+values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of storage values inserted. 
+
+
+
+Definition at line 116 of file storage\+\_\+value\+\_\+information.\+cpp.
+
+
+
+References number\+\_\+of\+\_\+storage\+\_\+values.
+
+
+
+Referenced by compatibility\+\_\+based\+\_\+register\+::create\+\_\+compatibility\+\_\+graph(), conflict\+\_\+based\+\_\+register\+::create\+\_\+conflict\+\_\+graph(), unique\+\_\+binding\+\_\+register\+::\+Internal\+Exec(), and chordal\+\_\+coloring\+\_\+register\+::\+Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dbe/classStorageValueInformation_a5ccb95e3ac0776910f8967099f46a679_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStorageValueInformation_a03f6c3fab2ebcf00fd56fda4b32194a2}\label{classStorageValueInformation_a03f6c3fab2ebcf00fd56fda4b32194a2}} 
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!get\+\_\+storage\+\_\+value\+\_\+index@{get\+\_\+storage\+\_\+value\+\_\+index}}
+\index{get\+\_\+storage\+\_\+value\+\_\+index@{get\+\_\+storage\+\_\+value\+\_\+index}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\subsubsection{\texorpdfstring{get\+\_\+storage\+\_\+value\+\_\+index()}{get\_storage\_value\_index()}}
+{\footnotesize\ttfamily unsigned int Storage\+Value\+Information\+::get\+\_\+storage\+\_\+value\+\_\+index (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{curr\+\_\+vertex,  }\item[{unsigned int}]{var\+\_\+index }\end{DoxyParamCaption}) const}
+
+
+
+Returns the index of the storage value associated with the variable in a given vertex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr\+\_\+vertex} & is the vertex \\
+\hline
+{\em var\+\_\+index} & is the variable \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 126 of file storage\+\_\+value\+\_\+information.\+cpp.
+
+
+
+References storage\+\_\+index\+\_\+map, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding\+::connect\+\_\+to\+\_\+registers(), compatibility\+\_\+based\+\_\+register\+::create\+\_\+compatibility\+\_\+graph(), conflict\+\_\+based\+\_\+register\+::create\+\_\+conflict\+\_\+graph(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), vertex\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), unique\+\_\+binding\+\_\+register\+::\+Internal\+Exec(), chordal\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), weighted\+\_\+clique\+\_\+register\+::\+Internal\+Exec(), port\+\_\+swapping\+::\+Internal\+Exec(), Vcd\+Signal\+Selection\+::\+Select\+Internal\+Signals(), and mux\+\_\+connection\+\_\+binding\+::swap\+\_\+p().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dbe/classStorageValueInformation_a03f6c3fab2ebcf00fd56fda4b32194a2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStorageValueInformation_aba9fe8ab9e8d87fc8b58d470b7c8f6f5}\label{classStorageValueInformation_aba9fe8ab9e8d87fc8b58d470b7c8f6f5}} 
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!get\+\_\+variable\+\_\+index@{get\+\_\+variable\+\_\+index}}
+\index{get\+\_\+variable\+\_\+index@{get\+\_\+variable\+\_\+index}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\subsubsection{\texorpdfstring{get\+\_\+variable\+\_\+index()}{get\_variable\_index()}}
+{\footnotesize\ttfamily unsigned int Storage\+Value\+Information\+::get\+\_\+variable\+\_\+index (\begin{DoxyParamCaption}\item[{unsigned int}]{storage\+\_\+value\+\_\+index }\end{DoxyParamCaption}) const}
+
+
+
+Returns the index of the variable associated with the storage value in a given vertex. 
+
+
+
+Definition at line 132 of file storage\+\_\+value\+\_\+information.\+cpp.
+
+
+
+References T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and variable\+\_\+index\+\_\+vect.
+
+
+
+Referenced by are\+\_\+value\+\_\+bitsize\+\_\+compatible(), get\+\_\+compatibility\+\_\+weight(), reg\+\_\+binding\+::get\+\_\+vars(), and reg\+\_\+binding\+::print\+\_\+el().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dbe/classStorageValueInformation_aba9fe8ab9e8d87fc8b58d470b7c8f6f5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStorageValueInformation_af5c2b65a807420f83b1cf8d7a8516f5b}\label{classStorageValueInformation_af5c2b65a807420f83b1cf8d7a8516f5b}} 
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Storage\+Value\+Information\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the step (i.\+e., like a constructor) 
+
+initialize the vw2vertex relation 
+
+Definition at line 69 of file storage\+\_\+value\+\_\+information.\+cpp.
+
+
+
+References Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), tree\+\_\+manager\+::\+C\+Get\+Tree\+Node(), counter, data, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, D\+E\+F\+I\+N\+I\+T\+I\+ON, Function\+Behavior\+::\+D\+FG, fu, function\+\_\+id, G\+E\+T\+\_\+\+N\+A\+ME, G\+E\+T\+\_\+\+T\+Y\+PE, H\+L\+S\+\_\+mgr, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+helper\+::is\+\_\+parameter(), tree\+\_\+helper\+::is\+\_\+ssa\+\_\+name(), tree\+\_\+helper\+::is\+\_\+virtual(), hls\+::\+Rfu, S\+C\+A\+L\+AR, hls\+::storage\+\_\+value\+\_\+information, S\+TR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, T\+Y\+P\+E\+\_\+\+E\+N\+T\+RY, and vw2vertex.
+
+
+
+Referenced by storage\+\_\+value\+\_\+insertion\+::\+Initialize(), and values\+\_\+scheme\+::\+Initialize().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dbe/classStorageValueInformation_af5c2b65a807420f83b1cf8d7a8516f5b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dbe/classStorageValueInformation_af5c2b65a807420f83b1cf8d7a8516f5b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStorageValueInformation_ad1eb25efaf228bcf4d2b3d62b7b6d102}\label{classStorageValueInformation_ad1eb25efaf228bcf4d2b3d62b7b6d102}} 
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!is\+\_\+a\+\_\+storage\+\_\+value@{is\+\_\+a\+\_\+storage\+\_\+value}}
+\index{is\+\_\+a\+\_\+storage\+\_\+value@{is\+\_\+a\+\_\+storage\+\_\+value}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\subsubsection{\texorpdfstring{is\+\_\+a\+\_\+storage\+\_\+value()}{is\_a\_storage\_value()}}
+{\footnotesize\ttfamily bool Storage\+Value\+Information\+::is\+\_\+a\+\_\+storage\+\_\+value (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{curr\+\_\+vertex,  }\item[{unsigned int}]{var\+\_\+index }\end{DoxyParamCaption}) const}
+
+
+
+return true in case a storage value exist for the pair vertex variable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr\+\_\+vertex} & is the vertex \\
+\hline
+{\em var\+\_\+index} & is the variable \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 121 of file storage\+\_\+value\+\_\+information.\+cpp.
+
+
+
+References storage\+\_\+index\+\_\+map.
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding\+::connect\+\_\+to\+\_\+registers(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), port\+\_\+swapping\+::\+Internal\+Exec(), Vcd\+Signal\+Selection\+::\+Select\+Internal\+Signals(), and mux\+\_\+connection\+\_\+binding\+::swap\+\_\+p().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dbe/classStorageValueInformation_ad1eb25efaf228bcf4d2b3d62b7b6d102_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classStorageValueInformation_ad8261cbbbabaa93fee0cbe16ef21f3ff}\label{classStorageValueInformation_ad8261cbbbabaa93fee0cbe16ef21f3ff}} 
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!values\+\_\+scheme@{values\+\_\+scheme}}
+\index{values\+\_\+scheme@{values\+\_\+scheme}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\subsubsection{\texorpdfstring{values\+\_\+scheme}{values\_scheme}}
+{\footnotesize\ttfamily friend class \hyperlink{classvalues__scheme}{values\+\_\+scheme}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 59 of file storage\+\_\+value\+\_\+information.\+hpp.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classStorageValueInformation_ac59da92fcdad5a9021d8d63a7cad92ac}\label{classStorageValueInformation_ac59da92fcdad5a9021d8d63a7cad92ac}} 
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!data@{data}}
+\index{data@{data}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} Storage\+Value\+Information\+::data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+operation graph used to compute the affinity between storage values 
+
+
+
+Definition at line 80 of file storage\+\_\+value\+\_\+information.\+hpp.
+
+
+
+Referenced by get\+\_\+compatibility\+\_\+weight(), and Initialize().
+
+\mbox{\Hypertarget{classStorageValueInformation_a8951bbb3fc2f08b55714349c736f1714}\label{classStorageValueInformation_a8951bbb3fc2f08b55714349c736f1714}} 
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!fu@{fu}}
+\index{fu@{fu}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\subsubsection{\texorpdfstring{fu}{fu}}
+{\footnotesize\ttfamily \hyperlink{classWrefcount}{Wrefcount}$<$const \hyperlink{classfu__binding}{fu\+\_\+binding}$>$ Storage\+Value\+Information\+::fu\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+functional unit assignments 
+
+
+
+Definition at line 83 of file storage\+\_\+value\+\_\+information.\+hpp.
+
+
+
+Referenced by get\+\_\+compatibility\+\_\+weight(), and Initialize().
+
+\mbox{\Hypertarget{classStorageValueInformation_ad5a9397ff900616471a7fed787bdce2d}\label{classStorageValueInformation_ad5a9397ff900616471a7fed787bdce2d}} 
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!function\+\_\+id@{function\+\_\+id}}
+\index{function\+\_\+id@{function\+\_\+id}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\subsubsection{\texorpdfstring{function\+\_\+id}{function\_id}}
+{\footnotesize\ttfamily const unsigned int Storage\+Value\+Information\+::function\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The index of the function. 
+
+
+
+Definition at line 77 of file storage\+\_\+value\+\_\+information.\+hpp.
+
+
+
+Referenced by Initialize().
+
+\mbox{\Hypertarget{classStorageValueInformation_aa60471f4fd3f3c6ca9a2ec472de3de48}\label{classStorageValueInformation_aa60471f4fd3f3c6ca9a2ec472de3de48}} 
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!H\+L\+S\+\_\+mgr@{H\+L\+S\+\_\+mgr}}
+\index{H\+L\+S\+\_\+mgr@{H\+L\+S\+\_\+mgr}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\subsubsection{\texorpdfstring{H\+L\+S\+\_\+mgr}{HLS\_mgr}}
+{\footnotesize\ttfamily const \hyperlink{hls__manager_8hpp_a1b481383e3beabc89bd7562ae672dd8c}{H\+L\+S\+\_\+manager\+Const\+Ref} Storage\+Value\+Information\+::\+H\+L\+S\+\_\+mgr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The H\+LS manager. 
+
+
+
+Definition at line 74 of file storage\+\_\+value\+\_\+information.\+hpp.
+
+
+
+Referenced by are\+\_\+value\+\_\+bitsize\+\_\+compatible(), get\+\_\+compatibility\+\_\+weight(), and Initialize().
+
+\mbox{\Hypertarget{classStorageValueInformation_a3bfe09e2d9557c3554108765579b9372}\label{classStorageValueInformation_a3bfe09e2d9557c3554108765579b9372}} 
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!number\+\_\+of\+\_\+storage\+\_\+values@{number\+\_\+of\+\_\+storage\+\_\+values}}
+\index{number\+\_\+of\+\_\+storage\+\_\+values@{number\+\_\+of\+\_\+storage\+\_\+values}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\subsubsection{\texorpdfstring{number\+\_\+of\+\_\+storage\+\_\+values}{number\_of\_storage\_values}}
+{\footnotesize\ttfamily unsigned int Storage\+Value\+Information\+::number\+\_\+of\+\_\+storage\+\_\+values\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+current number of storage values 
+
+
+
+Definition at line 62 of file storage\+\_\+value\+\_\+information.\+hpp.
+
+
+
+Referenced by get\+\_\+number\+\_\+of\+\_\+storage\+\_\+values(), and values\+\_\+scheme\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{classStorageValueInformation_a68d366c305f831df0a0c98ae27dd83c5}\label{classStorageValueInformation_a68d366c305f831df0a0c98ae27dd83c5}} 
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!storage\+\_\+index\+\_\+map@{storage\+\_\+index\+\_\+map}}
+\index{storage\+\_\+index\+\_\+map@{storage\+\_\+index\+\_\+map}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\subsubsection{\texorpdfstring{storage\+\_\+index\+\_\+map}{storage\_index\_map}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$unsigned int, unsigned int$>$ Storage\+Value\+Information\+::storage\+\_\+index\+\_\+map\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+put into relation variables/values with storage values 
+
+
+
+Definition at line 65 of file storage\+\_\+value\+\_\+information.\+hpp.
+
+
+
+Referenced by get\+\_\+storage\+\_\+value\+\_\+index(), values\+\_\+scheme\+::\+Internal\+Exec(), and is\+\_\+a\+\_\+storage\+\_\+value().
+
+\mbox{\Hypertarget{classStorageValueInformation_aeff413536430335a40fd77b8271396d5}\label{classStorageValueInformation_aeff413536430335a40fd77b8271396d5}} 
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!variable\+\_\+index\+\_\+vect@{variable\+\_\+index\+\_\+vect}}
+\index{variable\+\_\+index\+\_\+vect@{variable\+\_\+index\+\_\+vect}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\subsubsection{\texorpdfstring{variable\+\_\+index\+\_\+vect}{variable\_index\_vect}}
+{\footnotesize\ttfamily std\+::vector$<$unsigned int$>$ Storage\+Value\+Information\+::variable\+\_\+index\+\_\+vect\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+put into relation storage value index with variables 
+
+
+
+Definition at line 68 of file storage\+\_\+value\+\_\+information.\+hpp.
+
+
+
+Referenced by get\+\_\+variable\+\_\+index(), and values\+\_\+scheme\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{classStorageValueInformation_a07563c0af438986143be9c4103f3e6ea}\label{classStorageValueInformation_a07563c0af438986143be9c4103f3e6ea}} 
+\index{Storage\+Value\+Information@{Storage\+Value\+Information}!vw2vertex@{vw2vertex}}
+\index{vw2vertex@{vw2vertex}!Storage\+Value\+Information@{Storage\+Value\+Information}}
+\subsubsection{\texorpdfstring{vw2vertex}{vw2vertex}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$unsigned int, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ Storage\+Value\+Information\+::vw2vertex\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+relation between var written and operations 
+
+
+
+Definition at line 71 of file storage\+\_\+value\+\_\+information.\+hpp.
+
+
+
+Referenced by get\+\_\+compatibility\+\_\+weight(), and Initialize().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/storage\+\_\+value\+\_\+insertion/\hyperlink{storage__value__information_8hpp}{storage\+\_\+value\+\_\+information.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/storage\+\_\+value\+\_\+insertion/\hyperlink{storage__value__information_8cpp}{storage\+\_\+value\+\_\+information.\+cpp}\end{DoxyCompactItemize}

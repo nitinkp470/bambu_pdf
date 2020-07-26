@@ -1,0 +1,582 @@
+\hypertarget{dbgPrintHelper_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/dbg\+Print\+Helper.hpp File Reference}
+\label{dbgPrintHelper_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/dbg\+Print\+Helper.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/dbg\+Print\+Helper.\+hpp}}
+
+
+File containing functions and utilities to support the printing of debug messagges.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for dbg\+Print\+Helper.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{d0/d48/dbgPrintHelper_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d44/dbgPrintHelper_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_a402812409599b18759655c7294e3683e}{N\+O\+U\+T\+P\+UT}~0
+\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_aac8d5b27ffe36bcb2eeeea56918ae2ed}{P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX}(dbg\+Level,  cur\+Dbg\+Level,  mex)~((dbg\+Level $<$= cur\+Dbg\+Level) ? std\+::cerr $<$$<$ mex $<$$<$ std\+::endl \+: std\+::cerr)
+\begin{DoxyCompactList}\small\item\em We are producing a debug version of the program, so the message is printed;. \end{DoxyCompactList}\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_adfea258a7c9bfba8645dfd2eb6edb5a7}{P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+S\+T\+R\+I\+NG}(dbg\+Level,  cur\+Dbg\+Level,  mex)~((dbg\+Level $<$= cur\+Dbg\+Level) ? std\+::cerr $<$$<$ mex \+: std\+::cerr)
+\begin{DoxyCompactList}\small\item\em We are producing a debug version of the program, so the message is printed; no newline is added;. \end{DoxyCompactList}\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_a679418f160461bb84a3acc3df5aa6fcb}{I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX}(dbg\+Level,  cur\+Dbg\+Level,  mex)
+\begin{DoxyCompactList}\small\item\em We are producing a debug version of the program, so the message is printed;. \end{DoxyCompactList}\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_a9e0c16c2229a92561d39964a6a539847}{I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX}(out\+Level,  cur\+Out\+Level,  mex)
+\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_a0cfa3971efe609ebfbaeb1259c63b6a4}{P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX}(prof\+Level,  curprof\+Level,  mex)~((prof\+Level $<$= curprof\+Level) ? std\+::cerr $<$$<$ mex $<$$<$ std\+::endl \+: std\+::cerr)
+\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_aed98d2ab3791b713b13dc118d57e9f87}{P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+S\+T\+R\+I\+NG}(prof\+Level,  curprof\+Level,  mex)~((prof\+Level $<$= curprof\+Level) ? std\+::cerr $<$$<$ mex \+: std\+::cerr)
+\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_a0336d721d98a575385311a86077d885d}{P\+R\+I\+N\+T\+\_\+\+M\+SG}(mex)~std\+::cerr $<$$<$ mex $<$$<$ std\+::endl
+\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_ab1b858823cf8ebcbd003490ea6d52627}{P\+R\+I\+N\+T\+\_\+\+S\+T\+R\+I\+NG}(mex)~std\+::cerr $<$$<$ mex
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ O\+U\+T\+P\+UT levels}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_afb562db7c742e918f34c78949e970ae6}{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE}~0
+\begin{DoxyCompactList}\small\item\em no output print is performed. \end{DoxyCompactList}\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_a9c19f46a606539b16821bc81c4d94024}{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM}~1
+\begin{DoxyCompactList}\small\item\em minimum debugging print is performed. \end{DoxyCompactList}\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_a5ebb21bd541de255097777d751e01a5b}{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE}~2
+\begin{DoxyCompactList}\small\item\em verbose debugging print is performed. \end{DoxyCompactList}\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_abae808475b2d07f746fc797c93012453}{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC}~3
+\begin{DoxyCompactList}\small\item\em verbose debugging print is performed. \end{DoxyCompactList}\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_aa3e5572801666428f6ea0f337e0aa669}{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC}~4
+\begin{DoxyCompactList}\small\item\em verbose debugging print is performed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ D\+E\+B\+U\+G\+G\+I\+NG levels}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_a6dd8d5a980e283a0101121dbb602cdd1}{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE}~0
+\begin{DoxyCompactList}\small\item\em no debugging print is performed. \end{DoxyCompactList}\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_a3482f45c2e46eca9f3c7a1d8f81610d2}{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM}~1
+\begin{DoxyCompactList}\small\item\em minimum debugging print is performed. \end{DoxyCompactList}\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_a63a16e73fa942bc3a43b6f400bd63c39}{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE}~2
+\begin{DoxyCompactList}\small\item\em verbose debugging print is performed. \end{DoxyCompactList}\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_a58c9c55a959b015072e9f8819135468a}{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC}~3
+\begin{DoxyCompactList}\small\item\em very verbose debugging print is performed. \end{DoxyCompactList}\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_a4d8ce97cddce52edd70744beae6f0abc}{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC}~4
+\begin{DoxyCompactList}\small\item\em extremely verbose debugging print is performed. \end{DoxyCompactList}\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_a68674580b974b6875524e03c82b3e1f4}{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+A\+R\+A\+N\+O\+IC}~5
+\begin{DoxyCompactList}\small\item\em paranoid level debugging print is performed. \end{DoxyCompactList}\item 
+\#define \hyperlink{dbgPrintHelper_8hpp_a240da495461cc2187990ba02c8decabe}{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+I\+N\+F\+I\+N\+I\+TE}~11
+\begin{DoxyCompactList}\small\item\em everything is printed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} \hyperlink{dbgPrintHelper_8hpp_a416b89e08aff70daa4359da0365b04da}{indentation}
+\begin{DoxyCompactList}\small\item\em The current indentation for debug messages. \end{DoxyCompactList}\item 
+std\+::ostream \hyperlink{dbgPrintHelper_8hpp_a9c6999e37c888ad294f6f86183dfd252}{null\+\_\+stream}
+\item 
+std\+::string \hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\+\_\+message}
+\begin{DoxyCompactList}\small\item\em This is the message to be printed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File containing functions and utilities to support the printing of debug messagges. 
+
+File containing functions and utilities to support the printing of debug messagges
+
+\begin{DoxyAuthor}{Author}
+Luca Fossati \href{mailto:fossati@elet.polimi.it}{\tt fossati@elet.\+polimi.\+it} 
+
+Marco Lattuada \href{mailto:lattuada@elet.polimi.it}{\tt lattuada@elet.\+polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_a240da495461cc2187990ba02c8decabe}\label{dbgPrintHelper_8hpp_a240da495461cc2187990ba02c8decabe}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+I\+N\+F\+I\+N\+I\+TE@{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+I\+N\+F\+I\+N\+I\+TE}}
+\index{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+I\+N\+F\+I\+N\+I\+TE@{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+I\+N\+F\+I\+N\+I\+TE}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+I\+N\+F\+I\+N\+I\+TE}{DEBUG\_LEVEL\_INFINITE}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+I\+N\+F\+I\+N\+I\+TE~11}
+
+
+
+everything is printed. 
+
+
+
+Definition at line 88 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+Referenced by Parameter\+::get\+\_\+class\+\_\+debug\+\_\+level(), and Parameter\+::\+Get\+Function\+Debug\+Level().
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_a3482f45c2e46eca9f3c7a1d8f81610d2}\label{dbgPrintHelper_8hpp_a3482f45c2e46eca9f3c7a1d8f81610d2}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM@{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM}}
+\index{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM@{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM}{DEBUG\_LEVEL\_MINIMUM}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM~1}
+
+
+
+minimum debugging print is performed. 
+
+
+
+Definition at line 78 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+Referenced by pragma\+\_\+manager\+::check\+Compliant(), Backend\+Flow\+::create\+\_\+xml\+\_\+scripts(), C\+Testbench\+Execution\+::\+Exec(), Load\+Device\+Technology\+::\+Exec(), Test\+Vector\+Parser\+::\+Exec(), Testbench\+Values\+C\+Generation\+::\+Exec(), H\+L\+S\+\_\+constraints\+::\+H\+L\+S\+\_\+constraints(), add\+\_\+library\+::\+Internal\+Exec(), main(), glpk\+\_\+solver\+::make(), Eucalyptus\+Parameter\+::\+Set\+Defaults(), Spider\+Parameter\+::\+Set\+Defaults(), network\+\_\+flow\+::successive\+\_\+shortest\+\_\+path\+\_\+algorithm(), and Testbench\+Generation\+Base\+Step\+::verilator\+\_\+testbench().
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_a6dd8d5a980e283a0101121dbb602cdd1}\label{dbgPrintHelper_8hpp_a6dd8d5a980e283a0101121dbb602cdd1}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE@{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE}}
+\index{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE@{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE}{DEBUG\_LEVEL\_NONE}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE~0}
+
+
+
+no debugging print is performed. 
+
+
+
+Definition at line 76 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+Referenced by Add\+Artificial\+Call\+Flow\+Edges\+::\+Add\+Artificial\+Call\+Flow\+Edges(), Add\+Bb\+Ecfg\+Edges\+::\+Add\+Bb\+Ecfg\+Edges(), Add\+Op\+Exit\+Flow\+Edges\+::\+Add\+Op\+Exit\+Flow\+Edges(), Add\+Op\+Loop\+Flow\+Edges\+::\+Add\+Op\+Loop\+Flow\+Edges(), Add\+Op\+Phi\+Flow\+Edges\+::\+Add\+Op\+Phi\+Flow\+Edges(), Basic\+Blocks\+Cfg\+Computation\+::\+Basic\+Blocks\+Cfg\+Computation(), Basic\+Blocks\+Profiling\+::\+Basic\+Blocks\+Profiling(), bb\+\_\+feedback\+\_\+edges\+\_\+computation\+::bb\+\_\+feedback\+\_\+edges\+\_\+computation(), B\+B\+Order\+Computation\+::\+B\+B\+Order\+Computation(), B\+B\+Reachability\+Computation\+::\+B\+B\+Reachability\+Computation(), Bit\+\_\+\+Value\+::\+Bit\+\_\+\+Value(), Bit\+\_\+\+Value\+\_\+opt\+::\+Bit\+\_\+\+Value\+\_\+opt(), Bit\+Value\+I\+P\+A\+::\+Bit\+Value\+I\+P\+A(), Block\+Fix\+::\+Block\+Fix(), Build\+Virtual\+Phi\+::\+Build\+Virtual\+Phi(), call\+\_\+expr\+\_\+fix\+::call\+\_\+expr\+\_\+fix(), call\+\_\+graph\+\_\+computation\+::call\+\_\+graph\+\_\+computation(), Call\+Graph\+Builtin\+Call\+::\+Call\+Graph\+Builtin\+Call(), vcd\+\_\+parser\+::check\+\_\+signals(), Check\+System\+Type\+::\+Check\+System\+Type(), Clean\+Virtual\+Phi\+::\+Clean\+Virtual\+Phi(), commutative\+\_\+expr\+\_\+restructuring\+::commutative\+\_\+expr\+\_\+restructuring(), compute\+\_\+implicit\+\_\+calls\+::compute\+\_\+implicit\+\_\+calls(), Cond\+Expr\+Restructuring\+::\+Cond\+Expr\+Restructuring(), constant\+\_\+flop\+\_\+wrapper\+::constant\+\_\+flop\+\_\+wrapper(), create\+\_\+tree\+\_\+manager\+::create\+\_\+tree\+\_\+manager(), C\+S\+E\+::\+C\+S\+E(), dead\+\_\+code\+\_\+elimination\+::dead\+\_\+code\+\_\+elimination(), determine\+\_\+memory\+\_\+accesses\+::determine\+\_\+memory\+\_\+accesses(), dom\+\_\+post\+\_\+dom\+\_\+computation\+::dom\+\_\+post\+\_\+dom\+\_\+computation(), extract\+\_\+patterns\+::extract\+\_\+patterns(), Extract\+Omp\+Atomic\+::\+Extract\+Omp\+Atomic(), Extract\+Omp\+For\+::\+Extract\+Omp\+For(), fanout\+\_\+opt\+::fanout\+\_\+opt(), Fix\+Structs\+Passed\+By\+Value\+::\+Fix\+Structs\+Passed\+By\+Value(), fsm\+\_\+controller\+::fsm\+\_\+controller(), Function\+Call\+Type\+Cleanup\+::\+Function\+Call\+Type\+Cleanup(), H\+D\+L\+Var\+Decl\+Fix\+::\+H\+D\+L\+Var\+Decl\+Fix(), hls\+\_\+div\+\_\+cg\+\_\+ext\+::hls\+\_\+div\+\_\+cg\+\_\+ext(), Host\+Profiling\+::\+Host\+Profiling(), H\+W\+Call\+Injection\+::\+H\+W\+Call\+Injection(), Storage\+Value\+Information\+::\+Initialize(), interface\+\_\+infer\+::interface\+\_\+infer(), datapath\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), ipa\+\_\+point\+\_\+to\+\_\+analysis\+::ipa\+\_\+point\+\_\+to\+\_\+analysis(), loops\+\_\+computation\+::loops\+\_\+computation(), Loops\+Analysis\+Bambu\+::\+Loops\+Analysis\+Bambu(), lut\+\_\+transformation\+::lut\+\_\+transformation(), main(), mem\+\_\+cg\+\_\+ext\+::mem\+\_\+cg\+\_\+ext(), multi\+\_\+way\+\_\+if\+::multi\+\_\+way\+\_\+if(), Multiple\+Entry\+If\+Reduction\+::\+Multiple\+Entry\+If\+Reduction(), N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness(), op\+\_\+feedback\+\_\+edges\+\_\+computation\+::op\+\_\+feedback\+\_\+edges\+\_\+computation(), operations\+\_\+cfg\+\_\+computation\+::operations\+\_\+cfg\+\_\+computation(), Op\+Order\+Computation\+::\+Op\+Order\+Computation(), Op\+Reachability\+Computation\+::\+Op\+Reachability\+Computation(), parm2ssa\+::parm2ssa(), parm\+\_\+decl\+\_\+taken\+\_\+address\+\_\+fix\+::parm\+\_\+decl\+\_\+taken\+\_\+address\+\_\+fix(), Phi\+Opt\+::\+Phi\+Opt(), Pragma\+Analysis\+::\+Pragma\+Analysis(), rebuild\+\_\+initialization\+::rebuild\+\_\+initialization(), rebuild\+\_\+initialization2\+::rebuild\+\_\+initialization2(), remove\+\_\+clobber\+\_\+ga\+::remove\+\_\+clobber\+\_\+ga(), Remove\+Ending\+If\+::\+Remove\+Ending\+If(), Scalar\+Ssa\+Data\+Dependence\+Computation\+::\+Scalar\+Ssa\+Data\+Dependence\+Computation(), S\+D\+C\+Code\+Motion\+::\+S\+D\+C\+Code\+Motion(), Eucalyptus\+Parameter\+::\+Set\+Defaults(), Spider\+Parameter\+::\+Set\+Defaults(), tree\+\_\+panda\+\_\+gcc\+\_\+parameter\+::\+Set\+Defaults(), Bambu\+Parameter\+::\+Set\+Defaults(), short\+\_\+circuit\+\_\+taf\+::short\+\_\+circuit\+\_\+taf(), simple\+\_\+code\+\_\+motion\+::simple\+\_\+code\+\_\+motion(), soft\+\_\+float\+\_\+cg\+\_\+ext\+::soft\+\_\+float\+\_\+cg\+\_\+ext(), Split\+Return\+::\+Split\+Return(), string\+\_\+cst\+\_\+fix\+::string\+\_\+cst\+\_\+fix(), Switch\+Fix\+::\+Switch\+Fix(), Update\+Schedule\+::\+Update\+Schedule(), use\+\_\+counting\+::use\+\_\+counting(), Var\+Computation\+::\+Var\+Computation(), Var\+Decl\+Fix\+::\+Var\+Decl\+Fix(), and virtual\+\_\+phi\+\_\+nodes\+\_\+split\+::virtual\+\_\+phi\+\_\+nodes\+\_\+split().
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_a68674580b974b6875524e03c82b3e1f4}\label{dbgPrintHelper_8hpp_a68674580b974b6875524e03c82b3e1f4}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+A\+R\+A\+N\+O\+IC@{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+A\+R\+A\+N\+O\+IC}}
+\index{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+A\+R\+A\+N\+O\+IC@{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+A\+R\+A\+N\+O\+IC}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+A\+R\+A\+N\+O\+IC}{DEBUG\_LEVEL\_PARANOIC}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+A\+R\+A\+N\+O\+IC~5}
+
+
+
+paranoid level debugging print is performed. 
+
+
+
+Definition at line 86 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+Referenced by tree\+\_\+manager\+::check\+\_\+for\+\_\+type(), tree\+\_\+helper\+::compute\+\_\+ssa\+\_\+uses\+\_\+rec\+\_\+ptr(), tree\+\_\+helper\+::\+Compute\+Ssa\+Uses(), tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), Translator\+::\+Translator(), and H\+D\+L\+\_\+manager\+::write\+\_\+module().
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_a58c9c55a959b015072e9f8819135468a}\label{dbgPrintHelper_8hpp_a58c9c55a959b015072e9f8819135468a}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC@{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC}}
+\index{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC@{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC}{DEBUG\_LEVEL\_PEDANTIC}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC~3}
+
+
+
+very verbose debugging print is performed. 
+
+
+
+Definition at line 82 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+Referenced by classic\+\_\+datapath\+::add\+\_\+clock\+\_\+reset(), Control\+Flow\+Checker\+::add\+\_\+clock\+\_\+reset(), Controller\+Creator\+Base\+Step\+::add\+\_\+clock\+\_\+reset(), conn\+\_\+binding\+::add\+\_\+command\+\_\+ports(), controller\+\_\+cs\+::add\+\_\+common\+\_\+ports(), Control\+Flow\+Checker\+::add\+\_\+common\+\_\+ports(), Controller\+Creator\+Base\+Step\+::add\+\_\+common\+\_\+ports(), Control\+Flow\+Checker\+::add\+\_\+done\+\_\+port(), Controller\+Creator\+Base\+Step\+::add\+\_\+done\+\_\+port(), flopoco\+\_\+wrapper\+::add\+\_\+\+F\+U(), Control\+Flow\+Checker\+::add\+\_\+notifiers(), conn\+\_\+binding\+\_\+creator\+::add\+\_\+parameter\+\_\+ports(), classic\+\_\+datapath\+::add\+\_\+ports(), Control\+Flow\+Checker\+::add\+\_\+present\+\_\+state(), controller\+\_\+cs\+::add\+\_\+selector\+\_\+register\+\_\+file\+\_\+port(), Control\+Flow\+Checker\+::add\+\_\+start\+\_\+port(), Controller\+Creator\+Base\+Step\+::add\+\_\+start\+\_\+port(), allocation\+::add\+\_\+tech\+\_\+constraint(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), Bit\+\_\+\+Value\+::backward(), Bit\+\_\+\+Value\+::backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses(), Bit\+\_\+\+Value\+::backward\+\_\+transfer(), call\+\_\+graph\+\_\+computation\+::call\+\_\+graph\+\_\+computation\+\_\+recursive(), short\+\_\+circuit\+\_\+taf\+::check\+\_\+merging\+\_\+candidate(), tree\+\_\+manager\+::collapse\+\_\+into(), A\+S\+L\+A\+P\+::compute\+\_\+\+A\+L\+A\+P\+\_\+fast(), A\+S\+L\+A\+P\+::compute\+\_\+\+A\+S\+A\+P(), B\+B\+\_\+based\+\_\+stg\+::compute\+\_\+\+E\+P\+P\+\_\+edge\+\_\+increments(), mux\+\_\+connection\+\_\+binding\+::connect\+\_\+to\+\_\+registers(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), short\+\_\+circuit\+\_\+taf\+::create\+\_\+gimple\+\_\+cond(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+array(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Read\+\_\+simple(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Write\+\_\+simple(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+single\+\_\+conn(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), Backend\+Flow\+::\+Create\+Scripts(), C\+Writer\+::\+Declare\+Local\+Variables(), C\+Writer\+::\+Declare\+Variable(), Design\+Compiler\+Wrapper\+::\+Design\+Compiler\+Wrapper(), Loops\+::\+Detect\+Loops(), mux\+\_\+connection\+\_\+binding\+::determine\+\_\+connection(), H\+W\+Discrepancy\+Analysis\+::\+Exec(), Bambu\+Frontend\+Flow\+::\+Exec(), Bit\+Value\+I\+P\+A\+::\+Exec(), create\+\_\+tree\+\_\+manager\+::\+Exec(), call\+\_\+graph\+\_\+computation\+::\+Exec(), Vcd\+Signal\+Selection\+::\+Exec(), C\+Backend\+::\+Exec(), Bit\+\_\+\+Value\+::forward(), Bit\+\_\+\+Value\+::forward\+\_\+transfer(), A\+S\+L\+A\+P\+::\+Get\+Cycle\+Latency(), H\+L\+S\+\_\+constraints\+::\+H\+L\+S\+\_\+constraints(), Bit\+\_\+\+Value\+::initialize(), F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Internal\+Exec(), fsm\+\_\+controller\+::\+Internal\+Exec(), sched\+\_\+based\+\_\+chaining\+\_\+computation\+::\+Internal\+Exec(), Extract\+Omp\+Atomic\+::\+Internal\+Exec(), Extract\+Omp\+For\+::\+Internal\+Exec(), Switch\+Fix\+::\+Internal\+Exec(), Call\+Graph\+Builtin\+Call\+::\+Internal\+Exec(), compute\+\_\+implicit\+\_\+calls\+::\+Internal\+Exec(), extract\+\_\+patterns\+::\+Internal\+Exec(), rebuild\+\_\+initialization\+::\+Internal\+Exec(), N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Internal\+Exec(), Bit\+\_\+\+Value\+\_\+opt\+::\+Internal\+Exec(), determine\+\_\+memory\+\_\+accesses\+::\+Internal\+Exec(), constant\+\_\+flop\+\_\+wrapper\+::\+Internal\+Exec(), dead\+\_\+code\+\_\+elimination\+::\+Internal\+Exec(), interface\+\_\+infer\+::\+Internal\+Exec(), virtual\+\_\+phi\+\_\+nodes\+\_\+split\+::\+Internal\+Exec(), short\+\_\+circuit\+\_\+taf\+::\+Internal\+Exec(), I\+R\+\_\+lowering\+::\+Internal\+Exec(), port\+\_\+swapping\+::\+Internal\+Exec(), Phi\+Opt\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), Bit\+\_\+\+Value\+::\+Internal\+Exec(), flopoco\+\_\+wrapper\+::\+Internal\+Write\+V\+H\+D\+L(), I\+S\+E\+\_\+isim\+\_\+wrapper\+::\+I\+S\+E\+\_\+isim\+\_\+wrapper(), lattice\+\_\+flow\+\_\+wrapper\+::lattice\+\_\+flow\+\_\+wrapper(), glpk\+\_\+solver\+::make(), Bit\+\_\+\+Value\+::manage\+\_\+forward\+\_\+binary\+\_\+operands(), map\+\_\+wrapper\+::map\+\_\+wrapper(), tree\+\_\+manager\+::merge\+\_\+tree\+\_\+managers(), mux\+\_\+connection\+\_\+binding\+::mux\+\_\+interconnection(), Nano\+Xplore\+Backend\+Flow\+::\+Nano\+Xplore\+Backend\+Flow(), ngdbuild\+\_\+wrapper\+::ngdbuild\+\_\+wrapper(), Host\+Profiling\+::normalize(), nxpython\+\_\+flow\+\_\+wrapper\+::nxpython\+\_\+flow\+\_\+wrapper(), Bit\+\_\+\+Value\+\_\+opt\+::optimize(), par\+\_\+wrapper\+::par\+\_\+wrapper(), Test\+Vector\+Parser\+::\+Parse\+X\+M\+L\+File(), Allocation\+Information\+::print\+\_\+allocated\+\_\+resources(), Bit\+\_\+\+Value\+::print\+\_\+bitstring\+\_\+map(), Quartus13\+Report\+Wrapper\+::\+Quartus13\+Report\+Wrapper(), Quartus\+Power\+Wrapper\+::\+Quartus\+Power\+Wrapper(), Quartus\+Report\+Wrapper\+::\+Quartus\+Report\+Wrapper(), Var\+Decl\+Fix\+::recursive\+\_\+examinate(), port\+\_\+o\+::resize\+\_\+std\+\_\+port(), short\+\_\+circuit\+\_\+taf\+::restructure\+\_\+\+C\+F\+G(), fu\+\_\+binding\+::specialise\+\_\+fu(), network\+\_\+flow\+::successive\+\_\+shortest\+\_\+path\+\_\+algorithm(), Vectorize\+::\+Transform(), trce\+\_\+wrapper\+::trce\+\_\+wrapper(), A\+S\+L\+A\+P\+::update\+\_\+\+A\+L\+A\+P(), Bit\+\_\+\+Value\+::update\+\_\+\+I\+R(), vivado\+\_\+flow\+\_\+wrapper\+::vivado\+\_\+flow\+\_\+wrapper(), V\+I\+V\+A\+D\+O\+\_\+xsim\+\_\+wrapper\+::\+V\+I\+V\+A\+D\+O\+\_\+xsim\+\_\+wrapper(), H\+D\+L\+\_\+manager\+::write\+\_\+flopoco\+\_\+module(), Edge\+C\+Writer\+::write\+Routine\+Instructions(), C\+Writer\+::write\+Routine\+Instructions(), H\+L\+S\+C\+Writer\+::\+Write\+Simulator\+Init\+Memory(), Xilinx\+Backend\+Flow\+::\+Xilinx\+Backend\+Flow(), xst\+\_\+wrapper\+::xst\+\_\+wrapper(), and technology\+\_\+manager\+::xwrite().
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_a63a16e73fa942bc3a43b6f400bd63c39}\label{dbgPrintHelper_8hpp_a63a16e73fa942bc3a43b6f400bd63c39}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE@{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE}}
+\index{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE@{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE}{DEBUG\_LEVEL\_VERBOSE}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE~2}
+
+
+
+verbose debugging print is performed. 
+
+
+
+Definition at line 80 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+Referenced by datapath\+\_\+cs\+::add\+\_\+ports(), State\+Transition\+Graph\+Manager\+::add\+\_\+to\+\_\+\+S\+M(), conn\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), Altera\+Backend\+Flow\+::\+Altera\+Backend\+Flow(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+complete\+\_\+logic(), structural\+\_\+manager\+::check\+\_\+structure(), Gcc\+Wrapper\+::\+Compile\+File(), A\+S\+L\+A\+P\+::compute\+\_\+\+A\+S\+A\+P(), B\+B\+\_\+based\+\_\+stg\+::compute\+\_\+\+E\+P\+P\+\_\+edge\+\_\+increments(), ipa\+\_\+point\+\_\+to\+\_\+analysis\+::compute\+\_\+function\+\_\+topological\+\_\+order(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), Backend\+Flow\+::\+Create\+Scripts(), Load\+Device\+Technology\+::\+Exec(), parametric\+\_\+list\+\_\+based\+::exec(), memory\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation(), module\+Generator\+::\+Generate\+H\+D\+L(), Icarus\+Wrapper\+::\+Generate\+Script(), glpk\+\_\+print\+\_\+hook(), H\+L\+S\+\_\+constraints\+::\+H\+L\+S\+\_\+constraints(), Icarus\+Wrapper\+::\+Icarus\+Wrapper(), Gcc\+Wrapper\+::\+Initialize\+Gcc\+Parameters(), fu\+\_\+binding\+\_\+cs\+::instantiate\+\_\+component\+\_\+kernel(), fixed\+\_\+scheduling\+::\+Internal\+Exec(), unique\+\_\+binding\+::\+Internal\+Exec(), fsm\+\_\+controller\+::\+Internal\+Exec(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), classic\+\_\+datapath\+::\+Internal\+Exec(), mem\+\_\+xml\+\_\+allocation\+::\+Internal\+Exec(), top\+\_\+entity\+::\+Internal\+Exec(), datapath\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), C\+S\+E\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), Lattice\+Backend\+Flow\+::\+Lattice\+Backend\+Flow(), main(), modelsim\+Wrapper\+::modelsim\+Wrapper(), conn\+\_\+binding\+::mux\+\_\+connection(), mux\+\_\+connection\+\_\+binding\+::mux\+\_\+interconnection(), Nano\+Xplore\+Backend\+Flow\+::\+Nano\+Xplore\+Backend\+Flow(), Design\+Compiler\+Wrapper\+::parse\+\_\+area\+\_\+reports(), Design\+Compiler\+Wrapper\+::parse\+\_\+cell\+\_\+reports(), Design\+Compiler\+Wrapper\+::parse\+\_\+synthesis\+\_\+reports(), Design\+Compiler\+Wrapper\+::parse\+\_\+time\+\_\+reports(), vcd\+\_\+parser\+::parse\+\_\+vcd(), Allocation\+Information\+::print\+\_\+allocated\+\_\+resources(), read\+\_\+technology\+\_\+library(), glpk\+\_\+solver\+::solve(), glpk\+\_\+solver\+::solve\+\_\+ilp(), State\+Transition\+Graph\+Manager\+::specialise\+\_\+mu(), module\+Generator\+::specialize\+\_\+fu(), network\+\_\+flow\+::successive\+\_\+shortest\+\_\+path\+\_\+algorithm(), parametric\+\_\+list\+\_\+based\+::update\+\_\+starting\+\_\+ending\+\_\+time(), parametric\+\_\+list\+\_\+based\+::update\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), vcd\+\_\+parser\+::vcd\+\_\+parse\+\_\+def\+\_\+var(), Verilator\+Wrapper\+::\+Verilator\+Wrapper(), H\+D\+L\+\_\+manager\+::write\+\_\+fsm(), verilog\+\_\+writer\+::write\+\_\+state\+\_\+declaration(), Xilinx\+Backend\+Flow\+::\+Xilinx\+Backend\+Flow(), and library\+\_\+manager\+::xload().
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_a4d8ce97cddce52edd70744beae6f0abc}\label{dbgPrintHelper_8hpp_a4d8ce97cddce52edd70744beae6f0abc}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC@{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC}}
+\index{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC@{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC}{DEBUG\_LEVEL\_VERY\_PEDANTIC}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC~4}
+
+
+
+extremely verbose debugging print is performed. 
+
+
+
+Definition at line 84 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+Referenced by classic\+\_\+datapath\+::add\+\_\+clock\+\_\+reset(), Control\+Flow\+Checker\+::add\+\_\+clock\+\_\+reset(), Controller\+Creator\+Base\+Step\+::add\+\_\+clock\+\_\+reset(), Controller\+Creator\+Base\+Step\+::add\+\_\+command\+\_\+ports(), conn\+\_\+binding\+::add\+\_\+command\+\_\+ports(), conn\+\_\+binding\+::add\+\_\+connection(), A\+S\+L\+A\+P\+::add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+A\+P(), A\+S\+L\+A\+P\+::add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+A\+P(), top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port(), top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port\+\_\+kernel(), conn\+\_\+binding\+::add\+\_\+datapath\+\_\+connection(), Control\+Flow\+Checker\+::add\+\_\+done\+\_\+port(), Controller\+Creator\+Base\+Step\+::add\+\_\+done\+\_\+port(), dead\+\_\+code\+\_\+elimination\+::add\+\_\+gimple\+\_\+nop(), top\+\_\+entity\+\_\+cs\+::add\+\_\+input\+\_\+register(), Control\+Flow\+Checker\+::add\+\_\+notifiers(), cs\+\_\+interface\+::add\+\_\+parameter\+\_\+port(), datapath\+\_\+cs\+::add\+\_\+ports(), top\+\_\+entity\+::add\+\_\+ports(), classic\+\_\+datapath\+::add\+\_\+ports(), datapath\+\_\+parallel\+\_\+cs\+::add\+\_\+ports(), Control\+Flow\+Checker\+::add\+\_\+present\+\_\+state(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+module(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+wrapper(), controller\+\_\+cs\+::add\+\_\+selector\+\_\+register\+\_\+file\+\_\+port(), conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp(), Control\+Flow\+Checker\+::add\+\_\+start\+\_\+port(), Controller\+Creator\+Base\+Step\+::add\+\_\+start\+\_\+port(), parametric\+\_\+list\+\_\+based\+::add\+\_\+to\+\_\+priority\+\_\+queues(), Parallel\+Memory\+Fu\+Binding\+::add\+\_\+to\+\_\+\+S\+M(), reg\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), Call\+Graph\+Manager\+::\+Add\+Call\+Point(), module\+\_\+interface\+::\+Add\+Connection(), module\+\_\+interface\+::\+Add\+Constant(), S\+D\+C\+Scheduling\+::\+Add\+Delay\+Constraints(), S\+D\+C\+Scheduling\+::\+Add\+Dependence\+Constraint(), Call\+Graph\+Manager\+::\+Add\+Function(), Vectorize\+::\+Add\+Guards(), module\+\_\+interface\+::\+Add\+Signal(), tree\+\_\+helper\+::\+Allocated\+Memory\+Size(), Testbench\+Memory\+Allocation\+::\+Alloc\+Testbench\+Memory(), determine\+\_\+memory\+\_\+accesses\+::analyze\+\_\+node(), use\+\_\+counting\+::analyze\+\_\+node(), Generate\+Fu\+List\+::\+Analyze\+Cell(), Functional\+Unit\+Step\+::\+Analyze\+Fu(), C\+Backend\+::\+Analyze\+Include(), Scheduling\+::anticipate\+\_\+operations(), Phi\+Opt\+::\+Apply\+Diff\+Nothing(), Phi\+Opt\+::\+Apply\+Gimple\+Nothing(), Phi\+Opt\+::\+Apply\+If\+Merge(), Phi\+Opt\+::\+Apply\+If\+Nothing(), Phi\+Opt\+::\+Apply\+If\+Remove(), Phi\+Opt\+::\+Apply\+Multi\+Merge(), Phi\+Opt\+::\+Apply\+Multi\+Nothing(), Phi\+Opt\+::\+Apply\+Multi\+Remove(), I\+R\+\_\+lowering\+::array\+\_\+ref\+\_\+lowering(), Bit\+\_\+\+Value\+::backward(), Bit\+\_\+\+Value\+::backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses(), Bit\+\_\+\+Value\+::backward\+\_\+transfer(), tree\+\_\+manipulation\+::bb\+\_\+add\+\_\+stmt(), tree\+\_\+manipulation\+::bb\+\_\+remove\+\_\+predecessor(), tree\+\_\+manipulation\+::bb\+\_\+remove\+\_\+successor(), structural\+\_\+manager\+::build\+\_\+graph(), operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), H\+W\+Call\+Injection\+::build\+Builtin\+Call(), dom\+\_\+info$<$ Graph\+Obj $>$\+::calc\+\_\+dfs\+\_\+tree(), dom\+\_\+info$<$ Graph\+Obj $>$\+::calc\+\_\+dfs\+\_\+tree\+\_\+rec(), dom\+\_\+info$<$ Graph\+Obj $>$\+::calc\+\_\+idoms(), dominance$<$ B\+B\+Graph $>$\+::calculate\+\_\+dominance\+\_\+info(), Allocation\+Information\+::\+Can\+Be\+Chained(), Allocation\+Information\+::\+Can\+Be\+Merged(), Schedule\+::\+Can\+Be\+Moved(), Phi\+Opt\+::\+Chain\+Optimization(), tree\+\_\+manager\+::check\+\_\+for\+\_\+decl(), short\+\_\+circuit\+\_\+taf\+::check\+\_\+merging\+\_\+candidate(), allocation\+::check\+\_\+templated\+\_\+units(), allocation\+::check\+\_\+type\+\_\+and\+\_\+precision(), pragma\+\_\+manager\+::\+Check\+Add\+Omp\+For(), pragma\+\_\+manager\+::\+Check\+Add\+Omp\+Simd(), simple\+\_\+code\+\_\+motion\+::\+Check\+Movable(), pragma\+\_\+manager\+::\+Check\+Omp\+For(), Spider\+Parameter\+::\+Check\+Parameters(), Bambu\+Parameter\+::\+Check\+Parameters(), Vectorize\+::\+Classify\+Loop(), Vectorize\+::\+Classify\+Tree\+Node(), tree\+\_\+manager\+::collapse\+\_\+into(), Gcc\+Wrapper\+::\+Compile\+File(), A\+S\+L\+A\+P\+::compute\+\_\+\+A\+L\+A\+P(), reg\+\_\+binding\+::compute\+\_\+bitsize(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+exec\+\_\+stage\+\_\+time(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), Create\+Address\+Translation\+::\+Compute\+Address(), Schedule\+::\+Compute\+Critical\+Path(), Data\+Dependence\+Computation\+::\+Computedependencies(), Allocation\+Information\+::\+Compute\+Driven\+Cond\+Expr(), Generate\+Fu\+List\+::\+Compute\+Relationships(), H\+L\+S\+Function\+Step\+::\+Compute\+Relationships(), H\+L\+S\+\_\+step\+::\+Compute\+Relationships(), Call\+Graph\+Manager\+::\+Compute\+Root\+And\+Reached\+Functions(), Allocation\+Information\+::\+Compute\+Roots(), Load\+Technology\+::\+Compute\+Technology\+Relationships(), Tool\+Manager\+::configure(), datapath\+\_\+parallel\+\_\+cs\+::connect\+\_\+i\+\_\+module\+\_\+kernel(), datapath\+\_\+parallel\+\_\+cs\+::connect\+\_\+module\+\_\+kernel(), fu\+\_\+binding\+\_\+cs\+::connect\+\_\+selector\+\_\+kernel(), operations\+\_\+cfg\+\_\+computation\+::connect\+\_\+start\+\_\+nodes(), conn\+\_\+binding\+\_\+cs\+::connect\+Out\+Or(), port\+\_\+o\+::copy(), signal\+\_\+o\+::copy(), module\+::copy(), tree\+\_\+manipulation\+::create\+\_\+basic\+\_\+block(), tree\+\_\+manipulation\+::create\+\_\+binary\+\_\+operation(), tree\+\_\+manipulation\+::create\+\_\+bit\+\_\+size\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+boolean\+\_\+type(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), create\+\_\+control\+\_\+flow\+\_\+checker(), tree\+\_\+manipulation\+::create\+\_\+default\+\_\+integer\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+default\+\_\+unsigned\+\_\+integer\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+extract\+\_\+bit\+\_\+expr(), tree\+\_\+manipulation\+::create\+\_\+gimple\+\_\+call(), short\+\_\+circuit\+\_\+taf\+::create\+\_\+gimple\+\_\+cond(), tree\+\_\+manipulation\+::create\+\_\+gimple\+\_\+cond(), tree\+\_\+manipulation\+::create\+\_\+gimple\+\_\+modify\+\_\+stmt(), tree\+\_\+manipulation\+::create\+\_\+gimple\+\_\+return(), Testbench\+Generation\+Base\+Step\+::create\+\_\+\+H\+D\+L\+\_\+testbench(), tree\+\_\+manipulation\+::create\+\_\+identifier\+\_\+node(), tree\+\_\+manipulation\+::create\+\_\+lut\+\_\+expr(), Pragma\+Analysis\+::create\+\_\+map\+\_\+pragma(), Pragma\+Analysis\+::create\+\_\+omp\+\_\+pragma(), tree\+\_\+manipulation\+::create\+\_\+parm\+\_\+decl(), tree\+\_\+manipulation\+::create\+\_\+phi\+\_\+node(), tree\+\_\+manipulation\+::create\+\_\+pointer\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+quaternary\+\_\+operation(), tree\+\_\+manipulation\+::create\+\_\+result\+\_\+decl(), create\+\_\+return\+\_\+and\+\_\+fix\+\_\+cfg(), tree\+\_\+manipulation\+::create\+\_\+size\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+ssa\+\_\+name(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), tree\+\_\+manipulation\+::create\+\_\+ternary\+\_\+operation(), tree\+\_\+manipulation\+::create\+\_\+translation\+\_\+unit\+\_\+decl(), tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), tree\+\_\+manipulation\+::create\+\_\+unary\+\_\+operation(), tree\+\_\+manipulation\+::create\+\_\+var\+\_\+decl(), tree\+\_\+manipulation\+::create\+\_\+void\+\_\+type(), tree\+\_\+manipulation\+::\+Create\+Default\+Unsigned\+Long\+Long\+Int(), Gcc\+Wrapper\+::\+Create\+Executable(), H\+L\+S\+Flow\+Step\+Factory\+::\+Create\+H\+L\+S\+Flow\+Step(), H\+L\+S\+Flow\+Step\+Factory\+::\+Create\+H\+L\+S\+Flow\+Steps(), tree\+\_\+manipulation\+::\+Create\+Integer\+Cst(), tree\+\_\+manipulation\+::\+Create\+Real\+Cst(), C\+Writer\+::\+Declare\+Function\+Types(), C\+Writer\+::\+Declare\+Type(), C\+Writer\+::\+Declare\+Variable(), Design\+Flow\+Manager\+::\+De\+Execute(), Design\+Flow\+Manager\+::\+Design\+Flow\+Manager(), Loops\+::\+Detect\+Irreducible\+Loop(), Loops\+::\+Detect\+Loops(), djgraph\+\_\+dfs\+\_\+tree\+\_\+visitor\+::discover\+\_\+vertex(), I\+R\+\_\+lowering\+::division\+\_\+by\+\_\+a\+\_\+constant(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), Data\+Dependence\+Computation\+::do\+\_\+dependence\+\_\+reduction(), Vectorize\+::\+Duplicate\+Increment(), tree\+\_\+manager\+::erase\+\_\+usage\+\_\+info(), Allocation\+Information\+::estimate\+\_\+call\+\_\+delay(), estimate\+\_\+muxes(), Allocation\+Information\+::\+Estimate\+Controller\+Delay(), Schedule\+::\+Evaluate\+Conds\+Merging(), Omp\+Function\+Allocation\+C\+S\+::\+Exec(), Omp\+Function\+Allocation\+::\+Exec(), fun\+\_\+dominator\+\_\+allocation\+::\+Exec(), Generate\+Simulation\+Scripts\+::\+Exec(), Basic\+Blocks\+Profiling\+::\+Exec(), Pragma\+Substitution\+::\+Exec(), Bit\+Value\+I\+P\+A\+::\+Exec(), ipa\+\_\+point\+\_\+to\+\_\+analysis\+::\+Exec(), Fix\+Characterization\+::\+Exec(), create\+\_\+tree\+\_\+manager\+::\+Exec(), Testbench\+Values\+X\+M\+L\+Generation\+::\+Exec(), parm2ssa\+::\+Exec(), Pragma\+Analysis\+::\+Exec(), vcd\+\_\+utility\+::\+Exec(), Aadl\+Parser\+::\+Exec(), Create\+Address\+Translation\+::\+Exec(), Design\+Flow\+Manager\+::\+Exec(), parametric\+\_\+list\+\_\+based\+::exec(), Tool\+Manager\+::execute(), Tool\+Manager\+::execute\+\_\+command(), Find\+Max\+C\+F\+G\+Transformations\+::\+Execute\+Bambu(), Backend\+Flow\+::\+Execute\+Synthesis(), Non\+Deterministic\+Flows\+::\+Execute\+Tool(), I\+R\+\_\+lowering\+::expand\+\_\+mult\+\_\+const(), I\+R\+\_\+lowering\+::expand\+\_\+target\+\_\+mem\+\_\+ref(), pragma\+\_\+manager\+::\+Extract\+Clauses(), tree\+\_\+manipulation\+::\+Extract\+Condition(), fu\+\_\+binding\+::fill\+\_\+array\+\_\+ref\+\_\+memory(), dom\+\_\+info$<$ Graph\+Obj $>$\+::fill\+\_\+dom\+\_\+map(), Gcc\+Wrapper\+::\+Fill\+Tree\+Manager(), memory\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation(), multi\+\_\+way\+\_\+if\+::\+Fix\+Cfg(), Vectorize\+::\+Fix\+Phis(), Bit\+\_\+\+Value\+::forward(), xst\+\_\+wrapper\+::\+Generate\+Project\+File(), modelsim\+Wrapper\+::\+Generate\+Script(), I\+S\+E\+\_\+isim\+\_\+wrapper\+::\+Generate\+Script(), Xilinx\+Taste\+Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), Behavioral\+Helper\+::get\+\_\+asm\+\_\+string(), Allocation\+Information\+::get\+\_\+attribute\+\_\+of\+\_\+fu\+\_\+per\+\_\+op(), Pragma\+Analysis\+::get\+\_\+call\+\_\+parameter(), Storage\+Value\+Information\+::get\+\_\+compatibility\+\_\+weight(), Allocation\+Information\+::get\+\_\+correction\+\_\+time(), Allocation\+Information\+::get\+\_\+execution\+\_\+time(), Translator\+::get\+\_\+exponential\+\_\+notation(), tree\+\_\+manager\+::get\+\_\+next\+\_\+vers(), Translator\+::get\+\_\+normalization(), Behavioral\+Helper\+::get\+\_\+parameters(), Multiple\+Entry\+If\+Reduction\+::\+Get\+Area\+Cost(), Allocation\+Information\+::\+Get\+Connection\+Time(), Allocation\+Information\+::\+Get\+Cycle\+Latency(), Parameter\+::\+Get\+File\+Format(), Behavioral\+Helper\+::\+Get\+Init(), Allocation\+Information\+::\+Get\+Node\+Type\+Prec(), Allocation\+Information\+::\+Get\+Phi\+Connection\+Latency(), Schedule\+::\+Get\+Ready\+Time(), Gcc\+Wrapper\+::\+Get\+Source\+Code\+Lines(), Allocation\+Information\+::\+Get\+Time\+Latency(), Allocation\+Information\+::\+Get\+To\+Dsp\+Register\+Delay(), Allocation\+Information\+::\+Get\+Zero\+Distance\+Operations(), Memory\+Initialization\+Writer\+Base\+::\+Go\+Down(), Memory\+Initialization\+Writer\+Base\+::\+Go\+Next(), Memory\+Initialization\+Writer\+Base\+::\+Go\+Up(), C\+S\+E\+::hash\+\_\+check(), H\+D\+L\+\_\+manager\+::hdl\+\_\+gen(), Phi\+Opt\+::\+Identify\+Pattern(), Nano\+Xplore\+Backend\+Flow\+::\+Init\+Design\+Parameters(), Xilinx\+Backend\+Flow\+::\+Init\+Design\+Parameters(), S\+D\+C\+Scheduling\+::\+Initialize(), Bit\+\_\+\+Value\+::initialize(), cdfc\+\_\+module\+\_\+binding\+::initialize\+\_\+connection\+\_\+relation(), Gcc\+Wrapper\+::\+Initialize\+Gcc\+Parameters(), mux\+\_\+connection\+\_\+binding\+::input\+\_\+logic(), tree\+\_\+manager\+::insert\+\_\+usage\+\_\+info(), fu\+\_\+binding\+\_\+cs\+::instantiate\+\_\+component\+\_\+kernel(), datapath\+\_\+parallel\+\_\+cs\+::instantiate\+\_\+component\+\_\+parallel(), cs\+\_\+interface\+::instantiate\+\_\+component\+\_\+parallel(), conn\+\_\+binding\+\_\+cs\+::instantiate\+\_\+suspension\+\_\+component(), allocation\+::\+Integrate\+Technology\+Libraries(), parm\+\_\+decl\+\_\+taken\+\_\+address\+\_\+fix\+::\+Internal\+Exec(), Fix\+Structs\+Passed\+By\+Value\+::\+Internal\+Exec(), mem\+\_\+cg\+\_\+ext\+::\+Internal\+Exec(), F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Internal\+Exec(), sched\+\_\+based\+\_\+chaining\+\_\+computation\+::\+Internal\+Exec(), Serialize\+Mutual\+Exclusions\+::\+Internal\+Exec(), Predicate\+Statements\+::\+Internal\+Exec(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), Clean\+Virtual\+Phi\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), Un\+Comparison\+Lowering\+::\+Internal\+Exec(), Op\+Cdg\+Computation\+::\+Internal\+Exec(), B\+B\+Order\+Computation\+::\+Internal\+Exec(), Op\+Order\+Computation\+::\+Internal\+Exec(), Extract\+Omp\+Atomic\+::\+Internal\+Exec(), Extract\+Omp\+For\+::\+Internal\+Exec(), Taste\+Interface\+Generation\+::\+Internal\+Exec(), Simulation\+Evaluation\+::\+Internal\+Exec(), S\+D\+C\+Code\+Motion\+::\+Internal\+Exec(), Add\+Artificial\+Call\+Flow\+Edges\+::\+Internal\+Exec(), Basic\+Blocks\+Cfg\+Computation\+::\+Internal\+Exec(), Function\+Call\+Type\+Cleanup\+::\+Internal\+Exec(), Switch\+Fix\+::\+Internal\+Exec(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), Call\+Graph\+Builtin\+Call\+::\+Internal\+Exec(), Update\+Schedule\+::\+Internal\+Exec(), B\+B\+Reachability\+Computation\+::\+Internal\+Exec(), Top\+Entity\+Memory\+Mapped\+::\+Internal\+Exec(), Loops\+Analysis\+Bambu\+::\+Internal\+Exec(), Add\+Op\+Phi\+Flow\+Edges\+::\+Internal\+Exec(), call\+\_\+expr\+\_\+fix\+::\+Internal\+Exec(), Add\+Op\+Loop\+Flow\+Edges\+::\+Internal\+Exec(), op\+\_\+feedback\+\_\+edges\+\_\+computation\+::\+Internal\+Exec(), bb\+\_\+feedback\+\_\+edges\+\_\+computation\+::\+Internal\+Exec(), compute\+\_\+implicit\+\_\+calls\+::\+Internal\+Exec(), Add\+Bb\+Ecfg\+Edges\+::\+Internal\+Exec(), rebuild\+\_\+initialization\+::\+Internal\+Exec(), fanout\+\_\+opt\+::\+Internal\+Exec(), dom\+\_\+post\+\_\+dom\+\_\+computation\+::\+Internal\+Exec(), loops\+\_\+computation\+::\+Internal\+Exec(), Block\+Fix\+::\+Internal\+Exec(), Split\+Return\+::\+Internal\+Exec(), Build\+Virtual\+Phi\+::\+Internal\+Exec(), top\+\_\+entity\+::\+Internal\+Exec(), determine\+\_\+memory\+\_\+accesses\+::\+Internal\+Exec(), add\+\_\+library\+::\+Internal\+Exec(), dead\+\_\+code\+\_\+elimination\+::\+Internal\+Exec(), constant\+\_\+flop\+\_\+wrapper\+::\+Internal\+Exec(), hls\+\_\+div\+\_\+cg\+\_\+ext\+::\+Internal\+Exec(), Cond\+Expr\+Restructuring\+::\+Internal\+Exec(), commutative\+\_\+expr\+\_\+restructuring\+::\+Internal\+Exec(), interface\+\_\+infer\+::\+Internal\+Exec(), Remove\+Ending\+If\+::\+Internal\+Exec(), simple\+\_\+code\+\_\+motion\+::\+Internal\+Exec(), short\+\_\+circuit\+\_\+taf\+::\+Internal\+Exec(), C\+S\+E\+::\+Internal\+Exec(), Multiple\+Entry\+If\+Reduction\+::\+Internal\+Exec(), multi\+\_\+way\+\_\+if\+::\+Internal\+Exec(), I\+R\+\_\+lowering\+::\+Internal\+Exec(), operations\+\_\+cfg\+\_\+computation\+::\+Internal\+Exec(), port\+\_\+swapping\+::\+Internal\+Exec(), Vectorize\+::\+Internal\+Exec(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), Phi\+Opt\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), Bit\+\_\+\+Value\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), Check\+System\+Type\+::is\+\_\+system\+\_\+include(), tree\+\_\+helper\+::is\+\_\+unsigned(), Call\+Graph\+Manager\+::\+Is\+Call\+Point(), dead\+\_\+code\+\_\+elimination\+::kill\+\_\+uses(), F\+P\+G\+A\+\_\+device\+::load\+\_\+devices(), rebuild\+\_\+initialization2\+::look\+\_\+for\+\_\+\+R\+O\+Ms(), Call\+Graph\+Builtin\+Call\+::look\+For\+Builtin\+Call(), main(), datapath\+\_\+parallel\+\_\+cs\+::manage\+\_\+extern\+\_\+global\+\_\+port\+\_\+parallel(), cs\+\_\+interface\+::manage\+\_\+extern\+\_\+global\+\_\+port\+\_\+top(), fu\+\_\+binding\+\_\+cs\+::manage\+\_\+memory\+\_\+port\+\_\+hierarchical(), fu\+\_\+binding\+\_\+cs\+::manage\+\_\+memory\+\_\+port\+\_\+kernel(), Translator\+::merge\+\_\+pa(), tree\+\_\+manager\+::merge\+\_\+tree\+\_\+managers(), multi\+\_\+way\+\_\+if\+::\+Merge\+Cond\+Cond(), multi\+\_\+way\+\_\+if\+::\+Merge\+Cond\+Multi(), multi\+\_\+way\+\_\+if\+::\+Merge\+Multi\+Cond(), multi\+\_\+way\+\_\+if\+::\+Merge\+Multi\+Multi(), Phi\+Opt\+::\+Merge\+Phi(), Bit\+Lattice\+Manipulator\+::mix(), dead\+\_\+code\+\_\+elimination\+::move2empty\+B\+B(), B\+B\+\_\+based\+\_\+stg\+::move\+\_\+with\+\_\+duplication(), B\+B\+\_\+based\+\_\+stg\+::move\+\_\+without\+\_\+duplication(), conn\+\_\+binding\+::mux\+\_\+allocation(), conn\+\_\+binding\+::mux\+\_\+connection(), Host\+Profiling\+::normalize(), Bit\+\_\+\+Value\+\_\+opt\+::optimize(), B\+B\+\_\+based\+\_\+stg\+::optimize\+\_\+cycles(), C\+Initialization\+Parser\+::\+Parse(), Design\+Compiler\+Wrapper\+::parse\+\_\+area\+\_\+reports(), Design\+Compiler\+Wrapper\+::parse\+\_\+cell\+\_\+reports(), Design\+Compiler\+Wrapper\+::parse\+\_\+synthesis\+\_\+reports(), Design\+Compiler\+Wrapper\+::parse\+\_\+time\+\_\+reports(), Test\+Vector\+Parser\+::\+Parse\+User\+String(), Test\+Vector\+Parser\+::\+Parse\+X\+M\+L\+File(), Bit\+\_\+\+Value\+::pointer\+\_\+resizing(), Tool\+Manager\+::prepare\+\_\+input\+\_\+files(), Behavioral\+Helper\+::print\+\_\+constant(), Behavioral\+Helper\+::print\+\_\+node(), tree\+\_\+helper\+::print\+\_\+type(), Behavioral\+Helper\+::print\+\_\+type\+\_\+declaration(), Memory\+Initialization\+C\+Writer\+::\+Process(), Memory\+Initialization\+Writer\+::\+Process(), Translator\+::read\+\_\+column\+\_\+formats(), Pragma\+Parser\+::recognize\+\_\+omp\+\_\+pragma(), structural\+\_\+manager\+::reconnect\+\_\+signal\+\_\+member(), parm2ssa\+::recursive\+\_\+analysis(), string\+\_\+cst\+\_\+fix\+::recursive\+\_\+analysis(), hls\+\_\+div\+\_\+cg\+\_\+ext\+::recursive\+\_\+examinate(), Var\+Decl\+Fix\+::recursive\+\_\+examinate(), Check\+System\+Type\+::recursive\+\_\+examinate(), soft\+\_\+float\+\_\+cg\+\_\+ext\+::\+Recursive\+Examinate(), tree\+\_\+helper\+::\+Recursive\+Get\+Types\+To\+Be\+Declared(), Design\+Flow\+Manager\+::\+Recursively\+Add\+Steps(), Var\+Computation\+::\+Recursively\+Analyze(), tree\+\_\+manager\+::\+Recursive\+Replace\+Tree\+Node(), Call\+Graph\+Manager\+::\+Remove\+Call\+Point(), Phi\+Opt\+::\+Remove\+Cond\+Expr(), Top\+Entity\+Memory\+Mapped\+::resizing\+\_\+\+I\+O(), S\+D\+C\+Sorter\+::\+S\+D\+C\+Sorter(), Vectorize\+::\+Set\+Predication(), Phi\+Opt\+::\+Single\+Phi\+Optimization(), tree\+\_\+helper\+::\+Size(), fu\+\_\+binding\+::specialise\+\_\+fu(), conn\+\_\+binding\+::specialise\+\_\+mux(), reg\+\_\+binding\+::specialise\+\_\+reg(), Pragma\+Parser\+::substitute\+Pragmas(), network\+\_\+flow\+::successive\+\_\+shortest\+\_\+path\+\_\+algorithm(), Loops\+::tarjan\+\_\+scc(), extract\+\_\+patterns\+::ternary\+\_\+plus\+\_\+expr\+\_\+extraction(), Vectorize\+::\+Transform(), Translator\+::\+Translator(), V\+H\+D\+L\+\_\+writer\+::type\+\_\+converter\+\_\+size(), cdfc\+\_\+module\+\_\+binding\+::update\+\_\+slack\+\_\+starting\+\_\+time(), multi\+\_\+way\+\_\+if\+::\+Update\+Cfg(), Schedule\+::\+Update\+Time(), vcd\+\_\+parser\+::vcd\+\_\+pop\+\_\+def\+\_\+scope(), vcd\+\_\+parser\+::vcd\+\_\+push\+\_\+def\+\_\+scope(), virtual\+\_\+phi\+\_\+nodes\+\_\+split\+::virtual\+\_\+split\+\_\+phi(), cdfc\+\_\+module\+\_\+binding\+::weight\+\_\+computation(), H\+D\+L\+\_\+manager\+::write\+\_\+components(), Minimal\+Interface\+Testbench\+::write\+\_\+file\+\_\+reading\+\_\+operations(), H\+D\+L\+\_\+manager\+::write\+\_\+module(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl(), Testbench\+Generation\+Base\+Step\+::write\+\_\+output\+\_\+checks(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+port\+\_\+binding(), Translator\+::write\+\_\+to\+\_\+latex(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions(), verilog\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions(), verilog\+\_\+writer\+::write\+\_\+vector\+\_\+port\+\_\+binding(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+vector\+\_\+port\+\_\+binding(), Function\+Frontend\+Flow\+Step\+::\+Write\+B\+B\+Graph\+Dot(), V\+H\+D\+L\+\_\+writer\+::\+Write\+Builtin(), H\+L\+S\+C\+Writer\+::\+Write\+Expected\+Results(), Altera\+Backend\+Flow\+::\+Write\+Flow\+Configuration(), Nano\+Xplore\+Backend\+Flow\+::\+Write\+Flow\+Configuration(), C\+Backend\+::\+Write\+Global\+Declarations(), C\+Backend\+::write\+Implementations(), C\+Backend\+::write\+Includes(), H\+L\+S\+C\+Writer\+::\+Write\+Main\+Testbench(), H\+L\+S\+C\+Writer\+::\+Write\+Param\+Initialization(), Edge\+C\+Writer\+::write\+Routine\+Instructions(), C\+Writer\+::write\+Routine\+Instructions(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), H\+L\+S\+C\+Writer\+::\+Write\+Simulator\+Init\+Memory(), technology\+\_\+manager\+::xload(), structural\+\_\+object\+::xload(), functional\+\_\+unit\+::xload(), and module\+::xload().
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_a679418f160461bb84a3acc3df5aa6fcb}\label{dbgPrintHelper_8hpp_a679418f160461bb84a3acc3df5aa6fcb}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX@{I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX}}
+\index{I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX@{I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX}{INDENT\_DBG\_MEX}}
+{\footnotesize\ttfamily \#define I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX(\begin{DoxyParamCaption}\item[{}]{dbg\+Level,  }\item[{}]{cur\+Dbg\+Level,  }\item[{}]{mex }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((dbgLevel <= curDbgLevel) ?                                                                               
+                                                                                                                  
+                                         \(\backslash\)
+        (\hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message} = mex,                                                                 
+                                                                                                                  
+                                                         \(\backslash\)
+         (std::string(\hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message}) == \textcolor{stringliteral}{"-->"}) ?                                              
+                                                                                                                  
+                                                         \(\backslash\)
+             (\hyperlink{dbgPrintHelper_8hpp_a9c6999e37c888ad294f6f86183dfd252}{null\_stream} << (\hyperlink{dbgPrintHelper_8hpp_a416b89e08aff70daa4359da0365b04da}{indentation} += 2)) :                                   
+                                                                                                                  
+                                                                  \(\backslash\)
+             ((std::string(\hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message}).substr(0, 3) == \textcolor{stringliteral}{"-->"}) ?                            
+                                                                                                                  
+                                                         \(\backslash\)
+                  (std::cerr << std::string(indentation += 2, \textcolor{charliteral}{' '}) << std::string(
+      \hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message}).substr(3) << std::endl) :                                                      
+                                                                                   \(\backslash\)
+                  ((std::string(\hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message}).substr(0, 3) == \textcolor{stringliteral}{"---"}) ?                       
+                                                                                                                  
+                                                         \(\backslash\)
+                       (std::cerr << std::string(indentation + 2, \textcolor{charliteral}{' '}) << std::string(
+      \hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message}).substr(3) << std::endl) :                                                      
+                                                                               \(\backslash\)
+                       ((std::string(\hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message}) == \textcolor{stringliteral}{"<--"}) ? (
+      \hyperlink{dbgPrintHelper_8hpp_a9c6999e37c888ad294f6f86183dfd252}{null\_stream} << (indentation -= 2)) :                                                            
+                                                                                                  \(\backslash\)
+                                                                ((std::string(
+      \hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message}).substr(0, 3) == \textcolor{stringliteral}{"<--"}) ? (std::cerr << std::string(indentation, \textcolor{charliteral}{' '}) << 
+      std::string(\hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message}).substr(3) << std::endl, \hyperlink{dbgPrintHelper_8hpp_a9c6999e37c888ad294f6f86183dfd252}{null\_stream} << (indentation -= 2)) : \(\backslash\)
+                                                                                                           
+                 (std::cerr << std::string(indentation, \textcolor{charliteral}{' '}) << \hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message} << std::endl)))))) :   
+                                                         \(\backslash\)
+        (std::cerr))
+\end{DoxyCode}
+
+
+We are producing a debug version of the program, so the message is printed;. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dbglevel} & the minimum debug level at which we desire to print the message\+: if the actual debug level is smaller than that, no message is printed \\
+\hline
+{\em cur\+Dbg\+Level} & the current debug level at which the algorithm is executing \\
+\hline
+{\em format\+Mex} & the array of chars containing the message to print\+: this message can be written using a printf like syntax. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 137 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+Referenced by Controller\+Creator\+Base\+Step\+::add\+\_\+command\+\_\+ports(), conn\+\_\+binding\+::add\+\_\+command\+\_\+ports(), conn\+\_\+binding\+::add\+\_\+connection(), top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port(), top\+\_\+entity\+\_\+cs\+::add\+\_\+context\+\_\+switch\+\_\+port\+\_\+kernel(), conn\+\_\+binding\+::add\+\_\+datapath\+\_\+connection(), dead\+\_\+code\+\_\+elimination\+::add\+\_\+gimple\+\_\+nop(), top\+\_\+entity\+\_\+cs\+::add\+\_\+input\+\_\+register(), datapath\+\_\+cs\+::add\+\_\+ports(), top\+\_\+entity\+::add\+\_\+ports(), classic\+\_\+datapath\+::add\+\_\+ports(), conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp(), allocation\+::add\+\_\+tech\+\_\+constraint(), parametric\+\_\+list\+\_\+based\+::add\+\_\+to\+\_\+priority\+\_\+queues(), Parallel\+Memory\+Fu\+Binding\+::add\+\_\+to\+\_\+\+S\+M(), State\+Transition\+Graph\+Manager\+::add\+\_\+to\+\_\+\+S\+M(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), conn\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), Call\+Graph\+Manager\+::\+Add\+Call\+Point(), module\+\_\+interface\+::\+Add\+Connection(), module\+\_\+interface\+::\+Add\+Constant(), S\+D\+C\+Scheduling\+::\+Add\+Delay\+Constraints(), S\+D\+C\+Scheduling\+::\+Add\+Dependence\+Constraint(), Call\+Graph\+Manager\+::\+Add\+Function(), Vectorize\+::\+Add\+Guards(), module\+\_\+interface\+::\+Add\+Signal(), tree\+\_\+helper\+::\+Allocated\+Memory\+Size(), Testbench\+Memory\+Allocation\+::\+Alloc\+Testbench\+Memory(), Altera\+Backend\+Flow\+::\+Altera\+Backend\+Flow(), determine\+\_\+memory\+\_\+accesses\+::analyze\+\_\+node(), use\+\_\+counting\+::analyze\+\_\+node(), Generate\+Fu\+List\+::\+Analyze\+Cell(), Functional\+Unit\+Step\+::\+Analyze\+Fu(), C\+Backend\+::\+Analyze\+Include(), Phi\+Opt\+::\+Apply\+Diff\+Nothing(), Phi\+Opt\+::\+Apply\+Gimple\+Nothing(), Phi\+Opt\+::\+Apply\+If\+Merge(), Phi\+Opt\+::\+Apply\+If\+Nothing(), Phi\+Opt\+::\+Apply\+If\+Remove(), Phi\+Opt\+::\+Apply\+Multi\+Merge(), Phi\+Opt\+::\+Apply\+Multi\+Nothing(), Phi\+Opt\+::\+Apply\+Multi\+Remove(), I\+R\+\_\+lowering\+::array\+\_\+ref\+\_\+lowering(), Bit\+\_\+\+Value\+::backward(), Bit\+\_\+\+Value\+::backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses(), Bit\+\_\+\+Value\+::backward\+\_\+transfer(), structural\+\_\+manager\+::build\+\_\+graph(), operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), H\+W\+Call\+Injection\+::build\+Builtin\+Call(), dom\+\_\+info$<$ Graph\+Obj $>$\+::calc\+\_\+dfs\+\_\+tree(), dom\+\_\+info$<$ Graph\+Obj $>$\+::calc\+\_\+dfs\+\_\+tree\+\_\+rec(), dom\+\_\+info$<$ Graph\+Obj $>$\+::calc\+\_\+idoms(), dominance$<$ B\+B\+Graph $>$\+::calculate\+\_\+dominance\+\_\+info(), call\+\_\+graph\+\_\+computation\+::call\+\_\+graph\+\_\+computation\+\_\+recursive(), Allocation\+Information\+::\+Can\+Be\+Chained(), Allocation\+Information\+::\+Can\+Be\+Merged(), Schedule\+::\+Can\+Be\+Moved(), Phi\+Opt\+::\+Chain\+Optimization(), tree\+\_\+manager\+::check\+\_\+for\+\_\+decl(), short\+\_\+circuit\+\_\+taf\+::check\+\_\+merging\+\_\+candidate(), allocation\+::check\+\_\+templated\+\_\+units(), allocation\+::check\+\_\+type\+\_\+and\+\_\+precision(), pragma\+\_\+manager\+::\+Check\+Add\+Omp\+For(), pragma\+\_\+manager\+::\+Check\+Add\+Omp\+Simd(), simple\+\_\+code\+\_\+motion\+::\+Check\+Movable(), pragma\+\_\+manager\+::\+Check\+Omp\+For(), Spider\+Parameter\+::\+Check\+Parameters(), Vectorize\+::\+Classify\+Loop(), Vectorize\+::\+Classify\+Tree\+Node(), tree\+\_\+manager\+::collapse\+\_\+into(), Gcc\+Wrapper\+::\+Compile\+File(), B\+B\+\_\+based\+\_\+stg\+::compute\+\_\+\+E\+P\+P\+\_\+edge\+\_\+increments(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+exec\+\_\+stage\+\_\+time(), tree\+\_\+helper\+::compute\+\_\+ssa\+\_\+uses\+\_\+rec\+\_\+ptr(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), Create\+Address\+Translation\+::\+Compute\+Address(), Schedule\+::\+Compute\+Critical\+Path(), Data\+Dependence\+Computation\+::\+Computedependencies(), Allocation\+Information\+::\+Compute\+Driven\+Cond\+Expr(), H\+L\+S\+Function\+Step\+::\+Compute\+Relationships(), H\+L\+S\+\_\+step\+::\+Compute\+Relationships(), Call\+Graph\+Manager\+::\+Compute\+Root\+And\+Reached\+Functions(), Allocation\+Information\+::\+Compute\+Roots(), tree\+\_\+helper\+::\+Compute\+Ssa\+Uses(), operations\+\_\+cfg\+\_\+computation\+::connect\+\_\+start\+\_\+nodes(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), tree\+\_\+manipulation\+::create\+\_\+gimple\+\_\+call(), short\+\_\+circuit\+\_\+taf\+::create\+\_\+gimple\+\_\+cond(), tree\+\_\+manipulation\+::create\+\_\+gimple\+\_\+modify\+\_\+stmt(), Testbench\+Generation\+Base\+Step\+::create\+\_\+\+H\+D\+L\+\_\+testbench(), Pragma\+Analysis\+::create\+\_\+map\+\_\+pragma(), Pragma\+Analysis\+::create\+\_\+omp\+\_\+pragma(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+array(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Read\+\_\+simple(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Write\+\_\+simple(), create\+\_\+return\+\_\+and\+\_\+fix\+\_\+cfg(), tree\+\_\+manipulation\+::create\+\_\+ssa\+\_\+name(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), Backend\+Flow\+::create\+\_\+xml\+\_\+scripts(), tree\+\_\+manipulation\+::\+Create\+Default\+Unsigned\+Long\+Long\+Int(), Gcc\+Wrapper\+::\+Create\+Executable(), H\+L\+S\+Flow\+Step\+Factory\+::\+Create\+H\+L\+S\+Flow\+Step(), H\+L\+S\+Flow\+Step\+Factory\+::\+Create\+H\+L\+S\+Flow\+Steps(), Backend\+Flow\+::\+Create\+Scripts(), C\+Writer\+::\+Declare\+Function\+Types(), C\+Writer\+::\+Declare\+Local\+Variables(), C\+Writer\+::\+Declare\+Type(), C\+Writer\+::\+Declare\+Variable(), Design\+Flow\+Manager\+::\+De\+Execute(), Loops\+::\+Detect\+Irreducible\+Loop(), djgraph\+\_\+dfs\+\_\+tree\+\_\+visitor\+::discover\+\_\+vertex(), I\+R\+\_\+lowering\+::division\+\_\+by\+\_\+a\+\_\+constant(), Data\+Dependence\+Computation\+::do\+\_\+dependence\+\_\+reduction(), Vectorize\+::\+Duplicate\+Increment(), tree\+\_\+manager\+::erase\+\_\+usage\+\_\+info(), Allocation\+Information\+::estimate\+\_\+call\+\_\+delay(), estimate\+\_\+muxes(), Allocation\+Information\+::\+Estimate\+Controller\+Delay(), Schedule\+::\+Evaluate\+Conds\+Merging(), H\+W\+Discrepancy\+Analysis\+::\+Exec(), Omp\+Function\+Allocation\+::\+Exec(), Omp\+Function\+Allocation\+C\+S\+::\+Exec(), Generate\+Simulation\+Scripts\+::\+Exec(), fun\+\_\+dominator\+\_\+allocation\+::\+Exec(), C\+Testbench\+Execution\+::\+Exec(), Basic\+Blocks\+Profiling\+::\+Exec(), Pragma\+Substitution\+::\+Exec(), Bit\+Value\+I\+P\+A\+::\+Exec(), ipa\+\_\+point\+\_\+to\+\_\+analysis\+::\+Exec(), Fix\+Characterization\+::\+Exec(), create\+\_\+tree\+\_\+manager\+::\+Exec(), Test\+Vector\+Parser\+::\+Exec(), Testbench\+Values\+X\+M\+L\+Generation\+::\+Exec(), Testbench\+Values\+C\+Generation\+::\+Exec(), parm2ssa\+::\+Exec(), vcd\+\_\+utility\+::\+Exec(), Pragma\+Analysis\+::\+Exec(), Aadl\+Parser\+::\+Exec(), call\+\_\+graph\+\_\+computation\+::\+Exec(), Create\+Address\+Translation\+::\+Exec(), Design\+Flow\+Manager\+::\+Exec(), C\+Backend\+::\+Exec(), parametric\+\_\+list\+\_\+based\+::exec(), Tool\+Manager\+::execute(), Tool\+Manager\+::execute\+\_\+command(), Find\+Max\+C\+F\+G\+Transformations\+::\+Execute\+Bambu(), Backend\+Flow\+::\+Execute\+Synthesis(), Non\+Deterministic\+Flows\+::\+Execute\+Tool(), I\+R\+\_\+lowering\+::expand\+\_\+mult\+\_\+const(), I\+R\+\_\+lowering\+::expand\+\_\+target\+\_\+mem\+\_\+ref(), pragma\+\_\+manager\+::\+Extract\+Clauses(), tree\+\_\+manipulation\+::\+Extract\+Condition(), fu\+\_\+binding\+::fill\+\_\+array\+\_\+ref\+\_\+memory(), dom\+\_\+info$<$ Graph\+Obj $>$\+::fill\+\_\+dom\+\_\+map(), Gcc\+Wrapper\+::\+Fill\+Tree\+Manager(), memory\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation(), port\+\_\+o\+::find\+\_\+bounded\+\_\+object(), multi\+\_\+way\+\_\+if\+::\+Fix\+Cfg(), Vectorize\+::\+Fix\+Phis(), Bit\+\_\+\+Value\+::forward(), Bit\+\_\+\+Value\+::forward\+\_\+transfer(), xst\+\_\+wrapper\+::\+Generate\+Project\+File(), modelsim\+Wrapper\+::\+Generate\+Script(), Xilinx\+Taste\+Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), Backend\+Flow\+::\+Generate\+Synthesis\+Scripts(), Behavioral\+Helper\+::get\+\_\+asm\+\_\+string(), Allocation\+Information\+::get\+\_\+attribute\+\_\+of\+\_\+fu\+\_\+per\+\_\+op(), Pragma\+Analysis\+::get\+\_\+call\+\_\+parameter(), Storage\+Value\+Information\+::get\+\_\+compatibility\+\_\+weight(), Allocation\+Information\+::get\+\_\+correction\+\_\+time(), Allocation\+Information\+::get\+\_\+execution\+\_\+time(), tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), tree\+\_\+manager\+::get\+\_\+next\+\_\+vers(), Behavioral\+Helper\+::get\+\_\+parameters(), Multiple\+Entry\+If\+Reduction\+::\+Get\+Area\+Cost(), Allocation\+Information\+::\+Get\+Connection\+Time(), Allocation\+Information\+::\+Get\+Cycle\+Latency(), Parameter\+::\+Get\+File\+Format(), Behavioral\+Helper\+::\+Get\+Init(), Allocation\+Information\+::\+Get\+Node\+Type\+Prec(), Allocation\+Information\+::\+Get\+Phi\+Connection\+Latency(), Schedule\+::\+Get\+Ready\+Time(), Gcc\+Wrapper\+::\+Get\+Source\+Code\+Lines(), Allocation\+Information\+::\+Get\+Time\+Latency(), Allocation\+Information\+::\+Get\+To\+Dsp\+Register\+Delay(), Allocation\+Information\+::\+Get\+Zero\+Distance\+Operations(), glpk\+\_\+print\+\_\+hook(), Memory\+Initialization\+Writer\+Base\+::\+Go\+Down(), Memory\+Initialization\+Writer\+Base\+::\+Go\+Next(), Memory\+Initialization\+Writer\+Base\+::\+Go\+Up(), C\+S\+E\+::hash\+\_\+check(), Phi\+Opt\+::\+Identify\+Pattern(), Nano\+Xplore\+Backend\+Flow\+::\+Init\+Design\+Parameters(), Xilinx\+Backend\+Flow\+::\+Init\+Design\+Parameters(), Storage\+Value\+Information\+::\+Initialize(), S\+D\+C\+Scheduling\+::\+Initialize(), Bit\+\_\+\+Value\+::initialize(), cdfc\+\_\+module\+\_\+binding\+::initialize\+\_\+connection\+\_\+relation(), Gcc\+Wrapper\+::\+Initialize\+Gcc\+Parameters(), tree\+\_\+manager\+::insert\+\_\+usage\+\_\+info(), parm\+\_\+decl\+\_\+taken\+\_\+address\+\_\+fix\+::\+Internal\+Exec(), Fix\+Structs\+Passed\+By\+Value\+::\+Internal\+Exec(), mem\+\_\+cg\+\_\+ext\+::\+Internal\+Exec(), F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Internal\+Exec(), sched\+\_\+based\+\_\+chaining\+\_\+computation\+::\+Internal\+Exec(), Predicate\+Statements\+::\+Internal\+Exec(), Serialize\+Mutual\+Exclusions\+::\+Internal\+Exec(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), Clean\+Virtual\+Phi\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), Un\+Comparison\+Lowering\+::\+Internal\+Exec(), Op\+Cdg\+Computation\+::\+Internal\+Exec(), Op\+Order\+Computation\+::\+Internal\+Exec(), Extract\+Omp\+For\+::\+Internal\+Exec(), Extract\+Omp\+Atomic\+::\+Internal\+Exec(), Taste\+Interface\+Generation\+::\+Internal\+Exec(), B\+B\+Order\+Computation\+::\+Internal\+Exec(), S\+D\+C\+Code\+Motion\+::\+Internal\+Exec(), Simulation\+Evaluation\+::\+Internal\+Exec(), Basic\+Blocks\+Cfg\+Computation\+::\+Internal\+Exec(), Function\+Call\+Type\+Cleanup\+::\+Internal\+Exec(), Add\+Artificial\+Call\+Flow\+Edges\+::\+Internal\+Exec(), Switch\+Fix\+::\+Internal\+Exec(), Call\+Graph\+Builtin\+Call\+::\+Internal\+Exec(), Update\+Schedule\+::\+Internal\+Exec(), classic\+\_\+datapath\+::\+Internal\+Exec(), Top\+Entity\+Memory\+Mapped\+::\+Internal\+Exec(), Loops\+Analysis\+Bambu\+::\+Internal\+Exec(), Add\+Op\+Phi\+Flow\+Edges\+::\+Internal\+Exec(), call\+\_\+expr\+\_\+fix\+::\+Internal\+Exec(), op\+\_\+feedback\+\_\+edges\+\_\+computation\+::\+Internal\+Exec(), compute\+\_\+implicit\+\_\+calls\+::\+Internal\+Exec(), Add\+Bb\+Ecfg\+Edges\+::\+Internal\+Exec(), bb\+\_\+feedback\+\_\+edges\+\_\+computation\+::\+Internal\+Exec(), rebuild\+\_\+initialization\+::\+Internal\+Exec(), fanout\+\_\+opt\+::\+Internal\+Exec(), Block\+Fix\+::\+Internal\+Exec(), Split\+Return\+::\+Internal\+Exec(), Build\+Virtual\+Phi\+::\+Internal\+Exec(), add\+\_\+library\+::\+Internal\+Exec(), dead\+\_\+code\+\_\+elimination\+::\+Internal\+Exec(), hls\+\_\+div\+\_\+cg\+\_\+ext\+::\+Internal\+Exec(), constant\+\_\+flop\+\_\+wrapper\+::\+Internal\+Exec(), Cond\+Expr\+Restructuring\+::\+Internal\+Exec(), commutative\+\_\+expr\+\_\+restructuring\+::\+Internal\+Exec(), interface\+\_\+infer\+::\+Internal\+Exec(), Remove\+Ending\+If\+::\+Internal\+Exec(), simple\+\_\+code\+\_\+motion\+::\+Internal\+Exec(), datapath\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), short\+\_\+circuit\+\_\+taf\+::\+Internal\+Exec(), C\+S\+E\+::\+Internal\+Exec(), Multiple\+Entry\+If\+Reduction\+::\+Internal\+Exec(), multi\+\_\+way\+\_\+if\+::\+Internal\+Exec(), I\+R\+\_\+lowering\+::\+Internal\+Exec(), operations\+\_\+cfg\+\_\+computation\+::\+Internal\+Exec(), port\+\_\+swapping\+::\+Internal\+Exec(), Vectorize\+::\+Internal\+Exec(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), Phi\+Opt\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), Bit\+\_\+\+Value\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), Check\+System\+Type\+::is\+\_\+system\+\_\+include(), tree\+\_\+helper\+::is\+\_\+unsigned(), Call\+Graph\+Manager\+::\+Is\+Call\+Point(), dead\+\_\+code\+\_\+elimination\+::kill\+\_\+uses(), Lattice\+Backend\+Flow\+::\+Lattice\+Backend\+Flow(), F\+P\+G\+A\+\_\+device\+::load\+\_\+devices(), rebuild\+\_\+initialization2\+::look\+\_\+for\+\_\+\+R\+O\+Ms(), Call\+Graph\+Builtin\+Call\+::look\+For\+Builtin\+Call(), main(), datapath\+\_\+parallel\+\_\+cs\+::manage\+\_\+extern\+\_\+global\+\_\+port\+\_\+parallel(), cs\+\_\+interface\+::manage\+\_\+extern\+\_\+global\+\_\+port\+\_\+top(), Bit\+\_\+\+Value\+::manage\+\_\+forward\+\_\+binary\+\_\+operands(), tree\+\_\+manager\+::merge\+\_\+tree\+\_\+managers(), multi\+\_\+way\+\_\+if\+::\+Merge\+Cond\+Cond(), multi\+\_\+way\+\_\+if\+::\+Merge\+Cond\+Multi(), multi\+\_\+way\+\_\+if\+::\+Merge\+Multi\+Cond(), multi\+\_\+way\+\_\+if\+::\+Merge\+Multi\+Multi(), Phi\+Opt\+::\+Merge\+Phi(), Bit\+Lattice\+Manipulator\+::mix(), dead\+\_\+code\+\_\+elimination\+::move2empty\+B\+B(), B\+B\+\_\+based\+\_\+stg\+::move\+\_\+with\+\_\+duplication(), B\+B\+\_\+based\+\_\+stg\+::move\+\_\+without\+\_\+duplication(), conn\+\_\+binding\+::mux\+\_\+allocation(), conn\+\_\+binding\+::mux\+\_\+connection(), Nano\+Xplore\+Backend\+Flow\+::\+Nano\+Xplore\+Backend\+Flow(), Host\+Profiling\+::normalize(), Bit\+\_\+\+Value\+\_\+opt\+::optimize(), C\+Initialization\+Parser\+::\+Parse(), vcd\+\_\+parser\+::parse\+\_\+vcd(), Test\+Vector\+Parser\+::\+Parse\+User\+String(), Test\+Vector\+Parser\+::\+Parse\+X\+M\+L\+File(), Bit\+\_\+\+Value\+::pointer\+\_\+resizing(), Tool\+Manager\+::prepare\+\_\+input\+\_\+files(), Bit\+\_\+\+Value\+::print\+\_\+bitstring\+\_\+map(), Behavioral\+Helper\+::print\+\_\+constant(), Behavioral\+Helper\+::print\+\_\+node(), tree\+\_\+helper\+::print\+\_\+type(), Behavioral\+Helper\+::print\+\_\+type\+\_\+declaration(), Memory\+Initialization\+C\+Writer\+::\+Process(), Memory\+Initialization\+Writer\+::\+Process(), Translator\+::read\+\_\+column\+\_\+formats(), Pragma\+Parser\+::recognize\+\_\+omp\+\_\+pragma(), parm2ssa\+::recursive\+\_\+analysis(), string\+\_\+cst\+\_\+fix\+::recursive\+\_\+analysis(), hls\+\_\+div\+\_\+cg\+\_\+ext\+::recursive\+\_\+examinate(), Var\+Decl\+Fix\+::recursive\+\_\+examinate(), Check\+System\+Type\+::recursive\+\_\+examinate(), soft\+\_\+float\+\_\+cg\+\_\+ext\+::\+Recursive\+Examinate(), tree\+\_\+helper\+::\+Recursive\+Get\+Types\+To\+Be\+Declared(), Design\+Flow\+Manager\+::\+Recursively\+Add\+Steps(), Var\+Computation\+::\+Recursively\+Analyze(), tree\+\_\+manager\+::\+Recursive\+Replace\+Tree\+Node(), Call\+Graph\+Manager\+::\+Remove\+Call\+Point(), Phi\+Opt\+::\+Remove\+Cond\+Expr(), ssa\+\_\+name\+::\+Remove\+Use(), port\+\_\+o\+::resize\+\_\+std\+\_\+port(), Top\+Entity\+Memory\+Mapped\+::resizing\+\_\+\+I\+O(), S\+D\+C\+Sorter\+::\+S\+D\+C\+Sorter(), Vectorize\+::\+Set\+Predication(), Phi\+Opt\+::\+Single\+Phi\+Optimization(), tree\+\_\+helper\+::\+Size(), fu\+\_\+binding\+::specialise\+\_\+fu(), State\+Transition\+Graph\+Manager\+::specialise\+\_\+mu(), conn\+\_\+binding\+::specialise\+\_\+mux(), Pragma\+Parser\+::substitute\+Pragmas(), Loops\+::tarjan\+\_\+scc(), extract\+\_\+patterns\+::ternary\+\_\+plus\+\_\+expr\+\_\+extraction(), Vectorize\+::\+Transform(), V\+H\+D\+L\+\_\+writer\+::type\+\_\+converter\+\_\+size(), Bit\+\_\+\+Value\+::update\+\_\+\+I\+R(), cdfc\+\_\+module\+\_\+binding\+::update\+\_\+slack\+\_\+starting\+\_\+time(), multi\+\_\+way\+\_\+if\+::\+Update\+Cfg(), Schedule\+::\+Update\+Time(), cdfc\+\_\+module\+\_\+binding\+::weight\+\_\+computation(), H\+D\+L\+\_\+manager\+::write\+\_\+components(), Minimal\+Interface\+Testbench\+::write\+\_\+file\+\_\+reading\+\_\+operations(), H\+D\+L\+\_\+manager\+::write\+\_\+module(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl(), Testbench\+Generation\+Base\+Step\+::write\+\_\+output\+\_\+checks(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+port\+\_\+binding(), Translator\+::write\+\_\+to\+\_\+latex(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions(), verilog\+\_\+writer\+::write\+\_\+transition\+\_\+output\+\_\+functions(), verilog\+\_\+writer\+::write\+\_\+vector\+\_\+port\+\_\+binding(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+vector\+\_\+port\+\_\+binding(), Function\+Frontend\+Flow\+Step\+::\+Write\+B\+B\+Graph\+Dot(), V\+H\+D\+L\+\_\+writer\+::\+Write\+Builtin(), H\+L\+S\+C\+Writer\+::\+Write\+Expected\+Results(), Altera\+Backend\+Flow\+::\+Write\+Flow\+Configuration(), Nano\+Xplore\+Backend\+Flow\+::\+Write\+Flow\+Configuration(), C\+Backend\+::\+Write\+Global\+Declarations(), C\+Backend\+::write\+Implementations(), C\+Backend\+::write\+Includes(), H\+L\+S\+C\+Writer\+::\+Write\+Main\+Testbench(), H\+L\+S\+C\+Writer\+::\+Write\+Param\+Initialization(), Edge\+C\+Writer\+::write\+Routine\+Instructions(), C\+Writer\+::write\+Routine\+Instructions(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), H\+L\+S\+C\+Writer\+::\+Write\+Simulator\+Init\+Memory(), Xilinx\+Backend\+Flow\+::\+Xilinx\+Backend\+Flow(), and technology\+\_\+manager\+::xload().
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_a9e0c16c2229a92561d39964a6a539847}\label{dbgPrintHelper_8hpp_a9e0c16c2229a92561d39964a6a539847}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX@{I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX}}
+\index{I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX@{I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX}{INDENT\_OUT\_MEX}}
+{\footnotesize\ttfamily \#define I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX(\begin{DoxyParamCaption}\item[{}]{out\+Level,  }\item[{}]{cur\+Out\+Level,  }\item[{}]{mex }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((outLevel <= curOutLevel) ?                                                                               
+                                                                                                                  
+                                         \(\backslash\)
+        (\hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message} = mex,                                                                 
+                                                                                                                  
+                                                         \(\backslash\)
+         (std::string(\hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message}) == \textcolor{stringliteral}{"-->"}) ?                                              
+                                                                                                                  
+                                                         \(\backslash\)
+             (\hyperlink{dbgPrintHelper_8hpp_a9c6999e37c888ad294f6f86183dfd252}{null\_stream} << (\hyperlink{dbgPrintHelper_8hpp_a416b89e08aff70daa4359da0365b04da}{indentation} += 2)) :                                   
+                                                                                                                  
+                                                                  \(\backslash\)
+             ((std::string(\hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message}).substr(0, 3) == \textcolor{stringliteral}{"-->"}) ?                            
+                                                                                                                  
+                                                         \(\backslash\)
+                  (std::cerr << std::string(indentation += 2, \textcolor{charliteral}{' '}) << std::string(
+      \hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message}).substr(3) << std::endl) :                                                      
+                                                                                   \(\backslash\)
+                  ((std::string(\hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message}).substr(0, 3) == \textcolor{stringliteral}{"---"}) ?                       
+                                                                                                                  
+                                                         \(\backslash\)
+                       (std::cerr << std::string(indentation + 2, \textcolor{charliteral}{' '}) << std::string(
+      \hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message}).substr(3) << std::endl) :                                                      
+                                                                               \(\backslash\)
+                       ((std::string(\hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message}) == \textcolor{stringliteral}{"<--"}) ? (
+      \hyperlink{dbgPrintHelper_8hpp_a9c6999e37c888ad294f6f86183dfd252}{null\_stream} << (indentation -= 2)) :                                                            
+                                                                                                  \(\backslash\)
+                                                                ((std::string(
+      \hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message}).substr(0, 3) == \textcolor{stringliteral}{"<--"}) ? (std::cerr << std::string(indentation, \textcolor{charliteral}{' '}) << 
+      std::string(\hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message}).substr(3) << std::endl, \hyperlink{dbgPrintHelper_8hpp_a9c6999e37c888ad294f6f86183dfd252}{null\_stream} << (indentation -= 2)) : \(\backslash\)
+                                                                                                           
+                 (std::cerr << std::string(indentation, \textcolor{charliteral}{' '}) << \hyperlink{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}{panda\_message} << std::endl)))))) :   
+                                                         \(\backslash\)
+        (std::cerr))
+\end{DoxyCode}
+
+
+Definition at line 161 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+Referenced by reg\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), memory\+\_\+allocation\+::allocate\+\_\+parameters(), Testbench\+Memory\+Allocation\+::\+Alloc\+Testbench\+Memory(), determine\+\_\+memory\+\_\+accesses\+::analyze\+\_\+node(), I\+R\+\_\+lowering\+::division\+\_\+by\+\_\+a\+\_\+constant(), dump\+\_\+exec\+\_\+time(), H\+W\+Path\+Computation\+::\+Exec(), Call\+Graph\+Unfolding\+::\+Exec(), H\+W\+Discrepancy\+Analysis\+::\+Exec(), fun\+\_\+dominator\+\_\+allocation\+::\+Exec(), Basic\+Blocks\+Profiling\+::\+Exec(), Load\+File\+Technology\+::\+Exec(), Write\+Technology\+::\+Exec(), create\+\_\+tree\+\_\+manager\+::\+Exec(), Find\+Max\+C\+F\+G\+Transformations\+::\+Exec(), Evaluation\+::\+Exec(), Bambu\+Parameter\+::\+Exec(), vcd\+\_\+utility\+::\+Exec(), Design\+Flow\+Manager\+::\+Exec(), Vcd\+Signal\+Selection\+::\+Exec(), memory\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation(), Allocation\+Information\+::\+Get\+Fu\+Type(), vertex\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), unique\+\_\+binding\+\_\+register\+::\+Internal\+Exec(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), chordal\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), easy\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), values\+\_\+scheme\+::\+Internal\+Exec(), weighted\+\_\+clique\+\_\+register\+::\+Internal\+Exec(), commutative\+\_\+expr\+\_\+restructuring\+::\+Internal\+Exec(), port\+\_\+swapping\+::\+Internal\+Exec(), mux\+\_\+connection\+\_\+binding\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), Xml\+Flex\+Lexer\+::\+Lexer\+Error(), main(), Nano\+Xplore\+Backend\+Flow\+::\+Nano\+Xplore\+Backend\+Flow(), Bit\+\_\+\+Value\+\_\+opt\+::optimize(), Schedule\+::print(), conn\+\_\+binding\+::print(), vcd\+\_\+utility\+::print\+\_\+discrepancy(), reg\+\_\+binding\+::print\+\_\+el(), vcd\+\_\+utility\+::print\+\_\+failed\+\_\+vcd\+\_\+head(), State\+Transition\+Graph\+Manager\+::print\+\_\+statistics(), hls\+::\+Print\+Resources(), application\+\_\+manager\+::\+Register\+Transformation(), cdfc\+\_\+module\+\_\+binding\+::update\+\_\+slack\+\_\+starting\+\_\+time(), H\+L\+S\+C\+Writer\+::\+Write\+File(), and Xilinx\+Backend\+Flow\+::\+Xilinx\+Backend\+Flow().
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_a402812409599b18759655c7294e3683e}\label{dbgPrintHelper_8hpp_a402812409599b18759655c7294e3683e}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!N\+O\+U\+T\+P\+UT@{N\+O\+U\+T\+P\+UT}}
+\index{N\+O\+U\+T\+P\+UT@{N\+O\+U\+T\+P\+UT}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{N\+O\+U\+T\+P\+UT}{NOUTPUT}}
+{\footnotesize\ttfamily \#define N\+O\+U\+T\+P\+UT~0}
+
+
+
+Definition at line 50 of file dbg\+Print\+Helper.\+hpp.
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_a9c19f46a606539b16821bc81c4d94024}\label{dbgPrintHelper_8hpp_a9c19f46a606539b16821bc81c4d94024}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM@{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM}}
+\index{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM@{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM}{OUTPUT\_LEVEL\_MINIMUM}}
+{\footnotesize\ttfamily \#define O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM~1}
+
+
+
+minimum debugging print is performed. 
+
+
+
+Definition at line 62 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+Referenced by reg\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), Altera\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Lattice\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), C\+M\+O\+S\+\_\+technology\+::\+C\+M\+O\+S\+\_\+technology(), H\+W\+Discrepancy\+Analysis\+::\+Exec(), fun\+\_\+dominator\+\_\+allocation\+::\+Exec(), Basic\+Blocks\+Profiling\+::\+Exec(), create\+\_\+tree\+\_\+manager\+::\+Exec(), Find\+Max\+C\+F\+G\+Transformations\+::\+Exec(), Eucalyptus\+Parameter\+::\+Exec(), Evaluation\+::\+Exec(), Bambu\+Parameter\+::\+Exec(), vcd\+\_\+utility\+::\+Exec(), memory\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation(), library\+\_\+manager\+::get\+\_\+info(), H\+L\+S\+\_\+target\+::\+H\+L\+S\+\_\+target(), vertex\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), unique\+\_\+binding\+\_\+register\+::\+Internal\+Exec(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), chordal\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), easy\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), values\+\_\+scheme\+::\+Internal\+Exec(), weighted\+\_\+clique\+\_\+register\+::\+Internal\+Exec(), mux\+\_\+connection\+\_\+binding\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), I\+C\+\_\+device\+::load\+\_\+devices(), F\+P\+G\+A\+\_\+device\+::load\+\_\+devices(), main(), Design\+Compiler\+Wrapper\+::perform\+\_\+optimization(), State\+Transition\+Graph\+Manager\+::print\+\_\+statistics(), hls\+::\+Print\+Resources(), read\+\_\+technology\+\_\+library(), Eucalyptus\+Parameter\+::\+Set\+Defaults(), Spider\+Parameter\+::\+Set\+Defaults(), Bambu\+Parameter\+::\+Set\+Defaults(), Testbench\+Generation\+Base\+Step\+::write\+\_\+output\+\_\+checks(), H\+L\+S\+C\+Writer\+::\+Write\+Expected\+Results(), H\+L\+S\+C\+Writer\+::\+Write\+Simulator\+Init\+Memory(), and library\+\_\+manager\+::xload().
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_afb562db7c742e918f34c78949e970ae6}\label{dbgPrintHelper_8hpp_afb562db7c742e918f34c78949e970ae6}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE@{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE}}
+\index{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE@{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE}{OUTPUT\_LEVEL\_NONE}}
+{\footnotesize\ttfamily \#define O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE~0}
+
+
+
+no output print is performed. 
+
+
+
+Definition at line 60 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+Referenced by Gcc\+Wrapper\+::\+Compile\+File(), vcd\+\_\+utility\+::\+Exec(), Design\+Flow\+Manager\+::\+Exec(), Gcc\+Wrapper\+::\+Fill\+Tree\+Manager(), main(), Parameter\+::\+Manage\+Default\+Options(), Spider\+Parameter\+::\+Set\+Defaults(), and tree\+\_\+panda\+\_\+gcc\+\_\+parameter\+::\+Set\+Defaults().
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_abae808475b2d07f746fc797c93012453}\label{dbgPrintHelper_8hpp_abae808475b2d07f746fc797c93012453}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC@{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC}}
+\index{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC@{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC}{OUTPUT\_LEVEL\_PEDANTIC}}
+{\footnotesize\ttfamily \#define O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC~3}
+
+
+
+verbose debugging print is performed. 
+
+
+
+Definition at line 66 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+Referenced by Simulation\+Tool\+::\+Determine\+Cycles(), fun\+\_\+dominator\+\_\+allocation\+::\+Exec(), Gcc\+Wrapper\+::\+Get\+System\+Includes(), Bit\+\_\+\+Value\+::initialize(), vertex\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), unique\+\_\+binding\+\_\+register\+::\+Internal\+Exec(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), chordal\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), easy\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), values\+\_\+scheme\+::\+Internal\+Exec(), weighted\+\_\+clique\+\_\+register\+::\+Internal\+Exec(), mux\+\_\+connection\+\_\+binding\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), Panda\+System(), Design\+Compiler\+Wrapper\+::parse\+\_\+area\+\_\+reports(), Design\+Compiler\+Wrapper\+::parse\+\_\+cell\+\_\+reports(), and hls\+::\+Print\+Resources().
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_a5ebb21bd541de255097777d751e01a5b}\label{dbgPrintHelper_8hpp_a5ebb21bd541de255097777d751e01a5b}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE@{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE}}
+\index{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE@{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE}{OUTPUT\_LEVEL\_VERBOSE}}
+{\footnotesize\ttfamily \#define O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE~2}
+
+
+
+verbose debugging print is performed. 
+
+
+
+Definition at line 64 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+Referenced by memory\+\_\+allocation\+::allocate\+\_\+parameters(), Testbench\+Memory\+Allocation\+::\+Alloc\+Testbench\+Memory(), Altera\+Backend\+Flow\+::\+Altera\+Backend\+Flow(), determine\+\_\+memory\+\_\+accesses\+::analyze\+\_\+node(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), A\+S\+I\+C\+Backend\+Flow\+::\+A\+S\+I\+C\+Backend\+Flow(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+complete\+\_\+logic(), Tool\+Manager\+::check\+\_\+output\+\_\+files(), A\+S\+I\+C\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Nano\+Xplore\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Xilinx\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Gcc\+Wrapper\+::\+Compile\+File(), ipa\+\_\+point\+\_\+to\+\_\+analysis\+::compute\+\_\+function\+\_\+topological\+\_\+order(), Classical\+H\+L\+S\+Synthesis\+Flow\+::\+Compute\+H\+L\+S\+Relationships(), Gcc\+Wrapper\+::\+Create\+Executable(), Simulation\+Tool\+::\+Determine\+Cycles(), I\+R\+\_\+lowering\+::division\+\_\+by\+\_\+a\+\_\+constant(), H\+W\+Path\+Computation\+::\+Exec(), Call\+Graph\+Unfolding\+::\+Exec(), fun\+\_\+dominator\+\_\+allocation\+::\+Exec(), ipa\+\_\+point\+\_\+to\+\_\+analysis\+::\+Exec(), create\+\_\+tree\+\_\+manager\+::\+Exec(), Evaluation\+::\+Exec(), vcd\+\_\+utility\+::\+Exec(), Vcd\+Signal\+Selection\+::\+Exec(), Gcc\+Wrapper\+::\+Fill\+Tree\+Manager(), memory\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation(), Icarus\+Wrapper\+::\+Generate\+Script(), Simulation\+Tool\+::\+Generate\+Simulation\+Script(), I\+C\+\_\+device\+::initialize(), C\+M\+O\+S\+\_\+technology\+::initialize(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), commutative\+\_\+expr\+\_\+restructuring\+::\+Internal\+Exec(), port\+\_\+swapping\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), Lattice\+Backend\+Flow\+::\+Lattice\+Backend\+Flow(), F\+P\+G\+A\+\_\+device\+::load\+\_\+devices(), main(), Nano\+Xplore\+Backend\+Flow\+::\+Nano\+Xplore\+Backend\+Flow(), Bit\+\_\+\+Value\+\_\+opt\+::optimize(), Design\+Compiler\+Wrapper\+::parse\+\_\+area\+\_\+reports(), Design\+Compiler\+Wrapper\+::parse\+\_\+cell\+\_\+reports(), Design\+Compiler\+Wrapper\+::parse\+\_\+reports(), Design\+Compiler\+Wrapper\+::parse\+\_\+synthesis\+\_\+reports(), Design\+Compiler\+Wrapper\+::parse\+\_\+time\+\_\+reports(), pragma\+\_\+manager\+::pragma\+\_\+manager(), Simulation\+Tool\+::\+Simulate(), H\+L\+S\+C\+Writer\+::\+Write\+File(), Xilinx\+Backend\+Flow\+::\+Xilinx\+Backend\+Flow(), and library\+\_\+manager\+::xload().
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_aa3e5572801666428f6ea0f337e0aa669}\label{dbgPrintHelper_8hpp_aa3e5572801666428f6ea0f337e0aa669}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC@{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC}}
+\index{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC@{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC}{OUTPUT\_LEVEL\_VERY\_PEDANTIC}}
+{\footnotesize\ttfamily \#define O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC~4}
+
+
+
+verbose debugging print is performed. 
+
+
+
+Definition at line 68 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+Referenced by Nano\+Xplore\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Xilinx\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Load\+File\+Technology\+::\+Exec(), Write\+Technology\+::\+Exec(), Design\+Flow\+Manager\+::\+Exec(), modelsim\+Wrapper\+::\+Generate\+Script(), V\+I\+V\+A\+D\+O\+\_\+xsim\+\_\+wrapper\+::\+Generate\+Script(), I\+S\+E\+\_\+isim\+\_\+wrapper\+::\+Generate\+Script(), ngdbuild\+\_\+wrapper\+::get\+\_\+command\+\_\+line(), Xilinx\+Backend\+Flow\+::\+Init\+Design\+Parameters(), vertex\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), unique\+\_\+binding\+\_\+register\+::\+Internal\+Exec(), chordal\+\_\+coloring\+\_\+register\+::\+Internal\+Exec(), easy\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), weighted\+\_\+clique\+\_\+register\+::\+Internal\+Exec(), mux\+\_\+connection\+\_\+binding\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), Design\+Compiler\+Wrapper\+::parse\+\_\+area\+\_\+reports(), Xilinx\+Backend\+Flow\+::parse\+\_\+timing(), conn\+\_\+binding\+::print(), reg\+\_\+binding\+::print\+\_\+el(), State\+Transition\+Graph\+Manager\+::print\+\_\+statistics(), Testbench\+Generation\+Base\+Step\+::read\+\_\+input\+\_\+value\+\_\+from\+\_\+file(), Minimal\+Interface\+Testbench\+::read\+\_\+input\+\_\+value\+\_\+from\+\_\+file\+\_\+\+R\+N\+O\+N\+E(), and Testbench\+Generation\+Base\+Step\+::write\+\_\+output\+\_\+checks().
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_aac8d5b27ffe36bcb2eeeea56918ae2ed}\label{dbgPrintHelper_8hpp_aac8d5b27ffe36bcb2eeeea56918ae2ed}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX@{P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX}}
+\index{P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX@{P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX}{PRINT\_DBG\_MEX}}
+{\footnotesize\ttfamily \#define P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX(\begin{DoxyParamCaption}\item[{}]{dbg\+Level,  }\item[{}]{cur\+Dbg\+Level,  }\item[{}]{mex }\end{DoxyParamCaption})~((dbg\+Level $<$= cur\+Dbg\+Level) ? std\+::cerr $<$$<$ mex $<$$<$ std\+::endl \+: std\+::cerr)}
+
+
+
+We are producing a debug version of the program, so the message is printed;. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dbglevel} & the minimum debug level at which we desire to print the message\+: if the actual debug level is smaller than that, no message is printed \\
+\hline
+{\em cur\+Dbg\+Level} & the current debug level at which the algorithm is executing \\
+\hline
+{\em format\+Mex} & the array of chars containing the message to print\+: this message can be written using a printf like syntax. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 118 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+Referenced by classic\+\_\+datapath\+::add\+\_\+clock\+\_\+reset(), Control\+Flow\+Checker\+::add\+\_\+clock\+\_\+reset(), Controller\+Creator\+Base\+Step\+::add\+\_\+clock\+\_\+reset(), controller\+\_\+cs\+::add\+\_\+common\+\_\+ports(), Control\+Flow\+Checker\+::add\+\_\+common\+\_\+ports(), Controller\+Creator\+Base\+Step\+::add\+\_\+common\+\_\+ports(), A\+S\+L\+A\+P\+::add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+A\+P(), A\+S\+L\+A\+P\+::add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+A\+P(), Control\+Flow\+Checker\+::add\+\_\+done\+\_\+port(), Controller\+Creator\+Base\+Step\+::add\+\_\+done\+\_\+port(), flopoco\+\_\+wrapper\+::add\+\_\+\+F\+U(), Control\+Flow\+Checker\+::add\+\_\+notifiers(), cs\+\_\+interface\+::add\+\_\+parameter\+\_\+port(), conn\+\_\+binding\+\_\+creator\+::add\+\_\+parameter\+\_\+ports(), datapath\+\_\+parallel\+\_\+cs\+::add\+\_\+ports(), Control\+Flow\+Checker\+::add\+\_\+present\+\_\+state(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+module(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+wrapper(), controller\+\_\+cs\+::add\+\_\+selector\+\_\+register\+\_\+file\+\_\+port(), Control\+Flow\+Checker\+::add\+\_\+start\+\_\+port(), Controller\+Creator\+Base\+Step\+::add\+\_\+start\+\_\+port(), allocation\+::add\+\_\+tech\+\_\+constraint(), reg\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), determine\+\_\+memory\+\_\+accesses\+::analyze\+\_\+node(), Scheduling\+::anticipate\+\_\+operations(), tree\+\_\+manipulation\+::bb\+\_\+add\+\_\+stmt(), tree\+\_\+manipulation\+::bb\+\_\+remove\+\_\+predecessor(), tree\+\_\+manipulation\+::bb\+\_\+remove\+\_\+successor(), operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+complete\+\_\+logic(), tree\+\_\+manager\+::check\+\_\+for\+\_\+type(), short\+\_\+circuit\+\_\+taf\+::check\+\_\+merging\+\_\+candidate(), allocation\+::check\+\_\+templated\+\_\+units(), pragma\+\_\+manager\+::check\+Compliant(), A\+S\+L\+A\+P\+::compute\+\_\+\+A\+L\+A\+P(), A\+S\+L\+A\+P\+::compute\+\_\+\+A\+L\+A\+P\+\_\+fast(), A\+S\+L\+A\+P\+::compute\+\_\+\+A\+S\+A\+P(), reg\+\_\+binding\+::compute\+\_\+bitsize(), ipa\+\_\+point\+\_\+to\+\_\+analysis\+::compute\+\_\+function\+\_\+topological\+\_\+order(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), Tool\+Manager\+::configure(), datapath\+\_\+parallel\+\_\+cs\+::connect\+\_\+i\+\_\+module\+\_\+kernel(), datapath\+\_\+parallel\+\_\+cs\+::connect\+\_\+module\+\_\+kernel(), fu\+\_\+binding\+\_\+cs\+::connect\+\_\+selector\+\_\+kernel(), mux\+\_\+connection\+\_\+binding\+::connect\+\_\+to\+\_\+registers(), conn\+\_\+binding\+\_\+cs\+::connect\+Out\+Or(), port\+\_\+o\+::copy(), signal\+\_\+o\+::copy(), module\+::copy(), tree\+\_\+manipulation\+::create\+\_\+basic\+\_\+block(), tree\+\_\+manipulation\+::create\+\_\+binary\+\_\+operation(), tree\+\_\+manipulation\+::create\+\_\+bit\+\_\+size\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+boolean\+\_\+type(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), create\+\_\+control\+\_\+flow\+\_\+checker(), tree\+\_\+manipulation\+::create\+\_\+default\+\_\+integer\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+default\+\_\+unsigned\+\_\+integer\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+extract\+\_\+bit\+\_\+expr(), short\+\_\+circuit\+\_\+taf\+::create\+\_\+gimple\+\_\+cond(), tree\+\_\+manipulation\+::create\+\_\+gimple\+\_\+cond(), tree\+\_\+manipulation\+::create\+\_\+gimple\+\_\+return(), Testbench\+Generation\+Base\+Step\+::create\+\_\+\+H\+D\+L\+\_\+testbench(), tree\+\_\+manipulation\+::create\+\_\+identifier\+\_\+node(), tree\+\_\+manipulation\+::create\+\_\+lut\+\_\+expr(), tree\+\_\+manipulation\+::create\+\_\+parm\+\_\+decl(), tree\+\_\+manipulation\+::create\+\_\+phi\+\_\+node(), tree\+\_\+manipulation\+::create\+\_\+pointer\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+quaternary\+\_\+operation(), tree\+\_\+manipulation\+::create\+\_\+result\+\_\+decl(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+single\+\_\+conn(), tree\+\_\+manipulation\+::create\+\_\+size\+\_\+type(), tree\+\_\+manipulation\+::create\+\_\+ternary\+\_\+operation(), tree\+\_\+manipulation\+::create\+\_\+translation\+\_\+unit\+\_\+decl(), tree\+\_\+manipulation\+::create\+\_\+unary\+\_\+operation(), tree\+\_\+manipulation\+::create\+\_\+var\+\_\+decl(), tree\+\_\+manipulation\+::create\+\_\+void\+\_\+type(), tree\+\_\+manipulation\+::\+Create\+Default\+Unsigned\+Long\+Long\+Int(), tree\+\_\+manipulation\+::\+Create\+Integer\+Cst(), tree\+\_\+manipulation\+::\+Create\+Real\+Cst(), Design\+Compiler\+Wrapper\+::\+Design\+Compiler\+Wrapper(), Loops\+::\+Detect\+Irreducible\+Loop(), Loops\+::\+Detect\+Loops(), mux\+\_\+connection\+\_\+binding\+::determine\+\_\+connection(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), fun\+\_\+dominator\+\_\+allocation\+::\+Exec(), Load\+Device\+Technology\+::\+Exec(), Vcd\+Signal\+Selection\+::\+Exec(), parametric\+\_\+list\+\_\+based\+::exec(), memory\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation(), module\+Generator\+::\+Generate\+H\+D\+L(), Icarus\+Wrapper\+::\+Generate\+Script(), Translator\+::get\+\_\+exponential\+\_\+notation(), Translator\+::get\+\_\+normalization(), A\+S\+L\+A\+P\+::\+Get\+Cycle\+Latency(), H\+D\+L\+\_\+manager\+::hdl\+\_\+gen(), H\+L\+S\+\_\+constraints\+::\+H\+L\+S\+\_\+constraints(), Icarus\+Wrapper\+::\+Icarus\+Wrapper(), mux\+\_\+connection\+\_\+binding\+::input\+\_\+logic(), fu\+\_\+binding\+\_\+cs\+::instantiate\+\_\+component\+\_\+kernel(), datapath\+\_\+parallel\+\_\+cs\+::instantiate\+\_\+component\+\_\+parallel(), cs\+\_\+interface\+::instantiate\+\_\+component\+\_\+parallel(), conn\+\_\+binding\+\_\+cs\+::instantiate\+\_\+suspension\+\_\+component(), allocation\+::\+Integrate\+Technology\+Libraries(), fixed\+\_\+scheduling\+::\+Internal\+Exec(), F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Internal\+Exec(), fsm\+\_\+controller\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), B\+B\+Reachability\+Computation\+::\+Internal\+Exec(), Add\+Op\+Loop\+Flow\+Edges\+::\+Internal\+Exec(), compute\+\_\+implicit\+\_\+calls\+::\+Internal\+Exec(), extract\+\_\+patterns\+::\+Internal\+Exec(), rebuild\+\_\+initialization\+::\+Internal\+Exec(), dom\+\_\+post\+\_\+dom\+\_\+computation\+::\+Internal\+Exec(), loops\+\_\+computation\+::\+Internal\+Exec(), N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Internal\+Exec(), mem\+\_\+xml\+\_\+allocation\+::\+Internal\+Exec(), top\+\_\+entity\+::\+Internal\+Exec(), Bit\+\_\+\+Value\+\_\+opt\+::\+Internal\+Exec(), determine\+\_\+memory\+\_\+accesses\+::\+Internal\+Exec(), virtual\+\_\+phi\+\_\+nodes\+\_\+split\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), Bit\+\_\+\+Value\+::\+Internal\+Exec(), parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), flopoco\+\_\+wrapper\+::\+Internal\+Write\+V\+H\+D\+L(), I\+S\+E\+\_\+isim\+\_\+wrapper\+::\+I\+S\+E\+\_\+isim\+\_\+wrapper(), lattice\+\_\+flow\+\_\+wrapper\+::lattice\+\_\+flow\+\_\+wrapper(), main(), fu\+\_\+binding\+\_\+cs\+::manage\+\_\+memory\+\_\+port\+\_\+hierarchical(), fu\+\_\+binding\+\_\+cs\+::manage\+\_\+memory\+\_\+port\+\_\+kernel(), map\+\_\+wrapper\+::map\+\_\+wrapper(), Translator\+::merge\+\_\+pa(), modelsim\+Wrapper\+::modelsim\+Wrapper(), mux\+\_\+connection\+\_\+binding\+::mux\+\_\+interconnection(), ngdbuild\+\_\+wrapper\+::ngdbuild\+\_\+wrapper(), nxpython\+\_\+flow\+\_\+wrapper\+::nxpython\+\_\+flow\+\_\+wrapper(), Bit\+\_\+\+Value\+\_\+opt\+::optimize(), B\+B\+\_\+based\+\_\+stg\+::optimize\+\_\+cycles(), par\+\_\+wrapper\+::par\+\_\+wrapper(), Design\+Compiler\+Wrapper\+::parse\+\_\+area\+\_\+reports(), Design\+Compiler\+Wrapper\+::parse\+\_\+cell\+\_\+reports(), Design\+Compiler\+Wrapper\+::parse\+\_\+synthesis\+\_\+reports(), Design\+Compiler\+Wrapper\+::parse\+\_\+time\+\_\+reports(), Allocation\+Information\+::print\+\_\+allocated\+\_\+resources(), Quartus13\+Report\+Wrapper\+::\+Quartus13\+Report\+Wrapper(), Quartus\+Power\+Wrapper\+::\+Quartus\+Power\+Wrapper(), Quartus\+Report\+Wrapper\+::\+Quartus\+Report\+Wrapper(), read\+\_\+technology\+\_\+library(), structural\+\_\+manager\+::reconnect\+\_\+signal\+\_\+member(), Var\+Decl\+Fix\+::recursive\+\_\+examinate(), Check\+System\+Type\+::recursive\+\_\+examinate(), short\+\_\+circuit\+\_\+taf\+::restructure\+\_\+\+C\+F\+G(), fu\+\_\+binding\+::specialise\+\_\+fu(), reg\+\_\+binding\+::specialise\+\_\+reg(), module\+Generator\+::specialize\+\_\+fu(), network\+\_\+flow\+::successive\+\_\+shortest\+\_\+path\+\_\+algorithm(), Translator\+::\+Translator(), trce\+\_\+wrapper\+::trce\+\_\+wrapper(), A\+S\+L\+A\+P\+::update\+\_\+\+A\+L\+A\+P(), parametric\+\_\+list\+\_\+based\+::update\+\_\+starting\+\_\+ending\+\_\+time(), parametric\+\_\+list\+\_\+based\+::update\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), vcd\+\_\+parser\+::vcd\+\_\+parse\+\_\+def\+\_\+var(), vcd\+\_\+parser\+::vcd\+\_\+pop\+\_\+def\+\_\+scope(), vcd\+\_\+parser\+::vcd\+\_\+push\+\_\+def\+\_\+scope(), Testbench\+Generation\+Base\+Step\+::verilator\+\_\+testbench(), Verilator\+Wrapper\+::\+Verilator\+Wrapper(), virtual\+\_\+phi\+\_\+nodes\+\_\+split\+::virtual\+\_\+split\+\_\+phi(), vivado\+\_\+flow\+\_\+wrapper\+::vivado\+\_\+flow\+\_\+wrapper(), V\+I\+V\+A\+D\+O\+\_\+xsim\+\_\+wrapper\+::\+V\+I\+V\+A\+D\+O\+\_\+xsim\+\_\+wrapper(), H\+D\+L\+\_\+manager\+::write\+\_\+components(), H\+D\+L\+\_\+manager\+::write\+\_\+flopoco\+\_\+module(), H\+D\+L\+\_\+manager\+::write\+\_\+fsm(), H\+D\+L\+\_\+manager\+::write\+\_\+module(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl(), verilog\+\_\+writer\+::write\+\_\+state\+\_\+declaration(), Translator\+::write\+\_\+to\+\_\+latex(), structural\+\_\+object\+::xload(), functional\+\_\+unit\+::xload(), module\+::xload(), and xst\+\_\+wrapper\+::xst\+\_\+wrapper().
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_adfea258a7c9bfba8645dfd2eb6edb5a7}\label{dbgPrintHelper_8hpp_adfea258a7c9bfba8645dfd2eb6edb5a7}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+S\+T\+R\+I\+NG@{P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+S\+T\+R\+I\+NG}}
+\index{P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+S\+T\+R\+I\+NG@{P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+S\+T\+R\+I\+NG}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+S\+T\+R\+I\+NG}{PRINT\_DBG\_STRING}}
+{\footnotesize\ttfamily \#define P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+S\+T\+R\+I\+NG(\begin{DoxyParamCaption}\item[{}]{dbg\+Level,  }\item[{}]{cur\+Dbg\+Level,  }\item[{}]{mex }\end{DoxyParamCaption})~((dbg\+Level $<$= cur\+Dbg\+Level) ? std\+::cerr $<$$<$ mex \+: std\+::cerr)}
+
+
+
+We are producing a debug version of the program, so the message is printed; no newline is added;. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dbglevel} & the minimum debug level at which we desire to print the message\+: if the actual debug level is smaller than that, no message is printed \\
+\hline
+{\em cur\+Dbg\+Level} & the current debug level at which the algorithm is executing \\
+\hline
+{\em format\+Mex} & the array of chars containing the message to print\+: this message can be written using a printf like syntax. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 129 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+Referenced by A\+S\+L\+A\+P\+::add\+\_\+constraints\+\_\+to\+\_\+\+A\+L\+A\+P(), A\+S\+L\+A\+P\+::add\+\_\+constraints\+\_\+to\+\_\+\+A\+S\+A\+P(), conn\+\_\+binding\+\_\+creator\+::add\+\_\+parameter\+\_\+ports(), classic\+\_\+datapath\+::add\+\_\+ports(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Internal\+Exec(), and N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_a0336d721d98a575385311a86077d885d}\label{dbgPrintHelper_8hpp_a0336d721d98a575385311a86077d885d}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!P\+R\+I\+N\+T\+\_\+\+M\+SG@{P\+R\+I\+N\+T\+\_\+\+M\+SG}}
+\index{P\+R\+I\+N\+T\+\_\+\+M\+SG@{P\+R\+I\+N\+T\+\_\+\+M\+SG}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{P\+R\+I\+N\+T\+\_\+\+M\+SG}{PRINT\_MSG}}
+{\footnotesize\ttfamily \#define P\+R\+I\+N\+T\+\_\+\+M\+SG(\begin{DoxyParamCaption}\item[{}]{mex }\end{DoxyParamCaption})~std\+::cerr $<$$<$ mex $<$$<$ std\+::endl}
+
+
+
+Definition at line 181 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+Referenced by Backend\+Flow\+::\+Create\+Scripts(), Bambu\+Parameter\+::\+Exec(), main(), glpk\+\_\+solver\+::solve(), and glpk\+\_\+solver\+::solve\+\_\+ilp().
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_a0cfa3971efe609ebfbaeb1259c63b6a4}\label{dbgPrintHelper_8hpp_a0cfa3971efe609ebfbaeb1259c63b6a4}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX@{P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX}}
+\index{P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX@{P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX}{PRINT\_OUT\_MEX}}
+{\footnotesize\ttfamily \#define P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX(\begin{DoxyParamCaption}\item[{}]{prof\+Level,  }\item[{}]{curprof\+Level,  }\item[{}]{mex }\end{DoxyParamCaption})~((prof\+Level $<$= curprof\+Level) ? std\+::cerr $<$$<$ mex $<$$<$ std\+::endl \+: std\+::cerr)}
+
+
+
+Definition at line 175 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+Referenced by Altera\+Backend\+Flow\+::\+Altera\+Backend\+Flow(), R\+T\+L\+Characterization\+::\+Analyze\+Cell(), A\+S\+I\+C\+Backend\+Flow\+::\+A\+S\+I\+C\+Backend\+Flow(), Tool\+Manager\+::check\+\_\+output\+\_\+files(), vcd\+\_\+parser\+::check\+\_\+signals(), A\+S\+I\+C\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Altera\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Lattice\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Nano\+Xplore\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), Xilinx\+Backend\+Flow\+::\+Check\+Synthesis\+Results(), C\+M\+O\+S\+\_\+technology\+::\+C\+M\+O\+S\+\_\+technology(), Gcc\+Wrapper\+::\+Compile\+File(), Simulation\+Tool\+::\+Determine\+Cycles(), fun\+\_\+dominator\+\_\+allocation\+::\+Exec(), Write\+Technology\+::\+Exec(), Gcc\+Wrapper\+::\+Fill\+Tree\+Manager(), Icarus\+Wrapper\+::\+Generate\+Script(), V\+I\+V\+A\+D\+O\+\_\+xsim\+\_\+wrapper\+::\+Generate\+Script(), I\+S\+E\+\_\+isim\+\_\+wrapper\+::\+Generate\+Script(), library\+\_\+manager\+::get\+\_\+info(), Gcc\+Wrapper\+::\+Get\+System\+Includes(), H\+L\+S\+\_\+target\+::\+H\+L\+S\+\_\+target(), I\+C\+\_\+device\+::initialize(), C\+M\+O\+S\+\_\+technology\+::initialize(), Lattice\+Backend\+Flow\+::\+Lattice\+Backend\+Flow(), I\+C\+\_\+device\+::load\+\_\+devices(), F\+P\+G\+A\+\_\+device\+::load\+\_\+devices(), main(), Parameter\+::\+Manage\+Default\+Options(), Design\+Compiler\+Wrapper\+::parse\+\_\+area\+\_\+reports(), Design\+Compiler\+Wrapper\+::parse\+\_\+cell\+\_\+reports(), Design\+Compiler\+Wrapper\+::parse\+\_\+reports(), Design\+Compiler\+Wrapper\+::parse\+\_\+synthesis\+\_\+reports(), Design\+Compiler\+Wrapper\+::parse\+\_\+time\+\_\+reports(), Xilinx\+Backend\+Flow\+::parse\+\_\+timing(), Design\+Compiler\+Wrapper\+::perform\+\_\+optimization(), pragma\+\_\+manager\+::pragma\+\_\+manager(), read\+\_\+technology\+\_\+library(), and library\+\_\+manager\+::xload().
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_aed98d2ab3791b713b13dc118d57e9f87}\label{dbgPrintHelper_8hpp_aed98d2ab3791b713b13dc118d57e9f87}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+S\+T\+R\+I\+NG@{P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+S\+T\+R\+I\+NG}}
+\index{P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+S\+T\+R\+I\+NG@{P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+S\+T\+R\+I\+NG}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+S\+T\+R\+I\+NG}{PRINT\_OUT\_STRING}}
+{\footnotesize\ttfamily \#define P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+S\+T\+R\+I\+NG(\begin{DoxyParamCaption}\item[{}]{prof\+Level,  }\item[{}]{curprof\+Level,  }\item[{}]{mex }\end{DoxyParamCaption})~((prof\+Level $<$= curprof\+Level) ? std\+::cerr $<$$<$ mex \+: std\+::cerr)}
+
+
+
+Definition at line 177 of file dbg\+Print\+Helper.\+hpp.
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_ab1b858823cf8ebcbd003490ea6d52627}\label{dbgPrintHelper_8hpp_ab1b858823cf8ebcbd003490ea6d52627}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!P\+R\+I\+N\+T\+\_\+\+S\+T\+R\+I\+NG@{P\+R\+I\+N\+T\+\_\+\+S\+T\+R\+I\+NG}}
+\index{P\+R\+I\+N\+T\+\_\+\+S\+T\+R\+I\+NG@{P\+R\+I\+N\+T\+\_\+\+S\+T\+R\+I\+NG}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{P\+R\+I\+N\+T\+\_\+\+S\+T\+R\+I\+NG}{PRINT\_STRING}}
+{\footnotesize\ttfamily \#define P\+R\+I\+N\+T\+\_\+\+S\+T\+R\+I\+NG(\begin{DoxyParamCaption}\item[{}]{mex }\end{DoxyParamCaption})~std\+::cerr $<$$<$ mex}
+
+
+
+Definition at line 182 of file dbg\+Print\+Helper.\+hpp.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_a416b89e08aff70daa4359da0365b04da}\label{dbgPrintHelper_8hpp_a416b89e08aff70daa4359da0365b04da}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!indentation@{indentation}}
+\index{indentation@{indentation}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{indentation}{indentation}}
+{\footnotesize\ttfamily \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} indentation}
+
+
+
+The current indentation for debug messages. 
+
+
+
+Definition at line 54 of file global\+\_\+variables.\+cpp.
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_a9c6999e37c888ad294f6f86183dfd252}\label{dbgPrintHelper_8hpp_a9c6999e37c888ad294f6f86183dfd252}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!null\+\_\+stream@{null\+\_\+stream}}
+\index{null\+\_\+stream@{null\+\_\+stream}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{null\+\_\+stream}{null\_stream}}
+{\footnotesize\ttfamily std\+::ostream null\+\_\+stream}
+
+\mbox{\Hypertarget{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}\label{dbgPrintHelper_8hpp_a635d27565ac37b32ea0dde6d4b492d32}} 
+\index{dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}!panda\+\_\+message@{panda\+\_\+message}}
+\index{panda\+\_\+message@{panda\+\_\+message}!dbg\+Print\+Helper.\+hpp@{dbg\+Print\+Helper.\+hpp}}
+\subsubsection{\texorpdfstring{panda\+\_\+message}{panda\_message}}
+{\footnotesize\ttfamily std\+::string panda\+\_\+message}
+
+
+
+This is the message to be printed. 
+
+This is the message to be printed. 
+
+Definition at line 60 of file global\+\_\+variables.\+cpp.
+

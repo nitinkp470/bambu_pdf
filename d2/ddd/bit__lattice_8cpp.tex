@@ -1,0 +1,264 @@
+\hypertarget{bit__lattice_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/bit\+\_\+lattice.cpp File Reference}
+\label{bit__lattice_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/bit\+\_\+lattice.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/bit\+\_\+lattice.\+cpp}}
+{\ttfamily \#include \char`\"{}bit\+\_\+lattice.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+reindex.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utility.\+hpp\char`\"{}}\newline
+Include dependency graph for bit\+\_\+lattice.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d04/bit__lattice_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ \hyperlink{bit__lattice_8cpp_a162be3d4bf966c3f5a097a7c81c3eb12}{create\+\_\+u\+\_\+bitstring} (\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} lenght)
+\begin{DoxyCompactList}\small\item\em Creates a bitstring containing bits initialized at $<$\+U$>$ \end{DoxyCompactList}\item 
+std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ \hyperlink{bit__lattice_8cpp_af3fbc9939b77fdffbed10721e851b6ef}{create\+\_\+x\+\_\+bitstring} (unsigned int lenght)
+\begin{DoxyCompactList}\small\item\em Create a bitstring containing bits initialized at $<$\+X$>$ \end{DoxyCompactList}\item 
+std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ \hyperlink{bit__lattice_8cpp_ae4e5c56be4f8abd45a0975461b6dce6e}{create\+\_\+bitstring\+\_\+from\+\_\+constant} (long long int value\+\_\+int, unsigned int len, bool signed\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Creates a bitstring from a constant input. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{bit__lattice_8cpp_a76115a8712f724b8483a48e31d045524}{bitstring\+\_\+to\+\_\+string} (const std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ \&bitstring)
+\begin{DoxyCompactList}\small\item\em Translates a bitstring ( expressed as an std\+::deque of bit\+\_\+lattice ) into a string of characters. \end{DoxyCompactList}\item 
+std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ \hyperlink{bit__lattice_8cpp_ab4d81a0069bd80d02317be062df83974}{string\+\_\+to\+\_\+bitstring} (const std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em inverse of bitstring\+\_\+to\+\_\+string \end{DoxyCompactList}\item 
+bool \hyperlink{bit__lattice_8cpp_abea4676070c41b2523216883c20f222c}{bitstring\+\_\+constant} (const std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ \&a)
+\begin{DoxyCompactList}\small\item\em Checks if a bitstring is constant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Pietro Fezzardi \href{mailto:pietrofezzardi@gmail.com}{\tt pietrofezzardi@gmail.\+com} 
+
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{bit__lattice_8cpp_abea4676070c41b2523216883c20f222c}\label{bit__lattice_8cpp_abea4676070c41b2523216883c20f222c}} 
+\index{bit\+\_\+lattice.\+cpp@{bit\+\_\+lattice.\+cpp}!bitstring\+\_\+constant@{bitstring\+\_\+constant}}
+\index{bitstring\+\_\+constant@{bitstring\+\_\+constant}!bit\+\_\+lattice.\+cpp@{bit\+\_\+lattice.\+cpp}}
+\subsubsection{\texorpdfstring{bitstring\+\_\+constant()}{bitstring\_constant()}}
+{\footnotesize\ttfamily bool bitstring\+\_\+constant (\begin{DoxyParamCaption}\item[{const std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Checks if a bitstring is constant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the bitstring to be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if the bitstring contains only 1, 0 or X but not U values 
+\end{DoxyReturn}
+
+
+Definition at line 568 of file bit\+\_\+lattice.\+cpp.
+
+
+
+References U, and X.
+
+
+
+Referenced by Bit\+\_\+\+Value\+::backward().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/ddd/bit__lattice_8cpp_abea4676070c41b2523216883c20f222c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{bit__lattice_8cpp_a76115a8712f724b8483a48e31d045524}\label{bit__lattice_8cpp_a76115a8712f724b8483a48e31d045524}} 
+\index{bit\+\_\+lattice.\+cpp@{bit\+\_\+lattice.\+cpp}!bitstring\+\_\+to\+\_\+string@{bitstring\+\_\+to\+\_\+string}}
+\index{bitstring\+\_\+to\+\_\+string@{bitstring\+\_\+to\+\_\+string}!bit\+\_\+lattice.\+cpp@{bit\+\_\+lattice.\+cpp}}
+\subsubsection{\texorpdfstring{bitstring\+\_\+to\+\_\+string()}{bitstring\_to\_string()}}
+{\footnotesize\ttfamily std\+::string bitstring\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{const std\+::deque$<$ \hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice} $>$ \&}]{bitstring }\end{DoxyParamCaption})}
+
+
+
+Translates a bitstring ( expressed as an std\+::deque of bit\+\_\+lattice ) into a string of characters. 
+
+
+
+Definition at line 514 of file bit\+\_\+lattice.\+cpp.
+
+
+
+References O\+NE, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, U, X, and Z\+E\+RO.
+
+
+
+Referenced by Bit\+\_\+\+Value\+::backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses(), Bit\+\_\+\+Value\+::backward\+\_\+transfer(), Bit\+Value\+I\+P\+A\+::\+Exec(), Bit\+\_\+\+Value\+::forward(), Bit\+\_\+\+Value\+::forward\+\_\+transfer(), Bit\+\_\+\+Value\+::initialize(), Bit\+\_\+\+Value\+::manage\+\_\+forward\+\_\+binary\+\_\+operands(), Bit\+Lattice\+Manipulator\+::mix(), Bit\+\_\+\+Value\+::print\+\_\+bitstring\+\_\+map(), and Bit\+\_\+\+Value\+::update\+\_\+\+I\+R().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/ddd/bit__lattice_8cpp_a76115a8712f724b8483a48e31d045524_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{bit__lattice_8cpp_ae4e5c56be4f8abd45a0975461b6dce6e}\label{bit__lattice_8cpp_ae4e5c56be4f8abd45a0975461b6dce6e}} 
+\index{bit\+\_\+lattice.\+cpp@{bit\+\_\+lattice.\+cpp}!create\+\_\+bitstring\+\_\+from\+\_\+constant@{create\+\_\+bitstring\+\_\+from\+\_\+constant}}
+\index{create\+\_\+bitstring\+\_\+from\+\_\+constant@{create\+\_\+bitstring\+\_\+from\+\_\+constant}!bit\+\_\+lattice.\+cpp@{bit\+\_\+lattice.\+cpp}}
+\subsubsection{\texorpdfstring{create\+\_\+bitstring\+\_\+from\+\_\+constant()}{create\_bitstring\_from\_constant()}}
+{\footnotesize\ttfamily std\+::deque$<$\hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}$>$ create\+\_\+bitstring\+\_\+from\+\_\+constant (\begin{DoxyParamCaption}\item[{long long int}]{value\+\_\+int,  }\item[{unsigned int}]{length,  }\item[{bool}]{signed\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+Creates a bitstring from a constant input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value\+\_\+int} & integer constant \\
+\hline
+{\em length} & the length of the bitstring to be generated \\
+\hline
+{\em signed\+\_\+value} & specified if this bitstring can have negative values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bitstring generated from the integer constant 
+\end{DoxyReturn}
+
+
+Definition at line 486 of file bit\+\_\+lattice.\+cpp.
+
+
+
+References O\+NE, and Z\+E\+RO.
+
+
+
+Referenced by Bit\+Lattice\+Manipulator\+::constructor\+\_\+bitstring(), Bit\+Value\+I\+P\+A\+::\+Exec(), Bit\+\_\+\+Value\+::initialize(), and Bit\+Lattice\+Manipulator\+::string\+\_\+cst\+\_\+bitstring().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/ddd/bit__lattice_8cpp_ae4e5c56be4f8abd45a0975461b6dce6e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{bit__lattice_8cpp_a162be3d4bf966c3f5a097a7c81c3eb12}\label{bit__lattice_8cpp_a162be3d4bf966c3f5a097a7c81c3eb12}} 
+\index{bit\+\_\+lattice.\+cpp@{bit\+\_\+lattice.\+cpp}!create\+\_\+u\+\_\+bitstring@{create\+\_\+u\+\_\+bitstring}}
+\index{create\+\_\+u\+\_\+bitstring@{create\+\_\+u\+\_\+bitstring}!bit\+\_\+lattice.\+cpp@{bit\+\_\+lattice.\+cpp}}
+\subsubsection{\texorpdfstring{create\+\_\+u\+\_\+bitstring()}{create\_u\_bitstring()}}
+{\footnotesize\ttfamily std\+::deque$<$\hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}$>$ create\+\_\+u\+\_\+bitstring (\begin{DoxyParamCaption}\item[{\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{lenght }\end{DoxyParamCaption})}
+
+
+
+Creates a bitstring containing bits initialized at $<$\+U$>$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lenght} & the lenght of the bitstring \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a bitstring of the specified length containing $<$\+U$>$ values. 
+\end{DoxyReturn}
+
+
+Definition at line 476 of file bit\+\_\+lattice.\+cpp.
+
+
+
+References U.
+
+
+
+Referenced by Bit\+\_\+\+Value\+::backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses(), Bit\+\_\+\+Value\+::backward\+\_\+transfer(), Bit\+Lattice\+Manipulator\+::constructor\+\_\+bitstring(), Bit\+Value\+I\+P\+A\+::\+Exec(), Bit\+\_\+\+Value\+::forward(), Bit\+\_\+\+Value\+::forward\+\_\+transfer(), Bit\+\_\+\+Value\+::initialize(), and Bit\+\_\+\+Value\+::manage\+\_\+forward\+\_\+binary\+\_\+operands().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/ddd/bit__lattice_8cpp_a162be3d4bf966c3f5a097a7c81c3eb12_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{bit__lattice_8cpp_af3fbc9939b77fdffbed10721e851b6ef}\label{bit__lattice_8cpp_af3fbc9939b77fdffbed10721e851b6ef}} 
+\index{bit\+\_\+lattice.\+cpp@{bit\+\_\+lattice.\+cpp}!create\+\_\+x\+\_\+bitstring@{create\+\_\+x\+\_\+bitstring}}
+\index{create\+\_\+x\+\_\+bitstring@{create\+\_\+x\+\_\+bitstring}!bit\+\_\+lattice.\+cpp@{bit\+\_\+lattice.\+cpp}}
+\subsubsection{\texorpdfstring{create\+\_\+x\+\_\+bitstring()}{create\_x\_bitstring()}}
+{\footnotesize\ttfamily std\+::deque$<$\hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}$>$ create\+\_\+x\+\_\+bitstring (\begin{DoxyParamCaption}\item[{unsigned int}]{lenght }\end{DoxyParamCaption})}
+
+
+
+Create a bitstring containing bits initialized at $<$\+X$>$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lenght} & the lenght of the bitstring \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a bitstring of the specified length containing $<$\+X$>$ values. 
+\end{DoxyReturn}
+
+
+Definition at line 481 of file bit\+\_\+lattice.\+cpp.
+
+
+
+References X.
+
+
+
+Referenced by Bit\+\_\+\+Value\+::backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses(), Bit\+Value\+I\+P\+A\+::\+Exec(), and Bit\+\_\+\+Value\+::forward().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/ddd/bit__lattice_8cpp_af3fbc9939b77fdffbed10721e851b6ef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{bit__lattice_8cpp_ab4d81a0069bd80d02317be062df83974}\label{bit__lattice_8cpp_ab4d81a0069bd80d02317be062df83974}} 
+\index{bit\+\_\+lattice.\+cpp@{bit\+\_\+lattice.\+cpp}!string\+\_\+to\+\_\+bitstring@{string\+\_\+to\+\_\+bitstring}}
+\index{string\+\_\+to\+\_\+bitstring@{string\+\_\+to\+\_\+bitstring}!bit\+\_\+lattice.\+cpp@{bit\+\_\+lattice.\+cpp}}
+\subsubsection{\texorpdfstring{string\+\_\+to\+\_\+bitstring()}{string\_to\_bitstring()}}
+{\footnotesize\ttfamily std\+::deque$<$\hyperlink{bit__lattice_8hpp_ab732360111c810c4eaeb4c8b81d160d6}{bit\+\_\+lattice}$>$ string\+\_\+to\+\_\+bitstring (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})}
+
+
+
+inverse of bitstring\+\_\+to\+\_\+string 
+
+
+
+Definition at line 541 of file bit\+\_\+lattice.\+cpp.
+
+
+
+References O\+NE, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, U, X, and Z\+E\+RO.
+
+
+
+Referenced by Bit\+\_\+\+Value\+::backward\+\_\+compute\+\_\+result\+\_\+from\+\_\+uses(), Bit\+\_\+\+Value\+::backward\+\_\+transfer(), Bit\+Value\+I\+P\+A\+::\+Exec(), Bit\+\_\+\+Value\+::forward\+\_\+transfer(), and Bit\+\_\+\+Value\+::initialize().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/ddd/bit__lattice_8cpp_ab4d81a0069bd80d02317be062df83974_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,121 @@
+\hypertarget{token__interface_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/parser/treegcc/token\+\_\+interface.cpp File Reference}
+\label{token__interface_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/parser/treegcc/token\+\_\+interface.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/parser/treegcc/token\+\_\+interface.\+cpp}}
+
+
+Implementation of interface to token objects.  
+
+
+{\ttfamily \#include \char`\"{}token\+\_\+interface.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+B\+I\+S\+O\+N\+\_\+2\+\_\+7\+\_\+\+O\+R\+\_\+\+G\+R\+E\+A\+T\+E\+R.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iosfwd$>$}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+Parser.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/lexical\+\_\+cast.\+hpp$>$}\newline
+Include dependency graph for token\+\_\+interface.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d41/token__interface_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{token__interface_8cpp_ae9d8092febd3b2477a2162d1b6e7ca3a}{N\+O\+\_\+\+T\+O\+K\+EN}~-\/1
+\begin{DoxyCompactList}\small\item\em Tree include. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{token__interface_8cpp_a7bc25db5a2ce5907966cff64d9e2c247}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (Bison\+Parser\+Data)
+\begin{DoxyCompactList}\small\item\em Header include. \end{DoxyCompactList}\item 
+\hyperlink{token__interface_8cpp_a93ffd967972f5afe65cf0b0548503da7}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structTreeFlexLexer}{Tree\+Flex\+Lexer})
+\item 
+const std\+::string \hyperlink{token__interface_8cpp_a4d21c389663bd33787291bbc8bc168cd}{T\+I\+\_\+get\+Token\+Name} (const \hyperlink{token__interface_8hpp_a14502d0757789149f644966ca931b126}{Tree\+Vocabulary\+Token\+Types\+\_\+\+Token\+Enum} i)
+\begin{DoxyCompactList}\small\item\em Return the name associated with the token. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of interface to token objects. 
+
+Interface implementation to token objects.
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi $<$ferrandi.\+elet.\+polimi.\+it$>$ 
+
+Marco Lattuada \href{mailto:lattuada@elet.polimi.it}{\tt lattuada@elet.\+polimi.\+it} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{token__interface_8cpp_ae9d8092febd3b2477a2162d1b6e7ca3a}\label{token__interface_8cpp_ae9d8092febd3b2477a2162d1b6e7ca3a}} 
+\index{token\+\_\+interface.\+cpp@{token\+\_\+interface.\+cpp}!N\+O\+\_\+\+T\+O\+K\+EN@{N\+O\+\_\+\+T\+O\+K\+EN}}
+\index{N\+O\+\_\+\+T\+O\+K\+EN@{N\+O\+\_\+\+T\+O\+K\+EN}!token\+\_\+interface.\+cpp@{token\+\_\+interface.\+cpp}}
+\subsubsection{\texorpdfstring{N\+O\+\_\+\+T\+O\+K\+EN}{NO\_TOKEN}}
+{\footnotesize\ttfamily \#define N\+O\+\_\+\+T\+O\+K\+EN~-\/1}
+
+
+
+Tree include. 
+
+Utility include 
+
+Definition at line 70 of file token\+\_\+interface.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{token__interface_8cpp_a7bc25db5a2ce5907966cff64d9e2c247}\label{token__interface_8cpp_a7bc25db5a2ce5907966cff64d9e2c247}} 
+\index{token\+\_\+interface.\+cpp@{token\+\_\+interface.\+cpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!token\+\_\+interface.\+cpp@{token\+\_\+interface.\+cpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{Bison\+Parser\+Data}]{ }\end{DoxyParamCaption})}
+
+
+
+Header include. 
+
+S\+TD include Utility include N\+O\+TE\+: forward declarations of Bison\+Parser\+Data and \hyperlink{structTreeFlexLexer}{Tree\+Flex\+Lexer} are in this point since they will be used in tree\+Parser.\+h \mbox{\Hypertarget{token__interface_8cpp_a93ffd967972f5afe65cf0b0548503da7}\label{token__interface_8cpp_a93ffd967972f5afe65cf0b0548503da7}} 
+\index{token\+\_\+interface.\+cpp@{token\+\_\+interface.\+cpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!token\+\_\+interface.\+cpp@{token\+\_\+interface.\+cpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structTreeFlexLexer}{Tree\+Flex\+Lexer}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{token__interface_8cpp_a4d21c389663bd33787291bbc8bc168cd}\label{token__interface_8cpp_a4d21c389663bd33787291bbc8bc168cd}} 
+\index{token\+\_\+interface.\+cpp@{token\+\_\+interface.\+cpp}!T\+I\+\_\+get\+Token\+Name@{T\+I\+\_\+get\+Token\+Name}}
+\index{T\+I\+\_\+get\+Token\+Name@{T\+I\+\_\+get\+Token\+Name}!token\+\_\+interface.\+cpp@{token\+\_\+interface.\+cpp}}
+\subsubsection{\texorpdfstring{T\+I\+\_\+get\+Token\+Name()}{TI\_getTokenName()}}
+{\footnotesize\ttfamily const std\+::string T\+I\+\_\+get\+Token\+Name (\begin{DoxyParamCaption}\item[{const \hyperlink{token__interface_8hpp_a14502d0757789149f644966ca931b126}{Tree\+Vocabulary\+Token\+Types\+\_\+\+Token\+Enum}}]{i }\end{DoxyParamCaption})}
+
+
+
+Return the name associated with the token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is the token coding. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 788 of file token\+\_\+interface.\+cpp.
+
+
+
+References tree\+Vocabulary\+Token\+Types\+::token\+Names.
+
+
+
+Referenced by tree\+\_\+helper\+::print\+\_\+function\+\_\+name(), and raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{df/d1a/token__interface_8cpp_a4d21c389663bd33787291bbc8bc168cd_icgraph}
+\end{center}
+\end{figure}

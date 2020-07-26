@@ -1,0 +1,13 @@
+\hypertarget{src_HLS_controller_fsm_finite_state_machine}{}\section{Finite State Machine definition}\label{src_HLS_controller_fsm_finite_state_machine}
+The behavioral view of sequential circuits at the logic level can be expressed by finite-\/state machine transition diagrams. A finite-\/state machine can be described by\+:
+\begin{DoxyItemize}
+\item A set of primary input patterns, $X$.
+\item A set of primary output patterns, $Y$.
+\item A set of states, $S$.
+\item A state transition function, $\delta : X\times S\rightarrow S$.
+\item An output function, $\lambda : X\times S\rightarrow Y$ for Mealy models or $\lambda : S \rightarrow Y$ for Moore models.
+\item An initial state.
+\end{DoxyItemize}
+
+The state transition table is a tabulation of the state transition and output functions. Its corresponding graph-\/based representation is the state transition diagram. The state transition diagram (see \hyperlink{src_HLS_controller_stg}{Finite State Machine}) is a labeled directed multi-\/graph $G_t(V,E)$, where the vertex set \$V\$ is in one-\/to-\/one correspondence with the state set $S$ and the directed edge set $E$ is in one-\/to-\/one correspondence with the transitions specified by $\delta$. In particular, there is an edge $(v_i,v_j)$ if there is an input pattern $x\in X$ such that $\delta(x,s_i)=s_j, \forall i,j = 1,2,\ldots ,\vert S\vert$. In the Mealy model, such an edge is labeled by $x/\lambda(x,s_i)$. In the Moore model, that edge is labeled by $x$ only; each vertex $v_i\in S$ is labeled by the corresponding output function $\lambda(s_i)$.\hypertarget{src_HLS_controller_fsm_controller_definition}{}\section{Controller problem definition}\label{src_HLS_controller_fsm_controller_definition}
+The controller is defined as the part of the circuit that compute the evolution of the control flow, based on conditional inputs coming from the evaluation of the control constructs present in the initial specification. So the controller is created by the translation of the finite state machine graph in a structural representation of a finite state machine, where the states are the vertices of the graphs, the inputs are the control condition evaluations coming from datapath computations and the outputs are the enables to operations to be executed at each steps by the datapath. To help the construction of the decoding logic of the multiplexers, also informations about actual conditions have been provided as output directed to the datapath. 

@@ -1,0 +1,38 @@
+\hypertarget{NI__SSA__liveness_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.cpp File Reference}
+\label{NI__SSA__liveness_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+cpp}}
+
+
+Non-\/\+Iterative liveness analysis for S\+SA based gimple descriptions.  
+
+
+{\ttfamily \#include \char`\"{}N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}application\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}behavioral\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}function\+\_\+behavior.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+basic\+\_\+block.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+reindex.\+hpp\char`\"{}}\newline
+Include dependency graph for N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d11/NI__SSA__liveness_8cpp__incl}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+Non-\/\+Iterative liveness analysis for S\+SA based gimple descriptions. 
+
+Compute the liveness sets by exploring paths from variable use (Algorithm 4 and 5). Details of the algorithm can be found in the following technical report\+:
+\begin{DoxyItemize}
+\item Florian Brandner, Benoit Boissinot, Alain Darte, Benoît Dupont de Dinechin, Fabrice Rastello \char`\"{}\+Computing Liveness Sets for S\+S\+A-\/\+Form Programs\char`\"{}, inria-\/00558509, version 2
+
+\{B\+R\+A\+N\+D\+N\+ER\+:2011\+:I\+N\+R\+I\+A-\/00558509\+:2, hal\+\_\+id = \{inria-\/00558509\}, url = \{\href{http://hal.inria.fr/inria-00558509}{\tt http\+://hal.\+inria.\+fr/inria-\/00558509}\}, title = \{\{Computing Liveness Sets for S\+S\+A-\/\+Form Programs\}\}, author = \{Brandner, Florian and Boissinot, Benoit and Darte, Alain and Dupont De Dinechin, Beno\{\textbackslash{}$^\wedge$\}t and Rastello, Fabrice\}, abstract = \{\{We revisit the problem of computing liveness sets, i.\+e., the set of variables live-\/in and live-\/out of basic blocks, for programs in strict S\+SA (static single assignment). Strict S\+SA is also known as S\+SA with dominance property because it ensures that the definition of a variable always dominates all its uses. This property can be exploited to optimize the computation of liveness sets. Our first contribution is the design of a fast data-\/flow algorithm, which, unlike traditional approaches, avoids the iterative calculation of a fixed point. Thanks to the properties of strict S\+SA form and the use of a loop-\/nesting forest, we show that two passes are sufficient. A first pass, similar to the initialization of iterative data-\/flow analysis, traverses the control-\/flow graph in postorder propagating liveness information backwards. A second pass then traverses the loop-\/nesting forest, updating liveness information within loops. Another approach is to propagate from uses to definition, one variable and one path at a time, instead of unioning sets as in standard data-\/flow analysis. Such a path-\/exploration strategy was proposed by Appel in his \textquotesingle{}\textquotesingle{}Tiger book\textquotesingle{}\textquotesingle{} and is also used in the L\+L\+VM compiler. Our second contribution is to show how to extend and optimize algorithms based on this idea to compute liveness sets one variable at a time using adequate data 
+\end{DoxyItemize}

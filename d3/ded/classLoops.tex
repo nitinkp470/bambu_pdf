@@ -1,0 +1,715 @@
+\hypertarget{classLoops}{}\section{Loops Class Reference}
+\label{classLoops}\index{Loops@{Loops}}
+
+
+{\ttfamily \#include $<$loops.\+hpp$>$}
+
+
+
+Collaboration diagram for Loops\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{d1/d30/classLoops__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLoops_a4468afbab8156bb55299b15e35bb81ba}{Loops} (const \hyperlink{function__behavior_8hpp_affbc6a46ab86ddfabe31c10986d333dc}{Function\+Behavior\+Ref} \hyperlink{classLoops_ab337d3197422c62eabab4566280e95df}{FB}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} parameter)
+\begin{DoxyCompactList}\small\item\em The constructor builds the loop forest for the given method. \end{DoxyCompactList}\item 
+\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} \hyperlink{classLoops_a9cb155a94cf7363e6f15e770441fe20c}{Num\+Loops} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of loops. \end{DoxyCompactList}\item 
+const std\+::list$<$ Loop\+Const\+Ref $>$ \& \hyperlink{classLoops_aa8f1cb77af609624c7c6cd0da9fc00a4}{Get\+List} () const
+\begin{DoxyCompactList}\small\item\em Returns the list of loops (const) \end{DoxyCompactList}\item 
+const std\+::list$<$ \hyperlink{loop_8hpp_aa4a60313089619376f67557c4120423c}{Loop\+Ref} $>$ \& \hyperlink{classLoops_a6376c9fcfe6f046d1d8aa30570076eb2}{Get\+Modifiable\+List} () const
+\begin{DoxyCompactList}\small\item\em Return the list of loops. \end{DoxyCompactList}\item 
+const Loop\+Const\+Ref \hyperlink{classLoops_a55b90509f95276dd9cc5ca5cbfeb01b1}{C\+Get\+Loop} (unsigned int id) const
+\begin{DoxyCompactList}\small\item\em Returns a loop given the id. \end{DoxyCompactList}\item 
+const \hyperlink{loop_8hpp_aa4a60313089619376f67557c4120423c}{Loop\+Ref} \hyperlink{classLoops_ae1017c5d90fca5a7717adf98d5b73712}{Get\+Loop} (unsigned int id)
+\begin{DoxyCompactList}\small\item\em Returns a loop given the id. \end{DoxyCompactList}\item 
+void \hyperlink{classLoops_a52664116b60c75c5a56eaf38317e0d94}{Write\+Dot} (const std\+::string \&file\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Write dot files representing the loop forest. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::pair$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{classLoops_a0128208bc6f5092dcd97a7f2e75b168c}{vertex\+\_\+pair}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classLoops_ac022f2714ff16a787ea9e609616e7f9d}{is\+\_\+edge\+\_\+in\+\_\+list} (\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ \hyperlink{classLoops_a0128208bc6f5092dcd97a7f2e75b168c}{vertex\+\_\+pair} $>$ \&l, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} source, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} target)
+\item 
+\hyperlink{classLoops_a76c8286bf419d2b56d704f73d8b9afa6}{Loops} ()=delete
+\item 
+void \hyperlink{classLoops_ab4e1b49b594312ae244e75093833b672}{Detect\+Loops} ()
+\begin{DoxyCompactList}\small\item\em Computes the loops of the control flow graph. \end{DoxyCompactList}\item 
+void \hyperlink{classLoops_a2da630bd46322a13de6b01c173dd708e}{Detect\+Reducible\+Loop} (const \hyperlink{basic__block_8hpp_a0e7f233d1b83cad0bfd5aa865f0d3532}{B\+B\+Graph\+Ref} djg, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&visited, \hyperlink{loop_8hpp_aa4a60313089619376f67557c4120423c}{Loop\+Ref} loop, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} node, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} header)
+\begin{DoxyCompactList}\small\item\em Reducible loop construction. \end{DoxyCompactList}\item 
+void \hyperlink{classLoops_aac2e78898f8485a50d57e97b9e474dd4}{Detect\+Irreducible\+Loop} (const \hyperlink{basic__block_8hpp_a0e7f233d1b83cad0bfd5aa865f0d3532}{B\+B\+Graph\+Ref} djg, unsigned int min\+\_\+level, unsigned int max\+\_\+level, std\+::vector$<$ std\+::list$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$$>$ \&level\+\_\+vertices\+\_\+rel)
+\item 
+void \hyperlink{classLoops_ae9b35d5e7f808751d95c7dc05e18c7a4}{tarjan\+\_\+scc} (const \hyperlink{basic__block_8hpp_a0e7f233d1b83cad0bfd5aa865f0d3532}{B\+B\+Graph\+Ref} djg, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} v, \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, unsigned int $>$ \&dfs\+\_\+order, \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, unsigned int $>$ \&lowlink, std\+::list$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&s, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&u, unsigned int \&max\+\_\+dfs)
+\item 
+bool \hyperlink{classLoops_a695381637512bc8e48b578cc27137adb}{stack\+\_\+contains} (std\+::list$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{structstack}{stack}, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} v)
+\item 
+void \hyperlink{classLoops_ab35bfb9d05e559e6295037325ad22a1d}{Build\+Zero\+Loop} ()
+\begin{DoxyCompactList}\small\item\em Creates \hyperlink{classLoop}{Loop} zero data structure. \end{DoxyCompactList}\item 
+void \hyperlink{classLoops_a9409bfa50f8431dfbe3af427ac4c6de9}{compute\+Depth} (const Loop\+Const\+Ref loop)
+\begin{DoxyCompactList}\small\item\em Sets depth for each loop in the forest starting from loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{function__behavior_8hpp_affbc6a46ab86ddfabe31c10986d333dc}{Function\+Behavior\+Ref} \hyperlink{classLoops_ab337d3197422c62eabab4566280e95df}{FB}
+\begin{DoxyCompactList}\small\item\em The function behavior. \end{DoxyCompactList}\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classLoops_a756be6e3fec1b2c4b9518c6461dc009a}{Param}
+\begin{DoxyCompactList}\small\item\em class containing all the parameters \end{DoxyCompactList}\item 
+int \hyperlink{classLoops_aa40adf704306582fde6278a4257d1efa}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em Debug level. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{loop_8hpp_aa4a60313089619376f67557c4120423c}{Loop\+Ref} $>$ \hyperlink{classLoops_aad1cb53edf1df5649650f1f4d991bf82}{block\+\_\+to\+\_\+loop}
+\begin{DoxyCompactList}\small\item\em Maps between basic block and loop to which it belongs. \end{DoxyCompactList}\item 
+std\+::list$<$ \hyperlink{loop_8hpp_aa4a60313089619376f67557c4120423c}{Loop\+Ref} $>$ \hyperlink{classLoops_a5c8561d32679c74ff5998df3d7370d2f}{modifiable\+\_\+loops\+\_\+list}
+\begin{DoxyCompactList}\small\item\em List of found loops. \end{DoxyCompactList}\item 
+std\+::list$<$ Loop\+Const\+Ref $>$ \hyperlink{classLoops_a315b5cb886eb68b60ba20a0e85de97cf}{const\+\_\+loops\+\_\+list}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 89 of file loops.\+hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classLoops_a0128208bc6f5092dcd97a7f2e75b168c}\label{classLoops_a0128208bc6f5092dcd97a7f2e75b168c}} 
+\index{Loops@{Loops}!vertex\+\_\+pair@{vertex\+\_\+pair}}
+\index{vertex\+\_\+pair@{vertex\+\_\+pair}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{vertex\+\_\+pair}{vertex\_pair}}
+{\footnotesize\ttfamily typedef std\+::pair$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ \hyperlink{classLoops_a0128208bc6f5092dcd97a7f2e75b168c}{Loops\+::vertex\+\_\+pair}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 108 of file loops.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLoops_a76c8286bf419d2b56d704f73d8b9afa6}\label{classLoops_a76c8286bf419d2b56d704f73d8b9afa6}} 
+\index{Loops@{Loops}!Loops@{Loops}}
+\index{Loops@{Loops}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{Loops()}{Loops()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Loops\+::\+Loops (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classLoops_a4468afbab8156bb55299b15e35bb81ba}\label{classLoops_a4468afbab8156bb55299b15e35bb81ba}} 
+\index{Loops@{Loops}!Loops@{Loops}}
+\index{Loops@{Loops}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{Loops()}{Loops()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Loops\+::\+Loops (\begin{DoxyParamCaption}\item[{const \hyperlink{function__behavior_8hpp_affbc6a46ab86ddfabe31c10986d333dc}{Function\+Behavior\+Ref}}]{FB,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{parameter }\end{DoxyParamCaption})}
+
+
+
+The constructor builds the loop forest for the given method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em FB} & is the function behavior of the control flow graph to be analyzed \\
+\hline
+{\em parameter} & is the set of input parameters \\
+\hline
+\end{DoxyParams}
+Detect loops
+
+Build Zero \hyperlink{classLoop}{Loop}
+
+compute depth
+
+compute landing pads 
+
+Definition at line 176 of file loops.\+cpp.
+
+
+
+References Build\+Zero\+Loop(), compute\+Depth(), Detect\+Loops(), Get\+Loop(), and modifiable\+\_\+loops\+\_\+list.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/ded/classLoops_a4468afbab8156bb55299b15e35bb81ba_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classLoops_ab35bfb9d05e559e6295037325ad22a1d}\label{classLoops_ab35bfb9d05e559e6295037325ad22a1d}} 
+\index{Loops@{Loops}!Build\+Zero\+Loop@{Build\+Zero\+Loop}}
+\index{Build\+Zero\+Loop@{Build\+Zero\+Loop}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{Build\+Zero\+Loop()}{BuildZeroLoop()}}
+{\footnotesize\ttfamily void Loops\+::\+Build\+Zero\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates \hyperlink{classLoop}{Loop} zero data structure. 
+
+Putting all the basic blocks in blocks 
+
+Definition at line 671 of file loops.\+cpp.
+
+
+
+References Function\+Behavior\+::\+BB, Loop\+::blocks, B\+B\+Graph\+::\+C\+Get\+B\+B\+Graph\+Info(), Loop\+::children, const\+\_\+loops\+\_\+list, FB, Loop\+::is\+\_\+innermost\+\_\+loop, and modifiable\+\_\+loops\+\_\+list.
+
+
+
+Referenced by Loops().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/ded/classLoops_ab35bfb9d05e559e6295037325ad22a1d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{d3/ded/classLoops_ab35bfb9d05e559e6295037325ad22a1d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLoops_a55b90509f95276dd9cc5ca5cbfeb01b1}\label{classLoops_a55b90509f95276dd9cc5ca5cbfeb01b1}} 
+\index{Loops@{Loops}!C\+Get\+Loop@{C\+Get\+Loop}}
+\index{C\+Get\+Loop@{C\+Get\+Loop}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{C\+Get\+Loop()}{CGetLoop()}}
+{\footnotesize\ttfamily const Loop\+Const\+Ref Loops\+::\+C\+Get\+Loop (\begin{DoxyParamCaption}\item[{unsigned int}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Returns a loop given the id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id of the loop \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 575 of file loops.\+cpp.
+
+
+
+References const\+\_\+loops\+\_\+list, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+\mbox{\Hypertarget{classLoops_a9409bfa50f8431dfbe3af427ac4c6de9}\label{classLoops_a9409bfa50f8431dfbe3af427ac4c6de9}} 
+\index{Loops@{Loops}!compute\+Depth@{compute\+Depth}}
+\index{compute\+Depth@{compute\+Depth}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{compute\+Depth()}{computeDepth()}}
+{\footnotesize\ttfamily void Loops\+::compute\+Depth (\begin{DoxyParamCaption}\item[{const Loop\+Const\+Ref}]{loop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sets depth for each loop in the forest starting from loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loop} & is the root of the loop forest \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 659 of file loops.\+cpp.
+
+
+
+References test\+\_\+panda\+::children, and Loop\+::depth.
+
+
+
+Referenced by Loops().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{d3/ded/classLoops_a9409bfa50f8431dfbe3af427ac4c6de9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLoops_aac2e78898f8485a50d57e97b9e474dd4}\label{classLoops_aac2e78898f8485a50d57e97b9e474dd4}} 
+\index{Loops@{Loops}!Detect\+Irreducible\+Loop@{Detect\+Irreducible\+Loop}}
+\index{Detect\+Irreducible\+Loop@{Detect\+Irreducible\+Loop}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{Detect\+Irreducible\+Loop()}{DetectIrreducibleLoop()}}
+{\footnotesize\ttfamily void Loops\+::\+Detect\+Irreducible\+Loop (\begin{DoxyParamCaption}\item[{const \hyperlink{basic__block_8hpp_a0e7f233d1b83cad0bfd5aa865f0d3532}{B\+B\+Graph\+Ref}}]{djg,  }\item[{unsigned int}]{min\+\_\+level,  }\item[{unsigned int}]{max\+\_\+level,  }\item[{std\+::vector$<$ std\+::list$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$$>$ \&}]{level\+\_\+vertices\+\_\+rel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Populate u with all the non-\/visited node whose level is $>$= min\+\_\+level 
+
+Definition at line 426 of file loops.\+cpp.
+
+
+
+References Function\+Behavior\+::\+BB, B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, FB, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, test\+\_\+panda\+::level, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, S\+TR, tarjan\+\_\+scc(), and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Detect\+Loops().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/ded/classLoops_aac2e78898f8485a50d57e97b9e474dd4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/ded/classLoops_aac2e78898f8485a50d57e97b9e474dd4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLoops_ab4e1b49b594312ae244e75093833b672}\label{classLoops_ab4e1b49b594312ae244e75093833b672}} 
+\index{Loops@{Loops}!Detect\+Loops@{Detect\+Loops}}
+\index{Detect\+Loops@{Detect\+Loops}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{Detect\+Loops()}{DetectLoops()}}
+{\footnotesize\ttfamily void Loops\+::\+Detect\+Loops (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Computes the loops of the control flow graph. 
+
+Retrieve dominator tree and dominance relation
+
+Create the DJ graph. This is done in two steps\+: 1) build the dominator tree 2) add the \char`\"{}\+J\char`\"{} edges
+
+Add J edges (and detect CJ ones) D edges are already there since we use boost filtered graphs
+
+Check for CJ and BJ edges
+
+This is a BJ edge, and we mark it as such
+
+This is a CJ edge, and we mark it as such
+
+Build the spanning tree and detect the sp-\/back edges
+
+spanning tree ancestor data structure
+
+initialization
+
+spanning tree construction and vertex labeling
+
+compute the level\+\_\+vertices\+\_\+rel
+
+Detect the sp-\/back edges
+
+This is a sp-\/back edge
+
+Detect this \hyperlink{classLoop}{Loop} (n is the header)
+
+Identify S\+C\+Cs for the subgraphs induced by nodes at level greater or equal than lev 
+
+Definition at line 203 of file loops.\+cpp.
+
+
+
+References block\+\_\+to\+\_\+loop, B\+B\+Graph\+::\+C\+Get\+B\+B\+Graph\+Info(), B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), check\+\_\+ancestor(), const\+\_\+loops\+\_\+list, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Detect\+Irreducible\+Loop(), Detect\+Reducible\+Loop(), Function\+Behavior\+::\+DJ, FB, Function\+Behavior\+::\+F\+BB, Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), dominance$<$ Graph\+Obj $>$\+::get\+\_\+immediate\+\_\+dominator(), dominance$<$ Graph\+Obj $>$\+::get\+All\+Dominated(), index, is\+\_\+edge\+\_\+in\+\_\+list(), J\+\_\+\+S\+E\+L\+E\+C\+T\+OR, modifiable\+\_\+loops\+\_\+list, Param, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and B\+B\+Graph\+::\+Write\+Dot().
+
+
+
+Referenced by Loops().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/ded/classLoops_ab4e1b49b594312ae244e75093833b672_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{d3/ded/classLoops_ab4e1b49b594312ae244e75093833b672_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLoops_a2da630bd46322a13de6b01c173dd708e}\label{classLoops_a2da630bd46322a13de6b01c173dd708e}} 
+\index{Loops@{Loops}!Detect\+Reducible\+Loop@{Detect\+Reducible\+Loop}}
+\index{Detect\+Reducible\+Loop@{Detect\+Reducible\+Loop}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{Detect\+Reducible\+Loop()}{DetectReducibleLoop()}}
+{\footnotesize\ttfamily void Loops\+::\+Detect\+Reducible\+Loop (\begin{DoxyParamCaption}\item[{const \hyperlink{basic__block_8hpp_a0e7f233d1b83cad0bfd5aa865f0d3532}{B\+B\+Graph\+Ref}}]{djg,  }\item[{\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&}]{visited,  }\item[{\hyperlink{loop_8hpp_aa4a60313089619376f67557c4120423c}{Loop\+Ref}}]{loop,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{node,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{header }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reducible loop construction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em djg} & is the DJ graph \\
+\hline
+{\em visited} & is the set of vertex visited \\
+\hline
+{\em loop} & is the current loop \\
+\hline
+{\em node} & is current vertex \\
+\hline
+{\em header} & is the entry of the reducible loop \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 388 of file loops.\+cpp.
+
+
+
+References Loop\+::add\+\_\+block(), Loop\+::\+Add\+Child(), block\+\_\+to\+\_\+loop, Loop\+::\+Parent(), and Loop\+::\+Set\+Parent().
+
+
+
+Referenced by Detect\+Loops().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/ded/classLoops_a2da630bd46322a13de6b01c173dd708e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/ded/classLoops_a2da630bd46322a13de6b01c173dd708e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLoops_aa8f1cb77af609624c7c6cd0da9fc00a4}\label{classLoops_aa8f1cb77af609624c7c6cd0da9fc00a4}} 
+\index{Loops@{Loops}!Get\+List@{Get\+List}}
+\index{Get\+List@{Get\+List}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{Get\+List()}{GetList()}}
+{\footnotesize\ttfamily const std\+::list$<$ Loop\+Const\+Ref $>$ \& Loops\+::\+Get\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the list of loops (const) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em return} & the const list of loops \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 565 of file loops.\+cpp.
+
+
+
+References const\+\_\+loops\+\_\+list.
+
+\mbox{\Hypertarget{classLoops_ae1017c5d90fca5a7717adf98d5b73712}\label{classLoops_ae1017c5d90fca5a7717adf98d5b73712}} 
+\index{Loops@{Loops}!Get\+Loop@{Get\+Loop}}
+\index{Get\+Loop@{Get\+Loop}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{Get\+Loop()}{GetLoop()}}
+{\footnotesize\ttfamily const \hyperlink{loop_8hpp_aa4a60313089619376f67557c4120423c}{Loop\+Ref} Loops\+::\+Get\+Loop (\begin{DoxyParamCaption}\item[{unsigned int}]{id }\end{DoxyParamCaption})}
+
+
+
+Returns a loop given the id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id of the loop \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 586 of file loops.\+cpp.
+
+
+
+References modifiable\+\_\+loops\+\_\+list, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+
+
+Referenced by Loops().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{d3/ded/classLoops_ae1017c5d90fca5a7717adf98d5b73712_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLoops_a6376c9fcfe6f046d1d8aa30570076eb2}\label{classLoops_a6376c9fcfe6f046d1d8aa30570076eb2}} 
+\index{Loops@{Loops}!Get\+Modifiable\+List@{Get\+Modifiable\+List}}
+\index{Get\+Modifiable\+List@{Get\+Modifiable\+List}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{Get\+Modifiable\+List()}{GetModifiableList()}}
+{\footnotesize\ttfamily const std\+::list$<$ \hyperlink{loop_8hpp_aa4a60313089619376f67557c4120423c}{Loop\+Ref} $>$ \& Loops\+::\+Get\+Modifiable\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the list of loops. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em return} & the const list of loops \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 570 of file loops.\+cpp.
+
+
+
+References modifiable\+\_\+loops\+\_\+list.
+
+\mbox{\Hypertarget{classLoops_ac022f2714ff16a787ea9e609616e7f9d}\label{classLoops_ac022f2714ff16a787ea9e609616e7f9d}} 
+\index{Loops@{Loops}!is\+\_\+edge\+\_\+in\+\_\+list@{is\+\_\+edge\+\_\+in\+\_\+list}}
+\index{is\+\_\+edge\+\_\+in\+\_\+list@{is\+\_\+edge\+\_\+in\+\_\+list}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{is\+\_\+edge\+\_\+in\+\_\+list()}{is\_edge\_in\_list()}}
+{\footnotesize\ttfamily bool Loops\+::is\+\_\+edge\+\_\+in\+\_\+list (\begin{DoxyParamCaption}\item[{\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ \hyperlink{classLoops_a0128208bc6f5092dcd97a7f2e75b168c}{vertex\+\_\+pair} $>$ \&}]{l,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{source,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 192 of file loops.\+cpp.
+
+
+
+Referenced by Detect\+Loops().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/ded/classLoops_ac022f2714ff16a787ea9e609616e7f9d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLoops_a9cb155a94cf7363e6f15e770441fe20c}\label{classLoops_a9cb155a94cf7363e6f15e770441fe20c}} 
+\index{Loops@{Loops}!Num\+Loops@{Num\+Loops}}
+\index{Num\+Loops@{Num\+Loops}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{Num\+Loops()}{NumLoops()}}
+{\footnotesize\ttfamily \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} Loops\+::\+Num\+Loops (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of loops. 
+
+
+
+Definition at line 597 of file loops.\+cpp.
+
+
+
+References const\+\_\+loops\+\_\+list.
+
+\mbox{\Hypertarget{classLoops_a695381637512bc8e48b578cc27137adb}\label{classLoops_a695381637512bc8e48b578cc27137adb}} 
+\index{Loops@{Loops}!stack\+\_\+contains@{stack\+\_\+contains}}
+\index{stack\+\_\+contains@{stack\+\_\+contains}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{stack\+\_\+contains()}{stack\_contains()}}
+{\footnotesize\ttfamily bool Loops\+::stack\+\_\+contains (\begin{DoxyParamCaption}\item[{std\+::list$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$}]{stack,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 458 of file loops.\+cpp.
+
+
+
+Referenced by tarjan\+\_\+scc().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/ded/classLoops_a695381637512bc8e48b578cc27137adb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLoops_ae9b35d5e7f808751d95c7dc05e18c7a4}\label{classLoops_ae9b35d5e7f808751d95c7dc05e18c7a4}} 
+\index{Loops@{Loops}!tarjan\+\_\+scc@{tarjan\+\_\+scc}}
+\index{tarjan\+\_\+scc@{tarjan\+\_\+scc}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{tarjan\+\_\+scc()}{tarjan\_scc()}}
+{\footnotesize\ttfamily void Loops\+::tarjan\+\_\+scc (\begin{DoxyParamCaption}\item[{const \hyperlink{basic__block_8hpp_a0e7f233d1b83cad0bfd5aa865f0d3532}{B\+B\+Graph\+Ref}}]{djg,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{v,  }\item[{\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, unsigned int $>$ \&}]{dfs\+\_\+order,  }\item[{\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, unsigned int $>$ \&}]{lowlink,  }\item[{std\+::list$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&}]{s,  }\item[{\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \&}]{u,  }\item[{unsigned int \&}]{max\+\_\+dfs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 472 of file loops.\+cpp.
+
+
+
+References Loop\+::add\+\_\+block(), Loop\+::\+Add\+Child(), block\+\_\+to\+\_\+loop, B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), const\+\_\+loops\+\_\+list, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Loop\+::\+Get\+Id(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, modifiable\+\_\+loops\+\_\+list, stack\+\_\+contains(), and S\+TR.
+
+
+
+Referenced by Detect\+Irreducible\+Loop().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/ded/classLoops_ae9b35d5e7f808751d95c7dc05e18c7a4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/ded/classLoops_ae9b35d5e7f808751d95c7dc05e18c7a4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLoops_a52664116b60c75c5a56eaf38317e0d94}\label{classLoops_a52664116b60c75c5a56eaf38317e0d94}} 
+\index{Loops@{Loops}!Write\+Dot@{Write\+Dot}}
+\index{Write\+Dot@{Write\+Dot}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{Write\+Dot()}{WriteDot()}}
+{\footnotesize\ttfamily void Loops\+::\+Write\+Dot (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name }\end{DoxyParamCaption}) const}
+
+
+
+Write dot files representing the loop forest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & is the file name to be produced \\
+\hline
+{\em profiling\+\_\+information} & is the profiling information used to print data about loop iterations \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 602 of file loops.\+cpp.
+
+
+
+References Function\+Behavior\+::\+BB, B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), const\+\_\+loops\+\_\+list, C\+O\+U\+N\+T\+A\+B\+L\+E\+\_\+\+L\+O\+OP, D\+O\+\_\+\+W\+H\+I\+L\+E\+\_\+\+L\+O\+OP, D\+O\+A\+L\+L\+\_\+\+L\+O\+OP, FB, F\+O\+R\+\_\+\+L\+O\+OP, Param, P\+I\+P\+E\+L\+I\+N\+A\+B\+L\+E\+\_\+\+L\+O\+OP, S\+I\+N\+G\+L\+E\+\_\+\+E\+X\+I\+T\+\_\+\+L\+O\+OP, S\+TR, U\+N\+K\+N\+O\+W\+N\+\_\+\+L\+O\+OP, and W\+H\+I\+L\+E\+\_\+\+L\+O\+OP.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/ded/classLoops_a52664116b60c75c5a56eaf38317e0d94_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classLoops_aad1cb53edf1df5649650f1f4d991bf82}\label{classLoops_aad1cb53edf1df5649650f1f4d991bf82}} 
+\index{Loops@{Loops}!block\+\_\+to\+\_\+loop@{block\+\_\+to\+\_\+loop}}
+\index{block\+\_\+to\+\_\+loop@{block\+\_\+to\+\_\+loop}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{block\+\_\+to\+\_\+loop}{block\_to\_loop}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{loop_8hpp_aa4a60313089619376f67557c4120423c}{Loop\+Ref}$>$ Loops\+::block\+\_\+to\+\_\+loop\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Maps between basic block and loop to which it belongs. 
+
+
+
+Definition at line 102 of file loops.\+hpp.
+
+
+
+Referenced by Detect\+Loops(), Detect\+Reducible\+Loop(), and tarjan\+\_\+scc().
+
+\mbox{\Hypertarget{classLoops_a315b5cb886eb68b60ba20a0e85de97cf}\label{classLoops_a315b5cb886eb68b60ba20a0e85de97cf}} 
+\index{Loops@{Loops}!const\+\_\+loops\+\_\+list@{const\+\_\+loops\+\_\+list}}
+\index{const\+\_\+loops\+\_\+list@{const\+\_\+loops\+\_\+list}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{const\+\_\+loops\+\_\+list}{const\_loops\_list}}
+{\footnotesize\ttfamily std\+::list$<$Loop\+Const\+Ref$>$ Loops\+::const\+\_\+loops\+\_\+list\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 106 of file loops.\+hpp.
+
+
+
+Referenced by Build\+Zero\+Loop(), C\+Get\+Loop(), Detect\+Loops(), Get\+List(), Num\+Loops(), tarjan\+\_\+scc(), and Write\+Dot().
+
+\mbox{\Hypertarget{classLoops_aa40adf704306582fde6278a4257d1efa}\label{classLoops_aa40adf704306582fde6278a4257d1efa}} 
+\index{Loops@{Loops}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily int Loops\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Debug level. 
+
+
+
+Definition at line 99 of file loops.\+hpp.
+
+
+
+Referenced by Detect\+Irreducible\+Loop(), Detect\+Loops(), and tarjan\+\_\+scc().
+
+\mbox{\Hypertarget{classLoops_ab337d3197422c62eabab4566280e95df}\label{classLoops_ab337d3197422c62eabab4566280e95df}} 
+\index{Loops@{Loops}!FB@{FB}}
+\index{FB@{FB}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{FB}{FB}}
+{\footnotesize\ttfamily const \hyperlink{function__behavior_8hpp_affbc6a46ab86ddfabe31c10986d333dc}{Function\+Behavior\+Ref} Loops\+::\+FB\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The function behavior. 
+
+
+
+Definition at line 93 of file loops.\+hpp.
+
+
+
+Referenced by Build\+Zero\+Loop(), Detect\+Irreducible\+Loop(), Detect\+Loops(), and Write\+Dot().
+
+\mbox{\Hypertarget{classLoops_a5c8561d32679c74ff5998df3d7370d2f}\label{classLoops_a5c8561d32679c74ff5998df3d7370d2f}} 
+\index{Loops@{Loops}!modifiable\+\_\+loops\+\_\+list@{modifiable\+\_\+loops\+\_\+list}}
+\index{modifiable\+\_\+loops\+\_\+list@{modifiable\+\_\+loops\+\_\+list}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{modifiable\+\_\+loops\+\_\+list}{modifiable\_loops\_list}}
+{\footnotesize\ttfamily std\+::list$<$\hyperlink{loop_8hpp_aa4a60313089619376f67557c4120423c}{Loop\+Ref}$>$ Loops\+::modifiable\+\_\+loops\+\_\+list\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+List of found loops. 
+
+
+
+Definition at line 105 of file loops.\+hpp.
+
+
+
+Referenced by Build\+Zero\+Loop(), Detect\+Loops(), Get\+Loop(), Get\+Modifiable\+List(), Loops(), and tarjan\+\_\+scc().
+
+\mbox{\Hypertarget{classLoops_a756be6e3fec1b2c4b9518c6461dc009a}\label{classLoops_a756be6e3fec1b2c4b9518c6461dc009a}} 
+\index{Loops@{Loops}!Param@{Param}}
+\index{Param@{Param}!Loops@{Loops}}
+\subsubsection{\texorpdfstring{Param}{Param}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Loops\+::\+Param\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+class containing all the parameters 
+
+
+
+Definition at line 96 of file loops.\+hpp.
+
+
+
+Referenced by Detect\+Loops(), and Write\+Dot().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/algorithms/loops\+\_\+detection/\hyperlink{loops_8hpp}{loops.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/algorithms/loops\+\_\+detection/\hyperlink{loops_8cpp}{loops.\+cpp}\end{DoxyCompactItemize}

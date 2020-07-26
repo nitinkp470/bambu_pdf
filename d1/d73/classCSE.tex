@@ -1,0 +1,442 @@
+\hypertarget{classCSE}{}\section{C\+SE Class Reference}
+\label{classCSE}\index{C\+SE@{C\+SE}}
+
+
+\hyperlink{classCSE}{C\+SE} analysis.  
+
+
+
+
+{\ttfamily \#include $<$C\+S\+E.\+hpp$>$}
+
+
+
+Inheritance diagram for C\+SE\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{da/d2c/classCSE__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+SE\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d8c/classCSE__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSE_a0c288efafdfb4e2b4023d984e330b110}{C\+SE} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \+\_\+\+AppM, unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classCSE_ad2908703ed31dbc1be925fba3a6d9367}{$\sim$\+C\+SE} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classCSE_adbf292294aa82603ea2189ddf1293508}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em perform \hyperlink{classCSE}{C\+SE} analysis \end{DoxyCompactList}\item 
+void \hyperlink{classCSE_a6bb59a891291b3ecfec7072ce1b2d77d}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::pair$<$ enum \hyperlink{tree__common_8hpp_a9efbd7c7191fb190b76c2fd05d6e7b45}{kind}, std\+::vector$<$ unsigned int $>$ $>$ \hyperlink{classCSE_a541f4bbb7540d84d1ed98f9c44b74417}{C\+S\+E\+\_\+tuple\+\_\+key\+\_\+type}
+\begin{DoxyCompactList}\small\item\em define the type of the unique table key \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classCSE_a0a111aeea50dcdf012272ad684136558}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\item 
+\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \hyperlink{classCSE_a0b52dafe140cbca69eadfa11169bfbba}{hash\+\_\+check} (\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} tn, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} bb)
+\begin{DoxyCompactList}\small\item\em check if the statement has an equivalent in the unique table \end{DoxyCompactList}\item 
+bool \hyperlink{classCSE_ac4ffe21033c163f44c7117e78da4d50e}{check\+\_\+loads} (const \hyperlink{structgimple__assign}{gimple\+\_\+assign} $\ast$ga, unsigned int right\+\_\+part\+\_\+index, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} right\+\_\+part)
+\begin{DoxyCompactList}\small\item\em check if the gimple assignment is a load, store or a memcpy/memset \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} \hyperlink{classCSE_a71e05ccfa2a25a5c2d8d87f19d5fc2b5}{schedule}
+\begin{DoxyCompactList}\small\item\em The scheduling solution. \end{DoxyCompactList}\item 
+const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \hyperlink{classCSE_a07193f5f92e5a2c8eebb6d459cf192c1}{TM}
+\begin{DoxyCompactList}\small\item\em tree manager \end{DoxyCompactList}\item 
+\hyperlink{structstatement__list}{statement\+\_\+list} $\ast$ \hyperlink{classCSE_a0548b738f81f709d2c781cac84c3dd7f}{sl}
+\begin{DoxyCompactList}\small\item\em The statement list. \end{DoxyCompactList}\item 
+bool \hyperlink{classCSE_aa626fd33f0c12bb38a156f1911131fc6}{restart\+\_\+phi\+\_\+opt}
+\begin{DoxyCompactList}\small\item\em when true P\+H\+I\+\_\+\+O\+PT step has to restart \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{custom__map_8hpp_a7314a7df1cdb3a3acf478ab86e95c226}{Custom\+Unordered\+Map\+Stable}$<$ \hyperlink{classCSE_a541f4bbb7540d84d1ed98f9c44b74417}{C\+S\+E\+\_\+tuple\+\_\+key\+\_\+type}, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ $>$ \hyperlink{classCSE_a4188552ee310686996e4d3cacf837125}{unique\+\_\+table}
+\begin{DoxyCompactList}\small\item\em define a map relating variables and columns \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCSE}{C\+SE} analysis. 
+
+Definition at line 89 of file C\+S\+E.\+hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classCSE_a541f4bbb7540d84d1ed98f9c44b74417}\label{classCSE_a541f4bbb7540d84d1ed98f9c44b74417}} 
+\index{C\+SE@{C\+SE}!C\+S\+E\+\_\+tuple\+\_\+key\+\_\+type@{C\+S\+E\+\_\+tuple\+\_\+key\+\_\+type}}
+\index{C\+S\+E\+\_\+tuple\+\_\+key\+\_\+type@{C\+S\+E\+\_\+tuple\+\_\+key\+\_\+type}!C\+SE@{C\+SE}}
+\subsubsection{\texorpdfstring{C\+S\+E\+\_\+tuple\+\_\+key\+\_\+type}{CSE\_tuple\_key\_type}}
+{\footnotesize\ttfamily typedef std\+::pair$<$enum \hyperlink{tree__common_8hpp_a9efbd7c7191fb190b76c2fd05d6e7b45}{kind}, std\+::vector$<$unsigned int$>$ $>$ \hyperlink{classCSE_a541f4bbb7540d84d1ed98f9c44b74417}{C\+S\+E\+::\+C\+S\+E\+\_\+tuple\+\_\+key\+\_\+type}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+define the type of the unique table key 
+
+
+
+Definition at line 107 of file C\+S\+E.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCSE_a0c288efafdfb4e2b4023d984e330b110}\label{classCSE_a0c288efafdfb4e2b4023d984e330b110}} 
+\index{C\+SE@{C\+SE}!C\+SE@{C\+SE}}
+\index{C\+SE@{C\+SE}!C\+SE@{C\+SE}}
+\subsubsection{\texorpdfstring{C\+S\+E()}{CSE()}}
+{\footnotesize\ttfamily C\+S\+E\+::\+C\+SE (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters,  }\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{unsigned int}]{\+\_\+function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Header include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+Param} & is the set of the parameters \\
+\hline
+{\em \+\_\+\+AppM} & is the application manager \\
+\hline
+{\em function\+\_\+id} & is the identifier of the function \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager\\
+\hline
+\end{DoxyParams}
+. include boost include behavior includes algorithm/dominance include design\+\_\+flows include frontend\+\_\+analysis H\+LS include S\+TD include tree include wrapper/treegcc include 
+
+Definition at line 96 of file C\+S\+E.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$\+C\+S\+E().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{d1/d73/classCSE_a0c288efafdfb4e2b4023d984e330b110_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCSE_ad2908703ed31dbc1be925fba3a6d9367}\label{classCSE_ad2908703ed31dbc1be925fba3a6d9367}} 
+\index{C\+SE@{C\+SE}!````~C\+SE@{$\sim$\+C\+SE}}
+\index{````~C\+SE@{$\sim$\+C\+SE}!C\+SE@{C\+SE}}
+\subsubsection{\texorpdfstring{$\sim$\+C\+S\+E()}{~CSE()}}
+{\footnotesize\ttfamily C\+S\+E\+::$\sim$\+C\+SE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by C\+S\+E().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{d1/d73/classCSE_ad2908703ed31dbc1be925fba3a6d9367_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCSE_ac4ffe21033c163f44c7117e78da4d50e}\label{classCSE_ac4ffe21033c163f44c7117e78da4d50e}} 
+\index{C\+SE@{C\+SE}!check\+\_\+loads@{check\+\_\+loads}}
+\index{check\+\_\+loads@{check\+\_\+loads}!C\+SE@{C\+SE}}
+\subsubsection{\texorpdfstring{check\+\_\+loads()}{check\_loads()}}
+{\footnotesize\ttfamily bool C\+S\+E\+::check\+\_\+loads (\begin{DoxyParamCaption}\item[{const \hyperlink{structgimple__assign}{gimple\+\_\+assign} $\ast$}]{ga,  }\item[{unsigned int}]{right\+\_\+part\+\_\+index,  }\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{right\+\_\+part }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+check if the gimple assignment is a load, store or a memcpy/memset 
+
+check for bit field ref of vector type 
+
+Definition at line 156 of file C\+S\+E.\+cpp.
+
+
+
+References Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+type\+\_\+node(), tree\+\_\+helper\+::is\+\_\+a\+\_\+pointer(), tree\+\_\+helper\+::is\+\_\+a\+\_\+vector(), tree\+\_\+helper\+::is\+\_\+an\+\_\+array(), gimple\+\_\+assign\+::op0, and TM.
+
+
+
+Referenced by hash\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d73/classCSE_ac4ffe21033c163f44c7117e78da4d50e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d73/classCSE_ac4ffe21033c163f44c7117e78da4d50e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCSE_a0a111aeea50dcdf012272ad684136558}\label{classCSE_a0a111aeea50dcdf012272ad684136558}} 
+\index{C\+SE@{C\+SE}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!C\+SE@{C\+SE}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ C\+S\+E\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 104 of file C\+S\+E.\+cpp.
+
+
+
+References A\+B\+O\+R\+T\+ED, C\+O\+M\+P\+L\+E\+T\+E\+\_\+\+B\+B\+\_\+\+G\+R\+A\+PH, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, E\+M\+P\+TY, Design\+Flow\+Step\+::\+Get\+Status(), Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, N\+O\+N\+E\+X\+I\+S\+T\+E\+NT, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, restart\+\_\+phi\+\_\+opt, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, S\+K\+I\+P\+P\+ED, S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, U\+N\+C\+H\+A\+N\+G\+ED, U\+N\+E\+X\+E\+C\+U\+T\+ED, U\+N\+N\+E\+C\+E\+S\+S\+A\+RY, and U\+S\+E\+\_\+\+C\+O\+U\+N\+T\+I\+NG.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d73/classCSE_a0a111aeea50dcdf012272ad684136558_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCSE_a0b52dafe140cbca69eadfa11169bfbba}\label{classCSE_a0b52dafe140cbca69eadfa11169bfbba}} 
+\index{C\+SE@{C\+SE}!hash\+\_\+check@{hash\+\_\+check}}
+\index{hash\+\_\+check@{hash\+\_\+check}!C\+SE@{C\+SE}}
+\subsubsection{\texorpdfstring{hash\+\_\+check()}{hash\_check()}}
+{\footnotesize\ttfamily \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} C\+S\+E\+::hash\+\_\+check (\begin{DoxyParamCaption}\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{tn,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{bb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+check if the statement has an equivalent in the unique table 
+
+check for L\+O\+A\+Ds, S\+T\+O\+R\+Es, M\+E\+M\+S\+ET, M\+E\+M\+C\+PY, etc. etc.
+
+We add type of right part; load from same address with different types must be considered different
+
+If there are virtual uses, not only they must be the same, but also the basic block must be the same
+
+Check if the virtual is defined in the same basic block
+
+For each vuse we insert def\+\_\+stmt if it is before 
+
+Definition at line 208 of file C\+S\+E.\+cpp.
+
+
+
+References test\+\_\+panda\+::arg, gimple\+\_\+node\+::bb\+\_\+index, tree\+\_\+helper\+::\+C\+Get\+Type(), check\+\_\+loads(), gimple\+\_\+assign\+::clobber, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+C\+O\+N\+S\+T\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+node\+::get\+\_\+kind\+\_\+text(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+type\+\_\+node(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+node\+::index, gimple\+\_\+assign\+::init\+\_\+assignment, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, max(), gimple\+\_\+node\+::memdef, gimple\+\_\+assign\+::op0, gimple\+\_\+assign\+::op1, Design\+Flow\+Step\+::parameters, tree\+\_\+helper\+::\+Size(), sl, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, tree\+\_\+node\+::\+To\+String(), unique\+\_\+table, gimple\+\_\+node\+::vdef, gimple\+\_\+node\+::vovers, and gimple\+\_\+node\+::vuses.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d73/classCSE_a0b52dafe140cbca69eadfa11169bfbba_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{d1/d73/classCSE_a0b52dafe140cbca69eadfa11169bfbba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCSE_a6bb59a891291b3ecfec7072ce1b2d77d}\label{classCSE_a6bb59a891291b3ecfec7072ce1b2d77d}} 
+\index{C\+SE@{C\+SE}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!C\+SE@{C\+SE}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void C\+S\+E\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec) 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 555 of file C\+S\+E.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, and schedule.
+
+\mbox{\Hypertarget{classCSE_adbf292294aa82603ea2189ddf1293508}\label{classCSE_adbf292294aa82603ea2189ddf1293508}} 
+\index{C\+SE@{C\+SE}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!C\+SE@{C\+SE}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} C\+S\+E\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+perform \hyperlink{classCSE}{C\+SE} analysis 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+store the G\+CC BB graph ala boost\+::graph
+
+add vertices
+
+add edges
+
+add a connection between entry and exit thus avoiding problems with non terminating code
+
+\hyperlink{classCSE}{C\+SE} on basic blocks 
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 389 of file C\+S\+E.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), tree\+\_\+helper\+::\+C\+Get\+Type(), D\+\_\+\+S\+E\+L\+E\+C\+T\+OR, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, bloc\+::\+E\+N\+T\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, bloc\+::\+E\+X\+I\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+C\+O\+N\+S\+T\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), Function\+Frontend\+Flow\+Step\+::\+Get\+Name(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), hash\+\_\+check(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+node\+::index, Design\+Flow\+Step\+::parameters, tree\+\_\+manager\+::\+Replace\+Tree\+Node(), restart\+\_\+phi\+\_\+opt, schedule, sl, S\+TR, S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, TM, To\+String(), tree\+\_\+node\+::\+To\+String(), U\+N\+C\+H\+A\+N\+G\+ED, unique\+\_\+table, and Schedule\+::\+Update\+Time().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d73/classCSE_adbf292294aa82603ea2189ddf1293508_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classCSE_aa626fd33f0c12bb38a156f1911131fc6}\label{classCSE_aa626fd33f0c12bb38a156f1911131fc6}} 
+\index{C\+SE@{C\+SE}!restart\+\_\+phi\+\_\+opt@{restart\+\_\+phi\+\_\+opt}}
+\index{restart\+\_\+phi\+\_\+opt@{restart\+\_\+phi\+\_\+opt}!C\+SE@{C\+SE}}
+\subsubsection{\texorpdfstring{restart\+\_\+phi\+\_\+opt}{restart\_phi\_opt}}
+{\footnotesize\ttfamily bool C\+S\+E\+::restart\+\_\+phi\+\_\+opt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+when true P\+H\+I\+\_\+\+O\+PT step has to restart 
+
+
+
+Definition at line 102 of file C\+S\+E.\+hpp.
+
+
+
+Referenced by Compute\+Frontend\+Relationships(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classCSE_a71e05ccfa2a25a5c2d8d87f19d5fc2b5}\label{classCSE_a71e05ccfa2a25a5c2d8d87f19d5fc2b5}} 
+\index{C\+SE@{C\+SE}!schedule@{schedule}}
+\index{schedule@{schedule}!C\+SE@{C\+SE}}
+\subsubsection{\texorpdfstring{schedule}{schedule}}
+{\footnotesize\ttfamily \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} C\+S\+E\+::schedule\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The scheduling solution. 
+
+
+
+Definition at line 93 of file C\+S\+E.\+hpp.
+
+
+
+Referenced by Initialize(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classCSE_a0548b738f81f709d2c781cac84c3dd7f}\label{classCSE_a0548b738f81f709d2c781cac84c3dd7f}} 
+\index{C\+SE@{C\+SE}!sl@{sl}}
+\index{sl@{sl}!C\+SE@{C\+SE}}
+\subsubsection{\texorpdfstring{sl}{sl}}
+{\footnotesize\ttfamily \hyperlink{structstatement__list}{statement\+\_\+list}$\ast$ C\+S\+E\+::sl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The statement list. 
+
+
+
+Definition at line 99 of file C\+S\+E.\+hpp.
+
+
+
+Referenced by hash\+\_\+check(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classCSE_a07193f5f92e5a2c8eebb6d459cf192c1}\label{classCSE_a07193f5f92e5a2c8eebb6d459cf192c1}} 
+\index{C\+SE@{C\+SE}!TM@{TM}}
+\index{TM@{TM}!C\+SE@{C\+SE}}
+\subsubsection{\texorpdfstring{TM}{TM}}
+{\footnotesize\ttfamily const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} C\+S\+E\+::\+TM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+tree manager 
+
+
+
+Definition at line 96 of file C\+S\+E.\+hpp.
+
+
+
+Referenced by check\+\_\+loads(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classCSE_a4188552ee310686996e4d3cacf837125}\label{classCSE_a4188552ee310686996e4d3cacf837125}} 
+\index{C\+SE@{C\+SE}!unique\+\_\+table@{unique\+\_\+table}}
+\index{unique\+\_\+table@{unique\+\_\+table}!C\+SE@{C\+SE}}
+\subsubsection{\texorpdfstring{unique\+\_\+table}{unique\_table}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{custom__map_8hpp_a7314a7df1cdb3a3acf478ab86e95c226}{Custom\+Unordered\+Map\+Stable}$<$\hyperlink{classCSE_a541f4bbb7540d84d1ed98f9c44b74417}{C\+S\+E\+\_\+tuple\+\_\+key\+\_\+type}, \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}$>$ $>$ C\+S\+E\+::unique\+\_\+table\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+define a map relating variables and columns 
+
+
+
+Definition at line 110 of file C\+S\+E.\+hpp.
+
+
+
+Referenced by hash\+\_\+check(), and Internal\+Exec().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{CSE_8hpp}{C\+S\+E.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{CSE_8cpp}{C\+S\+E.\+cpp}\end{DoxyCompactItemize}

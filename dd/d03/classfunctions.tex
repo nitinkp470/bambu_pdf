@@ -1,0 +1,466 @@
+\hypertarget{classfunctions}{}\section{functions Class Reference}
+\label{classfunctions}\index{functions@{functions}}
+
+
+{\ttfamily \#include $<$functions.\+hpp$>$}
+
+
+
+Inheritance diagram for functions\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{d8/dbe/classfunctions__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfunctions_a5c36bb558cc8d3f9ed8999ad964d9b9b}{functions} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classfunctions_a046bf80312de8e979e3e46a581360e4c}{$\sim$functions} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classfunctions_aa00c291ca69a502b86be3e3cfda701fc}{map\+\_\+shared\+\_\+function} (unsigned int fun\+I\+D\+\_\+scope, const std\+::string \&\hyperlink{tutorial__pact__2019_2Introduction_2fourth_2module_8c_a0a2db8044a7b4ea68582e434d4f4692c}{fun})
+\begin{DoxyCompactList}\small\item\em allocate a shared function in a specified function. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \& \hyperlink{classfunctions_ab435b6f8df7ea1ddeabd35a2d73e7242}{get\+\_\+shared\+\_\+functions} (unsigned int fun\+I\+D\+\_\+scope) const
+\begin{DoxyCompactList}\small\item\em return the set of shared functions allocated in a given function. \end{DoxyCompactList}\item 
+bool \hyperlink{classfunctions_ae65e0b90457b7af2ed1af8f093797e64}{has\+\_\+shared\+\_\+functions} (unsigned int fun\+I\+D\+\_\+scope) const
+\begin{DoxyCompactList}\small\item\em return true in case there are shared functions allocated in a given function. \end{DoxyCompactList}\item 
+bool \hyperlink{classfunctions_a931331a26c67b312ee68dce38648046f}{is\+\_\+a\+\_\+shared\+\_\+function} (unsigned int fun\+I\+D\+\_\+scope, const std\+::string \&\hyperlink{tutorial__pact__2019_2Introduction_2fourth_2module_8c_a0a2db8044a7b4ea68582e434d4f4692c}{fun}) const
+\begin{DoxyCompactList}\small\item\em return true if a given function is a shared function allocated in a givend function scope \end{DoxyCompactList}\item 
+void \hyperlink{classfunctions_ac619c1c655baa02b54828555551f0ddf}{add\+\_\+shared\+\_\+function\+\_\+proxy} (unsigned int fun\+I\+D\+\_\+scope, const std\+::string \&\hyperlink{tutorial__pact__2019_2Introduction_2fourth_2module_8c_a0a2db8044a7b4ea68582e434d4f4692c}{fun})
+\begin{DoxyCompactList}\small\item\em allocate a proxy for the function referred within a given function \end{DoxyCompactList}\item 
+const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \& \hyperlink{classfunctions_a0dc27d773ab21876d91082e54b100780}{get\+\_\+proxied\+\_\+shared\+\_\+functions} (unsigned int fun\+I\+D\+\_\+scope) const
+\begin{DoxyCompactList}\small\item\em return the proxied internal functions associated with the function \end{DoxyCompactList}\item 
+bool \hyperlink{classfunctions_a97f9fd743ecd37a8538880ecd21e09c7}{has\+\_\+proxied\+\_\+shared\+\_\+functions} (unsigned int fun\+I\+D\+\_\+scope) const
+\begin{DoxyCompactList}\small\item\em check if the function has proxied shared functions \end{DoxyCompactList}\item 
+bool \hyperlink{classfunctions_ab0dc3920fb572cb4fb7da178bf285619}{is\+\_\+a\+\_\+proxied\+\_\+shared\+\_\+function} (unsigned int fun\+I\+D\+\_\+scope, const std\+::string \&\hyperlink{tutorial__pact__2019_2Introduction_2fourth_2module_8c_a0a2db8044a7b4ea68582e434d4f4692c}{fun}) const
+\begin{DoxyCompactList}\small\item\em return true if a given function is a shared function allocated in a givend function scope \end{DoxyCompactList}\item 
+bool \hyperlink{classfunctions_a01a8c5e566f31f6b3a4f36c9bc9e979b}{is\+\_\+a\+\_\+proxied\+\_\+function} (const std\+::string \&\hyperlink{tutorial__pact__2019_2Introduction_2fourth_2module_8c_a0a2db8044a7b4ea68582e434d4f4692c}{fun}) const
+\begin{DoxyCompactList}\small\item\em return true if the function is a proxied function \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classfunctions_aad881194f6ac949db8171c00ec263021}{get\+\_\+proxy\+\_\+mapping} (const std\+::string \&\hyperlink{tutorial__pact__2019_2Introduction_2fourth_2module_8c_a0a2db8044a7b4ea68582e434d4f4692c}{fun}) const
+\begin{DoxyCompactList}\small\item\em in case the function is a proxy function, it returns where the function is actually instantiated \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ $>$ \hyperlink{classfunctions_adb64aa230ffa11fb78fc2a031002b584}{shared\+\_\+function\+\_\+proxy}
+\begin{DoxyCompactList}\small\item\em set of function proxies called by a function \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, unsigned int $>$ \hyperlink{classfunctions_a68eefa9220caa56e0264cef91a024edb}{proxied\+\_\+functions}
+\begin{DoxyCompactList}\small\item\em define where the proxied functions are mapped \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ $>$ \hyperlink{classfunctions_ad71c1e9d1b6810de5e9a7591e6b3ebb8}{shared\+\_\+functions}
+\begin{DoxyCompactList}\small\item\em map where shared functions are allocated \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 52 of file functions.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfunctions_a5c36bb558cc8d3f9ed8999ad964d9b9b}\label{classfunctions_a5c36bb558cc8d3f9ed8999ad964d9b9b}} 
+\index{functions@{functions}!functions@{functions}}
+\index{functions@{functions}!functions@{functions}}
+\subsubsection{\texorpdfstring{functions()}{functions()}}
+{\footnotesize\ttfamily functions\+::functions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{classfunctions_a046bf80312de8e979e3e46a581360e4c}\label{classfunctions_a046bf80312de8e979e3e46a581360e4c}} 
+\index{functions@{functions}!````~functions@{$\sim$functions}}
+\index{````~functions@{$\sim$functions}!functions@{functions}}
+\subsubsection{\texorpdfstring{$\sim$functions()}{~functions()}}
+{\footnotesize\ttfamily functions\+::$\sim$functions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classfunctions_ac619c1c655baa02b54828555551f0ddf}\label{classfunctions_ac619c1c655baa02b54828555551f0ddf}} 
+\index{functions@{functions}!add\+\_\+shared\+\_\+function\+\_\+proxy@{add\+\_\+shared\+\_\+function\+\_\+proxy}}
+\index{add\+\_\+shared\+\_\+function\+\_\+proxy@{add\+\_\+shared\+\_\+function\+\_\+proxy}!functions@{functions}}
+\subsubsection{\texorpdfstring{add\+\_\+shared\+\_\+function\+\_\+proxy()}{add\_shared\_function\_proxy()}}
+{\footnotesize\ttfamily void functions\+::add\+\_\+shared\+\_\+function\+\_\+proxy (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope,  }\item[{const std\+::string \&}]{fun }\end{DoxyParamCaption})}
+
+
+
+allocate a proxy for the function referred within a given function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fun\+I\+D\+\_\+scope} & is the function id \\
+\hline
+{\em fun} & is the proxy function \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 74 of file functions.\+cpp.
+
+
+
+References shared\+\_\+function\+\_\+proxy.
+
+\mbox{\Hypertarget{classfunctions_a0dc27d773ab21876d91082e54b100780}\label{classfunctions_a0dc27d773ab21876d91082e54b100780}} 
+\index{functions@{functions}!get\+\_\+proxied\+\_\+shared\+\_\+functions@{get\+\_\+proxied\+\_\+shared\+\_\+functions}}
+\index{get\+\_\+proxied\+\_\+shared\+\_\+functions@{get\+\_\+proxied\+\_\+shared\+\_\+functions}!functions@{functions}}
+\subsubsection{\texorpdfstring{get\+\_\+proxied\+\_\+shared\+\_\+functions()}{get\_proxied\_shared\_functions()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \& functions\+::get\+\_\+proxied\+\_\+shared\+\_\+functions (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope }\end{DoxyParamCaption}) const}
+
+
+
+return the proxied internal functions associated with the function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fun\+I\+D\+\_\+scope} & is the function id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the set of functions proxied in fun\+I\+D\+\_\+scope 
+\end{DoxyReturn}
+
+
+Definition at line 79 of file functions.\+cpp.
+
+
+
+References has\+\_\+proxied\+\_\+shared\+\_\+functions(), shared\+\_\+function\+\_\+proxy, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{dd/d03/classfunctions_a0dc27d773ab21876d91082e54b100780_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfunctions_aad881194f6ac949db8171c00ec263021}\label{classfunctions_aad881194f6ac949db8171c00ec263021}} 
+\index{functions@{functions}!get\+\_\+proxy\+\_\+mapping@{get\+\_\+proxy\+\_\+mapping}}
+\index{get\+\_\+proxy\+\_\+mapping@{get\+\_\+proxy\+\_\+mapping}!functions@{functions}}
+\subsubsection{\texorpdfstring{get\+\_\+proxy\+\_\+mapping()}{get\_proxy\_mapping()}}
+{\footnotesize\ttfamily unsigned int functions\+::get\+\_\+proxy\+\_\+mapping (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fun }\end{DoxyParamCaption}) const}
+
+
+
+in case the function is a proxy function, it returns where the function is actually instantiated 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fun} & is the proxy function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the function ID of the function having the instance of proxy function fun 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file functions.\+cpp.
+
+
+
+References proxied\+\_\+functions, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+\mbox{\Hypertarget{classfunctions_ab435b6f8df7ea1ddeabd35a2d73e7242}\label{classfunctions_ab435b6f8df7ea1ddeabd35a2d73e7242}} 
+\index{functions@{functions}!get\+\_\+shared\+\_\+functions@{get\+\_\+shared\+\_\+functions}}
+\index{get\+\_\+shared\+\_\+functions@{get\+\_\+shared\+\_\+functions}!functions@{functions}}
+\subsubsection{\texorpdfstring{get\+\_\+shared\+\_\+functions()}{get\_shared\_functions()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \& functions\+::get\+\_\+shared\+\_\+functions (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope }\end{DoxyParamCaption}) const}
+
+
+
+return the set of shared functions allocated in a given function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fun\+I\+D\+\_\+scope} & is the function where the shared functions have been allocated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the set of shared functions allocated in fun\+I\+D\+\_\+scope 
+\end{DoxyReturn}
+
+
+Definition at line 59 of file functions.\+cpp.
+
+
+
+References shared\+\_\+functions.
+
+\mbox{\Hypertarget{classfunctions_a97f9fd743ecd37a8538880ecd21e09c7}\label{classfunctions_a97f9fd743ecd37a8538880ecd21e09c7}} 
+\index{functions@{functions}!has\+\_\+proxied\+\_\+shared\+\_\+functions@{has\+\_\+proxied\+\_\+shared\+\_\+functions}}
+\index{has\+\_\+proxied\+\_\+shared\+\_\+functions@{has\+\_\+proxied\+\_\+shared\+\_\+functions}!functions@{functions}}
+\subsubsection{\texorpdfstring{has\+\_\+proxied\+\_\+shared\+\_\+functions()}{has\_proxied\_shared\_functions()}}
+{\footnotesize\ttfamily bool functions\+::has\+\_\+proxied\+\_\+shared\+\_\+functions (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope }\end{DoxyParamCaption}) const}
+
+
+
+check if the function has proxied shared functions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fun\+I\+D\+\_\+scope} & is the function id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when there are proxied shared functions, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 85 of file functions.\+cpp.
+
+
+
+References shared\+\_\+function\+\_\+proxy.
+
+
+
+Referenced by get\+\_\+proxied\+\_\+shared\+\_\+functions(), and is\+\_\+a\+\_\+proxied\+\_\+shared\+\_\+function().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{dd/d03/classfunctions_a97f9fd743ecd37a8538880ecd21e09c7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfunctions_ae65e0b90457b7af2ed1af8f093797e64}\label{classfunctions_ae65e0b90457b7af2ed1af8f093797e64}} 
+\index{functions@{functions}!has\+\_\+shared\+\_\+functions@{has\+\_\+shared\+\_\+functions}}
+\index{has\+\_\+shared\+\_\+functions@{has\+\_\+shared\+\_\+functions}!functions@{functions}}
+\subsubsection{\texorpdfstring{has\+\_\+shared\+\_\+functions()}{has\_shared\_functions()}}
+{\footnotesize\ttfamily bool functions\+::has\+\_\+shared\+\_\+functions (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope }\end{DoxyParamCaption}) const}
+
+
+
+return true in case there are shared functions allocated in a given function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fun\+I\+D\+\_\+scope} & is the function id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when there are shared functions in fun\+I\+D\+\_\+scope 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file functions.\+cpp.
+
+
+
+References shared\+\_\+functions.
+
+
+
+Referenced by is\+\_\+a\+\_\+shared\+\_\+function().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{dd/d03/classfunctions_ae65e0b90457b7af2ed1af8f093797e64_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfunctions_a01a8c5e566f31f6b3a4f36c9bc9e979b}\label{classfunctions_a01a8c5e566f31f6b3a4f36c9bc9e979b}} 
+\index{functions@{functions}!is\+\_\+a\+\_\+proxied\+\_\+function@{is\+\_\+a\+\_\+proxied\+\_\+function}}
+\index{is\+\_\+a\+\_\+proxied\+\_\+function@{is\+\_\+a\+\_\+proxied\+\_\+function}!functions@{functions}}
+\subsubsection{\texorpdfstring{is\+\_\+a\+\_\+proxied\+\_\+function()}{is\_a\_proxied\_function()}}
+{\footnotesize\ttfamily bool functions\+::is\+\_\+a\+\_\+proxied\+\_\+function (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fun }\end{DoxyParamCaption}) const}
+
+
+
+return true if the function is a proxied function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fun} & is the id of the function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when fun is a proxied functions 
+\end{DoxyReturn}
+
+
+Definition at line 95 of file functions.\+cpp.
+
+
+
+References proxied\+\_\+functions.
+
+\mbox{\Hypertarget{classfunctions_ab0dc3920fb572cb4fb7da178bf285619}\label{classfunctions_ab0dc3920fb572cb4fb7da178bf285619}} 
+\index{functions@{functions}!is\+\_\+a\+\_\+proxied\+\_\+shared\+\_\+function@{is\+\_\+a\+\_\+proxied\+\_\+shared\+\_\+function}}
+\index{is\+\_\+a\+\_\+proxied\+\_\+shared\+\_\+function@{is\+\_\+a\+\_\+proxied\+\_\+shared\+\_\+function}!functions@{functions}}
+\subsubsection{\texorpdfstring{is\+\_\+a\+\_\+proxied\+\_\+shared\+\_\+function()}{is\_a\_proxied\_shared\_function()}}
+{\footnotesize\ttfamily bool functions\+::is\+\_\+a\+\_\+proxied\+\_\+shared\+\_\+function (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope,  }\item[{const std\+::string \&}]{fun }\end{DoxyParamCaption}) const}
+
+
+
+return true if a given function is a shared function allocated in a givend function scope 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fun\+I\+D\+\_\+scope} & is the function scope \\
+\hline
+{\em fun} & is the proxied shared function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when fun is a proxied shared in fun\+I\+D\+\_\+scope, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 90 of file functions.\+cpp.
+
+
+
+References has\+\_\+proxied\+\_\+shared\+\_\+functions(), and shared\+\_\+function\+\_\+proxy.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{dd/d03/classfunctions_ab0dc3920fb572cb4fb7da178bf285619_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfunctions_a931331a26c67b312ee68dce38648046f}\label{classfunctions_a931331a26c67b312ee68dce38648046f}} 
+\index{functions@{functions}!is\+\_\+a\+\_\+shared\+\_\+function@{is\+\_\+a\+\_\+shared\+\_\+function}}
+\index{is\+\_\+a\+\_\+shared\+\_\+function@{is\+\_\+a\+\_\+shared\+\_\+function}!functions@{functions}}
+\subsubsection{\texorpdfstring{is\+\_\+a\+\_\+shared\+\_\+function()}{is\_a\_shared\_function()}}
+{\footnotesize\ttfamily bool functions\+::is\+\_\+a\+\_\+shared\+\_\+function (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope,  }\item[{const std\+::string \&}]{fun }\end{DoxyParamCaption}) const}
+
+
+
+return true if a given function is a shared function allocated in a givend function scope 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fun\+I\+D\+\_\+scope} & is the function scope \\
+\hline
+{\em fun} & is the shared function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when fun is a shared function in fun\+I\+D\+\_\+scope, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 69 of file functions.\+cpp.
+
+
+
+References has\+\_\+shared\+\_\+functions(), and shared\+\_\+functions.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{dd/d03/classfunctions_a931331a26c67b312ee68dce38648046f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfunctions_aa00c291ca69a502b86be3e3cfda701fc}\label{classfunctions_aa00c291ca69a502b86be3e3cfda701fc}} 
+\index{functions@{functions}!map\+\_\+shared\+\_\+function@{map\+\_\+shared\+\_\+function}}
+\index{map\+\_\+shared\+\_\+function@{map\+\_\+shared\+\_\+function}!functions@{functions}}
+\subsubsection{\texorpdfstring{map\+\_\+shared\+\_\+function()}{map\_shared\_function()}}
+{\footnotesize\ttfamily void functions\+::map\+\_\+shared\+\_\+function (\begin{DoxyParamCaption}\item[{unsigned int}]{fun\+I\+D\+\_\+scope,  }\item[{const std\+::string \&}]{fun }\end{DoxyParamCaption})}
+
+
+
+allocate a shared function in a specified function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fun\+I\+D\+\_\+scope} & if the function id where the shared function is allocated \\
+\hline
+{\em fun} & is the shared function \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file functions.\+cpp.
+
+
+
+References fun(), proxied\+\_\+functions, shared\+\_\+functions, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d03/classfunctions_aa00c291ca69a502b86be3e3cfda701fc_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classfunctions_a68eefa9220caa56e0264cef91a024edb}\label{classfunctions_a68eefa9220caa56e0264cef91a024edb}} 
+\index{functions@{functions}!proxied\+\_\+functions@{proxied\+\_\+functions}}
+\index{proxied\+\_\+functions@{proxied\+\_\+functions}!functions@{functions}}
+\subsubsection{\texorpdfstring{proxied\+\_\+functions}{proxied\_functions}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, unsigned int$>$ functions\+::proxied\+\_\+functions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+define where the proxied functions are mapped 
+
+
+
+Definition at line 58 of file functions.\+hpp.
+
+
+
+Referenced by get\+\_\+proxy\+\_\+mapping(), is\+\_\+a\+\_\+proxied\+\_\+function(), and map\+\_\+shared\+\_\+function().
+
+\mbox{\Hypertarget{classfunctions_adb64aa230ffa11fb78fc2a031002b584}\label{classfunctions_adb64aa230ffa11fb78fc2a031002b584}} 
+\index{functions@{functions}!shared\+\_\+function\+\_\+proxy@{shared\+\_\+function\+\_\+proxy}}
+\index{shared\+\_\+function\+\_\+proxy@{shared\+\_\+function\+\_\+proxy}!functions@{functions}}
+\subsubsection{\texorpdfstring{shared\+\_\+function\+\_\+proxy}{shared\_function\_proxy}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$std\+::string$>$ $>$ functions\+::shared\+\_\+function\+\_\+proxy\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set of function proxies called by a function 
+
+
+
+Definition at line 55 of file functions.\+hpp.
+
+
+
+Referenced by add\+\_\+shared\+\_\+function\+\_\+proxy(), get\+\_\+proxied\+\_\+shared\+\_\+functions(), has\+\_\+proxied\+\_\+shared\+\_\+functions(), and is\+\_\+a\+\_\+proxied\+\_\+shared\+\_\+function().
+
+\mbox{\Hypertarget{classfunctions_ad71c1e9d1b6810de5e9a7591e6b3ebb8}\label{classfunctions_ad71c1e9d1b6810de5e9a7591e6b3ebb8}} 
+\index{functions@{functions}!shared\+\_\+functions@{shared\+\_\+functions}}
+\index{shared\+\_\+functions@{shared\+\_\+functions}!functions@{functions}}
+\subsubsection{\texorpdfstring{shared\+\_\+functions}{shared\_functions}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$std\+::string$>$ $>$ functions\+::shared\+\_\+functions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+map where shared functions are allocated 
+
+
+
+Definition at line 61 of file functions.\+hpp.
+
+
+
+Referenced by get\+\_\+shared\+\_\+functions(), has\+\_\+shared\+\_\+functions(), is\+\_\+a\+\_\+shared\+\_\+function(), and map\+\_\+shared\+\_\+function().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/function\+\_\+allocation/\hyperlink{functions_8hpp}{functions.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/function\+\_\+allocation/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

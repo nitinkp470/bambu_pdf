@@ -1,0 +1,161 @@
+\hypertarget{op__graph_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/op\+\_\+graph.cpp File Reference}
+\label{op__graph_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/op\+\_\+graph.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/op\+\_\+graph.\+cpp}}
+
+
+Data structures used in operations graph.  
+
+
+{\ttfamily \#include \char`\"{}op\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}behavioral\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}behavioral\+\_\+writer\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+reindex.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/filesystem/operations.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/tuple/tuple.\+hpp$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+Include dependency graph for op\+\_\+graph.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d92/op__graph_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{op__graph_8cpp_a61f87de0cc49c9e600067a395835231a}{Print\+Variables\+List} (std\+::ostream \&stream, const std\+::string \&name, const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$ variables, const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} behavioral\+\_\+helper, const bool dotty\+\_\+format)
+\item 
+void \hyperlink{op__graph_8cpp_af40a3a60f56caef05c9458a42036b646}{Print\+Memories\+List} (std\+::ostream \&stream, const std\+::string \&name, const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ Memory\+Address $>$ variables, const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}, const bool dotty\+\_\+format)
+\item 
+void \hyperlink{op__graph_8cpp_ac416c75ca00a66e78bf27a43a67da237}{Print\+Variables\+Lists} (std\+::ostream \&stream, const std\+::string \&name, const \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ \hyperlink{function__behavior_8hpp_a68c28bfcfefbe63cece191e941af0409}{Function\+Behavior\+\_\+\+Variable\+Access\+Type}, \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$$>$ variables, const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} behavioral\+\_\+helper, const bool dotty\+\_\+format)
+\item 
+void \hyperlink{op__graph_8cpp_a627d403d5e05f9a2566efe53294273ae}{Print\+Memories\+Lists} (std\+::ostream \&stream, const std\+::string \&name, const \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ \hyperlink{function__behavior_8hpp_a68c28bfcfefbe63cece191e941af0409}{Function\+Behavior\+\_\+\+Variable\+Access\+Type}, \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ Memory\+Address $>$$>$ variables, const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} behavioral\+\_\+helper, const bool dotty\+\_\+format)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Data structures used in operations graph. 
+
+\begin{DoxyAuthor}{Author}
+Marco Lattuada \href{mailto:lattuada@elet.polimi.it}{\tt lattuada@elet.\+polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{op__graph_8cpp_af40a3a60f56caef05c9458a42036b646}\label{op__graph_8cpp_af40a3a60f56caef05c9458a42036b646}} 
+\index{op\+\_\+graph.\+cpp@{op\+\_\+graph.\+cpp}!Print\+Memories\+List@{Print\+Memories\+List}}
+\index{Print\+Memories\+List@{Print\+Memories\+List}!op\+\_\+graph.\+cpp@{op\+\_\+graph.\+cpp}}
+\subsubsection{\texorpdfstring{Print\+Memories\+List()}{PrintMemoriesList()}}
+{\footnotesize\ttfamily void Print\+Memories\+List (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{const std\+::string \&}]{name,  }\item[{const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ Memory\+Address $>$}]{variables,  }\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{,  }\item[{const bool}]{dotty\+\_\+format }\end{DoxyParamCaption})}
+
+
+
+Definition at line 161 of file op\+\_\+graph.\+cpp.
+
+
+
+Referenced by Print\+Memories\+Lists().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/op__graph_8cpp_af40a3a60f56caef05c9458a42036b646_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{op__graph_8cpp_a627d403d5e05f9a2566efe53294273ae}\label{op__graph_8cpp_a627d403d5e05f9a2566efe53294273ae}} 
+\index{op\+\_\+graph.\+cpp@{op\+\_\+graph.\+cpp}!Print\+Memories\+Lists@{Print\+Memories\+Lists}}
+\index{Print\+Memories\+Lists@{Print\+Memories\+Lists}!op\+\_\+graph.\+cpp@{op\+\_\+graph.\+cpp}}
+\subsubsection{\texorpdfstring{Print\+Memories\+Lists()}{PrintMemoriesLists()}}
+{\footnotesize\ttfamily void Print\+Memories\+Lists (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{const std\+::string \&}]{name,  }\item[{const \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ \hyperlink{function__behavior_8hpp_a68c28bfcfefbe63cece191e941af0409}{Function\+Behavior\+\_\+\+Variable\+Access\+Type}, \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ Memory\+Address $>$$>$}]{variables,  }\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{behavioral\+\_\+helper,  }\item[{const bool}]{dotty\+\_\+format }\end{DoxyParamCaption})}
+
+
+
+Definition at line 185 of file op\+\_\+graph.\+cpp.
+
+
+
+References D\+E\+F\+I\+N\+I\+T\+I\+ON, O\+V\+ER, Print\+Memories\+List(), U\+SE, and Op\+Node\+Info\+::variables.
+
+
+
+Referenced by Op\+Node\+Info\+::\+Print().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{da/d68/op__graph_8cpp_a627d403d5e05f9a2566efe53294273ae_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{da/d68/op__graph_8cpp_a627d403d5e05f9a2566efe53294273ae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{op__graph_8cpp_a61f87de0cc49c9e600067a395835231a}\label{op__graph_8cpp_a61f87de0cc49c9e600067a395835231a}} 
+\index{op\+\_\+graph.\+cpp@{op\+\_\+graph.\+cpp}!Print\+Variables\+List@{Print\+Variables\+List}}
+\index{Print\+Variables\+List@{Print\+Variables\+List}!op\+\_\+graph.\+cpp@{op\+\_\+graph.\+cpp}}
+\subsubsection{\texorpdfstring{Print\+Variables\+List()}{PrintVariablesList()}}
+{\footnotesize\ttfamily void Print\+Variables\+List (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{const std\+::string \&}]{name,  }\item[{const \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$}]{variables,  }\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{behavioral\+\_\+helper,  }\item[{const bool}]{dotty\+\_\+format }\end{DoxyParamCaption})}
+
+
+
+Definition at line 152 of file op\+\_\+graph.\+cpp.
+
+
+
+Referenced by Op\+Node\+Info\+::\+Print(), and Print\+Variables\+Lists().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/op__graph_8cpp_a61f87de0cc49c9e600067a395835231a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{op__graph_8cpp_ac416c75ca00a66e78bf27a43a67da237}\label{op__graph_8cpp_ac416c75ca00a66e78bf27a43a67da237}} 
+\index{op\+\_\+graph.\+cpp@{op\+\_\+graph.\+cpp}!Print\+Variables\+Lists@{Print\+Variables\+Lists}}
+\index{Print\+Variables\+Lists@{Print\+Variables\+Lists}!op\+\_\+graph.\+cpp@{op\+\_\+graph.\+cpp}}
+\subsubsection{\texorpdfstring{Print\+Variables\+Lists()}{PrintVariablesLists()}}
+{\footnotesize\ttfamily void Print\+Variables\+Lists (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{const std\+::string \&}]{name,  }\item[{const \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ \hyperlink{function__behavior_8hpp_a68c28bfcfefbe63cece191e941af0409}{Function\+Behavior\+\_\+\+Variable\+Access\+Type}, \hyperlink{custom__set_8hpp_a615bc2f42fc38a4bb1790d12c759e86f}{Custom\+Set}$<$ unsigned int $>$$>$}]{variables,  }\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{behavioral\+\_\+helper,  }\item[{const bool}]{dotty\+\_\+format }\end{DoxyParamCaption})}
+
+
+
+Definition at line 169 of file op\+\_\+graph.\+cpp.
+
+
+
+References A\+D\+D\+R\+E\+SS, D\+E\+F\+I\+N\+I\+T\+I\+ON, O\+V\+ER, Print\+Variables\+List(), U\+SE, and Op\+Node\+Info\+::variables.
+
+
+
+Referenced by Op\+Node\+Info\+::\+Print().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{da/d68/op__graph_8cpp_ac416c75ca00a66e78bf27a43a67da237_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{da/d68/op__graph_8cpp_ac416c75ca00a66e78bf27a43a67da237_icgraph}
+\end{center}
+\end{figure}

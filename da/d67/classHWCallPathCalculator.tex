@@ -1,0 +1,256 @@
+\hypertarget{classHWCallPathCalculator}{}\section{H\+W\+Call\+Path\+Calculator Class Reference}
+\label{classHWCallPathCalculator}\index{H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}}
+
+
+Inheritance diagram for H\+W\+Call\+Path\+Calculator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{dc/dbd/classHWCallPathCalculator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for H\+W\+Call\+Path\+Calculator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{d2/d1b/classHWCallPathCalculator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHWCallPathCalculator_ac3b39ef9a827f6a1e01e675f713cc493}{H\+W\+Call\+Path\+Calculator} (const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} \+\_\+\+H\+L\+S\+Mgr)
+\item 
+\hyperlink{classHWCallPathCalculator_a6fe2e7835e140de731dab17331fa8512}{$\sim$\+H\+W\+Call\+Path\+Calculator} ()
+\item 
+void \hyperlink{classHWCallPathCalculator_a995bb66a575708682644226f3d1e1ecf}{start\+\_\+vertex} (const \hyperlink{UnfoldedCallGraph_8hpp_a6c87395c9d950d587c8e4db39b93e3e2}{Unfolded\+Vertex\+Descriptor} \&v, const \hyperlink{classUnfoldedCallGraph}{Unfolded\+Call\+Graph} \&ucg)
+\item 
+void \hyperlink{classHWCallPathCalculator_a53001ec23cdf7629228bbca0cb46750f}{discover\+\_\+vertex} (const \hyperlink{UnfoldedCallGraph_8hpp_a6c87395c9d950d587c8e4db39b93e3e2}{Unfolded\+Vertex\+Descriptor} \&v, const \hyperlink{classUnfoldedCallGraph}{Unfolded\+Call\+Graph} \&ucg)
+\item 
+void \hyperlink{classHWCallPathCalculator_ac39442469f65a16565954434a23a60c7}{finish\+\_\+vertex} (const \hyperlink{UnfoldedCallGraph_8hpp_a6c87395c9d950d587c8e4db39b93e3e2}{Unfolded\+Vertex\+Descriptor} \&v, const \hyperlink{classUnfoldedCallGraph}{Unfolded\+Call\+Graph} \&)
+\item 
+void \hyperlink{classHWCallPathCalculator_a907a8d0f033b3d51c8499ffcd4070bc3}{examine\+\_\+edge} (const \hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor} \&e, const \hyperlink{classUnfoldedCallGraph}{Unfolded\+Call\+Graph} \&cg)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} \hyperlink{classHWCallPathCalculator_a232983d5550599d833b9dc14333a1b1f}{H\+L\+S\+Mgr}
+\begin{DoxyCompactList}\small\item\em a refcount to the \hyperlink{classHLS__manager}{H\+L\+S\+\_\+manager} \end{DoxyCompactList}\item 
+std\+::stack$<$ std\+::string $>$ \hyperlink{classHWCallPathCalculator_af8a6a9326069aabe7c4794d27d050cff}{scope}
+\begin{DoxyCompactList}\small\item\em a stack of scopes used during the traversal of the \hyperlink{classUnfoldedCallGraph}{Unfolded\+Call\+Graph} \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::string $>$ \hyperlink{classHWCallPathCalculator_a1c46c538712d447372be06463edcfae0}{shared\+\_\+fun\+\_\+scope}
+\begin{DoxyCompactList}\small\item\em The key is the name of a shared function, the mapped value is the HW. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classHWCallPathCalculator_a903a1ffb11ea45f207eb363e64e73b7a}{top\+\_\+fun\+\_\+scope}
+\begin{DoxyCompactList}\small\item\em The scope of the top function. It depends on different parameters and. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Pietro Fezzardi \href{mailto:pietrofezzardi@gmail.com}{\tt pietrofezzardi@gmail.\+com} 
+\end{DoxyAuthor}
+
+
+Definition at line 69 of file H\+W\+Path\+Computation.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHWCallPathCalculator_ac3b39ef9a827f6a1e01e675f713cc493}\label{classHWCallPathCalculator_ac3b39ef9a827f6a1e01e675f713cc493}} 
+\index{H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}!H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}}
+\index{H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}!H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}}
+\subsubsection{\texorpdfstring{H\+W\+Call\+Path\+Calculator()}{HWCallPathCalculator()}}
+{\footnotesize\ttfamily H\+W\+Call\+Path\+Calculator\+::\+H\+W\+Call\+Path\+Calculator (\begin{DoxyParamCaption}\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{\+\_\+\+H\+L\+S\+Mgr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 97 of file H\+W\+Path\+Computation.\+cpp.
+
+
+
+References H\+L\+S\+Mgr, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and $\sim$\+H\+W\+Call\+Path\+Calculator().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d67/classHWCallPathCalculator_ac3b39ef9a827f6a1e01e675f713cc493_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHWCallPathCalculator_a6fe2e7835e140de731dab17331fa8512}\label{classHWCallPathCalculator_a6fe2e7835e140de731dab17331fa8512}} 
+\index{H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}!````~H\+W\+Call\+Path\+Calculator@{$\sim$\+H\+W\+Call\+Path\+Calculator}}
+\index{````~H\+W\+Call\+Path\+Calculator@{$\sim$\+H\+W\+Call\+Path\+Calculator}!H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}}
+\subsubsection{\texorpdfstring{$\sim$\+H\+W\+Call\+Path\+Calculator()}{~HWCallPathCalculator()}}
+{\footnotesize\ttfamily H\+W\+Call\+Path\+Calculator\+::$\sim$\+H\+W\+Call\+Path\+Calculator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Referenced by H\+W\+Call\+Path\+Calculator().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d67/classHWCallPathCalculator_a6fe2e7835e140de731dab17331fa8512_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classHWCallPathCalculator_a53001ec23cdf7629228bbca0cb46750f}\label{classHWCallPathCalculator_a53001ec23cdf7629228bbca0cb46750f}} 
+\index{H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}!discover\+\_\+vertex@{discover\+\_\+vertex}}
+\index{discover\+\_\+vertex@{discover\+\_\+vertex}!H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}}
+\subsubsection{\texorpdfstring{discover\+\_\+vertex()}{discover\_vertex()}}
+{\footnotesize\ttfamily void H\+W\+Call\+Path\+Calculator\+::discover\+\_\+vertex (\begin{DoxyParamCaption}\item[{const \hyperlink{UnfoldedCallGraph_8hpp_a6c87395c9d950d587c8e4db39b93e3e2}{Unfolded\+Vertex\+Descriptor} \&}]{v,  }\item[{const \hyperlink{classUnfoldedCallGraph}{Unfolded\+Call\+Graph} \&}]{ucg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 162 of file H\+W\+Path\+Computation.\+cpp.
+
+
+
+References Behavioral\+Helper\+::function\+\_\+has\+\_\+to\+\_\+be\+\_\+printed(), Behavioral\+Helper\+::has\+\_\+implementation(), H\+I\+E\+R\+A\+R\+C\+H\+Y\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR, H\+L\+S\+Mgr, scope, shared\+\_\+fun\+\_\+scope, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d67/classHWCallPathCalculator_a53001ec23cdf7629228bbca0cb46750f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHWCallPathCalculator_a907a8d0f033b3d51c8499ffcd4070bc3}\label{classHWCallPathCalculator_a907a8d0f033b3d51c8499ffcd4070bc3}} 
+\index{H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}!examine\+\_\+edge@{examine\+\_\+edge}}
+\index{examine\+\_\+edge@{examine\+\_\+edge}!H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}}
+\subsubsection{\texorpdfstring{examine\+\_\+edge()}{examine\_edge()}}
+{\footnotesize\ttfamily void H\+W\+Call\+Path\+Calculator\+::examine\+\_\+edge (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor} \&}]{e,  }\item[{const \hyperlink{classUnfoldedCallGraph}{Unfolded\+Call\+Graph} \&}]{cg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 195 of file H\+W\+Path\+Computation.\+cpp.
+
+
+
+References Function\+Behavior\+::\+C\+FG, Op\+Graph\+::\+C\+Get\+Op\+Graph\+Info(), Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), G\+E\+T\+\_\+\+N\+A\+ME, H\+I\+E\+R\+A\+R\+C\+H\+Y\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR, H\+L\+S\+Mgr, scope, shared\+\_\+fun\+\_\+scope, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and top\+\_\+fun\+\_\+scope.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d67/classHWCallPathCalculator_a907a8d0f033b3d51c8499ffcd4070bc3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHWCallPathCalculator_ac39442469f65a16565954434a23a60c7}\label{classHWCallPathCalculator_ac39442469f65a16565954434a23a60c7}} 
+\index{H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}!finish\+\_\+vertex@{finish\+\_\+vertex}}
+\index{finish\+\_\+vertex@{finish\+\_\+vertex}!H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}}
+\subsubsection{\texorpdfstring{finish\+\_\+vertex()}{finish\_vertex()}}
+{\footnotesize\ttfamily void H\+W\+Call\+Path\+Calculator\+::finish\+\_\+vertex (\begin{DoxyParamCaption}\item[{const \hyperlink{UnfoldedCallGraph_8hpp_a6c87395c9d950d587c8e4db39b93e3e2}{Unfolded\+Vertex\+Descriptor} \&}]{v,  }\item[{const \hyperlink{classUnfoldedCallGraph}{Unfolded\+Call\+Graph} \&}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 190 of file H\+W\+Path\+Computation.\+cpp.
+
+
+
+References scope.
+
+\mbox{\Hypertarget{classHWCallPathCalculator_a995bb66a575708682644226f3d1e1ecf}\label{classHWCallPathCalculator_a995bb66a575708682644226f3d1e1ecf}} 
+\index{H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}!start\+\_\+vertex@{start\+\_\+vertex}}
+\index{start\+\_\+vertex@{start\+\_\+vertex}!H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}}
+\subsubsection{\texorpdfstring{start\+\_\+vertex()}{start\_vertex()}}
+{\footnotesize\ttfamily void H\+W\+Call\+Path\+Calculator\+::start\+\_\+vertex (\begin{DoxyParamCaption}\item[{const \hyperlink{UnfoldedCallGraph_8hpp_a6c87395c9d950d587c8e4db39b93e3e2}{Unfolded\+Vertex\+Descriptor} \&}]{v,  }\item[{const \hyperlink{classUnfoldedCallGraph}{Unfolded\+Call\+Graph} \&}]{ucg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 104 of file H\+W\+Path\+Computation.\+cpp.
+
+
+
+References H\+I\+E\+R\+A\+R\+C\+H\+Y\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR, H\+L\+S\+Mgr, I\+N\+F\+E\+R\+R\+E\+D\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+ON, M\+I\+N\+I\+M\+A\+L\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+ON, test\+\_\+panda\+::parameters, scope, shared\+\_\+fun\+\_\+scope, S\+TR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, top\+\_\+fun\+\_\+scope, and W\+B4\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+G\+E\+N\+E\+R\+A\+T\+I\+ON.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classHWCallPathCalculator_a232983d5550599d833b9dc14333a1b1f}\label{classHWCallPathCalculator_a232983d5550599d833b9dc14333a1b1f}} 
+\index{H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}!H\+L\+S\+Mgr@{H\+L\+S\+Mgr}}
+\index{H\+L\+S\+Mgr@{H\+L\+S\+Mgr}!H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}}
+\subsubsection{\texorpdfstring{H\+L\+S\+Mgr}{HLSMgr}}
+{\footnotesize\ttfamily const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} H\+W\+Call\+Path\+Calculator\+::\+H\+L\+S\+Mgr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+a refcount to the \hyperlink{classHLS__manager}{H\+L\+S\+\_\+manager} 
+
+
+
+Definition at line 73 of file H\+W\+Path\+Computation.\+cpp.
+
+
+
+Referenced by discover\+\_\+vertex(), examine\+\_\+edge(), H\+W\+Path\+Computation\+::\+Exec(), H\+W\+Call\+Path\+Calculator(), and start\+\_\+vertex().
+
+\mbox{\Hypertarget{classHWCallPathCalculator_af8a6a9326069aabe7c4794d27d050cff}\label{classHWCallPathCalculator_af8a6a9326069aabe7c4794d27d050cff}} 
+\index{H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}!scope@{scope}}
+\index{scope@{scope}!H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}}
+\subsubsection{\texorpdfstring{scope}{scope}}
+{\footnotesize\ttfamily std\+::stack$<$std\+::string$>$ H\+W\+Call\+Path\+Calculator\+::scope\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+a stack of scopes used during the traversal of the \hyperlink{classUnfoldedCallGraph}{Unfolded\+Call\+Graph} 
+
+
+
+Definition at line 76 of file H\+W\+Path\+Computation.\+cpp.
+
+
+
+Referenced by discover\+\_\+vertex(), examine\+\_\+edge(), finish\+\_\+vertex(), and start\+\_\+vertex().
+
+\mbox{\Hypertarget{classHWCallPathCalculator_a1c46c538712d447372be06463edcfae0}\label{classHWCallPathCalculator_a1c46c538712d447372be06463edcfae0}} 
+\index{H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}!shared\+\_\+fun\+\_\+scope@{shared\+\_\+fun\+\_\+scope}}
+\index{shared\+\_\+fun\+\_\+scope@{shared\+\_\+fun\+\_\+scope}!H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}}
+\subsubsection{\texorpdfstring{shared\+\_\+fun\+\_\+scope}{shared\_fun\_scope}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::string$>$ H\+W\+Call\+Path\+Calculator\+::shared\+\_\+fun\+\_\+scope\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The key is the name of a shared function, the mapped value is the HW. 
+
+
+
+Definition at line 80 of file H\+W\+Path\+Computation.\+cpp.
+
+
+
+Referenced by discover\+\_\+vertex(), examine\+\_\+edge(), and start\+\_\+vertex().
+
+\mbox{\Hypertarget{classHWCallPathCalculator_a903a1ffb11ea45f207eb363e64e73b7a}\label{classHWCallPathCalculator_a903a1ffb11ea45f207eb363e64e73b7a}} 
+\index{H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}!top\+\_\+fun\+\_\+scope@{top\+\_\+fun\+\_\+scope}}
+\index{top\+\_\+fun\+\_\+scope@{top\+\_\+fun\+\_\+scope}!H\+W\+Call\+Path\+Calculator@{H\+W\+Call\+Path\+Calculator}}
+\subsubsection{\texorpdfstring{top\+\_\+fun\+\_\+scope}{top\_fun\_scope}}
+{\footnotesize\ttfamily std\+::string H\+W\+Call\+Path\+Calculator\+::top\+\_\+fun\+\_\+scope\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The scope of the top function. It depends on different parameters and. 
+
+
+
+Definition at line 84 of file H\+W\+Path\+Computation.\+cpp.
+
+
+
+Referenced by examine\+\_\+edge(), and start\+\_\+vertex().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/vcd/\hyperlink{HWPathComputation_8cpp}{H\+W\+Path\+Computation.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,115 @@
+\hypertarget{mem__dominator__allocation_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/memory/mem\+\_\+dominator\+\_\+allocation.cpp File Reference}
+\label{mem__dominator__allocation_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/memory/mem\+\_\+dominator\+\_\+allocation.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/memory/mem\+\_\+dominator\+\_\+allocation.\+cpp}}
+
+
+Memory allocation based on the dominator tree of the call graph.  
+
+
+{\ttfamily \#include \char`\"{}mem\+\_\+dominator\+\_\+allocation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}functions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+constraints.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+target.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}memory.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}target\+\_\+device.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}behavioral\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}call\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}call\+\_\+graph\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}function\+\_\+behavior.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}op\+\_\+graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Dominance.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constant\+\_\+strings.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cpu\+\_\+time.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}math\+\_\+function.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}module\+\_\+interface.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}technology\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ext\+\_\+tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+reindex.\+hpp\char`\"{}}\newline
+Include dependency graph for mem\+\_\+dominator\+\_\+allocation.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d28/mem__dominator__allocation_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{mem__dominator__allocation_8cpp_aa20dd90c58eb9f9a62472e12b1777989}{build\+Allocation\+Order\+Recursively} (const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} H\+L\+S\+Mgr, std\+::vector$<$ unsigned int $>$ \&List, unsigned int top\+Function)
+\item 
+static \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \hyperlink{mem__dominator__allocation_8cpp_a2e7d67fcc25e815bcbad1085552eb0d6}{get\+\_\+remapped\+\_\+vertex} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} current\+\_\+vertex, const \hyperlink{call__graph__manager_8hpp_a19eec454bbf914c67fe80bcf28e4a90f}{Call\+Graph\+Manager\+Const\+Ref} CG, const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} H\+L\+S\+Mgr)
+\begin{DoxyCompactList}\small\item\em check if current\+\_\+vertex is a proxied function \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Memory allocation based on the dominator tree of the call graph. 
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{mem__dominator__allocation_8cpp_aa20dd90c58eb9f9a62472e12b1777989}\label{mem__dominator__allocation_8cpp_aa20dd90c58eb9f9a62472e12b1777989}} 
+\index{mem\+\_\+dominator\+\_\+allocation.\+cpp@{mem\+\_\+dominator\+\_\+allocation.\+cpp}!build\+Allocation\+Order\+Recursively@{build\+Allocation\+Order\+Recursively}}
+\index{build\+Allocation\+Order\+Recursively@{build\+Allocation\+Order\+Recursively}!mem\+\_\+dominator\+\_\+allocation.\+cpp@{mem\+\_\+dominator\+\_\+allocation.\+cpp}}
+\subsubsection{\texorpdfstring{build\+Allocation\+Order\+Recursively()}{buildAllocationOrderRecursively()}}
+{\footnotesize\ttfamily static void build\+Allocation\+Order\+Recursively (\begin{DoxyParamCaption}\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr,  }\item[{std\+::vector$<$ unsigned int $>$ \&}]{List,  }\item[{unsigned int}]{top\+Function }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 99 of file mem\+\_\+dominator\+\_\+allocation.\+cpp.
+
+
+
+Referenced by mem\+\_\+dominator\+\_\+allocation\+::get\+Function\+Allocation\+Order().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d52/mem__dominator__allocation_8cpp_aa20dd90c58eb9f9a62472e12b1777989_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mem__dominator__allocation_8cpp_a2e7d67fcc25e815bcbad1085552eb0d6}\label{mem__dominator__allocation_8cpp_a2e7d67fcc25e815bcbad1085552eb0d6}} 
+\index{mem\+\_\+dominator\+\_\+allocation.\+cpp@{mem\+\_\+dominator\+\_\+allocation.\+cpp}!get\+\_\+remapped\+\_\+vertex@{get\+\_\+remapped\+\_\+vertex}}
+\index{get\+\_\+remapped\+\_\+vertex@{get\+\_\+remapped\+\_\+vertex}!mem\+\_\+dominator\+\_\+allocation.\+cpp@{mem\+\_\+dominator\+\_\+allocation.\+cpp}}
+\subsubsection{\texorpdfstring{get\+\_\+remapped\+\_\+vertex()}{get\_remapped\_vertex()}}
+{\footnotesize\ttfamily static \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} get\+\_\+remapped\+\_\+vertex (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{current\+\_\+vertex,  }\item[{const \hyperlink{call__graph__manager_8hpp_a19eec454bbf914c67fe80bcf28e4a90f}{Call\+Graph\+Manager\+Const\+Ref}}]{CG,  }\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+check if current\+\_\+vertex is a proxied function 
+
+
+
+Definition at line 134 of file mem\+\_\+dominator\+\_\+allocation.\+cpp.
+
+
+
+Referenced by mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d52/mem__dominator__allocation_8cpp_a2e7d67fcc25e815bcbad1085552eb0d6_icgraph}
+\end{center}
+\end{figure}

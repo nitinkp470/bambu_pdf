@@ -1,0 +1,195 @@
+\hypertarget{modelsimWrapper_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/simulation/modelsim/modelsim\+Wrapper.cpp File Reference}
+\label{modelsimWrapper_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/simulation/modelsim/modelsim\+Wrapper.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/simulation/modelsim/modelsim\+Wrapper.\+cpp}}
+
+
+Implementation of the wrapper to modelsim compiler and simulator.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+M\+E\+N\+T\+O\+R\+\_\+\+V\+I\+S\+U\+A\+L\+I\+Z\+E\+R\+\_\+\+E\+X\+E.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+M\+O\+D\+E\+L\+S\+I\+M.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+M\+E\+N\+T\+O\+R\+\_\+\+L\+I\+C\+E\+N\+S\+E.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+M\+E\+N\+T\+O\+R\+\_\+\+M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+I\+N.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+O\+P\+T\+I\+M\+I\+Z\+E\+R\+\_\+\+F\+L\+A\+G\+S.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}modelsim\+Wrapper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utility.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/algorithm/string.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/filesystem.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}language\+\_\+writer.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$cerrno$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constant\+\_\+strings.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}file\+I\+O.\+hpp\char`\"{}}\newline
+Include dependency graph for modelsim\+Wrapper.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/da1/modelsimWrapper_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{modelsimWrapper_8cpp_a07305e6c484d2c2c48b24fe7ca3f21de}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN}~(\hyperlink{string__manipulation_8hpp_a6388870e639eee9c0a69446876f1f8cc}{S\+TR}(M\+E\+N\+T\+O\+R\+\_\+\+M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN) != \char`\"{}0\char`\"{} ? \hyperlink{string__manipulation_8hpp_a6388870e639eee9c0a69446876f1f8cc}{S\+TR}(M\+E\+N\+T\+O\+R\+\_\+\+M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN) + \char`\"{}/\char`\"{} \+: std\+::string(\char`\"{}\char`\"{}))
+\begin{DoxyCompactList}\small\item\em Autoheader include. \end{DoxyCompactList}\item 
+\#define \hyperlink{modelsimWrapper_8cpp_a2e17d472b428bc7169b71b2ad73c9e65}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+D\+EL}~(\hyperlink{modelsimWrapper_8cpp_a07305e6c484d2c2c48b24fe7ca3f21de}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN} + \char`\"{}vdel\char`\"{})
+\item 
+\#define \hyperlink{modelsimWrapper_8cpp_a9022d948a7fb198c63eb5eae57fa3270}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+L\+IB}~(\hyperlink{modelsimWrapper_8cpp_a07305e6c484d2c2c48b24fe7ca3f21de}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN} + \char`\"{}vlib\char`\"{})
+\item 
+\#define \hyperlink{modelsimWrapper_8cpp_a21f12fc786917d93c46a22fa1dbbc43b}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+M\+AP}~(\hyperlink{modelsimWrapper_8cpp_a07305e6c484d2c2c48b24fe7ca3f21de}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN} + \char`\"{}vmap\char`\"{})
+\item 
+\#define \hyperlink{modelsimWrapper_8cpp_aadcea41792d8a09c75aba83663e644dc}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+C\+OM}~(\hyperlink{modelsimWrapper_8cpp_a07305e6c484d2c2c48b24fe7ca3f21de}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN} + \char`\"{}vcom\char`\"{})
+\item 
+\#define \hyperlink{modelsimWrapper_8cpp_a61d2545e91662910ddddca301b268330}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+L\+OG}~(\hyperlink{modelsimWrapper_8cpp_a07305e6c484d2c2c48b24fe7ca3f21de}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN} + \char`\"{}vlog\char`\"{})
+\item 
+\#define \hyperlink{modelsimWrapper_8cpp_ab959db29dd3131219205084d38dfb655}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+S\+IM}~(\hyperlink{modelsimWrapper_8cpp_a07305e6c484d2c2c48b24fe7ca3f21de}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN} + \char`\"{}vsim\char`\"{})
+\item 
+\#define \hyperlink{modelsimWrapper_8cpp_aed06382baf8fa086fa618a369f28fda7}{M\+E\+N\+T\+O\+R\+\_\+\+L\+I\+C\+E\+N\+S\+E\+\_\+\+S\+ET}~std\+::string(\char`\"{}export L\+M\+\_\+\+L\+I\+C\+E\+N\+S\+E\+\_\+\+F\+I\+LE=\char`\"{}) + S\+TR(M\+E\+N\+T\+O\+R\+\_\+\+L\+I\+C\+E\+N\+SE) + std\+::string(\char`\"{};\char`\"{})
+\item 
+\#define \hyperlink{modelsimWrapper_8cpp_aaa887fa29405528addda24cfcd9b54ce}{S\+I\+M\+\_\+\+S\+U\+B\+D\+IR}~(Param-\/$>$get\+Option$<$std\+::string$>$(O\+P\+T\+\_\+output\+\_\+directory) + std\+::string(\char`\"{}/modelsim\char`\"{}))
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of the wrapper to modelsim compiler and simulator. 
+
+Implementation of the methods for the wrapper.
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{modelsimWrapper_8cpp_aed06382baf8fa086fa618a369f28fda7}\label{modelsimWrapper_8cpp_aed06382baf8fa086fa618a369f28fda7}} 
+\index{modelsim\+Wrapper.\+cpp@{modelsim\+Wrapper.\+cpp}!M\+E\+N\+T\+O\+R\+\_\+\+L\+I\+C\+E\+N\+S\+E\+\_\+\+S\+ET@{M\+E\+N\+T\+O\+R\+\_\+\+L\+I\+C\+E\+N\+S\+E\+\_\+\+S\+ET}}
+\index{M\+E\+N\+T\+O\+R\+\_\+\+L\+I\+C\+E\+N\+S\+E\+\_\+\+S\+ET@{M\+E\+N\+T\+O\+R\+\_\+\+L\+I\+C\+E\+N\+S\+E\+\_\+\+S\+ET}!modelsim\+Wrapper.\+cpp@{modelsim\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{M\+E\+N\+T\+O\+R\+\_\+\+L\+I\+C\+E\+N\+S\+E\+\_\+\+S\+ET}{MENTOR\_LICENSE\_SET}}
+{\footnotesize\ttfamily \#define M\+E\+N\+T\+O\+R\+\_\+\+L\+I\+C\+E\+N\+S\+E\+\_\+\+S\+ET~std\+::string(\char`\"{}export L\+M\+\_\+\+L\+I\+C\+E\+N\+S\+E\+\_\+\+F\+I\+LE=\char`\"{}) + S\+TR(M\+E\+N\+T\+O\+R\+\_\+\+L\+I\+C\+E\+N\+SE) + std\+::string(\char`\"{};\char`\"{})}
+
+
+
+Definition at line 86 of file modelsim\+Wrapper.\+cpp.
+
+
+
+Referenced by modelsim\+Wrapper\+::\+Generate\+Script().
+
+\mbox{\Hypertarget{modelsimWrapper_8cpp_a07305e6c484d2c2c48b24fe7ca3f21de}\label{modelsimWrapper_8cpp_a07305e6c484d2c2c48b24fe7ca3f21de}} 
+\index{modelsim\+Wrapper.\+cpp@{modelsim\+Wrapper.\+cpp}!M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN@{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN}}
+\index{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN@{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN}!modelsim\+Wrapper.\+cpp@{modelsim\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN}{MODELSIM\_BIN}}
+{\footnotesize\ttfamily \#define M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN~(\hyperlink{string__manipulation_8hpp_a6388870e639eee9c0a69446876f1f8cc}{S\+TR}(M\+E\+N\+T\+O\+R\+\_\+\+M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN) != \char`\"{}0\char`\"{} ? \hyperlink{string__manipulation_8hpp_a6388870e639eee9c0a69446876f1f8cc}{S\+TR}(M\+E\+N\+T\+O\+R\+\_\+\+M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN) + \char`\"{}/\char`\"{} \+: std\+::string(\char`\"{}\char`\"{}))}
+
+
+
+Autoheader include. 
+
+Includes the class definition Standard PandA include includes all needed Boost.\+Filesystem declarations include to understand which backend is used S\+TL include 
+
+Definition at line 77 of file modelsim\+Wrapper.\+cpp.
+
+\mbox{\Hypertarget{modelsimWrapper_8cpp_aadcea41792d8a09c75aba83663e644dc}\label{modelsimWrapper_8cpp_aadcea41792d8a09c75aba83663e644dc}} 
+\index{modelsim\+Wrapper.\+cpp@{modelsim\+Wrapper.\+cpp}!M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+C\+OM@{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+C\+OM}}
+\index{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+C\+OM@{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+C\+OM}!modelsim\+Wrapper.\+cpp@{modelsim\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+C\+OM}{MODELSIM\_VCOM}}
+{\footnotesize\ttfamily \#define M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+C\+OM~(\hyperlink{modelsimWrapper_8cpp_a07305e6c484d2c2c48b24fe7ca3f21de}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN} + \char`\"{}vcom\char`\"{})}
+
+
+
+Definition at line 82 of file modelsim\+Wrapper.\+cpp.
+
+
+
+Referenced by modelsim\+Wrapper\+::\+Generate\+Script().
+
+\mbox{\Hypertarget{modelsimWrapper_8cpp_a2e17d472b428bc7169b71b2ad73c9e65}\label{modelsimWrapper_8cpp_a2e17d472b428bc7169b71b2ad73c9e65}} 
+\index{modelsim\+Wrapper.\+cpp@{modelsim\+Wrapper.\+cpp}!M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+D\+EL@{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+D\+EL}}
+\index{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+D\+EL@{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+D\+EL}!modelsim\+Wrapper.\+cpp@{modelsim\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+D\+EL}{MODELSIM\_VDEL}}
+{\footnotesize\ttfamily \#define M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+D\+EL~(\hyperlink{modelsimWrapper_8cpp_a07305e6c484d2c2c48b24fe7ca3f21de}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN} + \char`\"{}vdel\char`\"{})}
+
+
+
+Definition at line 79 of file modelsim\+Wrapper.\+cpp.
+
+
+
+Referenced by modelsim\+Wrapper\+::\+Generate\+Script().
+
+\mbox{\Hypertarget{modelsimWrapper_8cpp_a9022d948a7fb198c63eb5eae57fa3270}\label{modelsimWrapper_8cpp_a9022d948a7fb198c63eb5eae57fa3270}} 
+\index{modelsim\+Wrapper.\+cpp@{modelsim\+Wrapper.\+cpp}!M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+L\+IB@{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+L\+IB}}
+\index{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+L\+IB@{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+L\+IB}!modelsim\+Wrapper.\+cpp@{modelsim\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+L\+IB}{MODELSIM\_VLIB}}
+{\footnotesize\ttfamily \#define M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+L\+IB~(\hyperlink{modelsimWrapper_8cpp_a07305e6c484d2c2c48b24fe7ca3f21de}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN} + \char`\"{}vlib\char`\"{})}
+
+
+
+Definition at line 80 of file modelsim\+Wrapper.\+cpp.
+
+
+
+Referenced by modelsim\+Wrapper\+::\+Generate\+Script().
+
+\mbox{\Hypertarget{modelsimWrapper_8cpp_a61d2545e91662910ddddca301b268330}\label{modelsimWrapper_8cpp_a61d2545e91662910ddddca301b268330}} 
+\index{modelsim\+Wrapper.\+cpp@{modelsim\+Wrapper.\+cpp}!M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+L\+OG@{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+L\+OG}}
+\index{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+L\+OG@{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+L\+OG}!modelsim\+Wrapper.\+cpp@{modelsim\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+L\+OG}{MODELSIM\_VLOG}}
+{\footnotesize\ttfamily \#define M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+L\+OG~(\hyperlink{modelsimWrapper_8cpp_a07305e6c484d2c2c48b24fe7ca3f21de}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN} + \char`\"{}vlog\char`\"{})}
+
+
+
+Definition at line 83 of file modelsim\+Wrapper.\+cpp.
+
+
+
+Referenced by modelsim\+Wrapper\+::\+Generate\+Script().
+
+\mbox{\Hypertarget{modelsimWrapper_8cpp_a21f12fc786917d93c46a22fa1dbbc43b}\label{modelsimWrapper_8cpp_a21f12fc786917d93c46a22fa1dbbc43b}} 
+\index{modelsim\+Wrapper.\+cpp@{modelsim\+Wrapper.\+cpp}!M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+M\+AP@{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+M\+AP}}
+\index{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+M\+AP@{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+M\+AP}!modelsim\+Wrapper.\+cpp@{modelsim\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+M\+AP}{MODELSIM\_VMAP}}
+{\footnotesize\ttfamily \#define M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+M\+AP~(\hyperlink{modelsimWrapper_8cpp_a07305e6c484d2c2c48b24fe7ca3f21de}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN} + \char`\"{}vmap\char`\"{})}
+
+
+
+Definition at line 81 of file modelsim\+Wrapper.\+cpp.
+
+
+
+Referenced by modelsim\+Wrapper\+::\+Generate\+Script().
+
+\mbox{\Hypertarget{modelsimWrapper_8cpp_ab959db29dd3131219205084d38dfb655}\label{modelsimWrapper_8cpp_ab959db29dd3131219205084d38dfb655}} 
+\index{modelsim\+Wrapper.\+cpp@{modelsim\+Wrapper.\+cpp}!M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+S\+IM@{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+S\+IM}}
+\index{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+S\+IM@{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+S\+IM}!modelsim\+Wrapper.\+cpp@{modelsim\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+S\+IM}{MODELSIM\_VSIM}}
+{\footnotesize\ttfamily \#define M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+V\+S\+IM~(\hyperlink{modelsimWrapper_8cpp_a07305e6c484d2c2c48b24fe7ca3f21de}{M\+O\+D\+E\+L\+S\+I\+M\+\_\+\+B\+IN} + \char`\"{}vsim\char`\"{})}
+
+
+
+Definition at line 84 of file modelsim\+Wrapper.\+cpp.
+
+
+
+Referenced by modelsim\+Wrapper\+::\+Generate\+Script().
+
+\mbox{\Hypertarget{modelsimWrapper_8cpp_aaa887fa29405528addda24cfcd9b54ce}\label{modelsimWrapper_8cpp_aaa887fa29405528addda24cfcd9b54ce}} 
+\index{modelsim\+Wrapper.\+cpp@{modelsim\+Wrapper.\+cpp}!S\+I\+M\+\_\+\+S\+U\+B\+D\+IR@{S\+I\+M\+\_\+\+S\+U\+B\+D\+IR}}
+\index{S\+I\+M\+\_\+\+S\+U\+B\+D\+IR@{S\+I\+M\+\_\+\+S\+U\+B\+D\+IR}!modelsim\+Wrapper.\+cpp@{modelsim\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{S\+I\+M\+\_\+\+S\+U\+B\+D\+IR}{SIM\_SUBDIR}}
+{\footnotesize\ttfamily \#define S\+I\+M\+\_\+\+S\+U\+B\+D\+IR~(Param-\/$>$get\+Option$<$std\+::string$>$(O\+P\+T\+\_\+output\+\_\+directory) + std\+::string(\char`\"{}/modelsim\char`\"{}))}
+
+
+
+Definition at line 92 of file modelsim\+Wrapper.\+cpp.
+
+
+
+Referenced by modelsim\+Wrapper\+::\+Clean(), modelsim\+Wrapper\+::\+Generate\+Script(), and modelsim\+Wrapper\+::modelsim\+Wrapper().
+

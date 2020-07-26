@@ -1,0 +1,434 @@
+\hypertarget{classGenerateFuList}{}\section{Generate\+Fu\+List Class Reference}
+\label{classGenerateFuList}\index{Generate\+Fu\+List@{Generate\+Fu\+List}}
+
+
+{\ttfamily \#include $<$generate\+\_\+fu\+\_\+list.\+hpp$>$}
+
+
+
+Inheritance diagram for Generate\+Fu\+List\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{d2/db6/classGenerateFuList__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Generate\+Fu\+List\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d81/classGenerateFuList__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGenerateFuList_ac027f6e5f51f33b7bb3b673ec414e4f6}{Generate\+Fu\+List} (const \hyperlink{target__manager_8hpp_aee0b586a84fb6eb4faefa6e41e1735a9}{target\+\_\+manager\+Ref} \hyperlink{classFunctionalUnitStep_a1f90bc8bd6531c4cdf67966734a66cea}{target}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters})
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classGenerateFuList_adadbe6658c33d77bb24fd0e8b1516a65}{Exec} () override
+\begin{DoxyCompactList}\small\item\em Execute the step. \end{DoxyCompactList}\item 
+void \hyperlink{classGenerateFuList_a3651813235effdc39f39dd064571a135}{Compute\+Relationships} (\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&relationship, const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) override
+\begin{DoxyCompactList}\small\item\em Compute the relationships of a step with other steps. \end{DoxyCompactList}\item 
+bool \hyperlink{classGenerateFuList_ae5f29f70bd0b315ffa9369fc93fa5096}{Has\+To\+Be\+Executed} () const override
+\begin{DoxyCompactList}\small\item\em Check if this step has actually to be executed. \end{DoxyCompactList}\item 
+const std\+::string \hyperlink{classGenerateFuList_a7bd13ddbc7a4b82d834a9cd0812d4b90}{Get\+Signature} () const override
+\begin{DoxyCompactList}\small\item\em Return a unified identifier of this design step. \end{DoxyCompactList}\item 
+const std\+::string \hyperlink{classGenerateFuList_a0b6efa299b9de2bc45157d9e28a97a9e}{Get\+Name} () const override
+\begin{DoxyCompactList}\small\item\em Return the name of this design step. \end{DoxyCompactList}\item 
+const Design\+Flow\+Step\+Factory\+Const\+Ref \hyperlink{classGenerateFuList_a51c1a9b6fe9a61328d6dc99d8e0bd47c}{C\+Get\+Design\+Flow\+Step\+Factory} () const override
+\begin{DoxyCompactList}\small\item\em Return the factory to create this type of steps. \end{DoxyCompactList}\item 
+void \hyperlink{classGenerateFuList_a133ca515874d6d494d54dae031046a25}{Analyze\+Cell} (\hyperlink{structfunctional__unit}{functional\+\_\+unit} $\ast$fu, const unsigned int prec, const std\+::vector$<$ std\+::string $>$ \&portsize\+\_\+parameters, const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} portsize\+\_\+index, const std\+::vector$<$ std\+::string $>$ \&pipe\+\_\+parameters, const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} stage\+\_\+index, const unsigned int const\+Port, const bool is\+\_\+commutative, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} max\+\_\+lut\+\_\+size) override
+\begin{DoxyCompactList}\small\item\em Analyze the single cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \hyperlink{classGenerateFuList_a3832208eba8658699d0880ee9123159e}{cells}
+\begin{DoxyCompactList}\small\item\em The set of list of cells. \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ std\+::string $>$ \hyperlink{classGenerateFuList_a4415121177ccfd3e8e386ef0971f6712}{components\+\_\+to\+\_\+be\+\_\+characterized}
+\begin{DoxyCompactList}\small\item\em The list of components to be added to the list; if the list is empty, all the components will be added. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classGenerateFuList_aa23b467e895dc2e1402dfbd23193dd1d}{component}
+\begin{DoxyCompactList}\small\item\em The current functional unit. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classGenerateFuList_a934ddfe617b1a07a2a87c2ae1c460580}{current\+\_\+list}
+\begin{DoxyCompactList}\small\item\em The current entry for list of functional units. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 52 of file generate\+\_\+fu\+\_\+list.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGenerateFuList_ac027f6e5f51f33b7bb3b673ec414e4f6}\label{classGenerateFuList_ac027f6e5f51f33b7bb3b673ec414e4f6}} 
+\index{Generate\+Fu\+List@{Generate\+Fu\+List}!Generate\+Fu\+List@{Generate\+Fu\+List}}
+\index{Generate\+Fu\+List@{Generate\+Fu\+List}!Generate\+Fu\+List@{Generate\+Fu\+List}}
+\subsubsection{\texorpdfstring{Generate\+Fu\+List()}{GenerateFuList()}}
+{\footnotesize\ttfamily Generate\+Fu\+List\+::\+Generate\+Fu\+List (\begin{DoxyParamCaption}\item[{const \hyperlink{target__manager_8hpp_aee0b586a84fb6eb4faefa6e41e1735a9}{target\+\_\+manager\+Ref}}]{\+\_\+target,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters }\end{DoxyParamCaption})}
+
+
+
+The constructor. 
+
+Header include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & is the target manager \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+{\em parameters} & is the set of input parameters\\
+\hline
+\end{DoxyParams}
+. include circuit includes design\+\_\+flows includes design\+\_\+flows/technology includes S\+TD include S\+TL include technology include technology/physical\+\_\+library includes utility include 
+
+Definition at line 75 of file generate\+\_\+fu\+\_\+list.\+cpp.
+
+
+
+References components\+\_\+to\+\_\+be\+\_\+characterized, Design\+Flow\+Step\+::debug\+\_\+level, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and Split\+String().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{db/dea/classGenerateFuList_ac027f6e5f51f33b7bb3b673ec414e4f6_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGenerateFuList_a133ca515874d6d494d54dae031046a25}\label{classGenerateFuList_a133ca515874d6d494d54dae031046a25}} 
+\index{Generate\+Fu\+List@{Generate\+Fu\+List}!Analyze\+Cell@{Analyze\+Cell}}
+\index{Analyze\+Cell@{Analyze\+Cell}!Generate\+Fu\+List@{Generate\+Fu\+List}}
+\subsubsection{\texorpdfstring{Analyze\+Cell()}{AnalyzeCell()}}
+{\footnotesize\ttfamily void Generate\+Fu\+List\+::\+Analyze\+Cell (\begin{DoxyParamCaption}\item[{\hyperlink{structfunctional__unit}{functional\+\_\+unit} $\ast$}]{fu,  }\item[{const unsigned int}]{prec,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{portsize\+\_\+parameters,  }\item[{const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{portsize\+\_\+index,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{pipe\+\_\+parameters,  }\item[{const \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{stage\+\_\+index,  }\item[{const unsigned int}]{const\+Port,  }\item[{const bool}]{is\+\_\+commutative,  }\item[{\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{max\+\_\+lut\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Analyze the single cell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fu} & is the cell \\
+\hline
+{\em prec} & is the precision \\
+\hline
+{\em portsize\+\_\+parameters} & is the size of parameters \\
+\hline
+{\em portsize\+\_\+index} & \\
+\hline
+{\em pipe\+\_\+parameters} & \\
+\hline
+{\em stage\+\_\+index} & \\
+\hline
+{\em const\+Port} & is the index of the constant port \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFunctionalUnitStep_afe8188cf489c2c980bc537f5ed37a5cc}{Functional\+Unit\+Step}.
+
+
+
+Definition at line 184 of file generate\+\_\+fu\+\_\+list.\+cpp.
+
+
+
+References cells, component, current\+\_\+list, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, functional\+\_\+unit\+::get\+\_\+name(), Functional\+Unit\+Step\+::has\+\_\+first\+\_\+synthesis\+\_\+id, and I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dea/classGenerateFuList_a133ca515874d6d494d54dae031046a25_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGenerateFuList_a51c1a9b6fe9a61328d6dc99d8e0bd47c}\label{classGenerateFuList_a51c1a9b6fe9a61328d6dc99d8e0bd47c}} 
+\index{Generate\+Fu\+List@{Generate\+Fu\+List}!C\+Get\+Design\+Flow\+Step\+Factory@{C\+Get\+Design\+Flow\+Step\+Factory}}
+\index{C\+Get\+Design\+Flow\+Step\+Factory@{C\+Get\+Design\+Flow\+Step\+Factory}!Generate\+Fu\+List@{Generate\+Fu\+List}}
+\subsubsection{\texorpdfstring{C\+Get\+Design\+Flow\+Step\+Factory()}{CGetDesignFlowStepFactory()}}
+{\footnotesize\ttfamily const Design\+Flow\+Step\+Factory\+Const\+Ref Generate\+Fu\+List\+::\+C\+Get\+Design\+Flow\+Step\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return the factory to create this type of steps. 
+
+
+
+Implements \hyperlink{classDesignFlowStep_a5510a8d296670a07f6b53312c448994c}{Design\+Flow\+Step}.
+
+
+
+Definition at line 179 of file generate\+\_\+fu\+\_\+list.\+cpp.
+
+
+
+References To\+Data\+File\+Step\+::\+C\+Get\+Design\+Flow\+Step\+Factory().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dea/classGenerateFuList_a51c1a9b6fe9a61328d6dc99d8e0bd47c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGenerateFuList_a3651813235effdc39f39dd064571a135}\label{classGenerateFuList_a3651813235effdc39f39dd064571a135}} 
+\index{Generate\+Fu\+List@{Generate\+Fu\+List}!Compute\+Relationships@{Compute\+Relationships}}
+\index{Compute\+Relationships@{Compute\+Relationships}!Generate\+Fu\+List@{Generate\+Fu\+List}}
+\subsubsection{\texorpdfstring{Compute\+Relationships()}{ComputeRelationships()}}
+{\footnotesize\ttfamily void Generate\+Fu\+List\+::\+Compute\+Relationships (\begin{DoxyParamCaption}\item[{\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&}]{relationship,  }\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the relationships of a step with other steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dependencies} & is where relationships will be stored \\
+\hline
+{\em relationship\+\_\+type} & is the type of relationship to be computed \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classToDataFileStep_aa2644f2c16d52ff381a6c52eef19c7c5}{To\+Data\+File\+Step}.
+
+
+
+Definition at line 119 of file generate\+\_\+fu\+\_\+list.\+cpp.
+
+
+
+References Technology\+Flow\+Step\+::\+Compute\+Signature(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, L\+O\+A\+D\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+T\+E\+C\+H\+N\+O\+L\+O\+GY, L\+O\+A\+D\+\_\+\+F\+I\+L\+E\+\_\+\+T\+E\+C\+H\+N\+O\+L\+O\+GY, Wrefcount$<$ T $>$\+::lock(), Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and W\+R\+I\+T\+E\+\_\+\+T\+E\+C\+H\+N\+O\+L\+O\+GY.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dea/classGenerateFuList_a3651813235effdc39f39dd064571a135_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGenerateFuList_adadbe6658c33d77bb24fd0e8b1516a65}\label{classGenerateFuList_adadbe6658c33d77bb24fd0e8b1516a65}} 
+\index{Generate\+Fu\+List@{Generate\+Fu\+List}!Exec@{Exec}}
+\index{Exec@{Exec}!Generate\+Fu\+List@{Generate\+Fu\+List}}
+\subsubsection{\texorpdfstring{Exec()}{Exec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} Generate\+Fu\+List\+::\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the step. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classDesignFlowStep_a77d7e38493016766098711ea24f60b89}{Design\+Flow\+Step}.
+
+
+
+Definition at line 90 of file generate\+\_\+fu\+\_\+list.\+cpp.
+
+
+
+References Functional\+Unit\+Step\+::\+Analyze\+Fu(), cells, component, components\+\_\+to\+\_\+be\+\_\+characterized, current\+\_\+list, library\+\_\+manager\+::get\+\_\+library\+\_\+fu(), technology\+\_\+manager\+::get\+\_\+library\+\_\+list(), technology\+\_\+manager\+::get\+\_\+library\+\_\+manager(), Design\+Flow\+Step\+::parameters, S\+U\+C\+C\+E\+SS, and Functional\+Unit\+Step\+::\+TM.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dea/classGenerateFuList_adadbe6658c33d77bb24fd0e8b1516a65_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGenerateFuList_a0b6efa299b9de2bc45157d9e28a97a9e}\label{classGenerateFuList_a0b6efa299b9de2bc45157d9e28a97a9e}} 
+\index{Generate\+Fu\+List@{Generate\+Fu\+List}!Get\+Name@{Get\+Name}}
+\index{Get\+Name@{Get\+Name}!Generate\+Fu\+List@{Generate\+Fu\+List}}
+\subsubsection{\texorpdfstring{Get\+Name()}{GetName()}}
+{\footnotesize\ttfamily const std\+::string Generate\+Fu\+List\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return the name of this design step. 
+
+\begin{DoxyReturn}{Returns}
+the name of the pass (for debug purpose) 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classDesignFlowStep_a01e5ebfab88db3b3b7f832f80075fad8}{Design\+Flow\+Step}.
+
+
+
+Definition at line 174 of file generate\+\_\+fu\+\_\+list.\+cpp.
+
+
+
+References To\+Data\+File\+Step\+::\+Get\+Name().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dea/classGenerateFuList_a0b6efa299b9de2bc45157d9e28a97a9e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGenerateFuList_a7bd13ddbc7a4b82d834a9cd0812d4b90}\label{classGenerateFuList_a7bd13ddbc7a4b82d834a9cd0812d4b90}} 
+\index{Generate\+Fu\+List@{Generate\+Fu\+List}!Get\+Signature@{Get\+Signature}}
+\index{Get\+Signature@{Get\+Signature}!Generate\+Fu\+List@{Generate\+Fu\+List}}
+\subsubsection{\texorpdfstring{Get\+Signature()}{GetSignature()}}
+{\footnotesize\ttfamily const std\+::string Generate\+Fu\+List\+::\+Get\+Signature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return a unified identifier of this design step. 
+
+\begin{DoxyReturn}{Returns}
+the signature of the design step 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classDesignFlowStep_ab111e3d4058615c2dedc0505978d4699}{Design\+Flow\+Step}.
+
+
+
+Definition at line 169 of file generate\+\_\+fu\+\_\+list.\+cpp.
+
+
+
+References To\+Data\+File\+Step\+::\+Get\+Signature().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dea/classGenerateFuList_a7bd13ddbc7a4b82d834a9cd0812d4b90_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGenerateFuList_ae5f29f70bd0b315ffa9369fc93fa5096}\label{classGenerateFuList_ae5f29f70bd0b315ffa9369fc93fa5096}} 
+\index{Generate\+Fu\+List@{Generate\+Fu\+List}!Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}}
+\index{Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}!Generate\+Fu\+List@{Generate\+Fu\+List}}
+\subsubsection{\texorpdfstring{Has\+To\+Be\+Executed()}{HasToBeExecuted()}}
+{\footnotesize\ttfamily bool Generate\+Fu\+List\+::\+Has\+To\+Be\+Executed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if this step has actually to be executed. 
+
+\begin{DoxyReturn}{Returns}
+true if the step has to be executed 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classDesignFlowStep_a1783abe0c1d162a52da1e413d5d1ef05}{Design\+Flow\+Step}.
+
+
+
+Definition at line 164 of file generate\+\_\+fu\+\_\+list.\+cpp.
+
+
+
+References To\+Data\+File\+Step\+::\+Has\+To\+Be\+Executed().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dea/classGenerateFuList_ae5f29f70bd0b315ffa9369fc93fa5096_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classGenerateFuList_a3832208eba8658699d0880ee9123159e}\label{classGenerateFuList_a3832208eba8658699d0880ee9123159e}} 
+\index{Generate\+Fu\+List@{Generate\+Fu\+List}!cells@{cells}}
+\index{cells@{cells}!Generate\+Fu\+List@{Generate\+Fu\+List}}
+\subsubsection{\texorpdfstring{cells}{cells}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$std\+::string$>$ Generate\+Fu\+List\+::cells\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The set of list of cells. 
+
+
+
+Definition at line 56 of file generate\+\_\+fu\+\_\+list.\+hpp.
+
+
+
+Referenced by Analyze\+Cell(), and Exec().
+
+\mbox{\Hypertarget{classGenerateFuList_aa23b467e895dc2e1402dfbd23193dd1d}\label{classGenerateFuList_aa23b467e895dc2e1402dfbd23193dd1d}} 
+\index{Generate\+Fu\+List@{Generate\+Fu\+List}!component@{component}}
+\index{component@{component}!Generate\+Fu\+List@{Generate\+Fu\+List}}
+\subsubsection{\texorpdfstring{component}{component}}
+{\footnotesize\ttfamily std\+::string Generate\+Fu\+List\+::component\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The current functional unit. 
+
+
+
+Definition at line 62 of file generate\+\_\+fu\+\_\+list.\+hpp.
+
+
+
+Referenced by Analyze\+Cell(), and Exec().
+
+\mbox{\Hypertarget{classGenerateFuList_a4415121177ccfd3e8e386ef0971f6712}\label{classGenerateFuList_a4415121177ccfd3e8e386ef0971f6712}} 
+\index{Generate\+Fu\+List@{Generate\+Fu\+List}!components\+\_\+to\+\_\+be\+\_\+characterized@{components\+\_\+to\+\_\+be\+\_\+characterized}}
+\index{components\+\_\+to\+\_\+be\+\_\+characterized@{components\+\_\+to\+\_\+be\+\_\+characterized}!Generate\+Fu\+List@{Generate\+Fu\+List}}
+\subsubsection{\texorpdfstring{components\+\_\+to\+\_\+be\+\_\+characterized}{components\_to\_be\_characterized}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$std\+::string$>$ Generate\+Fu\+List\+::components\+\_\+to\+\_\+be\+\_\+characterized\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The list of components to be added to the list; if the list is empty, all the components will be added. 
+
+
+
+Definition at line 59 of file generate\+\_\+fu\+\_\+list.\+hpp.
+
+
+
+Referenced by Exec(), and Generate\+Fu\+List().
+
+\mbox{\Hypertarget{classGenerateFuList_a934ddfe617b1a07a2a87c2ae1c460580}\label{classGenerateFuList_a934ddfe617b1a07a2a87c2ae1c460580}} 
+\index{Generate\+Fu\+List@{Generate\+Fu\+List}!current\+\_\+list@{current\+\_\+list}}
+\index{current\+\_\+list@{current\+\_\+list}!Generate\+Fu\+List@{Generate\+Fu\+List}}
+\subsubsection{\texorpdfstring{current\+\_\+list}{current\_list}}
+{\footnotesize\ttfamily std\+::string Generate\+Fu\+List\+::current\+\_\+list\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The current entry for list of functional units. 
+
+
+
+Definition at line 65 of file generate\+\_\+fu\+\_\+list.\+hpp.
+
+
+
+Referenced by Analyze\+Cell(), and Exec().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+Data\+File/\hyperlink{generate__fu__list_8hpp}{generate\+\_\+fu\+\_\+list.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+Data\+File/\hyperlink{generate__fu__list_8cpp}{generate\+\_\+fu\+\_\+list.\+cpp}\end{DoxyCompactItemize}

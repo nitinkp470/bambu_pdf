@@ -1,0 +1,1149 @@
+\hypertarget{classPhiOpt}{}\section{Phi\+Opt Class Reference}
+\label{classPhiOpt}\index{Phi\+Opt@{Phi\+Opt}}
+
+
+Restructure the tree control flow graph.  
+
+
+
+
+{\ttfamily \#include $<$phi\+\_\+opt.\+hpp$>$}
+
+
+
+Inheritance diagram for Phi\+Opt\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{de/d57/classPhiOpt__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Phi\+Opt\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db7/classPhiOpt__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPhiOpt_aacf9802f665e61f3de0790b306667c2b}{Phi\+Opt} (const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classPhiOpt_ab5e673afa29877e20a18490e4193a9d4}{$\sim$\+Phi\+Opt} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classPhiOpt_aad12a9928fb1f1b7a28777c4480a31f4}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Updates the tree to have a more compliant C\+FG. \end{DoxyCompactList}\item 
+void \hyperlink{classPhiOpt_a1b620dd1d02ad1accbfe986e02add067}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\item 
+void \hyperlink{classPhiOpt_ae9fa634dbb3dfb91ff7928cc8e48be1c}{Compute\+Relationships} (\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&relationship, const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) override
+\begin{DoxyCompactList}\small\item\em Compute the relationships of a step with other steps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77}{Phi\+Opt\+\_\+\+Pattern\+Type} \hyperlink{classPhiOpt_a152f18a024bdfc6164aed9ad0cafe910}{Identify\+Pattern} (const unsigned int bb\+\_\+index) const
+\begin{DoxyCompactList}\small\item\em Identify to which pattern an empty basic block belongs. \end{DoxyCompactList}\item 
+void \hyperlink{classPhiOpt_a5d7228a841bc0ddd41c3bad7c338d7c2}{Apply\+Diff\+Nothing} (const unsigned int bb\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Remove an empty basic block with multiple input edges. \end{DoxyCompactList}\item 
+void \hyperlink{classPhiOpt_a1bfa08060f3cb11d7c12163b4bd83e7d}{Apply\+Gimple\+Nothing} (const unsigned int bb\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Remove an empty basic block dominated by gimple assign. \end{DoxyCompactList}\item 
+void \hyperlink{classPhiOpt_a3ad16335886d4b4ef6f00b7d4d087ff5}{Apply\+If\+Merge} (const unsigned int bb\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Transform the control flow graph by merging a \hyperlink{structgimple__phi}{gimple\+\_\+phi} dominated by a \hyperlink{structgimple__cond}{gimple\+\_\+cond}. \end{DoxyCompactList}\item 
+void \hyperlink{classPhiOpt_af2d1a2083c7f247ec714dfc73ee38de0}{Apply\+If\+Nothing} (const unsigned int bb\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Transform the control flow graph by eliminating an empty basic block dominated by \hyperlink{structgimple__cond}{gimple\+\_\+cond} without modifying phi. \end{DoxyCompactList}\item 
+void \hyperlink{classPhiOpt_a5d3aca47ec2f9f675c2f6ffbe2a5eef0}{Apply\+If\+Remove} (const unsigned int bb\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Transform the control flow graph by removing a \hyperlink{structgimple__phi}{gimple\+\_\+phi} dominated by a \hyperlink{structgimple__cond}{gimple\+\_\+cond}. \end{DoxyCompactList}\item 
+void \hyperlink{classPhiOpt_ae4b11dc6285655c89d79ef38bb635374}{Apply\+Multi\+Merge} (const unsigned int bb\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Transform the control flow graph by merging a \hyperlink{structgimple__phi}{gimple\+\_\+phi} dominated by a \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if}. \end{DoxyCompactList}\item 
+void \hyperlink{classPhiOpt_a7e227327f0aaa8d0714b5bf0ca4354ab}{Apply\+Multi\+Nothing} (const unsigned int bb\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Transform the control flow graph by eliminating an empty basic block dominated by \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} without modifying phi. \end{DoxyCompactList}\item 
+void \hyperlink{classPhiOpt_a4992671043b61c9366438a2387943f73}{Apply\+Multi\+Remove} (const unsigned int bb\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Transform the control flow graph by removing a \hyperlink{structgimple__phi}{gimple\+\_\+phi} dominated by a \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if}. \end{DoxyCompactList}\item 
+void \hyperlink{classPhiOpt_a1914c66ecf01c9ae565631219c6a60ca}{Single\+Phi\+Optimization} (const unsigned int bb\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Transform single input phi in assignment. \end{DoxyCompactList}\item 
+void \hyperlink{classPhiOpt_a128433a1cf7590534b3f9f990fb19683}{Chain\+Optimization} (const unsigned int bb\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Remove chains of basic blocks. \end{DoxyCompactList}\item 
+void \hyperlink{classPhiOpt_a8a350fb310bb1fccdc1be60e764c994f}{Merge\+Phi} (const unsigned int bb\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Remove a basic block composed only of phis my merging with the successor. \end{DoxyCompactList}\item 
+void \hyperlink{classPhiOpt_adf758836dc1fb94b9dacdb0c44e04b8c}{Remove\+Cond\+Expr} (const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} statement)
+\begin{DoxyCompactList}\small\item\em Remove a redundant cond expr. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classPhiOpt_ab3c872c6509a082eb92c957a6afc1de1}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \hyperlink{classPhiOpt_ac2182460316bcd03e5e773a93cb187e5}{TM}
+\begin{DoxyCompactList}\small\item\em The tree manager. \end{DoxyCompactList}\item 
+\hyperlink{tree__manipulation_8hpp_af8a30f3f306569d7681c1b5af9ddd9d0}{tree\+\_\+manipulation\+Const\+Ref} \hyperlink{classPhiOpt_a67681ee459d9b87db295f45996b750ff}{tree\+\_\+man}
+\begin{DoxyCompactList}\small\item\em The tree manipulation. \end{DoxyCompactList}\item 
+\hyperlink{structstatement__list}{statement\+\_\+list} $\ast$ \hyperlink{classPhiOpt_a6a4406457378eb931a2760352c11c014}{sl} \{nullptr\}
+\begin{DoxyCompactList}\small\item\em The basic block graph of the function. \end{DoxyCompactList}\item 
+bool \hyperlink{classPhiOpt_a6c89ff366752e9be3bf875cc93ef60d3}{bb\+\_\+modified}
+\begin{DoxyCompactList}\small\item\em flag used to restart code motion step \end{DoxyCompactList}\item 
+\hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} \hyperlink{classPhiOpt_a4cbcc0b8ed5df57d64d71cd9a957a55a}{schedule}
+\begin{DoxyCompactList}\small\item\em The scheduling solution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classPhiOpt_a7515aee0b8a57b866c4d1dacb982a5ea}{tree\+\_\+dumped}
+\begin{DoxyCompactList}\small\item\em flag to check if initial tree has been dumped \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classPhiOpt_abefe683fd46c528422c3d2bf0fc546d4}{short\+\_\+circuit\+\_\+taf}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Restructure the tree control flow graph. 
+
+Definition at line 86 of file phi\+\_\+opt.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPhiOpt_aacf9802f665e61f3de0790b306667c2b}\label{classPhiOpt_aacf9802f665e61f3de0790b306667c2b}} 
+\index{Phi\+Opt@{Phi\+Opt}!Phi\+Opt@{Phi\+Opt}}
+\index{Phi\+Opt@{Phi\+Opt}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{Phi\+Opt()}{PhiOpt()}}
+{\footnotesize\ttfamily Phi\+Opt\+::\+Phi\+Opt (\begin{DoxyParamCaption}\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{unsigned int}]{\+\_\+function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Autoheader include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em AppM} & is the application manager \\
+\hline
+{\em function\+\_\+id} & is the identifier of the function \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+{\em parameters} & is the set of input parameters\\
+\hline
+\end{DoxyParams}
+header include . include behavior includes design\+\_\+flow\+\_\+manager includes parser/treegcc include S\+TD include design\+\_\+flows/technology includes tree includes utility include 
+
+Definition at line 99 of file phi\+\_\+opt.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, and $\sim$\+Phi\+Opt().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{dc/ddf/classPhiOpt_aacf9802f665e61f3de0790b306667c2b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhiOpt_ab5e673afa29877e20a18490e4193a9d4}\label{classPhiOpt_ab5e673afa29877e20a18490e4193a9d4}} 
+\index{Phi\+Opt@{Phi\+Opt}!````~Phi\+Opt@{$\sim$\+Phi\+Opt}}
+\index{````~Phi\+Opt@{$\sim$\+Phi\+Opt}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{$\sim$\+Phi\+Opt()}{~PhiOpt()}}
+{\footnotesize\ttfamily Phi\+Opt\+::$\sim$\+Phi\+Opt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Phi\+Opt().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{dc/ddf/classPhiOpt_ab5e673afa29877e20a18490e4193a9d4_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPhiOpt_a5d7228a841bc0ddd41c3bad7c338d7c2}\label{classPhiOpt_a5d7228a841bc0ddd41c3bad7c338d7c2}} 
+\index{Phi\+Opt@{Phi\+Opt}!Apply\+Diff\+Nothing@{Apply\+Diff\+Nothing}}
+\index{Apply\+Diff\+Nothing@{Apply\+Diff\+Nothing}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{Apply\+Diff\+Nothing()}{ApplyDiffNothing()}}
+{\footnotesize\ttfamily void Phi\+Opt\+::\+Apply\+Diff\+Nothing (\begin{DoxyParamCaption}\item[{const unsigned int}]{bb\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Remove an empty basic block with multiple input edges. 
+
+Create empty basic block
+
+Add predecessor as pred basic block
+
+Add successor as succ basic block
+
+Fix successor of predecessor
+
+Fix predecessor of successor
+
+Fix \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if}
+
+Fix phis 
+
+Definition at line 618 of file phi\+\_\+opt.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, phi, sl, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and TM.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/ddf/classPhiOpt_a5d7228a841bc0ddd41c3bad7c338d7c2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhiOpt_a1bfa08060f3cb11d7c12163b4bd83e7d}\label{classPhiOpt_a1bfa08060f3cb11d7c12163b4bd83e7d}} 
+\index{Phi\+Opt@{Phi\+Opt}!Apply\+Gimple\+Nothing@{Apply\+Gimple\+Nothing}}
+\index{Apply\+Gimple\+Nothing@{Apply\+Gimple\+Nothing}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{Apply\+Gimple\+Nothing()}{ApplyGimpleNothing()}}
+{\footnotesize\ttfamily void Phi\+Opt\+::\+Apply\+Gimple\+Nothing (\begin{DoxyParamCaption}\item[{const unsigned int}]{bb\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Remove an empty basic block dominated by gimple assign. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bb\+\_\+index} & is the index of the empty basic block \\
+\hline
+\end{DoxyParams}
+Refactoring of the cfg -\/ updating the predecessor
+
+Refactoring of the cfg -\/ updating the successor
+
+Remove the current basic block 
+
+Definition at line 895 of file phi\+\_\+opt.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, phi, sl, S\+TR, and TM.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/ddf/classPhiOpt_a1bfa08060f3cb11d7c12163b4bd83e7d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhiOpt_a3ad16335886d4b4ef6f00b7d4d087ff5}\label{classPhiOpt_a3ad16335886d4b4ef6f00b7d4d087ff5}} 
+\index{Phi\+Opt@{Phi\+Opt}!Apply\+If\+Merge@{Apply\+If\+Merge}}
+\index{Apply\+If\+Merge@{Apply\+If\+Merge}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{Apply\+If\+Merge()}{ApplyIfMerge()}}
+{\footnotesize\ttfamily void Phi\+Opt\+::\+Apply\+If\+Merge (\begin{DoxyParamCaption}\item[{const unsigned int}]{bb\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Transform the control flow graph by merging a \hyperlink{structgimple__phi}{gimple\+\_\+phi} dominated by a \hyperlink{structgimple__cond}{gimple\+\_\+cond}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bb\+\_\+index} & is the index of the empty basic block \\
+\hline
+\end{DoxyParams}
+True if bb\+\_\+index is on the true edge
+
+The condition
+
+Remove \hyperlink{structgimple__cond}{gimple\+\_\+cond} from list of statement
+
+Update all the phis
+
+The value coming from true edge
+
+The value coming from false edge
+
+The type of the expression
+
+Create the ssa with the new input of the phi
+
+Create a nop with virtual operands
+
+Create the cond expr
+
+Create the assign
+
+Updating the phi
+
+Do nothing -\/ this edge will be removed
+
+Refactoring of the cfg -\/ updating the predecessor
+
+Refactoring of the cfg -\/ updating the successor
+
+Remove the current basic block 
+
+Definition at line 712 of file phi\+\_\+opt.\+cpp.
+
+
+
+References tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, tree\+\_\+manipulation\+::\+Extract\+Condition(), tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+manager\+::get\+\_\+next\+\_\+vers(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+helper\+::is\+\_\+a\+\_\+vector(), statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), phi, sl, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, TM, T\+OK, T\+O\+K\+\_\+\+B\+I\+T\+\_\+\+V\+A\+L\+U\+ES, T\+O\+K\+\_\+\+O\+P0, T\+O\+K\+\_\+\+O\+P1, T\+O\+K\+\_\+\+O\+P2, T\+O\+K\+\_\+\+S\+R\+CP, T\+O\+K\+\_\+\+T\+Y\+PE, T\+O\+K\+\_\+\+V\+AR, T\+O\+K\+\_\+\+V\+E\+RS, T\+O\+K\+\_\+\+V\+I\+R\+T\+U\+AL, T\+O\+K\+\_\+\+V\+O\+L\+A\+T\+I\+LE, tree\+\_\+node\+::\+To\+String(), and tree\+\_\+man.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/ddf/classPhiOpt_a3ad16335886d4b4ef6f00b7d4d087ff5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{dc/ddf/classPhiOpt_a3ad16335886d4b4ef6f00b7d4d087ff5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhiOpt_af2d1a2083c7f247ec714dfc73ee38de0}\label{classPhiOpt_af2d1a2083c7f247ec714dfc73ee38de0}} 
+\index{Phi\+Opt@{Phi\+Opt}!Apply\+If\+Nothing@{Apply\+If\+Nothing}}
+\index{Apply\+If\+Nothing@{Apply\+If\+Nothing}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{Apply\+If\+Nothing()}{ApplyIfNothing()}}
+{\footnotesize\ttfamily void Phi\+Opt\+::\+Apply\+If\+Nothing (\begin{DoxyParamCaption}\item[{const unsigned int}]{bb\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Transform the control flow graph by eliminating an empty basic block dominated by \hyperlink{structgimple__cond}{gimple\+\_\+cond} without modifying phi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bb\+\_\+index} & is the index of the empty basic block \\
+\hline
+\end{DoxyParams}
+Refactoring of the cfg -\/ updating the predecessor
+
+Refactoring of the cfg -\/ updating the successor
+
+Remove the current basic block 
+
+Definition at line 851 of file phi\+\_\+opt.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, phi, sl, S\+TR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and TM.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{dc/ddf/classPhiOpt_af2d1a2083c7f247ec714dfc73ee38de0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhiOpt_a5d3aca47ec2f9f675c2f6ffbe2a5eef0}\label{classPhiOpt_a5d3aca47ec2f9f675c2f6ffbe2a5eef0}} 
+\index{Phi\+Opt@{Phi\+Opt}!Apply\+If\+Remove@{Apply\+If\+Remove}}
+\index{Apply\+If\+Remove@{Apply\+If\+Remove}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{Apply\+If\+Remove()}{ApplyIfRemove()}}
+{\footnotesize\ttfamily void Phi\+Opt\+::\+Apply\+If\+Remove (\begin{DoxyParamCaption}\item[{const unsigned int}]{bb\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Transform the control flow graph by removing a \hyperlink{structgimple__phi}{gimple\+\_\+phi} dominated by a \hyperlink{structgimple__cond}{gimple\+\_\+cond}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bb\+\_\+index} & is the index of the empty basic block \\
+\hline
+\end{DoxyParams}
+True if bb\+\_\+index is on the true edge
+
+Remove \hyperlink{structgimple__cond}{gimple\+\_\+cond} from list of statement. New statements can be pushed at the end
+
+The condition
+
+Remove all the phis
+
+The value coming from true edge
+
+The value coming from false edge
+
+The type of the expression
+
+Create a nop with virtual operands
+
+Replace all use of virtual defined in phi with res of phi
+
+Create the cond expr
+
+Create the assign
+
+Refactoring of the cfg -\/ updating the predecessor
+
+Refactoring of the cfg -\/ updating the successor
+
+Remove the current basic block 
+
+Definition at line 926 of file phi\+\_\+opt.\+cpp.
+
+
+
+References tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, tree\+\_\+manipulation\+::\+Extract\+Condition(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+helper\+::is\+\_\+a\+\_\+vector(), statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), phi, sl, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, TM, T\+OK, T\+O\+K\+\_\+\+O\+P0, T\+O\+K\+\_\+\+O\+P1, T\+O\+K\+\_\+\+O\+P2, T\+O\+K\+\_\+\+S\+R\+CP, T\+O\+K\+\_\+\+T\+Y\+PE, tree\+\_\+node\+::\+To\+String(), and tree\+\_\+man.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/ddf/classPhiOpt_a5d3aca47ec2f9f675c2f6ffbe2a5eef0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{dc/ddf/classPhiOpt_a5d3aca47ec2f9f675c2f6ffbe2a5eef0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhiOpt_ae4b11dc6285655c89d79ef38bb635374}\label{classPhiOpt_ae4b11dc6285655c89d79ef38bb635374}} 
+\index{Phi\+Opt@{Phi\+Opt}!Apply\+Multi\+Merge@{Apply\+Multi\+Merge}}
+\index{Apply\+Multi\+Merge@{Apply\+Multi\+Merge}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{Apply\+Multi\+Merge()}{ApplyMultiMerge()}}
+{\footnotesize\ttfamily void Phi\+Opt\+::\+Apply\+Multi\+Merge (\begin{DoxyParamCaption}\item[{const unsigned int}]{bb\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Transform the control flow graph by merging a \hyperlink{structgimple__phi}{gimple\+\_\+phi} dominated by a \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bb\+\_\+index} & is the index of the empty basic block \\
+\hline
+\end{DoxyParams}
+True if bb\+\_\+index is on the first edge
+
+The gimple multi way if
+
+Temporary remove gimple multi way if
+
+The first condition
+
+The second condition
+
+Update all the phis
+
+The value coming from the first edge
+
+The value coming from the second edge
+
+The type of the expression
+
+Create the ssa with the new input of the phi
+
+Create a nop with virtual operands
+
+Create the cond expr
+
+Create the assign
+
+Updating the phi
+
+Do nothing -\/ this edge will be removed
+
+Readding gimple multi way if it has more than two exits
+
+Refactoring of the cfg -\/ updating the predecessor
+
+Refactoring of the cfg -\/ updating the successor
+
+Remove the current basic block 
+
+Definition at line 1079 of file phi\+\_\+opt.\+cpp.
+
+
+
+References tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), tree\+\_\+manipulation\+::\+Create\+Or\+Expr(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+manager\+::get\+\_\+next\+\_\+vers(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+node\+::index, tree\+\_\+helper\+::is\+\_\+a\+\_\+vector(), statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), phi, sl, S\+TR, TM, T\+OK, T\+O\+K\+\_\+\+B\+I\+T\+\_\+\+V\+A\+L\+U\+ES, T\+O\+K\+\_\+\+O\+P0, T\+O\+K\+\_\+\+O\+P1, T\+O\+K\+\_\+\+O\+P2, T\+O\+K\+\_\+\+S\+R\+CP, T\+O\+K\+\_\+\+T\+Y\+PE, T\+O\+K\+\_\+\+V\+AR, T\+O\+K\+\_\+\+V\+E\+RS, T\+O\+K\+\_\+\+V\+I\+R\+T\+U\+AL, T\+O\+K\+\_\+\+V\+O\+L\+A\+T\+I\+LE, and tree\+\_\+man.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/ddf/classPhiOpt_ae4b11dc6285655c89d79ef38bb635374_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{dc/ddf/classPhiOpt_ae4b11dc6285655c89d79ef38bb635374_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhiOpt_a7e227327f0aaa8d0714b5bf0ca4354ab}\label{classPhiOpt_a7e227327f0aaa8d0714b5bf0ca4354ab}} 
+\index{Phi\+Opt@{Phi\+Opt}!Apply\+Multi\+Nothing@{Apply\+Multi\+Nothing}}
+\index{Apply\+Multi\+Nothing@{Apply\+Multi\+Nothing}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{Apply\+Multi\+Nothing()}{ApplyMultiNothing()}}
+{\footnotesize\ttfamily void Phi\+Opt\+::\+Apply\+Multi\+Nothing (\begin{DoxyParamCaption}\item[{const unsigned int}]{bb\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Transform the control flow graph by eliminating an empty basic block dominated by \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} without modifying phi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bb\+\_\+index} & is the index of the empty basic block \\
+\hline
+\end{DoxyParams}
+Refactoring of the cfg -\/ updating the predecessor
+
+Refactoring of the cfg -\/ updating the successor
+
+Remove the current basic block 
+
+Definition at line 1287 of file phi\+\_\+opt.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, phi, sl, S\+TR, and TM.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/ddf/classPhiOpt_a7e227327f0aaa8d0714b5bf0ca4354ab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhiOpt_a4992671043b61c9366438a2387943f73}\label{classPhiOpt_a4992671043b61c9366438a2387943f73}} 
+\index{Phi\+Opt@{Phi\+Opt}!Apply\+Multi\+Remove@{Apply\+Multi\+Remove}}
+\index{Apply\+Multi\+Remove@{Apply\+Multi\+Remove}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{Apply\+Multi\+Remove()}{ApplyMultiRemove()}}
+{\footnotesize\ttfamily void Phi\+Opt\+::\+Apply\+Multi\+Remove (\begin{DoxyParamCaption}\item[{const unsigned int}]{bb\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Transform the control flow graph by removing a \hyperlink{structgimple__phi}{gimple\+\_\+phi} dominated by a \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bb\+\_\+index} & is the index of the empty basic block \\
+\hline
+\end{DoxyParams}
+True if bb\+\_\+index is on the first edge
+
+The gimple multi way if
+
+Temporary remove gimple multi way if
+
+The first condition
+
+The second condition
+
+Remove all the phis
+
+The value coming from the first edge
+
+The value coming from the second edge
+
+The type of the expression
+
+Create a nop with virtual operands
+
+Replace all use of virtual defined in phi with res of phi
+
+Create the cond expr
+
+Create the assign
+
+Readd multi way if
+
+Refactoring of the cfg -\/ updating the predecessor
+
+Refactoring of the cfg -\/ updating the successor
+
+Remove the current basic block 
+
+Definition at line 1330 of file phi\+\_\+opt.\+cpp.
+
+
+
+References tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), tree\+\_\+manipulation\+::\+Create\+Or\+Expr(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+node\+::index, tree\+\_\+helper\+::is\+\_\+a\+\_\+vector(), statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), phi, sl, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, TM, T\+OK, T\+O\+K\+\_\+\+O\+P0, T\+O\+K\+\_\+\+O\+P1, T\+O\+K\+\_\+\+O\+P2, T\+O\+K\+\_\+\+S\+R\+CP, T\+O\+K\+\_\+\+T\+Y\+PE, tree\+\_\+node\+::\+To\+String(), and tree\+\_\+man.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/ddf/classPhiOpt_a4992671043b61c9366438a2387943f73_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/ddf/classPhiOpt_a4992671043b61c9366438a2387943f73_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhiOpt_a128433a1cf7590534b3f9f990fb19683}\label{classPhiOpt_a128433a1cf7590534b3f9f990fb19683}} 
+\index{Phi\+Opt@{Phi\+Opt}!Chain\+Optimization@{Chain\+Optimization}}
+\index{Chain\+Optimization@{Chain\+Optimization}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{Chain\+Optimization()}{ChainOptimization()}}
+{\footnotesize\ttfamily void Phi\+Opt\+::\+Chain\+Optimization (\begin{DoxyParamCaption}\item[{const unsigned int}]{bb\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Remove chains of basic blocks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bb\+\_\+index} & is the starting basic block index \\
+\hline
+\end{DoxyParams}
+The phis are taken from the first block
+
+Move statement of second block in first one
+
+Update successor of curr\+\_\+bb
+
+Fix successor of succ
+
+Remove bb 
+
+Definition at line 1847 of file phi\+\_\+opt.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, bloc\+::\+E\+X\+I\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, phi, sl, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and TM.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/ddf/classPhiOpt_a128433a1cf7590534b3f9f990fb19683_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhiOpt_ab3c872c6509a082eb92c957a6afc1de1}\label{classPhiOpt_ab3c872c6509a082eb92c957a6afc1de1}} 
+\index{Phi\+Opt@{Phi\+Opt}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ Phi\+Opt\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 123 of file phi\+\_\+opt.\+cpp.
+
+
+
+References A\+B\+O\+R\+T\+ED, B\+L\+O\+C\+K\+\_\+\+F\+IX, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, E\+M\+P\+TY, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), Design\+Flow\+Step\+::\+Get\+Status(), Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, tree\+\_\+helper\+::is\+\_\+a\+\_\+nop\+\_\+function\+\_\+decl(), N\+O\+N\+E\+X\+I\+S\+T\+E\+NT, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, S\+K\+I\+P\+P\+ED, S\+U\+C\+C\+E\+SS, S\+W\+I\+T\+C\+H\+\_\+\+F\+IX, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, TM, U\+N\+C\+H\+A\+N\+G\+ED, U\+N\+E\+X\+E\+C\+U\+T\+ED, U\+N\+N\+E\+C\+E\+S\+S\+A\+RY, and U\+S\+E\+\_\+\+C\+O\+U\+N\+T\+I\+NG.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/ddf/classPhiOpt_ab3c872c6509a082eb92c957a6afc1de1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhiOpt_ae9fa634dbb3dfb91ff7928cc8e48be1c}\label{classPhiOpt_ae9fa634dbb3dfb91ff7928cc8e48be1c}} 
+\index{Phi\+Opt@{Phi\+Opt}!Compute\+Relationships@{Compute\+Relationships}}
+\index{Compute\+Relationships@{Compute\+Relationships}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{Compute\+Relationships()}{ComputeRelationships()}}
+{\footnotesize\ttfamily void Phi\+Opt\+::\+Compute\+Relationships (\begin{DoxyParamCaption}\item[{\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&}]{relationship,  }\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the relationships of a step with other steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dependencies} & is where relationships will be stored \\
+\hline
+{\em relationship\+\_\+type} & is the type of relationship to be computed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classFunctionFrontendFlowStep_a1a815ea7885f3e92e414dadd40c43cba}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 2051 of file phi\+\_\+opt.\+cpp.
+
+
+
+References Function\+Frontend\+Flow\+Step\+::\+Compute\+Relationships(), Technology\+Flow\+Step\+::\+Compute\+Signature(), Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, L\+O\+A\+D\+\_\+\+T\+E\+C\+H\+N\+O\+L\+O\+GY, Wrefcount$<$ T $>$\+::lock(), Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/ddf/classPhiOpt_ae9fa634dbb3dfb91ff7928cc8e48be1c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhiOpt_a152f18a024bdfc6164aed9ad0cafe910}\label{classPhiOpt_a152f18a024bdfc6164aed9ad0cafe910}} 
+\index{Phi\+Opt@{Phi\+Opt}!Identify\+Pattern@{Identify\+Pattern}}
+\index{Identify\+Pattern@{Identify\+Pattern}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{Identify\+Pattern()}{IdentifyPattern()}}
+{\footnotesize\ttfamily \hyperlink{phi__opt_8hpp_a56025cfe3e431d463931162e2d771f77}{Phi\+Opt\+\_\+\+Pattern\+Type} Phi\+Opt\+::\+Identify\+Pattern (\begin{DoxyParamCaption}\item[{const unsigned int}]{bb\+\_\+index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Identify to which pattern an empty basic block belongs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bb\+\_\+index} & is the index of the empty basic block \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the identified pattern 
+\end{DoxyReturn}
+The gimple multi way if
+
+The conditions
+
+Successor is ending if of the function
+
+Simulate to add the cond expr and check if there are problems with timing
+
+The gimple multi way if
+
+The first condition
+
+The value coming from the first edge
+
+The value coming from the second edge
+
+True if bb\+\_\+index is on the first edge
+
+The type of the expression
+
+Create the cond expr
+
+Create the assign
+
+Workaround\+: we need to consider the overhead due to multiplexers associated with the phi; for this reason definition is one of the operands; this is not fully consistent, but it is a temporary assignment
+
+Created statement is not added to the predecessor 
+
+Definition at line 1556 of file phi\+\_\+opt.\+cpp.
+
+
+
+References Schedule\+::\+Can\+Be\+Moved(), tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+I\+F\+F\+\_\+\+N\+O\+T\+H\+I\+NG, bloc\+::\+E\+N\+T\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, Schedule\+::\+Evaluate\+Conds\+Merging(), bloc\+::\+E\+X\+I\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, G\+E\+T\+\_\+\+C\+O\+N\+S\+T\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+T\+H\+I\+NG, I\+F\+\_\+\+M\+E\+R\+GE, I\+F\+\_\+\+N\+O\+T\+H\+I\+NG, I\+F\+\_\+\+R\+E\+M\+O\+VE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+helper\+::is\+\_\+a\+\_\+vector(), statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, M\+U\+L\+T\+I\+\_\+\+M\+E\+R\+GE, M\+U\+L\+T\+I\+\_\+\+N\+O\+T\+H\+I\+NG, M\+U\+L\+T\+I\+\_\+\+R\+E\+M\+O\+VE, tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), phi, schedule, sl, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, TM, T\+OK, T\+O\+K\+\_\+\+O\+P0, T\+O\+K\+\_\+\+O\+P1, T\+O\+K\+\_\+\+O\+P2, T\+O\+K\+\_\+\+S\+R\+CP, T\+O\+K\+\_\+\+T\+Y\+PE, U\+N\+C\+H\+A\+N\+G\+ED, and U\+N\+K\+N\+O\+WN.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/ddf/classPhiOpt_a152f18a024bdfc6164aed9ad0cafe910_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{dc/ddf/classPhiOpt_a152f18a024bdfc6164aed9ad0cafe910_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhiOpt_a1b620dd1d02ad1accbfe986e02add067}\label{classPhiOpt_a1b620dd1d02ad1accbfe986e02add067}} 
+\index{Phi\+Opt@{Phi\+Opt}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Phi\+Opt\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 107 of file phi\+\_\+opt.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, bb\+\_\+modified, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), Design\+Flow\+Step\+::parameters, schedule, sl, TM, and tree\+\_\+man.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{dc/ddf/classPhiOpt_a1b620dd1d02ad1accbfe986e02add067_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhiOpt_aad12a9928fb1f1b7a28777c4480a31f4}\label{classPhiOpt_aad12a9928fb1f1b7a28777c4480a31f4}} 
+\index{Phi\+Opt@{Phi\+Opt}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} Phi\+Opt\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the tree to have a more compliant C\+FG. 
+
+Removed blocks composed only of phi
+
+Check that two basic block do not have any common predecessor
+
+Check that ssa defined by phi are used only once
+
+Transform single input phi
+
+Transform chain of basic blocks
+
+Workaround to avoid invalidation of pointer
+
+Remove empty basic block
+
+Remove nop
+
+Transform chain of basic blocks
+
+If there is only a single vuse replace vdef with vuse in all the uses of vdef
+
+Check that all the uses are not in phi or not defining a self loop 
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 178 of file phi\+\_\+opt.\+cpp.
+
+
+
+References Apply\+Diff\+Nothing(), Apply\+Gimple\+Nothing(), Apply\+If\+Merge(), Apply\+If\+Nothing(), Apply\+If\+Remove(), Apply\+Multi\+Merge(), Apply\+Multi\+Nothing(), Apply\+Multi\+Remove(), Frontend\+Flow\+Step\+::\+AppM, bb\+\_\+modified, Chain\+Optimization(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+I\+F\+F\+\_\+\+N\+O\+T\+H\+I\+NG, bloc\+::\+E\+N\+T\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, bloc\+::\+E\+X\+I\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, Function\+Frontend\+Flow\+Step\+::\+Get\+Name(), G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+T\+H\+I\+NG, Identify\+Pattern(), I\+F\+\_\+\+M\+E\+R\+GE, I\+F\+\_\+\+N\+O\+T\+H\+I\+NG, I\+F\+\_\+\+R\+E\+M\+O\+VE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, Merge\+Phi(), M\+U\+L\+T\+I\+\_\+\+M\+E\+R\+GE, M\+U\+L\+T\+I\+\_\+\+N\+O\+T\+H\+I\+NG, M\+U\+L\+T\+I\+\_\+\+R\+E\+M\+O\+VE, Design\+Flow\+Step\+::parameters, phi, Remove\+Cond\+Expr(), tree\+\_\+manager\+::\+Replace\+Tree\+Node(), test\+\_\+panda\+::restart, Single\+Phi\+Optimization(), sl, S\+TR, S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, TM, To\+String(), U\+N\+C\+H\+A\+N\+G\+ED, U\+N\+K\+N\+O\+WN, and Function\+Frontend\+Flow\+Step\+::\+Write\+B\+B\+Graph\+Dot().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/ddf/classPhiOpt_aad12a9928fb1f1b7a28777c4480a31f4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhiOpt_a8a350fb310bb1fccdc1be60e764c994f}\label{classPhiOpt_a8a350fb310bb1fccdc1be60e764c994f}} 
+\index{Phi\+Opt@{Phi\+Opt}!Merge\+Phi@{Merge\+Phi}}
+\index{Merge\+Phi@{Merge\+Phi}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{Merge\+Phi()}{MergePhi()}}
+{\footnotesize\ttfamily void Phi\+Opt\+::\+Merge\+Phi (\begin{DoxyParamCaption}\item[{const unsigned int}]{bb\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Remove a basic block composed only of phis my merging with the successor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & is the index of the basic block \\
+\hline
+\end{DoxyParams}
+Fixing phis
+
+Removing phi only if number of uses is 1
+
+These are phis which were present only in the predecessor
+
+Fixing predecessor
+
+Fixing gimple phi of predecessor
+
+Fixing successor
+
+Erasing basic block 
+
+Definition at line 1898 of file phi\+\_\+opt.\+cpp.
+
+
+
+References bb\+\_\+modified, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, phi, sl, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and TM.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{dc/ddf/classPhiOpt_a8a350fb310bb1fccdc1be60e764c994f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhiOpt_adf758836dc1fb94b9dacdb0c44e04b8c}\label{classPhiOpt_adf758836dc1fb94b9dacdb0c44e04b8c}} 
+\index{Phi\+Opt@{Phi\+Opt}!Remove\+Cond\+Expr@{Remove\+Cond\+Expr}}
+\index{Remove\+Cond\+Expr@{Remove\+Cond\+Expr}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{Remove\+Cond\+Expr()}{RemoveCondExpr()}}
+{\footnotesize\ttfamily void Phi\+Opt\+::\+Remove\+Cond\+Expr (\begin{DoxyParamCaption}\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{statement }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Remove a redundant cond expr. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em statement} & is the statement containing \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2035 of file phi\+\_\+opt.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, tree\+\_\+manager\+::\+Replace\+Tree\+Node(), sl, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, TM, and tree\+\_\+node\+::\+To\+String().
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/ddf/classPhiOpt_adf758836dc1fb94b9dacdb0c44e04b8c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/ddf/classPhiOpt_adf758836dc1fb94b9dacdb0c44e04b8c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhiOpt_a1914c66ecf01c9ae565631219c6a60ca}\label{classPhiOpt_a1914c66ecf01c9ae565631219c6a60ca}} 
+\index{Phi\+Opt@{Phi\+Opt}!Single\+Phi\+Optimization@{Single\+Phi\+Optimization}}
+\index{Single\+Phi\+Optimization@{Single\+Phi\+Optimization}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{Single\+Phi\+Optimization()}{SinglePhiOptimization()}}
+{\footnotesize\ttfamily void Phi\+Opt\+::\+Single\+Phi\+Optimization (\begin{DoxyParamCaption}\item[{const unsigned int}]{bb\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Transform single input phi in assignment. 
+
+Building temp set of use stmts (to avoid invalidation during loop execution and to skip phi) 
+
+Definition at line 1793 of file phi\+\_\+opt.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, phi, tree\+\_\+manager\+::\+Replace\+Tree\+Node(), sl, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and TM.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/ddf/classPhiOpt_a1914c66ecf01c9ae565631219c6a60ca_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/ddf/classPhiOpt_a1914c66ecf01c9ae565631219c6a60ca_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classPhiOpt_abefe683fd46c528422c3d2bf0fc546d4}\label{classPhiOpt_abefe683fd46c528422c3d2bf0fc546d4}} 
+\index{Phi\+Opt@{Phi\+Opt}!short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}}
+\index{short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{short\+\_\+circuit\+\_\+taf}{short\_circuit\_taf}}
+{\footnotesize\ttfamily friend class \hyperlink{classshort__circuit__taf}{short\+\_\+circuit\+\_\+taf}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 88 of file phi\+\_\+opt.\+hpp.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classPhiOpt_a6c89ff366752e9be3bf875cc93ef60d3}\label{classPhiOpt_a6c89ff366752e9be3bf875cc93ef60d3}} 
+\index{Phi\+Opt@{Phi\+Opt}!bb\+\_\+modified@{bb\+\_\+modified}}
+\index{bb\+\_\+modified@{bb\+\_\+modified}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{bb\+\_\+modified}{bb\_modified}}
+{\footnotesize\ttfamily bool Phi\+Opt\+::bb\+\_\+modified\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+flag used to restart code motion step 
+
+
+
+Definition at line 104 of file phi\+\_\+opt.\+hpp.
+
+
+
+Referenced by Initialize(), Internal\+Exec(), and Merge\+Phi().
+
+\mbox{\Hypertarget{classPhiOpt_a4cbcc0b8ed5df57d64d71cd9a957a55a}\label{classPhiOpt_a4cbcc0b8ed5df57d64d71cd9a957a55a}} 
+\index{Phi\+Opt@{Phi\+Opt}!schedule@{schedule}}
+\index{schedule@{schedule}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{schedule}{schedule}}
+{\footnotesize\ttfamily \hyperlink{schedule_8hpp_af67f402958b3b52a1ec5cc4ce08ae3b9}{Schedule\+Ref} Phi\+Opt\+::schedule\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The scheduling solution. 
+
+
+
+Definition at line 107 of file phi\+\_\+opt.\+hpp.
+
+
+
+Referenced by Identify\+Pattern(), and Initialize().
+
+\mbox{\Hypertarget{classPhiOpt_a6a4406457378eb931a2760352c11c014}\label{classPhiOpt_a6a4406457378eb931a2760352c11c014}} 
+\index{Phi\+Opt@{Phi\+Opt}!sl@{sl}}
+\index{sl@{sl}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{sl}{sl}}
+{\footnotesize\ttfamily \hyperlink{structstatement__list}{statement\+\_\+list}$\ast$ Phi\+Opt\+::sl \{nullptr\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The basic block graph of the function. 
+
+
+
+Definition at line 98 of file phi\+\_\+opt.\+hpp.
+
+
+
+Referenced by Apply\+Diff\+Nothing(), Apply\+Gimple\+Nothing(), Apply\+If\+Merge(), Apply\+If\+Nothing(), Apply\+If\+Remove(), Apply\+Multi\+Merge(), Apply\+Multi\+Nothing(), Apply\+Multi\+Remove(), Chain\+Optimization(), Identify\+Pattern(), Initialize(), Internal\+Exec(), Merge\+Phi(), Remove\+Cond\+Expr(), and Single\+Phi\+Optimization().
+
+\mbox{\Hypertarget{classPhiOpt_ac2182460316bcd03e5e773a93cb187e5}\label{classPhiOpt_ac2182460316bcd03e5e773a93cb187e5}} 
+\index{Phi\+Opt@{Phi\+Opt}!TM@{TM}}
+\index{TM@{TM}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{TM}{TM}}
+{\footnotesize\ttfamily \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} Phi\+Opt\+::\+TM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The tree manager. 
+
+
+
+Definition at line 92 of file phi\+\_\+opt.\+hpp.
+
+
+
+Referenced by Apply\+Diff\+Nothing(), Apply\+Gimple\+Nothing(), Apply\+If\+Merge(), Apply\+If\+Nothing(), Apply\+If\+Remove(), Apply\+Multi\+Merge(), Apply\+Multi\+Nothing(), Apply\+Multi\+Remove(), Chain\+Optimization(), Compute\+Frontend\+Relationships(), Identify\+Pattern(), Initialize(), Internal\+Exec(), Merge\+Phi(), Remove\+Cond\+Expr(), and Single\+Phi\+Optimization().
+
+\mbox{\Hypertarget{classPhiOpt_a7515aee0b8a57b866c4d1dacb982a5ea}\label{classPhiOpt_a7515aee0b8a57b866c4d1dacb982a5ea}} 
+\index{Phi\+Opt@{Phi\+Opt}!tree\+\_\+dumped@{tree\+\_\+dumped}}
+\index{tree\+\_\+dumped@{tree\+\_\+dumped}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{tree\+\_\+dumped}{tree\_dumped}}
+{\footnotesize\ttfamily bool Phi\+Opt\+::tree\+\_\+dumped\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+flag to check if initial tree has been dumped 
+
+
+
+Definition at line 101 of file phi\+\_\+opt.\+hpp.
+
+\mbox{\Hypertarget{classPhiOpt_a67681ee459d9b87db295f45996b750ff}\label{classPhiOpt_a67681ee459d9b87db295f45996b750ff}} 
+\index{Phi\+Opt@{Phi\+Opt}!tree\+\_\+man@{tree\+\_\+man}}
+\index{tree\+\_\+man@{tree\+\_\+man}!Phi\+Opt@{Phi\+Opt}}
+\subsubsection{\texorpdfstring{tree\+\_\+man}{tree\_man}}
+{\footnotesize\ttfamily \hyperlink{tree__manipulation_8hpp_af8a30f3f306569d7681c1b5af9ddd9d0}{tree\+\_\+manipulation\+Const\+Ref} Phi\+Opt\+::tree\+\_\+man\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The tree manipulation. 
+
+
+
+Definition at line 95 of file phi\+\_\+opt.\+hpp.
+
+
+
+Referenced by Apply\+If\+Merge(), Apply\+If\+Remove(), Apply\+Multi\+Merge(), Apply\+Multi\+Remove(), and Initialize().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{phi__opt_8hpp}{phi\+\_\+opt.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{phi__opt_8cpp}{phi\+\_\+opt.\+cpp}\end{DoxyCompactItemize}

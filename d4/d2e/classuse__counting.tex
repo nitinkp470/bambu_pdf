@@ -1,0 +1,312 @@
+\hypertarget{classuse__counting}{}\section{use\+\_\+counting Class Reference}
+\label{classuse__counting}\index{use\+\_\+counting@{use\+\_\+counting}}
+
+
+Update \hyperlink{structssa__name}{ssa\+\_\+name} with information about how many times it is used.  
+
+
+
+
+{\ttfamily \#include $<$use\+\_\+counting.\+hpp$>$}
+
+
+
+Inheritance diagram for use\+\_\+counting\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{d9/dce/classuse__counting__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for use\+\_\+counting\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dfd/classuse__counting__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classuse__counting_aa642d9fb1069098c5d783426503562cc}{use\+\_\+counting} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classuse__counting_a90fc0f0d8a9821ee13e8a2fec93e2949}{$\sim$use\+\_\+counting} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classuse__counting_ae475b6f0db3a817a4a1b90ba6ffb2a6d}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Counts how many time a \hyperlink{structssa__name}{ssa\+\_\+name} is read. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classuse__counting_a7772a13ea271918f8f5d3136d73e05d7}{analyze\+\_\+node} (\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&tn, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&ssa\+\_\+uses)
+\begin{DoxyCompactList}\small\item\em Update counters with information concerning \hyperlink{classtree__node}{tree\+\_\+node} tn. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classuse__counting_a8a110f0d3c446c00cbdbe88a465e24d8}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\item 
+void \hyperlink{classuse__counting_ae50eb0e5cc8c9e0a5c6a630ac6765f59}{Compute\+Relationships} (\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&relationship, const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) override
+\begin{DoxyCompactList}\small\item\em Compute the relationships of a step with other steps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ unsigned int, unsigned int $>$ \hyperlink{classuse__counting_ad40a38317279077e2bb55e5a61c72f2c}{counter}
+\begin{DoxyCompactList}\small\item\em Counters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Update \hyperlink{structssa__name}{ssa\+\_\+name} with information about how many times it is used. 
+
+Definition at line 69 of file use\+\_\+counting.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classuse__counting_aa642d9fb1069098c5d783426503562cc}\label{classuse__counting_aa642d9fb1069098c5d783426503562cc}} 
+\index{use\+\_\+counting@{use\+\_\+counting}!use\+\_\+counting@{use\+\_\+counting}}
+\index{use\+\_\+counting@{use\+\_\+counting}!use\+\_\+counting@{use\+\_\+counting}}
+\subsubsection{\texorpdfstring{use\+\_\+counting()}{use\_counting()}}
+{\footnotesize\ttfamily use\+\_\+counting\+::use\+\_\+counting (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters,  }\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{unsigned int}]{\+\_\+function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Autoheader include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Param} & is the set of the parameters \\
+\hline
+{\em AppM} & is the application manager \\
+\hline
+{\em function\+\_\+id} & is the identifier of the function \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager\\
+\hline
+\end{DoxyParams}
+Header include Behavior include design\+\_\+flow\+\_\+manager includes design\+\_\+flows/technology includes \hyperlink{classParameter}{Parameter} include H\+LS includes S\+TL includes tree include 
+
+Definition at line 79 of file use\+\_\+counting.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$use\+\_\+counting().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d2e/classuse__counting_aa642d9fb1069098c5d783426503562cc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classuse__counting_a90fc0f0d8a9821ee13e8a2fec93e2949}\label{classuse__counting_a90fc0f0d8a9821ee13e8a2fec93e2949}} 
+\index{use\+\_\+counting@{use\+\_\+counting}!````~use\+\_\+counting@{$\sim$use\+\_\+counting}}
+\index{````~use\+\_\+counting@{$\sim$use\+\_\+counting}!use\+\_\+counting@{use\+\_\+counting}}
+\subsubsection{\texorpdfstring{$\sim$use\+\_\+counting()}{~use\_counting()}}
+{\footnotesize\ttfamily use\+\_\+counting\+::$\sim$use\+\_\+counting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by use\+\_\+counting().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d2e/classuse__counting_a90fc0f0d8a9821ee13e8a2fec93e2949_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classuse__counting_a7772a13ea271918f8f5d3136d73e05d7}\label{classuse__counting_a7772a13ea271918f8f5d3136d73e05d7}} 
+\index{use\+\_\+counting@{use\+\_\+counting}!analyze\+\_\+node@{analyze\+\_\+node}}
+\index{analyze\+\_\+node@{analyze\+\_\+node}!use\+\_\+counting@{use\+\_\+counting}}
+\subsubsection{\texorpdfstring{analyze\+\_\+node()}{analyze\_node()}}
+{\footnotesize\ttfamily void use\+\_\+counting\+::analyze\+\_\+node (\begin{DoxyParamCaption}\item[{\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{tn,  }\item[{\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} $>$ \&}]{ssa\+\_\+uses }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update counters with information concerning \hyperlink{classtree__node}{tree\+\_\+node} tn. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tn} & is the \hyperlink{classtree__node}{tree\+\_\+node} to be analyzed \\
+\hline
+{\em ssa\+\_\+uses} & is the vector containing the ssa\+\_\+nodes \char`\"{}used\char`\"{} by the \hyperlink{classtree__node}{tree\+\_\+node} tn \\
+\hline
+\end{DoxyParams}
+var decl performs an assignment when init is not null
+
+step and offset are constants
+
+step and offset are constants 
+
+Definition at line 199 of file use\+\_\+counting.\+cpp.
+
+
+
+References test\+\_\+panda\+::arg, test\+\_\+panda\+::args, C\+A\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+F\+A\+K\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, counter, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and tree\+\_\+node\+::\+To\+String().
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d2e/classuse__counting_a7772a13ea271918f8f5d3136d73e05d7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d2e/classuse__counting_a7772a13ea271918f8f5d3136d73e05d7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classuse__counting_a8a110f0d3c446c00cbdbe88a465e24d8}\label{classuse__counting_a8a110f0d3c446c00cbdbe88a465e24d8}} 
+\index{use\+\_\+counting@{use\+\_\+counting}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!use\+\_\+counting@{use\+\_\+counting}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ use\+\_\+counting\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+We can check if single\+\_\+write\+\_\+memory is true only after technology was loaded 
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 87 of file use\+\_\+counting.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, C\+L\+E\+A\+N\+\_\+\+V\+I\+R\+T\+U\+A\+L\+\_\+\+P\+HI, Technology\+Flow\+Step\+::\+Compute\+Signature(), Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, E\+M\+P\+TY, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, L\+O\+A\+D\+\_\+\+T\+E\+C\+H\+N\+O\+L\+O\+GY, Wrefcount$<$ T $>$\+::lock(), Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, S\+W\+I\+T\+C\+H\+\_\+\+F\+IX, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d2e/classuse__counting_a8a110f0d3c446c00cbdbe88a465e24d8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classuse__counting_ae50eb0e5cc8c9e0a5c6a630ac6765f59}\label{classuse__counting_ae50eb0e5cc8c9e0a5c6a630ac6765f59}} 
+\index{use\+\_\+counting@{use\+\_\+counting}!Compute\+Relationships@{Compute\+Relationships}}
+\index{Compute\+Relationships@{Compute\+Relationships}!use\+\_\+counting@{use\+\_\+counting}}
+\subsubsection{\texorpdfstring{Compute\+Relationships()}{ComputeRelationships()}}
+{\footnotesize\ttfamily void use\+\_\+counting\+::\+Compute\+Relationships (\begin{DoxyParamCaption}\item[{\hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&}]{relationship,  }\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Compute the relationships of a step with other steps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dependencies} & is where relationships will be stored \\
+\hline
+{\em relationship\+\_\+type} & is the type of relationship to be computed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classFunctionFrontendFlowStep_a1a815ea7885f3e92e414dadd40c43cba}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 128 of file use\+\_\+counting.\+cpp.
+
+
+
+References Function\+Frontend\+Flow\+Step\+::\+Compute\+Relationships(), Technology\+Flow\+Step\+::\+Compute\+Signature(), Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, L\+O\+A\+D\+\_\+\+T\+E\+C\+H\+N\+O\+L\+O\+GY, Wrefcount$<$ T $>$\+::lock(), Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d2e/classuse__counting_ae50eb0e5cc8c9e0a5c6a630ac6765f59_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classuse__counting_ae475b6f0db3a817a4a1b90ba6ffb2a6d}\label{classuse__counting_ae475b6f0db3a817a4a1b90ba6ffb2a6d}} 
+\index{use\+\_\+counting@{use\+\_\+counting}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!use\+\_\+counting@{use\+\_\+counting}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} use\+\_\+counting\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Counts how many time a \hyperlink{structssa__name}{ssa\+\_\+name} is read. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+\mbox{[}breadshe\mbox{]} This set contains the \hyperlink{structssa__name}{ssa\+\_\+name} nodes \char`\"{}used\char`\"{} by the statement
+
+\mbox{[}breadshe\mbox{]} Add current statement to the use\+\_\+stmts corresponding to the \hyperlink{structssa__name}{ssa\+\_\+name} nodes contained in ssa\+\_\+uses 
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 159 of file use\+\_\+counting.\+cpp.
+
+
+
+References analyze\+\_\+node(), Frontend\+Flow\+Step\+::\+AppM, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), sl, and S\+U\+C\+C\+E\+SS.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d2e/classuse__counting_ae475b6f0db3a817a4a1b90ba6ffb2a6d_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classuse__counting_ad40a38317279077e2bb55e5a61c72f2c}\label{classuse__counting_ad40a38317279077e2bb55e5a61c72f2c}} 
+\index{use\+\_\+counting@{use\+\_\+counting}!counter@{counter}}
+\index{counter@{counter}!use\+\_\+counting@{use\+\_\+counting}}
+\subsubsection{\texorpdfstring{counter}{counter}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, unsigned int$>$ use\+\_\+counting\+::counter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Counters. 
+
+
+
+Definition at line 73 of file use\+\_\+counting.\+hpp.
+
+
+
+Referenced by analyze\+\_\+node().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{use__counting_8hpp}{use\+\_\+counting.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{use__counting_8cpp}{use\+\_\+counting.\+cpp}\end{DoxyCompactItemize}

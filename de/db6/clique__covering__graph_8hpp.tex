@@ -1,0 +1,226 @@
+\hypertarget{clique__covering__graph_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/algorithms/clique\+\_\+covering/clique\+\_\+covering\+\_\+graph.hpp File Reference}
+\label{clique__covering__graph_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/algorithms/clique\+\_\+covering/clique\+\_\+covering\+\_\+graph.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/algorithms/clique\+\_\+covering/clique\+\_\+covering\+\_\+graph.\+hpp}}
+{\ttfamily \#include $<$boost/config.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/adjacency\+\_\+list.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/filtered\+\_\+graph.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/graph\+\_\+utility.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/graphviz.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/incremental\+\_\+components.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/properties.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/topological\+\_\+sort.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/pending/disjoint\+\_\+sets.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/version.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+Include dependency graph for clique\+\_\+covering\+\_\+graph.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d8e/clique__covering__graph_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/da3/clique__covering__graph_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcc__compatibility__graph__vertex__selector}{cc\+\_\+compatibility\+\_\+graph\+\_\+vertex\+\_\+selector$<$ Graph $>$}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structGraph}{Graph} includes. \end{DoxyCompactList}\item 
+struct \hyperlink{structcc__compatibility__graph__edge__selector}{cc\+\_\+compatibility\+\_\+graph\+\_\+edge\+\_\+selector$<$ Graph $>$}
+\begin{DoxyCompactList}\small\item\em Predicate functor object used to select the proper set of edges. \end{DoxyCompactList}\item 
+struct \hyperlink{structedge__compatibility__selector}{edge\+\_\+compatibility\+\_\+selector}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\+::adjacency\+\_\+list$<$ boost\+::vecS, boost\+::vecS, boost\+::undirectedS, boost\+::property$<$ boost\+::vertex\+\_\+index\+\_\+t, \hyperlink{tutorial__pact__2019_2Introduction_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{std\+::size\+\_\+t} $>$, \hyperlink{structedge__compatibility__selector}{edge\+\_\+compatibility\+\_\+selector} $>$ \hyperlink{clique__covering__graph_8hpp_af47b1c28cf9a2c360afafb8d80582ce6}{boost\+\_\+cc\+\_\+compatibility\+\_\+graph}
+\begin{DoxyCompactList}\small\item\em bulk compatibility graph \end{DoxyCompactList}\item 
+typedef boost\+::filtered\+\_\+graph$<$ \hyperlink{clique__covering__graph_8hpp_af47b1c28cf9a2c360afafb8d80582ce6}{boost\+\_\+cc\+\_\+compatibility\+\_\+graph}, \hyperlink{structcc__compatibility__graph__edge__selector}{cc\+\_\+compatibility\+\_\+graph\+\_\+edge\+\_\+selector}$<$ \hyperlink{clique__covering__graph_8hpp_af47b1c28cf9a2c360afafb8d80582ce6}{boost\+\_\+cc\+\_\+compatibility\+\_\+graph} $>$, \hyperlink{structcc__compatibility__graph__vertex__selector}{cc\+\_\+compatibility\+\_\+graph\+\_\+vertex\+\_\+selector}$<$ \hyperlink{clique__covering__graph_8hpp_af47b1c28cf9a2c360afafb8d80582ce6}{boost\+\_\+cc\+\_\+compatibility\+\_\+graph} $>$ $>$ \hyperlink{clique__covering__graph_8hpp_aa88e9419fe776ef37020cacd507cc4ad}{cc\+\_\+compatibility\+\_\+graph}
+\begin{DoxyCompactList}\small\item\em compatibility graph \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{clique__covering__graph_8hpp_aa88e9419fe776ef37020cacd507cc4ad}{cc\+\_\+compatibility\+\_\+graph} $>$ \hyperlink{clique__covering__graph_8hpp_ac7a90ca8b64cfc536aaf17bc81186c18}{cc\+\_\+compatibility\+\_\+graph\+Ref}
+\begin{DoxyCompactList}\small\item\em refcount version of cc\+\_\+compatibility\+\_\+graph \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{clique__covering__graph_8hpp_aa88e9419fe776ef37020cacd507cc4ad}{cc\+\_\+compatibility\+\_\+graph} $>$\+::vertex\+\_\+descriptor \hyperlink{clique__covering__graph_8hpp_a9cb45047ea8c5ed95a8cfa90494345aa}{C\+\_\+vertex}
+\begin{DoxyCompactList}\small\item\em cc\+\_\+compatibility\+\_\+graph vertex \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{clique__covering__graph_8hpp_aa88e9419fe776ef37020cacd507cc4ad}{cc\+\_\+compatibility\+\_\+graph} $>$\+::out\+\_\+edge\+\_\+iterator \hyperlink{clique__covering__graph_8hpp_acaf87dd280df6deb9dd3b544b7bc29b3}{C\+\_\+out\+Edge\+Iterator}
+\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{clique__covering__graph_8hpp_af47b1c28cf9a2c360afafb8d80582ce6}{boost\+\_\+cc\+\_\+compatibility\+\_\+graph} $>$\+::vertices\+\_\+size\+\_\+type \hyperlink{clique__covering__graph_8hpp_a5a293c5c2e993ca19291a775a728fa15}{Vertex\+Index}
+\begin{DoxyCompactList}\small\item\em vertices index type \end{DoxyCompactList}\item 
+typedef boost\+::property\+\_\+map$<$ \hyperlink{clique__covering__graph_8hpp_af47b1c28cf9a2c360afafb8d80582ce6}{boost\+\_\+cc\+\_\+compatibility\+\_\+graph}, boost\+::vertex\+\_\+index\+\_\+t $>$\+::type \hyperlink{clique__covering__graph_8hpp_aa992129c180497243088bbbb5c9fcf92}{vertex\+\_\+index\+\_\+pmap\+\_\+t}
+\begin{DoxyCompactList}\small\item\em index map type \end{DoxyCompactList}\item 
+typedef boost\+::iterator\+\_\+property\+\_\+map$<$ std\+::vector$<$ \hyperlink{clique__covering__graph_8hpp_a5a293c5c2e993ca19291a775a728fa15}{Vertex\+Index} $>$\+::iterator, \hyperlink{clique__covering__graph_8hpp_aa992129c180497243088bbbb5c9fcf92}{vertex\+\_\+index\+\_\+pmap\+\_\+t} $>$ \hyperlink{clique__covering__graph_8hpp_af170aff46b9e4328f1ad9b119cf78b4a}{rank\+\_\+pmap\+\_\+type}
+\begin{DoxyCompactList}\small\item\em rank property map definition \end{DoxyCompactList}\item 
+typedef boost\+::iterator\+\_\+property\+\_\+map$<$ std\+::vector$<$ \hyperlink{clique__covering__graph_8hpp_a9cb45047ea8c5ed95a8cfa90494345aa}{C\+\_\+vertex} $>$\+::iterator, \hyperlink{clique__covering__graph_8hpp_aa992129c180497243088bbbb5c9fcf92}{vertex\+\_\+index\+\_\+pmap\+\_\+t} $>$ \hyperlink{clique__covering__graph_8hpp_af4c454ac367cfb12e29c98e6bc942a06}{pred\+\_\+pmap\+\_\+type}
+\begin{DoxyCompactList}\small\item\em parent property map definition \end{DoxyCompactList}\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{clique__covering__graph_8hpp_af47b1c28cf9a2c360afafb8d80582ce6}{boost\+\_\+cc\+\_\+compatibility\+\_\+graph} $>$\+::vertices\+\_\+size\+\_\+type \hyperlink{clique__covering__graph_8hpp_a13407d0f08f17095777e46cc1e73571d}{R\+Vertex\+Index}
+\item 
+typedef boost\+::graph\+\_\+traits$<$ \hyperlink{clique__covering__graph_8hpp_af47b1c28cf9a2c360afafb8d80582ce6}{boost\+\_\+cc\+\_\+compatibility\+\_\+graph} $>$\+::edge\+\_\+descriptor \hyperlink{clique__covering__graph_8hpp_af021077f8a66250423e23d77654b8dd0}{R\+Edge}
+\item 
+typedef boost\+::disjoint\+\_\+sets$<$ \hyperlink{clique__covering__graph_8hpp_af170aff46b9e4328f1ad9b119cf78b4a}{rank\+\_\+pmap\+\_\+type}, \hyperlink{clique__covering__graph_8hpp_af4c454ac367cfb12e29c98e6bc942a06}{pred\+\_\+pmap\+\_\+type} $>$ \hyperlink{clique__covering__graph_8hpp_a31259358a4554ca73dea75aadecd2700}{R\+Disjoint\+Set}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Stefano Bodini, Federico Badini 
+\end{DoxyAuthor}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{clique__covering__graph_8hpp_af47b1c28cf9a2c360afafb8d80582ce6}\label{clique__covering__graph_8hpp_af47b1c28cf9a2c360afafb8d80582ce6}} 
+\index{clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}!boost\+\_\+cc\+\_\+compatibility\+\_\+graph@{boost\+\_\+cc\+\_\+compatibility\+\_\+graph}}
+\index{boost\+\_\+cc\+\_\+compatibility\+\_\+graph@{boost\+\_\+cc\+\_\+compatibility\+\_\+graph}!clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{boost\+\_\+cc\+\_\+compatibility\+\_\+graph}{boost\_cc\_compatibility\_graph}}
+{\footnotesize\ttfamily typedef boost\+::adjacency\+\_\+list$<$boost\+::vecS, boost\+::vecS, boost\+::undirectedS, boost\+::property$<$boost\+::vertex\+\_\+index\+\_\+t, \hyperlink{tutorial__pact__2019_2Introduction_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{std\+::size\+\_\+t}$>$, \hyperlink{structedge__compatibility__selector}{edge\+\_\+compatibility\+\_\+selector}$>$ \hyperlink{clique__covering__graph_8hpp_af47b1c28cf9a2c360afafb8d80582ce6}{boost\+\_\+cc\+\_\+compatibility\+\_\+graph}}
+
+
+
+bulk compatibility graph 
+
+
+
+Definition at line 147 of file clique\+\_\+covering\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{clique__covering__graph_8hpp_acaf87dd280df6deb9dd3b544b7bc29b3}\label{clique__covering__graph_8hpp_acaf87dd280df6deb9dd3b544b7bc29b3}} 
+\index{clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}!C\+\_\+out\+Edge\+Iterator@{C\+\_\+out\+Edge\+Iterator}}
+\index{C\+\_\+out\+Edge\+Iterator@{C\+\_\+out\+Edge\+Iterator}!clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+\_\+out\+Edge\+Iterator}{C\_outEdgeIterator}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{clique__covering__graph_8hpp_aa88e9419fe776ef37020cacd507cc4ad}{cc\+\_\+compatibility\+\_\+graph}$>$\+::out\+\_\+edge\+\_\+iterator \hyperlink{clique__covering__graph_8hpp_acaf87dd280df6deb9dd3b544b7bc29b3}{C\+\_\+out\+Edge\+Iterator}}
+
+
+
+Definition at line 157 of file clique\+\_\+covering\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{clique__covering__graph_8hpp_a9cb45047ea8c5ed95a8cfa90494345aa}\label{clique__covering__graph_8hpp_a9cb45047ea8c5ed95a8cfa90494345aa}} 
+\index{clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}!C\+\_\+vertex@{C\+\_\+vertex}}
+\index{C\+\_\+vertex@{C\+\_\+vertex}!clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+\_\+vertex}{C\_vertex}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{clique__covering__graph_8hpp_aa88e9419fe776ef37020cacd507cc4ad}{cc\+\_\+compatibility\+\_\+graph}$>$\+::vertex\+\_\+descriptor \hyperlink{clique__covering__graph_8hpp_a9cb45047ea8c5ed95a8cfa90494345aa}{C\+\_\+vertex}}
+
+
+
+cc\+\_\+compatibility\+\_\+graph vertex 
+
+
+
+Definition at line 156 of file clique\+\_\+covering\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{clique__covering__graph_8hpp_aa88e9419fe776ef37020cacd507cc4ad}\label{clique__covering__graph_8hpp_aa88e9419fe776ef37020cacd507cc4ad}} 
+\index{clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}!cc\+\_\+compatibility\+\_\+graph@{cc\+\_\+compatibility\+\_\+graph}}
+\index{cc\+\_\+compatibility\+\_\+graph@{cc\+\_\+compatibility\+\_\+graph}!clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{cc\+\_\+compatibility\+\_\+graph}{cc\_compatibility\_graph}}
+{\footnotesize\ttfamily typedef boost\+::filtered\+\_\+graph$<$\hyperlink{clique__covering__graph_8hpp_af47b1c28cf9a2c360afafb8d80582ce6}{boost\+\_\+cc\+\_\+compatibility\+\_\+graph}, \hyperlink{structcc__compatibility__graph__edge__selector}{cc\+\_\+compatibility\+\_\+graph\+\_\+edge\+\_\+selector}$<$\hyperlink{clique__covering__graph_8hpp_af47b1c28cf9a2c360afafb8d80582ce6}{boost\+\_\+cc\+\_\+compatibility\+\_\+graph}$>$, \hyperlink{structcc__compatibility__graph__vertex__selector}{cc\+\_\+compatibility\+\_\+graph\+\_\+vertex\+\_\+selector}$<$\hyperlink{clique__covering__graph_8hpp_af47b1c28cf9a2c360afafb8d80582ce6}{boost\+\_\+cc\+\_\+compatibility\+\_\+graph}$>$ $>$ \hyperlink{clique__covering__graph_8hpp_aa88e9419fe776ef37020cacd507cc4ad}{cc\+\_\+compatibility\+\_\+graph}}
+
+
+
+compatibility graph 
+
+
+
+Definition at line 150 of file clique\+\_\+covering\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{clique__covering__graph_8hpp_ac7a90ca8b64cfc536aaf17bc81186c18}\label{clique__covering__graph_8hpp_ac7a90ca8b64cfc536aaf17bc81186c18}} 
+\index{clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}!cc\+\_\+compatibility\+\_\+graph\+Ref@{cc\+\_\+compatibility\+\_\+graph\+Ref}}
+\index{cc\+\_\+compatibility\+\_\+graph\+Ref@{cc\+\_\+compatibility\+\_\+graph\+Ref}!clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{cc\+\_\+compatibility\+\_\+graph\+Ref}{cc\_compatibility\_graphRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{clique__covering__graph_8hpp_aa88e9419fe776ef37020cacd507cc4ad}{cc\+\_\+compatibility\+\_\+graph}$>$ \hyperlink{clique__covering__graph_8hpp_ac7a90ca8b64cfc536aaf17bc81186c18}{cc\+\_\+compatibility\+\_\+graph\+Ref}}
+
+
+
+refcount version of cc\+\_\+compatibility\+\_\+graph 
+
+
+
+Definition at line 153 of file clique\+\_\+covering\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{clique__covering__graph_8hpp_af4c454ac367cfb12e29c98e6bc942a06}\label{clique__covering__graph_8hpp_af4c454ac367cfb12e29c98e6bc942a06}} 
+\index{clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}!pred\+\_\+pmap\+\_\+type@{pred\+\_\+pmap\+\_\+type}}
+\index{pred\+\_\+pmap\+\_\+type@{pred\+\_\+pmap\+\_\+type}!clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{pred\+\_\+pmap\+\_\+type}{pred\_pmap\_type}}
+{\footnotesize\ttfamily typedef boost\+::iterator\+\_\+property\+\_\+map$<$std\+::vector$<$\hyperlink{clique__covering__graph_8hpp_a9cb45047ea8c5ed95a8cfa90494345aa}{C\+\_\+vertex}$>$\+::iterator, \hyperlink{clique__covering__graph_8hpp_aa992129c180497243088bbbb5c9fcf92}{vertex\+\_\+index\+\_\+pmap\+\_\+t}$>$ \hyperlink{clique__covering__graph_8hpp_af4c454ac367cfb12e29c98e6bc942a06}{pred\+\_\+pmap\+\_\+type}}
+
+
+
+parent property map definition 
+
+
+
+Definition at line 166 of file clique\+\_\+covering\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{clique__covering__graph_8hpp_af170aff46b9e4328f1ad9b119cf78b4a}\label{clique__covering__graph_8hpp_af170aff46b9e4328f1ad9b119cf78b4a}} 
+\index{clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}!rank\+\_\+pmap\+\_\+type@{rank\+\_\+pmap\+\_\+type}}
+\index{rank\+\_\+pmap\+\_\+type@{rank\+\_\+pmap\+\_\+type}!clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{rank\+\_\+pmap\+\_\+type}{rank\_pmap\_type}}
+{\footnotesize\ttfamily typedef boost\+::iterator\+\_\+property\+\_\+map$<$std\+::vector$<$\hyperlink{clique__covering__graph_8hpp_a5a293c5c2e993ca19291a775a728fa15}{Vertex\+Index}$>$\+::iterator, \hyperlink{clique__covering__graph_8hpp_aa992129c180497243088bbbb5c9fcf92}{vertex\+\_\+index\+\_\+pmap\+\_\+t}$>$ \hyperlink{clique__covering__graph_8hpp_af170aff46b9e4328f1ad9b119cf78b4a}{rank\+\_\+pmap\+\_\+type}}
+
+
+
+rank property map definition 
+
+
+
+Definition at line 164 of file clique\+\_\+covering\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{clique__covering__graph_8hpp_a31259358a4554ca73dea75aadecd2700}\label{clique__covering__graph_8hpp_a31259358a4554ca73dea75aadecd2700}} 
+\index{clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}!R\+Disjoint\+Set@{R\+Disjoint\+Set}}
+\index{R\+Disjoint\+Set@{R\+Disjoint\+Set}!clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{R\+Disjoint\+Set}{RDisjointSet}}
+{\footnotesize\ttfamily typedef boost\+::disjoint\+\_\+sets$<$\hyperlink{clique__covering__graph_8hpp_af170aff46b9e4328f1ad9b119cf78b4a}{rank\+\_\+pmap\+\_\+type}, \hyperlink{clique__covering__graph_8hpp_af4c454ac367cfb12e29c98e6bc942a06}{pred\+\_\+pmap\+\_\+type}$>$ \hyperlink{clique__covering__graph_8hpp_a31259358a4554ca73dea75aadecd2700}{R\+Disjoint\+Set}}
+
+
+
+Definition at line 179 of file clique\+\_\+covering\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{clique__covering__graph_8hpp_af021077f8a66250423e23d77654b8dd0}\label{clique__covering__graph_8hpp_af021077f8a66250423e23d77654b8dd0}} 
+\index{clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}!R\+Edge@{R\+Edge}}
+\index{R\+Edge@{R\+Edge}!clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{R\+Edge}{REdge}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{clique__covering__graph_8hpp_af47b1c28cf9a2c360afafb8d80582ce6}{boost\+\_\+cc\+\_\+compatibility\+\_\+graph}$>$\+::edge\+\_\+descriptor \hyperlink{clique__covering__graph_8hpp_af021077f8a66250423e23d77654b8dd0}{R\+Edge}}
+
+
+
+Definition at line 171 of file clique\+\_\+covering\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{clique__covering__graph_8hpp_a13407d0f08f17095777e46cc1e73571d}\label{clique__covering__graph_8hpp_a13407d0f08f17095777e46cc1e73571d}} 
+\index{clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}!R\+Vertex\+Index@{R\+Vertex\+Index}}
+\index{R\+Vertex\+Index@{R\+Vertex\+Index}!clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{R\+Vertex\+Index}{RVertexIndex}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{clique__covering__graph_8hpp_af47b1c28cf9a2c360afafb8d80582ce6}{boost\+\_\+cc\+\_\+compatibility\+\_\+graph}$>$\+::vertices\+\_\+size\+\_\+type \hyperlink{clique__covering__graph_8hpp_a13407d0f08f17095777e46cc1e73571d}{R\+Vertex\+Index}}
+
+
+
+Definition at line 170 of file clique\+\_\+covering\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{clique__covering__graph_8hpp_aa992129c180497243088bbbb5c9fcf92}\label{clique__covering__graph_8hpp_aa992129c180497243088bbbb5c9fcf92}} 
+\index{clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}!vertex\+\_\+index\+\_\+pmap\+\_\+t@{vertex\+\_\+index\+\_\+pmap\+\_\+t}}
+\index{vertex\+\_\+index\+\_\+pmap\+\_\+t@{vertex\+\_\+index\+\_\+pmap\+\_\+t}!clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{vertex\+\_\+index\+\_\+pmap\+\_\+t}{vertex\_index\_pmap\_t}}
+{\footnotesize\ttfamily typedef boost\+::property\+\_\+map$<$\hyperlink{clique__covering__graph_8hpp_af47b1c28cf9a2c360afafb8d80582ce6}{boost\+\_\+cc\+\_\+compatibility\+\_\+graph}, boost\+::vertex\+\_\+index\+\_\+t$>$\+::type \hyperlink{clique__covering__graph_8hpp_aa992129c180497243088bbbb5c9fcf92}{vertex\+\_\+index\+\_\+pmap\+\_\+t}}
+
+
+
+index map type 
+
+
+
+Definition at line 162 of file clique\+\_\+covering\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{clique__covering__graph_8hpp_a5a293c5c2e993ca19291a775a728fa15}\label{clique__covering__graph_8hpp_a5a293c5c2e993ca19291a775a728fa15}} 
+\index{clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}!Vertex\+Index@{Vertex\+Index}}
+\index{Vertex\+Index@{Vertex\+Index}!clique\+\_\+covering\+\_\+graph.\+hpp@{clique\+\_\+covering\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{Vertex\+Index}{VertexIndex}}
+{\footnotesize\ttfamily typedef boost\+::graph\+\_\+traits$<$\hyperlink{clique__covering__graph_8hpp_af47b1c28cf9a2c360afafb8d80582ce6}{boost\+\_\+cc\+\_\+compatibility\+\_\+graph}$>$\+::vertices\+\_\+size\+\_\+type \hyperlink{clique__covering__graph_8hpp_a5a293c5c2e993ca19291a775a728fa15}{Vertex\+Index}}
+
+
+
+vertices index type 
+
+
+
+Definition at line 160 of file clique\+\_\+covering\+\_\+graph.\+hpp.
+

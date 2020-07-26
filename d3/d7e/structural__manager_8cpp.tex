@@ -1,0 +1,245 @@
+\hypertarget{structural__manager_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/circuit/structural\+\_\+manager.cpp File Reference}
+\label{structural__manager_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/circuit/structural\+\_\+manager.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/circuit/structural\+\_\+manager.\+cpp}}
+
+
+Implementation of the class that manages the creation of the graph associated with the circuit.  
+
+
+{\ttfamily \#include \char`\"{}structural\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+B\+A\+M\+B\+U\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+K\+O\+A\+L\+A\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+T\+E\+C\+H\+N\+O\+L\+O\+G\+Y\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cg\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graph\+\_\+info.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}library\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/algorithm/string/predicate.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/adjacency\+\_\+list.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/filtered\+\_\+graph.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/graph\+\_\+traits.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/graphviz.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/iterator/iterator\+\_\+facade.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/smart\+\_\+ptr/shared\+\_\+ptr.\+hpp$>$}\newline
+{\ttfamily \#include $<$iosfwd$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}typed\+\_\+node\+\_\+info.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+element.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+node.\+hpp\char`\"{}}\newline
+Include dependency graph for structural\+\_\+manager.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dcd/structural__manager_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Graph $>$ }\\void \hyperlink{structural__manager_8cpp_a43b9fa18260f30f51957559e87aa134e}{circuit\+\_\+add\+\_\+edge} (typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::vertex\+\_\+descriptor \hyperlink{tutorial__pnnl__2019_2memory_2third_2solution_2mips_8c_a5bbae38a6853eac231d3bb734d82fe8f}{A}, typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::vertex\+\_\+descriptor B, int selector, \hyperlink{structGraph}{Graph} \&g, const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} from1, \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} to1, bool is\+\_\+critical=false)
+\begin{DoxyCompactList}\small\item\em this template function adds an edge to the bulk graph and possibly a label to the edge. \end{DoxyCompactList}\item 
+static void \hyperlink{structural__manager_8cpp_ae5945242b7d80fcc8bcccdf48ebe06cc}{add\+\_\+directed\+\_\+edge\+\_\+single} (\hyperlink{structgraphs__collection}{graphs\+\_\+collection} $\ast$bg, const std\+::map$<$ \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}, boost\+::graph\+\_\+traits$<$ \hyperlink{structgraphs__collection}{graphs\+\_\+collection} $>$\+::vertex\+\_\+descriptor $>$ \&module\+\_\+vertex\+\_\+rel, const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&p1, const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&p2, boost\+::graph\+\_\+traits$<$ \hyperlink{structgraphs__collection}{graphs\+\_\+collection} $>$\+::vertex\+\_\+descriptor en, boost\+::graph\+\_\+traits$<$ \hyperlink{structgraphs__collection}{graphs\+\_\+collection} $>$\+::vertex\+\_\+descriptor ex, bool is\+\_\+critical=false)
+\begin{DoxyCompactList}\small\item\em Add a directed edge between the nodes associated with p1 and p2. \end{DoxyCompactList}\item 
+static void \hyperlink{structural__manager_8cpp_af4e0bef00fe2a03300954acd11cdcfa2}{add\+\_\+directed\+\_\+edge} (\hyperlink{structgraphs__collection}{graphs\+\_\+collection} $\ast$bg, const std\+::map$<$ \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}, boost\+::graph\+\_\+traits$<$ \hyperlink{structgraphs__collection}{graphs\+\_\+collection} $>$\+::vertex\+\_\+descriptor $>$ \&module\+\_\+vertex\+\_\+rel, const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&p1, const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&p2, boost\+::graph\+\_\+traits$<$ \hyperlink{structgraphs__collection}{graphs\+\_\+collection} $>$\+::vertex\+\_\+descriptor en, boost\+::graph\+\_\+traits$<$ \hyperlink{structgraphs__collection}{graphs\+\_\+collection} $>$\+::vertex\+\_\+descriptor ex, bool is\+\_\+critical=false)
+\begin{DoxyCompactList}\small\item\em Add a directed edge between the nodes associated with p1 and p2. \end{DoxyCompactList}\item 
+void \hyperlink{structural__manager_8cpp_a5bb6c94937e4c1d9c128919881344be1}{remove\+\_\+port\+\_\+connection} (const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of the class that manages the creation of the graph associated with the circuit. 
+
+This class implements functions which build the circuit and the graph associated with the circuit
+
+\begin{DoxyAuthor}{Author}
+Matteo Barbati \href{mailto:mbarbati@gmail.com}{\tt mbarbati@gmail.\+com} 
+
+Christian Pilato \href{mailto:pilato@elet.polimi.it}{\tt pilato@elet.\+polimi.\+it} 
+
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{structural__manager_8cpp_af4e0bef00fe2a03300954acd11cdcfa2}\label{structural__manager_8cpp_af4e0bef00fe2a03300954acd11cdcfa2}} 
+\index{structural\+\_\+manager.\+cpp@{structural\+\_\+manager.\+cpp}!add\+\_\+directed\+\_\+edge@{add\+\_\+directed\+\_\+edge}}
+\index{add\+\_\+directed\+\_\+edge@{add\+\_\+directed\+\_\+edge}!structural\+\_\+manager.\+cpp@{structural\+\_\+manager.\+cpp}}
+\subsubsection{\texorpdfstring{add\+\_\+directed\+\_\+edge()}{add\_directed\_edge()}}
+{\footnotesize\ttfamily static void add\+\_\+directed\+\_\+edge (\begin{DoxyParamCaption}\item[{\hyperlink{structgraphs__collection}{graphs\+\_\+collection} $\ast$}]{bg,  }\item[{const std\+::map$<$ \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}, boost\+::graph\+\_\+traits$<$ \hyperlink{structgraphs__collection}{graphs\+\_\+collection} $>$\+::vertex\+\_\+descriptor $>$ \&}]{module\+\_\+vertex\+\_\+rel,  }\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{p1,  }\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{p2,  }\item[{boost\+::graph\+\_\+traits$<$ \hyperlink{structgraphs__collection}{graphs\+\_\+collection} $>$\+::vertex\+\_\+descriptor}]{en,  }\item[{boost\+::graph\+\_\+traits$<$ \hyperlink{structgraphs__collection}{graphs\+\_\+collection} $>$\+::vertex\+\_\+descriptor}]{ex,  }\item[{bool}]{is\+\_\+critical = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Add a directed edge between the nodes associated with p1 and p2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em module\+\_\+vertex\+\_\+rel} & is the relation between modules and vertexes. \\
+\hline
+{\em p1} & is the first port. \\
+\hline
+{\em p2} & is the second object. It could be a port, a signal or a module. \\
+\hline
+{\em en} & is the entry vertex. \\
+\hline
+{\em ex} & is the exit vertex. \\
+\hline
+\end{DoxyParams}
+gen port connection 
+
+Definition at line 1308 of file structural\+\_\+manager.\+cpp.
+
+
+
+References action\+\_\+o\+\_\+K, add\+\_\+directed\+\_\+edge\+\_\+single(), bus\+\_\+connection\+\_\+o\+\_\+K, channel\+\_\+o\+\_\+K, C\+H\+A\+N\+N\+E\+L\+\_\+\+S\+E\+L\+E\+C\+T\+OR, circuit\+\_\+add\+\_\+edge(), component\+\_\+o\+\_\+K, constant\+\_\+o\+\_\+K, data\+\_\+o\+\_\+K, D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR, event\+\_\+o\+\_\+K, structural\+\_\+object\+::get\+\_\+kind(), structural\+\_\+object\+::get\+\_\+kind\+\_\+text(), structural\+\_\+object\+::get\+\_\+owner(), port\+\_\+o\+\_\+K, port\+\_\+vector\+\_\+o\+\_\+K, signal\+\_\+o\+\_\+K, signal\+\_\+vector\+\_\+o\+\_\+K, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG.
+
+
+
+Referenced by structural\+\_\+manager\+::build\+\_\+graph().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d7e/structural__manager_8cpp_af4e0bef00fe2a03300954acd11cdcfa2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d7e/structural__manager_8cpp_af4e0bef00fe2a03300954acd11cdcfa2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structural__manager_8cpp_ae5945242b7d80fcc8bcccdf48ebe06cc}\label{structural__manager_8cpp_ae5945242b7d80fcc8bcccdf48ebe06cc}} 
+\index{structural\+\_\+manager.\+cpp@{structural\+\_\+manager.\+cpp}!add\+\_\+directed\+\_\+edge\+\_\+single@{add\+\_\+directed\+\_\+edge\+\_\+single}}
+\index{add\+\_\+directed\+\_\+edge\+\_\+single@{add\+\_\+directed\+\_\+edge\+\_\+single}!structural\+\_\+manager.\+cpp@{structural\+\_\+manager.\+cpp}}
+\subsubsection{\texorpdfstring{add\+\_\+directed\+\_\+edge\+\_\+single()}{add\_directed\_edge\_single()}}
+{\footnotesize\ttfamily static void add\+\_\+directed\+\_\+edge\+\_\+single (\begin{DoxyParamCaption}\item[{\hyperlink{structgraphs__collection}{graphs\+\_\+collection} $\ast$}]{bg,  }\item[{const std\+::map$<$ \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}, boost\+::graph\+\_\+traits$<$ \hyperlink{structgraphs__collection}{graphs\+\_\+collection} $>$\+::vertex\+\_\+descriptor $>$ \&}]{module\+\_\+vertex\+\_\+rel,  }\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{p1,  }\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{p2,  }\item[{boost\+::graph\+\_\+traits$<$ \hyperlink{structgraphs__collection}{graphs\+\_\+collection} $>$\+::vertex\+\_\+descriptor}]{en,  }\item[{boost\+::graph\+\_\+traits$<$ \hyperlink{structgraphs__collection}{graphs\+\_\+collection} $>$\+::vertex\+\_\+descriptor}]{ex,  }\item[{bool}]{is\+\_\+critical = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Add a directed edge between the nodes associated with p1 and p2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em module\+\_\+vertex\+\_\+rel} & is the relation between modules and vertexes. \\
+\hline
+{\em p1} & is the first port. \\
+\hline
+{\em p2} & is the second port. \\
+\hline
+{\em en} & is the entry vertex. \\
+\hline
+{\em ex} & is the exit vertex. \\
+\hline
+\end{DoxyParams}
+p2 is a top port
+
+p1 is a top port
+
+hyper-\/edge and not significant connectivity 
+
+Definition at line 1136 of file structural\+\_\+manager.\+cpp.
+
+
+
+References circuit\+\_\+add\+\_\+edge(), C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR, D\+A\+T\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR, port\+\_\+o\+::\+G\+EN, structural\+\_\+object\+::get\+\_\+kind(), structural\+\_\+object\+::get\+\_\+owner(), port\+\_\+o\+::\+IN, port\+\_\+o\+::\+IO, port\+\_\+o\+::\+O\+UT, port\+\_\+o\+\_\+K, port\+\_\+vector\+\_\+o\+\_\+K, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by add\+\_\+directed\+\_\+edge().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d7e/structural__manager_8cpp_ae5945242b7d80fcc8bcccdf48ebe06cc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d7e/structural__manager_8cpp_ae5945242b7d80fcc8bcccdf48ebe06cc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structural__manager_8cpp_a43b9fa18260f30f51957559e87aa134e}\label{structural__manager_8cpp_a43b9fa18260f30f51957559e87aa134e}} 
+\index{structural\+\_\+manager.\+cpp@{structural\+\_\+manager.\+cpp}!circuit\+\_\+add\+\_\+edge@{circuit\+\_\+add\+\_\+edge}}
+\index{circuit\+\_\+add\+\_\+edge@{circuit\+\_\+add\+\_\+edge}!structural\+\_\+manager.\+cpp@{structural\+\_\+manager.\+cpp}}
+\subsubsection{\texorpdfstring{circuit\+\_\+add\+\_\+edge()}{circuit\_add\_edge()}}
+{\footnotesize\ttfamily template$<$class Graph $>$ \\
+void circuit\+\_\+add\+\_\+edge (\begin{DoxyParamCaption}\item[{typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::vertex\+\_\+descriptor}]{A,  }\item[{typename boost\+::graph\+\_\+traits$<$ \hyperlink{structGraph}{Graph} $>$\+::vertex\+\_\+descriptor}]{B,  }\item[{int}]{selector,  }\item[{\hyperlink{structGraph}{Graph} \&}]{g,  }\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{from1,  }\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{to1,  }\item[{bool}]{is\+\_\+critical = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+this template function adds an edge to the bulk graph and possibly a label to the edge. 
+
+Parallel edges are allowed. 
+
+Definition at line 1110 of file structural\+\_\+manager.\+cpp.
+
+
+
+References E\+D\+G\+E\+\_\+\+A\+D\+D\+\_\+\+F\+R\+O\+M\+\_\+\+P\+O\+RT, E\+D\+G\+E\+\_\+\+A\+D\+D\+\_\+\+T\+O\+\_\+\+P\+O\+RT, E\+D\+G\+E\+\_\+\+S\+E\+T\+\_\+\+C\+R\+I\+T\+I\+C\+AL, G\+E\+T\+\_\+\+F\+R\+O\+M\+\_\+\+P\+O\+RT, and G\+E\+T\+\_\+\+T\+O\+\_\+\+P\+O\+RT.
+
+
+
+Referenced by add\+\_\+directed\+\_\+edge(), and add\+\_\+directed\+\_\+edge\+\_\+single().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d7e/structural__manager_8cpp_a43b9fa18260f30f51957559e87aa134e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structural__manager_8cpp_a5bb6c94937e4c1d9c128919881344be1}\label{structural__manager_8cpp_a5bb6c94937e4c1d9c128919881344be1}} 
+\index{structural\+\_\+manager.\+cpp@{structural\+\_\+manager.\+cpp}!remove\+\_\+port\+\_\+connection@{remove\+\_\+port\+\_\+connection}}
+\index{remove\+\_\+port\+\_\+connection@{remove\+\_\+port\+\_\+connection}!structural\+\_\+manager.\+cpp@{structural\+\_\+manager.\+cpp}}
+\subsubsection{\texorpdfstring{remove\+\_\+port\+\_\+connection()}{remove\_port\_connection()}}
+{\footnotesize\ttfamily void remove\+\_\+port\+\_\+connection (\begin{DoxyParamCaption}\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} \&}]{obj }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1679 of file structural\+\_\+manager.\+cpp.
+
+
+
+References structural\+\_\+manager\+::remove\+\_\+connection().
+
+
+
+Referenced by structural\+\_\+manager\+::remove\+\_\+module().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d3/d7e/structural__manager_8cpp_a5bb6c94937e4c1d9c128919881344be1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d3/d7e/structural__manager_8cpp_a5bb6c94937e4c1d9c128919881344be1_icgraph}
+\end{center}
+\end{figure}

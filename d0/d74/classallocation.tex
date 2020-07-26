@@ -1,0 +1,1195 @@
+\hypertarget{classallocation}{}\section{allocation Class Reference}
+\label{classallocation}\index{allocation@{allocation}}
+
+
+This wrapper collects all the methods used by the High-\/level synthesis classes to retrieve information about the functional units.  
+
+
+
+
+{\ttfamily \#include $<$allocation.\+hpp$>$}
+
+
+
+Inheritance diagram for allocation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{db/d49/classallocation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for allocation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d3c/classallocation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classallocation_a4bb8fddc280745e60af6840eec09d4ca}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Execute the step. \end{DoxyCompactList}\item 
+void \hyperlink{classallocation_a448e4e0cc7e3444fb3479f211d0b637e}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\item 
+bool \hyperlink{classallocation_af29b72851d7c54b1b6ea0b60daa162de}{Has\+To\+Be\+Executed} () const override
+\begin{DoxyCompactList}\small\item\em Check if this step has actually to be executed. \end{DoxyCompactList}\item 
+void \hyperlink{classallocation_aa977c26d2952e7fc0e7f09037c540bd3}{Print\+Initial\+IR} () const override
+\begin{DoxyCompactList}\small\item\em Dump the initial intermediate representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Constructors and destructors.}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classallocation_a28d6121ea2736ac049f433e367683575}{allocation} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} \hyperlink{classHLS__step_ade85003a99d34134418451ddc46a18e9}{H\+L\+S\+Mgr}, unsigned int \hyperlink{classHLSFunctionStep_a3e6434fd86c698b0c70520b859bff5b0}{fun\+Id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type}=\hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8daf3ade60018a383ba297f423fa621528e}{H\+L\+S\+Flow\+Step\+\_\+\+Type\+::\+A\+L\+L\+O\+C\+A\+T\+I\+ON})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classallocation_a6582d417d60e3e09b82147b48004b285}{$\sim$allocation} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} \hyperlink{classallocation_a15d6ddec8f9a3eb2f499481ef96525e0}{get\+\_\+fu} (const std\+::string \&fu\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{structtechnology__node}{technology\+\_\+node} associated with the given operation. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classallocation_a0bac9cf0d8365c80a4868c63398f3cd8}{get\+\_\+compliant\+\_\+pipelined\+\_\+unit} (double clock, const std\+::string \&pipe\+\_\+parameter, const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} current\+\_\+fu, const std\+::string \&curr\+\_\+op, const std\+::string \&library\+\_\+name, const std\+::string \&template\+\_\+suffix, unsigned int module\+\_\+prec)
+\begin{DoxyCompactList}\small\item\em In case the current functional unit has pipelined operations then it return an id identifying the most compliant functional unit given the current clock period. \end{DoxyCompactList}\item 
+\hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} \hyperlink{classallocation_a24b901da7ff60e973feddb65b2c7d23c}{extract\+\_\+bambu\+\_\+provided} (const std\+::string \&library\+\_\+name, \hyperlink{structoperation}{operation} $\ast$curr\+\_\+op, const std\+::string \&bambu\+\_\+provided\+\_\+resource)
+\item 
+void \hyperlink{classallocation_a6f4d2a8b3457f7ff1751b08154dfa0b7}{set\+\_\+number\+\_\+channels} (unsigned int fu\+\_\+name, unsigned int n\+\_\+ports)
+\begin{DoxyCompactList}\small\item\em set the number of ports associated with the functional unit \end{DoxyCompactList}\item 
+double \hyperlink{classallocation_aa14fbc0eb589e643571db7f9338a5471}{get\+\_\+execution\+\_\+time\+\_\+dsp\+\_\+modified} (const unsigned int fu\+\_\+name, const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} \&node\+\_\+op) const
+\item 
+double \hyperlink{classallocation_a6e86c7e93c8e3f957d1e152b3732fa44}{get\+\_\+stage\+\_\+period\+\_\+dsp\+\_\+modified} (const unsigned int fu\+\_\+name, const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} \&node\+\_\+op) const
+\item 
+void \hyperlink{classallocation_a4084c75f1c138f51b8b7f3c609d45d01}{add\+\_\+proxy\+\_\+function\+\_\+module} (const \hyperlink{hls__constraints_8hpp_ac394d1c5cd991614133724294a79182b}{H\+L\+S\+\_\+constraints\+Ref} H\+L\+S\+\_\+C, \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} tech\+Node\+\_\+obj, const std\+::string \&orig\+\_\+fun\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Add a proxy function to the W\+O\+RK library. \end{DoxyCompactList}\item 
+void \hyperlink{classallocation_afa7e3452b30f32920f34aaad4d3299ed}{add\+\_\+proxy\+\_\+function\+\_\+wrapper} (const std\+::string \&library\+\_\+name, \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} tech\+Node\+\_\+obj, const std\+::string \&orig\+\_\+fun\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Add a proxy wrapper to the W\+O\+RK library. \end{DoxyCompactList}\item 
+void \hyperlink{classallocation_a6a0e21dd875ccd2320ec1c3032bd53c1}{Build\+Proxy\+Wrapper} (\hyperlink{structfunctional__unit}{functional\+\_\+unit} $\ast$current\+\_\+fu, const std\+::string \&orig\+\_\+fun\+\_\+name, const std\+::string \&orig\+\_\+library\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Build the proxy wrapper. \end{DoxyCompactList}\item 
+void \hyperlink{classallocation_ac305b0fc0edfc7c02e39b37a5615260f}{Build\+Proxy\+Function\+Verilog} (\hyperlink{structfunctional__unit}{functional\+\_\+unit} $\ast$orig\+\_\+fu)
+\begin{DoxyCompactList}\small\item\em Build the proxy function in Verilog. \end{DoxyCompactList}\item 
+void \hyperlink{classallocation_ab924181104812480fb5f27f23599487c}{Build\+Proxy\+Function\+V\+H\+DL} (\hyperlink{structfunctional__unit}{functional\+\_\+unit} $\ast$orig\+\_\+fu)
+\begin{DoxyCompactList}\small\item\em Build the proxy function in V\+H\+DL. \end{DoxyCompactList}\item 
+void \hyperlink{classallocation_a7e6e103d4874dd3126414e0f4d8bdd24}{Build\+Proxy\+Function} (\hyperlink{structfunctional__unit}{functional\+\_\+unit} $\ast$orig\+\_\+fu)
+\begin{DoxyCompactList}\small\item\em Build the proxy function. \end{DoxyCompactList}\item 
+void \hyperlink{classallocation_a8896615bea432f94fc39ba9eb56f410c}{add\+\_\+tech\+\_\+constraint} (\hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} cur\+\_\+fu, unsigned int tech\+\_\+constrain\+\_\+value, unsigned int pos, bool proxy\+\_\+constrained)
+\item 
+void \hyperlink{classallocation_a88280c4c0b8d9bd5cf61934cf43a0f7b}{add\+\_\+resource\+\_\+to\+\_\+fu\+\_\+list} (std\+::string channels\+\_\+type, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} g, \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} current\+\_\+fu, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ vertex\+\_\+analysed, node\+\_\+kind\+\_\+prec\+\_\+info\+Ref node\+\_\+info, unsigned int current\+\_\+id, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$\+::const\+\_\+iterator vert, const std\+::vector$<$ std\+::string $>$ \&libraries, bool is\+Memory, std\+::string bambu\+\_\+provided\+\_\+resource, \hyperlink{structoperation}{operation} $\ast$curr\+\_\+op, std\+::string specialized\+\_\+fu\+Name, bool predicate\+\_\+2, std\+::string current\+\_\+op, \hyperlink{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}{H\+L\+S\+\_\+manager\+::io\+\_\+binding\+\_\+type} constant\+\_\+id, bool varargs\+\_\+fu, unsigned int l, std\+::string memory\+\_\+ctrl\+\_\+type, std\+::map$<$ std\+::string, \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} $>$ new\+\_\+fu, unsigned int tech\+\_\+constrain\+\_\+value)
+\item 
+bool \hyperlink{classallocation_a5aa6886382ebdc049a6bc4ef82225973}{check\+\_\+templated\+\_\+units} (double clock\+\_\+period, node\+\_\+kind\+\_\+prec\+\_\+info\+Ref node\+\_\+info, const \hyperlink{library__manager_8hpp_aacc6d633b0aa80ecfeb1180fd480ae68}{library\+\_\+manager\+Ref} library, \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} current\+\_\+fu, \hyperlink{structoperation}{operation} $\ast$curr\+\_\+op)
+\item 
+bool \hyperlink{classallocation_abcfa5870832b4b9d8d194054d7b2f86b}{check\+\_\+for\+\_\+memory\+\_\+compliancy} (bool Has\+\_\+extern\+\_\+allocated\+\_\+data, \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} current\+\_\+fu, const std\+::string \&memory\+\_\+ctrl\+\_\+type, std\+::string channels\+\_\+type)
+\item 
+bool \hyperlink{classallocation_a92dce6f1c4e5c6c794ef18ed545fc21d}{check\+\_\+type\+\_\+and\+\_\+precision} (\hyperlink{structoperation}{operation} $\ast$curr\+\_\+op, node\+\_\+kind\+\_\+prec\+\_\+info\+Ref node\+\_\+info)
+\item 
+bool \hyperlink{classallocation_a11a59e23f159e981fdb7d62446153267}{check\+\_\+proxies} (const \hyperlink{library__manager_8hpp_aacc6d633b0aa80ecfeb1180fd480ae68}{library\+\_\+manager\+Ref} library, std\+::string fu\+\_\+name)
+\item 
+bool \hyperlink{classallocation_ad0e5db03715e2282b6d3d78507bcf6fb}{check\+\_\+generated\+\_\+bambu\+\_\+flopoco} (bool skip\+\_\+softfloat\+\_\+resources, \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} struct\+Manager\+\_\+obj, std\+::string \&bambu\+\_\+provided\+\_\+resource, bool skip\+\_\+flopoco\+\_\+resources, \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} current\+\_\+fu)
+\item 
+bool \hyperlink{classallocation_a0ade22133e76bb62a10d4dc280842f01}{is\+\_\+ram\+\_\+not\+\_\+timing\+\_\+compliant} (const \hyperlink{hls__constraints_8hpp_ac394d1c5cd991614133724294a79182b}{H\+L\+S\+\_\+constraints\+Ref} H\+L\+S\+\_\+C, unsigned int var, \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} current\+\_\+fu)
+\item 
+std\+::string \hyperlink{classallocation_acef7ab9b504f496fa9367192c5edca22}{get\+\_\+synch\+\_\+ram\+\_\+latency} (const std\+::string \&ram\+\_\+template, const std\+::string \&latency\+\_\+postfix, const \hyperlink{hls__constraints_8hpp_ac394d1c5cd991614133724294a79182b}{H\+L\+S\+\_\+constraints\+Ref} H\+L\+S\+\_\+C, unsigned int var)
+\item 
+virtual void \hyperlink{classallocation_a2a1bfe82ec889179c591b1ebee43464b}{Integrate\+Technology\+Libraries} ()
+\begin{DoxyCompactList}\small\item\em Integrate technology libraries with special functional units. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::tuple$<$ \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type}, \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref}, \hyperlink{hls__step_8hpp_a3ad360b9b11e6bf0683d5562a0ceb169}{H\+L\+S\+Flow\+Step\+\_\+\+Relationship} $>$ $>$ \hyperlink{classallocation_a164671812f520839974efb00b03e79e2}{Compute\+H\+L\+S\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ unsigned int, unsigned int $>$ \hyperlink{classallocation_a9e3e786dd1b209a63a42894a4fb365f1}{last\+\_\+bb\+\_\+ver}
+\item 
+\hyperlink{allocation__information_8hpp_ad90a86da153cba50cbcefc4679036755}{Allocation\+Information\+Ref} \hyperlink{classallocation_a6f1b3fd4ce46389216d316e91fd5e3ff}{allocation\+\_\+information}
+\begin{DoxyCompactList}\small\item\em The allocation solution. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::string $>$ \hyperlink{classallocation_a6da9ffbc83498fadfa6755b0e192d712}{precomputed\+\_\+pipeline\+\_\+unit}
+\begin{DoxyCompactList}\small\item\em store the precomputed pipeline unit\+: given a functional unit it return the pipeline id compliant \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}, std\+::map$<$ unsigned int, std\+::map$<$ \hyperlink{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}{H\+L\+S\+\_\+manager\+::io\+\_\+binding\+\_\+type}, unsigned int $>$ $>$ $>$ \hyperlink{classallocation_abb3dd63c5df7f47db4f56a5b88e643bf}{fu\+\_\+list}
+\item 
+\hyperlink{hls__target_8hpp_a390f1d55d3b31739665ff2776abe2a3f}{H\+L\+S\+\_\+target\+Ref} \hyperlink{classallocation_a27ad1d8608f43abd9b719988ddb5095c}{H\+L\+S\+\_\+T}
+\begin{DoxyCompactList}\small\item\em The H\+LS target. \end{DoxyCompactList}\item 
+\hyperlink{technology__manager_8hpp_a4b9ecd440c804109c962654f9227244e}{technology\+\_\+manager\+Ref} \hyperlink{classallocation_a4d459a70dabbb13058a43f912edcfe93}{TM}
+\begin{DoxyCompactList}\small\item\em The technology manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{classallocation_ae62048173f29362c5fb37b7b34b40f59}{updatecopy\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+functor}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This wrapper collects all the methods used by the High-\/level synthesis classes to retrieve information about the functional units. 
+
+Definition at line 102 of file allocation.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classallocation_a28d6121ea2736ac049f433e367683575}\label{classallocation_a28d6121ea2736ac049f433e367683575}} 
+\index{allocation@{allocation}!allocation@{allocation}}
+\index{allocation@{allocation}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{allocation()}{allocation()}}
+{\footnotesize\ttfamily allocation\+::allocation (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr,  }\item[{unsigned int}]{fun\+Id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type}}]{ = {\ttfamily \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8daf3ade60018a383ba297f423fa621528e}{H\+L\+S\+Flow\+Step\+\_\+\+Type\+::\+A\+L\+L\+O\+C\+A\+T\+I\+ON}} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 130 of file allocation.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, G\+E\+T\+\_\+\+C\+L\+A\+SS, and $\sim$allocation().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d0/d74/classallocation_a28d6121ea2736ac049f433e367683575_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_a6582d417d60e3e09b82147b48004b285}\label{classallocation_a6582d417d60e3e09b82147b48004b285}} 
+\index{allocation@{allocation}!````~allocation@{$\sim$allocation}}
+\index{````~allocation@{$\sim$allocation}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{$\sim$allocation()}{~allocation()}}
+{\footnotesize\ttfamily allocation\+::$\sim$allocation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by allocation().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d0/d74/classallocation_a6582d417d60e3e09b82147b48004b285_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classallocation_a4084c75f1c138f51b8b7f3c609d45d01}\label{classallocation_a4084c75f1c138f51b8b7f3c609d45d01}} 
+\index{allocation@{allocation}!add\+\_\+proxy\+\_\+function\+\_\+module@{add\+\_\+proxy\+\_\+function\+\_\+module}}
+\index{add\+\_\+proxy\+\_\+function\+\_\+module@{add\+\_\+proxy\+\_\+function\+\_\+module}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{add\+\_\+proxy\+\_\+function\+\_\+module()}{add\_proxy\_function\_module()}}
+{\footnotesize\ttfamily void allocation\+::add\+\_\+proxy\+\_\+function\+\_\+module (\begin{DoxyParamCaption}\item[{const \hyperlink{hls__constraints_8hpp_ac394d1c5cd991614133724294a79182b}{H\+L\+S\+\_\+constraints\+Ref}}]{H\+L\+S\+\_\+C,  }\item[{\hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}}]{tech\+Node\+\_\+obj,  }\item[{const std\+::string \&}]{orig\+\_\+fun\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add a proxy function to the W\+O\+RK library. 
+
+add description and license
+
+add a fictitious operation to allow bus merging
+
+automatically build proxy description 
+
+Definition at line 696 of file allocation.\+cpp.
+
+
+
+References structural\+\_\+manager\+::add\+\_\+\+N\+P\+\_\+functionality(), technology\+\_\+manager\+::add\+\_\+operation(), structural\+\_\+manager\+::add\+\_\+port(), structural\+\_\+manager\+::add\+\_\+port\+\_\+vector(), Build\+Proxy\+Function(), C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, structural\+\_\+object\+::copy(), time\+\_\+model\+::create\+\_\+model(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, E\+N\+C\+O\+D\+E\+\_\+\+F\+U\+\_\+\+L\+IB, structural\+\_\+manager\+::get\+\_\+circ(), technology\+\_\+manager\+::get\+\_\+fu(), structural\+\_\+object\+::get\+\_\+id(), structural\+\_\+object\+::get\+\_\+kind(), technology\+\_\+node\+::get\+\_\+name(), N\+P\+\_\+functionality\+::get\+\_\+\+N\+P\+\_\+functionality(), target\+\_\+manager\+::get\+\_\+target\+\_\+device(), target\+\_\+device\+::get\+\_\+type(), structural\+\_\+object\+::get\+\_\+type\+Ref(), H\+L\+S\+\_\+T, port\+\_\+o\+::\+IN, is\+\_\+other\+\_\+port(), N\+P\+\_\+functionality\+::\+L\+I\+B\+R\+A\+RY, port\+\_\+o\+::\+O\+UT, Design\+Flow\+Step\+::parameters, port\+\_\+o\+::\+P\+A\+R\+A\+M\+E\+T\+R\+I\+C\+\_\+\+P\+O\+RT, port\+\_\+vector\+\_\+o\+\_\+K, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, P\+R\+O\+X\+Y\+\_\+\+L\+I\+B\+R\+A\+RY, P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, structural\+\_\+manager\+::set\+\_\+top\+\_\+info(), TM, and top().
+
+
+
+Referenced by Integrate\+Technology\+Libraries().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a4084c75f1c138f51b8b7f3c609d45d01_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a4084c75f1c138f51b8b7f3c609d45d01_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_afa7e3452b30f32920f34aaad4d3299ed}\label{classallocation_afa7e3452b30f32920f34aaad4d3299ed}} 
+\index{allocation@{allocation}!add\+\_\+proxy\+\_\+function\+\_\+wrapper@{add\+\_\+proxy\+\_\+function\+\_\+wrapper}}
+\index{add\+\_\+proxy\+\_\+function\+\_\+wrapper@{add\+\_\+proxy\+\_\+function\+\_\+wrapper}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{add\+\_\+proxy\+\_\+function\+\_\+wrapper()}{add\_proxy\_function\_wrapper()}}
+{\footnotesize\ttfamily void allocation\+::add\+\_\+proxy\+\_\+function\+\_\+wrapper (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{library\+\_\+name,  }\item[{\hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}}]{tech\+Node\+\_\+obj,  }\item[{const std\+::string \&}]{orig\+\_\+fun\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add a proxy wrapper to the W\+O\+RK library. 
+
+add description and license
+
+add a fictitious operation to allow bus merging
+
+automatically build proxy wrapper H\+DL description 
+
+Definition at line 411 of file allocation.\+cpp.
+
+
+
+References structural\+\_\+manager\+::add\+\_\+\+N\+P\+\_\+functionality(), technology\+\_\+manager\+::add\+\_\+operation(), structural\+\_\+manager\+::add\+\_\+port(), structural\+\_\+manager\+::add\+\_\+port\+\_\+vector(), Build\+Proxy\+Wrapper(), C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, structural\+\_\+object\+::copy(), time\+\_\+model\+::create\+\_\+model(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, structural\+\_\+manager\+::get\+\_\+circ(), technology\+\_\+manager\+::get\+\_\+fu(), structural\+\_\+object\+::get\+\_\+id(), structural\+\_\+object\+::get\+\_\+kind(), technology\+\_\+node\+::get\+\_\+name(), N\+P\+\_\+functionality\+::get\+\_\+\+N\+P\+\_\+functionality(), target\+\_\+manager\+::get\+\_\+target\+\_\+device(), target\+\_\+device\+::get\+\_\+type(), structural\+\_\+object\+::get\+\_\+type\+Ref(), H\+L\+S\+\_\+T, port\+\_\+o\+::\+IN, is\+\_\+other\+\_\+port(), N\+P\+\_\+functionality\+::\+L\+I\+B\+R\+A\+RY, M\+E\+M\+O\+R\+Y\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER, port\+\_\+o\+::\+O\+UT, Design\+Flow\+Step\+::parameters, port\+\_\+o\+::\+P\+A\+R\+A\+M\+E\+T\+R\+I\+C\+\_\+\+P\+O\+RT, port\+\_\+vector\+\_\+o\+\_\+K, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, P\+R\+O\+X\+Y\+\_\+\+L\+I\+B\+R\+A\+RY, P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, structural\+\_\+manager\+::set\+\_\+top\+\_\+info(), TM, and W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX.
+
+
+
+Referenced by Integrate\+Technology\+Libraries().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_afa7e3452b30f32920f34aaad4d3299ed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_afa7e3452b30f32920f34aaad4d3299ed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_a88280c4c0b8d9bd5cf61934cf43a0f7b}\label{classallocation_a88280c4c0b8d9bd5cf61934cf43a0f7b}} 
+\index{allocation@{allocation}!add\+\_\+resource\+\_\+to\+\_\+fu\+\_\+list@{add\+\_\+resource\+\_\+to\+\_\+fu\+\_\+list}}
+\index{add\+\_\+resource\+\_\+to\+\_\+fu\+\_\+list@{add\+\_\+resource\+\_\+to\+\_\+fu\+\_\+list}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{add\+\_\+resource\+\_\+to\+\_\+fu\+\_\+list()}{add\_resource\_to\_fu\_list()}}
+{\footnotesize\ttfamily void allocation\+::add\+\_\+resource\+\_\+to\+\_\+fu\+\_\+list (\begin{DoxyParamCaption}\item[{std\+::string}]{channels\+\_\+type,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{g,  }\item[{\hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}}]{current\+\_\+fu,  }\item[{\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$}]{vertex\+\_\+analysed,  }\item[{node\+\_\+kind\+\_\+prec\+\_\+info\+Ref}]{node\+\_\+info,  }\item[{unsigned int}]{current\+\_\+id,  }\item[{\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$\+::const\+\_\+iterator}]{vert,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{libraries,  }\item[{bool}]{is\+Memory,  }\item[{std\+::string}]{bambu\+\_\+provided\+\_\+resource,  }\item[{\hyperlink{structoperation}{operation} $\ast$}]{curr\+\_\+op,  }\item[{std\+::string}]{specialized\+\_\+fu\+Name,  }\item[{bool}]{predicate\+\_\+2,  }\item[{std\+::string}]{current\+\_\+op,  }\item[{\hyperlink{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}{H\+L\+S\+\_\+manager\+::io\+\_\+binding\+\_\+type}}]{constant\+\_\+id,  }\item[{bool}]{varargs\+\_\+fu,  }\item[{unsigned int}]{l,  }\item[{std\+::string}]{memory\+\_\+ctrl\+\_\+type,  }\item[{std\+::map$<$ std\+::string, \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} $>$}]{new\+\_\+fu,  }\item[{unsigned int}]{tech\+\_\+constrain\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classallocation_a8896615bea432f94fc39ba9eb56f410c}\label{classallocation_a8896615bea432f94fc39ba9eb56f410c}} 
+\index{allocation@{allocation}!add\+\_\+tech\+\_\+constraint@{add\+\_\+tech\+\_\+constraint}}
+\index{add\+\_\+tech\+\_\+constraint@{add\+\_\+tech\+\_\+constraint}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{add\+\_\+tech\+\_\+constraint()}{add\_tech\_constraint()}}
+{\footnotesize\ttfamily void allocation\+::add\+\_\+tech\+\_\+constraint (\begin{DoxyParamCaption}\item[{\hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}}]{cur\+\_\+fu,  }\item[{unsigned int}]{tech\+\_\+constrain\+\_\+value,  }\item[{unsigned int}]{pos,  }\item[{bool}]{proxy\+\_\+constrained }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+check resource constraints for indirect memory accesses 
+
+Definition at line 884 of file allocation.\+cpp.
+
+
+
+References allocation\+\_\+information, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, technology\+\_\+node\+::get\+\_\+name(), Allocation\+Information\+::get\+\_\+number\+\_\+channels(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Allocation\+Information\+::is\+\_\+indirect\+\_\+access\+\_\+memory\+\_\+unit(), Allocation\+Information\+::list\+\_\+of\+\_\+\+FU, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, S\+TR, and Allocation\+Information\+::tech\+\_\+constraints.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a8896615bea432f94fc39ba9eb56f410c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d0/d74/classallocation_a8896615bea432f94fc39ba9eb56f410c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_a7e6e103d4874dd3126414e0f4d8bdd24}\label{classallocation_a7e6e103d4874dd3126414e0f4d8bdd24}} 
+\index{allocation@{allocation}!Build\+Proxy\+Function@{Build\+Proxy\+Function}}
+\index{Build\+Proxy\+Function@{Build\+Proxy\+Function}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{Build\+Proxy\+Function()}{BuildProxyFunction()}}
+{\footnotesize\ttfamily void allocation\+::\+Build\+Proxy\+Function (\begin{DoxyParamCaption}\item[{\hyperlink{structfunctional__unit}{functional\+\_\+unit} $\ast$}]{orig\+\_\+fu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Build the proxy function. 
+
+
+
+Definition at line 670 of file allocation.\+cpp.
+
+
+
+References Build\+Proxy\+Function\+Verilog(), Build\+Proxy\+Function\+V\+H\+D\+L(), Design\+Flow\+Step\+::parameters, S\+Y\+S\+T\+E\+M\+\_\+\+V\+E\+R\+I\+L\+OG, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, V\+E\+R\+I\+L\+OG, and V\+H\+DL.
+
+
+
+Referenced by add\+\_\+proxy\+\_\+function\+\_\+module(), and extract\+\_\+bambu\+\_\+provided().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a7e6e103d4874dd3126414e0f4d8bdd24_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a7e6e103d4874dd3126414e0f4d8bdd24_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_ac305b0fc0edfc7c02e39b37a5615260f}\label{classallocation_ac305b0fc0edfc7c02e39b37a5615260f}} 
+\index{allocation@{allocation}!Build\+Proxy\+Function\+Verilog@{Build\+Proxy\+Function\+Verilog}}
+\index{Build\+Proxy\+Function\+Verilog@{Build\+Proxy\+Function\+Verilog}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{Build\+Proxy\+Function\+Verilog()}{BuildProxyFunctionVerilog()}}
+{\footnotesize\ttfamily void allocation\+::\+Build\+Proxy\+Function\+Verilog (\begin{DoxyParamCaption}\item[{\hyperlink{structfunctional__unit}{functional\+\_\+unit} $\ast$}]{orig\+\_\+fu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Build the proxy function in Verilog. 
+
+
+
+Definition at line 545 of file allocation.\+cpp.
+
+
+
+References add\+\_\+escape(), structural\+\_\+manager\+::add\+\_\+\+N\+P\+\_\+functionality(), structural\+\_\+manager\+::add\+\_\+port(), C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, language\+\_\+writer\+::create\+\_\+writer(), structural\+\_\+object\+::find\+\_\+member(), fix\+\_\+identifier(), structural\+\_\+manager\+::get\+\_\+circ(), structural\+\_\+object\+::get\+\_\+id(), functional\+\_\+unit\+::get\+\_\+operations(), H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, port\+\_\+o\+::\+IN, is\+\_\+other\+\_\+port(), Design\+Flow\+Step\+::parameters, port\+\_\+o\+\_\+K, P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, top(), V\+E\+R\+I\+L\+OG, and N\+P\+\_\+functionality\+::\+V\+E\+R\+I\+L\+O\+G\+\_\+\+P\+R\+O\+V\+I\+D\+ED.
+
+
+
+Referenced by Build\+Proxy\+Function().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_ac305b0fc0edfc7c02e39b37a5615260f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_ac305b0fc0edfc7c02e39b37a5615260f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_ab924181104812480fb5f27f23599487c}\label{classallocation_ab924181104812480fb5f27f23599487c}} 
+\index{allocation@{allocation}!Build\+Proxy\+Function\+V\+H\+DL@{Build\+Proxy\+Function\+V\+H\+DL}}
+\index{Build\+Proxy\+Function\+V\+H\+DL@{Build\+Proxy\+Function\+V\+H\+DL}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{Build\+Proxy\+Function\+V\+H\+D\+L()}{BuildProxyFunctionVHDL()}}
+{\footnotesize\ttfamily void allocation\+::\+Build\+Proxy\+Function\+V\+H\+DL (\begin{DoxyParamCaption}\item[{\hyperlink{structfunctional__unit}{functional\+\_\+unit} $\ast$}]{orig\+\_\+fu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Build the proxy function in V\+H\+DL. 
+
+
+
+Definition at line 606 of file allocation.\+cpp.
+
+
+
+References add\+\_\+escape(), structural\+\_\+manager\+::add\+\_\+\+N\+P\+\_\+functionality(), structural\+\_\+manager\+::add\+\_\+port(), C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, language\+\_\+writer\+::create\+\_\+writer(), structural\+\_\+object\+::find\+\_\+member(), fix\+\_\+identifier(), structural\+\_\+manager\+::get\+\_\+circ(), structural\+\_\+object\+::get\+\_\+id(), functional\+\_\+unit\+::get\+\_\+operations(), G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+I\+ZE, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, port\+\_\+o\+::\+IN, is\+\_\+other\+\_\+port(), Design\+Flow\+Step\+::parameters, port\+\_\+o\+\_\+K, P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, top(), V\+H\+DL, and N\+P\+\_\+functionality\+::\+V\+H\+D\+L\+\_\+\+P\+R\+O\+V\+I\+D\+ED.
+
+
+
+Referenced by Build\+Proxy\+Function().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_ab924181104812480fb5f27f23599487c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_ab924181104812480fb5f27f23599487c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_a6a0e21dd875ccd2320ec1c3032bd53c1}\label{classallocation_a6a0e21dd875ccd2320ec1c3032bd53c1}} 
+\index{allocation@{allocation}!Build\+Proxy\+Wrapper@{Build\+Proxy\+Wrapper}}
+\index{Build\+Proxy\+Wrapper@{Build\+Proxy\+Wrapper}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{Build\+Proxy\+Wrapper()}{BuildProxyWrapper()}}
+{\footnotesize\ttfamily void allocation\+::\+Build\+Proxy\+Wrapper (\begin{DoxyParamCaption}\item[{\hyperlink{structfunctional__unit}{functional\+\_\+unit} $\ast$}]{current\+\_\+fu,  }\item[{const std\+::string \&}]{orig\+\_\+fun\+\_\+name,  }\item[{const std\+::string \&}]{orig\+\_\+library\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Build the proxy wrapper. 
+
+
+
+Definition at line 282 of file allocation.\+cpp.
+
+
+
+References C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, connect\+Clock\+And\+Reset(), structural\+\_\+object\+::find\+\_\+member(), structural\+\_\+manager\+::get\+\_\+circ(), library\+\_\+manager\+::get\+\_\+fu(), structural\+\_\+object\+::get\+\_\+id(), module\+::get\+\_\+in\+\_\+port(), module\+::get\+\_\+in\+\_\+port\+\_\+size(), technology\+\_\+manager\+::get\+\_\+library\+\_\+manager(), functional\+\_\+unit\+::get\+\_\+operations(), module\+::get\+\_\+out\+\_\+port(), module\+::get\+\_\+out\+\_\+port\+\_\+size(), structural\+\_\+object\+::get\+\_\+type\+Ref(), H\+L\+S\+Function\+Step\+::\+H\+LS, hls\+::\+H\+L\+S\+\_\+T, port\+\_\+o\+::\+IN, library\+\_\+manager\+::is\+\_\+fu(), is\+\_\+other\+\_\+port(), M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD, O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD, port\+\_\+o\+\_\+K, port\+\_\+vector\+\_\+o\+\_\+K, memory\+::propagate\+\_\+memory\+\_\+parameters(), P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, structural\+\_\+object\+::set\+\_\+id(), S\+T\+D\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, TM, and W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX.
+
+
+
+Referenced by add\+\_\+proxy\+\_\+function\+\_\+wrapper(), and extract\+\_\+bambu\+\_\+provided().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a6a0e21dd875ccd2320ec1c3032bd53c1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a6a0e21dd875ccd2320ec1c3032bd53c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_abcfa5870832b4b9d8d194054d7b2f86b}\label{classallocation_abcfa5870832b4b9d8d194054d7b2f86b}} 
+\index{allocation@{allocation}!check\+\_\+for\+\_\+memory\+\_\+compliancy@{check\+\_\+for\+\_\+memory\+\_\+compliancy}}
+\index{check\+\_\+for\+\_\+memory\+\_\+compliancy@{check\+\_\+for\+\_\+memory\+\_\+compliancy}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{check\+\_\+for\+\_\+memory\+\_\+compliancy()}{check\_for\_memory\_compliancy()}}
+{\footnotesize\ttfamily bool allocation\+::check\+\_\+for\+\_\+memory\+\_\+compliancy (\begin{DoxyParamCaption}\item[{bool}]{Has\+\_\+extern\+\_\+allocated\+\_\+data,  }\item[{\hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}}]{current\+\_\+fu,  }\item[{const std\+::string \&}]{memory\+\_\+ctrl\+\_\+type,  }\item[{std\+::string}]{channels\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+L\+O\+A\+D/\+S\+T\+O\+RE operations allocated on memories have been already allocated
+
+L\+O\+A\+D/\+S\+T\+O\+RE operations on proxys have been already managed 
+
+Definition at line 965 of file allocation.\+cpp.
+
+
+
+References C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+CS, C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+NN, C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+P1N, M\+E\+M\+\_\+\+A\+C\+C\+\_\+11, M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+CS, M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+N1, M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+NN, M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+P1N, M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+P\+R\+O\+XY, M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+P\+R\+O\+X\+YN, M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+O\+XY, M\+E\+M\+O\+R\+Y\+\_\+\+C\+T\+R\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+O\+X\+YN, Design\+Flow\+Step\+::parameters, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{d0/d74/classallocation_abcfa5870832b4b9d8d194054d7b2f86b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_ad0e5db03715e2282b6d3d78507bcf6fb}\label{classallocation_ad0e5db03715e2282b6d3d78507bcf6fb}} 
+\index{allocation@{allocation}!check\+\_\+generated\+\_\+bambu\+\_\+flopoco@{check\+\_\+generated\+\_\+bambu\+\_\+flopoco}}
+\index{check\+\_\+generated\+\_\+bambu\+\_\+flopoco@{check\+\_\+generated\+\_\+bambu\+\_\+flopoco}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{check\+\_\+generated\+\_\+bambu\+\_\+flopoco()}{check\_generated\_bambu\_flopoco()}}
+{\footnotesize\ttfamily bool allocation\+::check\+\_\+generated\+\_\+bambu\+\_\+flopoco (\begin{DoxyParamCaption}\item[{bool}]{skip\+\_\+softfloat\+\_\+resources,  }\item[{\hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref}}]{struct\+Manager\+\_\+obj,  }\item[{std\+::string \&}]{bambu\+\_\+provided\+\_\+resource,  }\item[{bool}]{skip\+\_\+flopoco\+\_\+resources,  }\item[{\hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}}]{current\+\_\+fu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+generated cannot be directly considered for allocation 
+
+Definition at line 1099 of file allocation.\+cpp.
+
+
+
+References N\+P\+\_\+functionality\+::\+B\+A\+M\+B\+U\+\_\+\+P\+R\+O\+V\+I\+D\+ED, N\+P\+\_\+functionality\+::\+F\+L\+O\+P\+O\+C\+O\+\_\+\+P\+R\+O\+V\+I\+D\+ED, structural\+\_\+manager\+::get\+\_\+circ(), get\+\_\+fu(), and N\+P\+\_\+functionality\+::get\+\_\+\+N\+P\+\_\+functionality().
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_ad0e5db03715e2282b6d3d78507bcf6fb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_ad0e5db03715e2282b6d3d78507bcf6fb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_a11a59e23f159e981fdb7d62446153267}\label{classallocation_a11a59e23f159e981fdb7d62446153267}} 
+\index{allocation@{allocation}!check\+\_\+proxies@{check\+\_\+proxies}}
+\index{check\+\_\+proxies@{check\+\_\+proxies}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{check\+\_\+proxies()}{check\_proxies()}}
+{\footnotesize\ttfamily bool allocation\+::check\+\_\+proxies (\begin{DoxyParamCaption}\item[{const \hyperlink{library__manager_8hpp_aacc6d633b0aa80ecfeb1180fd480ae68}{library\+\_\+manager\+Ref}}]{library,  }\item[{std\+::string}]{fu\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 1076 of file allocation.\+cpp.
+
+
+
+References H\+L\+S\+Function\+Step\+::fun\+Id, library\+\_\+manager\+::get\+\_\+library\+\_\+name(), H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, P\+R\+O\+X\+Y\+\_\+\+L\+I\+B\+R\+A\+RY, P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{d0/d74/classallocation_a11a59e23f159e981fdb7d62446153267_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a11a59e23f159e981fdb7d62446153267_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_a5aa6886382ebdc049a6bc4ef82225973}\label{classallocation_a5aa6886382ebdc049a6bc4ef82225973}} 
+\index{allocation@{allocation}!check\+\_\+templated\+\_\+units@{check\+\_\+templated\+\_\+units}}
+\index{check\+\_\+templated\+\_\+units@{check\+\_\+templated\+\_\+units}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{check\+\_\+templated\+\_\+units()}{check\_templated\_units()}}
+{\footnotesize\ttfamily bool allocation\+::check\+\_\+templated\+\_\+units (\begin{DoxyParamCaption}\item[{double}]{clock\+\_\+period,  }\item[{node\+\_\+kind\+\_\+prec\+\_\+info\+Ref}]{node\+\_\+info,  }\item[{const \hyperlink{library__manager_8hpp_aacc6d633b0aa80ecfeb1180fd480ae68}{library\+\_\+manager\+Ref}}]{library,  }\item[{\hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}}]{current\+\_\+fu,  }\item[{\hyperlink{structoperation}{operation} $\ast$}]{curr\+\_\+op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 906 of file allocation.\+cpp.
+
+
+
+References allocation\+\_\+information, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, get\+\_\+compliant\+\_\+pipelined\+\_\+unit(), time\+\_\+model\+::get\+\_\+cycles(), library\+\_\+manager\+::get\+\_\+library\+\_\+name(), operation\+::get\+\_\+name(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, operation\+::pipe\+\_\+parameters, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, S\+TR, T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG, operation\+::time\+\_\+m, and Allocation\+Information\+::time\+\_\+m\+\_\+execution\+\_\+time().
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a5aa6886382ebdc049a6bc4ef82225973_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a5aa6886382ebdc049a6bc4ef82225973_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_a92dce6f1c4e5c6c794ef18ed545fc21d}\label{classallocation_a92dce6f1c4e5c6c794ef18ed545fc21d}} 
+\index{allocation@{allocation}!check\+\_\+type\+\_\+and\+\_\+precision@{check\+\_\+type\+\_\+and\+\_\+precision}}
+\index{check\+\_\+type\+\_\+and\+\_\+precision@{check\+\_\+type\+\_\+and\+\_\+precision}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{check\+\_\+type\+\_\+and\+\_\+precision()}{check\_type\_and\_precision()}}
+{\footnotesize\ttfamily bool allocation\+::check\+\_\+type\+\_\+and\+\_\+precision (\begin{DoxyParamCaption}\item[{\hyperlink{structoperation}{operation} $\ast$}]{curr\+\_\+op,  }\item[{node\+\_\+kind\+\_\+prec\+\_\+info\+Ref}]{node\+\_\+info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 1060 of file allocation.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, and operation\+::is\+\_\+type\+\_\+supported().
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{d0/d74/classallocation_a92dce6f1c4e5c6c794ef18ed545fc21d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{d0/d74/classallocation_a92dce6f1c4e5c6c794ef18ed545fc21d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_a164671812f520839974efb00b03e79e2}\label{classallocation_a164671812f520839974efb00b03e79e2}} 
+\index{allocation@{allocation}!Compute\+H\+L\+S\+Relationships@{Compute\+H\+L\+S\+Relationships}}
+\index{Compute\+H\+L\+S\+Relationships@{Compute\+H\+L\+S\+Relationships}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{Compute\+H\+L\+S\+Relationships()}{ComputeHLSRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::tuple$<$ \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type}, \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref}, \hyperlink{hls__step_8hpp_a3ad360b9b11e6bf0683d5562a0ceb169}{H\+L\+S\+Flow\+Step\+\_\+\+Relationship} $>$ $>$ allocation\+::\+Compute\+H\+L\+S\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classHLS__step_aed0ce8cca9a1ef18e705fc1032ad4de5}{H\+L\+S\+\_\+step}.
+
+
+
+Definition at line 156 of file allocation.\+cpp.
+
+
+
+References C\+A\+L\+L\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+NS, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, H\+L\+S\+\_\+\+B\+I\+T\+\_\+\+V\+A\+L\+UE, H\+L\+S\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+I\+S\+\_\+\+F\+L\+OW, I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+\_\+\+H\+LS, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::parameters, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and W\+H\+O\+L\+E\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON.
+
+\mbox{\Hypertarget{classallocation_a24b901da7ff60e973feddb65b2c7d23c}\label{classallocation_a24b901da7ff60e973feddb65b2c7d23c}} 
+\index{allocation@{allocation}!extract\+\_\+bambu\+\_\+provided@{extract\+\_\+bambu\+\_\+provided}}
+\index{extract\+\_\+bambu\+\_\+provided@{extract\+\_\+bambu\+\_\+provided}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{extract\+\_\+bambu\+\_\+provided()}{extract\_bambu\_provided()}}
+{\footnotesize\ttfamily \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} allocation\+::extract\+\_\+bambu\+\_\+provided (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{library\+\_\+name,  }\item[{\hyperlink{structoperation}{operation} $\ast$}]{curr\+\_\+op,  }\item[{const std\+::string \&}]{bambu\+\_\+provided\+\_\+resource }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 185 of file allocation.\+cpp.
+
+
+
+References Build\+Proxy\+Function(), Build\+Proxy\+Wrapper(), operation\+::commutative, H\+L\+S\+Function\+Step\+::fun\+Id, technology\+\_\+manager\+::get\+\_\+fu(), library\+\_\+manager\+::get\+\_\+fu(), technology\+\_\+manager\+::get\+\_\+library\+\_\+manager(), operation\+::get\+\_\+name(), H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, library\+\_\+manager\+::is\+\_\+fu(), operation\+::pipe\+\_\+parameters, P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX, operation\+::supported\+\_\+types, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, TM, W\+O\+R\+K\+\_\+\+L\+I\+B\+R\+A\+RY, and W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a24b901da7ff60e973feddb65b2c7d23c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{d0/d74/classallocation_a24b901da7ff60e973feddb65b2c7d23c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_a0bac9cf0d8365c80a4868c63398f3cd8}\label{classallocation_a0bac9cf0d8365c80a4868c63398f3cd8}} 
+\index{allocation@{allocation}!get\+\_\+compliant\+\_\+pipelined\+\_\+unit@{get\+\_\+compliant\+\_\+pipelined\+\_\+unit}}
+\index{get\+\_\+compliant\+\_\+pipelined\+\_\+unit@{get\+\_\+compliant\+\_\+pipelined\+\_\+unit}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{get\+\_\+compliant\+\_\+pipelined\+\_\+unit()}{get\_compliant\_pipelined\_unit()}}
+{\footnotesize\ttfamily std\+::string allocation\+::get\+\_\+compliant\+\_\+pipelined\+\_\+unit (\begin{DoxyParamCaption}\item[{double}]{clock,  }\item[{const std\+::string \&}]{pipe\+\_\+parameter,  }\item[{const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}}]{current\+\_\+fu,  }\item[{const std\+::string \&}]{curr\+\_\+op,  }\item[{const std\+::string \&}]{library\+\_\+name,  }\item[{const std\+::string \&}]{template\+\_\+suffix,  }\item[{unsigned int}]{module\+\_\+prec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+In case the current functional unit has pipelined operations then it return an id identifying the most compliant functional unit given the current clock period. 
+
+in case no pipelined version exist it returns the one not pipelined
+
+in case clock is not compatible with any of the pipelined version it returns the fastest pipelined version available 
+
+Definition at line 1973 of file allocation.\+cpp.
+
+
+
+References allocation\+\_\+information, clb\+\_\+model\+::\+D\+SP, Allocation\+Information\+::\+D\+S\+P\+\_\+allocation\+\_\+coefficient, Allocation\+Information\+::\+D\+S\+P\+\_\+y\+\_\+db, Allocation\+Information\+::\+D\+S\+Ps\+\_\+margin, Allocation\+Information\+::\+D\+S\+Ps\+\_\+margin\+\_\+stage, N\+P\+\_\+functionality\+::\+F\+L\+O\+P\+O\+C\+O\+\_\+\+P\+R\+O\+V\+I\+D\+ED, functional\+\_\+unit\+\_\+template\+::\+FU, structural\+\_\+manager\+::get\+\_\+circ(), technology\+\_\+manager\+::get\+\_\+fu(), N\+P\+\_\+functionality\+::get\+\_\+\+N\+P\+\_\+functionality(), functional\+\_\+unit\+::get\+\_\+operation(), target\+\_\+manager\+::get\+\_\+technology\+\_\+manager(), H\+L\+S\+\_\+T, is\+\_\+a\+\_\+skip\+\_\+operation(), max(), Design\+Flow\+Step\+::parameters, precomputed\+\_\+pipeline\+\_\+unit, Split\+String(), S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG, Allocation\+Information\+::time\+\_\+m\+\_\+execution\+\_\+time(), and Allocation\+Information\+::time\+\_\+m\+\_\+stage\+\_\+period().
+
+
+
+Referenced by check\+\_\+templated\+\_\+units().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a0bac9cf0d8365c80a4868c63398f3cd8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a0bac9cf0d8365c80a4868c63398f3cd8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_aa14fbc0eb589e643571db7f9338a5471}\label{classallocation_aa14fbc0eb589e643571db7f9338a5471}} 
+\index{allocation@{allocation}!get\+\_\+execution\+\_\+time\+\_\+dsp\+\_\+modified@{get\+\_\+execution\+\_\+time\+\_\+dsp\+\_\+modified}}
+\index{get\+\_\+execution\+\_\+time\+\_\+dsp\+\_\+modified@{get\+\_\+execution\+\_\+time\+\_\+dsp\+\_\+modified}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{get\+\_\+execution\+\_\+time\+\_\+dsp\+\_\+modified()}{get\_execution\_time\_dsp\_modified()}}
+{\footnotesize\ttfamily double allocation\+::get\+\_\+execution\+\_\+time\+\_\+dsp\+\_\+modified (\begin{DoxyParamCaption}\item[{const unsigned int}]{fu\+\_\+name,  }\item[{const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} \&}]{node\+\_\+op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classallocation_a15d6ddec8f9a3eb2f499481ef96525e0}\label{classallocation_a15d6ddec8f9a3eb2f499481ef96525e0}} 
+\index{allocation@{allocation}!get\+\_\+fu@{get\+\_\+fu}}
+\index{get\+\_\+fu@{get\+\_\+fu}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{get\+\_\+fu()}{get\_fu()}}
+{\footnotesize\ttfamily \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} allocation\+::get\+\_\+fu (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fu\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Returns the \hyperlink{structtechnology__node}{technology\+\_\+node} associated with the given operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fu\+\_\+name} & is the string representing the name of the unit \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2105 of file allocation.\+cpp.
+
+
+
+References technology\+\_\+manager\+::get\+\_\+fu(), technology\+\_\+manager\+::get\+\_\+library(), target\+\_\+manager\+::get\+\_\+technology\+\_\+manager(), and H\+L\+S\+\_\+T.
+
+
+
+Referenced by check\+\_\+generated\+\_\+bambu\+\_\+flopoco(), get\+\_\+synch\+\_\+ram\+\_\+latency(), Integrate\+Technology\+Libraries(), and Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{d0/d74/classallocation_a15d6ddec8f9a3eb2f499481ef96525e0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a15d6ddec8f9a3eb2f499481ef96525e0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_a6e86c7e93c8e3f957d1e152b3732fa44}\label{classallocation_a6e86c7e93c8e3f957d1e152b3732fa44}} 
+\index{allocation@{allocation}!get\+\_\+stage\+\_\+period\+\_\+dsp\+\_\+modified@{get\+\_\+stage\+\_\+period\+\_\+dsp\+\_\+modified}}
+\index{get\+\_\+stage\+\_\+period\+\_\+dsp\+\_\+modified@{get\+\_\+stage\+\_\+period\+\_\+dsp\+\_\+modified}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{get\+\_\+stage\+\_\+period\+\_\+dsp\+\_\+modified()}{get\_stage\_period\_dsp\_modified()}}
+{\footnotesize\ttfamily double allocation\+::get\+\_\+stage\+\_\+period\+\_\+dsp\+\_\+modified (\begin{DoxyParamCaption}\item[{const unsigned int}]{fu\+\_\+name,  }\item[{const \hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref} \&}]{node\+\_\+op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classallocation_acef7ab9b504f496fa9367192c5edca22}\label{classallocation_acef7ab9b504f496fa9367192c5edca22}} 
+\index{allocation@{allocation}!get\+\_\+synch\+\_\+ram\+\_\+latency@{get\+\_\+synch\+\_\+ram\+\_\+latency}}
+\index{get\+\_\+synch\+\_\+ram\+\_\+latency@{get\+\_\+synch\+\_\+ram\+\_\+latency}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{get\+\_\+synch\+\_\+ram\+\_\+latency()}{get\_synch\_ram\_latency()}}
+{\footnotesize\ttfamily std\+::string allocation\+::get\+\_\+synch\+\_\+ram\+\_\+latency (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ram\+\_\+template,  }\item[{const std\+::string \&}]{latency\+\_\+postfix,  }\item[{const \hyperlink{hls__constraints_8hpp_ac394d1c5cd991614133724294a79182b}{H\+L\+S\+\_\+constraints\+Ref}}]{H\+L\+S\+\_\+C,  }\item[{unsigned int}]{var }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 2131 of file allocation.\+cpp.
+
+
+
+References allocation\+\_\+information, get\+\_\+fu(), Allocation\+Information\+::get\+\_\+latency\+\_\+string(), is\+\_\+ram\+\_\+not\+\_\+timing\+\_\+compliant(), and Allocation\+Information\+::sync\+\_\+ram\+\_\+var\+\_\+latency.
+
+
+
+Referenced by Integrate\+Technology\+Libraries().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_acef7ab9b504f496fa9367192c5edca22_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_acef7ab9b504f496fa9367192c5edca22_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_af29b72851d7c54b1b6ea0b60daa162de}\label{classallocation_af29b72851d7c54b1b6ea0b60daa162de}} 
+\index{allocation@{allocation}!Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}}
+\index{Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{Has\+To\+Be\+Executed()}{HasToBeExecuted()}}
+{\footnotesize\ttfamily bool allocation\+::\+Has\+To\+Be\+Executed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if this step has actually to be executed. 
+
+\begin{DoxyReturn}{Returns}
+true if the step has to be executed 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classHLSFunctionStep_ac70d2df8fd475639bf9b5c8d492b2d62}{H\+L\+S\+Function\+Step}.
+
+
+
+Definition at line 2424 of file allocation.\+cpp.
+
+
+
+References H\+L\+S\+Function\+Step\+::fun\+Id, Function\+Behavior\+::\+Get\+B\+B\+Version(), H\+L\+S\+Function\+Step\+::\+Has\+To\+Be\+Executed(), H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, and last\+\_\+bb\+\_\+ver.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_af29b72851d7c54b1b6ea0b60daa162de_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_a448e4e0cc7e3444fb3479f211d0b637e}\label{classallocation_a448e4e0cc7e3444fb3479f211d0b637e}} 
+\index{allocation@{allocation}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void allocation\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classHLSFunctionStep_a966629ba62a8188ff4fa783ab0d4e319}{H\+L\+S\+Function\+Step}.
+
+
+
+Definition at line 138 of file allocation.\+cpp.
+
+
+
+References allocation\+\_\+information, hls\+::allocation\+\_\+information, Allocation\+Information\+::\+Clear(), fu\+\_\+list, H\+L\+S\+Function\+Step\+::fun\+Id, target\+\_\+manager\+::get\+\_\+technology\+\_\+manager(), H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+\_\+T, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, H\+L\+S\+Function\+Step\+::\+Initialize(), Allocation\+Information\+::\+Initialize(), Design\+Flow\+Step\+::parameters, and TM.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a448e4e0cc7e3444fb3479f211d0b637e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_a2a1bfe82ec889179c591b1ebee43464b}\label{classallocation_a2a1bfe82ec889179c591b1ebee43464b}} 
+\index{allocation@{allocation}!Integrate\+Technology\+Libraries@{Integrate\+Technology\+Libraries}}
+\index{Integrate\+Technology\+Libraries@{Integrate\+Technology\+Libraries}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{Integrate\+Technology\+Libraries()}{IntegrateTechnologyLibraries()}}
+{\footnotesize\ttfamily void allocation\+::\+Integrate\+Technology\+Libraries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Integrate technology libraries with special functional units. 
+
+check clock constraints compatibility
+
+allocate proxies
+
+add shared functions to the technology manager
+
+allocate it
+
+add shared function proxies to the technology manager 
+
+Reimplemented in \hyperlink{classOmpAllocation_a7be1bcabcbba606451d0abe4e70970f2}{Omp\+Allocation}.
+
+
+
+Definition at line 2150 of file allocation.\+cpp.
+
+
+
+References add\+\_\+proxy\+\_\+function\+\_\+module(), add\+\_\+proxy\+\_\+function\+\_\+wrapper(), allocation\+\_\+information, A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+AM, A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1, A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS, A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+D\+S\+\_\+\+B\+US, A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+NN, A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS, A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+D\+S\+\_\+\+B\+US, A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+DS, A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+B\+R\+A\+M\+\_\+\+S\+D\+S\+\_\+\+B\+US, A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N1\+\_\+\+S\+DS, A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+N\+N\+\_\+\+S\+DS, A\+R\+R\+A\+Y\+\_\+1\+D\+\_\+\+S\+T\+D\+\_\+\+D\+I\+S\+T\+R\+A\+M\+\_\+\+S\+DS, Allocation\+Information\+::can\+\_\+be\+\_\+asynchronous\+\_\+ram(), Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL, D\+P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN, E\+N\+C\+O\+D\+E\+\_\+\+F\+U\+\_\+\+L\+IB, fu\+\_\+list, H\+L\+S\+Function\+Step\+::fun\+Id, Allocation\+Information\+::get\+\_\+correction\+\_\+time(), get\+\_\+fu(), technology\+\_\+manager\+::get\+\_\+fu(), library\+\_\+manager\+::get\+\_\+fu(), Allocation\+Information\+::get\+\_\+latency\+\_\+string(), technology\+\_\+manager\+::get\+\_\+library(), technology\+\_\+manager\+::get\+\_\+library\+\_\+manager(), technology\+\_\+node\+::get\+\_\+name(), Allocation\+Information\+::get\+\_\+number\+\_\+fu\+\_\+types(), Allocation\+Information\+::get\+\_\+setup\+\_\+hold\+\_\+time(), get\+\_\+synch\+\_\+ram\+\_\+latency(), H\+L\+S\+Function\+Step\+::\+H\+LS, hls\+::\+H\+L\+S\+\_\+C, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, Allocation\+Information\+::id\+\_\+to\+\_\+fu\+\_\+names, I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+U\+I\+NT, is\+\_\+ram\+\_\+not\+\_\+timing\+\_\+compliant(), Allocation\+Information\+::list\+\_\+of\+\_\+\+FU, M\+E\+M\+\_\+\+A\+C\+C\+\_\+11, M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+N1, M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+NN, M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+P1N, Allocation\+Information\+::memory\+\_\+units, Allocation\+Information\+::memory\+\_\+units\+\_\+sizes, Design\+Flow\+Step\+::parameters, Allocation\+Information\+::precision\+\_\+map, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Behavioral\+Helper\+::\+Print\+Variable(), P\+R\+O\+X\+Y\+\_\+\+C\+T\+RL, P\+R\+O\+X\+Y\+\_\+\+C\+T\+R\+LN, P\+R\+O\+X\+Y\+\_\+\+L\+I\+B\+R\+A\+RY, Allocation\+Information\+::proxy\+\_\+memory\+\_\+units, P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX, Allocation\+Information\+::proxy\+\_\+wrapped\+\_\+units, set\+\_\+number\+\_\+channels(), tree\+\_\+helper\+::size(), S\+TR, Allocation\+Information\+::tech\+\_\+constraints, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, Allocation\+Information\+::time\+\_\+m\+\_\+execution\+\_\+time(), TM, Allocation\+Information\+::vars\+\_\+to\+\_\+memory\+\_\+units, and W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX.
+
+
+
+Referenced by Omp\+Allocation\+::\+Integrate\+Technology\+Libraries(), and Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d0/d74/classallocation_a2a1bfe82ec889179c591b1ebee43464b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a2a1bfe82ec889179c591b1ebee43464b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_a4bb8fddc280745e60af6840eec09d4ca}\label{classallocation_a4bb8fddc280745e60af6840eec09d4ca}} 
+\index{allocation@{allocation}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} allocation\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the step. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+skip library of internal components
+
+check proxy functions
+
+check for generated module and bambu/flopoco resources
+
+Check for correct type and precision
+
+in case the operation is pipelined check the clock period
+
+These data structure are filled only once 
+
+Implements \hyperlink{classHLSFunctionStep_a8db4c00d080655984d98143206fc9fa8}{H\+L\+S\+Function\+Step}.
+
+
+
+Definition at line 1143 of file allocation.\+cpp.
+
+
+
+References technology\+\_\+manager\+::add(), add\+\_\+tech\+\_\+constraint(), A\+D\+D\+R\+\_\+\+E\+X\+PR, A\+D\+D\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD, A\+L\+L\+\_\+\+B\+R\+AM, allocation\+\_\+information, A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+PR, A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+R\+E\+A\+L\+\_\+\+S\+TD, A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD, A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+P\+R\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD, A\+S\+S\+I\+GN, A\+S\+S\+I\+G\+N\+\_\+\+R\+E\+A\+L\+\_\+\+S\+TD, A\+S\+S\+I\+G\+N\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD, A\+S\+S\+I\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD, A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD, A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD, A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+\+B\+O\+O\+L\+\_\+\+S\+TD, H\+L\+S\+Function\+Step\+::bb\+\_\+version, Allocation\+Information\+::binding, B\+I\+V\+E\+C\+T\+O\+R\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, B\+U\+V\+E\+C\+T\+O\+R\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, Function\+Behavior\+::\+C\+FG, Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), tree\+\_\+manager\+::\+C\+Get\+Tree\+Node(), C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+NN, C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+\_\+\+A\+C\+C\+\_\+\+P1N, check\+\_\+for\+\_\+memory\+\_\+compliancy(), check\+\_\+generated\+\_\+bambu\+\_\+flopoco(), check\+\_\+proxies(), check\+\_\+templated\+\_\+units(), check\+\_\+type\+\_\+and\+\_\+precision(), C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, C\+O\+N\+V\+E\+R\+T\+\_\+\+E\+X\+PR, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, E\+N\+C\+O\+D\+E\+\_\+\+F\+U\+\_\+\+L\+IB, encode\+\_\+op\+\_\+type(), encode\+\_\+op\+\_\+type\+\_\+prec(), E\+N\+T\+RY, E\+N\+T\+R\+Y\+\_\+\+ID, E\+N\+T\+R\+Y\+\_\+\+S\+TD, E\+X\+IT, E\+X\+I\+T\+\_\+\+ID, E\+X\+I\+T\+\_\+\+S\+TD, E\+X\+T\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+D\+\_\+\+B\+R\+AM, extract\+\_\+bambu\+\_\+provided(), Allocation\+Information\+::extract\+\_\+bambu\+\_\+provided\+\_\+name(), E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+PR, E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD, E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+P\+R\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD, F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, fu\+\_\+list, functional\+\_\+unit\+\_\+K, hls\+::function\+Id, H\+L\+S\+Function\+Step\+::fun\+Id, Allocation\+Information\+::fus\+\_\+to\+\_\+node\+\_\+id, tree\+\_\+helper\+::get\+\_\+base\+\_\+index(), structural\+\_\+manager\+::get\+\_\+circ(), Allocation\+Information\+::get\+\_\+\+D\+S\+Ps(), get\+\_\+fu(), technology\+\_\+manager\+::get\+\_\+fu(), library\+\_\+manager\+::get\+\_\+fu(), Allocation\+Information\+::get\+\_\+fu\+\_\+name(), structural\+\_\+object\+::get\+\_\+id(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, technology\+\_\+manager\+::get\+\_\+library(), library\+\_\+manager\+::get\+\_\+library\+\_\+fu(), technology\+\_\+manager\+::get\+\_\+library\+\_\+list(), technology\+\_\+manager\+::get\+\_\+library\+\_\+manager(), G\+E\+T\+\_\+\+N\+A\+ME, technology\+\_\+node\+::get\+\_\+name(), G\+E\+T\+\_\+\+N\+O\+DE, Allocation\+Information\+::get\+\_\+number\+\_\+fu\+\_\+types(), target\+\_\+manager\+::get\+\_\+target\+\_\+device(), tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), G\+E\+T\+\_\+\+T\+Y\+PE, target\+\_\+device\+::get\+\_\+type(), tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), tree\+\_\+helper\+::get\+\_\+type\+\_\+node(), Function\+Behavior\+::\+Get\+B\+B\+Version(), tree\+\_\+helper\+::\+Get\+Elements(), Allocation\+Information\+::\+Get\+Node\+Type\+Prec(), G\+I\+M\+P\+L\+E\+\_\+\+A\+SM, G\+I\+M\+P\+L\+E\+\_\+\+G\+O\+TO, G\+I\+M\+P\+L\+E\+\_\+\+G\+O\+T\+O\+\_\+\+S\+TD, G\+I\+M\+P\+L\+E\+\_\+\+L\+A\+B\+EL, G\+I\+M\+P\+L\+E\+\_\+\+L\+A\+B\+E\+L\+\_\+\+S\+TD, G\+I\+M\+P\+L\+E\+\_\+\+N\+OP, G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+P\+\_\+\+S\+TD, G\+I\+M\+P\+L\+E\+\_\+\+P\+HI, G\+I\+M\+P\+L\+E\+\_\+\+P\+H\+I\+\_\+\+S\+TD, G\+I\+M\+P\+L\+E\+\_\+\+P\+R\+A\+G\+MA, G\+I\+M\+P\+L\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+S\+TD, G\+I\+M\+P\+L\+E\+\_\+\+R\+E\+T\+U\+RN, G\+I\+M\+P\+L\+E\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+S\+TD, H\+L\+S\+Function\+Step\+::\+H\+LS, hls\+::\+H\+L\+S\+\_\+C, H\+L\+S\+\_\+T, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, Allocation\+Information\+::id\+\_\+to\+\_\+fu\+\_\+names, I\+I\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD, I\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+U\+I\+NT, insert(), Integrate\+Technology\+Libraries(), I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+L\+I\+B\+R\+A\+RY, I\+N\+T\+E\+R\+N\+\_\+\+U\+N\+A\+L\+I\+G\+N\+ED, tree\+\_\+helper\+::is\+\_\+a\+\_\+complex(), tree\+\_\+helper\+::is\+\_\+a\+\_\+pointer(), tree\+\_\+helper\+::is\+\_\+a\+\_\+vector(), tree\+\_\+helper\+::is\+\_\+an\+\_\+enum(), tree\+\_\+helper\+::is\+\_\+bool(), tree\+\_\+helper\+::is\+\_\+int(), tree\+\_\+helper\+::is\+\_\+real(), tree\+\_\+helper\+::is\+\_\+unsigned(), Allocation\+Information\+::is\+\_\+vertex\+\_\+bounded\+\_\+rel, I\+U\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD, I\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, last\+\_\+bb\+\_\+ver, Allocation\+Information\+::list\+\_\+of\+\_\+\+FU, L\+U\+T\+\_\+\+E\+X\+PR, L\+U\+T\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD, Allocation\+Information\+::memory\+\_\+units, M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+ND, M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD, Allocation\+Information\+::n\+\_\+complex\+\_\+operations, Allocation\+Information\+::node\+\_\+id\+\_\+to\+\_\+fus, N\+OP, N\+O\+P\+\_\+\+E\+X\+PR, N\+O\+P\+\_\+\+S\+TD, tree\+\_\+helper\+::normalized\+\_\+\+I\+D(), hls\+::operations, Design\+Flow\+Step\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Design\+Flow\+Step\+::parameters, Allocation\+Information\+::precision\+\_\+map, Allocation\+Information\+::print\+\_\+allocated\+\_\+resources(), print\+\_\+cpu\+\_\+time(), P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Allocation\+Information\+::proxy\+\_\+function\+\_\+units, P\+R\+O\+X\+Y\+\_\+\+L\+I\+B\+R\+A\+RY, Allocation\+Information\+::proxy\+\_\+memory\+\_\+units, P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX, Allocation\+Information\+::proxy\+\_\+wrapped\+\_\+units, R\+E\+A\+D\+\_\+\+C\+O\+ND, R\+E\+A\+D\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, set\+\_\+number\+\_\+channels(), Allocation\+Information\+::simple\+\_\+pointer\+\_\+plus\+\_\+expr, Allocation\+Information\+::single\+\_\+bool\+\_\+test\+\_\+cond\+\_\+expr\+\_\+units, tree\+\_\+helper\+::size(), S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, S\+T\+A\+R\+T\+\_\+\+T\+I\+ME, S\+T\+O\+P\+\_\+\+T\+I\+ME, S\+TR, S\+U\+C\+C\+E\+SS, S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+ND, S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+N\+D\+\_\+\+S\+TD, Allocation\+Information\+::tech\+\_\+constraints, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, Allocation\+Information\+::time\+\_\+m\+\_\+stage\+\_\+period(), TM, tree\+\_\+node\+::\+To\+String(), T\+Y\+P\+E\+\_\+\+L\+O\+AD, T\+Y\+P\+E\+\_\+\+M\+E\+M\+C\+PY, T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE, U\+I\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD, U\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, U\+U\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+E\+X\+P\+R\+\_\+\+S\+TD, U\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, Allocation\+Information\+::vars\+\_\+to\+\_\+memory\+\_\+units, V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+E\+X\+PR, V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+I\+NT, V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+R\+E\+AL, V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+S\+T\+D\+\_\+\+U\+I\+NT, W\+O\+R\+K\+\_\+\+L\+I\+B\+R\+A\+RY, and W\+R\+A\+P\+P\+E\+D\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+R\+E\+F\+IX.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d0/d74/classallocation_a4bb8fddc280745e60af6840eec09d4ca_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_a0ade22133e76bb62a10d4dc280842f01}\label{classallocation_a0ade22133e76bb62a10d4dc280842f01}} 
+\index{allocation@{allocation}!is\+\_\+ram\+\_\+not\+\_\+timing\+\_\+compliant@{is\+\_\+ram\+\_\+not\+\_\+timing\+\_\+compliant}}
+\index{is\+\_\+ram\+\_\+not\+\_\+timing\+\_\+compliant@{is\+\_\+ram\+\_\+not\+\_\+timing\+\_\+compliant}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{is\+\_\+ram\+\_\+not\+\_\+timing\+\_\+compliant()}{is\_ram\_not\_timing\_compliant()}}
+{\footnotesize\ttfamily bool allocation\+::is\+\_\+ram\+\_\+not\+\_\+timing\+\_\+compliant (\begin{DoxyParamCaption}\item[{const \hyperlink{hls__constraints_8hpp_ac394d1c5cd991614133724294a79182b}{H\+L\+S\+\_\+constraints\+Ref}}]{H\+L\+S\+\_\+C,  }\item[{unsigned int}]{var,  }\item[{\hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}}]{current\+\_\+fu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 2113 of file allocation.\+cpp.
+
+
+
+References allocation\+\_\+information, Allocation\+Information\+::estimate\+\_\+mux\+Nto1\+\_\+delay(), functional\+\_\+unit\+::get\+\_\+operation(), Allocation\+Information\+::get\+\_\+setup\+\_\+hold\+\_\+time(), H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, Design\+Flow\+Step\+::parameters, and Allocation\+Information\+::time\+\_\+m\+\_\+execution\+\_\+time().
+
+
+
+Referenced by get\+\_\+synch\+\_\+ram\+\_\+latency(), and Integrate\+Technology\+Libraries().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a0ade22133e76bb62a10d4dc280842f01_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a0ade22133e76bb62a10d4dc280842f01_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_aa977c26d2952e7fc0e7f09037c540bd3}\label{classallocation_aa977c26d2952e7fc0e7f09037c540bd3}} 
+\index{allocation@{allocation}!Print\+Initial\+IR@{Print\+Initial\+IR}}
+\index{Print\+Initial\+IR@{Print\+Initial\+IR}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{Print\+Initial\+I\+R()}{PrintInitialIR()}}
+{\footnotesize\ttfamily void allocation\+::\+Print\+Initial\+IR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Dump the initial intermediate representation. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a2a169bd0ac5fe3cd5179871714cbe1ab}{Design\+Flow\+Step}.
+
+
+
+Definition at line 2447 of file allocation.\+cpp.
+
+
+
+References H\+L\+S\+Function\+Step\+::\+Get\+Name(), Design\+Flow\+Step\+::parameters, technology\+\_\+manager\+::print(), and TM.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_aa977c26d2952e7fc0e7f09037c540bd3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classallocation_a6f4d2a8b3457f7ff1751b08154dfa0b7}\label{classallocation_a6f4d2a8b3457f7ff1751b08154dfa0b7}} 
+\index{allocation@{allocation}!set\+\_\+number\+\_\+channels@{set\+\_\+number\+\_\+channels}}
+\index{set\+\_\+number\+\_\+channels@{set\+\_\+number\+\_\+channels}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{set\+\_\+number\+\_\+channels()}{set\_number\_channels()}}
+{\footnotesize\ttfamily void allocation\+::set\+\_\+number\+\_\+channels (\begin{DoxyParamCaption}\item[{unsigned int}]{fu\+\_\+name,  }\item[{unsigned int}]{n\+\_\+ports }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+set the number of ports associated with the functional unit 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fu\+\_\+name} & is the functional unit id \\
+\hline
+{\em n\+\_\+ports} & is the number of ports \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2100 of file allocation.\+cpp.
+
+
+
+References allocation\+\_\+information, and Allocation\+Information\+::nports\+\_\+map.
+
+
+
+Referenced by Integrate\+Technology\+Libraries(), and Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d74/classallocation_a6f4d2a8b3457f7ff1751b08154dfa0b7_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classallocation_ae62048173f29362c5fb37b7b34b40f59}\label{classallocation_ae62048173f29362c5fb37b7b34b40f59}} 
+\index{allocation@{allocation}!updatecopy\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+functor@{updatecopy\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+functor}}
+\index{updatecopy\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+functor@{updatecopy\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+functor}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{updatecopy\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+functor}{updatecopy\_HLS\_constraints\_functor}}
+{\footnotesize\ttfamily friend struct \hyperlink{structupdatecopy__HLS__constraints__functor}{updatecopy\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+functor}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 109 of file allocation.\+hpp.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classallocation_a6f1b3fd4ce46389216d316e91fd5e3ff}\label{classallocation_a6f1b3fd4ce46389216d316e91fd5e3ff}} 
+\index{allocation@{allocation}!allocation\+\_\+information@{allocation\+\_\+information}}
+\index{allocation\+\_\+information@{allocation\+\_\+information}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{allocation\+\_\+information}{allocation\_information}}
+{\footnotesize\ttfamily \hyperlink{allocation__information_8hpp_ad90a86da153cba50cbcefc4679036755}{Allocation\+Information\+Ref} allocation\+::allocation\+\_\+information\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The allocation solution. 
+
+
+
+Definition at line 108 of file allocation.\+hpp.
+
+
+
+Referenced by add\+\_\+tech\+\_\+constraint(), check\+\_\+templated\+\_\+units(), get\+\_\+compliant\+\_\+pipelined\+\_\+unit(), get\+\_\+synch\+\_\+ram\+\_\+latency(), Initialize(), Integrate\+Technology\+Libraries(), Internal\+Exec(), is\+\_\+ram\+\_\+not\+\_\+timing\+\_\+compliant(), and set\+\_\+number\+\_\+channels().
+
+\mbox{\Hypertarget{classallocation_abb3dd63c5df7f47db4f56a5b88e643bf}\label{classallocation_abb3dd63c5df7f47db4f56a5b88e643bf}} 
+\index{allocation@{allocation}!fu\+\_\+list@{fu\+\_\+list}}
+\index{fu\+\_\+list@{fu\+\_\+list}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{fu\+\_\+list}{fu\_list}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{technology__node_8hpp_a33dd193b7bd6b987bf0d8a770a819fa7}{technology\+\_\+node\+Ref}, std\+::map$<$unsigned int, std\+::map$<$\hyperlink{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}{H\+L\+S\+\_\+manager\+::io\+\_\+binding\+\_\+type}, unsigned int$>$ $>$ $>$ allocation\+::fu\+\_\+list\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 114 of file allocation.\+hpp.
+
+
+
+Referenced by Initialize(), Integrate\+Technology\+Libraries(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classallocation_a27ad1d8608f43abd9b719988ddb5095c}\label{classallocation_a27ad1d8608f43abd9b719988ddb5095c}} 
+\index{allocation@{allocation}!H\+L\+S\+\_\+T@{H\+L\+S\+\_\+T}}
+\index{H\+L\+S\+\_\+T@{H\+L\+S\+\_\+T}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{H\+L\+S\+\_\+T}{HLS\_T}}
+{\footnotesize\ttfamily \hyperlink{hls__target_8hpp_a390f1d55d3b31739665ff2776abe2a3f}{H\+L\+S\+\_\+target\+Ref} allocation\+::\+H\+L\+S\+\_\+T\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The H\+LS target. 
+
+
+
+Definition at line 117 of file allocation.\+hpp.
+
+
+
+Referenced by add\+\_\+proxy\+\_\+function\+\_\+module(), add\+\_\+proxy\+\_\+function\+\_\+wrapper(), get\+\_\+compliant\+\_\+pipelined\+\_\+unit(), get\+\_\+fu(), Initialize(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classallocation_a9e3e786dd1b209a63a42894a4fb365f1}\label{classallocation_a9e3e786dd1b209a63a42894a4fb365f1}} 
+\index{allocation@{allocation}!last\+\_\+bb\+\_\+ver@{last\+\_\+bb\+\_\+ver}}
+\index{last\+\_\+bb\+\_\+ver@{last\+\_\+bb\+\_\+ver}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{last\+\_\+bb\+\_\+ver}{last\_bb\_ver}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, unsigned int$>$ allocation\+::last\+\_\+bb\+\_\+ver\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 105 of file allocation.\+hpp.
+
+
+
+Referenced by Has\+To\+Be\+Executed(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classallocation_a6da9ffbc83498fadfa6755b0e192d712}\label{classallocation_a6da9ffbc83498fadfa6755b0e192d712}} 
+\index{allocation@{allocation}!precomputed\+\_\+pipeline\+\_\+unit@{precomputed\+\_\+pipeline\+\_\+unit}}
+\index{precomputed\+\_\+pipeline\+\_\+unit@{precomputed\+\_\+pipeline\+\_\+unit}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{precomputed\+\_\+pipeline\+\_\+unit}{precomputed\_pipeline\_unit}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::string$>$ allocation\+::precomputed\+\_\+pipeline\+\_\+unit\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+store the precomputed pipeline unit\+: given a functional unit it return the pipeline id compliant 
+
+
+
+Definition at line 112 of file allocation.\+hpp.
+
+
+
+Referenced by get\+\_\+compliant\+\_\+pipelined\+\_\+unit().
+
+\mbox{\Hypertarget{classallocation_a4d459a70dabbb13058a43f912edcfe93}\label{classallocation_a4d459a70dabbb13058a43f912edcfe93}} 
+\index{allocation@{allocation}!TM@{TM}}
+\index{TM@{TM}!allocation@{allocation}}
+\subsubsection{\texorpdfstring{TM}{TM}}
+{\footnotesize\ttfamily \hyperlink{technology__manager_8hpp_a4b9ecd440c804109c962654f9227244e}{technology\+\_\+manager\+Ref} allocation\+::\+TM\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The technology manager. 
+
+
+
+Definition at line 120 of file allocation.\+hpp.
+
+
+
+Referenced by add\+\_\+proxy\+\_\+function\+\_\+module(), add\+\_\+proxy\+\_\+function\+\_\+wrapper(), Omp\+Allocation\+::\+Add\+Panda\+Pthread\+Mutex(), Build\+Proxy\+Wrapper(), extract\+\_\+bambu\+\_\+provided(), Initialize(), Omp\+Allocation\+::\+Integrate\+Technology\+Libraries(), Integrate\+Technology\+Libraries(), Internal\+Exec(), and Print\+Initial\+I\+R().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/module\+\_\+allocation/\hyperlink{allocation_8hpp}{allocation.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/module\+\_\+allocation/\hyperlink{allocation_8cpp}{allocation.\+cpp}\end{DoxyCompactItemize}

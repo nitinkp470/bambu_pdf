@@ -1,0 +1,680 @@
+\hypertarget{classmulti__way__if}{}\section{multi\+\_\+way\+\_\+if Class Reference}
+\label{classmulti__way__if}\index{multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}}
+
+
+S\+TL include.  
+
+
+
+
+{\ttfamily \#include $<$multi\+\_\+way\+\_\+if.\+hpp$>$}
+
+
+
+Inheritance diagram for multi\+\_\+way\+\_\+if\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{db/d2c/classmulti__way__if__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for multi\+\_\+way\+\_\+if\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d6e/classmulti__way__if__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmulti__way__if_ae2ba8078520ffa6983a72c4d955c8314}{multi\+\_\+way\+\_\+if} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \+\_\+\+Param, const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \+\_\+\+AppM, unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classmulti__way__if_aee90986a58430ee295582e404e5922ec}{$\sim$multi\+\_\+way\+\_\+if} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classmulti__way__if_a48bf37aef9a799c0d3b1322e27502a0f}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Restructures the unstructured code. \end{DoxyCompactList}\item 
+void \hyperlink{classmulti__way__if_a8503a9e02e909dfe59978ad170f2d844}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\item 
+bool \hyperlink{classmulti__way__if_a067bd457b6d38a33de81d0a3b474f947}{Has\+To\+Be\+Executed} () const override
+\begin{DoxyCompactList}\small\item\em Check if this step has actually to be executed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classmulti__way__if_ae7810fa463c0f83a9a3e3b274a832582}{Merge\+Cond\+Cond} (unsigned int pred, unsigned int curr\+\_\+bb)
+\begin{DoxyCompactList}\small\item\em Merge two basic blocks both ending with gimple\+\_\+cond\+\_\+K. \end{DoxyCompactList}\item 
+void \hyperlink{classmulti__way__if_ad207368bda4ed43c0b73088848d2521f}{Merge\+Cond\+Multi} (const unsigned int pred\+\_\+bb, const unsigned int curr\+\_\+bb)
+\begin{DoxyCompactList}\small\item\em Build the \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} by mergin a \hyperlink{structgimple__cond}{gimple\+\_\+cond} with a \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if}. \end{DoxyCompactList}\item 
+void \hyperlink{classmulti__way__if_a61400a9cda1ead68203f4fa34ca2a120}{Merge\+Multi\+Cond} (const unsigned int pred\+\_\+bb, const unsigned int curr\+\_\+bb)
+\begin{DoxyCompactList}\small\item\em Merge a \hyperlink{structgimple__cond}{gimple\+\_\+cond} in a \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if}. \end{DoxyCompactList}\item 
+void \hyperlink{classmulti__way__if_a074fa69a22db0768c7e6b7f237ef38d7}{Merge\+Multi\+Multi} (const unsigned int pred\+\_\+bb, const unsigned int curr\+\_\+bb)
+\begin{DoxyCompactList}\small\item\em Merge two \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} in a single one. \end{DoxyCompactList}\item 
+void \hyperlink{classmulti__way__if_acff7c7c7e90fbeabb45e4dec35ec9fa2}{Update\+Cfg} (unsigned int pred\+\_\+bb, unsigned int curr\+\_\+bb)
+\begin{DoxyCompactList}\small\item\em Update the basic block control flow graph data structure. \end{DoxyCompactList}\item 
+void \hyperlink{classmulti__way__if_a5d3d9ceeead0ef86f24f33e3bd165c84}{Fix\+Cfg} (const unsigned int pred\+\_\+bb, const unsigned int succ\+\_\+bb)
+\begin{DoxyCompactList}\small\item\em Insert a basic block on an edge. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classmulti__way__if_a1c92b27310f15468fe430576a025a94f}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structstatement__list}{statement\+\_\+list} $\ast$ \hyperlink{classmulti__way__if_ab60cc09060810013c1a138209e85405c}{sl}
+\begin{DoxyCompactList}\small\item\em The statement list of the analyzed function. \end{DoxyCompactList}\item 
+\hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} \hyperlink{classmulti__way__if_afcac541c14e9f6b9e13c434315673023}{TM}
+\begin{DoxyCompactList}\small\item\em The tree manager. \end{DoxyCompactList}\item 
+\hyperlink{tree__manipulation_8hpp_a1a9460e3a2f9fc6a96cfd2f24cc9b2a5}{tree\+\_\+manipulation\+Ref} \hyperlink{classmulti__way__if_afa70d2a92fc33d0ad311fc2fb1f0924a}{tree\+\_\+man}
+\begin{DoxyCompactList}\small\item\em The tree manipulation. \end{DoxyCompactList}\item 
+bool \hyperlink{classmulti__way__if_ad84ba355151bfbd19e9f7e9fe554b5d2}{bb\+\_\+modified}
+\begin{DoxyCompactList}\small\item\em Modified file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+S\+TL include. 
+
+Structure the original short circuit 
+
+Definition at line 72 of file multi\+\_\+way\+\_\+if.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmulti__way__if_ae2ba8078520ffa6983a72c4d955c8314}\label{classmulti__way__if_ae2ba8078520ffa6983a72c4d955c8314}} 
+\index{multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}!multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}}
+\index{multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}!multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}}
+\subsubsection{\texorpdfstring{multi\+\_\+way\+\_\+if()}{multi\_way\_if()}}
+{\footnotesize\ttfamily multi\+\_\+way\+\_\+if\+::multi\+\_\+way\+\_\+if (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters,  }\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{unsigned int}]{\+\_\+function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Header include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Param} & is the set of the parameters \\
+\hline
+{\em AppM} & is the application manager \\
+\hline
+{\em function\+\_\+id} & is the identifier of the function \\
+\hline
+{\em Design\+Flow\+Manager\+Const\+Ref} & is the design flow manager\\
+\hline
+\end{DoxyParams}
+. include src/algorithms/graph\+\_\+helpers include behavior includes design\+\_\+flows includes hls includes parser/treegcc include S\+TD include S\+TL include tree includes 
+
+Definition at line 98 of file multi\+\_\+way\+\_\+if.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$multi\+\_\+way\+\_\+if().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{dd/dca/classmulti__way__if_ae2ba8078520ffa6983a72c4d955c8314_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmulti__way__if_aee90986a58430ee295582e404e5922ec}\label{classmulti__way__if_aee90986a58430ee295582e404e5922ec}} 
+\index{multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}!````~multi\+\_\+way\+\_\+if@{$\sim$multi\+\_\+way\+\_\+if}}
+\index{````~multi\+\_\+way\+\_\+if@{$\sim$multi\+\_\+way\+\_\+if}!multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}}
+\subsubsection{\texorpdfstring{$\sim$multi\+\_\+way\+\_\+if()}{~multi\_way\_if()}}
+{\footnotesize\ttfamily multi\+\_\+way\+\_\+if\+::$\sim$multi\+\_\+way\+\_\+if (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by multi\+\_\+way\+\_\+if().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{dd/dca/classmulti__way__if_aee90986a58430ee295582e404e5922ec_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmulti__way__if_a1c92b27310f15468fe430576a025a94f}\label{classmulti__way__if_a1c92b27310f15468fe430576a025a94f}} 
+\index{multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ multi\+\_\+way\+\_\+if\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 106 of file multi\+\_\+way\+\_\+if.\+cpp.
+
+
+
+References B\+L\+O\+C\+K\+\_\+\+F\+IX, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::parameters, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, S\+W\+I\+T\+C\+H\+\_\+\+F\+IX, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and U\+S\+E\+\_\+\+C\+O\+U\+N\+T\+I\+NG.
+
+\mbox{\Hypertarget{classmulti__way__if_a5d3d9ceeead0ef86f24f33e3bd165c84}\label{classmulti__way__if_a5d3d9ceeead0ef86f24f33e3bd165c84}} 
+\index{multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}!Fix\+Cfg@{Fix\+Cfg}}
+\index{Fix\+Cfg@{Fix\+Cfg}!multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}}
+\subsubsection{\texorpdfstring{Fix\+Cfg()}{FixCfg()}}
+{\footnotesize\ttfamily void multi\+\_\+way\+\_\+if\+::\+Fix\+Cfg (\begin{DoxyParamCaption}\item[{const unsigned int}]{pred\+\_\+bb,  }\item[{const unsigned int}]{succ\+\_\+bb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Insert a basic block on an edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pred\+\_\+bb} & is the index of the first basic block \\
+\hline
+{\em succ\+\_\+bb} & is the index of the second basic block \\
+\hline
+\end{DoxyParams}
+The index of the basic block to be created
+
+Create the new basic block and set all the fields
+
+Fix the predecessor
+
+Fix the last statement of the predecessor
+
+Fix the successor
+
+Fix the phi 
+
+Definition at line 668 of file multi\+\_\+way\+\_\+if.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, phi, sl, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and TM.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dca/classmulti__way__if_a5d3d9ceeead0ef86f24f33e3bd165c84_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmulti__way__if_a067bd457b6d38a33de81d0a3b474f947}\label{classmulti__way__if_a067bd457b6d38a33de81d0a3b474f947}} 
+\index{multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}!Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}}
+\index{Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}!multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}}
+\subsubsection{\texorpdfstring{Has\+To\+Be\+Executed()}{HasToBeExecuted()}}
+{\footnotesize\ttfamily bool multi\+\_\+way\+\_\+if\+::\+Has\+To\+Be\+Executed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if this step has actually to be executed. 
+
+\begin{DoxyReturn}{Returns}
+true if the step has to be executed 
+\end{DoxyReturn}
+Multi way if can be executed only after vectorization 
+
+Reimplemented from \hyperlink{classFunctionFrontendFlowStep_a12e786363530aa9533e4bd9380130d75}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 729 of file multi\+\_\+way\+\_\+if.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, Function\+Frontend\+Flow\+Step\+::\+C\+Get\+B\+B\+Version(), Function\+Frontend\+Flow\+Step\+::\+Compute\+Signature(), Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, Function\+Frontend\+Flow\+Step\+::\+Has\+To\+Be\+Executed(), Wrefcount$<$ T $>$\+::lock(), N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX, and Design\+Flow\+Step\+::parameters.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dca/classmulti__way__if_a067bd457b6d38a33de81d0a3b474f947_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmulti__way__if_a8503a9e02e909dfe59978ad170f2d844}\label{classmulti__way__if_a8503a9e02e909dfe59978ad170f2d844}} 
+\index{multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void multi\+\_\+way\+\_\+if\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 144 of file multi\+\_\+way\+\_\+if.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, bb\+\_\+modified, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), Design\+Flow\+Step\+::parameters, sl, TM, and tree\+\_\+man.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{dd/dca/classmulti__way__if_a8503a9e02e909dfe59978ad170f2d844_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmulti__way__if_a48bf37aef9a799c0d3b1322e27502a0f}\label{classmulti__way__if_a48bf37aef9a799c0d3b1322e27502a0f}} 
+\index{multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} multi\+\_\+way\+\_\+if\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Restructures the unstructured code. 
+
+add edges
+
+add a connection between entry and exit thus avoiding problems with non terminating code
+
+sort basic block vertices from the entry till the exit
+
+check for short circuit conditions\+: i.\+e., if they have at least a successor in common if so we add a basic block on the shortest path (e.\+g., predecessor --$>$ common successor) In this way in the produced \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} there cannot be multiple conditions with the same next bb phi\+\_\+opt will remove the extra basic block
+
+Fixed point since list of successor is changed by Fix\+Cfg
+
+now the merging starts 
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 205 of file multi\+\_\+way\+\_\+if.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, bb\+\_\+modified, C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, cyclic\+\_\+topological\+\_\+sort(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, bloc\+::\+E\+N\+T\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, bloc\+::\+E\+X\+I\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, Fix\+Cfg(), Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+node\+::get\+\_\+kind\+\_\+text(), G\+E\+T\+\_\+\+N\+O\+DE, B\+B\+Graph\+::\+Get\+B\+B\+Node\+Info(), Function\+Frontend\+Flow\+Step\+::\+Get\+Name(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, Merge\+Cond\+Cond(), Merge\+Cond\+Multi(), Merge\+Multi\+Cond(), Merge\+Multi\+Multi(), Design\+Flow\+Step\+::parameters, test\+\_\+panda\+::restart, sl, S\+TR, S\+U\+C\+C\+E\+SS, U\+N\+C\+H\+A\+N\+G\+ED, Update\+Cfg(), and Function\+Frontend\+Flow\+Step\+::\+Write\+B\+B\+Graph\+Dot().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dca/classmulti__way__if_a48bf37aef9a799c0d3b1322e27502a0f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmulti__way__if_ae7810fa463c0f83a9a3e3b274a832582}\label{classmulti__way__if_ae7810fa463c0f83a9a3e3b274a832582}} 
+\index{multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}!Merge\+Cond\+Cond@{Merge\+Cond\+Cond}}
+\index{Merge\+Cond\+Cond@{Merge\+Cond\+Cond}!multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}}
+\subsubsection{\texorpdfstring{Merge\+Cond\+Cond()}{MergeCondCond()}}
+{\footnotesize\ttfamily void multi\+\_\+way\+\_\+if\+::\+Merge\+Cond\+Cond (\begin{DoxyParamCaption}\item[{unsigned int}]{pred,  }\item[{unsigned int}]{curr\+\_\+bb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Merge two basic blocks both ending with gimple\+\_\+cond\+\_\+K. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pred} & is the first basic block \\
+\hline
+{\em curr\+\_\+bb} & is the second basic block \\
+\hline
+\end{DoxyParams}
+identify the first \hyperlink{structgimple__cond}{gimple\+\_\+cond}
+
+identify the second \hyperlink{structgimple__cond}{gimple\+\_\+cond}
+
+create the \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} node 
+
+Definition at line 613 of file multi\+\_\+way\+\_\+if.\+cpp.
+
+
+
+References tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), tree\+\_\+manipulation\+::\+Create\+And\+Expr(), tree\+\_\+manipulation\+::\+Create\+Not\+Expr(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, tree\+\_\+manipulation\+::\+Extract\+Condition(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), sl, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, TM, T\+OK, T\+O\+K\+\_\+\+S\+R\+CP, and tree\+\_\+man.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dca/classmulti__way__if_ae7810fa463c0f83a9a3e3b274a832582_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dca/classmulti__way__if_ae7810fa463c0f83a9a3e3b274a832582_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmulti__way__if_ad207368bda4ed43c0b73088848d2521f}\label{classmulti__way__if_ad207368bda4ed43c0b73088848d2521f}} 
+\index{multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}!Merge\+Cond\+Multi@{Merge\+Cond\+Multi}}
+\index{Merge\+Cond\+Multi@{Merge\+Cond\+Multi}!multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}}
+\subsubsection{\texorpdfstring{Merge\+Cond\+Multi()}{MergeCondMulti()}}
+{\footnotesize\ttfamily void multi\+\_\+way\+\_\+if\+::\+Merge\+Cond\+Multi (\begin{DoxyParamCaption}\item[{const unsigned int}]{pred\+\_\+bb,  }\item[{const unsigned int}]{curr\+\_\+bb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Build the \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} by mergin a \hyperlink{structgimple__cond}{gimple\+\_\+cond} with a \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pred\+\_\+bb} & is the basic block containing the \hyperlink{structgimple__cond}{gimple\+\_\+cond} \\
+\hline
+{\em second\+\_\+bb} & is the basic block containg the \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} \\
+\hline
+\end{DoxyParams}
+create the \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} node
+
+Create ce\+\_\+condition
+
+Remove old \hyperlink{structgimple__cond}{gimple\+\_\+cond}
+
+Remove old gimple multi way if
+
+First case\+: second bb is on the true edge
+
+Skipped default condition
+
+Second case\+: second bb is on the false edge 
+
+Definition at line 373 of file multi\+\_\+way\+\_\+if.\+cpp.
+
+
+
+References tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), tree\+\_\+manipulation\+::\+Create\+And\+Expr(), tree\+\_\+manipulation\+::\+Create\+Not\+Expr(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, tree\+\_\+manipulation\+::\+Extract\+Condition(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), sl, TM, T\+OK, T\+O\+K\+\_\+\+S\+R\+CP, and tree\+\_\+man.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dca/classmulti__way__if_ad207368bda4ed43c0b73088848d2521f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dca/classmulti__way__if_ad207368bda4ed43c0b73088848d2521f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmulti__way__if_a61400a9cda1ead68203f4fa34ca2a120}\label{classmulti__way__if_a61400a9cda1ead68203f4fa34ca2a120}} 
+\index{multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}!Merge\+Multi\+Cond@{Merge\+Multi\+Cond}}
+\index{Merge\+Multi\+Cond@{Merge\+Multi\+Cond}!multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}}
+\subsubsection{\texorpdfstring{Merge\+Multi\+Cond()}{MergeMultiCond()}}
+{\footnotesize\ttfamily void multi\+\_\+way\+\_\+if\+::\+Merge\+Multi\+Cond (\begin{DoxyParamCaption}\item[{const unsigned int}]{pred\+\_\+bb,  }\item[{const unsigned int}]{curr\+\_\+bb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Merge a \hyperlink{structgimple__cond}{gimple\+\_\+cond} in a \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pred\+\_\+bb} & is the basic block containing the \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} \\
+\hline
+{\em curr\+\_\+bb} & is the basic block containing the \hyperlink{structgimple__cond}{gimple\+\_\+cond} \\
+\hline
+\end{DoxyParams}
+create the \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} node
+
+Remove old \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if}
+
+Remove old \hyperlink{structgimple__cond}{gimple\+\_\+cond}
+
+Create condition
+
+Non default and succ is on this edge
+
+Non default and succ is not on this edge
+
+Default and succ is is on this edge
+
+Building the and of the not of other conditions of cond
+
+Default and second is not on this edge 
+
+Definition at line 541 of file multi\+\_\+way\+\_\+if.\+cpp.
+
+
+
+References tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), tree\+\_\+manipulation\+::\+Create\+And\+Expr(), tree\+\_\+manipulation\+::\+Create\+Not\+Expr(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, tree\+\_\+manipulation\+::\+Extract\+Condition(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), sl, TM, T\+OK, T\+O\+K\+\_\+\+S\+R\+CP, and tree\+\_\+man.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dca/classmulti__way__if_a61400a9cda1ead68203f4fa34ca2a120_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dca/classmulti__way__if_a61400a9cda1ead68203f4fa34ca2a120_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmulti__way__if_a074fa69a22db0768c7e6b7f237ef38d7}\label{classmulti__way__if_a074fa69a22db0768c7e6b7f237ef38d7}} 
+\index{multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}!Merge\+Multi\+Multi@{Merge\+Multi\+Multi}}
+\index{Merge\+Multi\+Multi@{Merge\+Multi\+Multi}!multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}}
+\subsubsection{\texorpdfstring{Merge\+Multi\+Multi()}{MergeMultiMulti()}}
+{\footnotesize\ttfamily void multi\+\_\+way\+\_\+if\+::\+Merge\+Multi\+Multi (\begin{DoxyParamCaption}\item[{const unsigned int}]{pred\+\_\+bb,  }\item[{const unsigned int}]{curr\+\_\+bb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Merge two \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} in a single one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pred\+\_\+bb} & is the basic block containing the first \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} \\
+\hline
+{\em curr\+\_\+bb} & is the basic block containing the second gimple \hyperlink{classmulti__way__if}{multi\+\_\+way\+\_\+if} \\
+\hline
+\end{DoxyParams}
+create the \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} node
+
+Remove old \hyperlink{structgimple__cond}{gimple\+\_\+cond}
+
+Remove old gimple multi way if
+
+Non default and succ is on this edge
+
+Non default and succ is not on this edge
+
+Default and succ is on this edge
+
+Building the and of the not of other conditions of cond1
+
+Default and second is not on this edge 
+
+Definition at line 432 of file multi\+\_\+way\+\_\+if.\+cpp.
+
+
+
+References tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), tree\+\_\+manipulation\+::\+Create\+And\+Expr(), tree\+\_\+manipulation\+::\+Create\+Not\+Expr(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), sl, TM, T\+OK, T\+O\+K\+\_\+\+S\+R\+CP, and tree\+\_\+man.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dca/classmulti__way__if_a074fa69a22db0768c7e6b7f237ef38d7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dca/classmulti__way__if_a074fa69a22db0768c7e6b7f237ef38d7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmulti__way__if_acff7c7c7e90fbeabb45e4dec35ec9fa2}\label{classmulti__way__if_acff7c7c7e90fbeabb45e4dec35ec9fa2}} 
+\index{multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}!Update\+Cfg@{Update\+Cfg}}
+\index{Update\+Cfg@{Update\+Cfg}!multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}}
+\subsubsection{\texorpdfstring{Update\+Cfg()}{UpdateCfg()}}
+{\footnotesize\ttfamily void multi\+\_\+way\+\_\+if\+::\+Update\+Cfg (\begin{DoxyParamCaption}\item[{unsigned int}]{pred\+\_\+bb,  }\item[{unsigned int}]{curr\+\_\+bb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update the basic block control flow graph data structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pred\+\_\+bb} & is the predecessor basic block \\
+\hline
+{\em curr\+\_\+bb} & is the current basic block \\
+\hline
+\end{DoxyParams}
+Remove curr\+\_\+bb from successor of pred\+\_\+bb
+
+For each successor succ of curr\+\_\+bb
+
+Remove curr\+\_\+bb from its predecessor
+
+Add pred\+\_\+bb to its predecessor
+
+Add succ to successor of pred\+\_\+bb
+
+Update phi information 
+
+Definition at line 164 of file multi\+\_\+way\+\_\+if.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, statement\+\_\+list\+::list\+\_\+of\+\_\+bloc, phi, sl, and TM.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dca/classmulti__way__if_acff7c7c7e90fbeabb45e4dec35ec9fa2_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classmulti__way__if_ad84ba355151bfbd19e9f7e9fe554b5d2}\label{classmulti__way__if_ad84ba355151bfbd19e9f7e9fe554b5d2}} 
+\index{multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}!bb\+\_\+modified@{bb\+\_\+modified}}
+\index{bb\+\_\+modified@{bb\+\_\+modified}!multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}}
+\subsubsection{\texorpdfstring{bb\+\_\+modified}{bb\_modified}}
+{\footnotesize\ttfamily bool multi\+\_\+way\+\_\+if\+::bb\+\_\+modified\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Modified file. 
+
+
+
+Definition at line 85 of file multi\+\_\+way\+\_\+if.\+hpp.
+
+
+
+Referenced by Initialize(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classmulti__way__if_ab60cc09060810013c1a138209e85405c}\label{classmulti__way__if_ab60cc09060810013c1a138209e85405c}} 
+\index{multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}!sl@{sl}}
+\index{sl@{sl}!multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}}
+\subsubsection{\texorpdfstring{sl}{sl}}
+{\footnotesize\ttfamily \hyperlink{structstatement__list}{statement\+\_\+list}$\ast$ multi\+\_\+way\+\_\+if\+::sl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The statement list of the analyzed function. 
+
+
+
+Definition at line 76 of file multi\+\_\+way\+\_\+if.\+hpp.
+
+
+
+Referenced by Fix\+Cfg(), Initialize(), Internal\+Exec(), Merge\+Cond\+Cond(), Merge\+Cond\+Multi(), Merge\+Multi\+Cond(), Merge\+Multi\+Multi(), and Update\+Cfg().
+
+\mbox{\Hypertarget{classmulti__way__if_afcac541c14e9f6b9e13c434315673023}\label{classmulti__way__if_afcac541c14e9f6b9e13c434315673023}} 
+\index{multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}!TM@{TM}}
+\index{TM@{TM}!multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}}
+\subsubsection{\texorpdfstring{TM}{TM}}
+{\footnotesize\ttfamily \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} multi\+\_\+way\+\_\+if\+::\+TM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The tree manager. 
+
+
+
+Definition at line 79 of file multi\+\_\+way\+\_\+if.\+hpp.
+
+
+
+Referenced by Fix\+Cfg(), Initialize(), Merge\+Cond\+Cond(), Merge\+Cond\+Multi(), Merge\+Multi\+Cond(), Merge\+Multi\+Multi(), and Update\+Cfg().
+
+\mbox{\Hypertarget{classmulti__way__if_afa70d2a92fc33d0ad311fc2fb1f0924a}\label{classmulti__way__if_afa70d2a92fc33d0ad311fc2fb1f0924a}} 
+\index{multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}!tree\+\_\+man@{tree\+\_\+man}}
+\index{tree\+\_\+man@{tree\+\_\+man}!multi\+\_\+way\+\_\+if@{multi\+\_\+way\+\_\+if}}
+\subsubsection{\texorpdfstring{tree\+\_\+man}{tree\_man}}
+{\footnotesize\ttfamily \hyperlink{tree__manipulation_8hpp_a1a9460e3a2f9fc6a96cfd2f24cc9b2a5}{tree\+\_\+manipulation\+Ref} multi\+\_\+way\+\_\+if\+::tree\+\_\+man\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The tree manipulation. 
+
+
+
+Definition at line 82 of file multi\+\_\+way\+\_\+if.\+hpp.
+
+
+
+Referenced by Initialize(), Merge\+Cond\+Cond(), Merge\+Cond\+Multi(), Merge\+Multi\+Cond(), and Merge\+Multi\+Multi().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{multi__way__if_8hpp}{multi\+\_\+way\+\_\+if.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{multi__way__if_8cpp}{multi\+\_\+way\+\_\+if.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,519 @@
+\hypertarget{classboost_1_1maxclique__dsatur__coloring__helper}{}\section{boost\+:\+:maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$ Class Template Reference}
+\label{classboost_1_1maxclique__dsatur__coloring__helper}\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$}}
+
+
+{\ttfamily \#include $<$maxclique\+\_\+dsatur\+\_\+coloring.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a018730156d996e46d6a9ab2e38935d84}{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper} (const Vertex\+List\+Graph \&\+\_\+G, Color\+Map \&\+\_\+\+CM, const size\+\_\+type \+\_\+num\+\_\+node, size\+\_\+type \&\+\_\+lb)
+\item 
+\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_acc7336a87e1d310b8044850aeea9a6c6}{$\sim$maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper} ()
+\item 
+\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a9f8ef23ffcbea873110b5ff92c9a504f}{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper} (const \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper} \&inst)=delete
+\item 
+\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper} \& \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a319cdb35be0d7121e295068c5c46f180}{operator=} (const \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper} \&inst)=delete
+\item 
+size\+\_\+type \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a0d161cb723d96561a6fd30413a84af53}{Max\+Clique\+Greedy} ()
+\item 
+size\+\_\+type \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_afd63b9cb7e6228c01fb266f19b7db9d3}{Max\+Clique\+Rec} (size\+\_\+type ub)
+\item 
+void \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a3920546347f3636ed6600e846676fedd}{save\+\_\+colors} ()
+\item 
+void \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a1f9b86609393ae2e3a6c2fe178d88d40}{Assign\+Color} (size\+\_\+type node, size\+\_\+type color)
+\item 
+void \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_afd706b1d8ee597c8ebea8fc043a3047b}{Remove\+Color} (size\+\_\+type node, size\+\_\+type color)
+\item 
+size\+\_\+type \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a5bd2cf2e839d9d424e788efec7a4dd60}{Seq\+Color\+Rec} (size\+\_\+type i, size\+\_\+type current\+\_\+color)
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef graph\+\_\+traits$<$ Vertex\+List\+Graph $>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a6f1b584e178237affdd69676e51eb316}{Graph\+Traits}
+\item 
+typedef Graph\+Traits\+::vertex\+\_\+descriptor \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_af5c1839ff3006967b2f34e9eb96161ef}{Vertex}
+\item 
+typedef filtered\+\_\+graph$<$ Vertex\+List\+Graph, keep\+\_\+all, \hyperlink{structboost_1_1select__vertex}{select\+\_\+vertex}$<$ S\+E\+T\+\_\+container $>$ $>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a2928978558b9545fe58e467dd8adf0e5}{Induced\+\_\+\+Graph}
+\item 
+typedef graph\+\_\+traits$<$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a2928978558b9545fe58e467dd8adf0e5}{Induced\+\_\+\+Graph} $>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a7e7d643710dac81b6aedfd442d226424}{I\+G\+\_\+\+Graph\+Traits}
+\item 
+typedef I\+G\+\_\+\+Graph\+Traits\+::vertex\+\_\+descriptor \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_aaedfd2b04cb4322182812033fcc9f879}{I\+G\+\_\+\+Vertex}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const size\+\_\+type \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a633bc42872ba1e8c51ae97b4ca092e92}{num\+\_\+node}
+\item 
+size\+\_\+type \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_ae8121f8ea3161423af724312f444ffc4}{Best\+Coloring}
+\item 
+std\+::vector$<$ size\+\_\+type $>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a60b34646f3805dd544857d2ce82a1397}{Color\+Class}
+\item 
+std\+::vector$<$ bool $>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a3efdfe934f0dd18f941dac27c5481b05}{valid}
+\item 
+boost\+::numeric\+::ublas\+::matrix$<$ size\+\_\+type $>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a448f9ff26409faef73fa41e6c59c9cfe}{Color\+Adj}
+\item 
+std\+::vector$<$ size\+\_\+type $>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_ac74b872f20e7feeaecb8ba1c69be579e}{Color\+Count}
+\item 
+std\+::vector$<$ size\+\_\+type $>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a00bf4408982a3547d654e661079c9f4b}{Degree\+Count}
+\item 
+size\+\_\+type \& \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a768edb034872c46d8f1b26ed21f82f22}{lb}
+\item 
+const Vertex\+List\+Graph \& \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_af420ca87f673bcf01207bb880bd129e7}{G}
+\item 
+Color\+Map \& \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_aace06ca9eef492772bb27436dc67af3b}{CM}
+\item 
+size\+\_\+type $\ast$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a8af7ffed5555add33c712f2da0b9320d}{heap\+\_\+container}
+\item 
+\hyperlink{structboost_1_1heap__compare__functor}{heap\+\_\+compare\+\_\+functor}$<$ size\+\_\+type $>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_ac3684724839cfab3a4cf31ee2f4a84e8}{H\+CF}
+\item 
+const unsigned int \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a1a0be72747da9f7562b13d9c544e480b}{clique\+\_\+size}
+\item 
+\hyperlink{structboost_1_1select__vertex}{select\+\_\+vertex}$<$ S\+E\+T\+\_\+container $>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a2e3327e697fcd36678ffa1f5ab6617a1}{filter}
+\item 
+S\+E\+T\+\_\+container \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_afb8bc7c39aeb0b0437ca58228b6b7cae}{support}
+\item 
+S\+E\+T\+\_\+container \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a251992998e0a300e73e674d0ae0fb9cd}{C}
+\item 
+S\+E\+T\+\_\+container \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_ac0169f40ec490dbab8d0367919afd49c}{Best\+Clique}
+\item 
+\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a2928978558b9545fe58e467dd8adf0e5}{Induced\+\_\+\+Graph} \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a96fe10b4473546d759458fe7f3bbd67f}{FG}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$\newline
+class boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$}
+
+
+
+Definition at line 199 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a6f1b584e178237affdd69676e51eb316}\label{classboost_1_1maxclique__dsatur__coloring__helper_a6f1b584e178237affdd69676e51eb316}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!Graph\+Traits@{Graph\+Traits}}
+\index{Graph\+Traits@{Graph\+Traits}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Graph\+Traits}{GraphTraits}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+typedef graph\+\_\+traits$<$Vertex\+List\+Graph$>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a6f1b584e178237affdd69676e51eb316}{Graph\+Traits}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 202 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a7e7d643710dac81b6aedfd442d226424}\label{classboost_1_1maxclique__dsatur__coloring__helper_a7e7d643710dac81b6aedfd442d226424}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!I\+G\+\_\+\+Graph\+Traits@{I\+G\+\_\+\+Graph\+Traits}}
+\index{I\+G\+\_\+\+Graph\+Traits@{I\+G\+\_\+\+Graph\+Traits}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{I\+G\+\_\+\+Graph\+Traits}{IG\_GraphTraits}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+typedef graph\+\_\+traits$<$\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a2928978558b9545fe58e467dd8adf0e5}{Induced\+\_\+\+Graph}$>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a7e7d643710dac81b6aedfd442d226424}{I\+G\+\_\+\+Graph\+Traits}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 224 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_aaedfd2b04cb4322182812033fcc9f879}\label{classboost_1_1maxclique__dsatur__coloring__helper_aaedfd2b04cb4322182812033fcc9f879}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!I\+G\+\_\+\+Vertex@{I\+G\+\_\+\+Vertex}}
+\index{I\+G\+\_\+\+Vertex@{I\+G\+\_\+\+Vertex}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{I\+G\+\_\+\+Vertex}{IG\_Vertex}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+typedef I\+G\+\_\+\+Graph\+Traits\+::vertex\+\_\+descriptor \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_aaedfd2b04cb4322182812033fcc9f879}{I\+G\+\_\+\+Vertex}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 225 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a2928978558b9545fe58e467dd8adf0e5}\label{classboost_1_1maxclique__dsatur__coloring__helper_a2928978558b9545fe58e467dd8adf0e5}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!Induced\+\_\+\+Graph@{Induced\+\_\+\+Graph}}
+\index{Induced\+\_\+\+Graph@{Induced\+\_\+\+Graph}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Induced\+\_\+\+Graph}{Induced\_Graph}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+typedef filtered\+\_\+graph$<$Vertex\+List\+Graph, keep\+\_\+all, \hyperlink{structboost_1_1select__vertex}{select\+\_\+vertex}$<$S\+E\+T\+\_\+container$>$ $>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a2928978558b9545fe58e467dd8adf0e5}{Induced\+\_\+\+Graph}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 222 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_af5c1839ff3006967b2f34e9eb96161ef}\label{classboost_1_1maxclique__dsatur__coloring__helper_af5c1839ff3006967b2f34e9eb96161ef}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Vertex}{Vertex}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+typedef Graph\+Traits\+::vertex\+\_\+descriptor \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_af5c1839ff3006967b2f34e9eb96161ef}{Vertex}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 203 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a018730156d996e46d6a9ab2e38935d84}\label{classboost_1_1maxclique__dsatur__coloring__helper_a018730156d996e46d6a9ab2e38935d84}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\index{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper()}{maxclique\_dsatur\_coloring\_helper()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper} (\begin{DoxyParamCaption}\item[{const Vertex\+List\+Graph \&}]{\+\_\+G,  }\item[{Color\+Map \&}]{\+\_\+\+CM,  }\item[{const size\+\_\+type}]{\+\_\+num\+\_\+node,  }\item[{size\+\_\+type \&}]{\+\_\+lb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 228 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_acc7336a87e1d310b8044850aeea9a6c6}\label{classboost_1_1maxclique__dsatur__coloring__helper_acc7336a87e1d310b8044850aeea9a6c6}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!````~maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{$\sim$maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\index{````~maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{$\sim$maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{$\sim$maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper()}{~maxclique\_dsatur\_coloring\_helper()}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::$\sim$\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 256 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a9f8ef23ffcbea873110b5ff92c9a504f}\label{classboost_1_1maxclique__dsatur__coloring__helper_a9f8ef23ffcbea873110b5ff92c9a504f}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\index{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper()}{maxclique\_dsatur\_coloring\_helper()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper} (\begin{DoxyParamCaption}\item[{const \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$ \&}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a1f9b86609393ae2e3a6c2fe178d88d40}\label{classboost_1_1maxclique__dsatur__coloring__helper_a1f9b86609393ae2e3a6c2fe178d88d40}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!Assign\+Color@{Assign\+Color}}
+\index{Assign\+Color@{Assign\+Color}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Assign\+Color()}{AssignColor()}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+void \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::Assign\+Color (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{node,  }\item[{size\+\_\+type}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 391 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a0d161cb723d96561a6fd30413a84af53}\label{classboost_1_1maxclique__dsatur__coloring__helper_a0d161cb723d96561a6fd30413a84af53}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!Max\+Clique\+Greedy@{Max\+Clique\+Greedy}}
+\index{Max\+Clique\+Greedy@{Max\+Clique\+Greedy}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Max\+Clique\+Greedy()}{MaxCliqueGreedy()}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+size\+\_\+type \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::Max\+Clique\+Greedy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 263 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+
+
+Referenced by boost\+::maxclique\+\_\+dsatur\+\_\+coloring().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/classboost_1_1maxclique__dsatur__coloring__helper_a0d161cb723d96561a6fd30413a84af53_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_afd63b9cb7e6228c01fb266f19b7db9d3}\label{classboost_1_1maxclique__dsatur__coloring__helper_afd63b9cb7e6228c01fb266f19b7db9d3}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!Max\+Clique\+Rec@{Max\+Clique\+Rec}}
+\index{Max\+Clique\+Rec@{Max\+Clique\+Rec}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Max\+Clique\+Rec()}{MaxCliqueRec()}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+size\+\_\+type \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::Max\+Clique\+Rec (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{ub }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+if C is empty and k is good save the coloring
+
+look for the vertex with maximum degree
+
+check a) condition
+
+check for the minimum degree condition
+
+create the support for the the induced graph N\{selected\} 
+
+Definition at line 303 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+
+
+References boost\+::unsorted\+\_\+coloring().
+
+
+
+Referenced by boost\+::maxclique\+\_\+dsatur\+\_\+coloring().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/classboost_1_1maxclique__dsatur__coloring__helper_afd63b9cb7e6228c01fb266f19b7db9d3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/classboost_1_1maxclique__dsatur__coloring__helper_afd63b9cb7e6228c01fb266f19b7db9d3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a319cdb35be0d7121e295068c5c46f180}\label{classboost_1_1maxclique__dsatur__coloring__helper_a319cdb35be0d7121e295068c5c46f180}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!operator=@{operator=}}
+\index{operator=@{operator=}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}\& \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$ \&}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_afd706b1d8ee597c8ebea8fc043a3047b}\label{classboost_1_1maxclique__dsatur__coloring__helper_afd706b1d8ee597c8ebea8fc043a3047b}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!Remove\+Color@{Remove\+Color}}
+\index{Remove\+Color@{Remove\+Color}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Remove\+Color()}{RemoveColor()}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+void \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::Remove\+Color (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{node,  }\item[{size\+\_\+type}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 408 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a3920546347f3636ed6600e846676fedd}\label{classboost_1_1maxclique__dsatur__coloring__helper_a3920546347f3636ed6600e846676fedd}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!save\+\_\+colors@{save\+\_\+colors}}
+\index{save\+\_\+colors@{save\+\_\+colors}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{save\+\_\+colors()}{save\_colors()}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+void \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::save\+\_\+colors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 383 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a5bd2cf2e839d9d424e788efec7a4dd60}\label{classboost_1_1maxclique__dsatur__coloring__helper_a5bd2cf2e839d9d424e788efec7a4dd60}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!Seq\+Color\+Rec@{Seq\+Color\+Rec}}
+\index{Seq\+Color\+Rec@{Seq\+Color\+Rec}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Seq\+Color\+Rec()}{SeqColorRec()}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+size\+\_\+type \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::Seq\+Color\+Rec (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{i,  }\item[{size\+\_\+type}]{current\+\_\+color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 424 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+
+
+Referenced by boost\+::maxclique\+\_\+dsatur\+\_\+coloring().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/classboost_1_1maxclique__dsatur__coloring__helper_a5bd2cf2e839d9d424e788efec7a4dd60_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_ac0169f40ec490dbab8d0367919afd49c}\label{classboost_1_1maxclique__dsatur__coloring__helper_ac0169f40ec490dbab8d0367919afd49c}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!Best\+Clique@{Best\+Clique}}
+\index{Best\+Clique@{Best\+Clique}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Best\+Clique}{BestClique}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+S\+E\+T\+\_\+container \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::Best\+Clique\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 221 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_ae8121f8ea3161423af724312f444ffc4}\label{classboost_1_1maxclique__dsatur__coloring__helper_ae8121f8ea3161423af724312f444ffc4}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!Best\+Coloring@{Best\+Coloring}}
+\index{Best\+Coloring@{Best\+Coloring}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Best\+Coloring}{BestColoring}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+size\+\_\+type \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::Best\+Coloring\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 205 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a251992998e0a300e73e674d0ae0fb9cd}\label{classboost_1_1maxclique__dsatur__coloring__helper_a251992998e0a300e73e674d0ae0fb9cd}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!C@{C}}
+\index{C@{C}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{C}{C}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+S\+E\+T\+\_\+container \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::C\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 220 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a1a0be72747da9f7562b13d9c544e480b}\label{classboost_1_1maxclique__dsatur__coloring__helper_a1a0be72747da9f7562b13d9c544e480b}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!clique\+\_\+size@{clique\+\_\+size}}
+\index{clique\+\_\+size@{clique\+\_\+size}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{clique\+\_\+size}{clique\_size}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+const unsigned int \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::clique\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 217 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_aace06ca9eef492772bb27436dc67af3b}\label{classboost_1_1maxclique__dsatur__coloring__helper_aace06ca9eef492772bb27436dc67af3b}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!CM@{CM}}
+\index{CM@{CM}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{CM}{CM}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+Color\+Map\& \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::CM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 214 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a448f9ff26409faef73fa41e6c59c9cfe}\label{classboost_1_1maxclique__dsatur__coloring__helper_a448f9ff26409faef73fa41e6c59c9cfe}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!Color\+Adj@{Color\+Adj}}
+\index{Color\+Adj@{Color\+Adj}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Color\+Adj}{ColorAdj}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+boost\+::numeric\+::ublas\+::matrix$<$size\+\_\+type$>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::Color\+Adj\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 209 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a60b34646f3805dd544857d2ce82a1397}\label{classboost_1_1maxclique__dsatur__coloring__helper_a60b34646f3805dd544857d2ce82a1397}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!Color\+Class@{Color\+Class}}
+\index{Color\+Class@{Color\+Class}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Color\+Class}{ColorClass}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+std\+::vector$<$size\+\_\+type$>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::Color\+Class\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 206 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_ac74b872f20e7feeaecb8ba1c69be579e}\label{classboost_1_1maxclique__dsatur__coloring__helper_ac74b872f20e7feeaecb8ba1c69be579e}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!Color\+Count@{Color\+Count}}
+\index{Color\+Count@{Color\+Count}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Color\+Count}{ColorCount}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+std\+::vector$<$size\+\_\+type$>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::Color\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 210 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a00bf4408982a3547d654e661079c9f4b}\label{classboost_1_1maxclique__dsatur__coloring__helper_a00bf4408982a3547d654e661079c9f4b}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!Degree\+Count@{Degree\+Count}}
+\index{Degree\+Count@{Degree\+Count}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{Degree\+Count}{DegreeCount}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+std\+::vector$<$size\+\_\+type$>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::Degree\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 211 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a96fe10b4473546d759458fe7f3bbd67f}\label{classboost_1_1maxclique__dsatur__coloring__helper_a96fe10b4473546d759458fe7f3bbd67f}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!FG@{FG}}
+\index{FG@{FG}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{FG}{FG}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+\hyperlink{classboost_1_1maxclique__dsatur__coloring__helper_a2928978558b9545fe58e467dd8adf0e5}{Induced\+\_\+\+Graph} \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::FG\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 223 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a2e3327e697fcd36678ffa1f5ab6617a1}\label{classboost_1_1maxclique__dsatur__coloring__helper_a2e3327e697fcd36678ffa1f5ab6617a1}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!filter@{filter}}
+\index{filter@{filter}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{filter}{filter}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+\hyperlink{structboost_1_1select__vertex}{select\+\_\+vertex}$<$S\+E\+T\+\_\+container$>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::filter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 218 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_af420ca87f673bcf01207bb880bd129e7}\label{classboost_1_1maxclique__dsatur__coloring__helper_af420ca87f673bcf01207bb880bd129e7}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!G@{G}}
+\index{G@{G}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{G}{G}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+const Vertex\+List\+Graph\& \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::G\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 213 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_ac3684724839cfab3a4cf31ee2f4a84e8}\label{classboost_1_1maxclique__dsatur__coloring__helper_ac3684724839cfab3a4cf31ee2f4a84e8}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!H\+CF@{H\+CF}}
+\index{H\+CF@{H\+CF}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{H\+CF}{HCF}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+\hyperlink{structboost_1_1heap__compare__functor}{heap\+\_\+compare\+\_\+functor}$<$size\+\_\+type$>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::H\+CF\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 216 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a8af7ffed5555add33c712f2da0b9320d}\label{classboost_1_1maxclique__dsatur__coloring__helper_a8af7ffed5555add33c712f2da0b9320d}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!heap\+\_\+container@{heap\+\_\+container}}
+\index{heap\+\_\+container@{heap\+\_\+container}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{heap\+\_\+container}{heap\_container}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+size\+\_\+type$\ast$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::heap\+\_\+container\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 215 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a768edb034872c46d8f1b26ed21f82f22}\label{classboost_1_1maxclique__dsatur__coloring__helper_a768edb034872c46d8f1b26ed21f82f22}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!lb@{lb}}
+\index{lb@{lb}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{lb}{lb}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+size\+\_\+type\& \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::lb\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 212 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a633bc42872ba1e8c51ae97b4ca092e92}\label{classboost_1_1maxclique__dsatur__coloring__helper_a633bc42872ba1e8c51ae97b4ca092e92}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!num\+\_\+node@{num\+\_\+node}}
+\index{num\+\_\+node@{num\+\_\+node}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{num\+\_\+node}{num\_node}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+const size\+\_\+type \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::num\+\_\+node\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 204 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_afb8bc7c39aeb0b0437ca58228b6b7cae}\label{classboost_1_1maxclique__dsatur__coloring__helper_afb8bc7c39aeb0b0437ca58228b6b7cae}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!support@{support}}
+\index{support@{support}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{support}{support}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+S\+E\+T\+\_\+container \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::support\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 219 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+\mbox{\Hypertarget{classboost_1_1maxclique__dsatur__coloring__helper_a3efdfe934f0dd18f941dac27c5481b05}\label{classboost_1_1maxclique__dsatur__coloring__helper_a3efdfe934f0dd18f941dac27c5481b05}} 
+\index{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}!valid@{valid}}
+\index{valid@{valid}!boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper@{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}}
+\subsubsection{\texorpdfstring{valid}{valid}}
+{\footnotesize\ttfamily template$<$typename Vertex\+List\+Graph, typename Color\+Map, typename size\+\_\+type, typename S\+E\+T\+\_\+container$>$ \\
+std\+::vector$<$bool$>$ \hyperlink{classboost_1_1maxclique__dsatur__coloring__helper}{boost\+::maxclique\+\_\+dsatur\+\_\+coloring\+\_\+helper}$<$ Vertex\+List\+Graph, Color\+Map, size\+\_\+type, S\+E\+T\+\_\+container $>$\+::valid\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 207 of file maxclique\+\_\+dsatur\+\_\+coloring.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/algorithms/clique\+\_\+covering/\hyperlink{maxclique__dsatur__coloring_8hpp}{maxclique\+\_\+dsatur\+\_\+coloring.\+hpp}\end{DoxyCompactItemize}

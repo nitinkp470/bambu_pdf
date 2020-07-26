@@ -1,0 +1,220 @@
+\hypertarget{structtype__pack__expansion}{}\section{type\+\_\+pack\+\_\+expansion Struct Reference}
+\label{structtype__pack__expansion}\index{type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}}
+
+
+Represents a type expression that will be expanded into a list of types when instantiated with one or more argument packs.  
+
+
+
+
+{\ttfamily \#include $<$tree\+\_\+node.\+hpp$>$}
+
+
+
+Inheritance diagram for type\+\_\+pack\+\_\+expansion\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{da/d52/structtype__pack__expansion__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for type\+\_\+pack\+\_\+expansion\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{db/d13/structtype__pack__expansion__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{structtype__pack__expansion_a5129e4215f774ea4fcd3afd69338b519af2d93c8f856cc0ab771cf0d650008f36}{G\+E\+T\+ID} =(type\+\_\+node) = 0, 
+\hyperlink{structtype__pack__expansion_a5129e4215f774ea4fcd3afd69338b519af2d93c8f856cc0ab771cf0d650008f36}{G\+E\+T\+ID} =(type\+\_\+node) = 0, 
+\hyperlink{structtype__pack__expansion_a5129e4215f774ea4fcd3afd69338b519af2d93c8f856cc0ab771cf0d650008f36}{G\+E\+T\+ID} =(type\+\_\+node) = 0
+ \}\begin{DoxyCompactList}\small\item\em visitor enum \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structtype__pack__expansion_a14be7735f885a65159ed5dc793cf8179}{type\+\_\+pack\+\_\+expansion} (unsigned int i)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+void \hyperlink{structtype__pack__expansion_a29598e1fd00fefa43588b8b30c8a6675}{visit} (\hyperlink{classtree__node__visitor}{tree\+\_\+node\+\_\+visitor} $\ast$const v) const override
+\begin{DoxyCompactList}\small\item\em Redefinition of get\+\_\+kind\+\_\+text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \hyperlink{structtype__pack__expansion_adbf4da3a02d6520fa846a05aee10e3ab}{op}
+\begin{DoxyCompactList}\small\item\em P\+A\+C\+K\+\_\+\+E\+X\+P\+A\+N\+S\+I\+O\+N\+\_\+\+P\+A\+T\+T\+E\+RN. \end{DoxyCompactList}\item 
+\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \hyperlink{structtype__pack__expansion_a91a6dbf9d3b70f695a636736ce03c98b}{param\+\_\+packs}
+\begin{DoxyCompactList}\small\item\em P\+A\+C\+K\+\_\+\+E\+X\+P\+A\+N\+S\+I\+O\+N\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+P\+A\+C\+KS. \end{DoxyCompactList}\item 
+\hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \hyperlink{structtype__pack__expansion_ae83ab534e3953eeaed0896e2b2c05aef}{arg}
+\begin{DoxyCompactList}\small\item\em P\+A\+C\+K\+\_\+\+E\+X\+P\+A\+N\+S\+I\+O\+N\+\_\+\+E\+X\+T\+R\+A\+\_\+\+A\+R\+GS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Represents a type expression that will be expanded into a list of types when instantiated with one or more argument packs. 
+
+P\+A\+C\+K\+\_\+\+E\+X\+P\+A\+N\+S\+I\+O\+N\+\_\+\+P\+A\+T\+T\+E\+RN retrieves the expansion pattern. This is the type or expression that we will substitute into with each argument in an argument pack.
+
+S\+E\+T\+\_\+\+P\+A\+C\+K\+\_\+\+E\+X\+P\+A\+N\+S\+I\+O\+N\+\_\+\+P\+A\+T\+T\+E\+RN sets the expansion pattern.
+
+P\+A\+C\+K\+\_\+\+E\+X\+P\+A\+N\+S\+I\+O\+N\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+P\+A\+C\+KS contains a T\+R\+E\+E\+\_\+\+L\+I\+ST of the parameter packs that are used in this pack expansion.
+
+Example\+: template$<$typename... Values$>$ struct tied \+: tuple$<$\+Values\&...$>$ \{ // ... \};
+
+The derivation from tuple contains a T\+Y\+P\+E\+\_\+\+P\+A\+C\+K\+\_\+\+E\+X\+P\+A\+N\+S\+I\+ON for the template arguments. Its P\+A\+C\+K\+\_\+\+E\+X\+P\+A\+N\+S\+I\+O\+N\+\_\+\+P\+A\+T\+T\+E\+RN is \char`\"{}\+Values\&\char`\"{} and its P\+A\+C\+K\+\_\+\+E\+X\+P\+A\+N\+S\+I\+O\+N\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+P\+A\+C\+KS will contain \char`\"{}\+Values\char`\"{}. 
+
+Definition at line 2148 of file tree\+\_\+node.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{structtype__pack__expansion_a5129e4215f774ea4fcd3afd69338b519}\label{structtype__pack__expansion_a5129e4215f774ea4fcd3afd69338b519}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+
+
+visitor enum 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+E\+T\+ID@{G\+E\+T\+ID}!type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}}\index{type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}!G\+E\+T\+ID@{G\+E\+T\+ID}}}\mbox{\Hypertarget{structtype__pack__expansion_a5129e4215f774ea4fcd3afd69338b519af2d93c8f856cc0ab771cf0d650008f36}\label{structtype__pack__expansion_a5129e4215f774ea4fcd3afd69338b519af2d93c8f856cc0ab771cf0d650008f36}} 
+G\+E\+T\+ID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+E\+T\+ID@{G\+E\+T\+ID}!type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}}\index{type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}!G\+E\+T\+ID@{G\+E\+T\+ID}}}\mbox{\Hypertarget{structtype__pack__expansion_a5129e4215f774ea4fcd3afd69338b519af2d93c8f856cc0ab771cf0d650008f36}\label{structtype__pack__expansion_a5129e4215f774ea4fcd3afd69338b519af2d93c8f856cc0ab771cf0d650008f36}} 
+G\+E\+T\+ID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+E\+T\+ID@{G\+E\+T\+ID}!type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}}\index{type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}!G\+E\+T\+ID@{G\+E\+T\+ID}}}\mbox{\Hypertarget{structtype__pack__expansion_a5129e4215f774ea4fcd3afd69338b519af2d93c8f856cc0ab771cf0d650008f36}\label{structtype__pack__expansion_a5129e4215f774ea4fcd3afd69338b519af2d93c8f856cc0ab771cf0d650008f36}} 
+G\+E\+T\+ID&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 2177 of file tree\+\_\+node.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtype__pack__expansion_a14be7735f885a65159ed5dc793cf8179}\label{structtype__pack__expansion_a14be7735f885a65159ed5dc793cf8179}} 
+\index{type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}!type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}}
+\index{type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}!type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}}
+\subsubsection{\texorpdfstring{type\+\_\+pack\+\_\+expansion()}{type\_pack\_expansion()}}
+{\footnotesize\ttfamily type\+\_\+pack\+\_\+expansion\+::type\+\_\+pack\+\_\+expansion (\begin{DoxyParamCaption}\item[{unsigned int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+constructor 
+
+
+
+Definition at line 2151 of file tree\+\_\+node.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structtype__pack__expansion_a29598e1fd00fefa43588b8b30c8a6675}\label{structtype__pack__expansion_a29598e1fd00fefa43588b8b30c8a6675}} 
+\index{type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}!visit@{visit}}
+\index{visit@{visit}!type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}}
+\subsubsection{\texorpdfstring{visit()}{visit()}}
+{\footnotesize\ttfamily void type\+\_\+pack\+\_\+expansion\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__node__visitor}{tree\+\_\+node\+\_\+visitor} $\ast$const}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Redefinition of get\+\_\+kind\+\_\+text. 
+
+Redefinition of get\+\_\+kind. virtual function used to traverse the \hyperlink{classtree__node}{tree\+\_\+node} data structure. 
+\begin{DoxyParams}{Parameters}
+{\em v} & is a reference to the \hyperlink{classtree__node}{tree\+\_\+node} visitor class \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{structtype__node_adc6e447af5f9505e6305320933c46a96}{type\+\_\+node}.
+
+
+
+Definition at line 1458 of file tree\+\_\+node.\+cpp.
+
+
+
+References A\+L\+L\+\_\+\+V\+I\+S\+IT, test\+\_\+panda\+::arg, var\+\_\+decl\+::visit(), V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+ER, and V\+I\+S\+I\+T\+\_\+\+SC.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{de/dbe/structtype__pack__expansion_a29598e1fd00fefa43588b8b30c8a6675_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structtype__pack__expansion_ae83ab534e3953eeaed0896e2b2c05aef}\label{structtype__pack__expansion_ae83ab534e3953eeaed0896e2b2c05aef}} 
+\index{type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}!arg@{arg}}
+\index{arg@{arg}!type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}}
+\subsubsection{\texorpdfstring{arg}{arg}}
+{\footnotesize\ttfamily \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} type\+\_\+pack\+\_\+expansion\+::arg}
+
+
+
+P\+A\+C\+K\+\_\+\+E\+X\+P\+A\+N\+S\+I\+O\+N\+\_\+\+E\+X\+T\+R\+A\+\_\+\+A\+R\+GS. 
+
+
+
+Definition at line 2162 of file tree\+\_\+node.\+hpp.
+
+
+
+Referenced by Gimple\+Writer\+::\+Gimple\+Writer(), and raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+
+\mbox{\Hypertarget{structtype__pack__expansion_adbf4da3a02d6520fa846a05aee10e3ab}\label{structtype__pack__expansion_adbf4da3a02d6520fa846a05aee10e3ab}} 
+\index{type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}!op@{op}}
+\index{op@{op}!type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}}
+\subsubsection{\texorpdfstring{op}{op}}
+{\footnotesize\ttfamily \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} type\+\_\+pack\+\_\+expansion\+::op}
+
+
+
+P\+A\+C\+K\+\_\+\+E\+X\+P\+A\+N\+S\+I\+O\+N\+\_\+\+P\+A\+T\+T\+E\+RN. 
+
+
+
+Definition at line 2156 of file tree\+\_\+node.\+hpp.
+
+
+
+Referenced by Gimple\+Writer\+::\+Gimple\+Writer(), and raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+
+\mbox{\Hypertarget{structtype__pack__expansion_a91a6dbf9d3b70f695a636736ce03c98b}\label{structtype__pack__expansion_a91a6dbf9d3b70f695a636736ce03c98b}} 
+\index{type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}!param\+\_\+packs@{param\+\_\+packs}}
+\index{param\+\_\+packs@{param\+\_\+packs}!type\+\_\+pack\+\_\+expansion@{type\+\_\+pack\+\_\+expansion}}
+\subsubsection{\texorpdfstring{param\+\_\+packs}{param\_packs}}
+{\footnotesize\ttfamily \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} type\+\_\+pack\+\_\+expansion\+::param\+\_\+packs}
+
+
+
+P\+A\+C\+K\+\_\+\+E\+X\+P\+A\+N\+S\+I\+O\+N\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+P\+A\+C\+KS. 
+
+
+
+Definition at line 2159 of file tree\+\_\+node.\+hpp.
+
+
+
+Referenced by Gimple\+Writer\+::\+Gimple\+Writer(), and raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/\hyperlink{tree__node_8hpp}{tree\+\_\+node.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/\hyperlink{tree__node_8cpp}{tree\+\_\+node.\+cpp}\end{DoxyCompactItemize}

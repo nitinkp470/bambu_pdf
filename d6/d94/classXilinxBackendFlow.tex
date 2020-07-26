@@ -1,0 +1,547 @@
+\hypertarget{classXilinxBackendFlow}{}\section{Xilinx\+Backend\+Flow Class Reference}
+\label{classXilinxBackendFlow}\index{Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}}
+
+
+{\ttfamily \#include $<$Xilinx\+Backend\+Flow.\+hpp$>$}
+
+
+
+Inheritance diagram for Xilinx\+Backend\+Flow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{dc/dad/classXilinxBackendFlow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Xilinx\+Backend\+Flow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/de9/classXilinxBackendFlow__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classXilinxBackendFlow_af4ee34fb087640152ee3e79f7153b0ab}{Xilinx\+Backend\+Flow} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classBackendFlow_a7d21e7cf0afc64b13e0009c9e351873d}{Param}, const std\+::string \&\hyperlink{classBackendFlow_acb230ccab7e32cf0a88811097ff8c3f8}{flow\+\_\+name}, const \hyperlink{target__manager_8hpp_aee0b586a84fb6eb4faefa6e41e1735a9}{target\+\_\+manager\+Ref} manager)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classXilinxBackendFlow_ab9993332094e8d1090c00ba110fe82e1}{$\sim$\+Xilinx\+Backend\+Flow} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classXilinxBackendFlow_a60d2b3155b8efbcba6ccf49d543751ea}{Init\+Design\+Parameters} () override
+\begin{DoxyCompactList}\small\item\em Initializes the parameters. \end{DoxyCompactList}\item 
+void \hyperlink{classXilinxBackendFlow_a006b64153e4e8498948c37522fc24b0f}{Execute\+Synthesis} () override
+\begin{DoxyCompactList}\small\item\em Checks if the execution can be performed and, in case, performs the synthesis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classXilinxBackendFlow_af8b92a68a04a001e2f4b43fd14dd21b7}{create\+\_\+cf} (const \hyperlink{DesignParameters_8hpp_ae36bb1c4c9150d0eeecfe1f96f42d157}{Design\+Parameters\+Ref} dp, bool xst)
+\begin{DoxyCompactList}\small\item\em Creates the U\+CF file. \end{DoxyCompactList}\item 
+void \hyperlink{classXilinxBackendFlow_a0c32028a834101dcd6b6e6df5481dbe4}{Write\+Flow\+Configuration} (std\+::ostream \&script) override
+\begin{DoxyCompactList}\small\item\em Writes the proper flow configuration in the output script. \end{DoxyCompactList}\item 
+void \hyperlink{classXilinxBackendFlow_a4c059a8e048f5780fa09f00ff7faf817}{Check\+Synthesis\+Results} () override
+\begin{DoxyCompactList}\small\item\em Checks the synthesis results and fills the corresponding datastructures. \end{DoxyCompactList}\item 
+void \hyperlink{classXilinxBackendFlow_a396e92b4d7e3867c814afa25787a7ed6}{xparse\+\_\+xst\+\_\+utilization} (const std\+::string \&fn)
+\begin{DoxyCompactList}\small\item\em Parses the utilization file in X\+ML format. \end{DoxyCompactList}\item 
+void \hyperlink{classXilinxBackendFlow_aad2aac0a9f9a4158831cfd4f842a8b24}{parse\+\_\+\+D\+S\+Ps} (const std\+::string \&log\+\_\+file)
+\begin{DoxyCompactList}\small\item\em retrieve the number of D\+S\+Ps from the xst log \end{DoxyCompactList}\item 
+void \hyperlink{classXilinxBackendFlow_aee48e3dc259b3310102e708480a99410}{xparse\+\_\+map\+\_\+utilization} (const std\+::string \&fn)
+\begin{DoxyCompactList}\small\item\em Parses the utilization file in X\+ML format. \end{DoxyCompactList}\item 
+void \hyperlink{classXilinxBackendFlow_a4606bf711aee0e82892bb50e73eaa6e1}{vivado\+\_\+xparse\+\_\+utilization} (const std\+::string \&fn)
+\begin{DoxyCompactList}\small\item\em parse vivado results \end{DoxyCompactList}\item 
+void \hyperlink{classXilinxBackendFlow_ad6ce13107d22bc9adc43b9b5e1423e6d}{xparse\+\_\+timing} (const std\+::string \&fn, bool post)
+\begin{DoxyCompactList}\small\item\em Fixed the parsing of timing results from trce. \end{DoxyCompactList}\item 
+void \hyperlink{classXilinxBackendFlow_a7316d2350ad8ab06e640e91d7b7baad3}{parse\+\_\+timing} (const std\+::string \&fn)
+\begin{DoxyCompactList}\small\item\em Fixed the parsing of timing results from xst. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, double $>$ \hyperlink{classXilinxBackendFlow_a043659a1184b608b1993a05a4d61755f}{design\+\_\+values}
+\begin{DoxyCompactList}\small\item\em results from the synthesis \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 61 of file Xilinx\+Backend\+Flow.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classXilinxBackendFlow_af4ee34fb087640152ee3e79f7153b0ab}\label{classXilinxBackendFlow_af4ee34fb087640152ee3e79f7153b0ab}} 
+\index{Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}!Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}}
+\index{Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}!Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{Xilinx\+Backend\+Flow()}{XilinxBackendFlow()}}
+{\footnotesize\ttfamily Xilinx\+Backend\+Flow\+::\+Xilinx\+Backend\+Flow (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{const std\+::string \&}]{flow\+\_\+name,  }\item[{const \hyperlink{target__manager_8hpp_aee0b586a84fb6eb4faefa6e41e1735a9}{target\+\_\+manager\+Ref}}]{manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 91 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+References Backend\+Flow\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, Backend\+Flow\+::default\+\_\+data, G\+E\+T\+\_\+\+C\+L\+A\+SS, target\+\_\+device\+::get\+\_\+parameter(), target\+\_\+device\+::has\+\_\+parameter(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, Backend\+Flow\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, Backend\+Flow\+::\+Param, Backend\+Flow\+::parse\+\_\+flow(), test\+\_\+panda\+::parser, Backend\+Flow\+::target, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, U\+C\+F\+\_\+\+S\+U\+B\+D\+IR, and $\sim$\+Xilinx\+Backend\+Flow().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/classXilinxBackendFlow_af4ee34fb087640152ee3e79f7153b0ab_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classXilinxBackendFlow_ab9993332094e8d1090c00ba110fe82e1}\label{classXilinxBackendFlow_ab9993332094e8d1090c00ba110fe82e1}} 
+\index{Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}!````~Xilinx\+Backend\+Flow@{$\sim$\+Xilinx\+Backend\+Flow}}
+\index{````~Xilinx\+Backend\+Flow@{$\sim$\+Xilinx\+Backend\+Flow}!Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{$\sim$\+Xilinx\+Backend\+Flow()}{~XilinxBackendFlow()}}
+{\footnotesize\ttfamily Xilinx\+Backend\+Flow\+::$\sim$\+Xilinx\+Backend\+Flow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Xilinx\+Backend\+Flow().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{d6/d94/classXilinxBackendFlow_ab9993332094e8d1090c00ba110fe82e1_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classXilinxBackendFlow_a4c059a8e048f5780fa09f00ff7faf817}\label{classXilinxBackendFlow_a4c059a8e048f5780fa09f00ff7faf817}} 
+\index{Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}!Check\+Synthesis\+Results@{Check\+Synthesis\+Results}}
+\index{Check\+Synthesis\+Results@{Check\+Synthesis\+Results}!Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{Check\+Synthesis\+Results()}{CheckSynthesisResults()}}
+{\footnotesize\ttfamily void Xilinx\+Backend\+Flow\+::\+Check\+Synthesis\+Results (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Checks the synthesis results and fills the corresponding datastructures. 
+
+
+
+Implements \hyperlink{classBackendFlow_ad2096d43b7c9c47611d719188215f23f}{Backend\+Flow}.
+
+
+
+Definition at line 577 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+References Backend\+Flow\+::actual\+\_\+parameters, Backend\+Flow\+::area\+\_\+m, clb\+\_\+model\+::\+B\+R\+AM, L\+U\+T\+\_\+model\+::\+C\+O\+M\+B\+I\+N\+A\+T\+I\+O\+N\+A\+L\+\_\+\+D\+E\+L\+AY, Copy\+File(), Copy\+Stdout(), area\+\_\+model\+::create\+\_\+model(), time\+\_\+model\+::create\+\_\+model(), design\+\_\+values, clb\+\_\+model\+::\+D\+SP, Exist\+File(), Backend\+Flow\+::flow\+\_\+name, F\+P\+GA, target\+\_\+device\+::get\+\_\+parameter(), clb\+\_\+model\+::\+L\+U\+T\+\_\+\+F\+F\+\_\+\+P\+A\+I\+RS, Backend\+Flow\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Backend\+Flow\+::\+Param, P\+A\+R\+A\+M\+\_\+map\+\_\+report, P\+A\+R\+A\+M\+\_\+trce\+\_\+report\+\_\+post, P\+A\+R\+A\+M\+\_\+trce\+\_\+report\+\_\+pre, P\+A\+R\+A\+M\+\_\+vivado\+\_\+report, P\+A\+R\+A\+M\+\_\+vivado\+\_\+timing\+\_\+report, P\+A\+R\+A\+M\+\_\+xst\+\_\+log\+\_\+file, P\+A\+R\+A\+M\+\_\+xst\+\_\+report, Design\+Parameters\+::parameter\+\_\+values, parse\+\_\+\+D\+S\+Ps(), parse\+\_\+timing(), P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, clb\+\_\+model\+::\+R\+E\+G\+I\+S\+T\+E\+RS, area\+\_\+model\+::set\+\_\+area\+\_\+value(), clb\+\_\+model\+::\+S\+L\+I\+CE, clb\+\_\+model\+::\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS, S\+T\+R\+\_\+\+C\+S\+T\+\_\+synthesis\+\_\+timing\+\_\+violation\+\_\+report, Backend\+Flow\+::target, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, Backend\+Flow\+::time\+\_\+m, V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO, V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+D\+E\+S\+I\+G\+N\+\_\+\+D\+E\+L\+AY, V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+D\+S\+PS, V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED, V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+CE, V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS, V\+I\+V\+A\+D\+O\+\_\+\+X\+I\+L\+I\+N\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS, vivado\+\_\+xparse\+\_\+utilization(), xparse\+\_\+map\+\_\+utilization(), xparse\+\_\+timing(), and xparse\+\_\+xst\+\_\+utilization().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/classXilinxBackendFlow_a4c059a8e048f5780fa09f00ff7faf817_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classXilinxBackendFlow_af8b92a68a04a001e2f4b43fd14dd21b7}\label{classXilinxBackendFlow_af8b92a68a04a001e2f4b43fd14dd21b7}} 
+\index{Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}!create\+\_\+cf@{create\+\_\+cf}}
+\index{create\+\_\+cf@{create\+\_\+cf}!Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{create\+\_\+cf()}{create\_cf()}}
+{\footnotesize\ttfamily void Xilinx\+Backend\+Flow\+::create\+\_\+cf (\begin{DoxyParamCaption}\item[{const \hyperlink{DesignParameters_8hpp_ae36bb1c4c9150d0eeecfe1f96f42d157}{Design\+Parameters\+Ref}}]{dp,  }\item[{bool}]{xst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Creates the U\+CF file. 
+
+
+
+Reimplemented in \hyperlink{classXilinxTasteBackendFlow_a0672740f515c4ef8cefe95feeca8dc12}{Xilinx\+Taste\+Backend\+Flow}.
+
+
+
+Definition at line 862 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+References Design\+Parameters\+::component\+\_\+name, Backend\+Flow\+::\+Param, P\+A\+R\+A\+M\+\_\+clk\+\_\+name, P\+A\+R\+A\+M\+\_\+clk\+\_\+period, P\+A\+R\+A\+M\+\_\+is\+\_\+combinational, P\+A\+R\+A\+M\+\_\+ucf\+\_\+file, P\+A\+R\+A\+M\+\_\+xcf\+\_\+file, Design\+Parameters\+::parameter\+\_\+values, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and U\+C\+F\+\_\+\+S\+U\+B\+D\+IR.
+
+
+
+Referenced by Init\+Design\+Parameters().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/classXilinxBackendFlow_af8b92a68a04a001e2f4b43fd14dd21b7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classXilinxBackendFlow_a006b64153e4e8498948c37522fc24b0f}\label{classXilinxBackendFlow_a006b64153e4e8498948c37522fc24b0f}} 
+\index{Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}!Execute\+Synthesis@{Execute\+Synthesis}}
+\index{Execute\+Synthesis@{Execute\+Synthesis}!Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{Execute\+Synthesis()}{ExecuteSynthesis()}}
+{\footnotesize\ttfamily void Xilinx\+Backend\+Flow\+::\+Execute\+Synthesis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the execution can be performed and, in case, performs the synthesis. 
+
+
+
+Reimplemented from \hyperlink{classBackendFlow_af0e8f1973185540298eaa3ac4bee3b2c}{Backend\+Flow}.
+
+
+
+Definition at line 757 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+References Backend\+Flow\+::\+Execute\+Synthesis(), and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/classXilinxBackendFlow_a006b64153e4e8498948c37522fc24b0f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classXilinxBackendFlow_a60d2b3155b8efbcba6ccf49d543751ea}\label{classXilinxBackendFlow_a60d2b3155b8efbcba6ccf49d543751ea}} 
+\index{Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}!Init\+Design\+Parameters@{Init\+Design\+Parameters}}
+\index{Init\+Design\+Parameters@{Init\+Design\+Parameters}!Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{Init\+Design\+Parameters()}{InitDesignParameters()}}
+{\footnotesize\ttfamily void Xilinx\+Backend\+Flow\+::\+Init\+Design\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initializes the parameters. 
+
+determine if power optimization has to be performed
+
+Vivado section
+
+additional constraints have to be manage at this level 
+
+Reimplemented from \hyperlink{classBackendFlow_a367d9917dc257ed6aa0bb5e97f57d2d4}{Backend\+Flow}.
+
+
+
+Definition at line 766 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+References Backend\+Flow\+::actual\+\_\+parameters, create\+\_\+cf(), Backend\+Flow\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, target\+\_\+device\+::get\+\_\+parameter(), Get\+Extension(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, I\+N\+T\+S\+T\+Y\+L\+E\+\_\+\+I\+SE, I\+N\+T\+S\+T\+Y\+L\+E\+\_\+\+S\+I\+L\+E\+NT, Backend\+Flow\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Backend\+Flow\+::\+Param, P\+A\+R\+A\+M\+\_\+\+H\+D\+L\+\_\+files, P\+A\+R\+A\+M\+\_\+ise\+\_\+style, P\+A\+R\+A\+M\+\_\+power\+\_\+optimization, P\+A\+R\+A\+M\+\_\+target\+\_\+device, P\+A\+R\+A\+M\+\_\+vivado\+\_\+sources\+\_\+macro\+\_\+list, P\+A\+R\+A\+M\+\_\+yosys\+\_\+vivado\+\_\+sources\+\_\+macro\+\_\+list, Design\+Parameters\+::parameter\+\_\+values, Backend\+Flow\+::steps, S\+TR, Backend\+Flow\+::target, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by Xilinx\+Taste\+Backend\+Flow\+::\+Generate\+Synthesis\+Scripts().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{d6/d94/classXilinxBackendFlow_a60d2b3155b8efbcba6ccf49d543751ea_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/classXilinxBackendFlow_a60d2b3155b8efbcba6ccf49d543751ea_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classXilinxBackendFlow_aad2aac0a9f9a4158831cfd4f842a8b24}\label{classXilinxBackendFlow_aad2aac0a9f9a4158831cfd4f842a8b24}} 
+\index{Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}!parse\+\_\+\+D\+S\+Ps@{parse\+\_\+\+D\+S\+Ps}}
+\index{parse\+\_\+\+D\+S\+Ps@{parse\+\_\+\+D\+S\+Ps}!Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{parse\+\_\+\+D\+S\+Ps()}{parse\_DSPs()}}
+{\footnotesize\ttfamily void Xilinx\+Backend\+Flow\+::parse\+\_\+\+D\+S\+Ps (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{log\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+retrieve the number of D\+S\+Ps from the xst log 
+
+
+
+Definition at line 464 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+References Backend\+Flow\+::area\+\_\+m, clb\+\_\+model\+::\+D\+SP, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Check\+Synthesis\+Results().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d6/d94/classXilinxBackendFlow_aad2aac0a9f9a4158831cfd4f842a8b24_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classXilinxBackendFlow_a7316d2350ad8ab06e640e91d7b7baad3}\label{classXilinxBackendFlow_a7316d2350ad8ab06e640e91d7b7baad3}} 
+\index{Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}!parse\+\_\+timing@{parse\+\_\+timing}}
+\index{parse\+\_\+timing@{parse\+\_\+timing}!Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{parse\+\_\+timing()}{parse\_timing()}}
+{\footnotesize\ttfamily void Xilinx\+Backend\+Flow\+::parse\+\_\+timing (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Fixed the parsing of timing results from xst. 
+
+
+
+Definition at line 420 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+References Backend\+Flow\+::actual\+\_\+parameters, L\+U\+T\+\_\+model\+::\+C\+O\+M\+B\+I\+N\+A\+T\+I\+O\+N\+A\+L\+\_\+\+D\+E\+L\+AY, Design\+Parameters\+::component\+\_\+name, Copy\+File(), time\+\_\+model\+::create\+\_\+model(), Backend\+Flow\+::flow\+\_\+name, F\+P\+GA, Backend\+Flow\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Backend\+Flow\+::\+Param, P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, S\+T\+R\+\_\+\+C\+S\+T\+\_\+synthesis\+\_\+timing\+\_\+violation\+\_\+report, T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG, and Backend\+Flow\+::time\+\_\+m.
+
+
+
+Referenced by Check\+Synthesis\+Results().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{d6/d94/classXilinxBackendFlow_a7316d2350ad8ab06e640e91d7b7baad3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d6/d94/classXilinxBackendFlow_a7316d2350ad8ab06e640e91d7b7baad3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classXilinxBackendFlow_a4606bf711aee0e82892bb50e73eaa6e1}\label{classXilinxBackendFlow_a4606bf711aee0e82892bb50e73eaa6e1}} 
+\index{Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}!vivado\+\_\+xparse\+\_\+utilization@{vivado\+\_\+xparse\+\_\+utilization}}
+\index{vivado\+\_\+xparse\+\_\+utilization@{vivado\+\_\+xparse\+\_\+utilization}!Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{vivado\+\_\+xparse\+\_\+utilization()}{vivado\_xparse\_utilization()}}
+{\footnotesize\ttfamily void Xilinx\+Backend\+Flow\+::vivado\+\_\+xparse\+\_\+utilization (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+parse vivado results 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fn} & si the file where the synthesis results are written \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 656 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+References C\+E\+\_\+\+X\+VM, design\+\_\+values, X\+M\+L\+Dom\+Parser\+::\+Exec(), xml\+\_\+child\+::get\+\_\+children(), X\+M\+L\+Dom\+Parser\+::get\+\_\+document(), xml\+\_\+node\+::get\+\_\+name(), L\+O\+A\+D\+\_\+\+X\+VM, test\+\_\+panda\+::parser, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by Check\+Synthesis\+Results().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/classXilinxBackendFlow_a4606bf711aee0e82892bb50e73eaa6e1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/classXilinxBackendFlow_a4606bf711aee0e82892bb50e73eaa6e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classXilinxBackendFlow_a0c32028a834101dcd6b6e6df5481dbe4}\label{classXilinxBackendFlow_a0c32028a834101dcd6b6e6df5481dbe4}} 
+\index{Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}!Write\+Flow\+Configuration@{Write\+Flow\+Configuration}}
+\index{Write\+Flow\+Configuration@{Write\+Flow\+Configuration}!Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{Write\+Flow\+Configuration()}{WriteFlowConfiguration()}}
+{\footnotesize\ttfamily void Xilinx\+Backend\+Flow\+::\+Write\+Flow\+Configuration (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{script }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Writes the proper flow configuration in the output script. 
+
+
+
+Implements \hyperlink{classBackendFlow_acd93b1846b958eb6b7e10b9894bf5615}{Backend\+Flow}.
+
+
+
+Definition at line 736 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+References target\+\_\+device\+::get\+\_\+parameter(), S\+TR, and Backend\+Flow\+::target.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{d6/d94/classXilinxBackendFlow_a0c32028a834101dcd6b6e6df5481dbe4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classXilinxBackendFlow_aee48e3dc259b3310102e708480a99410}\label{classXilinxBackendFlow_aee48e3dc259b3310102e708480a99410}} 
+\index{Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}!xparse\+\_\+map\+\_\+utilization@{xparse\+\_\+map\+\_\+utilization}}
+\index{xparse\+\_\+map\+\_\+utilization@{xparse\+\_\+map\+\_\+utilization}!Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{xparse\+\_\+map\+\_\+utilization()}{xparse\_map\_utilization()}}
+{\footnotesize\ttfamily void Xilinx\+Backend\+Flow\+::xparse\+\_\+map\+\_\+utilization (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parses the utilization file in X\+ML format. 
+
+
+
+Definition at line 163 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+References Backend\+Flow\+::area\+\_\+m, clb\+\_\+model\+::\+B\+R\+AM, area\+\_\+model\+::create\+\_\+model(), clb\+\_\+model\+::\+D\+SP, F\+P\+GA, clb\+\_\+model\+::\+L\+U\+T\+\_\+\+F\+F\+\_\+\+P\+A\+I\+RS, Backend\+Flow\+::\+Param, clb\+\_\+model\+::\+R\+E\+G\+I\+S\+T\+E\+RS, clb\+\_\+model\+::\+S\+L\+I\+CE, and clb\+\_\+model\+::\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS.
+
+
+
+Referenced by Check\+Synthesis\+Results().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d6/d94/classXilinxBackendFlow_aee48e3dc259b3310102e708480a99410_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/classXilinxBackendFlow_aee48e3dc259b3310102e708480a99410_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classXilinxBackendFlow_ad6ce13107d22bc9adc43b9b5e1423e6d}\label{classXilinxBackendFlow_ad6ce13107d22bc9adc43b9b5e1423e6d}} 
+\index{Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}!xparse\+\_\+timing@{xparse\+\_\+timing}}
+\index{xparse\+\_\+timing@{xparse\+\_\+timing}!Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{xparse\+\_\+timing()}{xparse\_timing()}}
+{\footnotesize\ttfamily void Xilinx\+Backend\+Flow\+::xparse\+\_\+timing (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn,  }\item[{bool}]{post }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Fixed the parsing of timing results from trce. 
+
+
+
+Definition at line 487 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+References abs(), time\+\_\+model\+::create\+\_\+model(), X\+M\+L\+Dom\+Parser\+::\+Exec(), Backend\+Flow\+::flow\+\_\+name, F\+P\+GA, xml\+\_\+child\+::get\+\_\+children(), xml\+\_\+text\+\_\+node\+::get\+\_\+content(), X\+M\+L\+Dom\+Parser\+::get\+\_\+document(), xml\+\_\+node\+::get\+\_\+name(), L\+U\+T\+\_\+model\+::\+M\+I\+N\+I\+M\+U\+M\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+P\+O\+S\+T\+\_\+\+M\+AP, L\+U\+T\+\_\+model\+::\+M\+I\+N\+I\+M\+U\+M\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+P\+O\+S\+T\+\_\+\+P\+AR, Backend\+Flow\+::\+Param, test\+\_\+panda\+::parser, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and Backend\+Flow\+::time\+\_\+m.
+
+
+
+Referenced by Check\+Synthesis\+Results().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/classXilinxBackendFlow_ad6ce13107d22bc9adc43b9b5e1423e6d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d6/d94/classXilinxBackendFlow_ad6ce13107d22bc9adc43b9b5e1423e6d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classXilinxBackendFlow_a396e92b4d7e3867c814afa25787a7ed6}\label{classXilinxBackendFlow_a396e92b4d7e3867c814afa25787a7ed6}} 
+\index{Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}!xparse\+\_\+xst\+\_\+utilization@{xparse\+\_\+xst\+\_\+utilization}}
+\index{xparse\+\_\+xst\+\_\+utilization@{xparse\+\_\+xst\+\_\+utilization}!Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{xparse\+\_\+xst\+\_\+utilization()}{xparse\_xst\_utilization()}}
+{\footnotesize\ttfamily void Xilinx\+Backend\+Flow\+::xparse\+\_\+xst\+\_\+utilization (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parses the utilization file in X\+ML format. 
+
+setting the global area occupation as the number of L\+U\+T/\+FF pairs when possible 
+
+Definition at line 320 of file Xilinx\+Backend\+Flow.\+cpp.
+
+
+
+References Backend\+Flow\+::area\+\_\+m, clb\+\_\+model\+::\+B\+R\+AM, C\+E\+\_\+\+X\+VM, area\+\_\+model\+::create\+\_\+model(), design\+\_\+values, X\+M\+L\+Dom\+Parser\+::\+Exec(), F\+P\+GA, xml\+\_\+child\+::get\+\_\+children(), X\+M\+L\+Dom\+Parser\+::get\+\_\+document(), xml\+\_\+node\+::get\+\_\+name(), L\+O\+A\+D\+\_\+\+X\+VM, clb\+\_\+model\+::\+L\+U\+T\+\_\+\+F\+F\+\_\+\+P\+A\+I\+RS, Backend\+Flow\+::\+Param, test\+\_\+panda\+::parser, clb\+\_\+model\+::\+R\+E\+G\+I\+S\+T\+E\+RS, clb\+\_\+model\+::\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+A\+M\+F\+I\+FO, X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+U\+T\+\_\+\+F\+L\+I\+P\+\_\+\+F\+L\+O\+P\+\_\+\+P\+A\+I\+R\+S\+\_\+\+U\+S\+ED, X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+L\+U\+TS, and X\+S\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+L\+I\+C\+E\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS.
+
+
+
+Referenced by Check\+Synthesis\+Results().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/classXilinxBackendFlow_a396e92b4d7e3867c814afa25787a7ed6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{d6/d94/classXilinxBackendFlow_a396e92b4d7e3867c814afa25787a7ed6_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classXilinxBackendFlow_a043659a1184b608b1993a05a4d61755f}\label{classXilinxBackendFlow_a043659a1184b608b1993a05a4d61755f}} 
+\index{Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}!design\+\_\+values@{design\+\_\+values}}
+\index{design\+\_\+values@{design\+\_\+values}!Xilinx\+Backend\+Flow@{Xilinx\+Backend\+Flow}}
+\subsubsection{\texorpdfstring{design\+\_\+values}{design\_values}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, double$>$ Xilinx\+Backend\+Flow\+::design\+\_\+values\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+results from the synthesis 
+
+
+
+Definition at line 65 of file Xilinx\+Backend\+Flow.\+hpp.
+
+
+
+Referenced by Check\+Synthesis\+Results(), vivado\+\_\+xparse\+\_\+utilization(), and xparse\+\_\+xst\+\_\+utilization().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/xilinx/\hyperlink{XilinxBackendFlow_8hpp}{Xilinx\+Backend\+Flow.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/xilinx/\hyperlink{XilinxBackendFlow_8cpp}{Xilinx\+Backend\+Flow.\+cpp}\end{DoxyCompactItemize}

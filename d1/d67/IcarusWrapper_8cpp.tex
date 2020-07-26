@@ -1,0 +1,122 @@
+\hypertarget{IcarusWrapper_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/simulation/icarus/\+Icarus\+Wrapper.cpp File Reference}
+\label{IcarusWrapper_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/simulation/icarus/\+Icarus\+Wrapper.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/simulation/icarus/\+Icarus\+Wrapper.\+cpp}}
+
+
+Implementation of the wrapper to Icarus for Verilog sources.  
+
+
+{\ttfamily \#include \char`\"{}Icarus\+Wrapper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I\+C\+A\+R\+U\+S.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}file\+\_\+\+I\+O\+\_\+constants.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utility.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/algorithm/string.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/filesystem.\+hpp$>$}\newline
+{\ttfamily \#include $<$cerrno$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constant\+\_\+strings.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}file\+I\+O.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+Include dependency graph for Icarus\+Wrapper.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d19/IcarusWrapper_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{IcarusWrapper_8cpp_a17102eba4faa7e89af9da84ad834696a}{I\+V\+E\+R\+I\+L\+OG}~\char`\"{}iverilog\char`\"{}
+\begin{DoxyCompactList}\small\item\em Includes the class definition. \end{DoxyCompactList}\item 
+\#define \hyperlink{IcarusWrapper_8cpp_a71876ddbcb7b426f6eb4906b64afdecc}{I\+VL}~\char`\"{}ivl\char`\"{}
+\item 
+\#define \hyperlink{IcarusWrapper_8cpp_a39f4bea381e8e7c3c2bad56b555f8317}{V\+VP}~\char`\"{}vvp\char`\"{}
+\item 
+\#define \hyperlink{IcarusWrapper_8cpp_aaa887fa29405528addda24cfcd9b54ce}{S\+I\+M\+\_\+\+S\+U\+B\+D\+IR}~(Param-\/$>$get\+Option$<$std\+::string$>$(O\+P\+T\+\_\+output\+\_\+directory) + std\+::string(\char`\"{}/icarus\char`\"{}))
+\begin{DoxyCompactList}\small\item\em utility include \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of the wrapper to Icarus for Verilog sources. 
+
+Implementation of the methods for the object for invoke the Icarus compiler from Verilog sources.
+
+\begin{DoxyAuthor}{Author}
+Christian Pilato \href{mailto:pilato@elet.polimi.it}{\tt pilato@elet.\+polimi.\+it} \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{IcarusWrapper_8cpp_a17102eba4faa7e89af9da84ad834696a}\label{IcarusWrapper_8cpp_a17102eba4faa7e89af9da84ad834696a}} 
+\index{Icarus\+Wrapper.\+cpp@{Icarus\+Wrapper.\+cpp}!I\+V\+E\+R\+I\+L\+OG@{I\+V\+E\+R\+I\+L\+OG}}
+\index{I\+V\+E\+R\+I\+L\+OG@{I\+V\+E\+R\+I\+L\+OG}!Icarus\+Wrapper.\+cpp@{Icarus\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{I\+V\+E\+R\+I\+L\+OG}{IVERILOG}}
+{\footnotesize\ttfamily \#define I\+V\+E\+R\+I\+L\+OG~\char`\"{}iverilog\char`\"{}}
+
+
+
+Includes the class definition. 
+
+Constants include Standard PandA include includes all needed Boost.\+Filesystem declarations S\+TL include 
+
+Definition at line 72 of file Icarus\+Wrapper.\+cpp.
+
+
+
+Referenced by Icarus\+Wrapper\+::\+Generate\+Script().
+
+\mbox{\Hypertarget{IcarusWrapper_8cpp_a71876ddbcb7b426f6eb4906b64afdecc}\label{IcarusWrapper_8cpp_a71876ddbcb7b426f6eb4906b64afdecc}} 
+\index{Icarus\+Wrapper.\+cpp@{Icarus\+Wrapper.\+cpp}!I\+VL@{I\+VL}}
+\index{I\+VL@{I\+VL}!Icarus\+Wrapper.\+cpp@{Icarus\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{I\+VL}{IVL}}
+{\footnotesize\ttfamily \#define I\+VL~\char`\"{}ivl\char`\"{}}
+
+
+
+Definition at line 73 of file Icarus\+Wrapper.\+cpp.
+
+
+
+Referenced by Icarus\+Wrapper\+::\+Generate\+Script().
+
+\mbox{\Hypertarget{IcarusWrapper_8cpp_aaa887fa29405528addda24cfcd9b54ce}\label{IcarusWrapper_8cpp_aaa887fa29405528addda24cfcd9b54ce}} 
+\index{Icarus\+Wrapper.\+cpp@{Icarus\+Wrapper.\+cpp}!S\+I\+M\+\_\+\+S\+U\+B\+D\+IR@{S\+I\+M\+\_\+\+S\+U\+B\+D\+IR}}
+\index{S\+I\+M\+\_\+\+S\+U\+B\+D\+IR@{S\+I\+M\+\_\+\+S\+U\+B\+D\+IR}!Icarus\+Wrapper.\+cpp@{Icarus\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{S\+I\+M\+\_\+\+S\+U\+B\+D\+IR}{SIM\_SUBDIR}}
+{\footnotesize\ttfamily \#define S\+I\+M\+\_\+\+S\+U\+B\+D\+IR~(Param-\/$>$get\+Option$<$std\+::string$>$(O\+P\+T\+\_\+output\+\_\+directory) + std\+::string(\char`\"{}/icarus\char`\"{}))}
+
+
+
+utility include 
+
+
+
+Definition at line 83 of file Icarus\+Wrapper.\+cpp.
+
+
+
+Referenced by Icarus\+Wrapper\+::\+Generate\+Script(), and Icarus\+Wrapper\+::\+Icarus\+Wrapper().
+
+\mbox{\Hypertarget{IcarusWrapper_8cpp_a39f4bea381e8e7c3c2bad56b555f8317}\label{IcarusWrapper_8cpp_a39f4bea381e8e7c3c2bad56b555f8317}} 
+\index{Icarus\+Wrapper.\+cpp@{Icarus\+Wrapper.\+cpp}!V\+VP@{V\+VP}}
+\index{V\+VP@{V\+VP}!Icarus\+Wrapper.\+cpp@{Icarus\+Wrapper.\+cpp}}
+\subsubsection{\texorpdfstring{V\+VP}{VVP}}
+{\footnotesize\ttfamily \#define V\+VP~\char`\"{}vvp\char`\"{}}
+
+
+
+Definition at line 74 of file Icarus\+Wrapper.\+cpp.
+
+
+
+Referenced by Icarus\+Wrapper\+::\+Generate\+Script().
+

@@ -1,0 +1,522 @@
+\hypertarget{classScheduling}{}\section{Scheduling Class Reference}
+\label{classScheduling}\index{Scheduling@{Scheduling}}
+
+
+Generic class managing scheduling algorithms.  
+
+
+
+
+{\ttfamily \#include $<$scheduling.\+hpp$>$}
+
+
+
+Inheritance diagram for Scheduling\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dfb/classScheduling__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Scheduling\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/dba/classScheduling__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classScheduling_ab64d824a1d85312cb1ac54ba91bb335f}{Scheduling} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} \hyperlink{classHLS__step_ade85003a99d34134418451ddc46a18e9}{H\+L\+S\+Mgr}, unsigned int \hyperlink{classHLSFunctionStep_a3e6434fd86c698b0c70520b859bff5b0}{fun\+Id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type} \hyperlink{classHLS__step_aefd59af15346ec3f10bf12bd756e6777}{hls\+\_\+flow\+\_\+step\+\_\+type}, const \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref} \hyperlink{classHLS__step_a843be75ba53b81876aa3c8b870ae8a55}{hls\+\_\+flow\+\_\+step\+\_\+specialization}=\hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref}())
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classScheduling_a943ed0dbb41df6925eebb44a33d8f74f}{$\sim$\+Scheduling} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+const \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, bool $>$ \& \hyperlink{classScheduling_ada5eff4553c39bf5f6c58e75c86a130b}{get\+\_\+spec} () const
+\begin{DoxyCompactList}\small\item\em It returns speculation property map. \end{DoxyCompactList}\item 
+void \hyperlink{classScheduling_a178619eced00400e3a023a0b32784f8d}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classScheduling_a9867cf2c93812bdbbd8e25fb02714c15}{compute\+\_\+b\+\_\+tag} (const \hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor} \&e, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} cdg, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$\+::const\+\_\+iterator \&switch\+\_\+it, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$\+::const\+\_\+iterator \&switch\+\_\+it\+\_\+end) const
+\begin{DoxyCompactList}\small\item\em compute the branch tag given the edge and the control data flow graph. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classScheduling_a3c6464c39018d94bb1965966a8b8581f}{compute\+\_\+b\+\_\+tag\+\_\+size} (const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} cdg, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} controlling\+\_\+vertex) const
+\begin{DoxyCompactList}\small\item\em Return the number of branches associated with the controlling vertex. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classScheduling_a785e18cb44b1a3daff11da1ea6b72fb6}{b\+\_\+tag\+\_\+normalize} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} controlling\+\_\+vertex, unsigned int b\+\_\+tag\+\_\+not\+\_\+normalized) const
+\begin{DoxyCompactList}\small\item\em return an unsigned int from 0 to compute\+\_\+b\+\_\+tag\+\_\+size(controlling\+\_\+vertex)-\/1 given a branch tag not normalized. \end{DoxyCompactList}\item 
+void \hyperlink{classScheduling_a5e00e09071613f56a5542b3c3636b71e}{init\+\_\+switch\+\_\+maps} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} controlling\+\_\+vertex, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} cdg)
+\begin{DoxyCompactList}\small\item\em initialize the maps associated with the switch vertices. \end{DoxyCompactList}\item 
+Control\+Step \hyperlink{classScheduling_acbaf1ca26611af23e5ebcfc21b2ea105}{anticipate\+\_\+operations} (const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} dependence\+\_\+graph)
+\begin{DoxyCompactList}\small\item\em Move up zero time operations in the previous step when possible. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::tuple$<$ \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type}, \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref}, \hyperlink{hls__step_8hpp_a3ad360b9b11e6bf0683d5562a0ceb169}{H\+L\+S\+Flow\+Step\+\_\+\+Relationship} $>$ $>$ \hyperlink{classScheduling_a60e98bfbe377334ea3f3c0de2f2ab758}{Compute\+H\+L\+S\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Compute the relationship of this step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, bool $>$ \hyperlink{classScheduling_a339591a82e4f4ca0340dd19ace0f632d}{spec}
+\begin{DoxyCompactList}\small\item\em Map for speculation property of each operation vertex. \end{DoxyCompactList}\item 
+const bool \hyperlink{classScheduling_a930765bc71ebc46f138194dcdf3bd4cb}{speculation}
+\begin{DoxyCompactList}\small\item\em flag to check speculation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{Indent}\textbf{ switch statements data structures and functions.}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, unsigned int $>$ \hyperlink{classScheduling_a90ca1317af84b97b8a0b7b6216b130b6}{switch\+\_\+map\+\_\+size}
+\begin{DoxyCompactList}\small\item\em store for each switch the number of outgoing branches. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$ unsigned int, unsigned int $>$ $>$ \hyperlink{classScheduling_a315d450347600d0a0f41087e8d2525ad}{switch\+\_\+normalizing\+\_\+map}
+\begin{DoxyCompactList}\small\item\em for each controlling vertex, it defines a relation between switch tags and branch tags \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Generic class managing scheduling algorithms. 
+
+Definition at line 64 of file scheduling.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classScheduling_ab64d824a1d85312cb1ac54ba91bb335f}\label{classScheduling_ab64d824a1d85312cb1ac54ba91bb335f}} 
+\index{Scheduling@{Scheduling}!Scheduling@{Scheduling}}
+\index{Scheduling@{Scheduling}!Scheduling@{Scheduling}}
+\subsubsection{\texorpdfstring{Scheduling()}{Scheduling()}}
+{\footnotesize\ttfamily Scheduling\+::\+Scheduling (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+\+Param,  }\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{\+\_\+\+H\+L\+S\+Mgr,  }\item[{unsigned int}]{\+\_\+fun\+Id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type}}]{\+\_\+hls\+\_\+flow\+\_\+step\+\_\+type,  }\item[{const \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref}}]{\+\_\+hls\+\_\+flow\+\_\+step\+\_\+specialization = {\ttfamily \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref}()} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+implemented algorithms
+
+
+\begin{DoxyParams}{Parameters}
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+{\em hls\+\_\+flow\+\_\+step\+\_\+type} & is the type of scheduling\\
+\hline
+\end{DoxyParams}
+H\+L\+S/module\+\_\+allocation 
+
+Definition at line 79 of file scheduling.\+cpp.
+
+
+
+References $\sim$\+Scheduling().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d2c/classScheduling_ab64d824a1d85312cb1ac54ba91bb335f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classScheduling_a943ed0dbb41df6925eebb44a33d8f74f}\label{classScheduling_a943ed0dbb41df6925eebb44a33d8f74f}} 
+\index{Scheduling@{Scheduling}!````~Scheduling@{$\sim$\+Scheduling}}
+\index{````~Scheduling@{$\sim$\+Scheduling}!Scheduling@{Scheduling}}
+\subsubsection{\texorpdfstring{$\sim$\+Scheduling()}{~Scheduling()}}
+{\footnotesize\ttfamily Scheduling\+::$\sim$\+Scheduling (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Scheduling().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d2c/classScheduling_a943ed0dbb41df6925eebb44a33d8f74f_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classScheduling_acbaf1ca26611af23e5ebcfc21b2ea105}\label{classScheduling_acbaf1ca26611af23e5ebcfc21b2ea105}} 
+\index{Scheduling@{Scheduling}!anticipate\+\_\+operations@{anticipate\+\_\+operations}}
+\index{anticipate\+\_\+operations@{anticipate\+\_\+operations}!Scheduling@{Scheduling}}
+\subsubsection{\texorpdfstring{anticipate\+\_\+operations()}{anticipate\_operations()}}
+{\footnotesize\ttfamily Control\+Step Scheduling\+::anticipate\+\_\+operations (\begin{DoxyParamCaption}\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{dependence\+\_\+graph }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Move up zero time operations in the previous step when possible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em H\+LS} & is the structure storing all the High level synthesis information \\
+\hline
+{\em dependence\+\_\+graph} & is the graph to be scheduled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new last step in which an operation is scheduled 
+\end{DoxyReturn}
+The clock cycle
+
+Last control step
+
+Checking vertex in topological order
+
+Checking if operations is time zero
+
+Operation can not be anticipated
+
+Operation can be anticipated 
+
+Definition at line 208 of file scheduling.\+cpp.
+
+
+
+References hls\+::allocation\+\_\+information, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Allocation\+Information\+::execution\+\_\+time, fu\+\_\+binding\+::get\+\_\+assign(), Schedule\+::get\+\_\+cstep(), Allocation\+Information\+::get\+\_\+execution\+\_\+time(), G\+E\+T\+\_\+\+N\+A\+ME, G\+E\+T\+\_\+\+T\+Y\+PE, H\+L\+S\+Function\+Step\+::\+H\+LS, hls\+::\+H\+L\+S\+\_\+C, Allocation\+Information\+::op\+\_\+et\+\_\+to\+\_\+cycles(), P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, hls\+::\+Rfu, hls\+::\+Rsch, Schedule\+::set\+\_\+execution(), T\+Y\+P\+E\+\_\+\+F\+OR, T\+Y\+P\+E\+\_\+\+IF, T\+Y\+P\+E\+\_\+\+S\+W\+I\+T\+CH, and T\+Y\+P\+E\+\_\+\+W\+H\+I\+LE.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d2c/classScheduling_acbaf1ca26611af23e5ebcfc21b2ea105_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classScheduling_a785e18cb44b1a3daff11da1ea6b72fb6}\label{classScheduling_a785e18cb44b1a3daff11da1ea6b72fb6}} 
+\index{Scheduling@{Scheduling}!b\+\_\+tag\+\_\+normalize@{b\+\_\+tag\+\_\+normalize}}
+\index{b\+\_\+tag\+\_\+normalize@{b\+\_\+tag\+\_\+normalize}!Scheduling@{Scheduling}}
+\subsubsection{\texorpdfstring{b\+\_\+tag\+\_\+normalize()}{b\_tag\_normalize()}}
+{\footnotesize\ttfamily unsigned int Scheduling\+::b\+\_\+tag\+\_\+normalize (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{controlling\+\_\+vertex,  }\item[{unsigned int}]{b\+\_\+tag\+\_\+not\+\_\+normalized }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+return an unsigned int from 0 to compute\+\_\+b\+\_\+tag\+\_\+size(controlling\+\_\+vertex)-\/1 given a branch tag not normalized. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controlling\+\_\+vertex} & is the controlling vertex (used only for switch vertex). \\
+\hline
+{\em b\+\_\+tag\+\_\+not\+\_\+normalized} & is the non normalized tag. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 182 of file scheduling.\+cpp.
+
+
+
+References switch\+\_\+normalizing\+\_\+map, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+\mbox{\Hypertarget{classScheduling_a9867cf2c93812bdbbd8e25fb02714c15}\label{classScheduling_a9867cf2c93812bdbbd8e25fb02714c15}} 
+\index{Scheduling@{Scheduling}!compute\+\_\+b\+\_\+tag@{compute\+\_\+b\+\_\+tag}}
+\index{compute\+\_\+b\+\_\+tag@{compute\+\_\+b\+\_\+tag}!Scheduling@{Scheduling}}
+\subsubsection{\texorpdfstring{compute\+\_\+b\+\_\+tag()}{compute\_b\_tag()}}
+{\footnotesize\ttfamily unsigned int Scheduling\+::compute\+\_\+b\+\_\+tag (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor} \&}]{e,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{cdg,  }\item[{\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$\+::const\+\_\+iterator \&}]{switch\+\_\+it,  }\item[{\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$\+::const\+\_\+iterator \&}]{switch\+\_\+it\+\_\+end }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+compute the branch tag given the edge and the control data flow graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & is the edge. \\
+\hline
+{\em cdg} & is the controlling dependency graph. \\
+\hline
+{\em switch\+\_\+set} & is filled with the switch tags in case the source of e is a switch vertex. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 158 of file scheduling.\+cpp.
+
+
+
+References C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, C\+D\+G\+\_\+\+T\+R\+U\+E\+\_\+\+C\+H\+E\+CK, E\+D\+G\+E\+\_\+\+G\+E\+T\+\_\+\+N\+O\+D\+E\+ID, refcount$<$ T $>$\+::get(), G\+E\+T\+\_\+\+T\+Y\+PE, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+Y\+P\+E\+\_\+\+E\+N\+T\+RY, T\+Y\+P\+E\+\_\+\+IF, and T\+Y\+P\+E\+\_\+\+S\+W\+I\+T\+CH.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{db/d2c/classScheduling_a9867cf2c93812bdbbd8e25fb02714c15_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classScheduling_a3c6464c39018d94bb1965966a8b8581f}\label{classScheduling_a3c6464c39018d94bb1965966a8b8581f}} 
+\index{Scheduling@{Scheduling}!compute\+\_\+b\+\_\+tag\+\_\+size@{compute\+\_\+b\+\_\+tag\+\_\+size}}
+\index{compute\+\_\+b\+\_\+tag\+\_\+size@{compute\+\_\+b\+\_\+tag\+\_\+size}!Scheduling@{Scheduling}}
+\subsubsection{\texorpdfstring{compute\+\_\+b\+\_\+tag\+\_\+size()}{compute\_b\_tag\_size()}}
+{\footnotesize\ttfamily unsigned int Scheduling\+::compute\+\_\+b\+\_\+tag\+\_\+size (\begin{DoxyParamCaption}\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{cdg,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{controlling\+\_\+vertex }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Return the number of branches associated with the controlling vertex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cdg} & is the control dependency graph. \\
+\hline
+{\em controlling\+\_\+vertex} & is the controlling vertex. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 142 of file scheduling.\+cpp.
+
+
+
+References refcount$<$ T $>$\+::get(), G\+E\+T\+\_\+\+T\+Y\+PE, switch\+\_\+map\+\_\+size, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+Y\+P\+E\+\_\+\+E\+N\+T\+RY, T\+Y\+P\+E\+\_\+\+IF, and T\+Y\+P\+E\+\_\+\+S\+W\+I\+T\+CH.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{db/d2c/classScheduling_a3c6464c39018d94bb1965966a8b8581f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classScheduling_a60e98bfbe377334ea3f3c0de2f2ab758}\label{classScheduling_a60e98bfbe377334ea3f3c0de2f2ab758}} 
+\index{Scheduling@{Scheduling}!Compute\+H\+L\+S\+Relationships@{Compute\+H\+L\+S\+Relationships}}
+\index{Compute\+H\+L\+S\+Relationships@{Compute\+H\+L\+S\+Relationships}!Scheduling@{Scheduling}}
+\subsubsection{\texorpdfstring{Compute\+H\+L\+S\+Relationships()}{ComputeHLSRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::tuple$<$ \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type}, \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref}, \hyperlink{hls__step_8hpp_a3ad360b9b11e6bf0683d5562a0ceb169}{H\+L\+S\+Flow\+Step\+\_\+\+Relationship} $>$ $>$ Scheduling\+::\+Compute\+H\+L\+S\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Compute the relationship of this step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the steps in relationship with this 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classHLS__step_aed0ce8cca9a1ef18e705fc1032ad4de5}{H\+L\+S\+\_\+step}.
+
+
+
+Reimplemented in \hyperlink{classSDCScheduling_aec06b6a8117baa3496c1ee294c4341ab}{S\+D\+C\+Scheduling}.
+
+
+
+Definition at line 109 of file scheduling.\+cpp.
+
+
+
+References A\+L\+L\+O\+C\+A\+T\+I\+ON, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::parameters, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+
+
+Referenced by S\+D\+C\+Scheduling\+::\+Compute\+H\+L\+S\+Relationships(), and parametric\+\_\+list\+\_\+based\+::\+Compute\+H\+L\+S\+Relationships().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d2c/classScheduling_a60e98bfbe377334ea3f3c0de2f2ab758_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classScheduling_ada5eff4553c39bf5f6c58e75c86a130b}\label{classScheduling_ada5eff4553c39bf5f6c58e75c86a130b}} 
+\index{Scheduling@{Scheduling}!get\+\_\+spec@{get\+\_\+spec}}
+\index{get\+\_\+spec@{get\+\_\+spec}!Scheduling@{Scheduling}}
+\subsubsection{\texorpdfstring{get\+\_\+spec()}{get\_spec()}}
+{\footnotesize\ttfamily const \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, bool$>$\& Scheduling\+::get\+\_\+spec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+It returns speculation property map. 
+
+\begin{DoxyReturn}{Returns}
+the map associated 
+\end{DoxyReturn}
+
+
+Definition at line 148 of file scheduling.\+hpp.
+
+
+
+References Initialize(), and spec.
+
+
+
+Referenced by parametric\+\_\+list\+\_\+based\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d2c/classScheduling_ada5eff4553c39bf5f6c58e75c86a130b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{db/d2c/classScheduling_ada5eff4553c39bf5f6c58e75c86a130b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classScheduling_a5e00e09071613f56a5542b3c3636b71e}\label{classScheduling_a5e00e09071613f56a5542b3c3636b71e}} 
+\index{Scheduling@{Scheduling}!init\+\_\+switch\+\_\+maps@{init\+\_\+switch\+\_\+maps}}
+\index{init\+\_\+switch\+\_\+maps@{init\+\_\+switch\+\_\+maps}!Scheduling@{Scheduling}}
+\subsubsection{\texorpdfstring{init\+\_\+switch\+\_\+maps()}{init\_switch\_maps()}}
+{\footnotesize\ttfamily void Scheduling\+::init\+\_\+switch\+\_\+maps (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{controlling\+\_\+vertex,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{cdg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+initialize the maps associated with the switch vertices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controlling\+\_\+vertex} & is a switch vertex. \\
+\hline
+{\em cdg} & is the control dependency graph. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 191 of file scheduling.\+cpp.
+
+
+
+References C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, E\+D\+G\+E\+\_\+\+G\+E\+T\+\_\+\+N\+O\+D\+E\+ID, switch\+\_\+map\+\_\+size, and switch\+\_\+normalizing\+\_\+map.
+
+\mbox{\Hypertarget{classScheduling_a178619eced00400e3a023a0b32784f8d}\label{classScheduling_a178619eced00400e3a023a0b32784f8d}} 
+\index{Scheduling@{Scheduling}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Scheduling@{Scheduling}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Scheduling\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classHLSFunctionStep_a966629ba62a8188ff4fa783ab0d4e319}{H\+L\+S\+Function\+Step}.
+
+
+
+Reimplemented in \hyperlink{classSDCScheduling_a6776ee26349c16c789a5b2c33c1fa9ff}{S\+D\+C\+Scheduling}.
+
+
+
+Definition at line 87 of file scheduling.\+cpp.
+
+
+
+References Function\+Behavior\+::\+C\+Get\+Op\+Graph(), fu\+\_\+binding\+::create\+\_\+fu\+\_\+binding(), Function\+Behavior\+::\+F\+L\+S\+A\+O\+DG, H\+L\+S\+Function\+Step\+::fun\+Id, H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, H\+L\+S\+Function\+Step\+::\+Initialize(), Schedule\+::\+Initialize(), Design\+Flow\+Step\+::parameters, hls\+::\+Rfu, and hls\+::\+Rsch.
+
+
+
+Referenced by get\+\_\+spec(), S\+D\+C\+Scheduling\+::\+Initialize(), and parametric\+\_\+list\+\_\+based\+::\+Initialize().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d2c/classScheduling_a178619eced00400e3a023a0b32784f8d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d2c/classScheduling_a178619eced00400e3a023a0b32784f8d_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classScheduling_a339591a82e4f4ca0340dd19ace0f632d}\label{classScheduling_a339591a82e4f4ca0340dd19ace0f632d}} 
+\index{Scheduling@{Scheduling}!spec@{spec}}
+\index{spec@{spec}!Scheduling@{Scheduling}}
+\subsubsection{\texorpdfstring{spec}{spec}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, bool$>$ Scheduling\+::spec\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Map for speculation property of each operation vertex. 
+
+If true, it means that vertex is speculative executed, false otherwise 
+
+Definition at line 81 of file scheduling.\+hpp.
+
+
+
+Referenced by get\+\_\+spec().
+
+\mbox{\Hypertarget{classScheduling_a930765bc71ebc46f138194dcdf3bd4cb}\label{classScheduling_a930765bc71ebc46f138194dcdf3bd4cb}} 
+\index{Scheduling@{Scheduling}!speculation@{speculation}}
+\index{speculation@{speculation}!Scheduling@{Scheduling}}
+\subsubsection{\texorpdfstring{speculation}{speculation}}
+{\footnotesize\ttfamily const bool Scheduling\+::speculation\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+flag to check speculation 
+
+
+
+Definition at line 84 of file scheduling.\+hpp.
+
+
+
+Referenced by parametric\+\_\+list\+\_\+based\+::exec(), and S\+D\+C\+Scheduling\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{classScheduling_a90ca1317af84b97b8a0b7b6216b130b6}\label{classScheduling_a90ca1317af84b97b8a0b7b6216b130b6}} 
+\index{Scheduling@{Scheduling}!switch\+\_\+map\+\_\+size@{switch\+\_\+map\+\_\+size}}
+\index{switch\+\_\+map\+\_\+size@{switch\+\_\+map\+\_\+size}!Scheduling@{Scheduling}}
+\subsubsection{\texorpdfstring{switch\+\_\+map\+\_\+size}{switch\_map\_size}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, unsigned int$>$ Scheduling\+::switch\+\_\+map\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+store for each switch the number of outgoing branches. 
+
+
+
+Definition at line 72 of file scheduling.\+hpp.
+
+
+
+Referenced by compute\+\_\+b\+\_\+tag\+\_\+size(), and init\+\_\+switch\+\_\+maps().
+
+\mbox{\Hypertarget{classScheduling_a315d450347600d0a0f41087e8d2525ad}\label{classScheduling_a315d450347600d0a0f41087e8d2525ad}} 
+\index{Scheduling@{Scheduling}!switch\+\_\+normalizing\+\_\+map@{switch\+\_\+normalizing\+\_\+map}}
+\index{switch\+\_\+normalizing\+\_\+map@{switch\+\_\+normalizing\+\_\+map}!Scheduling@{Scheduling}}
+\subsubsection{\texorpdfstring{switch\+\_\+normalizing\+\_\+map}{switch\_normalizing\_map}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{custom__map_8hpp_a8cbaceffc09790a885ec7e9c17809c69}{Custom\+Unordered\+Map\+Unstable}$<$unsigned int, unsigned int$>$ $>$ Scheduling\+::switch\+\_\+normalizing\+\_\+map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+for each controlling vertex, it defines a relation between switch tags and branch tags 
+
+
+
+Definition at line 75 of file scheduling.\+hpp.
+
+
+
+Referenced by b\+\_\+tag\+\_\+normalize(), and init\+\_\+switch\+\_\+maps().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/scheduling/\hyperlink{scheduling_8hpp}{scheduling.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/scheduling/\hyperlink{scheduling_8cpp}{scheduling.\+cpp}\end{DoxyCompactItemize}

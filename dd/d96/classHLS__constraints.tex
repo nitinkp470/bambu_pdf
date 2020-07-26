@@ -1,0 +1,1163 @@
+\hypertarget{classHLS__constraints}{}\section{H\+L\+S\+\_\+constraints Class Reference}
+\label{classHLS__constraints}\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+
+
+Data structure used to store all the H\+LS constraints.  
+
+
+
+
+{\ttfamily \#include $<$hls\+\_\+constraints.\+hpp$>$}
+
+
+
+Collaboration diagram for H\+L\+S\+\_\+constraints\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{d3/dbb/classHLS__constraints__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHLS__constraints_a53af44c5158085582b41f0ad2c6763bf}{H\+L\+S\+\_\+constraints} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&Param, std\+::string function\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classHLS__constraints_abbffb36768c52ff80a0b8cd24c5ab048}{get\+\_\+function\+\_\+name} () const
+\begin{DoxyCompactList}\small\item\em Gets the name of the function which the constraints are associated with. \end{DoxyCompactList}\item 
+void \hyperlink{classHLS__constraints_a26ccdc010e4ed339801844cb83392caa}{add\+\_\+builtin\+\_\+constraints} ()
+\begin{DoxyCompactList}\small\item\em Adds the builtin constraints. \end{DoxyCompactList}\item 
+void \hyperlink{classHLS__constraints_abd387f72baf392a410dcfba2995c0ef8}{read\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+\+File} (const std\+::string \&f)
+\begin{DoxyCompactList}\small\item\em Reads an X\+ML file describing the structural data structures. \end{DoxyCompactList}\item 
+void \hyperlink{classHLS__constraints_ad69227a7f2d1c6266571737752438e21}{write\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+\+File} (const std\+::string \&f)
+\begin{DoxyCompactList}\small\item\em Writes an X\+ML file describing the high level synthesis constraints data structure. \end{DoxyCompactList}\item 
+void \hyperlink{classHLS__constraints_afc848917bd7caf8c0187ccefdf14e3de}{set\+\_\+number\+\_\+fu} (const std\+::string \&name, const std\+::string \&library, unsigned int n\+\_\+resources=std\+::numeric\+\_\+limits$<$ unsigned int $>$\+::\hyperlink{tutorial__pact__2019_2Target-Customization_2first_2hint_8c_a28f422940797ea297699ba55d89171c5}{max}())
+\begin{DoxyCompactList}\small\item\em Sets the maximum number of resources available in the design. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classHLS__constraints_a5ffda80abbda1488aaacca937993df74}{get\+\_\+number\+\_\+fu} (const std\+::string \&name, const std\+::string \&library) const
+\begin{DoxyCompactList}\small\item\em This method returns the maximum number of functional units available for the design. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classHLS__constraints_a6add734962a7ab1a103e95e9bb87cc30}{get\+\_\+number\+\_\+fu} (const std\+::string \&combined) const
+\begin{DoxyCompactList}\small\item\em This method returns the maximum number of functional units available for the design. \end{DoxyCompactList}\item 
+void \hyperlink{classHLS__constraints_a059b4544182407ed8966208698ab2428}{bind\+\_\+vertex\+\_\+to\+\_\+fu} (const std\+::string \&vertex\+\_\+name, const std\+::string \&fu\+\_\+name, const std\+::string \&fu\+\_\+library, const unsigned int fu\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Binds a vertex to a functional unit. \end{DoxyCompactList}\item 
+bool \hyperlink{classHLS__constraints_ad09187107d9a2ad9a674a1c0f5e6ecae}{has\+\_\+binding\+\_\+to\+\_\+fu} (const std\+::string \&vertex\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Binds a vertex to a functional unit. \end{DoxyCompactList}\item 
+void \hyperlink{classHLS__constraints_ae62a3420be646725c3fc8dd777c03256}{set\+\_\+scheduling\+\_\+priority} (const std\+::string \&vertex\+\_\+name, int Priority)
+\begin{DoxyCompactList}\small\item\em Stores the priority value for an operation vertex. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ std\+::string, int $>$ \hyperlink{classHLS__constraints_af14fb287ca33eee91e03223daa631cc3}{get\+\_\+scheduling\+\_\+priority} () const
+\begin{DoxyCompactList}\small\item\em Returns the data structure containing scheduling priority constraints. \end{DoxyCompactList}\item 
+void \hyperlink{classHLS__constraints_a709ff2e7748684517916921c94a7175f}{set\+\_\+clock\+\_\+period} (double period)
+\begin{DoxyCompactList}\small\item\em Sets the clock period. \end{DoxyCompactList}\item 
+double \hyperlink{classHLS__constraints_af50660880ee956518894057845c5c45d}{get\+\_\+clock\+\_\+period} () const
+\begin{DoxyCompactList}\small\item\em Gets the clock period. \end{DoxyCompactList}\item 
+double \hyperlink{classHLS__constraints_a4daca2ffc0b08c77e83d16b3c45a0cdf}{get\+\_\+clock\+\_\+period\+\_\+resource\+\_\+fraction} () const
+\begin{DoxyCompactList}\small\item\em Gets the resource fraction of the clock period. \end{DoxyCompactList}\item 
+void \hyperlink{classHLS__constraints_ab2df34ff3335a38b047895ca9d303583}{set\+\_\+max\+\_\+registers} (unsigned int n\+\_\+resources)
+\begin{DoxyCompactList}\small\item\em Sets the number of registers present in the function. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classHLS__constraints_a4378dfa86b2203804067e93694ebaa6a}{get\+\_\+max\+\_\+registers} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of registers available. \end{DoxyCompactList}\item 
+void \hyperlink{classHLS__constraints_ae9f1030321791e339e7ced72f1d00cb1}{xload} (const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$Enode)
+\begin{DoxyCompactList}\small\item\em Loads a set of H\+LS constraints starting from an X\+ML node. \end{DoxyCompactList}\item 
+void \hyperlink{classHLS__constraints_ab4c4cb541597b8ac5e28b4309ea1af4b}{xwrite} (\hyperlink{classxml__element}{xml\+\_\+element} $\ast$Enode)
+\begin{DoxyCompactList}\small\item\em Writes the H\+LS constraints into an X\+ML tree. \end{DoxyCompactList}\item 
+void \hyperlink{classHLS__constraints_af924912aeb49636faa808c66697bd1cb}{xwrite\+H\+L\+S\+Constraints} (\hyperlink{classxml__element}{xml\+\_\+element} $\ast$Enode, bool for\+Dump=false)
+\begin{DoxyCompactList}\small\item\em Writes the generic synthesis constraints. \end{DoxyCompactList}\item 
+void \hyperlink{classHLS__constraints_ace5701a60c9f6c9a1b46c3b7681863c3}{xwrite\+F\+U\+Constraints} (\hyperlink{classxml__element}{xml\+\_\+element} $\ast$Enode, const std\+::string \&fu\+\_\+name, const std\+::string \&fu\+\_\+library, unsigned int number\+\_\+fu, bool for\+Dump=false)
+\begin{DoxyCompactList}\small\item\em Writes the constraints on the functional units. \end{DoxyCompactList}\item 
+void \hyperlink{classHLS__constraints_af671c4e42c7fd6dece76dfcb53ce627a}{xwrite\+Binding\+Constraints} (\hyperlink{classxml__element}{xml\+\_\+element} $\ast$Enode, const std\+::string \&vertex\+\_\+name, const std\+::string \&fu\+\_\+name, const std\+::string \&fu\+\_\+library, unsigned int fu\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Writes the binding constraints (i.\+e., functional unit, instance and library) associated with an operation. \end{DoxyCompactList}\item 
+void \hyperlink{classHLS__constraints_a863dabf331d4e0642f829e25ded9b6b5}{xwrite\+Scheduling\+Constraints} (\hyperlink{classxml__element}{xml\+\_\+element} $\ast$Enode, const std\+::string \&vertex\+\_\+name, int priority)
+\begin{DoxyCompactList}\small\item\em Writes the scheduling constraints (i.\+e., priority value) associated with an operation. \end{DoxyCompactList}\item 
+void \hyperlink{classHLS__constraints_a5d60dce734c42d7f7a659195b5883044}{print} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Function that prints the class \hyperlink{classHLS__constraints}{H\+L\+S\+\_\+constraints}. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classHLS__constraints_a48f7cc80f45d781e815dfc6e86c238ea}{get\+\_\+kind\+\_\+text} () const
+\begin{DoxyCompactList}\small\item\em definition of the get\+\_\+kind\+\_\+text method \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ std\+::string, unsigned int $>$ \hyperlink{classHLS__constraints_a9c622d8a77390c41a8abf51d989ca7ee}{tech\+\_\+constraints}
+\begin{DoxyCompactList}\small\item\em For each functional unit tech\+\_\+constraints stores the number of resources. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ std\+::string, std\+::pair$<$ std\+::string, std\+::pair$<$ std\+::string, unsigned int $>$ $>$ $>$ \hyperlink{classHLS__constraints_aa0ec5bd7ca34862b3786089e8360b63e}{binding\+\_\+constraints}
+\begin{DoxyCompactList}\small\item\em put into relation the vertex name with the functional unit, its library and the functional unit index this map can be used to define a binding for a vertex. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ std\+::string, int $>$ \hyperlink{classHLS__constraints_a8cbded9579c7865e1e2eba41cf763271}{scheduling\+\_\+constraints}
+\begin{DoxyCompactList}\small\item\em map between an operation vertex and its given scheduling priority value \end{DoxyCompactList}\item 
+double \hyperlink{classHLS__constraints_a8645bf9e5ae984eefe022a4ab1d65aa7}{clock\+\_\+period}
+\begin{DoxyCompactList}\small\item\em Clock period in ns. \end{DoxyCompactList}\item 
+double \hyperlink{classHLS__constraints_a9b9d4a8f5e65a7164c52edfe92c52af7}{clock\+\_\+period\+\_\+resource\+\_\+fraction}
+\begin{DoxyCompactList}\small\item\em current value of the resource fraction \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classHLS__constraints_ae36d9fde4e292cd2a651501706ec2325}{registers}
+\begin{DoxyCompactList}\small\item\em Variable storing the number of registers. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classHLS__constraints_ab112ab399141c42790fc367163eb5534}{fun\+\_\+name}
+\begin{DoxyCompactList}\small\item\em name of the function which the constraints are associated with; emtpy string means that they are global constraints \end{DoxyCompactList}\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classHLS__constraints_a64ee4139f8b4f84b0ea40de253b3e3c5}{parameters}
+\begin{DoxyCompactList}\small\item\em The set of input parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const double \hyperlink{classHLS__constraints_aa51dd0b45775afa572cd49fb686b14b6}{clock\+\_\+period\+\_\+resource\+\_\+fraction\+\_\+\+D\+E\+F\+A\+U\+LT} = 1.\+0
+\begin{DoxyCompactList}\small\item\em default resource fraction for the clock period \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classHLS__constraints_a2dc219c556df071c0061c3e9ddfa1dca}{allocation}
+\begin{DoxyCompactList}\small\item\em class that can directly access \end{DoxyCompactList}\item 
+std\+::ostream \& \hyperlink{classHLS__constraints_ac1bdf2eca4693e1be98bf968682c065f}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classHLS__constraints}{H\+L\+S\+\_\+constraints} \&s)
+\begin{DoxyCompactList}\small\item\em Friend definition of the $<$$<$ operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Data structure used to store all the H\+LS constraints. 
+
+Definition at line 74 of file hls\+\_\+constraints.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHLS__constraints_a53af44c5158085582b41f0ad2c6763bf}\label{classHLS__constraints_a53af44c5158085582b41f0ad2c6763bf}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{H\+L\+S\+\_\+constraints()}{HLS\_constraints()}}
+{\footnotesize\ttfamily H\+L\+S\+\_\+constraints\+::\+H\+L\+S\+\_\+constraints (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&}]{Param,  }\item[{std\+::string}]{function\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+add the general builtin constraints
+
+add user defined constraints
+
+the command-\/line values overwrite the ones written into the X\+ML file 
+
+Definition at line 81 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References add\+\_\+builtin\+\_\+constraints(), C\+E\+\_\+\+X\+VM, clock\+\_\+period, clock\+\_\+period\+\_\+resource\+\_\+fraction, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, X\+M\+L\+Dom\+Parser\+::\+Exec(), fun\+\_\+name, xml\+\_\+child\+::get\+\_\+children(), G\+E\+T\+\_\+\+C\+L\+A\+S\+S\+\_\+\+N\+A\+ME, X\+M\+L\+Dom\+Parser\+::get\+\_\+document(), L\+O\+A\+D\+\_\+\+X\+VM, parameters, test\+\_\+panda\+::parser, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, read\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+\+File(), T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, write\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+\+File(), and xload().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_a53af44c5158085582b41f0ad2c6763bf_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classHLS__constraints_a26ccdc010e4ed339801844cb83392caa}\label{classHLS__constraints_a26ccdc010e4ed339801844cb83392caa}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!add\+\_\+builtin\+\_\+constraints@{add\+\_\+builtin\+\_\+constraints}}
+\index{add\+\_\+builtin\+\_\+constraints@{add\+\_\+builtin\+\_\+constraints}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{add\+\_\+builtin\+\_\+constraints()}{add\_builtin\_constraints()}}
+{\footnotesize\ttfamily void H\+L\+S\+\_\+constraints\+::add\+\_\+builtin\+\_\+constraints (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Adds the builtin constraints. 
+
+Load default constraints on default resources 
+
+Definition at line 456 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References X\+M\+L\+Dom\+Parser\+::\+Exec(), xml\+\_\+child\+::get\+\_\+children(), G\+E\+T\+\_\+\+C\+L\+A\+S\+S\+\_\+\+N\+A\+ME, X\+M\+L\+Dom\+Parser\+::get\+\_\+document(), parameters, test\+\_\+panda\+::parser, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and xload().
+
+
+
+Referenced by H\+L\+S\+\_\+constraints().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_a26ccdc010e4ed339801844cb83392caa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{dd/d96/classHLS__constraints_a26ccdc010e4ed339801844cb83392caa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__constraints_a059b4544182407ed8966208698ab2428}\label{classHLS__constraints_a059b4544182407ed8966208698ab2428}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!bind\+\_\+vertex\+\_\+to\+\_\+fu@{bind\+\_\+vertex\+\_\+to\+\_\+fu}}
+\index{bind\+\_\+vertex\+\_\+to\+\_\+fu@{bind\+\_\+vertex\+\_\+to\+\_\+fu}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{bind\+\_\+vertex\+\_\+to\+\_\+fu()}{bind\_vertex\_to\_fu()}}
+{\footnotesize\ttfamily void H\+L\+S\+\_\+constraints\+::bind\+\_\+vertex\+\_\+to\+\_\+fu (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+\_\+name,  }\item[{const std\+::string \&}]{fu\+\_\+name,  }\item[{const std\+::string \&}]{fu\+\_\+library,  }\item[{const unsigned int}]{fu\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Binds a vertex to a functional unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+\_\+name} & is the name of the vertex. \\
+\hline
+{\em fu\+\_\+name} & is the name of the functional unit. \\
+\hline
+{\em fu\+\_\+library} & is the name of the library where the functional unit fu\+\_\+name is contained. \\
+\hline
+{\em fu\+\_\+index} & is the ith functional unit instance. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 217 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References binding\+\_\+constraints.
+
+\mbox{\Hypertarget{classHLS__constraints_af50660880ee956518894057845c5c45d}\label{classHLS__constraints_af50660880ee956518894057845c5c45d}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!get\+\_\+clock\+\_\+period@{get\+\_\+clock\+\_\+period}}
+\index{get\+\_\+clock\+\_\+period@{get\+\_\+clock\+\_\+period}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{get\+\_\+clock\+\_\+period()}{get\_clock\_period()}}
+{\footnotesize\ttfamily double H\+L\+S\+\_\+constraints\+::get\+\_\+clock\+\_\+period (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the clock period. 
+
+\begin{DoxyReturn}{Returns}
+the clock period (in ns) 
+\end{DoxyReturn}
+
+
+Definition at line 195 of file hls\+\_\+constraints.\+hpp.
+
+
+
+References clock\+\_\+period.
+
+\mbox{\Hypertarget{classHLS__constraints_a4daca2ffc0b08c77e83d16b3c45a0cdf}\label{classHLS__constraints_a4daca2ffc0b08c77e83d16b3c45a0cdf}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!get\+\_\+clock\+\_\+period\+\_\+resource\+\_\+fraction@{get\+\_\+clock\+\_\+period\+\_\+resource\+\_\+fraction}}
+\index{get\+\_\+clock\+\_\+period\+\_\+resource\+\_\+fraction@{get\+\_\+clock\+\_\+period\+\_\+resource\+\_\+fraction}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{get\+\_\+clock\+\_\+period\+\_\+resource\+\_\+fraction()}{get\_clock\_period\_resource\_fraction()}}
+{\footnotesize\ttfamily double H\+L\+S\+\_\+constraints\+::get\+\_\+clock\+\_\+period\+\_\+resource\+\_\+fraction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the resource fraction of the clock period. 
+
+\begin{DoxyReturn}{Returns}
+the value of the resource fraction 
+\end{DoxyReturn}
+
+
+Definition at line 204 of file hls\+\_\+constraints.\+hpp.
+
+
+
+References clock\+\_\+period\+\_\+resource\+\_\+fraction, and set\+\_\+max\+\_\+registers().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_a4daca2ffc0b08c77e83d16b3c45a0cdf_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__constraints_abbffb36768c52ff80a0b8cd24c5ab048}\label{classHLS__constraints_abbffb36768c52ff80a0b8cd24c5ab048}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!get\+\_\+function\+\_\+name@{get\+\_\+function\+\_\+name}}
+\index{get\+\_\+function\+\_\+name@{get\+\_\+function\+\_\+name}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{get\+\_\+function\+\_\+name()}{get\_function\_name()}}
+{\footnotesize\ttfamily std\+::string H\+L\+S\+\_\+constraints\+::get\+\_\+function\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the name of the function which the constraints are associated with. 
+
+
+
+Definition at line 187 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References fun\+\_\+name.
+
+\mbox{\Hypertarget{classHLS__constraints_a48f7cc80f45d781e815dfc6e86c238ea}\label{classHLS__constraints_a48f7cc80f45d781e815dfc6e86c238ea}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!get\+\_\+kind\+\_\+text@{get\+\_\+kind\+\_\+text}}
+\index{get\+\_\+kind\+\_\+text@{get\+\_\+kind\+\_\+text}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{get\+\_\+kind\+\_\+text()}{get\_kind\_text()}}
+{\footnotesize\ttfamily std\+::string H\+L\+S\+\_\+constraints\+::get\+\_\+kind\+\_\+text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+definition of the get\+\_\+kind\+\_\+text method 
+
+
+
+Definition at line 285 of file hls\+\_\+constraints.\+hpp.
+
+
+
+Referenced by xwrite().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_a48f7cc80f45d781e815dfc6e86c238ea_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__constraints_a4378dfa86b2203804067e93694ebaa6a}\label{classHLS__constraints_a4378dfa86b2203804067e93694ebaa6a}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!get\+\_\+max\+\_\+registers@{get\+\_\+max\+\_\+registers}}
+\index{get\+\_\+max\+\_\+registers@{get\+\_\+max\+\_\+registers}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{get\+\_\+max\+\_\+registers()}{get\_max\_registers()}}
+{\footnotesize\ttfamily unsigned int H\+L\+S\+\_\+constraints\+::get\+\_\+max\+\_\+registers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of registers available. 
+
+\begin{DoxyReturn}{Returns}
+the maximum number of registers 
+\end{DoxyReturn}
+
+
+Definition at line 219 of file hls\+\_\+constraints.\+hpp.
+
+
+
+References print(), registers, xload(), xwrite(), xwrite\+Binding\+Constraints(), xwrite\+F\+U\+Constraints(), xwrite\+H\+L\+S\+Constraints(), and xwrite\+Scheduling\+Constraints().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_a4378dfa86b2203804067e93694ebaa6a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__constraints_a5ffda80abbda1488aaacca937993df74}\label{classHLS__constraints_a5ffda80abbda1488aaacca937993df74}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!get\+\_\+number\+\_\+fu@{get\+\_\+number\+\_\+fu}}
+\index{get\+\_\+number\+\_\+fu@{get\+\_\+number\+\_\+fu}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{get\+\_\+number\+\_\+fu()}{get\_number\_fu()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned int H\+L\+S\+\_\+constraints\+::get\+\_\+number\+\_\+fu (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{library }\end{DoxyParamCaption}) const}
+
+
+
+This method returns the maximum number of functional units available for the design. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & is the name of the functional unit. \\
+\hline
+{\em library} & is the library of name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the maximum number of functional units available. 
+\end{DoxyReturn}
+
+
+Definition at line 197 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References E\+N\+C\+O\+D\+E\+\_\+\+F\+U\+\_\+\+L\+IB, I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+U\+I\+NT, and tech\+\_\+constraints.
+
+
+
+Referenced by get\+\_\+number\+\_\+fu().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{dd/d96/classHLS__constraints_a5ffda80abbda1488aaacca937993df74_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__constraints_a6add734962a7ab1a103e95e9bb87cc30}\label{classHLS__constraints_a6add734962a7ab1a103e95e9bb87cc30}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!get\+\_\+number\+\_\+fu@{get\+\_\+number\+\_\+fu}}
+\index{get\+\_\+number\+\_\+fu@{get\+\_\+number\+\_\+fu}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{get\+\_\+number\+\_\+fu()}{get\_number\_fu()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned int H\+L\+S\+\_\+constraints\+::get\+\_\+number\+\_\+fu (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{combined }\end{DoxyParamCaption}) const}
+
+
+
+This method returns the maximum number of functional units available for the design. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em combined} & is the name of the functional unit in the form $<$unit\+\_\+name$>$\+:$<$library\+\_\+name$>$ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the maximum number of functional units available. 
+\end{DoxyReturn}
+
+
+Definition at line 209 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References D\+E\+C\+O\+D\+E\+\_\+\+F\+U\+\_\+\+L\+I\+B(), and get\+\_\+number\+\_\+fu().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_a6add734962a7ab1a103e95e9bb87cc30_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__constraints_af14fb287ca33eee91e03223daa631cc3}\label{classHLS__constraints_af14fb287ca33eee91e03223daa631cc3}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!get\+\_\+scheduling\+\_\+priority@{get\+\_\+scheduling\+\_\+priority}}
+\index{get\+\_\+scheduling\+\_\+priority@{get\+\_\+scheduling\+\_\+priority}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{get\+\_\+scheduling\+\_\+priority()}{get\_scheduling\_priority()}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ std\+::string, int $>$ H\+L\+S\+\_\+constraints\+::get\+\_\+scheduling\+\_\+priority (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the data structure containing scheduling priority constraints. 
+
+\begin{DoxyReturn}{Returns}
+a map between the operation vertex and its priority value 
+\end{DoxyReturn}
+
+
+Definition at line 451 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References scheduling\+\_\+constraints.
+
+\mbox{\Hypertarget{classHLS__constraints_ad09187107d9a2ad9a674a1c0f5e6ecae}\label{classHLS__constraints_ad09187107d9a2ad9a674a1c0f5e6ecae}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!has\+\_\+binding\+\_\+to\+\_\+fu@{has\+\_\+binding\+\_\+to\+\_\+fu}}
+\index{has\+\_\+binding\+\_\+to\+\_\+fu@{has\+\_\+binding\+\_\+to\+\_\+fu}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{has\+\_\+binding\+\_\+to\+\_\+fu()}{has\_binding\_to\_fu()}}
+{\footnotesize\ttfamily bool H\+L\+S\+\_\+constraints\+::has\+\_\+binding\+\_\+to\+\_\+fu (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+\_\+name }\end{DoxyParamCaption}) const}
+
+
+
+Binds a vertex to a functional unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+\_\+name} & is the name of the operation vertex \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 222 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References binding\+\_\+constraints.
+
+\mbox{\Hypertarget{classHLS__constraints_a5d60dce734c42d7f7a659195b5883044}\label{classHLS__constraints_a5d60dce734c42d7f7a659195b5883044}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!print@{print}}
+\index{print@{print}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void H\+L\+S\+\_\+constraints\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const}
+
+
+
+Function that prints the class \hyperlink{classHLS__constraints}{H\+L\+S\+\_\+constraints}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & is the output stream. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 269 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References binding\+\_\+constraints, clock\+\_\+period, I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+U\+I\+NT, registers, scheduling\+\_\+constraints, and tech\+\_\+constraints.
+
+
+
+Referenced by get\+\_\+max\+\_\+registers().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{dd/d96/classHLS__constraints_a5d60dce734c42d7f7a659195b5883044_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__constraints_abd387f72baf392a410dcfba2995c0ef8}\label{classHLS__constraints_abd387f72baf392a410dcfba2995c0ef8}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!read\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+\+File@{read\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+\+File}}
+\index{read\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+\+File@{read\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+\+File}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{read\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+\+File()}{read\_HLS\_constraints\_File()}}
+{\footnotesize\ttfamily void H\+L\+S\+\_\+constraints\+::read\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{f }\end{DoxyParamCaption})}
+
+
+
+Reads an X\+ML file describing the structural data structures. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & the input file name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 511 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References X\+M\+L\+Dom\+Parser\+::\+Exec(), xml\+\_\+child\+::get\+\_\+children(), G\+E\+T\+\_\+\+C\+L\+A\+S\+S\+\_\+\+N\+A\+ME, X\+M\+L\+Dom\+Parser\+::get\+\_\+document(), test\+\_\+panda\+::parser, and xload().
+
+
+
+Referenced by H\+L\+S\+\_\+constraints().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_abd387f72baf392a410dcfba2995c0ef8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{dd/d96/classHLS__constraints_abd387f72baf392a410dcfba2995c0ef8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__constraints_a709ff2e7748684517916921c94a7175f}\label{classHLS__constraints_a709ff2e7748684517916921c94a7175f}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!set\+\_\+clock\+\_\+period@{set\+\_\+clock\+\_\+period}}
+\index{set\+\_\+clock\+\_\+period@{set\+\_\+clock\+\_\+period}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{set\+\_\+clock\+\_\+period()}{set\_clock\_period()}}
+{\footnotesize\ttfamily void H\+L\+S\+\_\+constraints\+::set\+\_\+clock\+\_\+period (\begin{DoxyParamCaption}\item[{double}]{period }\end{DoxyParamCaption})}
+
+
+
+Sets the clock period. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em period} & is the clock period (in ns) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 227 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References clock\+\_\+period.
+
+\mbox{\Hypertarget{classHLS__constraints_ab2df34ff3335a38b047895ca9d303583}\label{classHLS__constraints_ab2df34ff3335a38b047895ca9d303583}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!set\+\_\+max\+\_\+registers@{set\+\_\+max\+\_\+registers}}
+\index{set\+\_\+max\+\_\+registers@{set\+\_\+max\+\_\+registers}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{set\+\_\+max\+\_\+registers()}{set\_max\_registers()}}
+{\footnotesize\ttfamily void H\+L\+S\+\_\+constraints\+::set\+\_\+max\+\_\+registers (\begin{DoxyParamCaption}\item[{unsigned int}]{n\+\_\+resources }\end{DoxyParamCaption})}
+
+
+
+Sets the number of registers present in the function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+\_\+resources} & is the maximum number of registers available \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 232 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References max(), min, registers, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by get\+\_\+clock\+\_\+period\+\_\+resource\+\_\+fraction().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{dd/d96/classHLS__constraints_ab2df34ff3335a38b047895ca9d303583_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{dd/d96/classHLS__constraints_ab2df34ff3335a38b047895ca9d303583_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__constraints_afc848917bd7caf8c0187ccefdf14e3de}\label{classHLS__constraints_afc848917bd7caf8c0187ccefdf14e3de}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!set\+\_\+number\+\_\+fu@{set\+\_\+number\+\_\+fu}}
+\index{set\+\_\+number\+\_\+fu@{set\+\_\+number\+\_\+fu}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{set\+\_\+number\+\_\+fu()}{set\_number\_fu()}}
+{\footnotesize\ttfamily void H\+L\+S\+\_\+constraints\+::set\+\_\+number\+\_\+fu (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{library,  }\item[{unsigned int}]{n\+\_\+resources = {\ttfamily std\+:\+:numeric\+\_\+limits$<$unsigned~int$>$\+:\+:\hyperlink{tutorial__pact__2019_2Target-Customization_2first_2hint_8c_a28f422940797ea297699ba55d89171c5}{max}()} }\end{DoxyParamCaption})}
+
+
+
+Sets the maximum number of resources available in the design. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & is the name of the functional unit. \\
+\hline
+{\em library} & is the library of name. \\
+\hline
+{\em n\+\_\+resources} & is the maximum number of fu available (default is infinite). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 192 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References E\+N\+C\+O\+D\+E\+\_\+\+F\+U\+\_\+\+L\+IB, and tech\+\_\+constraints.
+
+\mbox{\Hypertarget{classHLS__constraints_ae62a3420be646725c3fc8dd777c03256}\label{classHLS__constraints_ae62a3420be646725c3fc8dd777c03256}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!set\+\_\+scheduling\+\_\+priority@{set\+\_\+scheduling\+\_\+priority}}
+\index{set\+\_\+scheduling\+\_\+priority@{set\+\_\+scheduling\+\_\+priority}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{set\+\_\+scheduling\+\_\+priority()}{set\_scheduling\_priority()}}
+{\footnotesize\ttfamily void H\+L\+S\+\_\+constraints\+::set\+\_\+scheduling\+\_\+priority (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+\_\+name,  }\item[{int}]{Priority }\end{DoxyParamCaption})}
+
+
+
+Stores the priority value for an operation vertex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+\_\+name} & is the operation name \\
+\hline
+{\em Priority} & is the priority value related to the operation vertex \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 446 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References scheduling\+\_\+constraints.
+
+\mbox{\Hypertarget{classHLS__constraints_ad69227a7f2d1c6266571737752438e21}\label{classHLS__constraints_ad69227a7f2d1c6266571737752438e21}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!write\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+\+File@{write\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+\+File}}
+\index{write\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+\+File@{write\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+\+File}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{write\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+\+File()}{write\_HLS\_constraints\_File()}}
+{\footnotesize\ttfamily void H\+L\+S\+\_\+constraints\+::write\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{f }\end{DoxyParamCaption})}
+
+
+
+Writes an X\+ML file describing the high level synthesis constraints data structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & the output file name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 553 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References xml\+\_\+document\+::create\+\_\+root\+\_\+node(), G\+E\+T\+\_\+\+C\+L\+A\+S\+S\+\_\+\+N\+A\+ME, xml\+\_\+document\+::write\+\_\+to\+\_\+file\+\_\+formatted(), and xwrite().
+
+
+
+Referenced by H\+L\+S\+\_\+constraints().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_ad69227a7f2d1c6266571737752438e21_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{dd/d96/classHLS__constraints_ad69227a7f2d1c6266571737752438e21_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__constraints_ae9f1030321791e339e7ced72f1d00cb1}\label{classHLS__constraints_ae9f1030321791e339e7ced72f1d00cb1}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!xload@{xload}}
+\index{xload@{xload}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{xload()}{xload()}}
+{\footnotesize\ttfamily void H\+L\+S\+\_\+constraints\+::xload (\begin{DoxyParamCaption}\item[{const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{Enode }\end{DoxyParamCaption})}
+
+
+
+Loads a set of H\+LS constraints starting from an X\+ML node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Enode} & is a node of the X\+ML tree where the constraints are stored. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 308 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References binding\+\_\+constraints, C\+E\+\_\+\+X\+VM, clock\+\_\+period, E\+N\+C\+O\+D\+E\+\_\+\+F\+U\+\_\+\+L\+IB, xml\+\_\+child\+::get\+\_\+children(), L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+TD, L\+O\+A\+D\+\_\+\+X\+VM, registers, scheduling\+\_\+constraints, tech\+\_\+constraints, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by add\+\_\+builtin\+\_\+constraints(), get\+\_\+max\+\_\+registers(), H\+L\+S\+\_\+constraints(), and read\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+\+File().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_ae9f1030321791e339e7ced72f1d00cb1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_ae9f1030321791e339e7ced72f1d00cb1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__constraints_ab4c4cb541597b8ac5e28b4309ea1af4b}\label{classHLS__constraints_ab4c4cb541597b8ac5e28b4309ea1af4b}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!xwrite@{xwrite}}
+\index{xwrite@{xwrite}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{xwrite()}{xwrite()}}
+{\footnotesize\ttfamily void H\+L\+S\+\_\+constraints\+::xwrite (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{Enode }\end{DoxyParamCaption})}
+
+
+
+Writes the H\+LS constraints into an X\+ML tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Enode} & is the root node which the X\+ML representation of the constraints is attached. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 413 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References xml\+\_\+child\+::add\+\_\+child\+\_\+element(), binding\+\_\+constraints, D\+E\+C\+O\+D\+E\+\_\+\+F\+U\+\_\+\+L\+I\+B(), get\+\_\+kind\+\_\+text(), scheduling\+\_\+constraints, tech\+\_\+constraints, xwrite\+Binding\+Constraints(), xwrite\+F\+U\+Constraints(), xwrite\+H\+L\+S\+Constraints(), and xwrite\+Scheduling\+Constraints().
+
+
+
+Referenced by get\+\_\+max\+\_\+registers(), and write\+\_\+\+H\+L\+S\+\_\+constraints\+\_\+\+File().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_ab4c4cb541597b8ac5e28b4309ea1af4b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_ab4c4cb541597b8ac5e28b4309ea1af4b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__constraints_af671c4e42c7fd6dece76dfcb53ce627a}\label{classHLS__constraints_af671c4e42c7fd6dece76dfcb53ce627a}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!xwrite\+Binding\+Constraints@{xwrite\+Binding\+Constraints}}
+\index{xwrite\+Binding\+Constraints@{xwrite\+Binding\+Constraints}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{xwrite\+Binding\+Constraints()}{xwriteBindingConstraints()}}
+{\footnotesize\ttfamily void H\+L\+S\+\_\+constraints\+::xwrite\+Binding\+Constraints (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{Enode,  }\item[{const std\+::string \&}]{vertex\+\_\+name,  }\item[{const std\+::string \&}]{fu\+\_\+name,  }\item[{const std\+::string \&}]{fu\+\_\+library,  }\item[{unsigned int}]{fu\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Writes the binding constraints (i.\+e., functional unit, instance and library) associated with an operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Enode} & is the node of the X\+ML tree where the constraint will be stored. \\
+\hline
+{\em vertex\+\_\+name} & is the operation name \\
+\hline
+{\em fu\+\_\+name} & is the name of the functional unit \\
+\hline
+{\em fu\+\_\+library} & is the name of the library where the functional unit fu\+\_\+name is contained. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 394 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References xml\+\_\+child\+::add\+\_\+child\+\_\+element(), L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+TD, and W\+R\+I\+T\+E\+\_\+\+X\+VM.
+
+
+
+Referenced by get\+\_\+max\+\_\+registers(), and xwrite().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_af671c4e42c7fd6dece76dfcb53ce627a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_af671c4e42c7fd6dece76dfcb53ce627a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__constraints_ace5701a60c9f6c9a1b46c3b7681863c3}\label{classHLS__constraints_ace5701a60c9f6c9a1b46c3b7681863c3}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!xwrite\+F\+U\+Constraints@{xwrite\+F\+U\+Constraints}}
+\index{xwrite\+F\+U\+Constraints@{xwrite\+F\+U\+Constraints}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{xwrite\+F\+U\+Constraints()}{xwriteFUConstraints()}}
+{\footnotesize\ttfamily void H\+L\+S\+\_\+constraints\+::xwrite\+F\+U\+Constraints (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{Enode,  }\item[{const std\+::string \&}]{fu\+\_\+name,  }\item[{const std\+::string \&}]{fu\+\_\+library,  }\item[{unsigned int}]{number\+\_\+fu,  }\item[{bool}]{for\+Dump = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Writes the constraints on the functional units. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Enode} & is the node of the X\+ML tree where the constraint will be stored. \\
+\hline
+{\em fu\+\_\+name} & is the name of the functional unit \\
+\hline
+{\em number\+\_\+fu} & is the number of the functional unit instances \\
+\hline
+{\em fu\+\_\+library} & is the name of the library where the functional unit fu\+\_\+name is contained. \\
+\hline
+{\em fu\+\_\+index} & is the ith functional unit instance. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 370 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References xml\+\_\+child\+::add\+\_\+child\+\_\+element(), I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+U\+I\+NT, L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+TD, and W\+R\+I\+T\+E\+\_\+\+X\+VM.
+
+
+
+Referenced by get\+\_\+max\+\_\+registers(), and xwrite().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_ace5701a60c9f6c9a1b46c3b7681863c3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_ace5701a60c9f6c9a1b46c3b7681863c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__constraints_af924912aeb49636faa808c66697bd1cb}\label{classHLS__constraints_af924912aeb49636faa808c66697bd1cb}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!xwrite\+H\+L\+S\+Constraints@{xwrite\+H\+L\+S\+Constraints}}
+\index{xwrite\+H\+L\+S\+Constraints@{xwrite\+H\+L\+S\+Constraints}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{xwrite\+H\+L\+S\+Constraints()}{xwriteHLSConstraints()}}
+{\footnotesize\ttfamily void H\+L\+S\+\_\+constraints\+::xwrite\+H\+L\+S\+Constraints (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{Enode,  }\item[{bool}]{for\+Dump = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Writes the generic synthesis constraints. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Enode} & is the node of the X\+ML tree where the constraints will be stored. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 385 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References clock\+\_\+period, I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+U\+I\+NT, registers, and W\+R\+I\+T\+E\+\_\+\+X\+VM.
+
+
+
+Referenced by get\+\_\+max\+\_\+registers(), and xwrite().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_af924912aeb49636faa808c66697bd1cb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHLS__constraints_a863dabf331d4e0642f829e25ded9b6b5}\label{classHLS__constraints_a863dabf331d4e0642f829e25ded9b6b5}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!xwrite\+Scheduling\+Constraints@{xwrite\+Scheduling\+Constraints}}
+\index{xwrite\+Scheduling\+Constraints@{xwrite\+Scheduling\+Constraints}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{xwrite\+Scheduling\+Constraints()}{xwriteSchedulingConstraints()}}
+{\footnotesize\ttfamily void H\+L\+S\+\_\+constraints\+::xwrite\+Scheduling\+Constraints (\begin{DoxyParamCaption}\item[{\hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{Enode,  }\item[{const std\+::string \&}]{vertex\+\_\+name,  }\item[{int}]{priority }\end{DoxyParamCaption})}
+
+
+
+Writes the scheduling constraints (i.\+e., priority value) associated with an operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Enode} & is the node of the X\+ML tree where the constraint will be stored. \\
+\hline
+{\em vertex\+\_\+name} & is the operation name \\
+\hline
+{\em priority} & is the priority value for the scheduling \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 406 of file hls\+\_\+constraints.\+cpp.
+
+
+
+References xml\+\_\+child\+::add\+\_\+child\+\_\+element(), and W\+R\+I\+T\+E\+\_\+\+X\+VM.
+
+
+
+Referenced by get\+\_\+max\+\_\+registers(), and xwrite().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_a863dabf331d4e0642f829e25ded9b6b5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d96/classHLS__constraints_a863dabf331d4e0642f829e25ded9b6b5_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classHLS__constraints_a2dc219c556df071c0061c3e9ddfa1dca}\label{classHLS__constraints_a2dc219c556df071c0061c3e9ddfa1dca}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!allocation@{allocation}}
+\index{allocation@{allocation}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{allocation}{allocation}}
+{\footnotesize\ttfamily friend class \hyperlink{classallocation}{allocation}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+class that can directly access 
+
+
+
+Definition at line 105 of file hls\+\_\+constraints.\+hpp.
+
+\mbox{\Hypertarget{classHLS__constraints_ac1bdf2eca4693e1be98bf968682c065f}\label{classHLS__constraints_ac1bdf2eca4693e1be98bf968682c065f}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classHLS__constraints}{H\+L\+S\+\_\+constraints} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Friend definition of the $<$$<$ operator. 
+
+
+
+Definition at line 278 of file hls\+\_\+constraints.\+hpp.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classHLS__constraints_aa0ec5bd7ca34862b3786089e8360b63e}\label{classHLS__constraints_aa0ec5bd7ca34862b3786089e8360b63e}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!binding\+\_\+constraints@{binding\+\_\+constraints}}
+\index{binding\+\_\+constraints@{binding\+\_\+constraints}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{binding\+\_\+constraints}{binding\_constraints}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$std\+::string, std\+::pair$<$std\+::string, std\+::pair$<$std\+::string, unsigned int$>$ $>$ $>$ H\+L\+S\+\_\+constraints\+::binding\+\_\+constraints\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+put into relation the vertex name with the functional unit, its library and the functional unit index this map can be used to define a binding for a vertex. 
+
+
+
+Definition at line 81 of file hls\+\_\+constraints.\+hpp.
+
+
+
+Referenced by bind\+\_\+vertex\+\_\+to\+\_\+fu(), has\+\_\+binding\+\_\+to\+\_\+fu(), print(), xload(), and xwrite().
+
+\mbox{\Hypertarget{classHLS__constraints_a8645bf9e5ae984eefe022a4ab1d65aa7}\label{classHLS__constraints_a8645bf9e5ae984eefe022a4ab1d65aa7}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!clock\+\_\+period@{clock\+\_\+period}}
+\index{clock\+\_\+period@{clock\+\_\+period}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{clock\+\_\+period}{clock\_period}}
+{\footnotesize\ttfamily double H\+L\+S\+\_\+constraints\+::clock\+\_\+period\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Clock period in ns. 
+
+
+
+Definition at line 87 of file hls\+\_\+constraints.\+hpp.
+
+
+
+Referenced by get\+\_\+clock\+\_\+period(), H\+L\+S\+\_\+constraints(), print(), set\+\_\+clock\+\_\+period(), xload(), and xwrite\+H\+L\+S\+Constraints().
+
+\mbox{\Hypertarget{classHLS__constraints_a9b9d4a8f5e65a7164c52edfe92c52af7}\label{classHLS__constraints_a9b9d4a8f5e65a7164c52edfe92c52af7}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!clock\+\_\+period\+\_\+resource\+\_\+fraction@{clock\+\_\+period\+\_\+resource\+\_\+fraction}}
+\index{clock\+\_\+period\+\_\+resource\+\_\+fraction@{clock\+\_\+period\+\_\+resource\+\_\+fraction}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{clock\+\_\+period\+\_\+resource\+\_\+fraction}{clock\_period\_resource\_fraction}}
+{\footnotesize\ttfamily double H\+L\+S\+\_\+constraints\+::clock\+\_\+period\+\_\+resource\+\_\+fraction\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+current value of the resource fraction 
+
+
+
+Definition at line 90 of file hls\+\_\+constraints.\+hpp.
+
+
+
+Referenced by get\+\_\+clock\+\_\+period\+\_\+resource\+\_\+fraction(), and H\+L\+S\+\_\+constraints().
+
+\mbox{\Hypertarget{classHLS__constraints_aa51dd0b45775afa572cd49fb686b14b6}\label{classHLS__constraints_aa51dd0b45775afa572cd49fb686b14b6}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!clock\+\_\+period\+\_\+resource\+\_\+fraction\+\_\+\+D\+E\+F\+A\+U\+LT@{clock\+\_\+period\+\_\+resource\+\_\+fraction\+\_\+\+D\+E\+F\+A\+U\+LT}}
+\index{clock\+\_\+period\+\_\+resource\+\_\+fraction\+\_\+\+D\+E\+F\+A\+U\+LT@{clock\+\_\+period\+\_\+resource\+\_\+fraction\+\_\+\+D\+E\+F\+A\+U\+LT}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{clock\+\_\+period\+\_\+resource\+\_\+fraction\+\_\+\+D\+E\+F\+A\+U\+LT}{clock\_period\_resource\_fraction\_DEFAULT}}
+{\footnotesize\ttfamily const double H\+L\+S\+\_\+constraints\+::clock\+\_\+period\+\_\+resource\+\_\+fraction\+\_\+\+D\+E\+F\+A\+U\+LT = 1.\+0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+default resource fraction for the clock period 
+
+S\+TL includes.
+
+utility include 
+
+Definition at line 92 of file hls\+\_\+constraints.\+hpp.
+
+\mbox{\Hypertarget{classHLS__constraints_ab112ab399141c42790fc367163eb5534}\label{classHLS__constraints_ab112ab399141c42790fc367163eb5534}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!fun\+\_\+name@{fun\+\_\+name}}
+\index{fun\+\_\+name@{fun\+\_\+name}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{fun\+\_\+name}{fun\_name}}
+{\footnotesize\ttfamily std\+::string H\+L\+S\+\_\+constraints\+::fun\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+name of the function which the constraints are associated with; emtpy string means that they are global constraints 
+
+
+
+Definition at line 98 of file hls\+\_\+constraints.\+hpp.
+
+
+
+Referenced by get\+\_\+function\+\_\+name(), and H\+L\+S\+\_\+constraints().
+
+\mbox{\Hypertarget{classHLS__constraints_a64ee4139f8b4f84b0ea40de253b3e3c5}\label{classHLS__constraints_a64ee4139f8b4f84b0ea40de253b3e3c5}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!parameters@{parameters}}
+\index{parameters@{parameters}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{parameters}{parameters}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} H\+L\+S\+\_\+constraints\+::parameters\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The set of input parameters. 
+
+
+
+Definition at line 101 of file hls\+\_\+constraints.\+hpp.
+
+
+
+Referenced by add\+\_\+builtin\+\_\+constraints(), and H\+L\+S\+\_\+constraints().
+
+\mbox{\Hypertarget{classHLS__constraints_ae36d9fde4e292cd2a651501706ec2325}\label{classHLS__constraints_ae36d9fde4e292cd2a651501706ec2325}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!registers@{registers}}
+\index{registers@{registers}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{registers}{registers}}
+{\footnotesize\ttfamily unsigned int H\+L\+S\+\_\+constraints\+::registers\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Variable storing the number of registers. 
+
+
+
+Definition at line 95 of file hls\+\_\+constraints.\+hpp.
+
+
+
+Referenced by get\+\_\+max\+\_\+registers(), print(), set\+\_\+max\+\_\+registers(), xload(), and xwrite\+H\+L\+S\+Constraints().
+
+\mbox{\Hypertarget{classHLS__constraints_a8cbded9579c7865e1e2eba41cf763271}\label{classHLS__constraints_a8cbded9579c7865e1e2eba41cf763271}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!scheduling\+\_\+constraints@{scheduling\+\_\+constraints}}
+\index{scheduling\+\_\+constraints@{scheduling\+\_\+constraints}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{scheduling\+\_\+constraints}{scheduling\_constraints}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$std\+::string, int$>$ H\+L\+S\+\_\+constraints\+::scheduling\+\_\+constraints\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+map between an operation vertex and its given scheduling priority value 
+
+
+
+Definition at line 84 of file hls\+\_\+constraints.\+hpp.
+
+
+
+Referenced by get\+\_\+scheduling\+\_\+priority(), print(), set\+\_\+scheduling\+\_\+priority(), xload(), and xwrite().
+
+\mbox{\Hypertarget{classHLS__constraints_a9c622d8a77390c41a8abf51d989ca7ee}\label{classHLS__constraints_a9c622d8a77390c41a8abf51d989ca7ee}} 
+\index{H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}!tech\+\_\+constraints@{tech\+\_\+constraints}}
+\index{tech\+\_\+constraints@{tech\+\_\+constraints}!H\+L\+S\+\_\+constraints@{H\+L\+S\+\_\+constraints}}
+\subsubsection{\texorpdfstring{tech\+\_\+constraints}{tech\_constraints}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$std\+::string, unsigned int$>$ H\+L\+S\+\_\+constraints\+::tech\+\_\+constraints\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+For each functional unit tech\+\_\+constraints stores the number of resources. 
+
+
+
+Definition at line 77 of file hls\+\_\+constraints.\+hpp.
+
+
+
+Referenced by get\+\_\+number\+\_\+fu(), print(), set\+\_\+number\+\_\+fu(), xload(), and xwrite().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/\hyperlink{hls__constraints_8hpp}{hls\+\_\+constraints.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/\hyperlink{hls__constraints_8cpp}{hls\+\_\+constraints.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,445 @@
+\hypertarget{classshort__circuit__taf}{}\section{short\+\_\+circuit\+\_\+taf Class Reference}
+\label{classshort__circuit__taf}\index{short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}}
+
+
+S\+TL include.  
+
+
+
+
+{\ttfamily \#include $<$short\+\_\+circuit\+\_\+taf.\+hpp$>$}
+
+
+
+Inheritance diagram for short\+\_\+circuit\+\_\+taf\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{d9/dff/classshort__circuit__taf__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for short\+\_\+circuit\+\_\+taf\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/df1/classshort__circuit__taf__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classshort__circuit__taf_a45779c36d6745e44e9463694cf4536cc}{short\+\_\+circuit\+\_\+taf} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \+\_\+\+Param, const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \+\_\+\+AppM, unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classshort__circuit__taf_a7c67b889806ffa462904b9bdfcebaba0}{$\sim$short\+\_\+circuit\+\_\+taf} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classshort__circuit__taf_a859bc9ef4199b52ef26a8bd39fcb699b}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Restructures the unstructured code. \end{DoxyCompactList}\item 
+void \hyperlink{classshort__circuit__taf_ab6bd4b50e2ab5bd53ab964156829ce6b}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classshort__circuit__taf_a5d3b7d29cc59c1bd90bdb77872d90c77}{check\+\_\+merging\+\_\+candidate} (unsigned int \&bb1, unsigned int \&bb2, unsigned int merging\+\_\+candidate, bool \&bb1\+\_\+true, bool \&bb2\+\_\+true, std\+::map$<$ unsigned int, bloc\+Ref $>$ \&list\+\_\+of\+\_\+bloc)
+\begin{DoxyCompactList}\small\item\em Check if a basic block is a merging BB for a short circuit. \end{DoxyCompactList}\item 
+bool \hyperlink{classshort__circuit__taf_ae72320e3a6c9112a5d7fe80414294d46}{create\+\_\+gimple\+\_\+cond} (unsigned int bb1, unsigned int bb2, bool bb1\+\_\+true, std\+::map$<$ unsigned int, bloc\+Ref $>$ \&list\+\_\+of\+\_\+bloc, bool or\+\_\+type, unsigned int merging\+\_\+candidate)
+\begin{DoxyCompactList}\small\item\em create the or/and expression required by short circuit collapsing \end{DoxyCompactList}\item 
+void \hyperlink{classshort__circuit__taf_a9f88813508d66f82309a90b24788f3f1}{restructure\+\_\+\+C\+FG} (unsigned int bb1, unsigned int bb2, unsigned int merging\+\_\+candidate, std\+::map$<$ unsigned int, bloc\+Ref $>$ \&list\+\_\+of\+\_\+bloc)
+\begin{DoxyCompactList}\small\item\em restructure the C\+FG eliminating all B\+Bs not needed after short circuit collapsing \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classshort__circuit__taf_aa20b443f2eb7bdefea17819fc62b2ce0}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\item 
+bool \hyperlink{classshort__circuit__taf_ae6d5913aa8df5e681f440a8ed11981a2}{check\+\_\+phis} (unsigned int curr\+\_\+bb, std\+::map$<$ unsigned int, bloc\+Ref $>$ \&list\+\_\+of\+\_\+bloc)
+\begin{DoxyCompactList}\small\item\em check if phi could create problem to the short circuit collapsing \end{DoxyCompactList}\item 
+void \hyperlink{classshort__circuit__taf_a295d6fe0b5076cb8c4b21b0de330677b}{fix\+\_\+multi\+\_\+way\+\_\+if} (unsigned int curr\+\_\+bb, std\+::map$<$ unsigned int, bloc\+Ref $>$ \&list\+\_\+of\+\_\+bloc, unsigned int succ)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+S\+TL include. 
+
+Structure the original short circuit 
+
+Definition at line 71 of file short\+\_\+circuit\+\_\+taf.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classshort__circuit__taf_a45779c36d6745e44e9463694cf4536cc}\label{classshort__circuit__taf_a45779c36d6745e44e9463694cf4536cc}} 
+\index{short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}!short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}}
+\index{short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}!short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}}
+\subsubsection{\texorpdfstring{short\+\_\+circuit\+\_\+taf()}{short\_circuit\_taf()}}
+{\footnotesize\ttfamily short\+\_\+circuit\+\_\+taf\+::short\+\_\+circuit\+\_\+taf (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters,  }\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{unsigned int}]{\+\_\+function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Header include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Param} & is the set of the parameters \\
+\hline
+{\em AppM} & is the application manager \\
+\hline
+{\em function\+\_\+id} & is the identifier of the function \\
+\hline
+{\em Design\+Flow\+Manager\+Const\+Ref} & is the design flow manager\\
+\hline
+\end{DoxyParams}
+Behavior include \hyperlink{classParameter}{Parameter} include design flow manager include H\+LS includes parser/treegcc include S\+TD include S\+TL include design\+\_\+flows/technology includes tree includes utility includes 
+
+Definition at line 98 of file short\+\_\+circuit\+\_\+taf.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$short\+\_\+circuit\+\_\+taf().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{dd/d1c/classshort__circuit__taf_a45779c36d6745e44e9463694cf4536cc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classshort__circuit__taf_a7c67b889806ffa462904b9bdfcebaba0}\label{classshort__circuit__taf_a7c67b889806ffa462904b9bdfcebaba0}} 
+\index{short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}!````~short\+\_\+circuit\+\_\+taf@{$\sim$short\+\_\+circuit\+\_\+taf}}
+\index{````~short\+\_\+circuit\+\_\+taf@{$\sim$short\+\_\+circuit\+\_\+taf}!short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}}
+\subsubsection{\texorpdfstring{$\sim$short\+\_\+circuit\+\_\+taf()}{~short\_circuit\_taf()}}
+{\footnotesize\ttfamily short\+\_\+circuit\+\_\+taf\+::$\sim$short\+\_\+circuit\+\_\+taf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by short\+\_\+circuit\+\_\+taf().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{dd/d1c/classshort__circuit__taf_a7c67b889806ffa462904b9bdfcebaba0_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classshort__circuit__taf_a5d3b7d29cc59c1bd90bdb77872d90c77}\label{classshort__circuit__taf_a5d3b7d29cc59c1bd90bdb77872d90c77}} 
+\index{short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}!check\+\_\+merging\+\_\+candidate@{check\+\_\+merging\+\_\+candidate}}
+\index{check\+\_\+merging\+\_\+candidate@{check\+\_\+merging\+\_\+candidate}!short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}}
+\subsubsection{\texorpdfstring{check\+\_\+merging\+\_\+candidate()}{check\_merging\_candidate()}}
+{\footnotesize\ttfamily bool short\+\_\+circuit\+\_\+taf\+::check\+\_\+merging\+\_\+candidate (\begin{DoxyParamCaption}\item[{unsigned int \&}]{bb1,  }\item[{unsigned int \&}]{bb2,  }\item[{unsigned int}]{merging\+\_\+candidate,  }\item[{bool \&}]{bb1\+\_\+true,  }\item[{bool \&}]{bb2\+\_\+true,  }\item[{std\+::map$<$ unsigned int, bloc\+Ref $>$ \&}]{list\+\_\+of\+\_\+bloc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Check if a basic block is a merging BB for a short circuit. 
+
+let bb1 the upper if
+
+let search bb2, the lower if 
+
+Definition at line 290 of file short\+\_\+circuit\+\_\+taf.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, bloc\+::\+E\+N\+T\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{dd/d1c/classshort__circuit__taf_a5d3b7d29cc59c1bd90bdb77872d90c77_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classshort__circuit__taf_ae6d5913aa8df5e681f440a8ed11981a2}\label{classshort__circuit__taf_ae6d5913aa8df5e681f440a8ed11981a2}} 
+\index{short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}!check\+\_\+phis@{check\+\_\+phis}}
+\index{check\+\_\+phis@{check\+\_\+phis}!short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}}
+\subsubsection{\texorpdfstring{check\+\_\+phis()}{check\_phis()}}
+{\footnotesize\ttfamily bool short\+\_\+circuit\+\_\+taf\+::check\+\_\+phis (\begin{DoxyParamCaption}\item[{unsigned int}]{curr\+\_\+bb,  }\item[{std\+::map$<$ unsigned int, bloc\+Ref $>$ \&}]{list\+\_\+of\+\_\+bloc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+check if phi could create problem to the short circuit collapsing 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr\+\_\+bb} & is the basic block that merge the two or more flows \\
+\hline
+{\em list\+\_\+of\+\_\+bloc} & is the list of basic blocks \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true in case the short circuit merging can be performed 
+\end{DoxyReturn}
+
+
+Definition at line 176 of file short\+\_\+circuit\+\_\+taf.\+cpp.
+
+
+
+References G\+E\+T\+\_\+\+N\+O\+DE, and phi.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{dd/d1c/classshort__circuit__taf_ae6d5913aa8df5e681f440a8ed11981a2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classshort__circuit__taf_aa20b443f2eb7bdefea17819fc62b2ce0}\label{classshort__circuit__taf_aa20b443f2eb7bdefea17819fc62b2ce0}} 
+\index{short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ short\+\_\+circuit\+\_\+taf\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+We can check if single\+\_\+write\+\_\+memory is true only after technology was loaded 
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 106 of file short\+\_\+circuit\+\_\+taf.\+cpp.
+
+
+
+References A\+B\+O\+R\+T\+ED, Frontend\+Flow\+Step\+::\+AppM, B\+L\+O\+C\+K\+\_\+\+F\+IX, C\+L\+E\+A\+N\+\_\+\+V\+I\+R\+T\+U\+A\+L\+\_\+\+P\+HI, Technology\+Flow\+Step\+::\+Compute\+Signature(), Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, E\+M\+P\+TY, Design\+Flow\+Step\+::\+Get\+Status(), Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, L\+O\+A\+D\+\_\+\+T\+E\+C\+H\+N\+O\+L\+O\+GY, Wrefcount$<$ T $>$\+::lock(), N\+O\+N\+E\+X\+I\+S\+T\+E\+NT, Design\+Flow\+Step\+::parameters, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, S\+K\+I\+P\+P\+ED, S\+U\+C\+C\+E\+SS, S\+W\+I\+T\+C\+H\+\_\+\+F\+IX, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, U\+N\+C\+H\+A\+N\+G\+ED, U\+N\+E\+X\+E\+C\+U\+T\+ED, U\+N\+N\+E\+C\+E\+S\+S\+A\+RY, and U\+S\+E\+\_\+\+C\+O\+U\+N\+T\+I\+NG.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d1c/classshort__circuit__taf_aa20b443f2eb7bdefea17819fc62b2ce0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classshort__circuit__taf_ae72320e3a6c9112a5d7fe80414294d46}\label{classshort__circuit__taf_ae72320e3a6c9112a5d7fe80414294d46}} 
+\index{short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}!create\+\_\+gimple\+\_\+cond@{create\+\_\+gimple\+\_\+cond}}
+\index{create\+\_\+gimple\+\_\+cond@{create\+\_\+gimple\+\_\+cond}!short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}}
+\subsubsection{\texorpdfstring{create\+\_\+gimple\+\_\+cond()}{create\_gimple\_cond()}}
+{\footnotesize\ttfamily bool short\+\_\+circuit\+\_\+taf\+::create\+\_\+gimple\+\_\+cond (\begin{DoxyParamCaption}\item[{unsigned int}]{bb1,  }\item[{unsigned int}]{bb2,  }\item[{bool}]{bb1\+\_\+true,  }\item[{std\+::map$<$ unsigned int, bloc\+Ref $>$ \&}]{list\+\_\+of\+\_\+bloc,  }\item[{bool}]{or\+\_\+type,  }\item[{unsigned int}]{merging\+\_\+candidate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+create the or/and expression required by short circuit collapsing 
+
+If there are more than one statements in the basic block containing cond2, then do not merge conditions (in case speculation step should manage the code motion)
+
+identify the first \hyperlink{structgimple__cond}{gimple\+\_\+cond}
+
+create the ssa\+\_\+var representing the condition for bb1
+
+create the assignment between condition for bb1 and the new ssa var
+
+and then add to the bb1 statement list
+
+fix merging\+\_\+candidate phis
+
+create the ssa\+\_\+var representing the result of the cond\+\_\+expr
+
+second, create the gimple assignment
+
+and then add to the statement list
+
+cond1 has to be negate create the ssa\+\_\+var representing the negated condition
+
+create !cond1
+
+and then add to the bb1 statement list
+
+identify the second \hyperlink{structgimple__cond}{gimple\+\_\+cond}
+
+create the ssa\+\_\+var representing the condition for bb2
+
+create the assignment between condition for bb2 and the new ssa var
+
+and then add to the bb1 statement list
+
+create (!)cond1 or cond2
+
+The expression contained in ce2 must now be the newly created expression, identified by expr\+\_\+index Temporary remove statement to remove old uses
+
+Readding the statement
+
+add the statements of bb1 to bb2
+
+add the phi of bb1 to bb2 
+
+Definition at line 364 of file short\+\_\+circuit\+\_\+taf.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, tree\+\_\+helper\+::\+C\+Get\+Type(), tree\+\_\+manipulation\+::create\+\_\+boolean\+\_\+type(), tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+next\+\_\+vers(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+node\+::index, tree\+\_\+helper\+::is\+\_\+a\+\_\+vector(), tree\+\_\+helper\+::is\+\_\+bool(), tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), Design\+Flow\+Step\+::parameters, phi, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+OK, T\+O\+K\+\_\+\+OP, T\+O\+K\+\_\+\+O\+P0, T\+O\+K\+\_\+\+O\+P1, T\+O\+K\+\_\+\+O\+P2, T\+O\+K\+\_\+\+O\+R\+IG, T\+O\+K\+\_\+\+S\+R\+CP, T\+O\+K\+\_\+\+T\+Y\+PE, T\+O\+K\+\_\+\+V\+E\+RS, T\+O\+K\+\_\+\+V\+I\+R\+T\+U\+AL, and T\+O\+K\+\_\+\+V\+O\+L\+A\+T\+I\+LE.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d1c/classshort__circuit__taf_ae72320e3a6c9112a5d7fe80414294d46_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{dd/d1c/classshort__circuit__taf_ae72320e3a6c9112a5d7fe80414294d46_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classshort__circuit__taf_a295d6fe0b5076cb8c4b21b0de330677b}\label{classshort__circuit__taf_a295d6fe0b5076cb8c4b21b0de330677b}} 
+\index{short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}!fix\+\_\+multi\+\_\+way\+\_\+if@{fix\+\_\+multi\+\_\+way\+\_\+if}}
+\index{fix\+\_\+multi\+\_\+way\+\_\+if@{fix\+\_\+multi\+\_\+way\+\_\+if}!short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}}
+\subsubsection{\texorpdfstring{fix\+\_\+multi\+\_\+way\+\_\+if()}{fix\_multi\_way\_if()}}
+{\footnotesize\ttfamily void short\+\_\+circuit\+\_\+taf\+::fix\+\_\+multi\+\_\+way\+\_\+if (\begin{DoxyParamCaption}\item[{unsigned int}]{curr\+\_\+bb,  }\item[{std\+::map$<$ unsigned int, bloc\+Ref $>$ \&}]{list\+\_\+of\+\_\+bloc,  }\item[{unsigned int}]{succ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 617 of file short\+\_\+circuit\+\_\+taf.\+cpp.
+
+
+
+References G\+E\+T\+\_\+\+N\+O\+DE.
+
+
+
+Referenced by restructure\+\_\+\+C\+F\+G().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d1c/classshort__circuit__taf_a295d6fe0b5076cb8c4b21b0de330677b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classshort__circuit__taf_ab6bd4b50e2ab5bd53ab964156829ce6b}\label{classshort__circuit__taf_ab6bd4b50e2ab5bd53ab964156829ce6b}} 
+\index{short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void short\+\_\+circuit\+\_\+taf\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 172 of file short\+\_\+circuit\+\_\+taf.\+cpp.
+
+\mbox{\Hypertarget{classshort__circuit__taf_a859bc9ef4199b52ef26a8bd39fcb699b}\label{classshort__circuit__taf_a859bc9ef4199b52ef26a8bd39fcb699b}} 
+\index{short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} short\+\_\+circuit\+\_\+taf\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Restructures the unstructured code. 
+
+compute merging candidates
+
+find the first to merge
+
+cond expr not completely collapsed 
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 187 of file short\+\_\+circuit\+\_\+taf.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, check\+\_\+merging\+\_\+candidate(), check\+\_\+phis(), create\+\_\+gimple\+\_\+cond(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, bloc\+::\+E\+N\+T\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, bloc\+::\+E\+X\+I\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), Function\+Frontend\+Flow\+Step\+::\+Get\+Name(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, restructure\+\_\+\+C\+F\+G(), sl, S\+TR, S\+U\+C\+C\+E\+SS, U\+N\+C\+H\+A\+N\+G\+ED, and Function\+Frontend\+Flow\+Step\+::\+Write\+B\+B\+Graph\+Dot().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d1c/classshort__circuit__taf_a859bc9ef4199b52ef26a8bd39fcb699b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classshort__circuit__taf_a9f88813508d66f82309a90b24788f3f1}\label{classshort__circuit__taf_a9f88813508d66f82309a90b24788f3f1}} 
+\index{short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}!restructure\+\_\+\+C\+FG@{restructure\+\_\+\+C\+FG}}
+\index{restructure\+\_\+\+C\+FG@{restructure\+\_\+\+C\+FG}!short\+\_\+circuit\+\_\+taf@{short\+\_\+circuit\+\_\+taf}}
+\subsubsection{\texorpdfstring{restructure\+\_\+\+C\+F\+G()}{restructure\_CFG()}}
+{\footnotesize\ttfamily void short\+\_\+circuit\+\_\+taf\+::restructure\+\_\+\+C\+FG (\begin{DoxyParamCaption}\item[{unsigned int}]{bb1,  }\item[{unsigned int}]{bb2,  }\item[{unsigned int}]{merging\+\_\+candidate,  }\item[{std\+::map$<$ unsigned int, bloc\+Ref $>$ \&}]{list\+\_\+of\+\_\+bloc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+restructure the C\+FG eliminating all B\+Bs not needed after short circuit collapsing 
+
+fix bb2 predecessor
+
+fix bb1 empty block
+
+check for BB with \hyperlink{structgimple__multi__way__if}{gimple\+\_\+multi\+\_\+way\+\_\+if} 
+
+Definition at line 591 of file short\+\_\+circuit\+\_\+taf.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, fix\+\_\+multi\+\_\+way\+\_\+if(), and P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{dd/d1c/classshort__circuit__taf_a9f88813508d66f82309a90b24788f3f1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{dd/d1c/classshort__circuit__taf_a9f88813508d66f82309a90b24788f3f1_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{short__circuit__taf_8hpp}{short\+\_\+circuit\+\_\+taf.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{short__circuit__taf_8cpp}{short\+\_\+circuit\+\_\+taf.\+cpp}\end{DoxyCompactItemize}

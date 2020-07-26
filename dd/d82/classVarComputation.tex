@@ -1,0 +1,361 @@
+\hypertarget{classVarComputation}{}\section{Var\+Computation Class Reference}
+\label{classVarComputation}\index{Var\+Computation@{Var\+Computation}}
+
+
+{\ttfamily \#include $<$var\+\_\+computation.\+hpp$>$}
+
+
+
+Inheritance diagram for Var\+Computation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{d2/de9/classVarComputation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Var\+Computation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d71/classVarComputation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVarComputation_ad83a5cc15eae4a3362c40224871ed7c2}{Var\+Computation} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classVarComputation_acd7be82192c76ea5af7116ed27063d64}{$\sim$\+Var\+Computation} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classVarComputation_a99f7f770ae1073b7e563159ef4fa42a5}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classVarComputation_a8c4cd153c99d3a411b69e9574f0c6447}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Computes the set of read and written variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classVarComputation_adbf3ccb08fa07a97200ab564774c9518}{Recursively\+Analyze} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} op\+\_\+vertex, const \hyperlink{tree__node_8hpp_a3cf5d02292c940f3892425a5b5fdec3c}{tree\+\_\+node\+Const\+Ref} \hyperlink{classtree__node}{tree\+\_\+node}, const \hyperlink{function__behavior_8hpp_a68c28bfcfefbe63cece191e941af0409}{Function\+Behavior\+\_\+\+Variable\+Access\+Type} access\+\_\+type) const
+\begin{DoxyCompactList}\small\item\em Recursively analyze a \hyperlink{classtree__node}{tree\+\_\+node}. \end{DoxyCompactList}\item 
+void \hyperlink{classVarComputation_ad1023a1abf7c16ada56d21c0385a54be}{Analyze\+Vops} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} op\+\_\+graph, const \hyperlink{structgimple__node}{gimple\+\_\+node} $\ast$vops) const
+\begin{DoxyCompactList}\small\item\em Analyze virtual operands associated with a gimple node. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classVarComputation_abbb72405583e939427e62d78175ac7e3}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const operations\+\_\+graph\+\_\+constructor\+Ref \hyperlink{classVarComputation_ab8ed2054d3cc29ed938c02ab3ec8c319}{ogc}
+\begin{DoxyCompactList}\small\item\em The operation graph constructor. \end{DoxyCompactList}\item 
+const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} \hyperlink{classVarComputation_aacd88a39d84c8c91bb04a81a18f360ba}{cfg}
+\begin{DoxyCompactList}\small\item\em The control flow graph of the function. \end{DoxyCompactList}\item 
+const \hyperlink{behavioral__helper_8hpp_a9da8798985d185e76cbde965d9d68f84}{Behavioral\+Helper\+Ref} \hyperlink{classVarComputation_a8b2e4fafbd38459bd4237d0774a5f837}{behavioral\+\_\+helper}
+\begin{DoxyCompactList}\small\item\em The behavioral helper associated with the function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 71 of file var\+\_\+computation.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVarComputation_ad83a5cc15eae4a3362c40224871ed7c2}\label{classVarComputation_ad83a5cc15eae4a3362c40224871ed7c2}} 
+\index{Var\+Computation@{Var\+Computation}!Var\+Computation@{Var\+Computation}}
+\index{Var\+Computation@{Var\+Computation}!Var\+Computation@{Var\+Computation}}
+\subsubsection{\texorpdfstring{Var\+Computation()}{VarComputation()}}
+{\footnotesize\ttfamily Var\+Computation\+::\+Var\+Computation (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{AppM,  }\item[{unsigned int}]{function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Param} & is the set of the parameters \\
+\hline
+{\em AppM} & is the reference to the application manager \\
+\hline
+{\em function\+\_\+id} & is the index of the function \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 83 of file var\+\_\+computation.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$\+Var\+Computation().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d82/classVarComputation_ad83a5cc15eae4a3362c40224871ed7c2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVarComputation_acd7be82192c76ea5af7116ed27063d64}\label{classVarComputation_acd7be82192c76ea5af7116ed27063d64}} 
+\index{Var\+Computation@{Var\+Computation}!````~Var\+Computation@{$\sim$\+Var\+Computation}}
+\index{````~Var\+Computation@{$\sim$\+Var\+Computation}!Var\+Computation@{Var\+Computation}}
+\subsubsection{\texorpdfstring{$\sim$\+Var\+Computation()}{~VarComputation()}}
+{\footnotesize\ttfamily Var\+Computation\+::$\sim$\+Var\+Computation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Var\+Computation().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d82/classVarComputation_acd7be82192c76ea5af7116ed27063d64_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classVarComputation_ad1023a1abf7c16ada56d21c0385a54be}\label{classVarComputation_ad1023a1abf7c16ada56d21c0385a54be}} 
+\index{Var\+Computation@{Var\+Computation}!Analyze\+Vops@{Analyze\+Vops}}
+\index{Analyze\+Vops@{Analyze\+Vops}!Var\+Computation@{Var\+Computation}}
+\subsubsection{\texorpdfstring{Analyze\+Vops()}{AnalyzeVops()}}
+{\footnotesize\ttfamily void Var\+Computation\+::\+Analyze\+Vops (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{op\+\_\+graph,  }\item[{const \hyperlink{structgimple__node}{gimple\+\_\+node} $\ast$}]{vops }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Analyze virtual operands associated with a gimple node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op\+\_\+vertex} & is the vertex to which gimple node belongs \\
+\hline
+{\em vops} & is the set of virtual operands to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 638 of file var\+\_\+computation.\+cpp.
+
+
+
+References D\+E\+F\+I\+N\+I\+T\+I\+ON, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, gimple\+\_\+node\+::memdef, M\+E\+M\+O\+RY, gimple\+\_\+node\+::memuse, ogc, O\+V\+ER, U\+SE, gimple\+\_\+node\+::vdef, V\+I\+R\+T\+U\+AL, gimple\+\_\+node\+::vovers, and gimple\+\_\+node\+::vuses.
+
+
+
+Referenced by Recursively\+Analyze().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d82/classVarComputation_ad1023a1abf7c16ada56d21c0385a54be_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVarComputation_abbb72405583e939427e62d78175ac7e3}\label{classVarComputation_abbb72405583e939427e62d78175ac7e3}} 
+\index{Var\+Computation@{Var\+Computation}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!Var\+Computation@{Var\+Computation}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ Var\+Computation\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 91 of file var\+\_\+computation.\+cpp.
+
+
+
+References B\+U\+I\+L\+D\+\_\+\+V\+I\+R\+T\+U\+A\+L\+\_\+\+P\+HI, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, O\+P\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+\+C\+F\+G\+\_\+\+C\+O\+M\+P\+U\+T\+A\+T\+I\+ON, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+\mbox{\Hypertarget{classVarComputation_a99f7f770ae1073b7e563159ef4fa42a5}\label{classVarComputation_a99f7f770ae1073b7e563159ef4fa42a5}} 
+\index{Var\+Computation@{Var\+Computation}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Var\+Computation@{Var\+Computation}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Var\+Computation\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 121 of file var\+\_\+computation.\+cpp.
+
+
+
+References Function\+Frontend\+Flow\+Step\+::bb\+\_\+version, Function\+Behavior\+::\+C\+FG, and Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior.
+
+\mbox{\Hypertarget{classVarComputation_a8c4cd153c99d3a411b69e9574f0c6447}\label{classVarComputation_a8c4cd153c99d3a411b69e9574f0c6447}} 
+\index{Var\+Computation@{Var\+Computation}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!Var\+Computation@{Var\+Computation}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} Var\+Computation\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes the set of read and written variables. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 144 of file var\+\_\+computation.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, cfg, Function\+Behavior\+::\+C\+FG, Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), tree\+\_\+manager\+::\+C\+Get\+Tree\+Node(), E\+N\+T\+R\+Y\+\_\+\+ID, E\+X\+I\+T\+\_\+\+ID, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, G\+E\+T\+\_\+\+T\+Y\+PE, Design\+Flow\+Step\+::parameters, Recursively\+Analyze(), S\+U\+C\+C\+E\+SS, T\+Y\+P\+E\+\_\+\+V\+P\+HI, and U\+N\+K\+N\+O\+WN.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d82/classVarComputation_a8c4cd153c99d3a411b69e9574f0c6447_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVarComputation_adbf3ccb08fa07a97200ab564774c9518}\label{classVarComputation_adbf3ccb08fa07a97200ab564774c9518}} 
+\index{Var\+Computation@{Var\+Computation}!Recursively\+Analyze@{Recursively\+Analyze}}
+\index{Recursively\+Analyze@{Recursively\+Analyze}!Var\+Computation@{Var\+Computation}}
+\subsubsection{\texorpdfstring{Recursively\+Analyze()}{RecursivelyAnalyze()}}
+{\footnotesize\ttfamily void Var\+Computation\+::\+Recursively\+Analyze (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{op\+\_\+vertex,  }\item[{const \hyperlink{tree__node_8hpp_a3cf5d02292c940f3892425a5b5fdec3c}{tree\+\_\+node\+Const\+Ref}}]{tree\+\_\+node,  }\item[{const \hyperlink{function__behavior_8hpp_a68c28bfcfefbe63cece191e941af0409}{Function\+Behavior\+\_\+\+Variable\+Access\+Type}}]{access\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Recursively analyze a \hyperlink{classtree__node}{tree\+\_\+node}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op\+\_\+vertex} & is the vertex to which the statement where \hyperlink{classtree__node}{tree\+\_\+node} is inclued belongs \\
+\hline
+{\em \hyperlink{classtree__node}{tree\+\_\+node}} & is the tree node to be examined \\
+\hline
+{\em access\+\_\+type} & is the type of the access \\
+\hline
+\end{DoxyParams}
+Needed to correctly support function pointers
+
+add parameter to the vertex
+
+Needed to correctly support function pointers
+
+add parameter to the vertex
+
+G\+CC 4.\+5 plugin does not writer vuse for component ref of volatile variable 
+
+Definition at line 188 of file var\+\_\+computation.\+cpp.
+
+
+
+References A\+D\+D\+R\+E\+SS, Analyze\+Vops(), Frontend\+Flow\+Step\+::\+AppM, A\+RG, test\+\_\+panda\+::arg, test\+\_\+panda\+::args, C\+A\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+F\+A\+K\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, cfg, Op\+Graph\+::\+C\+Get\+Op\+Graph\+Info(), tree\+\_\+helper\+::\+C\+Get\+Type(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+F\+I\+N\+I\+T\+I\+ON, G\+E\+T\+\_\+\+C\+O\+N\+S\+T\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+helper\+::is\+\_\+volatile(), ogc, O\+V\+ER, Design\+Flow\+Step\+::parameters, S\+C\+A\+L\+AR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, U\+N\+K\+N\+O\+WN, U\+SE, and V\+I\+R\+T\+U\+AL.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d82/classVarComputation_adbf3ccb08fa07a97200ab564774c9518_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d82/classVarComputation_adbf3ccb08fa07a97200ab564774c9518_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classVarComputation_a8b2e4fafbd38459bd4237d0774a5f837}\label{classVarComputation_a8b2e4fafbd38459bd4237d0774a5f837}} 
+\index{Var\+Computation@{Var\+Computation}!behavioral\+\_\+helper@{behavioral\+\_\+helper}}
+\index{behavioral\+\_\+helper@{behavioral\+\_\+helper}!Var\+Computation@{Var\+Computation}}
+\subsubsection{\texorpdfstring{behavioral\+\_\+helper}{behavioral\_helper}}
+{\footnotesize\ttfamily const \hyperlink{behavioral__helper_8hpp_a9da8798985d185e76cbde965d9d68f84}{Behavioral\+Helper\+Ref} Var\+Computation\+::behavioral\+\_\+helper\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The behavioral helper associated with the function. 
+
+
+
+Definition at line 81 of file var\+\_\+computation.\+hpp.
+
+\mbox{\Hypertarget{classVarComputation_aacd88a39d84c8c91bb04a81a18f360ba}\label{classVarComputation_aacd88a39d84c8c91bb04a81a18f360ba}} 
+\index{Var\+Computation@{Var\+Computation}!cfg@{cfg}}
+\index{cfg@{cfg}!Var\+Computation@{Var\+Computation}}
+\subsubsection{\texorpdfstring{cfg}{cfg}}
+{\footnotesize\ttfamily const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} Var\+Computation\+::cfg\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The control flow graph of the function. 
+
+
+
+Definition at line 78 of file var\+\_\+computation.\+hpp.
+
+
+
+Referenced by Internal\+Exec(), and Recursively\+Analyze().
+
+\mbox{\Hypertarget{classVarComputation_ab8ed2054d3cc29ed938c02ab3ec8c319}\label{classVarComputation_ab8ed2054d3cc29ed938c02ab3ec8c319}} 
+\index{Var\+Computation@{Var\+Computation}!ogc@{ogc}}
+\index{ogc@{ogc}!Var\+Computation@{Var\+Computation}}
+\subsubsection{\texorpdfstring{ogc}{ogc}}
+{\footnotesize\ttfamily const operations\+\_\+graph\+\_\+constructor\+Ref Var\+Computation\+::ogc\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The operation graph constructor. 
+
+
+
+Definition at line 75 of file var\+\_\+computation.\+hpp.
+
+
+
+Referenced by Analyze\+Vops(), and Recursively\+Analyze().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{var__computation_8hpp}{var\+\_\+computation.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{var__computation_8cpp}{var\+\_\+computation.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,236 @@
+\hypertarget{language__writer_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+H\+D\+L/language\+\_\+writer.hpp File Reference}
+\label{language__writer_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+H\+D\+L/language\+\_\+writer.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/backend/\+To\+H\+D\+L/language\+\_\+writer.\+hpp}}
+
+
+This class writes different H\+DL based descriptions (V\+H\+DL, Verilog, SystemC) starting from a structural representation.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+F\+R\+O\+M\+\_\+\+C\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}simple\+\_\+indent.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for language\+\_\+writer.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d0a/language__writer_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d77/language__writer_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classlanguage__writer}{language\+\_\+writer}
+\begin{DoxyCompactList}\small\item\em H\+DL writer base class used to specify the interface of the different language writers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{language__writer_8hpp_ae1754ab5104e488b6ec3291adcca76ce}{M\+E\+M\+\_\+\+P\+R\+E\+F\+IX}~\char`\"{}M\+E\+M\+\_\+\char`\"{}
+\item 
+\#define \hyperlink{language__writer_8hpp_a7d965019e7c08b6b4f09c1895b27621a}{B\+I\+T\+S\+I\+Z\+E\+\_\+\+P\+R\+E\+F\+IX}~\char`\"{}B\+I\+T\+S\+I\+Z\+E\+\_\+\char`\"{}
+\item 
+\#define \hyperlink{language__writer_8hpp_affc7331c008846e1a838c6759aac8b69}{P\+O\+R\+T\+S\+I\+Z\+E\+\_\+\+P\+R\+E\+F\+IX}~\char`\"{}P\+O\+R\+T\+S\+I\+Z\+E\+\_\+\char`\"{}
+\item 
+\#define \hyperlink{language__writer_8hpp_a2e78c8932228675b2b9b37ba6d8f6860}{N\+U\+M\+\_\+\+E\+L\+E\+M\+\_\+\+P\+R\+E\+F\+IX}~\char`\"{}N\+U\+M\+\_\+\+E\+L\+E\+M\+\_\+\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classlanguage__writer}{language\+\_\+writer} $>$ \hyperlink{language__writer_8hpp_ab5bb59a651cbff3f3c83b0f51c0b0b71}{language\+\_\+writer\+Ref}
+\begin{DoxyCompactList}\small\item\em Ref\+Count definition of the class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{language__writer_8hpp_a890069761ca3ce361c42684c789d886c}{H\+D\+L\+Writer\+\_\+\+Language} \{ \hyperlink{language__writer_8hpp_a890069761ca3ce361c42684c789d886cafe107693e04491cf323d46f5162a5aaf}{H\+D\+L\+Writer\+\_\+\+Language\+::\+V\+E\+R\+I\+L\+OG} = 0, 
+\hyperlink{language__writer_8hpp_a890069761ca3ce361c42684c789d886caec04e8a88f113a002f453702acdfc92e}{H\+D\+L\+Writer\+\_\+\+Language\+::\+S\+Y\+S\+T\+E\+M\+\_\+\+V\+E\+R\+I\+L\+OG}, 
+\hyperlink{language__writer_8hpp_a890069761ca3ce361c42684c789d886ca01ebe05cf3461b68eb59ecdb2bd4c8fc}{H\+D\+L\+Writer\+\_\+\+Language\+::\+V\+H\+DL}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}\textbf{ Forward declarations.}\par
+{\em Autoheader include
+
+utility include }\begin{DoxyCompactItemize}
+\item 
+\hyperlink{language__writer_8hpp_a667c1d1b99db5e29d7f5058a6405db1b}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classIndentedOutputStream}{Indented\+Output\+Stream})
+\item 
+\hyperlink{language__writer_8hpp_aa1d15a521893d1c822b389875a6c1a9a}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classlanguage__writer}{language\+\_\+writer})
+\item 
+\hyperlink{language__writer_8hpp_ac5c30465e53a2dee97960f0f406b8be7}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classParameter}{Parameter})
+\item 
+\hyperlink{language__writer_8hpp_addad9d423d5c91b257540df3bbf5766c}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor})
+\item 
+\hyperlink{language__writer_8hpp_a6cc986d41bd8485ca4cca564e4602129}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classstructural__object}{structural\+\_\+object})
+\item 
+\hyperlink{language__writer_8hpp_a1e2174e4f038a0b7f20e1e08332e0e05}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classstructural__object}{structural\+\_\+object})
+\item 
+\hyperlink{language__writer_8hpp_a7c20a82ecd2825bfa958fc8191c4d929}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtechnology__manager}{technology\+\_\+manager})
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+This class writes different H\+DL based descriptions (V\+H\+DL, Verilog, SystemC) starting from a structural representation. 
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+
+Christian Pilato \href{mailto:pilato@elet.polimi.it}{\tt pilato@elet.\+polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{language__writer_8hpp_a7d965019e7c08b6b4f09c1895b27621a}\label{language__writer_8hpp_a7d965019e7c08b6b4f09c1895b27621a}} 
+\index{language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}!B\+I\+T\+S\+I\+Z\+E\+\_\+\+P\+R\+E\+F\+IX@{B\+I\+T\+S\+I\+Z\+E\+\_\+\+P\+R\+E\+F\+IX}}
+\index{B\+I\+T\+S\+I\+Z\+E\+\_\+\+P\+R\+E\+F\+IX@{B\+I\+T\+S\+I\+Z\+E\+\_\+\+P\+R\+E\+F\+IX}!language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}}
+\subsubsection{\texorpdfstring{B\+I\+T\+S\+I\+Z\+E\+\_\+\+P\+R\+E\+F\+IX}{BITSIZE\_PREFIX}}
+{\footnotesize\ttfamily \#define B\+I\+T\+S\+I\+Z\+E\+\_\+\+P\+R\+E\+F\+IX~\char`\"{}B\+I\+T\+S\+I\+Z\+E\+\_\+\char`\"{}}
+
+
+
+Definition at line 75 of file language\+\_\+writer.\+hpp.
+
+
+
+Referenced by verilog\+\_\+writer\+::may\+\_\+slice\+\_\+string(), V\+H\+D\+L\+\_\+writer\+::may\+\_\+slice\+\_\+string(), verilog\+\_\+writer\+::type\+\_\+converter\+\_\+size(), V\+H\+D\+L\+\_\+writer\+::type\+\_\+converter\+\_\+size(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl(), and verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl().
+
+\mbox{\Hypertarget{language__writer_8hpp_ae1754ab5104e488b6ec3291adcca76ce}\label{language__writer_8hpp_ae1754ab5104e488b6ec3291adcca76ce}} 
+\index{language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}!M\+E\+M\+\_\+\+P\+R\+E\+F\+IX@{M\+E\+M\+\_\+\+P\+R\+E\+F\+IX}}
+\index{M\+E\+M\+\_\+\+P\+R\+E\+F\+IX@{M\+E\+M\+\_\+\+P\+R\+E\+F\+IX}!language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+\_\+\+P\+R\+E\+F\+IX}{MEM\_PREFIX}}
+{\footnotesize\ttfamily \#define M\+E\+M\+\_\+\+P\+R\+E\+F\+IX~\char`\"{}M\+E\+M\+\_\+\char`\"{}}
+
+
+
+Definition at line 74 of file language\+\_\+writer.\+hpp.
+
+\mbox{\Hypertarget{language__writer_8hpp_a2e78c8932228675b2b9b37ba6d8f6860}\label{language__writer_8hpp_a2e78c8932228675b2b9b37ba6d8f6860}} 
+\index{language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}!N\+U\+M\+\_\+\+E\+L\+E\+M\+\_\+\+P\+R\+E\+F\+IX@{N\+U\+M\+\_\+\+E\+L\+E\+M\+\_\+\+P\+R\+E\+F\+IX}}
+\index{N\+U\+M\+\_\+\+E\+L\+E\+M\+\_\+\+P\+R\+E\+F\+IX@{N\+U\+M\+\_\+\+E\+L\+E\+M\+\_\+\+P\+R\+E\+F\+IX}!language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}}
+\subsubsection{\texorpdfstring{N\+U\+M\+\_\+\+E\+L\+E\+M\+\_\+\+P\+R\+E\+F\+IX}{NUM\_ELEM\_PREFIX}}
+{\footnotesize\ttfamily \#define N\+U\+M\+\_\+\+E\+L\+E\+M\+\_\+\+P\+R\+E\+F\+IX~\char`\"{}N\+U\+M\+\_\+\+E\+L\+E\+M\+\_\+\char`\"{}}
+
+
+
+Definition at line 77 of file language\+\_\+writer.\+hpp.
+
+
+
+Referenced by verilog\+\_\+writer\+::may\+\_\+slice\+\_\+string(), V\+H\+D\+L\+\_\+writer\+::may\+\_\+slice\+\_\+string(), verilog\+\_\+writer\+::type\+\_\+converter\+\_\+size(), V\+H\+D\+L\+\_\+writer\+::type\+\_\+converter\+\_\+size(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl(), and verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl().
+
+\mbox{\Hypertarget{language__writer_8hpp_affc7331c008846e1a838c6759aac8b69}\label{language__writer_8hpp_affc7331c008846e1a838c6759aac8b69}} 
+\index{language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}!P\+O\+R\+T\+S\+I\+Z\+E\+\_\+\+P\+R\+E\+F\+IX@{P\+O\+R\+T\+S\+I\+Z\+E\+\_\+\+P\+R\+E\+F\+IX}}
+\index{P\+O\+R\+T\+S\+I\+Z\+E\+\_\+\+P\+R\+E\+F\+IX@{P\+O\+R\+T\+S\+I\+Z\+E\+\_\+\+P\+R\+E\+F\+IX}!language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}}
+\subsubsection{\texorpdfstring{P\+O\+R\+T\+S\+I\+Z\+E\+\_\+\+P\+R\+E\+F\+IX}{PORTSIZE\_PREFIX}}
+{\footnotesize\ttfamily \#define P\+O\+R\+T\+S\+I\+Z\+E\+\_\+\+P\+R\+E\+F\+IX~\char`\"{}P\+O\+R\+T\+S\+I\+Z\+E\+\_\+\char`\"{}}
+
+
+
+Definition at line 76 of file language\+\_\+writer.\+hpp.
+
+
+
+Referenced by verilog\+\_\+writer\+::type\+\_\+converter\+\_\+size(), V\+H\+D\+L\+\_\+writer\+::type\+\_\+converter\+\_\+size(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization(), V\+H\+D\+L\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl(), and verilog\+\_\+writer\+::write\+\_\+module\+\_\+parametrization\+\_\+decl().
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{language__writer_8hpp_ab5bb59a651cbff3f3c83b0f51c0b0b71}\label{language__writer_8hpp_ab5bb59a651cbff3f3c83b0f51c0b0b71}} 
+\index{language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}!language\+\_\+writer\+Ref@{language\+\_\+writer\+Ref}}
+\index{language\+\_\+writer\+Ref@{language\+\_\+writer\+Ref}!language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}}
+\subsubsection{\texorpdfstring{language\+\_\+writer\+Ref}{language\_writerRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classlanguage__writer}{language\+\_\+writer}$>$ \hyperlink{language__writer_8hpp_ab5bb59a651cbff3f3c83b0f51c0b0b71}{language\+\_\+writer\+Ref}}
+
+
+
+Ref\+Count definition of the class. 
+
+
+
+Definition at line 351 of file language\+\_\+writer.\+hpp.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{language__writer_8hpp_a890069761ca3ce361c42684c789d886c}\label{language__writer_8hpp_a890069761ca3ce361c42684c789d886c}} 
+\index{language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}!H\+D\+L\+Writer\+\_\+\+Language@{H\+D\+L\+Writer\+\_\+\+Language}}
+\index{H\+D\+L\+Writer\+\_\+\+Language@{H\+D\+L\+Writer\+\_\+\+Language}!language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}}
+\subsubsection{\texorpdfstring{H\+D\+L\+Writer\+\_\+\+Language}{HDLWriter\_Language}}
+{\footnotesize\ttfamily enum \hyperlink{language__writer_8hpp_a890069761ca3ce361c42684c789d886c}{H\+D\+L\+Writer\+\_\+\+Language}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{V\+E\+R\+I\+L\+OG@{V\+E\+R\+I\+L\+OG}!language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}}\index{language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}!V\+E\+R\+I\+L\+OG@{V\+E\+R\+I\+L\+OG}}}\mbox{\Hypertarget{language__writer_8hpp_a890069761ca3ce361c42684c789d886cafe107693e04491cf323d46f5162a5aaf}\label{language__writer_8hpp_a890069761ca3ce361c42684c789d886cafe107693e04491cf323d46f5162a5aaf}} 
+V\+E\+R\+I\+L\+OG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+Y\+S\+T\+E\+M\+\_\+\+V\+E\+R\+I\+L\+OG@{S\+Y\+S\+T\+E\+M\+\_\+\+V\+E\+R\+I\+L\+OG}!language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}}\index{language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}!S\+Y\+S\+T\+E\+M\+\_\+\+V\+E\+R\+I\+L\+OG@{S\+Y\+S\+T\+E\+M\+\_\+\+V\+E\+R\+I\+L\+OG}}}\mbox{\Hypertarget{language__writer_8hpp_a890069761ca3ce361c42684c789d886caec04e8a88f113a002f453702acdfc92e}\label{language__writer_8hpp_a890069761ca3ce361c42684c789d886caec04e8a88f113a002f453702acdfc92e}} 
+S\+Y\+S\+T\+E\+M\+\_\+\+V\+E\+R\+I\+L\+OG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{V\+H\+DL@{V\+H\+DL}!language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}}\index{language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}!V\+H\+DL@{V\+H\+DL}}}\mbox{\Hypertarget{language__writer_8hpp_a890069761ca3ce361c42684c789d886ca01ebe05cf3461b68eb59ecdb2bd4c8fc}\label{language__writer_8hpp_a890069761ca3ce361c42684c789d886ca01ebe05cf3461b68eb59ecdb2bd4c8fc}} 
+V\+H\+DL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 78 of file language\+\_\+writer.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{language__writer_8hpp_ac5c30465e53a2dee97960f0f406b8be7}\label{language__writer_8hpp_ac5c30465e53a2dee97960f0f406b8be7}} 
+\index{language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classParameter}{Parameter}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{language__writer_8hpp_a6cc986d41bd8485ca4cca564e4602129}\label{language__writer_8hpp_a6cc986d41bd8485ca4cca564e4602129}} 
+\index{language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classstructural__object}{structural\+\_\+object}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{language__writer_8hpp_a7c20a82ecd2825bfa958fc8191c4d929}\label{language__writer_8hpp_a7c20a82ecd2825bfa958fc8191c4d929}} 
+\index{language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtechnology__manager}{technology\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{language__writer_8hpp_a667c1d1b99db5e29d7f5058a6405db1b}\label{language__writer_8hpp_a667c1d1b99db5e29d7f5058a6405db1b}} 
+\index{language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classIndentedOutputStream}{Indented\+Output\+Stream}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{language__writer_8hpp_aa1d15a521893d1c822b389875a6c1a9a}\label{language__writer_8hpp_aa1d15a521893d1c822b389875a6c1a9a}} 
+\index{language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classlanguage__writer}{language\+\_\+writer}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{language__writer_8hpp_addad9d423d5c91b257540df3bbf5766c}\label{language__writer_8hpp_addad9d423d5c91b257540df3bbf5766c}} 
+\index{language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structstructural__type__descriptor}{structural\+\_\+type\+\_\+descriptor}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{language__writer_8hpp_a1e2174e4f038a0b7f20e1e08332e0e05}\label{language__writer_8hpp_a1e2174e4f038a0b7f20e1e08332e0e05}} 
+\index{language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!language\+\_\+writer.\+hpp@{language\+\_\+writer.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classstructural__object}{structural\+\_\+object}}]{ }\end{DoxyParamCaption})}
+

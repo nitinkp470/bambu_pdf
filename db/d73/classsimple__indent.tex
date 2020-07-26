@@ -1,0 +1,344 @@
+\hypertarget{classsimple__indent}{}\section{simple\+\_\+indent Class Reference}
+\label{classsimple__indent}\index{simple\+\_\+indent@{simple\+\_\+indent}}
+
+
+Very simple pretty printer functor.  
+
+
+
+
+{\ttfamily \#include $<$simple\+\_\+indent.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classsimple__indent_a3199d4f7593b10ca63ab8955e43f3985}{operator()} (std\+::ostream \&os, const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em pretty print functor \end{DoxyCompactList}\item 
+\hyperlink{classsimple__indent_a35f01c5da24340ddb20e2963c9017f65}{simple\+\_\+indent} (char o, char c, unsigned int d)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hyperlink{classsimple__indent_a4fdd904c16c34cba860c86939651b9a3}{$\sim$simple\+\_\+indent} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \hyperlink{classsimple__indent_aa88aafba2edf16742b332625ef292a20}{indent} ()
+\begin{DoxyCompactList}\small\item\em Manually increase the indenting of the code. \end{DoxyCompactList}\item 
+void \hyperlink{classsimple__indent_ae22b30d747a97908e638a655364e498f}{deindent} ()
+\begin{DoxyCompactList}\small\item\em Manually reduce the indenting of the code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classsimple__indent_aad9458b42a0de8b0f22dcf9c171b935f}{write\+\_\+indent} (std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Write the indent spaces. \end{DoxyCompactList}\item 
+void \hyperlink{classsimple__indent_a945ebea4ab143178d2664fa746cb0228}{write\+\_\+char} (std\+::ostream \&os, const char \&c)
+\begin{DoxyCompactList}\small\item\em Write the current char. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classsimple__indent_accc69ae9d9ad959ae711a7cf9243d7d7}{indent\+\_\+spaces}
+\begin{DoxyCompactList}\small\item\em number of spaces used to indent after a new line print \end{DoxyCompactList}\item 
+char \hyperlink{classsimple__indent_a47bb56e9b42182e8c35a2ff77e7dcb69}{opening\+\_\+char}
+\begin{DoxyCompactList}\small\item\em char that increments the indent space by a delta \end{DoxyCompactList}\item 
+char \hyperlink{classsimple__indent_a820d3dfc133cae5da3daf3ea1aa1c57f}{closing\+\_\+char}
+\begin{DoxyCompactList}\small\item\em char that increments the indent space by a delta \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classsimple__indent_a47dad96c1bd62b3fb2499c57b680c70d}{delta}
+\begin{DoxyCompactList}\small\item\em delta indent space \end{DoxyCompactList}\item 
+bool \hyperlink{classsimple__indent_a15aa364252fa38fff21e58f665176f80}{is\+\_\+line\+\_\+start}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Very simple pretty printer functor. 
+
+Definition at line 58 of file simple\+\_\+indent.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsimple__indent_a35f01c5da24340ddb20e2963c9017f65}\label{classsimple__indent_a35f01c5da24340ddb20e2963c9017f65}} 
+\index{simple\+\_\+indent@{simple\+\_\+indent}!simple\+\_\+indent@{simple\+\_\+indent}}
+\index{simple\+\_\+indent@{simple\+\_\+indent}!simple\+\_\+indent@{simple\+\_\+indent}}
+\subsubsection{\texorpdfstring{simple\+\_\+indent()}{simple\_indent()}}
+{\footnotesize\ttfamily simple\+\_\+indent\+::simple\+\_\+indent (\begin{DoxyParamCaption}\item[{char}]{o,  }\item[{char}]{c,  }\item[{unsigned int}]{d }\end{DoxyParamCaption})}
+
+
+
+constructor 
+
+Utility include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em o} & is the opening character used by \hyperlink{classsimple__indent}{simple\+\_\+indent}. \\
+\hline
+{\em c} & is the closing character used by \hyperlink{classsimple__indent}{simple\+\_\+indent}. \\
+\hline
+{\em d} & is the number of characters used to indent the code.\\
+\hline
+\end{DoxyParams}
+Header include 
+
+Definition at line 54 of file simple\+\_\+indent.\+cpp.
+
+\mbox{\Hypertarget{classsimple__indent_a4fdd904c16c34cba860c86939651b9a3}\label{classsimple__indent_a4fdd904c16c34cba860c86939651b9a3}} 
+\index{simple\+\_\+indent@{simple\+\_\+indent}!````~simple\+\_\+indent@{$\sim$simple\+\_\+indent}}
+\index{````~simple\+\_\+indent@{$\sim$simple\+\_\+indent}!simple\+\_\+indent@{simple\+\_\+indent}}
+\subsubsection{\texorpdfstring{$\sim$simple\+\_\+indent()}{~simple\_indent()}}
+{\footnotesize\ttfamily simple\+\_\+indent\+::$\sim$simple\+\_\+indent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+destructor 
+
+This corresponds to a T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, however it is against C++ rules throw an error inside a destructor 
+
+Definition at line 58 of file simple\+\_\+indent.\+cpp.
+
+
+
+References indent\+\_\+spaces, and indentation.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsimple__indent_ae22b30d747a97908e638a655364e498f}\label{classsimple__indent_ae22b30d747a97908e638a655364e498f}} 
+\index{simple\+\_\+indent@{simple\+\_\+indent}!deindent@{deindent}}
+\index{deindent@{deindent}!simple\+\_\+indent@{simple\+\_\+indent}}
+\subsubsection{\texorpdfstring{deindent()}{deindent()}}
+{\footnotesize\ttfamily void simple\+\_\+indent\+::deindent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Manually reduce the indenting of the code. 
+
+
+
+Definition at line 144 of file simple\+\_\+indent.\+cpp.
+
+
+
+References delta, indent\+\_\+spaces, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by operator()(), and flopoco\+\_\+wrapper\+::output\+Wrap\+V\+H\+D\+L().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d73/classsimple__indent_ae22b30d747a97908e638a655364e498f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsimple__indent_aa88aafba2edf16742b332625ef292a20}\label{classsimple__indent_aa88aafba2edf16742b332625ef292a20}} 
+\index{simple\+\_\+indent@{simple\+\_\+indent}!indent@{indent}}
+\index{indent@{indent}!simple\+\_\+indent@{simple\+\_\+indent}}
+\subsubsection{\texorpdfstring{indent()}{indent()}}
+{\footnotesize\ttfamily void simple\+\_\+indent\+::indent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Manually increase the indenting of the code. 
+
+
+
+Definition at line 139 of file simple\+\_\+indent.\+cpp.
+
+
+
+References delta, and indent\+\_\+spaces.
+
+
+
+Referenced by operator()(), and flopoco\+\_\+wrapper\+::output\+Wrap\+V\+H\+D\+L().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d73/classsimple__indent_aa88aafba2edf16742b332625ef292a20_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsimple__indent_a3199d4f7593b10ca63ab8955e43f3985}\label{classsimple__indent_a3199d4f7593b10ca63ab8955e43f3985}} 
+\index{simple\+\_\+indent@{simple\+\_\+indent}!operator()@{operator()}}
+\index{operator()@{operator()}!simple\+\_\+indent@{simple\+\_\+indent}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily void simple\+\_\+indent\+::operator() (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})}
+
+
+
+pretty print functor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & the output stream \\
+\hline
+{\em is} & the string to be printed \\
+\hline
+\end{DoxyParams}
+Specified whether the first character of the string we are going to write must be indented or not 
+
+Definition at line 69 of file simple\+\_\+indent.\+cpp.
+
+
+
+References closing\+\_\+char, deindent(), indent(), is\+\_\+line\+\_\+start, opening\+\_\+char, S\+T\+D\+\_\+\+C\+L\+O\+S\+I\+N\+G\+\_\+\+C\+H\+AR, S\+T\+D\+\_\+\+O\+P\+E\+N\+I\+N\+G\+\_\+\+C\+H\+AR, write\+\_\+char(), and write\+\_\+indent().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d73/classsimple__indent_a3199d4f7593b10ca63ab8955e43f3985_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsimple__indent_a945ebea4ab143178d2664fa746cb0228}\label{classsimple__indent_a945ebea4ab143178d2664fa746cb0228}} 
+\index{simple\+\_\+indent@{simple\+\_\+indent}!write\+\_\+char@{write\+\_\+char}}
+\index{write\+\_\+char@{write\+\_\+char}!simple\+\_\+indent@{simple\+\_\+indent}}
+\subsubsection{\texorpdfstring{write\+\_\+char()}{write\_char()}}
+{\footnotesize\ttfamily void simple\+\_\+indent\+::write\+\_\+char (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const char \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Write the current char. 
+
+
+
+Definition at line 158 of file simple\+\_\+indent.\+cpp.
+
+
+
+Referenced by operator()().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d73/classsimple__indent_a945ebea4ab143178d2664fa746cb0228_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsimple__indent_aad9458b42a0de8b0f22dcf9c171b935f}\label{classsimple__indent_aad9458b42a0de8b0f22dcf9c171b935f}} 
+\index{simple\+\_\+indent@{simple\+\_\+indent}!write\+\_\+indent@{write\+\_\+indent}}
+\index{write\+\_\+indent@{write\+\_\+indent}!simple\+\_\+indent@{simple\+\_\+indent}}
+\subsubsection{\texorpdfstring{write\+\_\+indent()}{write\_indent()}}
+{\footnotesize\ttfamily void simple\+\_\+indent\+::write\+\_\+indent (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Write the indent spaces. 
+
+
+
+Definition at line 150 of file simple\+\_\+indent.\+cpp.
+
+
+
+References indent\+\_\+spaces.
+
+
+
+Referenced by operator()().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{db/d73/classsimple__indent_aad9458b42a0de8b0f22dcf9c171b935f_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classsimple__indent_a820d3dfc133cae5da3daf3ea1aa1c57f}\label{classsimple__indent_a820d3dfc133cae5da3daf3ea1aa1c57f}} 
+\index{simple\+\_\+indent@{simple\+\_\+indent}!closing\+\_\+char@{closing\+\_\+char}}
+\index{closing\+\_\+char@{closing\+\_\+char}!simple\+\_\+indent@{simple\+\_\+indent}}
+\subsubsection{\texorpdfstring{closing\+\_\+char}{closing\_char}}
+{\footnotesize\ttfamily char simple\+\_\+indent\+::closing\+\_\+char\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+char that increments the indent space by a delta 
+
+
+
+Definition at line 68 of file simple\+\_\+indent.\+hpp.
+
+
+
+Referenced by operator()().
+
+\mbox{\Hypertarget{classsimple__indent_a47dad96c1bd62b3fb2499c57b680c70d}\label{classsimple__indent_a47dad96c1bd62b3fb2499c57b680c70d}} 
+\index{simple\+\_\+indent@{simple\+\_\+indent}!delta@{delta}}
+\index{delta@{delta}!simple\+\_\+indent@{simple\+\_\+indent}}
+\subsubsection{\texorpdfstring{delta}{delta}}
+{\footnotesize\ttfamily unsigned int simple\+\_\+indent\+::delta\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+delta indent space 
+
+
+
+Definition at line 71 of file simple\+\_\+indent.\+hpp.
+
+
+
+Referenced by deindent(), and indent().
+
+\mbox{\Hypertarget{classsimple__indent_accc69ae9d9ad959ae711a7cf9243d7d7}\label{classsimple__indent_accc69ae9d9ad959ae711a7cf9243d7d7}} 
+\index{simple\+\_\+indent@{simple\+\_\+indent}!indent\+\_\+spaces@{indent\+\_\+spaces}}
+\index{indent\+\_\+spaces@{indent\+\_\+spaces}!simple\+\_\+indent@{simple\+\_\+indent}}
+\subsubsection{\texorpdfstring{indent\+\_\+spaces}{indent\_spaces}}
+{\footnotesize\ttfamily unsigned int simple\+\_\+indent\+::indent\+\_\+spaces\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+number of spaces used to indent after a new line print 
+
+
+
+Definition at line 62 of file simple\+\_\+indent.\+hpp.
+
+
+
+Referenced by deindent(), indent(), write\+\_\+indent(), and $\sim$simple\+\_\+indent().
+
+\mbox{\Hypertarget{classsimple__indent_a15aa364252fa38fff21e58f665176f80}\label{classsimple__indent_a15aa364252fa38fff21e58f665176f80}} 
+\index{simple\+\_\+indent@{simple\+\_\+indent}!is\+\_\+line\+\_\+start@{is\+\_\+line\+\_\+start}}
+\index{is\+\_\+line\+\_\+start@{is\+\_\+line\+\_\+start}!simple\+\_\+indent@{simple\+\_\+indent}}
+\subsubsection{\texorpdfstring{is\+\_\+line\+\_\+start}{is\_line\_start}}
+{\footnotesize\ttfamily bool simple\+\_\+indent\+::is\+\_\+line\+\_\+start\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 73 of file simple\+\_\+indent.\+hpp.
+
+
+
+Referenced by operator()().
+
+\mbox{\Hypertarget{classsimple__indent_a47bb56e9b42182e8c35a2ff77e7dcb69}\label{classsimple__indent_a47bb56e9b42182e8c35a2ff77e7dcb69}} 
+\index{simple\+\_\+indent@{simple\+\_\+indent}!opening\+\_\+char@{opening\+\_\+char}}
+\index{opening\+\_\+char@{opening\+\_\+char}!simple\+\_\+indent@{simple\+\_\+indent}}
+\subsubsection{\texorpdfstring{opening\+\_\+char}{opening\_char}}
+{\footnotesize\ttfamily char simple\+\_\+indent\+::opening\+\_\+char\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+char that increments the indent space by a delta 
+
+
+
+Definition at line 65 of file simple\+\_\+indent.\+hpp.
+
+
+
+Referenced by operator()().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/\hyperlink{simple__indent_8hpp}{simple\+\_\+indent.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/\hyperlink{simple__indent_8cpp}{simple\+\_\+indent.\+cpp}\end{DoxyCompactItemize}

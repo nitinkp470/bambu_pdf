@@ -1,0 +1,663 @@
+\hypertarget{classToolManager}{}\section{Tool\+Manager Class Reference}
+\label{classToolManager}\index{Tool\+Manager@{Tool\+Manager}}
+
+
+{\ttfamily \#include $<$Tool\+Manager.\+hpp$>$}
+
+
+
+Collaboration diagram for Tool\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{d1/d2d/classToolManager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classToolManager_a213dc23b5dc57354857053ef0b0c3fa8}{Tool\+Manager} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&\hyperlink{classToolManager_ae9a9aa4672305bbf4ce1f28d4472b0eb}{Param})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classToolManager_a242d9f322f17b81946a921764ea6c5dd}{$\sim$\+Tool\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classToolManager_abc49a9ba19dbcea87407517f7f746d1d}{configure} (const std\+::string \&tool, const std\+::string \&setupscr, const std\+::string \&\hyperlink{classToolManager_a08d743e6d2aa5bfe5917130574d06a87}{host}=\char`\"{}\char`\"{}, const std\+::string \&\hyperlink{classToolManager_a01d51d439d7326cd32b06fe3c43f04ae}{remote\+\_\+path}=\char`\"{}\char`\"{}, bool force\+\_\+remote=false)
+\begin{DoxyCompactList}\small\item\em Configuration of the tool. \end{DoxyCompactList}\item 
+int \hyperlink{classToolManager_a30f0f9fac713b19600315938cb211a87}{execute} (const std\+::vector$<$ std\+::string $>$ \&parameters, const std\+::vector$<$ std\+::string $>$ \&input\+\_\+files, const std\+::vector$<$ std\+::string $>$ \&output\+\_\+files=std\+::vector$<$ std\+::string $>$(), const std\+::string \&log\+\_\+file=std\+::string(), bool permissive=false)
+\begin{DoxyCompactList}\small\item\em Execute the tool. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{classToolManager_a7973f93d141a5e61f42cf681c97c59e5}{determine\+\_\+paths} (std\+::vector$<$ std\+::string $>$ \&files, bool overwrite=true)
+\begin{DoxyCompactList}\small\item\em Determine the relative paths of the inputs files. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classToolManager_a0df8be838f09893c5eaefe22841b23b8}{determine\+\_\+paths} (std\+::string \&files, bool overwrite=true)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classToolManager_aa19f7107e57fbb649f0418bc074c0736}{execute\+\_\+command} (const std\+::string \&command, const std\+::string \&error\+\_\+message, const std\+::string \&log\+\_\+file, bool permissive=false, bool throw\+\_\+message=true)
+\begin{DoxyCompactList}\small\item\em Execute the command and check the return code. \end{DoxyCompactList}\item 
+int \hyperlink{classToolManager_a0301402158ba7ebe5a5f81b04809b761}{check\+\_\+command} (const std\+::string \&command, const std\+::string \&setupscr, const std\+::string \&\hyperlink{classToolManager_a08d743e6d2aa5bfe5917130574d06a87}{host}, bool permissive=false)
+\begin{DoxyCompactList}\small\item\em Check if a command exist on a given host provided a configuration script. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classToolManager_aaa21b7a46e2bc7c2d0842107224f54b4}{create\+\_\+remote\+\_\+command\+\_\+line} (const std\+::vector$<$ std\+::string $>$ \&parameters) const
+\begin{DoxyCompactList}\small\item\em Generate the command to the executed on the remote host. \end{DoxyCompactList}\item 
+void \hyperlink{classToolManager_ac300930662a619e8d71346241f766d5a}{prepare\+\_\+input\+\_\+files} (const std\+::vector$<$ std\+::string $>$ \&files)
+\begin{DoxyCompactList}\small\item\em Check that the input files exist. \end{DoxyCompactList}\item 
+void \hyperlink{classToolManager_ae3000ed97885017b442bc46241053510}{check\+\_\+output\+\_\+files} (const std\+::vector$<$ std\+::string $>$ \&files)
+\begin{DoxyCompactList}\small\item\em Check that the output files have been correctly generated. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classToolManager_aafcbbb6648d720ac19b5201626f1315a}{create\+\_\+command\+\_\+line} (const std\+::vector$<$ std\+::string $>$ \&parameters) const
+\begin{DoxyCompactList}\small\item\em Simply creates the command line starting from the list of parameters. \end{DoxyCompactList}\item 
+void \hyperlink{classToolManager_a9fa29cf550d563627666c294e8a38855}{remove\+\_\+files} (const std\+::vector$<$ std\+::string $>$ \&input\+\_\+files, const std\+::vector$<$ std\+::string $>$ \&files)
+\begin{DoxyCompactList}\small\item\em Removed the specified files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classToolManager_ae9a9aa4672305bbf4ce1f28d4472b0eb}{Param}
+\begin{DoxyCompactList}\small\item\em The set of parameters passed to the tool. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classToolManager_afe1fc7588032f94a9aedc5d3840bcbb3}{executable}
+\begin{DoxyCompactList}\small\item\em this string represent the path of the executable \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classToolManager_a21618f33c4d9a4da9ab3962c9a3af0bb}{setup\+\_\+script}
+\begin{DoxyCompactList}\small\item\em this string has the script used to setup the environment for the executable \end{DoxyCompactList}\item 
+bool \hyperlink{classToolManager_a3502f131211bdc34bc3b95e16abe8e3f}{local}
+\begin{DoxyCompactList}\small\item\em flag to specify if the executable is local (true) or remote (false) \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classToolManager_a08d743e6d2aa5bfe5917130574d06a87}{host}
+\begin{DoxyCompactList}\small\item\em this string represent the host machine if remote \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classToolManager_a01d51d439d7326cd32b06fe3c43f04ae}{remote\+\_\+path}
+\begin{DoxyCompactList}\small\item\em it represents the paths on the host where the files have to be copied \end{DoxyCompactList}\item 
+int \hyperlink{classToolManager_a747c92f90653a6135cf76b35fba2c40f}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em debug level of the class \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 57 of file Tool\+Manager.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classToolManager_a213dc23b5dc57354857053ef0b0c3fa8}\label{classToolManager_a213dc23b5dc57354857053ef0b0c3fa8}} 
+\index{Tool\+Manager@{Tool\+Manager}!Tool\+Manager@{Tool\+Manager}}
+\index{Tool\+Manager@{Tool\+Manager}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{Tool\+Manager()}{ToolManager()}}
+{\footnotesize\ttfamily Tool\+Manager\+::\+Tool\+Manager (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \&}]{Param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Param} & is the set of parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 65 of file Tool\+Manager.\+cpp.
+
+\mbox{\Hypertarget{classToolManager_a242d9f322f17b81946a921764ea6c5dd}\label{classToolManager_a242d9f322f17b81946a921764ea6c5dd}} 
+\index{Tool\+Manager@{Tool\+Manager}!````~Tool\+Manager@{$\sim$\+Tool\+Manager}}
+\index{````~Tool\+Manager@{$\sim$\+Tool\+Manager}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{$\sim$\+Tool\+Manager()}{~ToolManager()}}
+{\footnotesize\ttfamily Tool\+Manager\+::$\sim$\+Tool\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 70 of file Tool\+Manager.\+cpp.
+
+
+
+References O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+LE.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classToolManager_a0301402158ba7ebe5a5f81b04809b761}\label{classToolManager_a0301402158ba7ebe5a5f81b04809b761}} 
+\index{Tool\+Manager@{Tool\+Manager}!check\+\_\+command@{check\+\_\+command}}
+\index{check\+\_\+command@{check\+\_\+command}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{check\+\_\+command()}{check\_command()}}
+{\footnotesize\ttfamily int Tool\+Manager\+::check\+\_\+command (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{command,  }\item[{const std\+::string \&}]{setupscr,  }\item[{const std\+::string \&}]{host,  }\item[{bool}]{permissive = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Check if a command exist on a given host provided a configuration script. 
+
+check if the command is available on host machine
+
+add setup script execution 
+
+Definition at line 112 of file Tool\+Manager.\+cpp.
+
+
+
+References test\+\_\+panda\+::command, execute\+\_\+command(), O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+LE, and Param.
+
+
+
+Referenced by configure().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dc5/classToolManager_a0301402158ba7ebe5a5f81b04809b761_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dc5/classToolManager_a0301402158ba7ebe5a5f81b04809b761_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classToolManager_ae3000ed97885017b442bc46241053510}\label{classToolManager_ae3000ed97885017b442bc46241053510}} 
+\index{Tool\+Manager@{Tool\+Manager}!check\+\_\+output\+\_\+files@{check\+\_\+output\+\_\+files}}
+\index{check\+\_\+output\+\_\+files@{check\+\_\+output\+\_\+files}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{check\+\_\+output\+\_\+files()}{check\_output\_files()}}
+{\footnotesize\ttfamily void Tool\+Manager\+::check\+\_\+output\+\_\+files (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{files }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Check that the output files have been correctly generated. 
+
+If the execution is remote, it also copies the files in local 
+
+Definition at line 370 of file Tool\+Manager.\+cpp.
+
+
+
+References test\+\_\+panda\+::command, create\+\_\+command\+\_\+line(), execute\+\_\+command(), host, local, O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+LE, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, Param, P\+R\+I\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, remote\+\_\+path, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by execute().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dc5/classToolManager_ae3000ed97885017b442bc46241053510_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dc5/classToolManager_ae3000ed97885017b442bc46241053510_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classToolManager_abc49a9ba19dbcea87407517f7f746d1d}\label{classToolManager_abc49a9ba19dbcea87407517f7f746d1d}} 
+\index{Tool\+Manager@{Tool\+Manager}!configure@{configure}}
+\index{configure@{configure}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily void Tool\+Manager\+::configure (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tool,  }\item[{const std\+::string \&}]{setupscr,  }\item[{const std\+::string \&}]{host = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{remote\+\_\+path = {\ttfamily \char`\"{}\char`\"{}},  }\item[{bool}]{force\+\_\+remote = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Configuration of the tool. 
+
+check if the command is locally available
+
+check if the command is remotely available
+
+check if the host is reachable 
+
+Definition at line 154 of file Tool\+Manager.\+cpp.
+
+
+
+References check\+\_\+command(), test\+\_\+panda\+::command, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, executable, execute\+\_\+command(), host, local, O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+LE, Param, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, remote\+\_\+path, setup\+\_\+script, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by Backend\+Flow\+::\+Create\+Scripts(), Backend\+Flow\+::\+Execute\+Synthesis(), Simulation\+Tool\+::\+Generate\+Simulation\+Script(), Design\+Compiler\+Wrapper\+::set\+\_\+constraints(), and Simulation\+Tool\+::\+Simulate().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dc5/classToolManager_abc49a9ba19dbcea87407517f7f746d1d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dc5/classToolManager_abc49a9ba19dbcea87407517f7f746d1d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classToolManager_aafcbbb6648d720ac19b5201626f1315a}\label{classToolManager_aafcbbb6648d720ac19b5201626f1315a}} 
+\index{Tool\+Manager@{Tool\+Manager}!create\+\_\+command\+\_\+line@{create\+\_\+command\+\_\+line}}
+\index{create\+\_\+command\+\_\+line@{create\+\_\+command\+\_\+line}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{create\+\_\+command\+\_\+line()}{create\_command\_line()}}
+{\footnotesize\ttfamily std\+::string Tool\+Manager\+::create\+\_\+command\+\_\+line (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{parameters }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Simply creates the command line starting from the list of parameters. 
+
+Note that the executable has to be the first parameter 
+
+Definition at line 223 of file Tool\+Manager.\+cpp.
+
+
+
+References test\+\_\+panda\+::command, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by check\+\_\+output\+\_\+files(), create\+\_\+remote\+\_\+command\+\_\+line(), execute(), prepare\+\_\+input\+\_\+files(), and remove\+\_\+files().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dc5/classToolManager_aafcbbb6648d720ac19b5201626f1315a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classToolManager_aaa21b7a46e2bc7c2d0842107224f54b4}\label{classToolManager_aaa21b7a46e2bc7c2d0842107224f54b4}} 
+\index{Tool\+Manager@{Tool\+Manager}!create\+\_\+remote\+\_\+command\+\_\+line@{create\+\_\+remote\+\_\+command\+\_\+line}}
+\index{create\+\_\+remote\+\_\+command\+\_\+line@{create\+\_\+remote\+\_\+command\+\_\+line}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{create\+\_\+remote\+\_\+command\+\_\+line()}{create\_remote\_command\_line()}}
+{\footnotesize\ttfamily std\+::string Tool\+Manager\+::create\+\_\+remote\+\_\+command\+\_\+line (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{parameters }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Generate the command to the executed on the remote host. 
+
+
+
+Definition at line 234 of file Tool\+Manager.\+cpp.
+
+
+
+References test\+\_\+panda\+::command, create\+\_\+command\+\_\+line(), host, and remote\+\_\+path.
+
+
+
+Referenced by execute(), and remove\+\_\+files().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{dc/dc5/classToolManager_aaa21b7a46e2bc7c2d0842107224f54b4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dc5/classToolManager_aaa21b7a46e2bc7c2d0842107224f54b4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classToolManager_a7973f93d141a5e61f42cf681c97c59e5}\label{classToolManager_a7973f93d141a5e61f42cf681c97c59e5}} 
+\index{Tool\+Manager@{Tool\+Manager}!determine\+\_\+paths@{determine\+\_\+paths}}
+\index{determine\+\_\+paths@{determine\+\_\+paths}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{determine\+\_\+paths()}{determine\_paths()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Tool\+Manager\+::determine\+\_\+paths (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$ \&}]{files,  }\item[{bool}]{overwrite = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Determine the relative paths of the inputs files. 
+
+
+
+Definition at line 240 of file Tool\+Manager.\+cpp.
+
+
+
+Referenced by Design\+Compiler\+Wrapper\+::set\+\_\+constraints().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dc5/classToolManager_a7973f93d141a5e61f42cf681c97c59e5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classToolManager_a0df8be838f09893c5eaefe22841b23b8}\label{classToolManager_a0df8be838f09893c5eaefe22841b23b8}} 
+\index{Tool\+Manager@{Tool\+Manager}!determine\+\_\+paths@{determine\+\_\+paths}}
+\index{determine\+\_\+paths@{determine\+\_\+paths}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{determine\+\_\+paths()}{determine\_paths()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string Tool\+Manager\+::determine\+\_\+paths (\begin{DoxyParamCaption}\item[{std\+::string \&}]{files,  }\item[{bool}]{overwrite = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 251 of file Tool\+Manager.\+cpp.
+
+
+
+References test\+\_\+panda\+::command, execute\+\_\+command(), Get\+Leaf\+File\+Name(), host, local, Param, remote\+\_\+path, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dc5/classToolManager_a0df8be838f09893c5eaefe22841b23b8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classToolManager_a30f0f9fac713b19600315938cb211a87}\label{classToolManager_a30f0f9fac713b19600315938cb211a87}} 
+\index{Tool\+Manager@{Tool\+Manager}!execute@{execute}}
+\index{execute@{execute}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily int Tool\+Manager\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{parameters,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{input\+\_\+files,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{output\+\_\+files = {\ttfamily std\+:\+:vector$<$std\+:\+:string$>$()},  }\item[{const std\+::string \&}]{log\+\_\+file = {\ttfamily std\+:\+:string()},  }\item[{bool}]{permissive = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Execute the tool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & list of parameters to be given to the tool executable \\
+\hline
+{\em output\+\_\+files} & list of expected output files to be verified \\
+\hline
+{\em log\+\_\+file} & is the log file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a flag that is true if the execution has been terminated with success, false otherwise. 
+\end{DoxyReturn}
+check that the input files exist and, if the execution is remote, copy them on the remote path
+
+check if the output files are already present and delete them
+
+execute the command
+
+check that all expected files have been generated 
+
+Definition at line 323 of file Tool\+Manager.\+cpp.
+
+
+
+References check\+\_\+output\+\_\+files(), test\+\_\+panda\+::command, create\+\_\+command\+\_\+line(), create\+\_\+remote\+\_\+command\+\_\+line(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, executable, execute\+\_\+command(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, local, prepare\+\_\+input\+\_\+files(), remove\+\_\+files(), and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Backend\+Flow\+::\+Create\+Scripts(), Backend\+Flow\+::\+Execute\+Synthesis(), Simulation\+Tool\+::\+Generate\+Simulation\+Script(), and Simulation\+Tool\+::\+Simulate().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dc5/classToolManager_a30f0f9fac713b19600315938cb211a87_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dc5/classToolManager_a30f0f9fac713b19600315938cb211a87_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classToolManager_aa19f7107e57fbb649f0418bc074c0736}\label{classToolManager_aa19f7107e57fbb649f0418bc074c0736}} 
+\index{Tool\+Manager@{Tool\+Manager}!execute\+\_\+command@{execute\+\_\+command}}
+\index{execute\+\_\+command@{execute\+\_\+command}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{execute\+\_\+command()}{execute\_command()}}
+{\footnotesize\ttfamily int Tool\+Manager\+::execute\+\_\+command (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{command,  }\item[{const std\+::string \&}]{error\+\_\+message,  }\item[{const std\+::string \&}]{log\+\_\+file,  }\item[{bool}]{permissive = {\ttfamily false},  }\item[{bool}]{throw\+\_\+message = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Execute the command and check the return code. 
+
+If an error is occurred, an exception is raised with the given message If the permissive flag is given, it raises simply a warning 
+\begin{DoxyParams}{Parameters}
+{\em log\+\_\+file} & is the file where output will be saved \\
+\hline
+\end{DoxyParams}
+on Ubuntu sh is different from bash so we enforce it
+
+Safe approach for release where assertions are disabled 
+
+Definition at line 78 of file Tool\+Manager.\+cpp.
+
+
+
+References Copy\+Stdout(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Is\+Error(), Panda\+System(), Param, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, and T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG.
+
+
+
+Referenced by check\+\_\+command(), check\+\_\+output\+\_\+files(), configure(), determine\+\_\+paths(), execute(), prepare\+\_\+input\+\_\+files(), and remove\+\_\+files().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{dc/dc5/classToolManager_aa19f7107e57fbb649f0418bc074c0736_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dc5/classToolManager_aa19f7107e57fbb649f0418bc074c0736_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classToolManager_ac300930662a619e8d71346241f766d5a}\label{classToolManager_ac300930662a619e8d71346241f766d5a}} 
+\index{Tool\+Manager@{Tool\+Manager}!prepare\+\_\+input\+\_\+files@{prepare\+\_\+input\+\_\+files}}
+\index{prepare\+\_\+input\+\_\+files@{prepare\+\_\+input\+\_\+files}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{prepare\+\_\+input\+\_\+files()}{prepare\_input\_files()}}
+{\footnotesize\ttfamily void Tool\+Manager\+::prepare\+\_\+input\+\_\+files (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{files }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Check that the input files exist. 
+
+If the execution is remote, it also copies the files to the remote path 
+
+Definition at line 297 of file Tool\+Manager.\+cpp.
+
+
+
+References test\+\_\+panda\+::command, create\+\_\+command\+\_\+line(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, execute\+\_\+command(), host, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, local, O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+LE, Param, remote\+\_\+path, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by execute().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dc5/classToolManager_ac300930662a619e8d71346241f766d5a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dc5/classToolManager_ac300930662a619e8d71346241f766d5a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classToolManager_a9fa29cf550d563627666c294e8a38855}\label{classToolManager_a9fa29cf550d563627666c294e8a38855}} 
+\index{Tool\+Manager@{Tool\+Manager}!remove\+\_\+files@{remove\+\_\+files}}
+\index{remove\+\_\+files@{remove\+\_\+files}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{remove\+\_\+files()}{remove\_files()}}
+{\footnotesize\ttfamily void Tool\+Manager\+::remove\+\_\+files (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{input\+\_\+files,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{files }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Removed the specified files. 
+
+
+
+Definition at line 351 of file Tool\+Manager.\+cpp.
+
+
+
+References test\+\_\+panda\+::command, create\+\_\+command\+\_\+line(), create\+\_\+remote\+\_\+command\+\_\+line(), execute\+\_\+command(), local, and Param.
+
+
+
+Referenced by execute().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dc5/classToolManager_a9fa29cf550d563627666c294e8a38855_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dc5/classToolManager_a9fa29cf550d563627666c294e8a38855_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classToolManager_a747c92f90653a6135cf76b35fba2c40f}\label{classToolManager_a747c92f90653a6135cf76b35fba2c40f}} 
+\index{Tool\+Manager@{Tool\+Manager}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily int Tool\+Manager\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+debug level of the class 
+
+
+
+Definition at line 78 of file Tool\+Manager.\+hpp.
+
+
+
+Referenced by configure(), execute(), execute\+\_\+command(), and prepare\+\_\+input\+\_\+files().
+
+\mbox{\Hypertarget{classToolManager_afe1fc7588032f94a9aedc5d3840bcbb3}\label{classToolManager_afe1fc7588032f94a9aedc5d3840bcbb3}} 
+\index{Tool\+Manager@{Tool\+Manager}!executable@{executable}}
+\index{executable@{executable}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{executable}{executable}}
+{\footnotesize\ttfamily std\+::string Tool\+Manager\+::executable\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+this string represent the path of the executable 
+
+
+
+Definition at line 64 of file Tool\+Manager.\+hpp.
+
+
+
+Referenced by configure(), and execute().
+
+\mbox{\Hypertarget{classToolManager_a08d743e6d2aa5bfe5917130574d06a87}\label{classToolManager_a08d743e6d2aa5bfe5917130574d06a87}} 
+\index{Tool\+Manager@{Tool\+Manager}!host@{host}}
+\index{host@{host}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{host}{host}}
+{\footnotesize\ttfamily std\+::string Tool\+Manager\+::host\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+this string represent the host machine if remote 
+
+
+
+Definition at line 73 of file Tool\+Manager.\+hpp.
+
+
+
+Referenced by check\+\_\+output\+\_\+files(), configure(), create\+\_\+remote\+\_\+command\+\_\+line(), determine\+\_\+paths(), and prepare\+\_\+input\+\_\+files().
+
+\mbox{\Hypertarget{classToolManager_a3502f131211bdc34bc3b95e16abe8e3f}\label{classToolManager_a3502f131211bdc34bc3b95e16abe8e3f}} 
+\index{Tool\+Manager@{Tool\+Manager}!local@{local}}
+\index{local@{local}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{local}{local}}
+{\footnotesize\ttfamily bool Tool\+Manager\+::local\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+flag to specify if the executable is local (true) or remote (false) 
+
+
+
+Definition at line 70 of file Tool\+Manager.\+hpp.
+
+
+
+Referenced by check\+\_\+output\+\_\+files(), configure(), determine\+\_\+paths(), execute(), prepare\+\_\+input\+\_\+files(), and remove\+\_\+files().
+
+\mbox{\Hypertarget{classToolManager_ae9a9aa4672305bbf4ce1f28d4472b0eb}\label{classToolManager_ae9a9aa4672305bbf4ce1f28d4472b0eb}} 
+\index{Tool\+Manager@{Tool\+Manager}!Param@{Param}}
+\index{Param@{Param}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{Param}{Param}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Tool\+Manager\+::\+Param\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The set of parameters passed to the tool. 
+
+
+
+Definition at line 61 of file Tool\+Manager.\+hpp.
+
+
+
+Referenced by check\+\_\+command(), check\+\_\+output\+\_\+files(), configure(), determine\+\_\+paths(), execute\+\_\+command(), prepare\+\_\+input\+\_\+files(), and remove\+\_\+files().
+
+\mbox{\Hypertarget{classToolManager_a01d51d439d7326cd32b06fe3c43f04ae}\label{classToolManager_a01d51d439d7326cd32b06fe3c43f04ae}} 
+\index{Tool\+Manager@{Tool\+Manager}!remote\+\_\+path@{remote\+\_\+path}}
+\index{remote\+\_\+path@{remote\+\_\+path}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{remote\+\_\+path}{remote\_path}}
+{\footnotesize\ttfamily std\+::string Tool\+Manager\+::remote\+\_\+path\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+it represents the paths on the host where the files have to be copied 
+
+
+
+Definition at line 75 of file Tool\+Manager.\+hpp.
+
+
+
+Referenced by check\+\_\+output\+\_\+files(), configure(), create\+\_\+remote\+\_\+command\+\_\+line(), determine\+\_\+paths(), and prepare\+\_\+input\+\_\+files().
+
+\mbox{\Hypertarget{classToolManager_a21618f33c4d9a4da9ab3962c9a3af0bb}\label{classToolManager_a21618f33c4d9a4da9ab3962c9a3af0bb}} 
+\index{Tool\+Manager@{Tool\+Manager}!setup\+\_\+script@{setup\+\_\+script}}
+\index{setup\+\_\+script@{setup\+\_\+script}!Tool\+Manager@{Tool\+Manager}}
+\subsubsection{\texorpdfstring{setup\+\_\+script}{setup\_script}}
+{\footnotesize\ttfamily std\+::string Tool\+Manager\+::setup\+\_\+script\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+this string has the script used to setup the environment for the executable 
+
+
+
+Definition at line 67 of file Tool\+Manager.\+hpp.
+
+
+
+Referenced by configure().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/\hyperlink{ToolManager_8hpp}{Tool\+Manager.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/\hyperlink{ToolManager_8cpp}{Tool\+Manager.\+cpp}\end{DoxyCompactItemize}

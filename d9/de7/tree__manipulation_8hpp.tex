@@ -1,0 +1,615 @@
+\hypertarget{tree__manipulation_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/tree\+\_\+manipulation.hpp File Reference}
+\label{tree__manipulation_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/tree\+\_\+manipulation.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/tree\+\_\+manipulation.\+hpp}}
+
+
+Class defining some useful functions to create tree nodes and to manipulate the tree manager.  
+
+
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for tree\+\_\+manipulation.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d06/tree__manipulation_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/df2/tree__manipulation_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classtree__manipulation}{tree\+\_\+manipulation}
+\begin{DoxyCompactList}\small\item\em This class creates a layer to add nodes and to manipulate the tree\+\_\+nodes manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_a1998e1c8db4e6d04d17d7d20485c5d33}{A\+L\+G\+N\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}~64
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_ac560fef4a337308b85cd3620a5d49770}{A\+L\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}~32
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_a2d8ca8c015fcdb4c922f58577330a69a}{A\+L\+G\+N\+\_\+\+I\+NT}~32
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_a21d6b74aa443d80a9f8e1e7119ce9a52}{A\+L\+G\+N\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}~64
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_a6b034a0af838ea1d0c79ebe0122b4c39}{A\+L\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}~64
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_aa4414877e435dcde3707b3cc6d1c0f30}{A\+L\+G\+N\+\_\+\+V\+O\+ID}~8
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_a533e9cffebabbcdcf1386e59eeec6d00}{A\+L\+G\+N\+\_\+\+B\+O\+O\+L\+E\+AN}~8
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_a07810147cfa622c941996a586e3dce41}{A\+L\+G\+N\+\_\+\+P\+O\+I\+N\+T\+ER}~32
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_a5dcaabbfec8ca2d04d8992a3fe200c12}{P\+R\+E\+C\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}~64
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_aff91fe3ae6778c5332e5d8aed267e6a6}{P\+R\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}~32
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_af731d8b169079dd552cbac531a09d3d4}{P\+R\+E\+C\+\_\+\+I\+NT}~32
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_a19765fce8e78ce65a204abe513db59ff}{P\+R\+E\+C\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}~64
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_ac8baa314a974eed43bfe2b0d76cf9df4}{P\+R\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}~64
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_a9d8fa182ef1a4da7ebb0a47d5b51792d}{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}~64
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_adbd8a7c25c61b3a3528828d6681706e8}{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}~32
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_aaaf5195f98ce1bb8e66b571f6c7bcee1}{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}~64
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_ab157f68ad9460d8944eeb9db9fbeb089}{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}~64
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_a42f25fb3ab93a7f1d6963e4f71e4e08f}{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT}~32
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_aa6435de45009f3ae6bc1bff284511ab7}{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+O\+OL}~8
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_ac960bf34c1a1040f989d18572ad58ac9}{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON}~8
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_aafadeb662955dec8d54eef3d05665d61}{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+O\+I\+N\+T\+ER}~32
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_a4694a4d0103865449e71f5c5511ab4f3}{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}~0
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_a24e862b6b7f25c481b19c259199eaa31}{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}~0
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_a7c65c8745444a875462d14eb4b4d29bf}{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT}~-\/2147483648\+LL
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_aac6a1279db425be22e16b79502606108}{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}~0
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_aed0c3aa54319d69f34cf6244ec7271e1}{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}~0
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_a0c418fa177a12e5fda9b7e89dc894c4f}{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}~-\/1
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_aff17037376ebb1845205928147cf6aac}{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}~-\/1
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_a451b1c0b913b3b733622217cf1770340}{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT}~2147483647
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_a002b4ebd5f4e694d831ae18df546bc1c}{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}~-\/1
+\item 
+\#define \hyperlink{tree__manipulation_8hpp_a30ca12427a49f4f93436be5e1f2bbcd4}{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}~-\/1
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classtree__manipulation}{tree\+\_\+manipulation} $>$ \hyperlink{tree__manipulation_8hpp_a1a9460e3a2f9fc6a96cfd2f24cc9b2a5}{tree\+\_\+manipulation\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{classtree__manipulation}{tree\+\_\+manipulation} $>$ \hyperlink{tree__manipulation_8hpp_af8a30f3f306569d7681c1b5af9ddd9d0}{tree\+\_\+manipulation\+Const\+Ref}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}\textbf{ forward declarations}\par
+{\em Utility include }\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{tree__common_8hpp_a9efbd7c7191fb190b76c2fd05d6e7b45}{kind} int \hyperlink{tree__manipulation_8hpp_aa76878a75b02e26cbde7f9b855dd71c1}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classParameter}{Parameter})
+\item 
+\hyperlink{tree__manipulation_8hpp_a676de0ccdd1189b2b906e6c884116894}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtree__node}{tree\+\_\+node})
+\item 
+\hyperlink{tree__manipulation_8hpp_a5e5c6c3bccb026bcd977e354651411ab}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtree__node}{tree\+\_\+node})
+\item 
+\hyperlink{tree__manipulation_8hpp_a52756886a578bcd0db3c2fd210400eb3}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtree__manager}{tree\+\_\+manager})
+\item 
+\hyperlink{tree__manipulation_8hpp_ad96f9232d309d54be82fed94e085f5b7}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtree__manipulation}{tree\+\_\+manipulation})
+\item 
+\hyperlink{tree__manipulation_8hpp_a3534c699031037ce3bebffe714643338}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structbloc}{bloc})
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Class defining some useful functions to create tree nodes and to manipulate the tree manager. 
+
+This class defines some useful functions to create tree nodes and to manipulate the tree manager.
+
+\begin{DoxyAuthor}{Author}
+ste \href{mailto:stefano.viazzi@gmail.com}{\tt stefano.\+viazzi@gmail.\+com} 
+
+Marco Lattuada \href{mailto:marco.lattuada@polimi.it}{\tt marco.\+lattuada@polimi.\+it} 
+
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{tree__manipulation_8hpp_a1998e1c8db4e6d04d17d7d20485c5d33}\label{tree__manipulation_8hpp_a1998e1c8db4e6d04d17d7d20485c5d33}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!A\+L\+G\+N\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE@{A\+L\+G\+N\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}}
+\index{A\+L\+G\+N\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE@{A\+L\+G\+N\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{A\+L\+G\+N\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}{ALGN\_BIT\_SIZE}}
+{\footnotesize\ttfamily \#define A\+L\+G\+N\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE~64}
+
+
+
+Definition at line 69 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+bit\+\_\+size\+\_\+type(), and tree\+\_\+manipulation\+::create\+\_\+size\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a533e9cffebabbcdcf1386e59eeec6d00}\label{tree__manipulation_8hpp_a533e9cffebabbcdcf1386e59eeec6d00}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!A\+L\+G\+N\+\_\+\+B\+O\+O\+L\+E\+AN@{A\+L\+G\+N\+\_\+\+B\+O\+O\+L\+E\+AN}}
+\index{A\+L\+G\+N\+\_\+\+B\+O\+O\+L\+E\+AN@{A\+L\+G\+N\+\_\+\+B\+O\+O\+L\+E\+AN}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{A\+L\+G\+N\+\_\+\+B\+O\+O\+L\+E\+AN}{ALGN\_BOOLEAN}}
+{\footnotesize\ttfamily \#define A\+L\+G\+N\+\_\+\+B\+O\+O\+L\+E\+AN~8}
+
+
+
+Definition at line 75 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+boolean\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a2d8ca8c015fcdb4c922f58577330a69a}\label{tree__manipulation_8hpp_a2d8ca8c015fcdb4c922f58577330a69a}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!A\+L\+G\+N\+\_\+\+I\+NT@{A\+L\+G\+N\+\_\+\+I\+NT}}
+\index{A\+L\+G\+N\+\_\+\+I\+NT@{A\+L\+G\+N\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{A\+L\+G\+N\+\_\+\+I\+NT}{ALGN\_INT}}
+{\footnotesize\ttfamily \#define A\+L\+G\+N\+\_\+\+I\+NT~32}
+
+
+
+Definition at line 71 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+default\+\_\+integer\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a21d6b74aa443d80a9f8e1e7119ce9a52}\label{tree__manipulation_8hpp_a21d6b74aa443d80a9f8e1e7119ce9a52}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!A\+L\+G\+N\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{A\+L\+G\+N\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}}
+\index{A\+L\+G\+N\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{A\+L\+G\+N\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{A\+L\+G\+N\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}{ALGN\_LONG\_LONG\_INT}}
+{\footnotesize\ttfamily \#define A\+L\+G\+N\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT~64}
+
+
+
+Definition at line 72 of file tree\+\_\+manipulation.\+hpp.
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a07810147cfa622c941996a586e3dce41}\label{tree__manipulation_8hpp_a07810147cfa622c941996a586e3dce41}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!A\+L\+G\+N\+\_\+\+P\+O\+I\+N\+T\+ER@{A\+L\+G\+N\+\_\+\+P\+O\+I\+N\+T\+ER}}
+\index{A\+L\+G\+N\+\_\+\+P\+O\+I\+N\+T\+ER@{A\+L\+G\+N\+\_\+\+P\+O\+I\+N\+T\+ER}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{A\+L\+G\+N\+\_\+\+P\+O\+I\+N\+T\+ER}{ALGN\_POINTER}}
+{\footnotesize\ttfamily \#define A\+L\+G\+N\+\_\+\+P\+O\+I\+N\+T\+ER~32}
+
+
+
+Definition at line 76 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by H\+W\+Call\+Injection\+::build\+Builtin\+Call(), tree\+\_\+manipulation\+::create\+\_\+gimple\+\_\+call(), tree\+\_\+manipulation\+::\+Create\+Call\+Expr(), Fix\+Structs\+Passed\+By\+Value\+::\+Internal\+Exec(), and I\+R\+\_\+lowering\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_ac560fef4a337308b85cd3620a5d49770}\label{tree__manipulation_8hpp_ac560fef4a337308b85cd3620a5d49770}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!A\+L\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT@{A\+L\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}}
+\index{A\+L\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT@{A\+L\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{A\+L\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}{ALGN\_UNSIGNED\_INT}}
+{\footnotesize\ttfamily \#define A\+L\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT~32}
+
+
+
+Definition at line 70 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+default\+\_\+unsigned\+\_\+integer\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a6b034a0af838ea1d0c79ebe0122b4c39}\label{tree__manipulation_8hpp_a6b034a0af838ea1d0c79ebe0122b4c39}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!A\+L\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{A\+L\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}}
+\index{A\+L\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{A\+L\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{A\+L\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}{ALGN\_UNSIGNED\_LONG\_LONG\_INT}}
+{\footnotesize\ttfamily \#define A\+L\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT~64}
+
+
+
+Definition at line 73 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::\+Create\+Default\+Unsigned\+Long\+Long\+Int().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_aa4414877e435dcde3707b3cc6d1c0f30}\label{tree__manipulation_8hpp_aa4414877e435dcde3707b3cc6d1c0f30}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!A\+L\+G\+N\+\_\+\+V\+O\+ID@{A\+L\+G\+N\+\_\+\+V\+O\+ID}}
+\index{A\+L\+G\+N\+\_\+\+V\+O\+ID@{A\+L\+G\+N\+\_\+\+V\+O\+ID}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{A\+L\+G\+N\+\_\+\+V\+O\+ID}{ALGN\_VOID}}
+{\footnotesize\ttfamily \#define A\+L\+G\+N\+\_\+\+V\+O\+ID~8}
+
+
+
+Definition at line 74 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+void\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a0c418fa177a12e5fda9b7e89dc894c4f}\label{tree__manipulation_8hpp_a0c418fa177a12e5fda9b7e89dc894c4f}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE@{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}}
+\index{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE@{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}{MAX\_VALUE\_BIT\_SIZE}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE~-\/1}
+
+
+
+Definition at line 99 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+bit\+\_\+size\+\_\+type(), and tree\+\_\+manipulation\+::create\+\_\+size\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a451b1c0b913b3b733622217cf1770340}\label{tree__manipulation_8hpp_a451b1c0b913b3b733622217cf1770340}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT@{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT}}
+\index{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT@{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT}{MAX\_VALUE\_INT}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT~2147483647}
+
+
+
+Definition at line 101 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+default\+\_\+integer\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a002b4ebd5f4e694d831ae18df546bc1c}\label{tree__manipulation_8hpp_a002b4ebd5f4e694d831ae18df546bc1c}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}}
+\index{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}{MAX\_VALUE\_LONG\_LONG\_INT}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT~-\/1}
+
+
+
+Definition at line 102 of file tree\+\_\+manipulation.\+hpp.
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_aff17037376ebb1845205928147cf6aac}\label{tree__manipulation_8hpp_aff17037376ebb1845205928147cf6aac}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT@{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}}
+\index{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT@{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}{MAX\_VALUE\_UNSIGNED\_INT}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT~-\/1}
+
+
+
+Definition at line 100 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+default\+\_\+unsigned\+\_\+integer\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a30ca12427a49f4f93436be5e1f2bbcd4}\label{tree__manipulation_8hpp_a30ca12427a49f4f93436be5e1f2bbcd4}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}}
+\index{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}{MAX\_VALUE\_UNSIGNED\_LONG\_LONG\_INT}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT~-\/1}
+
+
+
+Definition at line 103 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::\+Create\+Default\+Unsigned\+Long\+Long\+Int().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a4694a4d0103865449e71f5c5511ab4f3}\label{tree__manipulation_8hpp_a4694a4d0103865449e71f5c5511ab4f3}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE@{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}}
+\index{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE@{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}{MIN\_VALUE\_BIT\_SIZE}}
+{\footnotesize\ttfamily \#define M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE~0}
+
+
+
+Definition at line 93 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+bit\+\_\+size\+\_\+type(), and tree\+\_\+manipulation\+::create\+\_\+size\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a7c65c8745444a875462d14eb4b4d29bf}\label{tree__manipulation_8hpp_a7c65c8745444a875462d14eb4b4d29bf}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT@{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT}}
+\index{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT@{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT}{MIN\_VALUE\_INT}}
+{\footnotesize\ttfamily \#define M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT~-\/2147483648\+LL}
+
+
+
+Definition at line 95 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+default\+\_\+integer\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_aac6a1279db425be22e16b79502606108}\label{tree__manipulation_8hpp_aac6a1279db425be22e16b79502606108}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}}
+\index{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}{MIN\_VALUE\_LONG\_LONG\_INT}}
+{\footnotesize\ttfamily \#define M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT~0}
+
+
+
+Definition at line 96 of file tree\+\_\+manipulation.\+hpp.
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a24e862b6b7f25c481b19c259199eaa31}\label{tree__manipulation_8hpp_a24e862b6b7f25c481b19c259199eaa31}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT@{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}}
+\index{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT@{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}{MIN\_VALUE\_UNSIGNED\_INT}}
+{\footnotesize\ttfamily \#define M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT~0}
+
+
+
+Definition at line 94 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+default\+\_\+unsigned\+\_\+integer\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_aed0c3aa54319d69f34cf6244ec7271e1}\label{tree__manipulation_8hpp_aed0c3aa54319d69f34cf6244ec7271e1}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}}
+\index{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}{MIN\_VALUE\_UNSIGNED\_LONG\_LONG\_INT}}
+{\footnotesize\ttfamily \#define M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT~0}
+
+
+
+Definition at line 97 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::\+Create\+Default\+Unsigned\+Long\+Long\+Int().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a5dcaabbfec8ca2d04d8992a3fe200c12}\label{tree__manipulation_8hpp_a5dcaabbfec8ca2d04d8992a3fe200c12}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!P\+R\+E\+C\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE@{P\+R\+E\+C\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}}
+\index{P\+R\+E\+C\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE@{P\+R\+E\+C\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{P\+R\+E\+C\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}{PREC\_BIT\_SIZE}}
+{\footnotesize\ttfamily \#define P\+R\+E\+C\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE~64}
+
+
+
+Definition at line 78 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+bit\+\_\+size\+\_\+type(), and tree\+\_\+manipulation\+::create\+\_\+size\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_af731d8b169079dd552cbac531a09d3d4}\label{tree__manipulation_8hpp_af731d8b169079dd552cbac531a09d3d4}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!P\+R\+E\+C\+\_\+\+I\+NT@{P\+R\+E\+C\+\_\+\+I\+NT}}
+\index{P\+R\+E\+C\+\_\+\+I\+NT@{P\+R\+E\+C\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{P\+R\+E\+C\+\_\+\+I\+NT}{PREC\_INT}}
+{\footnotesize\ttfamily \#define P\+R\+E\+C\+\_\+\+I\+NT~32}
+
+
+
+Definition at line 80 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+default\+\_\+integer\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a19765fce8e78ce65a204abe513db59ff}\label{tree__manipulation_8hpp_a19765fce8e78ce65a204abe513db59ff}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!P\+R\+E\+C\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{P\+R\+E\+C\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}}
+\index{P\+R\+E\+C\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{P\+R\+E\+C\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{P\+R\+E\+C\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}{PREC\_LONG\_LONG\_INT}}
+{\footnotesize\ttfamily \#define P\+R\+E\+C\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT~64}
+
+
+
+Definition at line 81 of file tree\+\_\+manipulation.\+hpp.
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_aff91fe3ae6778c5332e5d8aed267e6a6}\label{tree__manipulation_8hpp_aff91fe3ae6778c5332e5d8aed267e6a6}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!P\+R\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT@{P\+R\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}}
+\index{P\+R\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT@{P\+R\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{P\+R\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}{PREC\_UNSIGNED\_INT}}
+{\footnotesize\ttfamily \#define P\+R\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT~32}
+
+
+
+Definition at line 79 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+default\+\_\+unsigned\+\_\+integer\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_ac8baa314a974eed43bfe2b0d76cf9df4}\label{tree__manipulation_8hpp_ac8baa314a974eed43bfe2b0d76cf9df4}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!P\+R\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{P\+R\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}}
+\index{P\+R\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{P\+R\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{P\+R\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}{PREC\_UNSIGNED\_LONG\_LONG\_INT}}
+{\footnotesize\ttfamily \#define P\+R\+E\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT~64}
+
+
+
+Definition at line 82 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::\+Create\+Default\+Unsigned\+Long\+Long\+Int().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a9d8fa182ef1a4da7ebb0a47d5b51792d}\label{tree__manipulation_8hpp_a9d8fa182ef1a4da7ebb0a47d5b51792d}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE@{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}}
+\index{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE@{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE}{SIZE\_VALUE\_BIT\_SIZE}}
+{\footnotesize\ttfamily \#define S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+\_\+\+S\+I\+ZE~64}
+
+
+
+Definition at line 84 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+bit\+\_\+size\+\_\+type(), and tree\+\_\+manipulation\+::create\+\_\+size\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_aa6435de45009f3ae6bc1bff284511ab7}\label{tree__manipulation_8hpp_aa6435de45009f3ae6bc1bff284511ab7}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+O\+OL@{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+O\+OL}}
+\index{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+O\+OL@{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+O\+OL}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+O\+OL}{SIZE\_VALUE\_BOOL}}
+{\footnotesize\ttfamily \#define S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+O\+OL~8}
+
+
+
+Definition at line 89 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+boolean\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_ac960bf34c1a1040f989d18572ad58ac9}\label{tree__manipulation_8hpp_ac960bf34c1a1040f989d18572ad58ac9}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON@{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON}}
+\index{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON@{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON}{SIZE\_VALUE\_FUNCTION}}
+{\footnotesize\ttfamily \#define S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON~8}
+
+
+
+Definition at line 90 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+function\+\_\+decl().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a42f25fb3ab93a7f1d6963e4f71e4e08f}\label{tree__manipulation_8hpp_a42f25fb3ab93a7f1d6963e4f71e4e08f}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT@{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT}}
+\index{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT@{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT}{SIZE\_VALUE\_INT}}
+{\footnotesize\ttfamily \#define S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+I\+NT~32}
+
+
+
+Definition at line 88 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+default\+\_\+integer\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_aaaf5195f98ce1bb8e66b571f6c7bcee1}\label{tree__manipulation_8hpp_aaaf5195f98ce1bb8e66b571f6c7bcee1}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}}
+\index{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}{SIZE\_VALUE\_LONG\_LONG\_INT}}
+{\footnotesize\ttfamily \#define S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT~64}
+
+
+
+Definition at line 86 of file tree\+\_\+manipulation.\+hpp.
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_aafadeb662955dec8d54eef3d05665d61}\label{tree__manipulation_8hpp_aafadeb662955dec8d54eef3d05665d61}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+O\+I\+N\+T\+ER@{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+O\+I\+N\+T\+ER}}
+\index{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+O\+I\+N\+T\+ER@{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+O\+I\+N\+T\+ER}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+O\+I\+N\+T\+ER}{SIZE\_VALUE\_POINTER}}
+{\footnotesize\ttfamily \#define S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+O\+I\+N\+T\+ER~32}
+
+
+
+Definition at line 91 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+pointer\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_adbd8a7c25c61b3a3528828d6681706e8}\label{tree__manipulation_8hpp_adbd8a7c25c61b3a3528828d6681706e8}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT@{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}}
+\index{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT@{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT}{SIZE\_VALUE\_UNSIGNED\_INT}}
+{\footnotesize\ttfamily \#define S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT~32}
+
+
+
+Definition at line 85 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::create\+\_\+default\+\_\+unsigned\+\_\+integer\+\_\+type().
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_ab157f68ad9460d8944eeb9db9fbeb089}\label{tree__manipulation_8hpp_ab157f68ad9460d8944eeb9db9fbeb089}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}}
+\index{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT@{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT}{SIZE\_VALUE\_UNSIGNED\_LONG\_LONG\_INT}}
+{\footnotesize\ttfamily \#define S\+I\+Z\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+L\+O\+N\+G\+\_\+\+L\+O\+N\+G\+\_\+\+I\+NT~64}
+
+
+
+Definition at line 87 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+Referenced by tree\+\_\+manipulation\+::\+Create\+Default\+Unsigned\+Long\+Long\+Int().
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{tree__manipulation_8hpp_af8a30f3f306569d7681c1b5af9ddd9d0}\label{tree__manipulation_8hpp_af8a30f3f306569d7681c1b5af9ddd9d0}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!tree\+\_\+manipulation\+Const\+Ref@{tree\+\_\+manipulation\+Const\+Ref}}
+\index{tree\+\_\+manipulation\+Const\+Ref@{tree\+\_\+manipulation\+Const\+Ref}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{tree\+\_\+manipulation\+Const\+Ref}{tree\_manipulationConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{classtree__manipulation}{tree\+\_\+manipulation}$>$ \hyperlink{tree__manipulation_8hpp_af8a30f3f306569d7681c1b5af9ddd9d0}{tree\+\_\+manipulation\+Const\+Ref}}
+
+
+
+Definition at line 667 of file tree\+\_\+manipulation.\+hpp.
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a1a9460e3a2f9fc6a96cfd2f24cc9b2a5}\label{tree__manipulation_8hpp_a1a9460e3a2f9fc6a96cfd2f24cc9b2a5}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!tree\+\_\+manipulation\+Ref@{tree\+\_\+manipulation\+Ref}}
+\index{tree\+\_\+manipulation\+Ref@{tree\+\_\+manipulation\+Ref}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{tree\+\_\+manipulation\+Ref}{tree\_manipulationRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classtree__manipulation}{tree\+\_\+manipulation}$>$ \hyperlink{tree__manipulation_8hpp_a1a9460e3a2f9fc6a96cfd2f24cc9b2a5}{tree\+\_\+manipulation\+Ref}}
+
+
+
+Definition at line 666 of file tree\+\_\+manipulation.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{tree__manipulation_8hpp_aa76878a75b02e26cbde7f9b855dd71c1}\label{tree__manipulation_8hpp_aa76878a75b02e26cbde7f9b855dd71c1}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{tree__common_8hpp_a9efbd7c7191fb190b76c2fd05d6e7b45}{kind} int C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classParameter}{Parameter}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a5e5c6c3bccb026bcd977e354651411ab}\label{tree__manipulation_8hpp_a5e5c6c3bccb026bcd977e354651411ab}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__node}{tree\+\_\+node}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a676de0ccdd1189b2b906e6c884116894}\label{tree__manipulation_8hpp_a676de0ccdd1189b2b906e6c884116894}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__node}{tree\+\_\+node}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a52756886a578bcd0db3c2fd210400eb3}\label{tree__manipulation_8hpp_a52756886a578bcd0db3c2fd210400eb3}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__manager}{tree\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_ad96f9232d309d54be82fed94e085f5b7}\label{tree__manipulation_8hpp_ad96f9232d309d54be82fed94e085f5b7}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__manipulation}{tree\+\_\+manipulation}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tree__manipulation_8hpp_a3534c699031037ce3bebffe714643338}\label{tree__manipulation_8hpp_a3534c699031037ce3bebffe714643338}} 
+\index{tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!tree\+\_\+manipulation.\+hpp@{tree\+\_\+manipulation.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structbloc}{bloc}}]{ }\end{DoxyParamCaption})}
+

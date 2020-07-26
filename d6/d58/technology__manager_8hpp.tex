@@ -1,0 +1,398 @@
+\hypertarget{technology__manager_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/technology\+\_\+manager.hpp File Reference}
+\label{technology__manager_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/technology\+\_\+manager.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/technology/technology\+\_\+manager.\+hpp}}
+
+
+Class specification of the manager of the technology library data structures.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+B\+E\+A\+G\+L\+E.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+B\+O\+O\+L\+E\+A\+N\+\_\+\+P\+A\+R\+S\+E\+R\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+C\+I\+R\+C\+U\+I\+T\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+F\+R\+O\+M\+\_\+\+L\+I\+B\+E\+R\+T\+Y.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+P\+H\+Y\+S\+I\+C\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+M\+O\+D\+E\+L\+S\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}strong\+\_\+typedef.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utility.\+hpp\char`\"{}}\newline
+Include dependency graph for technology\+\_\+manager.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d63/technology__manager_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dec/technology__manager_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classtechnology__manager}{technology\+\_\+manager}
+\begin{DoxyCompactList}\small\item\em This class manages the technology library structures. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{technology__manager_8hpp_a9a642a7feaec09dc61a5c34b7bdc2977}{D\+E\+S\+I\+GN}~std\+::string(\char`\"{}design\char`\"{})
+\begin{DoxyCompactList}\small\item\em Autoheader include. \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__manager_8hpp_ad3d8378a02dbb95bdd42905dcb974b4d}{W\+O\+R\+K\+\_\+\+L\+I\+B\+R\+A\+RY}~std\+::string(\char`\"{}work\char`\"{})
+\begin{DoxyCompactList}\small\item\em working library. \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__manager_8hpp_ad0b44ada35eef8b9ce57803d6e828297}{O\+P\+E\+N\+M\+P\+\_\+\+L\+I\+B\+R\+A\+RY}~std\+::string(\char`\"{}Open\+M\+P\+\_\+library\char`\"{})
+\begin{DoxyCompactList}\small\item\em Open\+MP library. \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__manager_8hpp_a778f959e3820c2faeeadef15893892a3}{P\+R\+O\+X\+Y\+\_\+\+L\+I\+B\+R\+A\+RY}~std\+::string(\char`\"{}proxy\+\_\+library\char`\"{})
+\begin{DoxyCompactList}\small\item\em proxy library \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__manager_8hpp_a219515cf85c77ec6c0b2a22e31dff056}{I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+L\+I\+B\+R\+A\+RY}~std\+::string(\char`\"{}interface\+\_\+library\char`\"{})
+\begin{DoxyCompactList}\small\item\em interface library \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__manager_8hpp_a0033bdd1d1c034f88d486516cd90f614}{L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+TD}~std\+::string(\char`\"{}S\+TD\char`\"{})
+\begin{DoxyCompactList}\small\item\em standard library where all built-\/in ports are defined. \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__manager_8hpp_a1f1d1ece622e71071c498bedb43e4260}{L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+T\+D\+\_\+\+FU}~std\+::string(\char`\"{}S\+T\+D\+\_\+\+FU\char`\"{})
+\begin{DoxyCompactList}\small\item\em standard library where all standard H\+LS resources are defined \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__manager_8hpp_ac38c9afe9085ec1380cab91553b3f155}{C\+G\+\_\+\+L\+I\+B\+R\+A\+RY}~std\+::string(\char`\"{}CG\char`\"{})
+\begin{DoxyCompactList}\small\item\em compound gates \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__manager_8hpp_a7ca468ca64ab559dc26e46d72291dc3f}{L\+I\+B\+R\+A\+R\+Y\+\_\+\+T\+E\+M\+P\+L\+A\+TE}~std\+::string(\char`\"{}L\+I\+B\+R\+A\+R\+Y\+\_\+\+T\+E\+M\+P\+L\+A\+TE\char`\"{})
+\begin{DoxyCompactList}\small\item\em library template \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__manager_8hpp_a994671fb660c77a0e5fe180f3589581c}{L\+I\+B\+R\+A\+R\+Y\+\_\+\+PC}~std\+::string(\char`\"{}S\+T\+D\+\_\+\+PC\char`\"{})
+\begin{DoxyCompactList}\small\item\em standard library for parallel controller \end{DoxyCompactList}\item 
+\#define \hyperlink{technology__manager_8hpp_a057035f7fd5fa814827c71e50c225ac3}{F\+P\+G\+A\+\_\+\+L\+I\+B\+R\+A\+RY}~std\+::string(\char`\"{}F\+P\+G\+A\+\_\+\+L\+I\+B\+R\+A\+RY\char`\"{})
+\begin{DoxyCompactList}\small\item\em F\+P\+GA modules. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classtechnology__manager}{technology\+\_\+manager} $>$ \hyperlink{technology__manager_8hpp_a4b9ecd440c804109c962654f9227244e}{technology\+\_\+manager\+Ref}
+\end{DoxyCompactItemize}
+\subsection*{Forward declarations.}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ std\+::istream $>$ \hyperlink{technology__manager_8hpp_a997fb60da66e276a7cf23c1b5e40da2b}{file\+I\+O\+\_\+istream\+Ref}
+\item 
+\hyperlink{technology__manager_8hpp_ac5c30465e53a2dee97960f0f406b8be7}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classParameter}{Parameter})
+\begin{DoxyCompactList}\small\item\em Ref\+Count type definition of the \hyperlink{classParameter}{Parameter} class structure. \end{DoxyCompactList}\item 
+\hyperlink{technology__manager_8hpp_a7c20a82ecd2825bfa958fc8191c4d929}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtechnology__manager}{technology\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Ref\+Count type definition of the \hyperlink{classtechnology__manager}{technology\+\_\+manager} class structure. \end{DoxyCompactList}\item 
+\hyperlink{technology__manager_8hpp_a58b7e93e6cb0f620464dea2dcc629b38}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classlibrary__manager}{library\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Ref\+Count type definition of the \hyperlink{classlibrary__manager}{library\+\_\+manager} class structure for representing libraries. \end{DoxyCompactList}\item 
+\hyperlink{technology__manager_8hpp_af67cbe843687472baa608e3f81d42c66}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classstructural__manager}{structural\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Ref\+Count type definition of the \hyperlink{classstructural__manager}{structural\+\_\+manager} class structure. \end{DoxyCompactList}\item 
+\hyperlink{technology__manager_8hpp_ac516e596183bd52c5fadd3e9d5315b2b}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtechnology__manager}{technology\+\_\+manager})
+\item 
+\hyperlink{technology__manager_8hpp_a72446ed20f53edef97fbaa70462e8a88}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structtechnology__node}{technology\+\_\+node})
+\item 
+\hyperlink{technology__manager_8hpp_aa23fc79a0b701ce9b1cbd0f1bb48b2e2}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classtarget__device}{target\+\_\+device})
+\item 
+\hyperlink{technology__manager_8hpp_ae0cecf795f369683b667ed9a8cb33f9f}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classsimple__indent}{simple\+\_\+indent})
+\item 
+\hyperlink{technology__manager_8hpp_ae2c789f95cd3c40ffe7d0818abaf2752}{U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (Control\+Step)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class specification of the manager of the technology library data structures. 
+
+This class specifies the \hyperlink{classtechnology__manager}{technology\+\_\+manager} node.
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{technology__manager_8hpp_ac38c9afe9085ec1380cab91553b3f155}\label{technology__manager_8hpp_ac38c9afe9085ec1380cab91553b3f155}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!C\+G\+\_\+\+L\+I\+B\+R\+A\+RY@{C\+G\+\_\+\+L\+I\+B\+R\+A\+RY}}
+\index{C\+G\+\_\+\+L\+I\+B\+R\+A\+RY@{C\+G\+\_\+\+L\+I\+B\+R\+A\+RY}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{C\+G\+\_\+\+L\+I\+B\+R\+A\+RY}{CG\_LIBRARY}}
+{\footnotesize\ttfamily \#define C\+G\+\_\+\+L\+I\+B\+R\+A\+RY~std\+::string(\char`\"{}CG\char`\"{})}
+
+
+
+compound gates 
+
+
+
+Definition at line 83 of file technology\+\_\+manager.\+hpp.
+
+
+
+Referenced by technology\+\_\+manager\+::add().
+
+\mbox{\Hypertarget{technology__manager_8hpp_a9a642a7feaec09dc61a5c34b7bdc2977}\label{technology__manager_8hpp_a9a642a7feaec09dc61a5c34b7bdc2977}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!D\+E\+S\+I\+GN@{D\+E\+S\+I\+GN}}
+\index{D\+E\+S\+I\+GN@{D\+E\+S\+I\+GN}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{D\+E\+S\+I\+GN}{DESIGN}}
+{\footnotesize\ttfamily \#define D\+E\+S\+I\+GN~std\+::string(\char`\"{}design\char`\"{})}
+
+
+
+Autoheader include. 
+
+S\+TD include S\+TL include utility include working library. 
+
+Definition at line 69 of file technology\+\_\+manager.\+hpp.
+
+
+
+Referenced by technology\+\_\+manager\+::add(), read\+\_\+technology\+\_\+\+File(), and write\+\_\+xml\+\_\+technology\+\_\+\+File().
+
+\mbox{\Hypertarget{technology__manager_8hpp_a057035f7fd5fa814827c71e50c225ac3}\label{technology__manager_8hpp_a057035f7fd5fa814827c71e50c225ac3}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!F\+P\+G\+A\+\_\+\+L\+I\+B\+R\+A\+RY@{F\+P\+G\+A\+\_\+\+L\+I\+B\+R\+A\+RY}}
+\index{F\+P\+G\+A\+\_\+\+L\+I\+B\+R\+A\+RY@{F\+P\+G\+A\+\_\+\+L\+I\+B\+R\+A\+RY}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{F\+P\+G\+A\+\_\+\+L\+I\+B\+R\+A\+RY}{FPGA\_LIBRARY}}
+{\footnotesize\ttfamily \#define F\+P\+G\+A\+\_\+\+L\+I\+B\+R\+A\+RY~std\+::string(\char`\"{}F\+P\+G\+A\+\_\+\+L\+I\+B\+R\+A\+RY\char`\"{})}
+
+
+
+F\+P\+GA modules. 
+
+
+
+Definition at line 89 of file technology\+\_\+manager.\+hpp.
+
+
+
+Referenced by Load\+Builtin\+Technology\+::\+Exec().
+
+\mbox{\Hypertarget{technology__manager_8hpp_a219515cf85c77ec6c0b2a22e31dff056}\label{technology__manager_8hpp_a219515cf85c77ec6c0b2a22e31dff056}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+L\+I\+B\+R\+A\+RY@{I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+L\+I\+B\+R\+A\+RY}}
+\index{I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+L\+I\+B\+R\+A\+RY@{I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+L\+I\+B\+R\+A\+RY}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+L\+I\+B\+R\+A\+RY}{INTERFACE\_LIBRARY}}
+{\footnotesize\ttfamily \#define I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+L\+I\+B\+R\+A\+RY~std\+::string(\char`\"{}interface\+\_\+library\char`\"{})}
+
+
+
+interface library 
+
+
+
+Definition at line 77 of file technology\+\_\+manager.\+hpp.
+
+
+
+Referenced by interface\+\_\+infer\+::create\+\_\+resource\+\_\+array(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Read\+\_\+simple(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+\+Write\+\_\+simple(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{technology__manager_8hpp_a994671fb660c77a0e5fe180f3589581c}\label{technology__manager_8hpp_a994671fb660c77a0e5fe180f3589581c}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!L\+I\+B\+R\+A\+R\+Y\+\_\+\+PC@{L\+I\+B\+R\+A\+R\+Y\+\_\+\+PC}}
+\index{L\+I\+B\+R\+A\+R\+Y\+\_\+\+PC@{L\+I\+B\+R\+A\+R\+Y\+\_\+\+PC}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{L\+I\+B\+R\+A\+R\+Y\+\_\+\+PC}{LIBRARY\_PC}}
+{\footnotesize\ttfamily \#define L\+I\+B\+R\+A\+R\+Y\+\_\+\+PC~std\+::string(\char`\"{}S\+T\+D\+\_\+\+PC\char`\"{})}
+
+
+
+standard library for parallel controller 
+
+
+
+Definition at line 87 of file technology\+\_\+manager.\+hpp.
+
+
+
+Referenced by Parallel\+Memory\+Fu\+Binding\+::add\+\_\+to\+\_\+\+S\+M(), R\+T\+L\+Characterization\+::fix\+\_\+execution\+\_\+time\+\_\+std(), and R\+T\+L\+Characterization\+::fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std().
+
+\mbox{\Hypertarget{technology__manager_8hpp_a0033bdd1d1c034f88d486516cd90f614}\label{technology__manager_8hpp_a0033bdd1d1c034f88d486516cd90f614}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+TD@{L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+TD}}
+\index{L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+TD@{L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+TD}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+TD}{LIBRARY\_STD}}
+{\footnotesize\ttfamily \#define L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+TD~std\+::string(\char`\"{}S\+TD\char`\"{})}
+
+
+
+standard library where all built-\/in ports are defined. 
+
+
+
+Definition at line 79 of file technology\+\_\+manager.\+hpp.
+
+
+
+Referenced by classic\+\_\+datapath\+::add\+\_\+ports(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), W\+B4\+\_\+interface\+::build\+\_\+\+W\+B4\+\_\+complete\+\_\+logic(), minimal\+\_\+interface\+::build\+\_\+wrapper(), Load\+Builtin\+Technology\+::\+Exec(), R\+T\+L\+Characterization\+::fix\+\_\+execution\+\_\+time\+\_\+std(), R\+T\+L\+Characterization\+::fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std(), top\+\_\+entity\+\_\+parallel\+\_\+cs\+::\+Internal\+Exec(), classic\+\_\+datapath\+::\+Internal\+Exec(), top\+\_\+entity\+::\+Internal\+Exec(), hls\+::xload(), H\+L\+S\+\_\+constraints\+::xload(), hls\+::xwrite(), H\+L\+S\+\_\+constraints\+::xwrite\+Binding\+Constraints(), and H\+L\+S\+\_\+constraints\+::xwrite\+F\+U\+Constraints().
+
+\mbox{\Hypertarget{technology__manager_8hpp_a1f1d1ece622e71071c498bedb43e4260}\label{technology__manager_8hpp_a1f1d1ece622e71071c498bedb43e4260}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+T\+D\+\_\+\+FU@{L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+T\+D\+\_\+\+FU}}
+\index{L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+T\+D\+\_\+\+FU@{L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+T\+D\+\_\+\+FU}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+T\+D\+\_\+\+FU}{LIBRARY\_STD\_FU}}
+{\footnotesize\ttfamily \#define L\+I\+B\+R\+A\+R\+Y\+\_\+\+S\+T\+D\+\_\+\+FU~std\+::string(\char`\"{}S\+T\+D\+\_\+\+FU\char`\"{})}
+
+
+
+standard library where all standard H\+LS resources are defined 
+
+
+
+Definition at line 81 of file technology\+\_\+manager.\+hpp.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), technology\+\_\+manager\+::\+C\+Get\+Setup\+Hold\+F\+U(), interface\+\_\+infer\+::create\+\_\+resource\+\_\+array(), Allocation\+Information\+::\+Estimate\+Controller\+Delay(), I\+R\+\_\+lowering\+::expand\+\_\+\+M\+C(), R\+T\+L\+Characterization\+::fix\+\_\+execution\+\_\+time\+\_\+std(), R\+T\+L\+Characterization\+::fix\+\_\+muxes(), R\+T\+L\+Characterization\+::fix\+\_\+proxies\+\_\+execution\+\_\+time\+\_\+std(), Allocation\+Information\+::get\+\_\+correction\+\_\+time(), Allocation\+Information\+::\+Get\+Cycle\+Latency(), Allocation\+Information\+::\+Get\+Statement\+Area(), Allocation\+Information\+::\+Get\+Time\+Latency(), Allocation\+Information\+::\+Initialize\+Mux\+D\+B(), Taste\+Interface\+Generation\+::\+Internal\+Exec(), Allocation\+Information\+::mux\+\_\+area\+\_\+unit\+\_\+raw(), and Allocation\+Information\+::mux\+\_\+time\+\_\+unit\+\_\+raw().
+
+\mbox{\Hypertarget{technology__manager_8hpp_a7ca468ca64ab559dc26e46d72291dc3f}\label{technology__manager_8hpp_a7ca468ca64ab559dc26e46d72291dc3f}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!L\+I\+B\+R\+A\+R\+Y\+\_\+\+T\+E\+M\+P\+L\+A\+TE@{L\+I\+B\+R\+A\+R\+Y\+\_\+\+T\+E\+M\+P\+L\+A\+TE}}
+\index{L\+I\+B\+R\+A\+R\+Y\+\_\+\+T\+E\+M\+P\+L\+A\+TE@{L\+I\+B\+R\+A\+R\+Y\+\_\+\+T\+E\+M\+P\+L\+A\+TE}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{L\+I\+B\+R\+A\+R\+Y\+\_\+\+T\+E\+M\+P\+L\+A\+TE}{LIBRARY\_TEMPLATE}}
+{\footnotesize\ttfamily \#define L\+I\+B\+R\+A\+R\+Y\+\_\+\+T\+E\+M\+P\+L\+A\+TE~std\+::string(\char`\"{}L\+I\+B\+R\+A\+R\+Y\+\_\+\+T\+E\+M\+P\+L\+A\+TE\char`\"{})}
+
+
+
+library template 
+
+
+
+Definition at line 85 of file technology\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{technology__manager_8hpp_ad0b44ada35eef8b9ce57803d6e828297}\label{technology__manager_8hpp_ad0b44ada35eef8b9ce57803d6e828297}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!O\+P\+E\+N\+M\+P\+\_\+\+L\+I\+B\+R\+A\+RY@{O\+P\+E\+N\+M\+P\+\_\+\+L\+I\+B\+R\+A\+RY}}
+\index{O\+P\+E\+N\+M\+P\+\_\+\+L\+I\+B\+R\+A\+RY@{O\+P\+E\+N\+M\+P\+\_\+\+L\+I\+B\+R\+A\+RY}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{O\+P\+E\+N\+M\+P\+\_\+\+L\+I\+B\+R\+A\+RY}{OPENMP\_LIBRARY}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+M\+P\+\_\+\+L\+I\+B\+R\+A\+RY~std\+::string(\char`\"{}Open\+M\+P\+\_\+library\char`\"{})}
+
+
+
+Open\+MP library. 
+
+
+
+Definition at line 73 of file technology\+\_\+manager.\+hpp.
+
+
+
+Referenced by Omp\+Allocation\+::\+Add\+Panda\+Pthread\+Mutex(), and Omp\+Allocation\+::\+Integrate\+Technology\+Libraries().
+
+\mbox{\Hypertarget{technology__manager_8hpp_a778f959e3820c2faeeadef15893892a3}\label{technology__manager_8hpp_a778f959e3820c2faeeadef15893892a3}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!P\+R\+O\+X\+Y\+\_\+\+L\+I\+B\+R\+A\+RY@{P\+R\+O\+X\+Y\+\_\+\+L\+I\+B\+R\+A\+RY}}
+\index{P\+R\+O\+X\+Y\+\_\+\+L\+I\+B\+R\+A\+RY@{P\+R\+O\+X\+Y\+\_\+\+L\+I\+B\+R\+A\+RY}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{P\+R\+O\+X\+Y\+\_\+\+L\+I\+B\+R\+A\+RY}{PROXY\_LIBRARY}}
+{\footnotesize\ttfamily \#define P\+R\+O\+X\+Y\+\_\+\+L\+I\+B\+R\+A\+RY~std\+::string(\char`\"{}proxy\+\_\+library\char`\"{})}
+
+
+
+proxy library 
+
+
+
+Definition at line 75 of file technology\+\_\+manager.\+hpp.
+
+
+
+Referenced by allocation\+::add\+\_\+proxy\+\_\+function\+\_\+module(), allocation\+::add\+\_\+proxy\+\_\+function\+\_\+wrapper(), allocation\+::check\+\_\+proxies(), compute\+\_\+condition1(), compute\+Resources(), allocation\+::\+Integrate\+Technology\+Libraries(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), mem\+\_\+xml\+\_\+allocation\+::\+Internal\+Exec(), add\+\_\+library\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), read\+\_\+technology\+\_\+\+File(), fu\+\_\+binding\+::specialise\+\_\+fu(), and write\+\_\+xml\+\_\+technology\+\_\+\+File().
+
+\mbox{\Hypertarget{technology__manager_8hpp_ad3d8378a02dbb95bdd42905dcb974b4d}\label{technology__manager_8hpp_ad3d8378a02dbb95bdd42905dcb974b4d}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!W\+O\+R\+K\+\_\+\+L\+I\+B\+R\+A\+RY@{W\+O\+R\+K\+\_\+\+L\+I\+B\+R\+A\+RY}}
+\index{W\+O\+R\+K\+\_\+\+L\+I\+B\+R\+A\+RY@{W\+O\+R\+K\+\_\+\+L\+I\+B\+R\+A\+RY}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{W\+O\+R\+K\+\_\+\+L\+I\+B\+R\+A\+RY}{WORK\_LIBRARY}}
+{\footnotesize\ttfamily \#define W\+O\+R\+K\+\_\+\+L\+I\+B\+R\+A\+RY~std\+::string(\char`\"{}work\char`\"{})}
+
+
+
+working library. 
+
+
+
+Definition at line 71 of file technology\+\_\+manager.\+hpp.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), build\+Circuit(), compute\+\_\+condition1(), compute\+Resources(), Allocation\+Information\+::estimate\+\_\+call\+\_\+delay(), fun\+\_\+dominator\+\_\+allocation\+::\+Exec(), allocation\+::extract\+\_\+bambu\+\_\+provided(), Initialize\+H\+L\+S\+::\+Internal\+Exec(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), Taste\+Interface\+Generation\+::\+Internal\+Exec(), mem\+\_\+xml\+\_\+allocation\+::\+Internal\+Exec(), add\+\_\+library\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), read\+\_\+technology\+\_\+\+File(), fu\+\_\+binding\+::specialise\+\_\+fu(), and write\+\_\+xml\+\_\+technology\+\_\+\+File().
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{technology__manager_8hpp_a997fb60da66e276a7cf23c1b5e40da2b}\label{technology__manager_8hpp_a997fb60da66e276a7cf23c1b5e40da2b}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!file\+I\+O\+\_\+istream\+Ref@{file\+I\+O\+\_\+istream\+Ref}}
+\index{file\+I\+O\+\_\+istream\+Ref@{file\+I\+O\+\_\+istream\+Ref}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{file\+I\+O\+\_\+istream\+Ref}{fileIO\_istreamRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$std\+::istream$>$ \hyperlink{technology__manager_8hpp_a997fb60da66e276a7cf23c1b5e40da2b}{file\+I\+O\+\_\+istream\+Ref}}
+
+
+
+Definition at line 101 of file technology\+\_\+manager.\+hpp.
+
+\mbox{\Hypertarget{technology__manager_8hpp_a4b9ecd440c804109c962654f9227244e}\label{technology__manager_8hpp_a4b9ecd440c804109c962654f9227244e}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!technology\+\_\+manager\+Ref@{technology\+\_\+manager\+Ref}}
+\index{technology\+\_\+manager\+Ref@{technology\+\_\+manager\+Ref}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{technology\+\_\+manager\+Ref}{technology\_managerRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classtechnology__manager}{technology\+\_\+manager}$>$ \hyperlink{technology__manager_8hpp_a4b9ecd440c804109c962654f9227244e}{technology\+\_\+manager\+Ref}}
+
+
+
+Definition at line 394 of file technology\+\_\+manager.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{technology__manager_8hpp_ac5c30465e53a2dee97960f0f406b8be7}\label{technology__manager_8hpp_ac5c30465e53a2dee97960f0f406b8be7}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classParameter}{Parameter}}]{ }\end{DoxyParamCaption})}
+
+
+
+Ref\+Count type definition of the \hyperlink{classParameter}{Parameter} class structure. 
+
+\mbox{\Hypertarget{technology__manager_8hpp_a7c20a82ecd2825bfa958fc8191c4d929}\label{technology__manager_8hpp_a7c20a82ecd2825bfa958fc8191c4d929}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtechnology__manager}{technology\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+
+
+
+Ref\+Count type definition of the \hyperlink{classtechnology__manager}{technology\+\_\+manager} class structure. 
+
+\mbox{\Hypertarget{technology__manager_8hpp_a58b7e93e6cb0f620464dea2dcc629b38}\label{technology__manager_8hpp_a58b7e93e6cb0f620464dea2dcc629b38}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classlibrary__manager}{library\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+
+
+
+Ref\+Count type definition of the \hyperlink{classlibrary__manager}{library\+\_\+manager} class structure for representing libraries. 
+
+\mbox{\Hypertarget{technology__manager_8hpp_af67cbe843687472baa608e3f81d42c66}\label{technology__manager_8hpp_af67cbe843687472baa608e3f81d42c66}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classstructural__manager}{structural\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+
+
+
+Ref\+Count type definition of the \hyperlink{classstructural__manager}{structural\+\_\+manager} class structure. 
+
+\mbox{\Hypertarget{technology__manager_8hpp_ac516e596183bd52c5fadd3e9d5315b2b}\label{technology__manager_8hpp_ac516e596183bd52c5fadd3e9d5315b2b}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtechnology__manager}{technology\+\_\+manager}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{technology__manager_8hpp_a72446ed20f53edef97fbaa70462e8a88}\label{technology__manager_8hpp_a72446ed20f53edef97fbaa70462e8a88}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structtechnology__node}{technology\+\_\+node}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{technology__manager_8hpp_aa23fc79a0b701ce9b1cbd0f1bb48b2e2}\label{technology__manager_8hpp_aa23fc79a0b701ce9b1cbd0f1bb48b2e2}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classtarget__device}{target\+\_\+device}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{technology__manager_8hpp_ae0cecf795f369683b667ed9a8cb33f9f}\label{technology__manager_8hpp_ae0cecf795f369683b667ed9a8cb33f9f}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classsimple__indent}{simple\+\_\+indent}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{technology__manager_8hpp_ae2c789f95cd3c40ffe7d0818abaf2752}\label{technology__manager_8hpp_ae2c789f95cd3c40ffe7d0818abaf2752}} 
+\index{technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}!U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!technology\+\_\+manager.\+hpp@{technology\+\_\+manager.\+hpp}}
+\subsubsection{\texorpdfstring{U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{UINT\_STRONG\_TYPEDEF\_FORWARD\_DECL()}}
+{\footnotesize\ttfamily U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{Control\+Step}]{ }\end{DoxyParamCaption})}
+

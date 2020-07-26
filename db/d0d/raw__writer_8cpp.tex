@@ -1,0 +1,204 @@
+\hypertarget{raw__writer_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/raw\+\_\+writer.cpp File Reference}
+\label{raw__writer_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/raw\+\_\+writer.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/tree/raw\+\_\+writer.\+cpp}}
+
+
+tree node writer.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+C\+O\+D\+E\+\_\+\+E\+S\+T\+I\+M\+A\+T\+I\+O\+N\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+R\+T\+L\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}raw\+\_\+writer.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}token\+\_\+interface.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ext\+\_\+tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+basic\+\_\+block.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+reindex.\+hpp\char`\"{}}\newline
+Include dependency graph for raw\+\_\+writer.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d31/raw__writer_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{raw__writer_8cpp_a5d82dd53dbe8bf45264ee2c1dd5f9812}{W\+R\+I\+T\+E\+\_\+\+N\+F\+I\+E\+L\+D\+\_\+\+S\+T\+R\+I\+NG}(os,  field\+\_\+name,  field\+\_\+value)~os $<$$<$ \char`\"{} \char`\"{} $<$$<$ (field\+\_\+name) $<$$<$ \char`\"{}\+: \textbackslash{}\char`\"{}\char`\"{} $<$$<$ (field\+\_\+value) $<$$<$ \char`\"{}\textbackslash{}\char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em Autoheader include. \end{DoxyCompactList}\item 
+\#define \hyperlink{raw__writer_8cpp_af16a28baa3e5ca8bff14c07e03072deb}{W\+R\+I\+T\+E\+\_\+\+N\+F\+I\+E\+LD}(os,  name,  field)~os $<$$<$ \char`\"{} \char`\"{} $<$$<$ (name) $<$$<$ \char`\"{}\+: \char`\"{} $<$$<$ field
+\begin{DoxyCompactList}\small\item\em Macro which writes on an output stream a named field. \end{DoxyCompactList}\item 
+\#define \hyperlink{raw__writer_8cpp_a5352dccbdce625feadee44c0c45ebf72}{W\+R\+I\+T\+E\+\_\+\+U\+F\+I\+E\+LD}(os,  field)~os $<$$<$ \char`\"{} \char`\"{} $<$$<$ field
+\begin{DoxyCompactList}\small\item\em Macro which writes on an output stream an unnamed field. \end{DoxyCompactList}\item 
+\#define \hyperlink{raw__writer_8cpp_a46dde69b136c66a0326f722d706656cd}{W\+R\+I\+T\+E\+\_\+\+U\+F\+I\+E\+L\+D\+\_\+\+S\+T\+R\+I\+NG}(os,  field)~os $<$$<$ \char`\"{} \textbackslash{}\char`\"{}\char`\"{} $<$$<$ (field) $<$$<$ \char`\"{}\textbackslash{}\char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em Macro which writes on an output stream an unnamed field. \end{DoxyCompactList}\item 
+\#define \hyperlink{raw__writer_8cpp_a714108190d45467d1da3b04f84b9ea86}{W\+R\+I\+T\+E\+\_\+\+S\+T\+R\+G\+L\+N\+G\+T\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+ER}(os,  field)
+\begin{DoxyCompactList}\small\item\em Macro which writes on an output stream a string with its length. \end{DoxyCompactList}\item 
+\#define \hyperlink{raw__writer_8cpp_a3d71cd7564f04813a769fe9a8ab3a990}{W\+R\+I\+T\+E\+\_\+\+S\+T\+R\+G\+L\+N\+G\+T\+\_\+\+S\+T\+R\+I\+NG}(os,  field)
+\begin{DoxyCompactList}\small\item\em Macro which writes on an output stream a string with its length. \end{DoxyCompactList}\item 
+\#define \hyperlink{raw__writer_8cpp_ab26df37bfaa3e044a290ca45e2329a8d}{W\+R\+I\+T\+E\+\_\+\+S\+R\+CP}(os,  include\+\_\+name,  line\+\_\+number,  column\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Macro which writes on an output stream the srcp fields. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+tree node writer. 
+
+This class exploiting the visitor design pattern write a tree node according to the raw format.
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} 
+
+Marco Lattuada \href{mailto:lattuada@elet.polimi.it}{\tt lattuada@elet.\+polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{raw__writer_8cpp_af16a28baa3e5ca8bff14c07e03072deb}\label{raw__writer_8cpp_af16a28baa3e5ca8bff14c07e03072deb}} 
+\index{raw\+\_\+writer.\+cpp@{raw\+\_\+writer.\+cpp}!W\+R\+I\+T\+E\+\_\+\+N\+F\+I\+E\+LD@{W\+R\+I\+T\+E\+\_\+\+N\+F\+I\+E\+LD}}
+\index{W\+R\+I\+T\+E\+\_\+\+N\+F\+I\+E\+LD@{W\+R\+I\+T\+E\+\_\+\+N\+F\+I\+E\+LD}!raw\+\_\+writer.\+cpp@{raw\+\_\+writer.\+cpp}}
+\subsubsection{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+N\+F\+I\+E\+LD}{WRITE\_NFIELD}}
+{\footnotesize\ttfamily \#define W\+R\+I\+T\+E\+\_\+\+N\+F\+I\+E\+LD(\begin{DoxyParamCaption}\item[{}]{os,  }\item[{}]{name,  }\item[{}]{field }\end{DoxyParamCaption})~os $<$$<$ \char`\"{} \char`\"{} $<$$<$ (name) $<$$<$ \char`\"{}\+: \char`\"{} $<$$<$ field}
+
+
+
+Macro which writes on an output stream a named field. 
+
+
+
+Definition at line 85 of file raw\+\_\+writer.\+cpp.
+
+
+
+Referenced by raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+
+\mbox{\Hypertarget{raw__writer_8cpp_a5d82dd53dbe8bf45264ee2c1dd5f9812}\label{raw__writer_8cpp_a5d82dd53dbe8bf45264ee2c1dd5f9812}} 
+\index{raw\+\_\+writer.\+cpp@{raw\+\_\+writer.\+cpp}!W\+R\+I\+T\+E\+\_\+\+N\+F\+I\+E\+L\+D\+\_\+\+S\+T\+R\+I\+NG@{W\+R\+I\+T\+E\+\_\+\+N\+F\+I\+E\+L\+D\+\_\+\+S\+T\+R\+I\+NG}}
+\index{W\+R\+I\+T\+E\+\_\+\+N\+F\+I\+E\+L\+D\+\_\+\+S\+T\+R\+I\+NG@{W\+R\+I\+T\+E\+\_\+\+N\+F\+I\+E\+L\+D\+\_\+\+S\+T\+R\+I\+NG}!raw\+\_\+writer.\+cpp@{raw\+\_\+writer.\+cpp}}
+\subsubsection{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+N\+F\+I\+E\+L\+D\+\_\+\+S\+T\+R\+I\+NG}{WRITE\_NFIELD\_STRING}}
+{\footnotesize\ttfamily \#define W\+R\+I\+T\+E\+\_\+\+N\+F\+I\+E\+L\+D\+\_\+\+S\+T\+R\+I\+NG(\begin{DoxyParamCaption}\item[{}]{os,  }\item[{}]{field\+\_\+name,  }\item[{}]{field\+\_\+value }\end{DoxyParamCaption})~os $<$$<$ \char`\"{} \char`\"{} $<$$<$ (field\+\_\+name) $<$$<$ \char`\"{}\+: \textbackslash{}\char`\"{}\char`\"{} $<$$<$ (field\+\_\+value) $<$$<$ \char`\"{}\textbackslash{}\char`\"{}\char`\"{}}
+
+
+
+Autoheader include. 
+
+Header include parser/treegcc include Tree include Macro which writes on an output stream a named field of string type. 
+
+Definition at line 80 of file raw\+\_\+writer.\+cpp.
+
+
+
+Referenced by raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+
+\mbox{\Hypertarget{raw__writer_8cpp_ab26df37bfaa3e044a290ca45e2329a8d}\label{raw__writer_8cpp_ab26df37bfaa3e044a290ca45e2329a8d}} 
+\index{raw\+\_\+writer.\+cpp@{raw\+\_\+writer.\+cpp}!W\+R\+I\+T\+E\+\_\+\+S\+R\+CP@{W\+R\+I\+T\+E\+\_\+\+S\+R\+CP}}
+\index{W\+R\+I\+T\+E\+\_\+\+S\+R\+CP@{W\+R\+I\+T\+E\+\_\+\+S\+R\+CP}!raw\+\_\+writer.\+cpp@{raw\+\_\+writer.\+cpp}}
+\subsubsection{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+S\+R\+CP}{WRITE\_SRCP}}
+{\footnotesize\ttfamily \#define W\+R\+I\+T\+E\+\_\+\+S\+R\+CP(\begin{DoxyParamCaption}\item[{}]{os,  }\item[{}]{include\+\_\+name,  }\item[{}]{line\+\_\+number,  }\item[{}]{column\+\_\+number }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+os << \textcolor{stringliteral}{" "}                                                     \(\backslash\)
+      << \textcolor{stringliteral}{"srcp: \(\backslash\)""} << (include\_name) << \textcolor{stringliteral}{"\(\backslash\)":"} << (line\_number) << \textcolor{stringliteral}{":"} << column\_number
+\end{DoxyCode}
+
+
+Macro which writes on an output stream the srcp fields. 
+
+
+
+Definition at line 114 of file raw\+\_\+writer.\+cpp.
+
+
+
+Referenced by raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+
+\mbox{\Hypertarget{raw__writer_8cpp_a714108190d45467d1da3b04f84b9ea86}\label{raw__writer_8cpp_a714108190d45467d1da3b04f84b9ea86}} 
+\index{raw\+\_\+writer.\+cpp@{raw\+\_\+writer.\+cpp}!W\+R\+I\+T\+E\+\_\+\+S\+T\+R\+G\+L\+N\+G\+T\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+ER@{W\+R\+I\+T\+E\+\_\+\+S\+T\+R\+G\+L\+N\+G\+T\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+ER}}
+\index{W\+R\+I\+T\+E\+\_\+\+S\+T\+R\+G\+L\+N\+G\+T\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+ER@{W\+R\+I\+T\+E\+\_\+\+S\+T\+R\+G\+L\+N\+G\+T\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+ER}!raw\+\_\+writer.\+cpp@{raw\+\_\+writer.\+cpp}}
+\subsubsection{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+S\+T\+R\+G\+L\+N\+G\+T\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+ER}{WRITE\_STRGLNGT\_IDENTIFIER}}
+{\footnotesize\ttfamily \#define W\+R\+I\+T\+E\+\_\+\+S\+T\+R\+G\+L\+N\+G\+T\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+ER(\begin{DoxyParamCaption}\item[{}]{os,  }\item[{}]{field }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+os << \textcolor{stringliteral}{" "}                                 \(\backslash\)
+      << \textcolor{stringliteral}{"strg: \(\backslash\)""} << (field) << \textcolor{stringliteral}{"\(\backslash\)" lngt: "} << (field).size()
+\end{DoxyCode}
+
+
+Macro which writes on an output stream a string with its length. 
+
+I\+D\+E\+N\+T\+I\+F\+I\+E\+R\+\_\+\+N\+O\+DE case 
+
+Definition at line 100 of file raw\+\_\+writer.\+cpp.
+
+
+
+Referenced by raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+
+\mbox{\Hypertarget{raw__writer_8cpp_a3d71cd7564f04813a769fe9a8ab3a990}\label{raw__writer_8cpp_a3d71cd7564f04813a769fe9a8ab3a990}} 
+\index{raw\+\_\+writer.\+cpp@{raw\+\_\+writer.\+cpp}!W\+R\+I\+T\+E\+\_\+\+S\+T\+R\+G\+L\+N\+G\+T\+\_\+\+S\+T\+R\+I\+NG@{W\+R\+I\+T\+E\+\_\+\+S\+T\+R\+G\+L\+N\+G\+T\+\_\+\+S\+T\+R\+I\+NG}}
+\index{W\+R\+I\+T\+E\+\_\+\+S\+T\+R\+G\+L\+N\+G\+T\+\_\+\+S\+T\+R\+I\+NG@{W\+R\+I\+T\+E\+\_\+\+S\+T\+R\+G\+L\+N\+G\+T\+\_\+\+S\+T\+R\+I\+NG}!raw\+\_\+writer.\+cpp@{raw\+\_\+writer.\+cpp}}
+\subsubsection{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+S\+T\+R\+G\+L\+N\+G\+T\+\_\+\+S\+T\+R\+I\+NG}{WRITE\_STRGLNGT\_STRING}}
+{\footnotesize\ttfamily \#define W\+R\+I\+T\+E\+\_\+\+S\+T\+R\+G\+L\+N\+G\+T\+\_\+\+S\+T\+R\+I\+NG(\begin{DoxyParamCaption}\item[{}]{os,  }\item[{}]{field }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(os << \textcolor{stringliteral}{" "}                            \(\backslash\)
+       << \textcolor{stringliteral}{"strg: \(\backslash\)""} << (field) << \textcolor{stringliteral}{"\(\backslash\)" lngt: "} << (field).size() + 1)
+\end{DoxyCode}
+
+
+Macro which writes on an output stream a string with its length. 
+
+S\+T\+R\+I\+N\+G\+\_\+\+C\+ST case 
+
+Definition at line 107 of file raw\+\_\+writer.\+cpp.
+
+
+
+Referenced by raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+
+\mbox{\Hypertarget{raw__writer_8cpp_a5352dccbdce625feadee44c0c45ebf72}\label{raw__writer_8cpp_a5352dccbdce625feadee44c0c45ebf72}} 
+\index{raw\+\_\+writer.\+cpp@{raw\+\_\+writer.\+cpp}!W\+R\+I\+T\+E\+\_\+\+U\+F\+I\+E\+LD@{W\+R\+I\+T\+E\+\_\+\+U\+F\+I\+E\+LD}}
+\index{W\+R\+I\+T\+E\+\_\+\+U\+F\+I\+E\+LD@{W\+R\+I\+T\+E\+\_\+\+U\+F\+I\+E\+LD}!raw\+\_\+writer.\+cpp@{raw\+\_\+writer.\+cpp}}
+\subsubsection{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+U\+F\+I\+E\+LD}{WRITE\_UFIELD}}
+{\footnotesize\ttfamily \#define W\+R\+I\+T\+E\+\_\+\+U\+F\+I\+E\+LD(\begin{DoxyParamCaption}\item[{}]{os,  }\item[{}]{field }\end{DoxyParamCaption})~os $<$$<$ \char`\"{} \char`\"{} $<$$<$ field}
+
+
+
+Macro which writes on an output stream an unnamed field. 
+
+
+
+Definition at line 90 of file raw\+\_\+writer.\+cpp.
+
+
+
+Referenced by raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+
+\mbox{\Hypertarget{raw__writer_8cpp_a46dde69b136c66a0326f722d706656cd}\label{raw__writer_8cpp_a46dde69b136c66a0326f722d706656cd}} 
+\index{raw\+\_\+writer.\+cpp@{raw\+\_\+writer.\+cpp}!W\+R\+I\+T\+E\+\_\+\+U\+F\+I\+E\+L\+D\+\_\+\+S\+T\+R\+I\+NG@{W\+R\+I\+T\+E\+\_\+\+U\+F\+I\+E\+L\+D\+\_\+\+S\+T\+R\+I\+NG}}
+\index{W\+R\+I\+T\+E\+\_\+\+U\+F\+I\+E\+L\+D\+\_\+\+S\+T\+R\+I\+NG@{W\+R\+I\+T\+E\+\_\+\+U\+F\+I\+E\+L\+D\+\_\+\+S\+T\+R\+I\+NG}!raw\+\_\+writer.\+cpp@{raw\+\_\+writer.\+cpp}}
+\subsubsection{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+U\+F\+I\+E\+L\+D\+\_\+\+S\+T\+R\+I\+NG}{WRITE\_UFIELD\_STRING}}
+{\footnotesize\ttfamily \#define W\+R\+I\+T\+E\+\_\+\+U\+F\+I\+E\+L\+D\+\_\+\+S\+T\+R\+I\+NG(\begin{DoxyParamCaption}\item[{}]{os,  }\item[{}]{field }\end{DoxyParamCaption})~os $<$$<$ \char`\"{} \textbackslash{}\char`\"{}\char`\"{} $<$$<$ (field) $<$$<$ \char`\"{}\textbackslash{}\char`\"{}\char`\"{}}
+
+
+
+Macro which writes on an output stream an unnamed field. 
+
+
+
+Definition at line 95 of file raw\+\_\+writer.\+cpp.
+
+
+
+Referenced by raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+

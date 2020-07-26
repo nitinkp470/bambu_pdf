@@ -1,0 +1,354 @@
+\hypertarget{classxml__script__node__t}{}\section{xml\+\_\+script\+\_\+node\+\_\+t Class Reference}
+\label{classxml__script__node__t}\index{xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}}
+
+
+This is the abstract class which describes a generic synthesis script node, and some static helper methods.  
+
+
+
+
+{\ttfamily \#include $<$xml\+\_\+script\+\_\+command.\+hpp$>$}
+
+
+
+Inheritance diagram for xml\+\_\+script\+\_\+node\+\_\+t\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{db/df1/classxml__script__node__t__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \hyperlink{classxml__script__node__t_af5815fab8924e5e4f47ba1b7266b6cb8}{get\+\_\+xml\+\_\+name} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the X\+ML element name of this node type. \end{DoxyCompactList}\item 
+virtual xml\+\_\+node\+Ref \hyperlink{classxml__script__node__t_adaf9c51a079c4617f3845c6133eb477f}{create\+\_\+xml\+\_\+node} () const =0
+\begin{DoxyCompactList}\small\item\em Creates an X\+ML node for polixml data structures. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classxml__script__node__t_a2be778f2caef531c55b36c2bf2c996e2}{clean} ()=0
+\begin{DoxyCompactList}\small\item\em Cleans object attributes. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classxml__script__node__t_a13fbe7caa7bed64ab3cc25d51392523d}{check\+Condition} (const \hyperlink{DesignParameters_8hpp_ae36bb1c4c9150d0eeecfe1f96f42d157}{Design\+Parameters\+Ref} \&dp) const
+\begin{DoxyCompactList}\small\item\em If the node has a compile-\/time condition, this method evaluates it. \end{DoxyCompactList}\item 
+\hyperlink{classxml__script__node__t_aace8091f12771c1bb40433e1222a9305}{xml\+\_\+script\+\_\+node\+\_\+t} (\hyperlink{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59b}{xml\+\_\+script\+\_\+node\+\_\+enum\+\_\+t} \+\_\+type)
+\item 
+virtual \hyperlink{classxml__script__node__t_ad820fc2326bb87dbfb3cb799cc5a61d1}{$\sim$xml\+\_\+script\+\_\+node\+\_\+t} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59b}{xml\+\_\+script\+\_\+node\+\_\+enum\+\_\+t} \hyperlink{classxml__script__node__t_aca8e03906a47471b458570a203829aa3}{find\+\_\+type} (const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$element)
+\begin{DoxyCompactList}\small\item\em Finds the type of an X\+ML element. \end{DoxyCompactList}\item 
+static \hyperlink{classxml__script__node__t}{xml\+\_\+script\+\_\+node\+\_\+t} $\ast$ \hyperlink{classxml__script__node__t_aed7d38abc27f6750b763da3ccd7b4b87}{create} (const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$element)
+\begin{DoxyCompactList}\small\item\em Creates a script node by parsing the X\+ML element. \end{DoxyCompactList}\item 
+static bool \hyperlink{classxml__script__node__t_a01f5c0deca615d53775e40a512be3226}{evaluate\+\_\+condition} (const std\+::string $\ast$condition)
+\begin{DoxyCompactList}\small\item\em Evaluates a string condition. \end{DoxyCompactList}\item 
+static bool \hyperlink{classxml__script__node__t_ad27af696d98812f71634159dd6f5052c}{evaluate\+\_\+condition} (const std\+::string $\ast$condition, const \hyperlink{DesignParameters_8hpp_ae36bb1c4c9150d0eeecfe1f96f42d157}{Design\+Parameters\+Ref} \&dp)
+\begin{DoxyCompactList}\small\item\em Evaluates a string condition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59b}{xml\+\_\+script\+\_\+node\+\_\+enum\+\_\+t} \hyperlink{classxml__script__node__t_aaf981f64fd03ed4d8afbacd9f1cdbe2c}{node\+Type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the abstract class which describes a generic synthesis script node, and some static helper methods. 
+
+Definition at line 91 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classxml__script__node__t_aace8091f12771c1bb40433e1222a9305}\label{classxml__script__node__t_aace8091f12771c1bb40433e1222a9305}} 
+\index{xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}!xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}}
+\index{xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}!xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}}
+\subsubsection{\texorpdfstring{xml\+\_\+script\+\_\+node\+\_\+t()}{xml\_script\_node\_t()}}
+{\footnotesize\ttfamily xml\+\_\+script\+\_\+node\+\_\+t\+::xml\+\_\+script\+\_\+node\+\_\+t (\begin{DoxyParamCaption}\item[{\hyperlink{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59b}{xml\+\_\+script\+\_\+node\+\_\+enum\+\_\+t}}]{\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Definition at line 142 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+
+
+References $\sim$xml\+\_\+script\+\_\+node\+\_\+t().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d6/de5/classxml__script__node__t_aace8091f12771c1bb40433e1222a9305_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classxml__script__node__t_ad820fc2326bb87dbfb3cb799cc5a61d1}\label{classxml__script__node__t_ad820fc2326bb87dbfb3cb799cc5a61d1}} 
+\index{xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}!````~xml\+\_\+script\+\_\+node\+\_\+t@{$\sim$xml\+\_\+script\+\_\+node\+\_\+t}}
+\index{````~xml\+\_\+script\+\_\+node\+\_\+t@{$\sim$xml\+\_\+script\+\_\+node\+\_\+t}!xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}}
+\subsubsection{\texorpdfstring{$\sim$xml\+\_\+script\+\_\+node\+\_\+t()}{~xml\_script\_node\_t()}}
+{\footnotesize\ttfamily xml\+\_\+script\+\_\+node\+\_\+t\+::$\sim$xml\+\_\+script\+\_\+node\+\_\+t (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Referenced by xml\+\_\+script\+\_\+node\+\_\+t().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d6/de5/classxml__script__node__t_ad820fc2326bb87dbfb3cb799cc5a61d1_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classxml__script__node__t_a13fbe7caa7bed64ab3cc25d51392523d}\label{classxml__script__node__t_a13fbe7caa7bed64ab3cc25d51392523d}} 
+\index{xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}!check\+Condition@{check\+Condition}}
+\index{check\+Condition@{check\+Condition}!xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}}
+\subsubsection{\texorpdfstring{check\+Condition()}{checkCondition()}}
+{\footnotesize\ttfamily bool xml\+\_\+script\+\_\+node\+\_\+t\+::check\+Condition (\begin{DoxyParamCaption}\item[{const \hyperlink{DesignParameters_8hpp_ae36bb1c4c9150d0eeecfe1f96f42d157}{Design\+Parameters\+Ref} \&}]{dp }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+If the node has a compile-\/time condition, this method evaluates it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dp} & Design parameters, used to check conditions at compile time. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The condition evaluation if any, otherwise is true by default. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classxml__ite__block__t_a8f68c01acc36d5dba8b1161994d65d17}{xml\+\_\+ite\+\_\+block\+\_\+t}, \hyperlink{classxml__shell__t_aa23d475623b5aafbbbe919a2f23e400c}{xml\+\_\+shell\+\_\+t}, \hyperlink{classxml__command__t_a0bd9c4cf582f671898afd9ec1602a1dd}{xml\+\_\+command\+\_\+t}, \hyperlink{classxml__parameter__t_a3ba5d8470dadb8afd334dfbaba43c05f}{xml\+\_\+parameter\+\_\+t}, \hyperlink{classxml__set__variable__t_a85442505ebbf8662f4791b94a52487d4}{xml\+\_\+set\+\_\+variable\+\_\+t}, and \hyperlink{classxml__set__entry__t_a85ffc00f525e4b5425f60c2908d1bd83}{xml\+\_\+set\+\_\+entry\+\_\+t}.
+
+
+
+Definition at line 56 of file xml\+\_\+script\+\_\+command.\+cpp.
+
+\mbox{\Hypertarget{classxml__script__node__t_a2be778f2caef531c55b36c2bf2c996e2}\label{classxml__script__node__t_a2be778f2caef531c55b36c2bf2c996e2}} 
+\index{xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}!clean@{clean}}
+\index{clean@{clean}!xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}}
+\subsubsection{\texorpdfstring{clean()}{clean()}}
+{\footnotesize\ttfamily virtual void xml\+\_\+script\+\_\+node\+\_\+t\+::clean (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Cleans object attributes. 
+
+
+
+Implemented in \hyperlink{structxml__foreach__t_a62c4df007dbccbb16e471905c3a64826}{xml\+\_\+foreach\+\_\+t}, \hyperlink{classxml__ite__block__t_ab5a5590475fc25a5601daefd8a0deac3}{xml\+\_\+ite\+\_\+block\+\_\+t}, \hyperlink{classxml__shell__t_a372d74254457c1e1a7f2ffa093d25397}{xml\+\_\+shell\+\_\+t}, \hyperlink{classxml__command__t_ace4f9e713601beb9a850d2459550789f}{xml\+\_\+command\+\_\+t}, \hyperlink{classxml__parameter__t_a9fc1880ab4a4e6e4caa97f9f858c4c2e}{xml\+\_\+parameter\+\_\+t}, \hyperlink{classxml__set__variable__t_ac31d6bc914adb2a642e69adfabdb5f71}{xml\+\_\+set\+\_\+variable\+\_\+t}, and \hyperlink{classxml__set__entry__t_ac996d3a7900d2deceeee5efcea48bb3a}{xml\+\_\+set\+\_\+entry\+\_\+t}.
+
+\mbox{\Hypertarget{classxml__script__node__t_aed7d38abc27f6750b763da3ccd7b4b87}\label{classxml__script__node__t_aed7d38abc27f6750b763da3ccd7b4b87}} 
+\index{xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}!create@{create}}
+\index{create@{create}!xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \hyperlink{classxml__script__node__t}{xml\+\_\+script\+\_\+node\+\_\+t} $\ast$ xml\+\_\+script\+\_\+node\+\_\+t\+::create (\begin{DoxyParamCaption}\item[{const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a script node by parsing the X\+ML element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & X\+ML element to be parsed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Script node. 
+\end{DoxyReturn}
+
+
+Definition at line 98 of file xml\+\_\+script\+\_\+command.\+cpp.
+
+
+
+References xml\+\_\+node\+::get\+\_\+name(), T\+A\+G\+\_\+\+C\+O\+M\+M\+A\+ND, T\+A\+G\+\_\+\+E\+N\+T\+RY, T\+A\+G\+\_\+\+F\+O\+R\+E\+A\+CH, T\+A\+G\+\_\+\+I\+T\+E\+\_\+\+B\+L\+O\+CK, T\+A\+G\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER, T\+A\+G\+\_\+\+S\+H\+E\+LL, T\+A\+G\+\_\+\+V\+A\+R\+I\+A\+B\+LE, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by Synthesis\+Tool\+::xload\+\_\+scripts(), xml\+\_\+foreach\+\_\+t\+::xml\+\_\+foreach\+\_\+t(), and xml\+\_\+ite\+\_\+block\+\_\+t\+::xml\+\_\+ite\+\_\+block\+\_\+t().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{d6/de5/classxml__script__node__t_aed7d38abc27f6750b763da3ccd7b4b87_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/de5/classxml__script__node__t_aed7d38abc27f6750b763da3ccd7b4b87_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classxml__script__node__t_adaf9c51a079c4617f3845c6133eb477f}\label{classxml__script__node__t_adaf9c51a079c4617f3845c6133eb477f}} 
+\index{xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}!create\+\_\+xml\+\_\+node@{create\+\_\+xml\+\_\+node}}
+\index{create\+\_\+xml\+\_\+node@{create\+\_\+xml\+\_\+node}!xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}}
+\subsubsection{\texorpdfstring{create\+\_\+xml\+\_\+node()}{create\_xml\_node()}}
+{\footnotesize\ttfamily virtual xml\+\_\+node\+Ref xml\+\_\+script\+\_\+node\+\_\+t\+::create\+\_\+xml\+\_\+node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Creates an X\+ML node for polixml data structures. 
+
+
+
+Implemented in \hyperlink{structxml__foreach__t_a6056d8114277e5aad52bf31408bd24a2}{xml\+\_\+foreach\+\_\+t}, \hyperlink{classxml__ite__block__t_a1b9744c412acd0ded712ab4c8956ce27}{xml\+\_\+ite\+\_\+block\+\_\+t}, \hyperlink{classxml__shell__t_a8e65fb9948e3fdc63e370de8c67cfefc}{xml\+\_\+shell\+\_\+t}, \hyperlink{classxml__command__t_a8b11fb3c538442d1717e06a8f448b9ee}{xml\+\_\+command\+\_\+t}, \hyperlink{classxml__parameter__t_aa08b7e9ca07a2cc859a40a280b31f133}{xml\+\_\+parameter\+\_\+t}, \hyperlink{classxml__set__variable__t_a95b663fe068ba84695f348fb6cea929b}{xml\+\_\+set\+\_\+variable\+\_\+t}, and \hyperlink{classxml__set__entry__t_ac1b86d13e93d6fb01ace81a603cede2a}{xml\+\_\+set\+\_\+entry\+\_\+t}.
+
+\mbox{\Hypertarget{classxml__script__node__t_a01f5c0deca615d53775e40a512be3226}\label{classxml__script__node__t_a01f5c0deca615d53775e40a512be3226}} 
+\index{xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}!evaluate\+\_\+condition@{evaluate\+\_\+condition}}
+\index{evaluate\+\_\+condition@{evaluate\+\_\+condition}!xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}}
+\subsubsection{\texorpdfstring{evaluate\+\_\+condition()}{evaluate\_condition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool xml\+\_\+script\+\_\+node\+\_\+t\+::evaluate\+\_\+condition (\begin{DoxyParamCaption}\item[{const std\+::string $\ast$}]{condition }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Evaluates a string condition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em condition} & Condition to be evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false $<$=$>$ condition != N\+U\+LL \&\& ( trim($\ast$condition) == \char`\"{}\char`\"{} $\vert$$\vert$ (float)$\ast$condition == \char`\"{}0.\+0\char`\"{} $\vert$$\vert$ tolowercase(trim($\ast$condition)) == \char`\"{}false\char`\"{} ) 
+\end{DoxyReturn}
+represent a variable that has not been substituted/defined 
+
+Definition at line 137 of file xml\+\_\+script\+\_\+command.\+cpp.
+
+
+
+Referenced by xml\+\_\+set\+\_\+entry\+\_\+t\+::check\+Condition(), xml\+\_\+set\+\_\+variable\+\_\+t\+::check\+Condition(), xml\+\_\+parameter\+\_\+t\+::check\+Condition(), xml\+\_\+command\+\_\+t\+::check\+Condition(), xml\+\_\+shell\+\_\+t\+::check\+Condition(), xml\+\_\+ite\+\_\+block\+\_\+t\+::check\+Condition(), evaluate\+\_\+condition(), Nano\+Xplore\+Wrapper\+::to\+String(), Lattice\+Wrapper\+::to\+String(), Altera\+Wrapper\+::to\+String(), Synopsys\+Wrapper\+::to\+String(), Xilinx\+Wrapper\+::to\+String(), and xml\+\_\+parameter\+\_\+t\+::xml\+\_\+parameter\+\_\+t().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/de5/classxml__script__node__t_a01f5c0deca615d53775e40a512be3226_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classxml__script__node__t_ad27af696d98812f71634159dd6f5052c}\label{classxml__script__node__t_ad27af696d98812f71634159dd6f5052c}} 
+\index{xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}!evaluate\+\_\+condition@{evaluate\+\_\+condition}}
+\index{evaluate\+\_\+condition@{evaluate\+\_\+condition}!xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}}
+\subsubsection{\texorpdfstring{evaluate\+\_\+condition()}{evaluate\_condition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool xml\+\_\+script\+\_\+node\+\_\+t\+::evaluate\+\_\+condition (\begin{DoxyParamCaption}\item[{const std\+::string $\ast$}]{condition,  }\item[{const \hyperlink{DesignParameters_8hpp_ae36bb1c4c9150d0eeecfe1f96f42d157}{Design\+Parameters\+Ref} \&}]{dp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Evaluates a string condition. 
+
+If the condition is a design parameter, its string value is evaluated. 
+\begin{DoxyParams}{Parameters}
+{\em condition} & Condition to be evaluated. \\
+\hline
+{\em dp} & Design parameters. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(trim($<$em$>$condition) matches /\$\{\+\_\+\+\_\+.\+\_\+\+\_\+\}/) ? evaluate\+\_\+condition(value of dp\mbox{[}variable of $\ast$condition\mbox{]}) \+: evaluate\+\_\+condition(condition) ) 
+\end{DoxyReturn}
+
+
+Definition at line 188 of file xml\+\_\+script\+\_\+command.\+cpp.
+
+
+
+References evaluate\+\_\+condition(), Design\+Parameters\+::parameter\+\_\+values, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d6/de5/classxml__script__node__t_ad27af696d98812f71634159dd6f5052c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classxml__script__node__t_aca8e03906a47471b458570a203829aa3}\label{classxml__script__node__t_aca8e03906a47471b458570a203829aa3}} 
+\index{xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}!find\+\_\+type@{find\+\_\+type}}
+\index{find\+\_\+type@{find\+\_\+type}!xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}}
+\subsubsection{\texorpdfstring{find\+\_\+type()}{find\_type()}}
+{\footnotesize\ttfamily \hyperlink{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59b}{xml\+\_\+script\+\_\+node\+\_\+enum\+\_\+t} xml\+\_\+script\+\_\+node\+\_\+t\+::find\+\_\+type (\begin{DoxyParamCaption}\item[{const \hyperlink{classxml__element}{xml\+\_\+element} $\ast$}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Finds the type of an X\+ML element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & X\+ML element to be parsed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node type (see xml\+\_\+script\+\_\+node\+\_\+enum\+\_\+t). 
+\end{DoxyReturn}
+
+
+Definition at line 61 of file xml\+\_\+script\+\_\+command.\+cpp.
+
+
+
+References xml\+\_\+node\+::get\+\_\+name(), N\+O\+D\+E\+\_\+\+C\+O\+M\+M\+A\+ND, N\+O\+D\+E\+\_\+\+E\+N\+T\+RY, N\+O\+D\+E\+\_\+\+F\+O\+R\+E\+A\+CH, N\+O\+D\+E\+\_\+\+I\+T\+E\+\_\+\+B\+L\+O\+CK, N\+O\+D\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER, N\+O\+D\+E\+\_\+\+S\+H\+E\+LL, N\+O\+D\+E\+\_\+\+U\+N\+K\+N\+O\+WN, N\+O\+D\+E\+\_\+\+V\+A\+R\+I\+A\+B\+LE, T\+A\+G\+\_\+\+C\+O\+M\+M\+A\+ND, T\+A\+G\+\_\+\+E\+N\+T\+RY, T\+A\+G\+\_\+\+F\+O\+R\+E\+A\+CH, T\+A\+G\+\_\+\+I\+T\+E\+\_\+\+B\+L\+O\+CK, T\+A\+G\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER, T\+A\+G\+\_\+\+S\+H\+E\+LL, and T\+A\+G\+\_\+\+V\+A\+R\+I\+A\+B\+LE.
+
+
+
+Referenced by Synthesis\+Tool\+::xload\+\_\+scripts().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{d6/de5/classxml__script__node__t_aca8e03906a47471b458570a203829aa3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/de5/classxml__script__node__t_aca8e03906a47471b458570a203829aa3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classxml__script__node__t_af5815fab8924e5e4f47ba1b7266b6cb8}\label{classxml__script__node__t_af5815fab8924e5e4f47ba1b7266b6cb8}} 
+\index{xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}!get\+\_\+xml\+\_\+name@{get\+\_\+xml\+\_\+name}}
+\index{get\+\_\+xml\+\_\+name@{get\+\_\+xml\+\_\+name}!xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}}
+\subsubsection{\texorpdfstring{get\+\_\+xml\+\_\+name()}{get\_xml\_name()}}
+{\footnotesize\ttfamily virtual std\+::string xml\+\_\+script\+\_\+node\+\_\+t\+::get\+\_\+xml\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the X\+ML element name of this node type. 
+
+
+
+Implemented in \hyperlink{structxml__foreach__t_ad1bf3053ce2cc69b9b6a02402b7f9c22}{xml\+\_\+foreach\+\_\+t}, \hyperlink{classxml__ite__block__t_a82a199264ab67116550596a27ff2b051}{xml\+\_\+ite\+\_\+block\+\_\+t}, \hyperlink{classxml__shell__t_a5a9787981f0f16d4182a21cca3b14916}{xml\+\_\+shell\+\_\+t}, \hyperlink{classxml__command__t_a5d5ebe5a97c62b313c7190bb084fba87}{xml\+\_\+command\+\_\+t}, \hyperlink{classxml__parameter__t_a22e2fc519a78dbadd7dd583a5e6a5556}{xml\+\_\+parameter\+\_\+t}, \hyperlink{classxml__set__variable__t_aa247f1465847c3ee2ec8f7200e2ac401}{xml\+\_\+set\+\_\+variable\+\_\+t}, and \hyperlink{classxml__set__entry__t_a0a526ef7f3872e92b59a6f961b3383cf}{xml\+\_\+set\+\_\+entry\+\_\+t}.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classxml__script__node__t_aaf981f64fd03ed4d8afbacd9f1cdbe2c}\label{classxml__script__node__t_aaf981f64fd03ed4d8afbacd9f1cdbe2c}} 
+\index{xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}!node\+Type@{node\+Type}}
+\index{node\+Type@{node\+Type}!xml\+\_\+script\+\_\+node\+\_\+t@{xml\+\_\+script\+\_\+node\+\_\+t}}
+\subsubsection{\texorpdfstring{node\+Type}{nodeType}}
+{\footnotesize\ttfamily \hyperlink{xml__script__command_8hpp_a3f764b80e60a34ae77719e7f4616a59b}{xml\+\_\+script\+\_\+node\+\_\+enum\+\_\+t} xml\+\_\+script\+\_\+node\+\_\+t\+::node\+Type}
+
+
+
+Definition at line 94 of file xml\+\_\+script\+\_\+command.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/\hyperlink{xml__script__command_8hpp}{xml\+\_\+script\+\_\+command.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/wrapper/synthesis/\hyperlink{xml__script__command_8cpp}{xml\+\_\+script\+\_\+command.\+cpp}\end{DoxyCompactItemize}

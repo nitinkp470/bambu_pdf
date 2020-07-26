@@ -1,0 +1,98 @@
+\hypertarget{hls__flow__step__factory_8cpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/hls\+\_\+flow\+\_\+step\+\_\+factory.cpp File Reference}
+\label{hls__flow__step__factory_8cpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/hls\+\_\+flow\+\_\+step\+\_\+factory.\+cpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/hls\+\_\+flow\+\_\+step\+\_\+factory.\+cpp}}
+
+
+Factory for scheduling.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+I\+L\+P\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Parameter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+flow\+\_\+step\+\_\+factory.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}call\+\_\+graph\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}design\+\_\+flow\+\_\+step.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Top\+Entity\+Memory\+Mapped.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}top\+\_\+entity.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}top\+\_\+entity\+\_\+cs.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}top\+\_\+entity\+\_\+parallel\+\_\+cs.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}classic\+\_\+datapath.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}datapath\+\_\+cs.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}datapath\+\_\+parallel\+\_\+cs.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}control\+\_\+flow\+\_\+checker.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}controller\+\_\+cs.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fsm\+\_\+controller.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}generate\+\_\+hdl.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}generate\+\_\+simulation\+\_\+scripts.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}generate\+\_\+synthesis\+\_\+scripts.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mux\+\_\+connection\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cdfc\+\_\+module\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}easy\+\_\+module\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}port\+\_\+swapping.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unique\+\_\+binding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}chordal\+\_\+coloring\+\_\+register.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}compatibility\+\_\+based\+\_\+register.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unique\+\_\+binding\+\_\+register.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vertex\+\_\+coloring\+\_\+register.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}weighted\+\_\+clique\+\_\+register.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}values\+\_\+scheme.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sched\+\_\+based\+\_\+chaining\+\_\+computation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dry\+\_\+run\+\_\+evaluation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}evaluation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}simulation\+\_\+evaluation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}synthesis\+\_\+evaluation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fun\+\_\+dominator\+\_\+allocation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}classical\+\_\+synthesis\+\_\+flow.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}initialize\+\_\+hls.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}standard\+\_\+hls.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}virtual\+\_\+hls.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}write\+\_\+hls\+\_\+summary.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+synthesis\+\_\+flow.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cs\+\_\+interface.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}minimal\+\_\+interface.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}W\+B4\+Intercon\+\_\+interface.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}W\+B4\+\_\+interface.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}memory.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mem\+\_\+dominator\+\_\+allocation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mem\+\_\+dominator\+\_\+allocation\+\_\+cs.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mem\+\_\+xml\+\_\+allocation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}add\+\_\+library.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}allocation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+bit\+\_\+value.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hls\+\_\+function\+\_\+bit\+\_\+value.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fixed\+\_\+scheduling.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}parametric\+\_\+list\+\_\+based.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}scheduling.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}C\+Testbench\+Execution.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}minimal\+\_\+interface\+\_\+testbench.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}test\+\_\+vector\+\_\+parser.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}testbench\+\_\+generation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}testbench\+\_\+memory\+\_\+allocation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}testbench\+\_\+values\+\_\+c\+\_\+generation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}testbench\+\_\+values\+\_\+xml\+\_\+generation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}wishbone\+\_\+interface\+\_\+testbench.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}B\+B\+\_\+based\+\_\+stg.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Call\+Graph\+Unfolding.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+element.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include \char`\"{}tree\+\_\+manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dbg\+Print\+Helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+helper.\+hpp\char`\"{}}\newline
+Include dependency graph for hls\+\_\+flow\+\_\+step\+\_\+factory.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d3d/hls__flow__step__factory_8cpp__incl}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+Factory for scheduling. 
+
+\begin{DoxyAuthor}{Author}
+Marco Lattuada \href{mailto:lattuada@elet.polimi.it}{\tt lattuada@elet.\+polimi.\+it} 
+\end{DoxyAuthor}

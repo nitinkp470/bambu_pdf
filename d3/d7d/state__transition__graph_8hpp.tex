@@ -1,0 +1,286 @@
+\hypertarget{state__transition__graph_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/stg/state\+\_\+transition\+\_\+graph.hpp File Reference}
+\label{state__transition__graph_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/stg/state\+\_\+transition\+\_\+graph.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/stg/state\+\_\+transition\+\_\+graph.\+hpp}}
+
+
+This file contains the structures needed to manage a graph that will represent the state transition graph.  
+
+
+{\ttfamily \#include $<$edge\+\_\+info.\+hpp$>$}\newline
+{\ttfamily \#include $<$graph\+\_\+info.\+hpp$>$}\newline
+{\ttfamily \#include $<$node\+\_\+info.\+hpp$>$}\newline
+{\ttfamily \#include $<$graph.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+manipulation.\+hpp\char`\"{}}\newline
+Include dependency graph for state\+\_\+transition\+\_\+graph.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dff/state__transition__graph_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d9f/state__transition__graph_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structStateInfo}{State\+Info}
+\begin{DoxyCompactList}\small\item\em Structure holding information about a node into graph. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionInfo}{Transition\+Info}
+\begin{DoxyCompactList}\small\item\em Structure holding the information about an edge into the graph. \end{DoxyCompactList}\item 
+struct \hyperlink{structStateTransitionGraphInfo}{State\+Transition\+Graph\+Info}
+\begin{DoxyCompactList}\small\item\em Structure holding information about the whole graph. \end{DoxyCompactList}\item 
+class \hyperlink{classStateTransitionGraphsCollection}{State\+Transition\+Graphs\+Collection}
+\begin{DoxyCompactList}\small\item\em This structure defines the bulk for the state transition graph. \end{DoxyCompactList}\item 
+struct \hyperlink{structStateTransitionGraph}{State\+Transition\+Graph}
+\begin{DoxyCompactList}\small\item\em Class used to describe a state transition graph. \end{DoxyCompactList}\item 
+class \hyperlink{classStateWriter}{State\+Writer}
+\begin{DoxyCompactList}\small\item\em Functor template used to write the content of the nodes to a dotty file. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionWriter}{Transition\+Writer}
+\begin{DoxyCompactList}\small\item\em Functor used to write the content of the edges to a dotty file and it is used to write specific edge properties such as condition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Forward declarations}
+\label{_amgrp72ac167e7410ca648c9995de2f3d65a9}%
+Superclasses includ
+
+\hyperlink{structGraph}{Graph} include S\+TL includes Utility includes \begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710}{transition\+\_\+type} \+: int \{ \newline
+\hyperlink{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710a7a82876d2d9c7341c35e7d122536b54f}{D\+O\+N\+T\+C\+A\+R\+E\+\_\+\+C\+O\+ND} = 0, 
+\hyperlink{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710a6574dd8d65ffd4f0337596c4b48aa233}{T\+R\+U\+E\+\_\+\+C\+O\+ND}, 
+\hyperlink{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710a08c24ca08ce4d06d953c3cc2c60806fa}{F\+A\+L\+S\+E\+\_\+\+C\+O\+ND}, 
+\hyperlink{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710a1183ffc6adf9d5cda8f1eba690da3852}{C\+A\+S\+E\+\_\+\+C\+O\+ND}, 
+\newline
+\hyperlink{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710a138af81183244e7aafa5c306f373ad81}{A\+L\+L\+\_\+\+F\+I\+N\+I\+S\+H\+ED}, 
+\hyperlink{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710a974b926705d5749cfeae213ca559bcb6}{N\+O\+T\+\_\+\+A\+L\+L\+\_\+\+F\+I\+N\+I\+S\+H\+ED}
+ \}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structStateInfo}{State\+Info} $>$ \hyperlink{state__transition__graph_8hpp_aeb406353b516fb2c706df12defd64c99}{State\+Info\+Ref}
+\begin{DoxyCompactList}\small\item\em refcount definition \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{structStateInfo}{State\+Info} $>$ \hyperlink{state__transition__graph_8hpp_a50240fded93adab729e333c2b8090a8b}{State\+Info\+Const\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classTransitionInfo}{Transition\+Info} $>$ \hyperlink{state__transition__graph_8hpp_a4406374514e349d48b6dd148b6977b53}{Transition\+Info\+Ref}
+\begin{DoxyCompactList}\small\item\em refcount about edge info \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{classTransitionInfo}{Transition\+Info} $>$ \hyperlink{state__transition__graph_8hpp_a64af31867580dfd7aed5d8b7d93062ae}{Transition\+Info\+Const\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structStateTransitionGraphInfo}{State\+Transition\+Graph\+Info} $>$ \hyperlink{state__transition__graph_8hpp_ad14dd7263de4e0bad3ad431954ad8252}{State\+Transition\+Graph\+Info\+Ref}
+\begin{DoxyCompactList}\small\item\em definition of the refcount \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{structStateTransitionGraphInfo}{State\+Transition\+Graph\+Info} $>$ \hyperlink{state__transition__graph_8hpp_aeebd36a5156ebc171621000ba2c5180d}{State\+Transition\+Graph\+Info\+Const\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classStateTransitionGraphsCollection}{State\+Transition\+Graphs\+Collection} $>$ \hyperlink{state__transition__graph_8hpp_a2613a37dfdde13c61d36bfaba91f433e}{State\+Transition\+Graphs\+Collection\+Ref}
+\begin{DoxyCompactList}\small\item\em refcount definition of the class \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{classStateTransitionGraphsCollection}{State\+Transition\+Graphs\+Collection} $>$ \hyperlink{state__transition__graph_8hpp_ac21345f71ea1e93bdf9af1286282439f}{State\+Transition\+Graphs\+Collection\+Const\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structStateTransitionGraph}{State\+Transition\+Graph} $>$ \hyperlink{state__transition__graph_8hpp_a50ba60cd5e113de254d5d7638bbbba86}{State\+Transition\+Graph\+Ref}
+\begin{DoxyCompactList}\small\item\em refcount definition of the class \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{structStateTransitionGraph}{State\+Transition\+Graph} $>$ \hyperlink{state__transition__graph_8hpp_aa722f3ba42caaaafcacdec07925f6b06}{State\+Transition\+Graph\+Const\+Ref}
+\item 
+\hyperlink{state__transition__graph_8hpp_a942a3103598e9f83b960660212b20cef}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classBehavioralHelper}{Behavioral\+Helper})
+\item 
+\hyperlink{state__transition__graph_8hpp_aed6251ce31927fa1d8a5985bbc098105}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{structOpGraph}{Op\+Graph})
+\item 
+\hyperlink{state__transition__graph_8hpp_a8c8d82f336df8d5bba4c91b553b0fbae}{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classParameter}{Parameter})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the structures needed to manage a graph that will represent the state transition graph. 
+
+This file contains the needed data structures used to represent a graph used to represent a state transition graph associated to the specification. The State Transition \hyperlink{structGraph}{Graph} (S\+TG) is defined as follows\+:
+\begin{DoxyItemize}
+\item the nodes represent the states to be executed. Each node contains the set of operations to be executed when the control reaches the related state.
+\item the edges represent the transition, subjected to the related conditions. In particular, a condition is the result of the evaluation of a control operation that modifies the control flow.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Christian Pilato \href{mailto:pilato@elet.polimi.it}{\tt pilato@elet.\+polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{state__transition__graph_8hpp_a50240fded93adab729e333c2b8090a8b}\label{state__transition__graph_8hpp_a50240fded93adab729e333c2b8090a8b}} 
+\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!State\+Info\+Const\+Ref@{State\+Info\+Const\+Ref}}
+\index{State\+Info\+Const\+Ref@{State\+Info\+Const\+Ref}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{State\+Info\+Const\+Ref}{StateInfoConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{structStateInfo}{State\+Info}$>$ \hyperlink{state__transition__graph_8hpp_a50240fded93adab729e333c2b8090a8b}{State\+Info\+Const\+Ref}}
+
+
+
+Definition at line 153 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{state__transition__graph_8hpp_aeb406353b516fb2c706df12defd64c99}\label{state__transition__graph_8hpp_aeb406353b516fb2c706df12defd64c99}} 
+\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!State\+Info\+Ref@{State\+Info\+Ref}}
+\index{State\+Info\+Ref@{State\+Info\+Ref}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{State\+Info\+Ref}{StateInfoRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structStateInfo}{State\+Info}$>$ \hyperlink{state__transition__graph_8hpp_aeb406353b516fb2c706df12defd64c99}{State\+Info\+Ref}}
+
+
+
+refcount definition 
+
+
+
+Definition at line 152 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{state__transition__graph_8hpp_aa722f3ba42caaaafcacdec07925f6b06}\label{state__transition__graph_8hpp_aa722f3ba42caaaafcacdec07925f6b06}} 
+\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!State\+Transition\+Graph\+Const\+Ref@{State\+Transition\+Graph\+Const\+Ref}}
+\index{State\+Transition\+Graph\+Const\+Ref@{State\+Transition\+Graph\+Const\+Ref}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{State\+Transition\+Graph\+Const\+Ref}{StateTransitionGraphConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{structStateTransitionGraph}{State\+Transition\+Graph}$>$ \hyperlink{state__transition__graph_8hpp_aa722f3ba42caaaafcacdec07925f6b06}{State\+Transition\+Graph\+Const\+Ref}}
+
+
+
+Definition at line 421 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{state__transition__graph_8hpp_aeebd36a5156ebc171621000ba2c5180d}\label{state__transition__graph_8hpp_aeebd36a5156ebc171621000ba2c5180d}} 
+\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!State\+Transition\+Graph\+Info\+Const\+Ref@{State\+Transition\+Graph\+Info\+Const\+Ref}}
+\index{State\+Transition\+Graph\+Info\+Const\+Ref@{State\+Transition\+Graph\+Info\+Const\+Ref}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{State\+Transition\+Graph\+Info\+Const\+Ref}{StateTransitionGraphInfoConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{structStateTransitionGraphInfo}{State\+Transition\+Graph\+Info}$>$ \hyperlink{state__transition__graph_8hpp_aeebd36a5156ebc171621000ba2c5180d}{State\+Transition\+Graph\+Info\+Const\+Ref}}
+
+
+
+Definition at line 276 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{state__transition__graph_8hpp_ad14dd7263de4e0bad3ad431954ad8252}\label{state__transition__graph_8hpp_ad14dd7263de4e0bad3ad431954ad8252}} 
+\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!State\+Transition\+Graph\+Info\+Ref@{State\+Transition\+Graph\+Info\+Ref}}
+\index{State\+Transition\+Graph\+Info\+Ref@{State\+Transition\+Graph\+Info\+Ref}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{State\+Transition\+Graph\+Info\+Ref}{StateTransitionGraphInfoRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structStateTransitionGraphInfo}{State\+Transition\+Graph\+Info}$>$ \hyperlink{state__transition__graph_8hpp_ad14dd7263de4e0bad3ad431954ad8252}{State\+Transition\+Graph\+Info\+Ref}}
+
+
+
+definition of the refcount 
+
+
+
+Definition at line 275 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{state__transition__graph_8hpp_a50ba60cd5e113de254d5d7638bbbba86}\label{state__transition__graph_8hpp_a50ba60cd5e113de254d5d7638bbbba86}} 
+\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!State\+Transition\+Graph\+Ref@{State\+Transition\+Graph\+Ref}}
+\index{State\+Transition\+Graph\+Ref@{State\+Transition\+Graph\+Ref}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{State\+Transition\+Graph\+Ref}{StateTransitionGraphRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structStateTransitionGraph}{State\+Transition\+Graph}$>$ \hyperlink{state__transition__graph_8hpp_a50ba60cd5e113de254d5d7638bbbba86}{State\+Transition\+Graph\+Ref}}
+
+
+
+refcount definition of the class 
+
+
+
+Definition at line 420 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{state__transition__graph_8hpp_ac21345f71ea1e93bdf9af1286282439f}\label{state__transition__graph_8hpp_ac21345f71ea1e93bdf9af1286282439f}} 
+\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!State\+Transition\+Graphs\+Collection\+Const\+Ref@{State\+Transition\+Graphs\+Collection\+Const\+Ref}}
+\index{State\+Transition\+Graphs\+Collection\+Const\+Ref@{State\+Transition\+Graphs\+Collection\+Const\+Ref}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{State\+Transition\+Graphs\+Collection\+Const\+Ref}{StateTransitionGraphsCollectionConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{classStateTransitionGraphsCollection}{State\+Transition\+Graphs\+Collection}$>$ \hyperlink{state__transition__graph_8hpp_ac21345f71ea1e93bdf9af1286282439f}{State\+Transition\+Graphs\+Collection\+Const\+Ref}}
+
+
+
+Definition at line 312 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{state__transition__graph_8hpp_a2613a37dfdde13c61d36bfaba91f433e}\label{state__transition__graph_8hpp_a2613a37dfdde13c61d36bfaba91f433e}} 
+\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!State\+Transition\+Graphs\+Collection\+Ref@{State\+Transition\+Graphs\+Collection\+Ref}}
+\index{State\+Transition\+Graphs\+Collection\+Ref@{State\+Transition\+Graphs\+Collection\+Ref}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{State\+Transition\+Graphs\+Collection\+Ref}{StateTransitionGraphsCollectionRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classStateTransitionGraphsCollection}{State\+Transition\+Graphs\+Collection}$>$ \hyperlink{state__transition__graph_8hpp_a2613a37dfdde13c61d36bfaba91f433e}{State\+Transition\+Graphs\+Collection\+Ref}}
+
+
+
+refcount definition of the class 
+
+
+
+Definition at line 311 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{state__transition__graph_8hpp_a64af31867580dfd7aed5d8b7d93062ae}\label{state__transition__graph_8hpp_a64af31867580dfd7aed5d8b7d93062ae}} 
+\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!Transition\+Info\+Const\+Ref@{Transition\+Info\+Const\+Ref}}
+\index{Transition\+Info\+Const\+Ref@{Transition\+Info\+Const\+Ref}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{Transition\+Info\+Const\+Ref}{TransitionInfoConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{classTransitionInfo}{Transition\+Info}$>$ \hyperlink{state__transition__graph_8hpp_a64af31867580dfd7aed5d8b7d93062ae}{Transition\+Info\+Const\+Ref}}
+
+
+
+Definition at line 239 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{state__transition__graph_8hpp_a4406374514e349d48b6dd148b6977b53}\label{state__transition__graph_8hpp_a4406374514e349d48b6dd148b6977b53}} 
+\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!Transition\+Info\+Ref@{Transition\+Info\+Ref}}
+\index{Transition\+Info\+Ref@{Transition\+Info\+Ref}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{Transition\+Info\+Ref}{TransitionInfoRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classTransitionInfo}{Transition\+Info}$>$ \hyperlink{state__transition__graph_8hpp_a4406374514e349d48b6dd148b6977b53}{Transition\+Info\+Ref}}
+
+
+
+refcount about edge info 
+
+
+
+Definition at line 238 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710}\label{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710}} 
+\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!transition\+\_\+type@{transition\+\_\+type}}
+\index{transition\+\_\+type@{transition\+\_\+type}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{transition\+\_\+type}{transition\_type}}
+{\footnotesize\ttfamily enum \hyperlink{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710}{transition\+\_\+type} \+: int}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+O\+N\+T\+C\+A\+R\+E\+\_\+\+C\+O\+ND@{D\+O\+N\+T\+C\+A\+R\+E\+\_\+\+C\+O\+ND}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!D\+O\+N\+T\+C\+A\+R\+E\+\_\+\+C\+O\+ND@{D\+O\+N\+T\+C\+A\+R\+E\+\_\+\+C\+O\+ND}}}\mbox{\Hypertarget{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710a7a82876d2d9c7341c35e7d122536b54f}\label{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710a7a82876d2d9c7341c35e7d122536b54f}} 
+D\+O\+N\+T\+C\+A\+R\+E\+\_\+\+C\+O\+ND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+R\+U\+E\+\_\+\+C\+O\+ND@{T\+R\+U\+E\+\_\+\+C\+O\+ND}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!T\+R\+U\+E\+\_\+\+C\+O\+ND@{T\+R\+U\+E\+\_\+\+C\+O\+ND}}}\mbox{\Hypertarget{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710a6574dd8d65ffd4f0337596c4b48aa233}\label{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710a6574dd8d65ffd4f0337596c4b48aa233}} 
+T\+R\+U\+E\+\_\+\+C\+O\+ND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+A\+L\+S\+E\+\_\+\+C\+O\+ND@{F\+A\+L\+S\+E\+\_\+\+C\+O\+ND}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!F\+A\+L\+S\+E\+\_\+\+C\+O\+ND@{F\+A\+L\+S\+E\+\_\+\+C\+O\+ND}}}\mbox{\Hypertarget{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710a08c24ca08ce4d06d953c3cc2c60806fa}\label{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710a08c24ca08ce4d06d953c3cc2c60806fa}} 
+F\+A\+L\+S\+E\+\_\+\+C\+O\+ND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+A\+S\+E\+\_\+\+C\+O\+ND@{C\+A\+S\+E\+\_\+\+C\+O\+ND}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!C\+A\+S\+E\+\_\+\+C\+O\+ND@{C\+A\+S\+E\+\_\+\+C\+O\+ND}}}\mbox{\Hypertarget{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710a1183ffc6adf9d5cda8f1eba690da3852}\label{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710a1183ffc6adf9d5cda8f1eba690da3852}} 
+C\+A\+S\+E\+\_\+\+C\+O\+ND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+L\+\_\+\+F\+I\+N\+I\+S\+H\+ED@{A\+L\+L\+\_\+\+F\+I\+N\+I\+S\+H\+ED}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!A\+L\+L\+\_\+\+F\+I\+N\+I\+S\+H\+ED@{A\+L\+L\+\_\+\+F\+I\+N\+I\+S\+H\+ED}}}\mbox{\Hypertarget{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710a138af81183244e7aafa5c306f373ad81}\label{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710a138af81183244e7aafa5c306f373ad81}} 
+A\+L\+L\+\_\+\+F\+I\+N\+I\+S\+H\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+T\+\_\+\+A\+L\+L\+\_\+\+F\+I\+N\+I\+S\+H\+ED@{N\+O\+T\+\_\+\+A\+L\+L\+\_\+\+F\+I\+N\+I\+S\+H\+ED}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!N\+O\+T\+\_\+\+A\+L\+L\+\_\+\+F\+I\+N\+I\+S\+H\+ED@{N\+O\+T\+\_\+\+A\+L\+L\+\_\+\+F\+I\+N\+I\+S\+H\+ED}}}\mbox{\Hypertarget{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710a974b926705d5749cfeae213ca559bcb6}\label{state__transition__graph_8hpp_a73ce4c522d9c8d45a7e1ab48c95a1710a974b926705d5749cfeae213ca559bcb6}} 
+N\+O\+T\+\_\+\+A\+L\+L\+\_\+\+F\+I\+N\+I\+S\+H\+ED&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 155 of file state\+\_\+transition\+\_\+graph.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{state__transition__graph_8hpp_a942a3103598e9f83b960660212b20cef}\label{state__transition__graph_8hpp_a942a3103598e9f83b960660212b20cef}} 
+\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classBehavioralHelper}{Behavioral\+Helper}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{state__transition__graph_8hpp_aed6251ce31927fa1d8a5985bbc098105}\label{state__transition__graph_8hpp_aed6251ce31927fa1d8a5985bbc098105}} 
+\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{structOpGraph}{Op\+Graph}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{state__transition__graph_8hpp_a8c8d82f336df8d5bba4c91b553b0fbae}\label{state__transition__graph_8hpp_a8c8d82f336df8d5bba4c91b553b0fbae}} 
+\index{state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}!R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!state\+\_\+transition\+\_\+graph.\+hpp@{state\+\_\+transition\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{REF\_FORWARD\_DECL()}}
+{\footnotesize\ttfamily R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classParameter}{Parameter}}]{ }\end{DoxyParamCaption})}
+

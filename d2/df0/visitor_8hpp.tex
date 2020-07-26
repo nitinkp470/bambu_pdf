@@ -1,0 +1,346 @@
+\hypertarget{visitor_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/visitor.hpp File Reference}
+\label{visitor_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/visitor.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/utility/visitor.\+hpp}}
+
+
+Visitor/walker design pattern.  
+
+
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$boost/preprocessor/facilities/empty.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/preprocessor/seq/for\+\_\+each.\+hpp$>$}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+Include dependency graph for visitor.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dc7/visitor_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d93/visitor_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classobject__visitor}{object\+\_\+visitor}
+\begin{DoxyCompactList}\small\item\em object visitor template. \end{DoxyCompactList}\item 
+class \hyperlink{classfor__each__functor}{for\+\_\+each\+\_\+functor$<$ T, visitor\+\_\+obj $>$}
+\begin{DoxyCompactList}\small\item\em functor used to traverse sequences with std\+::for\+\_\+each \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{visitor_8hpp_ad4ad841c2e56422b75fc07c0426b5234}{G\+E\+T\+ID}(field)~field\#\#\+\_\+\+ID
+\begin{DoxyCompactList}\small\item\em return the id given a super class or a class member \end{DoxyCompactList}\item 
+\#define \hyperlink{visitor_8hpp_a70368060d499373afeb04c938cfccfae}{V\+I\+S\+I\+T\+\_\+\+SC}(mask,  superclass,  method)
+\begin{DoxyCompactList}\small\item\em macro used to visit the super class \end{DoxyCompactList}\item 
+\#define \hyperlink{visitor_8hpp_acf71754d730ff2debe4001ce56fe90a7}{V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+E\+R\+\_\+\+N\+A\+M\+ED}(ref\+\_\+obj\+\_\+name,  mask,  ref\+\_\+obj,  method)
+\begin{DoxyCompactList}\small\item\em macro used to visit a non null member \end{DoxyCompactList}\item 
+\#define \hyperlink{visitor_8hpp_a34f60f05c043b947c14c987eb9a7a866}{V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+ER}(mask,  ref\+\_\+obj,  method)~\hyperlink{visitor_8hpp_acf71754d730ff2debe4001ce56fe90a7}{V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+E\+R\+\_\+\+N\+A\+M\+ED}(ref\+\_\+obj, mask, ref\+\_\+obj, method)
+\item 
+\#define \hyperlink{visitor_8hpp_a4f6a19ff0cb860c77e92a2f90ad6a5c0}{S\+E\+Q\+\_\+\+V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+ER}(mask,  seq,  seqbasetype,  method,  visitor\+\_\+type,  visitor\+\_\+obj)
+\begin{DoxyCompactList}\small\item\em macro used to traverse non empty sequences \end{DoxyCompactList}\item 
+\#define \hyperlink{visitor_8hpp_af159f3df38018c87ead68ae991ca3157}{N\+O\+\_\+\+V\+I\+S\+IT}~$\sim$0U
+\begin{DoxyCompactList}\small\item\em constant used to avoid member visit \end{DoxyCompactList}\item 
+\#define \hyperlink{visitor_8hpp_aed5f8b935ad480239d2c4b7c958d34c1}{A\+L\+L\+\_\+\+V\+I\+S\+IT}~0U
+\begin{DoxyCompactList}\small\item\em constant used to allow member visit \end{DoxyCompactList}\item 
+\#define \hyperlink{visitor_8hpp_a44f6ff65bbd814ffe7dde7d96e26217f}{S\+E\+T\+\_\+\+N\+O\+\_\+\+V\+I\+S\+I\+T\+\_\+\+I\+N\+D\+EX}(mask,  \hyperlink{tutorial__pact__2019_2Introduction_2third_2include_2Keccak_8h_a028c9bdc8344cca38ab522a337074797}{index})~(mask $\vert$= (1\+U $<$$<$ G\+E\+T\+I\+D(index)))
+\begin{DoxyCompactList}\small\item\em macro used to selectively avoid member visit \end{DoxyCompactList}\item 
+\#define \hyperlink{visitor_8hpp_a6300da364405189ed23a4363db036372}{S\+E\+T\+\_\+\+V\+I\+S\+I\+T\+\_\+\+I\+N\+D\+EX}(mask,  \hyperlink{tutorial__pact__2019_2Introduction_2third_2include_2Keccak_8h_a028c9bdc8344cca38ab522a337074797}{index})~(mask \&= $\sim$(1\+U $<$$<$ G\+E\+T\+I\+D(index)))
+\begin{DoxyCompactList}\small\item\em macro used to selectively allow member visit \end{DoxyCompactList}\item 
+\#define \hyperlink{visitor_8hpp_a5203594a05d1a26cae217e8224aa4da3}{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+H\+E\+A\+D\+ER}(r,  data,  elem)~virtual void operator()(const elem$\ast$, unsigned int\&)
+\item 
+\#define \hyperlink{visitor_8hpp_a80983551ee6703cc3d862060f1aea641}{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+D\+E\+CL}(r,  data,  elem)~\hyperlink{visitor_8hpp_a5203594a05d1a26cae217e8224aa4da3}{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+H\+E\+A\+D\+ER}(r, data, elem);
+\item 
+\#define \hyperlink{visitor_8hpp_a824d794626a77855112081a5d90bd4bd}{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+RO}(r,  data,  elem)
+\item 
+\#define \hyperlink{visitor_8hpp_a6ae1d86299490f49565e734ae2d11601}{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+H\+E\+A\+D\+E\+RO}(r,  data,  elem)~void operator()(const elem$\ast$, unsigned int\&) override
+\item 
+\#define \hyperlink{visitor_8hpp_a8229dd7e271c69dda840f688cebb92ee}{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+D\+E\+C\+LO}(r,  data,  elem)~\hyperlink{visitor_8hpp_a6ae1d86299490f49565e734ae2d11601}{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+H\+E\+A\+D\+E\+RO}(r, data, elem);
+\item 
+\#define \hyperlink{visitor_8hpp_a81dd0658a245c9538d5ee04179677e96}{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+OO}(r,  data,  elem)
+\item 
+\#define \hyperlink{visitor_8hpp_a282c627c47d9a068511235b5c8d16049}{F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L\+A\+R\+A\+T\+I\+O\+N\+\_\+\+M\+A\+C\+RO}(r,  data,  elem)~class elem;
+\begin{DoxyCompactList}\small\item\em forward declaration macro \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Visitor/walker design pattern. 
+
+\begin{DoxyAuthor}{Author}
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{visitor_8hpp_aed5f8b935ad480239d2c4b7c958d34c1}\label{visitor_8hpp_aed5f8b935ad480239d2c4b7c958d34c1}} 
+\index{visitor.\+hpp@{visitor.\+hpp}!A\+L\+L\+\_\+\+V\+I\+S\+IT@{A\+L\+L\+\_\+\+V\+I\+S\+IT}}
+\index{A\+L\+L\+\_\+\+V\+I\+S\+IT@{A\+L\+L\+\_\+\+V\+I\+S\+IT}!visitor.\+hpp@{visitor.\+hpp}}
+\subsubsection{\texorpdfstring{A\+L\+L\+\_\+\+V\+I\+S\+IT}{ALL\_VISIT}}
+{\footnotesize\ttfamily \#define A\+L\+L\+\_\+\+V\+I\+S\+IT~0U}
+
+
+
+constant used to allow member visit 
+
+
+
+Definition at line 70 of file visitor.\+hpp.
+
+
+
+Referenced by typename\+\_\+type(), null\+\_\+node\+::visit(), tree\+\_\+reindex\+::visit(), gimple\+\_\+pragma\+::visit(), profiling\+\_\+pragma\+::visit(), statistical\+\_\+profiling\+::visit(), map\+\_\+pragma\+::visit(), call\+\_\+hw\+\_\+pragma\+::visit(), bloc\+::visit(), call\+\_\+point\+\_\+hw\+\_\+pragma\+::visit(), issue\+\_\+pragma\+::visit(), blackbox\+\_\+pragma\+::visit(), omp\+\_\+pragma\+::visit(), omp\+\_\+parallel\+\_\+pragma\+::visit(), omp\+\_\+sections\+\_\+pragma\+::visit(), omp\+\_\+parallel\+\_\+sections\+\_\+pragma\+::visit(), omp\+\_\+section\+\_\+pragma\+::visit(), omp\+\_\+target\+\_\+pragma\+::visit(), omp\+\_\+task\+\_\+pragma\+::visit(), omp\+\_\+critical\+\_\+pragma\+::visit(), omp\+\_\+atomic\+\_\+pragma\+::visit(), omp\+\_\+for\+\_\+pragma\+::visit(), omp\+\_\+simd\+\_\+pragma\+::visit(), omp\+\_\+declare\+\_\+simd\+\_\+pragma\+::visit(), gimple\+\_\+while\+::visit(), gimple\+\_\+for\+::visit(), Weighted\+Node\+::visit(), gimple\+\_\+multi\+\_\+way\+\_\+if\+::visit(), attr\+::visit(), srcp\+::visit(), decl\+\_\+node\+::visit(), expr\+\_\+node\+::visit(), Point\+To\+Solution\+::visit(), gimple\+\_\+node\+::visit(), unary\+\_\+expr\+::visit(), binary\+\_\+expr\+::visit(), ternary\+\_\+expr\+::visit(), quaternary\+\_\+expr\+::visit(), type\+\_\+node\+::visit(), memory\+\_\+tag\+::visit(), cst\+\_\+node\+::visit(), error\+\_\+mark\+::visit(), array\+\_\+type\+::visit(), gimple\+\_\+asm\+::visit(), baselink\+::visit(), gimple\+\_\+bind\+::visit(), binfo\+::visit(), block\+::visit(), call\+\_\+expr\+::visit(), aggr\+\_\+init\+\_\+expr\+::visit(), gimple\+\_\+call\+::visit(), case\+\_\+label\+\_\+expr\+::visit(), cast\+\_\+expr\+::visit(), type\+\_\+pack\+\_\+expansion\+::visit(), expr\+\_\+pack\+\_\+expansion\+::visit(), complex\+\_\+cst\+::visit(), complex\+\_\+type\+::visit(), gimple\+\_\+cond\+::visit(), const\+\_\+decl\+::visit(), constructor\+::visit(), enumeral\+\_\+type\+::visit(), expr\+\_\+stmt\+::visit(), field\+\_\+decl\+::visit(), function\+\_\+decl\+::visit(), function\+\_\+type\+::visit(), gimple\+\_\+assign\+::visit(), gimple\+\_\+nop\+::visit(), gimple\+\_\+goto\+::visit(), handler\+::visit(), identifier\+\_\+node\+::visit(), integer\+\_\+cst\+::visit(), integer\+\_\+type\+::visit(), gimple\+\_\+label\+::visit(), method\+\_\+type\+::visit(), namespace\+\_\+decl\+::visit(), overload\+::visit(), parm\+\_\+decl\+::visit(), gimple\+\_\+phi\+::visit(), gimple\+\_\+predict\+::visit(), pointer\+\_\+type\+::visit(), real\+\_\+cst\+::visit(), real\+\_\+type\+::visit(), record\+\_\+type\+::visit(), reference\+\_\+type\+::visit(), result\+\_\+decl\+::visit(), gimple\+\_\+resx\+::visit(), gimple\+\_\+return\+::visit(), return\+\_\+stmt\+::visit(), scope\+\_\+ref\+::visit(), ssa\+\_\+name\+::visit(), statement\+\_\+list\+::visit(), string\+\_\+cst\+::visit(), gimple\+\_\+switch\+::visit(), target\+\_\+expr\+::visit(), target\+\_\+mem\+\_\+ref\+::visit(), target\+\_\+mem\+\_\+ref461\+::visit(), template\+\_\+decl\+::visit(), template\+\_\+parm\+\_\+index\+::visit(), type\+\_\+argument\+\_\+pack\+::visit(), nontype\+\_\+argument\+\_\+pack\+::visit(), tree\+\_\+list\+::visit(), tree\+\_\+vec\+::visit(), try\+\_\+block\+::visit(), type\+\_\+decl\+::visit(), union\+\_\+type\+::visit(), var\+\_\+decl\+::visit(), vector\+\_\+cst\+::visit(), vector\+\_\+type\+::visit(), and lut\+\_\+expr\+::visit().
+
+\mbox{\Hypertarget{visitor_8hpp_a282c627c47d9a068511235b5c8d16049}\label{visitor_8hpp_a282c627c47d9a068511235b5c8d16049}} 
+\index{visitor.\+hpp@{visitor.\+hpp}!F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L\+A\+R\+A\+T\+I\+O\+N\+\_\+\+M\+A\+C\+RO@{F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L\+A\+R\+A\+T\+I\+O\+N\+\_\+\+M\+A\+C\+RO}}
+\index{F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L\+A\+R\+A\+T\+I\+O\+N\+\_\+\+M\+A\+C\+RO@{F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L\+A\+R\+A\+T\+I\+O\+N\+\_\+\+M\+A\+C\+RO}!visitor.\+hpp@{visitor.\+hpp}}
+\subsubsection{\texorpdfstring{F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L\+A\+R\+A\+T\+I\+O\+N\+\_\+\+M\+A\+C\+RO}{FORWARD\_DECLARATION\_MACRO}}
+{\footnotesize\ttfamily \#define F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L\+A\+R\+A\+T\+I\+O\+N\+\_\+\+M\+A\+C\+RO(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{data,  }\item[{}]{elem }\end{DoxyParamCaption})~class elem;}
+
+
+
+forward declaration macro 
+
+
+
+Definition at line 97 of file visitor.\+hpp.
+
+\mbox{\Hypertarget{visitor_8hpp_ad4ad841c2e56422b75fc07c0426b5234}\label{visitor_8hpp_ad4ad841c2e56422b75fc07c0426b5234}} 
+\index{visitor.\+hpp@{visitor.\+hpp}!G\+E\+T\+ID@{G\+E\+T\+ID}}
+\index{G\+E\+T\+ID@{G\+E\+T\+ID}!visitor.\+hpp@{visitor.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+ID}{GETID}}
+{\footnotesize\ttfamily \#define G\+E\+T\+ID(\begin{DoxyParamCaption}\item[{}]{field }\end{DoxyParamCaption})~field\#\#\+\_\+\+ID}
+
+
+
+return the id given a super class or a class member 
+
+
+
+Definition at line 53 of file visitor.\+hpp.
+
+\mbox{\Hypertarget{visitor_8hpp_af159f3df38018c87ead68ae991ca3157}\label{visitor_8hpp_af159f3df38018c87ead68ae991ca3157}} 
+\index{visitor.\+hpp@{visitor.\+hpp}!N\+O\+\_\+\+V\+I\+S\+IT@{N\+O\+\_\+\+V\+I\+S\+IT}}
+\index{N\+O\+\_\+\+V\+I\+S\+IT@{N\+O\+\_\+\+V\+I\+S\+IT}!visitor.\+hpp@{visitor.\+hpp}}
+\subsubsection{\texorpdfstring{N\+O\+\_\+\+V\+I\+S\+IT}{NO\_VISIT}}
+{\footnotesize\ttfamily \#define N\+O\+\_\+\+V\+I\+S\+IT~$\sim$0U}
+
+
+
+constant used to avoid member visit 
+
+
+
+Definition at line 68 of file visitor.\+hpp.
+
+
+
+Referenced by Gimple\+Writer\+::\+Gimple\+Writer(), type\+\_\+casting\+::operator()(), and raw\+\_\+writer\+::write\+\_\+when\+\_\+not\+\_\+null\+\_\+point\+\_\+to().
+
+\mbox{\Hypertarget{visitor_8hpp_a824d794626a77855112081a5d90bd4bd}\label{visitor_8hpp_a824d794626a77855112081a5d90bd4bd}} 
+\index{visitor.\+hpp@{visitor.\+hpp}!O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+RO@{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+RO}}
+\index{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+RO@{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+RO}!visitor.\+hpp@{visitor.\+hpp}}
+\subsubsection{\texorpdfstring{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+RO}{OPERATOR\_MACRO}}
+{\footnotesize\ttfamily \#define O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+RO(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{data,  }\item[{}]{elem }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{visitor_8hpp_a5203594a05d1a26cae217e8224aa4da3}{OPERATOR\_MACRO\_HEADER}(r, data, elem) \(\backslash\)
+   \{                                    \(\backslash\)
+   \}
+\end{DoxyCode}
+
+
+Definition at line 85 of file visitor.\+hpp.
+
+
+
+Referenced by function\+\_\+decl\+\_\+refs\+::function\+\_\+decl\+\_\+refs(), tree\+\_\+node\+\_\+dup\+::tree\+\_\+node\+\_\+dup(), tree\+\_\+node\+\_\+factory\+::tree\+\_\+node\+\_\+factory(), tree\+\_\+node\+\_\+finder\+::tree\+\_\+node\+\_\+finder(), tree\+\_\+node\+\_\+index\+\_\+factory\+::tree\+\_\+node\+\_\+index\+\_\+factory(), tree\+\_\+node\+\_\+reached\+::tree\+\_\+node\+\_\+reached(), and object\+\_\+visitor\+::$\sim$object\+\_\+visitor().
+
+\mbox{\Hypertarget{visitor_8hpp_a80983551ee6703cc3d862060f1aea641}\label{visitor_8hpp_a80983551ee6703cc3d862060f1aea641}} 
+\index{visitor.\+hpp@{visitor.\+hpp}!O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+D\+E\+CL@{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+D\+E\+CL}}
+\index{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+D\+E\+CL@{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+D\+E\+CL}!visitor.\+hpp@{visitor.\+hpp}}
+\subsubsection{\texorpdfstring{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+D\+E\+CL}{OPERATOR\_MACRO\_DECL}}
+{\footnotesize\ttfamily \#define O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+D\+E\+CL(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{data,  }\item[{}]{elem }\end{DoxyParamCaption})~\hyperlink{visitor_8hpp_a5203594a05d1a26cae217e8224aa4da3}{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+H\+E\+A\+D\+ER}(r, data, elem);}
+
+
+
+Definition at line 84 of file visitor.\+hpp.
+
+
+
+Referenced by function\+\_\+decl\+\_\+refs\+::function\+\_\+decl\+\_\+refs(), tree\+\_\+node\+\_\+dup\+::tree\+\_\+node\+\_\+dup(), tree\+\_\+node\+\_\+factory\+::tree\+\_\+node\+\_\+factory(), tree\+\_\+node\+\_\+finder\+::tree\+\_\+node\+\_\+finder(), tree\+\_\+node\+\_\+index\+\_\+factory\+::tree\+\_\+node\+\_\+index\+\_\+factory(), and tree\+\_\+node\+\_\+reached\+::tree\+\_\+node\+\_\+reached().
+
+\mbox{\Hypertarget{visitor_8hpp_a8229dd7e271c69dda840f688cebb92ee}\label{visitor_8hpp_a8229dd7e271c69dda840f688cebb92ee}} 
+\index{visitor.\+hpp@{visitor.\+hpp}!O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+D\+E\+C\+LO@{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+D\+E\+C\+LO}}
+\index{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+D\+E\+C\+LO@{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+D\+E\+C\+LO}!visitor.\+hpp@{visitor.\+hpp}}
+\subsubsection{\texorpdfstring{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+D\+E\+C\+LO}{OPERATOR\_MACRO\_DECLO}}
+{\footnotesize\ttfamily \#define O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+D\+E\+C\+LO(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{data,  }\item[{}]{elem }\end{DoxyParamCaption})~\hyperlink{visitor_8hpp_a6ae1d86299490f49565e734ae2d11601}{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+H\+E\+A\+D\+E\+RO}(r, data, elem);}
+
+
+
+Definition at line 90 of file visitor.\+hpp.
+
+
+
+Referenced by type\+\_\+casting\+::type\+\_\+casting().
+
+\mbox{\Hypertarget{visitor_8hpp_a5203594a05d1a26cae217e8224aa4da3}\label{visitor_8hpp_a5203594a05d1a26cae217e8224aa4da3}} 
+\index{visitor.\+hpp@{visitor.\+hpp}!O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+H\+E\+A\+D\+ER@{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+H\+E\+A\+D\+ER}}
+\index{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+H\+E\+A\+D\+ER@{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+H\+E\+A\+D\+ER}!visitor.\+hpp@{visitor.\+hpp}}
+\subsubsection{\texorpdfstring{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+H\+E\+A\+D\+ER}{OPERATOR\_MACRO\_HEADER}}
+{\footnotesize\ttfamily \#define O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+H\+E\+A\+D\+ER(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{data,  }\item[{}]{elem }\end{DoxyParamCaption})~virtual void operator()(const elem$\ast$, unsigned int\&)}
+
+
+
+Definition at line 83 of file visitor.\+hpp.
+
+\mbox{\Hypertarget{visitor_8hpp_a6ae1d86299490f49565e734ae2d11601}\label{visitor_8hpp_a6ae1d86299490f49565e734ae2d11601}} 
+\index{visitor.\+hpp@{visitor.\+hpp}!O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+H\+E\+A\+D\+E\+RO@{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+H\+E\+A\+D\+E\+RO}}
+\index{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+H\+E\+A\+D\+E\+RO@{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+H\+E\+A\+D\+E\+RO}!visitor.\+hpp@{visitor.\+hpp}}
+\subsubsection{\texorpdfstring{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+H\+E\+A\+D\+E\+RO}{OPERATOR\_MACRO\_HEADERO}}
+{\footnotesize\ttfamily \#define O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+O\+\_\+\+H\+E\+A\+D\+E\+RO(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{data,  }\item[{}]{elem }\end{DoxyParamCaption})~void operator()(const elem$\ast$, unsigned int\&) override}
+
+
+
+Definition at line 89 of file visitor.\+hpp.
+
+\mbox{\Hypertarget{visitor_8hpp_a81dd0658a245c9538d5ee04179677e96}\label{visitor_8hpp_a81dd0658a245c9538d5ee04179677e96}} 
+\index{visitor.\+hpp@{visitor.\+hpp}!O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+OO@{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+OO}}
+\index{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+OO@{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+OO}!visitor.\+hpp@{visitor.\+hpp}}
+\subsubsection{\texorpdfstring{O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+OO}{OPERATOR\_MACROO}}
+{\footnotesize\ttfamily \#define O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+M\+A\+C\+R\+OO(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{data,  }\item[{}]{elem }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{visitor_8hpp_a6ae1d86299490f49565e734ae2d11601}{OPERATOR\_MACRO\_HEADERO}(r, data, elem) \(\backslash\)
+   \{                                     \(\backslash\)
+   \}
+\end{DoxyCode}
+
+
+Definition at line 91 of file visitor.\+hpp.
+
+
+
+Referenced by type\+\_\+casting\+::type\+\_\+casting().
+
+\mbox{\Hypertarget{visitor_8hpp_a4f6a19ff0cb860c77e92a2f90ad6a5c0}\label{visitor_8hpp_a4f6a19ff0cb860c77e92a2f90ad6a5c0}} 
+\index{visitor.\+hpp@{visitor.\+hpp}!S\+E\+Q\+\_\+\+V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+ER@{S\+E\+Q\+\_\+\+V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+ER}}
+\index{S\+E\+Q\+\_\+\+V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+ER@{S\+E\+Q\+\_\+\+V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+ER}!visitor.\+hpp@{visitor.\+hpp}}
+\subsubsection{\texorpdfstring{S\+E\+Q\+\_\+\+V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+ER}{SEQ\_VISIT\_MEMBER}}
+{\footnotesize\ttfamily \#define S\+E\+Q\+\_\+\+V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+ER(\begin{DoxyParamCaption}\item[{}]{mask,  }\item[{}]{seq,  }\item[{}]{seqbasetype,  }\item[{}]{method,  }\item[{}]{visitor\+\_\+type,  }\item[{}]{visitor\+\_\+obj }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}(((1 << \hyperlink{visitor_8hpp_ad4ad841c2e56422b75fc07c0426b5234}{GETID}(seq)) & mask) == 0 && !seq.empty())                              \(\backslash\)
+   std::for\_each(seq.begin(), seq.end(), 
+      \hyperlink{classfor__each__functor}{for\_each\_functor<seqbasetype, visitor\_type>}(&seqbasetype::method
+      , visitor\_obj))
+\end{DoxyCode}
+
+
+macro used to traverse non empty sequences 
+
+
+
+Definition at line 64 of file visitor.\+hpp.
+
+
+
+Referenced by bloc\+::visit(), Point\+To\+Solution\+::visit(), gimple\+\_\+node\+::visit(), memory\+\_\+tag\+::visit(), gimple\+\_\+bind\+::visit(), call\+\_\+expr\+::visit(), gimple\+\_\+call\+::visit(), function\+\_\+decl\+::visit(), record\+\_\+type\+::visit(), ssa\+\_\+name\+::visit(), statement\+\_\+list\+::visit(), tree\+\_\+vec\+::visit(), union\+\_\+type\+::visit(), and vector\+\_\+cst\+::visit().
+
+\mbox{\Hypertarget{visitor_8hpp_a44f6ff65bbd814ffe7dde7d96e26217f}\label{visitor_8hpp_a44f6ff65bbd814ffe7dde7d96e26217f}} 
+\index{visitor.\+hpp@{visitor.\+hpp}!S\+E\+T\+\_\+\+N\+O\+\_\+\+V\+I\+S\+I\+T\+\_\+\+I\+N\+D\+EX@{S\+E\+T\+\_\+\+N\+O\+\_\+\+V\+I\+S\+I\+T\+\_\+\+I\+N\+D\+EX}}
+\index{S\+E\+T\+\_\+\+N\+O\+\_\+\+V\+I\+S\+I\+T\+\_\+\+I\+N\+D\+EX@{S\+E\+T\+\_\+\+N\+O\+\_\+\+V\+I\+S\+I\+T\+\_\+\+I\+N\+D\+EX}!visitor.\+hpp@{visitor.\+hpp}}
+\subsubsection{\texorpdfstring{S\+E\+T\+\_\+\+N\+O\+\_\+\+V\+I\+S\+I\+T\+\_\+\+I\+N\+D\+EX}{SET\_NO\_VISIT\_INDEX}}
+{\footnotesize\ttfamily \#define S\+E\+T\+\_\+\+N\+O\+\_\+\+V\+I\+S\+I\+T\+\_\+\+I\+N\+D\+EX(\begin{DoxyParamCaption}\item[{}]{mask,  }\item[{}]{\hyperlink{tutorial__pact__2019_2Introduction_2third_2include_2Keccak_8h_a028c9bdc8344cca38ab522a337074797}{index} }\end{DoxyParamCaption})~(mask $\vert$= (1\+U $<$$<$ G\+E\+T\+I\+D(index)))}
+
+
+
+macro used to selectively avoid member visit 
+
+
+
+Definition at line 72 of file visitor.\+hpp.
+
+\mbox{\Hypertarget{visitor_8hpp_a6300da364405189ed23a4363db036372}\label{visitor_8hpp_a6300da364405189ed23a4363db036372}} 
+\index{visitor.\+hpp@{visitor.\+hpp}!S\+E\+T\+\_\+\+V\+I\+S\+I\+T\+\_\+\+I\+N\+D\+EX@{S\+E\+T\+\_\+\+V\+I\+S\+I\+T\+\_\+\+I\+N\+D\+EX}}
+\index{S\+E\+T\+\_\+\+V\+I\+S\+I\+T\+\_\+\+I\+N\+D\+EX@{S\+E\+T\+\_\+\+V\+I\+S\+I\+T\+\_\+\+I\+N\+D\+EX}!visitor.\+hpp@{visitor.\+hpp}}
+\subsubsection{\texorpdfstring{S\+E\+T\+\_\+\+V\+I\+S\+I\+T\+\_\+\+I\+N\+D\+EX}{SET\_VISIT\_INDEX}}
+{\footnotesize\ttfamily \#define S\+E\+T\+\_\+\+V\+I\+S\+I\+T\+\_\+\+I\+N\+D\+EX(\begin{DoxyParamCaption}\item[{}]{mask,  }\item[{}]{\hyperlink{tutorial__pact__2019_2Introduction_2third_2include_2Keccak_8h_a028c9bdc8344cca38ab522a337074797}{index} }\end{DoxyParamCaption})~(mask \&= $\sim$(1\+U $<$$<$ G\+E\+T\+I\+D(index)))}
+
+
+
+macro used to selectively allow member visit 
+
+
+
+Definition at line 74 of file visitor.\+hpp.
+
+\mbox{\Hypertarget{visitor_8hpp_a34f60f05c043b947c14c987eb9a7a866}\label{visitor_8hpp_a34f60f05c043b947c14c987eb9a7a866}} 
+\index{visitor.\+hpp@{visitor.\+hpp}!V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+ER@{V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+ER}}
+\index{V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+ER@{V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+ER}!visitor.\+hpp@{visitor.\+hpp}}
+\subsubsection{\texorpdfstring{V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+ER}{VISIT\_MEMBER}}
+{\footnotesize\ttfamily \#define V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+ER(\begin{DoxyParamCaption}\item[{}]{mask,  }\item[{}]{ref\+\_\+obj,  }\item[{}]{method }\end{DoxyParamCaption})~\hyperlink{visitor_8hpp_acf71754d730ff2debe4001ce56fe90a7}{V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+E\+R\+\_\+\+N\+A\+M\+ED}(ref\+\_\+obj, mask, ref\+\_\+obj, method)}
+
+
+
+Definition at line 62 of file visitor.\+hpp.
+
+
+
+Referenced by tree\+\_\+reindex\+::visit(), gimple\+\_\+pragma\+::visit(), omp\+\_\+parallel\+\_\+sections\+\_\+pragma\+::visit(), gimple\+\_\+while\+::visit(), gimple\+\_\+for\+::visit(), decl\+\_\+node\+::visit(), expr\+\_\+node\+::visit(), gimple\+\_\+node\+::visit(), unary\+\_\+expr\+::visit(), binary\+\_\+expr\+::visit(), ternary\+\_\+expr\+::visit(), quaternary\+\_\+expr\+::visit(), type\+\_\+node\+::visit(), cst\+\_\+node\+::visit(), array\+\_\+type\+::visit(), gimple\+\_\+asm\+::visit(), baselink\+::visit(), gimple\+\_\+bind\+::visit(), binfo\+::visit(), call\+\_\+expr\+::visit(), aggr\+\_\+init\+\_\+expr\+::visit(), gimple\+\_\+call\+::visit(), case\+\_\+label\+\_\+expr\+::visit(), cast\+\_\+expr\+::visit(), type\+\_\+pack\+\_\+expansion\+::visit(), expr\+\_\+pack\+\_\+expansion\+::visit(), complex\+\_\+cst\+::visit(), gimple\+\_\+cond\+::visit(), const\+\_\+decl\+::visit(), constructor\+::visit(), enumeral\+\_\+type\+::visit(), expr\+\_\+stmt\+::visit(), field\+\_\+decl\+::visit(), function\+\_\+decl\+::visit(), function\+\_\+type\+::visit(), gimple\+\_\+assign\+::visit(), gimple\+\_\+goto\+::visit(), handler\+::visit(), integer\+\_\+type\+::visit(), gimple\+\_\+label\+::visit(), method\+\_\+type\+::visit(), namespace\+\_\+decl\+::visit(), overload\+::visit(), parm\+\_\+decl\+::visit(), gimple\+\_\+phi\+::visit(), pointer\+\_\+type\+::visit(), record\+\_\+type\+::visit(), reference\+\_\+type\+::visit(), result\+\_\+decl\+::visit(), gimple\+\_\+return\+::visit(), return\+\_\+stmt\+::visit(), scope\+\_\+ref\+::visit(), ssa\+\_\+name\+::visit(), gimple\+\_\+switch\+::visit(), target\+\_\+expr\+::visit(), target\+\_\+mem\+\_\+ref\+::visit(), target\+\_\+mem\+\_\+ref461\+::visit(), template\+\_\+decl\+::visit(), template\+\_\+parm\+\_\+index\+::visit(), type\+\_\+argument\+\_\+pack\+::visit(), nontype\+\_\+argument\+\_\+pack\+::visit(), tree\+\_\+list\+::visit(), try\+\_\+block\+::visit(), type\+\_\+decl\+::visit(), union\+\_\+type\+::visit(), var\+\_\+decl\+::visit(), vector\+\_\+type\+::visit(), and lut\+\_\+expr\+::visit().
+
+\mbox{\Hypertarget{visitor_8hpp_acf71754d730ff2debe4001ce56fe90a7}\label{visitor_8hpp_acf71754d730ff2debe4001ce56fe90a7}} 
+\index{visitor.\+hpp@{visitor.\+hpp}!V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+E\+R\+\_\+\+N\+A\+M\+ED@{V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+E\+R\+\_\+\+N\+A\+M\+ED}}
+\index{V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+E\+R\+\_\+\+N\+A\+M\+ED@{V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+E\+R\+\_\+\+N\+A\+M\+ED}!visitor.\+hpp@{visitor.\+hpp}}
+\subsubsection{\texorpdfstring{V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+E\+R\+\_\+\+N\+A\+M\+ED}{VISIT\_MEMBER\_NAMED}}
+{\footnotesize\ttfamily \#define V\+I\+S\+I\+T\+\_\+\+M\+E\+M\+B\+E\+R\+\_\+\+N\+A\+M\+ED(\begin{DoxyParamCaption}\item[{}]{ref\+\_\+obj\+\_\+name,  }\item[{}]{mask,  }\item[{}]{ref\+\_\+obj,  }\item[{}]{method }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}(((1 << \hyperlink{visitor_8hpp_ad4ad841c2e56422b75fc07c0426b5234}{GETID}(ref\_obj\_name)) & mask) == 0 && ref\_obj)      \(\backslash\)
+   ref\_obj->method
+\end{DoxyCode}
+
+
+macro used to visit a non null member 
+
+
+
+Definition at line 59 of file visitor.\+hpp.
+
+
+
+Referenced by gimple\+\_\+multi\+\_\+way\+\_\+if\+::visit(), binfo\+::visit(), constructor\+::visit(), gimple\+\_\+phi\+::visit(), and statement\+\_\+list\+::visit().
+
+\mbox{\Hypertarget{visitor_8hpp_a70368060d499373afeb04c938cfccfae}\label{visitor_8hpp_a70368060d499373afeb04c938cfccfae}} 
+\index{visitor.\+hpp@{visitor.\+hpp}!V\+I\+S\+I\+T\+\_\+\+SC@{V\+I\+S\+I\+T\+\_\+\+SC}}
+\index{V\+I\+S\+I\+T\+\_\+\+SC@{V\+I\+S\+I\+T\+\_\+\+SC}!visitor.\+hpp@{visitor.\+hpp}}
+\subsubsection{\texorpdfstring{V\+I\+S\+I\+T\+\_\+\+SC}{VISIT\_SC}}
+{\footnotesize\ttfamily \#define V\+I\+S\+I\+T\+\_\+\+SC(\begin{DoxyParamCaption}\item[{}]{mask,  }\item[{}]{superclass,  }\item[{}]{method }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}(((1 << \hyperlink{visitor_8hpp_ad4ad841c2e56422b75fc07c0426b5234}{GETID}(superclass)) & mask) == 0) \(\backslash\)
+   this->superclass::method
+\end{DoxyCode}
+
+
+macro used to visit the super class 
+
+
+
+Definition at line 55 of file visitor.\+hpp.
+
+
+
+Referenced by null\+\_\+node\+::visit(), gimple\+\_\+pragma\+::visit(), profiling\+\_\+pragma\+::visit(), statistical\+\_\+profiling\+::visit(), map\+\_\+pragma\+::visit(), call\+\_\+hw\+\_\+pragma\+::visit(), call\+\_\+point\+\_\+hw\+\_\+pragma\+::visit(), issue\+\_\+pragma\+::visit(), blackbox\+\_\+pragma\+::visit(), omp\+\_\+pragma\+::visit(), omp\+\_\+parallel\+\_\+pragma\+::visit(), omp\+\_\+sections\+\_\+pragma\+::visit(), omp\+\_\+parallel\+\_\+sections\+\_\+pragma\+::visit(), omp\+\_\+section\+\_\+pragma\+::visit(), omp\+\_\+target\+\_\+pragma\+::visit(), omp\+\_\+task\+\_\+pragma\+::visit(), omp\+\_\+critical\+\_\+pragma\+::visit(), omp\+\_\+atomic\+\_\+pragma\+::visit(), omp\+\_\+for\+\_\+pragma\+::visit(), omp\+\_\+simd\+\_\+pragma\+::visit(), omp\+\_\+declare\+\_\+simd\+\_\+pragma\+::visit(), gimple\+\_\+while\+::visit(), gimple\+\_\+for\+::visit(), gimple\+\_\+multi\+\_\+way\+\_\+if\+::visit(), decl\+\_\+node\+::visit(), expr\+\_\+node\+::visit(), gimple\+\_\+node\+::visit(), unary\+\_\+expr\+::visit(), binary\+\_\+expr\+::visit(), ternary\+\_\+expr\+::visit(), quaternary\+\_\+expr\+::visit(), type\+\_\+node\+::visit(), memory\+\_\+tag\+::visit(), cst\+\_\+node\+::visit(), error\+\_\+mark\+::visit(), array\+\_\+type\+::visit(), gimple\+\_\+asm\+::visit(), baselink\+::visit(), gimple\+\_\+bind\+::visit(), binfo\+::visit(), block\+::visit(), call\+\_\+expr\+::visit(), aggr\+\_\+init\+\_\+expr\+::visit(), gimple\+\_\+call\+::visit(), case\+\_\+label\+\_\+expr\+::visit(), cast\+\_\+expr\+::visit(), type\+\_\+pack\+\_\+expansion\+::visit(), expr\+\_\+pack\+\_\+expansion\+::visit(), complex\+\_\+cst\+::visit(), complex\+\_\+type\+::visit(), gimple\+\_\+cond\+::visit(), const\+\_\+decl\+::visit(), enumeral\+\_\+type\+::visit(), expr\+\_\+stmt\+::visit(), field\+\_\+decl\+::visit(), function\+\_\+decl\+::visit(), function\+\_\+type\+::visit(), gimple\+\_\+assign\+::visit(), gimple\+\_\+nop\+::visit(), gimple\+\_\+goto\+::visit(), handler\+::visit(), identifier\+\_\+node\+::visit(), integer\+\_\+cst\+::visit(), integer\+\_\+type\+::visit(), gimple\+\_\+label\+::visit(), method\+\_\+type\+::visit(), namespace\+\_\+decl\+::visit(), overload\+::visit(), parm\+\_\+decl\+::visit(), gimple\+\_\+phi\+::visit(), gimple\+\_\+predict\+::visit(), pointer\+\_\+type\+::visit(), real\+\_\+cst\+::visit(), real\+\_\+type\+::visit(), record\+\_\+type\+::visit(), reference\+\_\+type\+::visit(), result\+\_\+decl\+::visit(), gimple\+\_\+resx\+::visit(), gimple\+\_\+return\+::visit(), return\+\_\+stmt\+::visit(), scope\+\_\+ref\+::visit(), ssa\+\_\+name\+::visit(), statement\+\_\+list\+::visit(), string\+\_\+cst\+::visit(), gimple\+\_\+switch\+::visit(), target\+\_\+expr\+::visit(), target\+\_\+mem\+\_\+ref\+::visit(), target\+\_\+mem\+\_\+ref461\+::visit(), template\+\_\+decl\+::visit(), template\+\_\+parm\+\_\+index\+::visit(), type\+\_\+argument\+\_\+pack\+::visit(), nontype\+\_\+argument\+\_\+pack\+::visit(), tree\+\_\+vec\+::visit(), try\+\_\+block\+::visit(), type\+\_\+decl\+::visit(), union\+\_\+type\+::visit(), var\+\_\+decl\+::visit(), vector\+\_\+cst\+::visit(), vector\+\_\+type\+::visit(), and lut\+\_\+expr\+::visit().
+

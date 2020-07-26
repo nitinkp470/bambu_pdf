@@ -1,0 +1,357 @@
+\hypertarget{classdetermine__memory__accesses}{}\section{determine\+\_\+memory\+\_\+accesses Class Reference}
+\label{classdetermine__memory__accesses}\index{determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}}
+
+
+{\ttfamily \#include $<$determine\+\_\+memory\+\_\+accesses.\+hpp$>$}
+
+
+
+Inheritance diagram for determine\+\_\+memory\+\_\+accesses\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{d1/d68/classdetermine__memory__accesses__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for determine\+\_\+memory\+\_\+accesses\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d95/classdetermine__memory__accesses__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdetermine__memory__accesses_a379def7cb52f5a4b51961127aa859410}{determine\+\_\+memory\+\_\+accesses} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowStep_a802eaafe8013df706370679d1a436949}{parameters}, const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, unsigned int function\+\_\+idi, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classdetermine__memory__accesses_a9fcc117c8717ee2001a9bda537f7c010}{$\sim$determine\+\_\+memory\+\_\+accesses} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classdetermine__memory__accesses_a28439693ec5dde524cb6ae92d6d8ce28}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Determines the variables that require a memory access. \end{DoxyCompactList}\item 
+bool \hyperlink{classdetermine__memory__accesses_a5a273a8e5ec33a4abc8989169231c827}{Has\+To\+Be\+Executed} () const override
+\begin{DoxyCompactList}\small\item\em Check if this step has actually to be executed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classdetermine__memory__accesses_a28b2c63625b32f4cb63221e0d8a51b96}{analyze\+\_\+node} (unsigned int node\+\_\+id, bool left\+\_\+p, bool dynamic\+\_\+address, bool no\+\_\+dynamic\+\_\+address)
+\begin{DoxyCompactList}\small\item\em Analyze the given node ID to determine which variables have to be referred in memory. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classdetermine__memory__accesses_a00428eb833cbc6a1c65a23a184677851}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} \hyperlink{classdetermine__memory__accesses_ab1b211e2e30260df1c147d7c3fe30240}{behavioral\+\_\+helper}
+\begin{DoxyCompactList}\small\item\em The behavioral helper. \end{DoxyCompactList}\item 
+const \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref} \hyperlink{classdetermine__memory__accesses_a6dc11035d8da329f4f6e8008e1f36e06}{TM}
+\begin{DoxyCompactList}\small\item\em The tree manager. \end{DoxyCompactList}\item 
+\hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ unsigned int $>$ \hyperlink{classdetermine__memory__accesses_a521b58bdb10fe63f37a04982c526096b}{already\+\_\+visited\+\_\+ae}
+\begin{DoxyCompactList}\small\item\em Already visited address expression (used to avoid infinite recursion) \end{DoxyCompactList}\item 
+bool \hyperlink{classdetermine__memory__accesses_a0f7480b9ae00c5876ac48e7d073b2c05}{already\+\_\+executed}
+\begin{DoxyCompactList}\small\item\em True if already executed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 61 of file determine\+\_\+memory\+\_\+accesses.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdetermine__memory__accesses_a379def7cb52f5a4b51961127aa859410}\label{classdetermine__memory__accesses_a379def7cb52f5a4b51961127aa859410}} 
+\index{determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}!determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}}
+\index{determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}!determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}}
+\subsubsection{\texorpdfstring{determine\+\_\+memory\+\_\+accesses()}{determine\_memory\_accesses()}}
+{\footnotesize\ttfamily determine\+\_\+memory\+\_\+accesses\+::determine\+\_\+memory\+\_\+accesses (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters,  }\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{unsigned int}]{\+\_\+function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Header include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & is the set of input parameters \\
+\hline
+{\em AppM} & is the application manager \\
+\hline
+{\em function\+\_\+id} & is the node id of the function analyzed. \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager\\
+\hline
+\end{DoxyParams}
+Behavior include \hyperlink{classParameter}{Parameter} include Tree include 
+
+Definition at line 71 of file determine\+\_\+memory\+\_\+accesses.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$determine\+\_\+memory\+\_\+accesses().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8a/classdetermine__memory__accesses_a379def7cb52f5a4b51961127aa859410_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdetermine__memory__accesses_a9fcc117c8717ee2001a9bda537f7c010}\label{classdetermine__memory__accesses_a9fcc117c8717ee2001a9bda537f7c010}} 
+\index{determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}!````~determine\+\_\+memory\+\_\+accesses@{$\sim$determine\+\_\+memory\+\_\+accesses}}
+\index{````~determine\+\_\+memory\+\_\+accesses@{$\sim$determine\+\_\+memory\+\_\+accesses}!determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}}
+\subsubsection{\texorpdfstring{$\sim$determine\+\_\+memory\+\_\+accesses()}{~determine\_memory\_accesses()}}
+{\footnotesize\ttfamily determine\+\_\+memory\+\_\+accesses\+::$\sim$determine\+\_\+memory\+\_\+accesses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by determine\+\_\+memory\+\_\+accesses().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8a/classdetermine__memory__accesses_a9fcc117c8717ee2001a9bda537f7c010_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdetermine__memory__accesses_a28b2c63625b32f4cb63221e0d8a51b96}\label{classdetermine__memory__accesses_a28b2c63625b32f4cb63221e0d8a51b96}} 
+\index{determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}!analyze\+\_\+node@{analyze\+\_\+node}}
+\index{analyze\+\_\+node@{analyze\+\_\+node}!determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}}
+\subsubsection{\texorpdfstring{analyze\+\_\+node()}{analyze\_node()}}
+{\footnotesize\ttfamily void determine\+\_\+memory\+\_\+accesses\+::analyze\+\_\+node (\begin{DoxyParamCaption}\item[{unsigned int}]{node\+\_\+id,  }\item[{bool}]{left\+\_\+p,  }\item[{bool}]{dynamic\+\_\+address,  }\item[{bool}]{no\+\_\+dynamic\+\_\+address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Analyze the given node ID to determine which variables have to be referred in memory. 
+
+check for implicit memcpy calls
+
+manage temporary addresses
+
+manage temporary addresses
+
+an address of a parm decl may be used in writing so it has to be copied
+
+check if the actual parameter has been allocated in memory
+
+if the formal parameter has not been allocated in memory then it has to be initialized
+
+check if the formal parameter has been allocated in memory.
+
+If the actual has not been allocated in memory then the formal parameter storage has to be initialized with the actual value with a M\+E\+M\+S\+T\+O\+R\+E\+\_\+\+S\+TD
+
+check if the actual parameter has been allocated in memory
+
+if the formal parameter has not been allocated in memory then it has to be initialized
+
+check if the formal parameter has been allocated in memory.
+
+If the actual has not been allocated in memory then the formal parameter storage has to be initialized with the actual value with a M\+E\+M\+S\+T\+O\+R\+E\+\_\+\+S\+TD
+
+skip the \&
+
+check for unaligned accesses 
+
+Definition at line 162 of file determine\+\_\+memory\+\_\+accesses.\+cpp.
+
+
+
+References already\+\_\+visited\+\_\+ae, Frontend\+Flow\+Step\+::\+AppM, test\+\_\+panda\+::arg, test\+\_\+panda\+::args, behavioral\+\_\+helper, B\+U\+I\+L\+T\+I\+N\+\_\+\+W\+A\+I\+T\+\_\+\+C\+A\+LL, C\+\_\+\+EC, C\+A\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+D\+E\+C\+L\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+F\+A\+K\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, el, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, tree\+\_\+helper\+::get\+\_\+base\+\_\+index(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+node\+::get\+\_\+kind\+\_\+text(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+helper\+::get\+\_\+type\+\_\+node(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, tree\+\_\+node\+::index, tree\+\_\+helper\+::is\+\_\+a\+\_\+pointer(), tree\+\_\+helper\+::is\+\_\+a\+\_\+vector(), tree\+\_\+helper\+::is\+\_\+volatile(), N\+O\+D\+E\+\_\+\+N\+O\+T\+\_\+\+Y\+E\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+EC, Design\+Flow\+Step\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, Design\+Flow\+Step\+::parameters, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+helper\+::print\+\_\+function\+\_\+name(), S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+DE, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, TM, and tree\+\_\+node\+::\+To\+String().
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8a/classdetermine__memory__accesses_a28b2c63625b32f4cb63221e0d8a51b96_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8a/classdetermine__memory__accesses_a28b2c63625b32f4cb63221e0d8a51b96_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdetermine__memory__accesses_a00428eb833cbc6a1c65a23a184677851}\label{classdetermine__memory__accesses_a00428eb833cbc6a1c65a23a184677851}} 
+\index{determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ determine\+\_\+memory\+\_\+accesses\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 79 of file determine\+\_\+memory\+\_\+accesses.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+C\+A\+L\+L\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+NS, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::parameters, P\+A\+R\+M2\+S\+SA, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, V\+A\+R\+\_\+\+D\+E\+C\+L\+\_\+\+F\+IX, and Frontend\+Flow\+Step\+::\+W\+H\+O\+L\+E\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON.
+
+\mbox{\Hypertarget{classdetermine__memory__accesses_a5a273a8e5ec33a4abc8989169231c827}\label{classdetermine__memory__accesses_a5a273a8e5ec33a4abc8989169231c827}} 
+\index{determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}!Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}}
+\index{Has\+To\+Be\+Executed@{Has\+To\+Be\+Executed}!determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}}
+\subsubsection{\texorpdfstring{Has\+To\+Be\+Executed()}{HasToBeExecuted()}}
+{\footnotesize\ttfamily bool determine\+\_\+memory\+\_\+accesses\+::\+Has\+To\+Be\+Executed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if this step has actually to be executed. 
+
+\begin{DoxyReturn}{Returns}
+true if the step has to be executed 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFunctionFrontendFlowStep_a12e786363530aa9533e4bd9380130d75}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 1290 of file determine\+\_\+memory\+\_\+accesses.\+cpp.
+
+
+
+References already\+\_\+executed.
+
+\mbox{\Hypertarget{classdetermine__memory__accesses_a28439693ec5dde524cb6ae92d6d8ce28}\label{classdetermine__memory__accesses_a28439693ec5dde524cb6ae92d6d8ce28}} 
+\index{determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} determine\+\_\+memory\+\_\+accesses\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Determines the variables that require a memory access. 
+
+analyze formal parameters 
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 124 of file determine\+\_\+memory\+\_\+accesses.\+cpp.
+
+
+
+References already\+\_\+executed, analyze\+\_\+node(), Frontend\+Flow\+Step\+::\+AppM, B\+B\+\_\+\+E\+N\+T\+RY, B\+B\+\_\+\+E\+X\+IT, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), Design\+Flow\+Step\+::parameters, phi, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, sl, S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, TM, and U\+N\+C\+H\+A\+N\+G\+ED.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8a/classdetermine__memory__accesses_a28439693ec5dde524cb6ae92d6d8ce28_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classdetermine__memory__accesses_a0f7480b9ae00c5876ac48e7d073b2c05}\label{classdetermine__memory__accesses_a0f7480b9ae00c5876ac48e7d073b2c05}} 
+\index{determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}!already\+\_\+executed@{already\+\_\+executed}}
+\index{already\+\_\+executed@{already\+\_\+executed}!determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}}
+\subsubsection{\texorpdfstring{already\+\_\+executed}{already\_executed}}
+{\footnotesize\ttfamily bool determine\+\_\+memory\+\_\+accesses\+::already\+\_\+executed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+True if already executed. 
+
+
+
+Definition at line 74 of file determine\+\_\+memory\+\_\+accesses.\+hpp.
+
+
+
+Referenced by Has\+To\+Be\+Executed(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classdetermine__memory__accesses_a521b58bdb10fe63f37a04982c526096b}\label{classdetermine__memory__accesses_a521b58bdb10fe63f37a04982c526096b}} 
+\index{determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}!already\+\_\+visited\+\_\+ae@{already\+\_\+visited\+\_\+ae}}
+\index{already\+\_\+visited\+\_\+ae@{already\+\_\+visited\+\_\+ae}!determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}}
+\subsubsection{\texorpdfstring{already\+\_\+visited\+\_\+ae}{already\_visited\_ae}}
+{\footnotesize\ttfamily \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$unsigned int$>$ determine\+\_\+memory\+\_\+accesses\+::already\+\_\+visited\+\_\+ae\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Already visited address expression (used to avoid infinite recursion) 
+
+
+
+Definition at line 71 of file determine\+\_\+memory\+\_\+accesses.\+hpp.
+
+
+
+Referenced by analyze\+\_\+node().
+
+\mbox{\Hypertarget{classdetermine__memory__accesses_ab1b211e2e30260df1c147d7c3fe30240}\label{classdetermine__memory__accesses_ab1b211e2e30260df1c147d7c3fe30240}} 
+\index{determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}!behavioral\+\_\+helper@{behavioral\+\_\+helper}}
+\index{behavioral\+\_\+helper@{behavioral\+\_\+helper}!determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}}
+\subsubsection{\texorpdfstring{behavioral\+\_\+helper}{behavioral\_helper}}
+{\footnotesize\ttfamily const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} determine\+\_\+memory\+\_\+accesses\+::behavioral\+\_\+helper\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The behavioral helper. 
+
+
+
+Definition at line 65 of file determine\+\_\+memory\+\_\+accesses.\+hpp.
+
+
+
+Referenced by analyze\+\_\+node().
+
+\mbox{\Hypertarget{classdetermine__memory__accesses_a6dc11035d8da329f4f6e8008e1f36e06}\label{classdetermine__memory__accesses_a6dc11035d8da329f4f6e8008e1f36e06}} 
+\index{determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}!TM@{TM}}
+\index{TM@{TM}!determine\+\_\+memory\+\_\+accesses@{determine\+\_\+memory\+\_\+accesses}}
+\subsubsection{\texorpdfstring{TM}{TM}}
+{\footnotesize\ttfamily const \hyperlink{tree__manager_8hpp_a792e3f1f892d7d997a8d8a4a12e39346}{tree\+\_\+manager\+Const\+Ref} determine\+\_\+memory\+\_\+accesses\+::\+TM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The tree manager. 
+
+
+
+Definition at line 68 of file determine\+\_\+memory\+\_\+accesses.\+hpp.
+
+
+
+Referenced by analyze\+\_\+node(), and Internal\+Exec().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{determine__memory__accesses_8hpp}{determine\+\_\+memory\+\_\+accesses.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{determine__memory__accesses_8cpp}{determine\+\_\+memory\+\_\+accesses.\+cpp}\end{DoxyCompactItemize}

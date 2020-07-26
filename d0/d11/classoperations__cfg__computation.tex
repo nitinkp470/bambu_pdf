@@ -1,0 +1,597 @@
+\hypertarget{classoperations__cfg__computation}{}\section{operations\+\_\+cfg\+\_\+computation Class Reference}
+\label{classoperations__cfg__computation}\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+
+
+Compute the control flow graph for the operations.  
+
+
+
+
+{\ttfamily \#include $<$operations\+\_\+cfg\+\_\+computation.\+hpp$>$}
+
+
+
+Inheritance diagram for operations\+\_\+cfg\+\_\+computation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{dd/d88/classoperations__cfg__computation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for operations\+\_\+cfg\+\_\+computation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d8c/classoperations__cfg__computation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classoperations__cfg__computation_a73fb897b367730b68b708905638fd29b}{operations\+\_\+cfg\+\_\+computation} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classoperations__cfg__computation_ae8176a7b01ff9965351b3dc47c3cf5ad}{$\sim$operations\+\_\+cfg\+\_\+computation} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classoperations__cfg__computation_a5ab48f4fbba150d484e99c36c352bfad}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Computes the operations C\+FG graph data structure. \end{DoxyCompactList}\item 
+void \hyperlink{classoperations__cfg__computation_ae89b6b5ecac95fdcb9e84ee9bbf527f5}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classoperations__cfg__computation_a552a18ba450de75c9651cc9eda82f3ac}{get\+\_\+first\+\_\+node} (const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&tn, const std\+::string \&f\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Return the name of the first node given a tree node. \end{DoxyCompactList}\item 
+void \hyperlink{classoperations__cfg__computation_af375bcc0ff06c7e67fe29e1d481c395b}{clean\+\_\+start\+\_\+nodes} ()
+\begin{DoxyCompactList}\small\item\em Clean the list of start nodes. \end{DoxyCompactList}\item 
+void \hyperlink{classoperations__cfg__computation_af46dd1597651071b58c65df3a5205a92}{insert\+\_\+start\+\_\+node} (const std\+::string \&start\+\_\+node)
+\begin{DoxyCompactList}\small\item\em Insert a start node to the list of start nodes. \end{DoxyCompactList}\item 
+bool \hyperlink{classoperations__cfg__computation_a3565d9d33d44fce47a2fde3d39392f4b}{empty\+\_\+start\+\_\+nodes} () const
+\begin{DoxyCompactList}\small\item\em Return true if start\+\_\+node is empty. \end{DoxyCompactList}\item 
+void \hyperlink{classoperations__cfg__computation_ae1d29037a601f373f5d8db0faed1ffbf}{init\+\_\+start\+\_\+nodes} (const std\+::string \&start\+\_\+node)
+\begin{DoxyCompactList}\small\item\em Initialize the list of start nodes. \end{DoxyCompactList}\item 
+void \hyperlink{classoperations__cfg__computation_a10a94b4065c3e5bf12d59b78873f6dce}{connect\+\_\+start\+\_\+nodes} (const operations\+\_\+graph\+\_\+constructor\+Ref ogc, const std\+::string \&next, bool true\+\_\+edge=false, bool false\+\_\+edge=false, unsigned int nodeid=0)
+\begin{DoxyCompactList}\small\item\em Connect start\+\_\+node with the next node. \end{DoxyCompactList}\item 
+void \hyperlink{classoperations__cfg__computation_a15f7edea4fa3125578040172ac73c006}{build\+\_\+operation\+\_\+recursive} (const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} TM, const operations\+\_\+graph\+\_\+constructor\+Ref ogc, const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} tn, const std\+::string \&f\+\_\+name, unsigned int bb\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Builds recursively the operation for a given tree node. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classoperations__cfg__computation_a8a039eb04d4aed41aba4d5f5b9e505eb}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classoperations__cfg__computation_afc96a2e50d26b0b82d0a50ee8084fd69}{last\+\_\+bb\+\_\+cfg\+\_\+computation\+\_\+version}
+\item 
+std\+::map$<$ unsigned int, std\+::string $>$ \hyperlink{classoperations__cfg__computation_a376558dd1ae44b3a523bc4482fd9f9ec}{label\+\_\+decl\+\_\+map}
+\begin{DoxyCompactList}\small\item\em relation between label declaration and first statement id \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, std\+::string $>$ \hyperlink{classoperations__cfg__computation_af1b5e6119a42455a86fa01e3f3ec3f4b}{first\+\_\+statement}
+\begin{DoxyCompactList}\small\item\em relation between basic block and first statement id \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::string $>$ \hyperlink{classoperations__cfg__computation_adfd410fb60f942075cecc8c45afb7f41}{start\+\_\+nodes}
+\begin{DoxyCompactList}\small\item\em store the name of the nodes at which the next node should be attached. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classoperations__cfg__computation_ab7ad207edecdf0376496f570bd70638b}{actual\+\_\+name}
+\begin{DoxyCompactList}\small\item\em store the name of the current vertex \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Compute the control flow graph for the operations. 
+
+Definition at line 75 of file operations\+\_\+cfg\+\_\+computation.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoperations__cfg__computation_a73fb897b367730b68b708905638fd29b}\label{classoperations__cfg__computation_a73fb897b367730b68b708905638fd29b}} 
+\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}!operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}!operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+\subsubsection{\texorpdfstring{operations\+\_\+cfg\+\_\+computation()}{operations\_cfg\_computation()}}
+{\footnotesize\ttfamily operations\+\_\+cfg\+\_\+computation\+::operations\+\_\+cfg\+\_\+computation (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters,  }\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{unsigned int}]{\+\_\+function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Autoheader include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Param} & is the set of the parameters \\
+\hline
+{\em AppM} & is the application manager \\
+\hline
+{\em function\+\_\+id} & is the identifier of the function\\
+\hline
+\end{DoxyParams}
+Header include Behavior include Design Flow include \hyperlink{structGraph}{Graph} include \hyperlink{classParameter}{Parameter} include parser/treegcc include Tree include 
+
+Definition at line 84 of file operations\+\_\+cfg\+\_\+computation.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, Design\+Flow\+Step\+::parameters, and $\sim$operations\+\_\+cfg\+\_\+computation().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d11/classoperations__cfg__computation_a73fb897b367730b68b708905638fd29b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoperations__cfg__computation_ae8176a7b01ff9965351b3dc47c3cf5ad}\label{classoperations__cfg__computation_ae8176a7b01ff9965351b3dc47c3cf5ad}} 
+\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}!````~operations\+\_\+cfg\+\_\+computation@{$\sim$operations\+\_\+cfg\+\_\+computation}}
+\index{````~operations\+\_\+cfg\+\_\+computation@{$\sim$operations\+\_\+cfg\+\_\+computation}!operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+\subsubsection{\texorpdfstring{$\sim$operations\+\_\+cfg\+\_\+computation()}{~operations\_cfg\_computation()}}
+{\footnotesize\ttfamily operations\+\_\+cfg\+\_\+computation\+::$\sim$operations\+\_\+cfg\+\_\+computation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d11/classoperations__cfg__computation_ae8176a7b01ff9965351b3dc47c3cf5ad_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classoperations__cfg__computation_a15f7edea4fa3125578040172ac73c006}\label{classoperations__cfg__computation_a15f7edea4fa3125578040172ac73c006}} 
+\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}!build\+\_\+operation\+\_\+recursive@{build\+\_\+operation\+\_\+recursive}}
+\index{build\+\_\+operation\+\_\+recursive@{build\+\_\+operation\+\_\+recursive}!operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+\subsubsection{\texorpdfstring{build\+\_\+operation\+\_\+recursive()}{build\_operation\_recursive()}}
+{\footnotesize\ttfamily void operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive (\begin{DoxyParamCaption}\item[{const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref}}]{TM,  }\item[{const operations\+\_\+graph\+\_\+constructor\+Ref}]{ogc,  }\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref}}]{tn,  }\item[{const std\+::string \&}]{f\+\_\+name,  }\item[{unsigned int}]{bb\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Builds recursively the operation for a given tree node. 
+
+We assume a one to one mapping between nodeids and vertices 
+\begin{DoxyParams}{Parameters}
+{\em TM} & is the tree manager. \\
+\hline
+{\em ogc} & is the operation graph constructor used to add the vertices. \\
+\hline
+{\em tn} & is the reference of the tree node we are currently analyzing \\
+\hline
+{\em f\+\_\+name} & is the name of the function which the node we are analyzing belongs to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 485 of file operations\+\_\+cfg\+\_\+computation.\+cpp.
+
+
+
+References actual\+\_\+name, A\+S\+S\+I\+GN, C\+A\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+D\+E\+C\+L\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+F\+A\+K\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, connect\+\_\+start\+\_\+nodes(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, default\+\_\+\+C\+O\+ND, tree\+\_\+helper\+::find\+\_\+obj\+\_\+type\+\_\+ref\+\_\+function(), F\+I\+X\+\_\+\+T\+R\+U\+N\+C\+\_\+\+E\+X\+PR, F\+L\+O\+A\+T\+\_\+\+E\+X\+PR, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, get\+\_\+first\+\_\+node(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+node\+::get\+\_\+kind\+\_\+text(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+type\+\_\+node(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+node\+::index, tree\+\_\+helper\+::is\+\_\+a\+\_\+nop\+\_\+function\+\_\+decl(), tree\+\_\+helper\+::is\+\_\+a\+\_\+pointer(), tree\+\_\+helper\+::is\+\_\+a\+\_\+vector(), tree\+\_\+helper\+::is\+\_\+an\+\_\+array(), tree\+\_\+helper\+::is\+\_\+unsigned(), tree\+\_\+helper\+::\+Is\+Load(), tree\+\_\+helper\+::\+Is\+Store(), M\+E\+M\+C\+PY, M\+E\+M\+S\+ET, M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+ND, N\+O\+D\+E\+\_\+\+N\+O\+T\+\_\+\+Y\+E\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+EC, N\+OP, tree\+\_\+helper\+::normalized\+\_\+\+I\+D(), unary\+\_\+expr\+::op, binary\+\_\+expr\+::op0, ternary\+\_\+expr\+::op0, quaternary\+\_\+expr\+::op0, binary\+\_\+expr\+::op1, ternary\+\_\+expr\+::op1, quaternary\+\_\+expr\+::op1, ternary\+\_\+expr\+::op2, quaternary\+\_\+expr\+::op2, quaternary\+\_\+expr\+::op3, phi, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+helper\+::print\+\_\+function\+\_\+name(), R\+E\+A\+D\+\_\+\+C\+O\+ND, tree\+\_\+helper\+::size(), S\+TR, S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+ND, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+DE, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, T\+Y\+P\+E\+\_\+\+A\+S\+S\+I\+GN, T\+Y\+P\+E\+\_\+\+A\+T\+O\+M\+IC, T\+Y\+P\+E\+\_\+\+E\+X\+T\+E\+R\+N\+AL, T\+Y\+P\+E\+\_\+\+F\+OR, T\+Y\+P\+E\+\_\+\+G\+E\+N\+E\+R\+IC, T\+Y\+P\+E\+\_\+\+G\+O\+TO, T\+Y\+P\+E\+\_\+\+IF, T\+Y\+P\+E\+\_\+\+I\+N\+IT, T\+Y\+P\+E\+\_\+\+L\+A\+B\+EL, T\+Y\+P\+E\+\_\+\+L\+A\+S\+T\+\_\+\+OP, T\+Y\+P\+E\+\_\+\+L\+O\+AD, T\+Y\+P\+E\+\_\+\+M\+E\+M\+C\+PY, T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+IF, T\+Y\+P\+E\+\_\+\+N\+OP, T\+Y\+P\+E\+\_\+\+O\+P\+A\+Q\+UE, T\+Y\+P\+E\+\_\+\+P\+HI, T\+Y\+P\+E\+\_\+\+P\+R\+E\+D\+I\+C\+A\+T\+ED, T\+Y\+P\+E\+\_\+\+R\+ET, T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE, T\+Y\+P\+E\+\_\+\+S\+W\+I\+T\+CH, T\+Y\+P\+E\+\_\+\+V\+P\+HI, T\+Y\+P\+E\+\_\+\+W\+A\+S\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+P\+HI, T\+Y\+P\+E\+\_\+\+W\+H\+I\+LE, and V\+E\+C\+T\+\_\+\+C\+O\+N\+C\+A\+T\+E\+N\+A\+T\+I\+ON.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d11/classoperations__cfg__computation_a15f7edea4fa3125578040172ac73c006_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d11/classoperations__cfg__computation_a15f7edea4fa3125578040172ac73c006_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoperations__cfg__computation_af375bcc0ff06c7e67fe29e1d481c395b}\label{classoperations__cfg__computation_af375bcc0ff06c7e67fe29e1d481c395b}} 
+\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}!clean\+\_\+start\+\_\+nodes@{clean\+\_\+start\+\_\+nodes}}
+\index{clean\+\_\+start\+\_\+nodes@{clean\+\_\+start\+\_\+nodes}!operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+\subsubsection{\texorpdfstring{clean\+\_\+start\+\_\+nodes()}{clean\_start\_nodes()}}
+{\footnotesize\ttfamily void operations\+\_\+cfg\+\_\+computation\+::clean\+\_\+start\+\_\+nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Clean the list of start nodes. 
+
+
+
+Definition at line 442 of file operations\+\_\+cfg\+\_\+computation.\+cpp.
+
+
+
+References start\+\_\+nodes.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d11/classoperations__cfg__computation_af375bcc0ff06c7e67fe29e1d481c395b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoperations__cfg__computation_a8a039eb04d4aed41aba4d5f5b9e505eb}\label{classoperations__cfg__computation_a8a039eb04d4aed41aba4d5f5b9e505eb}} 
+\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ operations\+\_\+cfg\+\_\+computation\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 92 of file operations\+\_\+cfg\+\_\+computation.\+cpp.
+
+
+
+References B\+B\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+E\+D\+G\+E\+S\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+C\+A\+T\+I\+ON, B\+U\+I\+L\+D\+\_\+\+V\+I\+R\+T\+U\+A\+L\+\_\+\+P\+HI, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::parameters, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+\mbox{\Hypertarget{classoperations__cfg__computation_a10a94b4065c3e5bf12d59b78873f6dce}\label{classoperations__cfg__computation_a10a94b4065c3e5bf12d59b78873f6dce}} 
+\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}!connect\+\_\+start\+\_\+nodes@{connect\+\_\+start\+\_\+nodes}}
+\index{connect\+\_\+start\+\_\+nodes@{connect\+\_\+start\+\_\+nodes}!operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+\subsubsection{\texorpdfstring{connect\+\_\+start\+\_\+nodes()}{connect\_start\_nodes()}}
+{\footnotesize\ttfamily void operations\+\_\+cfg\+\_\+computation\+::connect\+\_\+start\+\_\+nodes (\begin{DoxyParamCaption}\item[{const operations\+\_\+graph\+\_\+constructor\+Ref}]{ogc,  }\item[{const std\+::string \&}]{next,  }\item[{bool}]{true\+\_\+edge = {\ttfamily false},  }\item[{bool}]{false\+\_\+edge = {\ttfamily false},  }\item[{unsigned int}]{nodeid = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Connect start\+\_\+node with the next node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ogc} & is the operation graph constructor used to add the edges. \\
+\hline
+{\em next} & is the ending node of the edge that must be added to g. \\
+\hline
+{\em true\+\_\+edge} & when it is true the control edge is the true branch of an if then else statement. \\
+\hline
+{\em false\+\_\+edge} & when it is true the control edge is the false branch of an if then else statement. \\
+\hline
+{\em nodeid} & is meaningful only in case true\+\_\+edge and false\+\_\+edge are both true and the control edge is associated with a switch statement. \\
+\hline
+\end{DoxyParams}
+Mark first operation of the application 
+
+Definition at line 458 of file operations\+\_\+cfg\+\_\+computation.\+cpp.
+
+
+
+References Frontend\+Flow\+Step\+::\+AppM, C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, E\+N\+T\+RY, F\+\_\+\+C\+O\+ND, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, start\+\_\+nodes, T\+\_\+\+C\+O\+ND, and T\+Y\+P\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+OP.
+
+
+
+Referenced by build\+\_\+operation\+\_\+recursive(), and Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d11/classoperations__cfg__computation_a10a94b4065c3e5bf12d59b78873f6dce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoperations__cfg__computation_a3565d9d33d44fce47a2fde3d39392f4b}\label{classoperations__cfg__computation_a3565d9d33d44fce47a2fde3d39392f4b}} 
+\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}!empty\+\_\+start\+\_\+nodes@{empty\+\_\+start\+\_\+nodes}}
+\index{empty\+\_\+start\+\_\+nodes@{empty\+\_\+start\+\_\+nodes}!operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+\subsubsection{\texorpdfstring{empty\+\_\+start\+\_\+nodes()}{empty\_start\_nodes()}}
+{\footnotesize\ttfamily bool operations\+\_\+cfg\+\_\+computation\+::empty\+\_\+start\+\_\+nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Return true if start\+\_\+node is empty. 
+
+\begin{DoxyReturn}{Returns}
+true if start node is empty 
+\end{DoxyReturn}
+
+
+Definition at line 447 of file operations\+\_\+cfg\+\_\+computation.\+cpp.
+
+
+
+References start\+\_\+nodes.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d11/classoperations__cfg__computation_a3565d9d33d44fce47a2fde3d39392f4b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoperations__cfg__computation_a552a18ba450de75c9651cc9eda82f3ac}\label{classoperations__cfg__computation_a552a18ba450de75c9651cc9eda82f3ac}} 
+\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}!get\+\_\+first\+\_\+node@{get\+\_\+first\+\_\+node}}
+\index{get\+\_\+first\+\_\+node@{get\+\_\+first\+\_\+node}!operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+\subsubsection{\texorpdfstring{get\+\_\+first\+\_\+node()}{get\_first\_node()}}
+{\footnotesize\ttfamily std\+::string operations\+\_\+cfg\+\_\+computation\+::get\+\_\+first\+\_\+node (\begin{DoxyParamCaption}\item[{const \hyperlink{tree__node_8hpp_a6ee377554d1c4871ad66a337eaa67fd5}{tree\+\_\+node\+Ref} \&}]{tn,  }\item[{const std\+::string \&}]{f\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Return the name of the first node given a tree node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tn} & is the tree node. \\
+\hline
+{\em f\+\_\+name} & is the name of the function of the node we are analyzing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the name of the first node 
+\end{DoxyReturn}
+
+
+Definition at line 380 of file operations\+\_\+cfg\+\_\+computation.\+cpp.
+
+
+
+References C\+A\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+C\+S\+T\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+D\+E\+C\+L\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+F\+A\+K\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+node\+::get\+\_\+kind\+\_\+text(), G\+E\+T\+\_\+\+N\+O\+DE, label\+\_\+decl\+\_\+map, N\+O\+D\+E\+\_\+\+N\+O\+T\+\_\+\+Y\+E\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+EC, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+DE.
+
+
+
+Referenced by build\+\_\+operation\+\_\+recursive(), and Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d11/classoperations__cfg__computation_a552a18ba450de75c9651cc9eda82f3ac_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d11/classoperations__cfg__computation_a552a18ba450de75c9651cc9eda82f3ac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoperations__cfg__computation_ae1d29037a601f373f5d8db0faed1ffbf}\label{classoperations__cfg__computation_ae1d29037a601f373f5d8db0faed1ffbf}} 
+\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}!init\+\_\+start\+\_\+nodes@{init\+\_\+start\+\_\+nodes}}
+\index{init\+\_\+start\+\_\+nodes@{init\+\_\+start\+\_\+nodes}!operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+\subsubsection{\texorpdfstring{init\+\_\+start\+\_\+nodes()}{init\_start\_nodes()}}
+{\footnotesize\ttfamily void operations\+\_\+cfg\+\_\+computation\+::init\+\_\+start\+\_\+nodes (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{start\+\_\+node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialize the list of start nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+node} & is the starting node \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 452 of file operations\+\_\+cfg\+\_\+computation.\+cpp.
+
+
+
+References start\+\_\+nodes.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d11/classoperations__cfg__computation_ae1d29037a601f373f5d8db0faed1ffbf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoperations__cfg__computation_ae89b6b5ecac95fdcb9e84ee9bbf527f5}\label{classoperations__cfg__computation_ae89b6b5ecac95fdcb9e84ee9bbf527f5}} 
+\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void operations\+\_\+cfg\+\_\+computation\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 138 of file operations\+\_\+cfg\+\_\+computation.\+cpp.
+
+
+
+References B\+A\+S\+I\+C\+\_\+\+B\+L\+O\+C\+K\+S\+\_\+\+C\+F\+G\+\_\+\+C\+O\+M\+P\+U\+T\+A\+T\+I\+ON, Function\+Behavior\+::\+BB, Function\+Frontend\+Flow\+Step\+::bb\+\_\+version, Function\+Frontend\+Flow\+Step\+::\+C\+Get\+B\+B\+Version(), Function\+Frontend\+Flow\+Step\+::\+Compute\+Signature(), Design\+Flow\+Step\+::design\+\_\+flow\+\_\+manager, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, B\+B\+Graph\+::\+Get\+B\+B\+Node\+Info(), last\+\_\+bb\+\_\+cfg\+\_\+computation\+\_\+version, Wrefcount$<$ T $>$\+::lock(), and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d11/classoperations__cfg__computation_ae89b6b5ecac95fdcb9e84ee9bbf527f5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoperations__cfg__computation_af46dd1597651071b58c65df3a5205a92}\label{classoperations__cfg__computation_af46dd1597651071b58c65df3a5205a92}} 
+\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}!insert\+\_\+start\+\_\+node@{insert\+\_\+start\+\_\+node}}
+\index{insert\+\_\+start\+\_\+node@{insert\+\_\+start\+\_\+node}!operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+\subsubsection{\texorpdfstring{insert\+\_\+start\+\_\+node()}{insert\_start\_node()}}
+{\footnotesize\ttfamily void operations\+\_\+cfg\+\_\+computation\+::insert\+\_\+start\+\_\+node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{start\+\_\+node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Insert a start node to the list of start nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+node} & is the starting node \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 437 of file operations\+\_\+cfg\+\_\+computation.\+cpp.
+
+
+
+References start\+\_\+nodes.
+
+\mbox{\Hypertarget{classoperations__cfg__computation_a5ab48f4fbba150d484e99c36c352bfad}\label{classoperations__cfg__computation_a5ab48f4fbba150d484e99c36c352bfad}} 
+\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} operations\+\_\+cfg\+\_\+computation\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes the operations C\+FG graph data structure. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+entry and exit computation
+
+first cycle to compute the label\+\_\+decl\+\_\+map and the first\+\_\+statement maps.
+
+second cycle doing the real job 
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 164 of file operations\+\_\+cfg\+\_\+computation.\+cpp.
+
+
+
+References actual\+\_\+name, Frontend\+Flow\+Step\+::\+AppM, B\+B\+\_\+\+E\+N\+T\+RY, B\+B\+\_\+\+E\+X\+IT, build\+\_\+operation\+\_\+recursive(), Function\+Behavior\+::\+C\+FG, B\+B\+Graph\+::\+C\+Get\+B\+B\+Graph\+Info(), B\+B\+Graph\+::\+C\+Get\+B\+B\+Node\+Info(), clean\+\_\+start\+\_\+nodes(), connect\+\_\+start\+\_\+nodes(), tree\+\_\+manager\+::create\+\_\+tree\+\_\+node(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, empty\+\_\+start\+\_\+nodes(), E\+N\+T\+RY, E\+X\+IT, bloc\+::\+E\+X\+I\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+ID, Function\+Behavior\+::\+F\+BB, first\+\_\+statement, Function\+Frontend\+Flow\+Step\+::function\+\_\+behavior, Function\+Frontend\+Flow\+Step\+::function\+\_\+id, get\+\_\+first\+\_\+node(), Behavioral\+Helper\+::get\+\_\+function\+\_\+name(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), tree\+\_\+manager\+::\+Get\+Tree\+Reindex(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, init\+\_\+start\+\_\+nodes(), label\+\_\+decl\+\_\+map, tree\+\_\+manager\+::new\+\_\+tree\+\_\+node\+\_\+id(), Design\+Flow\+Step\+::parameters, phi, start\+\_\+nodes, S\+TR, S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, T\+OK, T\+O\+K\+\_\+\+S\+R\+CP, tree\+\_\+node\+::\+To\+String(), T\+Y\+P\+E\+\_\+\+E\+N\+T\+RY, T\+Y\+P\+E\+\_\+\+E\+X\+IT, and T\+Y\+P\+E\+\_\+\+L\+A\+S\+T\+\_\+\+OP.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d11/classoperations__cfg__computation_a5ab48f4fbba150d484e99c36c352bfad_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classoperations__cfg__computation_ab7ad207edecdf0376496f570bd70638b}\label{classoperations__cfg__computation_ab7ad207edecdf0376496f570bd70638b}} 
+\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}!actual\+\_\+name@{actual\+\_\+name}}
+\index{actual\+\_\+name@{actual\+\_\+name}!operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+\subsubsection{\texorpdfstring{actual\+\_\+name}{actual\_name}}
+{\footnotesize\ttfamily std\+::string operations\+\_\+cfg\+\_\+computation\+::actual\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+store the name of the current vertex 
+
+
+
+Definition at line 90 of file operations\+\_\+cfg\+\_\+computation.\+hpp.
+
+
+
+Referenced by build\+\_\+operation\+\_\+recursive(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classoperations__cfg__computation_af1b5e6119a42455a86fa01e3f3ec3f4b}\label{classoperations__cfg__computation_af1b5e6119a42455a86fa01e3f3ec3f4b}} 
+\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}!first\+\_\+statement@{first\+\_\+statement}}
+\index{first\+\_\+statement@{first\+\_\+statement}!operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+\subsubsection{\texorpdfstring{first\+\_\+statement}{first\_statement}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, std\+::string$>$ operations\+\_\+cfg\+\_\+computation\+::first\+\_\+statement\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+relation between basic block and first statement id 
+
+
+
+Definition at line 84 of file operations\+\_\+cfg\+\_\+computation.\+hpp.
+
+
+
+Referenced by Internal\+Exec().
+
+\mbox{\Hypertarget{classoperations__cfg__computation_a376558dd1ae44b3a523bc4482fd9f9ec}\label{classoperations__cfg__computation_a376558dd1ae44b3a523bc4482fd9f9ec}} 
+\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}!label\+\_\+decl\+\_\+map@{label\+\_\+decl\+\_\+map}}
+\index{label\+\_\+decl\+\_\+map@{label\+\_\+decl\+\_\+map}!operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+\subsubsection{\texorpdfstring{label\+\_\+decl\+\_\+map}{label\_decl\_map}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, std\+::string$>$ operations\+\_\+cfg\+\_\+computation\+::label\+\_\+decl\+\_\+map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+relation between label declaration and first statement id 
+
+
+
+Definition at line 81 of file operations\+\_\+cfg\+\_\+computation.\+hpp.
+
+
+
+Referenced by get\+\_\+first\+\_\+node(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classoperations__cfg__computation_afc96a2e50d26b0b82d0a50ee8084fd69}\label{classoperations__cfg__computation_afc96a2e50d26b0b82d0a50ee8084fd69}} 
+\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}!last\+\_\+bb\+\_\+cfg\+\_\+computation\+\_\+version@{last\+\_\+bb\+\_\+cfg\+\_\+computation\+\_\+version}}
+\index{last\+\_\+bb\+\_\+cfg\+\_\+computation\+\_\+version@{last\+\_\+bb\+\_\+cfg\+\_\+computation\+\_\+version}!operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+\subsubsection{\texorpdfstring{last\+\_\+bb\+\_\+cfg\+\_\+computation\+\_\+version}{last\_bb\_cfg\_computation\_version}}
+{\footnotesize\ttfamily unsigned int operations\+\_\+cfg\+\_\+computation\+::last\+\_\+bb\+\_\+cfg\+\_\+computation\+\_\+version\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 78 of file operations\+\_\+cfg\+\_\+computation.\+hpp.
+
+
+
+Referenced by Initialize().
+
+\mbox{\Hypertarget{classoperations__cfg__computation_adfd410fb60f942075cecc8c45afb7f41}\label{classoperations__cfg__computation_adfd410fb60f942075cecc8c45afb7f41}} 
+\index{operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}!start\+\_\+nodes@{start\+\_\+nodes}}
+\index{start\+\_\+nodes@{start\+\_\+nodes}!operations\+\_\+cfg\+\_\+computation@{operations\+\_\+cfg\+\_\+computation}}
+\subsubsection{\texorpdfstring{start\+\_\+nodes}{start\_nodes}}
+{\footnotesize\ttfamily std\+::list$<$std\+::string$>$ operations\+\_\+cfg\+\_\+computation\+::start\+\_\+nodes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+store the name of the nodes at which the next node should be attached. 
+
+
+
+Definition at line 87 of file operations\+\_\+cfg\+\_\+computation.\+hpp.
+
+
+
+Referenced by clean\+\_\+start\+\_\+nodes(), connect\+\_\+start\+\_\+nodes(), empty\+\_\+start\+\_\+nodes(), init\+\_\+start\+\_\+nodes(), insert\+\_\+start\+\_\+node(), and Internal\+Exec().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{operations__cfg__computation_8hpp}{operations\+\_\+cfg\+\_\+computation.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/\+I\+R\+\_\+analysis/\hyperlink{operations__cfg__computation_8cpp}{operations\+\_\+cfg\+\_\+computation.\+cpp}\end{DoxyCompactItemize}

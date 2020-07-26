@@ -1,0 +1,836 @@
+\hypertarget{classDesignFlowManager}{}\section{Design\+Flow\+Manager Class Reference}
+\label{classDesignFlowManager}\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+
+
+{\ttfamily \#include $<$design\+\_\+flow\+\_\+manager.\+hpp$>$}
+
+
+
+Collaboration diagram for Design\+Flow\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{dc/de6/classDesignFlowManager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDesignFlowManager_a50d4704e76a3132f1cfc24884055faa7}{Design\+Flow\+Manager} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowManager_a445e732d3d9516b40ad5862519a01cfc}{parameters})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classDesignFlowManager_a8329c2a542d8f94c55fca404c807eded}{$\sim$\+Design\+Flow\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDesignFlowManager_ae33babf44b5caddeafba01e7fa22bcd4}{Exec} ()
+\begin{DoxyCompactList}\small\item\em Execute the design flow. \end{DoxyCompactList}\item 
+void \hyperlink{classDesignFlowManager_ae694a3d971e944cd6349ef7c3dd0eff7}{Add\+Step} (const \hyperlink{design__flow__step_8hpp_a9dd6b4474ddf52d41a78b1aaa12ae6c8}{Design\+Flow\+Step\+Ref} step)
+\begin{DoxyCompactList}\small\item\em Add step and corresponding dependencies to the design flow. \end{DoxyCompactList}\item 
+void \hyperlink{classDesignFlowManager_a4ee7e2fb3a5313538b8ec26a49c498bd}{Add\+Steps} (const \hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&steps)
+\begin{DoxyCompactList}\small\item\em Add steps and corresponding dependencies to the design flow. \end{DoxyCompactList}\item 
+const \hyperlink{design__flow__graph_8hpp_a0230319e566e6824d3d187b6871598f7}{Design\+Flow\+Graph\+Const\+Ref} \hyperlink{classDesignFlowManager_aaac5aac231b91e51a8d63b611b3acba6}{C\+Get\+Design\+Flow\+Graph} () const
+\begin{DoxyCompactList}\small\item\em Return the design flow graph. \end{DoxyCompactList}\item 
+\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \hyperlink{classDesignFlowManager_aac97bf59eaa0aaad7c5b4e2b31d7fb55}{Get\+Design\+Flow\+Step} (const std\+::string \&signature) const
+\begin{DoxyCompactList}\small\item\em Return the vertex associated with a design step if exists, N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX otherwise. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classDesignFlowManager_af692644b14a5f889d8511f41aa1317b4}{Get\+Status} (const std\+::string \&signature) const
+\begin{DoxyCompactList}\small\item\em Return the status of a design step (if it does not exist return N\+O\+N\+E\+X\+I\+S\+T\+E\+NT) \end{DoxyCompactList}\item 
+const Design\+Flow\+Step\+Factory\+Const\+Ref \hyperlink{classDesignFlowManager_af6188161209a658023cd0c26dae9d4ca}{C\+Get\+Design\+Flow\+Step\+Factory} (const std\+::string \&prefix) const
+\begin{DoxyCompactList}\small\item\em Return the factory which can create design flow step with signature beginning with prefix. \end{DoxyCompactList}\item 
+void \hyperlink{classDesignFlowManager_a863161302c892a561919d294e8d20e0d}{Register\+Factory} (const Design\+Flow\+Step\+Factory\+Const\+Ref factory)
+\begin{DoxyCompactList}\small\item\em Register a design flow step factory. \end{DoxyCompactList}\item 
+const \hyperlink{design__flow__step_8hpp_a9dd6b4474ddf52d41a78b1aaa12ae6c8}{Design\+Flow\+Step\+Ref} \hyperlink{classDesignFlowManager_a163f98e734cb159907e23c3f6f9abda9}{Create\+Flow\+Step} (const std\+::string \&signature) const
+\begin{DoxyCompactList}\small\item\em Create a design flow step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDesignFlowManager_ab5d3fe2338fef7db3edacd11d8539da0}{Recursively\+Add\+Steps} (const \hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&steps, const bool unnecessary)
+\begin{DoxyCompactList}\small\item\em Recursively add steps and corresponding dependencies to the design flow. \end{DoxyCompactList}\item 
+void \hyperlink{classDesignFlowManager_ac61f3e68a4afd29ca8c5667eb4fc3e81}{De\+Execute} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} starting\+\_\+vertex, bool force\+\_\+execution)
+\begin{DoxyCompactList}\small\item\em Recursively remove executed flag starting from a vertex. \end{DoxyCompactList}\item 
+void \hyperlink{classDesignFlowManager_a7c196a82bdb37a21941565f453fa3814}{Consolidate} ()
+\begin{DoxyCompactList}\small\item\em Connect source and sink vertices to entry and exit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{design__flow__graph_8hpp_abb8645fa685dc5bd944be20162a6d174}{Design\+Flow\+Graphs\+Collection\+Ref} \hyperlink{classDesignFlowManager_af7a54cf43b76cd8da9a64e7e83fb93bd}{design\+\_\+flow\+\_\+graphs\+\_\+collection}
+\begin{DoxyCompactList}\small\item\em The bulk graph of steps composing the design flow. \end{DoxyCompactList}\item 
+const \hyperlink{design__flow__graph_8hpp_ab67393ecbbac075afaded9713a6cb39a}{Design\+Flow\+Graph\+Ref} \hyperlink{classDesignFlowManager_a2ecadf8326eac0ac1418595f1c312af2}{design\+\_\+flow\+\_\+graph}
+\begin{DoxyCompactList}\small\item\em The graph of steps composing the design flow. \end{DoxyCompactList}\item 
+const \hyperlink{design__flow__graph_8hpp_a0230319e566e6824d3d187b6871598f7}{Design\+Flow\+Graph\+Const\+Ref} \hyperlink{classDesignFlowManager_a733e1430234354a0e6c87e49f1967cf3}{feedback\+\_\+design\+\_\+flow\+\_\+graph}
+\begin{DoxyCompactList}\small\item\em The design flow graph with feedback edges. \end{DoxyCompactList}\item 
+std\+::set$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{classDesignFlowStepNecessitySorter}{Design\+Flow\+Step\+Necessity\+Sorter} $>$ \hyperlink{classDesignFlowManager_ac3a34b1fa14762e16309115e92a38fd9}{possibly\+\_\+ready}
+\begin{DoxyCompactList}\small\item\em The set of potentially ready steps; when a step is added to set is ready to be executed, but it can become unready because of new added vertices. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$ std\+::string, Design\+Flow\+Step\+Factory\+Const\+Ref $>$ \hyperlink{classDesignFlowManager_a4e7a87bc3009946842d3c41a05f6ea6f}{design\+\_\+flow\+\_\+step\+\_\+factories}
+\begin{DoxyCompactList}\small\item\em The registered factories. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}, \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} $>$ $>$ \hyperlink{classDesignFlowManager_a2ca7c1db5d0b6cbea2c118601cbe1948}{vertex\+\_\+history}
+\begin{DoxyCompactList}\small\item\em This structure stores \char`\"{}history of design flow graph manager -\/ vertices\char`\"{} First key is the iteration Second key is the vertex If a vertex is not present in a iteration, it was not yet been created The first value is the status. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}, \hyperlink{custom__map_8hpp_a7314a7df1cdb3a3acf478ab86e95c226}{Custom\+Unordered\+Map\+Stable}$<$ \hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor}, int $>$ $>$ \hyperlink{classDesignFlowManager_ad81eea42b4dd034b2ba9a5b61dcb84bf}{edge\+\_\+history}
+\begin{DoxyCompactList}\small\item\em This structure stores \char`\"{}history of design flow graph manager -\/ edges\char`\"{} First key is the iteration Second key is the edge Value is the selector. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, std\+::string $>$ \hyperlink{classDesignFlowManager_aab1b4d4f34b44e99076f1c8c0bef18f0}{step\+\_\+names}
+\begin{DoxyCompactList}\small\item\em The name of each vertex (we have to store since it is possible that it cannot be recomputed at the end -\/ for example because the corresponding task graph has been deallocated) \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, long $>$ \hyperlink{classDesignFlowManager_a63c70d202fd40d1db1f537d970e8fae3}{accumulated\+\_\+execution\+\_\+time}
+\begin{DoxyCompactList}\small\item\em The accumulated times of each step. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} $>$ \hyperlink{classDesignFlowManager_aa583fc57e8f7514426a8b1891ae0bffd}{success\+\_\+executions}
+\begin{DoxyCompactList}\small\item\em The number of times each step is executed with success. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} $>$ \hyperlink{classDesignFlowManager_a5d95ea33043a9a5b10a583d0601ab0f3}{unchanged\+\_\+executions}
+\begin{DoxyCompactList}\small\item\em The number of times each step is executed with unchanged exit. \end{DoxyCompactList}\item 
+\hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} $>$ \hyperlink{classDesignFlowManager_a3819ea61eec3ea670467397a954b3e84}{skipped\+\_\+executions}
+\begin{DoxyCompactList}\small\item\em The number of times the execution of a step is skipped. \end{DoxyCompactList}\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classDesignFlowManager_a445e732d3d9516b40ad5862519a01cfc}{parameters}
+\begin{DoxyCompactList}\small\item\em The set of input parameters. \end{DoxyCompactList}\item 
+const int \hyperlink{classDesignFlowManager_ad7b7d5778dda58ed7bd03a1f4a609279}{output\+\_\+level}
+\begin{DoxyCompactList}\small\item\em The output level. \end{DoxyCompactList}\item 
+int \hyperlink{classDesignFlowManager_a339b488636513296591ea1491e19744d}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em The debug level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} \hyperlink{classDesignFlowManager_a7f27cfe1cb613464bd12f024a14a1ac0}{step\+\_\+counter} = 0
+\begin{DoxyCompactList}\small\item\em N\+O\+TE\+: static should be removed when all the design flow managers will be merged Counter of current iteration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 90 of file design\+\_\+flow\+\_\+manager.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDesignFlowManager_a50d4704e76a3132f1cfc24884055faa7}\label{classDesignFlowManager_a50d4704e76a3132f1cfc24884055faa7}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{Design\+Flow\+Manager()}{DesignFlowManager()}}
+{\footnotesize\ttfamily Design\+Flow\+Manager\+::\+Design\+Flow\+Manager (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{parameters }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 112 of file design\+\_\+flow\+\_\+manager.\+cpp.
+
+
+
+References debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+S\+I\+G\+N\+\_\+\+F\+L\+O\+W\+\_\+\+E\+N\+T\+RY, D\+E\+S\+I\+G\+N\+\_\+\+F\+L\+O\+W\+\_\+\+E\+X\+IT, design\+\_\+flow\+\_\+graph, design\+\_\+flow\+\_\+graphs\+\_\+collection, E\+M\+P\+TY, G\+E\+T\+\_\+\+C\+L\+A\+SS, parameters, step\+\_\+counter, step\+\_\+names, and $\sim$\+Design\+Flow\+Manager().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{de/d63/classDesignFlowManager_a50d4704e76a3132f1cfc24884055faa7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDesignFlowManager_a8329c2a542d8f94c55fca404c807eded}\label{classDesignFlowManager_a8329c2a542d8f94c55fca404c807eded}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!````~Design\+Flow\+Manager@{$\sim$\+Design\+Flow\+Manager}}
+\index{````~Design\+Flow\+Manager@{$\sim$\+Design\+Flow\+Manager}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{$\sim$\+Design\+Flow\+Manager()}{~DesignFlowManager()}}
+{\footnotesize\ttfamily Design\+Flow\+Manager\+::$\sim$\+Design\+Flow\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Design\+Flow\+Manager().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{de/d63/classDesignFlowManager_a8329c2a542d8f94c55fca404c807eded_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDesignFlowManager_ae694a3d971e944cd6349ef7c3dd0eff7}\label{classDesignFlowManager_ae694a3d971e944cd6349ef7c3dd0eff7}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!Add\+Step@{Add\+Step}}
+\index{Add\+Step@{Add\+Step}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{Add\+Step()}{AddStep()}}
+{\footnotesize\ttfamily void Design\+Flow\+Manager\+::\+Add\+Step (\begin{DoxyParamCaption}\item[{const \hyperlink{design__flow__step_8hpp_a9dd6b4474ddf52d41a78b1aaa12ae6c8}{Design\+Flow\+Step\+Ref}}]{step }\end{DoxyParamCaption})}
+
+
+
+Add step and corresponding dependencies to the design flow. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em step} & is the step to be added \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 145 of file design\+\_\+flow\+\_\+manager.\+cpp.
+
+
+
+References Recursively\+Add\+Steps().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d63/classDesignFlowManager_ae694a3d971e944cd6349ef7c3dd0eff7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDesignFlowManager_a4ee7e2fb3a5313538b8ec26a49c498bd}\label{classDesignFlowManager_a4ee7e2fb3a5313538b8ec26a49c498bd}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!Add\+Steps@{Add\+Steps}}
+\index{Add\+Steps@{Add\+Steps}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{Add\+Steps()}{AddSteps()}}
+{\footnotesize\ttfamily void Design\+Flow\+Manager\+::\+Add\+Steps (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&}]{steps }\end{DoxyParamCaption})}
+
+
+
+Add steps and corresponding dependencies to the design flow. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em steps} & is the set of steps to be added \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 152 of file design\+\_\+flow\+\_\+manager.\+cpp.
+
+
+
+References Recursively\+Add\+Steps().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d63/classDesignFlowManager_a4ee7e2fb3a5313538b8ec26a49c498bd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDesignFlowManager_aaac5aac231b91e51a8d63b611b3acba6}\label{classDesignFlowManager_aaac5aac231b91e51a8d63b611b3acba6}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!C\+Get\+Design\+Flow\+Graph@{C\+Get\+Design\+Flow\+Graph}}
+\index{C\+Get\+Design\+Flow\+Graph@{C\+Get\+Design\+Flow\+Graph}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{C\+Get\+Design\+Flow\+Graph()}{CGetDesignFlowGraph()}}
+{\footnotesize\ttfamily const \hyperlink{design__flow__graph_8hpp_a0230319e566e6824d3d187b6871598f7}{Design\+Flow\+Graph\+Const\+Ref} Design\+Flow\+Manager\+::\+C\+Get\+Design\+Flow\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the design flow graph. 
+
+\begin{DoxyReturn}{Returns}
+the design flow graph 
+\end{DoxyReturn}
+
+
+Definition at line 387 of file design\+\_\+flow\+\_\+manager.\+cpp.
+
+
+
+References design\+\_\+flow\+\_\+graph.
+
+\mbox{\Hypertarget{classDesignFlowManager_af6188161209a658023cd0c26dae9d4ca}\label{classDesignFlowManager_af6188161209a658023cd0c26dae9d4ca}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!C\+Get\+Design\+Flow\+Step\+Factory@{C\+Get\+Design\+Flow\+Step\+Factory}}
+\index{C\+Get\+Design\+Flow\+Step\+Factory@{C\+Get\+Design\+Flow\+Step\+Factory}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{C\+Get\+Design\+Flow\+Step\+Factory()}{CGetDesignFlowStepFactory()}}
+{\footnotesize\ttfamily const Design\+Flow\+Step\+Factory\+Const\+Ref Design\+Flow\+Manager\+::\+C\+Get\+Design\+Flow\+Step\+Factory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{prefix }\end{DoxyParamCaption}) const}
+
+
+
+Return the factory which can create design flow step with signature beginning with prefix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prefix} & is the beginning of the steps that the factory should be created \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding factory 
+\end{DoxyReturn}
+
+
+Definition at line 887 of file design\+\_\+flow\+\_\+manager.\+cpp.
+
+
+
+References design\+\_\+flow\+\_\+step\+\_\+factories, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Create\+Flow\+Step().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d63/classDesignFlowManager_af6188161209a658023cd0c26dae9d4ca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDesignFlowManager_a7c196a82bdb37a21941565f453fa3814}\label{classDesignFlowManager_a7c196a82bdb37a21941565f453fa3814}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!Consolidate@{Consolidate}}
+\index{Consolidate@{Consolidate}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{Consolidate()}{Consolidate()}}
+{\footnotesize\ttfamily void Design\+Flow\+Manager\+::\+Consolidate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Connect source and sink vertices to entry and exit. 
+
+\mbox{\Hypertarget{classDesignFlowManager_a163f98e734cb159907e23c3f6f9abda9}\label{classDesignFlowManager_a163f98e734cb159907e23c3f6f9abda9}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!Create\+Flow\+Step@{Create\+Flow\+Step}}
+\index{Create\+Flow\+Step@{Create\+Flow\+Step}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{Create\+Flow\+Step()}{CreateFlowStep()}}
+{\footnotesize\ttfamily const \hyperlink{design__flow__step_8hpp_a9dd6b4474ddf52d41a78b1aaa12ae6c8}{Design\+Flow\+Step\+Ref} Design\+Flow\+Manager\+::\+Create\+Flow\+Step (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{signature }\end{DoxyParamCaption}) const}
+
+
+
+Create a design flow step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em signature} & is the signature of the step to be created \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the created design flow step 
+\end{DoxyReturn}
+
+
+Definition at line 1028 of file design\+\_\+flow\+\_\+manager.\+cpp.
+
+
+
+References C\+Get\+Design\+Flow\+Step\+Factory(), and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d63/classDesignFlowManager_a163f98e734cb159907e23c3f6f9abda9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDesignFlowManager_ac61f3e68a4afd29ca8c5667eb4fc3e81}\label{classDesignFlowManager_ac61f3e68a4afd29ca8c5667eb4fc3e81}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!De\+Execute@{De\+Execute}}
+\index{De\+Execute@{De\+Execute}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{De\+Execute()}{DeExecute()}}
+{\footnotesize\ttfamily void Design\+Flow\+Manager\+::\+De\+Execute (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{starting\+\_\+vertex,  }\item[{bool}]{force\+\_\+execution }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Recursively remove executed flag starting from a vertex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em starting\+\_\+vertex} & is the starting vertex \\
+\hline
+{\em force\+\_\+execution} & specifies if a skipped vertex has to be changed into a unexecuted \\
+\hline
+\end{DoxyParams}
+Set not executed on the starting vertex
+
+Check if the vertex is already ready
+
+Propagating to successor 
+
+Definition at line 898 of file design\+\_\+flow\+\_\+manager.\+cpp.
+
+
+
+References A\+B\+O\+R\+T\+ED, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, design\+\_\+flow\+\_\+graph, E\+M\+P\+TY, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, N\+O\+N\+E\+X\+I\+S\+T\+E\+NT, possibly\+\_\+ready, S\+K\+I\+P\+P\+ED, S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, U\+N\+C\+H\+A\+N\+G\+ED, U\+N\+E\+X\+E\+C\+U\+T\+ED, and U\+N\+N\+E\+C\+E\+S\+S\+A\+RY.
+
+
+
+Referenced by Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d63/classDesignFlowManager_ac61f3e68a4afd29ca8c5667eb4fc3e81_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDesignFlowManager_ae33babf44b5caddeafba01e7fa22bcd4}\label{classDesignFlowManager_ae33babf44b5caddeafba01e7fa22bcd4}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!Exec@{Exec}}
+\index{Exec@{Exec}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{Exec()}{Exec()}}
+{\footnotesize\ttfamily void Design\+Flow\+Manager\+::\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Execute the design flow. 
+
+Now check if next is actually ready First of all check if there are new dependence to add
+
+Now iterate on ingoing precedence edge
+
+Save the current status of the graph in history
+
+Add steps and edges from post dependencies
+
+Post dependence previously required and previously executed; Now it is not more required, otherwise execution flag should just invalidated
+
+Save the current status of the graph in history 
+
+Definition at line 392 of file design\+\_\+flow\+\_\+manager.\+cpp.
+
+
+
+References A\+B\+O\+R\+T\+ED, accumulated\+\_\+execution\+\_\+time, Design\+Flow\+Graph\+::\+A\+U\+X\+\_\+\+S\+E\+L\+E\+C\+T\+OR, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, De\+Execute(), Design\+Flow\+Graph\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+S\+E\+L\+E\+C\+T\+OR, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Graph\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+S\+E\+L\+E\+C\+T\+OR, design\+\_\+flow\+\_\+graph, design\+\_\+flow\+\_\+graphs\+\_\+collection, edge\+\_\+history, E\+M\+P\+TY, feedback\+\_\+design\+\_\+flow\+\_\+graph, Get\+Design\+Flow\+Step(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, indentation, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, N\+O\+N\+E\+X\+I\+S\+T\+E\+NT, output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, parameters, possibly\+\_\+ready, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Graph\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+S\+E\+L\+E\+C\+T\+OR, print\+\_\+cpu\+\_\+time(), Print\+Virtual\+Data\+Memory\+Usage(), Recursively\+Add\+Steps(), S\+K\+I\+P\+P\+ED, skipped\+\_\+executions, S\+T\+A\+R\+T\+\_\+\+T\+I\+ME, step\+\_\+counter, step\+\_\+names, S\+T\+O\+P\+\_\+\+T\+I\+ME, S\+TR, S\+U\+C\+C\+E\+SS, success\+\_\+executions, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, U\+N\+C\+H\+A\+N\+G\+ED, unchanged\+\_\+executions, U\+N\+E\+X\+E\+C\+U\+T\+ED, U\+N\+N\+E\+C\+E\+S\+S\+A\+RY, and vertex\+\_\+history.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d63/classDesignFlowManager_ae33babf44b5caddeafba01e7fa22bcd4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDesignFlowManager_aac97bf59eaa0aaad7c5b4e2b31d7fb55}\label{classDesignFlowManager_aac97bf59eaa0aaad7c5b4e2b31d7fb55}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!Get\+Design\+Flow\+Step@{Get\+Design\+Flow\+Step}}
+\index{Get\+Design\+Flow\+Step@{Get\+Design\+Flow\+Step}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Design\+Flow\+Step()}{GetDesignFlowStep()}}
+{\footnotesize\ttfamily \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} Design\+Flow\+Manager\+::\+Get\+Design\+Flow\+Step (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{signature }\end{DoxyParamCaption}) const}
+
+
+
+Return the vertex associated with a design step if exists, N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX otherwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em signature} & is the signature of the design step \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 882 of file design\+\_\+flow\+\_\+manager.\+cpp.
+
+
+
+References design\+\_\+flow\+\_\+graphs\+\_\+collection.
+
+
+
+Referenced by Exec(), Get\+Status(), and Recursively\+Add\+Steps().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d63/classDesignFlowManager_aac97bf59eaa0aaad7c5b4e2b31d7fb55_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDesignFlowManager_af692644b14a5f889d8511f41aa1317b4}\label{classDesignFlowManager_af692644b14a5f889d8511f41aa1317b4}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!Get\+Status@{Get\+Status}}
+\index{Get\+Status@{Get\+Status}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Status()}{GetStatus()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} Design\+Flow\+Manager\+::\+Get\+Status (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{signature }\end{DoxyParamCaption}) const}
+
+
+
+Return the status of a design step (if it does not exist return N\+O\+N\+E\+X\+I\+S\+T\+E\+NT) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em signature} & is the signature of the design step \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1015 of file design\+\_\+flow\+\_\+manager.\+cpp.
+
+
+
+References design\+\_\+flow\+\_\+graph, Get\+Design\+Flow\+Step(), N\+O\+N\+E\+X\+I\+S\+T\+E\+NT, and N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{de/d63/classDesignFlowManager_af692644b14a5f889d8511f41aa1317b4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDesignFlowManager_ab5d3fe2338fef7db3edacd11d8539da0}\label{classDesignFlowManager_ab5d3fe2338fef7db3edacd11d8539da0}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!Recursively\+Add\+Steps@{Recursively\+Add\+Steps}}
+\index{Recursively\+Add\+Steps@{Recursively\+Add\+Steps}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{Recursively\+Add\+Steps()}{RecursivelyAddSteps()}}
+{\footnotesize\ttfamily void Design\+Flow\+Manager\+::\+Recursively\+Add\+Steps (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStepSet}{Design\+Flow\+Step\+Set} \&}]{steps,  }\item[{const bool}]{unnecessary }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Recursively add steps and corresponding dependencies to the design flow. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em steps} & is the set of steps to be added \\
+\hline
+{\em unnecessary} & specify if the steps have to be added only as a possible precedence of other steps (i.\+e., they could be not executed if no step depends on them) \\
+\hline
+\end{DoxyParams}
+Get vertex from design flow graph; there are four cases
+
+The step already exists
+
+The step already exists and we are trying to readd as unnecessary; both if now it is unnecessary or not, nothing has to be done
+
+The step already exists and it was unnecessary; now we are switching to necessary; note that computation of relationships of this node is performed to propagate the necessity If design flow step was ready I have to reinsert it into the set because of the ordering; so the setting of the unnecessary flag can not be factorized
+
+The step already exists and it is already necessary; nothing to do
+
+Add edges from dependencies
+
+Add steps from precedences
+
+Check if the added step is already ready 
+
+Definition at line 157 of file design\+\_\+flow\+\_\+manager.\+cpp.
+
+
+
+References A\+B\+O\+R\+T\+ED, Design\+Flow\+Graph\+::\+A\+U\+X\+\_\+\+S\+E\+L\+E\+C\+T\+OR, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Graph\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+S\+E\+L\+E\+C\+T\+OR, design\+\_\+flow\+\_\+graph, design\+\_\+flow\+\_\+graphs\+\_\+collection, E\+M\+P\+TY, feedback\+\_\+design\+\_\+flow\+\_\+graph, Get\+Design\+Flow\+Step(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, N\+O\+N\+E\+X\+I\+S\+T\+E\+NT, parameters, possibly\+\_\+ready, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Graph\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+S\+E\+L\+E\+C\+T\+OR, S\+K\+I\+P\+P\+ED, step\+\_\+counter, step\+\_\+names, S\+U\+C\+C\+E\+SS, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, U\+N\+C\+H\+A\+N\+G\+ED, U\+N\+E\+X\+E\+C\+U\+T\+ED, and U\+N\+N\+E\+C\+E\+S\+S\+A\+RY.
+
+
+
+Referenced by Add\+Step(), Add\+Steps(), and Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{de/d63/classDesignFlowManager_ab5d3fe2338fef7db3edacd11d8539da0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d63/classDesignFlowManager_ab5d3fe2338fef7db3edacd11d8539da0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDesignFlowManager_a863161302c892a561919d294e8d20e0d}\label{classDesignFlowManager_a863161302c892a561919d294e8d20e0d}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!Register\+Factory@{Register\+Factory}}
+\index{Register\+Factory@{Register\+Factory}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{Register\+Factory()}{RegisterFactory()}}
+{\footnotesize\ttfamily void Design\+Flow\+Manager\+::\+Register\+Factory (\begin{DoxyParamCaption}\item[{const Design\+Flow\+Step\+Factory\+Const\+Ref}]{factory }\end{DoxyParamCaption})}
+
+
+
+Register a design flow step factory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & is the factory to be registered \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 893 of file design\+\_\+flow\+\_\+manager.\+cpp.
+
+
+
+References design\+\_\+flow\+\_\+step\+\_\+factories.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classDesignFlowManager_a63c70d202fd40d1db1f537d970e8fae3}\label{classDesignFlowManager_a63c70d202fd40d1db1f537d970e8fae3}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!accumulated\+\_\+execution\+\_\+time@{accumulated\+\_\+execution\+\_\+time}}
+\index{accumulated\+\_\+execution\+\_\+time@{accumulated\+\_\+execution\+\_\+time}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{accumulated\+\_\+execution\+\_\+time}{accumulated\_execution\_time}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, long$>$ Design\+Flow\+Manager\+::accumulated\+\_\+execution\+\_\+time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The accumulated times of each step. 
+
+
+
+Definition at line 133 of file design\+\_\+flow\+\_\+manager.\+hpp.
+
+
+
+Referenced by Exec().
+
+\mbox{\Hypertarget{classDesignFlowManager_a339b488636513296591ea1491e19744d}\label{classDesignFlowManager_a339b488636513296591ea1491e19744d}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily int Design\+Flow\+Manager\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The debug level. 
+
+
+
+Definition at line 152 of file design\+\_\+flow\+\_\+manager.\+hpp.
+
+
+
+Referenced by De\+Execute(), Design\+Flow\+Manager(), Exec(), and Recursively\+Add\+Steps().
+
+\mbox{\Hypertarget{classDesignFlowManager_a2ecadf8326eac0ac1418595f1c312af2}\label{classDesignFlowManager_a2ecadf8326eac0ac1418595f1c312af2}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!design\+\_\+flow\+\_\+graph@{design\+\_\+flow\+\_\+graph}}
+\index{design\+\_\+flow\+\_\+graph@{design\+\_\+flow\+\_\+graph}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{design\+\_\+flow\+\_\+graph}{design\_flow\_graph}}
+{\footnotesize\ttfamily const \hyperlink{design__flow__graph_8hpp_ab67393ecbbac075afaded9713a6cb39a}{Design\+Flow\+Graph\+Ref} Design\+Flow\+Manager\+::design\+\_\+flow\+\_\+graph\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The graph of steps composing the design flow. 
+
+
+
+Definition at line 104 of file design\+\_\+flow\+\_\+manager.\+hpp.
+
+
+
+Referenced by C\+Get\+Design\+Flow\+Graph(), De\+Execute(), Design\+Flow\+Manager(), Exec(), Get\+Status(), and Recursively\+Add\+Steps().
+
+\mbox{\Hypertarget{classDesignFlowManager_af7a54cf43b76cd8da9a64e7e83fb93bd}\label{classDesignFlowManager_af7a54cf43b76cd8da9a64e7e83fb93bd}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!design\+\_\+flow\+\_\+graphs\+\_\+collection@{design\+\_\+flow\+\_\+graphs\+\_\+collection}}
+\index{design\+\_\+flow\+\_\+graphs\+\_\+collection@{design\+\_\+flow\+\_\+graphs\+\_\+collection}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{design\+\_\+flow\+\_\+graphs\+\_\+collection}{design\_flow\_graphs\_collection}}
+{\footnotesize\ttfamily const \hyperlink{design__flow__graph_8hpp_abb8645fa685dc5bd944be20162a6d174}{Design\+Flow\+Graphs\+Collection\+Ref} Design\+Flow\+Manager\+::design\+\_\+flow\+\_\+graphs\+\_\+collection\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The bulk graph of steps composing the design flow. 
+
+
+
+Definition at line 101 of file design\+\_\+flow\+\_\+manager.\+hpp.
+
+
+
+Referenced by Design\+Flow\+Manager(), Exec(), Get\+Design\+Flow\+Step(), and Recursively\+Add\+Steps().
+
+\mbox{\Hypertarget{classDesignFlowManager_a4e7a87bc3009946842d3c41a05f6ea6f}\label{classDesignFlowManager_a4e7a87bc3009946842d3c41a05f6ea6f}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!design\+\_\+flow\+\_\+step\+\_\+factories@{design\+\_\+flow\+\_\+step\+\_\+factories}}
+\index{design\+\_\+flow\+\_\+step\+\_\+factories@{design\+\_\+flow\+\_\+step\+\_\+factories}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{design\+\_\+flow\+\_\+step\+\_\+factories}{design\_flow\_step\_factories}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_ad1ed68f2ff093683ab1a33522b144adc}{Custom\+Unordered\+Map}$<$std\+::string, Design\+Flow\+Step\+Factory\+Const\+Ref$>$ Design\+Flow\+Manager\+::design\+\_\+flow\+\_\+step\+\_\+factories\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The registered factories. 
+
+
+
+Definition at line 113 of file design\+\_\+flow\+\_\+manager.\+hpp.
+
+
+
+Referenced by C\+Get\+Design\+Flow\+Step\+Factory(), and Register\+Factory().
+
+\mbox{\Hypertarget{classDesignFlowManager_ad81eea42b4dd034b2ba9a5b61dcb84bf}\label{classDesignFlowManager_ad81eea42b4dd034b2ba9a5b61dcb84bf}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!edge\+\_\+history@{edge\+\_\+history}}
+\index{edge\+\_\+history@{edge\+\_\+history}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{edge\+\_\+history}{edge\_history}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}, \hyperlink{custom__map_8hpp_a7314a7df1cdb3a3acf478ab86e95c226}{Custom\+Unordered\+Map\+Stable}$<$\hyperlink{graph_8hpp_a9eb9afea34e09f484b21f2efd263dd48}{Edge\+Descriptor}, int$>$ $>$ Design\+Flow\+Manager\+::edge\+\_\+history\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This structure stores \char`\"{}history of design flow graph manager -\/ edges\char`\"{} First key is the iteration Second key is the edge Value is the selector. 
+
+
+
+Definition at line 127 of file design\+\_\+flow\+\_\+manager.\+hpp.
+
+
+
+Referenced by Exec().
+
+\mbox{\Hypertarget{classDesignFlowManager_a733e1430234354a0e6c87e49f1967cf3}\label{classDesignFlowManager_a733e1430234354a0e6c87e49f1967cf3}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!feedback\+\_\+design\+\_\+flow\+\_\+graph@{feedback\+\_\+design\+\_\+flow\+\_\+graph}}
+\index{feedback\+\_\+design\+\_\+flow\+\_\+graph@{feedback\+\_\+design\+\_\+flow\+\_\+graph}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{feedback\+\_\+design\+\_\+flow\+\_\+graph}{feedback\_design\_flow\_graph}}
+{\footnotesize\ttfamily const \hyperlink{design__flow__graph_8hpp_a0230319e566e6824d3d187b6871598f7}{Design\+Flow\+Graph\+Const\+Ref} Design\+Flow\+Manager\+::feedback\+\_\+design\+\_\+flow\+\_\+graph\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The design flow graph with feedback edges. 
+
+
+
+Definition at line 107 of file design\+\_\+flow\+\_\+manager.\+hpp.
+
+
+
+Referenced by Exec(), and Recursively\+Add\+Steps().
+
+\mbox{\Hypertarget{classDesignFlowManager_ad7b7d5778dda58ed7bd03a1f4a609279}\label{classDesignFlowManager_ad7b7d5778dda58ed7bd03a1f4a609279}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!output\+\_\+level@{output\+\_\+level}}
+\index{output\+\_\+level@{output\+\_\+level}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{output\+\_\+level}{output\_level}}
+{\footnotesize\ttfamily const int Design\+Flow\+Manager\+::output\+\_\+level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The output level. 
+
+
+
+Definition at line 149 of file design\+\_\+flow\+\_\+manager.\+hpp.
+
+
+
+Referenced by Exec().
+
+\mbox{\Hypertarget{classDesignFlowManager_a445e732d3d9516b40ad5862519a01cfc}\label{classDesignFlowManager_a445e732d3d9516b40ad5862519a01cfc}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!parameters@{parameters}}
+\index{parameters@{parameters}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{parameters}{parameters}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Design\+Flow\+Manager\+::parameters\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The set of input parameters. 
+
+
+
+Definition at line 146 of file design\+\_\+flow\+\_\+manager.\+hpp.
+
+
+
+Referenced by Design\+Flow\+Manager(), Exec(), and Recursively\+Add\+Steps().
+
+\mbox{\Hypertarget{classDesignFlowManager_ac3a34b1fa14762e16309115e92a38fd9}\label{classDesignFlowManager_ac3a34b1fa14762e16309115e92a38fd9}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!possibly\+\_\+ready@{possibly\+\_\+ready}}
+\index{possibly\+\_\+ready@{possibly\+\_\+ready}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{possibly\+\_\+ready}{possibly\_ready}}
+{\footnotesize\ttfamily std\+::set$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{classDesignFlowStepNecessitySorter}{Design\+Flow\+Step\+Necessity\+Sorter}$>$ Design\+Flow\+Manager\+::possibly\+\_\+ready\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The set of potentially ready steps; when a step is added to set is ready to be executed, but it can become unready because of new added vertices. 
+
+
+
+Definition at line 110 of file design\+\_\+flow\+\_\+manager.\+hpp.
+
+
+
+Referenced by De\+Execute(), Exec(), and Recursively\+Add\+Steps().
+
+\mbox{\Hypertarget{classDesignFlowManager_a3819ea61eec3ea670467397a954b3e84}\label{classDesignFlowManager_a3819ea61eec3ea670467397a954b3e84}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!skipped\+\_\+executions@{skipped\+\_\+executions}}
+\index{skipped\+\_\+executions@{skipped\+\_\+executions}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{skipped\+\_\+executions}{skipped\_executions}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}$>$ Design\+Flow\+Manager\+::skipped\+\_\+executions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The number of times the execution of a step is skipped. 
+
+
+
+Definition at line 142 of file design\+\_\+flow\+\_\+manager.\+hpp.
+
+
+
+Referenced by Exec().
+
+\mbox{\Hypertarget{classDesignFlowManager_a7f27cfe1cb613464bd12f024a14a1ac0}\label{classDesignFlowManager_a7f27cfe1cb613464bd12f024a14a1ac0}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!step\+\_\+counter@{step\+\_\+counter}}
+\index{step\+\_\+counter@{step\+\_\+counter}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{step\+\_\+counter}{step\_counter}}
+{\footnotesize\ttfamily \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} Design\+Flow\+Manager\+::step\+\_\+counter = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+N\+O\+TE\+: static should be removed when all the design flow managers will be merged Counter of current iteration. 
+
+
+
+Definition at line 98 of file design\+\_\+flow\+\_\+manager.\+hpp.
+
+
+
+Referenced by Design\+Flow\+Manager(), Exec(), and Recursively\+Add\+Steps().
+
+\mbox{\Hypertarget{classDesignFlowManager_aab1b4d4f34b44e99076f1c8c0bef18f0}\label{classDesignFlowManager_aab1b4d4f34b44e99076f1c8c0bef18f0}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!step\+\_\+names@{step\+\_\+names}}
+\index{step\+\_\+names@{step\+\_\+names}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{step\+\_\+names}{step\_names}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, std\+::string$>$ Design\+Flow\+Manager\+::step\+\_\+names\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The name of each vertex (we have to store since it is possible that it cannot be recomputed at the end -\/ for example because the corresponding task graph has been deallocated) 
+
+
+
+Definition at line 130 of file design\+\_\+flow\+\_\+manager.\+hpp.
+
+
+
+Referenced by Design\+Flow\+Manager(), Exec(), and Recursively\+Add\+Steps().
+
+\mbox{\Hypertarget{classDesignFlowManager_aa583fc57e8f7514426a8b1891ae0bffd}\label{classDesignFlowManager_aa583fc57e8f7514426a8b1891ae0bffd}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!success\+\_\+executions@{success\+\_\+executions}}
+\index{success\+\_\+executions@{success\+\_\+executions}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{success\+\_\+executions}{success\_executions}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}$>$ Design\+Flow\+Manager\+::success\+\_\+executions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The number of times each step is executed with success. 
+
+
+
+Definition at line 136 of file design\+\_\+flow\+\_\+manager.\+hpp.
+
+
+
+Referenced by Exec().
+
+\mbox{\Hypertarget{classDesignFlowManager_a5d95ea33043a9a5b10a583d0601ab0f3}\label{classDesignFlowManager_a5d95ea33043a9a5b10a583d0601ab0f3}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!unchanged\+\_\+executions@{unchanged\+\_\+executions}}
+\index{unchanged\+\_\+executions@{unchanged\+\_\+executions}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{unchanged\+\_\+executions}{unchanged\_executions}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}$>$ Design\+Flow\+Manager\+::unchanged\+\_\+executions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The number of times each step is executed with unchanged exit. 
+
+
+
+Definition at line 139 of file design\+\_\+flow\+\_\+manager.\+hpp.
+
+
+
+Referenced by Exec().
+
+\mbox{\Hypertarget{classDesignFlowManager_a2ca7c1db5d0b6cbea2c118601cbe1948}\label{classDesignFlowManager_a2ca7c1db5d0b6cbea2c118601cbe1948}} 
+\index{Design\+Flow\+Manager@{Design\+Flow\+Manager}!vertex\+\_\+history@{vertex\+\_\+history}}
+\index{vertex\+\_\+history@{vertex\+\_\+history}!Design\+Flow\+Manager@{Design\+Flow\+Manager}}
+\subsubsection{\texorpdfstring{vertex\+\_\+history}{vertex\_history}}
+{\footnotesize\ttfamily \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$\hyperlink{tutorial__fpt__2017_2intro_2sixth_2test_8c_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}, \hyperlink{custom__map_8hpp_a18ca01763abbe3e5623223bfe5aaac6b}{Custom\+Map}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status}$>$ $>$ Design\+Flow\+Manager\+::vertex\+\_\+history\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This structure stores \char`\"{}history of design flow graph manager -\/ vertices\char`\"{} First key is the iteration Second key is the vertex If a vertex is not present in a iteration, it was not yet been created The first value is the status. 
+
+
+
+Definition at line 121 of file design\+\_\+flow\+\_\+manager.\+hpp.
+
+
+
+Referenced by Exec().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/\hyperlink{design__flow__manager_8hpp}{design\+\_\+flow\+\_\+manager.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/design\+\_\+flows/\hyperlink{design__flow__manager_8cpp}{design\+\_\+flow\+\_\+manager.\+cpp}\end{DoxyCompactItemize}

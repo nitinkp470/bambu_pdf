@@ -1,0 +1,200 @@
+\hypertarget{classOpReachabilityComputation}{}\section{Op\+Reachability\+Computation Class Reference}
+\label{classOpReachabilityComputation}\index{Op\+Reachability\+Computation@{Op\+Reachability\+Computation}}
+
+
+Superclass include.  
+
+
+
+
+{\ttfamily \#include $<$op\+\_\+reachability\+\_\+computation.\+hpp$>$}
+
+
+
+Inheritance diagram for Op\+Reachability\+Computation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{d1/d66/classOpReachabilityComputation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Op\+Reachability\+Computation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d89/classOpReachabilityComputation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOpReachabilityComputation_aa13c82cc0275ae96b5c315158d272419}{Op\+Reachability\+Computation} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref} \hyperlink{classFrontendFlowStep_a0ac0d8db2a378416583f51c4faa59d15}{AppM}, unsigned int \hyperlink{classFunctionFrontendFlowStep_a58ef2383ad1a212a8d3f396625a4b616}{function\+\_\+id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classOpReachabilityComputation_a69178b27ad4de132945101c219f92f8e}{$\sim$\+Op\+Reachability\+Computation} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classOpReachabilityComputation_a64280ac1c3901738ef28fd4aaaece2d8}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classOpReachabilityComputation_ae8ff7b0bd968398819a90254ac482e5c}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Computes the reachability between operations according to the control flow graph W\+I\+T\+H\+O\+UT feedback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Function\+Relationship} $>$ $>$ \hyperlink{classOpReachabilityComputation_a27d746a81ee9baa814405b99ef003131}{Compute\+Frontend\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Superclass include. 
+
+Computes reachability between operations according to the extended control flow graph An operation inside a loop reaches all the operation after the loop An operation inside a loop does not reach all the operation inside the loop but which are not reachable without crossing a feedback edge 
+
+Definition at line 51 of file op\+\_\+reachability\+\_\+computation.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classOpReachabilityComputation_aa13c82cc0275ae96b5c315158d272419}\label{classOpReachabilityComputation_aa13c82cc0275ae96b5c315158d272419}} 
+\index{Op\+Reachability\+Computation@{Op\+Reachability\+Computation}!Op\+Reachability\+Computation@{Op\+Reachability\+Computation}}
+\index{Op\+Reachability\+Computation@{Op\+Reachability\+Computation}!Op\+Reachability\+Computation@{Op\+Reachability\+Computation}}
+\subsubsection{\texorpdfstring{Op\+Reachability\+Computation()}{OpReachabilityComputation()}}
+{\footnotesize\ttfamily Op\+Reachability\+Computation\+::\+Op\+Reachability\+Computation (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+\+Param,  }\item[{const \hyperlink{application__manager_8hpp_a04ccad4e5ee401e8934306672082c180}{application\+\_\+manager\+Ref}}]{\+\_\+\+AppM,  }\item[{unsigned int}]{\+\_\+function\+\_\+id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{\+\_\+design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Header include.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Param} & is the set of the parameters \\
+\hline
+{\em AppM} & is the application manager \\
+\hline
+{\em function\+\_\+id} & is the identifier of the function \\
+\hline
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager\\
+\hline
+\end{DoxyParams}
+. includes 
+
+Definition at line 49 of file op\+\_\+reachability\+\_\+computation.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+N\+O\+NE, G\+E\+T\+\_\+\+C\+L\+A\+SS, and $\sim$\+Op\+Reachability\+Computation().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/df4/classOpReachabilityComputation_aa13c82cc0275ae96b5c315158d272419_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOpReachabilityComputation_a69178b27ad4de132945101c219f92f8e}\label{classOpReachabilityComputation_a69178b27ad4de132945101c219f92f8e}} 
+\index{Op\+Reachability\+Computation@{Op\+Reachability\+Computation}!````~Op\+Reachability\+Computation@{$\sim$\+Op\+Reachability\+Computation}}
+\index{````~Op\+Reachability\+Computation@{$\sim$\+Op\+Reachability\+Computation}!Op\+Reachability\+Computation@{Op\+Reachability\+Computation}}
+\subsubsection{\texorpdfstring{$\sim$\+Op\+Reachability\+Computation()}{~OpReachabilityComputation()}}
+{\footnotesize\ttfamily Op\+Reachability\+Computation\+::$\sim$\+Op\+Reachability\+Computation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Op\+Reachability\+Computation().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/df4/classOpReachabilityComputation_a69178b27ad4de132945101c219f92f8e_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classOpReachabilityComputation_a27d746a81ee9baa814405b99ef003131}\label{classOpReachabilityComputation_a27d746a81ee9baa814405b99ef003131}} 
+\index{Op\+Reachability\+Computation@{Op\+Reachability\+Computation}!Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}}
+\index{Compute\+Frontend\+Relationships@{Compute\+Frontend\+Relationships}!Op\+Reachability\+Computation@{Op\+Reachability\+Computation}}
+\subsubsection{\texorpdfstring{Compute\+Frontend\+Relationships()}{ComputeFrontendRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::pair$<$ \hyperlink{frontend__flow__step_8hpp_afeb3716c693d2b2e4ed3e6d04c3b63bb}{Frontend\+Flow\+Step\+Type}, \hyperlink{classFrontendFlowStep_af7cf30f2023e5b99e637dc2058289ab0}{Frontend\+Flow\+Step\+::\+Function\+Relationship} $>$ $>$ Op\+Reachability\+Computation\+::\+Compute\+Frontend\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+This dependence is necessary to guarantee that \hyperlink{classFunctionBehavior_abac17bd921424216c7f67c0a7d276c6e}{Function\+Behavior\+::\+Check\+Reachability} can be used \hyperlink{classFunctionBehavior_abac17bd921424216c7f67c0a7d276c6e}{Function\+Behavior\+::\+Check\+Reachability} indeed uses map\+\_\+levels 
+
+Implements \hyperlink{classFrontendFlowStep_abeaff70b59734e462d347ed343dd700d}{Frontend\+Flow\+Step}.
+
+
+
+Definition at line 61 of file op\+\_\+reachability\+\_\+computation.\+cpp.
+
+
+
+References B\+B\+\_\+\+R\+E\+A\+C\+H\+A\+B\+I\+L\+I\+T\+Y\+\_\+\+C\+O\+M\+P\+U\+T\+A\+T\+I\+ON, Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, O\+P\+\_\+\+O\+R\+D\+E\+R\+\_\+\+C\+O\+M\+P\+U\+T\+A\+T\+I\+ON, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Frontend\+Flow\+Step\+::\+S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+\mbox{\Hypertarget{classOpReachabilityComputation_a64280ac1c3901738ef28fd4aaaece2d8}\label{classOpReachabilityComputation_a64280ac1c3901738ef28fd4aaaece2d8}} 
+\index{Op\+Reachability\+Computation@{Op\+Reachability\+Computation}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Op\+Reachability\+Computation@{Op\+Reachability\+Computation}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Op\+Reachability\+Computation\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 57 of file op\+\_\+reachability\+\_\+computation.\+cpp.
+
+\mbox{\Hypertarget{classOpReachabilityComputation_ae8ff7b0bd968398819a90254ac482e5c}\label{classOpReachabilityComputation_ae8ff7b0bd968398819a90254ac482e5c}} 
+\index{Op\+Reachability\+Computation@{Op\+Reachability\+Computation}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!Op\+Reachability\+Computation@{Op\+Reachability\+Computation}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} Op\+Reachability\+Computation\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes the reachability between operations according to the control flow graph W\+I\+T\+H\+O\+UT feedback. 
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFunctionFrontendFlowStep_a00612f7fb9eabbbc8ee7e39d34e5ac68}{Function\+Frontend\+Flow\+Step}.
+
+
+
+Definition at line 87 of file op\+\_\+reachability\+\_\+computation.\+cpp.
+
+
+
+References E\+M\+P\+TY.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/behavior\+\_\+analysis/\hyperlink{op__reachability__computation_8hpp}{op\+\_\+reachability\+\_\+computation.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/frontend\+\_\+analysis/behavior\+\_\+analysis/\hyperlink{op__reachability__computation_8cpp}{op\+\_\+reachability\+\_\+computation.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,1917 @@
+\hypertarget{classconn__binding}{}\section{conn\+\_\+binding Class Reference}
+\label{classconn__binding}\index{conn\+\_\+binding@{conn\+\_\+binding}}
+
+
+Class managing the interconnection binding.  
+
+
+
+
+{\ttfamily \#include $<$conn\+\_\+binding.\+hpp$>$}
+
+
+
+Inheritance diagram for conn\+\_\+binding\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{d8/d09/classconn__binding__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for conn\+\_\+binding\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db7/classconn__binding__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structconn__binding_1_1ConnectionSorter}{Connection\+Sorter}
+\begin{DoxyCompactList}\small\item\em definition of the connection implementations \end{DoxyCompactList}\item 
+struct \hyperlink{structconn__binding_1_1ConnectionTarget}{Connection\+Target}
+\begin{DoxyCompactList}\small\item\em definition of target of a connection \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663}{direction\+\_\+type} \{ \hyperlink{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663aa68bce108f8394f35145f4342546beac}{IN} = 0, 
+\hyperlink{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663a754ed18cd3b2e1d50168f142fce6b00a}{O\+UT}
+ \}\begin{DoxyCompactList}\small\item\em direction port identifier \end{DoxyCompactList}
+\item 
+enum \hyperlink{classconn__binding_ab68bc4dff16c46775bdd39f61d5ff7bf}{type\+\_\+t} \{ \hyperlink{classconn__binding_ab68bc4dff16c46775bdd39f61d5ff7bfab2003934da8adbe0ac312330dc834eb9}{S\+TG} = 0
+ \}\begin{DoxyCompactList}\small\item\em type of the datastructure \end{DoxyCompactList}
+\item 
+typedef std\+::tuple$<$ \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}, unsigned int, unsigned int $>$ \hyperlink{classconn__binding_aefee92bcc9e59d19b7a3e55e2cbdf615}{connection}
+\begin{DoxyCompactList}\small\item\em connection between two objects ($<$src, tgt, tgt\+\_\+port, tgt\+\_\+port\+\_\+index$>$) \end{DoxyCompactList}\item 
+typedef std\+::map$<$ \hyperlink{classconn__binding_aefee92bcc9e59d19b7a3e55e2cbdf615}{connection}, \hyperlink{connection__obj_8hpp_af3c6e389c8543ed97dd9ba412f2c141b}{connection\+\_\+obj\+Ref}, \hyperlink{structconn__binding_1_1ConnectionSorter}{Connection\+Sorter} $>$ \hyperlink{classconn__binding_a352bfe56b0a7f7b3c9763bf90c87f785}{conn\+\_\+implementation\+\_\+map}
+\item 
+typedef std\+::tuple$<$ std\+::string, std\+::string $>$ \hyperlink{classconn__binding_a08cb5241cd588e215f61ab30d27a14c0}{const\+\_\+param}
+\begin{DoxyCompactList}\small\item\em definition of the key to deal with constant parameters \end{DoxyCompactList}\item 
+typedef std\+::map$<$ \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{conn__binding_8hpp_ae44ffa64566f2bb3ce6941833ac940fb}{data\+\_\+transfer} $>$, \hyperlink{classGenericObjSorter}{Generic\+Obj\+Sorter} $>$ \hyperlink{classconn__binding_aa5406c3bf4cee893234c2b0847471f56}{Connection\+Sources}
+\begin{DoxyCompactList}\small\item\em definition of sources of a connection \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classconn__binding_aa06a50cd09bec55b1e4d968963abaf55}{conn\+\_\+binding} (const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} \hyperlink{classconn__binding_a10ef50de9953e2267264484077bdbfdb}{BH}, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classconn__binding_a2fea3ae9e3d6941856636531c50c6ff6}{parameters})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classconn__binding_ae2443ca6da548b0dbbabbdc9253c4d1e}{$\sim$conn\+\_\+binding} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} \hyperlink{classconn__binding_a15ab7a8e03857a8a11ce016944f7aaab}{bind\+\_\+port} (unsigned int var, \hyperlink{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663}{direction\+\_\+type} dir)
+\begin{DoxyCompactList}\small\item\em Bind variable to a port object. \end{DoxyCompactList}\item 
+\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} \hyperlink{classconn__binding_ac7b383c69e3484e71b5f4d474af6c2f4}{bind\+\_\+command\+\_\+port} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&ver, \hyperlink{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663}{direction\+\_\+type} dir, unsigned int mode, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} g)
+\begin{DoxyCompactList}\small\item\em Bind vertex to a command port object. \end{DoxyCompactList}\item 
+\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} \hyperlink{classconn__binding_ad6d2c05551ea948d7ce6b4e015292e5e}{bind\+\_\+selector\+\_\+port} (\hyperlink{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663}{direction\+\_\+type} dir, unsigned int mode, const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&ver, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} data)
+\item 
+\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} \hyperlink{classconn__binding_a723f7511cfb4dd34de9be43801fea518}{bind\+\_\+selector\+\_\+port} (\hyperlink{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663}{direction\+\_\+type} dir, unsigned int mode, const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} elem, unsigned int op)
+\item 
+\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} \hyperlink{classconn__binding_a0a23777374b0ac3c3c9811bbeb2c3137}{get\+\_\+port} (unsigned int var, \hyperlink{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663}{direction\+\_\+type} dir)
+\begin{DoxyCompactList}\small\item\em Returns reference to generic object associated to a given variable, for a specific port direction. \end{DoxyCompactList}\item 
+\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} \hyperlink{classconn__binding_a24e43a95958793e3557d9d01626f37f6}{get\+\_\+command\+\_\+port} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&ver, \hyperlink{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663}{direction\+\_\+type} dir, unsigned int mode)
+\begin{DoxyCompactList}\small\item\em Returns reference to generic object associated to a given vertex, for a specific port direction. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classconn__binding_a61f18502e0796a50790c50cf2ed77e9f}{get\+\_\+to\+\_\+controller\+\_\+ports} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of connections from the datapath to the controller. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::pair$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, unsigned int $>$, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} $>$ \hyperlink{classconn__binding_a71efbb9e5b43e9ae3978786144178b64}{get\+\_\+command\+\_\+input\+\_\+ports} () const
+\begin{DoxyCompactList}\small\item\em Returns the list of connections from the controller to the datapath. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classconn__binding_a1e5c6ff971f65ab857d0c599b97e9e88}{get\+\_\+from\+\_\+controller\+\_\+ports} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of connections from the controller to the datapath. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classconn__binding_afa60c298700898adbe9f7c03a4b5cd48}{print} () const
+\begin{DoxyCompactList}\small\item\em Function that prints the interconnection binding. \end{DoxyCompactList}\item 
+void \hyperlink{classconn__binding_a43c6611fbbb3ee279fb4a87c1940a0a1}{add\+\_\+data\+\_\+transfer} (const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} op1, const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} op2, unsigned int operand, unsigned int port\+\_\+index, \hyperlink{conn__binding_8hpp_ae44ffa64566f2bb3ce6941833ac940fb}{data\+\_\+transfer} data)
+\begin{DoxyCompactList}\small\item\em Adds a data transfer between two objects. \end{DoxyCompactList}\item 
+void \hyperlink{classconn__binding_a2ca6e2f49d291760b4455cea98baebea}{add\+\_\+connection} (const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} op1, const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} op2, unsigned int operand, unsigned int port\+\_\+index, \hyperlink{connection__obj_8hpp_af3c6e389c8543ed97dd9ba412f2c141b}{connection\+\_\+obj\+Ref} conn)
+\begin{DoxyCompactList}\small\item\em Creates a connection between two objects. \end{DoxyCompactList}\item 
+\hyperlink{connection__obj_8hpp_af3c6e389c8543ed97dd9ba412f2c141b}{connection\+\_\+obj\+Ref} \hyperlink{classconn__binding_a39a42582d79c8e8cb85017f32ec7c56c}{get\+\_\+connection} (const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} op1, const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} op2, unsigned int operand, unsigned int port\+\_\+index) const
+\begin{DoxyCompactList}\small\item\em Return the current connection between two objects, if any. \end{DoxyCompactList}\item 
+bool \hyperlink{classconn__binding_a01c01d9417e2ec21be4329bae19336ae}{is\+\_\+connection} (const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} op1, const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} op2, unsigned int operand, unsigned int port\+\_\+index) const
+\begin{DoxyCompactList}\small\item\em Checks if there is a connection between two objects. \end{DoxyCompactList}\item 
+const std\+::map$<$ \hyperlink{structconn__binding_1_1ConnectionTarget}{Connection\+Target}, \hyperlink{classconn__binding_aa5406c3bf4cee893234c2b0847471f56}{Connection\+Sources} $>$ \& \hyperlink{classconn__binding_a3d80a579f44ae487ed5419b560ad5d26}{get\+\_\+data\+\_\+transfers} () const
+\begin{DoxyCompactList}\small\item\em Returns the map containing all the data transfers. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classconn__binding_a6caea0ccfc30f9ef2d3a1a6452f08cb3}{determine\+\_\+bit\+\_\+level\+\_\+mux} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of bit-\/level multiplexers. \end{DoxyCompactList}\item 
+const \hyperlink{classconn__binding_a352bfe56b0a7f7b3c9763bf90c87f785}{conn\+\_\+implementation\+\_\+map} \& \hyperlink{classconn__binding_ad5bc96e38fd8c49069bea634be25e3b0}{get\+\_\+connection\+\_\+implementations} () const
+\begin{DoxyCompactList}\small\item\em Returns the map containing all the connection implementations. \end{DoxyCompactList}\item 
+void \hyperlink{classconn__binding_a31cfcf41327aa36e1c1db32f175ef001}{add\+\_\+command\+\_\+port} (const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} obj)
+\begin{DoxyCompactList}\small\item\em Adds a generic command port to proper set. \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} $>$ \hyperlink{classconn__binding_a1f0458cf4aaf63d2786931ad13d1ae71}{get\+\_\+command\+\_\+ports} () const
+\begin{DoxyCompactList}\small\item\em Returns set of generic command ports. \end{DoxyCompactList}\item 
+const std\+::map$<$ unsigned int, \hyperlink{classconn__binding_a1994d72baf506bcb1d94e0cfede4258b}{Selectors} $>$ \& \hyperlink{classconn__binding_acc27af44bcec7ebad475db78c098ce59}{Get\+Selectors} () const
+\item 
+unsigned int \hyperlink{classconn__binding_ae44e000813aa8342a78b2dee1009c66b}{get\+\_\+component\+\_\+num} (const std\+::string \&type) const
+\item 
+void \hyperlink{classconn__binding_a0d6764ed3f41fa21e131a4a5c3a84978}{add\+\_\+component} (const std\+::string \&type, unsigned int num=1)
+\item 
+void \hyperlink{classconn__binding_ab42e47f8c1b558caf9029baed9c59705}{add\+\_\+sparse\+\_\+logic} (const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} so)
+\item 
+const std\+::map$<$ std\+::string, unsigned int $>$ \& \hyperlink{classconn__binding_a26e9ce42b031e5b5051a6e4aad81c0bd}{get\+\_\+components} () const
+\item 
+virtual void \hyperlink{classconn__binding_aaf898285e246aa69fd49c271cfb8b0bc}{add\+\_\+to\+\_\+\+SM} (const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} H\+L\+S\+Mgr, const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} H\+LS, const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} SM)
+\begin{DoxyCompactList}\small\item\em Add the interconnection to the structural representation of the datapath. \end{DoxyCompactList}\item 
+\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} \hyperlink{classconn__binding_ae385543cd719612dd44a8a54b3df8ad8}{get\+\_\+constant\+\_\+obj} (const std\+::string \&value, const std\+::string \&param, unsigned int precision)
+\item 
+std\+::map$<$ \hyperlink{classconn__binding_a08cb5241cd588e215f61ab30d27a14c0}{const\+\_\+param}, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} $>$ \hyperlink{classconn__binding_a46ef802caccfc0f0fb9625b0ba99e5eb}{get\+\_\+constant\+\_\+objs} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{conn__binding_8hpp_a074d084f1d6f4503d815ba91304264a0}{conn\+\_\+binding\+Ref} \hyperlink{classconn__binding_af189b02ddea6e39918e098877b96b73c}{create\+\_\+conn\+\_\+binding} (const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} \+\_\+\+H\+L\+S\+Mgr, const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} \+\_\+\+H\+LS, const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} \+\_\+\+BH, const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \+\_\+parameters)
+\begin{DoxyCompactList}\small\item\em factory method to create the right \hyperlink{classconn__binding}{conn\+\_\+binding} depending on the flow \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ std\+::pair$<$ \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}, unsigned int $>$, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}, \hyperlink{classGenericObjUnsignedIntSorter}{Generic\+Obj\+Unsigned\+Int\+Sorter} $>$ \hyperlink{classconn__binding_a1994d72baf506bcb1d94e0cfede4258b}{Selectors}
+\begin{DoxyCompactList}\small\item\em selector ports \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classconn__binding_ae9a6eb2b8e5eb480e94a8a1f04ce58e4}{specialise\+\_\+mux} (const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} mux, unsigned int bits\+\_\+tgt) const
+\begin{DoxyCompactList}\small\item\em Specialise a multiplexer according to the type of the variables crossing it. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classconn__binding_a81141f5a9d7905a26c53d13123c286b6}{get\+\_\+mux\+\_\+size} (const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} mux) const
+\begin{DoxyCompactList}\small\item\em Specialise a multiplexer according to the type of the variables crossing it. \end{DoxyCompactList}\item 
+void \hyperlink{classconn__binding_ab815fc2d481fffaa79d9659e3808616b}{mux\+\_\+connection} (const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} H\+LS, const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} SM)
+\begin{DoxyCompactList}\small\item\em Add the mux-\/based interconnection. \end{DoxyCompactList}\item 
+void \hyperlink{classconn__binding_a393ed99302e52c270d5756f789f2fc76}{add\+\_\+sparse\+\_\+logic\+\_\+dp} (const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} H\+LS, const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} SM, const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} H\+L\+S\+Mgr)
+\begin{DoxyCompactList}\small\item\em Add sparse logic to the datapath. \end{DoxyCompactList}\item 
+void \hyperlink{classconn__binding_abad9d4010da617d55dd3ba1a1eaf3bf1}{add\+\_\+command\+\_\+ports} (const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} H\+L\+S\+Mgr, const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} H\+LS, const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} SM)
+\begin{DoxyCompactList}\small\item\em Add signals from/to controller. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classconn__binding_a58f8b4130f06326232baabc4cf18730e}{mux\+\_\+allocation} (const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref} H\+LS, const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} SM, \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} src, \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} tgt, \hyperlink{connection__obj_8hpp_af3c6e389c8543ed97dd9ba412f2c141b}{connection\+\_\+obj\+Ref} conn)
+\begin{DoxyCompactList}\small\item\em Add multiplexers to the structural representation of the datapath. \end{DoxyCompactList}\item 
+void \hyperlink{classconn__binding_a9b8d9e4a2740b3cef8f4242be0c06dda}{add\+\_\+datapath\+\_\+connection} (const \hyperlink{technology__manager_8hpp_a4b9ecd440c804109c962654f9227244e}{technology\+\_\+manager\+Ref} TM, const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} SM, const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} conn\+\_\+out, const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} port\+\_\+tgt, unsigned int conn\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Add a data converter, if needed, between two objects of the structural representation of the datapath. \end{DoxyCompactList}\item 
+bool \hyperlink{classconn__binding_af11f0bf92436cc8c5b6eb7002544f3dc}{check\+\_\+pv\+\_\+allconnected} (\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} port\+\_\+i)
+\begin{DoxyCompactList}\small\item\em check if a port vector has its port bounded to something \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} \hyperlink{classconn__binding_a2fea3ae9e3d6941856636531c50c6ff6}{parameters}
+\begin{DoxyCompactList}\small\item\em The set of input parameters. \end{DoxyCompactList}\item 
+int \hyperlink{classconn__binding_af0b05f77221d5cd5eff651b767d039d7}{debug\+\_\+level}
+\begin{DoxyCompactList}\small\item\em control the verbosity during the debugging \end{DoxyCompactList}\item 
+int \hyperlink{classconn__binding_a60cfb5c986070b396f335e790e99a034}{output\+\_\+level}
+\begin{DoxyCompactList}\small\item\em control the output verbosity \end{DoxyCompactList}\item 
+const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} \hyperlink{classconn__binding_a10ef50de9953e2267264484077bdbfdb}{BH}
+\begin{DoxyCompactList}\small\item\em reference to the behavioral helper associated with the specification \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, std\+::map$<$ unsigned int, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} $>$ $>$ \hyperlink{classconn__binding_ac0b9f48b56e603ba299ae97f439247a7}{activation\+\_\+ports}
+\begin{DoxyCompactList}\small\item\em map between a vertex and the corresponding activation signal \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} $>$ \hyperlink{classconn__binding_a829b8672c7f9b2d48e0583cf39e1e768}{input\+\_\+ports}
+\begin{DoxyCompactList}\small\item\em map between input port variable and generic object \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} $>$ \hyperlink{classconn__binding_af6e110c11925ff778bb1f895d1dc078f}{output\+\_\+ports}
+\begin{DoxyCompactList}\small\item\em map between output port variable and generic object \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{classconn__binding_a08cb5241cd588e215f61ab30d27a14c0}{const\+\_\+param}, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} $>$ \hyperlink{classconn__binding_a4f1b9a9fec4cdc7cbac192dd943aed23}{constant\+\_\+values}
+\begin{DoxyCompactList}\small\item\em constant values \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} $>$ \hyperlink{classconn__binding_a00109a76f23a1c32f8c7d1a85bf2c290}{converters}
+\begin{DoxyCompactList}\small\item\em data type converters \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::pair$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, unsigned int $>$, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} $>$ \hyperlink{classconn__binding_a37d4850b1509016aefb78063be87bf97}{command\+\_\+input\+\_\+ports}
+\begin{DoxyCompactList}\small\item\em map between command input port (operation vertex and command type) and generic object \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} $>$ \hyperlink{classconn__binding_ad312dee69a14b9c6598f5af99308a87a}{command\+\_\+output\+\_\+ports}
+\begin{DoxyCompactList}\small\item\em map between output port variable and generic object \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::pair$<$ std\+::string, unsigned int $>$, unsigned int $>$ \hyperlink{classconn__binding_a19b042a73e19efd030ac8d76527dea10}{interconnection\+\_\+elements}
+\begin{DoxyCompactList}\small\item\em map between interconnection elements and their number \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} $>$ \hyperlink{classconn__binding_a87dd4f0563999fbb03571769db2372ba}{command\+\_\+ports}
+\begin{DoxyCompactList}\small\item\em set of other command ports \end{DoxyCompactList}\item 
+std\+::map$<$ unsigned int, \hyperlink{classconn__binding_a1994d72baf506bcb1d94e0cfede4258b}{Selectors} $>$ \hyperlink{classconn__binding_afeb17985cbcc1739c90e5428700aecfb}{selectors}
+\item 
+std\+::map$<$ std\+::string, unsigned int $>$ \hyperlink{classconn__binding_a9bda1f1b0572a64f1f47e32079bbfb36}{component\+\_\+num}
+\begin{DoxyCompactList}\small\item\em map between a resource name and the corresponding number of instances inside the datapath \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}, \hyperlink{classGenericObjSorter}{Generic\+Obj\+Sorter} $>$ \hyperlink{classconn__binding_a6f2b90952b7cb790fe4fabe7399ea90c}{sparse\+\_\+logic}
+\begin{DoxyCompactList}\small\item\em set containing all the sparse logic contained into the datapath \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{structconn__binding_1_1ConnectionTarget}{Connection\+Target}, \hyperlink{classconn__binding_aa5406c3bf4cee893234c2b0847471f56}{Connection\+Sources} $>$ \hyperlink{classconn__binding_a898c3972aa4e06c44a5154132e476471}{conn\+\_\+variables}
+\begin{DoxyCompactList}\small\item\em map between the input of the unit and the corresponding incoming connections. \end{DoxyCompactList}\item 
+\hyperlink{classconn__binding_a352bfe56b0a7f7b3c9763bf90c87f785}{conn\+\_\+implementation\+\_\+map} \hyperlink{classconn__binding_a029160ea56f0b1c2f3044e467276daa1}{conn\+\_\+implementation}
+\begin{DoxyCompactList}\small\item\em map between the connection $<$src, tgt, tgt\+\_\+port, tgt\+\_\+port\+\_\+index$>$ and the corresponding object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned \hyperlink{classconn__binding_a3c372bf7271e49d0d73a667dafac8449}{unique\+\_\+id} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class managing the interconnection binding. 
+
+Definition at line 77 of file conn\+\_\+binding.\+hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classconn__binding_a352bfe56b0a7f7b3c9763bf90c87f785}\label{classconn__binding_a352bfe56b0a7f7b3c9763bf90c87f785}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!conn\+\_\+implementation\+\_\+map@{conn\+\_\+implementation\+\_\+map}}
+\index{conn\+\_\+implementation\+\_\+map@{conn\+\_\+implementation\+\_\+map}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{conn\+\_\+implementation\+\_\+map}{conn\_implementation\_map}}
+{\footnotesize\ttfamily typedef std\+::map$<$\hyperlink{classconn__binding_aefee92bcc9e59d19b7a3e55e2cbdf615}{connection}, \hyperlink{connection__obj_8hpp_af3c6e389c8543ed97dd9ba412f2c141b}{connection\+\_\+obj\+Ref}, \hyperlink{structconn__binding_1_1ConnectionSorter}{Connection\+Sorter}$>$ \hyperlink{classconn__binding_a352bfe56b0a7f7b3c9763bf90c87f785}{conn\+\_\+binding\+::conn\+\_\+implementation\+\_\+map}}
+
+
+
+Definition at line 113 of file conn\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{classconn__binding_aefee92bcc9e59d19b7a3e55e2cbdf615}\label{classconn__binding_aefee92bcc9e59d19b7a3e55e2cbdf615}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!connection@{connection}}
+\index{connection@{connection}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{connection}{connection}}
+{\footnotesize\ttfamily typedef std\+::tuple$<$\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}, unsigned int, unsigned int$>$ \hyperlink{classconn__binding_aefee92bcc9e59d19b7a3e55e2cbdf615}{conn\+\_\+binding\+::connection}}
+
+
+
+connection between two objects ($<$src, tgt, tgt\+\_\+port, tgt\+\_\+port\+\_\+index$>$) 
+
+
+
+Definition at line 94 of file conn\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{classconn__binding_aa5406c3bf4cee893234c2b0847471f56}\label{classconn__binding_aa5406c3bf4cee893234c2b0847471f56}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!Connection\+Sources@{Connection\+Sources}}
+\index{Connection\+Sources@{Connection\+Sources}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{Connection\+Sources}{ConnectionSources}}
+{\footnotesize\ttfamily typedef std\+::map$<$\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{conn__binding_8hpp_ae44ffa64566f2bb3ce6941833ac940fb}{data\+\_\+transfer}$>$, \hyperlink{classGenericObjSorter}{Generic\+Obj\+Sorter}$>$ \hyperlink{classconn__binding_aa5406c3bf4cee893234c2b0847471f56}{conn\+\_\+binding\+::\+Connection\+Sources}}
+
+
+
+definition of sources of a connection 
+
+
+
+Definition at line 143 of file conn\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{classconn__binding_a08cb5241cd588e215f61ab30d27a14c0}\label{classconn__binding_a08cb5241cd588e215f61ab30d27a14c0}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!const\+\_\+param@{const\+\_\+param}}
+\index{const\+\_\+param@{const\+\_\+param}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{const\+\_\+param}{const\_param}}
+{\footnotesize\ttfamily typedef std\+::tuple$<$std\+::string, std\+::string$>$ \hyperlink{classconn__binding_a08cb5241cd588e215f61ab30d27a14c0}{conn\+\_\+binding\+::const\+\_\+param}}
+
+
+
+definition of the key to deal with constant parameters 
+
+
+
+Definition at line 117 of file conn\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{classconn__binding_a1994d72baf506bcb1d94e0cfede4258b}\label{classconn__binding_a1994d72baf506bcb1d94e0cfede4258b}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!Selectors@{Selectors}}
+\index{Selectors@{Selectors}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{Selectors}{Selectors}}
+{\footnotesize\ttfamily typedef std\+::map$<$std\+::pair$<$\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}, unsigned int$>$, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}, \hyperlink{classGenericObjUnsignedIntSorter}{Generic\+Obj\+Unsigned\+Int\+Sorter}$>$ \hyperlink{classconn__binding_a1994d72baf506bcb1d94e0cfede4258b}{conn\+\_\+binding\+::\+Selectors}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+selector ports 
+
+
+
+Definition at line 190 of file conn\+\_\+binding.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663}\label{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!direction\+\_\+type@{direction\+\_\+type}}
+\index{direction\+\_\+type@{direction\+\_\+type}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{direction\+\_\+type}{direction\_type}}
+{\footnotesize\ttfamily enum \hyperlink{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663}{conn\+\_\+binding\+::direction\+\_\+type}}
+
+
+
+direction port identifier 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IN@{IN}!conn\+\_\+binding@{conn\+\_\+binding}}\index{conn\+\_\+binding@{conn\+\_\+binding}!IN@{IN}}}\mbox{\Hypertarget{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663aa68bce108f8394f35145f4342546beac}\label{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663aa68bce108f8394f35145f4342546beac}} 
+IN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+UT@{O\+UT}!conn\+\_\+binding@{conn\+\_\+binding}}\index{conn\+\_\+binding@{conn\+\_\+binding}!O\+UT@{O\+UT}}}\mbox{\Hypertarget{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663a754ed18cd3b2e1d50168f142fce6b00a}\label{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663a754ed18cd3b2e1d50168f142fce6b00a}} 
+O\+UT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 81 of file conn\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{classconn__binding_ab68bc4dff16c46775bdd39f61d5ff7bf}\label{classconn__binding_ab68bc4dff16c46775bdd39f61d5ff7bf}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!type\+\_\+t@{type\+\_\+t}}
+\index{type\+\_\+t@{type\+\_\+t}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{type\+\_\+t}{type\_t}}
+{\footnotesize\ttfamily enum \hyperlink{classconn__binding_ab68bc4dff16c46775bdd39f61d5ff7bf}{conn\+\_\+binding\+::type\+\_\+t}}
+
+
+
+type of the datastructure 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+TG@{S\+TG}!conn\+\_\+binding@{conn\+\_\+binding}}\index{conn\+\_\+binding@{conn\+\_\+binding}!S\+TG@{S\+TG}}}\mbox{\Hypertarget{classconn__binding_ab68bc4dff16c46775bdd39f61d5ff7bfab2003934da8adbe0ac312330dc834eb9}\label{classconn__binding_ab68bc4dff16c46775bdd39f61d5ff7bfab2003934da8adbe0ac312330dc834eb9}} 
+S\+TG&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 88 of file conn\+\_\+binding.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classconn__binding_aa06a50cd09bec55b1e4d968963abaf55}\label{classconn__binding_aa06a50cd09bec55b1e4d968963abaf55}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!conn\+\_\+binding@{conn\+\_\+binding}}
+\index{conn\+\_\+binding@{conn\+\_\+binding}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{conn\+\_\+binding()}{conn\_binding()}}
+{\footnotesize\ttfamily conn\+\_\+binding\+::conn\+\_\+binding (\begin{DoxyParamCaption}\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{BH,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{parameters }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 113 of file conn\+\_\+binding.\+cpp.
+
+
+
+Referenced by create\+\_\+conn\+\_\+binding().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_aa06a50cd09bec55b1e4d968963abaf55_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_ae2443ca6da548b0dbbabbdc9253c4d1e}\label{classconn__binding_ae2443ca6da548b0dbbabbdc9253c4d1e}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!````~conn\+\_\+binding@{$\sim$conn\+\_\+binding}}
+\index{````~conn\+\_\+binding@{$\sim$conn\+\_\+binding}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{$\sim$conn\+\_\+binding()}{~conn\_binding()}}
+{\footnotesize\ttfamily conn\+\_\+binding\+::$\sim$conn\+\_\+binding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by create\+\_\+conn\+\_\+binding().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_ae2443ca6da548b0dbbabbdc9253c4d1e_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classconn__binding_a31cfcf41327aa36e1c1db32f175ef001}\label{classconn__binding_a31cfcf41327aa36e1c1db32f175ef001}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!add\+\_\+command\+\_\+port@{add\+\_\+command\+\_\+port}}
+\index{add\+\_\+command\+\_\+port@{add\+\_\+command\+\_\+port}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{add\+\_\+command\+\_\+port()}{add\_command\_port()}}
+{\footnotesize\ttfamily void conn\+\_\+binding\+::add\+\_\+command\+\_\+port (\begin{DoxyParamCaption}\item[{const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a generic command port to proper set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & is refcount to \hyperlink{classgeneric__obj}{generic\+\_\+obj} class associated with port to be added \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 384 of file conn\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{classconn__binding_abad9d4010da617d55dd3ba1a1eaf3bf1}\label{classconn__binding_abad9d4010da617d55dd3ba1a1eaf3bf1}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!add\+\_\+command\+\_\+ports@{add\+\_\+command\+\_\+ports}}
+\index{add\+\_\+command\+\_\+ports@{add\+\_\+command\+\_\+ports}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{add\+\_\+command\+\_\+ports()}{add\_command\_ports()}}
+{\footnotesize\ttfamily void conn\+\_\+binding\+::add\+\_\+command\+\_\+ports (\begin{DoxyParamCaption}\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr,  }\item[{const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref}}]{H\+LS,  }\item[{const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref}}]{SM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add signals from/to controller. 
+
+define the type for boolean command signals
+
+check for start port
+
+if elem is a functional unit and has more than one operation, add a selector for each operation (e.\+g. selector\+\_\+\+L\+O\+A\+D\+\_\+1...)
+
+no port selector means that functional units can implement different operations without using a selector (i.\+e., it has several alias operation)
+
+output signals to the controller for condition evaluation 
+
+Definition at line 927 of file conn\+\_\+binding.\+cpp.
+
+
+
+References structural\+\_\+manager\+::add\+\_\+connection(), structural\+\_\+manager\+::add\+\_\+port(), structural\+\_\+manager\+::add\+\_\+sign(), hls\+::allocation\+\_\+information, BH, bind\+\_\+selector\+\_\+port(), Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), generic\+\_\+obj\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+P\+O\+RT, generic\+\_\+obj\+::\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+E\+L\+E\+M\+E\+NT, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Function\+Behavior\+::\+D\+FG, D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, structural\+\_\+object\+::find\+\_\+member(), generic\+\_\+obj\+::\+F\+U\+N\+C\+T\+I\+O\+N\+A\+L\+\_\+\+U\+N\+IT, hls\+::function\+Id, fu\+\_\+binding\+::get(), fu\+\_\+binding\+::get\+\_\+assign(), structural\+\_\+manager\+::get\+\_\+circ(), Allocation\+Information\+::get\+\_\+fu(), structural\+\_\+object\+::get\+\_\+id(), structural\+\_\+object\+::get\+\_\+kind(), technology\+\_\+manager\+::get\+\_\+library(), State\+Transition\+Graph\+Manager\+::get\+\_\+mu\+\_\+ctrls(), G\+E\+T\+\_\+\+N\+A\+ME, structural\+\_\+object\+::get\+\_\+owner(), structural\+\_\+object\+::get\+\_\+path(), get\+\_\+port(), port\+\_\+o\+::get\+\_\+port(), generic\+\_\+obj\+::get\+\_\+string(), generic\+\_\+obj\+::get\+\_\+structural\+\_\+obj(), generic\+\_\+obj\+::get\+\_\+type(), G\+E\+T\+\_\+\+T\+Y\+PE, hls\+::\+H\+L\+S\+\_\+T, IN, port\+\_\+o\+::\+IN, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, index, commandport\+\_\+obj\+::\+M\+U\+L\+T\+I\+\_\+\+U\+N\+B\+O\+U\+N\+D\+ED, commandport\+\_\+obj\+::\+M\+U\+L\+T\+I\+IF, tree\+\_\+helper\+::normalized\+\_\+\+I\+D(), hls\+::operations, O\+R\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD, O\+UT, port\+\_\+o\+::\+O\+UT, port\+\_\+o\+\_\+K, port\+\_\+vector\+\_\+o\+\_\+K, hls\+::\+Rconn, generic\+\_\+obj\+::\+R\+E\+G\+I\+S\+T\+ER, hls\+::\+Rfu, selectors, S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, hls\+::\+S\+TG, S\+TR, commandport\+\_\+obj\+::\+S\+W\+I\+T\+CH, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, top(), T\+Y\+P\+E\+\_\+\+E\+X\+T\+E\+R\+N\+AL, commandport\+\_\+obj\+::\+U\+N\+B\+O\+U\+N\+D\+ED, unique\+\_\+id, and W\+E\+N\+A\+B\+L\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME.
+
+
+
+Referenced by add\+\_\+to\+\_\+\+S\+M().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_abad9d4010da617d55dd3ba1a1eaf3bf1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_abad9d4010da617d55dd3ba1a1eaf3bf1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_a0d6764ed3f41fa21e131a4a5c3a84978}\label{classconn__binding_a0d6764ed3f41fa21e131a4a5c3a84978}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!add\+\_\+component@{add\+\_\+component}}
+\index{add\+\_\+component@{add\+\_\+component}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{add\+\_\+component()}{add\_component()}}
+{\footnotesize\ttfamily void conn\+\_\+binding\+::add\+\_\+component (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{type,  }\item[{unsigned int}]{num = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 272 of file conn\+\_\+binding.\+cpp.
+
+
+
+References component\+\_\+num, and test\+\_\+panda\+::type.
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding\+::add\+\_\+conversion(), mux\+\_\+connection\+\_\+binding\+::connect\+\_\+array\+\_\+index(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), mux\+\_\+connection\+\_\+binding\+::determine\+\_\+connection(), mux\+\_\+connection\+\_\+binding\+::dynamic\+\_\+multidimensional\+\_\+array\+\_\+handler(), Get\+Selectors(), and mux\+\_\+connection\+\_\+binding\+::input\+\_\+logic().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_a0d6764ed3f41fa21e131a4a5c3a84978_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_a2ca6e2f49d291760b4455cea98baebea}\label{classconn__binding_a2ca6e2f49d291760b4455cea98baebea}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!add\+\_\+connection@{add\+\_\+connection}}
+\index{add\+\_\+connection@{add\+\_\+connection}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{add\+\_\+connection()}{add\_connection()}}
+{\footnotesize\ttfamily void conn\+\_\+binding\+::add\+\_\+connection (\begin{DoxyParamCaption}\item[{const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{op1,  }\item[{const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{op2,  }\item[{unsigned int}]{operand,  }\item[{unsigned int}]{port\+\_\+index,  }\item[{\hyperlink{connection__obj_8hpp_af3c6e389c8543ed97dd9ba412f2c141b}{connection\+\_\+obj\+Ref}}]{conn }\end{DoxyParamCaption})}
+
+
+
+Creates a connection between two objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op1} & is reference to first object \\
+\hline
+{\em op2} & is reference to second object \\
+\hline
+{\em operand} & is i-\/th operand for second object, where first one is connected \\
+\hline
+{\em port\+\_\+index} & is i-\/th port associated with the operand (different from 0 when multi-\/channels components are considered) \\
+\hline
+{\em conn} & is the reference to the implemented connection \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 172 of file conn\+\_\+binding.\+cpp.
+
+
+
+References conn\+\_\+implementation, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, generic\+\_\+obj\+::get\+\_\+string(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, and S\+TR.
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding\+::input\+\_\+logic().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_a2ca6e2f49d291760b4455cea98baebea_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_a2ca6e2f49d291760b4455cea98baebea_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_a43c6611fbbb3ee279fb4a87c1940a0a1}\label{classconn__binding_a43c6611fbbb3ee279fb4a87c1940a0a1}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!add\+\_\+data\+\_\+transfer@{add\+\_\+data\+\_\+transfer}}
+\index{add\+\_\+data\+\_\+transfer@{add\+\_\+data\+\_\+transfer}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{add\+\_\+data\+\_\+transfer()}{add\_data\_transfer()}}
+{\footnotesize\ttfamily void conn\+\_\+binding\+::add\+\_\+data\+\_\+transfer (\begin{DoxyParamCaption}\item[{const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{op1,  }\item[{const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{op2,  }\item[{unsigned int}]{operand,  }\item[{unsigned int}]{port\+\_\+index,  }\item[{\hyperlink{conn__binding_8hpp_ae44ffa64566f2bb3ce6941833ac940fb}{data\+\_\+transfer}}]{data }\end{DoxyParamCaption})}
+
+
+
+Adds a data transfer between two objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op1} & is reference to first object \\
+\hline
+{\em op2} & is reference to second object \\
+\hline
+{\em operand} & is i-\/th operand for second object, where first one is connected \\
+\hline
+{\em port\+\_\+index} & is i-\/th port associated with the operand (different from 0 when multi-\/channels components are considered) \\
+\hline
+{\em data} & is the data to be transferred \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 157 of file conn\+\_\+binding.\+cpp.
+
+
+
+References conn\+\_\+variables.
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding\+::connect\+\_\+to\+\_\+registers(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), and mux\+\_\+connection\+\_\+binding\+::create\+\_\+single\+\_\+conn().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_a43c6611fbbb3ee279fb4a87c1940a0a1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_a9b8d9e4a2740b3cef8f4242be0c06dda}\label{classconn__binding_a9b8d9e4a2740b3cef8f4242be0c06dda}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!add\+\_\+datapath\+\_\+connection@{add\+\_\+datapath\+\_\+connection}}
+\index{add\+\_\+datapath\+\_\+connection@{add\+\_\+datapath\+\_\+connection}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{add\+\_\+datapath\+\_\+connection()}{add\_datapath\_connection()}}
+{\footnotesize\ttfamily void conn\+\_\+binding\+::add\+\_\+datapath\+\_\+connection (\begin{DoxyParamCaption}\item[{const \hyperlink{technology__manager_8hpp_a4b9ecd440c804109c962654f9227244e}{technology\+\_\+manager\+Ref}}]{TM,  }\item[{const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref}}]{SM,  }\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{conn\+\_\+out,  }\item[{const \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{port\+\_\+tgt,  }\item[{unsigned int}]{conn\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add a data converter, if needed, between two objects of the structural representation of the datapath. 
+
+fixing input stuff
+
+fixing output stuff 
+
+Definition at line 642 of file conn\+\_\+binding.\+cpp.
+
+
+
+References structural\+\_\+manager\+::add\+\_\+connection(), structural\+\_\+manager\+::add\+\_\+sign(), converters, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, structural\+\_\+manager\+::get\+\_\+circ(), structural\+\_\+object\+::get\+\_\+id(), structural\+\_\+object\+::get\+\_\+kind(), technology\+\_\+manager\+::get\+\_\+library(), structural\+\_\+type\+\_\+descriptor\+::get\+\_\+name(), structural\+\_\+object\+::get\+\_\+owner(), structural\+\_\+object\+::get\+\_\+path(), G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+I\+ZE, structural\+\_\+object\+::get\+\_\+type\+Ref(), I\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, structural\+\_\+type\+\_\+descriptor\+::\+I\+NT, I\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, port\+\_\+o\+\_\+K, structural\+\_\+type\+\_\+descriptor\+::\+R\+E\+AL, structural\+\_\+type\+\_\+descriptor\+::size, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, structural\+\_\+type\+\_\+descriptor\+::type, structural\+\_\+object\+::type\+\_\+resize(), U\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, U\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, and structural\+\_\+type\+\_\+descriptor\+::\+V\+E\+C\+T\+O\+R\+\_\+\+B\+O\+OL.
+
+
+
+Referenced by mux\+\_\+allocation(), and mux\+\_\+connection().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_a9b8d9e4a2740b3cef8f4242be0c06dda_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_a9b8d9e4a2740b3cef8f4242be0c06dda_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_ab42e47f8c1b558caf9029baed9c59705}\label{classconn__binding_ab42e47f8c1b558caf9029baed9c59705}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!add\+\_\+sparse\+\_\+logic@{add\+\_\+sparse\+\_\+logic}}
+\index{add\+\_\+sparse\+\_\+logic@{add\+\_\+sparse\+\_\+logic}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{add\+\_\+sparse\+\_\+logic()}{add\_sparse\_logic()}}
+{\footnotesize\ttfamily void conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic (\begin{DoxyParamCaption}\item[{const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{so }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 407 of file conn\+\_\+binding.\+hpp.
+
+
+
+References add\+\_\+to\+\_\+\+S\+M(), create\+\_\+conn\+\_\+binding(), get\+\_\+components(), get\+\_\+constant\+\_\+obj(), and get\+\_\+constant\+\_\+objs().
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding\+::add\+\_\+conversion(), mux\+\_\+connection\+\_\+binding\+::connect\+\_\+array\+\_\+index(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), mux\+\_\+connection\+\_\+binding\+::determine\+\_\+connection(), and mux\+\_\+connection\+\_\+binding\+::dynamic\+\_\+multidimensional\+\_\+array\+\_\+handler().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_ab42e47f8c1b558caf9029baed9c59705_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_ab42e47f8c1b558caf9029baed9c59705_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_a393ed99302e52c270d5756f789f2fc76}\label{classconn__binding_a393ed99302e52c270d5756f789f2fc76}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!add\+\_\+sparse\+\_\+logic\+\_\+dp@{add\+\_\+sparse\+\_\+logic\+\_\+dp}}
+\index{add\+\_\+sparse\+\_\+logic\+\_\+dp@{add\+\_\+sparse\+\_\+logic\+\_\+dp}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{add\+\_\+sparse\+\_\+logic\+\_\+dp()}{add\_sparse\_logic\_dp()}}
+{\footnotesize\ttfamily void conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic\+\_\+dp (\begin{DoxyParamCaption}\item[{const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref}}]{H\+LS,  }\item[{const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref}}]{SM,  }\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add sparse logic to the datapath. 
+
+specializing sparse module ports
+
+the multiplier in the resource library is pipelined, so we use the non-\/pipelined version by setting P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER to 0 
+
+Definition at line 743 of file conn\+\_\+binding.\+cpp.
+
+
+
+References generic\+\_\+obj\+::\+A\+D\+D\+E\+R\+\_\+\+C\+O\+N\+N\+\_\+\+O\+BJ, A\+S\+S\+I\+G\+N\+\_\+\+R\+E\+A\+L\+\_\+\+S\+TD, A\+S\+S\+I\+G\+N\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD, A\+S\+S\+I\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD, A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+\+B\+O\+O\+L\+\_\+\+S\+TD, generic\+\_\+obj\+::\+B\+I\+T\+F\+I\+E\+L\+D\+\_\+\+O\+BJ, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, Allocation\+Information\+::extract\+\_\+bambu\+\_\+provided\+\_\+name(), generic\+\_\+obj\+::\+F\+\_\+\+A\+S\+S\+I\+G\+N\+\_\+\+C\+O\+N\+N\+\_\+\+O\+BJ, generic\+\_\+obj\+::\+F\+F\+\_\+\+C\+O\+N\+V\+\_\+\+C\+O\+N\+N\+\_\+\+O\+BJ, F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, structural\+\_\+manager\+::get\+\_\+circ(), structural\+\_\+object\+::get\+\_\+path(), hls\+::\+H\+L\+S\+\_\+T, generic\+\_\+obj\+::\+I\+\_\+\+A\+S\+S\+I\+G\+N\+\_\+\+C\+O\+N\+N\+\_\+\+O\+BJ, generic\+\_\+obj\+::\+I\+I\+\_\+\+C\+O\+N\+V\+\_\+\+C\+O\+N\+N\+\_\+\+O\+BJ, I\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, generic\+\_\+obj\+::\+I\+U\+\_\+\+C\+O\+N\+V\+\_\+\+C\+O\+N\+N\+\_\+\+O\+BJ, I\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, generic\+\_\+obj\+::\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+C\+O\+N\+N\+\_\+\+O\+BJ, hls\+::\+Param, P\+I\+P\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER, S\+I\+G\+N\+E\+D\+\_\+\+B\+I\+T\+F\+I\+E\+L\+D\+\_\+\+F\+U\+\_\+\+S\+TD, sparse\+\_\+logic, S\+TR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, generic\+\_\+obj\+::\+U\+\_\+\+A\+S\+S\+I\+G\+N\+\_\+\+C\+O\+N\+N\+\_\+\+O\+BJ, U\+I\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD, U\+I\+\_\+\+A\+L\+I\+G\+N\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD, U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD, generic\+\_\+obj\+::\+U\+I\+\_\+\+C\+O\+N\+V\+\_\+\+C\+O\+N\+N\+\_\+\+O\+BJ, U\+I\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD, U\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, generic\+\_\+obj\+::\+U\+U\+\_\+\+C\+O\+N\+V\+\_\+\+C\+O\+N\+N\+\_\+\+O\+BJ, U\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER, and generic\+\_\+obj\+::\+V\+B\+\_\+\+A\+S\+S\+I\+G\+N\+\_\+\+C\+O\+N\+N\+\_\+\+O\+BJ.
+
+
+
+Referenced by add\+\_\+to\+\_\+\+S\+M().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_a393ed99302e52c270d5756f789f2fc76_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_a393ed99302e52c270d5756f789f2fc76_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_aaf898285e246aa69fd49c271cfb8b0bc}\label{classconn__binding_aaf898285e246aa69fd49c271cfb8b0bc}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!add\+\_\+to\+\_\+\+SM@{add\+\_\+to\+\_\+\+SM}}
+\index{add\+\_\+to\+\_\+\+SM@{add\+\_\+to\+\_\+\+SM}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{add\+\_\+to\+\_\+\+S\+M()}{add\_to\_SM()}}
+{\footnotesize\ttfamily void conn\+\_\+binding\+::add\+\_\+to\+\_\+\+SM (\begin{DoxyParamCaption}\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr,  }\item[{const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref}}]{H\+LS,  }\item[{const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref}}]{SM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add the interconnection to the structural representation of the datapath. 
+
+add command ports
+
+add sparse logic
+
+up to now, circuit is general about interconnections. Now, proper interconnection architecture will be executed 
+
+Reimplemented in \hyperlink{classconn__binding__cs_a1ab5041953556d30503a795859c3121c}{conn\+\_\+binding\+\_\+cs}, and \hyperlink{classParallelMemoryConnBinding_a269ef0bbe0925ec814787b9d3b5a54bf}{Parallel\+Memory\+Conn\+Binding}.
+
+
+
+Definition at line 315 of file conn\+\_\+binding.\+cpp.
+
+
+
+References add\+\_\+command\+\_\+ports(), structural\+\_\+manager\+::add\+\_\+connection(), structural\+\_\+manager\+::add\+\_\+constant(), structural\+\_\+manager\+::add\+\_\+sign(), add\+\_\+sparse\+\_\+logic\+\_\+dp(), check\+\_\+pv\+\_\+allconnected(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, structural\+\_\+manager\+::get\+\_\+circ(), get\+\_\+id(), structural\+\_\+object\+::get\+\_\+id(), structural\+\_\+object\+::get\+\_\+kind(), structural\+\_\+object\+::get\+\_\+owner(), get\+\_\+port(), G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+I\+ZE, structural\+\_\+object\+::get\+\_\+type\+Ref(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, mux\+\_\+connection(), M\+U\+X\+\_\+\+I\+N\+T\+E\+R\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+B\+I\+N\+D\+I\+NG, hls\+::\+Param, port\+\_\+o\+\_\+K, port\+\_\+vector\+\_\+o\+\_\+K, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by add\+\_\+sparse\+\_\+logic(), Parallel\+Memory\+Conn\+Binding\+::add\+\_\+to\+\_\+\+S\+M(), conn\+\_\+binding\+\_\+cs\+::add\+\_\+to\+\_\+\+S\+M(), and classic\+\_\+datapath\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_aaf898285e246aa69fd49c271cfb8b0bc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_aaf898285e246aa69fd49c271cfb8b0bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_ac7b383c69e3484e71b5f4d474af6c2f4}\label{classconn__binding_ac7b383c69e3484e71b5f4d474af6c2f4}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!bind\+\_\+command\+\_\+port@{bind\+\_\+command\+\_\+port}}
+\index{bind\+\_\+command\+\_\+port@{bind\+\_\+command\+\_\+port}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{bind\+\_\+command\+\_\+port()}{bind\_command\_port()}}
+{\footnotesize\ttfamily \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} conn\+\_\+binding\+::bind\+\_\+command\+\_\+port (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&}]{ver,  }\item[{\hyperlink{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663}{conn\+\_\+binding\+::direction\+\_\+type}}]{dir,  }\item[{unsigned int}]{mode,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{g }\end{DoxyParamCaption})}
+
+
+
+Bind vertex to a command port object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ver} & is the vertex to be associated to the port \\
+\hline
+{\em dir} & is the direction to be associated to the port \\
+\hline
+{\em mode} & is command mode (as defined into \hyperlink{classcommandport__obj_a2aacc9b2d5176f992066e7d499a5322e}{commandport\+\_\+obj\+::command\+\_\+type}) \\
+\hline
+{\em g} & is graph where vertex ver is stored \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 227 of file conn\+\_\+binding.\+cpp.
+
+
+
+References command\+\_\+input\+\_\+ports, command\+\_\+output\+\_\+ports, commandport\+\_\+obj\+::get\+\_\+mode\+\_\+string(), G\+E\+T\+\_\+\+N\+A\+ME, IN, O\+UT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{d2/db1/classconn__binding_ac7b383c69e3484e71b5f4d474af6c2f4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_ac7b383c69e3484e71b5f4d474af6c2f4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_a15ab7a8e03857a8a11ce016944f7aaab}\label{classconn__binding_a15ab7a8e03857a8a11ce016944f7aaab}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!bind\+\_\+port@{bind\+\_\+port}}
+\index{bind\+\_\+port@{bind\+\_\+port}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{bind\+\_\+port()}{bind\_port()}}
+{\footnotesize\ttfamily \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} conn\+\_\+binding\+::bind\+\_\+port (\begin{DoxyParamCaption}\item[{unsigned int}]{var,  }\item[{\hyperlink{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663}{conn\+\_\+binding\+::direction\+\_\+type}}]{dir }\end{DoxyParamCaption})}
+
+
+
+Bind variable to a port object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is the variable to be associated to the port \\
+\hline
+{\em dir} & is the direction to be associated to the port \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 205 of file conn\+\_\+binding.\+cpp.
+
+
+
+References BH, IN, input\+\_\+ports, O\+UT, output\+\_\+ports, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by conn\+\_\+binding\+\_\+creator\+::add\+\_\+parameter\+\_\+ports().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_a15ab7a8e03857a8a11ce016944f7aaab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_ad6d2c05551ea948d7ce6b4e015292e5e}\label{classconn__binding_ad6d2c05551ea948d7ce6b4e015292e5e}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!bind\+\_\+selector\+\_\+port@{bind\+\_\+selector\+\_\+port}}
+\index{bind\+\_\+selector\+\_\+port@{bind\+\_\+selector\+\_\+port}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{bind\+\_\+selector\+\_\+port()}{bind\_selector\_port()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} conn\+\_\+binding\+::bind\+\_\+selector\+\_\+port (\begin{DoxyParamCaption}\item[{\hyperlink{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663}{conn\+\_\+binding\+::direction\+\_\+type}}]{dir,  }\item[{unsigned int}]{mode,  }\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&}]{ver,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 256 of file conn\+\_\+binding.\+cpp.
+
+
+
+References activation\+\_\+ports, commandport\+\_\+obj\+::get\+\_\+mode\+\_\+string(), G\+E\+T\+\_\+\+N\+A\+ME, IN, and selectors.
+
+
+
+Referenced by add\+\_\+command\+\_\+ports(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), and mux\+\_\+connection\+\_\+binding\+::input\+\_\+logic().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{d2/db1/classconn__binding_ad6d2c05551ea948d7ce6b4e015292e5e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_ad6d2c05551ea948d7ce6b4e015292e5e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_a723f7511cfb4dd34de9be43801fea518}\label{classconn__binding_a723f7511cfb4dd34de9be43801fea518}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!bind\+\_\+selector\+\_\+port@{bind\+\_\+selector\+\_\+port}}
+\index{bind\+\_\+selector\+\_\+port@{bind\+\_\+selector\+\_\+port}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{bind\+\_\+selector\+\_\+port()}{bind\_selector\_port()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} conn\+\_\+binding\+::bind\+\_\+selector\+\_\+port (\begin{DoxyParamCaption}\item[{\hyperlink{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663}{conn\+\_\+binding\+::direction\+\_\+type}}]{dir,  }\item[{unsigned int}]{mode,  }\item[{const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{elem,  }\item[{unsigned int}]{op }\end{DoxyParamCaption})}
+
+
+
+Definition at line 249 of file conn\+\_\+binding.\+cpp.
+
+
+
+References commandport\+\_\+obj\+::get\+\_\+mode\+\_\+string(), generic\+\_\+obj\+::get\+\_\+string(), IN, selectors, and S\+TR.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{d2/db1/classconn__binding_a723f7511cfb4dd34de9be43801fea518_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_af11f0bf92436cc8c5b6eb7002544f3dc}\label{classconn__binding_af11f0bf92436cc8c5b6eb7002544f3dc}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!check\+\_\+pv\+\_\+allconnected@{check\+\_\+pv\+\_\+allconnected}}
+\index{check\+\_\+pv\+\_\+allconnected@{check\+\_\+pv\+\_\+allconnected}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{check\+\_\+pv\+\_\+allconnected()}{check\_pv\_allconnected()}}
+{\footnotesize\ttfamily bool conn\+\_\+binding\+::check\+\_\+pv\+\_\+allconnected (\begin{DoxyParamCaption}\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{port\+\_\+i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+check if a port vector has its port bounded to something 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+\_\+i} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true in case all ports are bounded to something, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 302 of file conn\+\_\+binding.\+cpp.
+
+
+
+References get\+\_\+port().
+
+
+
+Referenced by add\+\_\+to\+\_\+\+S\+M().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{d2/db1/classconn__binding_af11f0bf92436cc8c5b6eb7002544f3dc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_af11f0bf92436cc8c5b6eb7002544f3dc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_af189b02ddea6e39918e098877b96b73c}\label{classconn__binding_af189b02ddea6e39918e098877b96b73c}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!create\+\_\+conn\+\_\+binding@{create\+\_\+conn\+\_\+binding}}
+\index{create\+\_\+conn\+\_\+binding@{create\+\_\+conn\+\_\+binding}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{create\+\_\+conn\+\_\+binding()}{create\_conn\_binding()}}
+{\footnotesize\ttfamily \hyperlink{conn__binding_8hpp_a074d084f1d6f4503d815ba91304264a0}{conn\+\_\+binding\+Ref} conn\+\_\+binding\+::create\+\_\+conn\+\_\+binding (\begin{DoxyParamCaption}\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{\+\_\+\+H\+L\+S\+Mgr,  }\item[{const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref}}]{\+\_\+\+H\+LS,  }\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{\+\_\+\+BH,  }\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{\+\_\+parameters }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+factory method to create the right \hyperlink{classconn__binding}{conn\+\_\+binding} depending on the flow 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+H\+L\+S\+Mgr} & \\
+\hline
+{\em \+\_\+\+H\+LS} & \\
+\hline
+{\em \+\_\+\+BH} & \\
+\hline
+{\em \+\_\+parameters} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 118 of file conn\+\_\+binding.\+cpp.
+
+
+
+References conn\+\_\+binding(), hls\+::function\+Id, and $\sim$conn\+\_\+binding().
+
+
+
+Referenced by add\+\_\+sparse\+\_\+logic(), and mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{d2/db1/classconn__binding_af189b02ddea6e39918e098877b96b73c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_af189b02ddea6e39918e098877b96b73c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_a6caea0ccfc30f9ef2d3a1a6452f08cb3}\label{classconn__binding_a6caea0ccfc30f9ef2d3a1a6452f08cb3}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!determine\+\_\+bit\+\_\+level\+\_\+mux@{determine\+\_\+bit\+\_\+level\+\_\+mux}}
+\index{determine\+\_\+bit\+\_\+level\+\_\+mux@{determine\+\_\+bit\+\_\+level\+\_\+mux}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{determine\+\_\+bit\+\_\+level\+\_\+mux()}{determine\_bit\_level\_mux()}}
+{\footnotesize\ttfamily unsigned int conn\+\_\+binding\+::determine\+\_\+bit\+\_\+level\+\_\+mux (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of bit-\/level multiplexers. 
+
+
+
+Definition at line 910 of file conn\+\_\+binding.\+cpp.
+
+
+
+References conn\+\_\+implementation.
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding\+::\+Internal\+Exec().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_a6caea0ccfc30f9ef2d3a1a6452f08cb3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_a71efbb9e5b43e9ae3978786144178b64}\label{classconn__binding_a71efbb9e5b43e9ae3978786144178b64}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!get\+\_\+command\+\_\+input\+\_\+ports@{get\+\_\+command\+\_\+input\+\_\+ports}}
+\index{get\+\_\+command\+\_\+input\+\_\+ports@{get\+\_\+command\+\_\+input\+\_\+ports}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{get\+\_\+command\+\_\+input\+\_\+ports()}{get\_command\_input\_ports()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::pair$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, unsigned int $>$, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} $>$ conn\+\_\+binding\+::get\+\_\+command\+\_\+input\+\_\+ports (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the list of connections from the controller to the datapath. 
+
+
+
+Definition at line 292 of file conn\+\_\+binding.\+cpp.
+
+
+
+References command\+\_\+input\+\_\+ports.
+
+\mbox{\Hypertarget{classconn__binding_a24e43a95958793e3557d9d01626f37f6}\label{classconn__binding_a24e43a95958793e3557d9d01626f37f6}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!get\+\_\+command\+\_\+port@{get\+\_\+command\+\_\+port}}
+\index{get\+\_\+command\+\_\+port@{get\+\_\+command\+\_\+port}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{get\+\_\+command\+\_\+port()}{get\_command\_port()}}
+{\footnotesize\ttfamily \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} conn\+\_\+binding\+::get\+\_\+command\+\_\+port (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&}]{ver,  }\item[{\hyperlink{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663}{conn\+\_\+binding\+::direction\+\_\+type}}]{dir,  }\item[{unsigned int}]{mode }\end{DoxyParamCaption})}
+
+
+
+Returns reference to generic object associated to a given vertex, for a specific port direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ver} & is vertex associated to desired port \\
+\hline
+{\em dir} & is port direction \\
+\hline
+{\em mode} & is command mode (O\+P\+E\+R\+A\+T\+I\+ON or C\+O\+N\+D\+I\+T\+I\+ON) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to the generic object of the port associated to given vertex, into given direction 
+\end{DoxyReturn}
+
+
+Definition at line 189 of file conn\+\_\+binding.\+cpp.
+
+
+
+References command\+\_\+input\+\_\+ports, command\+\_\+output\+\_\+ports, IN, O\+UT, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+\mbox{\Hypertarget{classconn__binding_a1f0458cf4aaf63d2786931ad13d1ae71}\label{classconn__binding_a1f0458cf4aaf63d2786931ad13d1ae71}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!get\+\_\+command\+\_\+ports@{get\+\_\+command\+\_\+ports}}
+\index{get\+\_\+command\+\_\+ports@{get\+\_\+command\+\_\+ports}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{get\+\_\+command\+\_\+ports()}{get\_command\_ports()}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}$>$ conn\+\_\+binding\+::get\+\_\+command\+\_\+ports (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns set of generic command ports. 
+
+\begin{DoxyReturn}{Returns}
+a set of all refcount to \hyperlink{classgeneric__obj}{generic\+\_\+obj}\textquotesingle{}s associated to ports 
+\end{DoxyReturn}
+
+
+Definition at line 393 of file conn\+\_\+binding.\+hpp.
+
+
+
+References command\+\_\+ports.
+
+\mbox{\Hypertarget{classconn__binding_ae44e000813aa8342a78b2dee1009c66b}\label{classconn__binding_ae44e000813aa8342a78b2dee1009c66b}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!get\+\_\+component\+\_\+num@{get\+\_\+component\+\_\+num}}
+\index{get\+\_\+component\+\_\+num@{get\+\_\+component\+\_\+num}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{get\+\_\+component\+\_\+num()}{get\_component\_num()}}
+{\footnotesize\ttfamily unsigned int conn\+\_\+binding\+::get\+\_\+component\+\_\+num (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{type }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 265 of file conn\+\_\+binding.\+cpp.
+
+
+
+References component\+\_\+num.
+
+
+
+Referenced by Get\+Selectors().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_ae44e000813aa8342a78b2dee1009c66b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_a26e9ce42b031e5b5051a6e4aad81c0bd}\label{classconn__binding_a26e9ce42b031e5b5051a6e4aad81c0bd}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!get\+\_\+components@{get\+\_\+components}}
+\index{get\+\_\+components@{get\+\_\+components}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{get\+\_\+components()}{get\_components()}}
+{\footnotesize\ttfamily const std\+::map$<$ std\+::string, unsigned int $>$ \& conn\+\_\+binding\+::get\+\_\+components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 282 of file conn\+\_\+binding.\+cpp.
+
+
+
+References component\+\_\+num.
+
+
+
+Referenced by add\+\_\+sparse\+\_\+logic().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_a26e9ce42b031e5b5051a6e4aad81c0bd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_a39a42582d79c8e8cb85017f32ec7c56c}\label{classconn__binding_a39a42582d79c8e8cb85017f32ec7c56c}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!get\+\_\+connection@{get\+\_\+connection}}
+\index{get\+\_\+connection@{get\+\_\+connection}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{get\+\_\+connection()}{get\_connection()}}
+{\footnotesize\ttfamily \hyperlink{connection__obj_8hpp_af3c6e389c8543ed97dd9ba412f2c141b}{connection\+\_\+obj\+Ref} conn\+\_\+binding\+::get\+\_\+connection (\begin{DoxyParamCaption}\item[{const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{op1,  }\item[{const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{op2,  }\item[{unsigned int}]{operand,  }\item[{unsigned int}]{port\+\_\+index }\end{DoxyParamCaption}) const}
+
+
+
+Return the current connection between two objects, if any. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op1} & is reference to first object \\
+\hline
+{\em op2} & is reference to second object \\
+\hline
+{\em operand} & is i-\/th operand for second object, where first one is connected \\
+\hline
+{\em port\+\_\+index} & is i-\/th port associated with the operand (different from 0 when multi-\/channels components are considered) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+conn is the reference to the implemented connection 
+\end{DoxyReturn}
+
+
+Definition at line 178 of file conn\+\_\+binding.\+cpp.
+
+
+
+References conn\+\_\+implementation, is\+\_\+connection(), and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_a39a42582d79c8e8cb85017f32ec7c56c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_ad5bc96e38fd8c49069bea634be25e3b0}\label{classconn__binding_ad5bc96e38fd8c49069bea634be25e3b0}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!get\+\_\+connection\+\_\+implementations@{get\+\_\+connection\+\_\+implementations}}
+\index{get\+\_\+connection\+\_\+implementations@{get\+\_\+connection\+\_\+implementations}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{get\+\_\+connection\+\_\+implementations()}{get\_connection\_implementations()}}
+{\footnotesize\ttfamily const \hyperlink{classconn__binding_a352bfe56b0a7f7b3c9763bf90c87f785}{conn\+\_\+binding\+::conn\+\_\+implementation\+\_\+map} \& conn\+\_\+binding\+::get\+\_\+connection\+\_\+implementations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the map containing all the connection implementations. 
+
+
+
+Definition at line 167 of file conn\+\_\+binding.\+cpp.
+
+
+
+References conn\+\_\+implementation.
+
+\mbox{\Hypertarget{classconn__binding_ae385543cd719612dd44a8a54b3df8ad8}\label{classconn__binding_ae385543cd719612dd44a8a54b3df8ad8}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!get\+\_\+constant\+\_\+obj@{get\+\_\+constant\+\_\+obj}}
+\index{get\+\_\+constant\+\_\+obj@{get\+\_\+constant\+\_\+obj}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{get\+\_\+constant\+\_\+obj()}{get\_constant\_obj()}}
+{\footnotesize\ttfamily \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} conn\+\_\+binding\+::get\+\_\+constant\+\_\+obj (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value,  }\item[{const std\+::string \&}]{param,  }\item[{unsigned int}]{precision }\end{DoxyParamCaption})}
+
+
+
+Definition at line 730 of file conn\+\_\+binding.\+cpp.
+
+
+
+References constant\+\_\+values, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by add\+\_\+sparse\+\_\+logic(), and mux\+\_\+connection\+\_\+binding\+::determine\+\_\+connection().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_ae385543cd719612dd44a8a54b3df8ad8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_a46ef802caccfc0f0fb9625b0ba99e5eb}\label{classconn__binding_a46ef802caccfc0f0fb9625b0ba99e5eb}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!get\+\_\+constant\+\_\+objs@{get\+\_\+constant\+\_\+objs}}
+\index{get\+\_\+constant\+\_\+objs@{get\+\_\+constant\+\_\+objs}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{get\+\_\+constant\+\_\+objs()}{get\_constant\_objs()}}
+{\footnotesize\ttfamily std\+::map$<$ \hyperlink{classconn__binding_a08cb5241cd588e215f61ab30d27a14c0}{conn\+\_\+binding\+::const\+\_\+param}, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} $>$ conn\+\_\+binding\+::get\+\_\+constant\+\_\+objs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 738 of file conn\+\_\+binding.\+cpp.
+
+
+
+References constant\+\_\+values.
+
+
+
+Referenced by classic\+\_\+datapath\+::add\+\_\+ports(), and add\+\_\+sparse\+\_\+logic().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_a46ef802caccfc0f0fb9625b0ba99e5eb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_a3d80a579f44ae487ed5419b560ad5d26}\label{classconn__binding_a3d80a579f44ae487ed5419b560ad5d26}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!get\+\_\+data\+\_\+transfers@{get\+\_\+data\+\_\+transfers}}
+\index{get\+\_\+data\+\_\+transfers@{get\+\_\+data\+\_\+transfers}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{get\+\_\+data\+\_\+transfers()}{get\_data\_transfers()}}
+{\footnotesize\ttfamily const std\+::map$<$ \hyperlink{structconn__binding_1_1ConnectionTarget}{conn\+\_\+binding\+::\+Connection\+Target}, \hyperlink{classconn__binding_aa5406c3bf4cee893234c2b0847471f56}{conn\+\_\+binding\+::\+Connection\+Sources} $>$ \& conn\+\_\+binding\+::get\+\_\+data\+\_\+transfers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the map containing all the data transfers. 
+
+
+
+Definition at line 162 of file conn\+\_\+binding.\+cpp.
+
+
+
+References conn\+\_\+variables.
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding\+::mux\+\_\+interconnection().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_a3d80a579f44ae487ed5419b560ad5d26_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_a1e5c6ff971f65ab857d0c599b97e9e88}\label{classconn__binding_a1e5c6ff971f65ab857d0c599b97e9e88}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!get\+\_\+from\+\_\+controller\+\_\+ports@{get\+\_\+from\+\_\+controller\+\_\+ports}}
+\index{get\+\_\+from\+\_\+controller\+\_\+ports@{get\+\_\+from\+\_\+controller\+\_\+ports}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{get\+\_\+from\+\_\+controller\+\_\+ports()}{get\_from\_controller\_ports()}}
+{\footnotesize\ttfamily unsigned int conn\+\_\+binding\+::get\+\_\+from\+\_\+controller\+\_\+ports (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of connections from the controller to the datapath. 
+
+
+
+Definition at line 297 of file conn\+\_\+binding.\+cpp.
+
+
+
+References command\+\_\+input\+\_\+ports.
+
+\mbox{\Hypertarget{classconn__binding_a81141f5a9d7905a26c53d13123c286b6}\label{classconn__binding_a81141f5a9d7905a26c53d13123c286b6}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!get\+\_\+mux\+\_\+size@{get\+\_\+mux\+\_\+size}}
+\index{get\+\_\+mux\+\_\+size@{get\+\_\+mux\+\_\+size}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{get\+\_\+mux\+\_\+size()}{get\_mux\_size()}}
+{\footnotesize\ttfamily unsigned int conn\+\_\+binding\+::get\+\_\+mux\+\_\+size (\begin{DoxyParamCaption}\item[{const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{mux }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Specialise a multiplexer according to the type of the variables crossing it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mux} & is the multiplexer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classconn__binding_a0a23777374b0ac3c3c9811bbeb2c3137}\label{classconn__binding_a0a23777374b0ac3c3c9811bbeb2c3137}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!get\+\_\+port@{get\+\_\+port}}
+\index{get\+\_\+port@{get\+\_\+port}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{get\+\_\+port()}{get\_port()}}
+{\footnotesize\ttfamily \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} conn\+\_\+binding\+::get\+\_\+port (\begin{DoxyParamCaption}\item[{unsigned int}]{var,  }\item[{\hyperlink{classconn__binding_af1575e7a7dc7acd00fc5c947f413c663}{conn\+\_\+binding\+::direction\+\_\+type}}]{dir }\end{DoxyParamCaption})}
+
+
+
+Returns reference to generic object associated to a given variable, for a specific port direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & is variable associated with the port \\
+\hline
+{\em dir} & is port direction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to the generic object of the port associated to given variable, into given direction 
+\end{DoxyReturn}
+
+
+Definition at line 141 of file conn\+\_\+binding.\+cpp.
+
+
+
+References IN, input\+\_\+ports, O\+UT, output\+\_\+ports, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by add\+\_\+command\+\_\+ports(), classic\+\_\+datapath\+::add\+\_\+ports(), Parallel\+Memory\+Conn\+Binding\+::add\+\_\+to\+\_\+\+S\+M(), fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), add\+\_\+to\+\_\+\+S\+M(), check\+\_\+pv\+\_\+allconnected(), conn\+\_\+binding\+\_\+cs\+::instantiate\+\_\+suspension\+\_\+component(), and mux\+\_\+connection().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_a0a23777374b0ac3c3c9811bbeb2c3137_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_a61f18502e0796a50790c50cf2ed77e9f}\label{classconn__binding_a61f18502e0796a50790c50cf2ed77e9f}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!get\+\_\+to\+\_\+controller\+\_\+ports@{get\+\_\+to\+\_\+controller\+\_\+ports}}
+\index{get\+\_\+to\+\_\+controller\+\_\+ports@{get\+\_\+to\+\_\+controller\+\_\+ports}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{get\+\_\+to\+\_\+controller\+\_\+ports()}{get\_to\_controller\_ports()}}
+{\footnotesize\ttfamily unsigned int conn\+\_\+binding\+::get\+\_\+to\+\_\+controller\+\_\+ports (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of connections from the datapath to the controller. 
+
+
+
+Definition at line 287 of file conn\+\_\+binding.\+cpp.
+
+
+
+References command\+\_\+output\+\_\+ports.
+
+\mbox{\Hypertarget{classconn__binding_acc27af44bcec7ebad475db78c098ce59}\label{classconn__binding_acc27af44bcec7ebad475db78c098ce59}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!Get\+Selectors@{Get\+Selectors}}
+\index{Get\+Selectors@{Get\+Selectors}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{Get\+Selectors()}{GetSelectors()}}
+{\footnotesize\ttfamily const std\+::map$<$unsigned int, \hyperlink{classconn__binding_a1994d72baf506bcb1d94e0cfede4258b}{Selectors}$>$\& conn\+\_\+binding\+::\+Get\+Selectors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 398 of file conn\+\_\+binding.\+hpp.
+
+
+
+References add\+\_\+component(), get\+\_\+component\+\_\+num(), selectors, and test\+\_\+panda\+::type.
+
+
+
+Referenced by Controller\+Creator\+Base\+Step\+::add\+\_\+command\+\_\+ports(), top\+\_\+entity\+::add\+\_\+command\+\_\+signals(), and fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_acc27af44bcec7ebad475db78c098ce59_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_acc27af44bcec7ebad475db78c098ce59_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_a01c01d9417e2ec21be4329bae19336ae}\label{classconn__binding_a01c01d9417e2ec21be4329bae19336ae}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!is\+\_\+connection@{is\+\_\+connection}}
+\index{is\+\_\+connection@{is\+\_\+connection}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{is\+\_\+connection()}{is\_connection()}}
+{\footnotesize\ttfamily bool conn\+\_\+binding\+::is\+\_\+connection (\begin{DoxyParamCaption}\item[{const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{op1,  }\item[{const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{op2,  }\item[{unsigned int}]{operand,  }\item[{unsigned int}]{port\+\_\+index }\end{DoxyParamCaption}) const}
+
+
+
+Checks if there is a connection between two objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op1} & is reference to first object \\
+\hline
+{\em op2} & is reference to second object \\
+\hline
+{\em operand} & is i-\/th operand for second object, where first one is connected \\
+\hline
+{\em port\+\_\+index} & is i-\/th port associated with the operand (different from 0 when multi-\/channels components are considered) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 184 of file conn\+\_\+binding.\+cpp.
+
+
+
+References conn\+\_\+implementation.
+
+
+
+Referenced by get\+\_\+connection().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_a01c01d9417e2ec21be4329bae19336ae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_a58f8b4130f06326232baabc4cf18730e}\label{classconn__binding_a58f8b4130f06326232baabc4cf18730e}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!mux\+\_\+allocation@{mux\+\_\+allocation}}
+\index{mux\+\_\+allocation@{mux\+\_\+allocation}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{mux\+\_\+allocation()}{mux\_allocation()}}
+{\footnotesize\ttfamily void conn\+\_\+binding\+::mux\+\_\+allocation (\begin{DoxyParamCaption}\item[{const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref}}]{H\+LS,  }\item[{const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref}}]{SM,  }\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{src,  }\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{tgt,  }\item[{\hyperlink{connection__obj_8hpp_af3c6e389c8543ed97dd9ba412f2c141b}{connection\+\_\+obj\+Ref}}]{conn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Add multiplexers to the structural representation of the datapath. 
+
+adding input connection
+
+mux selector in datapath interface
+
+selector in mux object
+
+specializing allocated mux
+
+adding input connection
+
+adding output signal to the multiplexer 
+
+Definition at line 550 of file conn\+\_\+binding.\+cpp.
+
+
+
+References structural\+\_\+manager\+::add\+\_\+connection(), add\+\_\+datapath\+\_\+connection(), structural\+\_\+manager\+::add\+\_\+sign(), debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, structural\+\_\+object\+::find\+\_\+member(), structural\+\_\+manager\+::get\+\_\+circ(), structural\+\_\+object\+::get\+\_\+path(), generic\+\_\+obj\+::get\+\_\+structural\+\_\+obj(), G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+I\+ZE, structural\+\_\+object\+::get\+\_\+type\+Ref(), hls\+::\+H\+L\+S\+\_\+T, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, structural\+\_\+type\+\_\+descriptor\+::\+I\+NT, M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD, port\+\_\+o\+\_\+K, structural\+\_\+type\+\_\+descriptor\+::\+R\+E\+AL, structural\+\_\+type\+\_\+descriptor\+::size, specialise\+\_\+mux(), T\+\_\+\+C\+O\+ND, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, structural\+\_\+type\+\_\+descriptor\+::type, structural\+\_\+type\+\_\+descriptor\+::\+U\+I\+NT, and structural\+\_\+type\+\_\+descriptor\+::\+V\+E\+C\+T\+O\+R\+\_\+\+B\+O\+OL.
+
+
+
+Referenced by mux\+\_\+connection().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_a58f8b4130f06326232baabc4cf18730e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_a58f8b4130f06326232baabc4cf18730e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_ab815fc2d481fffaa79d9659e3808616b}\label{classconn__binding_ab815fc2d481fffaa79d9659e3808616b}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!mux\+\_\+connection@{mux\+\_\+connection}}
+\index{mux\+\_\+connection@{mux\+\_\+connection}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{mux\+\_\+connection()}{mux\_connection()}}
+{\footnotesize\ttfamily void conn\+\_\+binding\+::mux\+\_\+connection (\begin{DoxyParamCaption}\item[{const \hyperlink{hls_8hpp_a75d0c73923d0ddfa28c4843a802c73a7}{hls\+Ref}}]{H\+LS,  }\item[{const \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref}}]{SM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add the mux-\/based interconnection. 
+
+
+
+Definition at line 403 of file conn\+\_\+binding.\+cpp.
+
+
+
+References structural\+\_\+manager\+::add\+\_\+connection(), add\+\_\+datapath\+\_\+connection(), structural\+\_\+manager\+::add\+\_\+sign(), connection\+\_\+obj\+::\+B\+Y\+\_\+\+M\+UX, C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, component\+\_\+o\+\_\+K, conn\+\_\+implementation, debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, connection\+\_\+obj\+::\+D\+I\+R\+E\+C\+T\+\_\+\+C\+O\+NN, D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, structural\+\_\+manager\+::get\+\_\+circ(), structural\+\_\+object\+::get\+\_\+id(), structural\+\_\+object\+::get\+\_\+kind(), generic\+\_\+obj\+::get\+\_\+out\+\_\+sign(), structural\+\_\+object\+::get\+\_\+path(), get\+\_\+port(), generic\+\_\+obj\+::get\+\_\+string(), generic\+\_\+obj\+::get\+\_\+structural\+\_\+obj(), G\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+I\+ZE, hls\+::\+H\+L\+S\+\_\+T, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, structural\+\_\+type\+\_\+descriptor\+::\+I\+NT, mux\+\_\+allocation(), port\+\_\+o\+\_\+K, port\+\_\+vector\+\_\+o\+\_\+K, generic\+\_\+obj\+::print(), structural\+\_\+object\+::print(), structural\+\_\+type\+\_\+descriptor\+::\+R\+E\+AL, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, generic\+\_\+obj\+::set\+\_\+out\+\_\+sign(), S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, structural\+\_\+type\+\_\+descriptor\+::\+U\+I\+NT, and structural\+\_\+type\+\_\+descriptor\+::\+V\+E\+C\+T\+O\+R\+\_\+\+B\+O\+OL.
+
+
+
+Referenced by add\+\_\+to\+\_\+\+S\+M().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_ab815fc2d481fffaa79d9659e3808616b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_ab815fc2d481fffaa79d9659e3808616b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_afa60c298700898adbe9f7c03a4b5cd48}\label{classconn__binding_afa60c298700898adbe9f7c03a4b5cd48}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!print@{print}}
+\index{print@{print}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void conn\+\_\+binding\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Function that prints the interconnection binding. 
+
+
+
+Definition at line 894 of file conn\+\_\+binding.\+cpp.
+
+
+
+References connection\+\_\+obj\+::\+B\+Y\+\_\+\+M\+UX, conn\+\_\+implementation, generic\+\_\+obj\+::get\+\_\+string(), I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, and S\+TR.
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{d2/db1/classconn__binding_afa60c298700898adbe9f7c03a4b5cd48_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{d2/db1/classconn__binding_afa60c298700898adbe9f7c03a4b5cd48_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classconn__binding_ae9a6eb2b8e5eb480e94a8a1f04ce58e4}\label{classconn__binding_ae9a6eb2b8e5eb480e94a8a1f04ce58e4}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!specialise\+\_\+mux@{specialise\+\_\+mux}}
+\index{specialise\+\_\+mux@{specialise\+\_\+mux}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{specialise\+\_\+mux()}{specialise\_mux()}}
+{\footnotesize\ttfamily void conn\+\_\+binding\+::specialise\+\_\+mux (\begin{DoxyParamCaption}\item[{const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{mux,  }\item[{unsigned int}]{bits\+\_\+tgt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Specialise a multiplexer according to the type of the variables crossing it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mux} & is the multiplexer \\
+\hline
+{\em bits\+\_\+tgt} & is the bitwidth of the target port \\
+\hline
+\end{DoxyParams}
+specializing multiplexer ports 
+
+Definition at line 535 of file conn\+\_\+binding.\+cpp.
+
+
+
+References debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, module\+::get\+\_\+in\+\_\+port(), module\+::get\+\_\+out\+\_\+port(), structural\+\_\+object\+::get\+\_\+path(), generic\+\_\+obj\+::get\+\_\+structural\+\_\+obj(), I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, max(), and S\+TR.
+
+
+
+Referenced by mux\+\_\+allocation().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_ae9a6eb2b8e5eb480e94a8a1f04ce58e4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/classconn__binding_ae9a6eb2b8e5eb480e94a8a1f04ce58e4_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classconn__binding_ac0b9f48b56e603ba299ae97f439247a7}\label{classconn__binding_ac0b9f48b56e603ba299ae97f439247a7}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!activation\+\_\+ports@{activation\+\_\+ports}}
+\index{activation\+\_\+ports@{activation\+\_\+ports}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{activation\+\_\+ports}{activation\_ports}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, std\+::map$<$unsigned int, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}$>$ $>$ conn\+\_\+binding\+::activation\+\_\+ports\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+map between a vertex and the corresponding activation signal 
+
+
+
+Definition at line 160 of file conn\+\_\+binding.\+hpp.
+
+
+
+Referenced by bind\+\_\+selector\+\_\+port().
+
+\mbox{\Hypertarget{classconn__binding_a10ef50de9953e2267264484077bdbfdb}\label{classconn__binding_a10ef50de9953e2267264484077bdbfdb}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!BH@{BH}}
+\index{BH@{BH}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{BH}{BH}}
+{\footnotesize\ttfamily const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} conn\+\_\+binding\+::\+BH\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+reference to the behavioral helper associated with the specification 
+
+
+
+Definition at line 157 of file conn\+\_\+binding.\+hpp.
+
+
+
+Referenced by add\+\_\+command\+\_\+ports(), and bind\+\_\+port().
+
+\mbox{\Hypertarget{classconn__binding_a37d4850b1509016aefb78063be87bf97}\label{classconn__binding_a37d4850b1509016aefb78063be87bf97}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!command\+\_\+input\+\_\+ports@{command\+\_\+input\+\_\+ports}}
+\index{command\+\_\+input\+\_\+ports@{command\+\_\+input\+\_\+ports}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{command\+\_\+input\+\_\+ports}{command\_input\_ports}}
+{\footnotesize\ttfamily std\+::map$<$std\+::pair$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, unsigned int$>$, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}$>$ conn\+\_\+binding\+::command\+\_\+input\+\_\+ports\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+map between command input port (operation vertex and command type) and generic object 
+
+
+
+Definition at line 175 of file conn\+\_\+binding.\+hpp.
+
+
+
+Referenced by bind\+\_\+command\+\_\+port(), get\+\_\+command\+\_\+input\+\_\+ports(), get\+\_\+command\+\_\+port(), and get\+\_\+from\+\_\+controller\+\_\+ports().
+
+\mbox{\Hypertarget{classconn__binding_ad312dee69a14b9c6598f5af99308a87a}\label{classconn__binding_ad312dee69a14b9c6598f5af99308a87a}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!command\+\_\+output\+\_\+ports@{command\+\_\+output\+\_\+ports}}
+\index{command\+\_\+output\+\_\+ports@{command\+\_\+output\+\_\+ports}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{command\+\_\+output\+\_\+ports}{command\_output\_ports}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}$>$ conn\+\_\+binding\+::command\+\_\+output\+\_\+ports\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+map between output port variable and generic object 
+
+
+
+Definition at line 178 of file conn\+\_\+binding.\+hpp.
+
+
+
+Referenced by bind\+\_\+command\+\_\+port(), get\+\_\+command\+\_\+port(), and get\+\_\+to\+\_\+controller\+\_\+ports().
+
+\mbox{\Hypertarget{classconn__binding_a87dd4f0563999fbb03571769db2372ba}\label{classconn__binding_a87dd4f0563999fbb03571769db2372ba}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!command\+\_\+ports@{command\+\_\+ports}}
+\index{command\+\_\+ports@{command\+\_\+ports}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{command\+\_\+ports}{command\_ports}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}$>$ conn\+\_\+binding\+::command\+\_\+ports\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+set of other command ports 
+
+
+
+Definition at line 184 of file conn\+\_\+binding.\+hpp.
+
+
+
+Referenced by get\+\_\+command\+\_\+ports().
+
+\mbox{\Hypertarget{classconn__binding_a9bda1f1b0572a64f1f47e32079bbfb36}\label{classconn__binding_a9bda1f1b0572a64f1f47e32079bbfb36}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!component\+\_\+num@{component\+\_\+num}}
+\index{component\+\_\+num@{component\+\_\+num}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{component\+\_\+num}{component\_num}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, unsigned int$>$ conn\+\_\+binding\+::component\+\_\+num\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+map between a resource name and the corresponding number of instances inside the datapath 
+
+
+
+Definition at line 195 of file conn\+\_\+binding.\+hpp.
+
+
+
+Referenced by add\+\_\+component(), get\+\_\+component\+\_\+num(), and get\+\_\+components().
+
+\mbox{\Hypertarget{classconn__binding_a029160ea56f0b1c2f3044e467276daa1}\label{classconn__binding_a029160ea56f0b1c2f3044e467276daa1}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!conn\+\_\+implementation@{conn\+\_\+implementation}}
+\index{conn\+\_\+implementation@{conn\+\_\+implementation}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{conn\+\_\+implementation}{conn\_implementation}}
+{\footnotesize\ttfamily \hyperlink{classconn__binding_a352bfe56b0a7f7b3c9763bf90c87f785}{conn\+\_\+implementation\+\_\+map} conn\+\_\+binding\+::conn\+\_\+implementation\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+map between the connection $<$src, tgt, tgt\+\_\+port, tgt\+\_\+port\+\_\+index$>$ and the corresponding object 
+
+
+
+Definition at line 209 of file conn\+\_\+binding.\+hpp.
+
+
+
+Referenced by add\+\_\+connection(), determine\+\_\+bit\+\_\+level\+\_\+mux(), get\+\_\+connection(), get\+\_\+connection\+\_\+implementations(), is\+\_\+connection(), mux\+\_\+connection(), and print().
+
+\mbox{\Hypertarget{classconn__binding_a898c3972aa4e06c44a5154132e476471}\label{classconn__binding_a898c3972aa4e06c44a5154132e476471}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!conn\+\_\+variables@{conn\+\_\+variables}}
+\index{conn\+\_\+variables@{conn\+\_\+variables}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{conn\+\_\+variables}{conn\_variables}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{structconn__binding_1_1ConnectionTarget}{Connection\+Target}, \hyperlink{classconn__binding_aa5406c3bf4cee893234c2b0847471f56}{Connection\+Sources}$>$ conn\+\_\+binding\+::conn\+\_\+variables\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+map between the input of the unit and the corresponding incoming connections. 
+
+The key $<$tgt, tgt\+\_\+port, tgt\+\_\+port\+\_\+index$>$ is the target of the connection, while the value is a set of pairs $<$src, variable$>$ 
+
+Definition at line 206 of file conn\+\_\+binding.\+hpp.
+
+
+
+Referenced by add\+\_\+data\+\_\+transfer(), and get\+\_\+data\+\_\+transfers().
+
+\mbox{\Hypertarget{classconn__binding_a4f1b9a9fec4cdc7cbac192dd943aed23}\label{classconn__binding_a4f1b9a9fec4cdc7cbac192dd943aed23}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!constant\+\_\+values@{constant\+\_\+values}}
+\index{constant\+\_\+values@{constant\+\_\+values}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{constant\+\_\+values}{constant\_values}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{classconn__binding_a08cb5241cd588e215f61ab30d27a14c0}{const\+\_\+param}, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}$>$ conn\+\_\+binding\+::constant\+\_\+values\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+constant values 
+
+
+
+Definition at line 169 of file conn\+\_\+binding.\+hpp.
+
+
+
+Referenced by get\+\_\+constant\+\_\+obj(), and get\+\_\+constant\+\_\+objs().
+
+\mbox{\Hypertarget{classconn__binding_a00109a76f23a1c32f8c7d1a85bf2c290}\label{classconn__binding_a00109a76f23a1c32f8c7d1a85bf2c290}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!converters@{converters}}
+\index{converters@{converters}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{converters}{converters}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}$>$ conn\+\_\+binding\+::converters\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+data type converters 
+
+
+
+Definition at line 172 of file conn\+\_\+binding.\+hpp.
+
+
+
+Referenced by add\+\_\+datapath\+\_\+connection().
+
+\mbox{\Hypertarget{classconn__binding_af0b05f77221d5cd5eff651b767d039d7}\label{classconn__binding_af0b05f77221d5cd5eff651b767d039d7}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!debug\+\_\+level@{debug\+\_\+level}}
+\index{debug\+\_\+level@{debug\+\_\+level}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{debug\+\_\+level}{debug\_level}}
+{\footnotesize\ttfamily int conn\+\_\+binding\+::debug\+\_\+level\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+control the verbosity during the debugging 
+
+
+
+Definition at line 151 of file conn\+\_\+binding.\+hpp.
+
+
+
+Referenced by add\+\_\+command\+\_\+ports(), add\+\_\+connection(), add\+\_\+datapath\+\_\+connection(), add\+\_\+sparse\+\_\+logic\+\_\+dp(), add\+\_\+to\+\_\+\+S\+M(), conn\+\_\+binding\+\_\+cs\+::conn\+\_\+binding\+\_\+cs(), conn\+\_\+binding\+\_\+cs\+::connect\+Out\+Or(), conn\+\_\+binding\+\_\+cs\+::instantiate\+\_\+suspension\+\_\+component(), mux\+\_\+allocation(), mux\+\_\+connection(), and specialise\+\_\+mux().
+
+\mbox{\Hypertarget{classconn__binding_a829b8672c7f9b2d48e0583cf39e1e768}\label{classconn__binding_a829b8672c7f9b2d48e0583cf39e1e768}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!input\+\_\+ports@{input\+\_\+ports}}
+\index{input\+\_\+ports@{input\+\_\+ports}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{input\+\_\+ports}{input\_ports}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}$>$ conn\+\_\+binding\+::input\+\_\+ports\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+map between input port variable and generic object 
+
+
+
+Definition at line 163 of file conn\+\_\+binding.\+hpp.
+
+
+
+Referenced by bind\+\_\+port(), and get\+\_\+port().
+
+\mbox{\Hypertarget{classconn__binding_a19b042a73e19efd030ac8d76527dea10}\label{classconn__binding_a19b042a73e19efd030ac8d76527dea10}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!interconnection\+\_\+elements@{interconnection\+\_\+elements}}
+\index{interconnection\+\_\+elements@{interconnection\+\_\+elements}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{interconnection\+\_\+elements}{interconnection\_elements}}
+{\footnotesize\ttfamily std\+::map$<$std\+::pair$<$std\+::string, unsigned int$>$, unsigned int$>$ conn\+\_\+binding\+::interconnection\+\_\+elements\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+map between interconnection elements and their number 
+
+
+
+Definition at line 181 of file conn\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{classconn__binding_a60cfb5c986070b396f335e790e99a034}\label{classconn__binding_a60cfb5c986070b396f335e790e99a034}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!output\+\_\+level@{output\+\_\+level}}
+\index{output\+\_\+level@{output\+\_\+level}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{output\+\_\+level}{output\_level}}
+{\footnotesize\ttfamily int conn\+\_\+binding\+::output\+\_\+level\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+control the output verbosity 
+
+
+
+Definition at line 154 of file conn\+\_\+binding.\+hpp.
+
+
+
+Referenced by print().
+
+\mbox{\Hypertarget{classconn__binding_af6e110c11925ff778bb1f895d1dc078f}\label{classconn__binding_af6e110c11925ff778bb1f895d1dc078f}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!output\+\_\+ports@{output\+\_\+ports}}
+\index{output\+\_\+ports@{output\+\_\+ports}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{output\+\_\+ports}{output\_ports}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}$>$ conn\+\_\+binding\+::output\+\_\+ports\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+map between output port variable and generic object 
+
+
+
+Definition at line 166 of file conn\+\_\+binding.\+hpp.
+
+
+
+Referenced by bind\+\_\+port(), and get\+\_\+port().
+
+\mbox{\Hypertarget{classconn__binding_a2fea3ae9e3d6941856636531c50c6ff6}\label{classconn__binding_a2fea3ae9e3d6941856636531c50c6ff6}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!parameters@{parameters}}
+\index{parameters@{parameters}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{parameters}{parameters}}
+{\footnotesize\ttfamily const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} conn\+\_\+binding\+::parameters\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The set of input parameters. 
+
+
+
+Definition at line 148 of file conn\+\_\+binding.\+hpp.
+
+
+
+Referenced by Parallel\+Memory\+Conn\+Binding\+::add\+\_\+to\+\_\+\+S\+M().
+
+\mbox{\Hypertarget{classconn__binding_afeb17985cbcc1739c90e5428700aecfb}\label{classconn__binding_afeb17985cbcc1739c90e5428700aecfb}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!selectors@{selectors}}
+\index{selectors@{selectors}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{selectors}{selectors}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, \hyperlink{classconn__binding_a1994d72baf506bcb1d94e0cfede4258b}{Selectors}$>$ conn\+\_\+binding\+::selectors\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 192 of file conn\+\_\+binding.\+hpp.
+
+
+
+Referenced by add\+\_\+command\+\_\+ports(), bind\+\_\+selector\+\_\+port(), and Get\+Selectors().
+
+\mbox{\Hypertarget{classconn__binding_a6f2b90952b7cb790fe4fabe7399ea90c}\label{classconn__binding_a6f2b90952b7cb790fe4fabe7399ea90c}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!sparse\+\_\+logic@{sparse\+\_\+logic}}
+\index{sparse\+\_\+logic@{sparse\+\_\+logic}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{sparse\+\_\+logic}{sparse\_logic}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}, \hyperlink{classGenericObjSorter}{Generic\+Obj\+Sorter}$>$ conn\+\_\+binding\+::sparse\+\_\+logic\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+set containing all the sparse logic contained into the datapath 
+
+
+
+Definition at line 201 of file conn\+\_\+binding.\+hpp.
+
+
+
+Referenced by add\+\_\+sparse\+\_\+logic\+\_\+dp().
+
+\mbox{\Hypertarget{classconn__binding_a3c372bf7271e49d0d73a667dafac8449}\label{classconn__binding_a3c372bf7271e49d0d73a667dafac8449}} 
+\index{conn\+\_\+binding@{conn\+\_\+binding}!unique\+\_\+id@{unique\+\_\+id}}
+\index{unique\+\_\+id@{unique\+\_\+id}!conn\+\_\+binding@{conn\+\_\+binding}}
+\subsubsection{\texorpdfstring{unique\+\_\+id}{unique\_id}}
+{\footnotesize\ttfamily unsigned conn\+\_\+binding\+::unique\+\_\+id = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 211 of file conn\+\_\+binding.\+hpp.
+
+
+
+Referenced by add\+\_\+command\+\_\+ports().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/interconnection/\hyperlink{conn__binding_8hpp}{conn\+\_\+binding.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/interconnection/\hyperlink{conn__binding_8cpp}{conn\+\_\+binding.\+cpp}\end{DoxyCompactItemize}

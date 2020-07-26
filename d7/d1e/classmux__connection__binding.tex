@@ -1,0 +1,1060 @@
+\hypertarget{classmux__connection__binding}{}\section{mux\+\_\+connection\+\_\+binding Class Reference}
+\label{classmux__connection__binding}\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+
+
+Class managing the connection binding of datapath.  
+
+
+
+
+{\ttfamily \#include $<$mux\+\_\+connection\+\_\+binding.\+hpp$>$}
+
+
+
+Inheritance diagram for mux\+\_\+connection\+\_\+binding\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{df/d8e/classmux__connection__binding__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for mux\+\_\+connection\+\_\+binding\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/ddb/classmux__connection__binding__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmux__connection__binding_a24be4eb50d6efd12ec88d90e6efd139d}{mux\+\_\+connection\+\_\+binding} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} \hyperlink{classHLS__step_ade85003a99d34134418451ddc46a18e9}{H\+L\+S\+Mgr}, unsigned int \hyperlink{classHLSFunctionStep_a3e6434fd86c698b0c70520b859bff5b0}{fun\+Id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager})
+\begin{DoxyCompactList}\small\item\em Main constructor. \end{DoxyCompactList}\item 
+\hyperlink{classmux__connection__binding_aa93fc534c265dc11637ef16d550e13e0}{$\sim$mux\+\_\+connection\+\_\+binding} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} \hyperlink{classmux__connection__binding_a87b0d8d8254080cb835394a5eb56eedf}{Internal\+Exec} () override
+\begin{DoxyCompactList}\small\item\em Execute the step. \end{DoxyCompactList}\item 
+void \hyperlink{classmux__connection__binding_af8f6b0964f86f8cf2b503a0570a425e1}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\item 
+void \hyperlink{classmux__connection__binding_a7c22a4143586f31111cd64e34f1c9a59}{create\+\_\+connections} ()
+\begin{DoxyCompactList}\small\item\em Creates the connections inside the architecture. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmux__connection__binding_a2eccd06bada7e07af12b2e14918dbbfa}{swap\+\_\+p} (const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} data, \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} op, unsigned int num, std\+::vector$<$ \hyperlink{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}{H\+L\+S\+\_\+manager\+::io\+\_\+binding\+\_\+type} $>$ \&vars\+\_\+read, const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} behavioral\+\_\+helper, const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} TreeM)
+\begin{DoxyCompactList}\small\item\em check if the port has to be swapped \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classmux__connection__binding_aaf8d69f505f7832b20e1b0c50c3b6efe}{cache\+Type} \{ \hyperlink{classmux__connection__binding_aaf8d69f505f7832b20e1b0c50c3b6efea680a23b7ae50154bd3365aa295e66c6f}{i\+\_\+assign} = 0, 
+\hyperlink{classmux__connection__binding_aaf8d69f505f7832b20e1b0c50c3b6efeacebdc2e431d26d4676cc2ea7e2da6a05}{iu\+\_\+conv}, 
+\hyperlink{classmux__connection__binding_aaf8d69f505f7832b20e1b0c50c3b6efea318417f204d85c7a81fbde6e7c687192}{ui\+\_\+conv}, 
+\hyperlink{classmux__connection__binding_aaf8d69f505f7832b20e1b0c50c3b6efeaecb6949ff2f4dd7a4f7d41b9fff8cdcc}{vb\+\_\+assign}
+ \}\begin{DoxyCompactList}\small\item\em cache connection type \end{DoxyCompactList}
+\item 
+typedef std\+::pair$<$ unsigned int, unsigned int $>$ \hyperlink{classmux__connection__binding_aa43c7eaf66a55ac97a5a7f57f6149025}{resource\+\_\+id\+\_\+type}
+\begin{DoxyCompactList}\small\item\em type representing a resource identifier \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classmux__connection__binding_adfcb7df795ba15e433753c6682e44daa}{mux\+\_\+interconnection} ()
+\begin{DoxyCompactList}\small\item\em Performs specialization of interconnections using mux architecture. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmux__connection__binding_a0adc59417dbca6bec2932be7341490a0}{input\+\_\+logic} (const \hyperlink{classconn__binding_aa5406c3bf4cee893234c2b0847471f56}{conn\+\_\+binding\+::\+Connection\+Sources} \&src, const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} tgt, unsigned int op, unsigned int port\+\_\+index, unsigned int iteration)
+\begin{DoxyCompactList}\small\item\em Computes logic for inputs. \end{DoxyCompactList}\item 
+void \hyperlink{classmux__connection__binding_ad6e5804e02d1a7c926ecdb1ae458a76f}{determine\+\_\+connection} (const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&op, const \hyperlink{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}{H\+L\+S\+\_\+manager\+::io\+\_\+binding\+\_\+type} \&var, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} fu\+\_\+obj, unsigned int port\+\_\+num, unsigned int port\+\_\+index, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} data, unsigned int precision, unsigned int alignment=0)
+\begin{DoxyCompactList}\small\item\em Determine the actual interconnection. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmux__connection__binding_a5a1ab44883c4e500c1a23724fbff9364}{object\+\_\+bitsize} (const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} TreeM, const \hyperlink{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}{H\+L\+S\+\_\+manager\+::io\+\_\+binding\+\_\+type} \&obj) const
+\begin{DoxyCompactList}\small\item\em Compute the bitsize given a io\+\_\+binding type. \end{DoxyCompactList}\item 
+\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} \hyperlink{classmux__connection__binding_a89ede1ce1d15207461df7fdf816a4a16}{dynamic\+\_\+multidimensional\+\_\+array\+\_\+handler} (array\+\_\+ref $\ast$ar, const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&op, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} data, unsigned int \&base\+\_\+address\+\_\+index\+\_\+pointer, std\+::vector$<$ unsigned int $>$ \&recursive\+\_\+indexes\+\_\+values, std\+::vector$<$ unsigned int $>$ \&dims, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} \&global\+\_\+adder, const bool is\+\_\+not\+\_\+a\+\_\+phi)
+\begin{DoxyCompactList}\small\item\em Recursive function which returns the offset of a dynamic multidimensional array call. \end{DoxyCompactList}\item 
+void \hyperlink{classmux__connection__binding_ad251a8347349b835c134d933a8f02048}{connect\+\_\+array\+\_\+index} (unsigned int tree\+\_\+index, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} fu\+\_\+obj, unsigned int port\+\_\+num, unsigned int port\+\_\+index, unsigned int bus\+\_\+addr\+\_\+bitsize, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} data, const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&op)
+\begin{DoxyCompactList}\small\item\em connect\+\_\+array\+\_\+index\+: connect the index port of an array\+\_\+ref and convert it in case the source is of int type \end{DoxyCompactList}\item 
+void \hyperlink{classmux__connection__binding_ae17b2f5ce5c792eabdf7d5343e866b05}{create\+\_\+single\+\_\+conn} (const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} data, const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&op, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} fu\+\_\+obj\+\_\+src, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} fu\+\_\+obj, unsigned int port\+\_\+num, unsigned int port\+\_\+index, unsigned int tree\+\_\+var, unsigned int precision, const bool is\+\_\+not\+\_\+a\+\_\+phi)
+\begin{DoxyCompactList}\small\item\em create the connection object and update the unique table \end{DoxyCompactList}\item 
+void \hyperlink{classmux__connection__binding_a19eaa5ec4596679c457c35b7aa4061ed}{connect\+\_\+to\+\_\+registers} (\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} op, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} data, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} fu\+\_\+obj, unsigned int port\+\_\+num, unsigned int port\+\_\+index, unsigned int tree\+\_\+var, unsigned int precision, const bool is\+\_\+not\+\_\+a\+\_\+phi)
+\begin{DoxyCompactList}\small\item\em connect the fu\+\_\+obj with the associated registers. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmux__connection__binding_af62b7f65acce2f389f49634b980c88a6}{extract\+\_\+parm\+\_\+decl} (unsigned int tree\+\_\+var, const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} TreeM)
+\item 
+void \hyperlink{classmux__connection__binding_aa34c2f95532bff6fa7d281583bad6a3f}{add\+\_\+conversion} (unsigned int num, unsigned int size\+\_\+tree\+\_\+var, \hyperlink{graph_8hpp_a80e30b305ae26da1989a155d199d7e2c}{Vertex\+Iterator} op, unsigned int form\+\_\+par\+\_\+type, unsigned int port\+\_\+index, const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} fu\+\_\+obj, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} data, const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} TreeM, unsigned int tree\+\_\+var, std\+::vector$<$ \hyperlink{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}{H\+L\+S\+\_\+manager\+::io\+\_\+binding\+\_\+type} $>$ \&var\+\_\+read, unsigned int size\+\_\+form\+\_\+par)
+\item 
+unsigned int \hyperlink{classmux__connection__binding_ac5426fb29f88f4e8a2b1a3dc3cb7be9a}{address\+\_\+precision} (unsigned int precision, const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&op, const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref} data, const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} TreeM)
+\item 
+bool \hyperlink{classmux__connection__binding_af8f0423ad663b8a5fb6b9a2f96dde90c}{is\+Zero\+Obj} (unsigned int tree\+\_\+index, const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} TreeM)
+\item 
+bool \hyperlink{classmux__connection__binding_a89c0ed6afea0b88bf31e8e6dcefc0f63}{is\+Constant\+Obj} (unsigned int tree\+\_\+index, const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref} TreeM)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ \hyperlink{classmux__connection__binding_aa43c7eaf66a55ac97a5a7f57f6149025}{resource\+\_\+id\+\_\+type}, std\+::map$<$ unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ $>$ $>$ \hyperlink{classmux__connection__binding_ae2887fd8b2a2ac2f821b88ee5b72645c}{regs\+\_\+in}
+\begin{DoxyCompactList}\small\item\em store the registers for each resource and for each port \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{classmux__connection__binding_aa43c7eaf66a55ac97a5a7f57f6149025}{resource\+\_\+id\+\_\+type}, std\+::map$<$ unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ $>$ $>$ \hyperlink{classmux__connection__binding_a6a7f00a750edd58786915ba407f4fc0c}{chained\+\_\+in}
+\begin{DoxyCompactList}\small\item\em store the chained storage values for each resource and for each port \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{classmux__connection__binding_aa43c7eaf66a55ac97a5a7f57f6149025}{resource\+\_\+id\+\_\+type}, std\+::map$<$ unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{classmux__connection__binding_aa43c7eaf66a55ac97a5a7f57f6149025}{resource\+\_\+id\+\_\+type} $>$ $>$ $>$ \hyperlink{classmux__connection__binding_abe3e45c29632c3aa4629f55195c3990e}{module\+\_\+in}
+\begin{DoxyCompactList}\small\item\em store the resource in IN for each resource and for each port \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{classmux__connection__binding_aca8cadda839b8ce1a7274ef6ec437603}{swap\+\_\+computed\+\_\+table}
+\begin{DoxyCompactList}\small\item\em store the operations for which a port swapping is beneficial \end{DoxyCompactList}\item 
+\hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} $>$ \hyperlink{classmux__connection__binding_a8605219f931f5173519515526515b3bd}{noswap\+\_\+computed\+\_\+table}
+\begin{DoxyCompactList}\small\item\em store the operations for which a port swapping is not beneficial \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmux__connection__binding_a29d2b0e043edf53408192cdb8f770b19}{id}
+\begin{DoxyCompactList}\small\item\em variable used to assign a unique id to sparse logic \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classmux__connection__binding_a7ba6eaf97161963dc246e6db966e6386}{cur\+\_\+phi\+\_\+tree\+\_\+var}
+\begin{DoxyCompactList}\small\item\em store the current phi use. Used during the analysis of phi nodes \end{DoxyCompactList}\item 
+bool \hyperlink{classmux__connection__binding_a1e2a12ebf8b4526a747c73d91d97adc9}{is\+\_\+\+PC}
+\item 
+std\+::map$<$ std\+::tuple$<$ unsigned int, \hyperlink{classmux__connection__binding_aaf8d69f505f7832b20e1b0c50c3b6efe}{cache\+Type}, const \hyperlink{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}{H\+L\+S\+\_\+manager\+::io\+\_\+binding\+\_\+type} $>$, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} $>$ \hyperlink{classmux__connection__binding_a2d3ec6f686648da3f5f4d02ff4f7a2f9}{conn\+Cache}
+\begin{DoxyCompactList}\small\item\em connection cache \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class managing the connection binding of datapath. 
+
+It extends the standard \hyperlink{classmux__connection__binding}{mux\+\_\+connection\+\_\+binding} class.
+
+This class provides methods to compute interconnections among datapath elements (functional units, registers, ports). Different architectural style have been implemented\+: mux-\/based or bus-\/based. They are implemented as specialization of generic interconnections. 
+
+Definition at line 69 of file mux\+\_\+connection\+\_\+binding.\+hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classmux__connection__binding_aa43c7eaf66a55ac97a5a7f57f6149025}\label{classmux__connection__binding_aa43c7eaf66a55ac97a5a7f57f6149025}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!resource\+\_\+id\+\_\+type@{resource\+\_\+id\+\_\+type}}
+\index{resource\+\_\+id\+\_\+type@{resource\+\_\+id\+\_\+type}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{resource\+\_\+id\+\_\+type}{resource\_id\_type}}
+{\footnotesize\ttfamily typedef std\+::pair$<$unsigned int, unsigned int$>$ \hyperlink{classmux__connection__binding_aa43c7eaf66a55ac97a5a7f57f6149025}{mux\+\_\+connection\+\_\+binding\+::resource\+\_\+id\+\_\+type}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+type representing a resource identifier 
+
+
+
+Definition at line 73 of file mux\+\_\+connection\+\_\+binding.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classmux__connection__binding_aaf8d69f505f7832b20e1b0c50c3b6efe}\label{classmux__connection__binding_aaf8d69f505f7832b20e1b0c50c3b6efe}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!cache\+Type@{cache\+Type}}
+\index{cache\+Type@{cache\+Type}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{cache\+Type}{cacheType}}
+{\footnotesize\ttfamily enum \hyperlink{classmux__connection__binding_aaf8d69f505f7832b20e1b0c50c3b6efe}{mux\+\_\+connection\+\_\+binding\+::cache\+Type}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+cache connection type 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{i\+\_\+assign@{i\+\_\+assign}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!i\+\_\+assign@{i\+\_\+assign}}}\mbox{\Hypertarget{classmux__connection__binding_aaf8d69f505f7832b20e1b0c50c3b6efea680a23b7ae50154bd3365aa295e66c6f}\label{classmux__connection__binding_aaf8d69f505f7832b20e1b0c50c3b6efea680a23b7ae50154bd3365aa295e66c6f}} 
+i\+\_\+assign&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{iu\+\_\+conv@{iu\+\_\+conv}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!iu\+\_\+conv@{iu\+\_\+conv}}}\mbox{\Hypertarget{classmux__connection__binding_aaf8d69f505f7832b20e1b0c50c3b6efeacebdc2e431d26d4676cc2ea7e2da6a05}\label{classmux__connection__binding_aaf8d69f505f7832b20e1b0c50c3b6efeacebdc2e431d26d4676cc2ea7e2da6a05}} 
+iu\+\_\+conv&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ui\+\_\+conv@{ui\+\_\+conv}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!ui\+\_\+conv@{ui\+\_\+conv}}}\mbox{\Hypertarget{classmux__connection__binding_aaf8d69f505f7832b20e1b0c50c3b6efea318417f204d85c7a81fbde6e7c687192}\label{classmux__connection__binding_aaf8d69f505f7832b20e1b0c50c3b6efea318417f204d85c7a81fbde6e7c687192}} 
+ui\+\_\+conv&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{vb\+\_\+assign@{vb\+\_\+assign}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!vb\+\_\+assign@{vb\+\_\+assign}}}\mbox{\Hypertarget{classmux__connection__binding_aaf8d69f505f7832b20e1b0c50c3b6efeaecb6949ff2f4dd7a4f7d41b9fff8cdcc}\label{classmux__connection__binding_aaf8d69f505f7832b20e1b0c50c3b6efeaecb6949ff2f4dd7a4f7d41b9fff8cdcc}} 
+vb\+\_\+assign&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 97 of file mux\+\_\+connection\+\_\+binding.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmux__connection__binding_a24be4eb50d6efd12ec88d90e6efd139d}\label{classmux__connection__binding_a24be4eb50d6efd12ec88d90e6efd139d}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{mux\+\_\+connection\+\_\+binding()}{mux\_connection\_binding()}}
+{\footnotesize\ttfamily mux\+\_\+connection\+\_\+binding\+::mux\+\_\+connection\+\_\+binding (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr,  }\item[{unsigned int}]{fun\+Id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{design\+\_\+flow\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Main constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em design\+\_\+flow\+\_\+manager} & is the design flow manager \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 138 of file mux\+\_\+connection\+\_\+binding.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, G\+E\+T\+\_\+\+C\+L\+A\+SS, M\+U\+X\+\_\+\+I\+N\+T\+E\+R\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+B\+I\+N\+D\+I\+NG, and $\sim$mux\+\_\+connection\+\_\+binding().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_a24be4eb50d6efd12ec88d90e6efd139d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmux__connection__binding_aa93fc534c265dc11637ef16d550e13e0}\label{classmux__connection__binding_aa93fc534c265dc11637ef16d550e13e0}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!````~mux\+\_\+connection\+\_\+binding@{$\sim$mux\+\_\+connection\+\_\+binding}}
+\index{````~mux\+\_\+connection\+\_\+binding@{$\sim$mux\+\_\+connection\+\_\+binding}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{$\sim$mux\+\_\+connection\+\_\+binding()}{~mux\_connection\_binding()}}
+{\footnotesize\ttfamily mux\+\_\+connection\+\_\+binding\+::$\sim$mux\+\_\+connection\+\_\+binding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_aa93fc534c265dc11637ef16d550e13e0_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmux__connection__binding_aa34c2f95532bff6fa7d281583bad6a3f}\label{classmux__connection__binding_aa34c2f95532bff6fa7d281583bad6a3f}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!add\+\_\+conversion@{add\+\_\+conversion}}
+\index{add\+\_\+conversion@{add\+\_\+conversion}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{add\+\_\+conversion()}{add\_conversion()}}
+{\footnotesize\ttfamily void mux\+\_\+connection\+\_\+binding\+::add\+\_\+conversion (\begin{DoxyParamCaption}\item[{unsigned int}]{num,  }\item[{unsigned int}]{size\+\_\+tree\+\_\+var,  }\item[{\hyperlink{graph_8hpp_a80e30b305ae26da1989a155d199d7e2c}{Vertex\+Iterator}}]{op,  }\item[{unsigned int}]{form\+\_\+par\+\_\+type,  }\item[{unsigned int}]{port\+\_\+index,  }\item[{const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{fu\+\_\+obj,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{data,  }\item[{const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref}}]{TreeM,  }\item[{unsigned int}]{tree\+\_\+var,  }\item[{std\+::vector$<$ \hyperlink{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}{H\+L\+S\+\_\+manager\+::io\+\_\+binding\+\_\+type} $>$ \&}]{var\+\_\+read,  }\item[{unsigned int}]{size\+\_\+form\+\_\+par }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1590 of file mux\+\_\+connection\+\_\+binding.\+cpp.
+
+
+
+References conn\+\_\+binding\+::add\+\_\+component(), conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic(), conn\+Cache, create\+\_\+single\+\_\+conn(), determine\+\_\+connection(), Allocation\+Information\+::extract\+\_\+bambu\+\_\+provided\+\_\+name(), F\+F\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, tree\+\_\+helper\+::is\+\_\+bool(), tree\+\_\+helper\+::is\+\_\+int(), tree\+\_\+helper\+::is\+\_\+unsigned(), is\+Constant\+Obj(), is\+Zero\+Obj(), iu\+\_\+conv, I\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, object\+\_\+bitsize(), Design\+Flow\+Step\+::parameters, hls\+::\+Rconn, S\+TR, ui\+\_\+conv, and U\+I\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD.
+
+
+
+Referenced by create\+\_\+connections().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d1e/classmux__connection__binding_aa34c2f95532bff6fa7d281583bad6a3f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_aa34c2f95532bff6fa7d281583bad6a3f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmux__connection__binding_ac5426fb29f88f4e8a2b1a3dc3cb7be9a}\label{classmux__connection__binding_ac5426fb29f88f4e8a2b1a3dc3cb7be9a}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!address\+\_\+precision@{address\+\_\+precision}}
+\index{address\+\_\+precision@{address\+\_\+precision}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{address\+\_\+precision()}{address\_precision()}}
+{\footnotesize\ttfamily unsigned int mux\+\_\+connection\+\_\+binding\+::address\+\_\+precision (\begin{DoxyParamCaption}\item[{unsigned int}]{precision,  }\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&}]{op,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{data,  }\item[{const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref}}]{TreeM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 359 of file mux\+\_\+connection\+\_\+binding.\+cpp.
+
+
+
+References hls\+::allocation\+\_\+information, Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), hls\+::function\+Id, fu\+\_\+binding\+::get\+\_\+assign(), Allocation\+Information\+::get\+\_\+memory\+\_\+var(), G\+E\+T\+\_\+\+N\+O\+DE, Allocation\+Information\+::get\+\_\+proxy\+\_\+memory\+\_\+var(), tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), G\+E\+T\+\_\+\+T\+Y\+PE, H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, Allocation\+Information\+::is\+\_\+direct\+\_\+access\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+memory\+\_\+unit(), hls\+::\+Rfu, tree\+\_\+helper\+::size(), T\+Y\+P\+E\+\_\+\+L\+O\+AD, and T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE.
+
+
+
+Referenced by determine\+\_\+connection(), and dynamic\+\_\+multidimensional\+\_\+array\+\_\+handler().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_ac5426fb29f88f4e8a2b1a3dc3cb7be9a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_ac5426fb29f88f4e8a2b1a3dc3cb7be9a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmux__connection__binding_ad251a8347349b835c134d933a8f02048}\label{classmux__connection__binding_ad251a8347349b835c134d933a8f02048}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!connect\+\_\+array\+\_\+index@{connect\+\_\+array\+\_\+index}}
+\index{connect\+\_\+array\+\_\+index@{connect\+\_\+array\+\_\+index}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{connect\+\_\+array\+\_\+index()}{connect\_array\_index()}}
+{\footnotesize\ttfamily void mux\+\_\+connection\+\_\+binding\+::connect\+\_\+array\+\_\+index (\begin{DoxyParamCaption}\item[{unsigned int}]{tree\+\_\+index,  }\item[{\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{fu\+\_\+obj,  }\item[{unsigned int}]{port\+\_\+num,  }\item[{unsigned int}]{port\+\_\+index,  }\item[{unsigned int}]{bus\+\_\+addr\+\_\+bitsize,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{data,  }\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+connect\+\_\+array\+\_\+index\+: connect the index port of an array\+\_\+ref and convert it in case the source is of int type 
+
+
+
+Definition at line 3236 of file mux\+\_\+connection\+\_\+binding.\+cpp.
+
+
+
+References conn\+\_\+binding\+::add\+\_\+component(), conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic(), conn\+Cache, create\+\_\+single\+\_\+conn(), determine\+\_\+connection(), H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, tree\+\_\+helper\+::is\+\_\+int(), is\+Constant\+Obj(), is\+Zero\+Obj(), iu\+\_\+conv, I\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, hls\+::\+Rconn, and S\+TR.
+
+
+
+Referenced by determine\+\_\+connection(), and dynamic\+\_\+multidimensional\+\_\+array\+\_\+handler().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d1e/classmux__connection__binding_ad251a8347349b835c134d933a8f02048_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_ad251a8347349b835c134d933a8f02048_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmux__connection__binding_a19eaa5ec4596679c457c35b7aa4061ed}\label{classmux__connection__binding_a19eaa5ec4596679c457c35b7aa4061ed}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!connect\+\_\+to\+\_\+registers@{connect\+\_\+to\+\_\+registers}}
+\index{connect\+\_\+to\+\_\+registers@{connect\+\_\+to\+\_\+registers}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{connect\+\_\+to\+\_\+registers()}{connect\_to\_registers()}}
+{\footnotesize\ttfamily void mux\+\_\+connection\+\_\+binding\+::connect\+\_\+to\+\_\+registers (\begin{DoxyParamCaption}\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{op,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{data,  }\item[{\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{fu\+\_\+obj,  }\item[{unsigned int}]{port\+\_\+num,  }\item[{unsigned int}]{port\+\_\+index,  }\item[{unsigned int}]{tree\+\_\+var,  }\item[{unsigned int}]{precision,  }\item[{const bool}]{is\+\_\+not\+\_\+a\+\_\+phi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+connect the fu\+\_\+obj with the associated registers. 
+
+
+
+Definition at line 1334 of file mux\+\_\+connection\+\_\+binding.\+cpp.
+
+
+
+References conn\+\_\+binding\+::add\+\_\+data\+\_\+transfer(), Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), cur\+\_\+phi\+\_\+tree\+\_\+var, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, extract\+\_\+parm\+\_\+decl(), H\+L\+S\+Function\+Step\+::fun\+Id, reg\+\_\+binding\+::get(), fu\+\_\+binding\+::get(), G\+E\+T\+\_\+\+N\+A\+ME, liveness\+::get\+\_\+name(), liveness\+::get\+\_\+op\+\_\+where\+\_\+defined(), reg\+\_\+binding\+::get\+\_\+register(), liveness\+::get\+\_\+state\+\_\+in(), liveness\+::get\+\_\+state\+\_\+where\+\_\+end(), liveness\+::get\+\_\+state\+\_\+where\+\_\+run(), Storage\+Value\+Information\+::get\+\_\+storage\+\_\+value\+\_\+index(), generic\+\_\+obj\+::get\+\_\+string(), tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), G\+E\+T\+\_\+\+T\+Y\+PE, State\+Transition\+Graph\+Manager\+::\+Get\+Stg(), liveness\+::has\+\_\+state\+\_\+in(), H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, conn\+\_\+binding\+\_\+creator\+::input\+\_\+ports, Storage\+Value\+Information\+::is\+\_\+a\+\_\+storage\+\_\+value(), tree\+\_\+helper\+::is\+\_\+parameter(), is\+\_\+\+PC, N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, hls\+::\+Rconn, hls\+::\+Rfu, hls\+::\+Rliv, hls\+::\+Rreg, hls\+::\+S\+TG, hls\+::storage\+\_\+value\+\_\+information, S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, and T\+Y\+P\+E\+\_\+\+P\+HI.
+
+
+
+Referenced by determine\+\_\+connection().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_a19eaa5ec4596679c457c35b7aa4061ed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_a19eaa5ec4596679c457c35b7aa4061ed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmux__connection__binding_a7c22a4143586f31111cd64e34f1c9a59}\label{classmux__connection__binding_a7c22a4143586f31111cd64e34f1c9a59}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!create\+\_\+connections@{create\+\_\+connections}}
+\index{create\+\_\+connections@{create\+\_\+connections}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{create\+\_\+connections()}{create\_connections()}}
+{\footnotesize\ttfamily void mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates the connections inside the architecture. 
+
+add the ports representing the parameters
+
+check for required and produced values
+
+virtual phis are skipped
+
+phis are skipped
+
+adding activation\textquotesingle{}s state of selector related to operation op
+
+M\+E\+M\+O\+RY R\+E\+F\+E\+R\+E\+N\+C\+ES
+
+bitfield management
+
+phi must be differently managed
+
+if the variable does not belong to the live-\/out set, it means that it is used inside the state (chaining) and this situation is managed above 
+
+Definition at line 1660 of file mux\+\_\+connection\+\_\+binding.\+cpp.
+
+
+
+References conn\+\_\+binding\+::add\+\_\+component(), add\+\_\+conversion(), conn\+\_\+binding\+::add\+\_\+data\+\_\+transfer(), conn\+\_\+binding\+\_\+creator\+::add\+\_\+parameter\+\_\+ports(), conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic(), hls\+::allocation\+\_\+information, test\+\_\+panda\+::arg, test\+\_\+panda\+::args, A\+S\+S\+I\+G\+N\+\_\+\+R\+E\+A\+L\+\_\+\+S\+TD, A\+S\+S\+I\+G\+N\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD, A\+S\+S\+I\+G\+N\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+S\+TD, A\+S\+S\+I\+G\+N\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+\+B\+O\+O\+L\+\_\+\+S\+TD, conn\+\_\+binding\+::bind\+\_\+command\+\_\+port(), conn\+\_\+binding\+::bind\+\_\+selector\+\_\+port(), C\+A\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+C\+S\+T\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+D\+E\+C\+L\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+F\+A\+K\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+E\+R\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, C\+A\+S\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON, Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), commandport\+\_\+obj\+::\+C\+O\+N\+D\+I\+T\+I\+ON, conn\+Cache, conn\+\_\+binding\+::create\+\_\+conn\+\_\+binding(), create\+\_\+single\+\_\+conn(), cur\+\_\+phi\+\_\+tree\+\_\+var, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, determine\+\_\+connection(), Function\+Behavior\+::\+F\+D\+FG, hls\+::function\+Id, H\+L\+S\+Function\+Step\+::fun\+Id, reg\+\_\+binding\+::get(), fu\+\_\+binding\+::get(), fu\+\_\+binding\+::get\+\_\+allocation\+\_\+list(), fu\+\_\+binding\+::get\+\_\+assign(), tree\+\_\+helper\+::get\+\_\+formal\+\_\+ith(), Allocation\+Information\+::get\+\_\+fu(), Allocation\+Information\+::get\+\_\+fu\+\_\+name(), fu\+\_\+binding\+::get\+\_\+index(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+node\+::get\+\_\+kind\+\_\+text(), liveness\+::get\+\_\+live\+\_\+in(), G\+E\+T\+\_\+\+N\+A\+ME, liveness\+::get\+\_\+name(), G\+E\+T\+\_\+\+N\+O\+DE, fu\+\_\+binding\+::get\+\_\+number(), Allocation\+Information\+::get\+\_\+number\+\_\+channels(), liveness\+::get\+\_\+op\+\_\+where\+\_\+defined(), fu\+\_\+binding\+::get\+\_\+ports\+\_\+are\+\_\+swapped(), reg\+\_\+binding\+::get\+\_\+register(), liveness\+::get\+\_\+state\+\_\+in(), liveness\+::get\+\_\+state\+\_\+out(), liveness\+::get\+\_\+state\+\_\+where\+\_\+end(), liveness\+::get\+\_\+state\+\_\+where\+\_\+run(), Storage\+Value\+Information\+::get\+\_\+storage\+\_\+value\+\_\+index(), generic\+\_\+obj\+::get\+\_\+string(), Allocation\+Information\+::get\+\_\+string\+\_\+name(), liveness\+::get\+\_\+support(), tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), G\+E\+T\+\_\+\+T\+Y\+PE, tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), tree\+\_\+helper\+::get\+\_\+type\+\_\+node(), reg\+\_\+binding\+::get\+\_\+used\+\_\+regs(), State\+Transition\+Graph\+Manager\+::\+Get\+Stg(), liveness\+::has\+\_\+state\+\_\+in(), liveness\+::has\+\_\+state\+\_\+out(), H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, i\+\_\+assign, conn\+\_\+binding\+::\+IN, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+helper\+::is\+\_\+a\+\_\+pointer(), Storage\+Value\+Information\+::is\+\_\+a\+\_\+storage\+\_\+value(), tree\+\_\+helper\+::is\+\_\+bool(), Allocation\+Information\+::is\+\_\+direct\+\_\+access\+\_\+memory\+\_\+unit(), Allocation\+Information\+::is\+\_\+indirect\+\_\+access\+\_\+memory\+\_\+unit(), tree\+\_\+helper\+::is\+\_\+int(), is\+\_\+\+PC, tree\+\_\+helper\+::is\+\_\+real(), tree\+\_\+helper\+::is\+\_\+unsigned(), is\+Constant\+Obj(), is\+Zero\+Obj(), iu\+\_\+conv, I\+U\+D\+A\+T\+A\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+\_\+\+S\+TD, M\+E\+M\+C\+PY, M\+E\+M\+S\+ET, M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+ND, commandport\+\_\+obj\+::\+M\+U\+L\+T\+I\+IF, N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX, object\+\_\+bitsize(), commandport\+\_\+obj\+::\+O\+P\+E\+R\+A\+T\+I\+ON, conn\+\_\+binding\+::\+O\+UT, Design\+Flow\+Step\+::parameters, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, tree\+\_\+helper\+::print\+\_\+function\+\_\+name(), Behavioral\+Helper\+::\+Print\+Variable(), hls\+::\+Rconn, hls\+::\+Rfu, hls\+::\+Rliv, hls\+::\+Rreg, commandport\+\_\+obj\+::\+S\+E\+L\+E\+C\+T\+OR, tree\+\_\+helper\+::size(), hls\+::\+S\+TG, hls\+::storage\+\_\+value\+\_\+information, S\+TR, commandport\+\_\+obj\+::\+S\+W\+I\+T\+CH, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE, To\+String(), test\+\_\+panda\+::type, T\+Y\+P\+E\+\_\+\+IF, T\+Y\+P\+E\+\_\+\+L\+O\+AD, T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+IF, T\+Y\+P\+E\+\_\+\+P\+HI, T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE, T\+Y\+P\+E\+\_\+\+S\+W\+I\+T\+CH, T\+Y\+P\+E\+\_\+\+V\+P\+HI, vb\+\_\+assign, and commandport\+\_\+obj\+::\+W\+R\+E\+N\+A\+B\+LE.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d1e/classmux__connection__binding_a7c22a4143586f31111cd64e34f1c9a59_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_a7c22a4143586f31111cd64e34f1c9a59_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmux__connection__binding_ae17b2f5ce5c792eabdf7d5343e866b05}\label{classmux__connection__binding_ae17b2f5ce5c792eabdf7d5343e866b05}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!create\+\_\+single\+\_\+conn@{create\+\_\+single\+\_\+conn}}
+\index{create\+\_\+single\+\_\+conn@{create\+\_\+single\+\_\+conn}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{create\+\_\+single\+\_\+conn()}{create\_single\_conn()}}
+{\footnotesize\ttfamily void mux\+\_\+connection\+\_\+binding\+::create\+\_\+single\+\_\+conn (\begin{DoxyParamCaption}\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{data,  }\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&}]{op,  }\item[{\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{fu\+\_\+obj\+\_\+src,  }\item[{\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{fu\+\_\+obj,  }\item[{unsigned int}]{port\+\_\+num,  }\item[{unsigned int}]{port\+\_\+index,  }\item[{unsigned int}]{tree\+\_\+var,  }\item[{unsigned int}]{precision,  }\item[{const bool}]{is\+\_\+not\+\_\+a\+\_\+phi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+create the connection object and update the unique table 
+
+instead of tree\+\_\+var we use cur\+\_\+phi\+\_\+tree\+\_\+var when we look into the state in data structure since tree\+\_\+var can be modified in the mean time 
+
+Definition at line 299 of file mux\+\_\+connection\+\_\+binding.\+cpp.
+
+
+
+References conn\+\_\+binding\+::add\+\_\+data\+\_\+transfer(), Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), cur\+\_\+phi\+\_\+tree\+\_\+var, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, H\+L\+S\+Function\+Step\+::fun\+Id, liveness\+::get\+\_\+name(), liveness\+::get\+\_\+state\+\_\+in(), liveness\+::get\+\_\+state\+\_\+where\+\_\+run(), generic\+\_\+obj\+::get\+\_\+string(), tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), State\+Transition\+Graph\+Manager\+::\+Get\+Stg(), liveness\+::has\+\_\+state\+\_\+in(), H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, is\+\_\+\+PC, N\+U\+L\+L\+\_\+\+V\+E\+R\+T\+EX, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, hls\+::\+Rconn, hls\+::\+Rliv, hls\+::\+S\+TG, S\+TR, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by add\+\_\+conversion(), connect\+\_\+array\+\_\+index(), create\+\_\+connections(), determine\+\_\+connection(), and dynamic\+\_\+multidimensional\+\_\+array\+\_\+handler().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_ae17b2f5ce5c792eabdf7d5343e866b05_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_ae17b2f5ce5c792eabdf7d5343e866b05_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmux__connection__binding_ad6e5804e02d1a7c926ecdb1ae458a76f}\label{classmux__connection__binding_ad6e5804e02d1a7c926ecdb1ae458a76f}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!determine\+\_\+connection@{determine\+\_\+connection}}
+\index{determine\+\_\+connection@{determine\+\_\+connection}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{determine\+\_\+connection()}{determine\_connection()}}
+{\footnotesize\ttfamily void mux\+\_\+connection\+\_\+binding\+::determine\+\_\+connection (\begin{DoxyParamCaption}\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&}]{op,  }\item[{const \hyperlink{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}{H\+L\+S\+\_\+manager\+::io\+\_\+binding\+\_\+type} \&}]{var,  }\item[{\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{fu\+\_\+obj,  }\item[{unsigned int}]{port\+\_\+num,  }\item[{unsigned int}]{port\+\_\+index,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{data,  }\item[{unsigned int}]{precision,  }\item[{unsigned int}]{alignment = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Determine the actual interconnection. 
+
+dynamic multidimensional array case
+
+symbol\+\_\+index + base\+\_\+index + idx\+\_\+index $\ast$ step\+\_\+index + offset\+\_\+index
+
+idx2\+\_\+index + base\+\_\+index + idx\+\_\+index $\ast$ step\+\_\+index + offset\+\_\+index
+
+the first element of a complex object is the realpart so we just need the base\+\_\+address
+
+else a direct connection is considered since adresses are passed
+
+else a direct connection is considered
+
+check bitsize
+
+create connection with the constant 
+
+Definition at line 408 of file mux\+\_\+connection\+\_\+binding.\+cpp.
+
+
+
+References conn\+\_\+binding\+::add\+\_\+component(), conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic(), address\+\_\+precision(), align\+\_\+to\+\_\+trimmed\+\_\+bits(), B\+I\+T\+F\+I\+E\+L\+D\+\_\+\+EC, C\+A\+S\+E\+\_\+\+C\+P\+P\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+F\+A\+K\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+P\+R\+A\+G\+M\+A\+\_\+\+N\+O\+D\+ES, C\+A\+S\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+D\+ES, Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), connect\+\_\+array\+\_\+index(), connect\+\_\+to\+\_\+registers(), convert\+\_\+to\+\_\+binary(), create\+\_\+single\+\_\+conn(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, dynamic\+\_\+multidimensional\+\_\+array\+\_\+handler(), hls\+::function\+Id, H\+L\+S\+Function\+Step\+::fun\+Id, tree\+\_\+helper\+::get\+\_\+base\+\_\+index(), conn\+\_\+binding\+::get\+\_\+constant\+\_\+obj(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), tree\+\_\+node\+::get\+\_\+kind(), tree\+\_\+node\+::get\+\_\+kind\+\_\+text(), G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const(), G\+E\+T\+\_\+\+T\+Y\+PE, tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), tree\+\_\+helper\+::get\+\_\+type\+\_\+node(), H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, Behavioral\+Helper\+::is\+\_\+a\+\_\+constant(), Function\+Behavior\+::is\+\_\+variable\+\_\+mem(), min, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, Behavioral\+Helper\+::\+Print\+Variable(), hls\+::\+Rconn, resize\+\_\+to\+\_\+1\+\_\+8\+\_\+16\+\_\+32\+\_\+64\+\_\+128\+\_\+256\+\_\+512(), tree\+\_\+helper\+::size(), S\+TR, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+DE, test\+\_\+panda\+::type, T\+Y\+P\+E\+\_\+\+P\+HI, U\+I\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD, U\+I\+\_\+\+A\+L\+I\+G\+N\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD, U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD, and U\+I\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD.
+
+
+
+Referenced by add\+\_\+conversion(), connect\+\_\+array\+\_\+index(), create\+\_\+connections(), and dynamic\+\_\+multidimensional\+\_\+array\+\_\+handler().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d1e/classmux__connection__binding_ad6e5804e02d1a7c926ecdb1ae458a76f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_ad6e5804e02d1a7c926ecdb1ae458a76f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmux__connection__binding_a89ede1ce1d15207461df7fdf816a4a16}\label{classmux__connection__binding_a89ede1ce1d15207461df7fdf816a4a16}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!dynamic\+\_\+multidimensional\+\_\+array\+\_\+handler@{dynamic\+\_\+multidimensional\+\_\+array\+\_\+handler}}
+\index{dynamic\+\_\+multidimensional\+\_\+array\+\_\+handler@{dynamic\+\_\+multidimensional\+\_\+array\+\_\+handler}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{dynamic\+\_\+multidimensional\+\_\+array\+\_\+handler()}{dynamic\_multidimensional\_array\_handler()}}
+{\footnotesize\ttfamily \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} mux\+\_\+connection\+\_\+binding\+::dynamic\+\_\+multidimensional\+\_\+array\+\_\+handler (\begin{DoxyParamCaption}\item[{array\+\_\+ref $\ast$}]{ar,  }\item[{const \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex} \&}]{op,  }\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{data,  }\item[{unsigned int \&}]{base\+\_\+address\+\_\+index\+\_\+pointer,  }\item[{std\+::vector$<$ unsigned int $>$ \&}]{recursive\+\_\+indexes\+\_\+values,  }\item[{std\+::vector$<$ unsigned int $>$ \&}]{dims,  }\item[{\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} \&}]{global\+\_\+adder,  }\item[{const bool}]{is\+\_\+not\+\_\+a\+\_\+phi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Recursive function which returns the offset of a dynamic multidimensional array call. 
+
+generates needed components
+
+updates indexes array and calls recursive function
+
+starts to create basic components directly linked to the offset calculator 
+
+Definition at line 191 of file mux\+\_\+connection\+\_\+binding.\+cpp.
+
+
+
+References conn\+\_\+binding\+::add\+\_\+component(), conn\+\_\+binding\+::add\+\_\+sparse\+\_\+logic(), address\+\_\+precision(), connect\+\_\+array\+\_\+index(), create\+\_\+single\+\_\+conn(), determine\+\_\+connection(), tree\+\_\+helper\+::get\+\_\+array\+\_\+dimensions(), G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, G\+E\+T\+\_\+\+N\+O\+DE, tree\+\_\+helper\+::get\+\_\+type\+\_\+node(), H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, hls\+::\+Rconn, S\+TR, T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR, U\+I\+\_\+\+A\+D\+D\+E\+R\+\_\+\+S\+TD, and U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R\+\_\+\+S\+TD.
+
+
+
+Referenced by determine\+\_\+connection().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d1e/classmux__connection__binding_a89ede1ce1d15207461df7fdf816a4a16_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_a89ede1ce1d15207461df7fdf816a4a16_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmux__connection__binding_af62b7f65acce2f389f49634b980c88a6}\label{classmux__connection__binding_af62b7f65acce2f389f49634b980c88a6}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!extract\+\_\+parm\+\_\+decl@{extract\+\_\+parm\+\_\+decl}}
+\index{extract\+\_\+parm\+\_\+decl@{extract\+\_\+parm\+\_\+decl}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{extract\+\_\+parm\+\_\+decl()}{extract\_parm\_decl()}}
+{\footnotesize\ttfamily unsigned int mux\+\_\+connection\+\_\+binding\+::extract\+\_\+parm\+\_\+decl (\begin{DoxyParamCaption}\item[{unsigned int}]{tree\+\_\+var,  }\item[{const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref}}]{TreeM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1320 of file mux\+\_\+connection\+\_\+binding.\+cpp.
+
+
+
+References G\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+O\+DE, and tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const().
+
+
+
+Referenced by connect\+\_\+to\+\_\+registers().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_af62b7f65acce2f389f49634b980c88a6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_af62b7f65acce2f389f49634b980c88a6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmux__connection__binding_af8f6b0964f86f8cf2b503a0570a425e1}\label{classmux__connection__binding_af8f6b0964f86f8cf2b503a0570a425e1}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void mux\+\_\+connection\+\_\+binding\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 146 of file mux\+\_\+connection\+\_\+binding.\+cpp.
+
+
+
+References chained\+\_\+in, hls\+::controller\+\_\+type, cur\+\_\+phi\+\_\+tree\+\_\+var, H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+Function\+Step\+::\+Initialize(), is\+\_\+\+PC, module\+\_\+in, noswap\+\_\+computed\+\_\+table, hls\+::\+Rconn, regs\+\_\+in, and swap\+\_\+computed\+\_\+table.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_af8f6b0964f86f8cf2b503a0570a425e1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmux__connection__binding_a0adc59417dbca6bec2932be7341490a0}\label{classmux__connection__binding_a0adc59417dbca6bec2932be7341490a0}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!input\+\_\+logic@{input\+\_\+logic}}
+\index{input\+\_\+logic@{input\+\_\+logic}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{input\+\_\+logic()}{input\_logic()}}
+{\footnotesize\ttfamily unsigned int mux\+\_\+connection\+\_\+binding\+::input\+\_\+logic (\begin{DoxyParamCaption}\item[{const \hyperlink{classconn__binding_aa5406c3bf4cee893234c2b0847471f56}{conn\+\_\+binding\+::\+Connection\+Sources} \&}]{src,  }\item[{const \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}}]{tgt,  }\item[{unsigned int}]{op,  }\item[{unsigned int}]{port\+\_\+index,  }\item[{unsigned int}]{iteration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Computes logic for inputs. 
+
+The connection can become directed or by multiplexer. If multiplexers are allocated, then decoding logic is created. 
+\begin{DoxyParams}{Parameters}
+{\em src} & is the set of references to \hyperlink{classgeneric__obj}{generic\+\_\+obj}, sources of connections \\
+\hline
+{\em tgt} & is the reference to connection target \\
+\hline
+{\em op} & is i-\/th operand of target element, where source is attached \\
+\hline
+{\em port\+\_\+index} & is the i-\/th port index of the given target port. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of multiplexer allocated 
+\end{DoxyReturn}
+if it\textquotesingle{}s a one-\/to-\/one connection, a directed link can be used
+
+map between the source object and the resulting tree of multiplexers to the current target object
+
+map between a data\+\_\+transfer and object associated at the moment
+
+map between a \hyperlink{classgeneric__obj}{generic\+\_\+obj} and list of data\+\_\+transfer associated with this object
+
+map between a data\+\_\+transfer and original source object
+
+all the inputs are connected with 2\+:1 multiplexers. Two inputs are taken at each time.
+
+stuff for the first input
+
+stuff for the second input
+
+specialize connections between sources and target 
+
+Definition at line 2720 of file mux\+\_\+connection\+\_\+binding.\+cpp.
+
+
+
+References conn\+\_\+binding\+::add\+\_\+component(), conn\+\_\+binding\+::add\+\_\+connection(), conn\+\_\+binding\+::bind\+\_\+selector\+\_\+port(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, F\+\_\+\+C\+O\+ND, H\+L\+S\+Function\+Step\+::fun\+Id, liveness\+::get\+\_\+name(), generic\+\_\+obj\+::get\+\_\+string(), H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, conn\+\_\+binding\+::\+IN, I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+U\+I\+NT, test\+\_\+panda\+::level, M\+U\+X\+\_\+\+G\+A\+T\+E\+\_\+\+S\+TD, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, hls\+::\+Rconn, generic\+\_\+obj\+::\+R\+E\+G\+I\+S\+T\+ER, hls\+::\+Rliv, commandport\+\_\+obj\+::\+S\+E\+L\+E\+C\+T\+OR, S\+TR, T\+\_\+\+C\+O\+ND, T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT, and T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR.
+
+
+
+Referenced by mux\+\_\+interconnection().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_a0adc59417dbca6bec2932be7341490a0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_a0adc59417dbca6bec2932be7341490a0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmux__connection__binding_a87b0d8d8254080cb835394a5eb56eedf}\label{classmux__connection__binding_a87b0d8d8254080cb835394a5eb56eedf}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!Internal\+Exec@{Internal\+Exec}}
+\index{Internal\+Exec@{Internal\+Exec}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{Internal\+Exec()}{InternalExec()}}
+{\footnotesize\ttfamily \hyperlink{design__flow__step_8hpp_afb1f0d73069c26076b8d31dbc8ebecdf}{Design\+Flow\+Step\+\_\+\+Status} mux\+\_\+connection\+\_\+binding\+::\+Internal\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the step. 
+
+This function is the public one to execute connection binding.
+
+\begin{DoxyReturn}{Returns}
+the exit status of this step
+\end{DoxyReturn}
+First it computes virtual connection to be implemented and then it allocates them based on chosen architecture 
+
+Implements \hyperlink{classHLSFunctionStep_a8db4c00d080655984d98143206fc9fa8}{H\+L\+S\+Function\+Step}.
+
+
+
+Definition at line 164 of file mux\+\_\+connection\+\_\+binding.\+cpp.
+
+
+
+References conn\+Cache, create\+\_\+connections(), conn\+\_\+binding\+::determine\+\_\+bit\+\_\+level\+\_\+mux(), H\+L\+S\+Function\+Step\+::fun\+Id, H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, I\+N\+D\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+M\+EX, mux\+\_\+interconnection(), Design\+Flow\+Step\+::output\+\_\+level, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+I\+N\+I\+M\+UM, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, O\+U\+T\+P\+U\+T\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, conn\+\_\+binding\+::print(), print\+\_\+cpu\+\_\+time(), hls\+::\+Rconn, S\+T\+A\+R\+T\+\_\+\+T\+I\+ME, S\+T\+O\+P\+\_\+\+T\+I\+ME, S\+TR, and S\+U\+C\+C\+E\+SS.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d1e/classmux__connection__binding_a87b0d8d8254080cb835394a5eb56eedf_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmux__connection__binding_a89c0ed6afea0b88bf31e8e6dcefc0f63}\label{classmux__connection__binding_a89c0ed6afea0b88bf31e8e6dcefc0f63}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!is\+Constant\+Obj@{is\+Constant\+Obj}}
+\index{is\+Constant\+Obj@{is\+Constant\+Obj}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{is\+Constant\+Obj()}{isConstantObj()}}
+{\footnotesize\ttfamily bool mux\+\_\+connection\+\_\+binding\+::is\+Constant\+Obj (\begin{DoxyParamCaption}\item[{unsigned int}]{tree\+\_\+index,  }\item[{const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref}}]{TreeM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 397 of file mux\+\_\+connection\+\_\+binding.\+cpp.
+
+
+
+References tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const().
+
+
+
+Referenced by add\+\_\+conversion(), connect\+\_\+array\+\_\+index(), and create\+\_\+connections().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_a89c0ed6afea0b88bf31e8e6dcefc0f63_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_a89c0ed6afea0b88bf31e8e6dcefc0f63_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmux__connection__binding_af8f0423ad663b8a5fb6b9a2f96dde90c}\label{classmux__connection__binding_af8f0423ad663b8a5fb6b9a2f96dde90c}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!is\+Zero\+Obj@{is\+Zero\+Obj}}
+\index{is\+Zero\+Obj@{is\+Zero\+Obj}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{is\+Zero\+Obj()}{isZeroObj()}}
+{\footnotesize\ttfamily bool mux\+\_\+connection\+\_\+binding\+::is\+Zero\+Obj (\begin{DoxyParamCaption}\item[{unsigned int}]{tree\+\_\+index,  }\item[{const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref}}]{TreeM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 384 of file mux\+\_\+connection\+\_\+binding.\+cpp.
+
+
+
+References tree\+\_\+helper\+::get\+\_\+integer\+\_\+cst\+\_\+value(), and tree\+\_\+manager\+::get\+\_\+tree\+\_\+node\+\_\+const().
+
+
+
+Referenced by add\+\_\+conversion(), connect\+\_\+array\+\_\+index(), and create\+\_\+connections().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_af8f0423ad663b8a5fb6b9a2f96dde90c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_af8f0423ad663b8a5fb6b9a2f96dde90c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmux__connection__binding_adfcb7df795ba15e433753c6682e44daa}\label{classmux__connection__binding_adfcb7df795ba15e433753c6682e44daa}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!mux\+\_\+interconnection@{mux\+\_\+interconnection}}
+\index{mux\+\_\+interconnection@{mux\+\_\+interconnection}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{mux\+\_\+interconnection()}{mux\_interconnection()}}
+{\footnotesize\ttfamily unsigned int mux\+\_\+connection\+\_\+binding\+::mux\+\_\+interconnection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Performs specialization of interconnections using mux architecture. 
+
+
+
+Definition at line 2698 of file mux\+\_\+connection\+\_\+binding.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+B\+O\+SE, conn\+\_\+binding\+::get\+\_\+data\+\_\+transfers(), generic\+\_\+obj\+::get\+\_\+string(), H\+L\+S\+Function\+Step\+::\+H\+LS, input\+\_\+logic(), P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, and hls\+::\+Rconn.
+
+
+
+Referenced by Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_adfcb7df795ba15e433753c6682e44daa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_adfcb7df795ba15e433753c6682e44daa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmux__connection__binding_a5a1ab44883c4e500c1a23724fbff9364}\label{classmux__connection__binding_a5a1ab44883c4e500c1a23724fbff9364}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!object\+\_\+bitsize@{object\+\_\+bitsize}}
+\index{object\+\_\+bitsize@{object\+\_\+bitsize}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{object\+\_\+bitsize()}{object\_bitsize()}}
+{\footnotesize\ttfamily unsigned int mux\+\_\+connection\+\_\+binding\+::object\+\_\+bitsize (\begin{DoxyParamCaption}\item[{const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref}}]{TreeM,  }\item[{const \hyperlink{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}{H\+L\+S\+\_\+manager\+::io\+\_\+binding\+\_\+type} \&}]{obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compute the bitsize given a io\+\_\+binding type. 
+
+
+
+Definition at line 2864 of file mux\+\_\+connection\+\_\+binding.\+cpp.
+
+
+
+References tree\+\_\+helper\+::get\+\_\+type\+\_\+index(), H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, tree\+\_\+helper\+::is\+\_\+a\+\_\+struct(), tree\+\_\+helper\+::is\+\_\+an\+\_\+array(), tree\+\_\+helper\+::is\+\_\+an\+\_\+union(), and tree\+\_\+helper\+::size().
+
+
+
+Referenced by add\+\_\+conversion(), and create\+\_\+connections().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_a5a1ab44883c4e500c1a23724fbff9364_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_a5a1ab44883c4e500c1a23724fbff9364_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmux__connection__binding_a2eccd06bada7e07af12b2e14918dbbfa}\label{classmux__connection__binding_a2eccd06bada7e07af12b2e14918dbbfa}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!swap\+\_\+p@{swap\+\_\+p}}
+\index{swap\+\_\+p@{swap\+\_\+p}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{swap\+\_\+p()}{swap\_p()}}
+{\footnotesize\ttfamily unsigned int mux\+\_\+connection\+\_\+binding\+::swap\+\_\+p (\begin{DoxyParamCaption}\item[{const \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}]{data,  }\item[{\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}}]{op,  }\item[{unsigned int}]{num,  }\item[{std\+::vector$<$ \hyperlink{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}{H\+L\+S\+\_\+manager\+::io\+\_\+binding\+\_\+type} $>$ \&}]{vars\+\_\+read,  }\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{behavioral\+\_\+helper,  }\item[{const \hyperlink{tree__manager_8hpp_a96ff150c071ce11a9a7a1e40590f205e}{tree\+\_\+manager\+Ref}}]{TreeM }\end{DoxyParamCaption})}
+
+
+
+check if the port has to be swapped 
+
+it is not chained but from the mux binding it counts as input to the mux tree 
+
+Definition at line 2892 of file mux\+\_\+connection\+\_\+binding.\+cpp.
+
+
+
+References Op\+Graph\+::\+C\+Get\+Op\+Node\+Info(), chained\+\_\+in, fu\+\_\+binding\+::get\+\_\+assign(), fu\+\_\+binding\+::get\+\_\+index(), liveness\+::get\+\_\+op\+\_\+where\+\_\+defined(), reg\+\_\+binding\+::get\+\_\+register(), liveness\+::get\+\_\+state\+\_\+where\+\_\+end(), liveness\+::get\+\_\+state\+\_\+where\+\_\+run(), Storage\+Value\+Information\+::get\+\_\+storage\+\_\+value\+\_\+index(), G\+E\+T\+\_\+\+T\+Y\+PE, liveness\+::has\+\_\+op\+\_\+where\+\_\+defined(), H\+L\+S\+Function\+Step\+::\+H\+LS, I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+U\+I\+NT, insert(), Behavioral\+Helper\+::is\+\_\+a\+\_\+constant(), Storage\+Value\+Information\+::is\+\_\+a\+\_\+storage\+\_\+value(), tree\+\_\+helper\+::is\+\_\+parameter(), module\+\_\+in, noswap\+\_\+computed\+\_\+table, regs\+\_\+in, hls\+::\+Rfu, hls\+::\+Rliv, hls\+::\+Rreg, S\+T\+OK, hls\+::storage\+\_\+value\+\_\+information, swap\+\_\+computed\+\_\+table, T\+O\+K\+\_\+\+B\+I\+T\+\_\+\+A\+N\+D\+\_\+\+E\+X\+PR, T\+O\+K\+\_\+\+B\+I\+T\+\_\+\+I\+O\+R\+\_\+\+E\+X\+PR, T\+O\+K\+\_\+\+B\+I\+T\+\_\+\+X\+O\+R\+\_\+\+E\+X\+PR, T\+O\+K\+\_\+\+E\+Q\+\_\+\+E\+X\+PR, T\+O\+K\+\_\+\+M\+U\+L\+T\+\_\+\+E\+X\+PR, T\+O\+K\+\_\+\+N\+E\+\_\+\+E\+X\+PR, T\+O\+K\+\_\+\+P\+L\+U\+S\+\_\+\+E\+X\+PR, T\+O\+K\+\_\+\+P\+O\+I\+N\+T\+E\+R\+\_\+\+P\+L\+U\+S\+\_\+\+E\+X\+PR, T\+O\+K\+\_\+\+W\+I\+D\+E\+N\+\_\+\+M\+U\+L\+T\+\_\+\+E\+X\+PR, T\+O\+K\+\_\+\+W\+I\+D\+E\+N\+\_\+\+S\+U\+M\+\_\+\+E\+X\+PR, and T\+Y\+P\+E\+\_\+\+P\+HI.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1e/classmux__connection__binding_a2eccd06bada7e07af12b2e14918dbbfa_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classmux__connection__binding_a6a7f00a750edd58786915ba407f4fc0c}\label{classmux__connection__binding_a6a7f00a750edd58786915ba407f4fc0c}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!chained\+\_\+in@{chained\+\_\+in}}
+\index{chained\+\_\+in@{chained\+\_\+in}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{chained\+\_\+in}{chained\_in}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{classmux__connection__binding_aa43c7eaf66a55ac97a5a7f57f6149025}{resource\+\_\+id\+\_\+type}, std\+::map$<$unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ $>$ $>$ mux\+\_\+connection\+\_\+binding\+::chained\+\_\+in\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+store the chained storage values for each resource and for each port 
+
+
+
+Definition at line 78 of file mux\+\_\+connection\+\_\+binding.\+hpp.
+
+
+
+Referenced by Initialize(), and swap\+\_\+p().
+
+\mbox{\Hypertarget{classmux__connection__binding_a2d3ec6f686648da3f5f4d02ff4f7a2f9}\label{classmux__connection__binding_a2d3ec6f686648da3f5f4d02ff4f7a2f9}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!conn\+Cache@{conn\+Cache}}
+\index{conn\+Cache@{conn\+Cache}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{conn\+Cache}{connCache}}
+{\footnotesize\ttfamily std\+::map$<$std\+::tuple$<$unsigned int, \hyperlink{classmux__connection__binding_aaf8d69f505f7832b20e1b0c50c3b6efe}{cache\+Type}, const \hyperlink{classHLS__manager_a972627cc658afa992590b9d2bf1a1e87}{H\+L\+S\+\_\+manager\+::io\+\_\+binding\+\_\+type}$>$, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}$>$ mux\+\_\+connection\+\_\+binding\+::conn\+Cache\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+connection cache 
+
+
+
+Definition at line 105 of file mux\+\_\+connection\+\_\+binding.\+hpp.
+
+
+
+Referenced by add\+\_\+conversion(), connect\+\_\+array\+\_\+index(), create\+\_\+connections(), and Internal\+Exec().
+
+\mbox{\Hypertarget{classmux__connection__binding_a7ba6eaf97161963dc246e6db966e6386}\label{classmux__connection__binding_a7ba6eaf97161963dc246e6db966e6386}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!cur\+\_\+phi\+\_\+tree\+\_\+var@{cur\+\_\+phi\+\_\+tree\+\_\+var}}
+\index{cur\+\_\+phi\+\_\+tree\+\_\+var@{cur\+\_\+phi\+\_\+tree\+\_\+var}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{cur\+\_\+phi\+\_\+tree\+\_\+var}{cur\_phi\_tree\_var}}
+{\footnotesize\ttfamily unsigned int mux\+\_\+connection\+\_\+binding\+::cur\+\_\+phi\+\_\+tree\+\_\+var\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+store the current phi use. Used during the analysis of phi nodes 
+
+
+
+Definition at line 92 of file mux\+\_\+connection\+\_\+binding.\+hpp.
+
+
+
+Referenced by connect\+\_\+to\+\_\+registers(), create\+\_\+connections(), create\+\_\+single\+\_\+conn(), and Initialize().
+
+\mbox{\Hypertarget{classmux__connection__binding_a29d2b0e043edf53408192cdb8f770b19}\label{classmux__connection__binding_a29d2b0e043edf53408192cdb8f770b19}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!id@{id}}
+\index{id@{id}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily unsigned int mux\+\_\+connection\+\_\+binding\+::id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+variable used to assign a unique id to sparse logic 
+
+
+
+Definition at line 89 of file mux\+\_\+connection\+\_\+binding.\+hpp.
+
+\mbox{\Hypertarget{classmux__connection__binding_a1e2a12ebf8b4526a747c73d91d97adc9}\label{classmux__connection__binding_a1e2a12ebf8b4526a747c73d91d97adc9}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!is\+\_\+\+PC@{is\+\_\+\+PC}}
+\index{is\+\_\+\+PC@{is\+\_\+\+PC}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{is\+\_\+\+PC}{is\_PC}}
+{\footnotesize\ttfamily bool mux\+\_\+connection\+\_\+binding\+::is\+\_\+\+PC\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 94 of file mux\+\_\+connection\+\_\+binding.\+hpp.
+
+
+
+Referenced by connect\+\_\+to\+\_\+registers(), create\+\_\+connections(), create\+\_\+single\+\_\+conn(), and Initialize().
+
+\mbox{\Hypertarget{classmux__connection__binding_abe3e45c29632c3aa4629f55195c3990e}\label{classmux__connection__binding_abe3e45c29632c3aa4629f55195c3990e}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!module\+\_\+in@{module\+\_\+in}}
+\index{module\+\_\+in@{module\+\_\+in}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{module\+\_\+in}{module\_in}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{classmux__connection__binding_aa43c7eaf66a55ac97a5a7f57f6149025}{resource\+\_\+id\+\_\+type}, std\+::map$<$unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{classmux__connection__binding_aa43c7eaf66a55ac97a5a7f57f6149025}{resource\+\_\+id\+\_\+type}$>$ $>$ $>$ mux\+\_\+connection\+\_\+binding\+::module\+\_\+in\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+store the resource in IN for each resource and for each port 
+
+
+
+Definition at line 80 of file mux\+\_\+connection\+\_\+binding.\+hpp.
+
+
+
+Referenced by Initialize(), and swap\+\_\+p().
+
+\mbox{\Hypertarget{classmux__connection__binding_a8605219f931f5173519515526515b3bd}\label{classmux__connection__binding_a8605219f931f5173519515526515b3bd}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!noswap\+\_\+computed\+\_\+table@{noswap\+\_\+computed\+\_\+table}}
+\index{noswap\+\_\+computed\+\_\+table@{noswap\+\_\+computed\+\_\+table}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{noswap\+\_\+computed\+\_\+table}{noswap\_computed\_table}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ mux\+\_\+connection\+\_\+binding\+::noswap\+\_\+computed\+\_\+table\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+store the operations for which a port swapping is not beneficial 
+
+
+
+Definition at line 86 of file mux\+\_\+connection\+\_\+binding.\+hpp.
+
+
+
+Referenced by Initialize(), and swap\+\_\+p().
+
+\mbox{\Hypertarget{classmux__connection__binding_ae2887fd8b2a2ac2f821b88ee5b72645c}\label{classmux__connection__binding_ae2887fd8b2a2ac2f821b88ee5b72645c}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!regs\+\_\+in@{regs\+\_\+in}}
+\index{regs\+\_\+in@{regs\+\_\+in}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{regs\+\_\+in}{regs\_in}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{classmux__connection__binding_aa43c7eaf66a55ac97a5a7f57f6149025}{resource\+\_\+id\+\_\+type}, std\+::map$<$unsigned int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ $>$ $>$ mux\+\_\+connection\+\_\+binding\+::regs\+\_\+in\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+store the registers for each resource and for each port 
+
+
+
+Definition at line 76 of file mux\+\_\+connection\+\_\+binding.\+hpp.
+
+
+
+Referenced by Initialize(), and swap\+\_\+p().
+
+\mbox{\Hypertarget{classmux__connection__binding_aca8cadda839b8ce1a7274ef6ec437603}\label{classmux__connection__binding_aca8cadda839b8ce1a7274ef6ec437603}} 
+\index{mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}!swap\+\_\+computed\+\_\+table@{swap\+\_\+computed\+\_\+table}}
+\index{swap\+\_\+computed\+\_\+table@{swap\+\_\+computed\+\_\+table}!mux\+\_\+connection\+\_\+binding@{mux\+\_\+connection\+\_\+binding}}
+\subsubsection{\texorpdfstring{swap\+\_\+computed\+\_\+table}{swap\_computed\_table}}
+{\footnotesize\ttfamily \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}$>$ mux\+\_\+connection\+\_\+binding\+::swap\+\_\+computed\+\_\+table\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+store the operations for which a port swapping is beneficial 
+
+
+
+Definition at line 83 of file mux\+\_\+connection\+\_\+binding.\+hpp.
+
+
+
+Referenced by Initialize(), and swap\+\_\+p().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/interconnection/\hyperlink{mux__connection__binding_8hpp}{mux\+\_\+connection\+\_\+binding.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/binding/interconnection/\hyperlink{mux__connection__binding_8cpp}{mux\+\_\+connection\+\_\+binding.\+cpp}\end{DoxyCompactItemize}

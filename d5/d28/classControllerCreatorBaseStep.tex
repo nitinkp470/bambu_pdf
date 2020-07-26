@@ -1,0 +1,597 @@
+\hypertarget{classControllerCreatorBaseStep}{}\section{Controller\+Creator\+Base\+Step Class Reference}
+\label{classControllerCreatorBaseStep}\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+
+
+Generic class managing controller creation algorithms.  
+
+
+
+
+{\ttfamily \#include $<$controller\+\_\+creator\+\_\+base\+\_\+step.\+hpp$>$}
+
+
+
+Inheritance diagram for Controller\+Creator\+Base\+Step\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{d7/d1e/classControllerCreatorBaseStep__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Controller\+Creator\+Base\+Step\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d1b/classControllerCreatorBaseStep__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classControllerCreatorBaseStep_a3a40d6aa636355cf2059e04ea6f9e2af}{Controller\+Creator\+Base\+Step} (const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref} Param, const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref} \hyperlink{classHLS__step_ade85003a99d34134418451ddc46a18e9}{H\+L\+S\+Mgr}, unsigned int \hyperlink{classHLSFunctionStep_a3e6434fd86c698b0c70520b859bff5b0}{fun\+Id}, const Design\+Flow\+Manager\+Const\+Ref \hyperlink{classDesignFlowStep_ab770677ddf087613add30024e16a5554}{design\+\_\+flow\+\_\+manager}, const \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type} \hyperlink{classHLS__step_aefd59af15346ec3f10bf12bd756e6777}{hls\+\_\+flow\+\_\+step\+\_\+type})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classControllerCreatorBaseStep_aec6e95d7d03daad670dcea1eeb6121da}{$\sim$\+Controller\+Creator\+Base\+Step} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::tuple$<$ \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type}, \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref}, \hyperlink{hls__step_8hpp_a3ad360b9b11e6bf0683d5562a0ceb169}{H\+L\+S\+Flow\+Step\+\_\+\+Relationship} $>$ $>$ \hyperlink{classControllerCreatorBaseStep_a786209eedbc7068e8a8d6f873cf25fc3}{Compute\+H\+L\+S\+Relationships} (const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type} relationship\+\_\+type) const override
+\begin{DoxyCompactList}\small\item\em Return the set of analyses in relationship with this design step. \end{DoxyCompactList}\item 
+void \hyperlink{classControllerCreatorBaseStep_a1446309080149bf6370ae3a9d1e18feb}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Initialize the step (i.\+e., like a constructor, but executed just before exec. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classControllerCreatorBaseStep_aae1b2e6c9d6c8f5b4e3a7b6a26d1d56a}{add\+\_\+common\+\_\+ports} (\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} circuit)
+\begin{DoxyCompactList}\small\item\em This member function adds the standard ports (clock, reset, done and command ones) to a circuit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} \hyperlink{classControllerCreatorBaseStep_a734af585945c1206eda3c2ac884f9f45}{SM}
+\begin{DoxyCompactList}\small\item\em structural representation of the resulting controller circuit \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}, unsigned int $>$ \hyperlink{classControllerCreatorBaseStep_a2efc96be086bbbf888e66a80c629c85c}{out\+\_\+ports}
+\begin{DoxyCompactList}\small\item\em This contains all the ports that go from the controller to the datapath, used to enable the registers and to control muxes in the datapath. \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}, unsigned int $>$ \hyperlink{classControllerCreatorBaseStep_a0d60e828352fd20c95a96dffe0ac9a28}{in\+\_\+ports}
+\begin{DoxyCompactList}\small\item\em These are the lines that go from the datapath to the controller containing results of conditions of constructs such as for, if etc. \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, unsigned int $>$ \hyperlink{classControllerCreatorBaseStep_a2a6927fede489baf53ad52f8a2fd8142}{cond\+\_\+ports}
+\begin{DoxyCompactList}\small\item\em This is the same as in\+\_\+ports except that the first element is of type vertex. \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, unsigned int $>$ \hyperlink{classControllerCreatorBaseStep_aa977dc37a0cf88574c90ad4d4af78fb9}{mu\+\_\+ports}
+\begin{DoxyCompactList}\small\item\em This map put into relation fsm states and alldone multi\+\_\+unbounded ports. \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref} $>$ \hyperlink{classControllerCreatorBaseStep_a6171b5c8241664c0d19f858bdd815a17}{cond\+\_\+obj}
+\begin{DoxyCompactList}\small\item\em Map between the operation vertex and the corresponding control port. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classControllerCreatorBaseStep_a7f9f0f6879672a2cd603cbf7179edd86}{out\+\_\+num}
+\begin{DoxyCompactList}\small\item\em Initialized after add\+\_\+common\+\_\+ports is called. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classControllerCreatorBaseStep_a7913a7aff7c71c580fbc76ada00a5a5f}{in\+\_\+num}
+\begin{DoxyCompactList}\small\item\em Initialized after add\+\_\+common\+\_\+ports is called. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classControllerCreatorBaseStep_af4f27f2275640d4ff0ab51374597b0ad}{add\+\_\+clock\+\_\+reset} (\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} circuit)
+\begin{DoxyCompactList}\small\item\em Adds the clock and reset ports to a circuit. \end{DoxyCompactList}\item 
+void \hyperlink{classControllerCreatorBaseStep_a541e663f888f8a3af8d382fb71c929c1}{add\+\_\+done\+\_\+port} (\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} circuit)
+\begin{DoxyCompactList}\small\item\em Adds the done port to a circuit. \end{DoxyCompactList}\item 
+void \hyperlink{classControllerCreatorBaseStep_a7ed45c9688186b9d940d8eb50fead293}{add\+\_\+start\+\_\+port} (\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} circuit)
+\begin{DoxyCompactList}\small\item\em Adds the start port to a circuit. \end{DoxyCompactList}\item 
+void \hyperlink{classControllerCreatorBaseStep_a86b0917636dd8df88f42bb933e448bb9}{add\+\_\+command\+\_\+ports} (\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref} circuit)
+\begin{DoxyCompactList}\small\item\em Adds the command ports to a circuit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Generic class managing controller creation algorithms. 
+
+Definition at line 78 of file controller\+\_\+creator\+\_\+base\+\_\+step.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classControllerCreatorBaseStep_a3a40d6aa636355cf2059e04ea6f9e2af}\label{classControllerCreatorBaseStep_a3a40d6aa636355cf2059e04ea6f9e2af}} 
+\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}!Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}!Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+\subsubsection{\texorpdfstring{Controller\+Creator\+Base\+Step()}{ControllerCreatorBaseStep()}}
+{\footnotesize\ttfamily Controller\+Creator\+Base\+Step\+::\+Controller\+Creator\+Base\+Step (\begin{DoxyParamCaption}\item[{const \hyperlink{Parameter_8hpp_a37841774a6fcb479b597fdf8955eb4ea}{Parameter\+Const\+Ref}}]{Param,  }\item[{const \hyperlink{hls__manager_8hpp_acd3842b8589fe52c08fc0b2fcc813bfe}{H\+L\+S\+\_\+manager\+Ref}}]{H\+L\+S\+Mgr,  }\item[{unsigned int}]{fun\+Id,  }\item[{const Design\+Flow\+Manager\+Const\+Ref}]{design\+\_\+flow\+\_\+manager,  }\item[{const \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type}}]{hls\+\_\+flow\+\_\+step\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+implemented controllers 
+
+Definition at line 69 of file controller\+\_\+creator\+\_\+base\+\_\+step.\+cpp.
+
+
+
+References $\sim$\+Controller\+Creator\+Base\+Step().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d28/classControllerCreatorBaseStep_a3a40d6aa636355cf2059e04ea6f9e2af_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classControllerCreatorBaseStep_aec6e95d7d03daad670dcea1eeb6121da}\label{classControllerCreatorBaseStep_aec6e95d7d03daad670dcea1eeb6121da}} 
+\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}!````~Controller\+Creator\+Base\+Step@{$\sim$\+Controller\+Creator\+Base\+Step}}
+\index{````~Controller\+Creator\+Base\+Step@{$\sim$\+Controller\+Creator\+Base\+Step}!Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+\subsubsection{\texorpdfstring{$\sim$\+Controller\+Creator\+Base\+Step()}{~ControllerCreatorBaseStep()}}
+{\footnotesize\ttfamily Controller\+Creator\+Base\+Step\+::$\sim$\+Controller\+Creator\+Base\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+Referenced by Controller\+Creator\+Base\+Step().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d28/classControllerCreatorBaseStep_aec6e95d7d03daad670dcea1eeb6121da_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classControllerCreatorBaseStep_af4f27f2275640d4ff0ab51374597b0ad}\label{classControllerCreatorBaseStep_af4f27f2275640d4ff0ab51374597b0ad}} 
+\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}!add\+\_\+clock\+\_\+reset@{add\+\_\+clock\+\_\+reset}}
+\index{add\+\_\+clock\+\_\+reset@{add\+\_\+clock\+\_\+reset}!Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+\subsubsection{\texorpdfstring{add\+\_\+clock\+\_\+reset()}{add\_clock\_reset()}}
+{\footnotesize\ttfamily void Controller\+Creator\+Base\+Step\+::add\+\_\+clock\+\_\+reset (\begin{DoxyParamCaption}\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{circuit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Adds the clock and reset ports to a circuit. 
+
+Called by add\+\_\+common\+\_\+ports 
+\begin{DoxyParams}{Parameters}
+{\em circuit} & the circuit where to add the clock and reset ports \\
+\hline
+\end{DoxyParams}
+define boolean type for the clock and reset signals
+
+add clock port
+
+add entry in in\+\_\+port\+\_\+map between port id and port index
+
+add reset port 
+
+Definition at line 134 of file controller\+\_\+creator\+\_\+base\+\_\+step.\+cpp.
+
+
+
+References structural\+\_\+manager\+::add\+\_\+port(), C\+L\+O\+C\+K\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, port\+\_\+o\+::\+IN, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, R\+E\+S\+E\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, and SM.
+
+
+
+Referenced by add\+\_\+common\+\_\+ports().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d28/classControllerCreatorBaseStep_af4f27f2275640d4ff0ab51374597b0ad_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d28/classControllerCreatorBaseStep_af4f27f2275640d4ff0ab51374597b0ad_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classControllerCreatorBaseStep_a86b0917636dd8df88f42bb933e448bb9}\label{classControllerCreatorBaseStep_a86b0917636dd8df88f42bb933e448bb9}} 
+\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}!add\+\_\+command\+\_\+ports@{add\+\_\+command\+\_\+ports}}
+\index{add\+\_\+command\+\_\+ports@{add\+\_\+command\+\_\+ports}!Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+\subsubsection{\texorpdfstring{add\+\_\+command\+\_\+ports()}{add\_command\_ports()}}
+{\footnotesize\ttfamily void Controller\+Creator\+Base\+Step\+::add\+\_\+command\+\_\+ports (\begin{DoxyParamCaption}\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{circuit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Adds the command ports to a circuit. 
+
+Called by add\+\_\+common\+\_\+ports Command ports are of three types\+:
+\begin{DoxyItemize}
+\item Selectors to enable functional units in the datapath, these go from the controller to the datapath
+\item Selectors of mux in the datapath, these go from the controller to the datapath
+\item Conditions, used to modify instruction flow in constructs such as for, if, while, these go in the opposite direction, from the datapath to the controller 
+\begin{DoxyParams}{Parameters}
+{\em circuit} & the circuit where to add the command ports \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}define boolean type for command signals
+
+connections from controller to datapath
+
+operations signals have not to be added at this point
+
+they represent commands to multiplexers or write enables to registers
+
+connections from datapath to controller
+
+operation modifying the control flow (e.\+g., if, switch, ...)
+
+multi bit selector representing the evaluation of a switch
+
+single bit selector representing the evaluation of a condition 
+
+Definition at line 172 of file controller\+\_\+creator\+\_\+base\+\_\+step.\+cpp.
+
+
+
+References structural\+\_\+manager\+::add\+\_\+port(), Function\+Behavior\+::\+C\+Get\+Behavioral\+Helper(), cond\+\_\+obj, cond\+\_\+ports, Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, hls\+::function\+Id, H\+L\+S\+Function\+Step\+::fun\+Id, conn\+\_\+binding\+::\+Get\+Selectors(), H\+L\+S\+Function\+Step\+::\+H\+LS, H\+L\+S\+\_\+step\+::\+H\+L\+S\+Mgr, conn\+\_\+binding\+::\+IN, port\+\_\+o\+::\+IN, in\+\_\+num, in\+\_\+ports, I\+N\+D\+E\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, mu\+\_\+ports, commandport\+\_\+obj\+::\+M\+U\+L\+T\+I\+\_\+\+U\+N\+B\+O\+U\+N\+D\+ED, commandport\+\_\+obj\+::\+M\+U\+L\+T\+I\+IF, commandport\+\_\+obj\+::\+O\+P\+E\+R\+A\+T\+I\+ON, conn\+\_\+binding\+::\+O\+UT, port\+\_\+o\+::\+O\+UT, out\+\_\+num, out\+\_\+ports, hls\+::\+Rconn, SM, commandport\+\_\+obj\+::\+S\+W\+I\+T\+CH, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by add\+\_\+common\+\_\+ports().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d28/classControllerCreatorBaseStep_a86b0917636dd8df88f42bb933e448bb9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d28/classControllerCreatorBaseStep_a86b0917636dd8df88f42bb933e448bb9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classControllerCreatorBaseStep_aae1b2e6c9d6c8f5b4e3a7b6a26d1d56a}\label{classControllerCreatorBaseStep_aae1b2e6c9d6c8f5b4e3a7b6a26d1d56a}} 
+\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}!add\+\_\+common\+\_\+ports@{add\+\_\+common\+\_\+ports}}
+\index{add\+\_\+common\+\_\+ports@{add\+\_\+common\+\_\+ports}!Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+\subsubsection{\texorpdfstring{add\+\_\+common\+\_\+ports()}{add\_common\_ports()}}
+{\footnotesize\ttfamily void Controller\+Creator\+Base\+Step\+::add\+\_\+common\+\_\+ports (\begin{DoxyParamCaption}\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{circuit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+This member function adds the standard ports (clock, reset, done and command ones) to a circuit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em circuit} & it is the datastructure of the component where to add these ports \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classcontroller__cs_a8e36030a52dc30ae10633fc28a45a2bb}{controller\+\_\+cs}.
+
+
+
+Definition at line 120 of file controller\+\_\+creator\+\_\+base\+\_\+step.\+cpp.
+
+
+
+References add\+\_\+clock\+\_\+reset(), add\+\_\+command\+\_\+ports(), add\+\_\+done\+\_\+port(), add\+\_\+start\+\_\+port(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, and P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX.
+
+
+
+Referenced by controller\+\_\+cs\+::add\+\_\+common\+\_\+ports(), and fsm\+\_\+controller\+::\+Internal\+Exec().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d28/classControllerCreatorBaseStep_aae1b2e6c9d6c8f5b4e3a7b6a26d1d56a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d28/classControllerCreatorBaseStep_aae1b2e6c9d6c8f5b4e3a7b6a26d1d56a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classControllerCreatorBaseStep_a541e663f888f8a3af8d382fb71c929c1}\label{classControllerCreatorBaseStep_a541e663f888f8a3af8d382fb71c929c1}} 
+\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}!add\+\_\+done\+\_\+port@{add\+\_\+done\+\_\+port}}
+\index{add\+\_\+done\+\_\+port@{add\+\_\+done\+\_\+port}!Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+\subsubsection{\texorpdfstring{add\+\_\+done\+\_\+port()}{add\_done\_port()}}
+{\footnotesize\ttfamily void Controller\+Creator\+Base\+Step\+::add\+\_\+done\+\_\+port (\begin{DoxyParamCaption}\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{circuit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Adds the done port to a circuit. 
+
+Called by add\+\_\+common\+\_\+ports The done port appears to go high once all the calculation of a function are completed 
+\begin{DoxyParams}{Parameters}
+{\em circuit} & the circuit where to add the done port \\
+\hline
+\end{DoxyParams}
+define boolean type for the done port
+
+add done port 
+
+Definition at line 152 of file controller\+\_\+creator\+\_\+base\+\_\+step.\+cpp.
+
+
+
+References structural\+\_\+manager\+::add\+\_\+port(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+O\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME, port\+\_\+o\+::\+O\+UT, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, and SM.
+
+
+
+Referenced by add\+\_\+common\+\_\+ports().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d28/classControllerCreatorBaseStep_a541e663f888f8a3af8d382fb71c929c1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d28/classControllerCreatorBaseStep_a541e663f888f8a3af8d382fb71c929c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classControllerCreatorBaseStep_a7ed45c9688186b9d940d8eb50fead293}\label{classControllerCreatorBaseStep_a7ed45c9688186b9d940d8eb50fead293}} 
+\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}!add\+\_\+start\+\_\+port@{add\+\_\+start\+\_\+port}}
+\index{add\+\_\+start\+\_\+port@{add\+\_\+start\+\_\+port}!Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+\subsubsection{\texorpdfstring{add\+\_\+start\+\_\+port()}{add\_start\_port()}}
+{\footnotesize\ttfamily void Controller\+Creator\+Base\+Step\+::add\+\_\+start\+\_\+port (\begin{DoxyParamCaption}\item[{\hyperlink{structural__objects_8hpp_a8ea5f8cc50ab8f4c31e2751074ff60b2}{structural\+\_\+object\+Ref}}]{circuit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Adds the start port to a circuit. 
+
+Called by add\+\_\+common\+\_\+ports 
+\begin{DoxyParams}{Parameters}
+{\em circuit} & the circuit where to add the start port \\
+\hline
+\end{DoxyParams}
+define boolean type for the start port
+
+add the start port 
+
+Definition at line 162 of file controller\+\_\+creator\+\_\+base\+\_\+step.\+cpp.
+
+
+
+References structural\+\_\+manager\+::add\+\_\+port(), Design\+Flow\+Step\+::debug\+\_\+level, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+P\+E\+D\+A\+N\+T\+IC, D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+V\+E\+R\+Y\+\_\+\+P\+E\+D\+A\+N\+T\+IC, port\+\_\+o\+::\+IN, P\+R\+I\+N\+T\+\_\+\+D\+B\+G\+\_\+\+M\+EX, SM, and S\+T\+A\+R\+T\+\_\+\+P\+O\+R\+T\+\_\+\+N\+A\+ME.
+
+
+
+Referenced by add\+\_\+common\+\_\+ports().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d28/classControllerCreatorBaseStep_a7ed45c9688186b9d940d8eb50fead293_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d28/classControllerCreatorBaseStep_a7ed45c9688186b9d940d8eb50fead293_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classControllerCreatorBaseStep_a786209eedbc7068e8a8d6f873cf25fc3}\label{classControllerCreatorBaseStep_a786209eedbc7068e8a8d6f873cf25fc3}} 
+\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}!Compute\+H\+L\+S\+Relationships@{Compute\+H\+L\+S\+Relationships}}
+\index{Compute\+H\+L\+S\+Relationships@{Compute\+H\+L\+S\+Relationships}!Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+\subsubsection{\texorpdfstring{Compute\+H\+L\+S\+Relationships()}{ComputeHLSRelationships()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomUnorderedSet}{Custom\+Unordered\+Set}$<$ std\+::tuple$<$ \hyperlink{hls__step_8hpp_ada16bc22905016180e26fc7e39537f8d}{H\+L\+S\+Flow\+Step\+\_\+\+Type}, \hyperlink{hls__step_8hpp_a5fdd2edf290c196531d21d68e13f0e74}{H\+L\+S\+Flow\+Step\+Specialization\+Const\+Ref}, \hyperlink{hls__step_8hpp_a3ad360b9b11e6bf0683d5562a0ceb169}{H\+L\+S\+Flow\+Step\+\_\+\+Relationship} $>$ $>$ Controller\+Creator\+Base\+Step\+::\+Compute\+H\+L\+S\+Relationships (\begin{DoxyParamCaption}\item[{const \hyperlink{classDesignFlowStep_a723a3baf19ff2ceb77bc13e099d0b1b7}{Design\+Flow\+Step\+::\+Relationship\+Type}}]{relationship\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Return the set of analyses in relationship with this design step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relationship\+\_\+type} & is the type of relationship to be considered \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classHLS__step_aed0ce8cca9a1ef18e705fc1032ad4de5}{H\+L\+S\+\_\+step}.
+
+
+
+Definition at line 76 of file controller\+\_\+creator\+\_\+base\+\_\+step.\+cpp.
+
+
+
+References Design\+Flow\+Step\+::\+D\+E\+P\+E\+N\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::\+I\+N\+V\+A\+L\+I\+D\+A\+T\+I\+O\+N\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, Design\+Flow\+Step\+::parameters, Design\+Flow\+Step\+::\+P\+R\+E\+C\+E\+D\+E\+N\+C\+E\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+S\+H\+IP, S\+A\+M\+E\+\_\+\+F\+U\+N\+C\+T\+I\+ON, and T\+H\+R\+O\+W\+\_\+\+U\+N\+R\+E\+A\+C\+H\+A\+B\+LE.
+
+\mbox{\Hypertarget{classControllerCreatorBaseStep_a1446309080149bf6370ae3a9d1e18feb}\label{classControllerCreatorBaseStep_a1446309080149bf6370ae3a9d1e18feb}} 
+\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Controller\+Creator\+Base\+Step\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the step (i.\+e., like a constructor, but executed just before exec. 
+
+Test on previuos steps. They check if schedule, register and connection binding have been performed. Otherwise, the circuit cannot be created. 
+
+Reimplemented from \hyperlink{classDesignFlowStep_a44b50683382a094976e1d432a7784799}{Design\+Flow\+Step}.
+
+
+
+Definition at line 100 of file controller\+\_\+creator\+\_\+base\+\_\+step.\+cpp.
+
+
+
+References cond\+\_\+obj, cond\+\_\+ports, hls\+::controller, H\+L\+S\+Function\+Step\+::\+H\+LS, in\+\_\+num, in\+\_\+ports, H\+L\+S\+Function\+Step\+::\+Initialize(), out\+\_\+num, out\+\_\+ports, hls\+::\+Param, hls\+::\+Rconn, hls\+::\+Rreg, hls\+::\+Rsch, SM, and T\+H\+R\+O\+W\+\_\+\+A\+S\+S\+E\+RT.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d28/classControllerCreatorBaseStep_a1446309080149bf6370ae3a9d1e18feb_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classControllerCreatorBaseStep_a6171b5c8241664c0d19f858bdd815a17}\label{classControllerCreatorBaseStep_a6171b5c8241664c0d19f858bdd815a17}} 
+\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}!cond\+\_\+obj@{cond\+\_\+obj}}
+\index{cond\+\_\+obj@{cond\+\_\+obj}!Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+\subsubsection{\texorpdfstring{cond\+\_\+obj}{cond\_obj}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, \hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}$>$ Controller\+Creator\+Base\+Step\+::cond\+\_\+obj\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Map between the operation vertex and the corresponding control port. 
+
+
+
+Definition at line 135 of file controller\+\_\+creator\+\_\+base\+\_\+step.\+hpp.
+
+
+
+Referenced by add\+\_\+command\+\_\+ports(), and Initialize().
+
+\mbox{\Hypertarget{classControllerCreatorBaseStep_a2a6927fede489baf53ad52f8a2fd8142}\label{classControllerCreatorBaseStep_a2a6927fede489baf53ad52f8a2fd8142}} 
+\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}!cond\+\_\+ports@{cond\+\_\+ports}}
+\index{cond\+\_\+ports@{cond\+\_\+ports}!Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+\subsubsection{\texorpdfstring{cond\+\_\+ports}{cond\_ports}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, unsigned int$>$ Controller\+Creator\+Base\+Step\+::cond\+\_\+ports\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+This is the same as in\+\_\+ports except that the first element is of type vertex. 
+
+Each element is obtained by calling Get\+Pointer$<$commandport\+\_\+obj$>$(j-\/$>$second)-\/$>$get\+\_\+vertex() to the elements into in\+\_\+ports. The second element is the same number of the generic\+\_\+obj\+Ref into in\+\_\+ports to which get\+\_\+vertex() was called Initialized after add\+\_\+common\+\_\+ports is called 
+
+Definition at line 131 of file controller\+\_\+creator\+\_\+base\+\_\+step.\+hpp.
+
+
+
+Referenced by add\+\_\+command\+\_\+ports(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), and Initialize().
+
+\mbox{\Hypertarget{classControllerCreatorBaseStep_a7913a7aff7c71c580fbc76ada00a5a5f}\label{classControllerCreatorBaseStep_a7913a7aff7c71c580fbc76ada00a5a5f}} 
+\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}!in\+\_\+num@{in\+\_\+num}}
+\index{in\+\_\+num@{in\+\_\+num}!Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+\subsubsection{\texorpdfstring{in\+\_\+num}{in\_num}}
+{\footnotesize\ttfamily unsigned int Controller\+Creator\+Base\+Step\+::in\+\_\+num\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Initialized after add\+\_\+common\+\_\+ports is called. 
+
+It represents the current number of input ports (in\+\_\+num==in\+\_\+ports.\+size()==cond\+\_\+ports.\+size()) 
+
+Definition at line 143 of file controller\+\_\+creator\+\_\+base\+\_\+step.\+hpp.
+
+
+
+Referenced by add\+\_\+command\+\_\+ports(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), and Initialize().
+
+\mbox{\Hypertarget{classControllerCreatorBaseStep_a0d60e828352fd20c95a96dffe0ac9a28}\label{classControllerCreatorBaseStep_a0d60e828352fd20c95a96dffe0ac9a28}} 
+\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}!in\+\_\+ports@{in\+\_\+ports}}
+\index{in\+\_\+ports@{in\+\_\+ports}!Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+\subsubsection{\texorpdfstring{in\+\_\+ports}{in\_ports}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}, unsigned int$>$ Controller\+Creator\+Base\+Step\+::in\+\_\+ports\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+These are the lines that go from the datapath to the controller containing results of conditions of constructs such as for, if etc. 
+
+The key is the object representing the port, while the value is the integer value associated with the port. Initialized only after add\+\_\+common\+\_\+ports is called 
+
+Definition at line 125 of file controller\+\_\+creator\+\_\+base\+\_\+step.\+hpp.
+
+
+
+Referenced by add\+\_\+command\+\_\+ports(), and Initialize().
+
+\mbox{\Hypertarget{classControllerCreatorBaseStep_aa977dc37a0cf88574c90ad4d4af78fb9}\label{classControllerCreatorBaseStep_aa977dc37a0cf88574c90ad4d4af78fb9}} 
+\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}!mu\+\_\+ports@{mu\+\_\+ports}}
+\index{mu\+\_\+ports@{mu\+\_\+ports}!Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+\subsubsection{\texorpdfstring{mu\+\_\+ports}{mu\_ports}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{graph_8hpp_abefdcf0544e601805af44eca032cca14}{vertex}, unsigned int$>$ Controller\+Creator\+Base\+Step\+::mu\+\_\+ports\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+This map put into relation fsm states and alldone multi\+\_\+unbounded ports. 
+
+
+
+Definition at line 133 of file controller\+\_\+creator\+\_\+base\+\_\+step.\+hpp.
+
+
+
+Referenced by add\+\_\+command\+\_\+ports(), and fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine().
+
+\mbox{\Hypertarget{classControllerCreatorBaseStep_a7f9f0f6879672a2cd603cbf7179edd86}\label{classControllerCreatorBaseStep_a7f9f0f6879672a2cd603cbf7179edd86}} 
+\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}!out\+\_\+num@{out\+\_\+num}}
+\index{out\+\_\+num@{out\+\_\+num}!Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+\subsubsection{\texorpdfstring{out\+\_\+num}{out\_num}}
+{\footnotesize\ttfamily unsigned int Controller\+Creator\+Base\+Step\+::out\+\_\+num\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Initialized after add\+\_\+common\+\_\+ports is called. 
+
+It represents the current number of output ports (out\+\_\+num==out\+\_\+ports.\+size()) 
+
+Definition at line 139 of file controller\+\_\+creator\+\_\+base\+\_\+step.\+hpp.
+
+
+
+Referenced by add\+\_\+command\+\_\+ports(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), and Initialize().
+
+\mbox{\Hypertarget{classControllerCreatorBaseStep_a2efc96be086bbbf888e66a80c629c85c}\label{classControllerCreatorBaseStep_a2efc96be086bbbf888e66a80c629c85c}} 
+\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}!out\+\_\+ports@{out\+\_\+ports}}
+\index{out\+\_\+ports@{out\+\_\+ports}!Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+\subsubsection{\texorpdfstring{out\+\_\+ports}{out\_ports}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{generic__obj_8hpp_acb533b2ef8e0fe72e09a04d20904ca81}{generic\+\_\+obj\+Ref}, unsigned int$>$ Controller\+Creator\+Base\+Step\+::out\+\_\+ports\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+This contains all the ports that go from the controller to the datapath, used to enable the registers and to control muxes in the datapath. 
+
+The first element in the map is the port object. Despite its type is generic\+\_\+obj\+Ref it appears that this map contains only objects of type \hyperlink{classcommandport__obj}{commandport\+\_\+obj}. This is suggested by the dynamic cast hidden behind a Get\+Pointer call in controller\+::add\+\_\+command\+\_\+ports(). The second element of the map is the integer identifier of the port Initialized only after add\+\_\+common\+\_\+ports is called 
+
+Definition at line 119 of file controller\+\_\+creator\+\_\+base\+\_\+step.\+hpp.
+
+
+
+Referenced by add\+\_\+command\+\_\+ports(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), and Initialize().
+
+\mbox{\Hypertarget{classControllerCreatorBaseStep_a734af585945c1206eda3c2ac884f9f45}\label{classControllerCreatorBaseStep_a734af585945c1206eda3c2ac884f9f45}} 
+\index{Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}!SM@{SM}}
+\index{SM@{SM}!Controller\+Creator\+Base\+Step@{Controller\+Creator\+Base\+Step}}
+\subsubsection{\texorpdfstring{SM}{SM}}
+{\footnotesize\ttfamily \hyperlink{structural__manager_8hpp_ab3136f0e785d8535f8d252a7b53db5b5}{structural\+\_\+manager\+Ref} Controller\+Creator\+Base\+Step\+::\+SM\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+structural representation of the resulting controller circuit 
+
+
+
+Definition at line 111 of file controller\+\_\+creator\+\_\+base\+\_\+step.\+hpp.
+
+
+
+Referenced by add\+\_\+clock\+\_\+reset(), add\+\_\+command\+\_\+ports(), controller\+\_\+cs\+::add\+\_\+correct\+\_\+transition\+\_\+memory(), fsm\+\_\+controller\+::add\+\_\+correct\+\_\+transition\+\_\+memory(), add\+\_\+done\+\_\+port(), controller\+\_\+cs\+::add\+\_\+selector\+\_\+register\+\_\+file\+\_\+port(), add\+\_\+start\+\_\+port(), Initialize(), and fsm\+\_\+controller\+::\+Internal\+Exec().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/architecture\+\_\+creation/controller\+\_\+creation/\hyperlink{controller__creator__base__step_8hpp}{controller\+\_\+creator\+\_\+base\+\_\+step.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/\+H\+L\+S/architecture\+\_\+creation/controller\+\_\+creation/\hyperlink{controller__creator__base__step_8cpp}{controller\+\_\+creator\+\_\+base\+\_\+step.\+cpp}\end{DoxyCompactItemize}

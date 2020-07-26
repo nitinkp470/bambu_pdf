@@ -1,0 +1,337 @@
+\hypertarget{structCdfgEdgeInfo}{}\section{Cdfg\+Edge\+Info Struct Reference}
+\label{structCdfgEdgeInfo}\index{Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}}
+
+
+Information associated with an operation or basic block graph.  
+
+
+
+
+{\ttfamily \#include $<$cdfg\+\_\+edge\+\_\+info.\+hpp$>$}
+
+
+
+Inheritance diagram for Cdfg\+Edge\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{d2/dce/structCdfgEdgeInfo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cdfg\+Edge\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{da/d41/structCdfgEdgeInfo__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCdfgEdgeInfo_aa91cf4a7716a99292f9388c9b25fb693}{Cdfg\+Edge\+Info} ()=default
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{structCdfgEdgeInfo_add12d0e8da8fb0f05ccfbb8fc54e4ef2}{Cdg\+EdgeT} () const
+\begin{DoxyCompactList}\small\item\em Function returning true when the edge is a then control dependence edge. \end{DoxyCompactList}\item 
+bool \hyperlink{structCdfgEdgeInfo_a6a08ecaafed49f5a28292b7157e0f39e}{Cdg\+EdgeF} () const
+\begin{DoxyCompactList}\small\item\em Function returning true when the edge is an else control dependence edge. \end{DoxyCompactList}\item 
+bool \hyperlink{structCdfgEdgeInfo_af55cf6642e8a69596d1ec8ef3d1fd978}{Cfg\+EdgeT} () const
+\begin{DoxyCompactList}\small\item\em Function returning true when the edge is a then control flow edge. \end{DoxyCompactList}\item 
+bool \hyperlink{structCdfgEdgeInfo_a28dff795df29d3612a5622a4acdf3136}{Cfg\+EdgeF} () const
+\begin{DoxyCompactList}\small\item\em Function returning true when the edge is an else control flow edge. \end{DoxyCompactList}\item 
+bool \hyperlink{structCdfgEdgeInfo_a8b1bf37fa377e0c01cb6e813e9df6a66}{Switch} () const
+\begin{DoxyCompactList}\small\item\em Return true if it is an edge associated with a switch. \end{DoxyCompactList}\item 
+void \hyperlink{structCdfgEdgeInfo_ae63e9dfd56fde484bee0ac2604e39a3f}{add\+\_\+node\+ID} (unsigned int node\+ID, const int type)
+\begin{DoxyCompactList}\small\item\em Add a node\+ID of type type to this edge\+\_\+info. \end{DoxyCompactList}\item 
+const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \& \hyperlink{structCdfgEdgeInfo_ae5c707c6af7c0553144247c0f255d26b}{get\+\_\+node\+ID} (const int type) const
+\begin{DoxyCompactList}\small\item\em Return the node\+ID of type type associated with this edge information. \end{DoxyCompactList}\item 
+const std\+::string \hyperlink{structCdfgEdgeInfo_a505a8d89775aa583b86bf84e5ddb91f9}{Print\+Labels} (const int type, const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref} BH) const
+\begin{DoxyCompactList}\small\item\em Return the string of the labels associated with the edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ $>$ \hyperlink{structCdfgEdgeInfo_a9ef9bbae9b574d8bdc11007b7f240aa6}{labels}
+\begin{DoxyCompactList}\small\item\em edge labels; key is the selector \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Information associated with an operation or basic block graph. 
+
+Definition at line 91 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structCdfgEdgeInfo_aa91cf4a7716a99292f9388c9b25fb693}\label{structCdfgEdgeInfo_aa91cf4a7716a99292f9388c9b25fb693}} 
+\index{Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}!Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}}
+\index{Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}!Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}}
+\subsubsection{\texorpdfstring{Cdfg\+Edge\+Info()}{CdfgEdgeInfo()}}
+{\footnotesize\ttfamily Cdfg\+Edge\+Info\+::\+Cdfg\+Edge\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structCdfgEdgeInfo_ae63e9dfd56fde484bee0ac2604e39a3f}\label{structCdfgEdgeInfo_ae63e9dfd56fde484bee0ac2604e39a3f}} 
+\index{Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}!add\+\_\+node\+ID@{add\+\_\+node\+ID}}
+\index{add\+\_\+node\+ID@{add\+\_\+node\+ID}!Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}}
+\subsubsection{\texorpdfstring{add\+\_\+node\+I\+D()}{add\_nodeID()}}
+{\footnotesize\ttfamily void Cdfg\+Edge\+Info\+::add\+\_\+node\+ID (\begin{DoxyParamCaption}\item[{unsigned int}]{node\+ID,  }\item[{const int}]{type }\end{DoxyParamCaption})}
+
+
+
+Add a node\+ID of type type to this edge\+\_\+info. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+ID} & is the node\+ID \\
+\hline
+{\em type} & is the type \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 111 of file cdfg\+\_\+edge\+\_\+info.\+cpp.
+
+
+
+References labels, and test\+\_\+panda\+::type.
+
+\mbox{\Hypertarget{structCdfgEdgeInfo_a6a08ecaafed49f5a28292b7157e0f39e}\label{structCdfgEdgeInfo_a6a08ecaafed49f5a28292b7157e0f39e}} 
+\index{Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}!Cdg\+EdgeF@{Cdg\+EdgeF}}
+\index{Cdg\+EdgeF@{Cdg\+EdgeF}!Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}}
+\subsubsection{\texorpdfstring{Cdg\+Edge\+F()}{CdgEdgeF()}}
+{\footnotesize\ttfamily bool Cdfg\+Edge\+Info\+::\+Cdg\+EdgeF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Function returning true when the edge is an else control dependence edge. 
+
+
+
+Definition at line 54 of file cdfg\+\_\+edge\+\_\+info.\+cpp.
+
+
+
+References C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, F\+\_\+\+C\+O\+ND, and labels.
+
+
+
+Referenced by Switch().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d89/structCdfgEdgeInfo_a6a08ecaafed49f5a28292b7157e0f39e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structCdfgEdgeInfo_add12d0e8da8fb0f05ccfbb8fc54e4ef2}\label{structCdfgEdgeInfo_add12d0e8da8fb0f05ccfbb8fc54e4ef2}} 
+\index{Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}!Cdg\+EdgeT@{Cdg\+EdgeT}}
+\index{Cdg\+EdgeT@{Cdg\+EdgeT}!Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}}
+\subsubsection{\texorpdfstring{Cdg\+Edge\+T()}{CdgEdgeT()}}
+{\footnotesize\ttfamily bool Cdfg\+Edge\+Info\+::\+Cdg\+EdgeT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Function returning true when the edge is a then control dependence edge. 
+
+
+
+Definition at line 47 of file cdfg\+\_\+edge\+\_\+info.\+cpp.
+
+
+
+References C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, labels, and T\+\_\+\+C\+O\+ND.
+
+
+
+Referenced by Switch().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d89/structCdfgEdgeInfo_add12d0e8da8fb0f05ccfbb8fc54e4ef2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structCdfgEdgeInfo_a28dff795df29d3612a5622a4acdf3136}\label{structCdfgEdgeInfo_a28dff795df29d3612a5622a4acdf3136}} 
+\index{Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}!Cfg\+EdgeF@{Cfg\+EdgeF}}
+\index{Cfg\+EdgeF@{Cfg\+EdgeF}!Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}}
+\subsubsection{\texorpdfstring{Cfg\+Edge\+F()}{CfgEdgeF()}}
+{\footnotesize\ttfamily bool Cdfg\+Edge\+Info\+::\+Cfg\+EdgeF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Function returning true when the edge is an else control flow edge. 
+
+
+
+Definition at line 68 of file cdfg\+\_\+edge\+\_\+info.\+cpp.
+
+
+
+References C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, F\+\_\+\+C\+O\+ND, and labels.
+
+
+
+Referenced by Switch().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d89/structCdfgEdgeInfo_a28dff795df29d3612a5622a4acdf3136_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structCdfgEdgeInfo_af55cf6642e8a69596d1ec8ef3d1fd978}\label{structCdfgEdgeInfo_af55cf6642e8a69596d1ec8ef3d1fd978}} 
+\index{Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}!Cfg\+EdgeT@{Cfg\+EdgeT}}
+\index{Cfg\+EdgeT@{Cfg\+EdgeT}!Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}}
+\subsubsection{\texorpdfstring{Cfg\+Edge\+T()}{CfgEdgeT()}}
+{\footnotesize\ttfamily bool Cdfg\+Edge\+Info\+::\+Cfg\+EdgeT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Function returning true when the edge is a then control flow edge. 
+
+
+
+Definition at line 61 of file cdfg\+\_\+edge\+\_\+info.\+cpp.
+
+
+
+References C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, labels, and T\+\_\+\+C\+O\+ND.
+
+
+
+Referenced by Switch().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d89/structCdfgEdgeInfo_af55cf6642e8a69596d1ec8ef3d1fd978_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structCdfgEdgeInfo_ae5c707c6af7c0553144247c0f255d26b}\label{structCdfgEdgeInfo_ae5c707c6af7c0553144247c0f255d26b}} 
+\index{Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}!get\+\_\+node\+ID@{get\+\_\+node\+ID}}
+\index{get\+\_\+node\+ID@{get\+\_\+node\+ID}!Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}}
+\subsubsection{\texorpdfstring{get\+\_\+node\+I\+D()}{get\_nodeID()}}
+{\footnotesize\ttfamily const \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$ unsigned int $>$ \& Cdfg\+Edge\+Info\+::get\+\_\+node\+ID (\begin{DoxyParamCaption}\item[{const int}]{type }\end{DoxyParamCaption}) const}
+
+
+
+Return the node\+ID of type type associated with this edge information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & is the type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the node\+ID of type type 
+\end{DoxyReturn}
+
+
+Definition at line 116 of file cdfg\+\_\+edge\+\_\+info.\+cpp.
+
+
+
+References labels.
+
+\mbox{\Hypertarget{structCdfgEdgeInfo_a505a8d89775aa583b86bf84e5ddb91f9}\label{structCdfgEdgeInfo_a505a8d89775aa583b86bf84e5ddb91f9}} 
+\index{Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}!Print\+Labels@{Print\+Labels}}
+\index{Print\+Labels@{Print\+Labels}!Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}}
+\subsubsection{\texorpdfstring{Print\+Labels()}{PrintLabels()}}
+{\footnotesize\ttfamily const std\+::string Cdfg\+Edge\+Info\+::\+Print\+Labels (\begin{DoxyParamCaption}\item[{const int}]{type,  }\item[{const \hyperlink{behavioral__helper_8hpp_aae973b54cac87eef3b27442aa3e1e425}{Behavioral\+Helper\+Const\+Ref}}]{BH }\end{DoxyParamCaption}) const}
+
+
+
+Return the string of the labels associated with the edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & is the type of labels to be printed \\
+\hline
+{\em BH} & is the helper used to print the labels \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 80 of file cdfg\+\_\+edge\+\_\+info.\+cpp.
+
+
+
+References default\+\_\+\+C\+O\+ND, F\+\_\+\+C\+O\+ND, labels, Behavioral\+Helper\+::\+Print\+Variable(), and T\+\_\+\+C\+O\+ND.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d89/structCdfgEdgeInfo_a505a8d89775aa583b86bf84e5ddb91f9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structCdfgEdgeInfo_a8b1bf37fa377e0c01cb6e813e9df6a66}\label{structCdfgEdgeInfo_a8b1bf37fa377e0c01cb6e813e9df6a66}} 
+\index{Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}!Switch@{Switch}}
+\index{Switch@{Switch}!Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}}
+\subsubsection{\texorpdfstring{Switch()}{Switch()}}
+{\footnotesize\ttfamily bool Cdfg\+Edge\+Info\+::\+Switch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return true if it is an edge associated with a switch. 
+
+
+
+Definition at line 75 of file cdfg\+\_\+edge\+\_\+info.\+cpp.
+
+
+
+References C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, Cdg\+Edge\+F(), Cdg\+Edge\+T(), C\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR, Cfg\+Edge\+F(), Cfg\+Edge\+T(), and labels.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d89/structCdfgEdgeInfo_a8b1bf37fa377e0c01cb6e813e9df6a66_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structCdfgEdgeInfo_a9ef9bbae9b574d8bdc11007b7f240aa6}\label{structCdfgEdgeInfo_a9ef9bbae9b574d8bdc11007b7f240aa6}} 
+\index{Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}!labels@{labels}}
+\index{labels@{labels}!Cdfg\+Edge\+Info@{Cdfg\+Edge\+Info}}
+\subsubsection{\texorpdfstring{labels}{labels}}
+{\footnotesize\ttfamily std\+::map$<$int, \hyperlink{classCustomOrderedSet}{Custom\+Ordered\+Set}$<$unsigned int$>$ $>$ Cdfg\+Edge\+Info\+::labels\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+edge labels; key is the selector 
+
+
+
+Definition at line 95 of file cdfg\+\_\+edge\+\_\+info.\+hpp.
+
+
+
+Referenced by add\+\_\+node\+I\+D(), Cdg\+Edge\+F(), Cdg\+Edge\+T(), Cfg\+Edge\+F(), Cfg\+Edge\+T(), Op\+Edge\+Info\+::\+Flg\+Edge\+F(), Op\+Edge\+Info\+::\+Flg\+Edge\+T(), get\+\_\+node\+I\+D(), Print\+Labels(), and Switch().
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/\hyperlink{cdfg__edge__info_8hpp}{cdfg\+\_\+edge\+\_\+info.\+hpp}\item 
+/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/\hyperlink{cdfg__edge__info_8cpp}{cdfg\+\_\+edge\+\_\+info.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,1995 @@
+\hypertarget{op__graph_8hpp}{}\section{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/op\+\_\+graph.hpp File Reference}
+\label{op__graph_8hpp}\index{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/op\+\_\+graph.\+hpp@{/home/osboxes/bambu/\+Pand\+A-\/bambu/src/behavior/op\+\_\+graph.\+hpp}}
+
+
+Data structures used in operations graph.  
+
+
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+B\+A\+M\+B\+U\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+E\+X\+P\+E\+R\+I\+M\+E\+N\+T\+A\+L.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+H\+L\+S\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+T\+U\+C\+A\+N\+O\+\_\+\+B\+U\+I\+L\+T.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config\+\_\+\+H\+A\+V\+E\+\_\+\+U\+N\+O\+R\+D\+E\+R\+E\+D.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cdfg\+\_\+edge\+\_\+info.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}typed\+\_\+node\+\_\+info.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}function\+\_\+behavior.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/graph/graph\+\_\+traits.\+hpp$>$}\newline
+{\ttfamily \#include $<$iosfwd$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+map.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+set.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}refcount.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}strong\+\_\+typedef.\+hpp\char`\"{}}\newline
+Include dependency graph for op\+\_\+graph.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d52/op__graph_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/deb/op__graph_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structOpNodeInfo}{Op\+Node\+Info}
+\begin{DoxyCompactList}\small\item\em Information associated with a generic operation node. \end{DoxyCompactList}\item 
+class \hyperlink{classOpEdgeInfo}{Op\+Edge\+Info}
+\begin{DoxyCompactList}\small\item\em The info associated with an edge of operation graph. \end{DoxyCompactList}\item 
+struct \hyperlink{structOpGraphInfo}{Op\+Graph\+Info}
+\begin{DoxyCompactList}\small\item\em information associated with the whole graph \end{DoxyCompactList}\item 
+class \hyperlink{classOpVertexSorter}{Op\+Vertex\+Sorter}
+\item 
+class \hyperlink{classOpVertexSet}{Op\+Vertex\+Set}
+\begin{DoxyCompactList}\small\item\em A set of operation vertices. \end{DoxyCompactList}\item 
+class \hyperlink{classOpVertexMap}{Op\+Vertex\+Map$<$ value $>$}
+\begin{DoxyCompactList}\small\item\em Map from operation vertices to value. \end{DoxyCompactList}\item 
+class \hyperlink{classOpEdgeSorter}{Op\+Edge\+Sorter}
+\item 
+class \hyperlink{classOpEdgeSet}{Op\+Edge\+Set}
+\item 
+class \hyperlink{classOpGraphsCollection}{Op\+Graphs\+Collection}
+\begin{DoxyCompactList}\small\item\em This structure defines graphs where nodes are operations. \end{DoxyCompactList}\item 
+struct \hyperlink{structOpGraph}{Op\+Graph}
+\begin{DoxyCompactList}\small\item\em Class used to describe a particular graph with operations as nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{op__graph_8hpp_ab73f84cff7a93ab762326868679c5c1f}{E\+N\+T\+R\+Y\+\_\+\+ID}~(std\+::numeric\+\_\+limits$<$unsigned int$>$\+::\hyperlink{tutorial__pact__2019_2Target-Customization_2first_2hint_8c_a28f422940797ea297699ba55d89171c5}{max}())
+\begin{DoxyCompactList}\small\item\em constant used to represent tree node index of entry operation \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_af17bac57ec07573c8c1869c2b81b3331}{E\+X\+I\+T\+\_\+\+ID}~(std\+::numeric\+\_\+limits$<$unsigned int$>$\+::\hyperlink{tutorial__pact__2019_2Target-Customization_2first_2hint_8c_a28f422940797ea297699ba55d89171c5}{max}() -\/ 1)
+\begin{DoxyCompactList}\small\item\em constant used to represent tree node index of exit operation \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a507a000ab685ee51fa68ac8c35833efe}{A\+S\+S\+I\+GN}~\char`\"{}A\+S\+S\+I\+GN\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the operation performed by an assignment. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ad809fee23cd5f94b1f449d033ff79b07}{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+PR}~\char`\"{}assert\+\_\+expr\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the operation performed by an assignment. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a1ebe8d6547259b6c4ea57e453b176006}{E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+PR}~\char`\"{}extract\+\_\+bit\+\_\+expr\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the operation performed by an extract\+\_\+bit\+\_\+expr. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ae5f376a1502a8d4fc54f39d4b59d0832}{L\+U\+T\+\_\+\+E\+X\+PR}~\char`\"{}lut\+\_\+expr\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the operation performed by an extract\+\_\+bit\+\_\+expr. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a1ffdbe480b0cf50710a37442cae84b87}{R\+E\+A\+D\+\_\+\+C\+O\+ND}~\char`\"{}R\+E\+A\+D\+\_\+\+C\+O\+ND\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the operation performed by a R\+E\+A\+D\+\_\+\+C\+O\+ND. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a48424a902f69e41e5c3e62c090298855}{M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+ND}~\char`\"{}M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+ND\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the operation performed by a M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+ND. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_aecb379a67676a4aed0d69621697916e2}{S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+ND}~\char`\"{}S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+ND\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the operation performed by a S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+ND. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a44e76b06a3b42faba2d4192b6b8362d3}{G\+I\+M\+P\+L\+E\+\_\+\+L\+A\+B\+EL}~\char`\"{}gimple\+\_\+label\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the operation performed by a G\+I\+M\+P\+L\+E\+\_\+\+L\+A\+B\+EL. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ac38e805714466cf8dd4048d962d9d44b}{G\+I\+M\+P\+L\+E\+\_\+\+G\+O\+TO}~\char`\"{}gimple\+\_\+goto\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the operation performed by a G\+I\+M\+P\+L\+E\+\_\+\+G\+O\+TO. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a700f88377bf36711b711f69b06c52f5d}{N\+OP}~\char`\"{}N\+OP\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying a no operation. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ac70c3f9d6e774957ce18e24a690e857a}{G\+I\+M\+P\+L\+E\+\_\+\+R\+E\+T\+U\+RN}~\char`\"{}gimple\+\_\+return\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the operation performed by a \hyperlink{structgimple__return}{gimple\+\_\+return}. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a156446392010795a884cb28fb5aa668f}{G\+I\+M\+P\+L\+E\+\_\+\+N\+OP}~\char`\"{}gimple\+\_\+nop\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the operation performed by a \hyperlink{structgimple__return}{gimple\+\_\+return}. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_acef9da4fe9f10ccc9c3301c0a9e8d467}{G\+I\+M\+P\+L\+E\+\_\+\+P\+HI}~\char`\"{}gimple\+\_\+phi\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the operation performed by a \hyperlink{structgimple__phi}{gimple\+\_\+phi}. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a11d032948405469352aad34899bf5035}{G\+I\+M\+P\+L\+E\+\_\+\+A\+SM}~\char`\"{}gimple\+\_\+asm\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the operation performed by a \hyperlink{structgimple__asm}{gimple\+\_\+asm}. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ae0aa34664683fd1a51a73b3dddfe5497}{G\+I\+M\+P\+L\+E\+\_\+\+P\+R\+A\+G\+MA}~\char`\"{}gimple\+\_\+pragma\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the operation performed by a G\+I\+M\+P\+L\+E\+\_\+\+P\+R\+A\+G\+MA. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_afa49f5cbf45954321f45b92170a5fac2}{M\+E\+M\+C\+PY}~\char`\"{}\+\_\+\+\_\+internal\+\_\+bambu\+\_\+memcpy\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the operation performed when two objects are memcopied. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_abf469337f4140cba4fdc4d0a0a83b010}{M\+E\+M\+C\+MP}~\char`\"{}memcmp\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the operation performed when two objects are memcompared. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ae11c3f805f2c8994cc1ea3d8a9ad764a}{M\+E\+M\+S\+ET}~\char`\"{}\+\_\+\+\_\+internal\+\_\+bambu\+\_\+memset\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the operation performed when two objects are memsetted. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a591ec22eaa354d9d5bcb4b1263d25b72}{V\+E\+C\+T\+\_\+\+C\+O\+N\+C\+A\+T\+E\+N\+A\+T\+I\+ON}~\char`\"{}V\+E\+C\+T\+\_\+\+C\+O\+N\+C\+A\+T\+E\+N\+A\+T\+I\+ON\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the operation performed when a vector concatenation is considered. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_acdb1ed29fff5a60bb6f98d4a4a50d332}{A\+D\+D\+R\+\_\+\+E\+X\+PR}~\char`\"{}addr\+\_\+expr\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying the addressing operation. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ad25db51e0151ddcc7e2b213360430ba7}{N\+O\+P\+\_\+\+E\+X\+PR}~\char`\"{}nop\+\_\+expr\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying some conversion expressions \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ac1692716dcf5b5343fe1a7b80ed736e4}{F\+L\+O\+A\+T\+\_\+\+E\+X\+PR}~\char`\"{}float\+\_\+expr\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying integer to float conversions \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a1ef9c9aa08758ff6a9396cdd73cb1be3}{F\+I\+X\+\_\+\+T\+R\+U\+N\+C\+\_\+\+E\+X\+PR}~\char`\"{}fix\+\_\+trunc\+\_\+expr\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying float to integer conversions \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a43d75439cd48641a73e057cfa1cf1306}{C\+O\+N\+V\+E\+R\+T\+\_\+\+E\+X\+PR}~\char`\"{}convert\+\_\+expr\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying some conversion expressions \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a820380b875937949227532186ebba91e}{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+E\+X\+PR}~\char`\"{}view\+\_\+convert\+\_\+expr\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant string identifying view convert expressions \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a2c902b370b4e367b8d76911699955312}{B\+U\+I\+L\+T\+I\+N\+\_\+\+W\+A\+I\+T\+\_\+\+C\+A\+LL}~\char`\"{}\+\_\+\+\_\+builtin\+\_\+wait\+\_\+call\char`\"{}
+\begin{DoxyCompactList}\small\item\em constant defining the builtin wait call intrinsic function \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a0121784bb4135a4be76bd65421ed1ab7}{G\+E\+T\+\_\+\+B\+B\+\_\+\+I\+N\+D\+EX}(data,  vertex\+\_\+index)~\hyperlink{graph_8hpp_ad3607daf827c59148c71b9b124a4063c}{Cget\+\_\+node\+\_\+info}$<$\hyperlink{structOpNodeInfo}{Op\+Node\+Info}$>$(vertex\+\_\+index, $\ast$(data))-\/$>$bb\+\_\+index
+\begin{DoxyCompactList}\small\item\em Macro returning the index of the basic block which the node belongs to. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a81a360d9a7e32ad27693add99b9268ad}{G\+E\+T\+\_\+\+C\+ER}(data,  vertex\+\_\+index)~\hyperlink{graph_8hpp_ad3607daf827c59148c71b9b124a4063c}{Cget\+\_\+node\+\_\+info}$<$\hyperlink{structOpNodeInfo}{Op\+Node\+Info}$>$(vertex\+\_\+index, $\ast$(data))-\/$>$cer
+\begin{DoxyCompactList}\small\item\em Macro returning the control equivalent region of the node. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a7f5baade3693ff286d8d96f8f9bf4aad}{D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 7
+\begin{DoxyCompactList}\small\item\em Selectors used only in operation graphs; numbers continue from \hyperlink{cdfg__edge__info_8hpp}{cdfg\+\_\+edge\+\_\+info.\+hpp}. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a68d3a2f52ea5032f051a351f5b62661b}{D\+F\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 8
+\begin{DoxyCompactList}\small\item\em Data flow graph edge selector between computed on aggregates. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a8d9f021ce1e598506d4dd902847ff7ff}{D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(\hyperlink{op__graph_8hpp_a7f5baade3693ff286d8d96f8f9bf4aad}{D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a68d3a2f52ea5032f051a351f5b62661b}{D\+F\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})
+\begin{DoxyCompactList}\small\item\em Data flow graph edge selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a9453090214a2fbb4830996512929ac5a}{F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 9
+\begin{DoxyCompactList}\small\item\em Data flow graph edge selector between computed on scalars. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a31d785b7821eaf3cc7044ad75fd814c4}{F\+B\+\_\+\+D\+F\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 10
+\begin{DoxyCompactList}\small\item\em Data flow graph edge selector between computed on aggregates. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_aa443bf5eabdfe585610028574dc006a8}{F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(\hyperlink{op__graph_8hpp_a9453090214a2fbb4830996512929ac5a}{F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a31d785b7821eaf3cc7044ad75fd814c4}{F\+B\+\_\+\+D\+F\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})
+\begin{DoxyCompactList}\small\item\em Feedback Data flow graph edge selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a2c6f6b9b5972b95b8527486faf24ae3d}{F\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(\hyperlink{op__graph_8hpp_a8d9f021ce1e598506d4dd902847ff7ff}{D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_aa443bf5eabdfe585610028574dc006a8}{F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})
+\begin{DoxyCompactList}\small\item\em Data flow graph with feedback edges. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a66e19f5d275d59e8288affb7c18a047e}{A\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 11
+\begin{DoxyCompactList}\small\item\em Anti-\/dependence graph edge selector computed on scalar. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a3761f112f30d7b67bae86f4e32692d5e}{A\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 12
+\begin{DoxyCompactList}\small\item\em Anti-\/dependence graph edge selector computed on aggregates. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_aed2e2e8c5f412b664eeb0f00292830a8}{A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(\hyperlink{op__graph_8hpp_a66e19f5d275d59e8288affb7c18a047e}{A\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a3761f112f30d7b67bae86f4e32692d5e}{A\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})
+\begin{DoxyCompactList}\small\item\em Anti-\/dependence graph edge selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a5eb5d13875c824db1581e458621e944e}{F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 13
+\begin{DoxyCompactList}\small\item\em Feedback Anti-\/dependence graph edge selector computed on scalar. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ad7bab0a2beff4da0b85f0a59dc05eefa}{F\+B\+\_\+\+A\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 14
+\begin{DoxyCompactList}\small\item\em Feedback Anti-\/dependence graph edge selector computed on aggregates. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ae2038fd13539af04f3e762e314929690}{F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(\hyperlink{op__graph_8hpp_a5eb5d13875c824db1581e458621e944e}{F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_ad7bab0a2beff4da0b85f0a59dc05eefa}{F\+B\+\_\+\+A\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})
+\begin{DoxyCompactList}\small\item\em Feedback anti-\/dependence graph edge selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a2ad3b29deaec0fbcdc6c966579cfb090}{F\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(\hyperlink{op__graph_8hpp_aed2e2e8c5f412b664eeb0f00292830a8}{A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_ae2038fd13539af04f3e762e314929690}{F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})
+\begin{DoxyCompactList}\small\item\em Anti-\/dependence graph selector with feedback edges. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a9ab8b6c214babe9f00021529fea8381c}{O\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 15
+\begin{DoxyCompactList}\small\item\em Output-\/dependence graph edge selector computed on scalars. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a49ce1b7162597ab9b21fc6d613ef9b1b}{O\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 16
+\begin{DoxyCompactList}\small\item\em Output-\/dependence graph edge selector computed on aggregates. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a6ad3ca177084a35d1b7df5b11f4b92d4}{O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(\hyperlink{op__graph_8hpp_a9ab8b6c214babe9f00021529fea8381c}{O\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a49ce1b7162597ab9b21fc6d613ef9b1b}{O\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})
+\begin{DoxyCompactList}\small\item\em Output-\/dependence graph edge selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a50063d1f7bc16689be3ed80a852ac7d1}{F\+B\+\_\+\+O\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 17
+\begin{DoxyCompactList}\small\item\em Feedback Output-\/dependence graph edge selector computed on scalars. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a17926871d26a67cfd16673ac9371d0de}{F\+B\+\_\+\+O\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 18
+\begin{DoxyCompactList}\small\item\em Feedback Output-\/dependence graph edge selector computed on aggregates. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a9404bbc7a905430f40ee17fefbc44898}{F\+B\+\_\+\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(\hyperlink{op__graph_8hpp_a50063d1f7bc16689be3ed80a852ac7d1}{F\+B\+\_\+\+O\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a17926871d26a67cfd16673ac9371d0de}{F\+B\+\_\+\+O\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})
+\begin{DoxyCompactList}\small\item\em Feedback Output-\/dependence graph edge selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ae956cea48b0f953e1bb01b1c266633ed}{F\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(\hyperlink{op__graph_8hpp_a6ad3ca177084a35d1b7df5b11f4b92d4}{O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a9404bbc7a905430f40ee17fefbc44898}{F\+B\+\_\+\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})
+\begin{DoxyCompactList}\small\item\em Output-\/dependence graph selector with feedback edges. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a81c718d2b47c724583dd8893bf8e07b8}{S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(\hyperlink{cdfg__edge__info_8hpp_ae9ba127b2bce757619817f7f35faad9d}{C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a8d9f021ce1e598506d4dd902847ff7ff}{D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})
+\begin{DoxyCompactList}\small\item\em Control and Data dependence graph edge selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ab77cad5bc9a15e1880e1841d0bc4dac7}{F\+S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(\hyperlink{cdfg__edge__info_8hpp_ace7aef3af8493cf726201463ceb3d323}{F\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a2c6f6b9b5972b95b8527486faf24ae3d}{F\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})
+\begin{DoxyCompactList}\small\item\em Control and Data dependence graph and dependence edge selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ad0b16d207840daf09e82d39b4649a62e}{R\+S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(\hyperlink{cdfg__edge__info_8hpp_a9b80141d4cb668a73355a243954e151f}{T\+R\+E\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR})
+\begin{DoxyCompactList}\small\item\em Reducted sdg with feedback edges. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a882111dfa209931e6179079da5566be3}{F\+S\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(\hyperlink{cdfg__edge__info_8hpp_ae9ba127b2bce757619817f7f35faad9d}{C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a8d9f021ce1e598506d4dd902847ff7ff}{D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_aed2e2e8c5f412b664eeb0f00292830a8}{A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{cdfg__edge__info_8hpp_acc71451858388286c42127edfe9526c9}{F\+B\+\_\+\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_aa443bf5eabdfe585610028574dc006a8}{F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_ae2038fd13539af04f3e762e314929690}{F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})
+\begin{DoxyCompactList}\small\item\em Control and Data dependence and antidependence graph edge selector with feedback edges. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_aafe6cf49fe37aea1b1d7f161bc35ef4c}{S\+A\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(\hyperlink{cdfg__edge__info_8hpp_ae9ba127b2bce757619817f7f35faad9d}{C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a8d9f021ce1e598506d4dd902847ff7ff}{D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_aed2e2e8c5f412b664eeb0f00292830a8}{A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a6ad3ca177084a35d1b7df5b11f4b92d4}{O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})
+\begin{DoxyCompactList}\small\item\em Control and Data dependence and antidependence graph edge selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_afd746f1588e924e85237183988b79b86}{F\+A\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(\hyperlink{op__graph_8hpp_a8d9f021ce1e598506d4dd902847ff7ff}{D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_aed2e2e8c5f412b664eeb0f00292830a8}{A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})
+\begin{DoxyCompactList}\small\item\em data dependence antidependence and feedback graph edge selector \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a2ea3eca1ed0d36689b0eadd95075c11f}{C\+S\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 19
+\begin{DoxyCompactList}\small\item\em Control edge in a speculation graph. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a292ec8894b6d75b47e72b10acc07e512}{S\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~(\hyperlink{op__graph_8hpp_a2ea3eca1ed0d36689b0eadd95075c11f}{C\+S\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a8d9f021ce1e598506d4dd902847ff7ff}{D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_aed2e2e8c5f412b664eeb0f00292830a8}{A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a6ad3ca177084a35d1b7df5b11f4b92d4}{O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_aa30707b83b0a120a56039708c0388145}{F\+L\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})
+\begin{DoxyCompactList}\small\item\em Speculation graph. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a0735d1da3d6831825bf7ab125c62b806}{R\+P\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 20
+\begin{DoxyCompactList}\small\item\em Reduced P\+DG edge selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_aa30707b83b0a120a56039708c0388145}{F\+L\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 21
+\begin{DoxyCompactList}\small\item\em Flow edge selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_adbc25659b5ca9e086d63d08e31529dff}{F\+B\+\_\+\+F\+L\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 22
+\begin{DoxyCompactList}\small\item\em Feedback flow edge selector. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a0f62ffddfed6cf9687ca2f1cf4ac390e}{D\+E\+B\+U\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}~1 $<$$<$ 23
+\begin{DoxyCompactList}\small\item\em Debug selector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Node name and type definition for the cdfg node.}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{op__graph_8hpp_aa3075926354dd8e7707d4f6d9033c1aa}{T\+Y\+P\+E\+\_\+\+O\+P\+A\+Q\+UE}~1 $<$$<$ 0
+\begin{DoxyCompactList}\small\item\em constant identifying a node of opaque type \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ab7286f86c900a6385c7916ce04aed868}{T\+Y\+P\+E\+\_\+\+E\+X\+T\+E\+R\+N\+AL}~1 $<$$<$ 4
+\begin{DoxyCompactList}\small\item\em constant identifying the node type of a E\+X\+T\+E\+R\+N\+AL operation (a function call) \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a4714f730eb58ba8d487e73656ab65f08}{T\+Y\+P\+E\+\_\+\+IF}~1 $<$$<$ 5
+\begin{DoxyCompactList}\small\item\em constant identifying the node type of an IF operation. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ab68ed5835294a4902874f2c81d5624a9}{T\+Y\+P\+E\+\_\+\+S\+W\+I\+T\+CH}~1 $<$$<$ 6
+\begin{DoxyCompactList}\small\item\em constant identifying the node type of a S\+W\+I\+T\+CH operation. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a52bc3a139d3aca2e3dbc0e9523f4568f}{T\+Y\+P\+E\+\_\+\+W\+H\+I\+LE}~1 $<$$<$ 7
+\begin{DoxyCompactList}\small\item\em constant string identifying the node type of an W\+H\+I\+LE operation. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ad907d0e9dd022960f2ffde8e4d95612f}{T\+Y\+P\+E\+\_\+\+F\+OR}~1 $<$$<$ 8
+\begin{DoxyCompactList}\small\item\em constant string identifying the node type of an W\+H\+I\+LE operation. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a9921301bb00a4384ae59180ae1a17f85}{T\+Y\+P\+E\+\_\+\+DO}~1 $<$$<$ 9
+\begin{DoxyCompactList}\small\item\em constant string identifying the node type of an DO operation. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a509d6b2755317073e74fd9768ea91d1e}{T\+Y\+P\+E\+\_\+\+A\+S\+S\+I\+GN}~1 $<$$<$ 10
+\begin{DoxyCompactList}\small\item\em constant string identifying the node type of an A\+S\+S\+I\+GN operation. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a31a0ba1f07fcc0340332b6f4a8b60468}{T\+Y\+P\+E\+\_\+\+N\+OP}~1 $<$$<$ 11
+\begin{DoxyCompactList}\small\item\em constant string identifying a type for a no operation. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a65c310ba3e06853a18c2e3bca914db79}{T\+Y\+P\+E\+\_\+\+P\+HI}~1 $<$$<$ 12
+\begin{DoxyCompactList}\small\item\em constant string identifying an operation node of type P\+HI \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a77fc5d0c644117a1b5aa3c7a3f62c188}{T\+Y\+P\+E\+\_\+\+R\+ET}~1 $<$$<$ 13
+\begin{DoxyCompactList}\small\item\em constant string identifying an operation node of type return expr \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ae25bea07e3659ae172918c59d599db0e}{T\+Y\+P\+E\+\_\+\+T\+O\+\_\+\+B\+E\+\_\+\+R\+E\+M\+O\+V\+ED}~1 $<$$<$ 14
+\begin{DoxyCompactList}\small\item\em Constant string identifying an operation that has to be removed. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ad2ab457bbe915930d6174464808a33e2}{T\+Y\+P\+E\+\_\+\+L\+A\+B\+EL}~1 $<$$<$ 15
+\begin{DoxyCompactList}\small\item\em A vertex is of type T\+Y\+P\+E\+\_\+\+L\+A\+B\+EL when it is a target of a goto expression. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ae466c89caa79158ed01b3a764aefe4a1}{T\+Y\+P\+E\+\_\+\+G\+O\+TO}~1 $<$$<$ 16
+\begin{DoxyCompactList}\small\item\em A vertex is of type T\+Y\+P\+E\+\_\+\+G\+O\+TO when it is associated with a goto expression. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a33dee217f18c0d8276c17b190271d581}{T\+Y\+P\+E\+\_\+\+V\+P\+HI}~1 $<$$<$ 17
+\begin{DoxyCompactList}\small\item\em constant string identifying an operation node of type virtual phi-\/nodes \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a6cf6c759643ad2eb89a1b2073d4d5979}{T\+Y\+P\+E\+\_\+\+I\+N\+IT}~1 $<$$<$ 18
+\begin{DoxyCompactList}\small\item\em Constant string identifying an operation that is a variable initialization. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a0eac1f9a745fb7e8730989c05462e8d3}{T\+Y\+P\+E\+\_\+\+L\+O\+AD}~1 $<$$<$ 19
+\begin{DoxyCompactList}\small\item\em Constant string identifying a memory load operation. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a3ec36cddfe337233f163dd1b51a34422}{T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE}~1 $<$$<$ 20
+\begin{DoxyCompactList}\small\item\em Constant string identifying a memory store operation. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ab6f4fc11484a6154d11a24c140d4c2b7}{T\+Y\+P\+E\+\_\+\+M\+E\+M\+C\+PY}~1 $<$$<$ 21
+\begin{DoxyCompactList}\small\item\em A vertex is of type T\+Y\+P\+E\+\_\+\+M\+E\+M\+C\+PY when it is associated with a assignment between struct/union. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a41a1e0c75efd88a6980f66594ad53054}{T\+Y\+P\+E\+\_\+\+W\+A\+S\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+P\+HI}~1 $<$$<$ 22
+\begin{DoxyCompactList}\small\item\em A vertex is of type T\+Y\+P\+E\+\_\+\+W\+A\+S\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+P\+HI when it is comes from a split of phi nodes. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a518dd4281631366008b5317f3e786869}{T\+Y\+P\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+OP}~1 $<$$<$ 23
+\begin{DoxyCompactList}\small\item\em A vertex of type F\+I\+R\+S\+T\+\_\+\+OP if it is the first operation of the application. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_aa7274afab81f3cdccf5770b287690956}{T\+Y\+P\+E\+\_\+\+L\+A\+S\+T\+\_\+\+OP}~1 $<$$<$ 24
+\begin{DoxyCompactList}\small\item\em A vertex of type L\+A\+S\+T\+\_\+\+OP if it is the last operation of the application. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a543eed5297e4900c77068274bcc6ceb0}{T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+IF}~1 $<$$<$ 25
+\begin{DoxyCompactList}\small\item\em constant identifying the a multi-\/way if \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_a64173d68a6a94ac816dcd4849bb07c11}{T\+Y\+P\+E\+\_\+\+A\+T\+O\+M\+IC}~1 $<$$<$ 26
+\begin{DoxyCompactList}\small\item\em Constant identifying an atomic operation. \end{DoxyCompactList}\item 
+\#define \hyperlink{op__graph_8hpp_ab0ca1fe7b021fcd1b30da580eefbdbe6}{T\+Y\+P\+E\+\_\+\+P\+R\+E\+D\+I\+C\+A\+T\+ED}~1 $<$$<$ 27
+\begin{DoxyCompactList}\small\item\em Constant identifying a predicated operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structOpNodeInfo}{Op\+Node\+Info} $>$ \hyperlink{op__graph_8hpp_a03ecef2a2ccfe0a14c591757fb6624c4}{Op\+Node\+Info\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{structOpNodeInfo}{Op\+Node\+Info} $>$ \hyperlink{op__graph_8hpp_a9e7b5806b7d7ea87cc4abe68bf204684}{Op\+Node\+Info\+Const\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classOpEdgeInfo}{Op\+Edge\+Info} $>$ \hyperlink{op__graph_8hpp_a88b31783f4a268fd2586c9cf8134ccb6}{Op\+Edge\+Info\+Ref}
+\begin{DoxyCompactList}\small\item\em Refcount definition for \hyperlink{classOpEdgeInfo}{Op\+Edge\+Info}. \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{classOpEdgeInfo}{Op\+Edge\+Info} $>$ \hyperlink{op__graph_8hpp_ad56e1eade1e36cb8d170845855e19adc}{Op\+Edge\+Info\+Const\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structOpGraphInfo}{Op\+Graph\+Info} $>$ \hyperlink{op__graph_8hpp_aa53452ee6eef48921379dd17cb659724}{Op\+Graph\+Info\+Ref}
+\begin{DoxyCompactList}\small\item\em Refcount definition for \hyperlink{structOpGraphInfo}{Op\+Graph\+Info}. \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{structOpGraphInfo}{Op\+Graph\+Info} $>$ \hyperlink{op__graph_8hpp_af2fea39867a0ccd19a63845f5213dabc}{Op\+Graph\+Info\+Const\+Ref}
+\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{classOpGraphsCollection}{Op\+Graphs\+Collection} $>$ \hyperlink{op__graph_8hpp_a6a9918dc96f448814ad35759f9460ed7}{Op\+Graphs\+Collection\+Ref}
+\begin{DoxyCompactList}\small\item\em Refcount definition for Op\+Graphs\+Collection\+Ref. \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ \hyperlink{structOpGraph}{Op\+Graph} $>$ \hyperlink{op__graph_8hpp_aee97c95c40f791b60c451d9e29c72d39}{Op\+Graph\+Ref}
+\begin{DoxyCompactList}\small\item\em refcount definition of the class \end{DoxyCompactList}\item 
+typedef \hyperlink{structrefcount}{refcount}$<$ const \hyperlink{structOpGraph}{Op\+Graph} $>$ \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{op__graph_8hpp_a942a3103598e9f83b960660212b20cef}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classBehavioralHelper}{Behavioral\+Helper})
+\begin{DoxyCompactList}\small\item\em Autoheader include. \end{DoxyCompactList}\item 
+\hyperlink{op__graph_8hpp_ade14fd37447397e9814a299d22fdadcb}{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL} (\hyperlink{classhls}{hls})
+\item 
+\hyperlink{op__graph_8hpp_aaf2bd671f2c9b9dae12ef66c687f76e4}{U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+EF} (Memory\+Address)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Data structures used in operations graph. 
+
+\begin{DoxyAuthor}{Author}
+Marco Lattuada \href{mailto:lattuada@elet.polimi.it}{\tt lattuada@elet.\+polimi.\+it} 
+
+Fabrizio Ferrandi \href{mailto:fabrizio.ferrandi@polimi.it}{\tt fabrizio.\+ferrandi@polimi.\+it} \$\+Revision\$ \$\+Date\$ Last modified by \$\+Author\$ 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{op__graph_8hpp_acdb1ed29fff5a60bb6f98d4a4a50d332}\label{op__graph_8hpp_acdb1ed29fff5a60bb6f98d4a4a50d332}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!A\+D\+D\+R\+\_\+\+E\+X\+PR@{A\+D\+D\+R\+\_\+\+E\+X\+PR}}
+\index{A\+D\+D\+R\+\_\+\+E\+X\+PR@{A\+D\+D\+R\+\_\+\+E\+X\+PR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{A\+D\+D\+R\+\_\+\+E\+X\+PR}{ADDR\_EXPR}}
+{\footnotesize\ttfamily \#define A\+D\+D\+R\+\_\+\+E\+X\+PR~\char`\"{}addr\+\_\+expr\char`\"{}}
+
+
+
+constant string identifying the addressing operation. 
+
+
+
+Definition at line 328 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_a3761f112f30d7b67bae86f4e32692d5e}\label{op__graph_8hpp_a3761f112f30d7b67bae86f4e32692d5e}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!A\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{A\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{A\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{A\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{A\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{ADG\_AGG\_SELECTOR}}
+{\footnotesize\ttfamily \#define A\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 12}
+
+
+
+Anti-\/dependence graph edge selector computed on aggregates. 
+
+
+
+Definition at line 475 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Data\+Dependence\+Computation\+::do\+\_\+dependence\+\_\+reduction(), Virtual\+Aggregate\+Data\+Flow\+Analysis\+::\+Initialize(), Memory\+Data\+Flow\+Analysis\+::\+Initialize(), and Data\+Dependence\+Computation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_a66e19f5d275d59e8288affb7c18a047e}\label{op__graph_8hpp_a66e19f5d275d59e8288affb7c18a047e}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!A\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{A\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{A\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{A\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{A\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{ADG\_SCA\_SELECTOR}}
+{\footnotesize\ttfamily \#define A\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 11}
+
+
+
+Anti-\/dependence graph edge selector computed on scalar. 
+
+
+
+Definition at line 473 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Scalar\+Ssa\+Data\+Dependence\+Computation\+::\+Initialize(), and Data\+Dependence\+Computation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_aed2e2e8c5f412b664eeb0f00292830a8}\label{op__graph_8hpp_aed2e2e8c5f412b664eeb0f00292830a8}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{ADG\_SELECTOR}}
+{\footnotesize\ttfamily \#define A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(\hyperlink{op__graph_8hpp_a66e19f5d275d59e8288affb7c18a047e}{A\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a3761f112f30d7b67bae86f4e32692d5e}{A\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})}
+
+
+
+Anti-\/dependence graph edge selector. 
+
+
+
+Definition at line 477 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Data\+Dependence\+Computation\+::\+Computedependencies(), and Op\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{op__graph_8hpp_ad809fee23cd5f94b1f449d033ff79b07}\label{op__graph_8hpp_ad809fee23cd5f94b1f449d033ff79b07}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+PR@{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+PR}}
+\index{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+PR@{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+PR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+PR}{ASSERT\_EXPR}}
+{\footnotesize\ttfamily \#define A\+S\+S\+E\+R\+T\+\_\+\+E\+X\+PR~\char`\"{}assert\+\_\+expr\char`\"{}}
+
+
+
+constant string identifying the operation performed by an assignment. 
+
+
+
+Definition at line 238 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_a507a000ab685ee51fa68ac8c35833efe}\label{op__graph_8hpp_a507a000ab685ee51fa68ac8c35833efe}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!A\+S\+S\+I\+GN@{A\+S\+S\+I\+GN}}
+\index{A\+S\+S\+I\+GN@{A\+S\+S\+I\+GN}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{A\+S\+S\+I\+GN}{ASSIGN}}
+{\footnotesize\ttfamily \#define A\+S\+S\+I\+GN~\char`\"{}A\+S\+S\+I\+GN\char`\"{}}
+
+
+
+constant string identifying the operation performed by an assignment. 
+
+
+
+Definition at line 222 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), R\+T\+L\+Characterization\+::fix\+\_\+execution\+\_\+time\+\_\+std(), R\+T\+L\+Characterization\+::fix\+\_\+muxes(), allocation\+::\+Internal\+Exec(), and B\+B\+\_\+based\+\_\+stg\+::is\+\_\+instantaneous\+\_\+operation().
+
+\mbox{\Hypertarget{op__graph_8hpp_a2c902b370b4e367b8d76911699955312}\label{op__graph_8hpp_a2c902b370b4e367b8d76911699955312}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!B\+U\+I\+L\+T\+I\+N\+\_\+\+W\+A\+I\+T\+\_\+\+C\+A\+LL@{B\+U\+I\+L\+T\+I\+N\+\_\+\+W\+A\+I\+T\+\_\+\+C\+A\+LL}}
+\index{B\+U\+I\+L\+T\+I\+N\+\_\+\+W\+A\+I\+T\+\_\+\+C\+A\+LL@{B\+U\+I\+L\+T\+I\+N\+\_\+\+W\+A\+I\+T\+\_\+\+C\+A\+LL}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{B\+U\+I\+L\+T\+I\+N\+\_\+\+W\+A\+I\+T\+\_\+\+C\+A\+LL}{BUILTIN\_WAIT\_CALL}}
+{\footnotesize\ttfamily \#define B\+U\+I\+L\+T\+I\+N\+\_\+\+W\+A\+I\+T\+\_\+\+C\+A\+LL~\char`\"{}\+\_\+\+\_\+builtin\+\_\+wait\+\_\+call\char`\"{}}
+
+
+
+constant defining the builtin wait call intrinsic function 
+
+
+
+Definition at line 356 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by fu\+\_\+binding\+::add\+\_\+to\+\_\+\+S\+M(), determine\+\_\+memory\+\_\+accesses\+::analyze\+\_\+node(), H\+W\+Call\+Injection\+::build\+Builtin\+Call(), Vcd\+Signal\+Selection\+::\+Cross\+Propagate\+Addr\+Ssa(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), Call\+Graph\+Builtin\+Call\+::look\+For\+Builtin\+Call(), fu\+\_\+binding\+::specialise\+\_\+fu(), module\+Generator\+::specialize\+\_\+fu(), C\+Writer\+::\+Write\+Builtin\+Wait\+Call(), C\+Writer\+::\+Write\+Global\+Declarations(), and Discrepancy\+Analysis\+C\+Writer\+::write\+Pre\+Instruction\+Info().
+
+\mbox{\Hypertarget{op__graph_8hpp_a43d75439cd48641a73e057cfa1cf1306}\label{op__graph_8hpp_a43d75439cd48641a73e057cfa1cf1306}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!C\+O\+N\+V\+E\+R\+T\+\_\+\+E\+X\+PR@{C\+O\+N\+V\+E\+R\+T\+\_\+\+E\+X\+PR}}
+\index{C\+O\+N\+V\+E\+R\+T\+\_\+\+E\+X\+PR@{C\+O\+N\+V\+E\+R\+T\+\_\+\+E\+X\+PR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+V\+E\+R\+T\+\_\+\+E\+X\+PR}{CONVERT\_EXPR}}
+{\footnotesize\ttfamily \#define C\+O\+N\+V\+E\+R\+T\+\_\+\+E\+X\+PR~\char`\"{}convert\+\_\+expr\char`\"{}}
+
+
+
+constant string identifying some conversion expressions 
+
+
+
+Definition at line 348 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec(), and B\+B\+\_\+based\+\_\+stg\+::is\+\_\+instantaneous\+\_\+operation().
+
+\mbox{\Hypertarget{op__graph_8hpp_a2ea3eca1ed0d36689b0eadd95075c11f}\label{op__graph_8hpp_a2ea3eca1ed0d36689b0eadd95075c11f}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!C\+S\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{C\+S\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{C\+S\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{C\+S\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+S\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{CSG\_SELECTOR}}
+{\footnotesize\ttfamily \#define C\+S\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 19}
+
+
+
+Control edge in a speculation graph. 
+
+
+
+Definition at line 517 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Op\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{op__graph_8hpp_a0f62ffddfed6cf9687ca2f1cf4ac390e}\label{op__graph_8hpp_a0f62ffddfed6cf9687ca2f1cf4ac390e}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!D\+E\+B\+U\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{D\+E\+B\+U\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{D\+E\+B\+U\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{D\+E\+B\+U\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{D\+E\+B\+U\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{DEBUG\_SELECTOR}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 23}
+
+
+
+Debug selector. 
+
+
+
+Definition at line 531 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by S\+D\+C\+Scheduling\+::\+Add\+Delay\+Constraints(), Function\+Behavior\+::\+C\+Get\+Op\+Graph(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), and Op\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{op__graph_8hpp_a68d3a2f52ea5032f051a351f5b62661b}\label{op__graph_8hpp_a68d3a2f52ea5032f051a351f5b62661b}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!D\+F\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{D\+F\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{D\+F\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{D\+F\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{D\+F\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{DFG\_AGG\_SELECTOR}}
+{\footnotesize\ttfamily \#define D\+F\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 8}
+
+
+
+Data flow graph edge selector between computed on aggregates. 
+
+
+
+Definition at line 460 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Data\+Dependence\+Computation\+::do\+\_\+dependence\+\_\+reduction(), Virtual\+Aggregate\+Data\+Flow\+Analysis\+::\+Initialize(), Memory\+Data\+Flow\+Analysis\+::\+Initialize(), Data\+Dependence\+Computation\+::\+Internal\+Exec(), and Op\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{op__graph_8hpp_a7f5baade3693ff286d8d96f8f9bf4aad}\label{op__graph_8hpp_a7f5baade3693ff286d8d96f8f9bf4aad}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{DFG\_SCA\_SELECTOR}}
+{\footnotesize\ttfamily \#define D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 7}
+
+
+
+Selectors used only in operation graphs; numbers continue from \hyperlink{cdfg__edge__info_8hpp}{cdfg\+\_\+edge\+\_\+info.\+hpp}. 
+
+Data flow graph edge selector between computed on scalars 
+
+Definition at line 458 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by estimate\+\_\+muxes(), Scalar\+Ssa\+Data\+Dependence\+Computation\+::\+Initialize(), Data\+Dependence\+Computation\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), Op\+Edge\+Writer\+::operator()(), and cdfc\+\_\+module\+\_\+binding\+::update\+\_\+slack\+\_\+starting\+\_\+time().
+
+\mbox{\Hypertarget{op__graph_8hpp_a8d9f021ce1e598506d4dd902847ff7ff}\label{op__graph_8hpp_a8d9f021ce1e598506d4dd902847ff7ff}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{DFG\_SELECTOR}}
+{\footnotesize\ttfamily \#define D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(\hyperlink{op__graph_8hpp_a7f5baade3693ff286d8d96f8f9bf4aad}{D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a68d3a2f52ea5032f051a351f5b62661b}{D\+F\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})}
+
+
+
+Data flow graph edge selector. 
+
+
+
+Definition at line 462 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Data\+Dependence\+Computation\+::\+Computedependencies(), and Op\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{op__graph_8hpp_ab73f84cff7a93ab762326868679c5c1f}\label{op__graph_8hpp_ab73f84cff7a93ab762326868679c5c1f}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!E\+N\+T\+R\+Y\+\_\+\+ID@{E\+N\+T\+R\+Y\+\_\+\+ID}}
+\index{E\+N\+T\+R\+Y\+\_\+\+ID@{E\+N\+T\+R\+Y\+\_\+\+ID}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{E\+N\+T\+R\+Y\+\_\+\+ID}{ENTRY\_ID}}
+{\footnotesize\ttfamily \#define E\+N\+T\+R\+Y\+\_\+\+ID~(std\+::numeric\+\_\+limits$<$unsigned int$>$\+::\hyperlink{tutorial__pact__2019_2Target-Customization_2first_2hint_8c_a28f422940797ea297699ba55d89171c5}{max}())}
+
+
+
+constant used to represent tree node index of entry operation 
+
+
+
+Definition at line 82 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+graph\+\_\+constructor\+::\+Add\+Operation(), Allocation\+Information\+::can\+\_\+implement\+\_\+set(), Allocation\+Information\+::\+Can\+Be\+Chained(), Allocation\+Information\+::\+Can\+Be\+Merged(), Schedule\+::\+Can\+Be\+Moved(), Allocation\+Information\+::\+Can\+Implement\+Set\+Not\+Empty(), Schedule\+::\+Compute\+Critical\+Path(), C\+Writer\+::declare\+\_\+cast\+\_\+types(), Vcd\+Signal\+Selection\+::\+Detect\+Invalid\+Returns(), Behavioral\+Helper\+::get\+\_\+asm\+\_\+string(), Allocation\+Information\+::get\+\_\+attribute\+\_\+of\+\_\+fu\+\_\+per\+\_\+op(), Schedule\+::get\+\_\+cstep(), Schedule\+::get\+\_\+cstep\+\_\+end(), Allocation\+Information\+::get\+\_\+cycles(), Allocation\+Information\+::get\+\_\+execution\+\_\+time(), Allocation\+Information\+::get\+\_\+initiation\+\_\+time(), application\+\_\+manager\+::get\+\_\+produced\+\_\+value(), H\+L\+S\+\_\+manager\+::get\+\_\+required\+\_\+values(), Allocation\+Information\+::get\+\_\+stage\+\_\+period(), Allocation\+Information\+::\+Get\+Connection\+Time(), Allocation\+Information\+::\+Get\+Cycle\+Latency(), Schedule\+::\+Get\+Ending\+Time(), Op\+Node\+Info\+::\+Get\+Node\+Id(), Allocation\+Information\+::\+Get\+Phi\+Connection\+Latency(), Schedule\+::\+Get\+Starting\+Time(), Allocation\+Information\+::\+Get\+Time\+Latency(), Allocation\+Information\+::\+Get\+To\+Dsp\+Register\+Delay(), easy\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), Var\+Computation\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), Allocation\+Information\+::is\+\_\+vertex\+\_\+bounded\+\_\+with(), Allocation\+Information\+::\+Is\+Variable\+Execution\+Time(), Allocation\+Information\+::print\+\_\+allocated\+\_\+resources(), Behavioral\+Helper\+::print\+\_\+vertex(), Vcd\+Signal\+Selection\+::\+Propagate\+Addr\+Param\+To\+Ssa(), Vcd\+Signal\+Selection\+::\+Select\+Initial\+Ssa(), Vcd\+Signal\+Selection\+::\+Select\+Internal\+Signals(), Schedule\+::\+Update\+Time(), C\+Backend\+::write\+Includes(), Discrepancy\+Analysis\+C\+Writer\+::write\+Post\+Instruction\+Info(), and Discrepancy\+Analysis\+C\+Writer\+::write\+Pre\+Instruction\+Info().
+
+\mbox{\Hypertarget{op__graph_8hpp_af17bac57ec07573c8c1869c2b81b3331}\label{op__graph_8hpp_af17bac57ec07573c8c1869c2b81b3331}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!E\+X\+I\+T\+\_\+\+ID@{E\+X\+I\+T\+\_\+\+ID}}
+\index{E\+X\+I\+T\+\_\+\+ID@{E\+X\+I\+T\+\_\+\+ID}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{E\+X\+I\+T\+\_\+\+ID}{EXIT\_ID}}
+{\footnotesize\ttfamily \#define E\+X\+I\+T\+\_\+\+ID~(std\+::numeric\+\_\+limits$<$unsigned int$>$\+::\hyperlink{tutorial__pact__2019_2Target-Customization_2first_2hint_8c_a28f422940797ea297699ba55d89171c5}{max}() -\/ 1)}
+
+
+
+constant used to represent tree node index of exit operation 
+
+
+
+Definition at line 84 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+graph\+\_\+constructor\+::\+Add\+Operation(), Allocation\+Information\+::can\+\_\+implement\+\_\+set(), Allocation\+Information\+::\+Can\+Be\+Chained(), Allocation\+Information\+::\+Can\+Be\+Merged(), Schedule\+::\+Can\+Be\+Moved(), Allocation\+Information\+::\+Can\+Implement\+Set\+Not\+Empty(), Schedule\+::\+Compute\+Critical\+Path(), C\+Writer\+::declare\+\_\+cast\+\_\+types(), Vcd\+Signal\+Selection\+::\+Detect\+Invalid\+Returns(), Behavioral\+Helper\+::get\+\_\+asm\+\_\+string(), Allocation\+Information\+::get\+\_\+attribute\+\_\+of\+\_\+fu\+\_\+per\+\_\+op(), Schedule\+::get\+\_\+cstep(), Schedule\+::get\+\_\+cstep\+\_\+end(), Allocation\+Information\+::get\+\_\+cycles(), Allocation\+Information\+::get\+\_\+execution\+\_\+time(), Allocation\+Information\+::get\+\_\+initiation\+\_\+time(), application\+\_\+manager\+::get\+\_\+produced\+\_\+value(), H\+L\+S\+\_\+manager\+::get\+\_\+required\+\_\+values(), Allocation\+Information\+::get\+\_\+stage\+\_\+period(), Allocation\+Information\+::\+Get\+Connection\+Time(), Allocation\+Information\+::\+Get\+Cycle\+Latency(), Schedule\+::\+Get\+Ending\+Time(), Op\+Node\+Info\+::\+Get\+Node\+Id(), Allocation\+Information\+::\+Get\+Phi\+Connection\+Latency(), Schedule\+::\+Get\+Starting\+Time(), Allocation\+Information\+::\+Get\+Time\+Latency(), Allocation\+Information\+::\+Get\+To\+Dsp\+Register\+Delay(), easy\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), Var\+Computation\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), Allocation\+Information\+::is\+\_\+vertex\+\_\+bounded\+\_\+with(), Allocation\+Information\+::\+Is\+Variable\+Execution\+Time(), Allocation\+Information\+::print\+\_\+allocated\+\_\+resources(), Behavioral\+Helper\+::print\+\_\+vertex(), Vcd\+Signal\+Selection\+::\+Propagate\+Addr\+Param\+To\+Ssa(), Vcd\+Signal\+Selection\+::\+Select\+Initial\+Ssa(), Vcd\+Signal\+Selection\+::\+Select\+Internal\+Signals(), Schedule\+::\+Update\+Time(), C\+Backend\+::write\+Includes(), Discrepancy\+Analysis\+C\+Writer\+::write\+Post\+Instruction\+Info(), and Discrepancy\+Analysis\+C\+Writer\+::write\+Pre\+Instruction\+Info().
+
+\mbox{\Hypertarget{op__graph_8hpp_a1ebe8d6547259b6c4ea57e453b176006}\label{op__graph_8hpp_a1ebe8d6547259b6c4ea57e453b176006}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+PR@{E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+PR}}
+\index{E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+PR@{E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+PR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+PR}{EXTRACT\_BIT\_EXPR}}
+{\footnotesize\ttfamily \#define E\+X\+T\+R\+A\+C\+T\+\_\+\+B\+I\+T\+\_\+\+E\+X\+PR~\char`\"{}extract\+\_\+bit\+\_\+expr\char`\"{}}
+
+
+
+constant string identifying the operation performed by an extract\+\_\+bit\+\_\+expr. 
+
+
+
+Definition at line 243 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_afd746f1588e924e85237183988b79b86}\label{op__graph_8hpp_afd746f1588e924e85237183988b79b86}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+A\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+A\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+A\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+A\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+A\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FADFG\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+A\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(\hyperlink{op__graph_8hpp_a8d9f021ce1e598506d4dd902847ff7ff}{D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_aed2e2e8c5f412b664eeb0f00292830a8}{A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})}
+
+
+
+data dependence antidependence and feedback graph edge selector 
+
+
+
+Definition at line 514 of file op\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{op__graph_8hpp_a2ad3b29deaec0fbcdc6c966579cfb090}\label{op__graph_8hpp_a2ad3b29deaec0fbcdc6c966579cfb090}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FADG\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(\hyperlink{op__graph_8hpp_aed2e2e8c5f412b664eeb0f00292830a8}{A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_ae2038fd13539af04f3e762e314929690}{F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})}
+
+
+
+Anti-\/dependence graph selector with feedback edges. 
+
+
+
+Definition at line 485 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Function\+Behavior\+::\+C\+Get\+Op\+Graph(), and Op\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{op__graph_8hpp_ad7bab0a2beff4da0b85f0a59dc05eefa}\label{op__graph_8hpp_ad7bab0a2beff4da0b85f0a59dc05eefa}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+B\+\_\+\+A\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+A\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+B\+\_\+\+A\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+A\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+B\+\_\+\+A\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FB\_ADG\_AGG\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+B\+\_\+\+A\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 14}
+
+
+
+Feedback Anti-\/dependence graph edge selector computed on aggregates. 
+
+
+
+Definition at line 481 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Virtual\+Aggregate\+Data\+Flow\+Analysis\+::\+Initialize(), Memory\+Data\+Flow\+Analysis\+::\+Initialize(), and Data\+Dependence\+Computation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_a5eb5d13875c824db1581e458621e944e}\label{op__graph_8hpp_a5eb5d13875c824db1581e458621e944e}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FB\_ADG\_SCA\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 13}
+
+
+
+Feedback Anti-\/dependence graph edge selector computed on scalar. 
+
+
+
+Definition at line 479 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Scalar\+Ssa\+Data\+Dependence\+Computation\+::\+Initialize(), and Data\+Dependence\+Computation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_ae2038fd13539af04f3e762e314929690}\label{op__graph_8hpp_ae2038fd13539af04f3e762e314929690}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FB\_ADG\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(\hyperlink{op__graph_8hpp_a5eb5d13875c824db1581e458621e944e}{F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_ad7bab0a2beff4da0b85f0a59dc05eefa}{F\+B\+\_\+\+A\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})}
+
+
+
+Feedback anti-\/dependence graph edge selector. 
+
+
+
+Definition at line 483 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Function\+Behavior\+::\+C\+Get\+Op\+Graph(), and Op\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{op__graph_8hpp_a31d785b7821eaf3cc7044ad75fd814c4}\label{op__graph_8hpp_a31d785b7821eaf3cc7044ad75fd814c4}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+B\+\_\+\+D\+F\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+D\+F\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+B\+\_\+\+D\+F\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+D\+F\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+B\+\_\+\+D\+F\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FB\_DFG\_AGG\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+B\+\_\+\+D\+F\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 10}
+
+
+
+Data flow graph edge selector between computed on aggregates. 
+
+
+
+Definition at line 466 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Virtual\+Aggregate\+Data\+Flow\+Analysis\+::\+Initialize(), Memory\+Data\+Flow\+Analysis\+::\+Initialize(), and Data\+Dependence\+Computation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_a9453090214a2fbb4830996512929ac5a}\label{op__graph_8hpp_a9453090214a2fbb4830996512929ac5a}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FB\_DFG\_SCA\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 9}
+
+
+
+Data flow graph edge selector between computed on scalars. 
+
+
+
+Definition at line 464 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by estimate\+\_\+muxes(), Scalar\+Ssa\+Data\+Dependence\+Computation\+::\+Initialize(), and Data\+Dependence\+Computation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_aa443bf5eabdfe585610028574dc006a8}\label{op__graph_8hpp_aa443bf5eabdfe585610028574dc006a8}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FB\_DFG\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(\hyperlink{op__graph_8hpp_a9453090214a2fbb4830996512929ac5a}{F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a31d785b7821eaf3cc7044ad75fd814c4}{F\+B\+\_\+\+D\+F\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})}
+
+
+
+Feedback Data flow graph edge selector. 
+
+
+
+Definition at line 468 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Op\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{op__graph_8hpp_adbc25659b5ca9e086d63d08e31529dff}\label{op__graph_8hpp_adbc25659b5ca9e086d63d08e31529dff}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+B\+\_\+\+F\+L\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+F\+L\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+B\+\_\+\+F\+L\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+F\+L\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+B\+\_\+\+F\+L\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FB\_FLG\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+B\+\_\+\+F\+L\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 22}
+
+
+
+Feedback flow edge selector. 
+
+
+
+Definition at line 528 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Add\+Op\+Loop\+Flow\+Edges\+::\+Internal\+Exec(), and Op\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{op__graph_8hpp_a17926871d26a67cfd16673ac9371d0de}\label{op__graph_8hpp_a17926871d26a67cfd16673ac9371d0de}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+B\+\_\+\+O\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+O\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+B\+\_\+\+O\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+O\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+B\+\_\+\+O\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FB\_ODG\_AGG\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+B\+\_\+\+O\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 18}
+
+
+
+Feedback Output-\/dependence graph edge selector computed on aggregates. 
+
+
+
+Definition at line 496 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Data\+Dependence\+Computation\+::\+Computedependencies(), Virtual\+Aggregate\+Data\+Flow\+Analysis\+::\+Initialize(), and Memory\+Data\+Flow\+Analysis\+::\+Initialize().
+
+\mbox{\Hypertarget{op__graph_8hpp_a50063d1f7bc16689be3ed80a852ac7d1}\label{op__graph_8hpp_a50063d1f7bc16689be3ed80a852ac7d1}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+B\+\_\+\+O\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+O\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+B\+\_\+\+O\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+O\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+B\+\_\+\+O\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FB\_ODG\_SCA\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+B\+\_\+\+O\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 17}
+
+
+
+Feedback Output-\/dependence graph edge selector computed on scalars. 
+
+
+
+Definition at line 494 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Scalar\+Ssa\+Data\+Dependence\+Computation\+::\+Initialize().
+
+\mbox{\Hypertarget{op__graph_8hpp_a9404bbc7a905430f40ee17fefbc44898}\label{op__graph_8hpp_a9404bbc7a905430f40ee17fefbc44898}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+B\+\_\+\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+B\+\_\+\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+B\+\_\+\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+B\+\_\+\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FB\_ODG\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+B\+\_\+\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(\hyperlink{op__graph_8hpp_a50063d1f7bc16689be3ed80a852ac7d1}{F\+B\+\_\+\+O\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a17926871d26a67cfd16673ac9371d0de}{F\+B\+\_\+\+O\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})}
+
+
+
+Feedback Output-\/dependence graph edge selector. 
+
+
+
+Definition at line 498 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Op\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{op__graph_8hpp_a2c6f6b9b5972b95b8527486faf24ae3d}\label{op__graph_8hpp_a2c6f6b9b5972b95b8527486faf24ae3d}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FDFG\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(\hyperlink{op__graph_8hpp_a8d9f021ce1e598506d4dd902847ff7ff}{D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_aa443bf5eabdfe585610028574dc006a8}{F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})}
+
+
+
+Data flow graph with feedback edges. 
+
+
+
+Definition at line 470 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Function\+Behavior\+::\+C\+Get\+Op\+Graph(), and Op\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{op__graph_8hpp_a1ef9c9aa08758ff6a9396cdd73cb1be3}\label{op__graph_8hpp_a1ef9c9aa08758ff6a9396cdd73cb1be3}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+I\+X\+\_\+\+T\+R\+U\+N\+C\+\_\+\+E\+X\+PR@{F\+I\+X\+\_\+\+T\+R\+U\+N\+C\+\_\+\+E\+X\+PR}}
+\index{F\+I\+X\+\_\+\+T\+R\+U\+N\+C\+\_\+\+E\+X\+PR@{F\+I\+X\+\_\+\+T\+R\+U\+N\+C\+\_\+\+E\+X\+PR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+I\+X\+\_\+\+T\+R\+U\+N\+C\+\_\+\+E\+X\+PR}{FIX\_TRUNC\_EXPR}}
+{\footnotesize\ttfamily \#define F\+I\+X\+\_\+\+T\+R\+U\+N\+C\+\_\+\+E\+X\+PR~\char`\"{}fix\+\_\+trunc\+\_\+expr\char`\"{}}
+
+
+
+constant string identifying float to integer conversions 
+
+
+
+Definition at line 343 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive().
+
+\mbox{\Hypertarget{op__graph_8hpp_aa30707b83b0a120a56039708c0388145}\label{op__graph_8hpp_aa30707b83b0a120a56039708c0388145}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+L\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+L\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+L\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+L\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+L\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FLG\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+L\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 21}
+
+
+
+Flow edge selector. 
+
+
+
+Definition at line 525 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Op\+Edge\+Info\+::\+Flg\+Edge\+F(), Op\+Edge\+Info\+::\+Flg\+Edge\+T(), Add\+Op\+Phi\+Flow\+Edges\+::\+Initialize(), Add\+Op\+Exit\+Flow\+Edges\+::\+Initialize(), Add\+Op\+Loop\+Flow\+Edges\+::\+Initialize(), Add\+Artificial\+Call\+Flow\+Edges\+::\+Internal\+Exec(), Add\+Op\+Phi\+Flow\+Edges\+::\+Internal\+Exec(), Add\+Op\+Loop\+Flow\+Edges\+::\+Internal\+Exec(), Add\+Op\+Exit\+Flow\+Edges\+::\+Internal\+Exec(), and Op\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{op__graph_8hpp_ac1692716dcf5b5343fe1a7b80ed736e4}\label{op__graph_8hpp_ac1692716dcf5b5343fe1a7b80ed736e4}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+L\+O\+A\+T\+\_\+\+E\+X\+PR@{F\+L\+O\+A\+T\+\_\+\+E\+X\+PR}}
+\index{F\+L\+O\+A\+T\+\_\+\+E\+X\+PR@{F\+L\+O\+A\+T\+\_\+\+E\+X\+PR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+L\+O\+A\+T\+\_\+\+E\+X\+PR}{FLOAT\_EXPR}}
+{\footnotesize\ttfamily \#define F\+L\+O\+A\+T\+\_\+\+E\+X\+PR~\char`\"{}float\+\_\+expr\char`\"{}}
+
+
+
+constant string identifying integer to float conversions 
+
+
+
+Definition at line 338 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), and fu\+\_\+binding\+::specialise\+\_\+fu().
+
+\mbox{\Hypertarget{op__graph_8hpp_ae956cea48b0f953e1bb01b1c266633ed}\label{op__graph_8hpp_ae956cea48b0f953e1bb01b1c266633ed}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FODG\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(\hyperlink{op__graph_8hpp_a6ad3ca177084a35d1b7df5b11f4b92d4}{O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a9404bbc7a905430f40ee17fefbc44898}{F\+B\+\_\+\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})}
+
+
+
+Output-\/dependence graph selector with feedback edges. 
+
+
+
+Definition at line 500 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Function\+Behavior\+::\+C\+Get\+Op\+Graph(), and Op\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{op__graph_8hpp_a882111dfa209931e6179079da5566be3}\label{op__graph_8hpp_a882111dfa209931e6179079da5566be3}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+S\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+S\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+S\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+S\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+S\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FSADG\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+S\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(\hyperlink{cdfg__edge__info_8hpp_ae9ba127b2bce757619817f7f35faad9d}{C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a8d9f021ce1e598506d4dd902847ff7ff}{D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_aed2e2e8c5f412b664eeb0f00292830a8}{A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{cdfg__edge__info_8hpp_acc71451858388286c42127edfe9526c9}{F\+B\+\_\+\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_aa443bf5eabdfe585610028574dc006a8}{F\+B\+\_\+\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_ae2038fd13539af04f3e762e314929690}{F\+B\+\_\+\+A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})}
+
+
+
+Control and Data dependence and antidependence graph edge selector with feedback edges. 
+
+
+
+Definition at line 510 of file op\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{op__graph_8hpp_ab77cad5bc9a15e1880e1841d0bc4dac7}\label{op__graph_8hpp_ab77cad5bc9a15e1880e1841d0bc4dac7}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!F\+S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{F\+S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{F\+S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{F\+S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{FSDG\_SELECTOR}}
+{\footnotesize\ttfamily \#define F\+S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(\hyperlink{cdfg__edge__info_8hpp_ace7aef3af8493cf726201463ceb3d323}{F\+C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a2c6f6b9b5972b95b8527486faf24ae3d}{F\+D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})}
+
+
+
+Control and Data dependence graph and dependence edge selector. 
+
+
+
+Definition at line 505 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Function\+Behavior\+::\+C\+Get\+Op\+Graph().
+
+\mbox{\Hypertarget{op__graph_8hpp_a0121784bb4135a4be76bd65421ed1ab7}\label{op__graph_8hpp_a0121784bb4135a4be76bd65421ed1ab7}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!G\+E\+T\+\_\+\+B\+B\+\_\+\+I\+N\+D\+EX@{G\+E\+T\+\_\+\+B\+B\+\_\+\+I\+N\+D\+EX}}
+\index{G\+E\+T\+\_\+\+B\+B\+\_\+\+I\+N\+D\+EX@{G\+E\+T\+\_\+\+B\+B\+\_\+\+I\+N\+D\+EX}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+B\+B\+\_\+\+I\+N\+D\+EX}{GET\_BB\_INDEX}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+B\+B\+\_\+\+I\+N\+D\+EX(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{vertex\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_ad3607daf827c59148c71b9b124a4063c}{Cget\+\_\+node\+\_\+info}$<$\hyperlink{structOpNodeInfo}{Op\+Node\+Info}$>$(vertex\+\_\+index, $\ast$(data))-\/$>$bb\+\_\+index}
+
+
+
+Macro returning the index of the basic block which the node belongs to. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+\_\+index} & is the index of the cdfg node. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 446 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by liveness\+::are\+\_\+in\+\_\+conflict(), State\+Transition\+Graph\+\_\+constructor\+::create\+\_\+exit\+\_\+state(), and get\+\_\+bb\+\_\+index\+\_\+from\+\_\+state\+\_\+info().
+
+\mbox{\Hypertarget{op__graph_8hpp_a81a360d9a7e32ad27693add99b9268ad}\label{op__graph_8hpp_a81a360d9a7e32ad27693add99b9268ad}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!G\+E\+T\+\_\+\+C\+ER@{G\+E\+T\+\_\+\+C\+ER}}
+\index{G\+E\+T\+\_\+\+C\+ER@{G\+E\+T\+\_\+\+C\+ER}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+C\+ER}{GET\_CER}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+C\+ER(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{vertex\+\_\+index }\end{DoxyParamCaption})~\hyperlink{graph_8hpp_ad3607daf827c59148c71b9b124a4063c}{Cget\+\_\+node\+\_\+info}$<$\hyperlink{structOpNodeInfo}{Op\+Node\+Info}$>$(vertex\+\_\+index, $\ast$(data))-\/$>$cer}
+
+
+
+Macro returning the control equivalent region of the node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var\+\_\+index} & is the Node\+ID of the variable \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 452 of file op\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{op__graph_8hpp_a11d032948405469352aad34899bf5035}\label{op__graph_8hpp_a11d032948405469352aad34899bf5035}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!G\+I\+M\+P\+L\+E\+\_\+\+A\+SM@{G\+I\+M\+P\+L\+E\+\_\+\+A\+SM}}
+\index{G\+I\+M\+P\+L\+E\+\_\+\+A\+SM@{G\+I\+M\+P\+L\+E\+\_\+\+A\+SM}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{G\+I\+M\+P\+L\+E\+\_\+\+A\+SM}{GIMPLE\_ASM}}
+{\footnotesize\ttfamily \#define G\+I\+M\+P\+L\+E\+\_\+\+A\+SM~\char`\"{}gimple\+\_\+asm\char`\"{}}
+
+
+
+constant string identifying the operation performed by a \hyperlink{structgimple__asm}{gimple\+\_\+asm}. 
+
+
+
+Definition at line 298 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec(), and module\+Generator\+::specialize\+\_\+fu().
+
+\mbox{\Hypertarget{op__graph_8hpp_ac38e805714466cf8dd4048d962d9d44b}\label{op__graph_8hpp_ac38e805714466cf8dd4048d962d9d44b}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!G\+I\+M\+P\+L\+E\+\_\+\+G\+O\+TO@{G\+I\+M\+P\+L\+E\+\_\+\+G\+O\+TO}}
+\index{G\+I\+M\+P\+L\+E\+\_\+\+G\+O\+TO@{G\+I\+M\+P\+L\+E\+\_\+\+G\+O\+TO}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{G\+I\+M\+P\+L\+E\+\_\+\+G\+O\+TO}{GIMPLE\_GOTO}}
+{\footnotesize\ttfamily \#define G\+I\+M\+P\+L\+E\+\_\+\+G\+O\+TO~\char`\"{}gimple\+\_\+goto\char`\"{}}
+
+
+
+constant string identifying the operation performed by a G\+I\+M\+P\+L\+E\+\_\+\+G\+O\+TO. 
+
+
+
+Definition at line 273 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_a44e76b06a3b42faba2d4192b6b8362d3}\label{op__graph_8hpp_a44e76b06a3b42faba2d4192b6b8362d3}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!G\+I\+M\+P\+L\+E\+\_\+\+L\+A\+B\+EL@{G\+I\+M\+P\+L\+E\+\_\+\+L\+A\+B\+EL}}
+\index{G\+I\+M\+P\+L\+E\+\_\+\+L\+A\+B\+EL@{G\+I\+M\+P\+L\+E\+\_\+\+L\+A\+B\+EL}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{G\+I\+M\+P\+L\+E\+\_\+\+L\+A\+B\+EL}{GIMPLE\_LABEL}}
+{\footnotesize\ttfamily \#define G\+I\+M\+P\+L\+E\+\_\+\+L\+A\+B\+EL~\char`\"{}gimple\+\_\+label\char`\"{}}
+
+
+
+constant string identifying the operation performed by a G\+I\+M\+P\+L\+E\+\_\+\+L\+A\+B\+EL. 
+
+
+
+Definition at line 268 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_a156446392010795a884cb28fb5aa668f}\label{op__graph_8hpp_a156446392010795a884cb28fb5aa668f}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!G\+I\+M\+P\+L\+E\+\_\+\+N\+OP@{G\+I\+M\+P\+L\+E\+\_\+\+N\+OP}}
+\index{G\+I\+M\+P\+L\+E\+\_\+\+N\+OP@{G\+I\+M\+P\+L\+E\+\_\+\+N\+OP}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{G\+I\+M\+P\+L\+E\+\_\+\+N\+OP}{GIMPLE\_NOP}}
+{\footnotesize\ttfamily \#define G\+I\+M\+P\+L\+E\+\_\+\+N\+OP~\char`\"{}gimple\+\_\+nop\char`\"{}}
+
+
+
+constant string identifying the operation performed by a \hyperlink{structgimple__return}{gimple\+\_\+return}. 
+
+
+
+Definition at line 288 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_acef9da4fe9f10ccc9c3301c0a9e8d467}\label{op__graph_8hpp_acef9da4fe9f10ccc9c3301c0a9e8d467}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!G\+I\+M\+P\+L\+E\+\_\+\+P\+HI@{G\+I\+M\+P\+L\+E\+\_\+\+P\+HI}}
+\index{G\+I\+M\+P\+L\+E\+\_\+\+P\+HI@{G\+I\+M\+P\+L\+E\+\_\+\+P\+HI}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{G\+I\+M\+P\+L\+E\+\_\+\+P\+HI}{GIMPLE\_PHI}}
+{\footnotesize\ttfamily \#define G\+I\+M\+P\+L\+E\+\_\+\+P\+HI~\char`\"{}gimple\+\_\+phi\char`\"{}}
+
+
+
+constant string identifying the operation performed by a \hyperlink{structgimple__phi}{gimple\+\_\+phi}. 
+
+
+
+Definition at line 293 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_ae0aa34664683fd1a51a73b3dddfe5497}\label{op__graph_8hpp_ae0aa34664683fd1a51a73b3dddfe5497}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!G\+I\+M\+P\+L\+E\+\_\+\+P\+R\+A\+G\+MA@{G\+I\+M\+P\+L\+E\+\_\+\+P\+R\+A\+G\+MA}}
+\index{G\+I\+M\+P\+L\+E\+\_\+\+P\+R\+A\+G\+MA@{G\+I\+M\+P\+L\+E\+\_\+\+P\+R\+A\+G\+MA}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{G\+I\+M\+P\+L\+E\+\_\+\+P\+R\+A\+G\+MA}{GIMPLE\_PRAGMA}}
+{\footnotesize\ttfamily \#define G\+I\+M\+P\+L\+E\+\_\+\+P\+R\+A\+G\+MA~\char`\"{}gimple\+\_\+pragma\char`\"{}}
+
+
+
+constant string identifying the operation performed by a G\+I\+M\+P\+L\+E\+\_\+\+P\+R\+A\+G\+MA. 
+
+
+
+Definition at line 303 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_ac70c3f9d6e774957ce18e24a690e857a}\label{op__graph_8hpp_ac70c3f9d6e774957ce18e24a690e857a}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!G\+I\+M\+P\+L\+E\+\_\+\+R\+E\+T\+U\+RN@{G\+I\+M\+P\+L\+E\+\_\+\+R\+E\+T\+U\+RN}}
+\index{G\+I\+M\+P\+L\+E\+\_\+\+R\+E\+T\+U\+RN@{G\+I\+M\+P\+L\+E\+\_\+\+R\+E\+T\+U\+RN}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{G\+I\+M\+P\+L\+E\+\_\+\+R\+E\+T\+U\+RN}{GIMPLE\_RETURN}}
+{\footnotesize\ttfamily \#define G\+I\+M\+P\+L\+E\+\_\+\+R\+E\+T\+U\+RN~\char`\"{}gimple\+\_\+return\char`\"{}}
+
+
+
+constant string identifying the operation performed by a \hyperlink{structgimple__return}{gimple\+\_\+return}. 
+
+
+
+Definition at line 283 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_ae5f376a1502a8d4fc54f39d4b59d0832}\label{op__graph_8hpp_ae5f376a1502a8d4fc54f39d4b59d0832}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!L\+U\+T\+\_\+\+E\+X\+PR@{L\+U\+T\+\_\+\+E\+X\+PR}}
+\index{L\+U\+T\+\_\+\+E\+X\+PR@{L\+U\+T\+\_\+\+E\+X\+PR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{L\+U\+T\+\_\+\+E\+X\+PR}{LUT\_EXPR}}
+{\footnotesize\ttfamily \#define L\+U\+T\+\_\+\+E\+X\+PR~\char`\"{}lut\+\_\+expr\char`\"{}}
+
+
+
+constant string identifying the operation performed by an extract\+\_\+bit\+\_\+expr. 
+
+
+
+Definition at line 248 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_abf469337f4140cba4fdc4d0a0a83b010}\label{op__graph_8hpp_abf469337f4140cba4fdc4d0a0a83b010}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!M\+E\+M\+C\+MP@{M\+E\+M\+C\+MP}}
+\index{M\+E\+M\+C\+MP@{M\+E\+M\+C\+MP}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+C\+MP}{MEMCMP}}
+{\footnotesize\ttfamily \#define M\+E\+M\+C\+MP~\char`\"{}memcmp\char`\"{}}
+
+
+
+constant string identifying the operation performed when two objects are memcompared. 
+
+
+
+Definition at line 313 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by memory\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation(), and mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_afa49f5cbf45954321f45b92170a5fac2}\label{op__graph_8hpp_afa49f5cbf45954321f45b92170a5fac2}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!M\+E\+M\+C\+PY@{M\+E\+M\+C\+PY}}
+\index{M\+E\+M\+C\+PY@{M\+E\+M\+C\+PY}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+C\+PY}{MEMCPY}}
+{\footnotesize\ttfamily \#define M\+E\+M\+C\+PY~\char`\"{}\+\_\+\+\_\+internal\+\_\+bambu\+\_\+memcpy\char`\"{}}
+
+
+
+constant string identifying the operation performed when two objects are memcopied. 
+
+
+
+Definition at line 308 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), memory\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation(), and mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_ae11c3f805f2c8994cc1ea3d8a9ad764a}\label{op__graph_8hpp_ae11c3f805f2c8994cc1ea3d8a9ad764a}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!M\+E\+M\+S\+ET@{M\+E\+M\+S\+ET}}
+\index{M\+E\+M\+S\+ET@{M\+E\+M\+S\+ET}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{M\+E\+M\+S\+ET}{MEMSET}}
+{\footnotesize\ttfamily \#define M\+E\+M\+S\+ET~\char`\"{}\+\_\+\+\_\+internal\+\_\+bambu\+\_\+memset\char`\"{}}
+
+
+
+constant string identifying the operation performed when two objects are memsetted. 
+
+
+
+Definition at line 318 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), memory\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation(), and mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_a48424a902f69e41e5c3e62c090298855}\label{op__graph_8hpp_a48424a902f69e41e5c3e62c090298855}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+ND@{M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+ND}}
+\index{M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+ND@{M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+ND}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+ND}{MULTI\_READ\_COND}}
+{\footnotesize\ttfamily \#define M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+ND~\char`\"{}M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+ND\char`\"{}}
+
+
+
+constant string identifying the operation performed by a M\+U\+L\+T\+I\+\_\+\+R\+E\+A\+D\+\_\+\+C\+O\+ND. 
+
+
+
+Definition at line 258 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_a700f88377bf36711b711f69b06c52f5d}\label{op__graph_8hpp_a700f88377bf36711b711f69b06c52f5d}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!N\+OP@{N\+OP}}
+\index{N\+OP@{N\+OP}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{N\+OP}{NOP}}
+{\footnotesize\ttfamily \#define N\+OP~\char`\"{}N\+OP\char`\"{}}
+
+
+
+constant string identifying a no operation. 
+
+Only used for operations associated with empty basic blocks. 
+
+Definition at line 278 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), Op\+Node\+Info\+::\+Get\+Variables(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_ad25db51e0151ddcc7e2b213360430ba7}\label{op__graph_8hpp_ad25db51e0151ddcc7e2b213360430ba7}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!N\+O\+P\+\_\+\+E\+X\+PR@{N\+O\+P\+\_\+\+E\+X\+PR}}
+\index{N\+O\+P\+\_\+\+E\+X\+PR@{N\+O\+P\+\_\+\+E\+X\+PR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{N\+O\+P\+\_\+\+E\+X\+PR}{NOP\_EXPR}}
+{\footnotesize\ttfamily \#define N\+O\+P\+\_\+\+E\+X\+PR~\char`\"{}nop\+\_\+expr\char`\"{}}
+
+
+
+constant string identifying some conversion expressions 
+
+
+
+Definition at line 333 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec(), and B\+B\+\_\+based\+\_\+stg\+::is\+\_\+instantaneous\+\_\+operation().
+
+\mbox{\Hypertarget{op__graph_8hpp_a49ce1b7162597ab9b21fc6d613ef9b1b}\label{op__graph_8hpp_a49ce1b7162597ab9b21fc6d613ef9b1b}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!O\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{O\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{O\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{O\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{O\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{ODG\_AGG\_SELECTOR}}
+{\footnotesize\ttfamily \#define O\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 16}
+
+
+
+Output-\/dependence graph edge selector computed on aggregates. 
+
+
+
+Definition at line 490 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Data\+Dependence\+Computation\+::\+Computedependencies(), Virtual\+Aggregate\+Data\+Flow\+Analysis\+::\+Initialize(), and Memory\+Data\+Flow\+Analysis\+::\+Initialize().
+
+\mbox{\Hypertarget{op__graph_8hpp_a9ab8b6c214babe9f00021529fea8381c}\label{op__graph_8hpp_a9ab8b6c214babe9f00021529fea8381c}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!O\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{O\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{O\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{O\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{O\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{ODG\_SCA\_SELECTOR}}
+{\footnotesize\ttfamily \#define O\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 15}
+
+
+
+Output-\/dependence graph edge selector computed on scalars. 
+
+
+
+Definition at line 488 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Scalar\+Ssa\+Data\+Dependence\+Computation\+::\+Initialize().
+
+\mbox{\Hypertarget{op__graph_8hpp_a6ad3ca177084a35d1b7df5b11f4b92d4}\label{op__graph_8hpp_a6ad3ca177084a35d1b7df5b11f4b92d4}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{ODG\_SELECTOR}}
+{\footnotesize\ttfamily \#define O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(\hyperlink{op__graph_8hpp_a9ab8b6c214babe9f00021529fea8381c}{O\+D\+G\+\_\+\+S\+C\+A\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a49ce1b7162597ab9b21fc6d613ef9b1b}{O\+D\+G\+\_\+\+A\+G\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})}
+
+
+
+Output-\/dependence graph edge selector. 
+
+
+
+Definition at line 492 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Function\+Behavior\+::\+C\+Get\+Op\+Graph(), Data\+Dependence\+Computation\+::\+Computedependencies(), and Op\+Edge\+Writer\+::operator()().
+
+\mbox{\Hypertarget{op__graph_8hpp_a1ffdbe480b0cf50710a37442cae84b87}\label{op__graph_8hpp_a1ffdbe480b0cf50710a37442cae84b87}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!R\+E\+A\+D\+\_\+\+C\+O\+ND@{R\+E\+A\+D\+\_\+\+C\+O\+ND}}
+\index{R\+E\+A\+D\+\_\+\+C\+O\+ND@{R\+E\+A\+D\+\_\+\+C\+O\+ND}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{R\+E\+A\+D\+\_\+\+C\+O\+ND}{READ\_COND}}
+{\footnotesize\ttfamily \#define R\+E\+A\+D\+\_\+\+C\+O\+ND~\char`\"{}R\+E\+A\+D\+\_\+\+C\+O\+ND\char`\"{}}
+
+
+
+constant string identifying the operation performed by a R\+E\+A\+D\+\_\+\+C\+O\+ND. 
+
+
+
+Definition at line 253 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_a0735d1da3d6831825bf7ab125c62b806}\label{op__graph_8hpp_a0735d1da3d6831825bf7ab125c62b806}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!R\+P\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{R\+P\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{R\+P\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{R\+P\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{R\+P\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{RPDG\_SELECTOR}}
+{\footnotesize\ttfamily \#define R\+P\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~1 $<$$<$ 20}
+
+
+
+Reduced P\+DG edge selector. 
+
+
+
+Definition at line 522 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Function\+Behavior\+::\+C\+Get\+Op\+Graph().
+
+\mbox{\Hypertarget{op__graph_8hpp_ad0b16d207840daf09e82d39b4649a62e}\label{op__graph_8hpp_ad0b16d207840daf09e82d39b4649a62e}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!R\+S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{R\+S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{R\+S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{R\+S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{R\+S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{RSDG\_SELECTOR}}
+{\footnotesize\ttfamily \#define R\+S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(\hyperlink{cdfg__edge__info_8hpp_a9b80141d4cb668a73355a243954e151f}{T\+R\+E\+D\+\_\+\+S\+E\+L\+E\+C\+T\+OR})}
+
+
+
+Reducted sdg with feedback edges. 
+
+
+
+Definition at line 507 of file op\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{op__graph_8hpp_aafe6cf49fe37aea1b1d7f161bc35ef4c}\label{op__graph_8hpp_aafe6cf49fe37aea1b1d7f161bc35ef4c}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!S\+A\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{S\+A\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{S\+A\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{S\+A\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{S\+A\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{SAODG\_SELECTOR}}
+{\footnotesize\ttfamily \#define S\+A\+O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(\hyperlink{cdfg__edge__info_8hpp_ae9ba127b2bce757619817f7f35faad9d}{C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a8d9f021ce1e598506d4dd902847ff7ff}{D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_aed2e2e8c5f412b664eeb0f00292830a8}{A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a6ad3ca177084a35d1b7df5b11f4b92d4}{O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})}
+
+
+
+Control and Data dependence and antidependence graph edge selector. 
+
+
+
+Definition at line 512 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Function\+Behavior\+::\+C\+Get\+Op\+Graph().
+
+\mbox{\Hypertarget{op__graph_8hpp_a81c718d2b47c724583dd8893bf8e07b8}\label{op__graph_8hpp_a81c718d2b47c724583dd8893bf8e07b8}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{SDG\_SELECTOR}}
+{\footnotesize\ttfamily \#define S\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(\hyperlink{cdfg__edge__info_8hpp_ae9ba127b2bce757619817f7f35faad9d}{C\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a8d9f021ce1e598506d4dd902847ff7ff}{D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})}
+
+
+
+Control and Data dependence graph edge selector. 
+
+
+
+Definition at line 503 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Function\+Behavior\+::\+C\+Get\+Op\+Graph().
+
+\mbox{\Hypertarget{op__graph_8hpp_a292ec8894b6d75b47e72b10acc07e512}\label{op__graph_8hpp_a292ec8894b6d75b47e72b10acc07e512}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!S\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{S\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{S\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{S\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{S\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{SG\_SELECTOR}}
+{\footnotesize\ttfamily \#define S\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR~(\hyperlink{op__graph_8hpp_a2ea3eca1ed0d36689b0eadd95075c11f}{C\+S\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a8d9f021ce1e598506d4dd902847ff7ff}{D\+F\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_aed2e2e8c5f412b664eeb0f00292830a8}{A\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_a6ad3ca177084a35d1b7df5b11f4b92d4}{O\+D\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR} $\vert$ \hyperlink{op__graph_8hpp_aa30707b83b0a120a56039708c0388145}{F\+L\+G\+\_\+\+S\+E\+L\+E\+C\+T\+OR})}
+
+
+
+Speculation graph. 
+
+
+
+Definition at line 519 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Function\+Behavior\+::\+C\+Get\+Op\+Graph().
+
+\mbox{\Hypertarget{op__graph_8hpp_aecb379a67676a4aed0d69621697916e2}\label{op__graph_8hpp_aecb379a67676a4aed0d69621697916e2}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+ND@{S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+ND}}
+\index{S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+ND@{S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+ND}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+ND}{SWITCH\_COND}}
+{\footnotesize\ttfamily \#define S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+ND~\char`\"{}S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+ND\char`\"{}}
+
+
+
+constant string identifying the operation performed by a S\+W\+I\+T\+C\+H\+\_\+\+C\+O\+ND. 
+
+
+
+Definition at line 263 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), and allocation\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_a509d6b2755317073e74fd9768ea91d1e}\label{op__graph_8hpp_a509d6b2755317073e74fd9768ea91d1e}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+A\+S\+S\+I\+GN@{T\+Y\+P\+E\+\_\+\+A\+S\+S\+I\+GN}}
+\index{T\+Y\+P\+E\+\_\+\+A\+S\+S\+I\+GN@{T\+Y\+P\+E\+\_\+\+A\+S\+S\+I\+GN}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+A\+S\+S\+I\+GN}{TYPE\_ASSIGN}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+A\+S\+S\+I\+GN~1 $<$$<$ 10}
+
+
+
+constant string identifying the node type of an A\+S\+S\+I\+GN operation. 
+
+
+
+Definition at line 128 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), and Op\+Writer\+::operator()().
+
+\mbox{\Hypertarget{op__graph_8hpp_a64173d68a6a94ac816dcd4849bb07c11}\label{op__graph_8hpp_a64173d68a6a94ac816dcd4849bb07c11}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+A\+T\+O\+M\+IC@{T\+Y\+P\+E\+\_\+\+A\+T\+O\+M\+IC}}
+\index{T\+Y\+P\+E\+\_\+\+A\+T\+O\+M\+IC@{T\+Y\+P\+E\+\_\+\+A\+T\+O\+M\+IC}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+A\+T\+O\+M\+IC}{TYPE\_ATOMIC}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+A\+T\+O\+M\+IC~1 $<$$<$ 26}
+
+
+
+Constant identifying an atomic operation. 
+
+
+
+Definition at line 210 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Parallel\+Memory\+Fu\+Binding\+::add\+\_\+to\+\_\+\+S\+M(), and operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive().
+
+\mbox{\Hypertarget{op__graph_8hpp_a9921301bb00a4384ae59180ae1a17f85}\label{op__graph_8hpp_a9921301bb00a4384ae59180ae1a17f85}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+DO@{T\+Y\+P\+E\+\_\+\+DO}}
+\index{T\+Y\+P\+E\+\_\+\+DO@{T\+Y\+P\+E\+\_\+\+DO}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+DO}{TYPE\_DO}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+DO~1 $<$$<$ 9}
+
+
+
+constant string identifying the node type of an DO operation. 
+
+
+
+Definition at line 123 of file op\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{op__graph_8hpp_ab7286f86c900a6385c7916ce04aed868}\label{op__graph_8hpp_ab7286f86c900a6385c7916ce04aed868}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+E\+X\+T\+E\+R\+N\+AL@{T\+Y\+P\+E\+\_\+\+E\+X\+T\+E\+R\+N\+AL}}
+\index{T\+Y\+P\+E\+\_\+\+E\+X\+T\+E\+R\+N\+AL@{T\+Y\+P\+E\+\_\+\+E\+X\+T\+E\+R\+N\+AL}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+E\+X\+T\+E\+R\+N\+AL}{TYPE\_EXTERNAL}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+E\+X\+T\+E\+R\+N\+AL~1 $<$$<$ 4}
+
+
+
+constant identifying the node type of a E\+X\+T\+E\+R\+N\+AL operation (a function call) 
+
+
+
+Definition at line 98 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by conn\+\_\+binding\+::add\+\_\+command\+\_\+ports(), operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), cdfc\+\_\+module\+\_\+binding\+::can\+\_\+be\+\_\+clustered(), fsm\+\_\+controller\+::create\+\_\+state\+\_\+machine(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), Op\+Writer\+::operator()(), and B\+B\+\_\+based\+\_\+stg\+::optimize\+\_\+cycles().
+
+\mbox{\Hypertarget{op__graph_8hpp_a518dd4281631366008b5317f3e786869}\label{op__graph_8hpp_a518dd4281631366008b5317f3e786869}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+OP@{T\+Y\+P\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+OP}}
+\index{T\+Y\+P\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+OP@{T\+Y\+P\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+OP}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+OP}{TYPE\_FIRST\_OP}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+F\+I\+R\+S\+T\+\_\+\+OP~1 $<$$<$ 23}
+
+
+
+A vertex of type F\+I\+R\+S\+T\+\_\+\+OP if it is the first operation of the application. 
+
+
+
+Definition at line 195 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::connect\+\_\+start\+\_\+nodes().
+
+\mbox{\Hypertarget{op__graph_8hpp_ad907d0e9dd022960f2ffde8e4d95612f}\label{op__graph_8hpp_ad907d0e9dd022960f2ffde8e4d95612f}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+F\+OR@{T\+Y\+P\+E\+\_\+\+F\+OR}}
+\index{T\+Y\+P\+E\+\_\+\+F\+OR@{T\+Y\+P\+E\+\_\+\+F\+OR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+F\+OR}{TYPE\_FOR}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+F\+OR~1 $<$$<$ 8}
+
+
+
+constant string identifying the node type of an W\+H\+I\+LE operation. 
+
+
+
+Definition at line 118 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Scheduling\+::anticipate\+\_\+operations(), A\+S\+L\+A\+P\+::\+A\+S\+L\+A\+P(), operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), parametric\+\_\+list\+\_\+based\+::exec(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and C\+Writer\+::write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{op__graph_8hpp_ae466c89caa79158ed01b3a764aefe4a1}\label{op__graph_8hpp_ae466c89caa79158ed01b3a764aefe4a1}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+G\+O\+TO@{T\+Y\+P\+E\+\_\+\+G\+O\+TO}}
+\index{T\+Y\+P\+E\+\_\+\+G\+O\+TO@{T\+Y\+P\+E\+\_\+\+G\+O\+TO}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+G\+O\+TO}{TYPE\_GOTO}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+G\+O\+TO~1 $<$$<$ 16}
+
+
+
+A vertex is of type T\+Y\+P\+E\+\_\+\+G\+O\+TO when it is associated with a goto expression. 
+
+Mainly used in loops and in computed goto expressions. 
+
+Definition at line 160 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), cdfc\+\_\+module\+\_\+binding\+::can\+\_\+be\+\_\+clustered(), parametric\+\_\+list\+\_\+based\+::exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), and Op\+Writer\+::operator()().
+
+\mbox{\Hypertarget{op__graph_8hpp_a4714f730eb58ba8d487e73656ab65f08}\label{op__graph_8hpp_a4714f730eb58ba8d487e73656ab65f08}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+IF@{T\+Y\+P\+E\+\_\+\+IF}}
+\index{T\+Y\+P\+E\+\_\+\+IF@{T\+Y\+P\+E\+\_\+\+IF}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+IF}{TYPE\_IF}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+IF~1 $<$$<$ 5}
+
+
+
+constant identifying the node type of an IF operation. 
+
+
+
+Definition at line 103 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Scheduling\+::anticipate\+\_\+operations(), A\+S\+L\+A\+P\+::\+A\+S\+L\+A\+P(), operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), cdfc\+\_\+module\+\_\+binding\+::can\+\_\+be\+\_\+clustered(), Scheduling\+::compute\+\_\+b\+\_\+tag(), Scheduling\+::compute\+\_\+b\+\_\+tag\+\_\+size(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), parametric\+\_\+list\+\_\+based\+::exec(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), Op\+Writer\+::operator()(), B\+B\+\_\+based\+\_\+stg\+::optimize\+\_\+cycles(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and C\+Writer\+::write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{op__graph_8hpp_a6cf6c759643ad2eb89a1b2073d4d5979}\label{op__graph_8hpp_a6cf6c759643ad2eb89a1b2073d4d5979}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+I\+N\+IT@{T\+Y\+P\+E\+\_\+\+I\+N\+IT}}
+\index{T\+Y\+P\+E\+\_\+\+I\+N\+IT@{T\+Y\+P\+E\+\_\+\+I\+N\+IT}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+I\+N\+IT}{TYPE\_INIT}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+I\+N\+IT~1 $<$$<$ 18}
+
+
+
+Constant string identifying an operation that is a variable initialization. 
+
+
+
+Definition at line 170 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and C\+Writer\+::write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{op__graph_8hpp_ad2ab457bbe915930d6174464808a33e2}\label{op__graph_8hpp_ad2ab457bbe915930d6174464808a33e2}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+L\+A\+B\+EL@{T\+Y\+P\+E\+\_\+\+L\+A\+B\+EL}}
+\index{T\+Y\+P\+E\+\_\+\+L\+A\+B\+EL@{T\+Y\+P\+E\+\_\+\+L\+A\+B\+EL}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+L\+A\+B\+EL}{TYPE\_LABEL}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+L\+A\+B\+EL~1 $<$$<$ 15}
+
+
+
+A vertex is of type T\+Y\+P\+E\+\_\+\+L\+A\+B\+EL when it is a target of a goto expression. 
+
+Used to define the first vertex of a basic block header of a loop. 
+
+Definition at line 154 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), cdfc\+\_\+module\+\_\+binding\+::can\+\_\+be\+\_\+clustered(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and C\+Writer\+::write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{op__graph_8hpp_aa7274afab81f3cdccf5770b287690956}\label{op__graph_8hpp_aa7274afab81f3cdccf5770b287690956}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+L\+A\+S\+T\+\_\+\+OP@{T\+Y\+P\+E\+\_\+\+L\+A\+S\+T\+\_\+\+OP}}
+\index{T\+Y\+P\+E\+\_\+\+L\+A\+S\+T\+\_\+\+OP@{T\+Y\+P\+E\+\_\+\+L\+A\+S\+T\+\_\+\+OP}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+L\+A\+S\+T\+\_\+\+OP}{TYPE\_LAST\_OP}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+L\+A\+S\+T\+\_\+\+OP~1 $<$$<$ 24}
+
+
+
+A vertex of type L\+A\+S\+T\+\_\+\+OP if it is the last operation of the application. 
+
+
+
+Definition at line 200 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), Add\+Op\+Exit\+Flow\+Edges\+::\+Initialize(), Add\+Op\+Exit\+Flow\+Edges\+::\+Internal\+Exec(), operations\+\_\+cfg\+\_\+computation\+::\+Internal\+Exec(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), and Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{op__graph_8hpp_a0eac1f9a745fb7e8730989c05462e8d3}\label{op__graph_8hpp_a0eac1f9a745fb7e8730989c05462e8d3}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+L\+O\+AD@{T\+Y\+P\+E\+\_\+\+L\+O\+AD}}
+\index{T\+Y\+P\+E\+\_\+\+L\+O\+AD@{T\+Y\+P\+E\+\_\+\+L\+O\+AD}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+L\+O\+AD}{TYPE\_LOAD}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+L\+O\+AD~1 $<$$<$ 19}
+
+
+
+Constant string identifying a memory load operation. 
+
+
+
+Definition at line 175 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by mux\+\_\+connection\+\_\+binding\+::address\+\_\+precision(), operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), parametric\+\_\+list\+\_\+based\+::check\+\_\+direct\+\_\+operation\+\_\+chaining(), parametric\+\_\+list\+\_\+based\+::check\+\_\+\+L\+O\+A\+D\+\_\+chaining(), parametric\+\_\+list\+\_\+based\+::check\+\_\+non\+\_\+direct\+\_\+operation\+\_\+chaining(), parametric\+\_\+list\+\_\+based\+::\+Check\+Schedulability\+Conditions(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), parametric\+\_\+list\+\_\+based\+::exec(), memory\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), Op\+Writer\+::operator()(), B\+B\+\_\+based\+\_\+stg\+::optimize\+\_\+cycles(), fu\+\_\+binding\+::specialise\+\_\+fu(), parametric\+\_\+list\+\_\+based\+::store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+in(), and parametric\+\_\+list\+\_\+based\+::store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+out().
+
+\mbox{\Hypertarget{op__graph_8hpp_ab6f4fc11484a6154d11a24c140d4c2b7}\label{op__graph_8hpp_ab6f4fc11484a6154d11a24c140d4c2b7}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+M\+E\+M\+C\+PY@{T\+Y\+P\+E\+\_\+\+M\+E\+M\+C\+PY}}
+\index{T\+Y\+P\+E\+\_\+\+M\+E\+M\+C\+PY@{T\+Y\+P\+E\+\_\+\+M\+E\+M\+C\+PY}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+M\+E\+M\+C\+PY}{TYPE\_MEMCPY}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+M\+E\+M\+C\+PY~1 $<$$<$ 21}
+
+
+
+A vertex is of type T\+Y\+P\+E\+\_\+\+M\+E\+M\+C\+PY when it is associated with a assignment between struct/union. 
+
+
+
+Definition at line 185 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), allocation\+::\+Internal\+Exec(), and Op\+Writer\+::operator()().
+
+\mbox{\Hypertarget{op__graph_8hpp_a543eed5297e4900c77068274bcc6ceb0}\label{op__graph_8hpp_a543eed5297e4900c77068274bcc6ceb0}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+IF@{T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+IF}}
+\index{T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+IF@{T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+IF}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+IF}{TYPE\_MULTIIF}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+IF~1 $<$$<$ 25}
+
+
+
+constant identifying the a multi-\/way if 
+
+
+
+Definition at line 205 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), cdfc\+\_\+module\+\_\+binding\+::can\+\_\+be\+\_\+clustered(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), parametric\+\_\+list\+\_\+based\+::exec(), fsm\+\_\+controller\+::get\+\_\+guard\+\_\+value(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::optimize\+\_\+cycles(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and C\+Writer\+::write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{op__graph_8hpp_a31a0ba1f07fcc0340332b6f4a8b60468}\label{op__graph_8hpp_a31a0ba1f07fcc0340332b6f4a8b60468}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+N\+OP@{T\+Y\+P\+E\+\_\+\+N\+OP}}
+\index{T\+Y\+P\+E\+\_\+\+N\+OP@{T\+Y\+P\+E\+\_\+\+N\+OP}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+N\+OP}{TYPE\_NOP}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+N\+OP~1 $<$$<$ 11}
+
+
+
+constant string identifying a type for a no operation. 
+
+Only used for operations associated with empty basic blocks. 
+
+Definition at line 133 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), and F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Internal\+Exec().
+
+\mbox{\Hypertarget{op__graph_8hpp_aa3075926354dd8e7707d4f6d9033c1aa}\label{op__graph_8hpp_aa3075926354dd8e7707d4f6d9033c1aa}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+O\+P\+A\+Q\+UE@{T\+Y\+P\+E\+\_\+\+O\+P\+A\+Q\+UE}}
+\index{T\+Y\+P\+E\+\_\+\+O\+P\+A\+Q\+UE@{T\+Y\+P\+E\+\_\+\+O\+P\+A\+Q\+UE}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+O\+P\+A\+Q\+UE}{TYPE\_OPAQUE}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+O\+P\+A\+Q\+UE~1 $<$$<$ 0}
+
+
+
+constant identifying a node of opaque type 
+
+
+
+Definition at line 93 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive().
+
+\mbox{\Hypertarget{op__graph_8hpp_a65c310ba3e06853a18c2e3bca914db79}\label{op__graph_8hpp_a65c310ba3e06853a18c2e3bca914db79}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+P\+HI@{T\+Y\+P\+E\+\_\+\+P\+HI}}
+\index{T\+Y\+P\+E\+\_\+\+P\+HI@{T\+Y\+P\+E\+\_\+\+P\+HI}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+P\+HI}{TYPE\_PHI}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+P\+HI~1 $<$$<$ 12}
+
+
+
+constant string identifying an operation node of type P\+HI 
+
+
+
+Definition at line 138 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by S\+D\+C\+Scheduling\+::\+Add\+Delay\+Constraints(), operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), cdfc\+\_\+module\+\_\+binding\+::can\+\_\+be\+\_\+clustered(), C\+Writer\+::compute\+\_\+phi\+\_\+nodes(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), mux\+\_\+connection\+\_\+binding\+::connect\+\_\+to\+\_\+registers(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), mux\+\_\+connection\+\_\+binding\+::determine\+\_\+connection(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), Storage\+Value\+Information\+::get\+\_\+compatibility\+\_\+weight(), Add\+Op\+Phi\+Flow\+Edges\+::\+Initialize(), cdfc\+\_\+module\+\_\+binding\+::initialize\+\_\+connection\+\_\+relation(), F\+S\+M\+\_\+\+N\+I\+\_\+\+S\+S\+A\+\_\+liveness\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), Add\+Op\+Phi\+Flow\+Edges\+::\+Internal\+Exec(), port\+\_\+swapping\+::\+Internal\+Exec(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::is\+\_\+instantaneous\+\_\+operation(), B\+B\+\_\+based\+\_\+stg\+::optimize\+\_\+cycles(), and mux\+\_\+connection\+\_\+binding\+::swap\+\_\+p().
+
+\mbox{\Hypertarget{op__graph_8hpp_ab0ca1fe7b021fcd1b30da580eefbdbe6}\label{op__graph_8hpp_ab0ca1fe7b021fcd1b30da580eefbdbe6}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+P\+R\+E\+D\+I\+C\+A\+T\+ED@{T\+Y\+P\+E\+\_\+\+P\+R\+E\+D\+I\+C\+A\+T\+ED}}
+\index{T\+Y\+P\+E\+\_\+\+P\+R\+E\+D\+I\+C\+A\+T\+ED@{T\+Y\+P\+E\+\_\+\+P\+R\+E\+D\+I\+C\+A\+T\+ED}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+P\+R\+E\+D\+I\+C\+A\+T\+ED}{TYPE\_PREDICATED}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+P\+R\+E\+D\+I\+C\+A\+T\+ED~1 $<$$<$ 27}
+
+
+
+Constant identifying a predicated operation. 
+
+
+
+Definition at line 215 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive().
+
+\mbox{\Hypertarget{op__graph_8hpp_a77fc5d0c644117a1b5aa3c7a3f62c188}\label{op__graph_8hpp_a77fc5d0c644117a1b5aa3c7a3f62c188}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+R\+ET@{T\+Y\+P\+E\+\_\+\+R\+ET}}
+\index{T\+Y\+P\+E\+\_\+\+R\+ET@{T\+Y\+P\+E\+\_\+\+R\+ET}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+R\+ET}{TYPE\_RET}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+R\+ET~1 $<$$<$ 13}
+
+
+
+constant string identifying an operation node of type return expr 
+
+
+
+Definition at line 143 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), cdfc\+\_\+module\+\_\+binding\+::can\+\_\+be\+\_\+clustered(), parametric\+\_\+list\+\_\+based\+::\+Check\+Schedulability\+Conditions(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling(), parametric\+\_\+list\+\_\+based\+::exec(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::optimize\+\_\+cycles(), and Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{op__graph_8hpp_a3ec36cddfe337233f163dd1b51a34422}\label{op__graph_8hpp_a3ec36cddfe337233f163dd1b51a34422}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE@{T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE}}
+\index{T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE@{T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE}{TYPE\_STORE}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+S\+T\+O\+RE~1 $<$$<$ 20}
+
+
+
+Constant string identifying a memory store operation. 
+
+
+
+Definition at line 180 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by S\+D\+C\+Scheduling\+::\+Add\+Delay\+Constraints(), mux\+\_\+connection\+\_\+binding\+::address\+\_\+precision(), operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), parametric\+\_\+list\+\_\+based\+::\+Check\+Schedulability\+Conditions(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+alap(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), parametric\+\_\+list\+\_\+based\+::exec(), memory\+\_\+allocation\+::finalize\+\_\+memory\+\_\+allocation(), mem\+\_\+dominator\+\_\+allocation\+::\+Internal\+Exec(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), allocation\+::\+Internal\+Exec(), Op\+Writer\+::operator()(), B\+B\+\_\+based\+\_\+stg\+::optimize\+\_\+cycles(), State\+Info\+::print(), fu\+\_\+binding\+::specialise\+\_\+fu(), parametric\+\_\+list\+\_\+based\+::store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+in(), and parametric\+\_\+list\+\_\+based\+::store\+\_\+in\+\_\+chaining\+\_\+with\+\_\+load\+\_\+out().
+
+\mbox{\Hypertarget{op__graph_8hpp_ab68ed5835294a4902874f2c81d5624a9}\label{op__graph_8hpp_ab68ed5835294a4902874f2c81d5624a9}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+S\+W\+I\+T\+CH@{T\+Y\+P\+E\+\_\+\+S\+W\+I\+T\+CH}}
+\index{T\+Y\+P\+E\+\_\+\+S\+W\+I\+T\+CH@{T\+Y\+P\+E\+\_\+\+S\+W\+I\+T\+CH}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+S\+W\+I\+T\+CH}{TYPE\_SWITCH}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+S\+W\+I\+T\+CH~1 $<$$<$ 6}
+
+
+
+constant identifying the node type of a S\+W\+I\+T\+CH operation. 
+
+
+
+Definition at line 108 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Scheduling\+::anticipate\+\_\+operations(), A\+S\+L\+A\+P\+::\+A\+S\+L\+A\+P(), operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), cdfc\+\_\+module\+\_\+binding\+::can\+\_\+be\+\_\+clustered(), Scheduling\+::compute\+\_\+b\+\_\+tag(), Scheduling\+::compute\+\_\+b\+\_\+tag\+\_\+size(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), parametric\+\_\+list\+\_\+based\+::exec(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), Op\+Writer\+::operator()(), B\+B\+\_\+based\+\_\+stg\+::optimize\+\_\+cycles(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and C\+Writer\+::write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{op__graph_8hpp_ae25bea07e3659ae172918c59d599db0e}\label{op__graph_8hpp_ae25bea07e3659ae172918c59d599db0e}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+T\+O\+\_\+\+B\+E\+\_\+\+R\+E\+M\+O\+V\+ED@{T\+Y\+P\+E\+\_\+\+T\+O\+\_\+\+B\+E\+\_\+\+R\+E\+M\+O\+V\+ED}}
+\index{T\+Y\+P\+E\+\_\+\+T\+O\+\_\+\+B\+E\+\_\+\+R\+E\+M\+O\+V\+ED@{T\+Y\+P\+E\+\_\+\+T\+O\+\_\+\+B\+E\+\_\+\+R\+E\+M\+O\+V\+ED}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+T\+O\+\_\+\+B\+E\+\_\+\+R\+E\+M\+O\+V\+ED}{TYPE\_TO\_BE\_REMOVED}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+T\+O\+\_\+\+B\+E\+\_\+\+R\+E\+M\+O\+V\+ED~1 $<$$<$ 14}
+
+
+
+Constant string identifying an operation that has to be removed. 
+
+
+
+Definition at line 148 of file op\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{op__graph_8hpp_a33dee217f18c0d8276c17b190271d581}\label{op__graph_8hpp_a33dee217f18c0d8276c17b190271d581}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+V\+P\+HI@{T\+Y\+P\+E\+\_\+\+V\+P\+HI}}
+\index{T\+Y\+P\+E\+\_\+\+V\+P\+HI@{T\+Y\+P\+E\+\_\+\+V\+P\+HI}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+V\+P\+HI}{TYPE\_VPHI}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+V\+P\+HI~1 $<$$<$ 17}
+
+
+
+constant string identifying an operation node of type virtual phi-\/nodes 
+
+
+
+Definition at line 165 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), cdfc\+\_\+module\+\_\+binding\+::can\+\_\+be\+\_\+clustered(), parametric\+\_\+list\+\_\+based\+::compute\+\_\+starting\+\_\+ending\+\_\+time\+\_\+asap(), mux\+\_\+connection\+\_\+binding\+::create\+\_\+connections(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling(), parametric\+\_\+list\+\_\+based\+::do\+\_\+balanced\+\_\+scheduling1(), B\+B\+\_\+based\+\_\+stg\+::\+Internal\+Exec(), Var\+Computation\+::\+Internal\+Exec(), S\+D\+C\+Scheduling\+::\+Internal\+Exec(), cdfc\+\_\+module\+\_\+binding\+::\+Internal\+Exec(), B\+B\+\_\+based\+\_\+stg\+::optimize\+\_\+cycles(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and C\+Writer\+::write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{op__graph_8hpp_a41a1e0c75efd88a6980f66594ad53054}\label{op__graph_8hpp_a41a1e0c75efd88a6980f66594ad53054}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+W\+A\+S\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+P\+HI@{T\+Y\+P\+E\+\_\+\+W\+A\+S\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+P\+HI}}
+\index{T\+Y\+P\+E\+\_\+\+W\+A\+S\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+P\+HI@{T\+Y\+P\+E\+\_\+\+W\+A\+S\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+P\+HI}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+W\+A\+S\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+P\+HI}{TYPE\_WAS\_GIMPLE\_PHI}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+W\+A\+S\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+P\+HI~1 $<$$<$ 22}
+
+
+
+A vertex is of type T\+Y\+P\+E\+\_\+\+W\+A\+S\+\_\+\+G\+I\+M\+P\+L\+E\+\_\+\+P\+HI when it is comes from a split of phi nodes. 
+
+
+
+Definition at line 190 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive().
+
+\mbox{\Hypertarget{op__graph_8hpp_a52bc3a139d3aca2e3dbc0e9523f4568f}\label{op__graph_8hpp_a52bc3a139d3aca2e3dbc0e9523f4568f}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!T\+Y\+P\+E\+\_\+\+W\+H\+I\+LE@{T\+Y\+P\+E\+\_\+\+W\+H\+I\+LE}}
+\index{T\+Y\+P\+E\+\_\+\+W\+H\+I\+LE@{T\+Y\+P\+E\+\_\+\+W\+H\+I\+LE}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+W\+H\+I\+LE}{TYPE\_WHILE}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+W\+H\+I\+LE~1 $<$$<$ 7}
+
+
+
+constant string identifying the node type of an W\+H\+I\+LE operation. 
+
+
+
+Definition at line 113 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by Scheduling\+::anticipate\+\_\+operations(), A\+S\+L\+A\+P\+::\+A\+S\+L\+A\+P(), operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive(), parametric\+\_\+list\+\_\+based\+::exec(), Edge\+C\+Writer\+::write\+Routine\+Instructions\+\_\+rec(), and C\+Writer\+::write\+Routine\+Instructions\+\_\+rec().
+
+\mbox{\Hypertarget{op__graph_8hpp_a591ec22eaa354d9d5bcb4b1263d25b72}\label{op__graph_8hpp_a591ec22eaa354d9d5bcb4b1263d25b72}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!V\+E\+C\+T\+\_\+\+C\+O\+N\+C\+A\+T\+E\+N\+A\+T\+I\+ON@{V\+E\+C\+T\+\_\+\+C\+O\+N\+C\+A\+T\+E\+N\+A\+T\+I\+ON}}
+\index{V\+E\+C\+T\+\_\+\+C\+O\+N\+C\+A\+T\+E\+N\+A\+T\+I\+ON@{V\+E\+C\+T\+\_\+\+C\+O\+N\+C\+A\+T\+E\+N\+A\+T\+I\+ON}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{V\+E\+C\+T\+\_\+\+C\+O\+N\+C\+A\+T\+E\+N\+A\+T\+I\+ON}{VECT\_CONCATENATION}}
+{\footnotesize\ttfamily \#define V\+E\+C\+T\+\_\+\+C\+O\+N\+C\+A\+T\+E\+N\+A\+T\+I\+ON~\char`\"{}V\+E\+C\+T\+\_\+\+C\+O\+N\+C\+A\+T\+E\+N\+A\+T\+I\+ON\char`\"{}}
+
+
+
+constant string identifying the operation performed when a vector concatenation is considered. 
+
+
+
+Definition at line 323 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by operations\+\_\+cfg\+\_\+computation\+::build\+\_\+operation\+\_\+recursive().
+
+\mbox{\Hypertarget{op__graph_8hpp_a820380b875937949227532186ebba91e}\label{op__graph_8hpp_a820380b875937949227532186ebba91e}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+E\+X\+PR@{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+E\+X\+PR}}
+\index{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+E\+X\+PR@{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+E\+X\+PR}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+E\+X\+PR}{VIEW\_CONVERT\_EXPR}}
+{\footnotesize\ttfamily \#define V\+I\+E\+W\+\_\+\+C\+O\+N\+V\+E\+R\+T\+\_\+\+E\+X\+PR~\char`\"{}view\+\_\+convert\+\_\+expr\char`\"{}}
+
+
+
+constant string identifying view convert expressions 
+
+
+
+Definition at line 353 of file op\+\_\+graph.\+hpp.
+
+
+
+Referenced by allocation\+::\+Internal\+Exec(), and B\+B\+\_\+based\+\_\+stg\+::is\+\_\+instantaneous\+\_\+operation().
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{op__graph_8hpp_ad56e1eade1e36cb8d170845855e19adc}\label{op__graph_8hpp_ad56e1eade1e36cb8d170845855e19adc}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!Op\+Edge\+Info\+Const\+Ref@{Op\+Edge\+Info\+Const\+Ref}}
+\index{Op\+Edge\+Info\+Const\+Ref@{Op\+Edge\+Info\+Const\+Ref}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{Op\+Edge\+Info\+Const\+Ref}{OpEdgeInfoConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{classOpEdgeInfo}{Op\+Edge\+Info}$>$ \hyperlink{op__graph_8hpp_ad56e1eade1e36cb8d170845855e19adc}{Op\+Edge\+Info\+Const\+Ref}}
+
+
+
+Definition at line 561 of file op\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{op__graph_8hpp_a88b31783f4a268fd2586c9cf8134ccb6}\label{op__graph_8hpp_a88b31783f4a268fd2586c9cf8134ccb6}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!Op\+Edge\+Info\+Ref@{Op\+Edge\+Info\+Ref}}
+\index{Op\+Edge\+Info\+Ref@{Op\+Edge\+Info\+Ref}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{Op\+Edge\+Info\+Ref}{OpEdgeInfoRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classOpEdgeInfo}{Op\+Edge\+Info}$>$ \hyperlink{op__graph_8hpp_a88b31783f4a268fd2586c9cf8134ccb6}{Op\+Edge\+Info\+Ref}}
+
+
+
+Refcount definition for \hyperlink{classOpEdgeInfo}{Op\+Edge\+Info}. 
+
+
+
+Definition at line 560 of file op\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}\label{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!Op\+Graph\+Const\+Ref@{Op\+Graph\+Const\+Ref}}
+\index{Op\+Graph\+Const\+Ref@{Op\+Graph\+Const\+Ref}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{Op\+Graph\+Const\+Ref}{OpGraphConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{structOpGraph}{Op\+Graph}$>$ \hyperlink{op__graph_8hpp_a9a0b240622c47584bee6951a6f5de746}{Op\+Graph\+Const\+Ref}}
+
+
+
+Definition at line 926 of file op\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{op__graph_8hpp_af2fea39867a0ccd19a63845f5213dabc}\label{op__graph_8hpp_af2fea39867a0ccd19a63845f5213dabc}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!Op\+Graph\+Info\+Const\+Ref@{Op\+Graph\+Info\+Const\+Ref}}
+\index{Op\+Graph\+Info\+Const\+Ref@{Op\+Graph\+Info\+Const\+Ref}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{Op\+Graph\+Info\+Const\+Ref}{OpGraphInfoConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{structOpGraphInfo}{Op\+Graph\+Info}$>$ \hyperlink{op__graph_8hpp_af2fea39867a0ccd19a63845f5213dabc}{Op\+Graph\+Info\+Const\+Ref}}
+
+
+
+Definition at line 599 of file op\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{op__graph_8hpp_aa53452ee6eef48921379dd17cb659724}\label{op__graph_8hpp_aa53452ee6eef48921379dd17cb659724}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!Op\+Graph\+Info\+Ref@{Op\+Graph\+Info\+Ref}}
+\index{Op\+Graph\+Info\+Ref@{Op\+Graph\+Info\+Ref}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{Op\+Graph\+Info\+Ref}{OpGraphInfoRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structOpGraphInfo}{Op\+Graph\+Info}$>$ \hyperlink{op__graph_8hpp_aa53452ee6eef48921379dd17cb659724}{Op\+Graph\+Info\+Ref}}
+
+
+
+Refcount definition for \hyperlink{structOpGraphInfo}{Op\+Graph\+Info}. 
+
+
+
+Definition at line 598 of file op\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{op__graph_8hpp_aee97c95c40f791b60c451d9e29c72d39}\label{op__graph_8hpp_aee97c95c40f791b60c451d9e29c72d39}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!Op\+Graph\+Ref@{Op\+Graph\+Ref}}
+\index{Op\+Graph\+Ref@{Op\+Graph\+Ref}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{Op\+Graph\+Ref}{OpGraphRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structOpGraph}{Op\+Graph}$>$ \hyperlink{op__graph_8hpp_aee97c95c40f791b60c451d9e29c72d39}{Op\+Graph\+Ref}}
+
+
+
+refcount definition of the class 
+
+
+
+Definition at line 925 of file op\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{op__graph_8hpp_a6a9918dc96f448814ad35759f9460ed7}\label{op__graph_8hpp_a6a9918dc96f448814ad35759f9460ed7}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!Op\+Graphs\+Collection\+Ref@{Op\+Graphs\+Collection\+Ref}}
+\index{Op\+Graphs\+Collection\+Ref@{Op\+Graphs\+Collection\+Ref}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{Op\+Graphs\+Collection\+Ref}{OpGraphsCollectionRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{classOpGraphsCollection}{Op\+Graphs\+Collection}$>$ \hyperlink{op__graph_8hpp_a6a9918dc96f448814ad35759f9460ed7}{Op\+Graphs\+Collection\+Ref}}
+
+
+
+Refcount definition for Op\+Graphs\+Collection\+Ref. 
+
+
+
+Definition at line 783 of file op\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{op__graph_8hpp_a9e7b5806b7d7ea87cc4abe68bf204684}\label{op__graph_8hpp_a9e7b5806b7d7ea87cc4abe68bf204684}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!Op\+Node\+Info\+Const\+Ref@{Op\+Node\+Info\+Const\+Ref}}
+\index{Op\+Node\+Info\+Const\+Ref@{Op\+Node\+Info\+Const\+Ref}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{Op\+Node\+Info\+Const\+Ref}{OpNodeInfoConstRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$const \hyperlink{structOpNodeInfo}{Op\+Node\+Info}$>$ \hyperlink{op__graph_8hpp_a9e7b5806b7d7ea87cc4abe68bf204684}{Op\+Node\+Info\+Const\+Ref}}
+
+
+
+Definition at line 440 of file op\+\_\+graph.\+hpp.
+
+\mbox{\Hypertarget{op__graph_8hpp_a03ecef2a2ccfe0a14c591757fb6624c4}\label{op__graph_8hpp_a03ecef2a2ccfe0a14c591757fb6624c4}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!Op\+Node\+Info\+Ref@{Op\+Node\+Info\+Ref}}
+\index{Op\+Node\+Info\+Ref@{Op\+Node\+Info\+Ref}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{Op\+Node\+Info\+Ref}{OpNodeInfoRef}}
+{\footnotesize\ttfamily typedef \hyperlink{structrefcount}{refcount}$<$\hyperlink{structOpNodeInfo}{Op\+Node\+Info}$>$ \hyperlink{op__graph_8hpp_a03ecef2a2ccfe0a14c591757fb6624c4}{Op\+Node\+Info\+Ref}}
+
+
+
+Definition at line 439 of file op\+\_\+graph.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{op__graph_8hpp_a942a3103598e9f83b960660212b20cef}\label{op__graph_8hpp_a942a3103598e9f83b960660212b20cef}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classBehavioralHelper}{Behavioral\+Helper}}]{ }\end{DoxyParamCaption})}
+
+
+
+Autoheader include. 
+
+Superclasses include behavior include utility includes \mbox{\Hypertarget{op__graph_8hpp_ade14fd37447397e9814a299d22fdadcb}\label{op__graph_8hpp_ade14fd37447397e9814a299d22fdadcb}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}}
+\index{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL@{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+C\+L()}{CONSTREF\_FORWARD\_DECL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+O\+N\+S\+T\+R\+E\+F\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+E\+CL (\begin{DoxyParamCaption}\item[{\hyperlink{classhls}{hls}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{op__graph_8hpp_aaf2bd671f2c9b9dae12ef66c687f76e4}\label{op__graph_8hpp_aaf2bd671f2c9b9dae12ef66c687f76e4}} 
+\index{op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}!U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+EF@{U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+EF}}
+\index{U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+EF@{U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+EF}!op\+\_\+graph.\+hpp@{op\+\_\+graph.\+hpp}}
+\subsubsection{\texorpdfstring{U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+E\+F()}{UINT\_STRONG\_TYPEDEF()}}
+{\footnotesize\ttfamily U\+I\+N\+T\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E\+D\+EF (\begin{DoxyParamCaption}\item[{Memory\+Address}]{ }\end{DoxyParamCaption})}
+
